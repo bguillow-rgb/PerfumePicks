@@ -1,18 +1,17 @@
 /**
- * RevenueCat configuration and helpers for Stick Picks Pro subscriptions.
+ * RevenueCat configuration and helpers for Perfume Picks Pro subscriptions.
  *
  * Setup checklist (do once in RevenueCat dashboard):
  * 1. Create a project at https://app.revenuecat.com
- * 2. Add an Apple App Store app with your bundle ID (com.bobguillow.stickpicks)
- * 3. Create Products:
- *    - sp_pro_monthly  → $2.99/month auto-renewing subscription (TestFlight)
- *    - sp_pro_yearly   → $24.99/year auto-renewing subscription (TestFlight)
- *    Planned launch prices are $4.99 / $39.99 — bump via ASC's Plan
- *    Subscription Price Change flow once TestFlight testing is complete.
+ * 2. Add an Apple App Store app with bundle ID com.bobguillow.perfumepicks
+ * 3. Create Products in App Store Connect, then mirror in RevenueCat:
+ *    - pp_pro_monthly  → $4.99/month auto-renewing (locked, do not iterate)
+ *    - pp_pro_yearly   → $39.99/year auto-renewing (locked, do not iterate)
+ *    Both ship with a 7-day free trial.
  * 4. Create an Entitlement called "pro"
  * 5. Attach both products to the "pro" entitlement
  * 6. Create an Offering called "default" with both products
- * 7. Copy your Apple API key below
+ * 7. Set EXPO_PUBLIC_REVENUECAT_APPLE_KEY in eas.json
  */
 import { Platform } from 'react-native';
 import Purchases, {
@@ -30,8 +29,8 @@ const ENTITLEMENT_ID = 'pro';
 
 // ── Product IDs (must match App Store Connect / Google Play Console) ────────
 export const PRODUCT_IDS = {
-  monthly: 'sp_pro_monthly',
-  yearly: 'sp_pro_yearly',
+  monthly: 'pp_pro_monthly',
+  yearly: 'pp_pro_yearly',
 } as const;
 
 // ── Init ─────────────────────────────────────────────────────────────────────

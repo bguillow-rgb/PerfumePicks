@@ -17,34 +17,34 @@ type Plan = 'monthly' | 'yearly';
 // by naming the one thing that distinguishes Pro from free and from other apps.
 const FEATURES = [
   {
-    icon: 'wine-outline' as const,
-    title: 'Expert Drink Pairings',
-    desc: 'Three curated pours per cigar — including one deep cut no other app surfaces.',
-  },
-  {
     icon: 'sparkles-outline' as const,
-    title: 'Unlimited AI Scans',
-    desc: 'Snap any band, know the cigar. Free gets 5; Pro is unlimited.',
+    title: 'Unlimited Train My Nose',
+    desc: 'Sharpen your taste with unlimited swipes — free is 10 per day.',
   },
   {
     icon: 'flask-outline' as const,
     title: '9-Question Precision Quiz',
-    desc: 'Top 10 matches, scored to your palate. Free is 3 questions, 3 picks.',
+    desc: 'Ten matches scored against your palate. Free is 3 questions, 3 picks.',
   },
   {
-    icon: 'archive-outline' as const,
-    title: 'Full Humidor',
-    desc: 'Wishlist, owned, smoked — with pricing and resting days.',
+    icon: 'rose-outline' as const,
+    title: 'Unlimited Wardrobe',
+    desc: 'Track every bottle, decant and sample with mL meters and reorder alerts.',
   },
   {
-    icon: 'star-outline' as const,
-    title: 'Tasting Reviews',
-    desc: 'Rate draw, burn, and flavor. Build a personal journal.',
+    icon: 'analytics-outline' as const,
+    title: 'Taste Profile Insights',
+    desc: 'See your top notes, accords, and avoid list — your scent identity at a glance.',
   },
   {
-    icon: 'trending-up-outline' as const,
-    title: 'New Features First',
-    desc: 'Pro funds the roadmap — you get it before anyone else.',
+    icon: 'pricetags-outline' as const,
+    title: 'Dupes & Decant Intelligence',
+    desc: 'Find lookalikes 30%+ cheaper, plus best-value mL across every retailer.',
+  },
+  {
+    icon: 'sunny-outline' as const,
+    title: 'Wear Today + Layering',
+    desc: 'A daily pick tuned to weather, season and occasion — and pairs that layer well.',
   },
 ];
 
@@ -70,23 +70,18 @@ export default function PaywallScreen() {
     })();
   }, []);
 
-  // Use real prices from RevenueCat when available. Fallbacks must match the
-  // live App Store Connect prices so users never see a different number in
-  // the paywall vs. the Apple purchase sheet — only shown if RevenueCat
-  // offerings are still loading or unavailable.
-  //
-  // Current ASC prices (TestFlight-era): $2.99/mo, $24.99/yr. Plan is to bump
-  // to $4.99/$39.99 before public launch via Apple's Plan Subscription Price
-  // Change flow (only available once a subscription has been submitted for
-  // review at least once). Update the fallbacks in the same commit as the
-  // ASC price change so they stay in lockstep.
-  const yearlyPrice = yearlyPackage?.product.priceString ?? '$24.99';
-  const monthlyPrice = monthlyPackage?.product.priceString ?? '$2.99';
+  // Locked launch pricing for Perfume Picks: $4.99/mo, $39.99/yr (7-day
+  // free trial). These fallbacks must match the App Store Connect product
+  // prices so the paywall and Apple purchase sheet never show different
+  // numbers. DO NOT iterate post-spec — paywall pricing oscillation was
+  // a documented source of late-stage churn in StickPicks.
+  const yearlyPrice = yearlyPackage?.product.priceString ?? '$39.99';
+  const monthlyPrice = monthlyPackage?.product.priceString ?? '$4.99';
   // Per-month equivalent of the annual plan — Apple 3.1.2(a) requires this
   // to be shown alongside the annual price.
   const yearlyPerMonth = yearlyPackage
     ? `$${(yearlyPackage.product.price / 12).toFixed(2)}/month billed annually`
-    : '$2.08/month billed annually';
+    : '$3.33/month billed annually';
 
   async function handlePurchase() {
     if (isGuest) {
@@ -163,15 +158,15 @@ export default function PaywallScreen() {
       )}
 
       {/* Header */}
-      <Text style={styles.header}>Stick Picks Pro</Text>
-      <Text style={styles.subheader}>Your personal cigar sommelier</Text>
+      <Text style={styles.header}>Perfume Picks Pro</Text>
+      <Text style={styles.subheader}>Your personal fragrance concierge</Text>
 
       {/* Pitch — one sentence, named differentiators only. Users scan paywalls
           rather than read them; we frontload the two claims no competitor can
           make and let the bullets do the rest. */}
       <View style={styles.pitchCard}>
         <Text style={styles.pitchHeadline}>
-          The only cigar app with AI band ID and expert drink pairings.
+          The only fragrance app that learns your nose — and finds the dupes.
         </Text>
       </View>
 
@@ -360,7 +355,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Cormorant',
     fontSize: 10,
     fontWeight: '800',
-    color: COLORS.bg,
+    color: COLORS.white,
     letterSpacing: 1,
   },
   planPrice: {

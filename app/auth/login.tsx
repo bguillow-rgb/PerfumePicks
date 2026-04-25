@@ -11,7 +11,7 @@ import {
 } from '@react-native-google-signin/google-signin';
 import { supabase } from '@/lib/supabase';
 import { Button } from '@/src/components/ui/Button';
-import { COLORS, SPACING, FONTS } from '@/src/constants/theme';
+import { COLORS, SPACING } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
 
 GoogleSignin.configure({
@@ -137,10 +137,10 @@ export default function LoginScreen() {
 
   return (
     <View style={[styles.screen, { paddingTop: insets.top + 80 }]}>
-      <Text style={styles.brand}>STICK PICKS</Text>
+      <Text style={styles.wordmark}>Perfume Picks</Text>
       <View style={styles.brandRule} />
       <Text style={styles.tagline}>
-        Sign in to sync your humidor and scan history — or jump right in as a guest.
+        Sign in to sync your wardrobe across devices — or continue as a guest to explore.
       </Text>
 
       <View style={styles.buttons}>
@@ -198,13 +198,12 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.bg,
     paddingHorizontal: SPACING.lg,
   },
-  brand: {
-    fontFamily: FONTS.display,
-    fontSize: 32,
-    fontWeight: '800',
+  wordmark: {
+    fontFamily: 'PinyonScript_400Regular',
+    fontSize: 56,
     color: COLORS.accent,
     textAlign: 'center',
-    letterSpacing: 6,
+    lineHeight: 76,
   },
   brandRule: {
     width: 40,

@@ -1,163 +1,250 @@
-import { ScrollView, View, Text, StyleSheet, Pressable } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image, Dimensions } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
+import { NotePyramid } from '@/src/components/fragrance/NotePyramid';
+import { AccordChip } from '@/src/components/fragrance/AccordChip';
+import { PerfBar } from '@/src/components/fragrance/PerfBar';
+import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
+import { getFragrance, getFragrances } from '@/src/mock/fragrances';
+
+const { width: SCREEN_W } = Dimensions.get('window');
+const HERO_HEIGHT = SCREEN_W * 1.05;
 
 /**
- * Fragrance detail page. Routed via /fragrance/[id].
+ * Fragrance detail page — the canonical view of a single fragrance.
  *
- * Sections (per spec § 3 Fragrance Detail Page):
- *   - Hero: image + brand + name + concentration + price tier
- *   - Notes pyramid (top / heart / base) — chip rows
- *   - Accord chips with intensity meters
- *   - Performance bars (longevity, sillage, projection)
- *   - Compliment / versatility / office-safe scores
- *   - Similar fragrances grid
- *   - Dupes / alternatives section
- *   - Wear history (user's own logs for this fragrance)
- *   - Decant sources (mL × retailer table)
- *   - Add to wardrobe CTA
- *
- * STUB layout — wires to Supabase once catalog is seeded.
+ * Pulls from the mock catalog. Real version reads from Supabase + the
+ * recommendation engine for "similar" + "dupes" sections.
  */
 export default function FragranceDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
+  const fragrance = getFragrance(id ?? '');
+
+  if (!fragrance) {
+    return (
+      <View style={styles.notFound}>
+        <Text style={styles.notFoundText}>Fragrance not found.</Text>
+        <Pressable onPress={() => router.back()} style={styles.notFoundBtn}>
+          <Text style={styles.notFoundBtnText}>Go Back</Text>
+        </Pressable>
+      </View>
+    );
+  }
+
+  const similar = getFragrances(fragrance.similar_ids);
+  const headlinePrice = (fragrance.retail_msrp_usd_cents / 100).toFixed(0);
 
   return (
-    <SafeAreaView style={styles.safe} edges={['top']}>
+    <View style={styles.safe}>
       <Stack.Screen options={{ headerShown: false }} />
-      <ScrollView contentContainerStyle={styles.container}>
-        <Pressable style={styles.backBtn} onPress={() => router.back()}>
-          <Ionicons name="chevron-back" size={24} color={COLORS.text} />
-        </Pressable>
-
+      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.hero}>
-          <View style={styles.bottlePlaceholder} />
-          <Text style={styles.eyebrow}>HOUSE</Text>
-          <Text style={styles.brand}>Brand Name</Text>
-          <Text style={styles.fragranceName}>Fragrance Name</Text>
-          <Text style={styles.subline}>Eau de Parfum · 50ml · $$$$</Text>
+          <Image source={{ uri: fragrance.image_url }} style={styles.heroImage} />
+          <View style={styles.heroOverlay} />
+
+          <Pressable style={styles.backBtn} onPress={() => router.back()}>
+            <Ionicons name="chevron-back" size={26} color={COLORS.white} />
+          </Pressable>
+          <Pressable style={styles.heartBtn}>
+            <Ionicons name="heart-outline" size={22} color={COLORS.white} />
+          </Pressable>
+
+          <View style={styles.heroContent}>
+            <Text style={styles.heroBrand}>{fragrance.brand.toUpperCase()}</Text>
+            <Text style={styles.heroName}>{fragrance.name}</Text>
+            <View style={styles.heroMeta}>
+              <Text style={styles.heroMetaText}>{prettyConcentration(fragrance.concentration)}</Text>
+              <Text style={styles.heroMetaDot}>·</Text>
+              <Text style={styles.heroMetaText}>{fragrance.fragrance_family}</Text>
+              <Text style={styles.heroMetaDot}>·</Text>
+              <Text style={styles.heroMetaText}>{fragrance.release_year}</Text>
+            </View>
+          </View>
         </View>
 
-        <Section title="Notes">
-          <NoteRow label="TOP" />
-          <NoteRow label="HEART" />
-          <NoteRow label="BASE" />
+        <Section title="Notes" cursive="composition">
+          <NotePyramid
+            top_notes={fragrance.top_notes}
+            heart_notes={fragrance.heart_notes}
+            base_notes={fragrance.base_notes}
+          />
         </Section>
 
-        <Section title="Accords">
-          <Placeholder height={120} label="Accord chips with intensity meters" />
+        <Section title="Accords" cursive="character">
+          <View style={styles.accordWrap}>
+            {fragrance.top_accords.map((a) => (
+              <AccordChip key={a} label={a} intensity={fragrance.accord_intensity[a] ?? 3} />
+            ))}
+          </View>
         </Section>
 
-        <Section title="Performance">
-          <Placeholder height={140} label="Longevity · Sillage · Projection bars" />
+        <Section title="Performance" cursive="how it wears">
+          <View style={styles.perfCard}>
+            <PerfBar label="Longevity" value={fragrance.community_longevity} />
+            <PerfBar label="Sillage" value={fragrance.community_sillage} />
+            <PerfBar label="Projection" value={fragrance.community_projection} />
+            <View style={styles.scoreRow}>
+              <ScoreTile label="Compliments" value={fragrance.compliment_score} />
+              <ScoreTile label="Versatility" value={fragrance.versatility_score} />
+              <ScoreTile label="Office Safe" value={fragrance.office_safe_score} />
+            </View>
+          </View>
         </Section>
 
-        <Section title="Smells Like">
-          <Placeholder height={140} label="Similar fragrances horizontal scroller" />
+        <Section title="Smells Like" cursive="discover similar">
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+            {similar.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+          </ScrollView>
         </Section>
 
-        <Section title="Dupes & Alternatives">
-          <Placeholder height={140} label="High-similarity, lower-price options" />
-        </Section>
-
-        <Section title="Decant Sources">
-          <Placeholder height={120} label="mL × retailer pricing table" />
+        <Section title="Pricing" cursive="where to buy">
+          <View style={styles.priceCard}>
+            <View style={styles.priceRow}>
+              <View>
+                <Text style={styles.priceLabel}>Retail · 50ml</Text>
+                <Text style={styles.priceValue}>${headlinePrice}</Text>
+              </View>
+              <View style={styles.priceTier}>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <View key={i} style={[styles.priceDot, i < fragrance.price_tier && styles.priceDotActive]} />
+                ))}
+                <Text style={styles.priceTierLabel}>Tier {fragrance.price_tier}</Text>
+              </View>
+            </View>
+            <View style={styles.priceDivider} />
+            <Text style={styles.priceFootnote}>
+              Decant pricing across Sephora, Nordstrom, Luckyscent and FragranceX
+              appears once the data pipeline is wired up.
+            </Text>
+          </View>
         </Section>
 
         <View style={styles.ctaWrap}>
           <Pressable style={styles.cta}>
             <Text style={styles.ctaText}>Add to Wardrobe</Text>
           </Pressable>
+          <Pressable style={styles.secondaryCta}>
+            <Text style={styles.secondaryCtaText}>Log a Wear</Text>
+          </Pressable>
         </View>
-        <Text style={styles.debug}>id: {id}</Text>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({ title, cursive, children }: { title: string; cursive?: string; children: React.ReactNode }) {
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>{title}</Text>
+      <View style={styles.sectionHeader}>
+        <Text style={styles.sectionTitle}>{title}</Text>
+        {cursive && <Text style={styles.sectionCursive}>{cursive}</Text>}
+      </View>
       {children}
     </View>
   );
 }
 
-function NoteRow({ label }: { label: string }) {
+function ScoreTile({ label, value }: { label: string; value: number }) {
   return (
-    <View style={styles.noteRow}>
-      <Text style={styles.noteLabel}>{label}</Text>
-      <View style={styles.noteChips}>
-        <View style={styles.noteChip}><Text style={styles.noteChipText}>—</Text></View>
-      </View>
+    <View style={styles.scoreTile}>
+      <Text style={styles.scoreValue}>{Math.round(value * 100)}</Text>
+      <Text style={styles.scoreLabel}>{label}</Text>
     </View>
   );
 }
 
-function Placeholder({ height, label }: { height: number; label: string }) {
-  return (
-    <View style={[styles.placeholder, { height }]}>
-      <Text style={styles.placeholderLabel}>{label}</Text>
-    </View>
-  );
+function prettyConcentration(c: string): string {
+  return ({ parfum: 'Parfum', edp: 'Eau de Parfum', edt: 'Eau de Toilette', cologne: 'Cologne', extrait: 'Extrait' } as any)[c] ?? c;
 }
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.bg },
-  container: { paddingBottom: SPACING.xxl },
-  backBtn: { padding: SPACING.md },
-  hero: { alignItems: 'center', paddingHorizontal: SPACING.lg, paddingBottom: SPACING.xl },
-  bottlePlaceholder: {
-    width: 180, height: 240,
+  container: { paddingBottom: SPACING.xxl * 1.5 },
+  notFound: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: COLORS.bg, gap: SPACING.lg },
+  notFoundText: { ...TYPE.body },
+  notFoundBtn: { backgroundColor: COLORS.accent, paddingHorizontal: SPACING.xl, paddingVertical: 12, borderRadius: RADIUS.full },
+  notFoundBtnText: { color: COLORS.white, fontWeight: '600' },
+
+  hero: {
+    width: SCREEN_W, height: HERO_HEIGHT,
     backgroundColor: COLORS.card2,
+    overflow: 'hidden',
+  },
+  heroImage: { ...StyleSheet.absoluteFillObject, width: '100%', height: '100%' },
+  heroOverlay: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(42,31,24,0.42)' },
+  backBtn: {
+    position: 'absolute', top: 56, left: SPACING.lg,
+    width: 38, height: 38, borderRadius: 19,
+    backgroundColor: 'rgba(0,0,0,0.32)',
+    alignItems: 'center', justifyContent: 'center',
+  },
+  heartBtn: {
+    position: 'absolute', top: 56, right: SPACING.lg,
+    width: 38, height: 38, borderRadius: 19,
+    backgroundColor: 'rgba(0,0,0,0.32)',
+    alignItems: 'center', justifyContent: 'center',
+  },
+  heroContent: { position: 'absolute', left: 0, right: 0, bottom: 0, padding: SPACING.lg },
+  heroBrand: { ...TYPE.eyebrow, color: COLORS.accentSoft, marginBottom: 6 },
+  heroName: { fontFamily: FONTS.serif, fontWeight: '700', fontSize: 38, color: COLORS.white, lineHeight: 44, marginBottom: SPACING.sm },
+  heroMeta: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  heroMetaText: { ...TYPE.caption, color: COLORS.white, opacity: 0.9 },
+  heroMetaDot: { color: COLORS.white, opacity: 0.6 },
+
+  section: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl },
+  sectionHeader: { flexDirection: 'row', alignItems: 'baseline', gap: 10, marginBottom: SPACING.md },
+  sectionTitle: { ...TYPE.heading },
+  sectionCursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 22, color: COLORS.accent, lineHeight: 26 },
+  hScroll: { paddingRight: SPACING.lg },
+
+  accordWrap: {
+    flexDirection: 'row', flexWrap: 'wrap',
+    backgroundColor: COLORS.card,
     borderRadius: RADIUS.lg,
     borderWidth: 1, borderColor: COLORS.border,
-    marginBottom: SPACING.lg,
-  },
-  eyebrow: { ...TYPE.eyebrow, marginBottom: 4 },
-  brand: { ...TYPE.bodySmall, color: COLORS.muted, marginBottom: 4 },
-  fragranceName: {
-    fontFamily: FONTS.serif,
-    fontSize: 28,
-    fontWeight: '600',
-    color: COLORS.text,
-    textAlign: 'center',
-  },
-  subline: { ...TYPE.caption, marginTop: SPACING.sm },
-  section: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl },
-  sectionTitle: { ...TYPE.heading, marginBottom: SPACING.md },
-  noteRow: { marginBottom: SPACING.md },
-  noteLabel: { ...TYPE.eyebrow, fontSize: 10, marginBottom: 6 },
-  noteChips: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
-  noteChip: {
-    paddingHorizontal: SPACING.md,
-    paddingVertical: 6,
-    borderRadius: RADIUS.full,
-    backgroundColor: COLORS.card,
-    borderWidth: 1, borderColor: COLORS.border,
-  },
-  noteChipText: { ...TYPE.bodySmall, color: COLORS.muted },
-  placeholder: {
-    backgroundColor: COLORS.card,
-    borderRadius: RADIUS.md,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: SPACING.lg,
   },
-  placeholderLabel: { ...TYPE.bodySmall, textAlign: 'center' },
-  ctaWrap: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl },
-  cta: {
-    backgroundColor: COLORS.accent,
-    paddingVertical: 16,
-    borderRadius: RADIUS.full,
-    alignItems: 'center',
+
+  perfCard: {
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+    padding: SPACING.lg,
   },
+  scoreRow: { flexDirection: 'row', gap: SPACING.sm, marginTop: SPACING.md },
+  scoreTile: {
+    flex: 1, alignItems: 'center', padding: SPACING.md,
+    backgroundColor: COLORS.card2,
+    borderRadius: RADIUS.md,
+  },
+  scoreValue: { fontFamily: FONTS.serif, fontSize: 28, fontWeight: '700', color: COLORS.accent, lineHeight: 34 },
+  scoreLabel: { ...TYPE.eyebrow, fontSize: 9, marginTop: 2, textAlign: 'center' },
+
+  priceCard: {
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+    padding: SPACING.lg,
+  },
+  priceRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  priceLabel: { ...TYPE.eyebrow, marginBottom: 4 },
+  priceValue: { fontFamily: FONTS.serif, fontSize: 32, fontWeight: '700', color: COLORS.text, lineHeight: 36 },
+  priceTier: { alignItems: 'flex-end', gap: 6 },
+  priceDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: COLORS.border, marginLeft: 4 },
+  priceDotActive: { backgroundColor: COLORS.accent },
+  priceTierLabel: { ...TYPE.caption, marginTop: 4 },
+  priceDivider: { height: 1, backgroundColor: COLORS.border, marginVertical: SPACING.md },
+  priceFootnote: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic' },
+
+  ctaWrap: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl, gap: SPACING.sm },
+  cta: { backgroundColor: COLORS.accent, paddingVertical: 16, borderRadius: RADIUS.full, alignItems: 'center' },
   ctaText: { ...TYPE.label, color: COLORS.white, letterSpacing: 2 },
-  debug: { ...TYPE.caption, textAlign: 'center', marginTop: SPACING.md },
+  secondaryCta: {
+    backgroundColor: COLORS.card,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingVertical: 16, borderRadius: RADIUS.full, alignItems: 'center',
+  },
+  secondaryCtaText: { ...TYPE.label, letterSpacing: 1.5 },
 });

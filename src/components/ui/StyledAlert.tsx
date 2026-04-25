@@ -199,7 +199,7 @@ const textStyles = StyleSheet.create<Record<string, TextStyle>>({
   // Uppercase gold "small caps" title matches the section-title treatment used
   // throughout the cigar detail page — reads as a proper header, not a system dialog.
   title: {
-    fontFamily: FONTS.display,
+    fontFamily: FONTS.serif,
     fontSize: 12,
     fontWeight: '800',
     letterSpacing: 1.6,

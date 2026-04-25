@@ -1,33 +1,38 @@
 import { useEffect, useState, useCallback } from 'react';
-import { View, Text, StyleSheet, LogBox } from 'react-native';
+import { LogBox } from 'react-native';
 
-// RevenueCat can't fetch offerings until products are live in App Store
-// Connect, which only happens for release builds. In dev, the expected failure
-// surfaces as a red LogBox toast that obscures the UI we're testing — silence.
 if (__DEV__) {
   LogBox.ignoreLogs([
     /\[RevenueCat\]/,
     /Error fetching offerings/,
   ]);
 }
+
 import { DarkTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
 import { Stack, useRouter, useSegments } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withTiming,
-  withSequence,
-  withDelay,
-  runOnJS,
-  Easing,
-} from 'react-native-reanimated';
 import 'react-native-reanimated';
-import { COLORS, FONTS } from '@/src/constants/theme';
+
+// Load fonts directly from the @expo-google-fonts packages — these ship the
+// .ttfs as JS modules, no manual asset placement needed. PinyonScript is the
+// cursive wordmark; Cormorant Garamond is the serif used across headings.
+import {
+  useFonts as usePinyonFont,
+  PinyonScript_400Regular,
+} from '@expo-google-fonts/pinyon-script';
+import {
+  CormorantGaramond_400Regular,
+  CormorantGaramond_500Medium,
+  CormorantGaramond_600SemiBold,
+  CormorantGaramond_700Bold,
+  CormorantGaramond_400Regular_Italic,
+} from '@expo-google-fonts/cormorant-garamond';
+
+import { COLORS } from '@/src/constants/theme';
 import { StyledAlertHost } from '@/src/components/ui/StyledAlert';
-import { supabase } from '@/lib/supabase';
+import { HandwrittenSplash } from '@/src/components/splash/HandwrittenSplash';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { Session } from '@supabase/supabase-js';
 import { initRevenueCat, identifyUser, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { useProStore } from '@/src/stores/useProStore';
@@ -66,10 +71,14 @@ function useProtectedRoute(session: Session | null, isLoading: boolean) {
 
   useEffect(() => {
     if (isLoading) return;
-    const inAuthGroup = segments[0] === 'auth';
 
-    // Anonymous (guest) sessions are valid — let them in. Only kick to /auth
-    // when there's no session at all.
+    // Demo mode: when Supabase isn't configured (no env vars), skip the auth
+    // gate entirely so the app boots straight to (tabs) for UI review on a
+    // physical device. Production builds set EXPO_PUBLIC_SUPABASE_URL via
+    // eas.json and re-enable the real gate below.
+    if (!isSupabaseConfigured) return;
+
+    const inAuthGroup = segments[0] === 'auth';
     if (!session && !inAuthGroup) {
       router.replace('/auth/login');
     } else if (session && inAuthGroup && !session.user?.is_anonymous) {
@@ -78,132 +87,21 @@ function useProtectedRoute(session: Session | null, isLoading: boolean) {
   }, [session, segments, isLoading]);
 }
 
-function AnimatedSplash({
-  onReady,
-  onFinish,
-}: {
-  onReady?: () => void;
-  onFinish: () => void;
-}) {
-  const scale = useSharedValue(0.85);
-  const opacity = useSharedValue(0);
-  const wordmarkOpacity = useSharedValue(0);
-  const taglineOpacity = useSharedValue(0);
-
-  useEffect(() => {
-    opacity.value = withTiming(1, { duration: 500 });
-    scale.value = withSequence(
-      withTiming(1.04, { duration: 700, easing: Easing.out(Easing.cubic) }),
-      withTiming(1, { duration: 400 }),
-    );
-    wordmarkOpacity.value = withDelay(400, withTiming(1, { duration: 700 }));
-    taglineOpacity.value = withDelay(900, withTiming(1, { duration: 600 }));
-
-    const timeout = setTimeout(() => {
-      opacity.value = withTiming(0, { duration: 500 });
-      wordmarkOpacity.value = withTiming(0, { duration: 400 });
-      taglineOpacity.value = withTiming(0, { duration: 400 }, () => {
-        runOnJS(onFinish)();
-      });
-    }, 2600);
-
-    return () => clearTimeout(timeout);
-  }, []);
-
-  const wordmarkStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: scale.value }],
-    opacity: wordmarkOpacity.value,
-  }));
-
-  const containerStyle = useAnimatedStyle(() => ({
-    opacity: opacity.value,
-  }));
-
-  const taglineStyle = useAnimatedStyle(() => ({
-    opacity: taglineOpacity.value,
-  }));
-
-  return (
-    <Animated.View
-      style={[splashStyles.container, containerStyle]}
-      onLayout={() => onReady?.()}
-    >
-      <View style={splashStyles.ornamentTop} />
-      <Animated.View style={wordmarkStyle}>
-        {/* Cursive wordmark — uses Pinyon Script, the script font loaded in
-            useFonts() below. Loaded as 'Wordmark' so the font reference here
-            stays stable even if we swap the underlying TTF. */}
-        <Text style={splashStyles.wordmark}>Perfume Picks</Text>
-      </Animated.View>
-      <Animated.View style={taglineStyle}>
-        <View style={splashStyles.divider} />
-        <Text style={splashStyles.tagline}>FRAGRANCE, REFINED</Text>
-      </Animated.View>
-      <View style={splashStyles.ornamentBottom} />
-    </Animated.View>
-  );
-}
-
-const splashStyles = StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: COLORS.bg,
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 100,
-  },
-  ornamentTop: {
-    position: 'absolute',
-    top: '24%',
-    width: 80,
-    height: 1,
-    backgroundColor: COLORS.accent,
-    opacity: 0.5,
-  },
-  wordmark: {
-    fontFamily: 'Wordmark',
-    fontSize: 68,
-    color: COLORS.accent,
-    textAlign: 'center',
-    // Pinyon Script descenders sit low — extra line height prevents clipping.
-    lineHeight: 90,
-    paddingHorizontal: 24,
-  },
-  divider: {
-    width: 36,
-    height: 1,
-    backgroundColor: COLORS.accent,
-    alignSelf: 'center',
-    marginVertical: 14,
-    opacity: 0.6,
-  },
-  tagline: {
-    fontFamily: FONTS.serif,
-    fontSize: 11,
-    fontWeight: '500',
-    color: COLORS.muted,
-    textAlign: 'center',
-    letterSpacing: 5,
-  },
-  ornamentBottom: {
-    position: 'absolute',
-    bottom: '24%',
-    width: 80,
-    height: 1,
-    backgroundColor: COLORS.accent,
-    opacity: 0.5,
-  },
-});
-
 export default function RootLayout() {
-  const [loaded, error] = useFonts({
-    // Cursive wordmark font for the splash screen. Pinyon Script is a
-    // refined, feminine script — placeholder until the .ttf is dropped into
-    // assets/fonts/. Until then expo-font falls back to the system serif.
-    'Wordmark': require('../assets/fonts/PinyonScript-Regular.ttf'),
-    'Cormorant': require('../assets/fonts/Cormorant-Variable.ttf'),
-    'Cormorant-Italic': require('../assets/fonts/Cormorant-Italic-Variable.ttf'),
+  // Two font requests, joined: cursive wordmark + serif body.
+  const [pinyonLoaded] = usePinyonFont({ PinyonScript_400Regular });
+  const [serifLoaded] = usePinyonFont({
+    CormorantGaramond_400Regular,
+    CormorantGaramond_500Medium,
+    CormorantGaramond_600SemiBold,
+    CormorantGaramond_700Bold,
+    'CormorantGaramond_400Regular_Italic': CormorantGaramond_400Regular_Italic,
+    // Aliases so existing `fontFamily: 'Cormorant'` references keep working.
+    'Cormorant': CormorantGaramond_400Regular,
+    'Cormorant-Italic': CormorantGaramond_400Regular_Italic,
   });
+  const fontsLoaded = pinyonLoaded && serifLoaded;
+
   const [showSplash, setShowSplash] = useState(true);
   const [animatedSplashReady, setAnimatedSplashReady] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
@@ -218,6 +116,11 @@ export default function RootLayout() {
   }, []);
 
   useEffect(() => {
+    // Demo mode (no Supabase) — skip the whole auth subscription path.
+    if (!isSupabaseConfigured) {
+      setAuthLoading(false);
+      return;
+    }
     const activate = useProStore.getState().activate;
     let identifiedUserId: string | null = null;
 
@@ -256,14 +159,10 @@ export default function RootLayout() {
   }, []);
 
   useEffect(() => {
-    if (error) throw error;
-  }, [error]);
-
-  useEffect(() => {
-    if (loaded && animatedSplashReady) {
+    if (fontsLoaded && animatedSplashReady) {
       SplashScreen.hideAsync();
     }
-  }, [loaded, animatedSplashReady]);
+  }, [fontsLoaded, animatedSplashReady]);
 
   const handleSplashFinish = useCallback(() => {
     setShowSplash(false);
@@ -271,11 +170,11 @@ export default function RootLayout() {
 
   useProtectedRoute(session, authLoading || showSplash);
 
-  if (!loaded) return null;
+  if (!fontsLoaded) return null;
 
   return (
     <ThemeProvider value={PerfumePicksTheme}>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="auth/login" options={{ presentation: 'modal', gestureEnabled: false }} />
@@ -287,7 +186,8 @@ export default function RootLayout() {
         <Stack.Screen name="legal/terms" options={{ presentation: 'modal' }} />
       </Stack>
       {showSplash && (
-        <AnimatedSplash
+        <HandwrittenSplash
+          fontsLoaded={fontsLoaded}
           onReady={() => setAnimatedSplashReady(true)}
           onFinish={handleSplashFinish}
         />

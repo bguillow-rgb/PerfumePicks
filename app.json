@@ -50,16 +50,7 @@
       "expo-image-picker",
       "expo-secure-store",
       "expo-apple-authentication",
-      [
-        "expo-font",
-        {
-          "fonts": [
-            "./assets/fonts/PinyonScript-Regular.ttf",
-            "./assets/fonts/Cormorant-Variable.ttf",
-            "./assets/fonts/Cormorant-Italic-Variable.ttf"
-          ]
-        }
-      ],
+      "expo-font",
       "@react-native-google-signin/google-signin",
       "@sentry/react-native",
       [
