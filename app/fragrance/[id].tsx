@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable, Image, Dimensions } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -6,7 +7,11 @@ import { NotePyramid } from '@/src/components/fragrance/NotePyramid';
 import { AccordChip } from '@/src/components/fragrance/AccordChip';
 import { PerfBar } from '@/src/components/fragrance/PerfBar';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
+import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
+import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 import { getFragrance, getFragrances } from '@/src/mock/fragrances';
+import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
+import { useWearLogStore } from '@/src/stores/useWearLogStore';
 
 const { width: SCREEN_W } = Dimensions.get('window');
 const HERO_HEIGHT = SCREEN_W * 1.05;
@@ -21,6 +26,12 @@ export default function FragranceDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const fragrance = getFragrance(id ?? '');
+  const [wardrobeSheetOpen, setWardrobeSheetOpen] = useState(false);
+  const [wearSheetOpen, setWearSheetOpen] = useState(false);
+
+  // Live state from the persisted stores so the CTAs reflect reality.
+  const inWardrobe = useWardrobeStore((s) => fragrance ? s.getByFragrance(fragrance.id) : undefined);
+  const wearLogs = useWearLogStore((s) => fragrance ? s.forFragrance(fragrance.id) : []);
 
   if (!fragrance) {
     return (
@@ -121,17 +132,76 @@ export default function FragranceDetailScreen() {
           </View>
         </Section>
 
+        {/* Wear log preview — shows up only if the user has logged this
+            fragrance before. Encourages re-engagement and shows the data
+            captured by the LogWearSheet is being put to use. */}
+        {wearLogs.length > 0 && (
+          <Section title="Your Wears" cursive={`${wearLogs.length} logged`}>
+            <View style={styles.wearList}>
+              {wearLogs.slice(0, 3).map((w) => (
+                <View key={w.id} style={styles.wearRow}>
+                  <Ionicons name="bookmark" size={14} color={COLORS.accent} />
+                  <Text style={styles.wearDate}>{prettyWearDate(w.worn_on)}</Text>
+                  {w.occasion && <Text style={styles.wearMeta}>· {w.occasion}</Text>}
+                  {w.rating != null && (
+                    <View style={styles.wearStars}>
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Ionicons
+                          key={i}
+                          name={i < w.rating! ? 'star' : 'star-outline'}
+                          size={11}
+                          color={COLORS.accent}
+                        />
+                      ))}
+                    </View>
+                  )}
+                </View>
+              ))}
+            </View>
+          </Section>
+        )}
+
         <View style={styles.ctaWrap}>
-          <Pressable style={styles.cta}>
-            <Text style={styles.ctaText}>Add to Wardrobe</Text>
-          </Pressable>
-          <Pressable style={styles.secondaryCta}>
+          {inWardrobe ? (
+            <Pressable style={[styles.cta, styles.ctaInWardrobe]} onPress={() => setWardrobeSheetOpen(true)}>
+              <Ionicons name="checkmark-circle" size={18} color={COLORS.white} style={{ marginRight: 8 }} />
+              <Text style={styles.ctaText}>In Your Wardrobe</Text>
+            </Pressable>
+          ) : (
+            <Pressable style={styles.cta} onPress={() => setWardrobeSheetOpen(true)}>
+              <Ionicons name="rose" size={16} color={COLORS.white} style={{ marginRight: 8 }} />
+              <Text style={styles.ctaText}>Add to Wardrobe</Text>
+            </Pressable>
+          )}
+          <Pressable style={styles.secondaryCta} onPress={() => setWearSheetOpen(true)}>
+            <Ionicons name="bookmark-outline" size={16} color={COLORS.text} style={{ marginRight: 8 }} />
             <Text style={styles.secondaryCtaText}>Log a Wear</Text>
           </Pressable>
         </View>
       </ScrollView>
+
+      <AddToWardrobeSheet
+        visible={wardrobeSheetOpen}
+        fragrance={fragrance}
+        onClose={() => setWardrobeSheetOpen(false)}
+      />
+      <LogWearSheet
+        visible={wearSheetOpen}
+        fragrance={fragrance}
+        onClose={() => setWearSheetOpen(false)}
+      />
     </View>
   );
+}
+
+function prettyWearDate(iso: string): string {
+  // "2026-04-25" → "Apr 25" / "today" / "yesterday"
+  const today = new Date().toISOString().slice(0, 10);
+  if (iso === today) return 'today';
+  const d = new Date(iso + 'T00:00:00');
+  const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1);
+  if (iso === yesterday.toISOString().slice(0, 10)) return 'yesterday';
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
 function Section({ title, cursive, children }: { title: string; cursive?: string; children: React.ReactNode }) {
@@ -239,12 +309,34 @@ const styles = StyleSheet.create({
   priceFootnote: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic' },
 
   ctaWrap: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl, gap: SPACING.sm },
-  cta: { backgroundColor: COLORS.accent, paddingVertical: 16, borderRadius: RADIUS.full, alignItems: 'center' },
+  cta: {
+    backgroundColor: COLORS.accent,
+    paddingVertical: 16,
+    borderRadius: RADIUS.full,
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+  },
+  ctaInWardrobe: { backgroundColor: COLORS.success },
   ctaText: { ...TYPE.label, color: COLORS.white, letterSpacing: 2 },
+  wearList: {
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingVertical: 6,
+  },
+  wearRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    paddingHorizontal: SPACING.md, paddingVertical: 10,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: COLORS.border,
+  },
+  wearDate: { ...TYPE.body, fontWeight: '600' },
+  wearMeta: { ...TYPE.bodySmall },
+  wearStars: { flexDirection: 'row', marginLeft: 'auto', gap: 1 },
   secondaryCta: {
     backgroundColor: COLORS.card,
     borderWidth: 1, borderColor: COLORS.border,
-    paddingVertical: 16, borderRadius: RADIUS.full, alignItems: 'center',
+    paddingVertical: 16, borderRadius: RADIUS.full,
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
   },
   secondaryCtaText: { ...TYPE.label, letterSpacing: 1.5 },
 });

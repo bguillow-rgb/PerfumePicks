@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import MaskedView from '@react-native-masked-view/masked-view';
+import Svg, { Path, Rect, Ellipse } from 'react-native-svg';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -14,6 +15,65 @@ import Animated, {
   Extrapolation,
 } from 'react-native-reanimated';
 import { COLORS, FONTS } from '@/src/constants/theme';
+
+/**
+ * Fountain pen nib SVG — used as the "writing instrument" on the splash.
+ * Drawn so the TIP of the nib sits at SVG coordinate (12, 56). The pen body
+ * extends UP-RIGHT, as if held in a right hand. Wrapped in a non-animated
+ * View so its parent Animated.View can translate the whole pen along the
+ * wordmark's leading edge.
+ */
+function FountainPen() {
+  return (
+    <View style={penStyles.penWrap} pointerEvents="none">
+      <Svg width="48" height="64" viewBox="0 0 48 64" fill="none">
+        {/* Soft shadow under the nib so it lifts off the ivory bg */}
+        <Ellipse cx="14" cy="59" rx="8" ry="2" fill="rgba(42,31,24,0.15)" />
+
+        {/* Pen barrel — burgundy with a subtle taper */}
+        <Path
+          d="M 32 4 L 42 14 L 22 50 L 14 50 Z"
+          fill="#5C2A2A"
+        />
+        {/* Barrel highlight — thin lighter line for sheen */}
+        <Path
+          d="M 31 6 L 39 14 L 22 44"
+          stroke="rgba(255,255,255,0.18)"
+          strokeWidth="0.8"
+          strokeLinecap="round"
+          fill="none"
+        />
+
+        {/* Champagne-gold collar where nib meets barrel */}
+        <Path
+          d="M 14 50 L 22 50 L 19 56 L 12 54 Z"
+          fill="#B8924B"
+        />
+
+        {/* Nib — gold teardrop, point at (12, 58) */}
+        <Path
+          d="M 12 54 L 19 54 L 12 60 Z"
+          fill="#B8924B"
+        />
+
+        {/* Nib slit — fine dark line down the center for realism */}
+        <Path
+          d="M 14 55 L 13 59"
+          stroke="#5C2A2A"
+          strokeWidth="0.6"
+          strokeLinecap="round"
+        />
+
+        {/* Tiny gold ferrule at the cap end */}
+        <Rect x="33" y="2" width="3" height="3" rx="1" fill="#D4B179" />
+      </Svg>
+    </View>
+  );
+}
+
+const penStyles = StyleSheet.create({
+  penWrap: { width: 48, height: 64 },
+});
 
 /**
  * Handwriting splash for Perfume Picks.
@@ -102,16 +162,24 @@ export function HandwrittenSplash({ fontsLoaded, onReady, onFinish }: Props) {
       ),
     );
 
-    // 3. Fade everything out + signal the parent
+    // 3. Fade everything out + signal the parent. Use a setTimeout instead
+    //    of a second `containerOpacity.value = withDelay(...)` because in
+    //    Reanimated, consecutive assignments to the same shared value cancel
+    //    each other — chaining via a JS timer keeps both the fade-in (above)
+    //    and the fade-out independent.
     const fadeAt = WRITE_DURATION_MS + POST_HOLD_MS;
-    containerOpacity.value = withDelay(
-      fadeAt,
-      withTiming(0, { duration: FADE_OUT_MS, easing: Easing.in(Easing.cubic) }, (finished) => {
-        if (finished) runOnJS(onFinish)();
-      }),
-    );
+    const fadeOutTimer = setTimeout(() => {
+      containerOpacity.value = withTiming(
+        0,
+        { duration: FADE_OUT_MS, easing: Easing.in(Easing.cubic) },
+        (finished) => {
+          if (finished) runOnJS(onFinish)();
+        },
+      );
+    }, fadeAt);
 
     return () => {
+      clearTimeout(fadeOutTimer);
       // Cancel future repeats if the component unmounts mid-flight
       shimmer.value = 0;
     };
@@ -133,19 +201,27 @@ export function HandwrittenSplash({ fontsLoaded, onReady, onFinish }: Props) {
     ),
   }));
 
-  // Pen tip rides the leading edge of the reveal.
-  const penTipStyle = useAnimatedStyle(() => ({
-    transform: [
-      { translateX: interpolate(writeProgress.value, [0, 1], [0, WORDMARK_WIDTH], Extrapolation.CLAMP) },
-    ],
-    // Pen tip fades out after writing completes
-    opacity: writeProgress.value < 1 ? 1 : interpolate(writeProgress.value, [1, 1.001], [1, 0], Extrapolation.CLAMP),
-  }));
-
-  const haloStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(shimmer.value, [0, 1], [0.35, 0.85]),
-    transform: [{ scale: interpolate(shimmer.value, [0, 1], [0.9, 1.25]) }],
-  }));
+  // Pen rides the leading edge of the reveal. Subtle vertical wiggle and
+  // tilt jitter so the pen feels hand-held — derived from the same shimmer
+  // value that already loops at handwriting cadence.
+  const penTipStyle = useAnimatedStyle(() => {
+    // Tiny vertical bob (±1.5px) sourced from the shimmer loop — looks like
+    // natural hand bounce without going Disney-cartoonish.
+    const wiggleY = interpolate(shimmer.value, [0, 0.5, 1], [-1.5, 0.5, -1], Extrapolation.CLAMP);
+    // Subtle tilt jitter (±2°) on top of the writing angle (-22°).
+    const baseTilt = -22;
+    const tiltJitter = interpolate(shimmer.value, [0, 0.5, 1], [-1.5, 1, -1], Extrapolation.CLAMP);
+    return {
+      transform: [
+        { translateX: interpolate(writeProgress.value, [0, 1], [0, WORDMARK_WIDTH], Extrapolation.CLAMP) },
+        { translateY: wiggleY },
+        { rotate: `${baseTilt + tiltJitter}deg` },
+      ],
+      opacity: writeProgress.value < 1
+        ? 1
+        : interpolate(writeProgress.value, [1, 1.001], [1, 0], Extrapolation.CLAMP),
+    };
+  });
 
   const wordmarkBreathStyle = useAnimatedStyle(() => ({
     transform: [{ scale: wordmarkScale.value }],
@@ -186,11 +262,12 @@ export function HandwrittenSplash({ fontsLoaded, onReady, onFinish }: Props) {
           </Text>
         </MaskedView>
 
-        {/* Pen tip — a champagne-gold dot with a glowing halo, tracking the
-            leading edge of the reveal. Sits ABOVE the masked text. */}
+        {/* Fountain pen — tracks the leading edge of the reveal. The pen's
+            nib tip sits exactly at the writing edge (penTip anchor positions
+            the SVG so its nib point coincides with the wordmark baseline).
+            A subtle wiggle + tilt jitter makes the writing feel hand-drawn. */}
         <Animated.View pointerEvents="none" style={[styles.penTipWrap, penTipStyle]}>
-          <Animated.View style={[styles.penHalo, haloStyle]} />
-          <View style={styles.penDot} />
+          <FountainPen />
         </Animated.View>
       </Animated.View>
 
@@ -260,29 +337,19 @@ const styles = StyleSheet.create({
     lineHeight: WORDMARK_HEIGHT,
     includeFontPadding: false,
   },
+  // The fountain pen SVG is 48×64 and its NIB TIP is at SVG (12, 60).
+  // We anchor the wrapper so the nib tip lands exactly on the writing edge:
+  // shift left by 12 (nib x) and up by 60 (nib y) from the wordmark baseline,
+  // then push down by half the wordmark height so the nib sits on the
+  // visual baseline of the cursive script.
   penTipWrap: {
     position: 'absolute',
     left: 0,
     top: '50%',
-    width: 14,
-    height: 14,
-    marginTop: -7,
-    marginLeft: -7,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  penHalo: {
-    position: 'absolute',
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    backgroundColor: COLORS.accentSoft,
-  },
-  penDot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: COLORS.accent,
+    width: 48,
+    height: 64,
+    marginLeft: -12,
+    marginTop: -42, // nib at writing midline
   },
   divider: {
     width: 40,

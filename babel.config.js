@@ -3,9 +3,7 @@ module.exports = function (api) {
   return {
     presets: ['babel-preset-expo'],
     plugins: [
-      // Worklets must run before reanimated so frame-processor worklets are
-      // transformed in the right order.
-      'react-native-worklets-core/plugin',
+      // Reanimated's babel plugin must be listed last per the docs.
       'react-native-reanimated/plugin',
     ],
   };

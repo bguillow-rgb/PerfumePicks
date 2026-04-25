@@ -5,19 +5,39 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useState, useEffect } from 'react';
 import * as AppleAuthentication from 'expo-apple-authentication';
 import * as Crypto from 'expo-crypto';
-import {
-  GoogleSignin,
-  statusCodes,
-} from '@react-native-google-signin/google-signin';
 import { supabase } from '@/lib/supabase';
 import { Button } from '@/src/components/ui/Button';
 import { COLORS, SPACING } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
 
-GoogleSignin.configure({
-  iosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
-  webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
-});
+// Lazy-load Google Sign-In ONLY when the user actually taps the button.
+// expo-router pre-imports every route file at app boot, so a top-level
+// `import` here would force RNGoogleSignin's native module to initialize
+// during boot — and it throws "GoogleService-Info.plist not found" before
+// configure() even runs in demo mode.
+const GOOGLE_IOS_CLIENT_ID = process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID;
+const GOOGLE_WEB_CLIENT_ID = process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID;
+const isGoogleConfigured =
+  !!GOOGLE_IOS_CLIENT_ID &&
+  !!GOOGLE_WEB_CLIENT_ID &&
+  !GOOGLE_IOS_CLIENT_ID.startsWith('REPLACE_') &&
+  !GOOGLE_WEB_CLIENT_ID.startsWith('REPLACE_');
+
+let _googleConfigured = false;
+function loadGoogleSignIn() {
+  // require() instead of import so the native module isn't touched until
+  // someone actually taps "Continue with Google".
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const lib = require('@react-native-google-signin/google-signin');
+  if (!_googleConfigured) {
+    lib.GoogleSignin.configure({
+      iosClientId: GOOGLE_IOS_CLIENT_ID,
+      webClientId: GOOGLE_WEB_CLIENT_ID,
+    });
+    _googleConfigured = true;
+  }
+  return lib;
+}
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -47,8 +67,16 @@ export default function LoginScreen() {
 
   // ── Google Sign-In (native SDK) ──
   const handleGoogleSignIn = async () => {
+    if (!isGoogleConfigured) {
+      Alert.alert(
+        'Google Sign-In not available',
+        'This demo build is not configured for Google Sign-In. Use Apple or continue as a guest.',
+      );
+      return;
+    }
     try {
       setLoading(true);
+      const { GoogleSignin, statusCodes } = loadGoogleSignIn();
       await GoogleSignin.hasPlayServices();
 
       // Native Google sign-in: nonce checks skipped in Supabase config.
@@ -67,8 +95,9 @@ export default function LoginScreen() {
       if (error) throw error;
       goHome();
     } catch (e: any) {
-      if (e?.code === statusCodes.SIGN_IN_CANCELLED) return;
-      if (e?.code === statusCodes.IN_PROGRESS) return;
+      const codes = (() => { try { return loadGoogleSignIn().statusCodes; } catch { return {}; } })();
+      if (e?.code === codes.SIGN_IN_CANCELLED) return;
+      if (e?.code === codes.IN_PROGRESS) return;
       Alert.alert('Google Sign-In Error', e?.message ?? 'Unknown error');
     } finally {
       setLoading(false);

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -6,10 +6,12 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { MlMeter } from '@/src/components/fragrance/MlMeter';
 import { SAMPLE_WARDROBE_IDS, getFragrance, type MockFragrance } from '@/src/mock/fragrances';
+import { useWardrobeStore, type WardrobeStatus, type UnitType } from '@/src/stores/useWardrobeStore';
 
-type Status = 'have' | 'want' | 'tested' | 'sold_on';
+type Status = WardrobeStatus;
 
-interface WardrobeItem {
+interface WardrobeItemView {
+  itemId: string;
   fragrance: MockFragrance;
   status: Status;
   size_ml: number;
@@ -19,21 +21,50 @@ interface WardrobeItem {
 /**
  * myWardrobe — collection grid with status filter pills + mL tracking.
  *
- * Pulls SAMPLE_WARDROBE_IDS from the mock catalog. Real version reads from
- * the wardrobe_items table once Supabase is wired.
+ * Reads from the persisted wardrobe store. On first mount (empty store),
+ * seeds the store with SAMPLE_WARDROBE_IDS so the screen has demo content
+ * to show — but every change after that is real (add via fragrance detail
+ * page, delete, edit, etc.).
  */
 export default function WardrobeScreen() {
   const router = useRouter();
   const [activeStatus, setActiveStatus] = useState<'all' | Status>('all');
 
-  const items: WardrobeItem[] = useMemo(() => {
-    const out: WardrobeItem[] = [];
-    for (const { id, status, size_ml, remaining_ml } of SAMPLE_WARDROBE_IDS) {
-      const fragrance = getFragrance(id);
-      if (fragrance) out.push({ fragrance, status: status as Status, size_ml, remaining_ml });
+  const storeItems = useWardrobeStore((s) => s.items);
+  const addToStore = useWardrobeStore((s) => s.add);
+
+  // Seed once on first run if empty.
+  useEffect(() => {
+    if (storeItems.length > 0) return;
+    for (const { id: fragId, status, size_ml, remaining_ml } of SAMPLE_WARDROBE_IDS) {
+      addToStore({
+        fragrance_id: fragId,
+        status: status as WardrobeStatus,
+        unit_type: (size_ml < 5 ? 'sample' : size_ml < 30 ? 'decant' : 'bottle') as UnitType,
+        size_ml,
+        remaining_ml,
+        reorder_threshold_ml: status === 'have' ? size_ml * 0.2 : null,
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const items: WardrobeItemView[] = useMemo(() => {
+    const out: WardrobeItemView[] = [];
+    for (const i of storeItems) {
+      const fragrance = getFragrance(i.fragrance_id);
+      if (fragrance) {
+        out.push({
+          itemId: i.id,
+          fragrance,
+          status: i.status,
+          size_ml: i.size_ml,
+          remaining_ml: i.remaining_ml,
+        });
+      }
     }
     return out;
-  }, []);
+  }, [storeItems]);
 
   const visible = useMemo(
     () => activeStatus === 'all' ? items : items.filter((i) => i.status === activeStatus),
@@ -93,7 +124,7 @@ export default function WardrobeScreen() {
         ) : (
           <View style={styles.list}>
             {visible.map((item) => (
-              <WardrobeRow key={`${item.fragrance.id}-${item.status}`} item={item} onPress={() => router.push(`/fragrance/${item.fragrance.id}`)} />
+              <WardrobeRow key={item.itemId} item={item} onPress={() => router.push(`/fragrance/${item.fragrance.id}`)} />
             ))}
           </View>
         )}
@@ -102,7 +133,7 @@ export default function WardrobeScreen() {
   );
 }
 
-function WardrobeRow({ item, onPress }: { item: WardrobeItem; onPress: () => void }) {
+function WardrobeRow({ item, onPress }: { item: WardrobeItemView; onPress: () => void }) {
   const isLow = item.status === 'have' && (item.remaining_ml / item.size_ml) < 0.2;
 
   return (

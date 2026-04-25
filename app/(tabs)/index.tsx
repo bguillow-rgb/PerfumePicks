@@ -2,14 +2,7 @@ import { ScrollView, View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { COLORS, SPACING, TYPE, FONTS } from '@/src/constants/theme';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
-import {
-  getFragrance,
-  getFragrances,
-  HERO_PICK_ID,
-  TODAYS_EDIT_IDS,
-  NEW_ARRIVAL_IDS,
-  TRENDING_IDS,
-} from '@/src/mock/fragrances';
+import { useRecommendations, useNewArrivals } from '@/src/features/recommend/useRecommendations';
 
 /**
  * Home / "Today" tab — the daily ritual surface.
@@ -24,10 +17,11 @@ import {
  * time-of-day-aware so the screen feels alive on each open.
  */
 export default function HomeScreen() {
-  const heroPick = getFragrance(HERO_PICK_ID);
-  const editPicks = getFragrances(TODAYS_EDIT_IDS);
-  const newArrivals = getFragrances(NEW_ARRIVAL_IDS);
-  const trending = getFragrances(TRENDING_IDS);
+  // Live recommendations driven by the user's swipes + wear logs +
+  // wardrobe. Updates instantly when the user swipes in Train, logs a
+  // wear, or adds something new to their wardrobe.
+  const { heroPick, heroReason, todaysEdit, trending, hasSignals } = useRecommendations();
+  const newArrivals = useNewArrivals();
 
   const greeting = useGreeting();
 
@@ -35,22 +29,55 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.safe} edges={['top']}>
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
-          <Text style={styles.eyebrow}>{greeting}</Text>
-          <Text style={styles.wordmark}>Perfume Picks</Text>
-          <Text style={styles.dateLine}>{prettyDate()}</Text>
+          {/* Avatar lives in the bottom tab bar now — no duplicate here.
+              Header is purely the editorial masthead. */}
+
+          {/* Editorial masthead: thin champagne rules flanking the cursive
+              wordmark, like the cover of Vogue or a fine fragrance house's
+              monogrammed paper. The rules anchor the wordmark visually so it
+              reads as a CREST, not just a heading. */}
+          <View style={styles.mastheadRow}>
+            <View style={styles.mastheadRule} />
+            <Text
+              style={styles.wordmark}
+              numberOfLines={1}
+              adjustsFontSizeToFit
+              minimumFontScale={0.82}
+              allowFontScaling={false}
+            >
+              Perfume Picks
+            </Text>
+            <View style={styles.mastheadRule} />
+          </View>
+
+          {/* Quiet subtitle — italic serif, lowercase, soft taupe. Reads as
+              a personal greeting/dateline rather than a UI label. The em-dash
+              gives it editorial cadence ("good morning — saturday, april 25"). */}
+          <Text style={styles.subtitle} numberOfLines={1}>
+            {greeting.toLowerCase()} <Text style={styles.subtitleDash}>—</Text> {longDate().toLowerCase()}
+          </Text>
         </View>
 
         <Section eyebrow="WEAR TODAY" cursive="for you">
-          {heroPick && <FragranceCard fragrance={heroPick} variant="hero" />}
-          <Text style={styles.heroReason}>
-            <Text style={styles.italic}>Why this:</Text> warm + sweet, perfect for cool evenings —
-            and it tracks with the amber accord you've been swiping right on.
-          </Text>
+          {/* Section uses paddingLeft only (so the horizontal carousels below
+              can bleed cards off the right edge). The hero card is full-width
+              so it needs explicit right padding to stay centered. */}
+          <View style={styles.heroWrap}>
+            {heroPick && <FragranceCard fragrance={heroPick} variant="hero" />}
+          </View>
+          {heroPick && (
+            <Text style={styles.heroReason}>
+              <Text style={styles.italic}>{hasSignals ? 'Why this:' : 'A starting point:'}</Text>{' '}
+              {heroReason || (hasSignals
+                ? 'tracks with the notes and accords you keep favoring'
+                : 'a celebrated pick to anchor your taste — start swiping in Train to refine it')}.
+            </Text>
+          )}
         </Section>
 
         <Section eyebrow="TODAY'S EDIT" cursive="three picks">
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-            {editPicks.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+            {todaysEdit.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
           </ScrollView>
         </Section>
 
@@ -60,7 +87,7 @@ export default function HomeScreen() {
           </ScrollView>
         </Section>
 
-        <Section eyebrow="TRENDING IN YOUR TASTE" cursive="loved">
+        <Section eyebrow={hasSignals ? 'TRENDING IN YOUR TASTE' : 'EXPLORE'} cursive={hasSignals ? 'loved' : 'discover'}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
             {trending.map((f) => <FragranceCard key={f.id} fragrance={f} variant="small" />)}
           </ScrollView>
@@ -103,31 +130,63 @@ function prettyDate(): string {
   return new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 }
 
+// Long-form date for the editorial subtitle — written out so the lowercase
+// italic serif treatment reads like a personal note, not a system label.
+function longDate(): string {
+  return new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+}
+
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.bg },
   container: { paddingBottom: SPACING.xxl * 1.5 },
   header: {
-    paddingHorizontal: SPACING.lg,
-    paddingTop: SPACING.md,
-    paddingBottom: SPACING.lg,
-    alignItems: 'center',
+    paddingHorizontal: SPACING.md,
+    paddingTop: 0,
+    paddingBottom: SPACING.xs,
   },
-  eyebrow: { ...TYPE.eyebrow, marginBottom: 4 },
+  // Vogue masthead: cursive wordmark flanked by thin gold rules.
+  mastheadRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: SPACING.md,
+    paddingHorizontal: SPACING.sm,
+    marginTop: SPACING.xs,
+  },
+  // Thin champagne rule — visually anchors the wordmark as a crest, not
+  // a heading. Half-opacity so it whispers rather than shouts.
+  mastheadRule: {
+    flex: 1,
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: COLORS.accent,
+    opacity: 0.55,
+    maxWidth: 60,                    // never let the rules dominate the wordmark
+  },
   wordmark: {
     fontFamily: 'PinyonScript_400Regular',
-    fontSize: 52,
+    fontSize: 56,
     color: COLORS.accent,
-    lineHeight: 70,
+    lineHeight: 72,
+    textAlign: 'center',
+    flexShrink: 1,                   // lets adjustsFontSizeToFit work cleanly
   },
-  dateLine: {
-    ...TYPE.bodySmall,
-    fontStyle: 'italic',
+  // Editorial subtitle — italic serif, lowercase, soft taupe. Reads as a
+  // personal note ("good morning — saturday, april 25") rather than a label.
+  subtitle: {
+    fontFamily: 'CormorantGaramond_400Regular_Italic',
+    fontSize: 16,
     color: COLORS.muted,
-    marginTop: 4,
+    textAlign: 'center',
+    marginTop: SPACING.sm,
+    letterSpacing: 0.4,
+  },
+  subtitleDash: {
+    color: COLORS.accent,
+    fontStyle: 'normal',
   },
   section: {
     paddingLeft: SPACING.lg,
-    marginTop: SPACING.xl,
+    marginTop: SPACING.lg,
   },
   sectionHeader: {
     flexDirection: 'row',
@@ -144,6 +203,7 @@ const styles = StyleSheet.create({
     lineHeight: 26,
   },
   hScroll: { paddingRight: SPACING.lg },
+  heroWrap: { paddingRight: SPACING.lg },
   heroReason: {
     ...TYPE.bodySmall,
     color: COLORS.muted,

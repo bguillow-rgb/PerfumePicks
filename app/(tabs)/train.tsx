@@ -15,6 +15,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
+import { useSwipeStore } from '@/src/stores/useSwipeStore';
 
 /**
  * Train My Nose — swipe right to like, left to pass.
@@ -42,16 +43,30 @@ export default function TrainScreen() {
   const [index, setIndex] = useState(0);
   const [stats, setStats] = useState<SessionStats>({ liked: 0, passed: 0 });
 
-  // Shuffle the catalog once per session so the deck feels fresh on each visit.
-  const deck = useMemo(() => shuffle(MOCK_CATALOG), [started]);
+  const recordToStore = useSwipeStore((s) => s.record);
+  const alreadySwiped = useSwipeStore((s) => s.swipes);
 
-  const recordSwipe = useCallback((dir: 'left' | 'right') => {
+  // Shuffle the catalog once per session AND skip anything the user has
+  // already judged in past sessions — so a returning user always sees fresh
+  // bottles instead of being asked to re-rate the same ones.
+  const deck = useMemo(
+    () => shuffle(MOCK_CATALOG.filter((f) => !alreadySwiped[f.id])),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [started],
+  );
+
+  const recordSwipe = useCallback((dir: 'left' | 'right', fragrance?: MockFragrance) => {
     setStats((s) => dir === 'right'
       ? { ...s, liked: s.liked + 1 }
       : { ...s, passed: s.passed + 1 });
     setIndex((i) => i + 1);
     Haptics.impactAsync(dir === 'right' ? Haptics.ImpactFeedbackStyle.Medium : Haptics.ImpactFeedbackStyle.Light);
-  }, []);
+    // Persist to the swipe store so the recommendation engine on Today
+    // immediately reflects this signal.
+    if (fragrance) {
+      recordToStore(fragrance.id, dir === 'right' ? 'like' : 'dislike');
+    }
+  }, [recordToStore]);
 
   if (!started) return <Intro onStart={() => { setStarted(true); setIndex(0); setStats({ liked: 0, passed: 0 }); }} />;
 
@@ -90,8 +105,8 @@ export default function TrainScreen() {
             )}
 
             <View style={styles.actionRow}>
-              <ActionButton tone="pass" onPress={() => recordSwipe('left')} />
-              <ActionButton tone="like" onPress={() => recordSwipe('right')} />
+              <ActionButton tone="pass" onPress={() => recordSwipe('left', deck[index])} />
+              <ActionButton tone="like" onPress={() => recordSwipe('right', deck[index])} />
             </View>
             <Text style={styles.hint}>Swipe right to <Text style={styles.italic}>love</Text>, left to <Text style={styles.italic}>pass</Text></Text>
           </View>
@@ -125,7 +140,7 @@ function Intro({ onStart }: { onStart: () => void }) {
   );
 }
 
-function SwipeCard({ fragrance, onCommit }: { fragrance: MockFragrance; onCommit: (dir: 'left' | 'right') => void }) {
+function SwipeCard({ fragrance, onCommit }: { fragrance: MockFragrance; onCommit: (dir: 'left' | 'right', fragrance: MockFragrance) => void }) {
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
   const startX = useSharedValue(0);
@@ -147,7 +162,7 @@ function SwipeCard({ fragrance, onCommit }: { fragrance: MockFragrance; onCommit
         const dir = translateX.value > 0 ? 'right' : 'left';
         const exitX = (dir === 'right' ? 1 : -1) * SCREEN_W * 1.4;
         translateX.value = withTiming(exitX, { duration: 250 }, () => {
-          runOnJS(onCommit)(dir);
+          runOnJS(onCommit)(dir, fragrance);
         });
         translateY.value = withTiming(translateY.value + 80, { duration: 250 });
       } else {

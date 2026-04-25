@@ -1,9 +1,11 @@
-import { ScrollView, View, Text, StyleSheet, Pressable } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { COLORS, SPACING, TYPE, RADIUS } from '@/src/constants/theme';
+import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
+import { useProfileStore } from '@/src/stores/useProfileStore';
+import { pickAndSetProfilePhoto, clearProfilePhoto } from '@/src/lib/profilePhoto';
 
 /**
  * Profile tab — account, taste profile, settings, paywall entry.
@@ -17,15 +19,48 @@ import { useProStore } from '@/src/stores/useProStore';
 export default function ProfileScreen() {
   const router = useRouter();
   const isPro = useProStore((s) => s.isPro);
+  const photoUri = useProfileStore((s) => s.photoUri);
+  const monogram = useProfileStore((s) => s.getMonogram());
+  const displayName = useProfileStore((s) => s.displayName);
+
+  const handleChangePhoto = async () => {
+    try {
+      await pickAndSetProfilePhoto();
+    } catch (e) {
+      // Picker errors fail silently — most often it's "permission denied"
+      // and the system already showed the user a settings prompt.
+    }
+  };
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.header}>
-          <View style={styles.avatar}>
-            <Ionicons name="person-outline" size={32} color={COLORS.accent} />
-          </View>
-          <Text style={styles.name}>Welcome</Text>
+          {/* Tap the avatar to pick + crop a photo. Long-press to clear it
+              back to the cursive monogram. The avatar everywhere in the app
+              (tab bar, headers) updates instantly because it reads from the
+              same persisted store. */}
+          <Pressable
+            onPress={handleChangePhoto}
+            onLongPress={photoUri ? clearProfilePhoto : undefined}
+            style={styles.avatarTouch}
+          >
+            <View style={styles.avatar}>
+              {photoUri ? (
+                <Image source={{ uri: photoUri }} style={styles.avatarImage} />
+              ) : (
+                <Text style={styles.avatarMonogram}>{monogram}</Text>
+              )}
+              {/* Small camera badge — affordance that the avatar is tappable. */}
+              <View style={styles.cameraBadge}>
+                <Ionicons name="camera" size={12} color={COLORS.white} />
+              </View>
+            </View>
+          </Pressable>
+          <Text style={styles.editPhotoHint}>
+            {photoUri ? 'Tap to change · Hold to remove' : 'Tap to add a photo'}
+          </Text>
+          <Text style={styles.name}>{displayName}</Text>
           <Text style={styles.email}>Sign in to sync your wardrobe</Text>
           {isPro ? (
             <View style={styles.proBadge}>
@@ -90,12 +125,41 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.lg,
     paddingBottom: SPACING.xl,
   },
+  avatarTouch: { marginBottom: SPACING.xs },
   avatar: {
-    width: 72, height: 72, borderRadius: 36,
-    backgroundColor: COLORS.card,
-    borderWidth: 1, borderColor: COLORS.accent,
+    width: 96, height: 96, borderRadius: 48,
+    backgroundColor: COLORS.blushSoft,
+    borderWidth: 1.5, borderColor: COLORS.accent,
     alignItems: 'center', justifyContent: 'center',
-    marginBottom: SPACING.md,
+    overflow: 'hidden',                     // clips photo to circle
+  },
+  // Photo fills the circle. The avatar's `overflow: hidden` does the masking.
+  avatarImage: {
+    width: '100%', height: '100%',
+  },
+  // Cursive monogram fallback.
+  avatarMonogram: {
+    fontFamily: 'PinyonScript_400Regular',
+    fontSize: 56,
+    color: COLORS.accent,
+    lineHeight: 88,
+    textAlign: 'center',
+  },
+  // Tiny camera badge in the bottom-right of the avatar — affordance that
+  // the avatar is tappable. Champagne gold disc with a white camera icon.
+  cameraBadge: {
+    position: 'absolute',
+    right: 0, bottom: 0,
+    width: 28, height: 28, borderRadius: 14,
+    backgroundColor: COLORS.accent,
+    borderWidth: 2, borderColor: COLORS.bg,
+    alignItems: 'center', justifyContent: 'center',
+  },
+  editPhotoHint: {
+    ...TYPE.caption,
+    color: COLORS.muted,
+    fontStyle: 'italic',
+    marginBottom: SPACING.sm,
   },
   name: { ...TYPE.displayMedium, marginBottom: 4 },
   email: { ...TYPE.bodySmall, marginBottom: SPACING.md },

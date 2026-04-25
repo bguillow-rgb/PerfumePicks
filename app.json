@@ -52,7 +52,6 @@
       "expo-apple-authentication",
       "expo-font",
       "@react-native-google-signin/google-signin",
-      "@sentry/react-native",
       [
         "expo-build-properties",
         {
