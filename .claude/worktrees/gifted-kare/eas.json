@@ -1,0 +1,65 @@
+{
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+      },
+      "ios": {
+        "simulator": true
+      }
+    },
+    "development-device": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+      },
+      "ios": {
+        "simulator": false
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "channel": "preview",
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://nwxnympcfwydxzjkmmas.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53eG55bXBjZnd5ZHh6amttbWFzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1MTk5NTMsImV4cCI6MjA5MTA5NTk1M30.msEHOoSd8eLZj-oP9aKTT3S71_eA9u2u8ayEBkmt85E",
+        "EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID": "172292646973-3l3utmm05gcj2nemr9d9r3elf7fr78o7.apps.googleusercontent.com",
+        "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "172292646973-m6pfo7fc3kcblasum7eouhmm8abt8r5d.apps.googleusercontent.com",
+        "EXPO_PUBLIC_REVENUECAT_APPLE_KEY": "appl_qCmYgBoQltEZLpzCklWHgcSPjli",
+        "EXPO_PUBLIC_COMPED_EMAILS": "bguillow@gmail.com",
+        "EXPO_PUBLIC_SENTRY_DSN": "https://3be10b81d15f7538b9b12b8ab9c089d8@o4511230420582400.ingest.us.sentry.io/4511230453350400",
+        "EXPO_PUBLIC_POSTHOG_API_KEY": "phc_yax7dr8wzfTkfAvPFM9m2AZjZcCtkvHDDA2BbvqFvmR9",
+        "EXPO_PUBLIC_POSTHOG_HOST": "https://us.i.posthog.com"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://nwxnympcfwydxzjkmmas.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53eG55bXBjZnd5ZHh6amttbWFzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1MTk5NTMsImV4cCI6MjA5MTA5NTk1M30.msEHOoSd8eLZj-oP9aKTT3S71_eA9u2u8ayEBkmt85E",
+        "EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID": "172292646973-3l3utmm05gcj2nemr9d9r3elf7fr78o7.apps.googleusercontent.com",
+        "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "172292646973-m6pfo7fc3kcblasum7eouhmm8abt8r5d.apps.googleusercontent.com",
+        "EXPO_PUBLIC_REVENUECAT_APPLE_KEY": "appl_qCmYgBoQltEZLpzCklWHgcSPjli",
+        "EXPO_PUBLIC_COMPED_EMAILS": "bguillow@gmail.com",
+        "EXPO_PUBLIC_SENTRY_DSN": "https://3be10b81d15f7538b9b12b8ab9c089d8@o4511230420582400.ingest.us.sentry.io/4511230453350400",
+        "EXPO_PUBLIC_POSTHOG_API_KEY": "phc_yax7dr8wzfTkfAvPFM9m2AZjZcCtkvHDDA2BbvqFvmR9",
+        "EXPO_PUBLIC_POSTHOG_HOST": "https://us.i.posthog.com",
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "ascAppId": "6762097047"
+      }
+    }
+  }
+}

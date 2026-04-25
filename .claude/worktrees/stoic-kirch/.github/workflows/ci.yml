@@ -1,0 +1,39 @@
+name: CI
+
+# Runs on every pull request into main and on every push to main. Kept
+# deliberately minimal — typecheck + unit tests. No EAS build on CI
+# (those go through the EAS cloud runner when the team kicks a build).
+#
+# The jobs are intentionally not cached yet; we'll add node_modules
+# caching once the average cold-start cost is actually painful. For a
+# repo this size (~1300 deps) cold install is already under 2 minutes.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    name: Typecheck + unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm test -- --ci --passWithNoTests

@@ -1,0 +1,64 @@
+{
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+      },
+      "ios": {
+        "simulator": true
+      }
+    },
+    "development-device": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+      },
+      "ios": {
+        "simulator": false
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "channel": "preview",
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "REPLACE_WITH_PERFUME_PICKS_SUPABASE_URL",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "REPLACE_WITH_PERFUME_PICKS_SUPABASE_ANON_KEY",
+        "EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID": "REPLACE_WITH_PERFUME_PICKS_GOOGLE_IOS_CLIENT_ID",
+        "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "REPLACE_WITH_PERFUME_PICKS_GOOGLE_WEB_CLIENT_ID",
+        "EXPO_PUBLIC_REVENUECAT_APPLE_KEY": "REPLACE_WITH_PERFUME_PICKS_REVENUECAT_APPLE_KEY",
+        "EXPO_PUBLIC_SENTRY_DSN": "REPLACE_WITH_PERFUME_PICKS_SENTRY_DSN",
+        "EXPO_PUBLIC_POSTHOG_API_KEY": "REPLACE_WITH_PERFUME_PICKS_POSTHOG_KEY",
+        "EXPO_PUBLIC_POSTHOG_HOST": "https://us.i.posthog.com",
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "REPLACE_WITH_PERFUME_PICKS_SUPABASE_URL",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "REPLACE_WITH_PERFUME_PICKS_SUPABASE_ANON_KEY",
+        "EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID": "REPLACE_WITH_PERFUME_PICKS_GOOGLE_IOS_CLIENT_ID",
+        "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "REPLACE_WITH_PERFUME_PICKS_GOOGLE_WEB_CLIENT_ID",
+        "EXPO_PUBLIC_REVENUECAT_APPLE_KEY": "REPLACE_WITH_PERFUME_PICKS_REVENUECAT_APPLE_KEY",
+        "EXPO_PUBLIC_SENTRY_DSN": "REPLACE_WITH_PERFUME_PICKS_SENTRY_DSN",
+        "EXPO_PUBLIC_POSTHOG_API_KEY": "REPLACE_WITH_PERFUME_PICKS_POSTHOG_KEY",
+        "EXPO_PUBLIC_POSTHOG_HOST": "https://us.i.posthog.com",
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "ascAppId": "REPLACE_WITH_PERFUME_PICKS_ASC_APP_ID"
+      }
+    }
+  }
+}

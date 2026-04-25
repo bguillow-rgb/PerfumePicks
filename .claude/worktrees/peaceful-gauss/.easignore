@@ -1,0 +1,32 @@
+# Start from .gitignore defaults
+node_modules/
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.metro-health-check*
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.DS_Store
+*.pem
+.env*.local
+*.tsbuildinfo
+/ios
+/android
+
+# Large directories not needed for build
+build/
+scripts/data/adventura-images/
+scripts/data/crux-images/
+scripts/data/dropbox-images/
+scripts/data/fuente-images/
+scripts/data/gurkha-images/
+scripts/data/padron-images/
