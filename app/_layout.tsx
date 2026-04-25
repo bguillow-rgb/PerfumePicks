@@ -282,7 +282,6 @@ export default function RootLayout() {
         <Stack.Screen name="quiz/index" />
         <Stack.Screen name="quiz/results" />
         <Stack.Screen name="fragrance/[id]" />
-        <Stack.Screen name="train/index" />
         <Stack.Screen name="paywall" />
         <Stack.Screen name="legal/privacy" options={{ presentation: 'modal' }} />
         <Stack.Screen name="legal/terms" options={{ presentation: 'modal' }} />
