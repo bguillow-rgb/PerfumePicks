@@ -1,0 +1,42 @@
+URL: https://www.fragrantica.com/perfume/Maison-Francis-Kurkdjian/Baccarat-Rouge-540-25344.html
+Title: O Hira Stéphane Humbert Lucas 777 perfume - a fragrance for women and men 2014
+
+=== Selector counts ===
+  a[href]                                  314
+  a[href*="/products/"]                    0
+  a[href*="/product/"]                     0
+  a[href*="/fragrance/"]                   0
+  a[href*="/p/"]                           0
+  a[class*="product"]                      0
+  a[class*="card"]                         33
+  a[class*="tile"]                         0
+  a[data-product]                          0
+  a[data-product-id]                       0
+  div[class*="product-card"]               0
+  div[class*="product-tile"]               0
+  div[class*="ProductCard"]                0
+  div[class*="ProductTile"]                0
+  article[class*="product"]                0
+  li[class*="product"]                     0
+  h1                                       1
+  h2                                       0
+  h3                                       6
+  img[class*="product"]                    0
+  img[class*="hero"]                       0
+  picture img                              68
+  [class*="price"]                         0
+  [data-price]                             0
+
+=== Sample product-ish hrefs ===
+  https://www.fragrantica.com/designers/Stephane-Humbert-Lucas-777.html
+  https://www.fragrantica.com/perfume/Maison-Francis-Kurkdjian/Baccarat-Rouge-540-25344.html#all-reviews
+  https://www.fragrantica.de/Parfum/Stephane-Humbert-Lucas-777/O-Hira-25344.html
+  https://www.fragrantica.es/perfume/Stephane-Humbert-Lucas-777/O-Hira-25344.html
+  https://www.fragrantica.fr/parfum/Stephane-Humbert-Lucas-777/O-Hira-25344.html
+  https://www.fragrantica.it/perfume/Stephane-Humbert-Lucas-777/O-Hira-25344.html
+  https://www.fragrantica.hu/perfumes/Stephane-Humbert-Lucas-777/O-Hira-25344.html
+  https://www.fragrantica.nl/parfum/Stephane-Humbert-Lucas-777/O-Hira-25344.html
+  https://www.fragrantica.pl/perfumy/Stephane-Humbert-Lucas-777/O-Hira-25344.html
+  https://www.fragrantica.com.br/perfume/Stephane-Humbert-Lucas-777/O-Hira-25344.html
+  https://www.fragrantica.ro/parfum/Stephane-Humbert-Lucas-777/O-Hira-25344.html
+  https://www.punmiris.com/parfem/Stephane-Humbert-Lucas-777/O-Hira-25344.html

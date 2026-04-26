@@ -1,0 +1,30 @@
+URL: https://www.tomfordbeauty.com/fragrances
+Title: 404 Not Found | TOM FORD BEAUTY
+
+=== Selector counts ===
+  a[href]                                  350
+  a[href*="/products/"]                    41
+  a[href*="/product/"]                     0
+  a[href*="/fragrance/"]                   0
+  a[href*="/p/"]                           0
+  a[class*="product"]                      0
+  a[class*="card"]                         4
+  a[class*="tile"]                         0
+  a[data-product]                          0
+  a[data-product-id]                       0
+  div[class*="product-card"]               0
+  div[class*="product-tile"]               0
+  div[class*="ProductCard"]                0
+  div[class*="ProductTile"]                0
+  article[class*="product"]                0
+  li[class*="product"]                     4
+  h1                                       1
+  h2                                       1
+  h3                                       1
+  img[class*="product"]                    0
+  img[class*="hero"]                       0
+  picture img                              1
+  [class*="price"]                         8
+  [data-price]                             0
+
+=== Sample product-ish hrefs ===

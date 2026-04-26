@@ -78,16 +78,32 @@ function buildSignals(
   return out;
 }
 
-export function useRecommendations(ctx: RecContext = defaultContext()) {
-  const wears = useWearLogStore((s) => s.logs.map((l) => ({ fragrance_id: l.fragrance_id, rating: l.rating ?? null })));
-  const items = useWardrobeStore((s) => s.items.map((i) => ({ fragrance_id: i.fragrance_id, status: i.status })));
-  const swipes = useSwipeStore((s) =>
-    Object.values(s.swipes).map((x) => ({ fragrance_id: x.fragrance_id, action: x.action })),
+export function useRecommendations(ctx?: RecContext) {
+  // Subscribe to the RAW store fields (stable references — Zustand only
+  // re-emits when the underlying array actually changes). Mapping/filtering
+  // INSIDE the selector returns a new array every render → infinite re-
+  // render loop ("Maximum update depth exceeded"). Done here in useMemo
+  // instead.
+  const logs = useWearLogStore((s) => s.logs);
+  const items = useWardrobeStore((s) => s.items);
+  const swipesMap = useSwipeStore((s) => s.swipes);
+
+  // Likewise: don't compute defaultContext() in the param default — that
+  // produces a fresh object reference every render and busts the useMemo
+  // dependency comparison below. Compute once per render here, then re-
+  // memoize on each value individually.
+  const effectiveCtx = useMemo<RecContext>(
+    () => ctx ?? defaultContext(),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [ctx?.season, ctx?.weather, ctx?.occasion, ctx?.timeOfDay, ctx?.adventureMode],
   );
 
   const profile = useMemo(() => {
-    return deriveTasteProfile(buildSignals(wears, items, swipes));
-  }, [wears, items, swipes]);
+    const wears = logs.map((l) => ({ fragrance_id: l.fragrance_id, rating: l.rating ?? null }));
+    const itemsForProfile = items.map((i) => ({ fragrance_id: i.fragrance_id, status: i.status }));
+    const swipes = Object.values(swipesMap).map((x) => ({ fragrance_id: x.fragrance_id, action: x.action }));
+    return deriveTasteProfile(buildSignals(wears, itemsForProfile, swipes));
+  }, [logs, items, swipesMap]);
 
   // Don't recommend fragrances the user already owns ("have") — they're in
   // your wardrobe, no need to surface them again. Wishlist items can still
@@ -103,8 +119,8 @@ export function useRecommendations(ctx: RecContext = defaultContext()) {
   );
 
   const ranked: ScoredRec[] = useMemo(
-    () => rank(candidates, profile, ctx, 24),
-    [candidates, profile, ctx],
+    () => rank(candidates, profile, effectiveCtx, 24),
+    [candidates, profile, effectiveCtx],
   );
 
   return useMemo(() => {

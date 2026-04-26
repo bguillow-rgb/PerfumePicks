@@ -1,0 +1,31 @@
+URL: https://www.bykilian.com/fragrances
+Title: Page Not Found | Kilian
+
+=== Selector counts ===
+  a[href]                                  114
+  a[href*="/products/"]                    1
+  a[href*="/product/"]                     1
+  a[href*="/fragrance/"]                   0
+  a[href*="/p/"]                           0
+  a[class*="product"]                      0
+  a[class*="card"]                         0
+  a[class*="tile"]                         0
+  a[data-product]                          0
+  a[data-product-id]                       0
+  div[class*="product-card"]               0
+  div[class*="product-tile"]               0
+  div[class*="ProductCard"]                0
+  div[class*="ProductTile"]                0
+  article[class*="product"]                0
+  li[class*="product"]                     0
+  h1                                       0
+  h2                                       3
+  h3                                       10
+  img[class*="product"]                    0
+  img[class*="hero"]                       0
+  picture img                              21
+  [class*="price"]                         0
+  [data-price]                             0
+
+=== Sample product-ish hrefs ===
+  https://www.bykilian.com/product/19797/141917/parfum/her-majesty/the-narcotics#/sku/205933

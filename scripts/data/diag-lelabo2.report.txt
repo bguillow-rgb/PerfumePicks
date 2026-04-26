@@ -1,0 +1,42 @@
+URL: https://www.lelabofragrances.com/eaux-de-parfum
+Title: 404 | Le Labo Fragrances
+
+=== Selector counts ===
+  a[href]                                  431
+  a[href*="/products/"]                    1
+  a[href*="/product/"]                     0
+  a[href*="/fragrance/"]                   0
+  a[href*="/p/"]                           0
+  a[class*="product"]                      4
+  a[class*="card"]                         0
+  a[class*="tile"]                         0
+  a[data-product]                          0
+  a[data-product-id]                       8
+  div[class*="product-card"]               0
+  div[class*="product-tile"]               0
+  div[class*="ProductCard"]                0
+  div[class*="ProductTile"]                0
+  article[class*="product"]                0
+  li[class*="product"]                     4
+  h1                                       1
+  h2                                       1
+  h3                                       1
+  img[class*="product"]                    0
+  img[class*="hero"]                       0
+  picture img                              0
+  [class*="price"]                         4
+  [data-price]                             0
+
+=== Sample product-ish hrefs ===
+  https://www.lelabofragrances.com/santal-33.html
+  https://www.lelabofragrances.com/another-13.html
+  https://www.lelabofragrances.com/th-matcha-26.html
+  https://www.lelabofragrances.com/th-noir-29.html
+  https://www.lelabofragrances.com/bergamote-22.html
+  https://www.lelabofragrances.com/rose-31.html
+  https://www.lelabofragrances.com/lavande-31.html
+  https://www.lelabofragrances.com/baie-19.html
+  https://www.lelabofragrances.com/lys-41.html
+  https://www.lelabofragrances.com/classic-collection/eucalyptus-20.html
+  https://www.lelabofragrances.com/tonka-25.html
+  https://www.lelabofragrances.com/classic-collection/jasmin-17.html

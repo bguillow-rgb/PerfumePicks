@@ -1,0 +1,30 @@
+URL: https://www.creedboutique.com/collections/womens-fragrances
+Title: Luxury Women's Perfumes | Creed Boutique US
+
+=== Selector counts ===
+  a[href]                                  338
+  a[href*="/products/"]                    118
+  a[href*="/product/"]                     0
+  a[href*="/fragrance/"]                   0
+  a[href*="/p/"]                           0
+  a[class*="product"]                      7
+  a[class*="card"]                         0
+  a[class*="tile"]                         0
+  a[data-product]                          0
+  a[data-product-id]                       0
+  div[class*="product-card"]               30
+  div[class*="product-tile"]               7
+  div[class*="ProductCard"]                0
+  div[class*="ProductTile"]                0
+  article[class*="product"]                0
+  li[class*="product"]                     0
+  h1                                       1
+  h2                                       31
+  h3                                       0
+  img[class*="product"]                    0
+  img[class*="hero"]                       0
+  picture img                              7
+  [class*="price"]                         136
+  [data-price]                             0
+
+=== Sample product-ish hrefs ===

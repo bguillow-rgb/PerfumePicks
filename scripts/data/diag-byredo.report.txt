@@ -1,0 +1,31 @@
+URL: https://www.byredo.com/us_en/fragrance/eau-de-parfum
+Title: BYREDO Official Site | Perfumes, Candles & Body Care
+
+=== Selector counts ===
+  a[href]                                  125
+  a[href*="/products/"]                    1
+  a[href*="/product/"]                     0
+  a[href*="/fragrance/"]                   0
+  a[href*="/p/"]                           0
+  a[class*="product"]                      0
+  a[class*="card"]                         0
+  a[class*="tile"]                         0
+  a[data-product]                          0
+  a[data-product-id]                       0
+  div[class*="product-card"]               0
+  div[class*="product-tile"]               0
+  div[class*="ProductCard"]                0
+  div[class*="ProductTile"]                0
+  article[class*="product"]                0
+  li[class*="product"]                     0
+  h1                                       1
+  h2                                       8
+  h3                                       7
+  img[class*="product"]                    0
+  img[class*="hero"]                       0
+  picture img                              0
+  [class*="price"]                         0
+  [data-price]                             0
+
+=== Sample product-ish hrefs ===
+  https://www.byredo.com/us_en/fragrance/eau-de-parfum#main-content

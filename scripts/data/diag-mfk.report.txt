@@ -1,0 +1,42 @@
+URL: https://www.franciskurkdjian.com/us/en/category/fragrance/eaux-de-parfum.html
+Title: Sites-MFK_INT-Site
+
+=== Selector counts ===
+  a[href]                                  171
+  a[href*="/products/"]                    1
+  a[href*="/product/"]                     0
+  a[href*="/fragrance/"]                   0
+  a[href*="/p/"]                           15
+  a[class*="product"]                      18
+  a[class*="card"]                         1
+  a[class*="tile"]                         0
+  a[data-product]                          0
+  a[data-product-id]                       0
+  div[class*="product-card"]               0
+  div[class*="product-tile"]               4
+  div[class*="ProductCard"]                0
+  div[class*="ProductTile"]                0
+  article[class*="product"]                0
+  li[class*="product"]                     0
+  h1                                       1
+  h2                                       16
+  h3                                       14
+  img[class*="product"]                    0
+  img[class*="hero"]                       0
+  picture img                              29
+  [class*="price"]                         12
+  [data-price]                             0
+
+=== Sample product-ish hrefs ===
+  https://www.franciskurkdjian.com/us/en/category/fragrance/eaux-de-parfum.html#main
+  https://www.franciskurkdjian.com/eu-en/724-eau-de-parfum-collection/landing-724.html
+  https://www.franciskurkdjian.com/us/en/category/fragrance/eaux-de-parfum.html#
+  https://www.franciskurkdjian.com/eu-en/p/baccarat-rouge-540-eau-de-parfum-RA12232.html
+  https://www.franciskurkdjian.com/eu-en/p/oud-satin-mood-eau-de-parfum-RA12222.html
+  https://www.franciskurkdjian.com/eu-en/p/aqua-universalis-eau-de-toilette-RA130321.html
+  https://www.franciskurkdjian.com/eu-en/p/baccarat-rouge-540-eau-de-parfum-RA12232.html
+  https://www.franciskurkdjian.com/eu-en/p/baccarat-rouge-540-extrait-de-parfum-RA142321.html
+  https://www.franciskurkdjian.com/eu-en/p/baccarat-rouge-540-eau-de-parfum-RA12238.html
+  https://www.franciskurkdjian.com/eu-en/p/baccarat-rouge-540-extrait-de-parfum-RA14231.html
+  https://www.franciskurkdjian.com/eu-en/p/oud-satin-mood-eau-de-parfum-RA12222.html
+  https://www.franciskurkdjian.com/eu-en/p/grand-soir-eau-de-parfum-RA122521.html
