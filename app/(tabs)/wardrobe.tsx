@@ -13,6 +13,14 @@ import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 type Status = WardrobeStatus;
 type ActiveFilter = 'all' | 'want' | 'have' | 'worn';
 
+// Defined outside the component so it never gets recreated on re-render.
+const PILLS: { id: ActiveFilter; label: string }[] = [
+  { id: 'all',  label: 'All' },
+  { id: 'want', label: 'Want' },
+  { id: 'have', label: 'Have' },
+  { id: 'worn', label: 'Worn' },
+];
+
 interface WardrobeItemView {
   itemId: string;
   fragrance: MockFragrance;
@@ -120,13 +128,6 @@ export default function WardrobeScreen() {
       { text: 'Cancel', style: 'cancel' },
     ]);
   };
-
-  const PILLS: { id: ActiveFilter; label: string }[] = [
-    { id: 'all', label: 'All' },
-    { id: 'want', label: 'Want' },
-    { id: 'have', label: 'Have' },
-    { id: 'worn', label: 'Worn' },
-  ];
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -276,7 +277,7 @@ const styles = StyleSheet.create({
   },
   title: { ...TYPE.displayLarge },
   titleItalic: { fontStyle: 'italic', color: COLORS.accent, fontFamily: 'CormorantGaramond_400Regular_Italic' },
-  subtitle: { ...TYPE.bodySmall, marginTop: 4 },
+  subtitle: { ...TYPE.bodySmall, marginTop: 4, minHeight: 20 },
   addBtn: {
     width: 44, height: 44, borderRadius: 22,
     backgroundColor: COLORS.accent,
@@ -294,8 +295,8 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   pillActive: { backgroundColor: COLORS.accent, borderColor: COLORS.accent },
-  pillText: { fontFamily: FONTS.body, fontSize: 13, fontWeight: '600', color: COLORS.text, letterSpacing: 0.3 },
-  pillTextActive: { color: COLORS.white },
+  pillText: { fontFamily: 'Helvetica Neue', fontSize: 13, fontWeight: '600', color: COLORS.text, letterSpacing: 0.3 },
+  pillTextActive: { fontFamily: 'Helvetica Neue', color: COLORS.white },
   container: { paddingBottom: SPACING.xxl },
   list: { paddingHorizontal: SPACING.lg, gap: SPACING.md },
   empty: {
