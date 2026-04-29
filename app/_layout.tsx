@@ -182,7 +182,6 @@ export default function RootLayout() {
         <Stack.Screen name="auth/login" options={{ presentation: 'modal', gestureEnabled: false }} />
         <Stack.Screen name="quiz/index" />
         <Stack.Screen name="quiz/results" />
-        <Stack.Screen name="fragrance/[id]" />
         <Stack.Screen name="paywall" />
         <Stack.Screen name="brand/[name]" />
         <Stack.Screen name="rec/results" />
