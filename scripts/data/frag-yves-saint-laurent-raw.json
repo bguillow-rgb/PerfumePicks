@@ -1,0 +1,4446 @@
+[
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Saharienne",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Amalfi Lemon",
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "White Flowers",
+      "African Orange Flower",
+      "Cassis",
+      "Galbanum",
+      "Petitgrain"
+    ],
+    "base_notes": [
+      "Ginger",
+      "Pink Pepper"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "fresh spicy",
+      "aromatic",
+      "green",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 3,
+      "fresh spicy": 3,
+      "aromatic": 3,
+      "green": 3,
+      "fresh": 2,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11844.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Saharienne-11844.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Vice Versa",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tomato",
+      "Mandarin Orange",
+      "Raspberry",
+      "Blueberry"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "African Orange Flower",
+      "Bellflower",
+      "Jasmine",
+      "Freesia",
+      "Peony",
+      "Peach",
+      "Melon"
+    ],
+    "base_notes": [
+      "Musk",
+      "Iris",
+      "Amber",
+      "Vanille",
+      "Virginia Cedar"
+    ],
+    "top_accords": [
+      "white floral",
+      "fruity",
+      "floral",
+      "sweet",
+      "green",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "fruity": 5,
+      "floral": 4,
+      "sweet": 4,
+      "green": 4,
+      "citrus": 3,
+      "aromatic": 3,
+      "tuberose": 3,
+      "fresh spicy": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4236.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Vice-Versa-4236.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Baby Doll",
+    "release_year": 2000,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Black Currant",
+      "Pineapple",
+      "Orange",
+      "Apple"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Freesia",
+      "Heliotrope",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Cedar",
+      "Sandalwood",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "fruity",
+      "floral",
+      "rose",
+      "sweet",
+      "woody",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "floral": 3,
+      "rose": 3,
+      "sweet": 3,
+      "woody": 3,
+      "citrus": 3,
+      "fresh": 3,
+      "vanilla": 3,
+      "powdery": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.99.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Baby-Doll-99.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Baby Doll Candy Pink",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "floral",
+      "citrus",
+      "rose",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 3,
+      "floral": 3,
+      "citrus": 3,
+      "rose": 3,
+      "aromatic": 3,
+      "fresh": 2,
+      "soft spicy": 2,
+      "fresh spicy": 2,
+      "sour": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2952.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Baby-Doll-Candy-Pink-2952.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Baby Doll Honeymoon Limited Edition",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Red Currant",
+      "Passionfruit",
+      "Grapefruit",
+      "Rhuburb"
+    ],
+    "heart_notes": [
+      "Pomegranate",
+      "Jasmine",
+      "Passion Flower",
+      "Peach",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Virginia Cedar"
+    ],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "fresh",
+      "woody",
+      "sour",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 3,
+      "fresh": 3,
+      "woody": 3,
+      "sour": 3,
+      "citrus": 3,
+      "tropical": 2,
+      "floral": 2,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5605.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Baby-Doll-Honeymoon-Limited-Edition-5605.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Baby Doll Lucky Game",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "fruity",
+      "woody",
+      "fresh spicy",
+      "citrus",
+      "sweet",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "woody": 3,
+      "fresh spicy": 3,
+      "citrus": 3,
+      "sweet": 3,
+      "warm spicy": 3,
+      "aromatic": 3,
+      "rose": 3,
+      "sour": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2953.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Baby-Doll-Lucky-Game-2953.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Baby Doll Magic",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "fruity",
+      "ozonic",
+      "rose",
+      "aquatic",
+      "citrus",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "ozonic": 4,
+      "rose": 4,
+      "aquatic": 4,
+      "citrus": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2954.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Baby-Doll-Magic-2954.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Baby Doll Magic",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "musky",
+      "tropical",
+      "sweet",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 5,
+      "musky": 4,
+      "tropical": 4,
+      "sweet": 4,
+      "white floral": 4,
+      "citrus": 4,
+      "powdery": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3317.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Baby-Doll-Magic-3317.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Baby Doll Music Box Collector 2007",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4042.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Baby-Doll-Music-Box-Collector-2007-4042.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Pink Pepper",
+      "Orange Blossom"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Jasmine",
+      "Bitter Almond",
+      "Licorice"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Cashmere Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "vanilla",
+      "coffee",
+      "sweet",
+      "white floral",
+      "warm spicy",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "coffee": 4,
+      "sweet": 4,
+      "white floral": 4,
+      "warm spicy": 4,
+      "soft spicy": 3,
+      "woody": 3,
+      "fruity": 3,
+      "balsamic": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.25324.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-25324.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Baby Cat Collector",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Orange Blossom",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Bitter Almond",
+      "Licorice",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Vanilla",
+      "Cashmere Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "sweet",
+      "white floral",
+      "fruity",
+      "warm spicy",
+      "coffee"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "sweet": 5,
+      "white floral": 4,
+      "fruity": 4,
+      "warm spicy": 4,
+      "coffee": 4,
+      "patchouli": 4,
+      "soft spicy": 4,
+      "vanilla": 4,
+      "almond": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.63448.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Baby-Cat-Collector-63448.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Crystal Jacket",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange Blossom",
+      "Pear",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Jasmine",
+      "Almond",
+      "Licorice"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Cashmere Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "white floral",
+      "sweet",
+      "woody",
+      "coffee",
+      "vanilla",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "sweet": 5,
+      "woody": 4,
+      "coffee": 4,
+      "vanilla": 4,
+      "soft spicy": 4,
+      "warm spicy": 4,
+      "fruity": 4,
+      "balsamic": 3,
+      "almond": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.59307.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Crystal-Jacket-59307.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Dazzling Lights Edition",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Pear",
+      "Orange Blossom"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Almond",
+      "Jasmine",
+      "Licorice"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Cashmere Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "sweet",
+      "white floral",
+      "warm spicy",
+      "coffee",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "sweet": 5,
+      "white floral": 4,
+      "warm spicy": 4,
+      "coffee": 4,
+      "soft spicy": 4,
+      "vanilla": 4,
+      "patchouli": 4,
+      "fruity": 4,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47527.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Dazzling-Lights-Edition-47527.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Eau de Toilette",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Black Currant",
+      "Citruses",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Tea",
+      "Jasmine",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "White Wood",
+      "White Musk"
+    ],
+    "top_accords": [
+      "fruity",
+      "white floral",
+      "coffee",
+      "citrus",
+      "sweet",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "white floral": 4,
+      "coffee": 3,
+      "citrus": 3,
+      "sweet": 3,
+      "fresh": 3,
+      "woody": 3,
+      "green": 3,
+      "warm spicy": 3,
+      "aquatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31440.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Eau-de-Toilette-31440.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Eau de Toilette (2018)",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Coffee",
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Cedar",
+      "Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "coffee",
+      "woody",
+      "warm spicy",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 4,
+      "coffee": 3,
+      "woody": 3,
+      "warm spicy": 3,
+      "fruity": 3,
+      "sweet": 3,
+      "fresh": 3,
+      "patchouli": 3,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48042.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Eau-de-Toilette-2018-48042.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Exotic Illusion",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Orange Blossom",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Licorice",
+      "Jasmine",
+      "Almond"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Cedar",
+      "Patchouli",
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "sweet",
+      "vanilla",
+      "white floral",
+      "fruity",
+      "soft spicy",
+      "coffee"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "vanilla": 4,
+      "white floral": 4,
+      "fruity": 4,
+      "soft spicy": 4,
+      "coffee": 4,
+      "warm spicy": 3,
+      "woody": 3,
+      "balsamic": 3,
+      "almond": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54536.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Exotic-Illusion-54536.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Extreme",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Coffee",
+      "Cacao"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "coffee",
+      "vanilla",
+      "cacao",
+      "white floral",
+      "patchouli"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "coffee": 4,
+      "vanilla": 4,
+      "cacao": 4,
+      "white floral": 3,
+      "patchouli": 3,
+      "sweet": 3,
+      "woody": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.68506.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Extreme-68506.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Floral Shock",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Freesia",
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Gardenia",
+      "Solar Notes",
+      "White Flowers",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Coffee",
+      "White Musk",
+      "Amberwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "fruity",
+      "coffee",
+      "sweet",
+      "citrus",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "fruity": 3,
+      "coffee": 3,
+      "sweet": 3,
+      "citrus": 3,
+      "warm spicy": 3,
+      "floral": 2,
+      "aquatic": 2,
+      "animalic": 2,
+      "aldehydic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.42056.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Floral-Shock-42056.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Glitter",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Green Mandarin",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Vanilla Absolute",
+      "Coffee",
+      "Marshmallow",
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "sweet",
+      "citrus",
+      "vanilla",
+      "powdery",
+      "white floral",
+      "coffee"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "citrus": 4,
+      "vanilla": 4,
+      "powdery": 4,
+      "white floral": 4,
+      "coffee": 4,
+      "warm spicy": 3,
+      "musky": 3,
+      "patchouli": 2,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.100628.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Glitter-100628.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Gold Attraction Edition",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Pink Pepper",
+      "Orange Blossom"
+    ],
+    "heart_notes": [
+      "Licorice",
+      "Coffee",
+      "Jasmine",
+      "Bitter Almond"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Cedar",
+      "Patchouli",
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "woody",
+      "sweet",
+      "soft spicy",
+      "white floral",
+      "vanilla",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "sweet": 4,
+      "soft spicy": 4,
+      "white floral": 4,
+      "vanilla": 3,
+      "fruity": 3,
+      "patchouli": 3,
+      "warm spicy": 3,
+      "balsamic": 3,
+      "coffee": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52109.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Gold-Attraction-Edition-52109.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Hair Mist",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "coffee",
+      "white floral",
+      "warm spicy",
+      "woody",
+      "patchouli",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "coffee": 5,
+      "white floral": 5,
+      "warm spicy": 5,
+      "woody": 4,
+      "patchouli": 3,
+      "citrus": 3,
+      "sweet": 2,
+      "soapy": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48136.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Hair-Mist-48136.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Illicit Green",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Fig Leaf",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Fig",
+      "Orange Blossom",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Coffee",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "vanilla",
+      "sweet",
+      "coffee",
+      "fruity",
+      "white floral",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "sweet": 5,
+      "coffee": 5,
+      "fruity": 4,
+      "white floral": 4,
+      "warm spicy": 4,
+      "green": 3,
+      "citrus": 3,
+      "woody": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71193.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Illicit-Green-71193.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Intense",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Absinthe",
+      "Boysenberry"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Jasmine Sambac",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Licorice",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "coffee",
+      "aromatic",
+      "vanilla",
+      "warm spicy",
+      "soft spicy",
+      "bitter"
+    ],
+    "accord_intensity": {
+      "coffee": 5,
+      "aromatic": 5,
+      "vanilla": 5,
+      "warm spicy": 4,
+      "soft spicy": 4,
+      "bitter": 3,
+      "sweet": 3,
+      "fruity": 3,
+      "white floral": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52924.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Intense-52924.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Le Parfum",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Cinnamon",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac",
+      "Solar Notes",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Madagascar Vanilla",
+      "Bourbon Vanilla",
+      "Vanilla Absolute",
+      "Coffee",
+      "Vanilla Orchid",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "vanilla",
+      "warm spicy",
+      "coffee",
+      "sweet",
+      "white floral",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "warm spicy": 4,
+      "coffee": 3,
+      "sweet": 3,
+      "white floral": 3,
+      "powdery": 3,
+      "cinnamon": 2,
+      "citrus": 2,
+      "balsamic": 2,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.78427.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Le-Parfum-78427.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Make It Yours Fragrance Jacket Collection",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Pear",
+      "Orange Blossom"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Jasmine",
+      "Almond",
+      "Licorice"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Cedar",
+      "Vanilla",
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "woody",
+      "sweet",
+      "white floral",
+      "soft spicy",
+      "warm spicy",
+      "coffee"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "sweet": 4,
+      "white floral": 4,
+      "soft spicy": 4,
+      "warm spicy": 4,
+      "coffee": 4,
+      "patchouli": 3,
+      "fruity": 3,
+      "vanilla": 3,
+      "almond": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53849.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Make-It-Yours-Fragrance-Jacket-Collection-53849.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Neon",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pitahaya",
+      "Mandarin Orange",
+      "Citron"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Coffee",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Musk"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "coffee",
+      "vanilla",
+      "tropical",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 4,
+      "coffee": 4,
+      "vanilla": 3,
+      "tropical": 3,
+      "fruity": 3,
+      "sweet": 3,
+      "warm spicy": 3,
+      "powdery": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.58525.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Neon-58525.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Nuit Blanche",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Rice",
+      "Anise",
+      "Bourbon Pepper"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Orange Blossom",
+      "Coriander",
+      "Peony"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Milk",
+      "Caramel",
+      "Sandalwood",
+      "White Musk"
+    ],
+    "top_accords": [
+      "lactonic",
+      "sweet",
+      "vanilla",
+      "caramel",
+      "coffee",
+      "savory"
+    ],
+    "accord_intensity": {
+      "lactonic": 5,
+      "sweet": 5,
+      "vanilla": 4,
+      "caramel": 4,
+      "coffee": 4,
+      "savory": 3,
+      "warm spicy": 3,
+      "powdery": 3,
+      "soft spicy": 3,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.34503.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Nuit-Blanche-34503.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Over Red",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Cherry",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Black Tea"
+    ],
+    "base_notes": [
+      "Madagascar Vanilla",
+      "Coffee",
+      "Indonesian Patchouli Leaf"
+    ],
+    "top_accords": [
+      "cherry",
+      "vanilla",
+      "sweet",
+      "coffee",
+      "white floral",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "cherry": 5,
+      "vanilla": 5,
+      "sweet": 4,
+      "coffee": 4,
+      "white floral": 4,
+      "warm spicy": 3,
+      "citrus": 3,
+      "patchouli": 2,
+      "powdery": 2,
+      "nutty": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.88707.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Over-Red-88707.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Pure Illusion",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Orange Blossom",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Almond",
+      "Jasmine",
+      "Licorice"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Cedar",
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "sweet",
+      "vanilla",
+      "coffee",
+      "almond",
+      "white floral",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "vanilla": 5,
+      "coffee": 5,
+      "almond": 5,
+      "white floral": 4,
+      "fruity": 4,
+      "woody": 4,
+      "warm spicy": 4,
+      "soft spicy": 4,
+      "nutty": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46134.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Pure-Illusion-46134.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Shine On",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Orange Blossom",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Jasmine",
+      "Almond",
+      "Licorice"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Cashmere Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "sweet",
+      "warm spicy",
+      "coffee",
+      "white floral",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "sweet": 5,
+      "warm spicy": 5,
+      "coffee": 5,
+      "white floral": 4,
+      "vanilla": 4,
+      "patchouli": 4,
+      "soft spicy": 4,
+      "fruity": 4,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.57118.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Shine-On-57118.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Snake Jacket",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Orange Blossom",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Licorice",
+      "Coffee",
+      "Jasmine",
+      "Almond"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Vanila",
+      "Cedar",
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "sweet",
+      "white floral",
+      "woody",
+      "soft spicy",
+      "fruity",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "white floral": 5,
+      "woody": 4,
+      "soft spicy": 4,
+      "fruity": 4,
+      "warm spicy": 3,
+      "coffee": 3,
+      "patchouli": 3,
+      "vanilla": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.59306.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Snake-Jacket-59306.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Sound Illusion",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Coffee",
+      "Pear",
+      "Orange Blossom",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Licorice",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Cashmere Wood",
+      "Vanilla",
+      "Patchouli",
+      "Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "white floral",
+      "sweet",
+      "soft spicy",
+      "coffee",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "white floral": 5,
+      "sweet": 4,
+      "soft spicy": 4,
+      "coffee": 4,
+      "warm spicy": 4,
+      "vanilla": 3,
+      "balsamic": 3,
+      "patchouli": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.50159.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Sound-Illusion-50159.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Sparkle Clash Limited Collector's Edition Eau de Parfum",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Neroli",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Licorice",
+      "Jasmine",
+      "Bitter Almond"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Cashmere Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "coffee",
+      "vanilla",
+      "soft spicy",
+      "warm spicy",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "coffee": 5,
+      "vanilla": 5,
+      "soft spicy": 5,
+      "warm spicy": 5,
+      "sweet": 4,
+      "white floral": 4,
+      "patchouli": 4,
+      "balsamic": 4,
+      "almond": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.42310.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Sparkle-Clash-Limited-Collector-s-Edition-Eau-de-Parfum-42310.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Sparkle Clash Limited Collector's Edition Eau de Toilette",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Tea",
+      "Orange Blossom",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Coffee",
+      "White Woods"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "coffee",
+      "green",
+      "sweet",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 4,
+      "coffee": 4,
+      "green": 3,
+      "sweet": 3,
+      "fruity": 3,
+      "warm spicy": 3,
+      "fresh": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40638.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Sparkle-Clash-Limited-Collector-s-Edition-Eau-de-Toilette-40638.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Storm Illusion",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Orange Blossom",
+      "Mandarin Orange",
+      "Bergamot",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Licorice",
+      "Bitter Almond",
+      "Coffee",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Cashmirwood",
+      "White Musk",
+      "Vanilla",
+      "Patchouli",
+      "Cedar"
+    ],
+    "top_accords": [
+      "white floral",
+      "woody",
+      "musky",
+      "sweet",
+      "soft spicy",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "woody": 5,
+      "musky": 4,
+      "sweet": 4,
+      "soft spicy": 4,
+      "citrus": 4,
+      "tuberose": 3,
+      "powdery": 3,
+      "vanilla": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.60586.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Storm-Illusion-60586.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Swarovski Edition",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Orange Blossom",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Bitter Almond",
+      "Licorice",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Cashmere Wood",
+      "Patchouli",
+      "Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "sweet",
+      "white floral",
+      "coffee",
+      "soft spicy",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "sweet": 5,
+      "white floral": 5,
+      "coffee": 5,
+      "soft spicy": 5,
+      "warm spicy": 4,
+      "vanilla": 4,
+      "almond": 4,
+      "fruity": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40117.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Swarovski-Edition-40117.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Wild Edition",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Pink Pepper",
+      "Orange Blossom"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Jasmine",
+      "Bitter Almond",
+      "Licorice"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Cashmere Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "vanilla",
+      "coffee",
+      "white floral",
+      "warm spicy",
+      "sweet",
+      "woody"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "coffee": 5,
+      "white floral": 5,
+      "warm spicy": 4,
+      "sweet": 4,
+      "woody": 4,
+      "fruity": 3,
+      "soft spicy": 3,
+      "patchouli": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40116.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Wild-Edition-40116.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Black Opium Zebra Collector",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Pear",
+      "Orange Blossom"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Bitter Almond",
+      "Licorice",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Cashmere Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "sweet",
+      "white floral",
+      "soft spicy",
+      "woody",
+      "vanilla",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "white floral": 4,
+      "soft spicy": 4,
+      "woody": 4,
+      "vanilla": 4,
+      "warm spicy": 4,
+      "coffee": 4,
+      "fruity": 4,
+      "patchouli": 4,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.64627.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-Zebra-Collector-64627.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Baiser de Cin\u00e9ma",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "floral",
+      "citrus",
+      "fruity",
+      "sweet",
+      "almond",
+      "amber"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "citrus": 4,
+      "fruity": 4,
+      "sweet": 4,
+      "almond": 3,
+      "amber": 3,
+      "vanilla": 3,
+      "fresh": 3,
+      "powdery": 3,
+      "white floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3085.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Baiser-de-Cinema-3085.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Cin\u00e9ma",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Almond Blossom",
+      "Clementine",
+      "Cyclamen"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Peony",
+      "Amaryllis"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Amber",
+      "Benzoin",
+      "White Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "vanilla",
+      "amber",
+      "sweet",
+      "citrus",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "vanilla": 4,
+      "amber": 4,
+      "sweet": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "fresh": 2,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.92.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Cinema-92.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Cin\u00e9ma 2024",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Jasmine",
+      "Mimosa"
+    ],
+    "heart_notes": [
+      "Peach",
+      "Mandarin"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "powdery",
+      "white floral",
+      "fruity",
+      "yellow floral",
+      "amber",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "white floral": 5,
+      "fruity": 4,
+      "yellow floral": 4,
+      "amber": 4,
+      "sweet": 4,
+      "floral": 3,
+      "woody": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.98980.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Cinema-2024-98980.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Cin\u00e9ma Eau de Toilette",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Clementine",
+      "Mimosa",
+      "Cyclamen"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Amaryllis",
+      "Peony"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Amber",
+      "White Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "powdery",
+      "vanilla",
+      "amber",
+      "citrus",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "powdery": 5,
+      "vanilla": 4,
+      "amber": 4,
+      "citrus": 4,
+      "sweet": 4,
+      "yellow floral": 3,
+      "musky": 3,
+      "fresh": 3,
+      "white floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.56941.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Cinema-Eau-de-Toilette-56941.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Cin\u00e9ma Festival",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Italian Lemon",
+      "Mandarin Orange",
+      "Almond Blossom"
+    ],
+    "heart_notes": [
+      "Tiare Flower",
+      "Jasmine",
+      "Amaryllis"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Amber",
+      "White Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "floral",
+      "sweet",
+      "vanilla",
+      "amber"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 5,
+      "floral": 4,
+      "sweet": 3,
+      "vanilla": 3,
+      "amber": 3,
+      "musky": 3,
+      "fruity": 3,
+      "powdery": 3,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1289.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Cinema-Festival-1289.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Cin\u00e9ma Festival d'Ete",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Clementine",
+      "Rosemary",
+      "Lemon",
+      "Clary Sage",
+      "Mandarin Orange",
+      "Almond Blossom"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Peony",
+      "Amaryllis",
+      "Tiare Flower"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Amber",
+      "White Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "aromatic",
+      "white floral",
+      "sweet",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "aromatic": 4,
+      "white floral": 3,
+      "sweet": 3,
+      "vanilla": 3,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "amber": 2,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1290.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Cinema-Festival-d-Ete-1290.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Cin\u00e9ma Gold",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "fresh",
+      "vanilla",
+      "sweet",
+      "almond"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 3,
+      "fresh": 3,
+      "vanilla": 3,
+      "sweet": 3,
+      "almond": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "musky": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1291.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Cinema-Gold-1291.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Cin\u00e9ma Scenario d'Ete",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lime",
+      "Mandarin Orange",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Amaryllis",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Peach",
+      "Musk",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "sweet",
+      "white floral",
+      "fruity",
+      "floral",
+      "musky"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "sweet": 3,
+      "white floral": 3,
+      "fruity": 3,
+      "floral": 2,
+      "musky": 2,
+      "yellow floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3165.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Cinema-Scenario-d-Ete-3165.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Elle",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Litchi",
+      "Peony",
+      "Amalfi Lemon"
+    ],
+    "heart_notes": [
+      "Pink Pepper",
+      "Rose",
+      "Jasmine",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Vetiver",
+      "Cedar",
+      "Ambrette (Musk Mallow)"
+    ],
+    "top_accords": [
+      "woody",
+      "floral",
+      "patchouli",
+      "rose",
+      "fresh",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "floral": 4,
+      "patchouli": 4,
+      "rose": 4,
+      "fresh": 4,
+      "earthy": 3,
+      "soft spicy": 3,
+      "aromatic": 3,
+      "warm spicy": 3,
+      "musky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1574.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Elle-1574.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Elle 2024",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Peony"
+    ],
+    "base_notes": [
+      "Patchouli"
+    ],
+    "top_accords": [
+      "patchouli",
+      "floral",
+      "soft spicy",
+      "woody",
+      "fresh",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "patchouli": 5,
+      "floral": 4,
+      "soft spicy": 4,
+      "woody": 4,
+      "fresh": 4,
+      "warm spicy": 3,
+      "rose": 3,
+      "earthy": 3,
+      "balsamic": 3,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.98978.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Elle-2024-98978.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Elle Edition Collector",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Pink Pepper"
+    ],
+    "base_notes": [
+      "Amber",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "amber",
+      "soft spicy",
+      "fresh spicy",
+      "musky"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 4,
+      "amber": 4,
+      "soft spicy": 3,
+      "fresh spicy": 3,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8083.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Elle-Edition-Collector-8083.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Elle Intense Eau de Parfum",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Litchi",
+      "Raspberry"
+    ],
+    "heart_notes": [
+      "Red Berries",
+      "Iris",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Benzoin",
+      "Amber"
+    ],
+    "top_accords": [
+      "fruity",
+      "amber",
+      "patchouli",
+      "warm spicy",
+      "sweet",
+      "woody"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "amber": 4,
+      "patchouli": 4,
+      "warm spicy": 3,
+      "sweet": 3,
+      "woody": 3,
+      "earthy": 3,
+      "fresh": 3,
+      "balsamic": 2,
+      "iris": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4246.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Elle-Intense-Eau-de-Parfum-4246.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Elle Limited Edition",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peony",
+      "Grapefruit",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac",
+      "Pink Pepper",
+      "Raspberry"
+    ],
+    "base_notes": [
+      "Benzoin",
+      "Crystal Amber",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "white floral",
+      "amber",
+      "fresh",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "white floral": 4,
+      "amber": 4,
+      "fresh": 4,
+      "fruity": 4,
+      "sweet": 3,
+      "rose": 3,
+      "soft spicy": 3,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15479.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Elle-Limited-Edition-15479.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Elle Limited Edition 2011",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Peony"
+    ],
+    "heart_notes": [
+      "Pink Pepper",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amber",
+      "Vetiver",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "amber",
+      "fresh",
+      "white floral",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 5,
+      "amber": 4,
+      "fresh": 4,
+      "white floral": 4,
+      "soft spicy": 3,
+      "aromatic": 3,
+      "rose": 3,
+      "fresh spicy": 3,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12364.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Elle-Limited-Edition-2011-12364.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Elle Shocking (Elle Eau de Toilette)",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Ginger",
+      "Mandarin Orange",
+      "Raspberry"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Freesia",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Cedar",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "fresh",
+      "woody",
+      "fresh spicy",
+      "citrus",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fresh": 5,
+      "woody": 4,
+      "fresh spicy": 4,
+      "citrus": 4,
+      "fruity": 4,
+      "patchouli": 4,
+      "rose": 3,
+      "sweet": 3,
+      "musky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5847.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Elle-Shocking-Elle-Eau-de-Toilette-5847.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Elle Summer Fragrance 2008",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peony",
+      "Ginger",
+      "Tangerine"
+    ],
+    "heart_notes": [
+      "Red Berries",
+      "Raspberry",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Peony",
+      "Vetiver",
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "fresh",
+      "fruity",
+      "floral",
+      "sweet",
+      "woody",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "fresh": 5,
+      "fruity": 5,
+      "floral": 5,
+      "sweet": 3,
+      "woody": 3,
+      "fresh spicy": 3,
+      "earthy": 3,
+      "citrus": 3,
+      "rose": 3,
+      "patchouli": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2703.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Elle-Summer-Fragrance-2008-2703.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "In Love Again",
+    "release_year": 1998,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Black Currant",
+      "Cassia",
+      "Blueberry",
+      "Vodka",
+      "Apple"
+    ],
+    "heart_notes": [
+      "Grapefruit",
+      "Rose",
+      "Water Lily"
+    ],
+    "base_notes": [
+      "Tomato",
+      "Blackberry",
+      "Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "fruity",
+      "aromatic",
+      "green",
+      "citrus",
+      "fresh spicy",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "aromatic": 4,
+      "green": 4,
+      "citrus": 3,
+      "fresh spicy": 3,
+      "soft spicy": 3,
+      "woody": 2,
+      "fresh": 2,
+      "floral": 2,
+      "rose": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.104.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/In-Love-Again-104.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "In Love Again Edition Fleur De La Passion",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Raspberry",
+      "Black Currant",
+      "Grapes",
+      "Blueberry"
+    ],
+    "heart_notes": [
+      "Cassis",
+      "Passion Flower",
+      "Peony",
+      "Rose",
+      "Star Anise",
+      "Magnolia"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood",
+      "Vanille"
+    ],
+    "top_accords": [
+      "fruity",
+      "floral",
+      "sweet",
+      "citrus",
+      "soft spicy",
+      "rose"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "floral": 4,
+      "sweet": 3,
+      "citrus": 3,
+      "soft spicy": 3,
+      "rose": 3,
+      "aromatic": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.561.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/In-Love-Again-Edition-Fleur-De-La-Passion-561.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "In Love Again Jasmin Etoile",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Cassis",
+      "Mandarin Orange",
+      "Star Anise"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Carambola (Star Fruit)"
+    ],
+    "base_notes": [
+      "Vanille",
+      "Virginia Cedar",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "fruity",
+      "white floral",
+      "woody",
+      "citrus",
+      "soft spicy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "white floral": 4,
+      "woody": 4,
+      "citrus": 4,
+      "soft spicy": 3,
+      "aromatic": 3,
+      "fresh": 3,
+      "green": 3,
+      "vanilla": 3,
+      "tropical": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2955.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/In-Love-Again-Jasmin-Etoile-2955.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Jazz",
+    "release_year": 1988,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender",
+      "Nutmeg",
+      "Coriander",
+      "Artemisia",
+      "Anise",
+      "Basil",
+      "Bergamot",
+      "Cinnamon",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Geranium",
+      "Carnation",
+      "Jasmine",
+      "Iris"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Leather",
+      "Tobacco",
+      "Sandalwood",
+      "Cedar",
+      "Musk",
+      "Amber",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "herbal",
+      "warm spicy",
+      "woody",
+      "lavender"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 5,
+      "herbal": 3,
+      "warm spicy": 3,
+      "woody": 3,
+      "lavender": 3,
+      "floral": 3,
+      "powdery": 2,
+      "soft spicy": 2,
+      "mossy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2539.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Jazz-2539.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Jazz Prestige",
+    "release_year": 1993,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender",
+      "Bergamot",
+      "Fruity Notes",
+      "Pepper",
+      "Nutmeg Flower",
+      "Coriander",
+      "Green Notes",
+      "Anise"
+    ],
+    "heart_notes": [
+      "Geranium",
+      "Cypress",
+      "Ginger",
+      "Rose",
+      "Carnation",
+      "Jasmine",
+      "Caraway",
+      "Cinnamon"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Oakmoss",
+      "Leather",
+      "Patchouli",
+      "Benzoin",
+      "Coconut",
+      "Cedar",
+      "Amber"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "woody",
+      "warm spicy",
+      "floral",
+      "rose"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 4,
+      "woody": 4,
+      "warm spicy": 3,
+      "floral": 3,
+      "rose": 2,
+      "lavender": 2,
+      "amber": 2,
+      "citrus": 2,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4891.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Jazz-Prestige-4891.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Live Jazz",
+    "release_year": 1998,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mint",
+      "Grapefruit",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Coriander",
+      "Rhuburb"
+    ],
+    "base_notes": [
+      "Amber",
+      "Cedar",
+      "Nutmeg",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "aromatic",
+      "citrus",
+      "green",
+      "fresh spicy",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "citrus": 4,
+      "green": 4,
+      "fresh spicy": 3,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2538.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Live-Jazz-2538.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Body Kouros",
+    "release_year": 2000,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Eucalyptus",
+      "Incense"
+    ],
+    "heart_notes": [
+      "Chinese Cedar",
+      "Clary Sage"
+    ],
+    "base_notes": [
+      "Benzoin"
+    ],
+    "top_accords": [
+      "amber",
+      "woody",
+      "warm spicy",
+      "aromatic",
+      "camphor",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 4,
+      "warm spicy": 3,
+      "aromatic": 3,
+      "camphor": 3,
+      "smoky": 3,
+      "balsamic": 3,
+      "vanilla": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.736.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Body-Kouros-736.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Kouros",
+    "release_year": 1981,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Aldehydes",
+      "Coriander",
+      "Clary Sage",
+      "Artemisia",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Patchouli",
+      "Carnation",
+      "Jasmine",
+      "Vetiver",
+      "Geranium",
+      "Orris Root",
+      "Cinnamon",
+      "Lavender"
+    ],
+    "base_notes": [
+      "Civet",
+      "Musk",
+      "Honey",
+      "Leather",
+      "Oakmoss",
+      "Amber",
+      "Tonka Bean",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "musky",
+      "animalic",
+      "aromatic",
+      "powdery",
+      "earthy",
+      "leather"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "animalic": 4,
+      "aromatic": 4,
+      "powdery": 4,
+      "earthy": 3,
+      "leather": 3,
+      "honey": 3,
+      "warm spicy": 3,
+      "woody": 3,
+      "aldehydic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.735.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Kouros-735.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Kouros Cologne Sport",
+    "release_year": 2003,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "citrus",
+      "woody",
+      "fresh",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 4,
+      "citrus": 4,
+      "woody": 4,
+      "fresh": 3,
+      "warm spicy": 3,
+      "fresh spicy": 3,
+      "aromatic": 3,
+      "powdery": 3,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2451.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Kouros-Cologne-Sport-2451.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Kouros Cologne Sport Eau d'Ete Summer Fragrance",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mint",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "White Amber",
+      "Cedar"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "green",
+      "amber",
+      "citrus",
+      "lavender"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 5,
+      "green": 4,
+      "amber": 4,
+      "citrus": 4,
+      "lavender": 4,
+      "white floral": 4,
+      "woody": 3,
+      "floral": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2450.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Kouros-Cologne-Sport-Eau-d-Ete-Summer-Fragrance-2450.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Kouros Eau d'Ete 2005",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mint",
+      "Bergamot",
+      "Artemisia"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Rosemary"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Olibanum",
+      "Cedar"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "amber",
+      "woody",
+      "green",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 5,
+      "amber": 5,
+      "woody": 4,
+      "green": 3,
+      "white floral": 3,
+      "citrus": 3,
+      "animalic": 3,
+      "herbal": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.35854.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Kouros-Eau-d-Ete-2005-35854.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Kouros Eau d'Ete 2006",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Artemisia",
+      "Mint",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rosemary",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Musk",
+      "Ambergris",
+      "Cedar"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "musky",
+      "woody",
+      "herbal",
+      "amber"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "musky": 3,
+      "woody": 3,
+      "herbal": 3,
+      "amber": 3,
+      "green": 3,
+      "citrus": 3,
+      "animalic": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2956.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Kouros-Eau-d-Ete-2006-2956.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Kouros Eau de Toilette Tonique 2011",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Amalfi Lemon"
+    ],
+    "heart_notes": [
+      "Sea water"
+    ],
+    "base_notes": [
+      "Incense",
+      "Woodsy Notes",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "aromatic",
+      "marine",
+      "amber",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 5,
+      "aromatic": 4,
+      "marine": 4,
+      "amber": 4,
+      "smoky": 4,
+      "warm spicy": 3,
+      "balsamic": 3,
+      "patchouli": 3,
+      "salty": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12282.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Kouros-Eau-de-Toilette-Tonique-2011-12282.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Kouros Eau de Toilette Tonique 2014",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Aldehydes",
+      "Bergamot",
+      "Star Anise"
+    ],
+    "heart_notes": [
+      "Patchouli",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Incense",
+      "Virginia Cedar"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "woody",
+      "aldehydic",
+      "warm spicy",
+      "citrus",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "woody": 5,
+      "aldehydic": 5,
+      "warm spicy": 4,
+      "citrus": 4,
+      "aromatic": 4,
+      "patchouli": 4,
+      "anis": 4,
+      "amber": 4,
+      "soft spicy": 4
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24472.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Kouros-Eau-de-Toilette-Tonique-2014-24472.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Kouros Energizing 2010",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "marine",
+      "woody",
+      "aromatic",
+      "leather",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "marine": 5,
+      "woody": 5,
+      "aromatic": 4,
+      "leather": 4,
+      "fresh": 3,
+      "salty": 3,
+      "animalic": 3,
+      "aquatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11708.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Kouros-Energizing-2010-11708.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Kouros Summer Edition 2008",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "amber",
+      "fresh spicy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 3,
+      "amber": 3,
+      "fresh spicy": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2587.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Kouros-Summer-Edition-2008-2587.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Kouros Tattoo",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Neroli",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [],
+    "base_notes": [
+      "Incense",
+      "Musk",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "musky",
+      "amber",
+      "smoky",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "musky": 3,
+      "amber": 3,
+      "smoky": 3,
+      "powdery": 3,
+      "fresh spicy": 3,
+      "balsamic": 2,
+      "aromatic": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1052.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Kouros-Tattoo-1052.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Yves Saint Laurent Kouros Silver",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Apple"
+    ],
+    "heart_notes": [
+      "Sage"
+    ],
+    "base_notes": [
+      "Amber",
+      "Woody Notes"
+    ],
+    "top_accords": [
+      "aromatic",
+      "amber",
+      "fruity",
+      "herbal",
+      "woody",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "amber": 5,
+      "fruity": 5,
+      "herbal": 5,
+      "woody": 4,
+      "soft spicy": 4,
+      "fresh": 4,
+      "green": 3,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30240.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Yves-Saint-Laurent-Kouros-Silver-30240.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Art Collection: L'Homme",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Ginger",
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "White Pepper",
+      "Basil",
+      "Spices",
+      "Violet Leaf"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Tonka Bean",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "citrus",
+      "aromatic",
+      "woody",
+      "warm spicy",
+      "green"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "citrus": 4,
+      "aromatic": 4,
+      "woody": 3,
+      "warm spicy": 3,
+      "green": 3,
+      "fresh": 2,
+      "ozonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.57675.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Art-Collection-L-Homme-57675.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Art Collection: L'Homme Libre",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Basil",
+      "Star Anise",
+      "Violet Leaf",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Pink Pepper",
+      "Nutmeg"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "soft spicy",
+      "aromatic",
+      "anis",
+      "green",
+      "woody"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "soft spicy": 5,
+      "aromatic": 4,
+      "anis": 4,
+      "green": 4,
+      "woody": 3,
+      "patchouli": 3,
+      "ozonic": 3,
+      "citrus": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.57677.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Art-Collection-L-Homme-Libre-57677.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "Art Collection: La Nuit de L'Homme",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Cedar",
+      "Bergamot"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Caraway"
+    ],
+    "top_accords": [
+      "aromatic",
+      "lavender",
+      "woody",
+      "warm spicy",
+      "fresh spicy",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "lavender": 4,
+      "woody": 4,
+      "warm spicy": 4,
+      "fresh spicy": 3,
+      "citrus": 3,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.57678.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Art-Collection-La-Nuit-de-L-Homme-57678.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "L'Homme",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Ginger",
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Spices",
+      "Violet Leaf",
+      "White Pepper",
+      "Basil"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Cedar",
+      "Tahitian Vetiver"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "citrus",
+      "aromatic",
+      "warm spicy",
+      "woody",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "citrus": 4,
+      "aromatic": 3,
+      "warm spicy": 3,
+      "woody": 3,
+      "fresh": 3,
+      "vanilla": 2,
+      "ozonic": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.734.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/L-Homme-734.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "L'Homme Eau d'Et\u00e9",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Ginger",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Basil",
+      "White Pepper"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Tahitian Vetiver",
+      "Musk",
+      "Cedar"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "woody",
+      "powdery",
+      "citrus",
+      "violet"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 4,
+      "woody": 3,
+      "powdery": 3,
+      "citrus": 3,
+      "violet": 3,
+      "fresh": 3,
+      "vanilla": 2,
+      "green": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1053.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/L-Homme-Eau-d-Ete-1053.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "L'Homme Eau d'Ete",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Ginger"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Basil",
+      "White Pepper"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Tahitian Vetiver",
+      "Cedar",
+      "Musk"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "woody",
+      "powdery",
+      "citrus",
+      "violet"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 4,
+      "woody": 4,
+      "powdery": 3,
+      "citrus": 3,
+      "violet": 3,
+      "green": 3,
+      "fresh": 2,
+      "musky": 2,
+      "vanilla": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2702.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/L-Homme-Eau-d-Ete-2702.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "name": "L'Homme Eau de Parfum",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bitter Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Cognac",
+      "Oak",
+      "Cedar",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "lavender"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 3,
+      "aromatic": 3,
+      "fresh spicy": 3,
+      "lavender": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.72727.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/L-Homme-Eau-de-Parfum-72727.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

@@ -1,0 +1,5370 @@
+[
+  {
+    "brand": "Ayala Moriel",
+    "name": "Agua de Florida",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lime",
+      "Bergamot",
+      "Lemon",
+      "Bitter Orange",
+      "Petitgrain Bigarade",
+      "Cinnamon",
+      "Cl"
+    ],
+    "heart_notes": [
+      "Grapefruit Blossom",
+      "Petitgrain Bigarade",
+      "Cinnamon",
+      "Cloves",
+      "Bayberry",
+      "Bay Leaf",
+      "Mediterranean Lavender",
+      "Rosewater Base no"
+    ],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 5900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/agua-florida"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/image_79e43686-c252-4190-94ff-983e920861a6.jpg?v=1577196877",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/agua-florida",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Aqua Akko",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lemon",
+      "Bitter Orange",
+      "Grapefruit",
+      "Spearmint Heart notes: Turkish Roses",
+      "Neroli",
+      "Petitgrain",
+      "Jasmine",
+      "Saffron",
+      "Baharat Sp"
+    ],
+    "heart_notes": [
+      "Turkish Roses",
+      "Neroli",
+      "Petitgrain",
+      "Jasmine",
+      "Saffron",
+      "Myrrh",
+      "Ambergris",
+      "Fe"
+    ],
+    "base_notes": [
+      "Frankincense",
+      "Myrrh",
+      "Ambergris",
+      "Fenugreek Absolute",
+      "Seaweed",
+      "Opulent-Spicy"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/aqua-akka"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/aqua-akka"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/aqua-akka"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/image_041324e7-e303-49ac-9ba2-01788ca189fa.jpg?v=1577197140",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/aqua-akka",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Aqua Pistachia",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lentisk leaves waters and tincture",
+      "Galbanum",
+      "Etrog (Citron) Tincture",
+      "Elemi Heart notes: P"
+    ],
+    "heart_notes": [],
+    "base_notes": [
+      "Mastic resin",
+      "Cypress"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 5900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/aqua-pistachia"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/image_a123dd3f-cc4b-4884-9c14-fd0833e5a634.jpg?v=1577197275",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/aqua-pistachia",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "ArbitRary",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lime",
+      "Sweet Basil",
+      "Bergamot Heart notes: Lemongrass",
+      "Jasmine",
+      "Lemon Verbena Base notes: Hay absolute",
+      "Oak moss",
+      "Patchoul"
+    ],
+    "heart_notes": [
+      "Lemongrass",
+      "Jasmine",
+      "Lemon Verbena Base notes: Hay absolute",
+      "Oak moss",
+      "Citru"
+    ],
+    "base_notes": [
+      "Hay absolute",
+      "Oak moss",
+      "Citrus Fantasy"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/arbitrary"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/arbitrary"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/arbitrary"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/arbitrary"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/AgentM_Arbitrary_15ml.jpg?v=1421886246",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/arbitrary",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Autumn",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Rosewood",
+      "Cumin",
+      "Lemon",
+      "Ylang Ylang Extra Heart Notes: Jasmine",
+      "Rose Otto (Turkey)",
+      "Spices",
+      "Orris Root Base Notes: Oakmo"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Rose Otto (Turkey)",
+      "Spices",
+      "Orris Root Base Notes: Oakmoss",
+      "Rockrose",
+      "Patchouli",
+      "Sandalwood",
+      "Vanilla Families:"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Rockrose",
+      "Patchouli",
+      "Sandalwood",
+      "Vanilla Families: Chypre",
+      "Chypre Fruity"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/autumn"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/autumn"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/autumn"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/autumn"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/signature_Autumn_15ml_S.jpg?v=1437377295",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/autumn",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Ayalitta",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Galbanum",
+      "Sage",
+      "Neroli Heart notes: Jasmine",
+      "Rose",
+      "Clary Sage Base notes: Patchouli",
+      "Oak moss",
+      "Labdanum Fragrance Family"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Rose",
+      "Clary Sage Base notes: Patchouli",
+      "Oak moss",
+      "Labdanum Fragrance Family: Chypre Green"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Oak moss",
+      "Labdanum Fragrance Family: Chypre Green"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/ayalitta"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/ayalitta"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/ayalitta"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/ayalitta"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_Ayallita_15ml.jpg?v=1421886328",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/ayalitta",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Beach Lily",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bayberry",
+      "Galangal",
+      "Jasmine",
+      "Ginger Lily Base notes: Sandalwood",
+      "Foikienia"
+    ],
+    "heart_notes": [
+      "Ylang Ylang",
+      "Jasmine",
+      "Ginger Lily Base notes: Sandalwood",
+      "Foikienia"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Foikienia",
+      "Soap Bar (With Shea and Cacao But"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/beach-lily"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/beach-lily"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/beach-lily"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/beach-lily"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/BeachLily15ml.jpg?v=1663097173",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/beach-lily",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Black Licorice",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Aniseed",
+      "Black Currant Buds",
+      "Rose Maroc",
+      "Honey Absolute Base Notes: Tarrag"
+    ],
+    "heart_notes": [
+      "Ylang Ylang Concrete",
+      "Rose Maroc",
+      "Rockrose",
+      "Patchouli Families: Gourmand"
+    ],
+    "base_notes": [
+      "Tarragon Absolute",
+      "Rockrose",
+      "Patchouli Families: Gourmand",
+      "Opulent Spicy"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/black-licorice"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/black-licorice"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/black-licorice"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/black-licorice"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/signature_BLicorice_15ml_S.jpg?v=1437377653",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/black-licorice",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Bois d'Hiver",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Juniper Berry",
+      "Cedarwood",
+      "Rose",
+      "Jasmine",
+      "Pimento Berry",
+      "Cinnamon Base notes:"
+    ],
+    "heart_notes": [
+      "- absolutes of orange blossom"
+    ],
+    "base_notes": [
+      "Frankincense",
+      "Myrrh",
+      "Tolu",
+      "Fir Absolute Fragrance Families: Spicy",
+      "Woody",
+      "Incense"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bois-dhiver"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bois-dhiver"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bois-dhiver"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bois-dhiver"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/AgentM_BoisDHiver_15ml.jpg?v=1421886414",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/bois-dhiver",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Bon Zai",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cedar wood",
+      "Juniper",
+      "Tangerine Heart notes: Verbena",
+      "Shiso",
+      "Rose Base notes: Agarwood",
+      "Patchouli",
+      "Vetiver Fragrance Fami"
+    ],
+    "heart_notes": [
+      "Verbena",
+      "Shiso",
+      "Rose Base notes: Agarwood",
+      "Patchouli",
+      "Vetiver Fragrance Families: Woody",
+      "Citrus",
+      "Incensey"
+    ],
+    "base_notes": [
+      "Agarwood",
+      "Patchouli",
+      "Vetiver Fragrance Families: Woody",
+      "Citrus",
+      "Incensey"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bon-zai"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bon-zai"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bon-zai"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bon-zai"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_Bon_Zai_15ml.jpg?v=1421886520",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/bon-zai",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Cabaret",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [
+      "Attar of Rose",
+      "Rose Geranium",
+      "Orris Base notes: Amber",
+      "Vanilla",
+      "Ambrette Seed"
+    ],
+    "base_notes": [
+      "Amber",
+      "Vanilla",
+      "Ambrette Seed",
+      "Gourmand",
+      "Opulent Ambery"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/cabaret"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/cabaret"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/cabaret"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/cabaret"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_Cabaret_15ml.jpg?v=1421886568",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/cabaret",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Calendula Salve",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 30,
+        "price_usd_cents": 3900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/calendula-salve"
+      }
+    ],
+    "image_url": null,
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/calendula-salve",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Charisma",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Spearmint",
+      "Grapefruit",
+      "Kewda Heart notes: Jasmine Sambac",
+      "Osmanthus",
+      "Green Tea Base notes: Oud",
+      "Ambrette",
+      "Tonka Bean Fra"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac",
+      "Osmanthus",
+      "Green Tea Base notes: Oud",
+      "Ambrette",
+      "Floral Ambery"
+    ],
+    "base_notes": [
+      "Oud",
+      "Ambrette",
+      "Floral Ambery"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/charisma"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/charisma"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/charisma"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/charisma"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/charisma"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_Charisma_15ml.jpg?v=1421886667",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/charisma",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Coal Harbour",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Galbanum",
+      "Mimosa",
+      "Elemi Heart notes: Linden Blossom CO2",
+      "Fossilized Amb"
+    ],
+    "heart_notes": [
+      "Linden Blossom CO2",
+      "Pin"
+    ],
+    "base_notes": [
+      "Seaweed Absolute",
+      "Leather",
+      "Gre"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/coal-harbour"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/coal-harbour"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/coal-harbour"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/coal-harbour"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/CoalHarbour15ml.jpg?v=1471764948",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/coal-harbour",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Cocaigne",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/cocaigne"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/cocaigne"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/cocaigne"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/cocaigne"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Cocaigne4ml.jpg?v=1633282936",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/cocaigne",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Custom Perfume Refill",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/custom-perfume-refill"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 33000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/custom-perfume-refill"
+      }
+    ],
+    "image_url": null,
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/custom-perfume-refill",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Dance of Fire",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Virginia Cedarwood",
+      "Sweet Orange Heart notes: Frankincense",
+      "Cistus",
+      "Guaicwood",
+      "Liquidambar Base notes: Tibetan Amber",
+      "La"
+    ],
+    "heart_notes": [
+      "Frankincense",
+      "Cistus",
+      "Guaicwood",
+      "Liquidambar Base notes: Tibetan Amber",
+      "Labdanum",
+      "Benzoin",
+      "Don Quai",
+      "Lovage Fragrance fa"
+    ],
+    "base_notes": [
+      "Tibetan Amber",
+      "Labdanum",
+      "Benzoin",
+      "Don Quai",
+      "Lovage Fragrance family: Ambery-Incense",
+      "Smoky"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/dance-of-fire"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/dance-of-fire"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/dance-of-fire"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/dance-of-fire"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/dance-of-fire"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/image_794a3d1b-9b53-42b5-8796-ebb6ccddd425.jpg?v=1645239770",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/dance-of-fire",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Elecampane Salve",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 30,
+        "price_usd_cents": 3900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/elecampane-salve"
+      }
+    ],
+    "image_url": null,
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/elecampane-salve",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Épice Sauvage",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom",
+      "Rose Maroc",
+      "Honey Absolute",
+      "Cinnamon",
+      "Clove Bud Base notes: Atlas"
+    ],
+    "heart_notes": [
+      "Jasmine Grandiflorum",
+      "Rose Maroc",
+      "Honey Absolute",
+      "Cinnamon",
+      "Clove Bud Base notes: Atlas Cedarwood",
+      "Opoponax Fragrance Fa"
+    ],
+    "base_notes": [
+      "Atlas Cedarwood",
+      "Opulent Woody"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/epice-sauvage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/epice-sauvage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/epice-sauvage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/epice-sauvage"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Agent_Moriel_EpiceSauvage_15ml_S.jpg?v=1437371571",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/epice-sauvage",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Espionage",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cedarwood",
+      "Bergamot",
+      "Leather notes Heart notes: Rose Otto",
+      "Jasmine",
+      "Orris Base notes: Musk notes",
+      "Vanilla",
+      "Tobacco Fragr"
+    ],
+    "heart_notes": [
+      "Rose Otto",
+      "Jasmine",
+      "Orris Base notes: Musk notes",
+      "Vanilla",
+      "Tobacco Fragrance Families: Woody",
+      "Ambery",
+      "Leather/Tobacco"
+    ],
+    "base_notes": [
+      "Musk notes",
+      "Vanilla",
+      "Tobacco Fragrance Families: Woody",
+      "Ambery",
+      "Leather/Tobacco"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/espionage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/espionage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/espionage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/espionage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/espionage"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_Espionage_15ml.jpg?v=1421886870",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/espionage",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Etrog Oy de Cologne",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Etrog (Citron) Tincture",
+      "Green Myrtle",
+      "Japanese Mint"
+    ],
+    "heart_notes": [
+      "Petitgrain Cedrat (Etrog Petitgrain)",
+      "Lemon Myrtle",
+      "Honey Absolute",
+      "Fra"
+    ],
+    "base_notes": [
+      "Olive Tree Resin",
+      "Frankincense",
+      "Opoponax",
+      "Eau de Cologne"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/etrog-oy-de-cologne"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/etrog-oy-de-cologne"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/etrog-oy-de-cologne"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_Etrog_15ml.jpg?v=1421886928",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/etrog-oy-de-cologne",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Fête d'Hiver",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bitter Orange",
+      "Nutmeg",
+      "Bois de Rose Heart notes: Rose",
+      "Gardenia",
+      "Allspice Berry Base notes: Incense",
+      "Amber",
+      "Sandalwood F"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Gardenia",
+      "Allspice Berry Base notes: Incense",
+      "Amber",
+      "Opulent Ambery"
+    ],
+    "base_notes": [
+      "Incense",
+      "Amber",
+      "Opulent Ambery"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fete-dhiver"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fete-dhiver"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fete-dhiver"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fete-dhiver"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_FeteD_Hiver_15ml.jpg?v=1421887013",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/fete-dhiver",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Fetish",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit",
+      "Lemongrass",
+      "Mandarin Heart notes: Jasmine Sambac",
+      "Neroli",
+      "Litsea Cubeba Base notes: Fir absolute",
+      "Vanilla"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac",
+      "Neroli",
+      "Litsea Cubeba Base notes: Fir absolute",
+      "Vanilla",
+      "Green tea Fragrance Families: Gourmand",
+      "Citrus"
+    ],
+    "base_notes": [
+      "Fir absolute",
+      "Vanilla",
+      "Green tea Fragrance Families: Gourmand",
+      "Citrus Floral",
+      "Floral Fruity"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fetish"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fetish"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fetish"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fetish"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_Fetish_15ml.jpg?v=1421887126",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/fetish",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Film Noir",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [
+      "only! Notes: Myrrh",
+      "Benzoin",
+      "Cacao Absolute",
+      "Five different types of patchouli",
+      "including Dark Patchouli",
+      "Patchouli CO2"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/film-noir"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/film-noir"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/film-noir"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 6,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/film-noir"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_FilmNoir_15ml.jpg?v=1421887191",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/film-noir",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Finjan",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Blood Orange",
+      "Sweet Orange",
+      "Cinnamon Heart notes: Turkish Coffee",
+      "Rose",
+      "Jasmine Base notes: Honey",
+      "Cloves",
+      "Tolu Fragranc"
+    ],
+    "heart_notes": [
+      "Turkish Coffee",
+      "Rose",
+      "Jasmine Base notes: Honey",
+      "Cloves",
+      "Tolu Fragrance Family: Gourmand",
+      "Opulent Spicy"
+    ],
+    "base_notes": [
+      "Honey",
+      "Cloves",
+      "Tolu Fragrance Family: Gourmand",
+      "Opulent Spicy"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/finjan"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/finjan"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/finjan"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/finjan"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/AgentM_Finjan_15ml.jpg?v=1421887271",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/finjan",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Fleurs de Printemps",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "ylang ylang",
+      "bergamot",
+      "coriander Heart notes: violet",
+      "carnation",
+      "iris",
+      "rose",
+      "jasmine",
+      "orange blossom Base notes: ambrett"
+    ],
+    "heart_notes": [
+      "violet",
+      "carnation",
+      "iris",
+      "rose",
+      "jasmine",
+      "orange blossom Base notes: ambrette",
+      "Africa stone tincture",
+      "Cassie flowers",
+      "vani"
+    ],
+    "base_notes": [
+      "ambrette",
+      "Africa stone tincture",
+      "Cassie flowers",
+      "vanilla Free5!a was launched 23"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fleur-de-printemps"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fleur-de-printemps"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fleur-de-printemps"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/fleur-de-printemps"
+      }
+    ],
+    "image_url": null,
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/fleur-de-printemps",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Free5!a",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/free5-a"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/free5-a"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/free5-a"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/free5-a"
+      }
+    ],
+    "image_url": null,
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/free5-a",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Gigi",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Kewda",
+      "Cardamom",
+      "Rosweood Heart notes: Jasmine Sambac",
+      "Jonquille",
+      "Tuberose Base notes: Mysore Sandalwood",
+      "Vanilla",
+      "Myrrh"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac",
+      "Jonquille",
+      "Tuberose Base notes: Mysore Sandalwood",
+      "Vanilla"
+    ],
+    "base_notes": [
+      "Mysore Sandalwood",
+      "Vanilla"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/gigi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/gigi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/gigi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/gigi"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LOF_Gigi_15ml.jpg?v=1421887363",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/gigi",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Grin",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Galbanum",
+      "Violet Leaves",
+      "Green Pepper Heart notes: Boronia",
+      "Rose",
+      "Jasmine Base notes: Vetiver",
+      "Oud",
+      "Oakmoss Fragrance Fa"
+    ],
+    "heart_notes": [
+      "Boronia",
+      "Rose",
+      "Jasmine Base notes: Vetiver",
+      "Oud",
+      "Oakmoss Fragrance Family: Floral Green"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Oud",
+      "Oakmoss Fragrance Family: Floral Green"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/grin"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/grin"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 11900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/grin"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/grin"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/grin"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LP_Grin15ml.jpg?v=1421892573",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/grin",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Hanami",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cabreuva",
+      "Frangipani",
+      "Mimosa",
+      "Rosewood Heart notes: Pink Lotus",
+      "Magnolia",
+      "Tuberose",
+      "Violet Leaf",
+      "Oleander Base notes: Ha"
+    ],
+    "heart_notes": [
+      "Pink Lotus",
+      "Magnolia",
+      "Tuberose",
+      "Violet Leaf",
+      "Oleander Base notes: Haitian Vetiver",
+      "Tonka Bean",
+      "Cassie",
+      "Siamwood",
+      "Vanilla"
+    ],
+    "base_notes": [
+      "Haitian Vetiver",
+      "Tonka Bean",
+      "Cassie",
+      "Siamwood",
+      "Vanilla CO2",
+      "Copaiba Balsam"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1800,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/hanami"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/hanami"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/hanami"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/hanami"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LP_Hanami_15ml.jpg?v=1421887414",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/hanami",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Hypericum Salve",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 3900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/st-johns-wort-salve"
+      }
+    ],
+    "image_url": null,
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/st-johns-wort-salve",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Immortelle l'Amour",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Sweet Orange",
+      "Cinnamon Heart notes: Broom (Genet)",
+      "Vanilla CO2",
+      "Wheat Absolute Base notes: Immortelle",
+      "Rooibos (Red Tea)"
+    ],
+    "heart_notes": [
+      "Broom (Genet)",
+      "Vanilla CO2",
+      "Wheat Absolute Base notes: Immortelle",
+      "Rooibos (Red Tea)",
+      "Vanilla Absolute",
+      "Benzoin Siamese"
+    ],
+    "base_notes": [
+      "Immortelle",
+      "Rooibos (Red Tea)",
+      "Vanilla Absolute",
+      "Benzoin Siamese",
+      "Spicy *"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/immortelle-lamour"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/immortelle-lamour"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/immortelle-lamour"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/immortelle-lamour"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_Immortelle_15ml.jpg?v=1421887523",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/immortelle-lamour",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Inbar",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Wild Oregano Heart notes: Jasmine",
+      "Rose",
+      "Clary Sage",
+      "Varthemia",
+      "Propolis Base notes: Labdanum",
+      "Vanilla",
+      "Patcho"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Rose",
+      "Clary Sage",
+      "Varthemia",
+      "Propolis Base notes: Labdanum",
+      "Vanilla",
+      "Patchouli",
+      "Sandalwood",
+      "Benzoin",
+      "Hyraceum F"
+    ],
+    "base_notes": [
+      "Labdanum",
+      "Vanilla",
+      "Patchouli",
+      "Sandalwood",
+      "Benzoin"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/inbar"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/inbar"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/inbar"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/inbar"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Inbar15ml.jpg?v=1592764604",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/inbar",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "InCarnation",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Pepper",
+      "Carrot Seed",
+      "Mace",
+      "Ylang Ylang Heart Notes: Carnation",
+      "Clove Bud",
+      "Rose Otto",
+      "Tuberose Base Notes: African"
+    ],
+    "heart_notes": [
+      "Carnation",
+      "Clove Bud",
+      "Rose Otto",
+      "Angelica Seed Oil",
+      "Tolu Balsam",
+      "Siamese Be"
+    ],
+    "base_notes": [
+      "African Stone Tincture",
+      "Angelica Seed Oil",
+      "Tolu Balsam",
+      "Opule"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/incarnation"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/incarnation"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/incarnation"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/incarnation"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LOF_Incarnation_15ml.jpg?v=1421887585",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/incarnation",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Indigo",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Anise",
+      "Neroli",
+      "Tarragon",
+      "Caraway Heart notes: Boronia",
+      "Carnation",
+      "Orris Butter Base notes: Amber",
+      "Frankincense",
+      "Himalaya"
+    ],
+    "heart_notes": [
+      "Boronia",
+      "Carnation",
+      "Orris Butter Base notes: Amber",
+      "Frankincense"
+    ],
+    "base_notes": [
+      "Amber",
+      "Frankincense",
+      "Opulent Ambery",
+      "Opulent Spicy"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/indigo"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/indigo"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 11900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/indigo"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/indigo"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LP_Indigo_4ml.jpg?v=1441996855",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/indigo",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Kinmokusei",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Wild Orange",
+      "Green Pepper",
+      "Coriander Heart notes : Osmanthus",
+      "Linden Blossom",
+      "Green Tea Base notes: Tabac Blond",
+      "Sandalw"
+    ],
+    "heart_notes": [
+      "Osmanthus",
+      "Linden Blossom",
+      "Green Tea Base notes: Tabac Blond",
+      "Sandalwood",
+      "Ambergris",
+      "Musk Seed Fragrance Family: Soliflo"
+    ],
+    "base_notes": [
+      "Tabac Blond",
+      "Sandalwood",
+      "Ambergris",
+      "Tea"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/kinmokusei"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/kinmokusei"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/kinmokusei"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/kinmokusei"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LOF_Kinmokusei_15ml.jpg?v=1421887649",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/kinmokusei",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Komorebi",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/komorebi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/komorebi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/komorebi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/komorebi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/komorebi"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Komorebi_15ml.jpg?v=1446963047",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/komorebi",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Kyphi",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 30,
+        "price_usd_cents": 4900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/kyphi"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/55922ED7-D985-42ED-8A43-753EBB891923.jpeg?v=1560626031",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/kyphi",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Kyphi Galilee",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 30,
+        "price_usd_cents": 4900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/kyphi-galilee"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/DE38F90D-FDD0-49CA-8E4B-54F43BECF79E.jpeg?v=1560626822",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/kyphi-galilee",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Kyphi Ofrenda",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 30,
+        "price_usd_cents": 4900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/dia-de-los-muertos-kyphi"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/image_3a9ca5f3-a9d2-4326-86fe-f61dd5dcc2b9.jpg?v=1606809908",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/dia-de-los-muertos-kyphi",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Kyphi Passover",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 30,
+        "price_usd_cents": 4900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/kyphi-passover"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/55922ED7-D985-42ED-8A43-753EBB891923_18c3fed0-a021-4f8a-a4bb-f87edafdd2dc.jpeg?v=1585636855",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/kyphi-passover",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "l'Écume des Jours",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [
+      "Rose",
+      "Lotus",
+      "Tuberose Base notes: Seaweed",
+      "Cedar moss",
+      "Floral Aquatic",
+      "Marine"
+    ],
+    "base_notes": [
+      "Seaweed",
+      "Cedar moss",
+      "Floral Aquatic",
+      "Marine/Oceanic"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lecume-des-jours"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lecume-des-jours"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 11900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lecume-des-jours"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lecume-des-jours"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lecume-des-jours"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LP_LEcume_15ml.jpg?v=1421887758",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/lecume-des-jours",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "l'Herbe Rouge",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Juniper berry",
+      "Orange",
+      "Lavender Heart notes: Lemongrass",
+      "Cloves",
+      "Geranium",
+      "Lavender Absolute Base notes: Oak moss",
+      "Hay A"
+    ],
+    "heart_notes": [
+      "Lemongrass",
+      "Cloves",
+      "Geranium",
+      "Lavender Absolute Base notes: Oak moss",
+      "Hay Absolute",
+      "Vetiver Fragrance Family: Fougère Fr"
+    ],
+    "base_notes": [
+      "Oak moss",
+      "Hay Absolute",
+      "Vetiver Fragrance Family: Fougère Fresh"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lherbe-rouge"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lherbe-rouge"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lherbe-rouge"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lherbe-rouge"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/AgentM_LHerbeRouge_15ml.jpg?v=1421887861",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/lherbe-rouge",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Lost Lagoon",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Lemon",
+      "Galbanum Heart Notes: Rhododendron",
+      "Magnolia",
+      "Ylang Ylang",
+      "Violet Base Notes: Oakmoss",
+      "Amber",
+      "Iris Frag"
+    ],
+    "heart_notes": [
+      "Rhododendron",
+      "Magnolia",
+      "Ylang Ylang",
+      "Violet Base Notes: Oakmoss",
+      "Amber",
+      "Iris Fragrance Families: Chypre Fresh",
+      "Citrus Fa"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Amber",
+      "Iris Fragrance Families: Chypre Fresh",
+      "Citrus Fantasy",
+      "Floral Green"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lost-lagoon"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lost-lagoon"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lost-lagoon"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lost-lagoon"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LostLagoon15ml.jpg?v=1462124267",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/lost-lagoon",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Lovender",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lavender",
+      "Lemon Heart notes: Orris root",
+      "Lavender Absolute Base notes: Vanilla"
+    ],
+    "heart_notes": [
+      "Orris root",
+      "Lavender Absolute Base notes: Vanilla",
+      "Floral Powdery"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Floral Powdery"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lovender"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lovender"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lovender"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/lovender"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LOF_Lovender_15ml.jpg?v=1421887930",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/lovender",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "May Meron",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bitter Orange",
+      "Bergamot",
+      "Etrog Tincture",
+      "Vitex",
+      "Sage",
+      "Saffron"
+    ],
+    "heart_notes": [
+      "Varthemia",
+      "Vitex",
+      "Sage",
+      "Saffron Base notes: Cedar",
+      "Tobacco",
+      "Cistus"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Tobacco",
+      "Cistus"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/mt-meron"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/image.jpg?v=1577196892",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/mt-meron",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Megumi",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Red Mandarin",
+      "Apricot",
+      "Rose de Mai",
+      "Rose Otto (Turkey)",
+      "Allspice (Pimento Be"
+    ],
+    "heart_notes": [
+      "Jasmine Grandiflorum",
+      "Rose de Mai",
+      "Rose Otto (Turkey)",
+      "Agarwood (Oud)",
+      "Vet"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Agarwood (Oud)",
+      "Vetiver Families: Chypre",
+      "Chypre Woody",
+      "Chypre Fruity"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15600,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 15600,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/megumi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/megumi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 8900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/megumi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/megumi"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/signature_Megumi_15ml_S.jpg?v=1437378551",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/megumi",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Musk Malabi",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bitter Orange",
+      "Blood Orange",
+      "Cardamom",
+      "Coriander Heart notes: Neroli (Tunisia)",
+      "Orange Blossom Absolute",
+      "Rose Absolute ("
+    ],
+    "heart_notes": [
+      "Neroli (Tunisia)",
+      "Orange Blossom Absolute",
+      "Rose Absolute (Bulgaria)",
+      "Rose Absolute (Turkey)",
+      "Base notes: Atlas Cedarwood"
+    ],
+    "base_notes": [
+      "Atlas Cedarwood",
+      "Musk Notes",
+      "Myrrh Fragrance Families: Floral",
+      "Gourmand"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/musk-malabi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/musk-malabi"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/musk-malabi"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/MMalabi15ml.jpg?v=1422157460",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/musk-malabi",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Narkiss",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Szechuan Pepper",
+      "Coffee Flower Absolute",
+      "Orange Blossom"
+    ],
+    "heart_notes": [
+      "Narcissus Absolute",
+      "Coffee Flower Absolute",
+      "Orange Blossom Absolute",
+      "Orris CO2",
+      "Styrax Base notes: Vegetal Musk",
+      "Liatrix"
+    ],
+    "base_notes": [
+      "Vegetal Musk",
+      "Liatrix Absolute",
+      "Ambreine",
+      "Africa Stone",
+      "Pinewood Fragrance Families: Soliflore",
+      "Floral-Ambery",
+      "Modern Ch"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/narkiss"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/narkiss"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/narkiss"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Narkiss_15ml.jpg?v=1422158174",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/narkiss",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "New Orleans",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Meyer Lemon",
+      "Rosemary",
+      "Mandarin Murcott",
+      "Grapefruit Heart notes: Tea Olive",
+      "Magnolia",
+      "Orange Blossom",
+      "Tea Rose",
+      "Ambergri"
+    ],
+    "heart_notes": [
+      "Tea Olive",
+      "Magnolia",
+      "Orange Blossom",
+      "Tea Rose",
+      "Ambergris Base notes: Vetiver",
+      "Cypress",
+      "Seaweed",
+      "Amber",
+      "Cedarmoss Fragran"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Cypress",
+      "Seaweed",
+      "Amber",
+      "Citrus Fantasy",
+      "Chypre Fresh"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/new-orleans"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/new-orleans"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/new-orleans"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/new-orleans"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LP_New_Orleans_15ml.jpg?v=1421888854",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/new-orleans",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Orcas",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Rosemary",
+      "Lime",
+      "Cedarwood",
+      "Fresh Ginger Heart notes: Seaweed Oil",
+      "Clary Sage",
+      "Egyptian Geranium",
+      "Ambergris Base notes: S"
+    ],
+    "heart_notes": [
+      "Seaweed Oil",
+      "Clary Sage",
+      "Egyptian Geranium",
+      "Ambergris Base notes: Seaweed Absolute",
+      "Blue Spruce Absolute",
+      "Cypress",
+      "Angel"
+    ],
+    "base_notes": [
+      "Seaweed Absolute",
+      "Blue Spruce Absolute",
+      "Cypress",
+      "Woody"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/orcas"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/orcas"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/orcas"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/orcas"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/AgentM_Orcas_15ml.jpg?v=1421888702",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/orcas",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Palas Atena",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Sweet Orange",
+      "Lavender",
+      "Neroli Heart notes: Champaca",
+      "Jasmine",
+      "Cinnamon Base notes: Amber",
+      "Patchouli",
+      "Sandalwood Fragran"
+    ],
+    "heart_notes": [
+      "Champaca",
+      "Jasmine",
+      "Cinnamon Base notes: Amber",
+      "Patchouli",
+      "Opulent Ambery"
+    ],
+    "base_notes": [
+      "Amber",
+      "Patchouli",
+      "Opulent Ambery",
+      "Incensey"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/palas-atena"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/palas-atena"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/palas-atena"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/palas-atena"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_PalasD_Atena_15ml.jpg?v=1421888148",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/palas-atena",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Perfume Portrait (Signature Perfume)",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 99000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 99000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bespoke-custom-perfume"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 22000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bespoke-custom-perfume"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 33000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/bespoke-custom-perfume"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/SignaturePerfume.jpg?v=1547658855",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/bespoke-custom-perfume",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Rainforest",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Spruce",
+      "Galbanum",
+      "Juniper Heart notes: Violet Leaf",
+      "Rose",
+      "Orris Root Base notes: Oakmoss",
+      "Spikenard",
+      "Hay Fragrance"
+    ],
+    "heart_notes": [
+      "Violet Leaf",
+      "Rose",
+      "Orris Root Base notes: Oakmoss",
+      "Spikenard",
+      "Chypre Green"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Spikenard",
+      "Chypre Green"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rainforest"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rainforest"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rainforest"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rainforest"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/AgentM_Rainforest_15ml.jpg?v=1421888616",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/rainforest",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Razala",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Blood Orange",
+      "Pink Pepper Absolute",
+      "Rose Otto (Turkey)",
+      "Saffron",
+      "Tuberose"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Rose Otto (Turkey)",
+      "Saffron",
+      "Tuberose",
+      "Saffron Base notes: Agarwood (Oud)",
+      "Ambergris",
+      "Antique Patchouli"
+    ],
+    "base_notes": [
+      "Agarwood (Oud)",
+      "Ambergris",
+      "Antique Patchouli",
+      "Myrrh Families: Opulent Spicy",
+      "Woody",
+      "Animalic Also available as Bakhoor -"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/razala"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/razala"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 11900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/razala"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/razala"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/razala"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LP_Razala_15ml.jpg?v=1619011368",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/razala",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Rebellius",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Juniper",
+      "Cumin",
+      "Lime",
+      "Zantoxylum",
+      "Rhododendron Base notes: Tabac Blond",
+      "Vetiv"
+    ],
+    "heart_notes": [
+      "Champaca",
+      "Zantoxylum",
+      "Rhododendron Base notes: Tabac Blond",
+      "Vetiver",
+      "Vanilla Families: Chypre",
+      "Tobacco",
+      "Spicy"
+    ],
+    "base_notes": [
+      "Tabac Blond",
+      "Vetiver",
+      "Vanilla Families: Chypre",
+      "Tobacco",
+      "Spicy"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rebellius"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rebellius"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rebellius"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rebellius"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/AgentM_Rebellius_15ml.jpg?v=1421870702",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/rebellius",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Rosebud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Rose Otto Base notes: Ambrette"
+    ],
+    "base_notes": [
+      "Ambrette"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rosebud"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rosebud"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rosebud"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/rosebud"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LOF_Rosebud_15ml.jpg?v=1421889042",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/rosebud",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Roses & Resins Unguent",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 11000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 50,
+        "price_usd_cents": 11000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/unguent"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 30,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/unguent"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 3900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/unguent"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/IMG_0249.jpg?v=1638734230",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/unguent",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Roses et Chocolat",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pink Peppercorn",
+      "Nutmeg",
+      "Mace Heart notes: Turkish Rose",
+      "Rose Maroc",
+      "May Rose Base notes: Cocoa Absolute",
+      "Benzoin",
+      "Amber"
+    ],
+    "heart_notes": [
+      "Turkish Rose",
+      "Rose Maroc",
+      "May Rose Base notes: Cocoa Absolute",
+      "Benzoin",
+      "Amber Fragrance Families: Gourmand",
+      "Opulent Spic"
+    ],
+    "base_notes": [
+      "Cocoa Absolute",
+      "Benzoin",
+      "Amber Fragrance Families: Gourmand"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/roses-et-chocolat"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/roses-et-chocolat"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/roses-et-chocolat"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_RosesChocolat_15ml.jpg?v=1421888417",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/roses-et-chocolat",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Sabotage",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Green Peppercorn",
+      "Bergamot",
+      "Allspice (Pimento Berry)",
+      "Lemon Leaf Base n"
+    ],
+    "heart_notes": [
+      "Orange Flower Water Absolute",
+      "Allspice (Pimento Berry)",
+      "Lemon Leaf Base notes: Tabac Blond",
+      "Tonka Bean",
+      "Haitian Vetiver"
+    ],
+    "base_notes": [
+      "Tabac Blond",
+      "Tonka Bean",
+      "Leather/Tobacco",
+      "Woody"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/sabotage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/sabotage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/sabotage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/sabotage"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Agent_Moriel_Sabotage_15ml_S.jpg?v=1437369395",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/sabotage",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Sahleb",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Coriander Seed",
+      "Mastic Resin Heart notes: Orris",
+      "Rosewater",
+      "Butter Base notes: Ambrette Seeds",
+      "Vanilla",
+      "Coconut Fragranc"
+    ],
+    "heart_notes": [
+      "Orris",
+      "Rosewater",
+      "Butter Base notes: Ambrette Seeds",
+      "Vanilla",
+      "Coconut Fragrance Families: Gourmad",
+      "Soliflore (Iris)"
+    ],
+    "base_notes": [
+      "Ambrette Seeds",
+      "Vanilla",
+      "Coconut Fragrance Families: Gourmad",
+      "Soliflore (Iris)"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/sahleb"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/sahleb"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/sahleb"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/sahleb"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LP_Sahleb_15ml.jpg?v=1421888522",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/sahleb",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Sandal Ale",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Green Cognac",
+      "Hops",
+      "Marigold Base notes: Amyris",
+      "Sandalwood Absolute",
+      "Organic"
+    ],
+    "heart_notes": [
+      "Elderflower",
+      "Green Cognac",
+      "Hops",
+      "Marigold Base notes: Amyris",
+      "Sandalwood Absolute",
+      "Organic Sandalwood Oil (both from Aus"
+    ],
+    "base_notes": [
+      "Amyris",
+      "Sandalwood Absolute",
+      "Fruity"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/sandal-ale"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/sandal-ale"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/SandalAle_15ml.jpg?v=1422157514",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/sandal-ale",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Schizm",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Red Mandarin",
+      "Virginia Cedarwood",
+      "Black",
+      "White Pepper Heart Notes: Jasmine",
+      "Orange Blossom",
+      "Tuberose Base Notes: Oakmos"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Tuberose Base Notes: Oakmoss",
+      "Ambrette (Musk) Seed"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Ambrette (Musk) Seed",
+      "Chypre Floral",
+      "Chypre Floral Animalic"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/schizm"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/schizm"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/schizm"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/schizm"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/schizm"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/signature_Schizm_15ml_S.jpg?v=1437368565",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/schizm",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Song of Songs",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Saffron Heart notes: Rose",
+      "Spikenard Base notes: Frankincense",
+      "Myrrh",
+      "Agarwood"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Spikenard Base notes: Frankincense",
+      "Myrrh",
+      "Agarwood",
+      "Incense *Also a"
+    ],
+    "base_notes": [
+      "Frankincense",
+      "Myrrh",
+      "Agarwood"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15600,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 15600,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/song-of-songs"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 8900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/song-of-songs"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/song-of-songs"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/song-of-songs"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 4900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/song-of-songs"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_SongofSongs_15ml.jpg?v=1619008707",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/song-of-songs",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Song of Songs Anointing Body Oil",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 11000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 30,
+        "price_usd_cents": 11000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/song-of-songs-anointing-body-oil"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 4900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/song-of-songs-anointing-body-oil"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/AnointingSongs.jpg?v=1409214722",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/song-of-songs-anointing-body-oil",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Tamya",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Yuzu",
+      "Blackcurrant buds",
+      "Coriander Heart notes: Jasmine sambac",
+      "Hyacinth",
+      "Frangipani Base notes: Atlas cedarwood",
+      "Ambret"
+    ],
+    "heart_notes": [
+      "Jasmine sambac",
+      "Hyacinth",
+      "Frangipani Base notes: Atlas cedarwood",
+      "Ambrette seed",
+      "Vanilla Fragrance Families: Floral Frui"
+    ],
+    "base_notes": [
+      "Atlas cedarwood",
+      "Ambrette seed",
+      "Floral Ambery",
+      "Woody * Also available in as a"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/tamya"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 10,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/tamya"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/tamya"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/tamya"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 3900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/tamya"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/tamya"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Sig_Tamya_15ml.jpg?v=1421889150",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/tamya",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "The Purple Dress",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Star Anise",
+      "Nutmeg",
+      "Orange Juice Essence",
+      "Mace Heart notes: Red Champaca",
+      "Golden Champaca",
+      "Honey Absolute",
+      "Henna Leaf"
+    ],
+    "heart_notes": [
+      "Red Champaca",
+      "Golden Champaca",
+      "Honey Absolute",
+      "Henna Leaf",
+      "Tea Rose",
+      "White Magnolia Base notes: Agarwood",
+      "Guiawood",
+      "Vanu"
+    ],
+    "base_notes": [
+      "Agarwood",
+      "Guiawood",
+      "Vanuatu Sandalwood",
+      "Opulent Spicy"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/the-purple-dress"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/the-purple-dress"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/the-purple-dress"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/the-purple-dress"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LP_ThePurpleDress_15ml.jpg?v=1421895259",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/the-purple-dress",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Treazon",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Aniseed",
+      "Cinnamon",
+      "Wintergreen",
+      "Sweet Birch",
+      "Cassis Heart notes: Tuberose Absolute",
+      "Orange Blossom",
+      "Orris Root Base note"
+    ],
+    "heart_notes": [
+      "Tuberose Absolute",
+      "Orange Blossom",
+      "Orris Root Base notes: Benzoin",
+      "Vanillla",
+      "Massoia Bark",
+      "African Stone Tincture Fragra"
+    ],
+    "base_notes": [
+      "Benzoin",
+      "Vanillla",
+      "Massoia Bark"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/treazon"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/treazon"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/treazon"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/treazon"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 9,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/treazon"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/Treazon_15ml.jpg?v=1422157851",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/treazon",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Turtle Island Kyphi",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 30,
+        "price_usd_cents": 4900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/turtle-island-kyphi-1"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/DE38F90D-FDD0-49CA-8E4B-54F43BECF79E_5cb3fd70-a95a-4935-aa48-fe6f036a9986.jpeg?v=1606132622",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/turtle-island-kyphi-1",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Vetiver Racinettes",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Pepper",
+      "Fresh Ginger",
+      "Cardamom",
+      "Nutmeg Asbolute",
+      "Coffee",
+      "Spikenard"
+    ],
+    "heart_notes": [
+      "Haitian Vetiver",
+      "Nutmeg Asbolute",
+      "Coffee",
+      "Spikenard Base notes: Ruh Khus",
+      "Indonesian Vetiver",
+      "Vetiver Bourbon",
+      "Attar Mi"
+    ],
+    "base_notes": [
+      "Ruh Khus",
+      "Indonesian Vetiver",
+      "Vetiver Bourbon",
+      "Attar Mitti",
+      "Tarragon",
+      "Earthy G"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vetiver-racinettes"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vetiver-racinettes"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vetiver-racinettes"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vetiver-racinettes"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/AgentM_VetiverR_15ml.jpg?v=1511426201",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/vetiver-racinettes",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Vintage",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Juniper Berry",
+      "Lime",
+      "Green Lemon Heart notes: Bayberry",
+      "Hops Blossom",
+      "Ambret"
+    ],
+    "heart_notes": [
+      "Bayberry",
+      "Hops Blossom",
+      "Ambrette"
+    ],
+    "base_notes": [
+      "Cognac Absolute",
+      "Ambrette"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 18000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 32700,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 118,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 15600,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 18000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 6,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 6,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/vintage"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/DemocracyRed.jpg?v=1554727278",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/vintage",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Viola",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Ylang Ylang Heart notes: Violet",
+      "Rose Base notes: Tonka Bean",
+      "Iris",
+      "Floral"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Rose Base notes: Tonka Bean",
+      "Iris",
+      "Floral Powdery"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Iris",
+      "Floral Powdery"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/viola"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 8900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/viola"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/viola"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/viola"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LOF_Viola_15ml.jpg?v=1421889534",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/viola",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "White Potion",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Ylang ylang",
+      "Grapefruit",
+      "Rosewood Heart notes: Tuberose",
+      "Jasmine",
+      "Gardenia Base notes: Sandalwood",
+      "Tonka Bean",
+      "Coconut F"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Jasmine",
+      "Gardenia Base notes: Sandalwood",
+      "Tonka Bean",
+      "Floral A"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Tonka Bean"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 14900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 14900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/white-potion"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 8900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/white-potion"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/white-potion"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/white-potion"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 4900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/white-potion"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LOF_WPotion_15ml.jpg?v=1421889609",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/white-potion",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Yasmin",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mimosa",
+      "Frangipanni Heart notes: Jasmine",
+      "Gardenia",
+      "Jasmine Sambac Base notes: Amber",
+      "Sandalwood",
+      "Cassie Absolute Fragra"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Gardenia",
+      "Jasmine Sambac Base notes: Amber",
+      "Sandalwood"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood",
+      "Floral-Ambery"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 14900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 14900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/yasmin"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 8900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/yasmin"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/yasmin"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/yasmin"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LOF_Yasmin_15ml.jpg?v=1421889689",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/yasmin",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Zangvil",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Ginger",
+      "Wild Orange",
+      "Egyptian Jasmine",
+      "Honey",
+      "Magnolia Lily Base notes: C"
+    ],
+    "heart_notes": [
+      "Ginger Lily",
+      "Egyptian Jasmine",
+      "Honey",
+      "Ambrette Seed",
+      "Liquidamber Launched 2"
+    ],
+    "base_notes": [
+      "Crystalline Amber",
+      "Ambrette Seed",
+      "Liquidamber Launched 20"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/zangvil"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/zangvil"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/zangvil"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/zangvil"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/signature_Zangvil_15ml_S.jpg?v=1437378453",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/zangvil",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "Zohar",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Neroli",
+      "Bitter Orange",
+      "Tuberose",
+      "Jasmine Base notes: Orange Blossom Abso"
+    ],
+    "heart_notes": [
+      "Orange Flower Water Absolute",
+      "Tuberose",
+      "Amber Fragrance Family: Soliflore ("
+    ],
+    "base_notes": [
+      "Orange Blossom Absolute"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 14900,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 14900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/zohar"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/zohar"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/zohar"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 1,
+        "price_usd_cents": 1200,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/zohar"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/LOF_Zohar_15ml.jpg?v=1421886143",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/zohar",
+    "sources": [
+      "ayala-moriel"
+    ]
+  },
+  {
+    "brand": "Ayala Moriel",
+    "name": "🖤",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom",
+      "Mint Heart notes: Clematis Accord",
+      "Salty Tears Base notes: Incense",
+      "Musk Fragrance Families: Salty Floral",
+      "Flo"
+    ],
+    "heart_notes": [
+      "Clematis Accord",
+      "Salty Tears Base notes: Incense",
+      "Musk Fragrance Families: Salty Floral",
+      "Floral-Ambery"
+    ],
+    "base_notes": [
+      "Incense",
+      "Musk Fragrance Families: Salty Floral",
+      "Floral-Ambery"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12000,
+    "prices": [
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 15,
+        "price_usd_cents": 12000,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/3"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 4,
+        "price_usd_cents": 4800,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/3"
+      },
+      {
+        "retailer": "ayala-moriel-direct",
+        "size_ml": 5,
+        "price_usd_cents": 8900,
+        "is_decant": false,
+        "url": "https://ayalamoriel.com/products/3"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0569/0229/products/BlackHeart.jpeg?v=1518525146",
+    "source": "ayala-moriel",
+    "source_url": "https://ayalamoriel.com/products/3",
+    "sources": [
+      "ayala-moriel"
+    ]
+  }
+]

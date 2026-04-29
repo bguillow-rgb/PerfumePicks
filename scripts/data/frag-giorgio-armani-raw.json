@@ -1,0 +1,4508 @@
+[
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani",
+    "release_year": 1981,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Galbanum",
+      "Marigold",
+      "Aldehydes",
+      "Bergamot",
+      "Pineapple",
+      "Mint"
+    ],
+    "heart_notes": [
+      "Narcissus",
+      "Orris Root",
+      "Tuberose",
+      "Rose",
+      "Jasmine",
+      "Cyclamen",
+      "Lily-of-the-Valley",
+      "Orchid"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Benzoin",
+      "Cedar",
+      "Amber",
+      "Sandalwood",
+      "Tonka Bean",
+      "Musk"
+    ],
+    "top_accords": [
+      "green",
+      "aromatic",
+      "woody",
+      "balsamic",
+      "amber",
+      "mossy"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "aromatic": 5,
+      "woody": 4,
+      "balsamic": 4,
+      "amber": 4,
+      "mossy": 4,
+      "floral": 3,
+      "white floral": 3,
+      "earthy": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.827.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-827.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Giò",
+    "release_year": 1992,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Jasmine",
+      "Hyacinth",
+      "Sicilian Mandarin",
+      "Red Rose",
+      "Brazilian Rosewood",
+      "Bergamot",
+      "Violet"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Gardenia",
+      "Carnation",
+      "Cloves",
+      "Peach",
+      "Orange Blossom",
+      "White Flowers",
+      "Myrrh",
+      "Ylang-Ylang",
+      "Iris",
+      "Orris Root",
+      "Cassia",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood",
+      "Styrax",
+      "Vanilla",
+      "Musk",
+      "Cedar"
+    ],
+    "top_accords": [
+      "white floral",
+      "warm spicy",
+      "woody",
+      "floral",
+      "amber",
+      "tuberose"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "warm spicy": 3,
+      "woody": 3,
+      "floral": 3,
+      "amber": 3,
+      "tuberose": 3,
+      "powdery": 3,
+      "citrus": 2,
+      "animalic": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.418.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Gio-418.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gio",
+    "release_year": 1996,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lime",
+      "Lemon",
+      "Bergamot",
+      "Jasmine",
+      "Orange",
+      "Mandarin Orange",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Sea Notes",
+      "Jasmine",
+      "Calone",
+      "Rosemary",
+      "Peach",
+      "Freesia",
+      "Hiacynth",
+      "Cyclamen",
+      "Violet",
+      "Coriander",
+      "Rose",
+      "Nutmeg",
+      "Mignonette"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Cedar",
+      "Oakmoss",
+      "Patchouli",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "marine",
+      "fresh spicy",
+      "floral",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 3,
+      "marine": 3,
+      "fresh spicy": 3,
+      "floral": 2,
+      "woody": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.410.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-410.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gio",
+    "release_year": 1995,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peony",
+      "Musk Vodka",
+      "Pineapple",
+      "Lemon",
+      "Peach",
+      "Banana Leaf",
+      "Violet"
+    ],
+    "heart_notes": [
+      "Lily-of-the-Valley",
+      "Hiacynth",
+      "Lily",
+      "Jasmine",
+      "Freesia",
+      "Calone",
+      "Ylang-Ylang",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Cedar",
+      "Sandalwood",
+      "Amber",
+      "Styrax"
+    ],
+    "top_accords": [
+      "floral",
+      "fresh",
+      "white floral",
+      "green",
+      "rose",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fresh": 5,
+      "white floral": 4,
+      "green": 3,
+      "rose": 3,
+      "fruity": 3,
+      "sweet": 3,
+      "vodka": 3,
+      "powdery": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.411.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-411.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gio - Acqua di Life Edition",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sea water",
+      "Bergamot",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Persimmon",
+      "Watercress",
+      "Rosemary"
+    ],
+    "base_notes": [
+      "Amber",
+      "French labdanum",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "marine",
+      "aromatic",
+      "fresh spicy",
+      "citrus",
+      "amber",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "marine": 5,
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "citrus": 4,
+      "amber": 3,
+      "sweet": 3,
+      "salty": 3,
+      "green": 3,
+      "woody": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11755.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Acqua-di-Life-Edition-11755.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Absolu",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sea Notes",
+      "Bergamot",
+      "Pear",
+      "Apple",
+      "Grapefruit",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Rosemary",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Woody Notes",
+      "Tonka Bean",
+      "Amberwood",
+      "Patchouli",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "citrus",
+      "fresh spicy",
+      "amber",
+      "marine"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 5,
+      "citrus": 4,
+      "fresh spicy": 4,
+      "amber": 4,
+      "marine": 3,
+      "fruity": 3,
+      "warm spicy": 3,
+      "sweet": 3,
+      "aquatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48138.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Absolu-48138.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Absolu Instinct",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sea Notes",
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Seaweed",
+      "Patchouli"
+    ],
+    "base_notes": [
+      "Amberwood",
+      "Ebony Wood"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "marine",
+      "aromatic",
+      "amber",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "marine": 4,
+      "aromatic": 3,
+      "amber": 3,
+      "warm spicy": 3,
+      "aquatic": 3,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53764.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Absolu-Instinct-53764.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gio Blue Edition Pour Homme",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "aquatic",
+      "fresh spicy",
+      "white floral",
+      "floral",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aquatic": 4,
+      "fresh spicy": 3,
+      "white floral": 3,
+      "floral": 3,
+      "fresh": 3,
+      "amber": 3,
+      "aromatic": 3,
+      "sweet": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.25615.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Blue-Edition-Pour-Homme-25615.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Eau de Parfum",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sea Notes",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Clary Sage",
+      "Lavender",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Mineral notes",
+      "Vetiver",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "aromatic",
+      "marine",
+      "mineral",
+      "citrus",
+      "fresh spicy",
+      "lavender"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "marine": 3,
+      "mineral": 3,
+      "citrus": 3,
+      "fresh spicy": 2,
+      "lavender": 2,
+      "woody": 2,
+      "salty": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71606.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Eau-de-Parfum-71606.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Eau de Parfum Intense",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Green Apple",
+      "Calabrian bergamot"
+    ],
+    "heart_notes": [
+      "Marine notes",
+      "Clary Sage"
+    ],
+    "base_notes": [
+      "Woody Notes",
+      "Amber"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fruity",
+      "woody",
+      "marine",
+      "citrus",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fruity": 4,
+      "woody": 4,
+      "marine": 4,
+      "citrus": 3,
+      "fresh": 3,
+      "fresh spicy": 3,
+      "green": 3,
+      "soft spicy": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.122311.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Eau-de-Parfum-Intense-122311.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Elixir",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Green Mandarin",
+      "Nutmeg"
+    ],
+    "heart_notes": [
+      "Violet Leaf",
+      "Water Notes"
+    ],
+    "base_notes": [
+      "Leather",
+      "Patchouli",
+      "Vetiver",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "aquatic",
+      "citrus",
+      "ozonic",
+      "woody",
+      "fresh spicy",
+      "leather"
+    ],
+    "accord_intensity": {
+      "aquatic": 5,
+      "citrus": 5,
+      "ozonic": 3,
+      "woody": 3,
+      "fresh spicy": 3,
+      "leather": 3,
+      "aromatic": 3,
+      "patchouli": 3,
+      "earthy": 3,
+      "green": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.101438.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Elixir-101438.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gio Essenza",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Water Notes",
+      "Bergamot",
+      "Grapefruit",
+      "Calone"
+    ],
+    "heart_notes": [
+      "Basil",
+      "Floral Notes",
+      "Jasmine",
+      "Sage"
+    ],
+    "base_notes": [
+      "Pepper",
+      "Cedar",
+      "Musk",
+      "Vetiver",
+      "Ambergris",
+      "Clary Sage",
+      "Amber",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "citrus",
+      "fresh",
+      "aquatic",
+      "woody"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 5,
+      "citrus": 5,
+      "fresh": 4,
+      "aquatic": 4,
+      "woody": 3,
+      "floral": 3,
+      "amber": 3,
+      "herbal": 3,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14825.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Essenza-14825.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Parfum",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Marine notes",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rosemary",
+      "Clary Sage",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Olibanum",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "marine",
+      "woody",
+      "citrus",
+      "amber"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "marine": 3,
+      "woody": 3,
+      "citrus": 3,
+      "amber": 2,
+      "patchouli": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.81508.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Parfum-81508.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Profondo",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sea Notes",
+      "Aquozone",
+      "Bergamot",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Rosemary",
+      "Lavender",
+      "Cypress",
+      "Mastic or Lentisque"
+    ],
+    "base_notes": [
+      "Mineral notes",
+      "Musk",
+      "Patchouli",
+      "Amber"
+    ],
+    "top_accords": [
+      "marine",
+      "aromatic",
+      "citrus",
+      "fresh spicy",
+      "fresh",
+      "woody"
+    ],
+    "accord_intensity": {
+      "marine": 5,
+      "aromatic": 5,
+      "citrus": 4,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "woody": 3,
+      "mineral": 3,
+      "salty": 2,
+      "lavender": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.59532.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Profondo-59532.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Profondo Eau de Parfum (2024)",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sea Notes",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Rosemary",
+      "Lavender"
+    ],
+    "base_notes": [
+      "Mineral notes",
+      "Ambergris",
+      "Musk",
+      "Cedar",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "aromatic",
+      "marine",
+      "citrus",
+      "mineral",
+      "woody",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "marine": 4,
+      "citrus": 3,
+      "mineral": 3,
+      "woody": 3,
+      "fresh spicy": 3,
+      "salty": 3,
+      "amber": 2,
+      "lavender": 2,
+      "aquatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.105624.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Profondo-Eau-de-Parfum-2024-105624.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Profondo Eau de Toilette",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lemon",
+      "Grapefruit",
+      "Spices"
+    ],
+    "heart_notes": [
+      "Calone",
+      "Lavender",
+      "Cypress"
+    ],
+    "base_notes": [
+      "Mineral notes",
+      "Woody Notes",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh",
+      "woody",
+      "aromatic",
+      "mineral",
+      "ozonic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh": 4,
+      "woody": 4,
+      "aromatic": 4,
+      "mineral": 3,
+      "ozonic": 3,
+      "lavender": 3,
+      "fresh spicy": 3,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.106317.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Profondo-Eau-de-Toilette-106317.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Profondo Lights",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sea Notes",
+      "Green Mandarin",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Rosemary",
+      "Balsam Fir",
+      "Cypress",
+      "Mastic or Lentisque",
+      "Lavender Extract"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Vetiver",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "fresh spicy",
+      "marine",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 4,
+      "fresh spicy": 3,
+      "marine": 3,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.66265.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Profondo-Lights-66265.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Profondo Parfum",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Marine notes",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Mimosa"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "marine",
+      "citrus",
+      "aromatic",
+      "patchouli",
+      "yellow floral",
+      "salty"
+    ],
+    "accord_intensity": {
+      "marine": 5,
+      "citrus": 4,
+      "aromatic": 4,
+      "patchouli": 3,
+      "yellow floral": 3,
+      "salty": 3,
+      "amber": 3,
+      "woody": 3,
+      "aquatic": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.90451.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Profondo-Parfum-90451.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò Profumo",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sea Notes",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rosemary",
+      "Sage",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Incense",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "aromatic",
+      "marine",
+      "fresh spicy",
+      "amber",
+      "woody",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "marine": 4,
+      "fresh spicy": 3,
+      "amber": 3,
+      "woody": 3,
+      "smoky": 3,
+      "warm spicy": 3,
+      "citrus": 3,
+      "balsamic": 3,
+      "patchouli": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.29727.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Profumo-29727.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gio Profumo Special Blend",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sea Notes",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Sage",
+      "Rosemary",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Incense"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "marine",
+      "woody",
+      "patchouli",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 3,
+      "marine": 3,
+      "woody": 3,
+      "patchouli": 3,
+      "warm spicy": 3,
+      "amber": 3,
+      "balsamic": 3,
+      "smoky": 3,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46467.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Profumo-Special-Blend-46467.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gioia",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Amalfi Lemon",
+      "Mint"
+    ],
+    "heart_notes": [
+      "Water Jasmine"
+    ],
+    "base_notes": [
+      "Virginia Cedar",
+      "Brown sugar",
+      "French labdanum"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "green",
+      "white floral",
+      "fresh spicy",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 5,
+      "green": 5,
+      "white floral": 3,
+      "fresh spicy": 3,
+      "woody": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8442.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gioia-8442.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gioia Eau de Parfum Satinee",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mint",
+      "Mojito",
+      "Amalfi Lemon"
+    ],
+    "heart_notes": [
+      "Water Notes",
+      "Jasmine",
+      "Peony",
+      "Pink Pepper"
+    ],
+    "base_notes": [
+      "Virginia Cedar",
+      "French labdanum"
+    ],
+    "top_accords": [
+      "fresh",
+      "green",
+      "citrus",
+      "aquatic",
+      "aromatic",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "fresh": 5,
+      "green": 5,
+      "citrus": 5,
+      "aquatic": 4,
+      "aromatic": 4,
+      "white floral": 3,
+      "floral": 3,
+      "woody": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14402.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gioia-Eau-de-Parfum-Satinee-14402.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gioia Eau de Toilette",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lemon",
+      "Pear",
+      "Violet Leaf",
+      "Black Currant"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Jasmine Sambac",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "fresh",
+      "citrus",
+      "fruity",
+      "floral",
+      "aquatic",
+      "woody"
+    ],
+    "accord_intensity": {
+      "fresh": 5,
+      "citrus": 5,
+      "fruity": 5,
+      "floral": 4,
+      "aquatic": 4,
+      "woody": 4,
+      "white floral": 3,
+      "ozonic": 3,
+      "sweet": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24452.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gioia-Eau-de-Toilette-24452.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua Di Gioia Eau Fraiche",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lemon",
+      "Grapefruit",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Watery Notes",
+      "Water Jasmine",
+      "Tea",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Brown sugar",
+      "Musk",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "aquatic",
+      "fresh",
+      "sweet",
+      "white floral",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aquatic": 4,
+      "fresh": 3,
+      "sweet": 3,
+      "white floral": 3,
+      "green": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17566.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-Di-Gioia-Eau-Fraiche-17566.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gioia Essenza",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mint",
+      "Amalfi Lemon",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Sugar",
+      "Cashmeran",
+      "Virginia Cedar"
+    ],
+    "top_accords": [
+      "sweet",
+      "white floral",
+      "green",
+      "aromatic",
+      "woody",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "white floral": 5,
+      "green": 4,
+      "aromatic": 4,
+      "woody": 4,
+      "citrus": 4,
+      "musky": 3,
+      "vanilla": 3,
+      "fresh spicy": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12402.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gioia-Essenza-12402.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gioia Hair & Body Mist",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mint",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Jasmine Sambac",
+      "Pink Pepper"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Brown sugar",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "floral",
+      "fresh",
+      "aromatic",
+      "green",
+      "woody",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fresh": 5,
+      "aromatic": 5,
+      "green": 5,
+      "woody": 4,
+      "citrus": 4,
+      "sweet": 4,
+      "white floral": 4,
+      "amber": 4,
+      "rose": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.50128.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gioia-Hair-Body-Mist-50128.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Gioia Intense",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Citruses",
+      "Red Fruits"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Damask Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Woodsy Notes"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh",
+      "fruity",
+      "white floral",
+      "musky",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh": 4,
+      "fruity": 3,
+      "white floral": 3,
+      "musky": 3,
+      "woody": 3,
+      "rose": 3,
+      "powdery": 2,
+      "sweet": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.90952.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gioia-Intense-90952.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Acqua Di Gioia Jasmine",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Green Apple",
+      "Violet Leaf",
+      "Lemon",
+      "Galbanum"
+    ],
+    "heart_notes": [
+      "Water Jasmine",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Brown sugar",
+      "Musk",
+      "Cedar"
+    ],
+    "top_accords": [
+      "white floral",
+      "green",
+      "fruity",
+      "fresh",
+      "ozonic",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "green": 5,
+      "fruity": 5,
+      "fresh": 4,
+      "ozonic": 4,
+      "sweet": 4,
+      "aquatic": 4,
+      "citrus": 3,
+      "aromatic": 3,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30621.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-Di-Gioia-Jasmine-30621.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Air di Gioia",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Salt",
+      "Neroli",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Orange Blossom",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Cypress",
+      "Moss",
+      "Patchouli",
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "woody",
+      "floral",
+      "fresh",
+      "citrus",
+      "salty",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "floral": 4,
+      "fresh": 3,
+      "citrus": 3,
+      "salty": 3,
+      "white floral": 3,
+      "aromatic": 3,
+      "earthy": 3,
+      "mossy": 3,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.36599.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Air-di-Gioia-36599.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Light di Gioia",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Gardenia",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Woodsy Notes"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "musky",
+      "woody",
+      "lactonic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 3,
+      "musky": 2,
+      "woody": 2,
+      "lactonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54301.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Light-di-Gioia-54301.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Ocean di Gioia",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Green Notes",
+      "Citruses"
+    ],
+    "heart_notes": [
+      "Water Jasmine",
+      "Lily-of-the-Valley",
+      "Salt",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "green",
+      "fresh",
+      "fruity",
+      "citrus",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "green": 5,
+      "fresh": 5,
+      "fruity": 4,
+      "citrus": 4,
+      "sweet": 3,
+      "musky": 3,
+      "aquatic": 3,
+      "salty": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.59809.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Ocean-di-Gioia-59809.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Sky di Gioia",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Litchi",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Pink Peony",
+      "Rose"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Blackberry",
+      "Cedar"
+    ],
+    "top_accords": [
+      "fruity",
+      "fresh",
+      "rose",
+      "floral",
+      "tropical",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "fresh": 5,
+      "rose": 5,
+      "floral": 5,
+      "tropical": 3,
+      "sweet": 3,
+      "musky": 3,
+      "aquatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43587.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Sky-di-Gioia-43587.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Sun di Gioia",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Freesia",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Frangipani",
+      "Ylang-Ylang",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Ambroxan",
+      "Benzoin",
+      "Iris"
+    ],
+    "top_accords": [
+      "floral",
+      "amber",
+      "vanilla",
+      "tropical",
+      "yellow floral",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "amber": 4,
+      "vanilla": 4,
+      "tropical": 3,
+      "yellow floral": 3,
+      "citrus": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "lactonic": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.36600.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Sun-di-Gioia-36600.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Terra di Gioia",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Mandarin Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Almond Blossom",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amberwood",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "sweet",
+      "amber",
+      "woody",
+      "white floral",
+      "musky"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "sweet": 4,
+      "amber": 4,
+      "woody": 3,
+      "white floral": 3,
+      "musky": 3,
+      "fruity": 3,
+      "citrus": 3,
+      "almond": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.66409.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Terra-di-Gioia-66409.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Attitude",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Coffee",
+      "Sicilian Lemon"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Cardamom"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Amber",
+      "Opoponax",
+      "Chinese Cedar"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "woody",
+      "amber",
+      "patchouli",
+      "coffee",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "woody": 4,
+      "amber": 4,
+      "patchouli": 4,
+      "coffee": 3,
+      "aromatic": 3,
+      "lavender": 3,
+      "citrus": 3,
+      "balsamic": 3,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1067.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Attitude-1067.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Attitude Extreme",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "warm spicy",
+      "soft spicy",
+      "anis",
+      "coffee",
+      "woody",
+      "amber"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "soft spicy": 4,
+      "anis": 4,
+      "coffee": 4,
+      "woody": 3,
+      "amber": 3,
+      "citrus": 3,
+      "aromatic": 3,
+      "patchouli": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5743.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Attitude-Extreme-5743.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Star Anise",
+      "Olive Blossom",
+      "Guaiac Wood"
+    ],
+    "base_notes": [
+      "Leather",
+      "Tonka Bean",
+      "Tobacco"
+    ],
+    "top_accords": [
+      "citrus",
+      "leather",
+      "anis",
+      "soft spicy",
+      "floral",
+      "tobacco"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "leather": 4,
+      "anis": 4,
+      "soft spicy": 4,
+      "floral": 4,
+      "tobacco": 4,
+      "sweet": 3,
+      "aromatic": 3,
+      "vanilla": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.412.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-412.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code A-List",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Green Mandarin",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Lavender"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "aromatic",
+      "lavender",
+      "vanilla",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "aromatic": 4,
+      "lavender": 4,
+      "vanilla": 4,
+      "sweet": 3,
+      "amber": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49501.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-A-List-49501.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Absolu",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Green Mandarin",
+      "Apple"
+    ],
+    "heart_notes": [
+      "Nutmeg",
+      "Orange Blossom",
+      "Carrot Seeds"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Tonka Bean",
+      "Suede",
+      "Woody Notes"
+    ],
+    "top_accords": [
+      "vanilla",
+      "powdery",
+      "sweet",
+      "fresh spicy",
+      "leather",
+      "amber"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "powdery": 3,
+      "sweet": 3,
+      "fresh spicy": 2,
+      "leather": 2,
+      "amber": 2,
+      "citrus": 2,
+      "musky": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53106.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Absolu-53106.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Absolu Femme",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Neroli",
+      "Ginger",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Orange Blossom",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Tonka Bean",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "vanilla",
+      "citrus",
+      "tuberose",
+      "sweet",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "vanilla": 4,
+      "citrus": 3,
+      "tuberose": 3,
+      "sweet": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54302.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Absolu-Femme-54302.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Absolu Gold",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Green Apple"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Saffron"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Benzoin",
+      "Guaiac Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "amber",
+      "warm spicy",
+      "woody",
+      "vanilla",
+      "iris",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "warm spicy": 5,
+      "woody": 4,
+      "vanilla": 4,
+      "iris": 4,
+      "powdery": 3,
+      "citrus": 3,
+      "fruity": 3,
+      "violet": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.59334.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Absolu-Gold-59334.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Cashmere",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange Blossom",
+      "Jasmine Sambac"
+    ],
+    "heart_notes": [
+      "Almond Milk",
+      "Heliotrope",
+      "Iris"
+    ],
+    "base_notes": [
+      "Suede",
+      "Leather",
+      "Incense",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "almond",
+      "white floral",
+      "powdery",
+      "leather",
+      "nutty",
+      "floral"
+    ],
+    "accord_intensity": {
+      "almond": 5,
+      "white floral": 5,
+      "powdery": 4,
+      "leather": 4,
+      "nutty": 3,
+      "floral": 3,
+      "sweet": 3,
+      "fruity": 3,
+      "vanilla": 3,
+      "smoky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.42278.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Cashmere-42278.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Casino Limited Edition 2008",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [],
+    "base_notes": [
+      "Guaiac Wood",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "aromatic",
+      "vanilla",
+      "fresh spicy",
+      "amber"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "aromatic": 3,
+      "vanilla": 3,
+      "fresh spicy": 2,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3051.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Casino-Limited-Edition-2008-3051.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Colonia",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Mandarin Orange",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Clary Sage",
+      "Amyl Salicylate"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Amberwood",
+      "Heliotrope"
+    ],
+    "top_accords": [
+      "citrus",
+      "amber",
+      "vanilla",
+      "aromatic",
+      "sweet",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "amber": 4,
+      "vanilla": 4,
+      "aromatic": 3,
+      "sweet": 3,
+      "woody": 3,
+      "white floral": 3,
+      "powdery": 3,
+      "soft spicy": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.42895.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Colonia-42895.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Couture Edition",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Blood Orange",
+      "Petitgrain",
+      "Pear",
+      "Ginger",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Mirabilis",
+      "Osmanthus"
+    ],
+    "base_notes": [
+      "Honey",
+      "Leather",
+      "Vanilla",
+      "Tonka Bean",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "sweet",
+      "floral",
+      "vanilla",
+      "fruity",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "sweet": 4,
+      "floral": 4,
+      "vanilla": 3,
+      "fruity": 3,
+      "white floral": 3,
+      "fresh spicy": 3,
+      "honey": 3,
+      "leather": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17126.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Couture-Edition-17126.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Eau de Parfum",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender",
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Tonka Bean"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Suede",
+      "Musk",
+      "Cedar"
+    ],
+    "top_accords": [
+      "vanilla",
+      "citrus",
+      "aromatic",
+      "musky",
+      "powdery",
+      "lavender"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "citrus": 4,
+      "aromatic": 4,
+      "musky": 3,
+      "powdery": 3,
+      "lavender": 3,
+      "sweet": 3,
+      "leather": 3,
+      "amber": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.65581.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Eau-de-Parfum-65581.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Eau de Parfum (2024)",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Nutmeg"
+    ],
+    "base_notes": [
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "vanilla",
+      "amber",
+      "citrus",
+      "sweet",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "vanilla": 5,
+      "amber": 4,
+      "citrus": 4,
+      "sweet": 4,
+      "aromatic": 3,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.96540.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Eau-de-Parfum-2024-96540.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Eau de Toilette",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Lavender"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Cedar"
+    ],
+    "top_accords": [
+      "lavender",
+      "vanilla",
+      "aromatic",
+      "woody",
+      "citrus",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "lavender": 5,
+      "vanilla": 5,
+      "aromatic": 5,
+      "woody": 4,
+      "citrus": 4,
+      "sweet": 4,
+      "amber": 4,
+      "fresh spicy": 3,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.79263.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Eau-de-Toilette-79263.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Elixir",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1738.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Elixir-1738.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Elixir",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Liquor"
+    ],
+    "base_notes": [
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "leather",
+      "animalic",
+      "vanilla",
+      "citrus",
+      "amber",
+      "alcohol"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "animalic": 3,
+      "vanilla": 3,
+      "citrus": 3,
+      "amber": 3,
+      "alcohol": 3,
+      "sweet": 3,
+      "smoky": 3,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.106074.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Elixir-106074.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Italian Orange",
+      "Jasmine",
+      "Bitter Orange"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Ginger"
+    ],
+    "base_notes": [
+      "Honey",
+      "Vanilla",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "sweet",
+      "vanilla",
+      "honey",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 4,
+      "sweet": 3,
+      "vanilla": 3,
+      "honey": 3,
+      "fresh spicy": 2,
+      "fresh": 2,
+      "powdery": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.413.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-for-Women-413.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Golden Edition",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Olive Blossom",
+      "Guaiac Wood",
+      "Star Anise"
+    ],
+    "base_notes": [
+      "Leather",
+      "Tonka Bean",
+      "Tobacco"
+    ],
+    "top_accords": [
+      "citrus",
+      "leather",
+      "woody",
+      "aromatic",
+      "floral",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "leather": 4,
+      "woody": 4,
+      "aromatic": 3,
+      "floral": 3,
+      "sweet": 3,
+      "tobacco": 3,
+      "vanilla": 3,
+      "animalic": 3,
+      "smoky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.21934.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Golden-Edition-21934.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Ice",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mint",
+      "Ginger",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Geranium",
+      "Sage"
+    ],
+    "base_notes": [
+      "Woody Notes",
+      "Guaiac Wood",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "green",
+      "citrus",
+      "woody",
+      "lavender"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 4,
+      "green": 3,
+      "citrus": 3,
+      "woody": 3,
+      "lavender": 3,
+      "fresh": 3,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24601.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Ice-24601.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Le Parfum",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "fresh spicy",
+      "white floral",
+      "citrus",
+      "fresh",
+      "rose",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "white floral": 5,
+      "citrus": 5,
+      "fresh": 4,
+      "rose": 4,
+      "fruity": 4,
+      "sweet": 3,
+      "floral": 3,
+      "aquatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4957.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Le-Parfum-4957.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Luna",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bitter Orange",
+      "Bergamot",
+      "Petitgrain",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Osmanthus",
+      "Mirabilis"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Tonka Bean",
+      "Leather",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "vanilla",
+      "sweet",
+      "white floral",
+      "floral",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "vanilla": 4,
+      "sweet": 3,
+      "white floral": 3,
+      "floral": 3,
+      "fruity": 3,
+      "aromatic": 2,
+      "fresh": 2,
+      "fresh spicy": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14611.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Luna-14611.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Mirror Edition",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Italian Orange",
+      "Bitter Orange",
+      "Jasmine"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Honey"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "sweet",
+      "vanilla",
+      "honey"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 3,
+      "sweet": 3,
+      "vanilla": 3,
+      "honey": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5204.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Mirror-Edition-5204.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Parfum",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Bergamot Leaf"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Aldehydes",
+      "Clary Sage",
+      "Orris"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Cedar"
+    ],
+    "top_accords": [
+      "iris",
+      "aromatic",
+      "powdery",
+      "woody",
+      "citrus",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "iris": 5,
+      "aromatic": 4,
+      "powdery": 4,
+      "woody": 4,
+      "citrus": 4,
+      "vanilla": 3,
+      "earthy": 3,
+      "aldehydic": 3,
+      "violet": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.75126.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Parfum-75126.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Profumo",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Cardamom",
+      "Green Apple",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Nutmeg",
+      "Lavender",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Amber",
+      "Leather"
+    ],
+    "top_accords": [
+      "amber",
+      "vanilla",
+      "warm spicy",
+      "aromatic",
+      "leather",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "vanilla": 3,
+      "warm spicy": 3,
+      "aromatic": 3,
+      "leather": 3,
+      "fresh spicy": 3,
+      "sweet": 3,
+      "animalic": 3,
+      "citrus": 2,
+      "lavender": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.34761.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Profumo-34761.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Satin",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Ginger",
+      "Sorbet",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Neroli",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Cacao",
+      "Praline",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "sweet",
+      "white floral",
+      "vanilla",
+      "cacao",
+      "warm spicy",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "white floral": 4,
+      "vanilla": 4,
+      "cacao": 3,
+      "warm spicy": 3,
+      "citrus": 3,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "fruity": 2,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31664.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Satin-31664.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Sheer",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "African Orange Flower"
+    ],
+    "heart_notes": [
+      "Cyclamen",
+      "Jasmine",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Musk",
+      "Woodsy Notes"
+    ],
+    "top_accords": [
+      "white floral",
+      "fresh",
+      "floral",
+      "musky",
+      "woody",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "fresh": 3,
+      "floral": 3,
+      "musky": 2,
+      "woody": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1046.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Sheer-1046.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Special Blend",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Neroli",
+      "Mandarin Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Star Anise",
+      "Olive Blossom",
+      "Tarragon"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Guaiac Wood",
+      "Tobacco",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "anis",
+      "aromatic",
+      "floral",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 5,
+      "anis": 4,
+      "aromatic": 4,
+      "floral": 3,
+      "soft spicy": 3,
+      "sweet": 3,
+      "tobacco": 3,
+      "vanilla": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31954.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Special-Blend-31954.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Sport",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mint",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Lemon",
+      "Ginger flower"
+    ],
+    "base_notes": [
+      "Water Notes",
+      "Vetiver",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "green",
+      "fresh spicy",
+      "fresh",
+      "aquatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 4,
+      "green": 4,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "aquatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11649.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Sport-11649.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Sport Athlete",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "fresh",
+      "aromatic",
+      "green",
+      "aquatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 5,
+      "fresh": 5,
+      "aromatic": 4,
+      "green": 4,
+      "aquatic": 3,
+      "woody": 3,
+      "amber": 2,
+      "smoky": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14936.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Sport-Athlete-14936.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Sport Edition 2016",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mint",
+      "Peppermint",
+      "Sicilian Lemon",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Ginger",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Ambroxan",
+      "Rosemary",
+      "Vetiver",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "citrus",
+      "green",
+      "amber",
+      "woody"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 5,
+      "citrus": 4,
+      "green": 3,
+      "amber": 3,
+      "woody": 3,
+      "fresh": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.39648.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Sport-Edition-2016-39648.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Summer pour Femme",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Water Notes",
+      "Bitter Orange",
+      "Neroli",
+      "Pear"
+    ],
+    "heart_notes": [
+      "African Orange Flower",
+      "Jasmine",
+      "Ginger",
+      "Cyclamen"
+    ],
+    "base_notes": [
+      "Musk",
+      "Woodsy Notes",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "fresh",
+      "aquatic",
+      "fresh spicy",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 5,
+      "fresh": 4,
+      "aquatic": 4,
+      "fresh spicy": 3,
+      "sweet": 3,
+      "floral": 3,
+      "fruity": 3,
+      "musky": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5746.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Summer-pour-Femme-5746.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Summer Pour Femme 2010",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bitter Orange",
+      "Neroli",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Ginger",
+      "Jasmine",
+      "Cyclamen",
+      "African Orange Flower"
+    ],
+    "base_notes": [
+      "Musk",
+      "Vanille",
+      "Woodsy Notes"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "fresh",
+      "fresh spicy",
+      "floral",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 4,
+      "fresh": 4,
+      "fresh spicy": 3,
+      "floral": 3,
+      "fruity": 3,
+      "sweet": 3,
+      "vanilla": 3,
+      "musky": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7905.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Summer-Pour-Femme-2010-7905.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Summer Pour Femme 2011",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bitter Orange",
+      "Neroli",
+      "Pear"
+    ],
+    "heart_notes": [
+      "African Orange Flower",
+      "Jasmine",
+      "Ginger",
+      "Cyclamen"
+    ],
+    "base_notes": [
+      "Musk",
+      "Woodsy Notes",
+      "Vanille"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "fresh",
+      "fruity",
+      "sweet",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 5,
+      "fresh": 4,
+      "fruity": 3,
+      "sweet": 3,
+      "fresh spicy": 3,
+      "floral": 3,
+      "woody": 3,
+      "musky": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12358.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Summer-Pour-Femme-2011-12358.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Summer pour Homme",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Grapefruit",
+      "Neroli",
+      "Sea water",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Virginia Cedar",
+      "Tarragon"
+    ],
+    "base_notes": [
+      "Guaiac Wood",
+      "Amber",
+      "Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "marine",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "aromatic": 4,
+      "fresh spicy": 3,
+      "marine": 3,
+      "powdery": 2,
+      "amber": 2,
+      "musky": 2,
+      "rose": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5747.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Summer-pour-Homme-5747.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Summer Pour Homme 2010",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Neroli",
+      "Bergamot",
+      "Sea water",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Olive Blossom",
+      "Tincture of Rose",
+      "Tarragon",
+      "Virginia Cedar"
+    ],
+    "base_notes": [
+      "Musk",
+      "Amber",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "floral",
+      "marine",
+      "fresh spicy",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 4,
+      "floral": 3,
+      "marine": 3,
+      "fresh spicy": 3,
+      "woody": 3,
+      "rose": 3,
+      "powdery": 2,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7906.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Summer-Pour-Homme-2010-7906.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Summer Pour Homme 2011",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Grapefruit",
+      "Bergamot",
+      "Neroli",
+      "Sea water"
+    ],
+    "heart_notes": [
+      "Olive Leaf",
+      "Rose",
+      "Tarragon",
+      "Virginia Cedar"
+    ],
+    "base_notes": [
+      "Amber",
+      "Musk",
+      "Guaiac Wood",
+      "oak moss"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "aromatic",
+      "green",
+      "fresh spicy",
+      "rose"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "aromatic": 3,
+      "green": 3,
+      "fresh spicy": 3,
+      "rose": 3,
+      "herbal": 3,
+      "amber": 2,
+      "floral": 2,
+      "marine": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12357.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Summer-Pour-Homme-2011-12357.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Turquoise",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Neroli",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Olive Tree",
+      "Cedar"
+    ],
+    "base_notes": [
+      "Musk",
+      "Guaiac Wood",
+      "Amber"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "musky",
+      "powdery",
+      "white floral",
+      "amber"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "musky": 3,
+      "powdery": 3,
+      "white floral": 2,
+      "amber": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30324.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Turquoise-for-Men-30324.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Turquoise",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange Blossom",
+      "Neroli",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Ginger",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Orange Blossom",
+      "Musk",
+      "White Woods",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "fresh",
+      "sweet",
+      "fresh spicy",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 3,
+      "fresh": 3,
+      "sweet": 3,
+      "fresh spicy": 3,
+      "fruity": 2,
+      "musky": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30323.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Turquoise-for-Women-30323.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Ultimate",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Star Anise",
+      "Grapefruit",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Heliotrope",
+      "Olive Blossom",
+      "Cedar",
+      "Cypress"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Tonka Bean",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "vanilla",
+      "woody",
+      "powdery",
+      "sweet",
+      "floral",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "woody": 3,
+      "powdery": 3,
+      "sweet": 3,
+      "floral": 2,
+      "soft spicy": 2,
+      "aromatic": 2,
+      "anis": 2,
+      "amber": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15718.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Ultimate-15718.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Code Ultimate Femme",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bitter Orange",
+      "Ginger",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Orange Blossom",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Vanilla Bean",
+      "Exotic Woods"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "vanilla",
+      "coffee",
+      "fresh",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 5,
+      "vanilla": 5,
+      "coffee": 4,
+      "fresh": 3,
+      "sweet": 3,
+      "fresh spicy": 3,
+      "warm spicy": 3,
+      "woody": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28001.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Code-Ultimate-Femme-28001.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Mania",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Saffron",
+      "Citrus Leaves"
+    ],
+    "heart_notes": [
+      "Cedar",
+      "Vetiver"
+    ],
+    "base_notes": [
+      "Musk",
+      "Amber"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "musky",
+      "warm spicy",
+      "aromatic",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "musky": 3,
+      "warm spicy": 3,
+      "aromatic": 3,
+      "powdery": 3,
+      "earthy": 3,
+      "amber": 3,
+      "metallic": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.414.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Mania-414.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Armani Mania",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Bay Leaf",
+      "Orange",
+      "Black Currant",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Magnolia",
+      "Peony",
+      "Iris",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "White Sandalwood",
+      "Amber",
+      "Musk",
+      "Virginia Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "powdery",
+      "floral",
+      "soft spicy",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 5,
+      "powdery": 5,
+      "floral": 5,
+      "soft spicy": 4,
+      "vanilla": 4,
+      "fresh spicy": 4,
+      "musky": 4,
+      "sweet": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.415.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Armani-Mania-415.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Mania",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Labdanum",
+      "Vanilla",
+      "Orange Blossom",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Saffron",
+      "Nutmeg",
+      "Cloves",
+      "Amber"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Guaiac Wood",
+      "Vanilla",
+      "Iris"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "amber",
+      "powdery",
+      "fresh spicy",
+      "woody",
+      "musky"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "amber": 5,
+      "powdery": 4,
+      "fresh spicy": 4,
+      "woody": 4,
+      "musky": 4,
+      "citrus": 3,
+      "vanilla": 3,
+      "white floral": 3,
+      "iris": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.423.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Mania-423.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Summer Mania Eau Fraiche pour Femme",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear"
+    ],
+    "heart_notes": [
+      "Jasmine"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Amber",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "musky",
+      "powdery",
+      "amber",
+      "woody",
+      "white floral",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "powdery": 5,
+      "amber": 4,
+      "woody": 4,
+      "white floral": 4,
+      "fruity": 3,
+      "sweet": 3,
+      "animalic": 3,
+      "warm spicy": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.928.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Summer-Mania-Eau-Fraiche-pour-Femme-928.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Summer Mania Eau Fraiche pour Homme",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Citruses"
+    ],
+    "heart_notes": [
+      "Saffron"
+    ],
+    "base_notes": [
+      "Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh",
+      "musky",
+      "warm spicy",
+      "metallic",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh": 3,
+      "musky": 3,
+      "warm spicy": 3,
+      "metallic": 2,
+      "powdery": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.929.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Summer-Mania-Eau-Fraiche-pour-Homme-929.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "name": "Summer Mania Femme",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Black Currant",
+      "Violet Leaf",
+      "Mandarin Orange",
+      "Orange",
+      "Cassia",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Jasmine",
+      "Rose",
+      "Lily-of-the-Valley",
+      "Hawthorn"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Amber",
+      "White Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "fresh",
+      "white floral",
+      "rose",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 4,
+      "fresh": 4,
+      "white floral": 4,
+      "rose": 3,
+      "citrus": 3,
+      "woody": 3,
+      "green": 3,
+      "ozonic": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2705.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Giorgio-Armani/Summer-Mania-Femme-2705.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

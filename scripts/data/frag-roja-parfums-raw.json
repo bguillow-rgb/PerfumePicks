@@ -1,0 +1,3502 @@
+[
+  {
+    "brand": "Roja Parfums",
+    "name": "51 Pour Femme",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 53500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 53500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/51-femme-parfum"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 32800,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/51-femme-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/51-pour-femme-parfum-roja-parfums-50ml-parfum-551471.jpg?v=1758552898",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/51-femme-parfum",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "51 Pour Femme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 33000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 33000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/51-femme-edp"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/51-femme-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/51-pour-femme-eau-de-parfum-roja-parfums-361655.jpg?v=1758543817",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/51-femme-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "A Goodnight Kiss",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 161000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 161000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/goodnight-kiss"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/a-goodnight-kiss-parfum-roja-parfums-840100.jpg?v=1756742085",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/goodnight-kiss",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "A Midsummer Dream",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 45000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 45000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/midsummer-dream"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/a-midsummer-dream-eau-de-parfum-roja-parfums-506306.jpg?v=1774272811",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/midsummer-dream",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Amber Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 41000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 41000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/amber-aoud-50ml"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 79000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/amber-aoud-50ml"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 79000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/amber-aoud-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/amber-aoud-parfum-roja-parfums-50ml-parfum-119834.jpg?v=1756741984",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/amber-aoud-50ml",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Amber Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 22500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 250,
+        "price_usd_cents": 22500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/amber-aoud-diffuser"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/amber-aoud-diffuser-roja-parfums-250ml-886765.jpg?v=1758213096",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/amber-aoud-diffuser",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Amber Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 10000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 10000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/amber-aoud-travel"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/amber-aoud-travel-spray-roja-parfums-562704.jpg?v=1756741762",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/amber-aoud-travel",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Amber Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 20000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/amber-aoud-4"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/amber-aoud-hair-perfume-roja-parfums-50ml-hair-perfume-134718.jpg?v=1756741674",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/amber-aoud-4",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Amber Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 67500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 750,
+        "price_usd_cents": 67500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/amber-aoud-diffuser-refill"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/amber-aoud-decanter-roja-parfums-750ml-375713.jpg?v=1758280551",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/amber-aoud-diffuser-refill",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 41000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 41000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/aoud-50ml"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 79000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/aoud-50ml"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 79000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/aoud-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/aoud-parfum-roja-parfums-50ml-parfum-371578.jpg?v=1756741980",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/aoud-50ml",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Aoud Extraordinaire",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 41000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 41000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/aoud-extraordinaire-50"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 79000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/aoud-extraordinaire-50"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/aoud-extraordinaire-parfum-roja-parfums-50ml-parfum-433946.jpg?v=1756741847",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/aoud-extraordinaire-50",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Aoud Extraordinaire",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 10000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 10000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/aoud-extraordinaire-travel"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/aoud-extraordinaire-travel-spray-roja-parfums-243406.jpg?v=1756741765",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/aoud-extraordinaire-travel",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Aoud Extraordinaire",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 20000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/aoud-extraordinaire-hair-perfume"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/aoud-extraordinaire-hair-perfume-roja-parfums-50ml-hair-perfume-680914.jpg?v=1756741676",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/aoud-extraordinaire-hair-perfume",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Apex Eau Intense",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 38000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 38000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/apex-eau-intense-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/apex-eau-intense-eau-de-parfum-roja-parfums-696827.jpg?v=1756741792",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/apex-eau-intense-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Apex Pour Homme",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 54500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/apex-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/apex-pour-homme-parfum-roja-parfums-888747.jpg?v=1756742068",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/apex-parfum",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Apex Pour Homme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 38000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 38000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/apex-pour-homme"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/apex-pour-homme"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/apex-pour-homme-eau-de-parfum-roja-parfums-908058.jpg?v=1756742069",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/apex-pour-homme",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Bergdorf",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 57000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 57000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/bergdorf"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/bergdorf-parfum-roja-parfums-695519.jpg?v=1756742125",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/bergdorf",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Burlington 1819",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 45000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 45000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/burlington-1819"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/burlington-1819-eau-de-parfum-roja-parfums-673143.jpg?v=1758012409",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/burlington-1819",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Chypré Extraordinaire",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 110000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 110000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/chypre-extraordinaire"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/chypre-extraordinaire-parfum-roja-parfums-232002.jpg?v=1756742086",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/chypre-extraordinaire",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Danger Pour Femme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 26400,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 26400,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/danger-femme-edp"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 38200,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/danger-femme-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/danger-pour-femme-eau-de-parfum-roja-parfums-75ml-edp-691403.jpg?v=1756742027",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/danger-femme-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Diaghilev",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 110000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 110000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/diaghilev"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/diaghilev-parfum-roja-parfums-334330.jpg?v=1756742154",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/diaghilev",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "ROJA PARFUMS ELIXIR",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 54500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elixir-femme-parfum"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 33000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elixir-femme-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/elixir-pour-femme-parfum-roja-parfums-50ml-parfum-586170.jpg?v=1758552850",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/elixir-femme-parfum",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "ROJA PARFUMS ELIXIR",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 33000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 33000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elixir-femme-edp"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elixir-femme-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/elixir-pour-femme-eau-de-parfum-roja-parfums-535259.jpg?v=1758543724",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/elixir-femme-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Elysium Eau Intense",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 38000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 38000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elysium-eau-intense"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/elysium-eau-intense-eau-de-parfum-roja-parfums-100ml-edp-667116.jpg?v=1756741820",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/elysium-eau-intense",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Elysium Noir",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 38000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 38000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elysium-noir"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/elysium-noir-nsv-eau-de-parfum-roja-parfums-100ml-edp-717779.jpg?v=1756741786",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/elysium-noir",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Elysium Pour Femme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 33000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 33000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elysium-pour-femme"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elysium-pour-femme"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/elysium-pour-femme-eau-de-parfum-roja-parfums-237128.jpg?v=1756742035",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/elysium-pour-femme",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Elysium Pour Femme",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 54500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elysium-femme-parfum"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 33000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elysium-femme-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/elysium-pour-femme-parfum-roja-parfums-290118.jpg?v=1756742035",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/elysium-femme-parfum",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "ROJA PARFUMS ELYSIUM™  ",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 54500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elysium-homme-parfum"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 38000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elysium-homme-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/elysium-pour-homme-parfum-roja-parfums-50ml-parfum-929185.jpg?v=1758552883",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/elysium-homme-parfum",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Elysium Pour Homme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 38000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 38000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elysium-homme-edp"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/elysium-homme-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/elysium-pour-homme-eau-de-parfum-roja-parfums-100ml-edp-105527.jpg?v=1760365223",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/elysium-homme-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Enigma Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 41000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 41000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/enigma-aoud-50ml"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 79000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/enigma-aoud-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/enigma-aoud-parfum-roja-parfums-516717.jpg?v=1756741979",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/enigma-aoud-50ml",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Enigma Pour Femme",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 54500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/enigma-femme-parfum"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 33000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/enigma-femme-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/enigma-pour-femme-parfum-roja-parfums-50ml-parfum-442997.jpg?v=1758552867",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/enigma-femme-parfum",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Enigma Pour Femme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 33000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 33000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/enigma-femme-edp"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/enigma-femme-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/enigma-pour-femme-eau-de-parfum-roja-parfums-717083.jpg?v=1758543859",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/enigma-femme-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Enigma Pour Homme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 54500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/enigma-homme"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 38000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/enigma-homme"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/enigma-pour-homme-parfum-roja-parfums-50ml-parfum-735277.jpg?v=1758552928",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/enigma-homme",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Enigma Pour Homme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 38000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 38000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/enigma-homme-edp"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 54500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/enigma-homme-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/enigma-pour-homme-eau-de-parfum-roja-parfums-183165.jpg?v=1758539512",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/enigma-homme-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Espresso Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 9700,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 9700,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/espresso-aoud-travel"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/espresso-aoud-travel-spray-roja-parfums-117828.jpg?v=1770311508",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/espresso-aoud-travel",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Espresso Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 41800,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 41800,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/espresso-aoud-50"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 78400,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/espresso-aoud-50"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 9700,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/espresso-aoud-50"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/espresso-aoud-parfum-roja-parfums-50ml-parfum-889250.jpg?v=1770311463",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/espresso-aoud-50",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Fortnum & Mason",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 57000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 57000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/fortnum-perfume"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/fortnum-mason-parfum-roja-parfums-455048.jpg?v=1756742124",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/fortnum-perfume",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Goodman's",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 57000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 57000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/goodmans"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/goodmans-parfum-roja-parfums-544263.jpg?v=1756742126",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/goodmans",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Great Britain",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 110000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 110000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/great-britain-1"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/great-britain-parfum-roja-parfums-238391.jpg?v=1756742090",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/great-britain-1",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Harrods Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 64000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 64000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/harrods-aoud"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/harrods-aoud-parfum-roja-parfums-924830.jpg?v=1756742133",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/harrods-aoud",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Harrods Black Tier",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 110000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 110000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/black-tier"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/harrods-black-tier-parfum-roja-parfums-181691.jpg?v=1756742121",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/black-tier",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Harrods Pour Femme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 64000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 64000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/harrods-femme"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/harrods-pour-femme-parfum-roja-parfums-872231.jpg?v=1756742131",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/harrods-femme",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Harrods Pour Homme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 64000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 64000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/harrods-homme"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/harrods-pour-homme-parfum-roja-parfums-642447.jpg?v=1756742130",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/harrods-homme",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "HARRY POTTER BURLINGTON 1819 LIMITED-EDITION",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 47000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 47000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/harry-potter-burlington-1819-limited-edition"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/harry-potter-burlington-1819-limited-edition-eau-de-parfum-roja-parfums-100ml-edp-110413.jpg?v=1760389876",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/harry-potter-burlington-1819-limited-edition",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "HARRY POTTER BURLINGTON 1819 LIMITED-EDITION",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 29000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 29000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/harry-potter-burlington-1819-limited-edition-1"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/harry-potter-burlington-1819-limited-edition-eau-de-parfum-roja-parfums-50ml-edp-322425.jpg?v=1760389883",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/harry-potter-burlington-1819-limited-edition-1",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "ROJA PARFUMS ISOLA BLU",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 50000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 50000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/isola-blu"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/isola-blu-parfum-roja-parfums-50ml-parfum-908414.jpg?v=1756742063",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/isola-blu",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "ROJA PARFUMS ISOLA BLU",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 8500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/isola-blu-travel"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/isola-blu-travel-spray-roja-parfums-461989.jpg?v=1756741749",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/isola-blu-travel",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Isola Snow",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 50000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 50000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/isola-snow"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/isola-snow-parfum-roja-parfums-50ml-parfum-179031.jpg?v=1765283522",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/isola-snow",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Isola Snow",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 8500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/isola-snow-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/isola-snow-travel-spray-roja-parfums-10ml-parfum-311290.jpg?v=1765217028",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/isola-snow-10ml",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Isola Sol",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 50000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 50000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/isola-sol"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/isola-sol-parfum-roja-parfums-351194.jpg?v=1756742018",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/isola-sol",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Isola Sol",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 8500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/isola-sol-travel"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/isola-sol-travel-spray-roja-parfums-147347.jpg?v=1756741742",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/isola-sol-travel",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Isola Verde",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 50000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 50000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/isola-verde"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/isola-verde-parfum-roja-parfums-817025.jpg?v=1756741784",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/isola-verde",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Isola Verde",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 8500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/isola-verde-travel"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/isola-verde-travel-spray-roja-parfums-494226.jpg?v=1756741745",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/isola-verde-travel",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "London",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 22500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 250,
+        "price_usd_cents": 22500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/london-1"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/london-diffuser-roja-parfums-250ml-222458.jpg?v=1758213060",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/london-1",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "London",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 55000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 750,
+        "price_usd_cents": 55000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/london-diffuser-refill"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/london-decanter-roja-parfums-750ml-810749.jpg?v=1758280520",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/london-diffuser-refill",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Lost In Paris",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 129500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 129500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/lost-in-paris"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/lost-in-paris-parfum-roja-parfums-652160.jpg?v=1756741832",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/lost-in-paris",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Lost in Paris",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 19500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/lost-in-paris-1"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/lost-in-paris-travel-spray-roja-parfums-126411.jpg?v=1756741824",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/lost-in-paris-1",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Lost In Paris",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 22500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 250,
+        "price_usd_cents": 22500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/lost-in-paris-diffuser"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/paris-diffuser-roja-parfums-250ml-diffuser-918071.jpg?v=1758213052",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/lost-in-paris-diffuser",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Lost In Paris",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 55000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 750,
+        "price_usd_cents": 55000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/lost-in-paris-diffuser-refill"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/lost-in-paris-decanter-roja-parfums-750ml-decanter-519987.jpg?v=1758716047",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/lost-in-paris-diffuser-refill",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Luxury Reed Diffuser Decanter",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 109000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 750,
+        "price_usd_cents": 109000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/luxury-reed-diffuser-decanter"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/lost-in-paris-diffuser-roja-london-251201.jpg?v=1758736655",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/luxury-reed-diffuser-decanter",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Madison Pour Femme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 57000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 57000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/madison-femme"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/madison-pour-femme-parfum-roja-parfums-406619.jpg?v=1756742128",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/madison-femme",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Madison Pour Homme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 57000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 57000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/madison-homme"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/madison-pour-homme-parfum-roja-parfums-665955.jpg?v=1756742129",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/madison-homme",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Manhattan",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 45000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 45000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/manhattan"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 15000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/manhattan"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/manhattan-eau-de-parfum-roja-parfums-607189.jpg?v=1756742054",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/manhattan",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Manhattan",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 15000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/manhattan-hair-perfume"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/manhattan-hair-mist-hair-perfume-roja-parfums-259703.jpg?v=1756742054",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/manhattan-hair-perfume",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Neiman Marcus",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 55000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 55000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/neiman-marcus-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/neiman-marcus-parfum-roja-parfums-50ml-parfum-113308.jpg?v=1758117330",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/neiman-marcus-parfum",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "NüWa",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 77000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 77000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/nuwa"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/nuwa-parfum-roja-parfums-112627.jpg?v=1756742152",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/nuwa",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "NüWa",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 45000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 45000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/nuwa-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/nuwa-eau-de-parfum-roja-parfums-100ml-edp-260949.jpg?v=1775663918",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/nuwa-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "ROJA OCEANIA™",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 50000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 50000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/oceania-2"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/oceania-parfum-roja-parfums-222273.jpg?v=1756742163",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/oceania-2",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Oceania",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 8500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/oceania-travel"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/oceania-travel-spray-roja-parfums-486568.jpg?v=1756741743",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/oceania-travel",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Parfum De La Nuit",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 129500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 129500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/parfum-de-la-nuit"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/parfum-de-la-nuit-parfum-roja-parfums-110225.jpg?v=1756741806",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/parfum-de-la-nuit",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Parfum De La Nuit 1",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 90650,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 90650,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/nuit1"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/parfum-de-la-nuit-1-parfum-roja-parfums-844949.jpg?v=1770114425",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/nuit1",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Parfum De La Nuit 2",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 90650,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 90650,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/nuit2"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/parfum-de-la-nuit-2-parfum-roja-parfums-709585.jpg?v=1756742156",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/nuit2",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Qatar",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/qatar-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/qatar-parfum-roja-parfums-844534.jpg?v=1756742135",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/qatar-50ml",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Reckless Pour Femme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 26400,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 26400,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/reckless-femme-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/reckless-pour-femme-eau-de-parfum-roja-parfums-220908.jpg?v=1756742025",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/reckless-femme-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Reckless Pour Homme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 38200,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 38200,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/reckless-homme"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/reckless-pour-homme-parfum-roja-parfums-173904.jpg?v=1756742112",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/reckless-homme",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "ROJA",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 321500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 321500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/roja"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/roja-parfum-roja-parfums-100ml-parfum-324480.jpg?v=1770664960",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/roja",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Scandal Pour Femme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 26400,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 75,
+        "price_usd_cents": 26400,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/scandal-femme-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/scandal-pour-femme-eau-de-parfum-roja-parfums-75ml-edp-791942.jpg?v=1758543937",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/scandal-femme-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Scandal Pour Homme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 38200,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 38200,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/scandal-homme"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 26600,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/scandal-homme"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/scandal-pour-homme-parfum-roja-parfums-142522.jpg?v=1758552945",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/scandal-homme",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Scandal Pour Homme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 26600,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 26600,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/scandal-edp"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 38200,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/scandal-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/scandal-pour-homme-eau-de-parfum-roja-parfums-100ml-edp-899451.jpg?v=1758540103",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/scandal-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Serenity Blend",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 45000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 45000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/serenity-blend"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/serenity-blend-eau-de-parfum-roja-parfums-100ml-edp-637460.jpg?v=1773839031",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/serenity-blend",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Sultanate of Oman",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/oman"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/sultanate-of-oman-parfum-roja-parfums-675015.jpg?v=1756742138",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/oman",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Sweetie Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 41000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 41000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/sweetie-aoud-50ml"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 79000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/sweetie-aoud-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/sweetie-aoud-parfum-roja-parfums-50ml-parfum-405993.jpg?v=1756741977",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/sweetie-aoud-50ml",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Sweetie Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 20000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/sweetie-aoud-hair-perfume"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/sweetie-aoud-hair-perfume-roja-parfums-50ml-hair-perfume-892888.jpg?v=1756741677",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/sweetie-aoud-hair-perfume",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Taif Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 55300,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 55300,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/taif-aoud"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/taif-aoud-parfum-roja-parfums-267990.jpg?v=1756742044",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/taif-aoud",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Taif Aoud",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 41000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 41000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/taif-aoud-50ml"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 79000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/taif-aoud-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/taif-aoud-parfum-roja-parfums-50ml-parfum-145516.jpg?v=1756741982",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/taif-aoud-50ml",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Tea Time In The Conservatory",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 45000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 750,
+        "price_usd_cents": 45000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/tea-time-in-the-conservatory-diffuser-refill"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/tea-time-in-the-conservatory-decanter-roja-parfums-750ml-444869.jpg?v=1758280543",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/tea-time-in-the-conservatory-diffuser-refill",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "The Aoud Travel Collection",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 24500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 24500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/aoud-travel"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/the-aoud-travel-collection-travel-set-roja-parfums-160580.jpg?v=1756742046",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/aoud-travel",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "The Aoud Travel Collection",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 26000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 10,
+        "price_usd_cents": 26000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/the-aoud-travel-collection"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/the-aoud-travel-collection-travel-set-roja-parfums-5x10ml-914502.jpg?v=1756741838",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/the-aoud-travel-collection",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "The Isola Travel Collection",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 22500,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 40,
+        "price_usd_cents": 22500,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/the-isola-travel-collection"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/the-isola-travel-collection-travel-collection-roja-parfums-819775.jpg?v=1756741736",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/the-isola-travel-collection",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "United Arab Emirates",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40000,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40000,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/uae"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/united-arab-emirates-parfum-roja-parfums-262352.jpg?v=1756742137",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/uae",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "Vetiver Pour Homme",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 26600,
+    "prices": [
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 100,
+        "price_usd_cents": 26600,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/vetiver-edp"
+      },
+      {
+        "retailer": "roja-parfums-direct",
+        "size_ml": 50,
+        "price_usd_cents": 38200,
+        "is_decant": false,
+        "url": "https://www.rojaparfums.com/products/vetiver-edp"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/vetiver-pour-homme-eau-de-parfum-roja-parfums-100ml-edp-878591.jpg?v=1758539474",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/vetiver-edp",
+    "sources": [
+      "roja-parfums"
+    ]
+  },
+  {
+    "brand": "Roja Parfums",
+    "name": "‍Serenity Blend Eau De Parfum Parfum 2ml (Gift)",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0554/4702/7869/files/serenity-blend-eau-de-parfum-parfum-2ml-gift-roja-parfums-347192.jpg?v=1775737581",
+    "source": "roja-parfums",
+    "source_url": "https://www.rojaparfums.com/products/serenity-blend-eau-de-parfum-parfum-2ml-gift-sca_clone_freegift",
+    "sources": [
+      "roja-parfums"
+    ]
+  }
+]

@@ -1,0 +1,2413 @@
+[
+  {
+    "brand": "Commodity",
+    "name": "Bergamot",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/bergamot-archive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_V1_Bergamot.jpg?v=1730230702",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/bergamot-archive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Bois",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/bois-archive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_V1_Bois.jpg?v=1730230769",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/bois-archive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Bold Discovery Kit",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpaceKits_V2_Bold_1.png?v=1726769770",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/bold-discovery-kit",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Book",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/book-expressive"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/book-expressive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_BookExpressive_1.png?v=1718634031",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/book-expressive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Book",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/book-e-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_BookExpressive_1.png?v=1712862515",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/book-e-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Book+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/book-bold"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/book-bold"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Book_Bold.png?v=1718634209",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/book-bold",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Book+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/book-b-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Book_Bold_1.png?v=1712862573",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/book-b-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Book-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/book-personal"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/book-personal"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Book-Personal.png?v=1718634246",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/book-personal",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Book-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/book-p-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Book-Personal_1.png?v=1712862299",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/book-p-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Expressive Discovery Kit",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpaceKits_V2_Expressive.png?v=1722536821",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/expressive-discovery-kit",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Gin",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/gin-archive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_V1_Gin.jpg?v=1730230821",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/gin-archive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Gold",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/gold-expressive"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/gold-expressive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_GoldExpressive.png?v=1718635369",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/gold-expressive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Gold",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/gold-e-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_GoldExpressive_1.png?v=1712862750",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/gold-e-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Gold+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/gold-bold"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/gold-bold"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Gold_Bold.png?v=1718635414",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/gold-bold",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Gold+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/gold-b-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Gold_Bold_1.png?v=1712862801",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/gold-b-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Gold-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/gold-personal"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/gold-personal"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Gold-Personal.png?v=1718635452",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/gold-personal",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Gold-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/gold-p-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Gold-Personal_1.png?v=1712862694",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/gold-p-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Ice(d)",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/iced-expressive"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/iced-expressive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Ice_d_Expressive.jpg?v=1761770480",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/iced-expressive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Ice(d)",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/iced-e-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Ice_d_Expressive.jpg?v=1761773142",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/iced-e-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Ice(d)+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/iced-bold"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/iced-bold"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Scent_Space_100ml_V2_Ice_d_Bold.jpg?v=1761601595",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/iced-bold",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Ice(d)+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/iced-b-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Ice_d_Bold.jpg?v=1761773169",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/iced-b-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Ice(d)-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/iced-personal"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/iced-personal"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Ice_d_-Personal_a72e3db5-9792-45b6-84ed-e557ba97392f.jpg?v=1761772112",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/iced-personal",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Ice(d)-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/iced-p-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Ice_d_-Personal.jpg?v=1761773086",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/iced-p-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Juice",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/juice-expressive"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/juice-expressive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_JuiceExpressive.png?v=1715201206",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/juice-expressive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Juice",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/juice-e-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_JuiceExpressive_1.png?v=1712864087",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/juice-e-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Juice+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/juice-bold"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/juice-bold"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Juice_Bold_1.png?v=1715374241",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/juice-bold",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Juice+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/juice-b-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Juice_Bold_1.png?v=1712864283",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/juice-b-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Juice-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/juice-personal"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/juice-personal"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Juice-Personal_1.png?v=1715374264",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/juice-personal",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Juice-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/juice-p-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2__Juice-Personal_1.png?v=1712864026",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/juice-p-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Magnolia",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/magnolia-archive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_V1_Magnolia.jpg?v=1730230870",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/magnolia-archive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Milk",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-expressive"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-expressive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_MilkExpressive.png?v=1718635539",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/milk-expressive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Milk",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-e-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_MilkExpressive_1.png?v=1712863449",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/milk-e-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Milk Orchid",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-orchid-expressive"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-orchid-expressive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Scent_Space_100ml_V2_Milk_Orchid_Expressive.jpg?v=1774009345",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/milk-orchid-expressive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Milk Orchid",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-orchid-e-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_MilkOrchidExpressive.jpg?v=1773878128",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/milk-orchid-e-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Milk+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-bold"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-bold"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Milk_Bold.png?v=1718635580",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/milk-bold",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Milk+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-b-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Milk_Bold_1.png?v=1712863520",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/milk-b-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Milk-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-personal"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-personal"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Milk-Personal.png?v=1718635618",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/milk-personal",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Milk-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/milk-p-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Milk-Personal_1.png?v=1712862852",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/milk-p-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Mimosa",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/mimosa-archive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_V1_Mimosa.jpg?v=1730230894",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/mimosa-archive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Moss",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/moss-expressive"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/moss-expressive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_MossExpressive.png?v=1718635702",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/moss-expressive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Moss",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/moss-e-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_MossExpressive.png?v=1712863627",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/moss-e-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Moss+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/moss-bold"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/moss-bold"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Moss_Bold.png?v=1718635665",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/moss-bold",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Moss+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/moss-b-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Moss_Bold.png?v=1714081457",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/moss-b-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Moss-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/moss-personal"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/moss-personal"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Moss-Personal.png?v=1718635766",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/moss-personal",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Moss-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/moss-p-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Moss-Personal.png?v=1712863572",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/moss-p-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Nectar",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/nectar-archive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_V1_Nectar.jpg?v=1730230921",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/nectar-archive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Orris",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/orris-archive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_V1_Orris.jpg?v=1752009449",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/orris-archive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Paper",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/paper-expressive"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/paper-expressive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_PaperExpressive.png?v=1718635812",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/paper-expressive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Paper",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/paper-e-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_PaperExpressive.png?v=1712863834",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/paper-e-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Paper+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/paper-bold"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/paper-bold"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Paper_Bold.png?v=1718635849",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/paper-bold",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Paper+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/paper-b-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Paper_Bold.png?v=1712863911",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/paper-b-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Paper-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/paper-personal"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/paper-personal"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Paper-Personal.png?v=1718635887",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/paper-personal",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Paper-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/paper-p-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Paper-Personal.png?v=1712863777",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/paper-p-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Personal Discovery Kit",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpaceKits_V2_Personal.png?v=1722536870",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/personal-discovery-kit",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Rain",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/rain-archive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_V1_Rain_1.jpg?v=1730230959",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/rain-archive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "TEST PRODUCT",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_Components_V1_WithCallouts_bca79197-cd77-4b58-bbd1-e1eaacedfb6a.jpg?v=1771252751",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/test-product-2",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Velvet",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/velvet-expressive"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/velvet-expressive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_VelvetExpressive.png?v=1718635935",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/velvet-expressive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Velvet",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/velvet-e-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_VelvetExpressive.png?v=1728488020",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/velvet-e-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Velvet+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/velvet-bold"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/velvet-bold"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Velvet_Bold.png?v=1718727085",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/velvet-bold",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Velvet+",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 30,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/velvet-b-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace30ml_V2_Velvet_Bold.png?v=1728488105",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/velvet-b-30ml",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Velvet-",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/velvet-personal"
+      },
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 10,
+        "price_usd_cents": 3400,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/velvet-personal"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_ScentSpace100ml_V2_Velvet-Personal.png?v=1718654364",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/velvet-personal",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "W*****y",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/w-y-archive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_V1_Whiskey.jpg?v=1730231606",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/w-y-archive",
+    "sources": [
+      "commodity"
+    ]
+  },
+  {
+    "brand": "Commodity",
+    "name": "Wool",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "commodity-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.commodityfragrances.com/products/wool-archive"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0253/4293/5121/files/PPage_72dpi_Editions_Archive100ml_V1_Wool_1.jpg?v=1730231688",
+    "source": "commodity",
+    "source_url": "https://www.commodityfragrances.com/products/wool-archive",
+    "sources": [
+      "commodity"
+    ]
+  }
+]

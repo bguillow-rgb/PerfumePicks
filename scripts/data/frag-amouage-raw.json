@@ -1,0 +1,4733 @@
+[
+  {
+    "brand": "Amouage",
+    "name": "Beach Hut Man",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mint",
+      "Galbanum",
+      "Orange Blossom"
+    ],
+    "heart_notes": [
+      "Ivy",
+      "Vetiver",
+      "Moss"
+    ],
+    "base_notes": [
+      "Woody Notes",
+      "Myrrh",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "green",
+      "woody",
+      "aromatic",
+      "earthy",
+      "mossy",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "woody": 4,
+      "aromatic": 4,
+      "earthy": 3,
+      "mossy": 2,
+      "fresh": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46336.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Beach-Hut-Man-46336.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Cristal & Gold Man",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Aldehydes",
+      "Honey",
+      "Frankincense",
+      "Neroli",
+      "Petitgrain",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Heliotrope",
+      "Jasmine",
+      "Damask Rose",
+      "Ylang-Ylang",
+      "Orris Root"
+    ],
+    "base_notes": [
+      "Civet",
+      "Ambergris",
+      "Labdanum",
+      "Sandalwood",
+      "Patchouli",
+      "Vetiver",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "musky",
+      "animalic",
+      "powdery",
+      "amber",
+      "aldehydic",
+      "woody"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "animalic": 5,
+      "powdery": 5,
+      "amber": 5,
+      "aldehydic": 3,
+      "woody": 3,
+      "fresh": 3,
+      "floral": 3,
+      "vanilla": 3,
+      "honey": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.88160.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Cristal-Gold-Man-88160.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Cristal & Gold Woman",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Neroli",
+      "Petitgrain",
+      "Frankincense",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Jasmine",
+      "Heliotrope",
+      "Ylang-Ylang",
+      "Orris Root"
+    ],
+    "base_notes": [
+      "Amber",
+      "Civet",
+      "Bourbon Vanilla",
+      "Vetiver",
+      "Labdanum",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "aldehydic",
+      "powdery",
+      "rose",
+      "fresh",
+      "amber",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "aldehydic": 5,
+      "powdery": 4,
+      "rose": 4,
+      "fresh": 4,
+      "amber": 4,
+      "white floral": 4,
+      "animalic": 4,
+      "vanilla": 4,
+      "musky": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.88159.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Cristal-Gold-Woman-88159.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Dia Man",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Incense",
+      "Cardamom",
+      "Labdanum",
+      "Bitter Orange"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Plum",
+      "Orris Root",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Brazilian Rosewood",
+      "Leather",
+      "Amber",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "woody",
+      "amber",
+      "floral",
+      "warm spicy",
+      "earthy",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "amber": 5,
+      "floral": 4,
+      "warm spicy": 4,
+      "earthy": 3,
+      "fresh": 3,
+      "aromatic": 3,
+      "fruity": 3,
+      "balsamic": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1110.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Dia-Man-1110.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Dia Woman",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Cyclamen",
+      "Violet Leaf",
+      "Bergamot",
+      "Sage",
+      "Tarragon",
+      "Fig"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Turkish Rose Oil",
+      "Orris Root",
+      "Orange Blossom",
+      "Peach Blossom"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Heliotrope",
+      "Sandalwood",
+      "Incense",
+      "Cedar",
+      "Vanilla",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "fresh",
+      "floral",
+      "aldehydic",
+      "powdery",
+      "rose",
+      "woody"
+    ],
+    "accord_intensity": {
+      "fresh": 5,
+      "floral": 5,
+      "aldehydic": 4,
+      "powdery": 4,
+      "rose": 4,
+      "woody": 3,
+      "musky": 3,
+      "soapy": 3,
+      "iris": 3,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1109.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Dia-Woman-1109.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Epic Man",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Pink Pepper",
+      "Olibanum",
+      "Saffron",
+      "Nutmeg",
+      "Cardamom",
+      "Caraway",
+      "Mace",
+      "Myrtle"
+    ],
+    "heart_notes": [
+      "Myrrh",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Incense",
+      "Agarwood (Oud)",
+      "Leather",
+      "Castoreum",
+      "Patchouli",
+      "Cedar",
+      "Sandalowood",
+      "Styrax",
+      "Musk"
+    ],
+    "top_accords": [
+      "amber",
+      "warm spicy",
+      "fresh spicy",
+      "smoky",
+      "woody",
+      "leather"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "warm spicy": 5,
+      "fresh spicy": 4,
+      "smoky": 4,
+      "woody": 3,
+      "leather": 3,
+      "balsamic": 3,
+      "aromatic": 3,
+      "oud": 3,
+      "musky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6537.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Epic-Man-6537.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Epic Woman",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Caraway",
+      "Cinnamon",
+      "Pink Nerium Oleander"
+    ],
+    "heart_notes": [
+      "Damask Rose",
+      "Tea",
+      "Geranium",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Agarwood (Oud)",
+      "Olibanum",
+      "Patchouli",
+      "Amber",
+      "Sandalowood",
+      "Guaiac Wood",
+      "Vanilla",
+      "Orris Root",
+      "Musk"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "rose",
+      "woody",
+      "warm spicy",
+      "aromatic",
+      "amber"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "rose": 4,
+      "woody": 4,
+      "warm spicy": 4,
+      "aromatic": 4,
+      "amber": 3,
+      "oud": 3,
+      "powdery": 3,
+      "floral": 3,
+      "cinnamon": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6538.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Epic-Woman-6538.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Gold Man",
+    "release_year": 1983,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lily-of-the-Valley",
+      "Rose Hip",
+      "Incense"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orris Root",
+      "Myrrh"
+    ],
+    "base_notes": [
+      "Civet",
+      "Musk",
+      "Oakmoss",
+      "Amber",
+      "Sandalwood",
+      "Patchouli",
+      "Cedar"
+    ],
+    "top_accords": [
+      "musky",
+      "white floral",
+      "amber",
+      "powdery",
+      "animalic",
+      "woody"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "white floral": 5,
+      "amber": 4,
+      "powdery": 4,
+      "animalic": 4,
+      "woody": 3,
+      "rose": 3,
+      "warm spicy": 3,
+      "earthy": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.918.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Gold-Man-918.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Gold Woman",
+    "release_year": 1983,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lily-of-the-Valley",
+      "Rose",
+      "Incense"
+    ],
+    "heart_notes": [
+      "Incense",
+      "Jasmine",
+      "Orris Root",
+      "Myrrh",
+      "Labdanum"
+    ],
+    "base_notes": [
+      "Civet",
+      "Musk",
+      "Sandalwood",
+      "Amber",
+      "Cedar",
+      "Oakmoss",
+      "Ambergris",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "amber",
+      "white floral",
+      "powdery",
+      "musky",
+      "woody",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "white floral": 4,
+      "powdery": 4,
+      "musky": 4,
+      "woody": 3,
+      "animalic": 3,
+      "rose": 3,
+      "warm spicy": 3,
+      "balsamic": 3,
+      "iris": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.917.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Gold-Woman-917.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Guidance Hair Perfume",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Hazelnut",
+      "Pear",
+      "Frankincense"
+    ],
+    "heart_notes": [
+      "Osmanthus",
+      "Jasmine Sambac",
+      "Rose",
+      "Saffron"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Sandalwood",
+      "Ambergris",
+      "Akigalawood"
+    ],
+    "top_accords": [
+      "fruity",
+      "floral",
+      "woody",
+      "nutty",
+      "vanilla",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "floral": 4,
+      "woody": 4,
+      "nutty": 4,
+      "vanilla": 4,
+      "sweet": 4,
+      "rose": 3,
+      "white floral": 3,
+      "amber": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.116529.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Guidance-Hair-Perfume-116529.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Honour Man",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Pepper",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Geranium",
+      "elemi",
+      "Nutmeg"
+    ],
+    "base_notes": [
+      "Incense",
+      "Vetiver",
+      "Virginia Cedar",
+      "Musk",
+      "Patchouli",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "woody",
+      "warm spicy",
+      "amber",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 4,
+      "woody": 3,
+      "warm spicy": 3,
+      "amber": 3,
+      "balsamic": 3,
+      "soft spicy": 3,
+      "musky": 3,
+      "smoky": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12763.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Honour-Man-12763.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Honour Woman",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Rhuburb",
+      "Pepper",
+      "Coriander"
+    ],
+    "heart_notes": [
+      "Gardenia",
+      "Tuberose",
+      "Jasmine",
+      "Lily-of-the-Valley",
+      "Carnation"
+    ],
+    "base_notes": [
+      "Amber",
+      "Incense",
+      "Opoponax",
+      "Vetiver",
+      "Leather"
+    ],
+    "top_accords": [
+      "white floral",
+      "tuberose",
+      "green",
+      "aromatic",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "tuberose": 3,
+      "green": 3,
+      "aromatic": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12762.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Honour-Woman-12762.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Imitation Man",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Citron",
+      "Nutmeg",
+      "Black Pepper"
+    ],
+    "heart_notes": [
+      "Turkish Rose",
+      "Orris",
+      "Violet"
+    ],
+    "base_notes": [
+      "Leather",
+      "Vetiver",
+      "Patchouli",
+      "Castoreum",
+      "Myrhh"
+    ],
+    "top_accords": [
+      "leather",
+      "woody",
+      "powdery",
+      "rose",
+      "fresh spicy",
+      "iris"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "woody": 4,
+      "powdery": 4,
+      "rose": 4,
+      "fresh spicy": 4,
+      "iris": 4,
+      "earthy": 4,
+      "violet": 3,
+      "floral": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49850.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Imitation-Man-49850.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Imitation Woman",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Ylang-Ylang",
+      "Orange Blossom",
+      "Jasmine",
+      "Rose"
+    ],
+    "heart_notes": [
+      "Black Currant",
+      "Aldehydes",
+      "Licorice"
+    ],
+    "base_notes": [
+      "Incense",
+      "Patchouli",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "woody",
+      "fruity",
+      "aldehydic",
+      "soft spicy",
+      "white floral",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "fruity": 5,
+      "aldehydic": 4,
+      "soft spicy": 4,
+      "white floral": 4,
+      "balsamic": 3,
+      "sweet": 3,
+      "fresh": 3,
+      "amber": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49851.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Imitation-Woman-49851.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Interlude Black Iris",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Violet Leaf",
+      "Rosemary",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orris",
+      "Olibanum",
+      "Myrhh",
+      "Amber",
+      "Labdanum",
+      "Vanilla"
+    ],
+    "base_notes": [
+      "Leather",
+      "Agarwood (Oud)",
+      "Sandalwood",
+      "Patchouli",
+      "Cedar"
+    ],
+    "top_accords": [
+      "amber",
+      "woody",
+      "powdery",
+      "iris",
+      "fresh spicy",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 4,
+      "powdery": 3,
+      "iris": 3,
+      "fresh spicy": 3,
+      "warm spicy": 3,
+      "aromatic": 3,
+      "leather": 3,
+      "balsamic": 3,
+      "oud": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.60929.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Interlude-Black-Iris-60929.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Interlude Man",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Oregano",
+      "Pepper",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Incense",
+      "Opoponax",
+      "Amber",
+      "Labdanum"
+    ],
+    "base_notes": [
+      "Agarwood (Oud)",
+      "Leather",
+      "Sandalwood",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "amber",
+      "balsamic",
+      "fresh spicy",
+      "smoky",
+      "warm spicy",
+      "woody"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "balsamic": 3,
+      "fresh spicy": 3,
+      "smoky": 3,
+      "warm spicy": 3,
+      "woody": 3,
+      "oud": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15294.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Interlude-Man-15294.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Interlude Woman",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Marigold",
+      "Ginger",
+      "Grapefruit",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Incense",
+      "Walnut",
+      "Immortelle",
+      "Kiwi",
+      "Honey",
+      "Opoponax",
+      "Coffee",
+      "Sandalwood",
+      "Rose",
+      "Orange Blossom",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Leather",
+      "Benzoin",
+      "Agarwood (Oud)",
+      "Amber",
+      "Sandalwood",
+      "Tonka Bean",
+      "Oakmoss",
+      "Vanilla",
+      "Musk"
+    ],
+    "top_accords": [
+      "amber",
+      "sweet",
+      "warm spicy",
+      "balsamic",
+      "woody",
+      "herbal"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "sweet": 4,
+      "warm spicy": 4,
+      "balsamic": 4,
+      "woody": 3,
+      "herbal": 3,
+      "smoky": 3,
+      "nutty": 3,
+      "leather": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15295.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Interlude-Woman-15295.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Journey Man",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sichuan Pepper",
+      "Cardamom",
+      "Bergamot",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Tobacco Leaf",
+      "Incense",
+      "Juniper Berries"
+    ],
+    "base_notes": [
+      "Leather",
+      "Cypriol Oil or Nagarmotha",
+      "Tonka Bean",
+      "Musk"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "citrus",
+      "amber",
+      "warm spicy",
+      "tobacco"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 4,
+      "citrus": 4,
+      "amber": 3,
+      "warm spicy": 3,
+      "tobacco": 3,
+      "smoky": 3,
+      "woody": 3,
+      "sweet": 3,
+      "leather": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.25251.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Journey-Man-25251.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Journey Woman",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Osmanthus",
+      "Apricot",
+      "Nutmeg",
+      "Jasmine",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Honey",
+      "Mimosa",
+      "Jasmine Sambac",
+      "Cedar"
+    ],
+    "base_notes": [
+      "Tobacco",
+      "Saffron",
+      "Vanila",
+      "Cypriol Oil or Nagarmotha",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "sweet",
+      "honey",
+      "powdery",
+      "tobacco"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 4,
+      "sweet": 4,
+      "honey": 4,
+      "powdery": 4,
+      "tobacco": 3,
+      "warm spicy": 3,
+      "yellow floral": 3,
+      "lactonic": 3,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.25252.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Journey-Woman-25252.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Jubilation 25 Woman",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Ylang-Ylang",
+      "Rose",
+      "Tarragon",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Incense",
+      "Rose",
+      "Labdanum",
+      "Artemisia"
+    ],
+    "base_notes": [
+      "Myrrh",
+      "Amber",
+      "Patchouli",
+      "Vetiver",
+      "Musk"
+    ],
+    "top_accords": [
+      "amber",
+      "aromatic",
+      "woody",
+      "balsamic",
+      "warm spicy",
+      "yellow floral"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "aromatic": 3,
+      "woody": 3,
+      "balsamic": 3,
+      "warm spicy": 3,
+      "yellow floral": 3,
+      "sweet": 3,
+      "smoky": 2,
+      "rose": 2,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2367.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Jubilation-25-Woman-2367.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Jubilation XXV Man",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Blackberry",
+      "Olibanum",
+      "Labdanum",
+      "Orange",
+      "Coriander",
+      "Tarragon"
+    ],
+    "heart_notes": [
+      "Honey",
+      "Guaiac Wood",
+      "Cinnamon",
+      "Clove",
+      "Bay Leaf",
+      "Rose",
+      "Orchid",
+      "Celery Seeds"
+    ],
+    "base_notes": [
+      "Opoponax",
+      "Agarwood (Oud)",
+      "Myrrh",
+      "Patchouli",
+      "Ambergris",
+      "Musk",
+      "Cedar",
+      "Immortelle",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "amber",
+      "sweet",
+      "warm spicy",
+      "woody",
+      "balsamic",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "sweet": 4,
+      "warm spicy": 3,
+      "woody": 3,
+      "balsamic": 3,
+      "fruity": 3,
+      "fresh spicy": 3,
+      "oud": 3,
+      "aromatic": 3,
+      "honey": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2366.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Jubilation-XXV-Man-2366.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Lyric Man",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lime",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Angelica",
+      "Ginger",
+      "Orange Blossom",
+      "Saffron",
+      "Nutmeg",
+      "Galbanum"
+    ],
+    "base_notes": [
+      "Musk",
+      "Incense",
+      "Pine Tree",
+      "Sandalwood",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "rose",
+      "citrus",
+      "musky",
+      "powdery",
+      "woody",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "citrus": 5,
+      "musky": 4,
+      "powdery": 3,
+      "woody": 3,
+      "fresh spicy": 3,
+      "amber": 3,
+      "floral": 3,
+      "aromatic": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4622.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Lyric-Man-4622.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Lyric Woman",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Cardamom",
+      "Cinnamon",
+      "Ginger",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Geranium",
+      "Ylang-Ylang",
+      "Orris Root",
+      "Angelica",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Incense",
+      "Sandalwood",
+      "Woodsy Notes",
+      "Musk",
+      "Patchouli",
+      "Tonka Bean",
+      "Oakmoss",
+      "Vanilla",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "woody",
+      "rose",
+      "amber",
+      "aromatic",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "woody": 5,
+      "rose": 4,
+      "amber": 3,
+      "aromatic": 3,
+      "powdery": 3,
+      "fresh spicy": 3,
+      "balsamic": 3,
+      "smoky": 3,
+      "musky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4623.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Lyric-Woman-4623.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Memoir Man",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Wormwood",
+      "Mint",
+      "Basil"
+    ],
+    "heart_notes": [
+      "Incense",
+      "Lavender",
+      "Rose"
+    ],
+    "base_notes": [
+      "Tobacco",
+      "Leather",
+      "Sandalwood",
+      "Guaiac Wood",
+      "Vetiver",
+      "oak moss",
+      "Amber",
+      "Vanille",
+      "Musk"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "green",
+      "amber",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "woody": 4,
+      "green": 3,
+      "amber": 3,
+      "smoky": 3,
+      "balsamic": 3,
+      "warm spicy": 2,
+      "tobacco": 2,
+      "leather": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10145.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Memoir-Man-10145.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Memoir Woman",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Wormwood",
+      "Cardamom",
+      "Pink Pepper",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Incense",
+      "Clove",
+      "Woodsy Notes",
+      "Rose",
+      "White Flowers",
+      "Pepper",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Leather",
+      "French labdanum",
+      "Castoreum",
+      "Styrax",
+      "oak moss",
+      "Musk"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "amber",
+      "smoky",
+      "woody",
+      "leather",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "amber": 5,
+      "smoky": 4,
+      "woody": 4,
+      "leather": 3,
+      "aromatic": 3,
+      "balsamic": 3,
+      "musky": 3,
+      "white floral": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10146.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Memoir-Woman-10146.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Myths Man",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Chrysanthemum",
+      "Orris"
+    ],
+    "heart_notes": [
+      "elemi",
+      "Rum",
+      "Vetiver",
+      "Rose"
+    ],
+    "base_notes": [
+      "Ash",
+      "Leather",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "smoky",
+      "aromatic",
+      "woody",
+      "leather",
+      "herbal",
+      "iris"
+    ],
+    "accord_intensity": {
+      "smoky": 5,
+      "aromatic": 4,
+      "woody": 4,
+      "leather": 4,
+      "herbal": 4,
+      "iris": 3,
+      "fresh spicy": 3,
+      "earthy": 3,
+      "amber": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.38259.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Myths-Man-38259.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Myths Woman",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Chrysanthemum",
+      "Narcissus",
+      "Violet Leaf",
+      "Labdanum"
+    ],
+    "heart_notes": [
+      "Carnation",
+      "Ambergris",
+      "Patchouli"
+    ],
+    "base_notes": [
+      "Moss",
+      "Leather",
+      "Musk"
+    ],
+    "top_accords": [
+      "mossy",
+      "herbal",
+      "earthy",
+      "floral",
+      "yellow floral",
+      "amber"
+    ],
+    "accord_intensity": {
+      "mossy": 5,
+      "herbal": 5,
+      "earthy": 5,
+      "floral": 4,
+      "yellow floral": 4,
+      "amber": 4,
+      "woody": 4,
+      "aromatic": 4,
+      "animalic": 4,
+      "leather": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.38260.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Myths-Woman-38260.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Overture Man",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Cognac",
+      "Cumin",
+      "Cardamom",
+      "Nutmeg",
+      "Saffron",
+      "Ginger",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Myrrh",
+      "Cinnamon",
+      "Benzoin",
+      "Labdanum",
+      "Mastic or Lentisque",
+      "Patchouli",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Animal notes",
+      "Smoke",
+      "Incense",
+      "Leather",
+      "Sandalwood",
+      "Clary Sage"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "amber",
+      "woody",
+      "smoky",
+      "fresh spicy",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "amber": 5,
+      "woody": 4,
+      "smoky": 4,
+      "fresh spicy": 3,
+      "animalic": 3,
+      "balsamic": 3,
+      "aromatic": 3,
+      "leather": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.55859.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Overture-Man-55859.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Overture Woman",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Brandy",
+      "Apple",
+      "Saffron",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Benzoin",
+      "Myrhh",
+      "Cinnamon",
+      "May Rose",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Leather",
+      "Olibanum",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "amber",
+      "leather",
+      "fruity",
+      "woody",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "amber": 5,
+      "leather": 4,
+      "fruity": 3,
+      "woody": 3,
+      "fresh spicy": 3,
+      "rose": 2,
+      "cinnamon": 2,
+      "fresh": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.62331.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Overture-Woman-62331.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Portrayal Man",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Violet Leaves"
+    ],
+    "heart_notes": [
+      "Vetiver"
+    ],
+    "base_notes": [
+      "Cade oil"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "ozonic",
+      "aquatic",
+      "fresh spicy",
+      "green"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 4,
+      "ozonic": 4,
+      "aquatic": 3,
+      "fresh spicy": 3,
+      "green": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54460.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Portrayal-Man-54460.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Portrayal Woman",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Jasmine"
+    ],
+    "heart_notes": [
+      "Tobacco",
+      "Vanilla"
+    ],
+    "base_notes": [
+      "elemi"
+    ],
+    "top_accords": [
+      "white floral",
+      "tobacco",
+      "vanilla",
+      "aromatic",
+      "sweet",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "tobacco": 4,
+      "vanilla": 3,
+      "aromatic": 3,
+      "sweet": 3,
+      "balsamic": 3,
+      "conifer": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54459.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Portrayal-Woman-54459.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Reflection Man",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Rosemary",
+      "Pink Pepper",
+      "Petitgrain"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Neroli",
+      "Orris Root",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Cedar",
+      "Vetiver",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "woody",
+      "white floral",
+      "aromatic",
+      "powdery",
+      "fresh spicy",
+      "iris"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "white floral": 4,
+      "aromatic": 3,
+      "powdery": 3,
+      "fresh spicy": 3,
+      "iris": 3,
+      "citrus": 2,
+      "earthy": 2,
+      "floral": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.920.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Reflection-Man-920.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Reflection Woman",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Green Leaves",
+      "Freesia",
+      "Water Violet"
+    ],
+    "heart_notes": [
+      "Magnolia",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Sandalwood",
+      "Amber"
+    ],
+    "top_accords": [
+      "floral",
+      "green",
+      "powdery",
+      "violet",
+      "white floral",
+      "woody"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "green": 4,
+      "powdery": 2,
+      "violet": 2,
+      "white floral": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.919.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Reflection-Woman-919.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Sunshine Woman",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Almond",
+      "Black Currant",
+      "Davana"
+    ],
+    "heart_notes": [
+      "Osmanthus",
+      "Vanilla",
+      "Magnolia",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "White Tobacco",
+      "Papyrus",
+      "Patchouli",
+      "Cade oil"
+    ],
+    "top_accords": [
+      "fruity",
+      "floral",
+      "white floral",
+      "vanilla",
+      "almond",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "floral": 4,
+      "white floral": 4,
+      "vanilla": 3,
+      "almond": 3,
+      "soft spicy": 3,
+      "woody": 3,
+      "nutty": 2,
+      "sweet": 2,
+      "lactonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28182.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Sunshine-Woman-28182.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Amber Sogara",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Aldehydes"
+    ],
+    "heart_notes": [
+      "Rose"
+    ],
+    "base_notes": [
+      "Ambrette"
+    ],
+    "top_accords": [
+      "aldehydic",
+      "musky",
+      "floral",
+      "rose",
+      "fresh",
+      "soapy"
+    ],
+    "accord_intensity": {
+      "aldehydic": 5,
+      "musky": 4,
+      "floral": 4,
+      "rose": 4,
+      "fresh": 4,
+      "soapy": 3,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.81279.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Amber-Sogara-81279.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Incense Rori",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "woody",
+      "mossy",
+      "fresh spicy",
+      "earthy",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 4,
+      "mossy": 4,
+      "fresh spicy": 3,
+      "earthy": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71112.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Incense-Rori-71112.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Leather Sadah",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "leather",
+      "vanilla",
+      "oud",
+      "animalic",
+      "smoky",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "vanilla": 4,
+      "oud": 4,
+      "animalic": 3,
+      "smoky": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71107.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Leather-Sadah-71107.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Luban Al Akhdar",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "fresh",
+      "aldehydic",
+      "citrus",
+      "fresh spicy",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "fresh": 3,
+      "aldehydic": 3,
+      "citrus": 3,
+      "fresh spicy": 3,
+      "warm spicy": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.110974.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Luban-Al-Akhdar-110974.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Orris Wakan",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "powdery",
+      "iris",
+      "woody",
+      "musky",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "iris": 4,
+      "woody": 4,
+      "musky": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71109.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Orris-Wakan-71109.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Oud Kumzar",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "oud",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "oud": 5,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.92554.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Oud-Kumzar-92554.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Oud Ulya",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "leather",
+      "oud",
+      "smoky",
+      "animalic",
+      "musky",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "oud": 4,
+      "smoky": 4,
+      "animalic": 3,
+      "musky": 3,
+      "vanilla": 3,
+      "woody": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71108.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Oud-Ulya-71108.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Rose Aqor",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "rose",
+      "woody",
+      "warm spicy",
+      "fresh spicy",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "rose": 4,
+      "woody": 4,
+      "warm spicy": 3,
+      "fresh spicy": 3,
+      "balsamic": 2,
+      "floral": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71110.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Rose-Aqor-71110.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Saffron Hamra",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [
+      "Saffron",
+      "Cade oil",
+      "Rose"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "aromatic",
+      "metallic",
+      "fresh spicy",
+      "rose",
+      "leather"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "aromatic": 4,
+      "metallic": 4,
+      "fresh spicy": 3,
+      "rose": 3,
+      "leather": 3,
+      "woody": 3,
+      "tobacco": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71113.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Saffron-Hamra-71113.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Santal Sohar",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Rose"
+    ],
+    "heart_notes": [
+      "Clove"
+    ],
+    "base_notes": [
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "woody",
+      "warm spicy",
+      "powdery",
+      "rose",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "warm spicy": 4,
+      "powdery": 3,
+      "rose": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.81278.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Santal-Sohar-81278.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Vanilla Barka",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [
+      "Vanilla",
+      "Tonka Bean",
+      "Olibanum"
+    ],
+    "top_accords": [
+      "vanilla",
+      "amber",
+      "sweet",
+      "warm spicy",
+      "fresh spicy",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "amber": 4,
+      "sweet": 3,
+      "warm spicy": 2,
+      "fresh spicy": 2,
+      "balsamic": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71111.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Vanilla-Barka-71111.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Line 618",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Frankincense",
+      "Pineapple",
+      "Peach",
+      "Black Pepper",
+      "Plum"
+    ],
+    "heart_notes": [
+      "Coconut Milk",
+      "Pine",
+      "Heliotrope"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Leather",
+      "Guaiac Wood",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "woody",
+      "sweet",
+      "fruity",
+      "coconut",
+      "amber",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "sweet": 4,
+      "fruity": 4,
+      "coconut": 4,
+      "amber": 4,
+      "fresh spicy": 3,
+      "powdery": 3,
+      "warm spicy": 3,
+      "tropical": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.121882.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Line-618-121882.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Lustre",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom",
+      "Orris"
+    ],
+    "heart_notes": [
+      "Sandalwood",
+      "Cedarwood",
+      "Patchouli"
+    ],
+    "base_notes": [
+      "Myrrh",
+      "Benzoin",
+      "Ambrarome",
+      "Styrax",
+      "Labdanum",
+      "Vanilla",
+      "Cypriol",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "amber",
+      "warm spicy",
+      "woody",
+      "balsamic",
+      "powdery",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "warm spicy": 4,
+      "woody": 4,
+      "balsamic": 3,
+      "powdery": 3,
+      "vanilla": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.97927.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Lustre-97927.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Oud Zuhal",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom",
+      "Black Pepper",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Patchouli",
+      "Assam Oud"
+    ],
+    "base_notes": [
+      "Indonesian Oud",
+      "Amber"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "fresh spicy",
+      "patchouli",
+      "aromatic",
+      "soft spicy",
+      "oud"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "fresh spicy": 3,
+      "patchouli": 3,
+      "aromatic": 3,
+      "soft spicy": 3,
+      "oud": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.125753.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Oud-Zuhal-125753.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Outlands",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Frankincense",
+      "Cardamom",
+      "elemi",
+      "Lemon",
+      "Bergamot",
+      "Sichuan Pepper"
+    ],
+    "heart_notes": [
+      "Patchouli",
+      "Anise",
+      "Coriander",
+      "Cumin",
+      "Saffron",
+      "Orange Blossom",
+      "Wormwood",
+      "Geranium",
+      "Rose"
+    ],
+    "base_notes": [
+      "Frankincense",
+      "Vanilla",
+      "Amber",
+      "Benzoin",
+      "Oud",
+      "Opoponax",
+      "Birch",
+      "Ambergris",
+      "Labdanum",
+      "Maltol",
+      "Musk"
+    ],
+    "top_accords": [
+      "amber",
+      "warm spicy",
+      "aromatic",
+      "fresh spicy",
+      "citrus",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "warm spicy": 4,
+      "aromatic": 4,
+      "fresh spicy": 3,
+      "citrus": 3,
+      "balsamic": 3,
+      "vanilla": 3,
+      "woody": 3,
+      "sweet": 2,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.97924.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Outlands-97924.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Reasons",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom",
+      "Pink Pepper",
+      "Hazelnut",
+      "Cinnamon"
+    ],
+    "heart_notes": [
+      "Pine",
+      "Cypriol",
+      "Davana",
+      "Cashmeran",
+      "White Amber",
+      "Patchouli"
+    ],
+    "base_notes": [
+      "Myrrh",
+      "Palo Santo",
+      "Sandalwood",
+      "Benzoin",
+      "Cedarwood",
+      "Oakmoss",
+      "Musk",
+      "Vetiver",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "woody",
+      "amber",
+      "warm spicy",
+      "aromatic",
+      "balsamic",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "amber": 3,
+      "warm spicy": 3,
+      "aromatic": 3,
+      "balsamic": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.97925.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Reasons-97925.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Reception",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Coriander",
+      "Pink Pepper",
+      "Coffee",
+      "Pine",
+      "Juniper",
+      "Lemon",
+      "Labdanum"
+    ],
+    "heart_notes": [
+      "Frankincense",
+      "Cedarwood",
+      "Patchouli"
+    ],
+    "base_notes": [
+      "Palo Santo",
+      "Vanilla",
+      "Musk",
+      "Cypriol"
+    ],
+    "top_accords": [
+      "aromatic",
+      "amber",
+      "woody",
+      "soft spicy",
+      "fresh spicy",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "amber": 4,
+      "woody": 4,
+      "soft spicy": 3,
+      "fresh spicy": 3,
+      "warm spicy": 3,
+      "coffee": 2,
+      "citrus": 2,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.110438.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Reception-110438.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Remain",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Frankincense",
+      "Pimento",
+      "Bergamot",
+      "Mandarin"
+    ],
+    "heart_notes": [
+      "Ylang Ylang",
+      "Lily",
+      "Jasmine",
+      "Juniper"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Vanilla",
+      "Patchouli",
+      "Ambergris",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "amber",
+      "vanilla",
+      "warm spicy",
+      "woody",
+      "white floral",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "vanilla": 4,
+      "warm spicy": 4,
+      "woody": 4,
+      "white floral": 3,
+      "sweet": 3,
+      "fresh spicy": 3,
+      "aromatic": 3,
+      "yellow floral": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.121883.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Remain-121883.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Sequence",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Raspberry",
+      "Lychee",
+      "Saffron"
+    ],
+    "heart_notes": [
+      "Tonka Bean",
+      "Rose",
+      "Osmanthus"
+    ],
+    "base_notes": [
+      "Leather",
+      "Oud",
+      "Amberwood"
+    ],
+    "top_accords": [
+      "fruity",
+      "leather",
+      "sweet",
+      "oud",
+      "animalic",
+      "amber"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "leather": 4,
+      "sweet": 3,
+      "oud": 3,
+      "animalic": 3,
+      "amber": 3,
+      "rose": 3,
+      "warm spicy": 2,
+      "tropical": 2,
+      "smoky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.121884.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Sequence-121884.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Sindbad",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Honey",
+      "Apricot",
+      "Pomegranate",
+      "Cardamom",
+      "Tangerine",
+      "Ginger",
+      "Mango",
+      "Pink Pepper",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Cappuccino",
+      "Black Tea",
+      "Davana"
+    ],
+    "base_notes": [
+      "Cedarwood",
+      "Cypriol",
+      "Vetiver",
+      "Tonka Bean",
+      "Vanilla",
+      "Patchouli",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "woody",
+      "sweet",
+      "fruity",
+      "aromatic",
+      "honey",
+      "green"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "sweet": 4,
+      "fruity": 4,
+      "aromatic": 3,
+      "honey": 3,
+      "green": 3,
+      "warm spicy": 3,
+      "citrus": 3,
+      "fresh spicy": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.116626.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Sindbad-116626.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Dia 40 Woman",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Musk",
+      "Cyclamen",
+      "Violet Leaf",
+      "Black Currant"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Carnation",
+      "Ylang-Ylang",
+      "Cistus Incanus",
+      "Bay Leaf",
+      "Orange Blossom",
+      "Tarragon"
+    ],
+    "base_notes": [
+      "Orris Root",
+      "Sandalwood",
+      "Amyris",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "aldehydic",
+      "fresh",
+      "floral",
+      "woody",
+      "powdery",
+      "musky"
+    ],
+    "accord_intensity": {
+      "aldehydic": 5,
+      "fresh": 4,
+      "floral": 4,
+      "woody": 4,
+      "powdery": 3,
+      "musky": 3,
+      "aromatic": 3,
+      "rose": 3,
+      "soapy": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.87957.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Dia-40-Woman-87957.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Epic 56 Woman",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Cumin",
+      "Cinnamon"
+    ],
+    "heart_notes": [
+      "Damask Rose",
+      "Jasmine Tea",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Olibanum",
+      "Agarwood (Oud)",
+      "Patchouli",
+      "Guaiac Wood",
+      "Amber",
+      "Sandalwood",
+      "Musk",
+      "Orris",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "rose",
+      "woody",
+      "amber",
+      "warm spicy",
+      "floral"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "rose": 5,
+      "woody": 4,
+      "amber": 4,
+      "warm spicy": 4,
+      "floral": 3,
+      "oud": 3,
+      "powdery": 3,
+      "soft spicy": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.69700.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Epic-56-Woman-69700.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Guidance 46",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Rose Water",
+      "Pear",
+      "Hazelnut",
+      "Bitter Almond",
+      "Frankincense",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Osmanthus",
+      "Saffron",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Akigalawood",
+      "Vanilla",
+      "Ambrette",
+      "Ambergris",
+      "Labdanum",
+      "Georgywood",
+      "Cypriol"
+    ],
+    "top_accords": [
+      "woody",
+      "fruity",
+      "nutty",
+      "floral",
+      "warm spicy",
+      "amber"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "fruity": 3,
+      "nutty": 3,
+      "floral": 3,
+      "warm spicy": 3,
+      "amber": 3,
+      "rose": 3,
+      "sweet": 3,
+      "almond": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.94033.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Guidance-46-94033.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Honour 43 Woman",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Rhubarb Leaf",
+      "Coriander",
+      "Pepper"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Lily-of-the-Valley",
+      "Jasmine",
+      "Carnation"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Vetiver",
+      "Opoponax",
+      "Labdanum",
+      "Olibanum",
+      "Leather"
+    ],
+    "top_accords": [
+      "white floral",
+      "tuberose",
+      "green",
+      "aromatic",
+      "floral",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "tuberose": 3,
+      "green": 3,
+      "aromatic": 3,
+      "floral": 2,
+      "fresh": 2,
+      "warm spicy": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.69701.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Honour-43-Woman-69701.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Interlude 53 Man",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Oregano",
+      "Pimento",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Incense",
+      "Amber",
+      "Opoponax",
+      "Labdanum"
+    ],
+    "base_notes": [
+      "Smoke",
+      "Agarwood (Oud)",
+      "Leather",
+      "Patchouli",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "amber",
+      "smoky",
+      "woody",
+      "balsamic",
+      "warm spicy",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "smoky": 4,
+      "woody": 3,
+      "balsamic": 3,
+      "warm spicy": 3,
+      "fresh spicy": 3,
+      "oud": 2,
+      "leather": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.64153.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Interlude-53-Man-64153.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Jubilation 40 Man",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Blackberry",
+      "Labdanum",
+      "Black Currant",
+      "Rosemary",
+      "Orange",
+      "Davana"
+    ],
+    "heart_notes": [
+      "Frankincense",
+      "Bay Leaf",
+      "Cinnamon",
+      "Cloves",
+      "Broom",
+      "Celery Seeds",
+      "Rose"
+    ],
+    "base_notes": [
+      "Opoponax",
+      "Agarwood (Oud)",
+      "Patchouli",
+      "Myrrh",
+      "Guaiac Wood",
+      "Moss",
+      "Musk",
+      "Ambergris",
+      "Cedar",
+      "Cistus Incanus"
+    ],
+    "top_accords": [
+      "amber",
+      "woody",
+      "fruity",
+      "warm spicy",
+      "balsamic",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 4,
+      "fruity": 3,
+      "warm spicy": 3,
+      "balsamic": 3,
+      "sweet": 3,
+      "fresh spicy": 3,
+      "aromatic": 3,
+      "oud": 2,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.87958.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Jubilation-40-Man-87958.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Purpose 50",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Frankincense",
+      "Pimento",
+      "Pink Pepper",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Sandalwood",
+      "Vetiver",
+      "Papyrus",
+      "Rose"
+    ],
+    "base_notes": [
+      "Akigalawood",
+      "Suede",
+      "Vanilla",
+      "Mystikal",
+      "Saffron"
+    ],
+    "top_accords": [
+      "woody",
+      "warm spicy",
+      "amber",
+      "oud",
+      "fresh spicy",
+      "leather"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "warm spicy": 4,
+      "amber": 3,
+      "oud": 3,
+      "fresh spicy": 2,
+      "leather": 2,
+      "aromatic": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.100897.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Purpose-50-100897.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Purpose 50 Royal Drop",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Frankincense",
+      "Allspice",
+      "Pink Pepper",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Papyrus",
+      "Rose",
+      "Vetiver",
+      "Sandalwood"
+    ],
+    "base_notes": [
+      "Saffron",
+      "Akigalawood",
+      "Vanilla",
+      "Suede",
+      "Mystikal"
+    ],
+    "top_accords": [
+      "woody",
+      "fresh spicy",
+      "warm spicy",
+      "leather",
+      "amber",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "fresh spicy": 4,
+      "warm spicy": 4,
+      "leather": 4,
+      "amber": 4,
+      "vanilla": 3,
+      "oud": 3,
+      "soft spicy": 2,
+      "rose": 2,
+      "metallic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.118476.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Purpose-50-Royal-Drop-118476.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Reflection 45 Man",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender",
+      "Juniper Berries",
+      "Cardamom",
+      "Clary Sage",
+      "Benzoin",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Jasmine",
+      "Neroli",
+      "Angelica",
+      "Tonka Bean",
+      "Vanilla"
+    ],
+    "base_notes": [
+      "Olibanum",
+      "Cedar",
+      "Sandalwood",
+      "Vetiver",
+      "Patchouli",
+      "Myrrh",
+      "Opoponax"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "amber",
+      "warm spicy",
+      "powdery",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 5,
+      "amber": 4,
+      "warm spicy": 4,
+      "powdery": 3,
+      "white floral": 3,
+      "fresh spicy": 3,
+      "iris": 3,
+      "lavender": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.69488.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Reflection-45-Man-69488.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Opus V – Woods Symphony",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Orris Root",
+      "Rum"
+    ],
+    "heart_notes": [
+      "Orris Root",
+      "Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Agarwood (Oud)",
+      "Dry Wood",
+      "Civet"
+    ],
+    "top_accords": [
+      "iris",
+      "woody",
+      "powdery",
+      "rose",
+      "oud",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "iris": 5,
+      "woody": 5,
+      "powdery": 4,
+      "rose": 4,
+      "oud": 4,
+      "white floral": 3,
+      "musky": 3,
+      "animalic": 3,
+      "floral": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.74283.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Opus-V-Woods-Symphony-74283.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Opus VII – Reckless Leather",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Fenugreek",
+      "Galbanum",
+      "Cardamom",
+      "Pink Pepper",
+      "Nutmeg"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Agarwood (Oud)",
+      "Ambergris",
+      "Patchouli",
+      "Ambroxan"
+    ],
+    "base_notes": [
+      "Olibanum",
+      "Cypriol Oil or Nagarmotha",
+      "Sandalwood",
+      "Costus",
+      "Musk"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "amber",
+      "woody",
+      "warm spicy",
+      "leather",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "amber": 5,
+      "woody": 4,
+      "warm spicy": 4,
+      "leather": 3,
+      "aromatic": 3,
+      "green": 3,
+      "animalic": 3,
+      "earthy": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.74284.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Opus-VII-Reckless-Leather-74284.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Opus XII – Rose Incense",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Olibanum",
+      "Ink",
+      "elemi"
+    ],
+    "heart_notes": [
+      "Damask Rose",
+      "Olibanum"
+    ],
+    "base_notes": [
+      "Myrrh",
+      "Sandalwood",
+      "Vanilla",
+      "Cedar"
+    ],
+    "top_accords": [
+      "amber",
+      "rose",
+      "aromatic",
+      "woody",
+      "balsamic",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "rose": 5,
+      "aromatic": 4,
+      "woody": 4,
+      "balsamic": 3,
+      "warm spicy": 3,
+      "fresh spicy": 3,
+      "floral": 2,
+      "vanilla": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.74282.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Opus-XII-Rose-Incense-74282.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Opus XIII – Silver Oud",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cypriol Oil or Nagarmotha",
+      "Patchouli",
+      "Virginia Cedar"
+    ],
+    "heart_notes": [
+      "Agarwood (Oud)",
+      "Madagascar Vanilla"
+    ],
+    "base_notes": [
+      "Castoreum",
+      "Birch",
+      "Ambrarome",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "woody",
+      "leather",
+      "oud",
+      "smoky",
+      "balsamic",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "leather": 4,
+      "oud": 3,
+      "smoky": 3,
+      "balsamic": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.74285.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Opus-XIII-Silver-Oud-74285.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Opus XIV – Royal Tobacco",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Olibanum",
+      "Anise",
+      "Elemi resin",
+      "Cardamom",
+      "Basil",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Tobacco",
+      "Licorice",
+      "Fenugreek",
+      "Lavender",
+      "Prunol",
+      "Osmanthus",
+      "Orange Blossom",
+      "Rose"
+    ],
+    "base_notes": [
+      "Olibanum",
+      "Myrrh",
+      "Bourbon Vanilla",
+      "Birch Tar",
+      "Benzoin",
+      "Agarwood (Oud)",
+      "Peru Balsam",
+      "Labdanum",
+      "Guaiac Wood",
+      "Tonka Bean",
+      "Vetiver",
+      "Musk"
+    ],
+    "top_accords": [
+      "amber",
+      "sweet",
+      "balsamic",
+      "soft spicy",
+      "aromatic",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "sweet": 4,
+      "balsamic": 3,
+      "soft spicy": 3,
+      "aromatic": 3,
+      "warm spicy": 3,
+      "fresh spicy": 3,
+      "tobacco": 3,
+      "vanilla": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.75064.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Opus-XIV-Royal-Tobacco-75064.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Opus XV – King Blue",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin Orange",
+      "Black Currant",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Frankincense",
+      "Amber"
+    ],
+    "base_notes": [
+      "Agarwood (Oud)",
+      "Leather",
+      "Oak",
+      "Sandalwood",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "woody",
+      "oud",
+      "amber",
+      "fruity",
+      "citrus",
+      "leather"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "oud": 5,
+      "amber": 4,
+      "fruity": 4,
+      "citrus": 3,
+      "leather": 3,
+      "fresh spicy": 3,
+      "animalic": 3,
+      "warm spicy": 3,
+      "soft spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.83394.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Opus-XV-King-Blue-83394.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Opus XVI – Timber",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cypress",
+      "Juniper",
+      "Cardamom",
+      "Cocoa",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Frankincense",
+      "Fir",
+      "Lavender"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Palo Santo",
+      "Cedarwood",
+      "Vanilla",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "warm spicy",
+      "amber"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 4,
+      "fresh spicy": 3,
+      "warm spicy": 3,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.112699.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Opus-XVI-Timber-112699.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Ashore",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom",
+      "Turmeric",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac",
+      "Solar Notes",
+      "Rose"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Sandalwood",
+      "Olibanum"
+    ],
+    "top_accords": [
+      "white floral",
+      "warm spicy",
+      "amber",
+      "woody",
+      "floral",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "warm spicy": 4,
+      "amber": 3,
+      "woody": 2,
+      "floral": 2,
+      "animalic": 2,
+      "aldehydic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.62858.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Ashore-62858.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Crimson Rocks",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cinnamon",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Honey",
+      "Rose"
+    ],
+    "base_notes": [
+      "Oak",
+      "Atlas Cedar",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "woody",
+      "cinnamon",
+      "rose",
+      "warm spicy",
+      "honey",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "cinnamon": 4,
+      "rose": 4,
+      "warm spicy": 3,
+      "honey": 3,
+      "sweet": 3,
+      "soft spicy": 3,
+      "floral": 3,
+      "aromatic": 3,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.62857.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Crimson-Rocks-62857.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Enclave",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Peppermint",
+      "Cardamom",
+      "Cinnamon",
+      "Pink Pepper",
+      "Spearmint"
+    ],
+    "heart_notes": [
+      "Olibanum",
+      "Patchouli",
+      "Vetiver",
+      "Rose"
+    ],
+    "base_notes": [
+      "Amber Xtreme",
+      "Labdanum",
+      "Leather"
+    ],
+    "top_accords": [
+      "amber",
+      "aromatic",
+      "warm spicy",
+      "green",
+      "woody",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "aromatic": 4,
+      "warm spicy": 4,
+      "green": 4,
+      "woody": 4,
+      "fresh spicy": 3,
+      "balsamic": 3,
+      "cinnamon": 3,
+      "patchouli": 2,
+      "leather": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.62856.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Enclave-62856.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Meander",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Olibanum",
+      "Carrot Seeds",
+      "Black Pepper",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Orris",
+      "Cypriol Oil or Nagarmotha",
+      "Narcissus",
+      "Rose"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Olibanum",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "woody",
+      "powdery",
+      "earthy",
+      "warm spicy",
+      "iris",
+      "amber"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "powdery": 4,
+      "earthy": 3,
+      "warm spicy": 3,
+      "iris": 3,
+      "amber": 3,
+      "fresh spicy": 3,
+      "aromatic": 3,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.62859.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Meander-62859.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Boundless",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom",
+      "Blood Orange",
+      "Ginger",
+      "elemi"
+    ],
+    "heart_notes": [
+      "Bourbon Vanilla",
+      "Benzoin"
+    ],
+    "base_notes": [
+      "Tobacco",
+      "Myrrh",
+      "Incense",
+      "Cacao",
+      "Guaiac Wood",
+      "Patchouli",
+      "Vetiver",
+      "Papyrus",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "amber",
+      "balsamic",
+      "aromatic",
+      "woody",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "amber": 5,
+      "balsamic": 4,
+      "aromatic": 3,
+      "woody": 3,
+      "sweet": 3,
+      "tobacco": 3,
+      "vanilla": 3,
+      "citrus": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.66528.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Boundless-66528.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Material",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "elemi",
+      "Patchouli"
+    ],
+    "heart_notes": [
+      "Benzoin",
+      "Madagascar Vanilla"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Incense",
+      "Labdanum",
+      "Guaiac Wood",
+      "Agarwood (Oud)",
+      "Osmanthus"
+    ],
+    "top_accords": [
+      "amber",
+      "vanilla",
+      "balsamic",
+      "warm spicy",
+      "woody",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "vanilla": 4,
+      "balsamic": 4,
+      "warm spicy": 3,
+      "woody": 3,
+      "aromatic": 3,
+      "smoky": 2,
+      "patchouli": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.66527.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Material-66527.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Guidance",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pear",
+      "Hazelnut",
+      "Olibanum"
+    ],
+    "heart_notes": [
+      "Osmanthus",
+      "Rose",
+      "Saffron",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Vanilla",
+      "Akigalawood",
+      "Ambergris",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "woody",
+      "amber",
+      "warm spicy",
+      "fruity",
+      "nutty",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "amber": 3,
+      "warm spicy": 3,
+      "fruity": 3,
+      "nutty": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "vanilla": 3,
+      "floral": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.78656.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Guidance-78656.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Lineage",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Ginger",
+      "Sichuan Pepper",
+      "Peruvian Pepper",
+      "Saffron"
+    ],
+    "heart_notes": [
+      "Olibanum",
+      "Myrrh",
+      "Fenugreek"
+    ],
+    "base_notes": [
+      "Olibanum",
+      "Myrrh",
+      "Labdanum",
+      "Benzoin",
+      "Vetiver",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "amber",
+      "fresh spicy",
+      "warm spicy",
+      "woody",
+      "balsamic",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "fresh spicy": 5,
+      "warm spicy": 3,
+      "woody": 2,
+      "balsamic": 2,
+      "citrus": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.78654.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Lineage-78654.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Purpose",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Olibanum",
+      "Black and Pink Pepper",
+      "Pimento",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Vetiver",
+      "Papyrus",
+      "Sandalwood",
+      "Rose"
+    ],
+    "base_notes": [
+      "Akigalawood",
+      "Suede",
+      "Saffron",
+      "Mystikal"
+    ],
+    "top_accords": [
+      "woody",
+      "warm spicy",
+      "fresh spicy",
+      "amber",
+      "aromatic",
+      "leather"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "warm spicy": 4,
+      "fresh spicy": 4,
+      "amber": 3,
+      "aromatic": 3,
+      "leather": 2,
+      "oud": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.78657.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Purpose-78657.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Amouage",
+    "name": "Search",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lime",
+      "Lemon",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Olibanum",
+      "elemi",
+      "Black Pepper"
+    ],
+    "base_notes": [
+      "Cade oil",
+      "Vetiver",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "amber",
+      "conifer"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "woody": 4,
+      "amber": 3,
+      "conifer": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.78655.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Amouage/Search-78655.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

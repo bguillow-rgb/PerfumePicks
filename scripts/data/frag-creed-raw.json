@@ -1,0 +1,6307 @@
+[
+  {
+    "brand": "Creed",
+    "name": "2000 Fleurs",
+    "release_year": 2001,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Magnolia",
+      "Black Currant",
+      "Rose",
+      "Violet",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Green Tea",
+      "Lily",
+      "Narcissus",
+      "Lilac",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood",
+      "Amber"
+    ],
+    "top_accords": [
+      "floral",
+      "powdery",
+      "green",
+      "white floral",
+      "violet",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "powdery": 3,
+      "green": 3,
+      "white floral": 3,
+      "violet": 3,
+      "citrus": 3,
+      "fruity": 3,
+      "woody": 3,
+      "iris": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3806.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/2000-Fleurs-3806.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "250 Years Anniversary",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit",
+      "Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Narcissus",
+      "Neroli",
+      "Iris"
+    ],
+    "base_notes": [
+      "Musk",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "powdery",
+      "fresh spicy",
+      "musky",
+      "amber",
+      "iris"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "powdery": 3,
+      "fresh spicy": 3,
+      "musky": 2,
+      "amber": 2,
+      "iris": 2,
+      "aromatic": 2,
+      "yellow floral": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30674.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/250-Years-Anniversary-30674.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Acier Aluminium",
+    "release_year": 1973,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Spices",
+      "Fruity Notes"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Vanille"
+    ],
+    "top_accords": [
+      "amber",
+      "fruity",
+      "vanilla",
+      "warm spicy",
+      "sweet",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "fruity": 5,
+      "vanilla": 4,
+      "warm spicy": 4,
+      "sweet": 4,
+      "animalic": 4,
+      "balsamic": 3,
+      "citrus": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7498.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Acier-Aluminium-7498.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Acqua Fiorentina",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Apple",
+      "Plum"
+    ],
+    "heart_notes": [
+      "Bergamot",
+      "Sicilian Bergamot",
+      "Lemon",
+      "Pear",
+      "Rose"
+    ],
+    "base_notes": [
+      "White Grapefruit",
+      "Virginia Cedar",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "citrus",
+      "fruity",
+      "woody",
+      "fresh",
+      "fresh spicy",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fruity": 5,
+      "woody": 3,
+      "fresh": 3,
+      "fresh spicy": 3,
+      "sweet": 3,
+      "aromatic": 3,
+      "green": 2,
+      "rose": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6272.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Acqua-Fiorentina-6272.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Acqua Fiorentina The Encore",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Apple",
+      "Plum",
+      "Greengage",
+      "Prunella"
+    ],
+    "heart_notes": [
+      "Bergamot",
+      "Lemon",
+      "Carnation",
+      "Rose",
+      "Pear"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Sandalwood",
+      "Grapefruit"
+    ],
+    "top_accords": [
+      "citrus",
+      "fruity",
+      "floral",
+      "woody",
+      "aromatic",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fruity": 5,
+      "floral": 3,
+      "woody": 3,
+      "aromatic": 3,
+      "green": 3,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "warm spicy": 3,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.67087.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Acqua-Fiorentina-The-Encore-67087.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Amalfi Flowers",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Amalfi Lemon",
+      "Bougainvillea",
+      "Bergamot",
+      "Sicilian Mandarin",
+      "Black Currant",
+      "Ginger"
+    ],
+    "heart_notes": [
+      "Ravello Rose",
+      "Iris",
+      "Patchouli"
+    ],
+    "base_notes": [
+      "Parma Violet",
+      "Russian Leather",
+      "Ambergris",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "floral",
+      "powdery",
+      "violet",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "floral": 3,
+      "powdery": 3,
+      "violet": 3,
+      "fresh spicy": 3,
+      "fruity": 3,
+      "rose": 3,
+      "animalic": 3,
+      "leather": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4247.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Amalfi-Flowers-4247.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Ambre Cannelle",
+    "release_year": 1949,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Red Berries",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Tincture of Rose",
+      "Coriander"
+    ],
+    "base_notes": [
+      "Amber",
+      "Spices",
+      "Vanille"
+    ],
+    "top_accords": [
+      "amber",
+      "rose",
+      "warm spicy",
+      "fruity",
+      "citrus",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "rose": 4,
+      "warm spicy": 4,
+      "fruity": 3,
+      "citrus": 3,
+      "vanilla": 3,
+      "sweet": 3,
+      "aromatic": 3,
+      "powdery": 3,
+      "soft spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7516.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Ambre-Cannelle-7516.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Angélique Encens (2019)",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Violet",
+      "Bulgarian Rose",
+      "Coriander"
+    ],
+    "heart_notes": [
+      "Sandalwood",
+      "Cinnamon",
+      "White Pepper",
+      "Patchouli"
+    ],
+    "base_notes": [
+      "Incense",
+      "Musk",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "powdery",
+      "violet",
+      "woody",
+      "warm spicy",
+      "rose",
+      "amber"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "violet": 5,
+      "woody": 4,
+      "warm spicy": 4,
+      "rose": 4,
+      "amber": 3,
+      "smoky": 3,
+      "floral": 3,
+      "balsamic": 3,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.58229.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Angelique-Encens-2019-58229.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Aubepine Acacia",
+    "release_year": 1965,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Galbanum",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Hawthorn",
+      "Mimosa"
+    ],
+    "base_notes": [
+      "Amber"
+    ],
+    "top_accords": [
+      "floral",
+      "green",
+      "fresh spicy",
+      "citrus",
+      "yellow floral",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "green": 4,
+      "fresh spicy": 4,
+      "citrus": 3,
+      "yellow floral": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "aromatic": 3,
+      "aldehydic": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8888.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Aubepine-Acacia-8888.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Baie de Genievre",
+    "release_year": 1982,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cinnamon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Juniper Berries",
+      "Clove"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "aromatic",
+      "warm spicy",
+      "fresh spicy",
+      "woody",
+      "cinnamon",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "warm spicy": 4,
+      "fresh spicy": 4,
+      "woody": 4,
+      "cinnamon": 3,
+      "citrus": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7499.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Baie-de-Genievre-7499.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Bois de Cedrat",
+    "release_year": 1875,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Sicilian Lemon"
+    ],
+    "heart_notes": [
+      "Calabrian Mandarin"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "amber",
+      "aromatic",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 3,
+      "amber": 3,
+      "aromatic": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7500.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Bois-de-Cedrat-7500.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Bois du Portugal",
+    "release_year": 1987,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Lavender"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Cedar",
+      "Vetiver",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "lavender",
+      "citrus",
+      "powdery",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 3,
+      "lavender": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "fresh spicy": 3,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3805.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Bois-du-Portugal-3805.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Carmina",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Black Cherry",
+      "Saffron",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "May Rose",
+      "Peony",
+      "Violet",
+      "Cashmere Wood"
+    ],
+    "base_notes": [
+      "Musk",
+      "Ambroxan",
+      "Myrhh",
+      "Frankincense"
+    ],
+    "top_accords": [
+      "rose",
+      "amber",
+      "musky",
+      "floral",
+      "cherry",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "amber": 4,
+      "musky": 4,
+      "floral": 4,
+      "cherry": 4,
+      "warm spicy": 3,
+      "powdery": 3,
+      "fresh": 3,
+      "woody": 3,
+      "violet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.84206.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Carmina-84206.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Chevrefeuille",
+    "release_year": 1982,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Green Leaves",
+      "Honeysuckle"
+    ],
+    "heart_notes": [
+      "Honeysuckle",
+      "Green Grass"
+    ],
+    "base_notes": [
+      "Ambergris"
+    ],
+    "top_accords": [
+      "green",
+      "white floral",
+      "amber",
+      "animalic",
+      "fresh",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "white floral": 3,
+      "amber": 3,
+      "animalic": 2,
+      "fresh": 2,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7517.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Chevrefeuille-7517.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Citrus Bigarrade",
+    "release_year": 1901,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Citruses",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Neroli"
+    ],
+    "base_notes": [
+      "Ambergris"
+    ],
+    "top_accords": [
+      "citrus",
+      "amber",
+      "fresh spicy",
+      "fresh",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "amber": 3,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7501.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Citrus-Bigarrade-7501.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Creed Pour Enfants",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Apple",
+      "Rose"
+    ],
+    "base_notes": [
+      "Plum"
+    ],
+    "top_accords": [
+      "fruity",
+      "citrus",
+      "fresh",
+      "rose",
+      "green",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "citrus": 5,
+      "fresh": 3,
+      "rose": 2,
+      "green": 2,
+      "fresh spicy": 2,
+      "sweet": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.37549.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Creed-Pour-Enfants-37549.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Cuir de Russie",
+    "release_year": 1953,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "leather",
+      "citrus",
+      "amber",
+      "woody",
+      "smoky",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "citrus": 4,
+      "amber": 4,
+      "woody": 4,
+      "smoky": 3,
+      "animalic": 3,
+      "aromatic": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8889.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Cuir-de-Russie-8889.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Cypres Musc",
+    "release_year": 1948,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "mossy",
+      "musky",
+      "aromatic",
+      "amber",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "mossy": 5,
+      "musky": 4,
+      "aromatic": 4,
+      "amber": 4,
+      "earthy": 4,
+      "powdery": 4,
+      "fresh spicy": 3,
+      "citrus": 3,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8890.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Cypres-Musc-8890.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Eladaria",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Mandarin",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Powdery Notes",
+      "Peony",
+      "Lily of the Valley"
+    ],
+    "base_notes": [
+      "Musk",
+      "Ambroxan",
+      "Cashmere Wood",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "rose",
+      "powdery",
+      "musky",
+      "floral",
+      "fresh",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "powdery": 4,
+      "musky": 4,
+      "floral": 4,
+      "fresh": 3,
+      "citrus": 3,
+      "amber": 3,
+      "white floral": 2,
+      "soft spicy": 2,
+      "vanilla": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.103066.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Eladaria-103066.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Epicea",
+    "release_year": 1965,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Lavender"
+    ],
+    "heart_notes": [
+      "Clove"
+    ],
+    "base_notes": [
+      "Pine"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "warm spicy",
+      "citrus",
+      "lavender",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 5,
+      "warm spicy": 4,
+      "citrus": 4,
+      "lavender": 4,
+      "fresh spicy": 3,
+      "conifer": 3,
+      "green": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7502.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Epicea-7502.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Erolfa",
+    "release_year": 1992,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lime",
+      "Bergamot",
+      "Melon",
+      "Green Notes",
+      "Lemon",
+      "Violet",
+      "Caraway"
+    ],
+    "heart_notes": [
+      "Herbal Notes",
+      "Pine Tree",
+      "Ginger",
+      "Pepper",
+      "Jasmine",
+      "Cyclamen",
+      "Nutmeg Flower"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Musk",
+      "Sandalwood",
+      "Oakmoss",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "woody",
+      "green",
+      "aromatic",
+      "amber"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 4,
+      "woody": 3,
+      "green": 3,
+      "aromatic": 3,
+      "amber": 3,
+      "powdery": 3,
+      "fresh": 3,
+      "animalic": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4248.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Erolfa-4248.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Fantasia de Fleurs",
+    "release_year": 1862,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Bulgarian Rose",
+      "Iris"
+    ],
+    "base_notes": [
+      "Ambergris"
+    ],
+    "top_accords": [
+      "rose",
+      "amber",
+      "iris",
+      "citrus",
+      "animalic",
+      "floral"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "amber": 4,
+      "iris": 4,
+      "citrus": 3,
+      "animalic": 3,
+      "floral": 3,
+      "powdery": 3,
+      "violet": 3,
+      "earthy": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4249.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Fantasia-de-Fleurs-4249.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Feuille Verte",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lime",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Oakmoss",
+      "Bulgarian Rose",
+      "Vanilla"
+    ],
+    "base_notes": [
+      "Jasmine"
+    ],
+    "top_accords": [
+      "citrus",
+      "mossy",
+      "earthy",
+      "rose",
+      "woody",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "mossy": 5,
+      "earthy": 4,
+      "rose": 3,
+      "woody": 3,
+      "white floral": 3,
+      "conifer": 2,
+      "sweet": 2,
+      "vanilla": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4258.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Feuille-Verte-4258.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Fleur de The Rose Bulgare",
+    "release_year": 1890,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Citruses"
+    ],
+    "heart_notes": [
+      "Bulgarian Rose",
+      "Green Tea Flower"
+    ],
+    "base_notes": [
+      "Ambergris"
+    ],
+    "top_accords": [
+      "citrus",
+      "rose",
+      "floral",
+      "amber",
+      "fresh spicy",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "rose": 5,
+      "floral": 3,
+      "amber": 3,
+      "fresh spicy": 3,
+      "green": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7518.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Fleur-de-The-Rose-Bulgare-7518.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Fleurissimo",
+    "release_year": 1956,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Violet Leaves",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Rose",
+      "Jasmine",
+      "Ylang-Ylang",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Orris",
+      "Cedar",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "tuberose",
+      "white floral",
+      "citrus",
+      "rose",
+      "animalic",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "tuberose": 5,
+      "white floral": 5,
+      "citrus": 4,
+      "rose": 3,
+      "animalic": 3,
+      "fresh spicy": 3,
+      "green": 3,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4250.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Fleurissimo-4250.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Fleurs de Bulgarie",
+    "release_year": 1845,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Bulgarian Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "rose",
+      "musky",
+      "amber",
+      "animalic",
+      "citrus",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "musky": 4,
+      "amber": 4,
+      "animalic": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4251.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Fleurs-de-Bulgarie-4251.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Fleurs de Gardenia",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Galbanum",
+      "Pink Pepper",
+      "Black Currant"
+    ],
+    "heart_notes": [
+      "Gardenia",
+      "Lily-of-the-Valley",
+      "Peony",
+      "Pink Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Virginia Cedar",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "white floral",
+      "fresh",
+      "floral",
+      "green",
+      "woody",
+      "musky"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "fresh": 3,
+      "floral": 3,
+      "green": 3,
+      "woody": 3,
+      "musky": 2,
+      "rose": 2,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17111.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Fleurs-de-Gardenia-17111.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Floralie",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lilac",
+      "Tuberose",
+      "Marigold",
+      "Bulgarian Rose"
+    ],
+    "heart_notes": [
+      "Lily-of-the-Valley",
+      "Cedar",
+      "Amber"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Musk",
+      "Amber"
+    ],
+    "top_accords": [
+      "white floral",
+      "floral",
+      "fresh",
+      "tuberose",
+      "green",
+      "woody"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "floral": 5,
+      "fresh": 4,
+      "tuberose": 3,
+      "green": 3,
+      "woody": 3,
+      "aromatic": 3,
+      "rose": 3,
+      "musky": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.50211.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Floralie-50211.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Fragaria",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin",
+      "Pink Pepper",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Strawberry",
+      "Violet"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Cedarwood"
+    ],
+    "top_accords": [
+      "fruity",
+      "woody",
+      "citrus",
+      "sweet",
+      "violet",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "woody": 5,
+      "citrus": 4,
+      "sweet": 4,
+      "violet": 4,
+      "powdery": 4,
+      "aromatic": 3,
+      "earthy": 3,
+      "soft spicy": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.100641.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Fragaria-100641.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Green Irish Tweed",
+    "release_year": 1985,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Iris",
+      "Vervain"
+    ],
+    "heart_notes": [
+      "Violet Leaf"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "ozonic",
+      "aquatic",
+      "iris",
+      "powdery",
+      "woody",
+      "amber"
+    ],
+    "accord_intensity": {
+      "ozonic": 5,
+      "aquatic": 4,
+      "iris": 4,
+      "powdery": 4,
+      "woody": 4,
+      "amber": 4,
+      "animalic": 3,
+      "violet": 3,
+      "balsamic": 3,
+      "green": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.474.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Green-Irish-Tweed-474.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Green Valley",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Black Currant",
+      "Ginger"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "fruity",
+      "fresh spicy",
+      "amber",
+      "animalic",
+      "musky"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fruity": 4,
+      "fresh spicy": 4,
+      "amber": 4,
+      "animalic": 3,
+      "musky": 3,
+      "aromatic": 3,
+      "floral": 2,
+      "woody": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4259.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Green-Valley-4259.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Himalaya",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Calabrian bergamot",
+      "Grapefruit",
+      "Sicilian Lemon"
+    ],
+    "heart_notes": [
+      "Sandalwood"
+    ],
+    "base_notes": [
+      "Musk",
+      "Ambergris",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "powdery",
+      "musky",
+      "amber",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "powdery": 4,
+      "musky": 3,
+      "amber": 3,
+      "aromatic": 3,
+      "animalic": 3,
+      "fresh spicy": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.465.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Himalaya-465.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Imperatrice Eugenie",
+    "release_year": 1862,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Italian Jasmine",
+      "Bulgarian Rose"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Vanilla",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "white floral",
+      "powdery",
+      "vanilla",
+      "amber"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "white floral": 4,
+      "powdery": 4,
+      "vanilla": 4,
+      "amber": 4,
+      "rose": 4,
+      "floral": 3,
+      "aromatic": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4253.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Imperatrice-Eugenie-4253.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Irisia",
+    "release_year": 1968,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Peach",
+      "Mimosa",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Violet",
+      "Tuberose"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Amber",
+      "Patchouli",
+      "Ambergris",
+      "Sandalwood",
+      "Cedar",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "woody",
+      "powdery",
+      "earthy",
+      "amber",
+      "mossy",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "powdery": 4,
+      "earthy": 4,
+      "amber": 4,
+      "mossy": 3,
+      "citrus": 3,
+      "violet": 3,
+      "iris": 3,
+      "patchouli": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4252.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Irisia-4252.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Jasmal",
+    "release_year": 1959,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Italian Jasmine",
+      "Moroccan Jasmine"
+    ],
+    "base_notes": [
+      "Galbanum",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "white floral",
+      "green",
+      "aromatic",
+      "citrus",
+      "amber",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "green": 4,
+      "aromatic": 3,
+      "citrus": 3,
+      "amber": 3,
+      "balsamic": 2,
+      "floral": 2,
+      "animalic": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4260.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Jasmal-4260.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Jasmin Imperatrice Eugenie",
+    "release_year": 1989,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Italian Jasmine",
+      "Ambergris",
+      "Bulgarian Rose"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Vanille"
+    ],
+    "top_accords": [
+      "white floral",
+      "woody",
+      "amber",
+      "vanilla",
+      "powdery",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "woody": 5,
+      "amber": 4,
+      "vanilla": 4,
+      "powdery": 4,
+      "balsamic": 3,
+      "animalic": 3,
+      "rose": 3,
+      "warm spicy": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3867.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Jasmin-Imperatrice-Eugenie-3867.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Les Floralies",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Chrysanthemum",
+      "Green Notes",
+      "Magnolia"
+    ],
+    "heart_notes": [
+      "Lilac",
+      "Jasmine",
+      "Tea"
+    ],
+    "base_notes": [
+      "Plum Blossom",
+      "Tincture of Rose"
+    ],
+    "top_accords": [
+      "floral",
+      "green",
+      "fresh",
+      "herbal",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "green": 3,
+      "fresh": 3,
+      "herbal": 2,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7522.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Les-Floralies-7522.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Love in Black",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Italian Violet",
+      "Virginia Cedar",
+      "Wildflowers"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Musk",
+      "Cloves"
+    ],
+    "base_notes": [
+      "Black Currant",
+      "Bulgarian Rose"
+    ],
+    "top_accords": [
+      "powdery",
+      "violet",
+      "floral",
+      "woody",
+      "iris",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "violet": 5,
+      "floral": 4,
+      "woody": 3,
+      "iris": 3,
+      "fruity": 3,
+      "musky": 2,
+      "fresh": 2,
+      "warm spicy": 2,
+      "rose": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4261.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Love-in-Black-4261.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Love in Black 2024",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Violet Leaves",
+      "Cranberry",
+      "Raspberry"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Orris",
+      "Jasmine",
+      "Rose",
+      "Butter"
+    ],
+    "base_notes": [
+      "Leather",
+      "Cedarwood",
+      "Musk"
+    ],
+    "top_accords": [
+      "powdery",
+      "violet",
+      "fruity",
+      "iris",
+      "ozonic",
+      "woody"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "violet": 4,
+      "fruity": 4,
+      "iris": 4,
+      "ozonic": 3,
+      "woody": 3,
+      "floral": 3,
+      "leather": 3,
+      "aquatic": 3,
+      "white floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.101279.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Love-in-Black-2024-101279.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Love in White",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange Peel"
+    ],
+    "heart_notes": [
+      "Magnolia",
+      "Narcissus",
+      "Rice",
+      "Italian Jasmine",
+      "Iris",
+      "Bulgarian Rose"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Sandalwood",
+      "Vanille"
+    ],
+    "top_accords": [
+      "floral",
+      "citrus",
+      "yellow floral",
+      "white floral",
+      "powdery",
+      "iris"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "citrus": 5,
+      "yellow floral": 3,
+      "white floral": 3,
+      "powdery": 3,
+      "iris": 3,
+      "sweet": 3,
+      "savory": 3,
+      "green": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4262.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Love-in-White-4262.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Love in White 2024",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Apple",
+      "Orange",
+      "Apricot"
+    ],
+    "heart_notes": [
+      "Narcissus",
+      "Iris",
+      "Jasmine",
+      "Rose",
+      "Rice",
+      "Magnolia"
+    ],
+    "base_notes": [
+      "Cedarwood",
+      "Musk"
+    ],
+    "top_accords": [
+      "woody",
+      "yellow floral",
+      "iris",
+      "green",
+      "white floral",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "yellow floral": 4,
+      "iris": 4,
+      "green": 4,
+      "white floral": 4,
+      "powdery": 4,
+      "floral": 3,
+      "violet": 3,
+      "fruity": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.99883.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Love-in-White-2024-99883.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Love in White for Summer",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Magnolia",
+      "Calabrian bergamot",
+      "Bulgarian Rose"
+    ],
+    "heart_notes": [
+      "Rice",
+      "Tuscan Iris",
+      "Virginia Cedar"
+    ],
+    "base_notes": [
+      "Apple",
+      "Ambergris",
+      "Sandalwood",
+      "Jasmine"
+    ],
+    "top_accords": [
+      "floral",
+      "woody",
+      "citrus",
+      "powdery",
+      "fruity",
+      "amber"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "woody": 5,
+      "citrus": 5,
+      "powdery": 4,
+      "fruity": 4,
+      "amber": 3,
+      "iris": 3,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "savory": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49805.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Love-in-White-for-Summer-49805.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Millesime 1849",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Calabrian bergamot"
+    ],
+    "heart_notes": [
+      "Ylang-Ylang",
+      "Jasmine",
+      "Patchouli",
+      "Cedar"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Agarwood (Oud)",
+      "Bourbon Vanilla",
+      "Musk"
+    ],
+    "top_accords": [
+      "woody",
+      "yellow floral",
+      "powdery",
+      "white floral",
+      "sweet",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "yellow floral": 3,
+      "powdery": 3,
+      "white floral": 3,
+      "sweet": 3,
+      "warm spicy": 3,
+      "patchouli": 2,
+      "oud": 2,
+      "vanilla": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18711.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Millesime-1849-18711.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Millesime 1849 Eau de Parfum",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Lemon",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Ylang Ylang",
+      "Jasmine",
+      "Iris",
+      "Rose"
+    ],
+    "base_notes": [
+      "Bay Leaf",
+      "Thyme",
+      "Cedar",
+      "Incense"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "aromatic",
+      "woody",
+      "yellow floral",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 5,
+      "aromatic": 5,
+      "woody": 4,
+      "yellow floral": 4,
+      "white floral": 3,
+      "sweet": 3,
+      "iris": 3,
+      "floral": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.88140.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Millesime-1849-Eau-de-Parfum-88140.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Millésime Impérial",
+    "release_year": 1995,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Sea Salt",
+      "Fruity Notes"
+    ],
+    "heart_notes": [
+      "Sicilian Lemon",
+      "Bergamot",
+      "Iris",
+      "Mandarin Orange"
+    ],
+    "base_notes": [
+      "Sea Notes",
+      "Musk",
+      "Woody Notes"
+    ],
+    "top_accords": [
+      "marine",
+      "citrus",
+      "salty",
+      "fruity",
+      "aromatic",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "marine": 5,
+      "citrus": 5,
+      "salty": 4,
+      "fruity": 4,
+      "aromatic": 4,
+      "powdery": 3,
+      "musky": 3,
+      "sweet": 3,
+      "woody": 3,
+      "iris": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.466.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Millesime-Imperial-466.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Neroli Sauvage",
+    "release_year": 1994,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Verbena",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Ambergris"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "amber",
+      "aromatic",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 3,
+      "amber": 2,
+      "aromatic": 2,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.475.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Neroli-Sauvage-475.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Orange Spice",
+    "release_year": 1950,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Neroli"
+    ],
+    "base_notes": [
+      "Spices",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "citrus",
+      "amber",
+      "warm spicy",
+      "fresh spicy",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "amber": 3,
+      "warm spicy": 3,
+      "fresh spicy": 3,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7507.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Orange-Spice-7507.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Original Santal",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Juniper Berries",
+      "Coriander",
+      "Ginger",
+      "Rosemary",
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Sandalwood",
+      "Lavender",
+      "Geranium",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Musk",
+      "Cedar",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "fresh spicy",
+      "lavender",
+      "powdery",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 4,
+      "fresh spicy": 4,
+      "lavender": 3,
+      "powdery": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.473.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Original-Santal-473.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Original Santal 2024",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Juniper Berries",
+      "Sandalwood",
+      "Coriander",
+      "Cinnamon"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Ginger",
+      "Citrus",
+      "Rosemary"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "vanilla",
+      "lavender",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "woody": 4,
+      "vanilla": 3,
+      "lavender": 3,
+      "warm spicy": 3,
+      "powdery": 2,
+      "sweet": 2,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.100544.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Original-Santal-2024-100544.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Original Vetiver",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Ginger",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Haitian Vetiver",
+      "Sandalwood",
+      "Iris"
+    ],
+    "base_notes": [
+      "Musk",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "earthy",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 5,
+      "aromatic": 4,
+      "fresh spicy": 4,
+      "earthy": 3,
+      "powdery": 3,
+      "musky": 3,
+      "amber": 2,
+      "green": 2,
+      "iris": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.468.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Original-Vetiver-468.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Original Vetiver 2024",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Green Notes",
+      "Lemon",
+      "Ginger"
+    ],
+    "heart_notes": [
+      "Vetiver",
+      "Cypress",
+      "Coriander"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Guaiac Wood",
+      "Cedarwood"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "green",
+      "citrus",
+      "fresh spicy",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 4,
+      "green": 4,
+      "citrus": 4,
+      "fresh spicy": 3,
+      "earthy": 3,
+      "fresh": 3,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.99804.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Original-Vetiver-2024-99804.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Oud Zarian",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Spices",
+      "Frankincense",
+      "Ginger",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "May Rose"
+    ],
+    "base_notes": [
+      "Licorice",
+      "Myrrh",
+      "Oud",
+      "Tonka Bean",
+      "Sandalwood",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "amber",
+      "fresh spicy",
+      "sweet",
+      "soft spicy",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "amber": 5,
+      "fresh spicy": 3,
+      "sweet": 3,
+      "soft spicy": 3,
+      "balsamic": 3,
+      "woody": 3,
+      "oud": 3,
+      "aromatic": 3,
+      "rose": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.111224.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Oud-Zarian-111224.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Queen of Silk",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Saffron",
+      "Osmanthus",
+      "Magnolia"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Patchouli",
+      "Passionfruit",
+      "Agarwood (Oud)"
+    ],
+    "base_notes": [
+      "Madagascar Vanilla",
+      "Ambroxan",
+      "Myrrh",
+      "Musk",
+      "Incense",
+      "Cedarwood"
+    ],
+    "top_accords": [
+      "amber",
+      "warm spicy",
+      "floral",
+      "fruity",
+      "musky",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "warm spicy": 5,
+      "floral": 4,
+      "fruity": 3,
+      "musky": 3,
+      "vanilla": 3,
+      "tuberose": 3,
+      "balsamic": 3,
+      "woody": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.89643.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Queen-of-Silk-89643.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Rose Imperiale",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "May Rose",
+      "White Iris",
+      "Calabrian bergamot",
+      "Angelica"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Patchouli",
+      "Tuberose",
+      "Pink Pepper",
+      "Cedar",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Amber",
+      "Benzoin",
+      "Cacao",
+      "Caramel"
+    ],
+    "top_accords": [
+      "rose",
+      "amber",
+      "woody",
+      "warm spicy",
+      "patchouli",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "amber": 5,
+      "woody": 4,
+      "warm spicy": 3,
+      "patchouli": 3,
+      "powdery": 3,
+      "citrus": 3,
+      "floral": 3,
+      "white floral": 3,
+      "iris": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40298.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Rose-Imperiale-40298.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal Ceylan",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tangerine",
+      "Bergamot",
+      "Ginger",
+      "Green Tea",
+      "Rice"
+    ],
+    "heart_notes": [
+      "Sea Salt",
+      "Lotus",
+      "Tea"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Petitgrain",
+      "Lemon",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "green",
+      "floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 3,
+      "aromatic": 3,
+      "fresh spicy": 3,
+      "green": 3,
+      "floral": 2,
+      "fresh": 2,
+      "salty": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3807.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-Ceylan-3807.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal Delight",
+    "release_year": 1993,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Tangerine",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Violet"
+    ],
+    "base_notes": [
+      "Leather",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "white floral",
+      "leather",
+      "animalic",
+      "citrus",
+      "violet",
+      "amber"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "leather": 5,
+      "animalic": 4,
+      "citrus": 4,
+      "violet": 3,
+      "amber": 3,
+      "powdery": 3,
+      "floral": 3,
+      "smoky": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4254.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-Delight-4254.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal English Leather",
+    "release_year": 1781,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Ambergris"
+    ],
+    "base_notes": [
+      "Leather",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "leather",
+      "citrus",
+      "animalic",
+      "woody",
+      "amber",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "citrus": 4,
+      "animalic": 4,
+      "woody": 4,
+      "amber": 3,
+      "powdery": 3,
+      "smoky": 3,
+      "warm spicy": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7508.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-English-Leather-7508.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal Mayfair",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pine Tree",
+      "Gin",
+      "Lime"
+    ],
+    "heart_notes": [
+      "Rose"
+    ],
+    "base_notes": [
+      "Eucalyptus",
+      "Cedar",
+      "Orange"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "citrus",
+      "camphor",
+      "rose",
+      "conifer"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 4,
+      "citrus": 3,
+      "camphor": 3,
+      "rose": 2,
+      "conifer": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31562.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-Mayfair-31562.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal Mayfair 2024",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Eucalyptus",
+      "Bitter Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Cedarwood",
+      "Musk",
+      "Ambroxan"
+    ],
+    "top_accords": [
+      "woody",
+      "white floral",
+      "tuberose",
+      "citrus",
+      "camphor",
+      "musky"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "white floral": 5,
+      "tuberose": 4,
+      "citrus": 3,
+      "camphor": 3,
+      "musky": 3,
+      "aromatic": 3,
+      "rose": 3,
+      "animalic": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.99603.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-Mayfair-2024-99603.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal Oud",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pink Pepper",
+      "Lemon",
+      "Sicilian Bergamot"
+    ],
+    "heart_notes": [
+      "Cedar",
+      "Angelica",
+      "Galbanum"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Agarwood (Oud)",
+      "Musk"
+    ],
+    "top_accords": [
+      "woody",
+      "musky",
+      "powdery",
+      "citrus",
+      "aromatic",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "musky": 4,
+      "powdery": 4,
+      "citrus": 3,
+      "aromatic": 3,
+      "soft spicy": 3,
+      "oud": 2,
+      "green": 2,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12317.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-Oud-12317.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal Princess Oud",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Violet",
+      "Rose"
+    ],
+    "heart_notes": [
+      "Patchouli",
+      "Tuscan Iris",
+      "Jasmine",
+      "Vanilla Absolute"
+    ],
+    "base_notes": [
+      "Agarwood (Oud)",
+      "Sandalwood",
+      "Siam Benzoin",
+      "Styrax"
+    ],
+    "top_accords": [
+      "powdery",
+      "woody",
+      "violet",
+      "citrus",
+      "warm spicy",
+      "patchouli"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "woody": 5,
+      "violet": 4,
+      "citrus": 4,
+      "warm spicy": 4,
+      "patchouli": 4,
+      "oud": 3,
+      "iris": 3,
+      "floral": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31563.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-Princess-Oud-31563.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal Princess Oud 2024",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Violet",
+      "Bergamot",
+      "Rose"
+    ],
+    "heart_notes": [
+      "Patchouli",
+      "Jasmine",
+      "Tuscan Iris",
+      "Vanilla"
+    ],
+    "base_notes": [
+      "Oud",
+      "Sandalwood",
+      "Styrax"
+    ],
+    "top_accords": [
+      "powdery",
+      "woody",
+      "violet",
+      "oud",
+      "patchouli",
+      "floral"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "woody": 5,
+      "violet": 5,
+      "oud": 4,
+      "patchouli": 3,
+      "floral": 3,
+      "warm spicy": 3,
+      "white floral": 3,
+      "balsamic": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.100586.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-Princess-Oud-2024-100586.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal Scottish Lavender",
+    "release_year": 1856,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Citruses"
+    ],
+    "heart_notes": [
+      "Lavender"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Spices",
+      "Vanille"
+    ],
+    "top_accords": [
+      "citrus",
+      "lavender",
+      "woody",
+      "warm spicy",
+      "fresh spicy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "lavender": 4,
+      "woody": 4,
+      "warm spicy": 4,
+      "fresh spicy": 4,
+      "aromatic": 4,
+      "powdery": 3,
+      "vanilla": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7509.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-Scottish-Lavender-7509.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal Water",
+    "release_year": 1997,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Citruses",
+      "Bergamot",
+      "Mandarin Orange",
+      "Vervain"
+    ],
+    "heart_notes": [
+      "Basil",
+      "Allspice",
+      "Cumin"
+    ],
+    "base_notes": [
+      "Musk",
+      "Cedarwood"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "fresh",
+      "aromatic",
+      "musky",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 5,
+      "fresh": 3,
+      "aromatic": 3,
+      "musky": 3,
+      "green": 3,
+      "herbal": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7510.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-Water-7510.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Santal Imperial",
+    "release_year": 1850,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Citruses",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Tonka Bean"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "amber",
+      "powdery",
+      "fresh spicy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "amber": 4,
+      "powdery": 3,
+      "fresh spicy": 3,
+      "aromatic": 3,
+      "warm spicy": 3,
+      "fresh": 3,
+      "vanilla": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7513.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Santal-Imperial-7513.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Selection Verte",
+    "release_year": 1901,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Citruses",
+      "Neroli",
+      "Pepper"
+    ],
+    "heart_notes": [
+      "Mint",
+      "Herbal Notes"
+    ],
+    "base_notes": [
+      "Ambergris"
+    ],
+    "top_accords": [
+      "green",
+      "fresh spicy",
+      "citrus",
+      "aromatic",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "fresh spicy": 4,
+      "citrus": 4,
+      "aromatic": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7514.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Selection-Verte-7514.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Silver Mountain Water",
+    "release_year": 1995,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Green Tea",
+      "Black Currant"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood",
+      "Petitgrain",
+      "Galbanum"
+    ],
+    "top_accords": [
+      "citrus",
+      "green",
+      "fruity",
+      "musky",
+      "woody",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "green": 5,
+      "fruity": 4,
+      "musky": 3,
+      "woody": 3,
+      "aromatic": 3,
+      "powdery": 3,
+      "fresh spicy": 3,
+      "fresh": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.472.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Silver-Mountain-Water-472.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Spring Flower",
+    "release_year": 1996,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Apple",
+      "Melon",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "fruity",
+      "fresh",
+      "white floral",
+      "musky",
+      "rose",
+      "aquatic"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "fresh": 4,
+      "white floral": 3,
+      "musky": 3,
+      "rose": 3,
+      "aquatic": 3,
+      "ozonic": 3,
+      "powdery": 3,
+      "sweet": 3,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.471.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Spring-Flower-471.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Spring Flower 2023",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Lemon",
+      "Green Notes",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "White Flowers",
+      "Jasmine",
+      "Peach",
+      "Apricot"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Musk",
+      "Cedar"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "animalic",
+      "fruity",
+      "amber",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 5,
+      "animalic": 3,
+      "fruity": 3,
+      "amber": 3,
+      "powdery": 3,
+      "musky": 3,
+      "green": 2,
+      "aromatic": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.80687.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Spring-Flower-2023-80687.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Tabarome",
+    "release_year": 2000,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Tangerine",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Ginger"
+    ],
+    "base_notes": [
+      "Tobacco",
+      "Sandalwood",
+      "Ambergris",
+      "Leather",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "tobacco",
+      "woody",
+      "sweet",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 4,
+      "tobacco": 4,
+      "woody": 4,
+      "sweet": 3,
+      "animalic": 3,
+      "amber": 3,
+      "fresh": 3,
+      "leather": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.470.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Tabarome-470.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Tabarome Millésime",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Ginger",
+      "Grapefruit",
+      "Berries"
+    ],
+    "heart_notes": [
+      "Tea",
+      "Rum",
+      "Coffee",
+      "Blackcurrant"
+    ],
+    "base_notes": [
+      "Tobacco",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "tobacco",
+      "fruity",
+      "woody",
+      "fresh spicy",
+      "sweet",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "tobacco": 5,
+      "fruity": 5,
+      "woody": 5,
+      "fresh spicy": 5,
+      "sweet": 5,
+      "citrus": 4,
+      "fresh": 4,
+      "warm spicy": 4,
+      "green": 3,
+      "rum": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.118283.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Tabarome-Millesime-118283.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Tubereuse Indiana",
+    "release_year": 1980,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Indian Tuberose"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "tuberose",
+      "amber",
+      "animalic",
+      "white floral",
+      "vanilla",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "tuberose": 5,
+      "amber": 5,
+      "animalic": 5,
+      "white floral": 4,
+      "vanilla": 3,
+      "citrus": 3,
+      "balsamic": 3,
+      "green": 2,
+      "fresh spicy": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4255.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Tubereuse-Indiana-4255.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Vanisia",
+    "release_year": 1987,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Bulgarian Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood",
+      "Ambergris",
+      "Vanille"
+    ],
+    "top_accords": [
+      "amber",
+      "woody",
+      "powdery",
+      "animalic",
+      "rose",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 3,
+      "powdery": 3,
+      "animalic": 3,
+      "rose": 3,
+      "white floral": 3,
+      "vanilla": 3,
+      "balsamic": 3,
+      "citrus": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4256.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Vanisia-4256.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Vetiver",
+    "release_year": 1948,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Citruses",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Ginger"
+    ],
+    "base_notes": [
+      "Vetyver",
+      "Ambergris",
+      "Virginia Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "fresh spicy",
+      "aromatic",
+      "amber",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 5,
+      "fresh spicy": 4,
+      "aromatic": 4,
+      "amber": 4,
+      "fresh": 3,
+      "earthy": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7515.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Vetiver-7515.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Viking",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Pink Pepper",
+      "Peppermint",
+      "Bergamot",
+      "Lemon",
+      "Absinthe",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Bulgarian Rose",
+      "Clove",
+      "Allspice",
+      "Orris Root",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Cedar",
+      "White Musk",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "green",
+      "citrus",
+      "soft spicy",
+      "lavender"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "green": 4,
+      "citrus": 4,
+      "soft spicy": 3,
+      "lavender": 3,
+      "woody": 3,
+      "rose": 2,
+      "musky": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.41698.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Viking-41698.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Viking Cologne",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Lemon",
+      "Pink Pepper",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Geranium",
+      "Rosemary",
+      "Sage",
+      "Nutmeg"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Cedar",
+      "Sandalwood",
+      "Olibanum",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "aromatic",
+      "citrus",
+      "fresh spicy",
+      "woody",
+      "lavender",
+      "herbal"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "citrus": 5,
+      "fresh spicy": 4,
+      "woody": 4,
+      "lavender": 3,
+      "herbal": 2,
+      "soft spicy": 2,
+      "warm spicy": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.67039.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Viking-Cologne-67039.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Virgin Island Water",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lime",
+      "Tropical Fruits",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Coconut Milk",
+      "White Flowers",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "White Musk",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "citrus",
+      "sweet",
+      "coconut",
+      "white floral",
+      "tropical",
+      "patchouli"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "sweet": 4,
+      "coconut": 4,
+      "white floral": 4,
+      "tropical": 4,
+      "patchouli": 3,
+      "vanilla": 3,
+      "woody": 3,
+      "musky": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.111515.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Virgin-Island-Water-111515.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Virgin Island Water 2007",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Coconut",
+      "Lime",
+      "White Bergamot",
+      "Sicilian Mandarin"
+    ],
+    "heart_notes": [
+      "Ginger",
+      "Ylang-Ylang",
+      "Indian Jasmine",
+      "Hibiscus"
+    ],
+    "base_notes": [
+      "White Rum",
+      "Sugar Cane",
+      "Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "sweet",
+      "coconut",
+      "fresh spicy",
+      "vanilla",
+      "lactonic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "sweet": 4,
+      "coconut": 4,
+      "fresh spicy": 3,
+      "vanilla": 3,
+      "lactonic": 2,
+      "rum": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.899.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Virgin-Island-Water-2007-899.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Wild Vetiver",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Pink Pepper",
+      "Timur"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Blackcurrant",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Cedarwood",
+      "Amberwood"
+    ],
+    "top_accords": [
+      "rose",
+      "fresh spicy",
+      "aromatic",
+      "woody",
+      "citrus",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "fresh spicy": 5,
+      "aromatic": 5,
+      "woody": 4,
+      "citrus": 4,
+      "fruity": 3,
+      "floral": 3,
+      "soft spicy": 3,
+      "earthy": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.125485.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Wild-Vetiver-125485.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Wind Flowers",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac",
+      "Tuberose",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Orange Blossom",
+      "Praline",
+      "Iris",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "sweet",
+      "powdery",
+      "musky",
+      "tuberose",
+      "rose"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "sweet": 3,
+      "powdery": 3,
+      "musky": 3,
+      "tuberose": 2,
+      "rose": 2,
+      "woody": 2,
+      "iris": 2,
+      "animalic": 2,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.70182.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Wind-Flowers-70182.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Windsor",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Pine",
+      "Gin",
+      "Lime"
+    ],
+    "heart_notes": [
+      "Rose"
+    ],
+    "base_notes": [
+      "Eucalyptus",
+      "Cedar",
+      "Orange"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "rose",
+      "citrus",
+      "camphor",
+      "conifer"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 4,
+      "rose": 3,
+      "citrus": 3,
+      "camphor": 2,
+      "conifer": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7031.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Windsor-7031.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Zeste Mandarine",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "fresh",
+      "fresh spicy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh": 3,
+      "fresh spicy": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7274.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Zeste-Mandarine-7274.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Zeste Mandarine Pamplemousse",
+    "release_year": 1975,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit",
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "White Flowers"
+    ],
+    "base_notes": [
+      "Ambergris"
+    ],
+    "top_accords": [
+      "citrus",
+      "amber",
+      "white floral",
+      "fresh spicy",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "amber": 3,
+      "white floral": 3,
+      "fresh spicy": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4257.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Zeste-Mandarine-Pamplemousse-4257.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Centaurus",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cinnamon",
+      "Tobacco",
+      "Cardamom",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Sandalwood",
+      "Patchouli",
+      "Heliotrope",
+      "Geranium",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Benzoin",
+      "Tolu Balsam",
+      "Tonka Bean",
+      "Ambroxan"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "amber",
+      "vanilla",
+      "sweet",
+      "cinnamon",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "amber": 4,
+      "vanilla": 4,
+      "sweet": 3,
+      "cinnamon": 3,
+      "powdery": 3,
+      "tobacco": 3,
+      "aromatic": 2,
+      "balsamic": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95601.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Centaurus-95601.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Delphinus",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Almond",
+      "Incense",
+      "Pink Pepper",
+      "Black Pepper"
+    ],
+    "heart_notes": [
+      "Orris",
+      "Heliotrope",
+      "Orchid"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Tonka Bean",
+      "Leather",
+      "Amberwood",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "vanilla",
+      "almond",
+      "powdery",
+      "amber",
+      "sweet",
+      "iris"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "almond": 4,
+      "powdery": 4,
+      "amber": 3,
+      "sweet": 3,
+      "iris": 3,
+      "nutty": 3,
+      "floral": 3,
+      "woody": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95970.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Delphinus-95970.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Absolu Aventus",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Pineapple",
+      "Black Currant",
+      "Grapefruit",
+      "Bergamot",
+      "Pink Pepper",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Cardamom",
+      "Cinnamon",
+      "Ginger"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "fruity",
+      "citrus",
+      "aromatic",
+      "warm spicy",
+      "woody",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "citrus": 5,
+      "aromatic": 4,
+      "warm spicy": 4,
+      "woody": 4,
+      "sweet": 3,
+      "fresh spicy": 3,
+      "soft spicy": 3,
+      "earthy": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.106624.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Absolu-Aventus-106624.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Absolu Aventus 2023",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Grapefruit",
+      "Bergamot",
+      "Pink Pepper",
+      "Black Currant",
+      "Pineapple",
+      "Nutmeg",
+      "Cloves"
+    ],
+    "heart_notes": [
+      "Ginger",
+      "Cinnamon",
+      "Citron",
+      "Cardamom",
+      "Rose"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Vetiver",
+      "Oakmoss",
+      "Ambroxan",
+      "Sandalwood",
+      "Musk",
+      "Tonka",
+      "Evernyl"
+    ],
+    "top_accords": [
+      "citrus",
+      "warm spicy",
+      "fresh spicy",
+      "woody",
+      "aromatic",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "warm spicy": 4,
+      "fresh spicy": 4,
+      "woody": 3,
+      "aromatic": 3,
+      "fruity": 3,
+      "earthy": 3,
+      "soft spicy": 3,
+      "sweet": 3,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.84112.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Absolu-Aventus-2023-84112.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Aventus",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Black Currant",
+      "Apple",
+      "Lemon",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Pineapple",
+      "Patchouli",
+      "Moroccan Jasmine"
+    ],
+    "base_notes": [
+      "Birch",
+      "Musk",
+      "oak moss",
+      "Cedarwood",
+      "Ambroxan"
+    ],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "woody",
+      "leather",
+      "citrus",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 3,
+      "woody": 3,
+      "leather": 3,
+      "citrus": 3,
+      "smoky": 3,
+      "musky": 3,
+      "fresh": 3,
+      "tropical": 3,
+      "mossy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.9828.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Aventus-9828.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Aventus 10th Anniversary",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Pineapple",
+      "Bergamot",
+      "Black Currant",
+      "Apple",
+      "Pink Pepper",
+      "Orange",
+      "Green Notes"
+    ],
+    "heart_notes": [
+      "Birch",
+      "Melon",
+      "Juniper Berries",
+      "Patchouli",
+      "Rose",
+      "Cyclamen",
+      "Jasmine",
+      "Neroli",
+      "Hedione"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Ambroxan",
+      "Leather",
+      "Musk",
+      "Oakmoss",
+      "Vanilla",
+      "Cedar"
+    ],
+    "top_accords": [
+      "fruity",
+      "amber",
+      "citrus",
+      "woody",
+      "sweet",
+      "leather"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "amber": 4,
+      "citrus": 4,
+      "woody": 4,
+      "sweet": 3,
+      "leather": 3,
+      "fresh": 3,
+      "fresh spicy": 3,
+      "musky": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.62845.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Aventus-10th-Anniversary-62845.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Aventus Cologne",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Ginger",
+      "Pink Pepper",
+      "Bergamot",
+      "Spearmint"
+    ],
+    "heart_notes": [
+      "Vetiver",
+      "Patchouli",
+      "Sandalwood",
+      "Ozonic notes"
+    ],
+    "base_notes": [
+      "Musk",
+      "Birch",
+      "Tonka Bean",
+      "Styrax",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "musky",
+      "leather",
+      "fresh spicy",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 5,
+      "musky": 4,
+      "leather": 3,
+      "fresh spicy": 3,
+      "powdery": 3,
+      "smoky": 3,
+      "aromatic": 3,
+      "earthy": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51692.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Aventus-Cologne-51692.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Aventus for Her",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Green Apple",
+      "Bergamot",
+      "Lemon",
+      "Patchouli",
+      "Pink Pepper",
+      "Violet"
+    ],
+    "heart_notes": [
+      "Musk",
+      "Rose",
+      "Sandalwood",
+      "Styrax"
+    ],
+    "base_notes": [
+      "Black Currant",
+      "Peach",
+      "Amber",
+      "Lilac",
+      "Ylang-Ylang"
+    ],
+    "top_accords": [
+      "fruity",
+      "citrus",
+      "woody",
+      "powdery",
+      "musky",
+      "floral"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "citrus": 4,
+      "woody": 4,
+      "powdery": 4,
+      "musky": 4,
+      "floral": 3,
+      "fresh": 3,
+      "amber": 3,
+      "soft spicy": 3,
+      "green": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.38497.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Aventus-for-Her-38497.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Aventus Oil",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Pineapple",
+      "Apple",
+      "Bergamot",
+      "Black Currant"
+    ],
+    "heart_notes": [
+      "Birch",
+      "Jasmine",
+      "Patchouli",
+      "Rose"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Ambergris",
+      "Musk",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "fruity",
+      "woody",
+      "mossy",
+      "leather",
+      "earthy",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "woody": 4,
+      "mossy": 4,
+      "leather": 3,
+      "earthy": 3,
+      "sweet": 3,
+      "smoky": 3,
+      "fresh": 3,
+      "white floral": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71297.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Aventus-Oil-71297.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Aberdeen Lavender",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Rosemary",
+      "Artemisia",
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Lily",
+      "Tuberose",
+      "Rose"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Leather",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "lavender",
+      "white floral",
+      "woody",
+      "herbal"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "lavender": 4,
+      "white floral": 3,
+      "woody": 3,
+      "herbal": 3,
+      "citrus": 3,
+      "tuberose": 3,
+      "animalic": 3,
+      "patchouli": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24782.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Aberdeen-Lavender-24782.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Asian Green Tea",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin Orange",
+      "Bergamot",
+      "Lemon",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Green Tea",
+      "Black Currant",
+      "Violet",
+      "Heliotrope",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Amber",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "citrus",
+      "powdery",
+      "green",
+      "fruity",
+      "floral",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "powdery": 3,
+      "green": 3,
+      "fruity": 3,
+      "floral": 3,
+      "fresh": 2,
+      "aromatic": 2,
+      "fresh spicy": 2,
+      "woody": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24780.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Asian-Green-Tea-24780.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Cedre Blanc",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Bay Leaf",
+      "Galbanum",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Geranium",
+      "Lily",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Vetiver",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "fresh spicy",
+      "green",
+      "citrus",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 4,
+      "fresh spicy": 4,
+      "green": 3,
+      "citrus": 3,
+      "white floral": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24781.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Cedre-Blanc-24781.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Citrus Bigarade",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Petitgrain Paraguay",
+      "Italian Lemon"
+    ],
+    "heart_notes": [
+      "Italian Mandarin",
+      "White Pepper"
+    ],
+    "base_notes": [
+      "Haitian Vetiver",
+      "Ginger",
+      "Mint"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "green",
+      "woody",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 4,
+      "fresh spicy": 3,
+      "green": 3,
+      "woody": 3,
+      "earthy": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.63619.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Citrus-Bigarade-63619.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Green Neroli",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mint",
+      "Blood Mandarin",
+      "Petitgrain Paraguay"
+    ],
+    "heart_notes": [
+      "Tarragon",
+      "Neroli",
+      "Orange"
+    ],
+    "base_notes": [
+      "Mint",
+      "Italian Lemon",
+      "Caraway",
+      "Rosemary"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "green",
+      "fresh spicy",
+      "anis"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 5,
+      "green": 4,
+      "fresh spicy": 4,
+      "anis": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.63618.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Green-Neroli-63618.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Iris Tuberose",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Violet Leaf",
+      "Galbanum",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Lily",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Orange Blossom",
+      "Musk",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "tuberose",
+      "green",
+      "animalic",
+      "ozonic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "tuberose": 3,
+      "green": 3,
+      "animalic": 2,
+      "ozonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24784.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Iris-Tuberose-24784.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Vetiver Geranium",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Granny Smith apple",
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Geranium",
+      "Rose",
+      "Cinnamon"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Vetiver",
+      "Patchouli",
+      "Musk",
+      "Amber"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "citrus",
+      "rose",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 5,
+      "woody": 4,
+      "citrus": 4,
+      "rose": 3,
+      "warm spicy": 3,
+      "fruity": 3,
+      "earthy": 3,
+      "patchouli": 3,
+      "herbal": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24783.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Vetiver-Geranium-24783.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Zeste Mandarine",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lemon Leaf",
+      "Italian Orange"
+    ],
+    "heart_notes": [
+      "Yellow Mandarin",
+      "Italian Lemon"
+    ],
+    "base_notes": [
+      "Indian Patchouli",
+      "Petitgrain Paraguay",
+      "Orangewood"
+    ],
+    "top_accords": [
+      "citrus",
+      "patchouli",
+      "woody",
+      "aromatic",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "patchouli": 2,
+      "woody": 2,
+      "aromatic": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.63620.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Zeste-Mandarine-63620.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Jardin d’Amalfi",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Tangerine",
+      "Neroli",
+      "Bergamot",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Bulgarian Rose",
+      "Apple",
+      "Virginia Cedar"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Haitian Vetiver",
+      "Cinnamon"
+    ],
+    "top_accords": [
+      "citrus",
+      "fruity",
+      "fresh spicy",
+      "green",
+      "aromatic",
+      "rose"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fruity": 3,
+      "fresh spicy": 2,
+      "green": 2,
+      "aromatic": 2,
+      "rose": 2,
+      "white floral": 2,
+      "woody": 2,
+      "musky": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.13389.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Jardin-d-Amalfi-13389.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Original Cologne (Pure White Cologne)",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit",
+      "Lemon",
+      "Sicilian Bergamot"
+    ],
+    "heart_notes": [
+      "Pear",
+      "Neroli",
+      "Galbanum"
+    ],
+    "base_notes": [
+      "Rice",
+      "White Musk",
+      "Powdery Notes",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "citrus",
+      "powdery",
+      "aromatic",
+      "green",
+      "sweet",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "powdery": 3,
+      "aromatic": 3,
+      "green": 3,
+      "sweet": 3,
+      "fresh spicy": 2,
+      "fruity": 2,
+      "fresh": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.13391.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Original-Cologne-Pure-White-Cologne-13391.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Royal Service",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Grapefruit",
+      "Bitter Orange"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Narcissus",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Musk",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "powdery",
+      "musky",
+      "iris",
+      "fresh spicy",
+      "amber"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "powdery": 3,
+      "musky": 3,
+      "iris": 3,
+      "fresh spicy": 3,
+      "amber": 3,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.13613.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Royal-Service-13613.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Spice and Wood",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Apple",
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Pepper",
+      "Birch",
+      "Clove",
+      "Angelica",
+      "Patchouli"
+    ],
+    "base_notes": [
+      "Cedar",
+      "oak moss",
+      "Musk",
+      "Iris"
+    ],
+    "top_accords": [
+      "woody",
+      "fresh spicy",
+      "citrus",
+      "warm spicy",
+      "powdery",
+      "musky"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "fresh spicy": 4,
+      "citrus": 4,
+      "warm spicy": 4,
+      "powdery": 4,
+      "musky": 4,
+      "leather": 3,
+      "earthy": 3,
+      "smoky": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10101.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Spice-and-Wood-10101.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Sublime Vanille",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Vanilla",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Musk"
+    ],
+    "top_accords": [
+      "vanilla",
+      "citrus",
+      "powdery",
+      "aromatic",
+      "sweet",
+      "musky"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "citrus": 4,
+      "powdery": 3,
+      "aromatic": 3,
+      "sweet": 3,
+      "musky": 2,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7024.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Sublime-Vanille-7024.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "White Amber",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Fruits"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Benzoin"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "amber",
+      "fruity",
+      "woody",
+      "warm spicy",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "amber": 4,
+      "fruity": 3,
+      "woody": 3,
+      "warm spicy": 3,
+      "powdery": 3,
+      "sweet": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.45599.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/White-Amber-45599.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "White Flowers",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Green Apple",
+      "Lemon",
+      "Violet Leaf"
+    ],
+    "heart_notes": [
+      "Italian Jasmine",
+      "Moroccan Jasmine",
+      "Bulgarian Rose",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Narcissus",
+      "Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "green",
+      "yellow floral",
+      "citrus",
+      "aromatic",
+      "rose"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "green": 5,
+      "yellow floral": 4,
+      "citrus": 4,
+      "aromatic": 4,
+      "rose": 4,
+      "fruity": 4,
+      "fresh": 4,
+      "ozonic": 4,
+      "aquatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.13390.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/White-Flowers-13390.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Angelique Encens",
+    "release_year": 1933,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "white floral",
+      "musky",
+      "powdery",
+      "smoky",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "white floral": 3,
+      "musky": 3,
+      "powdery": 3,
+      "smoky": 3,
+      "vanilla": 2,
+      "tuberose": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8887.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Angelique-Encens-8887.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Bayrhum Vetiver",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bay Leaf",
+      "Pepper"
+    ],
+    "heart_notes": [
+      "Vetiver"
+    ],
+    "base_notes": [
+      "Vetiver"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "woody",
+      "earthy",
+      "camphor"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 4,
+      "woody": 3,
+      "earthy": 3,
+      "camphor": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30691.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Bayrhum-Vetiver-30691.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Bois de Santal",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Civet",
+      "Lemon",
+      "Orange",
+      "Green Notes"
+    ],
+    "heart_notes": [
+      "Sandalwood"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Tonka Bean",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "woody",
+      "powdery",
+      "vanilla",
+      "citrus",
+      "musky",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "powdery": 5,
+      "vanilla": 5,
+      "citrus": 4,
+      "musky": 4,
+      "animalic": 4,
+      "warm spicy": 3,
+      "amber": 3,
+      "sweet": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30676.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Bois-de-Santal-30676.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Verveine Narcisse",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Galbanum",
+      "Bergamot",
+      "Lemon Verbena"
+    ],
+    "heart_notes": [
+      "Narcissus",
+      "Tobacco",
+      "Orris",
+      "Floral Notes"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Benzoin",
+      "Musk",
+      "Vanilla",
+      "Oakmoss",
+      "Sandalwood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "amber",
+      "musky",
+      "yellow floral",
+      "animalic",
+      "tobacco"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "musky": 3,
+      "yellow floral": 3,
+      "animalic": 3,
+      "tobacco": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.74971.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Verveine-Narcisse-74971.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Creed",
+    "name": "Vintage Tabarome",
+    "release_year": 1875,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Citruses"
+    ],
+    "heart_notes": [
+      "Tobacco Leaf",
+      "Pepper"
+    ],
+    "base_notes": [
+      "oak moss",
+      "Sandalwood",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "woody",
+      "tobacco",
+      "mossy",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 4,
+      "woody": 4,
+      "tobacco": 4,
+      "mossy": 4,
+      "earthy": 3,
+      "amber": 3,
+      "warm spicy": 3,
+      "sweet": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8891.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Creed/Vintage-Tabarome-8891.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

@@ -1,0 +1,1919 @@
+[
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "LET'S PRETEND",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/lets-pretend"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/lets-pretend"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/files/Lets_Pretend_100ml.jpg?v=1774543811",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/lets-pretend",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "ABOVE THE WAVES",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/above-the-waves"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/above-the-waves"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/files/AbovetheWaves100ml.jpg?v=1756213496",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/above-the-waves",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "HERMANN A MES COTES ME PARAISSAIT UNE OMBRE",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Pepper",
+      "Galbanum",
+      "Blackcurrant Heart notes: Incense",
+      "Geosmine",
+      "Rose Absolute Base notes: Vetiver",
+      "Patchouli",
+      "Ambro"
+    ],
+    "heart_notes": [
+      "Incense",
+      "Geosmine",
+      "Rose Absolute Base notes: Vetiver",
+      "Patchouli",
+      "Ambroxan INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Patchouli",
+      "Ambroxan INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/hermann-a-mes-cotes-me-paraissait-une-ombre"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/hermann-a-mes-cotes-me-paraissait-une-ombre"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/Hermannamescotesmeparaissaituneombre100ml-flacon.jpg?v=1761863695",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/hermann-a-mes-cotes-me-paraissait-une-ombre",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "NOSTOS",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 24000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/nostos"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/files/Nostos100mlflacon.jpg?v=1726835266",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/nostos",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "THE GHOST IN THE SHELL",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Aqual™",
+      "Yuzu HE",
+      "Mugane™",
+      "Milky Skin Accord Base notes: Moss"
+    ],
+    "heart_notes": [
+      "Jasmin absolute",
+      "Mugane™",
+      "Vinyl Gaiacol (MANE Biotech)",
+      "Orcanox™ INGREDIENTS"
+    ],
+    "base_notes": [
+      "Moss Accord",
+      "Vinyl Gaiacol (MANE Biotech)",
+      "Orcanox™ INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/the-ghost-in-the-shell"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/the-ghost-in-the-shell"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/TheGhostintheShell100ml_Flacon.jpg?v=1761861981",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/the-ghost-in-the-shell",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "EXPERIMENTUM CRUCIS",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lychee",
+      "Apple",
+      "Cumin Heart notes: Rose NeoAbsolute",
+      "Jasmin Absolute",
+      "Honey Accord Base notes: Akigalawood©",
+      "Patchouli"
+    ],
+    "heart_notes": [
+      "Rose NeoAbsolute",
+      "Jasmin Absolute",
+      "Honey Accord Base notes: Akigalawood©",
+      "Patchouli",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Akigalawood©",
+      "Patchouli",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 24000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/experimentum-crucis"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/ExperimentumCrucisflacon100ml.jpg?v=1700754964",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/experimentum-crucis",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "YOU OR SOMEONE LIKE YOU",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/you-or-someone-like-you"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/you-or-someone-like-you"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/YouOrSomeoneLikeYou100ml_eef6dc82-22f0-4708-b57b-35ed35bad70b.jpg?v=1761862195",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/you-or-someone-like-you",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "REMARKABLE PEOPLE",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit",
+      "Champagne Accord",
+      "Cardamom Heart notes: Jasmin",
+      "Curry Neo Jungle Essence™",
+      "Black Pepper Base notes: Labdanum"
+    ],
+    "heart_notes": [
+      "Jasmin",
+      "Curry Neo Jungle Essence™",
+      "Black Pepper Base notes: Labdanum",
+      "Sandalwood",
+      "Lorenox™ INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Labdanum",
+      "Sandalwood",
+      "Lorenox™ INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/remarkable-people"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/remarkable-people"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/RemarkablePeople100ml.jpg?v=1700755283",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/remarkable-people",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "STORY OF YOUR LIFE",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/story-of-your-life"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/story-of-your-life"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/files/Story_of_your_life_100ml_Bottle.jpg?v=1726648842",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/story-of-your-life",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "FAT ELECTRICIAN",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Pepper",
+      "Elemi Rezin Heart notes: Cedarwood",
+      "Vetiver Base notes: Opoponax",
+      "Myrrh",
+      "Vanilla Orpur® INGREDIENTS ALCOHO"
+    ],
+    "heart_notes": [
+      "Cedarwood",
+      "Vetiver Base notes: Opoponax",
+      "Myrrh"
+    ],
+    "base_notes": [
+      "Opoponax",
+      "Myrrh"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/fat-electrician"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/fat-electrician"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/FatElectrician100ml_1042917a-6da6-4f05-8212-a6b6c005937a.jpg?v=1700754991",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/fat-electrician",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "LES FLEURS DU DECHET – I AM TRASH",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Apple Essence upcycling",
+      "Bitter Orange upcycling",
+      "Iso E"
+    ],
+    "heart_notes": [
+      "Rose Absolute upcycling",
+      "Iso E Super upcycling"
+    ],
+    "base_notes": [
+      "Cedarwood Atlas upcycling",
+      "Sandalore upcycling"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/les-fleurs-du-dechet-i-am-trash"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/les-fleurs-du-dechet-i-am-trash"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/LesFleursduDechet_IAmTrash.jpg?v=1700755199",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/les-fleurs-du-dechet-i-am-trash",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "EXIT THE KING",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Timur JE™",
+      "Soap Foam Accord (Aldehydes",
+      "Musk)",
+      "Rose Superessence",
+      "Lily"
+    ],
+    "heart_notes": [
+      "Jasmine e-pure JE™",
+      "Rose Superessence",
+      "Moss Absolute",
+      "Sandalwood Accord"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Moss Absolute",
+      "Sandalwood Accord",
+      "Orcanox™ INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/exit-the-king"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/exit-the-king"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/ExittheKing100ml.jpg?v=1700754934",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/exit-the-king",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "JASMIN ET CIGARETTE",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Galbanum",
+      "Curcuma Base notes: Tonka Beans",
+      "Mate INGREDIENTS ALCOHOL DENAT"
+    ],
+    "heart_notes": [
+      "Jasmine Absolute",
+      "Curcuma Base notes: Tonka Beans",
+      "Mate INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Tonka Beans",
+      "Mate INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/jasmin-et-cigarette"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/jasmin-et-cigarette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/JasminetCigarette100ml.jpg?v=1700755154",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/jasmin-et-cigarette",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "SHE WAS AN ANOMALY",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Prunes Neo Jungle Essence™",
+      "Incense Base notes: Musk",
+      "Sandalwood",
+      "Am"
+    ],
+    "heart_notes": [
+      "Vanilla-Orchid Accord",
+      "Prunes Neo Jungle Essence™",
+      "Incense Base notes: Musk",
+      "Sandalwood",
+      "Amberfix© INGREDIENTS ALCOHOL D"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood",
+      "Amberfix© INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/she-was-an-anomaly"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/she-was-an-anomaly"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/ShewasanAnomaly100ml.jpg?v=1700755377",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/she-was-an-anomaly",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "UNE AMOURETTE",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pink Peppercorn",
+      "Cardamom",
+      "Neroli Heart notes: Peach",
+      "Iris",
+      "Patchouli Base notes: Opoponax",
+      "Akigalawood®",
+      "Vanilla Absolu"
+    ],
+    "heart_notes": [
+      "Peach",
+      "Iris",
+      "Patchouli Base notes: Opoponax",
+      "Akigalawood®"
+    ],
+    "base_notes": [
+      "Opoponax",
+      "Akigalawood®"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/une-amourette"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/une-amourette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/files/Une_amourette_100_ml_flacon_Cocarde_2023_1_1_1.jpg?v=1757327342",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/une-amourette",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "DIVIN'ENFANT",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "of orange blossom and marshmallow",
+      "breaks the unexpected accord of coffee",
+      "leather and cold tobacco",
+      "a shrilling symbol"
+    ],
+    "heart_notes": [
+      "Rose Absolute Orpur®",
+      "Orange Blossom",
+      "Heliotrope Base notes: Vanilla",
+      "Patchouli",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/divinenfant"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/divinenfant"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/Divin_Enfant100ml-Flacon.jpg?v=1700754752",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/divinenfant",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "EAU DE PROTECTION",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bitter Orange",
+      "Ginger",
+      "Jasmine",
+      "Heliotrope Base notes: Tonka Bea"
+    ],
+    "heart_notes": [
+      "Turkish Rose Absolute Orpur®",
+      "Jasmine",
+      "Benzoin Orpur®",
+      "Patchouli Orpur® ING"
+    ],
+    "base_notes": [
+      "Tonka Beans Absolute",
+      "Benzoin Orpur®"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/eau-de-protection"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/eau-de-protection"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/files/Eau_de_Protection_100_ml_2024.jpg?v=1776762640",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/eau-de-protection",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "PUTAIN DES PALACES",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarine",
+      "Ginger Orpur®",
+      "Raspberry Heart notes: Iris",
+      "Rose Absolute",
+      "Sandal"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Rose Absolute",
+      "Sandalwood",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Tonka Beans Orpur®",
+      "Sandalwood",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/putain-des-palaces"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/putain-des-palaces"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/PutaindesPalaces100ml_c5a2a522-907b-40f5-a6b6-0c35df6be2b5.jpg?v=1700755262",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/putain-des-palaces",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "FRUSTRATION",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cumin HE",
+      "Cinnamon HE",
+      "Vanilla Absolute",
+      "Ciste Ab"
+    ],
+    "heart_notes": [
+      "Pure Vanilla Jungle Essence ™",
+      "Vanilla Absolute",
+      "Bourbon Vetiver HE",
+      "Vi"
+    ],
+    "base_notes": [
+      "Chestnut Wood Accord",
+      "Bourbon Vetiver HE"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 24000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/frustration"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/Frustration_100ml_Flacon.jpg?v=1700755102",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/frustration",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "LA FIN DU MONDE",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Popcorn",
+      "Black Pepper",
+      "Roasted Sesame Heart notes: Freesia",
+      "Cumin Seed",
+      "Ambr"
+    ],
+    "heart_notes": [
+      "Freesia",
+      "Cumin Seed",
+      "Ambrette Seeds",
+      "Sandalwood INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Gunpowder Accord",
+      "Ambrette Seeds",
+      "Sandalwood INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/la-fin-du-monde"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/la-fin-du-monde"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/LaFinduMonde100ml_69fc994c-c9b9-4781-a2d0-6aeaf0a80e25.jpg?v=1700755175",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/la-fin-du-monde",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "RIEN",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Pepper",
+      "Safraleine (Saffron",
+      "Leather Accord)",
+      "Iris Absolute",
+      "Cistus"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Iris Absolute",
+      "Vetiver essence Orpur®",
+      "Treemoss INGREDIEN"
+    ],
+    "base_notes": [
+      "Patchouli essence Orpur®",
+      "Vetiver essence Orpur®",
+      "Treemoss INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/rien"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/rien"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/Rien100ml.jpg?v=1700755305",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/rien",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "SOUL OF MY SOUL",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot Italy Orpur",
+      "Incense Essence Somalia Orpur",
+      "Rose Abso"
+    ],
+    "heart_notes": [
+      "Iris butter Orpur",
+      "Rose Absolute Orpur",
+      "Georgy wood Accord"
+    ],
+    "base_notes": [
+      "Sandalwood Essence Australia Orpur",
+      "Georgy wood Accord"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 24000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/soul-of-my-soul"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/Soulofmysoul100ml_bottle_1.jpg?v=1700755417",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/soul-of-my-soul",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "SOUS LE PONT MIRABEAU",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Italian Bergamot HE SUSTAINABLE",
+      "Pure Pink Pepper Jungle Essence ™",
+      "Elemi HE"
+    ],
+    "heart_notes": [
+      "Superessence incense",
+      "Aquatic Accord",
+      "Ozonic Accord",
+      "Vanilla Pure Jun"
+    ],
+    "base_notes": [
+      "Virginia Cedar Upcycled",
+      "Vanilla Pure Jungle Essence™",
+      "Sandalwood HE",
+      "Orcanox™ Upcycled",
+      "Musks INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/sous-le-pont-mirabeau"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/sous-le-pont-mirabeau"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/SouslepontMirabeau100ml.jpg?v=1700755450",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/sous-le-pont-mirabeau",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "LIKE THIS",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin",
+      "Ginger",
+      "Neroli",
+      "Rose Base notes: Vetiver",
+      "Heliotrope",
+      "Musk ING"
+    ],
+    "heart_notes": [
+      "Immortelle flowers",
+      "Neroli",
+      "Rose Base notes: Vetiver",
+      "Heliotrope",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Heliotrope",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/like-this"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/like-this"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/LikeThis100ml.jpg?v=1761862076",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/like-this",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "SECRETIONS MAGNIFIQUES",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Marine Accord",
+      "Salt Accord",
+      "Aldehyde Heart notes: Blood Accord",
+      "Milk Accord"
+    ],
+    "heart_notes": [
+      "Blood Accord",
+      "Milk Accord",
+      "Iris",
+      "Opoponax INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Iris",
+      "Opoponax INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 10500,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/secretions-magnifiques"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/SecretionsMagnifiques50ml.jpg?v=1603882330",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/secretions-magnifiques",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "COLOGNE",
+    "release_year": null,
+    "concentration": "cologne",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lemon",
+      "Mandarin",
+      "Mint Heart notes: Magnolia",
+      "Orange Blossom",
+      "Jasmine Base notes: Cedarwood",
+      "Patchouli essence Orpur®",
+      "Mu"
+    ],
+    "heart_notes": [
+      "Magnolia",
+      "Orange Blossom",
+      "Jasmine Base notes: Cedarwood",
+      "Patchouli essence Orpur®",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Cedarwood",
+      "Patchouli essence Orpur®",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/cologne"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/Cologne100ml_3c7a1441-0126-4178-a6fb-899155a35184.jpg?v=1700754618",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/cologne",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "NOEL AU BALCON",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot essence Orpur®",
+      "Cinnamon",
+      "Lilly of the Valley",
+      "Honey Base notes: Ce"
+    ],
+    "heart_notes": [
+      "Rose essence Orpur®",
+      "Lilly of the Valley",
+      "Honey Base notes: Cedarwood",
+      "Vanilla",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Cedarwood",
+      "Vanilla",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/noel-au-balcon"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/noel-au-balcon"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/NoelauBalcon100ml.jpg?v=1700755240",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/noel-au-balcon",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "RIEN INTENSE INCENSE",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Pepper",
+      "Safraleine (Saffron",
+      "Leather Accord)",
+      "Iris Absolute",
+      "Cistus"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Iris Absolute",
+      "Vetiver essence Orpur®",
+      "Treemoss INGREDIEN"
+    ],
+    "base_notes": [
+      "Patchouli essence Orpur®",
+      "Vetiver essence Orpur®",
+      "Treemoss INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/rien-intense-incense"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/RienIntenseIncense100ml.jpg?v=1700755352",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/rien-intense-incense",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "ATTAQUER LE SOLEIL - MARQUIS DE SADE",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/attaquer-le-soleil-marquis-de-sade"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/AttaquerleSoleil100ml.jpg?v=1700754353",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/attaquer-le-soleil-marquis-de-sade",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "ARCHIVES 69",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin",
+      "Pink berries Pure Jungle Essence™",
+      "Prunes Neo Jungle Essence"
+    ],
+    "heart_notes": [
+      "Vanilla-Orchid Accord",
+      "Prunes Neo Jungle Essence™",
+      "Incense Base notes: Camphor",
+      "Patchouli",
+      "Musk INGREDIENTS ALCOHOL DENA"
+    ],
+    "base_notes": [
+      "Camphor",
+      "Patchouli",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/archives-69"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/archives-69"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/Archives69100ml_flacon.jpg?v=1700754279",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/archives-69",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "DANGEROUS COMPLICITY",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Rhum Pure Jungle Essence™",
+      "Ginger Pure Jungle Essence™",
+      "Jasmin"
+    ],
+    "heart_notes": [
+      "Osmanthus Absolute",
+      "Jasmin Absolute",
+      "Ylang Ylang HE Base notes: Lorenox™",
+      "Patchouli HE",
+      "Sandalwood INGREDIENTS ALCOHOL D"
+    ],
+    "base_notes": [
+      "Lorenox™",
+      "Patchouli HE",
+      "Sandalwood INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/dangerous-complicity"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/dangerous-complicity"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/DangerousComplicity100ml_3fc8e102-2c6e-4663-a595-34af5067748a.jpg?v=1700754718",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/dangerous-complicity",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "SPICE MUST FLOW",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom Pure Jungle Essence™",
+      "Pepper HE",
+      "Turkish Rose Absolute"
+    ],
+    "heart_notes": [
+      "Cinnamon",
+      "Turkish Rose Absolute",
+      "Saffron Base notes: Incense",
+      "Fir Balsam",
+      "Patchouli HE INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Incense",
+      "Fir Balsam",
+      "Patchouli HE INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 24000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/spice-must-flow"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/SpiceMustFlow100ml.jpg?v=1700755475",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/spice-must-flow",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "YES I DO",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Aldehyde",
+      "Lily of the Valley",
+      "Pear Heart notes: Peony",
+      "Jasmine",
+      "Orange Blossom Base notes: Cedarwood",
+      "Cocoa Absolute",
+      "Mu"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Jasmine",
+      "Orange Blossom Base notes: Cedarwood",
+      "Cocoa Absolute",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Cedarwood",
+      "Cocoa Absolute",
+      "Musk INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/yes-i-do"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/yes-i-do"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/YesIDo100ml.jpg?v=1700755757",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/yes-i-do",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "THE AFTERNOON OF A FAUN",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Cinnamon",
+      "Incense Heart notes: Rose",
+      "Iris",
+      "Jasmin Base notes: Myrrh",
+      "Leather",
+      "Benzoin INGREDIENTS ALCOHOL DENA"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Iris",
+      "Jasmin Base notes: Myrrh",
+      "Leather",
+      "Benzoin INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Myrrh",
+      "Leather",
+      "Benzoin INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/the-afternoon-of-a-faun"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/TheAfternoonofaFaun100ml.jpg?v=1700755500",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/the-afternoon-of-a-faun",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "500 YEARS",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot HE",
+      "Cardamom Pure Jungle Essence ™",
+      "Oud HE",
+      "Geranium Burbon HE Base"
+    ],
+    "heart_notes": [
+      "Turkish Rose Absolute",
+      "Oud HE",
+      "Patchouli",
+      "Suede INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Amber Woods",
+      "Patchouli",
+      "Suede INGREDIENTS ALCOHOL DENAT",
+      "PARFUM (FRAGRANCE)",
+      "AQUA (WATER)",
+      "BHT",
+      "GERANIOL",
+      "CITRONELLOL"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 24000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/500-years"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/products/500Years100ml_c2f6e05c-21ab-4ea5-bdd9-a6a4760b12fe.jpg?v=1700750718",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/500-years",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  },
+  {
+    "brand": "Etat Libre d'Orange",
+    "name": "CLEAN SUEDE",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "of aldehydes and lemon"
+    ],
+    "heart_notes": [
+      "Birch Leaves",
+      "Pine",
+      "Pepper Base notes: Vanilla",
+      "Ambre Gris",
+      "Suede INGREDIENTS ALCOHOL DENAT"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Ambre Gris",
+      "Suede INGREDIENTS ALCOHOL DENAT"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16000,
+    "prices": [
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16000,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/clean-suede"
+      },
+      {
+        "retailer": "etat-libre-d'orange-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10500,
+        "is_decant": false,
+        "url": "https://www.etatlibredorange.com/products/clean-suede"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0281/2755/9714/files/CleanSuede100ml.jpg?v=1700754600",
+    "source": "etat-libre-d'orange",
+    "source_url": "https://www.etatlibredorange.com/products/clean-suede",
+    "sources": [
+      "etat-libre-d'orange"
+    ]
+  }
+]

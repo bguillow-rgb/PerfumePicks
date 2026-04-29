@@ -1,0 +1,2250 @@
+[
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Sicily Dolce&Gabbana",
+    "release_year": 2003,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Banana",
+      "Honeysuckle",
+      "Orange Blossom",
+      "Bergamot",
+      "Aldehydes"
+    ],
+    "heart_notes": [
+      "Nutmeg",
+      "Jasmine",
+      "Hiacynth",
+      "Hibiscus",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood",
+      "Heliotrope"
+    ],
+    "top_accords": [
+      "white floral",
+      "fruity",
+      "fresh spicy",
+      "powdery",
+      "floral",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "fruity": 4,
+      "fresh spicy": 3,
+      "powdery": 3,
+      "floral": 3,
+      "sweet": 3,
+      "citrus": 3,
+      "musky": 3,
+      "woody": 3,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.486.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Sicily-486.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "By Dolce&Gabbana",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lavender",
+      "Bergamot",
+      "Cyclamen",
+      "Tangerine",
+      "Lily-of-the-Valley"
+    ],
+    "heart_notes": [
+      "Lily",
+      "Cedar",
+      "Orchid",
+      "Violet"
+    ],
+    "base_notes": [
+      "Musk",
+      "Coffee",
+      "Ginger",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "powdery",
+      "woody",
+      "fresh spicy",
+      "lavender",
+      "musky",
+      "coffee"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "woody": 5,
+      "fresh spicy": 4,
+      "lavender": 4,
+      "musky": 4,
+      "coffee": 4,
+      "white floral": 4,
+      "citrus": 4,
+      "floral": 4,
+      "warm spicy": 4
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.489.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/By-489.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "By Dolce&Gabbana",
+    "release_year": 1997,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Nutmeg",
+      "Pepper"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Artemisia"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Tobacco",
+      "Leather",
+      "Amber",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "woody",
+      "lavender",
+      "aromatic",
+      "tobacco",
+      "leather"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "woody": 4,
+      "lavender": 3,
+      "aromatic": 3,
+      "tobacco": 3,
+      "leather": 3,
+      "amber": 3,
+      "powdery": 3,
+      "herbal": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.490.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/By-490.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce&Gabbana Dolce&Gabbana",
+    "release_year": 1992,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Basil",
+      "Citruses",
+      "Ivy",
+      "Mandarin Orange",
+      "Freesia",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Carnation",
+      "Marigold",
+      "Coriander",
+      "Orange Blossom",
+      "Lily",
+      "Jasmine",
+      "Bulgarian Rose",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Vanilla",
+      "Musk",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "aromatic",
+      "floral",
+      "fresh",
+      "white floral",
+      "aldehydic",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "floral": 4,
+      "fresh": 4,
+      "white floral": 4,
+      "aldehydic": 4,
+      "citrus": 4,
+      "fresh spicy": 3,
+      "warm spicy": 3,
+      "woody": 3,
+      "vanilla": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.484.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Gabbana-484.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce&Gabbana Perfume for Babies Dolce&Gabbana",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "musky",
+      "honey",
+      "sweet",
+      "citrus",
+      "powdery",
+      "ozonic"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "honey": 5,
+      "sweet": 4,
+      "citrus": 4,
+      "powdery": 4,
+      "ozonic": 3,
+      "aquatic": 3,
+      "floral": 3,
+      "fresh spicy": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.23597.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Gabbana-Perfume-for-Babies-23597.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce&Gabbana Pour Femme Dolce&Gabbana",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Raspberry",
+      "Neroli",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Marshmallow",
+      "Vanilla",
+      "Sandalwood",
+      "Heliotrope"
+    ],
+    "top_accords": [
+      "sweet",
+      "powdery",
+      "vanilla",
+      "fruity",
+      "white floral",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "powdery": 4,
+      "vanilla": 4,
+      "fruity": 3,
+      "white floral": 3,
+      "citrus": 3,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15335.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Gabbana-Pour-Femme-15335.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce&Gabbana Pour Femme Intense Dolce&Gabbana",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Neroli",
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Tuberose"
+    ],
+    "base_notes": [
+      "Marshmallow",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "sweet",
+      "citrus",
+      "powdery",
+      "woody",
+      "tuberose"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "sweet": 5,
+      "citrus": 4,
+      "powdery": 4,
+      "woody": 3,
+      "tuberose": 3,
+      "warm spicy": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18837.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Gabbana-Pour-Femme-Intense-18837.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce&Gabbana pour Homme (1994) Dolce&Gabbana",
+    "release_year": 1994,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender",
+      "Lemon",
+      "Bergamot",
+      "Clary Sage",
+      "Tarragon",
+      "Neroli",
+      "Mandarin Orange",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Pepper",
+      "Cinnamon",
+      "Coriander",
+      "Geranium",
+      "Violet",
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Tobacco",
+      "Tonka Bean",
+      "Sandalwood",
+      "Musk",
+      "Cedar",
+      "Amber",
+      "Coumarin",
+      "Iris"
+    ],
+    "top_accords": [
+      "aromatic",
+      "citrus",
+      "fresh spicy",
+      "woody",
+      "warm spicy",
+      "lavender"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "citrus": 4,
+      "fresh spicy": 4,
+      "woody": 3,
+      "warm spicy": 3,
+      "lavender": 3,
+      "powdery": 3,
+      "sweet": 3,
+      "tobacco": 2,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.483.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Gabbana-pour-Homme-1994-483.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce&Gabbana Pour Homme (2012) Dolce&Gabbana",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Citruses",
+      "Bergamot",
+      "Neroli",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Sage",
+      "Pepper"
+    ],
+    "base_notes": [
+      "Tobacco",
+      "Tonka Bean",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "aromatic",
+      "lavender",
+      "tobacco",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 4,
+      "aromatic": 4,
+      "lavender": 3,
+      "tobacco": 3,
+      "sweet": 3,
+      "fresh": 3,
+      "herbal": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15336.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Gabbana-Pour-Homme-2012-15336.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce&Gabbana Pour Homme Intenso Dolce&Gabbana",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender",
+      "Water Notes",
+      "Basil",
+      "Geranium",
+      "Marigold"
+    ],
+    "heart_notes": [
+      "Tobacco",
+      "Hay",
+      "Clary Sage",
+      "Moepel accord",
+      "Bran"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Cypress",
+      "Musk",
+      "Amber",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "herbal",
+      "green",
+      "lavender",
+      "tobacco"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 5,
+      "herbal": 3,
+      "green": 3,
+      "lavender": 3,
+      "tobacco": 3,
+      "woody": 3,
+      "sweet": 3,
+      "aquatic": 3,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28935.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Gabbana-Pour-Homme-Intenso-28935.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Feminine Dolce&Gabbana",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mimosa",
+      "Water Lily",
+      "Cyclamen",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Lily",
+      "Wisteria",
+      "Heliotrope",
+      "Jasmine",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Musk",
+      "Cashmere Wood",
+      "Sandalwood",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "floral",
+      "powdery",
+      "white floral",
+      "musky",
+      "woody",
+      "yellow floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "powdery": 5,
+      "white floral": 4,
+      "musky": 4,
+      "woody": 4,
+      "yellow floral": 3,
+      "fresh": 3,
+      "vanilla": 3,
+      "sweet": 3,
+      "aquatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.487.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Feminine-487.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Masculine Dolce&Gabbana",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Petitgrain"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Clary Sage",
+      "Mint",
+      "Basil",
+      "Jasmine",
+      "Caraway"
+    ],
+    "base_notes": [
+      "Teak Wood",
+      "Vetiver",
+      "Cedar",
+      "Musk",
+      "Fig Leaf"
+    ],
+    "top_accords": [
+      "aromatic",
+      "citrus",
+      "green",
+      "fresh spicy",
+      "woody",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "citrus": 4,
+      "green": 4,
+      "fresh spicy": 4,
+      "woody": 4,
+      "white floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.488.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Masculine-488.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Anthology L'Amoureux 6 Dolce&Gabbana",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Juniper Berries",
+      "Bergamot",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Birch",
+      "Cardamom",
+      "Orris Root"
+    ],
+    "base_notes": [
+      "Woodsy Notes",
+      "Musk"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "citrus",
+      "musky",
+      "leather"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "citrus": 3,
+      "musky": 3,
+      "leather": 3,
+      "powdery": 3,
+      "soft spicy": 3,
+      "smoky": 3,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6087.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Anthology-L-Amoureux-6-6087.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Anthology L'Empereur 4 Dolce&Gabbana",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Iris",
+      "Bergamot",
+      "Amalfi Lemon"
+    ],
+    "heart_notes": [
+      "Virginia Cedar",
+      "Water Notes"
+    ],
+    "base_notes": [
+      "Tobacco",
+      "Sandalwood",
+      "Musk"
+    ],
+    "top_accords": [
+      "woody",
+      "powdery",
+      "citrus",
+      "tobacco",
+      "iris",
+      "aquatic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "powdery": 4,
+      "citrus": 3,
+      "tobacco": 3,
+      "iris": 3,
+      "aquatic": 3,
+      "musky": 3,
+      "sweet": 2,
+      "aromatic": 2,
+      "violet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14407.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Anthology-L-Empereur-4-14407.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Anthology L'Imperatrice 3 Dolce&Gabbana",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Kiwi",
+      "Rhuburb",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Watermelon",
+      "Cyclamen",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Lemon Tree",
+      "Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "fruity",
+      "ozonic",
+      "aquatic",
+      "green",
+      "sweet",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "ozonic": 4,
+      "aquatic": 4,
+      "green": 3,
+      "sweet": 3,
+      "fresh": 2,
+      "tropical": 2,
+      "aromatic": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6086.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Anthology-L-Imperatrice-3-6086.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Anthology La Force 11 Dolce&Gabbana",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Cinnamon",
+      "Cardamom",
+      "Pimento"
+    ],
+    "heart_notes": [
+      "Cypress",
+      "Nutmeg",
+      "Heliotrope"
+    ],
+    "base_notes": [
+      "Vanille",
+      "Sandalwood",
+      "Caraway"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "vanilla",
+      "woody",
+      "powdery",
+      "cinnamon",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "vanilla": 4,
+      "woody": 4,
+      "powdery": 3,
+      "cinnamon": 3,
+      "fresh spicy": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6842.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Anthology-La-Force-11-6842.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Anthology La Lune 18 Dolce&Gabbana",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Red Apple",
+      "Green Notes",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Lily",
+      "Tuberose",
+      "Rose"
+    ],
+    "base_notes": [
+      "Leather",
+      "Musk",
+      "Orris Root",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "green",
+      "animalic",
+      "tuberose",
+      "powdery",
+      "leather"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "green": 3,
+      "animalic": 3,
+      "tuberose": 3,
+      "powdery": 3,
+      "leather": 3,
+      "musky": 3,
+      "fruity": 3,
+      "citrus": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6089.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Anthology-La-Lune-18-6089.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Anthology La Roue de La Fortune 10 Dolce&Gabbana",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pineapple",
+      "Pink Pepper",
+      "Green Notes"
+    ],
+    "heart_notes": [
+      "Gardenia",
+      "Tuberose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Benzoin",
+      "Vanille",
+      "Iris"
+    ],
+    "top_accords": [
+      "white floral",
+      "vanilla",
+      "patchouli",
+      "warm spicy",
+      "amber",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "vanilla": 4,
+      "patchouli": 4,
+      "warm spicy": 3,
+      "amber": 3,
+      "sweet": 3,
+      "woody": 3,
+      "tuberose": 3,
+      "fruity": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6088.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Anthology-La-Roue-de-La-Fortune-10-6088.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Anthology La Temperance 14 Dolce&Gabbana",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Ambrette (Musk Mallow)",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Orris",
+      "Hibiscus",
+      "Rose"
+    ],
+    "base_notes": [
+      "Oriental notes",
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "musky",
+      "iris",
+      "powdery",
+      "floral",
+      "warm spicy",
+      "amber"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "iris": 4,
+      "powdery": 4,
+      "floral": 3,
+      "warm spicy": 3,
+      "amber": 3,
+      "earthy": 3,
+      "violet": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12483.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Anthology-La-Temperance-14-12483.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Anthology Le Bateleur 1 Dolce&Gabbana",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Juniper Berries",
+      "Cardamom",
+      "Birch"
+    ],
+    "heart_notes": [
+      "Water Notes",
+      "Coriander"
+    ],
+    "base_notes": [
+      "Virginia Cedar",
+      "Vetiver",
+      "Olibanum"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "aquatic",
+      "fresh spicy",
+      "fresh",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 5,
+      "aquatic": 4,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "warm spicy": 3,
+      "leather": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6085.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Anthology-Le-Bateleur-1-6085.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "D&G Anthology Le Fou 21 Dolce&Gabbana",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Coriander",
+      "Bergamot",
+      "Violet"
+    ],
+    "heart_notes": [
+      "Juniper Berries",
+      "Cognac",
+      "Cardamom"
+    ],
+    "base_notes": [
+      "Fern",
+      "Ginger",
+      "Tonka Bean",
+      "Woodsy Notes"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "warm spicy",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "woody": 4,
+      "warm spicy": 3,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12484.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/D-G-Anthology-Le-Fou-21-12484.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "L'Imperatrice Limited Edition Dolce&Gabbana",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Watermelon",
+      "Strawberry"
+    ],
+    "heart_notes": [
+      "Pink Peony",
+      "Damask Rose",
+      "Magnolia",
+      "Cyclamen"
+    ],
+    "base_notes": [
+      "Musk",
+      "Woody Notes",
+      "Sandalwood",
+      "Smoke"
+    ],
+    "top_accords": [
+      "floral",
+      "ozonic",
+      "fruity",
+      "aquatic",
+      "rose",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "ozonic": 4,
+      "fruity": 4,
+      "aquatic": 4,
+      "rose": 3,
+      "fresh": 3,
+      "sweet": 3,
+      "musky": 3,
+      "woody": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.63485.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/L-Imperatrice-Limited-Edition-63485.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "L'Imperatrice Royale Dolce&Gabbana",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Cranberry"
+    ],
+    "heart_notes": [
+      "Azalea"
+    ],
+    "base_notes": [
+      "Virginian Cedar"
+    ],
+    "top_accords": [
+      "fruity",
+      "woody",
+      "fresh spicy",
+      "sour",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "woody": 4,
+      "fresh spicy": 3,
+      "sour": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.102672.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/L-Imperatrice-Royale-102672.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Devotion Dolce&Gabbana",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Candied Lemon"
+    ],
+    "heart_notes": [
+      "Panacotta",
+      "Orange Blossom",
+      "Rum"
+    ],
+    "base_notes": [
+      "Vanilla"
+    ],
+    "top_accords": [
+      "vanilla",
+      "sweet",
+      "white floral",
+      "lactonic",
+      "powdery",
+      "rum"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "sweet": 5,
+      "white floral": 3,
+      "lactonic": 3,
+      "powdery": 3,
+      "rum": 3,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.84951.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Devotion-84951.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Devotion Intense Dolce&Gabbana",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Hazelnut"
+    ],
+    "heart_notes": [
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Vanilla"
+    ],
+    "top_accords": [
+      "vanilla",
+      "nutty",
+      "white floral",
+      "sweet",
+      "woody",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "nutty": 5,
+      "white floral": 4,
+      "sweet": 4,
+      "woody": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "soapy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.96028.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Devotion-Intense-96028.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Devotion Pour Homme Dolce&Gabbana",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Coffee"
+    ],
+    "base_notes": [
+      "Patchouli"
+    ],
+    "top_accords": [
+      "coffee",
+      "warm spicy",
+      "citrus",
+      "patchouli",
+      "woody"
+    ],
+    "accord_intensity": {
+      "coffee": 5,
+      "warm spicy": 4,
+      "citrus": 3,
+      "patchouli": 3,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.101353.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Devotion-Pour-Homme-101353.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Devotion Pour Homme Parfum Dolce&Gabbana",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender",
+      "Lemon",
+      "Black Pepper"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Cypress"
+    ],
+    "base_notes": [
+      "Madagascar Vanilla",
+      "Guaiac Wood",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "woody",
+      "lavender",
+      "vanilla",
+      "aromatic",
+      "fresh spicy",
+      "coffee"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "lavender": 5,
+      "vanilla": 4,
+      "aromatic": 4,
+      "fresh spicy": 4,
+      "coffee": 4,
+      "warm spicy": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "mossy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.112765.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Devotion-Pour-Homme-Parfum-112765.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Devotion Sacred Heart Limited Edition Dolce&Gabbana",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Candied Lemon"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Rum",
+      "Panacotta"
+    ],
+    "base_notes": [
+      "Vanilla"
+    ],
+    "top_accords": [
+      "vanilla",
+      "sweet",
+      "white floral",
+      "rum",
+      "citrus",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "sweet": 5,
+      "white floral": 4,
+      "rum": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "lactonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.113726.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Devotion-Sacred-Heart-Limited-Edition-113726.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "My Devotion Eau de Parfum Intense Dolce&Gabbana",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear Blossom",
+      "Blackcurrant"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Madagascar Vanilla",
+      "Ambroxan",
+      "Amberwood"
+    ],
+    "top_accords": [
+      "floral",
+      "fresh",
+      "fruity",
+      "vanilla",
+      "amber",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fresh": 3,
+      "fruity": 3,
+      "vanilla": 3,
+      "amber": 3,
+      "white floral": 3,
+      "rose": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.113886.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/My-Devotion-Eau-de-Parfum-Intense-113886.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "DGVIB3 Eau de Parfum Dolce&Gabbana",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lavender"
+    ],
+    "heart_notes": [
+      "Vanilla"
+    ],
+    "base_notes": [
+      "Amber"
+    ],
+    "top_accords": [
+      "vanilla",
+      "amber",
+      "lavender",
+      "powdery",
+      "aromatic",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "amber": 5,
+      "lavender": 4,
+      "powdery": 3,
+      "aromatic": 3,
+      "fresh spicy": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.87434.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/DGVIB3-Eau-de-Parfum-87434.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce Dolce&Gabbana",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Neroli",
+      "Papaya flower"
+    ],
+    "heart_notes": [
+      "Water Lily",
+      "Narcissus",
+      "Amaryllis"
+    ],
+    "base_notes": [
+      "Musk",
+      "Cashmeran"
+    ],
+    "top_accords": [
+      "floral",
+      "musky",
+      "fresh",
+      "powdery",
+      "aquatic",
+      "yellow floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "musky": 4,
+      "fresh": 3,
+      "powdery": 3,
+      "aquatic": 3,
+      "yellow floral": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22955.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-22955.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce Blue Jasmine Dolce&Gabbana",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Fig"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Cedarwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "woody",
+      "fruity",
+      "sweet",
+      "floral"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "woody": 5,
+      "fruity": 4,
+      "sweet": 3,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.90660.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Blue-Jasmine-90660.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce Floral Drops Dolce&Gabbana",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Apple",
+      "Neroli",
+      "Papaya flower",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Water Lily",
+      "Narcissus",
+      "Amaryllis"
+    ],
+    "base_notes": [
+      "Musk",
+      "Cashmere Wood",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "fresh",
+      "green",
+      "aquatic",
+      "musky"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 4,
+      "fresh": 4,
+      "green": 3,
+      "aquatic": 3,
+      "musky": 3,
+      "woody": 3,
+      "yellow floral": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.29524.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Floral-Drops-29524.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce Garden Dolce&Gabbana",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Magnolia",
+      "Neroli",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Coconut",
+      "Frangipani",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Vanilla Absolute",
+      "Almond Milk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "floral",
+      "vanilla",
+      "coconut",
+      "sweet",
+      "tropical",
+      "lactonic"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "vanilla": 5,
+      "coconut": 5,
+      "sweet": 5,
+      "tropical": 4,
+      "lactonic": 4,
+      "almond": 4,
+      "citrus": 3,
+      "nutty": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48151.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Garden-48151.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce Lily Dolce&Gabbana",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Passionfruit",
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Pink Lily"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "citrus",
+      "tropical",
+      "fruity",
+      "sweet",
+      "musky",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "tropical": 4,
+      "fruity": 3,
+      "sweet": 3,
+      "musky": 3,
+      "fresh": 3,
+      "rose": 3,
+      "powdery": 3,
+      "aromatic": 3,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.72055.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Lily-72055.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce Magnolia Dolce&Gabbana",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Green Pear",
+      "Coconut"
+    ],
+    "heart_notes": [
+      "Magnolia",
+      "Ambrette"
+    ],
+    "base_notes": [
+      "Ice cream",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "musky",
+      "sweet",
+      "vanilla",
+      "coconut",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "musky": 5,
+      "sweet": 4,
+      "vanilla": 3,
+      "coconut": 3,
+      "citrus": 3,
+      "powdery": 2,
+      "lactonic": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.126394.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Magnolia-126394.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce Peony Dolce&Gabbana",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Cyclamen",
+      "Bergamot",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Freesia",
+      "Bulgarian Rose"
+    ],
+    "base_notes": [
+      "Mirabelle",
+      "Honey",
+      "Ambroxan",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "fresh",
+      "fruity",
+      "sweet",
+      "rose",
+      "honey"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fresh": 4,
+      "fruity": 3,
+      "sweet": 3,
+      "rose": 3,
+      "honey": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53803.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Peony-53803.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce Rosa Excelsa Dolce&Gabbana",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Neroli",
+      "Papaya flower"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Turkish Rose",
+      "Water Lily",
+      "Narcissus",
+      "Amaryllis"
+    ],
+    "base_notes": [
+      "Musk",
+      "Cashmere Wood",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "floral",
+      "rose",
+      "musky",
+      "fresh",
+      "aquatic",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "rose": 4,
+      "musky": 3,
+      "fresh": 3,
+      "aquatic": 3,
+      "powdery": 2,
+      "woody": 2,
+      "yellow floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32612.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Rosa-Excelsa-32612.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce Rose Dolce&Gabbana",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Red Currant",
+      "Green Apple",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Rose",
+      "May Rose",
+      "White Peach",
+      "Magnolia"
+    ],
+    "base_notes": [
+      "Musk",
+      "White Wood",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "fruity",
+      "rose",
+      "fresh",
+      "floral",
+      "sweet",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "rose": 3,
+      "fresh": 3,
+      "floral": 3,
+      "sweet": 3,
+      "soft spicy": 3,
+      "citrus": 2,
+      "musky": 2,
+      "powdery": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.64693.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Rose-64693.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Dolce & Gabbana",
+    "name": "Dolce Shine Dolce&Gabbana",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mango",
+      "Quince",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Solar Notes",
+      "Tuberose",
+      "Ozonic notes",
+      "Sea Salt",
+      "Jasmine",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Australian Sandalwood",
+      "White Woods"
+    ],
+    "top_accords": [
+      "white floral",
+      "fruity",
+      "sweet",
+      "tropical",
+      "tuberose",
+      "ozonic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "fruity": 4,
+      "sweet": 4,
+      "tropical": 3,
+      "tuberose": 3,
+      "ozonic": 3,
+      "citrus": 3,
+      "aldehydic": 3,
+      "salty": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.59129.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Dolce-Shine-59129.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

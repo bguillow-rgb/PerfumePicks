@@ -1,0 +1,5660 @@
+[
+  {
+    "brand": "Chanel",
+    "name": "Antaeus",
+    "release_year": 1981,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Clary Sage",
+      "Coriander",
+      "Bergamot",
+      "Lime",
+      "Amalfi Lemon",
+      "Myrtle"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Thyme",
+      "Basil",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Castoreum",
+      "Oakmoss",
+      "Patchouli",
+      "French labdanum"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "leather",
+      "mossy",
+      "earthy",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 5,
+      "leather": 4,
+      "mossy": 4,
+      "earthy": 4,
+      "smoky": 4,
+      "musky": 3,
+      "rose": 3,
+      "patchouli": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.616.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Antaeus-616.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Antaeus Sport Cologne",
+    "release_year": 1985,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Peppermint",
+      "Artemisia",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Pepper",
+      "Jasmine",
+      "Pimento",
+      "Rose",
+      "Mace"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Leather",
+      "Patchouli",
+      "Oakmoss",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "woody",
+      "aromatic",
+      "citrus",
+      "warm spicy",
+      "leather"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "woody": 4,
+      "aromatic": 4,
+      "citrus": 4,
+      "warm spicy": 4,
+      "leather": 3,
+      "earthy": 3,
+      "green": 3,
+      "powdery": 2,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.125706.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Antaeus-Sport-Cologne-125706.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Bois Noir",
+    "release_year": 1987,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "rose",
+      "lavender",
+      "floral",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 4,
+      "rose": 4,
+      "lavender": 3,
+      "floral": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "balsamic": 3,
+      "musky": 3,
+      "vanilla": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.34568.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Bois-Noir-34568.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Cuir de Russie Parfum",
+    "release_year": 1924,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "leather",
+      "aldehydic",
+      "sweet",
+      "yellow floral",
+      "tobacco",
+      "rose"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "aldehydic": 5,
+      "sweet": 4,
+      "yellow floral": 4,
+      "tobacco": 4,
+      "rose": 4,
+      "white floral": 4,
+      "fresh": 4,
+      "animalic": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47794.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Cuir-de-Russie-Parfum-47794.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Le 1940 Rouge de",
+    "release_year": 1931,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Geranium",
+      "Aldehydes"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Violet"
+    ],
+    "base_notes": [
+      "Amber",
+      "Java vetiver oil"
+    ],
+    "top_accords": [
+      "rose",
+      "fresh spicy",
+      "aromatic",
+      "aldehydic",
+      "fresh",
+      "amber"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "fresh spicy": 4,
+      "aromatic": 4,
+      "aldehydic": 4,
+      "fresh": 3,
+      "amber": 3,
+      "violet": 3,
+      "powdery": 3,
+      "floral": 3,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.45186.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Le-1940-Rouge-de-Chanel-45186.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Une Fleur de",
+    "release_year": 1998,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Green Notes",
+      "Citruses"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Camellia"
+    ],
+    "base_notes": [
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "green",
+      "citrus",
+      "floral",
+      "fresh",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "green": 5,
+      "citrus": 4,
+      "floral": 4,
+      "fresh": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4689.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Une-Fleur-de-Chanel-4689.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure",
+    "release_year": 1996,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lemon",
+      "Mandarin Orange",
+      "Peach",
+      "Passionfruit",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Honeysuckle",
+      "Jasmine",
+      "Magnolia",
+      "Freesia",
+      "Water Lily",
+      "Orange Blossom",
+      "Peony",
+      "May Rose"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Sandalwood",
+      "Amber",
+      "Vetiver",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "white floral",
+      "fruity",
+      "vanilla",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 5,
+      "white floral": 5,
+      "fruity": 3,
+      "vanilla": 3,
+      "fresh": 3,
+      "woody": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.502.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-502.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Eau de Parfum",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "white floral",
+      "vanilla",
+      "fruity",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "white floral": 4,
+      "vanilla": 4,
+      "fruity": 3,
+      "woody": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "rose": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.176.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Eau-de-Parfum-176.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Eau Fraîchissante pour l'Été",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Aldehydes",
+      "Grapefruit",
+      "Mandarin Orange",
+      "Blood Orange"
+    ],
+    "heart_notes": [
+      "Magnolia",
+      "Water Lily",
+      "Jasmine",
+      "Honeysuckle",
+      "Rose"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Vanille"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "white floral",
+      "aldehydic",
+      "fresh",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "white floral": 3,
+      "aldehydic": 3,
+      "fresh": 3,
+      "aromatic": 3,
+      "vanilla": 2,
+      "fresh spicy": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12448.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Eau-Fraichissante-pour-l-Ete-12448.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Hair Mist",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "rose",
+      "vanilla",
+      "floral",
+      "sweet",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "rose": 5,
+      "vanilla": 4,
+      "floral": 3,
+      "sweet": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46217.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Hair-Mist-46217.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Homme",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lemon",
+      "Peach",
+      "Ginger",
+      "Mandarin Orange",
+      "Lavender",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Pepper",
+      "Cedar",
+      "Patchouli",
+      "Vetiver",
+      "Jasmine",
+      "Brazilian Rosewood",
+      "Rose",
+      "Gardenia",
+      "Anise",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Tonka Bean",
+      "Sandalwood",
+      "Coconut",
+      "Amber",
+      "Benzoin",
+      "Musk",
+      "Leather",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "citrus",
+      "vanilla",
+      "woody",
+      "fresh spicy",
+      "sweet",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "vanilla": 5,
+      "woody": 4,
+      "fresh spicy": 4,
+      "sweet": 4,
+      "aromatic": 3,
+      "amber": 3,
+      "powdery": 3,
+      "warm spicy": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.523.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Homme-523.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Homme Eau Fraîchissante pour l'Été",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Aldehydes",
+      "Orange",
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Vetiver",
+      "Virginia Cedar"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Pink Pepper",
+      "French labdanum"
+    ],
+    "top_accords": [
+      "citrus",
+      "aldehydic",
+      "woody",
+      "sweet",
+      "fresh",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aldehydic": 4,
+      "woody": 3,
+      "sweet": 3,
+      "fresh": 3,
+      "aromatic": 3,
+      "fresh spicy": 2,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12447.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Homme-Eau-Fraichissante-pour-l-Ete-12447.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Homme Edition Blanche",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "vanilla",
+      "woody",
+      "powdery",
+      "musky"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 3,
+      "vanilla": 3,
+      "woody": 3,
+      "powdery": 3,
+      "musky": 2,
+      "soft spicy": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2653.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Homme-Edition-Blanche-2653.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Homme Edition Blanche Eau de Parfum",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Sandalwood",
+      "Woody Notes"
+    ],
+    "base_notes": [
+      "Madagascar Vanilla",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "aromatic",
+      "vanilla",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "aromatic": 3,
+      "vanilla": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28942.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Homme-Edition-Blanche-Eau-de-Parfum-28942.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Homme Sport",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Orange",
+      "Sea Notes",
+      "Aldehydes",
+      "Blood Mandarin"
+    ],
+    "heart_notes": [
+      "Pepper",
+      "Neroli",
+      "Cedar"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Tonka Bean",
+      "White Musk",
+      "Amber",
+      "Vetiver",
+      "Elemi resin"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "vanilla",
+      "aldehydic",
+      "marine",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 3,
+      "vanilla": 3,
+      "aldehydic": 3,
+      "marine": 3,
+      "sweet": 3,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "amber": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.607.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Homme-Sport-607.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Homme Sport Cologne",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lemon",
+      "Bergamot",
+      "Orange",
+      "Grapefruit",
+      "Aldehydes",
+      "Mandarin Orange",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Fir Resin",
+      "Spices",
+      "Elemi resin"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Pepper",
+      "Vetiver",
+      "Atlas Cedar",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 3,
+      "fresh spicy": 3,
+      "woody": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1004.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Homme-Sport-Cologne-1004.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Homme Sport Eau Extreme",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Mint",
+      "Cypress",
+      "Sage"
+    ],
+    "heart_notes": [
+      "Pepper"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Musk",
+      "Sandalwood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "fresh spicy",
+      "citrus",
+      "green",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 4,
+      "fresh spicy": 4,
+      "citrus": 4,
+      "green": 4,
+      "vanilla": 4,
+      "sweet": 3,
+      "musky": 3,
+      "amber": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14669.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Homme-Sport-Eau-Extreme-14669.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Homme Sport Superleggera",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Citrus",
+      "Mandarin",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Woody Notes",
+      "Cedarwood"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Amber",
+      "Patchouli",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "musky",
+      "powdery",
+      "amber",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "musky": 3,
+      "powdery": 3,
+      "amber": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95753.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Homme-Sport-Superleggera-95753.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Parfum",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "vanilla",
+      "rose",
+      "sweet",
+      "powdery",
+      "floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "vanilla": 5,
+      "rose": 4,
+      "sweet": 2,
+      "powdery": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.33506.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Parfum-33506.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Sensuelle",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Patchouli",
+      "Pink Pepper",
+      "Peach",
+      "Mandarin Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Turkish Rose",
+      "Bulgarian Rose",
+      "Iris",
+      "Jasmine",
+      "Dried Fruits"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Vanilla",
+      "Spices",
+      "Sandalwood",
+      "Vetiver",
+      "Labdanum",
+      "Lavender",
+      "Amber"
+    ],
+    "top_accords": [
+      "woody",
+      "warm spicy",
+      "patchouli",
+      "powdery",
+      "earthy",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "warm spicy": 4,
+      "patchouli": 4,
+      "powdery": 3,
+      "earthy": 3,
+      "vanilla": 3,
+      "sweet": 3,
+      "citrus": 3,
+      "rose": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.606.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Sensuelle-606.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Sensuelle Eau de Toilette",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Dried Fruits",
+      "Vetiver",
+      "Iris",
+      "Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Vanilla",
+      "Amber",
+      "Musk",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "patchouli",
+      "earthy",
+      "amber",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "patchouli": 4,
+      "earthy": 4,
+      "amber": 4,
+      "powdery": 4,
+      "musky": 3,
+      "sweet": 3,
+      "soft spicy": 3,
+      "vanilla": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28682.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Sensuelle-Eau-de-Toilette-28682.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Allure Sensuelle Parfum",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "warm spicy",
+      "amber",
+      "rose",
+      "vanilla",
+      "white floral",
+      "floral"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "amber": 5,
+      "rose": 4,
+      "vanilla": 4,
+      "white floral": 4,
+      "floral": 3,
+      "musky": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28683.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Allure-Sensuelle-Parfum-28683.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Bleu de",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Grapefruit",
+      "Lemon",
+      "Mint",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Ginger",
+      "Nutmeg",
+      "Jasmine",
+      "Iso E Super"
+    ],
+    "base_notes": [
+      "Incense",
+      "Cedar",
+      "Vetiver",
+      "Sandalwood",
+      "Patchouli",
+      "Labdanum",
+      "White Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "fresh spicy",
+      "aromatic",
+      "amber",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "fresh spicy": 4,
+      "aromatic": 3,
+      "amber": 3,
+      "smoky": 3,
+      "balsamic": 3,
+      "warm spicy": 3,
+      "green": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.9099.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Bleu-de-Chanel-9099.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Bleu de Chanel All-Over Spray",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Grapefruit",
+      "Mint",
+      "Pink Pepper",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Ginger",
+      "Jasmine",
+      "Iso E Super",
+      "Nutmeg"
+    ],
+    "base_notes": [
+      "Incense",
+      "Cedar",
+      "White Musk",
+      "Patchouli",
+      "Labdanum",
+      "Vetiver",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "fresh spicy",
+      "amber",
+      "aromatic",
+      "musky"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "fresh spicy": 4,
+      "amber": 4,
+      "aromatic": 4,
+      "musky": 4,
+      "green": 3,
+      "balsamic": 3,
+      "warm spicy": 3,
+      "smoky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.67790.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Bleu-de-Chanel-All-Over-Spray-67790.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Bleu de Chanel Eau de Parfum",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Grapefruit",
+      "Lemon",
+      "Mint",
+      "Bergamot",
+      "Pink Pepper",
+      "Aldehydes",
+      "Coriander"
+    ],
+    "heart_notes": [
+      "Ginger",
+      "Nutmeg",
+      "Jasmine",
+      "Melon"
+    ],
+    "base_notes": [
+      "Incense",
+      "Amber",
+      "Cedar",
+      "Sandalwood",
+      "Amberwood",
+      "Patchouli",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "citrus",
+      "amber",
+      "woody",
+      "fresh spicy",
+      "aromatic",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "amber": 4,
+      "woody": 4,
+      "fresh spicy": 4,
+      "aromatic": 3,
+      "warm spicy": 3,
+      "smoky": 3,
+      "fresh": 3,
+      "balsamic": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.25967.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Bleu-de-Chanel-Eau-de-Parfum-25967.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Bleu de Chanel L'Exclusif",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "amber",
+      "powdery",
+      "musky",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "amber": 5,
+      "powdery": 2,
+      "musky": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.113429.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Bleu-de-Chanel-L-Exclusif-113429.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Bleu de Chanel Parfum",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lemon Zest",
+      "Bergamot",
+      "Mint",
+      "Artemisia"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Pineapple",
+      "Geranium",
+      "Green Notes"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Cedar",
+      "Amberwood",
+      "Iso E Super",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "aromatic",
+      "amber",
+      "fresh spicy",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "aromatic": 3,
+      "amber": 3,
+      "fresh spicy": 3,
+      "powdery": 2,
+      "warm spicy": 2,
+      "green": 2,
+      "lavender": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49912.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Bleu-de-Chanel-Parfum-49912.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau de Parfum",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Iris"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "musky",
+      "patchouli",
+      "powdery",
+      "white floral",
+      "woody",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "patchouli": 5,
+      "powdery": 4,
+      "white floral": 4,
+      "woody": 4,
+      "soft spicy": 4,
+      "earthy": 3,
+      "vanilla": 3,
+      "warm spicy": 3,
+      "iris": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31351.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-de-Parfum-31351.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau de Toilette",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Patchouli",
+      "Pink Pepper",
+      "Pineapple",
+      "Hiacynth",
+      "Iris"
+    ],
+    "heart_notes": [
+      "Lemon",
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk",
+      "Vetiver",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "patchouli",
+      "woody",
+      "earthy",
+      "sweet",
+      "citrus",
+      "musky"
+    ],
+    "accord_intensity": {
+      "patchouli": 5,
+      "woody": 5,
+      "earthy": 5,
+      "sweet": 5,
+      "citrus": 5,
+      "musky": 4,
+      "fruity": 4,
+      "soft spicy": 4,
+      "powdery": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.610.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-de-Toilette-610.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau Fraiche",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lemon",
+      "Cedar",
+      "Citron"
+    ],
+    "heart_notes": [
+      "Water Hyacinth",
+      "Pink Pepper",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Patchouli",
+      "Vetiver",
+      "Teak Wood",
+      "Iris",
+      "Amber"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "aromatic",
+      "floral",
+      "musky",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 5,
+      "aromatic": 3,
+      "floral": 3,
+      "musky": 3,
+      "powdery": 3,
+      "earthy": 3,
+      "white floral": 2,
+      "patchouli": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1483.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Fraiche-1483.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau Fraiche Eau de Parfum",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Citron",
+      "Aldehydes"
+    ],
+    "heart_notes": [
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Teak Wood",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "aldehydic",
+      "fresh",
+      "white floral",
+      "woody",
+      "amber"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aldehydic": 4,
+      "fresh": 4,
+      "white floral": 3,
+      "woody": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.83980.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Fraiche-Eau-de-Parfum-83980.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau Fraiche Hair Mist",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "woody",
+      "fresh",
+      "floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 4,
+      "woody": 4,
+      "fresh": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46214.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Fraiche-Hair-Mist-46214.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau Splendide",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Red Fruits",
+      "Raspberry",
+      "Rose",
+      "Violet",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Rose Geranium"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Cedar"
+    ],
+    "top_accords": [
+      "fruity",
+      "powdery",
+      "rose",
+      "sweet",
+      "violet",
+      "musky"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "powdery": 4,
+      "rose": 3,
+      "sweet": 3,
+      "violet": 3,
+      "musky": 3,
+      "woody": 2,
+      "floral": 2,
+      "fresh": 2,
+      "iris": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.104610.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Splendide-104610.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau Tendre",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Quince",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Hyacinth",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Musk",
+      "Iris",
+      "Virginia Cedar",
+      "Amber"
+    ],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "citrus",
+      "sweet",
+      "fresh spicy",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 4,
+      "citrus": 4,
+      "sweet": 4,
+      "fresh spicy": 4,
+      "powdery": 3,
+      "white floral": 3,
+      "musky": 3,
+      "green": 3,
+      "iris": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8069.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Tendre-8069.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau Tendre Eau de Parfum",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Quince",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "White Musk"
+    ],
+    "top_accords": [
+      "rose",
+      "citrus",
+      "fruity",
+      "musky",
+      "floral",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "citrus": 5,
+      "fruity": 5,
+      "musky": 5,
+      "floral": 5,
+      "sweet": 4,
+      "white floral": 3,
+      "powdery": 3,
+      "fresh": 3,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52359.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Tendre-Eau-de-Parfum-52359.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau Tendre Hair Mist",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "white floral",
+      "fruity",
+      "citrus",
+      "sweet",
+      "floral",
+      "musky"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "fruity": 5,
+      "citrus": 4,
+      "sweet": 4,
+      "floral": 4,
+      "musky": 4,
+      "fresh": 3,
+      "powdery": 3,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46215.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Tendre-Hair-Mist-46215.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau Vive",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Blood Orange",
+      "Grapefruit",
+      "Citruses"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "White Musk"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Cedar",
+      "Iris"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "powdery",
+      "white floral",
+      "fresh spicy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 3,
+      "powdery": 2,
+      "white floral": 2,
+      "fresh spicy": 2,
+      "aromatic": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30796.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Vive-30796.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Eau Vive Hair Mist",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "iris",
+      "powdery",
+      "white floral",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 3,
+      "iris": 3,
+      "powdery": 3,
+      "white floral": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46216.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Vive-Hair-Mist-46216.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Hair Mist",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "patchouli",
+      "white floral",
+      "soft spicy",
+      "amber",
+      "woody",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "patchouli": 5,
+      "white floral": 4,
+      "soft spicy": 4,
+      "amber": 4,
+      "woody": 4,
+      "warm spicy": 3,
+      "earthy": 3,
+      "balsamic": 3,
+      "musky": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46213.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Hair-Mist-46213.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chance Parfum",
+    "release_year": 2003,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "powdery",
+      "iris",
+      "white floral",
+      "musky",
+      "vanilla",
+      "violet"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "iris": 4,
+      "white floral": 4,
+      "musky": 4,
+      "vanilla": 4,
+      "violet": 3,
+      "earthy": 3,
+      "floral": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31350.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chance-Parfum-31350.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel N°19",
+    "release_year": 1970,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Galbanum",
+      "Hiacynth",
+      "Bergamot",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Orris Root",
+      "Rose",
+      "Lily-of-the-Valley",
+      "Narcissus",
+      "Jasmine",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Vetiver",
+      "Leather",
+      "Cedar",
+      "Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "green",
+      "earthy",
+      "woody",
+      "iris",
+      "powdery",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "earthy": 4,
+      "woody": 4,
+      "iris": 4,
+      "powdery": 4,
+      "aromatic": 4,
+      "floral": 3,
+      "mossy": 3,
+      "white floral": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-N019-11.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel N°19 Eau de Toilette (2023)",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "green",
+      "powdery",
+      "woody",
+      "aromatic",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "powdery": 3,
+      "woody": 2,
+      "aromatic": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.87556.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-N019-Eau-de-Toilette-2023-87556.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel N°19 Voile Parfumé",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Galbanum",
+      "Hyacinth",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Lily of the Valley",
+      "Ylang Ylang",
+      "Narcissus",
+      "Jasmine",
+      "Rose",
+      "Iris"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Oakmoss",
+      "Leather",
+      "Cedar",
+      "Musk"
+    ],
+    "top_accords": [
+      "woody",
+      "green",
+      "white floral",
+      "floral",
+      "powdery",
+      "yellow floral"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "green": 5,
+      "white floral": 4,
+      "floral": 4,
+      "powdery": 4,
+      "yellow floral": 4,
+      "citrus": 3,
+      "aromatic": 3,
+      "rose": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.125708.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-N019-Voile-Parfume-125708.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 19 Eau de Parfum",
+    "release_year": 1970,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Green Notes",
+      "Bergamot",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Rose",
+      "Narcissus",
+      "Lily-of-the-Valley",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "oak moss",
+      "Vetiver",
+      "Leather",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "green",
+      "earthy",
+      "woody",
+      "iris",
+      "mossy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "earthy": 4,
+      "woody": 4,
+      "iris": 3,
+      "mossy": 3,
+      "aromatic": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "white floral": 3,
+      "yellow floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12345.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-19-Eau-de-Parfum-12345.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 19 Parfum",
+    "release_year": 1970,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Galbanum",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Orris",
+      "May Rose",
+      "Narcissus",
+      "Jasmine",
+      "Hedione",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Vetiver",
+      "Cedar",
+      "Musk"
+    ],
+    "top_accords": [
+      "green",
+      "woody",
+      "earthy",
+      "aromatic",
+      "iris",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "woody": 5,
+      "earthy": 5,
+      "aromatic": 4,
+      "iris": 4,
+      "powdery": 3,
+      "mossy": 3,
+      "floral": 3,
+      "yellow floral": 3,
+      "rose": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12346.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-19-Parfum-12346.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 19 Poudre",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Galbanum",
+      "Neroli",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Musk",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "iris",
+      "green",
+      "powdery",
+      "aromatic",
+      "earthy",
+      "woody"
+    ],
+    "accord_intensity": {
+      "iris": 5,
+      "green": 4,
+      "powdery": 4,
+      "aromatic": 4,
+      "earthy": 4,
+      "woody": 3,
+      "violet": 3,
+      "white floral": 3,
+      "musky": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12424.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-19-Poudre-12424.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel N°5 (Vintage)",
+    "release_year": 1921,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang",
+      "Neroli",
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Iris",
+      "Jasmine",
+      "Orris Root",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Civet",
+      "Amber",
+      "Sandalwood",
+      "Musk",
+      "Vanilla",
+      "Oakmoss",
+      "Patchouli",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "aldehydic",
+      "powdery",
+      "woody",
+      "fresh",
+      "white floral",
+      "iris"
+    ],
+    "accord_intensity": {
+      "aldehydic": 5,
+      "powdery": 5,
+      "woody": 5,
+      "fresh": 5,
+      "white floral": 4,
+      "iris": 4,
+      "musky": 4,
+      "citrus": 3,
+      "earthy": 3,
+      "yellow floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.608.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-N05-Vintage-608.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel N°5 Eau Premiere",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Tincture of Rose"
+    ],
+    "base_notes": [
+      "Vanille",
+      "Sandalwood",
+      "Vetyver"
+    ],
+    "top_accords": [
+      "woody",
+      "aldehydic",
+      "fresh",
+      "white floral",
+      "yellow floral",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aldehydic": 5,
+      "fresh": 4,
+      "white floral": 4,
+      "yellow floral": 4,
+      "vanilla": 4,
+      "sweet": 3,
+      "rose": 3,
+      "floral": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1360.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-N05-Eau-Premiere-1360.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel N°5 Elixir Sensuel",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Ylang-Ylang",
+      "Iris",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amber",
+      "Woodsy Notes",
+      "Musk"
+    ],
+    "top_accords": [
+      "white floral",
+      "woody",
+      "yellow floral",
+      "iris",
+      "amber",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "woody": 5,
+      "yellow floral": 5,
+      "iris": 4,
+      "amber": 4,
+      "powdery": 3,
+      "sweet": 3,
+      "floral": 3,
+      "violet": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4687.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-N05-Elixir-Sensuel-4687.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel N°5 Voile Parfumé",
+    "release_year": 1995,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Bergamot",
+      "Neroli",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Lily of the Valley",
+      "May Rose",
+      "Jasmine",
+      "Iris"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Vanilla",
+      "Vetiver",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "woody",
+      "fresh",
+      "powdery",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 5,
+      "woody": 4,
+      "fresh": 4,
+      "powdery": 4,
+      "aromatic": 4,
+      "floral": 3,
+      "aldehydic": 3,
+      "rose": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.122790.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-N05-Voile-Parfume-122790.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Eau de Parfum",
+    "release_year": 1986,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang",
+      "Neroli",
+      "Bergamot",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Jasmine",
+      "Rose",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Oakmoss",
+      "Vanilla",
+      "Patchouli",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "woody",
+      "aldehydic",
+      "fresh",
+      "white floral",
+      "powdery",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aldehydic": 4,
+      "fresh": 4,
+      "white floral": 4,
+      "powdery": 3,
+      "earthy": 3,
+      "yellow floral": 3,
+      "iris": 3,
+      "citrus": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40069.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Eau-de-Parfum-40069.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Eau de Parfum 100th Anniversary – Ask For The Moon Limited Edition",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang",
+      "Bergamot",
+      "Peach",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Lily-of-the-Valley",
+      "Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Oakmoss",
+      "Patchouli",
+      "Vetiver",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "woody",
+      "aldehydic",
+      "earthy",
+      "fresh",
+      "powdery",
+      "iris"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aldehydic": 4,
+      "earthy": 4,
+      "fresh": 3,
+      "powdery": 3,
+      "iris": 3,
+      "yellow floral": 3,
+      "mossy": 3,
+      "white floral": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.69910.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Eau-de-Parfum-100th-Anniversary-Ask-For-The-Moon-Limited-Edition-69910.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Eau de Parfum 2024 Limited Edition",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang",
+      "Neroli",
+      "Bergamot",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Rose",
+      "Jasmine",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Oakmoss",
+      "Vanilla",
+      "Vetiver",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "woody",
+      "earthy",
+      "aldehydic",
+      "fresh",
+      "iris",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "earthy": 5,
+      "aldehydic": 4,
+      "fresh": 4,
+      "iris": 4,
+      "white floral": 4,
+      "powdery": 3,
+      "patchouli": 3,
+      "yellow floral": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.97825.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Eau-de-Parfum-2024-Limited-Edition-97825.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Eau de Parfum Red Edition",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang",
+      "Neroli",
+      "Bergamot",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Jasmine",
+      "Rose",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Vanilla",
+      "Oakmoss",
+      "Vetiver",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "woody",
+      "white floral",
+      "powdery",
+      "fresh",
+      "yellow floral",
+      "aldehydic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "white floral": 4,
+      "powdery": 4,
+      "fresh": 4,
+      "yellow floral": 4,
+      "aldehydic": 4,
+      "earthy": 3,
+      "iris": 3,
+      "sweet": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51421.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Eau-de-Parfum-Red-Edition-51421.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Eau de Toilette",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang",
+      "Neroli",
+      "Amalfi Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Jasmine",
+      "Rose",
+      "Orris Root",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Civetta",
+      "Musk",
+      "Sandalwood",
+      "oak moss",
+      "Vetiver",
+      "Amber",
+      "Vanille",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "woody",
+      "powdery",
+      "aldehydic",
+      "fresh",
+      "iris",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "powdery": 5,
+      "aldehydic": 4,
+      "fresh": 4,
+      "iris": 4,
+      "earthy": 4,
+      "white floral": 4,
+      "musky": 4,
+      "citrus": 4,
+      "yellow floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10856.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Eau-de-Toilette-10856.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Eau de Toilette",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes"
+    ],
+    "heart_notes": [
+      "Ylang Ylang",
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "woody",
+      "aldehydic",
+      "yellow floral",
+      "fresh",
+      "white floral",
+      "rose"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aldehydic": 4,
+      "yellow floral": 3,
+      "fresh": 3,
+      "white floral": 3,
+      "rose": 3,
+      "aromatic": 3,
+      "powdery": 2,
+      "sweet": 2,
+      "soapy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.126361.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Eau-de-Toilette-126361.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Eau Premiere (2015)",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Sandalwood",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "aldehydic",
+      "woody",
+      "fresh",
+      "yellow floral",
+      "white floral",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "aldehydic": 5,
+      "woody": 5,
+      "fresh": 4,
+      "yellow floral": 4,
+      "white floral": 4,
+      "vanilla": 4,
+      "sweet": 3,
+      "powdery": 3,
+      "floral": 3,
+      "soapy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31172.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Eau-Premiere-2015-31172.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Hair Fragrance",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "rose",
+      "white floral",
+      "floral",
+      "fresh",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "white floral": 5,
+      "floral": 3,
+      "fresh": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.65510.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Hair-Fragrance-65510.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Hair Mist",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "rose",
+      "white floral",
+      "floral",
+      "fresh",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "white floral": 5,
+      "floral": 3,
+      "fresh": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46212.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Hair-Mist-46212.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 L'Eau",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Lemon",
+      "Neroli",
+      "Bergamot",
+      "Mandarin Orange",
+      "Lime",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Ylang-Ylang",
+      "Jasmine",
+      "May Rose"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Orris Root",
+      "Cedar",
+      "Vanila"
+    ],
+    "top_accords": [
+      "citrus",
+      "aldehydic",
+      "fresh",
+      "woody",
+      "powdery",
+      "yellow floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aldehydic": 3,
+      "fresh": 3,
+      "woody": 2,
+      "powdery": 2,
+      "yellow floral": 2,
+      "sweet": 2,
+      "white floral": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.38543.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-L-Eau-38543.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 L'Eau Eau De Toilette 100th Anniversary – Ask For The Moon Limited Edition",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Lime",
+      "Lemon",
+      "Bergamot",
+      "Neroli",
+      "Orange",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Ylang-Ylang",
+      "Jasmine",
+      "May Rose"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Orris",
+      "Vanilla",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "aldehydic",
+      "powdery",
+      "fresh",
+      "musky",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aldehydic": 3,
+      "powdery": 3,
+      "fresh": 3,
+      "musky": 3,
+      "sweet": 2,
+      "woody": 2,
+      "white floral": 2,
+      "yellow floral": 2,
+      "iris": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.69911.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-L-Eau-Eau-De-Toilette-100th-Anniversary-Ask-For-The-Moon-Limited-Edition-69911.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 L'Eau Red Edition",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Lemon",
+      "Neroli",
+      "Orange",
+      "Bergamot",
+      "Lime",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Ylang-Ylang",
+      "Jasmine",
+      "May Rose"
+    ],
+    "base_notes": [
+      "Orris",
+      "Vanilla",
+      "Cedar",
+      "White Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "aldehydic",
+      "woody",
+      "powdery",
+      "fresh",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aldehydic": 3,
+      "woody": 3,
+      "powdery": 3,
+      "fresh": 3,
+      "white floral": 3,
+      "iris": 3,
+      "sweet": 3,
+      "yellow floral": 3,
+      "vanilla": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51422.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-L-Eau-Red-Edition-51422.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Parfum",
+    "release_year": 1921,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang",
+      "Neroli",
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Jasmine",
+      "Rose",
+      "Orris Root",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Civet",
+      "Musk",
+      "Sandalwood",
+      "Amber",
+      "Moss",
+      "Vanilla",
+      "Vetiver",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "powdery",
+      "woody",
+      "aldehydic",
+      "iris",
+      "fresh",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "woody": 5,
+      "aldehydic": 4,
+      "iris": 4,
+      "fresh": 4,
+      "white floral": 4,
+      "musky": 4,
+      "earthy": 4,
+      "yellow floral": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28711.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Parfum-28711.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Parfum Baccarat Grand Extrait",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Ylang-Ylang",
+      "Aldehydes",
+      "Neroli",
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Iris",
+      "Orris",
+      "Jasmine",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Civet",
+      "Amber",
+      "Moss",
+      "Vanilla",
+      "Patchouli",
+      "Sandalwood",
+      "Musk",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "powdery",
+      "woody",
+      "earthy",
+      "musky",
+      "iris",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "woody": 5,
+      "earthy": 4,
+      "musky": 4,
+      "iris": 4,
+      "animalic": 3,
+      "amber": 3,
+      "rose": 3,
+      "yellow floral": 3,
+      "mossy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.69912.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Parfum-Baccarat-Grand-Extrait-69912.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Chanel No 5 Parfum Red Edition",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "May Rose"
+    ],
+    "base_notes": [
+      "Woody Notes"
+    ],
+    "top_accords": [
+      "aldehydic",
+      "white floral",
+      "fresh",
+      "woody",
+      "soapy",
+      "rose"
+    ],
+    "accord_intensity": {
+      "aldehydic": 5,
+      "white floral": 5,
+      "fresh": 4,
+      "woody": 4,
+      "soapy": 3,
+      "rose": 3,
+      "floral": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51423.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Parfum-Red-Edition-51423.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "N°5 L’EAU – Limited Edition",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Lime",
+      "Lemon",
+      "Bergamot",
+      "Orange",
+      "Mandarin Orange",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Ylang-Ylang",
+      "May Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Orris Root",
+      "Cedar",
+      "Vanila"
+    ],
+    "top_accords": [
+      "citrus",
+      "aldehydic",
+      "fresh",
+      "woody",
+      "powdery",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aldehydic": 3,
+      "fresh": 2,
+      "woody": 2,
+      "powdery": 2,
+      "sweet": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.93881.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/N05-L-EAU-Limited-Edition-93881.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Eau de Parfum",
+    "release_year": 1984,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bulgarian Rose",
+      "Coriander",
+      "Peach",
+      "Jasmine",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Cloves",
+      "Rose",
+      "Mimosa",
+      "Orange Blossom",
+      "Clover"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood",
+      "Opoponax",
+      "Tonka Bean",
+      "Civet",
+      "Vanilla",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "amber",
+      "warm spicy",
+      "sweet",
+      "powdery",
+      "woody",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "warm spicy": 4,
+      "sweet": 3,
+      "powdery": 3,
+      "woody": 3,
+      "vanilla": 3,
+      "rose": 3,
+      "white floral": 3,
+      "floral": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.609.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Eau-de-Parfum-609.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Eau de Toilette",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bulgarian Rose",
+      "Coriander",
+      "Peach",
+      "Mandarin Orange",
+      "Jasmine"
+    ],
+    "heart_notes": [
+      "Cloves",
+      "Rose",
+      "Mimosa",
+      "Orange Blossom",
+      "Clover"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Amber",
+      "Opoponax",
+      "Civet",
+      "Vanilla",
+      "Tonka Bean",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "amber",
+      "warm spicy",
+      "sweet",
+      "powdery",
+      "woody",
+      "floral"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "warm spicy": 4,
+      "sweet": 4,
+      "powdery": 4,
+      "woody": 3,
+      "floral": 3,
+      "rose": 3,
+      "white floral": 3,
+      "balsamic": 3,
+      "vanilla": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31353.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Eau-de-Toilette-31353.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Parfum",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bulgarian Rose",
+      "Coriander",
+      "Peach",
+      "Jasmine",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Cloves",
+      "Mimosa",
+      "Orange Blossom",
+      "Clover"
+    ],
+    "base_notes": [
+      "Amber",
+      "Opoponax",
+      "Labdanum",
+      "Civet",
+      "Sandalwood",
+      "Tonka Bean",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "amber",
+      "sweet",
+      "powdery",
+      "warm spicy",
+      "white floral",
+      "floral"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "sweet": 4,
+      "powdery": 3,
+      "warm spicy": 3,
+      "white floral": 3,
+      "floral": 3,
+      "woody": 3,
+      "rose": 3,
+      "musky": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31354.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Parfum-31354.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Voile Parfumé",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Frangipani",
+      "Coriander",
+      "Pimento"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Ylang Ylang",
+      "Cinnamon",
+      "Angelica",
+      "Jasmine",
+      "Rose",
+      "Iris"
+    ],
+    "base_notes": [
+      "Frankincense",
+      "Tonka Bean",
+      "Patchouli",
+      "Benzoin",
+      "Amber",
+      "Civet",
+      "Honey",
+      "Musk"
+    ],
+    "top_accords": [
+      "amber",
+      "warm spicy",
+      "musky",
+      "powdery",
+      "floral",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "warm spicy": 4,
+      "musky": 4,
+      "powdery": 3,
+      "floral": 3,
+      "white floral": 3,
+      "sweet": 3,
+      "citrus": 3,
+      "animalic": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.125707.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Voile-Parfume-125707.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Mademoiselle",
+    "release_year": 2001,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Mandarin Orange",
+      "Bergamot",
+      "Orange Blossom"
+    ],
+    "heart_notes": [
+      "Turkish Rose",
+      "Jasmine",
+      "Mimosa",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "White Musk",
+      "Vanilla",
+      "Vetiver",
+      "Tonka Bean",
+      "Opoponax"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "patchouli",
+      "sweet",
+      "white floral",
+      "rose"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 3,
+      "patchouli": 3,
+      "sweet": 3,
+      "white floral": 3,
+      "rose": 3,
+      "earthy": 2,
+      "vanilla": 2,
+      "warm spicy": 2,
+      "yellow floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.611.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-611.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Mademoiselle Eau de Toilette",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Bergamot",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Litchi",
+      "Italian Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Tahitian Vetiver",
+      "Bourbon Vanilla",
+      "White Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "patchouli",
+      "woody",
+      "fresh spicy",
+      "earthy",
+      "rose"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "patchouli": 3,
+      "woody": 3,
+      "fresh spicy": 3,
+      "earthy": 3,
+      "rose": 3,
+      "aromatic": 3,
+      "white floral": 2,
+      "warm spicy": 2,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.612.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-Eau-de-Toilette-612.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Mademoiselle Fragrance Primer",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Orange Blossom",
+      "Mandarin Orange",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Turkish Rose",
+      "Mimosa",
+      "Ylang Ylang"
+    ],
+    "base_notes": [
+      "Opoponax",
+      "Patchouli",
+      "Vetiver",
+      "Tonka Bean",
+      "White Musk",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "yellow floral",
+      "sweet",
+      "woody",
+      "floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 4,
+      "yellow floral": 4,
+      "sweet": 4,
+      "woody": 4,
+      "floral": 4,
+      "rose": 3,
+      "amber": 3,
+      "powdery": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.114251.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-Fragrance-Primer-114251.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Mademoiselle Hair Mist",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "rose",
+      "citrus",
+      "patchouli",
+      "woody",
+      "warm spicy",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "citrus": 5,
+      "patchouli": 4,
+      "woody": 3,
+      "warm spicy": 3,
+      "earthy": 3,
+      "floral": 3,
+      "sweet": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46211.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-Hair-Mist-46211.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Mademoiselle Hair Mist (2023)",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "woody",
+      "patchouli",
+      "rose",
+      "citrus",
+      "white floral",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "patchouli": 5,
+      "rose": 5,
+      "citrus": 5,
+      "white floral": 4,
+      "earthy": 4,
+      "warm spicy": 3,
+      "floral": 3,
+      "aromatic": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.79638.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-Hair-Mist-2023-79638.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Mademoiselle Intense",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Sicilian Orange",
+      "Calabrian bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Fruity Notes",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Madagascar Vanilla",
+      "Tonka Bean",
+      "White Musk",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "citrus",
+      "vanilla",
+      "patchouli",
+      "sweet",
+      "woody",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "vanilla": 4,
+      "patchouli": 4,
+      "sweet": 4,
+      "woody": 3,
+      "warm spicy": 3,
+      "amber": 3,
+      "balsamic": 3,
+      "rose": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48310.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-Intense-48310.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Mademoiselle L'Eau",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "White Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "rose",
+      "white floral",
+      "musky",
+      "floral",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "rose": 4,
+      "white floral": 3,
+      "musky": 3,
+      "floral": 3,
+      "fresh spicy": 3,
+      "powdery": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.66700.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-L-Eau-66700.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Mademoiselle L'Eau Privée",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "White Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "rose",
+      "musky",
+      "white floral",
+      "powdery",
+      "floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "rose": 4,
+      "musky": 4,
+      "white floral": 4,
+      "powdery": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.62194.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-L-Eau-Privee-62194.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Mademoiselle L’Extrait",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Iris",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk",
+      "Vetiver",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "powdery",
+      "earthy",
+      "rose",
+      "iris"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "powdery": 4,
+      "earthy": 4,
+      "rose": 3,
+      "iris": 3,
+      "white floral": 3,
+      "patchouli": 3,
+      "aromatic": 3,
+      "musky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14957.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-L-Extrait-14957.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Mademoiselle Parfum",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Orange",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Litchi",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Vanilla",
+      "Musk",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "citrus",
+      "patchouli",
+      "woody",
+      "rose",
+      "fresh spicy",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "patchouli": 3,
+      "woody": 3,
+      "rose": 3,
+      "fresh spicy": 3,
+      "earthy": 3,
+      "aromatic": 3,
+      "white floral": 3,
+      "vanilla": 3,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6928.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-Parfum-6928.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Noir",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Bergamot",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Geranium",
+      "Jasmine",
+      "Narcissus",
+      "Peach"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Sandalwood",
+      "Olibanum",
+      "Tonka Bean",
+      "Vanille",
+      "White Musk",
+      "Cloves",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "woody",
+      "citrus",
+      "fresh spicy",
+      "amber",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "woody": 5,
+      "citrus": 5,
+      "fresh spicy": 4,
+      "amber": 4,
+      "aromatic": 4,
+      "patchouli": 4,
+      "vanilla": 4,
+      "rose": 4,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15963.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Noir-15963.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Noir Extrait",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Bergamot",
+      "Aldehydes",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Geranium",
+      "Jasmine",
+      "Narcissus",
+      "Cloves"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Olibanum",
+      "Sandalwood",
+      "Tonka Bean",
+      "Vanilla",
+      "White Musk",
+      "Benzoin",
+      "Orris Root"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "amber",
+      "woody",
+      "citrus",
+      "fresh spicy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "amber": 4,
+      "woody": 4,
+      "citrus": 4,
+      "fresh spicy": 4,
+      "aromatic": 4,
+      "vanilla": 4,
+      "powdery": 4,
+      "rose": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.27496.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Noir-Extrait-27496.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Coco Noir Hair Mist",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "May Rose",
+      "Geranium",
+      "Egyptian Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Tonka Bean",
+      "Bourbon Vanilla",
+      "White Musk"
+    ],
+    "top_accords": [
+      "rose",
+      "vanilla",
+      "fresh spicy",
+      "aromatic",
+      "patchouli",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "vanilla": 5,
+      "fresh spicy": 5,
+      "aromatic": 5,
+      "patchouli": 5,
+      "citrus": 4,
+      "warm spicy": 4,
+      "white floral": 4,
+      "woody": 3,
+      "musky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.50254.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Coco-Noir-Hair-Mist-50254.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Cristalle Eau de Parfum",
+    "release_year": 1993,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Melon",
+      "Jasmine",
+      "Peach",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "earthy",
+      "woody",
+      "mossy",
+      "aromatic",
+      "fruity",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "earthy": 5,
+      "woody": 5,
+      "mossy": 4,
+      "aromatic": 3,
+      "fruity": 3,
+      "white floral": 3,
+      "sweet": 3,
+      "citrus": 3,
+      "ozonic": 3,
+      "yellow floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31352.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Cristalle-Eau-de-Parfum-31352.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Cristalle Eau de Parfum (2023)",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Citruses",
+      "Fruity Notes"
+    ],
+    "heart_notes": [
+      "Hyacinth",
+      "Honeysuckle"
+    ],
+    "base_notes": [
+      "Jasmine",
+      "Iris"
+    ],
+    "top_accords": [
+      "white floral",
+      "floral",
+      "fruity",
+      "fresh spicy",
+      "citrus",
+      "green"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "floral": 4,
+      "fruity": 3,
+      "fresh spicy": 3,
+      "citrus": 3,
+      "green": 3,
+      "iris": 3,
+      "earthy": 2,
+      "fresh": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.87555.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Cristalle-Eau-de-Parfum-2023-87555.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Cristalle Eau de Toilette",
+    "release_year": 1974,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Sicilian Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Hiacynth",
+      "Brazilian Rosewood",
+      "Honeysuckle",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "citrus",
+      "earthy",
+      "woody",
+      "mossy",
+      "aromatic",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "earthy": 5,
+      "woody": 4,
+      "mossy": 4,
+      "aromatic": 4,
+      "fresh spicy": 4,
+      "floral": 4,
+      "green": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Cristalle-Eau-de-Toilette-12.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Cristalle Eau Verte",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Amalfi Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Neroli",
+      "Magnolia"
+    ],
+    "base_notes": [
+      "Jasmine",
+      "Iris",
+      "Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "white floral",
+      "aromatic",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 3,
+      "white floral": 2,
+      "aromatic": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5909.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Cristalle-Eau-Verte-5909.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Cristalle Eau Verte Eau de Parfum",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "green",
+      "floral",
+      "white floral",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "green": 4,
+      "floral": 3,
+      "white floral": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.87554.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Cristalle-Eau-Verte-Eau-de-Parfum-87554.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Egoiste",
+    "release_year": 1990,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Brazilian Rosewood",
+      "Coriander",
+      "Mahogany",
+      "Sicilian Mandarin"
+    ],
+    "heart_notes": [
+      "Cinnamon",
+      "Damask Rose",
+      "Carnation"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Tobacco",
+      "Vanilla",
+      "Leather",
+      "Amber",
+      "Ambrette (Musk Mallow)"
+    ],
+    "top_accords": [
+      "woody",
+      "warm spicy",
+      "cinnamon",
+      "rose",
+      "floral",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "warm spicy": 5,
+      "cinnamon": 3,
+      "rose": 3,
+      "floral": 3,
+      "aromatic": 3,
+      "tobacco": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.613.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Egoiste-613.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Egoiste Platinum",
+    "release_year": 1993,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender",
+      "Rosemary",
+      "Neroli",
+      "Petitgrain"
+    ],
+    "heart_notes": [
+      "Geranium",
+      "Clary Sage",
+      "Galbanum",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Vetiver",
+      "Cedar",
+      "Sandalwood",
+      "Amber"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "lavender",
+      "green",
+      "herbal"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "woody": 3,
+      "lavender": 3,
+      "green": 2,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.614.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Egoiste-Platinum-614.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Gabrielle",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Mandarin Orange",
+      "Black Currant"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Jasmine",
+      "Ylang-Ylang",
+      "Tuberose",
+      "Lily-of-the-Valley",
+      "Pear",
+      "Pink Pepper"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood",
+      "Cashmeran",
+      "Orris"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "woody",
+      "sweet",
+      "fruity",
+      "musky"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 5,
+      "woody": 3,
+      "sweet": 3,
+      "fruity": 3,
+      "musky": 3,
+      "yellow floral": 2,
+      "powdery": 2,
+      "tuberose": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43718.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Gabrielle-43718.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Gabrielle Chanel Hair Mist",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Mandarin Orange",
+      "Black Currant"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Jasmine",
+      "Tuberose",
+      "Pear",
+      "Pink Pepper",
+      "Lily-of-the-Valley",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood",
+      "Cashmeran",
+      "Orris"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "woody",
+      "musky",
+      "powdery",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 5,
+      "woody": 3,
+      "musky": 3,
+      "powdery": 3,
+      "sweet": 3,
+      "fruity": 3,
+      "tuberose": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.56250.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Gabrielle-Chanel-Hair-Mist-56250.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Gabrielle Essence",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Citruses",
+      "Peach",
+      "Red Fruits",
+      "Black Currant",
+      "Petitgrain"
+    ],
+    "heart_notes": [
+      "White Flowers",
+      "Tuberose",
+      "Ylang-Ylang",
+      "Jasmine",
+      "Orange Blossom",
+      "Coconut"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "fruity",
+      "sweet",
+      "woody",
+      "tuberose"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 3,
+      "fruity": 3,
+      "sweet": 3,
+      "woody": 2,
+      "tuberose": 2,
+      "yellow floral": 2,
+      "animalic": 2,
+      "powdery": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.56076.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Gabrielle-Essence-56076.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Gabrielle Fragrance Primer",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Black Currant",
+      "Grapefruit",
+      "Mandarin"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Orange Blossom",
+      "Jasmine",
+      "Ylang Ylang"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "tuberose",
+      "musky",
+      "citrus",
+      "woody",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "tuberose": 4,
+      "musky": 3,
+      "citrus": 3,
+      "woody": 3,
+      "powdery": 3,
+      "animalic": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.113101.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Gabrielle-Fragrance-Primer-113101.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Gabrielle L'Eau",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Red Berries",
+      "Green Notes"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Tuberose",
+      "Ylang Ylang"
+    ],
+    "base_notes": [
+      "Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "musky",
+      "sweet",
+      "fruity",
+      "green",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "musky": 4,
+      "sweet": 4,
+      "fruity": 3,
+      "green": 3,
+      "powdery": 3,
+      "yellow floral": 3,
+      "tuberose": 3,
+      "fresh": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95110.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Gabrielle-L-Eau-95110.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Gabrielle Parfum",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "white floral",
+      "tuberose",
+      "woody",
+      "sweet",
+      "yellow floral",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "tuberose": 3,
+      "woody": 3,
+      "sweet": 3,
+      "yellow floral": 3,
+      "vanilla": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.75185.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Gabrielle-Parfum-75185.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Paris – Biarritz",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Tangerine",
+      "Bergamot",
+      "Lemon",
+      "Orange",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Neroli",
+      "Green Notes",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "green",
+      "white floral",
+      "fresh spicy",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "green": 3,
+      "white floral": 2,
+      "fresh spicy": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49698.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Paris-Biarritz-49698.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Paris – Deauville",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Basil",
+      "Lime",
+      "Bergamot",
+      "Sicilian Orange",
+      "Petitgrain",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Green Notes",
+      "Hedione",
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "green",
+      "fresh spicy",
+      "aromatic",
+      "fresh",
+      "floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "green": 4,
+      "fresh spicy": 4,
+      "aromatic": 3,
+      "fresh": 2,
+      "floral": 2,
+      "patchouli": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49697.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Paris-Deauville-49697.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Paris – Édimbourg",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cypress",
+      "Juniper Berries"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Cedar",
+      "Vetiver"
+    ],
+    "base_notes": [
+      "Musk",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "lavender",
+      "musky"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 5,
+      "fresh spicy": 3,
+      "lavender": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.67269.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Paris-Edimbourg-67269.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Chanel",
+    "name": "Paris – Paris",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Citruses",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Damask Rose"
+    ],
+    "base_notes": [
+      "Patchouli"
+    ],
+    "top_accords": [
+      "rose",
+      "citrus",
+      "patchouli",
+      "woody",
+      "warm spicy",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "citrus": 5,
+      "patchouli": 4,
+      "woody": 3,
+      "warm spicy": 3,
+      "soft spicy": 3,
+      "fresh": 3,
+      "earthy": 3,
+      "floral": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.73411.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Chanel/Paris-Paris-73411.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

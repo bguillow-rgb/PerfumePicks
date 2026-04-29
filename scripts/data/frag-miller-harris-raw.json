@@ -1,0 +1,2685 @@
+[
+  {
+    "brand": "Miller Harris",
+    "name": "Bergamote Hand & Body Wash",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2300,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 300,
+        "price_usd_cents": 2300,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/bergamote-hand-body-wash"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/BERGAMOTE_FRONT_WASH_SHADOW_LARGE_75d299e1-e69c-41c0-8b8c-8cc6428c41f2.png?v=1761206934",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/bergamote-hand-body-wash",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Bergamote Hand Cream",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2300,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 2300,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/bergamote-hand-cream"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/5591-MH-BERGAMOTE-HAND_CREAM-50ml-STRAIGHT_33703c87-2b82-4428-9c06-74b303a2d300.png?v=1756821993",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/bergamote-hand-cream",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Black Datura",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 21800,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 21800,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/black-datura-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/black-datura-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/100ML-BLACK-DATURA-BOTTLE-PNG-REFL.png?v=1687863637",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/black-datura-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Celadon",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20700,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 20700,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/celadon-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/celadon-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/100ML-CELADON-BOTTLE-CLOSE-PNG.png?v=1713792146",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/celadon-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Citron Citron",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 15500,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 15500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/citron-citron-1"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/100ML-CITRON-CITRON-BOTTLE-PNG.png?v=1702914738",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/citron-citron-1",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Cœur de Jardin",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/coeur-de-jardin-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/coeur-de-jardin-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/coeur-de-jardin-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-COEUR_DE_JARDIN-BOTTLE-PNG.png?v=1772804441",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/coeur-de-jardin-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Cœur de Jardin 14ml",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5200,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/coeur-de-jardin-eau-de-parfum-travel-size"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/CdJ_Bottle_14ml.png?v=1749654024",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/coeur-de-jardin-eau-de-parfum-travel-size",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Cœur de Jardin 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 10900,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/coeur-de-jardin-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/50ML-COEUR_DE_JARDIN-BOTTLE-BOX-copy-1080x1080-345f0d43-fed5-4f7f-be78-96de26af47e4.png?v=1772804441",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/coeur-de-jardin-50ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "DANCE amongst the Lace",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/dance-amongst-the-lace-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 12100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/dance-amongst-the-lace-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/dance-amongst-the-lace-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-DANCE-BOTTLE-PNG.png?v=1749653723",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/dance-amongst-the-lace-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "DANCE amongst the Lace 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 12100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/dance-amongst-the-lace-copy"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/50ML-DANCE-BOTTLE-BOX-RGB-copy.png?v=1666607925",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/dance-amongst-the-lace-copy",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Étui Noir",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/etui-noir-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/etui-noir-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/etui-noir-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-ETUI_NOIR-BOTTLE-PNG.png?v=1665749118",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/etui-noir-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Feuilles de Tabac",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/feuilles-de-tabac-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/feuilles-de-tabac-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/feuilles-de-tabac-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-FEUILLES_DE_TABAC-BOTTLE-PNG.png?v=1767090945",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/feuilles-de-tabac-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Feuilles de Tabac 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 10900,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/feuilles-de-tabac-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/50ML-FEUILLES_DE_TABAC-BOTTLE-BOX-copy.png?v=1767090945",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/feuilles-de-tabac-50ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Figue Diffuser",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 150,
+        "price_usd_cents": 8100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/figue-diffuser-150ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/439X-MILLER_HARRIS-AROMA_REEDS-FIGUE-1080_CLOSE.png?v=1749631140",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/figue-diffuser-150ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Hydra Figue",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/hydra-figue-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/hydra-figue-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/hydra-figue-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-HYDRA-FIGUE-BOTTLE-WEB.png?v=1682352022",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/hydra-figue-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "L'Air de Rien",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lair-de-rien-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lair-de-rien-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-LAIR_DE_RIEN-BOTTLE-PNG_1.png?v=1665749386",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/lair-de-rien-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "L'Eau Magnetic 50ml",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 12100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/leau-magnetic-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/L_Eau_Magnetic-2.png?v=1766179119",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/leau-magnetic-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "La Feuille",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 21800,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 21800,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/la-feuille-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/la-feuille-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-LA_FEUILLE-BOTTLE-PNG.png?v=1665749556",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/la-feuille-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "La Fumée Alexandrie",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 21800,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 21800,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/la-fumee-alexandrie-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/la-fumee-alexandrie-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-LAFumee-BOTTLE-PNG_1.png?v=1666132484",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/la-fumee-alexandrie-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Le Cèdre",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 21800,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 21800,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/le-cedre-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/le-cedre-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-LE-CEDRE-BOTTLE-PNG.png?v=1612365039",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/le-cedre-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Le Jasmin",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/le-jasmin-1"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/Le_Jasmin.png?v=1766176729",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/le-jasmin-1",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Leather Rouge",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 21800,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 21800,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/leather-rouge-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/leather-rouge-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-LEATHER_ROUGE-BOTTLE.png?v=1667852685",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/leather-rouge-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Legato",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20700,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 20700,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/legato-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/legato-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/5577-100ML-LEGATO-BOTTLE-PNG.png?v=1754383788",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/legato-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Lost 14ml",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5200,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lost-eau-de-parfum-travel-size"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/14ML-Lost-BOTTLE-RGB.png?v=1749654132",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/lost-eau-de-parfum-travel-size",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "LOST in the City",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lost-in-the-city-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 12100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lost-in-the-city-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lost-in-the-city-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-LOST-BOTTLE-PNG_d58f260b-9db9-4e41-8174-59e06986aa37.png?v=1766178567",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/lost-in-the-city-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "LOST in the City 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 12100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lost-in-the-city-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/Lost_2025_-_With_Box_50ml-1.png?v=1766178687",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/lost-in-the-city-50ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Lumière Dorée",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lumiere-doree-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lumiere-doree-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lumiere-doree-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-LUMIERE_DOREE-BOTTLE-PNG.png?v=1666607802",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/lumiere-doree-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Lumière Dorée 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 10900,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/lumiere-doree-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/50ML-LUMIERE_DOREE-BOTTLE-BOX-copy.png?v=1666607802",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/lumiere-doree-50ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Mandarin Diffuser",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 150,
+        "price_usd_cents": 8100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/mandarin-diffuser-150ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/439X-MILLER_HARRIS-AROMA_REEDS-MANDARIN_CLOSE-1080.png?v=1749587887",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/mandarin-diffuser-150ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Melody",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20700,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 20700,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/melody-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/melody-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/Melody_PNG_1080X1080_962e1043-4d4f-4bdd-8daa-cbfb6dacf05d.png?v=1756824301",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/melody-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Mìneir",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20700,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 20700,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/mineir-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/mineir-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/100ML-MINEIR-BOTTLE-PNG.png?v=1724836085",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/mineir-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Myrica Muse",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/myrica-muse-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/myrica-muse-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/myrica-muse-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ml_Myrica_Muse_UP_CLOSE.png?v=1666434305",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/myrica-muse-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Myrica Muse 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 10900,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/myrica-muse-pr-product-not-for-sale"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/50ML-MYRICA_MUSE-BOTTLE_BOX-PNG_dc233088-2ccf-4b75-b233-b3767c046b59.png?v=1767203537",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/myrica-muse-pr-product-not-for-sale",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Oud Éclat",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 21800,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 21800,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/oud-eclat-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/oud-eclat-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-OUD-ECLAT-BOTTLE-PNG.png?v=1666433914",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/oud-eclat-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Peau Santal",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/peau-santal-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/peau-santal-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/peau-santal-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-PEAU_SANTAL-BOTTLE-PNG.png?v=1666377336",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/peau-santal-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Poirier d'un Soir",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/poirier-dun-soir-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/poirier-dun-soir-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/poirier-dun-soir-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-POIRIER_D-UN_SOIR-BOTTLE-PNG.png?v=1767090749",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/poirier-dun-soir-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Poirier d'un Soir 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 10900,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/poirier-dun-soir-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/50ML-POIRIER_DUN_SOIR-BOTTLE-BOX-copy-1080x1080-688bdda6-fc10-4c24-828a-1b548e37cc1e.png?v=1767090749",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/poirier-dun-soir-50ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Rêverie de Bergamote",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/reverie-de-bergamote-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/reverie-de-bergamote-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/reverie-de-bergamote-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/reverie-de-bergamote-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-REVERIE_DE_BERGAMOTE-BOTTLE-1080_1.png?v=1749653641",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/reverie-de-bergamote-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Reverie de Bergamote 14ml",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5200,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/reverie-de-bergamote-eau-de-parfum-travel-size"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/RdB_Bottle_14ml.png?v=1649066095",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/reverie-de-bergamote-eau-de-parfum-travel-size",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Rose Diffuser",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 150,
+        "price_usd_cents": 8100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/rose-diffuser-150ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/439X-MILLER_HARRIS-AROMA_REEDS-ROSE-1080_CLOSE.png?v=1651057617",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/rose-diffuser-150ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Rose Silence",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/rose-silence-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/rose-silence-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/rose-silence-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/rose-silence-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-ROSE_SILENCE-BOTTLE-PNG.png?v=1741618017",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/rose-silence-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Rose Silence 14ml",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5200,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/rose-silence-eau-de-parfum-travel-size"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/RS_Bottle_14ml.png?v=1762776306",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/rose-silence-eau-de-parfum-travel-size",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Rose Silence Hand & Body Wash",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2300,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 300,
+        "price_usd_cents": 2300,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/rose-silence-hand-body-wash"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/ROSE_FRONT_WASH_SHADOW_LARGE_7764d715-ea66-430a-818c-01026e6910f3.png?v=1741947535",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/rose-silence-hand-body-wash",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Rose Silence Hand Cream",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2300,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 2300,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/rose-silence-hand-cream"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/5591-MH-ROSE_SILENCE-HAND_CREAM-50ml-STRAIGHT_5e86fa5b-9d37-47d7-96c9-32ec6a75bdda.png?v=1762776193",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/rose-silence-hand-cream",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Santal Diffuser",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 150,
+        "price_usd_cents": 8100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/santal-diffuser-150ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/439X-MILLER_HARRIS-AROMA_REEDS-SANTAL-1080_CLOSE.png?v=1749631111",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/santal-diffuser-150ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Scherzo",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20700,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 20700,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/scherzo-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 13200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/scherzo-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/scherzo-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/scherzo-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-SCHERZO-BOTTLE-PNG.png?v=1666433692",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/scherzo-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Scherzo 14ml",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5200,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/scherzo-eau-de-parfum-travel-size"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/Scherzo_14ml_bottle_d547541a-36e1-4291-91b8-2d3d29e58578.png?v=1702651165",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/scherzo-eau-de-parfum-travel-size",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Scherzo 7.5ml Travel Size",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2800,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 7.5,
+        "price_usd_cents": 2800,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/scherzo-travel-size-eau-de-parfum-7-5ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/NEW_2025_Scherzo_7.5ml_-_Gold_Cap.png?v=1759508840",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/scherzo-travel-size-eau-de-parfum-7-5ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Scherzo Hair Mist 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/scherzo-hair-mist-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/4396-MILLER_HARRIS-HAIR_MIST-SCHERZO-1080-RGB.png?v=1749631519",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/scherzo-hair-mist-100ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Scherzo Hand & Body Wash",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2300,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 300,
+        "price_usd_cents": 2300,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/scherzo-hand-body-wash"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/SCHERZO_FRONT_SHADOW_PNG_LARGE_7381adb9-5f03-4aff-8fa0-8817a5a9d35b.png?v=1763457636",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/scherzo-hand-body-wash",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Secret Gardenia",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/secret-gardenia-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/secret-gardenia-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/secret-gardenia-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-SECRET_GARDENIA-BOTTLE-PNG.png?v=1665758284",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/secret-gardenia-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Secret Gardenia 14ml",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5200,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/secret-gardenia-eau-de-parfum-travel-size"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/SG_Bottle_14ml.png?v=1649067689",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/secret-gardenia-eau-de-parfum-travel-size",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Soufflot",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20700,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 20700,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/soufflot-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/soufflot-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/100ML-SOUFFLOT-BOTTLE-CLOSE-PNG.png?v=1745329586",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/soufflot-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Staccato",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20700,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 20700,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/staccato-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/staccato-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/100ML-STACCATO-BOTTLE-WEB-PNG.png?v=1724836134",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/staccato-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Tabac Diffuser",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 150,
+        "price_usd_cents": 8100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/tabac-diffuser-150ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/439X-MILLER_HARRIS-AROMA_REEDS-TABAC-1080_CLOSE.png?v=1749631391",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/tabac-diffuser-150ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Tea Diffuser",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 150,
+        "price_usd_cents": 8100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/tea-diffuser"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/439X-MILLER_HARRIS-AROMA_REEDS-TEA-1080_CLOSE.png?v=1651058104",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/tea-diffuser",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Tea Tonique",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/tea-tonique-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/tea-tonique-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/tea-tonique-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/tea-tonique-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-TEA_TONIQUE-BOTTLE-PNG.png?v=1666434180",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/tea-tonique-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Tea Tonique 14ml",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5200,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 14,
+        "price_usd_cents": 5200,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/tea-tonique-eau-de-parfum-14ml-travel-size"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/TT_Bottle_14ml.png?v=1649068396",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/tea-tonique-eau-de-parfum-14ml-travel-size",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Tea Tonique Extrait",
+    "release_year": null,
+    "concentration": "extrait",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13800,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 13800,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/tea-tonique-extrait"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/5652-MH-TEA_TONIQUE-50ML-EXTRAIT_DP-BOTTLE_1080.png?v=1770381844",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/tea-tonique-extrait",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Tea Tonique Hand & Body Wash",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2300,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 300,
+        "price_usd_cents": 2300,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/tea-tonique-hand-body-wash"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/TEA_FRONT_WASH_SHADOW_LARGE_782b6c9b-3037-4d00-b979-5d66d9480e30.png?v=1721237671",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/tea-tonique-hand-body-wash",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Tea Tonique Hand Cream",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2300,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 2300,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/tea-tonique-hand-cream"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/5591-MH-TEA_TONIQUE-HAND_CREAM-50ml-STRAIGHT_66ab4954-92b7-4311-80cc-59315f26fea8.png?v=1770210384",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/tea-tonique-hand-cream",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Vetiver Insolent",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 16100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/vetiver-insolent-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/vetiver-insolent-eau-de-parfum"
+      },
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 2,
+        "price_usd_cents": 500,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/vetiver-insolent-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/100ML-VETIVER_INSOLENT-BOTTLE-PNG.png?v=1766940373",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/vetiver-insolent-eau-de-parfum",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Vetiver Insolent 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 10900,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 10900,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/vetiver-insolent-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/products/50ML-VETIVER_INSOLENT-BOTTLE-BOX-copy-1080x1080-7165861b-de9d-400f-8ec4-5acb0c59595b.png?v=1766940373",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/vetiver-insolent-50ml",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "Violet Ida",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 19300,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 100,
+        "price_usd_cents": 19300,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/violet-ida"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/Violet_Ida.png?v=1766177159",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/violet-ida",
+    "sources": [
+      "miller-harris"
+    ]
+  },
+  {
+    "brand": "Miller Harris",
+    "name": "WANDER through the parks 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 12100,
+    "prices": [
+      {
+        "retailer": "miller-harris-direct",
+        "size_ml": 50,
+        "price_usd_cents": 12100,
+        "is_decant": false,
+        "url": "https://www.millerharris.com/products/wander-through-the-parks-copy"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0028/4606/4709/files/Wander_2025_-_With_Box_50ml-1.png?v=1766178868",
+    "source": "miller-harris",
+    "source_url": "https://www.millerharris.com/products/wander-through-the-parks-copy",
+    "sources": [
+      "miller-harris"
+    ]
+  }
+]

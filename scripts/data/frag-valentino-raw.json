@@ -1,0 +1,2848 @@
+[
+  {
+    "brand": "Valentino",
+    "name": "Valentino",
+    "release_year": 1978,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Green Notes",
+      "Peach",
+      "Basil",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Hiacynth",
+      "Lily-of-the-Valley",
+      "Jasmine",
+      "Rose",
+      "Cyclamen",
+      "Carnation"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Musk",
+      "Civet",
+      "Cedar"
+    ],
+    "top_accords": [
+      "green",
+      "floral",
+      "white floral",
+      "fresh spicy",
+      "fresh",
+      "rose"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "floral": 5,
+      "white floral": 4,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "rose": 3,
+      "musky": 3,
+      "earthy": 2,
+      "aromatic": 2,
+      "mossy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2583.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-2583.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Eau de Parfum",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pomelo",
+      "Magnolia",
+      "Pear Blossom"
+    ],
+    "heart_notes": [
+      "Mimosa",
+      "Orange Blossom",
+      "Violet Leaf"
+    ],
+    "base_notes": [
+      "Vanilla Orchid",
+      "Rice",
+      "Heliotrope"
+    ],
+    "top_accords": [
+      "floral",
+      "citrus",
+      "sweet",
+      "powdery",
+      "yellow floral",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "citrus": 4,
+      "sweet": 3,
+      "powdery": 3,
+      "yellow floral": 3,
+      "white floral": 2,
+      "ozonic": 2,
+      "lactonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5409.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Eau-de-Parfum-5409.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Gold",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Cardamom",
+      "Lime",
+      "Peach",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Ginger",
+      "Water Lily",
+      "Cranberry",
+      "Rose"
+    ],
+    "base_notes": [
+      "Cinnamon",
+      "White Musk",
+      "Sandalwood",
+      "Iris"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "citrus",
+      "powdery",
+      "fresh spicy",
+      "fruity",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "citrus": 4,
+      "powdery": 4,
+      "fresh spicy": 3,
+      "fruity": 3,
+      "fresh": 3,
+      "woody": 3,
+      "cinnamon": 3,
+      "musky": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2035.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Gold-2035.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Amour Sans Detour",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Basil"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Orris",
+      "Rose",
+      "Jasmine",
+      "Angelica",
+      "Roots"
+    ],
+    "base_notes": [
+      "Leather",
+      "Madagascar Vanilla",
+      "Ambrette",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "powdery",
+      "floral",
+      "violet",
+      "iris",
+      "musky",
+      "rose"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "floral": 4,
+      "violet": 3,
+      "iris": 3,
+      "musky": 3,
+      "rose": 3,
+      "leather": 3,
+      "vanilla": 3,
+      "earthy": 3,
+      "white floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.113113.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Amour-Sans-Detour-113113.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Behind The Seen",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Turmeric"
+    ],
+    "heart_notes": [
+      "Hazelnut",
+      "Orris",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Cedar",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "warm spicy",
+      "earthy",
+      "nutty",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 4,
+      "warm spicy": 4,
+      "earthy": 3,
+      "nutty": 3,
+      "powdery": 2,
+      "iris": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95544.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Behind-The-Seen-95544.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Bianco 1968",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mate",
+      "Bergamot",
+      "Jasmine"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Labdanum",
+      "Ambergris"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Incense",
+      "Amber"
+    ],
+    "top_accords": [
+      "amber",
+      "musky",
+      "powdery",
+      "smoky",
+      "iris",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "musky": 5,
+      "powdery": 4,
+      "smoky": 3,
+      "iris": 3,
+      "balsamic": 3,
+      "aromatic": 3,
+      "woody": 3,
+      "fresh spicy": 3,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.97909.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Bianco-1968-97909.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Club Couture",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bitter Orange",
+      "Bergamot",
+      "Mandarin"
+    ],
+    "heart_notes": [
+      "Fig",
+      "Orange Blossom",
+      "Orris"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "fruity",
+      "sweet",
+      "white floral",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fruity": 3,
+      "sweet": 3,
+      "white floral": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95541.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Club-Couture-95541.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "L'innocence de L'air",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Green Mandarin",
+      "Angelica"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Damask Rose",
+      "Ambrette"
+    ],
+    "base_notes": [
+      "Musk",
+      "Suederal®"
+    ],
+    "top_accords": [
+      "musky",
+      "rose",
+      "floral",
+      "powdery",
+      "citrus",
+      "amber"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "rose": 3,
+      "floral": 3,
+      "powdery": 3,
+      "citrus": 3,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95540.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/L-innocence-de-L-air-95540.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Notte d'Oro",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Cherry",
+      "Grapefruit",
+      "Sweet Orange"
+    ],
+    "heart_notes": [
+      "Rose Oil",
+      "Geranium",
+      "Indian Jasmine"
+    ],
+    "base_notes": [
+      "Agarwood (Oud)",
+      "Patchouli",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "cherry",
+      "oud",
+      "fresh spicy",
+      "rose",
+      "citrus",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "cherry": 5,
+      "oud": 5,
+      "fresh spicy": 4,
+      "rose": 4,
+      "citrus": 4,
+      "aromatic": 3,
+      "white floral": 3,
+      "woody": 3,
+      "warm spicy": 3,
+      "patchouli": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95538.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Notte-d-Oro-95538.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Private Talk",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Ginger"
+    ],
+    "heart_notes": [
+      "Indian Tuberose",
+      "Tuberose",
+      "Cappuccino",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Virginia Cedar",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "tuberose",
+      "coffee",
+      "white floral",
+      "yellow floral",
+      "sweet",
+      "woody"
+    ],
+    "accord_intensity": {
+      "tuberose": 5,
+      "coffee": 5,
+      "white floral": 4,
+      "yellow floral": 4,
+      "sweet": 4,
+      "woody": 4,
+      "musky": 4,
+      "fresh spicy": 3,
+      "powdery": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95539.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Private-Talk-95539.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Punk Romantic",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Pepper"
+    ],
+    "heart_notes": [
+      "Olive Tree",
+      "Juniper Berries"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Madagascar Vanilla",
+      "Sandalwood",
+      "Musk"
+    ],
+    "top_accords": [
+      "woody",
+      "vanilla",
+      "fresh spicy",
+      "aromatic",
+      "powdery",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "vanilla": 4,
+      "fresh spicy": 3,
+      "aromatic": 3,
+      "powdery": 3,
+      "warm spicy": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95543.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Punk-Romantic-95543.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Rockstud Noir",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Milk",
+      "Woody Notes"
+    ],
+    "base_notes": [
+      "Vanilla Absolute",
+      "Amberwood",
+      "Myrrh",
+      "Sandalwood",
+      "Musk"
+    ],
+    "top_accords": [
+      "amber",
+      "woody",
+      "vanilla",
+      "warm spicy",
+      "powdery",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 5,
+      "vanilla": 4,
+      "warm spicy": 3,
+      "powdery": 3,
+      "sweet": 3,
+      "lactonic": 3,
+      "balsamic": 3,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.97910.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Rockstud-Noir-97910.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Sogno In Rosso",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Pepper",
+      "Juniper Berries",
+      "Petitgrain"
+    ],
+    "heart_notes": [
+      "Milk",
+      "Orange Blossom",
+      "Olibanum"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Madagascar Vanilla",
+      "Sandalwood",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "lactonic",
+      "vanilla",
+      "woody",
+      "aromatic",
+      "amber"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "lactonic": 5,
+      "vanilla": 4,
+      "woody": 4,
+      "aromatic": 4,
+      "amber": 4,
+      "white floral": 3,
+      "warm spicy": 3,
+      "powdery": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95537.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Sogno-In-Rosso-95537.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Born in Roma Extradose Donna",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Blackcurrant"
+    ],
+    "heart_notes": [
+      "Rum"
+    ],
+    "base_notes": [
+      "Vanilla"
+    ],
+    "top_accords": [
+      "vanilla",
+      "fruity",
+      "rum",
+      "woody",
+      "soft spicy",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "fruity": 4,
+      "rum": 3,
+      "woody": 3,
+      "soft spicy": 3,
+      "powdery": 3,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.101384.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Born-in-Roma-Extradose-Donna-101384.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Born in Roma the Gold Donna",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin"
+    ],
+    "heart_notes": [
+      "Gardenia"
+    ],
+    "base_notes": [
+      "Coconut"
+    ],
+    "top_accords": [
+      "white floral",
+      "coconut",
+      "lactonic",
+      "citrus",
+      "sweet",
+      "tropical"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "coconut": 4,
+      "lactonic": 4,
+      "citrus": 4,
+      "sweet": 3,
+      "tropical": 2,
+      "vanilla": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95704.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Born-in-Roma-the-Gold-Donna-95704.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Donna Born In Roma",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Black Currant",
+      "Pink Pepper",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Jasmine Sambac",
+      "Jasmine Tea"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Cashmeran",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "woody",
+      "vanilla",
+      "fruity",
+      "white floral",
+      "soft spicy",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "vanilla": 5,
+      "fruity": 4,
+      "white floral": 4,
+      "soft spicy": 4,
+      "powdery": 4,
+      "floral": 4,
+      "musky": 3,
+      "citrus": 3,
+      "green": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.55805.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Born-In-Roma-55805.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Donna Born In Roma Coral Fantasy",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Kiwi",
+      "Brazilian Orange"
+    ],
+    "heart_notes": [
+      "Indian Jasmine",
+      "Rose",
+      "Ambrette (Musk Mallow)"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Texas Cedar"
+    ],
+    "top_accords": [
+      "fruity",
+      "citrus",
+      "musky",
+      "tropical",
+      "sweet",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "citrus": 5,
+      "musky": 5,
+      "tropical": 3,
+      "sweet": 3,
+      "white floral": 3,
+      "floral": 3,
+      "rose": 3,
+      "fresh": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71760.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Born-In-Roma-Coral-Fantasy-71760.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Donna Born in Roma Green Stravaganza",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lapsang Souchong Tea"
+    ],
+    "heart_notes": [
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "vanilla",
+      "powdery",
+      "floral",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "vanilla": 4,
+      "powdery": 2,
+      "floral": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.88988.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Born-in-Roma-Green-Stravaganza-88988.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Donna Born In Roma Intense",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bourbon Vanilla",
+      "Amber"
+    ],
+    "heart_notes": [
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Benzoin"
+    ],
+    "top_accords": [
+      "amber",
+      "vanilla",
+      "white floral",
+      "powdery",
+      "warm spicy",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "vanilla": 5,
+      "white floral": 4,
+      "powdery": 3,
+      "warm spicy": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.78739.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Born-In-Roma-Intense-78739.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Donna Born in Roma Ivory",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Marshmallow"
+    ],
+    "base_notes": [
+      "Musk",
+      "Madagascar Vanilla"
+    ],
+    "top_accords": [
+      "sweet",
+      "powdery",
+      "white floral",
+      "citrus",
+      "musky",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "powdery": 5,
+      "white floral": 4,
+      "citrus": 4,
+      "musky": 4,
+      "vanilla": 4,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.113442.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Born-in-Roma-Ivory-113442.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Donna Born In Roma Pink PP",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Calabrian Mandarin"
+    ],
+    "heart_notes": [
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla"
+    ],
+    "top_accords": [
+      "vanilla",
+      "citrus",
+      "white floral",
+      "sweet",
+      "powdery",
+      "soapy"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "citrus": 5,
+      "white floral": 4,
+      "sweet": 3,
+      "powdery": 3,
+      "soapy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.84444.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Born-In-Roma-Pink-PP-84444.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Donna Born in Roma Purple Melancholia",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Plum"
+    ],
+    "heart_notes": [
+      "Osmanthus"
+    ],
+    "base_notes": [
+      "Vanilla"
+    ],
+    "top_accords": [
+      "fruity",
+      "floral",
+      "vanilla",
+      "sweet",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "floral": 3,
+      "vanilla": 3,
+      "sweet": 3,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.120985.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Born-in-Roma-Purple-Melancholia-120985.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Donna Born In Roma Yellow Dream",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Rose"
+    ],
+    "base_notes": [
+      "White Musk"
+    ],
+    "top_accords": [
+      "musky",
+      "citrus",
+      "rose",
+      "powdery",
+      "aromatic",
+      "floral"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "citrus": 5,
+      "rose": 4,
+      "powdery": 3,
+      "aromatic": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.64615.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Born-In-Roma-Yellow-Dream-64615.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Rock'n Dreams",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "iris",
+      "powdery",
+      "woody",
+      "fruity",
+      "sweet",
+      "amber"
+    ],
+    "accord_intensity": {
+      "iris": 5,
+      "powdery": 5,
+      "woody": 5,
+      "fruity": 4,
+      "sweet": 4,
+      "amber": 3,
+      "vanilla": 3,
+      "violet": 3,
+      "warm spicy": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5981.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Rock-n-Dreams-5981.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Rock'n Rose",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Black Currant",
+      "Bergamot",
+      "Green Notes"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Gardenia",
+      "Orange Blossom",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Musk",
+      "Orris Root",
+      "Sandalwood",
+      "Heliotrope"
+    ],
+    "top_accords": [
+      "rose",
+      "powdery",
+      "white floral",
+      "fruity",
+      "floral",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "powdery": 4,
+      "white floral": 4,
+      "fruity": 4,
+      "floral": 4,
+      "vanilla": 4,
+      "woody": 3,
+      "citrus": 3,
+      "green": 3,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.774.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Rock-n-Rose-774.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Rock'n Rose Pret-A-Porter",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Cassis",
+      "Bergamot",
+      "Green Notes"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Orange Blossom",
+      "Gardenia",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Heliotrope",
+      "Orris Root",
+      "Sandalwood",
+      "Musk"
+    ],
+    "top_accords": [
+      "rose",
+      "powdery",
+      "vanilla",
+      "white floral",
+      "green",
+      "floral"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "powdery": 5,
+      "vanilla": 5,
+      "white floral": 5,
+      "green": 3,
+      "floral": 3,
+      "citrus": 3,
+      "woody": 3,
+      "fruity": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3010.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Rock-n-Rose-Pret-A-Porter-3010.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Rock'n'Rose Couture",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Black Currant",
+      "Lily-of-the-Valley",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Gardenia",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Musk",
+      "Vanilla",
+      "Sandalwood",
+      "Heliotrope",
+      "Orris Root"
+    ],
+    "top_accords": [
+      "powdery",
+      "white floral",
+      "rose",
+      "fruity",
+      "vanilla",
+      "floral"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "white floral": 5,
+      "rose": 5,
+      "fruity": 4,
+      "vanilla": 4,
+      "floral": 4,
+      "woody": 4,
+      "musky": 3,
+      "citrus": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1643.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Rock-n-Rose-Couture-1643.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Born in Roma Extradose Uomo",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Spicy Notes"
+    ],
+    "heart_notes": [
+      "Wild Lavender"
+    ],
+    "base_notes": [
+      "Woody Notes"
+    ],
+    "top_accords": [
+      "lavender",
+      "woody",
+      "warm spicy",
+      "aromatic",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "lavender": 5,
+      "woody": 4,
+      "warm spicy": 3,
+      "aromatic": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.101383.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Born-in-Roma-Extradose-Uomo-101383.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Born in Roma The Gold Uomo",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Solar Notes",
+      "Spicy Notes",
+      "Nutmeg"
+    ],
+    "heart_notes": [
+      "Virginia Cedar"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Amber"
+    ],
+    "top_accords": [
+      "vanilla",
+      "amber",
+      "powdery",
+      "fresh spicy",
+      "woody",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "amber": 4,
+      "powdery": 4,
+      "fresh spicy": 3,
+      "woody": 3,
+      "warm spicy": 3,
+      "aldehydic": 3,
+      "mineral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95705.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Born-in-Roma-The-Gold-Uomo-95705.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Uomo Born in Roma",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mineral notes",
+      "Violet Leaf",
+      "Salt"
+    ],
+    "heart_notes": [
+      "Sage",
+      "Ginger"
+    ],
+    "base_notes": [
+      "Woody Notes",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "mineral",
+      "woody",
+      "ozonic",
+      "aromatic",
+      "aquatic",
+      "salty"
+    ],
+    "accord_intensity": {
+      "mineral": 5,
+      "woody": 5,
+      "ozonic": 4,
+      "aromatic": 4,
+      "aquatic": 4,
+      "salty": 3,
+      "herbal": 3,
+      "fresh spicy": 3,
+      "green": 3,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.55963.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Born-in-Roma-55963.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Uomo Born In Roma Coral Fantasy",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Red Apple",
+      "Cardamom",
+      "Calabrian bergamot"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Bourbon Geranium",
+      "Clary Sage"
+    ],
+    "base_notes": [
+      "Tobacco Leaf",
+      "Patchouli",
+      "Haitian Vetiver"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fruity",
+      "tobacco",
+      "sweet",
+      "warm spicy",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fruity": 4,
+      "tobacco": 4,
+      "sweet": 4,
+      "warm spicy": 4,
+      "fresh spicy": 3,
+      "lavender": 3,
+      "woody": 3,
+      "citrus": 3,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.71761.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Born-In-Roma-Coral-Fantasy-71761.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Uomo Born in Roma Green Stravaganza",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Calabrian bergamot"
+    ],
+    "heart_notes": [
+      "Coffee"
+    ],
+    "base_notes": [
+      "Vetiver"
+    ],
+    "top_accords": [
+      "citrus",
+      "coffee",
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "coffee": 4,
+      "aromatic": 4,
+      "fresh spicy": 3,
+      "woody": 3,
+      "warm spicy": 3,
+      "earthy": 3,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.88989.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Born-in-Roma-Green-Stravaganza-88989.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "Valentino Uomo Born In Roma Intense",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Vanilla"
+    ],
+    "heart_notes": [
+      "Lavender"
+    ],
+    "base_notes": [
+      "Vetiver"
+    ],
+    "top_accords": [
+      "lavender",
+      "vanilla",
+      "aromatic",
+      "woody",
+      "fresh spicy",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "lavender": 5,
+      "vanilla": 5,
+      "aromatic": 4,
+      "woody": 3,
+      "fresh spicy": 3,
+      "earthy": 3,
+      "powdery": 3,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.78740.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Born-In-Roma-Intense-78740.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Born-in-Roma-Ivory-113443.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Born-in-Roma-Purple-Melancholia-120986.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Born-In-Roma-Rockstud-Noir-84445.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Born-In-Roma-Yellow-Dream-64614.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/V-771.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/V-Absolu-772.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/V-Ete-773.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/V-pour-Homme-805.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentina-12770.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentina-2025-102129.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentina-Acqua-Floreale-17156.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentina-Assoluto-15514.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentina-Blush-44550.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentina-Myrrh-Assoluto-38649.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentina-Oud-Assoluto-18964.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentina-Pink-29901.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentina-Poudre-34936.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentina-Rosa-Assoluto-28008.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-31411.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Acqua-45032.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Rosa-Verde-49046.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Noir-Absolu-46420.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Noir-Absolu-Musc-Essence-49861.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Noir-Absolu-Oud-Essence-49860.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Noir-Absolu-46419.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-19558.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-2021-84716.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Acqua-44232.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Edition-Noire-29601.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Intense-38254.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Intense-2021-75094.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Vendetta-Donna-2584.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Vendetta-Uomo-2585.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Very-Valentino-2581.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Very-Valentino-Eau-Toilette-56436.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Voce-Viva-62754.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Voce-Viva-Intensa-68560.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Valentino",
+    "name": "429 Too Many Requests",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": null,
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Valentino/Very-Valentino-Pour-Homme-2582.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

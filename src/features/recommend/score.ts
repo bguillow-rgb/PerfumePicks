@@ -104,22 +104,23 @@ function performanceMatch(f: MockFragrance, profile: DerivedTasteProfile): numbe
 function contextMatch(f: MockFragrance, ctx: RecContext): number {
   let score = 0.5;
   let weightSum = 0;
+  const accords = f.top_accords ?? [];
 
   if (ctx.season) {
     weightSum += 1;
     const want = SEASONAL_ACCORDS[ctx.season] ?? [];
-    const overlap = f.top_accords.filter((a) => want.includes(a)).length;
+    const overlap = accords.filter((a) => want.includes(a)).length;
     score += (overlap / Math.max(want.length, 1)) * 0.5;
   }
   if (ctx.weather) {
     weightSum += 1;
     if (ctx.weather === 'hot-humid' || ctx.weather === 'hot-dry') {
       // hot → fresh / citrus bonus, gourmand penalty
-      const fresh = f.top_accords.some((a) => ['fresh','citrus','green','aquatic'].includes(a));
-      const heavy = f.top_accords.some((a) => ['gourmand','sweet','vanilla'].includes(a));
+      const fresh = accords.some((a) => ['fresh','citrus','green','aquatic'].includes(a));
+      const heavy = accords.some((a) => ['gourmand','sweet','vanilla'].includes(a));
       score += (fresh ? 0.4 : 0) + (heavy ? -0.2 : 0);
     } else if (ctx.weather === 'cold' || ctx.weather === 'cool') {
-      const warm = f.top_accords.some((a) => ['amber','warm-spicy','vanilla','woody','sweet','oud'].includes(a));
+      const warm = accords.some((a) => ['amber','warm-spicy','vanilla','woody','sweet','oud'].includes(a));
       score += warm ? 0.4 : 0;
     }
   }
@@ -154,6 +155,7 @@ export function scoreFragrance(
   f: MockFragrance,
   profile: DerivedTasteProfile,
   ctx: RecContext = {},
+  jitter = 0,
 ): ScoredRec {
   const noteS    = noteMatch(f, profile);
   const accordS  = accordMatch(f, profile);
@@ -171,8 +173,6 @@ export function scoreFragrance(
     0.10 * perfS +
     0.05 * ctxS;
 
-  // Diversity jitter — breaks ties + drives the adventure-mode dial.
-  const jitter = (Math.random() - 0.5) * diversityFactor(ctx.adventureMode);
   const score = clamp01(base + jitter);
 
   // Reason: pick the strongest signal that fired
@@ -230,8 +230,11 @@ export function rank(
   ctx: RecContext = {},
   limit = 10,
 ): ScoredRec[] {
+  // Generate jitter once per fragrance at ranking time, not per render.
+  // This prevents the hero pick from randomly re-ordering between focus events.
+  const diversityScale = diversityFactor(ctx.adventureMode);
   return candidates
-    .map((f) => scoreFragrance(f, profile, ctx))
+    .map((f) => scoreFragrance(f, profile, ctx, (Math.random() - 0.5) * diversityScale))
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
 }

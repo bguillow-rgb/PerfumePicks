@@ -1,0 +1,854 @@
+[
+  {
+    "brand": "Toskovat",
+    "name": "Age of Innocence",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 38800,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 38800,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/age-of-innocence"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Age-of-Innocence.jpg?v=1737123969",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/age-of-innocence",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Amaretto In The Melting Room (Betrayal Collection)",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/AmarettoTransparent_Floating.png?v=1765885514",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/betrayal-1-amaretto",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Anarchist A_",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 32800,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 32800,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/anarchist-a_"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Anarchist-A.jpg?v=1737123993",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/anarchist-a_",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Annacamento",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/annacamento"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Annacamento.jpg?v=1737124010",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/annacamento",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Born Screaming",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/born-screaming"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/born-screaming_fragrantica-scaled.jpg?v=1737124029",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/born-screaming",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Curtain Call",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 32800,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 32800,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/curtain-call"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Curtain-Call.jpg?v=1737124044",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/curtain-call",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Domus Numeni (EX- Take Me To Church) - 3 Year Anniversary - Limited Edition 300 PCS",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/domus_fatza.png?v=1755885314",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/domus-numeni-ex-take-me-to-church-3-year-anniversary-coming-soon-limited-edition-300-pcs",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Empty Wishes Well",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/empty-wishes-well"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Empty-Wishes-Well.jpg?v=1737124070",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/empty-wishes-well",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Forlorn Embers & Black Reigns",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 32800,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 32800,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/forlorn-embers-black-reigns"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/forlorn_embers_fragrantica-scaled.jpg?v=1737124091",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/forlorn-embers-black-reigns",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Génération Godard",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/generation-godard"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Generation-Godard.jpg?v=1737124106",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/generation-godard",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Hoary Date (formerly known as F2) - Toskovat Perfumes",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/f2_1ee76f70-17ad-4c0f-a8fe-a6b646c590cc.jpg?v=1737390603",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/hoary-date-formerly-known-as-f2-toskovat-perfumes",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Ichigo Ichie",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/ichigo-ichie"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/ichigo-ichie_fragrantica-scaled.jpg?v=1737124150",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/ichigo-ichie",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "In The Belly of The Beast",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/IMG_3729-Edit-533x800.jpg?v=1737390599",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/in-the-belly-of-the-beast",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "In The Belly of The Beast (Special Anniversary Edition) 1 of 100 bottles",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/5de26c4b-8a0c-4417-8c35-dfc95c32fbaf.jpg?v=1737124170",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/in-the-belly-of-the-beast-special-anniversary-edition",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Inexcusable Evil",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 32800,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 32800,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/inexcusable-evil"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Inexcusable-Evil.jpg?v=1737124186",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/inexcusable-evil",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Last Birthday Cake",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/last-birthday-cake"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/last-birthday-cake_fragrantica-scaled.jpg?v=1737124204",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/last-birthday-cake",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "My Past Selves’ Flowers",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 38800,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 38800,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/my-past-selves-flowers"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/my-past-selves-flowers_fragrantica-scaled.jpg?v=1737124220",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/my-past-selves-flowers",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Pining Dew 2",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/pining-dew-2"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Pining-Dew-2.jpg?v=1737124232",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/pining-dew-2",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Pornstar (Noyau Doux)",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Pornstar_gift-Floating_Transparent.png?v=1765885815",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/pornstar-noyau-doux",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Present Gambit (Formerly known as F7)",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 32800,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 32800,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/present-gambit-formerly-known-as-f7"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Present-Gambit.jpg?v=1737124259",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/present-gambit-formerly-known-as-f7",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Silent at The Theme park",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/silent-at-the-theme-park"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Silent-at-The-Theme-park.jpg?v=1737124275",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/silent-at-the-theme-park",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Spinal Fluid On The Walls (Betrayal Collection) - 60ml preorder",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/betrayal-3-spinal-liquid"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/IMG-9976.png?v=1742559449",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/betrayal-3-spinal-liquid",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Things We Never Shared",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 32800,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 32800,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/things-we-never-shared"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/Things-We-Never-Shared.jpg?v=1737124295",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/things-we-never-shared",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Vestibule Terror (Betrayal Collection)\n - 60ml preorder",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/betrayal-2-wasabi-chocolate"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/IMG-9973.png?v=1742559400",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/betrayal-2-wasabi-chocolate",
+    "sources": [
+      "toskovat"
+    ]
+  },
+  {
+    "brand": "Toskovat",
+    "name": "Я",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 23300,
+    "prices": [
+      {
+        "retailer": "toskovat-direct",
+        "size_ml": 60,
+        "price_usd_cents": 23300,
+        "is_decant": false,
+        "url": "https://www.toskovat.com/products/d1-8f"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0899/7912/6138/files/D0_AF.jpg?v=1737124321",
+    "source": "toskovat",
+    "source_url": "https://www.toskovat.com/products/d1-8f",
+    "sources": [
+      "toskovat"
+    ]
+  }
+]

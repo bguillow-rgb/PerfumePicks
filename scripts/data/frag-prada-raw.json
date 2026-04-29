@@ -1,0 +1,4263 @@
+[
+  {
+    "brand": "Prada",
+    "name": "Infusion d'Amande",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "almond",
+      "vanilla",
+      "powdery",
+      "sweet",
+      "musky",
+      "nutty"
+    ],
+    "accord_intensity": {
+      "almond": 5,
+      "vanilla": 4,
+      "powdery": 4,
+      "sweet": 3,
+      "musky": 3,
+      "nutty": 3,
+      "floral": 3,
+      "fruity": 3,
+      "anis": 3,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31044.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-d-Amande-31044.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion d'Homme",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Neroli",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Vetiver",
+      "Galbanum",
+      "Cedar"
+    ],
+    "base_notes": [
+      "Powdery Notes",
+      "Olibanum",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "powdery",
+      "iris",
+      "woody",
+      "amber",
+      "aromatic",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "iris": 4,
+      "woody": 4,
+      "amber": 3,
+      "aromatic": 3,
+      "earthy": 3,
+      "citrus": 3,
+      "green": 3,
+      "violet": 3,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3794.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-d-Homme-3794.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion d'Iris",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "African Orange Flower",
+      "Neroli",
+      "Orange",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Galbanum",
+      "Mastic or Lentisque"
+    ],
+    "base_notes": [
+      "Virginia Cedar",
+      "Incense",
+      "Benzoin",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "iris",
+      "woody",
+      "powdery",
+      "amber",
+      "citrus",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "iris": 5,
+      "woody": 5,
+      "powdery": 4,
+      "amber": 4,
+      "citrus": 4,
+      "earthy": 3,
+      "aromatic": 3,
+      "balsamic": 3,
+      "violet": 3,
+      "white floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1795.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-d-Iris-1795.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion d'Iris (2015)",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "iris",
+      "woody",
+      "powdery",
+      "citrus",
+      "violet",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "iris": 5,
+      "woody": 4,
+      "powdery": 4,
+      "citrus": 4,
+      "violet": 3,
+      "earthy": 3,
+      "amber": 3,
+      "white floral": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31040.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-d-Iris-2015-31040.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion d'Iris Cèdre",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "iris",
+      "amber",
+      "powdery",
+      "violet",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "iris": 5,
+      "amber": 4,
+      "powdery": 4,
+      "violet": 3,
+      "warm spicy": 3,
+      "earthy": 3,
+      "smoky": 3,
+      "balsamic": 3,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31043.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-d-Iris-Cedre-31043.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion d'Iris Eau de Parfum Absolue",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "African Orange Flower",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Mastic or Lentisque"
+    ],
+    "base_notes": [
+      "Benzoin",
+      "Vanille",
+      "Musk",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "iris",
+      "vanilla",
+      "powdery",
+      "amber",
+      "balsamic",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "iris": 5,
+      "vanilla": 5,
+      "powdery": 5,
+      "amber": 5,
+      "balsamic": 4,
+      "white floral": 3,
+      "violet": 3,
+      "musky": 3,
+      "aromatic": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14227.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-d-Iris-Eau-de-Parfum-Absolue-14227.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion d'Iris Eau de Toilette",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "powdery",
+      "violet",
+      "iris",
+      "woody",
+      "green",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "violet": 4,
+      "iris": 4,
+      "woody": 3,
+      "green": 3,
+      "white floral": 3,
+      "floral": 3,
+      "fresh": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.9715.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-d-Iris-Eau-de-Toilette-9715.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion d'Iris L'Eau d'Iris",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mint",
+      "Tunisian Neroli"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Lily-of-the-Valley",
+      "Orange Blossom",
+      "Pink Nerium Oleander",
+      "Rose"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Woody Notes",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "green",
+      "powdery",
+      "iris",
+      "floral",
+      "musky"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "green": 4,
+      "powdery": 4,
+      "iris": 4,
+      "floral": 4,
+      "musky": 3,
+      "aromatic": 3,
+      "woody": 3,
+      "citrus": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17591.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-d-Iris-L-Eau-d-Iris-17591.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion d'Oeillet",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "warm spicy",
+      "woody",
+      "floral",
+      "amber",
+      "patchouli",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "woody": 4,
+      "floral": 4,
+      "amber": 3,
+      "patchouli": 3,
+      "balsamic": 3,
+      "aromatic": 2,
+      "citrus": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31045.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-d-Oeillet-31045.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion d'Ylang",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "yellow floral",
+      "woody",
+      "citrus",
+      "sweet",
+      "warm spicy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "yellow floral": 5,
+      "woody": 5,
+      "citrus": 4,
+      "sweet": 3,
+      "warm spicy": 3,
+      "aromatic": 3,
+      "fresh spicy": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.74475.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-d-Ylang-74475.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Figue",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Fig"
+    ],
+    "base_notes": [
+      "Mastic or Lentisque",
+      "Galbanum"
+    ],
+    "top_accords": [
+      "fruity",
+      "balsamic",
+      "aromatic",
+      "green",
+      "sweet",
+      "woody"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "balsamic": 4,
+      "aromatic": 4,
+      "green": 4,
+      "sweet": 4,
+      "woody": 4,
+      "citrus": 3,
+      "terpenic": 3,
+      "bitter": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.80294.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Figue-80294.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Fleur d'Oranger",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Neroli",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Jasmine",
+      "Tuberose"
+    ],
+    "base_notes": [
+      "Powdery Notes",
+      "Serenolide"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "tuberose",
+      "animalic",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 3,
+      "tuberose": 2,
+      "animalic": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5533.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Fleur-d-Oranger-5533.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Fleur d'Oranger (2015)",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "tuberose",
+      "animalic",
+      "soapy"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 3,
+      "tuberose": 2,
+      "animalic": 2,
+      "soapy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31041.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Fleur-d-Oranger-2015-31041.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Gingembre",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Green Mandarin",
+      "Aldehydes"
+    ],
+    "heart_notes": [
+      "Ginger"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Musk"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "fresh",
+      "citrus",
+      "musky",
+      "aldehydic",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "fresh": 4,
+      "citrus": 4,
+      "musky": 3,
+      "aldehydic": 3,
+      "aromatic": 3,
+      "woody": 3,
+      "earthy": 3,
+      "fruity": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.90482.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Gingembre-90482.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Mimosa",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Anise",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Mimosa",
+      "Rose"
+    ],
+    "base_notes": [
+      "Woody Notes"
+    ],
+    "top_accords": [
+      "yellow floral",
+      "powdery",
+      "floral",
+      "sweet",
+      "anis",
+      "woody"
+    ],
+    "accord_intensity": {
+      "yellow floral": 5,
+      "powdery": 4,
+      "floral": 4,
+      "sweet": 3,
+      "anis": 3,
+      "woody": 3,
+      "citrus": 3,
+      "soft spicy": 3,
+      "rose": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.38347.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Mimosa-38347.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Rhubarbe",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Green Mandarin"
+    ],
+    "heart_notes": [
+      "Rhubarb"
+    ],
+    "base_notes": [
+      "Aldehydes",
+      "Citrus",
+      "Musk",
+      "White Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "green",
+      "fruity",
+      "aldehydic",
+      "fresh",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "green": 4,
+      "fruity": 4,
+      "aldehydic": 4,
+      "fresh": 4,
+      "aromatic": 3,
+      "musky": 3,
+      "sweet": 3,
+      "powdery": 2,
+      "sour": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.100900.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Rhubarbe-100900.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Rose",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "rose",
+      "aromatic",
+      "green",
+      "citrus",
+      "fresh spicy",
+      "beeswax"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "aromatic": 4,
+      "green": 4,
+      "citrus": 3,
+      "fresh spicy": 3,
+      "beeswax": 3,
+      "floral": 3,
+      "honey": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11233.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Rose-11233.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Rose (2017)",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "rose",
+      "citrus",
+      "green",
+      "floral",
+      "aromatic",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "citrus": 4,
+      "green": 3,
+      "floral": 3,
+      "aromatic": 2,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.44919.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Rose-2017-44919.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Rossetto",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Raspberry",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Geranium",
+      "Rose"
+    ],
+    "base_notes": [
+      "Honey",
+      "Vanilla",
+      "Musk"
+    ],
+    "top_accords": [
+      "sweet",
+      "fruity",
+      "powdery",
+      "violet",
+      "rose",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "fruity": 5,
+      "powdery": 4,
+      "violet": 4,
+      "rose": 4,
+      "fresh spicy": 4,
+      "aromatic": 3,
+      "honey": 3,
+      "citrus": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.45120.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Rossetto-45120.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Santal Chai",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom",
+      "Citrus"
+    ],
+    "heart_notes": [
+      "Masala Chai",
+      "Spices",
+      "Milk"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Musk"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "woody",
+      "powdery",
+      "lactonic",
+      "musky",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "woody": 3,
+      "powdery": 3,
+      "lactonic": 3,
+      "musky": 2,
+      "citrus": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.119370.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Santal-Chai-119370.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Tubereuse",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "tuberose",
+      "white floral",
+      "green",
+      "aromatic",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "tuberose": 5,
+      "white floral": 5,
+      "green": 3,
+      "aromatic": 3,
+      "animalic": 3,
+      "amber": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8142.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Tubereuse-8142.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Vanille",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Vanilla",
+      "Bergamot",
+      "Smoke"
+    ],
+    "heart_notes": [
+      "Neroli",
+      "Angelica"
+    ],
+    "base_notes": [
+      "Vanilla"
+    ],
+    "top_accords": [
+      "vanilla",
+      "citrus",
+      "powdery",
+      "musky",
+      "amber",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "citrus": 4,
+      "powdery": 4,
+      "musky": 3,
+      "amber": 3,
+      "fresh spicy": 3,
+      "smoky": 3,
+      "white floral": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.74476.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Vanille-74476.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Vetiver",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "earthy",
+      "anis",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "woody": 3,
+      "earthy": 3,
+      "anis": 3,
+      "fresh": 2,
+      "soft spicy": 2,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8141.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Vetiver-8141.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion de Vetiver (2015)",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "earthy",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 4,
+      "fresh spicy": 4,
+      "woody": 3,
+      "earthy": 3,
+      "fresh": 3,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31042.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-de-Vetiver-2015-31042.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Infusion Mandarine",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Green Mandarin",
+      "Orange",
+      "Orange Peel",
+      "Mandarin Leaf"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Opoponax"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "sweet",
+      "green",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 3,
+      "sweet": 2,
+      "green": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49713.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Infusion-Mandarine-49713.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada L'Homme",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Neroli",
+      "Black Pepper",
+      "Cardamom",
+      "Carrot Seeds"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Violet",
+      "Geranium",
+      "Mate"
+    ],
+    "base_notes": [
+      "Amber",
+      "Cedar",
+      "Sandalwood",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "powdery",
+      "iris",
+      "violet",
+      "woody",
+      "fresh spicy",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "iris": 4,
+      "violet": 4,
+      "woody": 4,
+      "fresh spicy": 3,
+      "warm spicy": 3,
+      "aromatic": 3,
+      "earthy": 3,
+      "amber": 3,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.39029.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-L-Homme-39029.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada L'Homme Absolu",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Cardamom",
+      "Black Pepper",
+      "Green Mandarin",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Geranium",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Amber",
+      "Cedar",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "citrus",
+      "aromatic",
+      "warm spicy",
+      "amber",
+      "iris"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "citrus": 4,
+      "aromatic": 4,
+      "warm spicy": 4,
+      "amber": 4,
+      "iris": 3,
+      "woody": 3,
+      "powdery": 3,
+      "violet": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51637.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-L-Homme-Absolu-51637.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada L'Homme Intense",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Iris"
+    ],
+    "heart_notes": [
+      "Amber",
+      "Patchouli"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Leather",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "iris",
+      "powdery",
+      "amber",
+      "woody",
+      "earthy",
+      "leather"
+    ],
+    "accord_intensity": {
+      "iris": 5,
+      "powdery": 4,
+      "amber": 4,
+      "woody": 4,
+      "earthy": 3,
+      "leather": 3,
+      "violet": 3,
+      "vanilla": 3,
+      "warm spicy": 3,
+      "patchouli": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.45396.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-L-Homme-Intense-45396.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada L'Homme L'Eau",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Neroli",
+      "Ginger"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Amber"
+    ],
+    "base_notes": [
+      "Powdery Notes",
+      "Sandalwood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "powdery",
+      "iris",
+      "woody",
+      "fresh spicy",
+      "violet",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "iris": 3,
+      "woody": 3,
+      "fresh spicy": 3,
+      "violet": 2,
+      "fresh": 2,
+      "citrus": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46400.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-L-Homme-L-Eau-46400.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada L'Homme Velvet Edition",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Neroli",
+      "Carrot Seeds",
+      "Cardamom",
+      "Black Pepper"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Mate",
+      "Geranium",
+      "Violet"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Sandalwood",
+      "Amber",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "powdery",
+      "woody",
+      "fresh spicy",
+      "aromatic",
+      "warm spicy",
+      "iris"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "woody": 4,
+      "fresh spicy": 4,
+      "aromatic": 4,
+      "warm spicy": 3,
+      "iris": 3,
+      "violet": 3,
+      "earthy": 2,
+      "fresh": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52383.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-L-Homme-Velvet-Edition-52383.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada L’Homme Water Splash",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Neroli",
+      "Mandarin Leaf",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Ginger"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Amber",
+      "Cedar"
+    ],
+    "top_accords": [
+      "iris",
+      "woody",
+      "powdery",
+      "fresh spicy",
+      "citrus",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "iris": 5,
+      "woody": 5,
+      "powdery": 5,
+      "fresh spicy": 4,
+      "citrus": 4,
+      "fresh": 4,
+      "aromatic": 4,
+      "warm spicy": 3,
+      "white floral": 3,
+      "violet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54677.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-L-Homme-Water-Splash-54677.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada La Femme",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Magnolia",
+      "Bergamot",
+      "Carrot Seeds"
+    ],
+    "heart_notes": [
+      "Frangipani",
+      "Tuberose",
+      "Ylang-Ylang",
+      "Iris",
+      "Spices"
+    ],
+    "base_notes": [
+      "Beeswax",
+      "Vanilla",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "floral",
+      "tuberose",
+      "beeswax",
+      "tropical",
+      "white floral",
+      "yellow floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "tuberose": 4,
+      "beeswax": 4,
+      "tropical": 3,
+      "white floral": 3,
+      "yellow floral": 3,
+      "animalic": 3,
+      "woody": 3,
+      "honey": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.39030.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-La-Femme-39030.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada La Femme Absolu",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peach",
+      "Blood Orange",
+      "Chili Pepper"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Broom",
+      "Neroli",
+      "Immortelle"
+    ],
+    "base_notes": [
+      "Tolu Balsam",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "sweet",
+      "white floral",
+      "citrus",
+      "warm spicy",
+      "amber",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "white floral": 4,
+      "citrus": 4,
+      "warm spicy": 4,
+      "amber": 3,
+      "powdery": 3,
+      "yellow floral": 3,
+      "herbal": 3,
+      "vanilla": 3,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51636.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-La-Femme-Absolu-51636.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada La Femme Intense",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Ylang-Ylang",
+      "Frangipani"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Jasmine Sambac",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Vanila",
+      "Iris",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "white floral",
+      "woody",
+      "floral",
+      "tuberose",
+      "yellow floral",
+      "patchouli"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "woody": 4,
+      "floral": 3,
+      "tuberose": 3,
+      "yellow floral": 3,
+      "patchouli": 3,
+      "earthy": 3,
+      "sweet": 3,
+      "tropical": 3,
+      "vanilla": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.45395.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-La-Femme-Intense-45395.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada La Femme L'Eau",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Frangipani",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Woody Notes"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "tuberose",
+      "yellow floral",
+      "tropical",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 5,
+      "tuberose": 4,
+      "yellow floral": 4,
+      "tropical": 4,
+      "woody": 4,
+      "white floral": 4,
+      "sweet": 3,
+      "lactonic": 3,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46399.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-La-Femme-L-Eau-46399.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada La Femme Velvet Edition",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Magnolia",
+      "Carrot Seeds",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Frangipani",
+      "Indian Tuberose",
+      "Iris",
+      "Ylang-Ylang",
+      "Spices"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Beeswax",
+      "Musk",
+      "Vetiver",
+      "Cedar"
+    ],
+    "top_accords": [
+      "floral",
+      "powdery",
+      "woody",
+      "citrus",
+      "musky",
+      "tropical"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "powdery": 5,
+      "woody": 4,
+      "citrus": 3,
+      "musky": 3,
+      "tropical": 3,
+      "iris": 3,
+      "vanilla": 3,
+      "tuberose": 3,
+      "white floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52382.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-La-Femme-Velvet-Edition-52382.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada La Femme Water Splash",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Mandarin Leaf"
+    ],
+    "heart_notes": [
+      "Frangipani",
+      "Magnolia",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Green Accord",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "floral",
+      "citrus",
+      "green",
+      "white floral",
+      "tropical",
+      "woody"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "citrus": 5,
+      "green": 4,
+      "white floral": 3,
+      "tropical": 3,
+      "woody": 3,
+      "fresh": 2,
+      "lactonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54676.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-La-Femme-Water-Splash-54676.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender",
+      "Bitter Orange"
+    ],
+    "heart_notes": [
+      "Mint",
+      "Clary Sage"
+    ],
+    "base_notes": [
+      "Ambrette (Musk Mallow)",
+      "Ambroxan"
+    ],
+    "top_accords": [
+      "aromatic",
+      "lavender",
+      "green",
+      "fresh spicy",
+      "citrus",
+      "musky"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "lavender": 4,
+      "green": 3,
+      "fresh spicy": 3,
+      "citrus": 3,
+      "musky": 3,
+      "amber": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15754.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-15754.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa 2024",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Mint"
+    ],
+    "heart_notes": [
+      "Lavender"
+    ],
+    "base_notes": [
+      "Amber"
+    ],
+    "top_accords": [
+      "lavender",
+      "aromatic",
+      "green",
+      "fresh spicy",
+      "amber"
+    ],
+    "accord_intensity": {
+      "lavender": 5,
+      "aromatic": 5,
+      "green": 4,
+      "fresh spicy": 4,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.99148.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-2024-99148.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa 34th America's Cup Limited Edition",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bitter Orange",
+      "Lavender"
+    ],
+    "heart_notes": [
+      "Mint",
+      "Clary Sage"
+    ],
+    "base_notes": [
+      "Ambrette (Musk Mallow)",
+      "Ambroxan"
+    ],
+    "top_accords": [
+      "aromatic",
+      "citrus",
+      "lavender",
+      "fresh spicy",
+      "green",
+      "musky"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "citrus": 4,
+      "lavender": 4,
+      "fresh spicy": 3,
+      "green": 3,
+      "musky": 3,
+      "floral": 2,
+      "fresh": 2,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18862.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-34th-America-s-Cup-Limited-Edition-18862.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa Black",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Angelica",
+      "Patchouli"
+    ],
+    "base_notes": [
+      "Coumarin",
+      "Amber",
+      "Musk"
+    ],
+    "top_accords": [
+      "amber",
+      "musky",
+      "powdery",
+      "woody",
+      "vanilla",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "musky": 5,
+      "powdery": 4,
+      "woody": 4,
+      "vanilla": 3,
+      "aromatic": 3,
+      "balsamic": 3,
+      "sweet": 3,
+      "warm spicy": 3,
+      "patchouli": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48682.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-Black-48682.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa Carbon Eau de Parfum",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender"
+    ],
+    "heart_notes": [
+      "Licorice"
+    ],
+    "base_notes": [
+      "Cypress"
+    ],
+    "top_accords": [
+      "aromatic",
+      "soft spicy",
+      "lavender",
+      "woody",
+      "fresh spicy",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "soft spicy": 5,
+      "lavender": 4,
+      "woody": 4,
+      "fresh spicy": 4,
+      "sweet": 3,
+      "anis": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.127045.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-Carbon-Eau-de-Parfum-127045.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa Carbon Eau de Toilette",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Pepper"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Metallic notes",
+      "Watery Notes",
+      "Coal",
+      "Soil Tincture"
+    ],
+    "base_notes": [
+      "Ambroxan",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "amber",
+      "lavender",
+      "aromatic",
+      "metallic",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "amber": 4,
+      "lavender": 4,
+      "aromatic": 4,
+      "metallic": 4,
+      "citrus": 4,
+      "musky": 3,
+      "woody": 3,
+      "mineral": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43402.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-Carbon-Eau-de-Toilette-43402.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa Eau Sport",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Citron",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Ginger"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "lavender",
+      "amber",
+      "aromatic",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 4,
+      "lavender": 4,
+      "amber": 3,
+      "aromatic": 3,
+      "woody": 3,
+      "fresh": 3,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.38511.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-Eau-Sport-38511.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa Extreme",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "fresh spicy",
+      "amber",
+      "aromatic",
+      "lavender",
+      "vanilla",
+      "woody"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "amber": 4,
+      "aromatic": 3,
+      "lavender": 3,
+      "vanilla": 3,
+      "woody": 2,
+      "warm spicy": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18882.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-Extreme-18882.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa Ocean",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Bergamot",
+      "Pink Pepper",
+      "Artemisia"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Iris",
+      "Sage",
+      "Suede",
+      "Saffron"
+    ],
+    "base_notes": [
+      "Musk",
+      "Caramel",
+      "Haitian Vetiver",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "aromatic",
+      "musky",
+      "powdery",
+      "lavender",
+      "herbal",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "musky": 4,
+      "powdery": 4,
+      "lavender": 4,
+      "herbal": 4,
+      "citrus": 4,
+      "fresh spicy": 4,
+      "iris": 3,
+      "woody": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.68753.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-Ocean-68753.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa Ocean Eau de Parfum",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Woody Notes",
+      "Frankincense"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Amber Xtreme"
+    ],
+    "top_accords": [
+      "amber",
+      "woody",
+      "vanilla",
+      "citrus",
+      "balsamic",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 4,
+      "vanilla": 4,
+      "citrus": 3,
+      "balsamic": 3,
+      "fresh spicy": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.81280.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-Ocean-Eau-de-Parfum-81280.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa Ocean Le Parfum",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Saffron"
+    ],
+    "base_notes": [
+      "Amber Xtreme",
+      "Oak"
+    ],
+    "top_accords": [
+      "woody",
+      "amber",
+      "warm spicy",
+      "citrus",
+      "balsamic",
+      "metallic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "amber": 4,
+      "warm spicy": 3,
+      "citrus": 3,
+      "balsamic": 3,
+      "metallic": 2,
+      "aromatic": 2,
+      "leather": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.91693.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-Ocean-Le-Parfum-91693.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Luna Rossa Sport",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Juniper Berries",
+      "Ginger"
+    ],
+    "heart_notes": [
+      "Lavender"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "vanilla",
+      "aromatic",
+      "lavender",
+      "fresh spicy",
+      "sweet",
+      "amber"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "aromatic": 4,
+      "lavender": 4,
+      "fresh spicy": 4,
+      "sweet": 3,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31116.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Luna-Rossa-Sport-31116.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Cargo de Nuit",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "musky",
+      "floral",
+      "aromatic",
+      "vanilla",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "musky": 3,
+      "floral": 3,
+      "aromatic": 3,
+      "vanilla": 3,
+      "powdery": 2,
+      "amber": 2,
+      "balsamic": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32197.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Cargo-de-Nuit-32197.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Day For Night",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "vanilla",
+      "balsamic",
+      "caramel",
+      "aromatic",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "vanilla": 3,
+      "balsamic": 3,
+      "caramel": 3,
+      "aromatic": 3,
+      "warm spicy": 3,
+      "sweet": 3,
+      "leather": 2,
+      "smoky": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32199.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Day-For-Night-32199.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Double Dare",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Pepper",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Orris",
+      "Labdanum",
+      "Rose"
+    ],
+    "base_notes": [
+      "Leather",
+      "Suede",
+      "Tolu Balsam",
+      "Amberwood",
+      "Vanilla",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "amber",
+      "powdery",
+      "leather",
+      "woody",
+      "warm spicy",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "powdery": 4,
+      "leather": 4,
+      "woody": 4,
+      "warm spicy": 3,
+      "fresh spicy": 3,
+      "iris": 3,
+      "citrus": 3,
+      "musky": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32201.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Double-Dare-32201.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Heat Wave",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Artemisia",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Night blooming Cereus",
+      "Jasmine",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Coconut",
+      "Benzoin",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "vanilla",
+      "yellow floral",
+      "sweet",
+      "herbal",
+      "coconut"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "vanilla": 3,
+      "yellow floral": 3,
+      "sweet": 3,
+      "herbal": 3,
+      "coconut": 3,
+      "amber": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32198.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Heat-Wave-32198.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Marienbad",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Plum",
+      "Rose"
+    ],
+    "base_notes": [
+      "Amber",
+      "Leather",
+      "Vanilla",
+      "Incense",
+      "Civet",
+      "Tolu Balsam",
+      "Labdanum",
+      "Orris",
+      "Patchouli",
+      "Agarwood (Oud)"
+    ],
+    "top_accords": [
+      "amber",
+      "powdery",
+      "animalic",
+      "balsamic",
+      "smoky",
+      "leather"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "powdery": 3,
+      "animalic": 3,
+      "balsamic": 3,
+      "smoky": 2,
+      "leather": 2,
+      "warm spicy": 2,
+      "vanilla": 2,
+      "musky": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32202.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Marienbad-32202.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Mirages Babylon",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Sandalwood"
+    ],
+    "heart_notes": [
+      "Amber"
+    ],
+    "base_notes": [
+      "Labdanum"
+    ],
+    "top_accords": [
+      "amber",
+      "woody",
+      "powdery",
+      "musky",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 4,
+      "powdery": 3,
+      "musky": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51517.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Mirages-Babylon-51517.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Mirages Dark Light",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "vanilla",
+      "aldehydic",
+      "powdery",
+      "musky",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "vanilla": 3,
+      "aldehydic": 3,
+      "powdery": 3,
+      "musky": 2,
+      "sweet": 2,
+      "balsamic": 2,
+      "fresh": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.44123.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Mirages-Dark-Light-44123.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Mirages Desert Serenade",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cumin",
+      "Saffron"
+    ],
+    "heart_notes": [
+      "Honey",
+      "Leather"
+    ],
+    "base_notes": [
+      "Cypress",
+      "Musk"
+    ],
+    "top_accords": [
+      "honey",
+      "leather",
+      "animalic",
+      "sweet",
+      "fresh spicy",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "honey": 5,
+      "leather": 4,
+      "animalic": 4,
+      "sweet": 3,
+      "fresh spicy": 3,
+      "warm spicy": 3,
+      "floral": 3,
+      "metallic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51518.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Mirages-Desert-Serenade-51518.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Mirages Midnight Train",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "patchouli",
+      "woody",
+      "amber",
+      "warm spicy",
+      "citrus",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "patchouli": 5,
+      "woody": 5,
+      "amber": 4,
+      "warm spicy": 3,
+      "citrus": 3,
+      "earthy": 3,
+      "balsamic": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.44126.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Mirages-Midnight-Train-44126.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Mirages Miracle of the Rose",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "rose",
+      "oud",
+      "tobacco",
+      "leather",
+      "patchouli",
+      "floral"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "oud": 4,
+      "tobacco": 3,
+      "leather": 3,
+      "patchouli": 3,
+      "floral": 3,
+      "sweet": 2,
+      "animalic": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.44125.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Mirages-Miracle-of-the-Rose-44125.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Mirages Moonlight Shadow",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Fig",
+      "Cumin",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Cacao"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "woody",
+      "fruity",
+      "leather",
+      "cacao",
+      "sweet",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "fruity": 4,
+      "leather": 4,
+      "cacao": 3,
+      "sweet": 3,
+      "warm spicy": 3,
+      "animalic": 3,
+      "powdery": 3,
+      "fresh spicy": 2,
+      "smoky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51515.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Mirages-Moonlight-Shadow-51515.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Mirages Soleil au Zenith",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Peach",
+      "Ylang-Ylang"
+    ],
+    "heart_notes": [
+      "Sandalwood"
+    ],
+    "base_notes": [
+      "Cinnamon",
+      "Nutmeg",
+      "Vanilla",
+      "Pimento",
+      "Cumin"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "woody",
+      "fresh spicy",
+      "sweet",
+      "yellow floral",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "woody": 5,
+      "fresh spicy": 4,
+      "sweet": 4,
+      "yellow floral": 4,
+      "powdery": 4,
+      "fruity": 4,
+      "cinnamon": 4,
+      "vanilla": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.44124.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Mirages-Soleil-au-Zenith-44124.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Mirages Some Velvet Morning",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "warm spicy",
+      "vanilla",
+      "patchouli",
+      "powdery",
+      "musky"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "warm spicy": 5,
+      "vanilla": 5,
+      "patchouli": 4,
+      "powdery": 4,
+      "musky": 4,
+      "balsamic": 3,
+      "fruity": 3,
+      "woody": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.57974.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Mirages-Some-Velvet-Morning-57974.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Nue au Soleil",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Aldehydes",
+      "Petitgrain"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Freesia",
+      "Magnolia",
+      "Green Notes"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Amberwood",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "floral",
+      "aldehydic",
+      "musky",
+      "green"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 4,
+      "floral": 4,
+      "aldehydic": 4,
+      "musky": 3,
+      "green": 3,
+      "woody": 3,
+      "soapy": 3,
+      "fresh": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32195.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Nue-au-Soleil-32195.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Pink Flamingos",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Lime",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Cherry",
+      "Hamanasu or Japanese Rose",
+      "Iris",
+      "Raspberry",
+      "Rose",
+      "Hedione",
+      "Peach",
+      "Black Currant"
+    ],
+    "base_notes": [
+      "Violet",
+      "White Musk",
+      "Iso E Super",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "powdery",
+      "rose",
+      "fruity",
+      "sweet",
+      "violet",
+      "musky"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "rose": 5,
+      "fruity": 5,
+      "sweet": 4,
+      "violet": 4,
+      "musky": 4,
+      "floral": 4,
+      "woody": 4,
+      "cherry": 4,
+      "citrus": 4
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32200.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Pink-Flamingos-32200.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Purple Rain",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Galbanum",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Neroli",
+      "Hedione",
+      "Rose"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Violet",
+      "White Musk",
+      "Iso E Super",
+      "Cedar",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "powdery",
+      "woody",
+      "iris",
+      "violet",
+      "earthy",
+      "green"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "woody": 5,
+      "iris": 4,
+      "violet": 4,
+      "earthy": 3,
+      "green": 3,
+      "aromatic": 3,
+      "musky": 3,
+      "floral": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32194.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Purple-Rain-32194.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Tainted Love",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pear"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Rose",
+      "Peach",
+      "Raspberry"
+    ],
+    "base_notes": [
+      "Orris",
+      "Musk"
+    ],
+    "top_accords": [
+      "powdery",
+      "fruity",
+      "violet",
+      "iris",
+      "sweet",
+      "musky"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "fruity": 4,
+      "violet": 4,
+      "iris": 3,
+      "sweet": 3,
+      "musky": 3,
+      "rose": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32193.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Tainted-Love-32193.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Un Chant D’Amour",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Neroli",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Cotton Flower",
+      "Orange Blossom",
+      "Jasmine",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Musk",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "white floral",
+      "powdery",
+      "citrus",
+      "floral",
+      "musky",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "powdery": 4,
+      "citrus": 4,
+      "floral": 3,
+      "musky": 3,
+      "fresh": 3,
+      "green": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32196.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Un-Chant-D-Amour-32196.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Paradigme",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Calabrian bergamot",
+      "Musk"
+    ],
+    "heart_notes": [
+      "Bourbon Geranium",
+      "Rose Geranium"
+    ],
+    "base_notes": [
+      "Benzoin",
+      "Peru Balsam",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "amber",
+      "aromatic",
+      "woody",
+      "citrus",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "amber": 5,
+      "aromatic": 4,
+      "woody": 4,
+      "citrus": 4,
+      "balsamic": 4,
+      "musky": 3,
+      "warm spicy": 3,
+      "rose": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.110661.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Paradigme-110661.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada Paradoxe",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Tangerine",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Neroli Essence",
+      "Neroli",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Amber",
+      "White Musk",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "sweet",
+      "amber",
+      "vanilla",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 4,
+      "sweet": 3,
+      "amber": 3,
+      "vanilla": 3,
+      "powdery": 3,
+      "fruity": 3,
+      "musky": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.75668.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-Paradoxe-75668.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada Paradoxe Hair Mist",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Calabrian bergamot",
+      "Tangerine"
+    ],
+    "heart_notes": [
+      "Tunisian Orange Blossom",
+      "Jasmine Sambac",
+      "Neroli",
+      "Bitter Orange Blossom"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Serenolide",
+      "Benzoin",
+      "Siam",
+      "Ambrofix™"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "sweet",
+      "vanilla",
+      "fruity",
+      "amber"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 5,
+      "sweet": 3,
+      "vanilla": 3,
+      "fruity": 3,
+      "amber": 2,
+      "fresh spicy": 2,
+      "fresh": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.108428.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-Paradoxe-Hair-Mist-108428.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada Paradoxe Intense",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Neroli",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Neroli Essence",
+      "Moss"
+    ],
+    "base_notes": [
+      "Bourbon Vanilla",
+      "Vanilla",
+      "Amber",
+      "Ambrofix™",
+      "Serenolide"
+    ],
+    "top_accords": [
+      "white floral",
+      "vanilla",
+      "citrus",
+      "mossy",
+      "amber",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "vanilla": 4,
+      "citrus": 4,
+      "mossy": 4,
+      "amber": 3,
+      "fruity": 3,
+      "sweet": 3,
+      "fresh": 3,
+      "earthy": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.83988.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-Paradoxe-Intense-83988.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada Paradoxe Radical Essence",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Neroli",
+      "Orange Blossom"
+    ],
+    "heart_notes": [
+      "Pistachio"
+    ],
+    "base_notes": [
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "woody",
+      "white floral",
+      "citrus",
+      "green",
+      "nutty",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "white floral": 4,
+      "citrus": 4,
+      "green": 4,
+      "nutty": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.108298.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-Paradoxe-Radical-Essence-108298.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada Paradoxe Virtual Flower",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Musk",
+      "Ambrette"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "musky",
+      "floral",
+      "fresh spicy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 4,
+      "musky": 4,
+      "floral": 3,
+      "fresh spicy": 3,
+      "aromatic": 3,
+      "powdery": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95006.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-Paradoxe-Virtual-Flower-95006.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "L'Eau Ambree",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Citruses",
+      "Amalfi Lemon"
+    ],
+    "heart_notes": [
+      "Patchouli",
+      "Rose"
+    ],
+    "base_notes": [
+      "Amber",
+      "Opoponax",
+      "Vanille"
+    ],
+    "top_accords": [
+      "amber",
+      "citrus",
+      "balsamic",
+      "patchouli",
+      "woody",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "citrus": 4,
+      "balsamic": 3,
+      "patchouli": 3,
+      "woody": 3,
+      "sweet": 3,
+      "vanilla": 3,
+      "fresh": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6524.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/L-Eau-Ambree-6524.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Bitter Orange",
+      "Mimosa",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Patchouli",
+      "Rose",
+      "Pink Pepper"
+    ],
+    "base_notes": [
+      "Benzoin",
+      "Sandalwood",
+      "Musk",
+      "Labdanum",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "woody",
+      "warm spicy",
+      "patchouli",
+      "amber",
+      "balsamic",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "warm spicy": 5,
+      "patchouli": 5,
+      "amber": 4,
+      "balsamic": 3,
+      "powdery": 3,
+      "earthy": 3,
+      "citrus": 2,
+      "musky": 2,
+      "vanilla": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1045.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-1045.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada Amber Pour Homme (Prada Man)",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Neroli",
+      "Cardamom",
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Myrrh",
+      "Musk",
+      "Orange Blossom",
+      "Geranium",
+      "Vetiver"
+    ],
+    "base_notes": [
+      "Saffron",
+      "Vanilla",
+      "Labdanum",
+      "Tonka Bean",
+      "Leather",
+      "Sandalwood",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "amber",
+      "aromatic",
+      "citrus",
+      "woody",
+      "musky"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "amber": 4,
+      "aromatic": 4,
+      "citrus": 4,
+      "woody": 3,
+      "musky": 3,
+      "vanilla": 3,
+      "white floral": 3,
+      "sweet": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1044.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-Amber-Pour-Homme-Prada-Man-1044.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada Amber Pour Homme Intense",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "warm spicy",
+      "woody",
+      "patchouli",
+      "balsamic",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "warm spicy": 4,
+      "woody": 3,
+      "patchouli": 3,
+      "balsamic": 3,
+      "aromatic": 3,
+      "vanilla": 3,
+      "sweet": 2,
+      "powdery": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11240.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-Amber-Pour-Homme-Intense-11240.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada Intense",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Bitter Orange",
+      "Bergamot",
+      "Mandarin Blossom"
+    ],
+    "heart_notes": [
+      "Patchouli",
+      "Peru Balsam",
+      "Tincture of Rose",
+      "Mimosa"
+    ],
+    "base_notes": [
+      "Tonka Bean",
+      "Vanille",
+      "French labdanum",
+      "Sandalwood",
+      "Musk"
+    ],
+    "top_accords": [
+      "woody",
+      "amber",
+      "balsamic",
+      "vanilla",
+      "patchouli",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "amber": 5,
+      "balsamic": 4,
+      "vanilla": 4,
+      "patchouli": 4,
+      "citrus": 3,
+      "warm spicy": 3,
+      "powdery": 3,
+      "sweet": 3,
+      "musky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8303.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-Intense-8303.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Prada Tendre",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Neroli",
+      "Mandarin Orange",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Tea Leaf",
+      "Tahitian Vetiver",
+      "Guatemalan Cardamom",
+      "Indian Jasmine"
+    ],
+    "base_notes": [
+      "Indonesian Patchouli Leaf",
+      "Sandalwood",
+      "Benzoin",
+      "Virginia Cedar",
+      "French labdanum"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "warm spicy",
+      "aromatic",
+      "amber",
+      "patchouli"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "warm spicy": 4,
+      "aromatic": 3,
+      "amber": 3,
+      "patchouli": 3,
+      "green": 3,
+      "earthy": 3,
+      "white floral": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2059.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Prada-Tendre-2059.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Prada",
+    "name": "Kiss Collection Prada Candy Florale Kiss",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Limoncello"
+    ],
+    "heart_notes": [
+      "Gardenia"
+    ],
+    "base_notes": [
+      "Benzoin",
+      "Musk",
+      "Caramel",
+      "Honey"
+    ],
+    "top_accords": [
+      "white floral",
+      "amber",
+      "musky",
+      "caramel",
+      "citrus",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "amber": 4,
+      "musky": 4,
+      "caramel": 3,
+      "citrus": 3,
+      "sweet": 3,
+      "lactonic": 3,
+      "warm spicy": 3,
+      "powdery": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30661.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Prada/Kiss-Collection-Prada-Candy-Florale-Kiss-30661.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

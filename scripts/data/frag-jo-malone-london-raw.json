@@ -1,0 +1,4121 @@
+[
+  {
+    "brand": "Jo Malone London",
+    "name": "154 Cologne",
+    "release_year": 2001,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit",
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Nutmeg",
+      "Lavender",
+      "Basil"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Patchouli",
+      "Musk",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "citrus",
+      "woody",
+      "lavender",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 4,
+      "citrus": 4,
+      "woody": 3,
+      "lavender": 3,
+      "earthy": 3,
+      "green": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17819.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/154-Cologne-17819.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Amber & Lavender",
+    "release_year": 1995,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Lavender",
+      "Mint",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Clove",
+      "Lily-of-the-Valley",
+      "Cinnamon"
+    ],
+    "base_notes": [
+      "Amber",
+      "Patchouli",
+      "Myrhh"
+    ],
+    "top_accords": [
+      "lavender",
+      "warm spicy",
+      "aromatic",
+      "amber",
+      "fresh spicy",
+      "green"
+    ],
+    "accord_intensity": {
+      "lavender": 5,
+      "warm spicy": 5,
+      "aromatic": 5,
+      "amber": 4,
+      "fresh spicy": 4,
+      "green": 3,
+      "patchouli": 3,
+      "citrus": 3,
+      "woody": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5582.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Amber-Lavender-5582.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Basil & Neroli",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Basil"
+    ],
+    "heart_notes": [
+      "Neroli"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "green",
+      "citrus",
+      "white floral",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 5,
+      "green": 4,
+      "citrus": 3,
+      "white floral": 3,
+      "fresh": 3,
+      "musky": 3,
+      "herbal": 3,
+      "woody": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40419.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Basil-Neroli-40419.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Black Vetyver Cafe",
+    "release_year": 2003,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Coffee",
+      "Citruses"
+    ],
+    "heart_notes": [
+      "Nutmeg",
+      "Coriander",
+      "Pepper"
+    ],
+    "base_notes": [
+      "Vetyver",
+      "Sandalwood",
+      "Incense",
+      "Vanille",
+      "Sequoia"
+    ],
+    "top_accords": [
+      "woody",
+      "warm spicy",
+      "aromatic",
+      "fresh spicy",
+      "coffee",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "warm spicy": 4,
+      "aromatic": 4,
+      "fresh spicy": 4,
+      "coffee": 4,
+      "earthy": 3,
+      "powdery": 2,
+      "smoky": 2,
+      "amber": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8278.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Black-Vetyver-Cafe-8278.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Blackberry & Bay",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "fruity",
+      "fresh spicy",
+      "aromatic",
+      "citrus",
+      "woody",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "fresh spicy": 5,
+      "aromatic": 4,
+      "citrus": 4,
+      "woody": 3,
+      "sweet": 3,
+      "camphor": 3,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15134.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Blackberry-Bay-15134.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Blue Agava & Cacao",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom",
+      "Lime (Linden) Blossom",
+      "Grapefruit",
+      "Red Berries"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Lily",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Cacao",
+      "Vanilla Pod",
+      "Cinnamon",
+      "Vetiver",
+      "Musk"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "cacao",
+      "sweet",
+      "aromatic",
+      "vanilla",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "cacao": 4,
+      "sweet": 3,
+      "aromatic": 3,
+      "vanilla": 3,
+      "powdery": 3,
+      "cinnamon": 2,
+      "yellow floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2280.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Blue-Agava-Cacao-2280.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Earl Grey & Cucumber",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Earl Grey Tea",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Cucumber"
+    ],
+    "base_notes": [
+      "Beeswax",
+      "Musk",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "green",
+      "citrus",
+      "ozonic",
+      "fresh spicy",
+      "aquatic",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "citrus": 5,
+      "ozonic": 4,
+      "fresh spicy": 4,
+      "aquatic": 3,
+      "fresh": 3,
+      "powdery": 3,
+      "beeswax": 3,
+      "musky": 3,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.79437.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Earl-Grey-Cucumber-79437.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "English Oak & Hazelnut",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Hazelnut"
+    ],
+    "heart_notes": [
+      "Cedar"
+    ],
+    "base_notes": [
+      "Oak"
+    ],
+    "top_accords": [
+      "woody",
+      "nutty",
+      "aromatic",
+      "earthy",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "nutty": 2,
+      "aromatic": 2,
+      "earthy": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46187.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/English-Oak-Hazelnut-46187.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "English Oak & Redcurrant",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Red Currant"
+    ],
+    "heart_notes": [
+      "Rose"
+    ],
+    "base_notes": [
+      "Oak"
+    ],
+    "top_accords": [
+      "woody",
+      "fruity",
+      "soft spicy",
+      "rose",
+      "fresh",
+      "sour"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "fruity": 5,
+      "soft spicy": 4,
+      "rose": 3,
+      "fresh": 3,
+      "sour": 3,
+      "sweet": 3,
+      "aromatic": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46186.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/English-Oak-Redcurrant-46186.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "English Pear & Freesia",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Melon"
+    ],
+    "heart_notes": [
+      "Freesia",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli",
+      "Rhuburb",
+      "Amber"
+    ],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "rose",
+      "sweet",
+      "aquatic",
+      "musky"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 4,
+      "rose": 4,
+      "sweet": 3,
+      "aquatic": 3,
+      "musky": 3,
+      "fresh": 3,
+      "patchouli": 3,
+      "green": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10314.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/English-Pear-Freesia-10314.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "English Pear & Freesia Limited Edition",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pear",
+      "Melon"
+    ],
+    "heart_notes": [
+      "Freesia",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Amber",
+      "Patchouli",
+      "Rhubarb"
+    ],
+    "top_accords": [
+      "floral",
+      "musky",
+      "fruity",
+      "sweet",
+      "aquatic",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "musky": 4,
+      "fruity": 4,
+      "sweet": 3,
+      "aquatic": 3,
+      "powdery": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.98103.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/English-Pear-Freesia-Limited-Edition-98103.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "English Pear & Sweet Pea",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Williams Pear"
+    ],
+    "heart_notes": [
+      "Sweet Pea"
+    ],
+    "base_notes": [
+      "White Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "sweet",
+      "musky",
+      "powdery",
+      "honey"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "sweet": 4,
+      "musky": 4,
+      "powdery": 3,
+      "honey": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.84035.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/English-Pear-Sweet-Pea-84035.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Fig & Lotus Flower",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Fig Leaf"
+    ],
+    "heart_notes": [
+      "Lotus"
+    ],
+    "base_notes": [
+      "Vetiver"
+    ],
+    "top_accords": [
+      "floral",
+      "aquatic",
+      "ozonic",
+      "green",
+      "woody"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "aquatic": 4,
+      "ozonic": 3,
+      "green": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.61929.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Fig-Lotus-Flower-61929.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Fir & Artemisia",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "herbal",
+      "conifer",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 5,
+      "fresh spicy": 5,
+      "herbal": 4,
+      "conifer": 3,
+      "fresh": 3,
+      "mossy": 3,
+      "earthy": 3,
+      "patchouli": 3,
+      "leather": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.97917.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Fir-Artemisia-97917.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "French Lime Blossom",
+    "release_year": 1995,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Petitgrain"
+    ],
+    "heart_notes": [
+      "Lime (Linden) Blossom",
+      "Lily-of-the-Valley",
+      "Tarragon",
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Beeswax"
+    ],
+    "top_accords": [
+      "yellow floral",
+      "white floral",
+      "citrus",
+      "honey",
+      "green",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "yellow floral": 5,
+      "white floral": 5,
+      "citrus": 4,
+      "honey": 4,
+      "green": 4,
+      "sweet": 4,
+      "aromatic": 4,
+      "floral": 3,
+      "beeswax": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5580.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/French-Lime-Blossom-5580.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Grapefruit",
+    "release_year": 1992,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit",
+      "Tangerine"
+    ],
+    "heart_notes": [
+      "Rosemary",
+      "Mint",
+      "Paprika",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Oakmoss",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "earthy",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "woody": 4,
+      "earthy": 3,
+      "green": 3,
+      "mossy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5584.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Grapefruit-5584.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Green Almond & Redcurrant",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "fruity",
+      "almond",
+      "sweet",
+      "nutty",
+      "woody",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "almond": 4,
+      "sweet": 3,
+      "nutty": 3,
+      "woody": 3,
+      "soft spicy": 3,
+      "fresh": 3,
+      "sour": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46197.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Green-Almond-Redcurrant-46197.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Honeysuckle & Davana",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Davana"
+    ],
+    "heart_notes": [
+      "Honeysuckle",
+      "Rose"
+    ],
+    "base_notes": [
+      "Moss"
+    ],
+    "top_accords": [
+      "white floral",
+      "fruity",
+      "green",
+      "mossy",
+      "aromatic",
+      "rose"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "fruity": 4,
+      "green": 3,
+      "mossy": 3,
+      "aromatic": 3,
+      "rose": 3,
+      "earthy": 3,
+      "yellow floral": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51266.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Honeysuckle-Davana-51266.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Honeysuckle & Jasmine",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Hyacinth",
+      "Neroli",
+      "Galbanum",
+      "Cassis"
+    ],
+    "heart_notes": [
+      "Honeysuckle",
+      "Jasmine",
+      "Lily-of-the-Valley",
+      "Iris",
+      "Rose"
+    ],
+    "base_notes": [
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "green",
+      "floral",
+      "fresh",
+      "fresh spicy",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "green": 4,
+      "floral": 3,
+      "fresh": 2,
+      "fresh spicy": 2,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.9554.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Honeysuckle-Jasmine-9554.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Lime Basil & Mandarin",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lime",
+      "Mandarin Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Basil",
+      "Thyme",
+      "Lilac",
+      "Iris"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "green",
+      "woody",
+      "herbal"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 4,
+      "fresh spicy": 4,
+      "green": 3,
+      "woody": 3,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5585.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Lime-Basil-Mandarin-5585.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Lotus Blossom & Water Lily",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Lotus",
+      "Water Lily",
+      "Honeysuckle",
+      "Freesia",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Musk",
+      "Guaiac Wood",
+      "Incense",
+      "Amber",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "floral",
+      "citrus",
+      "woody",
+      "aquatic",
+      "amber",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "citrus": 4,
+      "woody": 3,
+      "aquatic": 3,
+      "amber": 3,
+      "white floral": 3,
+      "powdery": 3,
+      "musky": 3,
+      "smoky": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3784.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Lotus-Blossom-Water-Lily-3784.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Midnight Musk & Amber",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Juniper"
+    ],
+    "heart_notes": [
+      "Amber"
+    ],
+    "base_notes": [
+      "Black Musk"
+    ],
+    "top_accords": [
+      "amber",
+      "musky",
+      "aromatic",
+      "fresh spicy",
+      "powdery",
+      "woody"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "musky": 5,
+      "aromatic": 4,
+      "fresh spicy": 4,
+      "powdery": 4,
+      "woody": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.63920.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Midnight-Musk-Amber-63920.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Mimosa & Cardamom",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Mimosa"
+    ],
+    "base_notes": [
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "yellow floral",
+      "warm spicy",
+      "powdery",
+      "sweet",
+      "aromatic",
+      "floral"
+    ],
+    "accord_intensity": {
+      "yellow floral": 5,
+      "warm spicy": 4,
+      "powdery": 4,
+      "sweet": 3,
+      "aromatic": 3,
+      "floral": 3,
+      "vanilla": 3,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31825.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Mimosa-Cardamom-31825.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Myrrh & Tonka Limited Edition",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "sweet",
+      "vanilla",
+      "warm spicy",
+      "aromatic",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "sweet": 3,
+      "vanilla": 3,
+      "warm spicy": 3,
+      "aromatic": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.98100.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Myrrh-Tonka-Limited-Edition-98100.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Nashi Blossom",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Pear Blossom",
+      "Rose"
+    ],
+    "base_notes": [
+      "White Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "musky",
+      "citrus",
+      "rose",
+      "powdery",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "musky": 4,
+      "citrus": 4,
+      "rose": 3,
+      "powdery": 3,
+      "fresh": 3,
+      "fruity": 3,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.37551.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Nashi-Blossom-37551.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Nectarine Blossom & Honey",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Green Notes",
+      "Black Currant",
+      "Petitgrain"
+    ],
+    "heart_notes": [
+      "Nectarine",
+      "Black locust",
+      "Black locust Honey"
+    ],
+    "base_notes": [
+      "Peach",
+      "Plum",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "green",
+      "powdery",
+      "fresh",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 4,
+      "green": 3,
+      "powdery": 3,
+      "fresh": 2,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3782.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Nectarine-Blossom-amp-Honey-3782.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Nutmeg & Ginger",
+    "release_year": 1990,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "fresh spicy",
+      "woody",
+      "fresh",
+      "powdery",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "woody": 3,
+      "fresh": 2,
+      "powdery": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2290.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Nutmeg-Ginger-2290.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Orange Bitters",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "amber",
+      "fresh",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 3,
+      "amber": 2,
+      "fresh": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.41360.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Orange-Bitters-41360.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Orange Bitters Cologne 2025",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bitter Orange",
+      "Sweet Orange",
+      "Mandarin"
+    ],
+    "heart_notes": [
+      "Dried Plum"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "citrus",
+      "amber",
+      "fruity",
+      "sweet",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "amber": 2,
+      "fruity": 2,
+      "sweet": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.115320.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Orange-Bitters-Cologne-2025-115320.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Orange Blossom",
+    "release_year": 2003,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Tangerine Blossom"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Lilac",
+      "Water Lily"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Iris"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "floral",
+      "sweet",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 3,
+      "floral": 3,
+      "sweet": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2279.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Orange-Blossom-2279.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Orange Marmalade",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Orange Peel"
+    ],
+    "heart_notes": [
+      "Bitter Orange"
+    ],
+    "base_notes": [
+      "Clary Sage",
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "woody",
+      "soft spicy",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 2,
+      "woody": 2,
+      "soft spicy": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.94355.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Orange-Marmalade-94355.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Osmanthus Blossom",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Petitgrain"
+    ],
+    "heart_notes": [
+      "Osmanthus"
+    ],
+    "base_notes": [
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "woody",
+      "citrus",
+      "aromatic",
+      "green"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 5,
+      "woody": 4,
+      "citrus": 3,
+      "aromatic": 3,
+      "green": 3,
+      "lactonic": 3,
+      "soft spicy": 3,
+      "musky": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18140.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Osmanthus-Blossom-18140.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Peony & Blush Suede",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Red Apple"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Rose",
+      "Jasmine",
+      "Carnation"
+    ],
+    "base_notes": [
+      "Suede"
+    ],
+    "top_accords": [
+      "floral",
+      "rose",
+      "fresh",
+      "leather",
+      "fruity",
+      "musky"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "rose": 4,
+      "fresh": 4,
+      "leather": 3,
+      "fruity": 3,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18767.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Peony-Blush-Suede-18767.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Plum Blossom",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "floral",
+      "musky",
+      "powdery",
+      "fresh",
+      "woody"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "musky": 4,
+      "powdery": 4,
+      "fresh": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15005.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Plum-Blossom-15005.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Pomegranate Noir",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pomegranate",
+      "Rhuburb",
+      "Plum",
+      "Raspberry",
+      "Watermelon"
+    ],
+    "heart_notes": [
+      "Clove",
+      "Pink Pepper",
+      "Guaiac Wood",
+      "Olibanum",
+      "Opoponax",
+      "Rose",
+      "Jasmine",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Virginia Cedar",
+      "Patchouli",
+      "Amber",
+      "Musk"
+    ],
+    "top_accords": [
+      "woody",
+      "warm spicy",
+      "fruity",
+      "sweet",
+      "amber",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "warm spicy": 4,
+      "fruity": 4,
+      "sweet": 3,
+      "amber": 3,
+      "fresh spicy": 2,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5581.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Pomegranate-Noir-5581.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Pomegranate Noir Christmas Edition",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pomegranate",
+      "Raspberry",
+      "Rhubarb",
+      "Plum",
+      "Watermelon"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Pink Pepper",
+      "Cardamon",
+      "Casablanca Lily",
+      "Jasmine",
+      "Lily-of-the-Valley",
+      "Guaiac Wood",
+      "Opoponax",
+      "Olibanum"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Amber",
+      "Cedar",
+      "Musk"
+    ],
+    "top_accords": [
+      "fruity",
+      "woody",
+      "sweet",
+      "white floral",
+      "rose",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "woody": 5,
+      "sweet": 4,
+      "white floral": 3,
+      "rose": 3,
+      "warm spicy": 3,
+      "patchouli": 3,
+      "soft spicy": 3,
+      "amber": 3,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28948.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Pomegranate-Noir-Christmas-Edition-28948.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Poppy & Barley",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Fig",
+      "Violet",
+      "Black Currant"
+    ],
+    "heart_notes": [
+      "Powdery Notes",
+      "Wheat",
+      "Poppy"
+    ],
+    "base_notes": [
+      "Barley",
+      "White Musk",
+      "Bran"
+    ],
+    "top_accords": [
+      "powdery",
+      "fruity",
+      "floral",
+      "violet",
+      "sweet",
+      "woody"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "fruity": 4,
+      "floral": 3,
+      "violet": 3,
+      "sweet": 3,
+      "woody": 3,
+      "musky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.56152.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Poppy-Barley-56152.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Raspberry Ripple",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Red Currant"
+    ],
+    "heart_notes": [
+      "Raspberry"
+    ],
+    "base_notes": [
+      "White Musk"
+    ],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "musky",
+      "soft spicy",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 4,
+      "musky": 3,
+      "soft spicy": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.108293.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Raspberry-Ripple-108293.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Red Hibiscus",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin Orange",
+      "Ginger",
+      "Black Cardamom"
+    ],
+    "heart_notes": [
+      "Hibiscus",
+      "Black Orchid",
+      "Jasmine",
+      "Water Lily",
+      "Ylang Ylang"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Amber",
+      "Incense"
+    ],
+    "top_accords": [
+      "floral",
+      "amber",
+      "vanilla",
+      "sweet",
+      "fresh spicy",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "amber": 3,
+      "vanilla": 3,
+      "sweet": 3,
+      "fresh spicy": 3,
+      "citrus": 2,
+      "powdery": 2,
+      "white floral": 2,
+      "fresh": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.89314.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Red-Hibiscus-89314.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Red Roses",
+    "release_year": 2001,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lemon",
+      "Mint"
+    ],
+    "heart_notes": [
+      "Bulgarian Rose",
+      "Violet Leaf"
+    ],
+    "base_notes": [
+      "Beeswax"
+    ],
+    "top_accords": [
+      "rose",
+      "floral",
+      "citrus",
+      "beeswax",
+      "green"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "floral": 3,
+      "citrus": 3,
+      "beeswax": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5484.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Red-Roses-5484.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Rose & Magnolia",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Magnolia",
+      "Black Pepper"
+    ],
+    "heart_notes": [
+      "Damask Rose",
+      "May Rose",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Moss",
+      "Amberwood"
+    ],
+    "top_accords": [
+      "rose",
+      "floral",
+      "fresh spicy",
+      "woody",
+      "warm spicy",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "floral": 4,
+      "fresh spicy": 4,
+      "woody": 3,
+      "warm spicy": 3,
+      "earthy": 3,
+      "citrus": 2,
+      "patchouli": 2,
+      "mossy": 2,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.57381.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Rose-Magnolia-57381.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Sakura Cherry Blossom",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Cherry Blossom",
+      "Rose",
+      "Mimosa"
+    ],
+    "base_notes": [
+      "Musk",
+      "Woodsy Notes"
+    ],
+    "top_accords": [
+      "floral",
+      "citrus",
+      "rose",
+      "musky",
+      "powdery",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "citrus": 4,
+      "rose": 3,
+      "musky": 3,
+      "powdery": 3,
+      "fresh": 3,
+      "yellow floral": 2,
+      "woody": 2,
+      "fruity": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11639.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Sakura-Cherry-Blossom-11639.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Sandalwood & Spiced Apricot",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "warm spicy",
+      "woody",
+      "fresh spicy",
+      "powdery",
+      "aromatic",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "woody": 5,
+      "fresh spicy": 4,
+      "powdery": 4,
+      "aromatic": 3,
+      "fruity": 3,
+      "balsamic": 3,
+      "amber": 3,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.115318.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Sandalwood-Spiced-Apricot-115318.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Silk Blossom",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Apricot",
+      "White Pepper"
+    ],
+    "heart_notes": [
+      "Silk Tree blossom",
+      "Rose Petals",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Moss",
+      "Heliotrope"
+    ],
+    "top_accords": [
+      "floral",
+      "fresh spicy",
+      "fruity",
+      "citrus",
+      "powdery",
+      "mossy"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fresh spicy": 4,
+      "fruity": 4,
+      "citrus": 3,
+      "powdery": 3,
+      "mossy": 3,
+      "rose": 3,
+      "white floral": 3,
+      "earthy": 3,
+      "vanilla": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24717.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Silk-Blossom-24717.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Star Magnolia",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lemon",
+      "Ginger",
+      "Shiso"
+    ],
+    "heart_notes": [
+      "Magnolia",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Amber",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "aromatic",
+      "fresh spicy",
+      "fresh",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "aromatic": 3,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.44050.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Star-Magnolia-44050.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Starlit Mandarin & Honey",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "honey",
+      "sweet",
+      "vanilla",
+      "amber",
+      "floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "honey": 4,
+      "sweet": 4,
+      "vanilla": 3,
+      "amber": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.70264.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Starlit-Mandarin-Honey-70264.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Sweet Lime & Cedar",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lime",
+      "Blood Orange",
+      "Pomelo",
+      "Passionfruit",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Gardenia",
+      "Ylang-Ylang",
+      "Cardamom",
+      "Sage",
+      "Coconut",
+      "Jasmine",
+      "Coriander"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Tamarind",
+      "Tonka Bean",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "aromatic",
+      "sweet",
+      "white floral",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "aromatic": 4,
+      "sweet": 3,
+      "white floral": 3,
+      "warm spicy": 2,
+      "fresh spicy": 2,
+      "soft spicy": 2,
+      "lavender": 2,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5031.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Sweet-Lime-Cedar-5031.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Taif Rose",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "rose",
+      "amber",
+      "coffee",
+      "warm spicy",
+      "floral"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "amber": 4,
+      "coffee": 4,
+      "warm spicy": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.100146.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Taif-Rose-100146.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Tuberose",
+    "release_year": 1991,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "African Orange Flower"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Jasmine",
+      "Peach"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "white floral",
+      "tuberose",
+      "woody",
+      "animalic",
+      "mossy"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "tuberose": 4,
+      "woody": 3,
+      "animalic": 2,
+      "mossy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5583.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Tuberose-5583.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Vanilla & Anise",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Star Anise",
+      "Fennel",
+      "Neroli",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Frangipani",
+      "Clove",
+      "Orchid",
+      "Tuberose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Tonka Bean",
+      "Vetiver",
+      "Amber"
+    ],
+    "top_accords": [
+      "soft spicy",
+      "anis",
+      "vanilla",
+      "floral",
+      "powdery",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "soft spicy": 5,
+      "anis": 4,
+      "vanilla": 4,
+      "floral": 4,
+      "powdery": 3,
+      "white floral": 3,
+      "citrus": 3,
+      "sweet": 2,
+      "fresh": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6459.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Vanilla-Anise-6459.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Verbenas of Provence",
+    "release_year": 1995,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lemon Verbena",
+      "Amalfi Lemon"
+    ],
+    "heart_notes": [
+      "Cypress",
+      "Juniper Berries",
+      "Rose"
+    ],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "woody",
+      "fresh spicy",
+      "herbal"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 4,
+      "woody": 3,
+      "fresh spicy": 3,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8922.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Verbenas-of-Provence-8922.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Vetyver",
+    "release_year": 1995,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "aromatic",
+      "citrus",
+      "fresh spicy",
+      "woody",
+      "earthy",
+      "anis"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "citrus": 4,
+      "fresh spicy": 4,
+      "woody": 4,
+      "earthy": 3,
+      "anis": 3,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2291.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Vetyver-2291.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Vintage Gardenia",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "white floral",
+      "warm spicy",
+      "amber",
+      "tuberose",
+      "balsamic",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "warm spicy": 4,
+      "amber": 3,
+      "tuberose": 3,
+      "balsamic": 3,
+      "animalic": 2,
+      "woody": 2,
+      "smoky": 2,
+      "lactonic": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2289.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Vintage-Gardenia-2289.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "White Jasmine & Mint",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mint",
+      "Bergamot",
+      "Chamomile",
+      "Coriander",
+      "Cardamom",
+      "Black Currant"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Lily-of-the-Valley",
+      "Ylang-Ylang",
+      "May Rose"
+    ],
+    "base_notes": [
+      "Tea",
+      "Vetiver",
+      "Cedar",
+      "Musk",
+      "Guaiac Wood",
+      "Dried Plum"
+    ],
+    "top_accords": [
+      "green",
+      "aromatic",
+      "white floral",
+      "fresh spicy",
+      "citrus",
+      "woody"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "aromatic": 5,
+      "white floral": 4,
+      "fresh spicy": 3,
+      "citrus": 3,
+      "woody": 3,
+      "herbal": 3,
+      "floral": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2278.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/White-Jasmine-Mint-2278.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "White Moss & Snowdrop",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Petitgrain",
+      "Clementine"
+    ],
+    "heart_notes": [
+      "Neroli",
+      "Snowdrops"
+    ],
+    "base_notes": [
+      "Moss",
+      "Tonka Bean",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "mossy",
+      "earthy",
+      "floral",
+      "amber",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "mossy": 4,
+      "earthy": 3,
+      "floral": 3,
+      "amber": 3,
+      "green": 3,
+      "aromatic": 3,
+      "fresh": 3,
+      "white floral": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52086.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/White-Moss-Snowdrop-52086.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "White Moss & Snowdrop Cologne Limited Edition",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Petitgrain",
+      "Clementine"
+    ],
+    "heart_notes": [
+      "Snowdrops",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Moss",
+      "Amber",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "mossy",
+      "fresh",
+      "green",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 5,
+      "mossy": 4,
+      "fresh": 4,
+      "green": 4,
+      "earthy": 3,
+      "amber": 3,
+      "white floral": 3,
+      "aromatic": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.77979.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/White-Moss-Snowdrop-Cologne-Limited-Edition-77979.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Wild Bluebell",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Dew Drop",
+      "Green Leaves",
+      "Bluebell",
+      "Clove"
+    ],
+    "heart_notes": [
+      "Persimmon",
+      "Peach"
+    ],
+    "base_notes": [
+      "Musk",
+      "Powdery Notes"
+    ],
+    "top_accords": [
+      "powdery",
+      "musky",
+      "green",
+      "aquatic",
+      "sweet",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "musky": 5,
+      "green": 5,
+      "aquatic": 4,
+      "sweet": 3,
+      "fruity": 3,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12310.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Wild-Bluebell-12310.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Wild Bluebell (2020)",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bluebell",
+      "Clove"
+    ],
+    "heart_notes": [
+      "Lily-of-the-Valley",
+      "Rose Hip",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Musk",
+      "White Amber"
+    ],
+    "top_accords": [
+      "white floral",
+      "rose",
+      "musky",
+      "fresh",
+      "powdery",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "rose": 4,
+      "musky": 3,
+      "fresh": 3,
+      "powdery": 2,
+      "warm spicy": 2,
+      "green": 2,
+      "fruity": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.64666.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Wild-Bluebell-2020-64666.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Wild Fig & Cassis",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grass",
+      "Cassis",
+      "Fig",
+      "Cherry"
+    ],
+    "heart_notes": [
+      "Pine Tree",
+      "Hyacinth",
+      "Cyclamen",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Musk",
+      "Patchouli",
+      "Amber"
+    ],
+    "top_accords": [
+      "green",
+      "woody",
+      "fresh",
+      "fruity",
+      "aromatic",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "woody": 4,
+      "fresh": 4,
+      "fruity": 3,
+      "aromatic": 3,
+      "soft spicy": 2,
+      "sweet": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4579.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Wild-Fig-Cassis-4579.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Wood Sage & Sea Salt",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "aromatic",
+      "salty",
+      "marine",
+      "citrus",
+      "musky",
+      "herbal"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "salty": 4,
+      "marine": 4,
+      "citrus": 4,
+      "musky": 4,
+      "herbal": 3,
+      "soft spicy": 3,
+      "floral": 3,
+      "aquatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.25529.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Wood-Sage-Sea-Salt-25529.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Wood Sage & Sea Salt Limited Edition",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "salty",
+      "mineral",
+      "marine",
+      "ozonic"
+    ],
+    "accord_intensity": {
+      "salty": 5,
+      "mineral": 5,
+      "marine": 3,
+      "ozonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.98102.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Wood-Sage-Sea-Salt-Limited-Edition-98102.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Yuzu Zest Cologne (2026)",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Yuzu"
+    ],
+    "heart_notes": [
+      "Clary Sage"
+    ],
+    "base_notes": [
+      "Cedarwood",
+      "Fir"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "green",
+      "fresh spicy",
+      "sweet",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 3,
+      "green": 3,
+      "fresh spicy": 3,
+      "sweet": 3,
+      "woody": 3,
+      "bitter": 2,
+      "soft spicy": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.128349.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Yuzu-Zest-Cologne-2026-128349.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Bitter Mandarin",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin Orange",
+      "Bergamot",
+      "Petitgrain"
+    ],
+    "heart_notes": [
+      "Orange"
+    ],
+    "base_notes": [
+      "Amber",
+      "Iris"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "amber",
+      "iris",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 2,
+      "amber": 2,
+      "iris": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.72614.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Bitter-Mandarin-72614.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Orange Blossom Hair Mist",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin Blossom"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Water Lily"
+    ],
+    "base_notes": [
+      "Argan"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "floral",
+      "aquatic",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 4,
+      "floral": 3,
+      "aquatic": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.72617.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Orange-Blossom-Hair-Mist-72617.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Sea Daffodil",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin Orange",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Sea Daffodil",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Vanilla",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "woody",
+      "yellow floral",
+      "sweet",
+      "vanilla",
+      "powdery",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "yellow floral": 4,
+      "sweet": 4,
+      "vanilla": 3,
+      "powdery": 3,
+      "citrus": 3,
+      "soft spicy": 2,
+      "aromatic": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.72615.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Sea-Daffodil-72615.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Silk Blossom",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "White Pepper"
+    ],
+    "heart_notes": [
+      "Silk Tree blossom"
+    ],
+    "base_notes": [
+      "Moss"
+    ],
+    "top_accords": [
+      "floral",
+      "mossy",
+      "fresh spicy",
+      "fruity",
+      "earthy",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "mossy": 4,
+      "fresh spicy": 4,
+      "fruity": 4,
+      "earthy": 3,
+      "warm spicy": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.72616.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Silk-Blossom-72616.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Hemlock & Bergamot",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "powdery",
+      "yellow floral",
+      "floral",
+      "vanilla",
+      "almond",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "yellow floral": 4,
+      "floral": 3,
+      "vanilla": 3,
+      "almond": 3,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.79439.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Hemlock-Bergamot-79439.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Redcurrant & Cream",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "soft spicy",
+      "fresh",
+      "musky",
+      "sour"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 3,
+      "soft spicy": 3,
+      "fresh": 3,
+      "musky": 3,
+      "sour": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.79436.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Redcurrant-Cream-79436.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Wisteria & Lavender",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "lavender",
+      "powdery",
+      "vanilla",
+      "aromatic",
+      "almond",
+      "musky"
+    ],
+    "accord_intensity": {
+      "lavender": 5,
+      "powdery": 4,
+      "vanilla": 3,
+      "aromatic": 3,
+      "almond": 3,
+      "musky": 3,
+      "floral": 3,
+      "fresh spicy": 3,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.79438.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Wisteria-Lavender-79438.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Osmanthus Blossom (2017)",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Petitgrain",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Osmanthus",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "fruity",
+      "floral",
+      "white floral",
+      "citrus",
+      "sweet",
+      "lactonic"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "floral": 4,
+      "white floral": 4,
+      "citrus": 4,
+      "sweet": 3,
+      "lactonic": 3,
+      "green": 3,
+      "aromatic": 3,
+      "soft spicy": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.44525.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Osmanthus-Blossom-2017-44525.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Plum Blossom (2017)",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Yellow Plum"
+    ],
+    "heart_notes": [
+      "Plum Blossom",
+      "Jasmine",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "fresh",
+      "sweet",
+      "white floral",
+      "yellow floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 4,
+      "fresh": 3,
+      "sweet": 3,
+      "white floral": 3,
+      "yellow floral": 3,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.44524.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Plum-Blossom-2017-44524.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Silk Blossom (2017)",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Apricot",
+      "White Pepper",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Silk Tree blossom",
+      "Rose Petals",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Heliotrope",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "powdery",
+      "rose",
+      "fresh spicy",
+      "mossy"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 4,
+      "powdery": 3,
+      "rose": 3,
+      "fresh spicy": 3,
+      "mossy": 3,
+      "vanilla": 3,
+      "citrus": 3,
+      "earthy": 2,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.44527.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Silk-Blossom-2017-44527.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Sunlit Cherimoya Cologne",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Cherimoya",
+      "Pear"
+    ],
+    "base_notes": [
+      "Copaiba balm",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "balsamic",
+      "vanilla",
+      "aquatic"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 4,
+      "balsamic": 2,
+      "vanilla": 2,
+      "aquatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.90020.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Sunlit-Cherimoya-Cologne-90020.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Yellow Hibiscus Cologne",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Hibiscus"
+    ],
+    "heart_notes": [
+      "Rose"
+    ],
+    "base_notes": [
+      "Lime",
+      "White Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "rose",
+      "musky",
+      "fresh spicy",
+      "conifer"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "rose": 4,
+      "musky": 4,
+      "fresh spicy": 3,
+      "conifer": 3,
+      "powdery": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.90023.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Yellow-Hibiscus-Cologne-90023.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Yuzu Zest Cologne",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Yuzu"
+    ],
+    "heart_notes": [
+      "Clary Sage"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Balsam Fir"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "green",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 5,
+      "aromatic": 4,
+      "fresh spicy": 4,
+      "green": 3,
+      "sweet": 3,
+      "conifer": 3,
+      "soft spicy": 2,
+      "fresh": 2,
+      "bitter": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.90019.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Yuzu-Zest-Cologne-90019.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Beach Blossom Limited Edition",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lime",
+      "Mint"
+    ],
+    "heart_notes": [
+      "Coconut Water"
+    ],
+    "base_notes": [
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "citrus",
+      "green",
+      "aromatic",
+      "fresh spicy",
+      "sweet",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "green": 4,
+      "aromatic": 4,
+      "fresh spicy": 3,
+      "sweet": 3,
+      "vanilla": 3,
+      "conifer": 3,
+      "amber": 2,
+      "sour": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.103305.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Beach-Blossom-Limited-Edition-103305.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Frangipani Flower Cologne",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lemon",
+      "Solar Notes"
+    ],
+    "heart_notes": [
+      "Frangipani",
+      "Ylang-Ylang",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "floral",
+      "citrus",
+      "tropical",
+      "yellow floral",
+      "white floral",
+      "woody"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "citrus": 5,
+      "tropical": 4,
+      "yellow floral": 3,
+      "white floral": 3,
+      "woody": 3,
+      "lactonic": 3,
+      "aldehydic": 3,
+      "sweet": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54458.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Frangipani-Flower-Cologne-54458.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Orange Blossom Cologne (2019)",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Clementine",
+      "Citron",
+      "Green Notes"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Lotus"
+    ],
+    "base_notes": [
+      "Lilac",
+      "Orris",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "white floral",
+      "green",
+      "sweet",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "white floral": 3,
+      "green": 3,
+      "sweet": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54457.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Orange-Blossom-Cologne-2019-54457.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Silk Blossom Cologne (2019)",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Apricot",
+      "White Pepper",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Silk Tree blossom",
+      "Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Moss",
+      "Heliotrope"
+    ],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "fresh spicy",
+      "powdery",
+      "rose",
+      "mossy"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 4,
+      "fresh spicy": 3,
+      "powdery": 3,
+      "rose": 3,
+      "mossy": 3,
+      "white floral": 3,
+      "citrus": 3,
+      "earthy": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54455.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Silk-Blossom-Cologne-2019-54455.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Jo Malone London",
+    "name": "Star Magnolia Cologne (2019)",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Lemon",
+      "Shiso",
+      "Ginger"
+    ],
+    "heart_notes": [
+      "Magnolia",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "aromatic": 4,
+      "fresh spicy": 3,
+      "woody": 3,
+      "green": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54456.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Jo-Malone-London/Star-Magnolia-Cologne-2019-54456.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

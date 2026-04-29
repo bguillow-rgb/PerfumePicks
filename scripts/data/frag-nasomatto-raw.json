@@ -1,0 +1,475 @@
+[
+  {
+    "brand": "Nasomatto",
+    "name": "ABSINTH",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/absinth"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/absinth"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Absinth-ProductPage3-30ML.jpg?v=1739801617",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/absinth",
+    "sources": [
+      "nasomatto"
+    ]
+  },
+  {
+    "brand": "Nasomatto",
+    "name": "BARAONDA",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/baraonda"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/baraonda"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Baroanda-ProductPage3-30ML.jpg?v=1739799831",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/baraonda",
+    "sources": [
+      "nasomatto"
+    ]
+  },
+  {
+    "brand": "Nasomatto",
+    "name": "BLACK AFGANO",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/black-afgano"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/black-afgano"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Black_Afgano-ProductPage3-30ML.jpg?v=1739800391",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/black-afgano",
+    "sources": [
+      "nasomatto"
+    ]
+  },
+  {
+    "brand": "Nasomatto",
+    "name": "BLAMAGE",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/blamage"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/blamage"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Blamage-ProductPage3-30ML.jpg?v=1739800342",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/blamage",
+    "sources": [
+      "nasomatto"
+    ]
+  },
+  {
+    "brand": "Nasomatto",
+    "name": "DURO",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/duro"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/duro"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Duro-ProductPage3-30ML.jpg?v=1739801654",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/duro",
+    "sources": [
+      "nasomatto"
+    ]
+  },
+  {
+    "brand": "Nasomatto",
+    "name": "FANTOMAS",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/fantomas"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/fantomas"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Fantomas-ProductPage3-30ML.jpg?v=1739797830",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/fantomas",
+    "sources": [
+      "nasomatto"
+    ]
+  },
+  {
+    "brand": "Nasomatto",
+    "name": "NARCOTIC V.",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/narcotic-v"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/narcotic-v"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Narcotic_V-ProductPage3-30ML.jpg?v=1739801634",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/narcotic-v",
+    "sources": [
+      "nasomatto"
+    ]
+  },
+  {
+    "brand": "Nasomatto",
+    "name": "NUDIFLORUM",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/nudiflorum"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/nudiflorum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Nudiflorum-ProductPage3-30ML.jpg?v=1739797853",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/nudiflorum",
+    "sources": [
+      "nasomatto"
+    ]
+  },
+  {
+    "brand": "Nasomatto",
+    "name": "PARDON",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/pardon"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/pardon"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Pardon-ProductPage3-30ML.jpg?v=1739800368",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/pardon",
+    "sources": [
+      "nasomatto"
+    ]
+  },
+  {
+    "brand": "Nasomatto",
+    "name": "SADONASO",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/sadonaso"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/sadonaso"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Sadonaso-ProductPage3-30ML.jpg?v=1739797798",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/sadonaso",
+    "sources": [
+      "nasomatto"
+    ]
+  },
+  {
+    "brand": "Nasomatto",
+    "name": "SILVER MUSK",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 13000,
+    "prices": [
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 30,
+        "price_usd_cents": 13000,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/silver-musk"
+      },
+      {
+        "retailer": "nasomatto-direct",
+        "size_ml": 4,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.nasomatto.com/products/silver-musk"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0733/6935/4506/files/Silver_Musk-ProductPage3-30ML.jpg?v=1739801594",
+    "source": "nasomatto",
+    "source_url": "https://www.nasomatto.com/products/silver-musk",
+    "sources": [
+      "nasomatto"
+    ]
+  }
+]

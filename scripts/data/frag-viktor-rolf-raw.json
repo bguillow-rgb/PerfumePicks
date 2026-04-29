@@ -1,0 +1,4514 @@
+[
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Antidote Viktor&Rolf",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Guatemalan Cardamom",
+      "Mint",
+      "Grapefruit",
+      "Mandarin Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Cinnamon",
+      "Nutmeg",
+      "Jasmine",
+      "Orange Blossom",
+      "Violet",
+      "African Geranium",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Incense",
+      "Vanilla",
+      "Sandalwood",
+      "Amber",
+      "Leather",
+      "Iris",
+      "Patchouli",
+      "Tonka Bean",
+      "Guaiac Wood",
+      "Cedar",
+      "White Musk",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "aromatic",
+      "woody",
+      "fresh spicy",
+      "amber",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "aromatic": 4,
+      "woody": 4,
+      "fresh spicy": 4,
+      "amber": 4,
+      "powdery": 3,
+      "citrus": 3,
+      "lavender": 3,
+      "smoky": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1461.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Antidote-1461.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Eau Mega Viktor&Rolf",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pear",
+      "Water Notes",
+      "Violet Leaf",
+      "Lemon",
+      "Basil"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "aquatic",
+      "fresh",
+      "fruity",
+      "ozonic",
+      "green",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "aquatic": 5,
+      "fresh": 4,
+      "fruity": 3,
+      "ozonic": 3,
+      "green": 3,
+      "aromatic": 3,
+      "floral": 3,
+      "citrus": 3,
+      "sweet": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6484.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Eau-Mega-6484.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Le Parfum Viktor&Rolf",
+    "release_year": 1996,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.62493.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Le-Parfum-62493.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Viktor&Rolf",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peach",
+      "Mandarin Orange",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Caramel",
+      "Orange Blossom",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood",
+      "Guaiac Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "caramel",
+      "sweet",
+      "citrus",
+      "white floral",
+      "fruity",
+      "woody"
+    ],
+    "accord_intensity": {
+      "caramel": 5,
+      "sweet": 4,
+      "citrus": 4,
+      "white floral": 3,
+      "fruity": 3,
+      "woody": 3,
+      "amber": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.23317.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-23317.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Couture Viktor&Rolf",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peach",
+      "Mandarin Orange",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Caramel",
+      "Orange Blossom",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "White Tobacco",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "caramel",
+      "sweet",
+      "vanilla",
+      "woody",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "caramel": 4,
+      "sweet": 4,
+      "vanilla": 3,
+      "woody": 3,
+      "citrus": 3,
+      "patchouli": 3,
+      "powdery": 3,
+      "balsamic": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.38910.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Couture-38910.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Edition Limitée Coeur Couture Eau de Parfum Viktor&Rolf",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peach",
+      "Mandarin Orange",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Jasmine",
+      "Caramel"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Sandalwood",
+      "Amber",
+      "Woody Notes",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "white floral",
+      "sweet",
+      "powdery",
+      "amber"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "white floral": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "amber": 2,
+      "caramel": 2,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.61050.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Edition-Limitee-Coeur-Couture-Eau-de-Parfum-61050.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Extreme Pure Perfume Viktor&Rolf",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Peach",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Jasmine Sambac",
+      "Caramel"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Vanilla",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "woody",
+      "vanilla",
+      "sweet",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 4,
+      "woody": 4,
+      "vanilla": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "caramel": 3,
+      "warm spicy": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.65607.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Extreme-Pure-Perfume-65607.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Hair Mist Viktor&Rolf",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Peach",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Caramel",
+      "Orange Blossom",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amber",
+      "Guaiac Wood",
+      "Sandalwood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "sweet",
+      "amber",
+      "caramel",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "sweet": 4,
+      "amber": 4,
+      "caramel": 4,
+      "white floral": 3,
+      "powdery": 3,
+      "fruity": 3,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.38558.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Hair-Mist-38558.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Holiday Limited Edition Viktor&Rolf",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peach",
+      "Mandarin Orange",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Caramel",
+      "Jasmine",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Amber",
+      "Guaiac Wood",
+      "Sandalwood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "caramel",
+      "sweet",
+      "woody",
+      "amber",
+      "white floral",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "caramel": 5,
+      "sweet": 3,
+      "woody": 3,
+      "amber": 3,
+      "white floral": 3,
+      "powdery": 2,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.41991.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Holiday-Limited-Edition-41991.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Holiday Limited Edition 2017 Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peach",
+      "Mandarin Orange",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Caramel",
+      "Neroli",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Guaiac Wood",
+      "Sandalwood",
+      "Amber",
+      "Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "caramel",
+      "sweet",
+      "amber",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "caramel": 4,
+      "sweet": 3,
+      "amber": 3,
+      "powdery": 3,
+      "fruity": 3,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47421.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Holiday-Limited-Edition-2017-47421.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Limited Edition 2015 Viktor&Rolf",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peach",
+      "Mandarin Orange",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Caramel",
+      "Jasmine",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood",
+      "Guaiac Wood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "caramel",
+      "sweet",
+      "fruity",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 5,
+      "caramel": 4,
+      "sweet": 4,
+      "fruity": 4,
+      "white floral": 4,
+      "amber": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.33652.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Limited-Edition-2015-33652.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Limited Edition 2018 Viktor&Rolf",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peach",
+      "Mandarin Orange",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Caramel",
+      "Jasmine",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Guaiac Wood",
+      "Cedar",
+      "Sandalwood",
+      "Amber"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "white floral",
+      "caramel",
+      "sweet",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "white floral": 4,
+      "caramel": 4,
+      "sweet": 4,
+      "fruity": 3,
+      "powdery": 3,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52088.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Limited-Edition-2018-52088.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Pastel Viktor&Rolf",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Bergamot",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Sea Notes",
+      "Orange Blossom",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Caramel",
+      "Amber",
+      "Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "aromatic",
+      "caramel",
+      "marine",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 3,
+      "aromatic": 3,
+      "caramel": 3,
+      "marine": 3,
+      "sweet": 3,
+      "warm spicy": 2,
+      "powdery": 2,
+      "amber": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.55747.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Pastel-55747.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Pink Bow Limited Edition Viktor&Rolf",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Mandarin Orange",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Caramel",
+      "Jasmine",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Amber",
+      "Musk",
+      "Guaiac Wood"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "sweet",
+      "powdery",
+      "white floral",
+      "caramel"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 4,
+      "sweet": 4,
+      "powdery": 3,
+      "white floral": 3,
+      "caramel": 3,
+      "amber": 3,
+      "musky": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.41992.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Pink-Bow-Limited-Edition-41992.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Spring Summer Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Tangerine",
+      "Grapefruit",
+      "Black Currant"
+    ],
+    "heart_notes": [
+      "Sugar",
+      "Peach",
+      "Orange Blossom",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Caramel",
+      "Cedar",
+      "Guaiac Wood",
+      "Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "sweet",
+      "fruity",
+      "caramel",
+      "white floral",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "sweet": 4,
+      "fruity": 3,
+      "caramel": 3,
+      "white floral": 3,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43788.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Spring-Summer-43788.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Spring Summer 2018 Viktor&Rolf",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Raspberry",
+      "Strawberry"
+    ],
+    "heart_notes": [
+      "Floral Notes",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Caramel",
+      "Musk"
+    ],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "caramel",
+      "musky",
+      "floral"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 5,
+      "caramel": 3,
+      "musky": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49502.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Spring-Summer-2018-49502.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Bonbon Swarovski Edition Viktor&Rolf",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Peach",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Caramel",
+      "Orange Blossom",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amber",
+      "Guaiac Wood",
+      "Sandalwood",
+      "Cedar"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "white floral",
+      "caramel",
+      "sweet",
+      "amber"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 5,
+      "white floral": 4,
+      "caramel": 4,
+      "sweet": 4,
+      "amber": 3,
+      "fruity": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.33653.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Bonbon-Swarovski-Edition-33653.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Viktor&Rolf",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Jasmine",
+      "Rose",
+      "Freesia",
+      "African Orange Flower"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "floral",
+      "patchouli",
+      "white floral",
+      "woody",
+      "powdery",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "patchouli": 4,
+      "white floral": 3,
+      "woody": 3,
+      "powdery": 3,
+      "citrus": 3,
+      "sweet": 3,
+      "musky": 3,
+      "warm spicy": 3,
+      "rose": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1460.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-1460.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb 15th Anniversary Haute Couture Edition Viktor&Rolf",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Jasmine",
+      "Rose",
+      "Freesia",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "green",
+      "sweet",
+      "powdery",
+      "musky",
+      "rose"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "green": 4,
+      "sweet": 4,
+      "powdery": 4,
+      "musky": 4,
+      "rose": 4,
+      "white floral": 4,
+      "fresh": 3,
+      "citrus": 3,
+      "lactonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.64471.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-15th-Anniversary-Haute-Couture-Edition-64471.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Black Sparkle Viktor&Rolf",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Freesia",
+      "Rose",
+      "Orchid",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "citrus",
+      "green",
+      "rose",
+      "patchouli"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 3,
+      "citrus": 3,
+      "green": 3,
+      "rose": 3,
+      "patchouli": 3,
+      "musky": 3,
+      "powdery": 3,
+      "sweet": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.42311.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Black-Sparkle-42311.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Bloom Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pomegranate",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Freesia",
+      "Mountain Air",
+      "Damask Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Woody Notes"
+    ],
+    "top_accords": [
+      "woody",
+      "floral",
+      "citrus",
+      "rose",
+      "fresh",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "floral": 5,
+      "citrus": 3,
+      "rose": 3,
+      "fresh": 3,
+      "fruity": 3,
+      "white floral": 3,
+      "ozonic": 3,
+      "fresh spicy": 2,
+      "sour": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.42905.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Bloom-42905.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Bomblicious Viktor&Rolf",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Mandarin Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Black Currant",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Cashmere Wood",
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "rose",
+      "musky",
+      "fresh spicy",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 3,
+      "rose": 3,
+      "musky": 3,
+      "fresh spicy": 2,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.56584.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Bomblicious-56584.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Christmas 2010 Edition Viktor&Rolf",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Tea"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Jasmine",
+      "Rose",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Amber"
+    ],
+    "top_accords": [
+      "floral",
+      "patchouli",
+      "citrus",
+      "woody",
+      "white floral",
+      "amber"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "patchouli": 4,
+      "citrus": 3,
+      "woody": 3,
+      "white floral": 3,
+      "amber": 3,
+      "rose": 3,
+      "warm spicy": 3,
+      "earthy": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10249.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Christmas-2010-Edition-10249.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Christmas 2012 Edition Viktor&Rolf",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "floral",
+      "rose",
+      "citrus",
+      "patchouli",
+      "fruity",
+      "woody"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "rose": 3,
+      "citrus": 3,
+      "patchouli": 3,
+      "fruity": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17281.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Christmas-2012-Edition-17281.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Christmas 2018 Edition Viktor&Rolf",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Lime",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Freesia",
+      "Rose",
+      "Orchid"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "citrus",
+      "patchouli",
+      "green",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 4,
+      "citrus": 3,
+      "patchouli": 3,
+      "green": 3,
+      "sweet": 3,
+      "rose": 3,
+      "musky": 3,
+      "woody": 3,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51912.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Christmas-2018-Edition-51912.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Christmas Edition 2014 Viktor&Rolf",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Rose",
+      "Orchid",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "citrus",
+      "musky",
+      "patchouli",
+      "rose"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 5,
+      "citrus": 3,
+      "musky": 3,
+      "patchouli": 3,
+      "rose": 3,
+      "powdery": 3,
+      "green": 2,
+      "sweet": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28112.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Christmas-Edition-2014-28112.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Crystal Edition 2013 Viktor&Rolf",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Osmanthus",
+      "Tea",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Jasmine",
+      "Freesia",
+      "Rose",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "patchouli",
+      "fruity",
+      "citrus",
+      "woody"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 3,
+      "patchouli": 3,
+      "fruity": 3,
+      "citrus": 3,
+      "woody": 2,
+      "green": 2,
+      "powdery": 2,
+      "musky": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.21935.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Crystal-Edition-2013-21935.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb de Paris Viktor&Rolf",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Orchid",
+      "Jasmine",
+      "African Orange Flower",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "rose",
+      "citrus",
+      "musky",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 4,
+      "rose": 4,
+      "citrus": 3,
+      "musky": 3,
+      "powdery": 3,
+      "sweet": 3,
+      "green": 3,
+      "patchouli": 3,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12036.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-de-Paris-12036.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Dew Viktor&Rolf",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Ambrette (Musk Mallow)",
+      "Pear",
+      "Dew Drop",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Rose"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Cashmeran",
+      "Heliotrope"
+    ],
+    "top_accords": [
+      "powdery",
+      "musky",
+      "iris",
+      "floral",
+      "woody",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "musky": 5,
+      "iris": 3,
+      "floral": 3,
+      "woody": 3,
+      "vanilla": 2,
+      "violet": 2,
+      "aquatic": 2,
+      "rose": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.58956.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Dew-58956.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Eau de Toilette Viktor&Rolf",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tangerine",
+      "Pink Pepper",
+      "Orange"
+    ],
+    "heart_notes": [
+      "Freesia",
+      "Osmanthus",
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Cashmere Wood",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "woody",
+      "soft spicy",
+      "patchouli",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 5,
+      "woody": 3,
+      "soft spicy": 3,
+      "patchouli": 3,
+      "fruity": 3,
+      "sweet": 3,
+      "white floral": 3,
+      "amber": 3,
+      "rose": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11555.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Eau-de-Toilette-11555.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Extrait de Parfum Viktor&Rolf",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Freesia",
+      "Jasmine",
+      "Rose",
+      "African Orange Flower"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "patchouli",
+      "powdery",
+      "rose",
+      "musky"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 3,
+      "patchouli": 3,
+      "powdery": 3,
+      "rose": 3,
+      "musky": 3,
+      "sweet": 3,
+      "citrus": 3,
+      "green": 3,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14088.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Extrait-de-Parfum-14088.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Extreme Viktor&Rolf",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Jasmine",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "White Flowers",
+      "Osmanthus",
+      "Palm Leaf"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Amber",
+      "Patchouli",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "amber",
+      "vanilla",
+      "white floral",
+      "warm spicy",
+      "patchouli",
+      "floral"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "vanilla": 4,
+      "white floral": 4,
+      "warm spicy": 3,
+      "patchouli": 3,
+      "floral": 3,
+      "balsamic": 3,
+      "woody": 3,
+      "powdery": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1462.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Extreme-1462.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Extreme 2007 Viktor&Rolf",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Jasmine"
+    ],
+    "heart_notes": [
+      "Osmanthus",
+      "White Flowers",
+      "Palm Leaf"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Amber",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "vanilla",
+      "white floral",
+      "amber",
+      "floral",
+      "citrus",
+      "patchouli"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "white floral": 5,
+      "amber": 5,
+      "floral": 4,
+      "citrus": 4,
+      "patchouli": 3,
+      "warm spicy": 3,
+      "fruity": 3,
+      "powdery": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1792.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Extreme-2007-1792.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Extreme 2013 Viktor&Rolf",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Jasmine Sambac",
+      "Osmanthus",
+      "Freesia",
+      "Orange Blossom",
+      "Rose"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Benzoin",
+      "Patchouli",
+      "Amber",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "vanilla",
+      "amber",
+      "powdery",
+      "white floral",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "vanilla": 5,
+      "amber": 4,
+      "powdery": 3,
+      "white floral": 3,
+      "warm spicy": 3,
+      "sweet": 3,
+      "patchouli": 3,
+      "citrus": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.19330.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Extreme-2013-19330.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Extreme 2025 Viktor&Rolf",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Raspberry"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Jasmine",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Vanilla Bean"
+    ],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "vanilla",
+      "white floral",
+      "rose",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 5,
+      "vanilla": 5,
+      "white floral": 4,
+      "rose": 4,
+      "powdery": 2,
+      "floral": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.101990.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Extreme-2025-101990.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Extreme Sparkle 2008 Viktor&Rolf",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "vanilla",
+      "floral",
+      "white floral",
+      "fruity",
+      "soft spicy",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "floral": 5,
+      "white floral": 4,
+      "fruity": 4,
+      "soft spicy": 3,
+      "powdery": 3,
+      "lactonic": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5023.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Extreme-Sparkle-2008-5023.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Fairy Tale Viktor&Rolf",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Tea"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Orchid",
+      "Freesia",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "patchouli",
+      "rose",
+      "woody",
+      "citrus",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "patchouli": 4,
+      "rose": 3,
+      "woody": 3,
+      "citrus": 3,
+      "white floral": 3,
+      "warm spicy": 3,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28996.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Fairy-Tale-28996.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Fireworks Viktor&Rolf",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Osmanthus",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Freesia",
+      "Rose",
+      "Jasmine",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "rose",
+      "patchouli",
+      "powdery",
+      "musky"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 3,
+      "rose": 3,
+      "patchouli": 3,
+      "powdery": 2,
+      "musky": 2,
+      "sweet": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32435.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Fireworks-32435.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Frozen Flower Viktor&Rolf",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Rose",
+      "Freesia",
+      "Orchid"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Osmanthus"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "vanilla",
+      "patchouli",
+      "rose",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 3,
+      "vanilla": 3,
+      "patchouli": 3,
+      "rose": 3,
+      "fruity": 3,
+      "powdery": 2,
+      "soft spicy": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.97239.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Frozen-Flower-97239.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Gold Edition Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Osmanthus",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Rose",
+      "Jasmine",
+      "Freesia",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "rose",
+      "green",
+      "white floral",
+      "patchouli",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "rose": 3,
+      "green": 3,
+      "white floral": 3,
+      "patchouli": 3,
+      "sweet": 3,
+      "powdery": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47419.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Gold-Edition-47419.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Holiday Edition 2017 Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Osmanthus",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Orange Blossom",
+      "Jasmine",
+      "Freesia",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "sweet",
+      "fruity",
+      "powdery",
+      "green"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 3,
+      "sweet": 3,
+      "fruity": 3,
+      "powdery": 3,
+      "green": 3,
+      "lactonic": 3,
+      "citrus": 2,
+      "musky": 2,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47418.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Holiday-Edition-2017-47418.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Holiday Edition 2019 Viktor&Rolf",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Mandarin Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Osmanthus",
+      "Orchid",
+      "May Rose",
+      "Jasmine Sambac",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Praline",
+      "Vanilla",
+      "Patchouli",
+      "Amber",
+      "Woodsy Notes"
+    ],
+    "top_accords": [
+      "sweet",
+      "floral",
+      "vanilla",
+      "lactonic",
+      "patchouli",
+      "woody"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "floral": 4,
+      "vanilla": 4,
+      "lactonic": 3,
+      "patchouli": 3,
+      "woody": 3,
+      "green": 3,
+      "fruity": 3,
+      "powdery": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.56980.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Holiday-Edition-2019-56980.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Holiday Limited Edition 2018 Viktor&Rolf",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Lime",
+      "Tea",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Freesia",
+      "Rose",
+      "Orchid"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "sweet",
+      "conifer",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 3,
+      "sweet": 2,
+      "conifer": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52087.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Holiday-Limited-Edition-2018-52087.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb In The Sky Viktor&Rolf",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Bergamot",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Currant buds",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Jasmine Sambac"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "rose",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 3,
+      "fresh spicy": 2,
+      "rose": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.58876.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-In-The-Sky-58876.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Jasmine Twist Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "white floral",
+      "floral",
+      "fresh",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "floral": 2,
+      "fresh": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.45944.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Jasmine-Twist-45944.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb La Vie En Rose Viktor&Rolf",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Pink Pepper",
+      "Bergamot",
+      "Tangerine"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Freesia",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "rose",
+      "floral",
+      "green",
+      "patchouli",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "rose": 5,
+      "floral": 4,
+      "green": 4,
+      "patchouli": 3,
+      "soft spicy": 3,
+      "white floral": 3,
+      "fresh": 3,
+      "woody": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6061.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-La-Vie-En-Rose-6061.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb La Vie en Rose 2011 Viktor&Rolf",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Pepper",
+      "Mandarin Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Almond",
+      "Red Berries",
+      "Raspberry",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Amber",
+      "Cashmere Wood",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "citrus",
+      "rose",
+      "amber",
+      "almond"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 4,
+      "citrus": 4,
+      "rose": 3,
+      "amber": 3,
+      "almond": 3,
+      "woody": 3,
+      "soft spicy": 2,
+      "floral": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11676.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-La-Vie-en-Rose-2011-11676.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb La Vie en Rose 2012 Viktor&Rolf",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tangerine",
+      "Tea",
+      "Mandarin Orange",
+      "Pink Pepper",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Freesia",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "rose",
+      "green",
+      "soft spicy",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "rose": 4,
+      "green": 3,
+      "soft spicy": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14995.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-La-Vie-en-Rose-2012-14995.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb La Vie en Rose 2013 Viktor&Rolf",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Pink Pepper",
+      "Green Tea",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Candied Almond",
+      "Raspberry",
+      "Red Berries",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Cashmere Wood",
+      "Amber"
+    ],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "citrus",
+      "rose",
+      "almond",
+      "woody"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 4,
+      "citrus": 3,
+      "rose": 3,
+      "almond": 3,
+      "woody": 3,
+      "fresh": 3,
+      "green": 3,
+      "patchouli": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17971.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-La-Vie-en-Rose-2013-17971.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb La Vie En Rose 2014 Viktor&Rolf",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Mandarin Orange",
+      "Grapefruit",
+      "Pink Pepper",
+      "Green Tea"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Orchid",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amber",
+      "Cashmeran",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "rose",
+      "amber",
+      "woody",
+      "floral",
+      "musky"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "rose": 3,
+      "amber": 3,
+      "woody": 3,
+      "floral": 3,
+      "musky": 3,
+      "powdery": 3,
+      "soft spicy": 3,
+      "green": 3,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.29376.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-La-Vie-En-Rose-2014-29376.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb La Vie En Rose 2015 Viktor&Rolf",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Pink Pepper",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Orchid",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Amber"
+    ],
+    "top_accords": [
+      "rose",
+      "citrus",
+      "floral",
+      "patchouli",
+      "soft spicy",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "citrus": 5,
+      "floral": 4,
+      "patchouli": 3,
+      "soft spicy": 3,
+      "sweet": 3,
+      "woody": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.29861.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-La-Vie-En-Rose-2015-29861.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb La Vie En Rose 2016 Viktor&Rolf",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Green Tea",
+      "Pink Pepper",
+      "Mandarin Orange",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Orchid",
+      "Red Berries",
+      "Freesia",
+      "Jasmine",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Cashmere Wood",
+      "Amber",
+      "Patchouli",
+      "Caramel",
+      "Vanila"
+    ],
+    "top_accords": [
+      "rose",
+      "citrus",
+      "floral",
+      "sweet",
+      "woody",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "citrus": 5,
+      "floral": 5,
+      "sweet": 3,
+      "woody": 3,
+      "fresh spicy": 3,
+      "fruity": 3,
+      "green": 3,
+      "amber": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.37511.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-La-Vie-En-Rose-2016-37511.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb La Vie en Rose 2017 Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Green Tea",
+      "Bergamot",
+      "Mandarin Orange",
+      "Pink Pepper",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Rose",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Cashmeran",
+      "Amber",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "powdery",
+      "woody",
+      "amber",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "powdery": 4,
+      "woody": 4,
+      "amber": 4,
+      "green": 3,
+      "musky": 3,
+      "sweet": 3,
+      "fresh spicy": 3,
+      "patchouli": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43799.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-La-Vie-en-Rose-2017-43799.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb La Vie en Rose 2018 Viktor&Rolf",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Tea",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Rose",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Amber",
+      "Cashmeran",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "floral",
+      "rose",
+      "woody",
+      "amber",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "floral": 4,
+      "rose": 4,
+      "woody": 3,
+      "amber": 3,
+      "green": 3,
+      "powdery": 3,
+      "soft spicy": 3,
+      "musky": 3,
+      "patchouli": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48477.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-La-Vie-en-Rose-2018-48477.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Limited Edition 2011 Viktor&Rolf",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Osmanthus",
+      "Tea",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Jasmine",
+      "Rose",
+      "Freesia",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "patchouli",
+      "white floral",
+      "fruity",
+      "woody",
+      "rose"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "patchouli": 3,
+      "white floral": 3,
+      "fruity": 3,
+      "woody": 2,
+      "rose": 2,
+      "powdery": 2,
+      "citrus": 2,
+      "musky": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.34277.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Limited-Edition-2011-34277.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Limited Edition 2015 Viktor&Rolf",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orchid",
+      "Orange Blossom",
+      "Freesia",
+      "Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "green",
+      "floral",
+      "fresh spicy",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 5,
+      "green": 4,
+      "floral": 4,
+      "fresh spicy": 3,
+      "fresh": 3,
+      "aromatic": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.29576.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Limited-Edition-2015-29576.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Limited Edition 2020 Viktor&Rolf",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Tea",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Freesia",
+      "Rose",
+      "Orchid"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "citrus",
+      "musky",
+      "patchouli",
+      "rose"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 4,
+      "citrus": 3,
+      "musky": 3,
+      "patchouli": 3,
+      "rose": 3,
+      "powdery": 2,
+      "fruity": 2,
+      "sweet": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.63451.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Limited-Edition-2020-63451.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Love Me Tight Viktor&Rolf",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Rose",
+      "Jasmine",
+      "African Orange Flower",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "patchouli",
+      "white floral",
+      "citrus",
+      "woody",
+      "rose"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "patchouli": 4,
+      "white floral": 4,
+      "citrus": 3,
+      "woody": 3,
+      "rose": 3,
+      "musky": 3,
+      "powdery": 3,
+      "warm spicy": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14289.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Love-Me-Tight-14289.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Mariage Viktor&Rolf",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Osmanthus",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Rose",
+      "Jasmine",
+      "Freesia",
+      "Orchid"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "patchouli",
+      "citrus",
+      "woody",
+      "musky"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 5,
+      "patchouli": 4,
+      "citrus": 3,
+      "woody": 3,
+      "musky": 3,
+      "warm spicy": 3,
+      "rose": 3,
+      "sweet": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.66361.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Mariage-66361.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Midnight Viktor&Rolf",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Black Currant",
+      "Pomegranate"
+    ],
+    "heart_notes": [
+      "Night Blooming Jasmine",
+      "Peony"
+    ],
+    "base_notes": [
+      "White Musk",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "fruity",
+      "floral",
+      "musky",
+      "woody",
+      "white floral",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "floral": 3,
+      "musky": 3,
+      "woody": 3,
+      "white floral": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "fresh": 3,
+      "vanilla": 2,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53550.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Midnight-53550.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Musk Twist Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "musky",
+      "powdery",
+      "animalic",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "powdery": 3,
+      "animalic": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.45945.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Musk-Twist-45945.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Nectar Viktor&Rolf",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "gunpowder",
+      "Cassis",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Osmanthus",
+      "Orange Blossom",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Tonka Bean",
+      "Benzoin",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "vanilla",
+      "amber",
+      "aromatic",
+      "smoky",
+      "warm spicy",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "amber": 4,
+      "aromatic": 4,
+      "smoky": 3,
+      "warm spicy": 3,
+      "fruity": 3,
+      "white floral": 3,
+      "sweet": 3,
+      "soft spicy": 3,
+      "patchouli": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48062.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Nectar-48062.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Pearl Pink Limited Edition Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Osmanthus",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Freesia",
+      "Orchid",
+      "Jasmine",
+      "Rose",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "green",
+      "white floral",
+      "powdery",
+      "fresh",
+      "rose"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "green": 3,
+      "white floral": 3,
+      "powdery": 2,
+      "fresh": 2,
+      "rose": 2,
+      "patchouli": 2,
+      "musky": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47417.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Pearl-Pink-Limited-Edition-47417.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Pearly Coral Pink Limited Edition Viktor&Rolf",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Freesia",
+      "Orchid",
+      "May Rose"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "vanilla",
+      "white floral",
+      "powdery",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "vanilla": 4,
+      "white floral": 3,
+      "powdery": 3,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.65977.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Pearly-Coral-Pink-Limited-Edition-65977.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Pink Chrome Viktor&Rolf",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Freesia",
+      "Jasmine Sambac",
+      "Orchid",
+      "Rose",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "green",
+      "patchouli",
+      "citrus",
+      "woody",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "green": 4,
+      "patchouli": 4,
+      "citrus": 4,
+      "woody": 3,
+      "white floral": 3,
+      "fresh": 3,
+      "fresh spicy": 3,
+      "warm spicy": 3,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53043.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Pink-Chrome-53043.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Pink Crystal Limited Edition Viktor&Rolf",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Osmanthus",
+      "Tea",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Freesia",
+      "Orange Blossom",
+      "Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "white floral",
+      "patchouli",
+      "citrus",
+      "green"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 3,
+      "white floral": 3,
+      "patchouli": 2,
+      "citrus": 2,
+      "green": 2,
+      "lactonic": 2,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.41616.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Pink-Crystal-Limited-Edition-41616.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Pink Sparkle Viktor&Rolf",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Tincture of Rose",
+      "Freesia",
+      "Orchid"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "patchouli",
+      "white floral",
+      "rose",
+      "musky",
+      "woody"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "patchouli": 4,
+      "white floral": 3,
+      "rose": 3,
+      "musky": 3,
+      "woody": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "green": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7376.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Pink-Sparkle-7376.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Pretty Peony Viktor&Rolf",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Strawberry"
+    ],
+    "heart_notes": [
+      "Peony"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Musk"
+    ],
+    "top_accords": [
+      "fruity",
+      "floral",
+      "sweet",
+      "fresh",
+      "vanilla",
+      "musky"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "floral": 5,
+      "sweet": 5,
+      "fresh": 4,
+      "vanilla": 4,
+      "musky": 3,
+      "rose": 3,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.116624.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Pretty-Peony-116624.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Rose Explosion Viktor&Rolf",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Saffron",
+      "Pink Pepper",
+      "Mandarin Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Turkish Rose",
+      "Moroccan Rose",
+      "Olive",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Agarwood (Oud)",
+      "Vanilla",
+      "Patchouli",
+      "Amber"
+    ],
+    "top_accords": [
+      "rose",
+      "oud",
+      "warm spicy",
+      "vanilla",
+      "patchouli",
+      "amber"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "oud": 4,
+      "warm spicy": 4,
+      "vanilla": 3,
+      "patchouli": 3,
+      "amber": 3,
+      "citrus": 3,
+      "floral": 3,
+      "woody": 3,
+      "soft spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18708.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Rose-Explosion-18708.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Rose Gold Viktor&Rolf",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Tea",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Jasmine Sambac",
+      "Orange Blossom",
+      "Freesia",
+      "Rose",
+      "Orchid"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "citrus",
+      "musky",
+      "patchouli",
+      "rose"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 4,
+      "citrus": 3,
+      "musky": 3,
+      "patchouli": 3,
+      "rose": 3,
+      "powdery": 2,
+      "fruity": 2,
+      "sweet": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53044.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Rose-Gold-53044.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Ruby Orchid Viktor&Rolf",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Peach",
+      "Vine"
+    ],
+    "heart_notes": [
+      "Orchid"
+    ],
+    "base_notes": [
+      "Vanilla Bean"
+    ],
+    "top_accords": [
+      "vanilla",
+      "sweet",
+      "powdery",
+      "floral",
+      "fruity",
+      "green"
+    ],
+    "accord_intensity": {
+      "vanilla": 5,
+      "sweet": 4,
+      "powdery": 4,
+      "floral": 4,
+      "fruity": 3,
+      "green": 3,
+      "lactonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.70984.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Ruby-Orchid-70984.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Silver Eau de Parfum Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Bergamot",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Orange Blossom",
+      "Freesia",
+      "Rose",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "green",
+      "sweet",
+      "rose",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 4,
+      "green": 3,
+      "sweet": 3,
+      "rose": 3,
+      "citrus": 3,
+      "powdery": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47416.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Silver-Eau-de-Parfum-47416.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Swarovski Deluxe Viktor&Rolf",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Osmanthus",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Freesia",
+      "Jasmine",
+      "Orange Blossom",
+      "Rose",
+      "Orchid"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "patchouli",
+      "green",
+      "woody",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 4,
+      "patchouli": 4,
+      "green": 3,
+      "woody": 3,
+      "warm spicy": 3,
+      "fresh": 2,
+      "earthy": 2,
+      "musky": 2,
+      "rose": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28111.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Swarovski-Deluxe-28111.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Swarovski Edition 2013 Viktor&Rolf",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Tea Leaf",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Jasmine",
+      "Freesia",
+      "Orchid",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "rose",
+      "musky",
+      "patchouli",
+      "white floral",
+      "citrus",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "musky": 4,
+      "patchouli": 4,
+      "white floral": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "woody": 3,
+      "floral": 3,
+      "warm spicy": 3,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22470.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Swarovski-Edition-2013-22470.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Swarovski Edition 2016 Viktor&Rolf",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Tea",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Orange Blossom",
+      "Freesia",
+      "Rose",
+      "Orchid"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "citrus",
+      "musky",
+      "patchouli",
+      "rose"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 4,
+      "citrus": 3,
+      "musky": 3,
+      "patchouli": 3,
+      "rose": 3,
+      "powdery": 2,
+      "fruity": 2,
+      "sweet": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.42193.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Swarovski-Edition-2016-42193.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Swarovski Edition 2017 Viktor&Rolf",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Osmanthus",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Jasmine",
+      "Orange Blossom",
+      "Freesia",
+      "Rose"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "patchouli",
+      "green",
+      "woody",
+      "musky",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "patchouli": 4,
+      "green": 3,
+      "woody": 3,
+      "musky": 3,
+      "white floral": 3,
+      "warm spicy": 3,
+      "powdery": 3,
+      "fresh": 3,
+      "fruity": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47420.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Swarovski-Edition-2017-47420.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Swarovski Edition 2020 Viktor&Rolf",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Tea",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Orchid",
+      "Jasmine",
+      "Orange Blossom",
+      "Freesia",
+      "May Rose"
+    ],
+    "base_notes": [
+      "Musk",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "citrus",
+      "musky",
+      "patchouli",
+      "rose"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 4,
+      "citrus": 3,
+      "musky": 3,
+      "patchouli": 3,
+      "rose": 3,
+      "powdery": 2,
+      "fruity": 2,
+      "sweet": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.58954.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Swarovski-Edition-2020-58954.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Swarovski Ribbon Edition Viktor&Rolf",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bergamot",
+      "Tea",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Jasmine",
+      "Freesia",
+      "Orchid",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "patchouli",
+      "rose",
+      "woody",
+      "citrus",
+      "warm spicy",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "patchouli": 5,
+      "rose": 4,
+      "woody": 4,
+      "citrus": 3,
+      "warm spicy": 3,
+      "earthy": 3,
+      "balsamic": 3,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22519.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Swarovski-Ribbon-Edition-22519.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Swarovski® Holiday Limited Edition Viktor&Rolf",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Tea",
+      "Osmanthus",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "May Rose",
+      "Freesia",
+      "Orchid",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "white floral",
+      "patchouli",
+      "green",
+      "rose",
+      "woody"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "white floral": 3,
+      "patchouli": 3,
+      "green": 3,
+      "rose": 3,
+      "woody": 3,
+      "citrus": 2,
+      "fruity": 2,
+      "warm spicy": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52513.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Swarovski-Holiday-Limited-Edition-52513.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Viktor & Rolf",
+    "name": "Flowerbomb Tiger Lily Viktor&Rolf",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Coconut Milk",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Tyger Lily",
+      "Jasmine",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Mango",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "tropical",
+      "white floral",
+      "coconut",
+      "sweet",
+      "fruity",
+      "floral"
+    ],
+    "accord_intensity": {
+      "tropical": 5,
+      "white floral": 5,
+      "coconut": 4,
+      "sweet": 4,
+      "fruity": 4,
+      "floral": 3,
+      "vanilla": 3,
+      "amber": 3,
+      "lactonic": 2,
+      "terpenic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.88986.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-Tiger-Lily-88986.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

@@ -1,0 +1,2685 @@
+[
+  {
+    "brand": "Byredo",
+    "name": "1996 Inez & Vinoodh",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Juniper Berries",
+      "Black Pepper"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Orris",
+      "Violet"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Black Amber",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "leather",
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "animalic",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "woody": 4,
+      "animalic": 4,
+      "smoky": 3,
+      "powdery": 2,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.19247.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/1996-Inez-Vinoodh-19247.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Accord Oud",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Blackberry",
+      "Rum",
+      "Saffron"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Agarwood (Oud)",
+      "Clary Sage"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "leather",
+      "fruity",
+      "oud",
+      "warm spicy",
+      "rum",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "fruity": 5,
+      "oud": 4,
+      "warm spicy": 4,
+      "rum": 3,
+      "sweet": 3,
+      "animalic": 3,
+      "woody": 3,
+      "aromatic": 3,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10757.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Accord-Oud-10757.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Alto Astral",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Coconut Water",
+      "Aldehydes"
+    ],
+    "heart_notes": [
+      "Musk",
+      "Jasmine",
+      "Incense"
+    ],
+    "base_notes": [
+      "Cashmeran",
+      "Sandalwood",
+      "Amber"
+    ],
+    "top_accords": [
+      "musky",
+      "woody",
+      "powdery",
+      "aldehydic",
+      "amber",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "woody": 5,
+      "powdery": 5,
+      "aldehydic": 4,
+      "amber": 4,
+      "fresh": 3,
+      "warm spicy": 3,
+      "white floral": 3,
+      "balsamic": 2,
+      "soapy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.111517.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Alto-Astral-111517.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Animalique",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Mimosa"
+    ],
+    "base_notes": [
+      "Suede",
+      "Tobacco Leaf",
+      "Amber"
+    ],
+    "top_accords": [
+      "powdery",
+      "leather",
+      "violet",
+      "musky",
+      "tobacco",
+      "amber"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "leather": 4,
+      "violet": 3,
+      "musky": 3,
+      "tobacco": 3,
+      "amber": 3,
+      "yellow floral": 3,
+      "sweet": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.85157.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Animalique-85157.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Bal d'Afrique",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "African Marigold",
+      "Buchu or Agathosma"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Cyclamen"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "earthy",
+      "violet",
+      "floral",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 5,
+      "earthy": 4,
+      "violet": 4,
+      "floral": 3,
+      "powdery": 3,
+      "fresh": 3,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6458.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Bal-d-Afrique-6458.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Baudelaire",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Juniper Berries",
+      "Pepper",
+      "Caraway"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Incense",
+      "Hyacinth"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Papyrus",
+      "Amber"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "woody",
+      "amber",
+      "aromatic",
+      "leather",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "woody": 4,
+      "amber": 4,
+      "aromatic": 4,
+      "leather": 4,
+      "smoky": 3,
+      "warm spicy": 3,
+      "patchouli": 3,
+      "balsamic": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7458.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Baudelaire-7458.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Belle de Tanger",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bitter Orange"
+    ],
+    "heart_notes": [
+      "Orris",
+      "Violet"
+    ],
+    "base_notes": [
+      "Cashmere Wood"
+    ],
+    "top_accords": [
+      "citrus",
+      "powdery",
+      "woody",
+      "iris",
+      "violet",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "powdery": 5,
+      "woody": 4,
+      "iris": 4,
+      "violet": 4,
+      "fresh": 3,
+      "musky": 3,
+      "earthy": 2,
+      "amber": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40622.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Belle-de-Tanger-40622.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Bibliothèque",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Plum",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Peony"
+    ],
+    "base_notes": [
+      "Leather",
+      "Patchouli",
+      "Vanilla",
+      "Musk"
+    ],
+    "top_accords": [
+      "fruity",
+      "leather",
+      "powdery",
+      "sweet",
+      "violet",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "leather": 4,
+      "powdery": 4,
+      "sweet": 3,
+      "violet": 3,
+      "animalic": 3,
+      "patchouli": 3,
+      "vanilla": 3,
+      "floral": 3,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43324.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Bibliotheque-43324.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Black Saffron",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "leather",
+      "fruity",
+      "woody",
+      "aromatic",
+      "warm spicy",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "fruity": 4,
+      "woody": 4,
+      "aromatic": 3,
+      "warm spicy": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "animalic": 3,
+      "metallic": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.16220.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Black-Saffron-16220.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Blanche",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Rose",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Peony",
+      "Violet",
+      "African Orange Flower"
+    ],
+    "base_notes": [
+      "Musk",
+      "Woodsy Notes",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "fresh",
+      "aldehydic",
+      "musky",
+      "powdery",
+      "floral",
+      "rose"
+    ],
+    "accord_intensity": {
+      "fresh": 5,
+      "aldehydic": 5,
+      "musky": 4,
+      "powdery": 4,
+      "floral": 4,
+      "rose": 3,
+      "violet": 3,
+      "woody": 3,
+      "soapy": 3,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6686.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Blanche-6686.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Bullion",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Plum",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Osmanthus",
+      "Magnolia"
+    ],
+    "base_notes": [
+      "dark woodsy notes",
+      "Musk",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "fruity",
+      "woody",
+      "leather",
+      "floral",
+      "sweet",
+      "musky"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "woody": 3,
+      "leather": 3,
+      "floral": 3,
+      "sweet": 3,
+      "musky": 3,
+      "animalic": 3,
+      "soft spicy": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15923.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Bullion-15923.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Gin",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Orris Root"
+    ],
+    "base_notes": [
+      "Balsam Fir",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "woody",
+      "powdery",
+      "violet",
+      "aromatic",
+      "iris",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "powdery": 4,
+      "violet": 4,
+      "aromatic": 4,
+      "iris": 3,
+      "earthy": 3,
+      "soft spicy": 3,
+      "fresh": 3,
+      "fresh spicy": 3,
+      "mossy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40351.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Byredo-40351.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Chembur",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "fresh spicy",
+      "citrus",
+      "balsamic",
+      "aromatic",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "fresh spicy": 5,
+      "citrus": 4,
+      "balsamic": 3,
+      "aromatic": 3,
+      "smoky": 3,
+      "fresh": 3,
+      "musky": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3573.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Chembur-3573.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Cuir Obscur",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Amaretto",
+      "Nutmeg"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Leather",
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "leather",
+      "rose",
+      "almond",
+      "animalic",
+      "fruity",
+      "patchouli"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "rose": 4,
+      "almond": 3,
+      "animalic": 3,
+      "fruity": 3,
+      "patchouli": 3,
+      "woody": 3,
+      "fresh spicy": 3,
+      "yellow floral": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40276.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Cuir-Obscur-40276.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "De Los Santos",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Sage",
+      "Mirabelle"
+    ],
+    "heart_notes": [
+      "Orris Root",
+      "Cistus Incanus"
+    ],
+    "base_notes": [
+      "Olibanum",
+      "Musk",
+      "Ambroxan"
+    ],
+    "top_accords": [
+      "amber",
+      "musky",
+      "aromatic",
+      "herbal",
+      "powdery",
+      "iris"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "musky": 5,
+      "aromatic": 5,
+      "herbal": 4,
+      "powdery": 4,
+      "iris": 3,
+      "soft spicy": 3,
+      "fruity": 3,
+      "fresh spicy": 3,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.72693.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/De-Los-Santos-72693.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Deep Viola",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Angelica",
+      "Saffron",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Violet",
+      "Iris"
+    ],
+    "base_notes": [
+      "Olibanum",
+      "Agarwood (Oud)",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "powdery",
+      "amber",
+      "leather",
+      "musky",
+      "violet",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "amber": 5,
+      "leather": 4,
+      "musky": 4,
+      "violet": 4,
+      "warm spicy": 3,
+      "animalic": 3,
+      "fresh spicy": 3,
+      "oud": 2,
+      "iris": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.61748.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Deep-Viola-61748.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Desert Dawn",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Rose Petals",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Sandalwood",
+      "Cedarwood",
+      "Carrot Seeds"
+    ],
+    "base_notes": [
+      "Musk",
+      "Papyrus",
+      "Vetiver",
+      "Silk"
+    ],
+    "top_accords": [
+      "woody",
+      "powdery",
+      "musky",
+      "warm spicy",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "powdery": 4,
+      "musky": 3,
+      "warm spicy": 3,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.96188.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Desert-Dawn-96188.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Elevator Music",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "musky",
+      "floral",
+      "powdery",
+      "aromatic",
+      "green"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "musky": 5,
+      "floral": 3,
+      "powdery": 3,
+      "aromatic": 3,
+      "green": 3,
+      "amber": 3,
+      "violet": 3,
+      "fresh": 2,
+      "white floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48821.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Elevator-Music-48821.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Eleventh Hour",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Timur"
+    ],
+    "heart_notes": [
+      "Plum",
+      "Rum",
+      "Fig",
+      "Carrot Seeds"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Iso E Super",
+      "Cashmere Wood",
+      "Tonka Bean",
+      "Olibanum",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "woody",
+      "fruity",
+      "amber",
+      "sweet",
+      "musky",
+      "rum"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "fruity": 4,
+      "amber": 4,
+      "sweet": 3,
+      "musky": 3,
+      "rum": 3,
+      "powdery": 2,
+      "fresh spicy": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.50934.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Eleventh-Hour-50934.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Eyes Closed",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Cinnamon",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Orris",
+      "Carrot",
+      "Ginger"
+    ],
+    "base_notes": [
+      "Papyrus",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "warm spicy",
+      "powdery",
+      "cinnamon",
+      "iris",
+      "earthy",
+      "woody"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "powdery": 4,
+      "cinnamon": 4,
+      "iris": 3,
+      "earthy": 3,
+      "woody": 3,
+      "soft spicy": 3,
+      "fresh": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.76339.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Eyes-Closed-76339.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Fantastic Man",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Star Anise",
+      "Bergamot",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Incense",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Oakmoss",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "aromatic",
+      "warm spicy",
+      "anis",
+      "fresh spicy",
+      "soft spicy",
+      "woody"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "warm spicy": 4,
+      "anis": 4,
+      "fresh spicy": 4,
+      "soft spicy": 4,
+      "woody": 3,
+      "earthy": 3,
+      "citrus": 3,
+      "lavender": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6688.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Fantastic-Man-6688.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Flowerhead",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Angelica",
+      "Cranberry",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Tuberose",
+      "Jasmine Sambac",
+      "Green Notes",
+      "Rose Petals"
+    ],
+    "base_notes": [
+      "Suede",
+      "Ambergris"
+    ],
+    "top_accords": [
+      "white floral",
+      "green",
+      "tuberose",
+      "musky",
+      "amber",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "green": 3,
+      "tuberose": 3,
+      "musky": 3,
+      "amber": 3,
+      "animalic": 2,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.23881.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Flowerhead-23881.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Green",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Petitgrain",
+      "Sage"
+    ],
+    "heart_notes": [
+      "Honeysuckle",
+      "Violet",
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Almond",
+      "Musk",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "white floral",
+      "aromatic",
+      "herbal",
+      "fruity",
+      "almond",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "aromatic": 4,
+      "herbal": 3,
+      "fruity": 3,
+      "almond": 3,
+      "powdery": 3,
+      "musky": 3,
+      "violet": 3,
+      "floral": 3,
+      "citrus": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3574.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Green-3574.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Gypsy Water",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Juniper",
+      "Lemon",
+      "Bergamot",
+      "Pepper"
+    ],
+    "heart_notes": [
+      "Pine needles",
+      "Incense",
+      "Orris Root"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Sandalwood",
+      "Amber"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "citrus",
+      "powdery",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "citrus": 4,
+      "powdery": 3,
+      "vanilla": 3,
+      "amber": 3,
+      "balsamic": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3575.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Gypsy-Water-3575.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Heliotropia",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "white floral",
+      "powdery",
+      "amber",
+      "woody",
+      "vanilla",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "powdery": 3,
+      "amber": 3,
+      "woody": 3,
+      "vanilla": 3,
+      "smoky": 3,
+      "almond": 3,
+      "floral": 3,
+      "balsamic": 2,
+      "lactonic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40277.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Heliotropia-40277.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Inflorescence",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Pink Freesia",
+      "Rose"
+    ],
+    "heart_notes": [
+      "Lily-of-the-Valley",
+      "Magnolia"
+    ],
+    "base_notes": [
+      "Jasmine"
+    ],
+    "top_accords": [
+      "white floral",
+      "floral",
+      "fresh",
+      "green",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "floral": 4,
+      "fresh": 3,
+      "green": 3,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17798.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Inflorescence-17798.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "La Tulipe",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Freesia",
+      "Cyclamen",
+      "Rhuburb"
+    ],
+    "heart_notes": [
+      "pink tulip"
+    ],
+    "base_notes": [
+      "Green Notes",
+      "Vetyver",
+      "Woodsy Notes"
+    ],
+    "top_accords": [
+      "floral",
+      "green",
+      "soft spicy",
+      "fruity",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "green": 4,
+      "soft spicy": 2,
+      "fruity": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8441.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/La-Tulipe-8441.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Lil Fleur",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Saffron",
+      "Cassis",
+      "Tangerine"
+    ],
+    "heart_notes": [
+      "Damask Rose",
+      "Leather"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Woody Notes",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "rose",
+      "leather",
+      "animalic",
+      "citrus",
+      "warm spicy",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "leather": 4,
+      "animalic": 3,
+      "citrus": 3,
+      "warm spicy": 3,
+      "fruity": 3,
+      "aromatic": 3,
+      "woody": 3,
+      "green": 3,
+      "soft spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.60487.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Lil-Fleur-60487.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "M/Mink",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "aldehydic",
+      "patchouli",
+      "warm spicy",
+      "marine",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "aldehydic": 5,
+      "patchouli": 4,
+      "warm spicy": 4,
+      "marine": 4,
+      "smoky": 4,
+      "honey": 4,
+      "balsamic": 4,
+      "fresh": 3,
+      "woody": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10758.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/M-Mink-10758.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Mister Marvelous",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Petitgrain",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Bamboo",
+      "Lavender"
+    ],
+    "base_notes": [
+      "Virginia Cedar",
+      "Amber"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "aromatic",
+      "green",
+      "white floral",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 4,
+      "aromatic": 3,
+      "green": 3,
+      "white floral": 3,
+      "fresh spicy": 3,
+      "lavender": 3,
+      "herbal": 2,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.13002.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Mister-Marvelous-13002.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Mixed Emotions",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Currant",
+      "Mate"
+    ],
+    "heart_notes": [
+      "Tea",
+      "Violet Leaf"
+    ],
+    "base_notes": [
+      "Birch",
+      "Papyrus"
+    ],
+    "top_accords": [
+      "woody",
+      "green",
+      "fruity",
+      "leather",
+      "aromatic",
+      "smoky"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "green": 5,
+      "fruity": 5,
+      "leather": 4,
+      "aromatic": 4,
+      "smoky": 3,
+      "fresh spicy": 3,
+      "ozonic": 3,
+      "fresh": 3,
+      "soft spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.65525.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Mixed-Emotions-65525.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Mojave Ghost",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Sapodilla",
+      "Ambrette (Musk Mallow)"
+    ],
+    "heart_notes": [
+      "Magnolia",
+      "Violet",
+      "Sandalwood"
+    ],
+    "base_notes": [
+      "Ambergris",
+      "Cedar",
+      "Musk"
+    ],
+    "top_accords": [
+      "floral",
+      "woody",
+      "powdery",
+      "violet",
+      "musky",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "woody": 4,
+      "powdery": 4,
+      "violet": 3,
+      "musky": 3,
+      "fruity": 3,
+      "amber": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.27040.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Mojave-Ghost-27040.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Mojave Ghost Alcohol-Free",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Sapodilla",
+      "Ambrette"
+    ],
+    "heart_notes": [
+      "Violet",
+      "Sandalwood",
+      "Magnolia"
+    ],
+    "base_notes": [
+      "Amber",
+      "Cedarwood",
+      "Musk"
+    ],
+    "top_accords": [
+      "powdery",
+      "floral",
+      "woody",
+      "amber",
+      "violet",
+      "musky"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "floral": 5,
+      "woody": 4,
+      "amber": 4,
+      "violet": 4,
+      "musky": 4,
+      "fruity": 3,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.97941.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Mojave-Ghost-Alcohol-Free-97941.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Mumbai Noise",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Davana"
+    ],
+    "heart_notes": [
+      "Coffee",
+      "Tonka Bean"
+    ],
+    "base_notes": [
+      "Agarwood (Oud)",
+      "Sandalwood",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "oud",
+      "woody",
+      "warm spicy",
+      "amber",
+      "coffee",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "oud": 5,
+      "woody": 4,
+      "warm spicy": 4,
+      "amber": 4,
+      "coffee": 4,
+      "aromatic": 4,
+      "green": 3,
+      "balsamic": 3,
+      "sweet": 3,
+      "fruity": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.69858.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Mumbai-Noise-69858.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Open Sky",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pomelo",
+      "Black Pepper"
+    ],
+    "heart_notes": [
+      "cannabis"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Palo Santo"
+    ],
+    "top_accords": [
+      "aromatic",
+      "citrus",
+      "cannabis",
+      "woody",
+      "fresh spicy",
+      "green"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "citrus": 5,
+      "cannabis": 4,
+      "woody": 4,
+      "fresh spicy": 3,
+      "green": 3,
+      "herbal": 3,
+      "earthy": 2,
+      "smoky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.66825.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Open-Sky-66825.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Oud Immortel",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Limoncello",
+      "Incense",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Agarwood (Oud)",
+      "Patchouli",
+      "Papyrus",
+      "Brazilian Rosewood"
+    ],
+    "base_notes": [
+      "oak moss",
+      "Tobacco"
+    ],
+    "top_accords": [
+      "woody",
+      "oud",
+      "warm spicy",
+      "citrus",
+      "earthy",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "oud": 4,
+      "warm spicy": 4,
+      "citrus": 4,
+      "earthy": 3,
+      "balsamic": 3,
+      "patchouli": 3,
+      "mossy": 3,
+      "fresh": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10759.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Oud-Immortel-10759.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Palermo",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Citruses",
+      "Petitgrain",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Musk",
+      "Rose"
+    ],
+    "base_notes": [
+      "Ambrette (Musk Mallow)"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "aromatic",
+      "musky",
+      "fresh",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 3,
+      "aromatic": 3,
+      "musky": 2,
+      "fresh": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12488.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Palermo-12488.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Pulp",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Currant",
+      "Bergamot",
+      "Cardamon"
+    ],
+    "heart_notes": [
+      "Fig",
+      "Red Apple",
+      "Tiare Flower"
+    ],
+    "base_notes": [
+      "Praline",
+      "Peach Blossom",
+      "Cedar"
+    ],
+    "top_accords": [
+      "fruity",
+      "sweet",
+      "woody",
+      "floral",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "sweet": 3,
+      "woody": 3,
+      "floral": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3576.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Pulp-3576.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Rodeo",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Leather"
+    ],
+    "heart_notes": [
+      "Suede",
+      "Violet"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "Black Amber"
+    ],
+    "top_accords": [
+      "leather",
+      "powdery",
+      "violet",
+      "animalic",
+      "woody",
+      "musky"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "powdery": 4,
+      "violet": 4,
+      "animalic": 3,
+      "woody": 3,
+      "musky": 3,
+      "aromatic": 2,
+      "amber": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.45540.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Rodeo-45540.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Rose Noir",
+    "release_year": 2008,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit",
+      "Freesia",
+      "Red Berries",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Damask Rose",
+      "Raspberry",
+      "Lily-of-the-Valley",
+      "Violet",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Moss",
+      "Musk",
+      "Labdanum",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "rose",
+      "mossy",
+      "floral",
+      "earthy",
+      "musky",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "mossy": 4,
+      "floral": 4,
+      "earthy": 3,
+      "musky": 3,
+      "citrus": 3,
+      "woody": 3,
+      "amber": 3,
+      "powdery": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3577.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Rose-Noir-3577.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Rose Of No Man's Land",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Turkey Red Rose",
+      "Pink Pepper"
+    ],
+    "heart_notes": [
+      "Turkey Red Rose",
+      "Raspberry Bloom"
+    ],
+    "base_notes": [
+      "Papyrus",
+      "Amber"
+    ],
+    "top_accords": [
+      "rose",
+      "floral",
+      "soft spicy",
+      "woody",
+      "amber"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "floral": 3,
+      "soft spicy": 3,
+      "woody": 3,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31931.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Rose-Of-No-Man-s-Land-31931.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Russell Westbrook",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Gin",
+      "Osmanthus"
+    ],
+    "heart_notes": [
+      "Black Violet",
+      "Tobacco"
+    ],
+    "base_notes": [
+      "Haitian Vetiver",
+      "Suede"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "floral",
+      "powdery",
+      "violet",
+      "fruity"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 5,
+      "floral": 4,
+      "powdery": 3,
+      "violet": 3,
+      "fruity": 3,
+      "earthy": 3,
+      "leather": 3,
+      "tobacco": 3,
+      "musky": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31423.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Russell-Westbrook-31423.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Seven Veils",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "powdery",
+      "soft spicy",
+      "vanilla",
+      "floral",
+      "woody",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "soft spicy": 5,
+      "vanilla": 4,
+      "floral": 4,
+      "woody": 3,
+      "sweet": 3,
+      "musky": 2,
+      "fresh": 2,
+      "rose": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.13307.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Seven-Veils-13307.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Sister Dreamer",
+    "release_year": 2026,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Pink Pepper",
+      "juniper berry",
+      "Frankincense"
+    ],
+    "heart_notes": [
+      "Turkish Rose",
+      "Geranium",
+      "Freesia"
+    ],
+    "base_notes": [
+      "Healingwood",
+      "Amberwood",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "rose",
+      "fresh spicy",
+      "aromatic",
+      "woody",
+      "amber",
+      "floral"
+    ],
+    "accord_intensity": {
+      "rose": 5,
+      "fresh spicy": 4,
+      "aromatic": 4,
+      "woody": 4,
+      "amber": 4,
+      "floral": 4,
+      "soft spicy": 4,
+      "warm spicy": 3,
+      "herbal": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.128860.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Sister-Dreamer-128860.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Slow Dance",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Opoponax",
+      "Cognac"
+    ],
+    "heart_notes": [
+      "Labdanum",
+      "Violet",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Vanilla",
+      "Patchouli",
+      "Incense"
+    ],
+    "top_accords": [
+      "amber",
+      "woody",
+      "balsamic",
+      "warm spicy",
+      "sweet",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 4,
+      "balsamic": 4,
+      "warm spicy": 3,
+      "sweet": 3,
+      "vanilla": 3,
+      "patchouli": 3,
+      "powdery": 2,
+      "violet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.57007.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Slow-Dance-57007.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Sunday Cologne",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Star Anise",
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Lavender",
+      "Geranium",
+      "Incense"
+    ],
+    "base_notes": [
+      "Vetiver",
+      "oak moss",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "citrus",
+      "woody",
+      "warm spicy",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "citrus": 4,
+      "woody": 3,
+      "warm spicy": 3,
+      "earthy": 3,
+      "lavender": 3,
+      "anis": 3,
+      "soft spicy": 3,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.13044.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Sunday-Cologne-13044.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Sundazed",
+    "release_year": 2019,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin Orange",
+      "Californian Lemon"
+    ],
+    "heart_notes": [
+      "Neroli",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Cotton Candy",
+      "White Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "sweet",
+      "white floral",
+      "caramel",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "sweet": 3,
+      "white floral": 3,
+      "caramel": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.54747.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Sundazed-54747.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Super Cedar",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Rose"
+    ],
+    "heart_notes": [
+      "Virginian Cedar"
+    ],
+    "base_notes": [
+      "Haitian Vetiver",
+      "Musk"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "musky",
+      "powdery",
+      "rose",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 3,
+      "musky": 3,
+      "powdery": 3,
+      "rose": 2,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.35530.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Super-Cedar-35530.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Susanne Kaufmann x Byredo Bregenzerwald Fragrance Oil",
+    "release_year": 2023,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Juniper Berries",
+      "elemi"
+    ],
+    "heart_notes": [
+      "Galbanum",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Sugar",
+      "Fig"
+    ],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.89054.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Susanne-Kaufmann-x-Byredo-Bregenzerwald-Fragrance-Oil-89054.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Byredo",
+    "name": "Velvet Haze",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Coconut",
+      "Hibiscus",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Patchouli",
+      "Tuberose",
+      "Osmanthus"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk",
+      "Cacao Pod",
+      "Ambrette (Musk Mallow)",
+      "Cashmeran"
+    ],
+    "top_accords": [
+      "musky",
+      "patchouli",
+      "woody",
+      "floral",
+      "coconut",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "patchouli": 4,
+      "woody": 3,
+      "floral": 3,
+      "coconut": 3,
+      "warm spicy": 3,
+      "powdery": 3,
+      "cacao": 3,
+      "sweet": 3,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46358.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Byredo/Velvet-Haze-46358.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

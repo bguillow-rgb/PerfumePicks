@@ -1,0 +1,3854 @@
+[
+  {
+    "brand": "100BON",
+    "name": "Aloe Givré 50ml",
+    "release_year": null,
+    "concentration": "edt",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5310,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 5310,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/aloe-givre-edt-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/3I5A0843-edit-ombre.jpg?v=1744631867",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/aloe-givre-edt-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ambre & Tonka 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8010,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8010,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ambre-tonka-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100188_1_29e8a449-4019-4169-955d-cd293c2dbd15.jpg?v=1776256250",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ambre-tonka-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ambre & Tonka 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1140,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 1140,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ambre-tonka-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-parfum-ambre-et-tonka-packshot-1.jpg?v=1760344337",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ambre-tonka-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ambre & Tonka 30ml",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2610,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 2610,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ambre-tonka-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030255_1_78bdc99c-76a0-4cd1-be4e-efaa86939d55.jpg?v=1775134202",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ambre-tonka-eau-de-parfum",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ambre & Tonka 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4410,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 4410,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ambre-tonka-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050188_1_3e9d05ac-8295-4fd4-9286-edc3bc5ee684.jpg?v=1776256317",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ambre-tonka-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ambre Sensuel 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ambre-sensuel-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100089_1_1b72a1cd-9e86-42ad-850c-f2e213f7ae11.jpg?v=1776247919",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ambre-sensuel-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ambre Sensuel 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ambre-sensuel-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-toilette-ambre-sensuel-packshot-1.jpg?v=1760344276",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ambre-sensuel-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ambre Sensuel 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1680,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 1680,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ambre-sensuel-eau-de-toilette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030247_1_16a97cea-73ee-4509-9aa7-412d4ffecd4a.jpg?v=1775134025",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ambre-sensuel-eau-de-toilette",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ambre Sensuel 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ambre-sensuel-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050089_2_8bfb67ff-2f4b-4707-a404-06d3387aac92.jpg?v=1776256674",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ambre-sensuel-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bois & Poudre 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bois-poudre-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100106_1_521cc97c-867e-4e56-b623-003edb631d34.jpg?v=1776256538",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bois-poudre-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bois & Poudre 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bois-poudre-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-toilette-bois-et-poudre-packshot-1.jpg?v=1755701981",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bois-poudre-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bois & Poudre 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1680,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 1680,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bois-poudre-eau-de-toilette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030252_1_3568b9c0-2c9e-4060-a731-6254aa232d72.jpg?v=1775133994",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bois-poudre-eau-de-toilette",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bois & Poudre 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bois-poudre-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030106_1.jpg?v=1776246884",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bois-poudre-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bois de Mangrove 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8910,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8910,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bois-de-mangrove-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100208_1_f42d3c62-9b5f-4c2b-afd2-00803c53028d.jpg?v=1776255744",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bois-de-mangrove-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bois de Mangrove 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bois-de-mangrove"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030208_1_c48c36dd-26c4-4358-9dc7-191327874d53.jpg?v=1775134050",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bois-de-mangrove",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bois de Mangrove 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5310,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 5310,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bois-de-mangrove-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050208_1_d65918f2-d85d-455e-9b02-d181d76cbd39.jpg?v=1776255805",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bois-de-mangrove-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bois Oriental & Ylang 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8910,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8910,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bois-oriental-ylang-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050205_2_af46fad3-1cfe-42cc-8a8d-f633052f6db9.jpg?v=1776247851",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bois-oriental-ylang-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bois Oriental & Ylang 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bois-oriental-ylang"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030205_1_47027d96-b8d9-4c98-b0c3-61676f506dfc.jpg?v=1775134074",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bois-oriental-ylang",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bois Oriental & Ylang 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5310,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 5310,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bois-oriental-ylang-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050205_1_95d92170-0568-4c2f-8a6e-96e21672e26c.jpg?v=1776255912",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bois-oriental-ylang-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Bon Vent",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2100,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 2100,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/bon-vent"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/brume-desodorisant-bon-vent-naturel-packshot1.jpg?v=1729321823",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/bon-vent",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Breathe in Paris by Susan Oubari 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4050,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 4050,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/breathe-in-paris-by-susan-oubari-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/brume-naturel-breathe-in-paris-packshot2.jpg?v=1741257279",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/breathe-in-paris-by-susan-oubari-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Breathe in Paris by Susan Oubari 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2610,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 2610,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/breathe-in-paris-by-susan-oubari-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/brume-naturel-breathe-in-paris-packshot1.jpg?v=1729255194",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/breathe-in-paris-by-susan-oubari-30ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Cacao & Fleur d'Oranger 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8010,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8010,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/cacao-fleur-doranger-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100236_1_fe28589e-2541-47fb-944d-46d3986c6111.jpg?v=1776248242",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/cacao-fleur-doranger-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Cacao & Fleur d'Oranger 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2610,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 2610,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/cacao-fleur-doranger"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030236_1.jpg?v=1776255395",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/cacao-fleur-doranger",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Cacao & Fleur d'Oranger 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4410,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 4410,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/cacao-fleur-doranger-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050236_1_781d92c3-e234-443d-837e-fb15268c9089.jpg?v=1776248945",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/cacao-fleur-doranger-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Cèdre & Iris soyeux",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 200,
+        "price_usd_cents": 3900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/cedre-iris-soyeux"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/c_Cedre_Irissoyeux200ml.jpg?v=1745848219",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/cedre-iris-soyeux",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Concentré Oud Wood & Amyris",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4140,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 200,
+        "price_usd_cents": 4140,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/concentre-oud-wood-amyris"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/c_Oudwood_Amyris200ml.jpg?v=1745848243",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/concentre-oud-wood-amyris",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Cuir Végétal 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8010,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8010,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/cuir-vegetal-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100091_1_f4b8b92a-80e2-41ac-bcf6-7f6360a66e20.jpg?v=1776256118",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/cuir-vegetal-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Cuir Végétal 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1710,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 1710,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/cuir-vegetal-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-parfum-cuir-vegetal-packshot-1.jpg?v=1729007720",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/cuir-vegetal-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Cuir Végétal 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2160,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 2160,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/cuir-vegetal-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030257_1_3c00c192-71d6-4e07-9121-5ef0a7c7ccdd.jpg?v=1776247324",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/cuir-vegetal-30ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Cuir Végétal 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4410,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 4410,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/cuir-vegetal-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050091_1.jpg?v=1776247379",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/cuir-vegetal-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Davana & Vanille 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3510,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3510,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/davana-vanille-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-cologne-naturel-davana-et-vanille-packshot-1.jpg?v=1729117917",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/davana-vanille-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Doux rêves 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4050,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 4050,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/doux-reves-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/brume-naturel-doux-reves-packshot2.jpg?v=1728389855",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/doux-reves-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Doux rêves 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2610,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 2610,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/doux-reves-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/brume-naturel-doux-reves-packshot1.jpg?v=1741273223",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/doux-reves-30ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Eau de thé & Gingembre 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3510,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3510,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/eau-de-the-gingembre-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-cologne-naturel-the-et-gingembre-packshot-1.jpg?v=1729117733",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/eau-de-the-gingembre-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ebène & Ambre 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8910,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8910,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ebene-ambre-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100209_2_535ad5d4-a7c7-4402-8d6d-4d37083f6982.jpg?v=1776255703",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ebene-ambre-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ebène & Ambre 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ebene-ambre"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050209_1_e6ee861e-7c73-4bc0-8998-cd46c443ad99.jpg?v=1775134150",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ebene-ambre",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Ebène & Ambre 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5310,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 5310,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/ebene-ambre-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050208_1_2_e9336415-c558-467c-ae79-edbe6823dcc3.jpg?v=1776247800",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/ebene-ambre-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Elémi & Ambre",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2700,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 2700,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/elemi-ambre"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-cologne-naturel-elemi-et-ambre-packshot-1.jpg?v=1731068623",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/elemi-ambre",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Eucalyptus & Lavande aromatique",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1740,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 200,
+        "price_usd_cents": 1740,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/eucalyptus-et-lavande-aromatique-body-mist-200ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/Eucalyptus_lavandearomatique.jpg?v=1745848102",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/eucalyptus-et-lavande-aromatique-body-mist-200ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Eucalyptus & Menthe 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/eucalyptus-menthe-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/brume-naturel-eucalyptus-et-menthe-packshot1.jpg?v=1729592962",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/eucalyptus-menthe-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Flacon 50ml vide complet édition limitée Dumè Saint-Valentin 2026",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3510,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3510,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/flacon-50ml-vide-complet-edition-limitee-dume-saint-valentin-2026"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/IMG_2283_SnapseedCopy_123dc317-865f-43a5-a5dc-654c18f55f49.jpg?v=1770219575",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/flacon-50ml-vide-complet-edition-limitee-dume-saint-valentin-2026",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Flacon vide, 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/flacon-vide-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/accessoire-flacon-vide-30-ml-flacon-vide-100-ml.jpg?v=1732558551",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/flacon-vide-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Flacon vide, 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 270,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 270,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/flacon-vide-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/accessoire-flacon-vide-30-mlaaccessoire-flacon-vide-30-ml.jpg?v=1732558288",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/flacon-vide-30ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Flacon vide, 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/flacon-vide-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/accessoire-flacon-vide-50-ml.jpg?v=1732614875",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/flacon-vide-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Gingembre & Vétiver",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4140,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 200,
+        "price_usd_cents": 4140,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/gingembre-vetiver"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/Vetiver_GingembreRecharge.jpg?v=1744719588",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/gingembre-vetiver",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Glam Flower 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/glam-flower-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100092_1_b3493461-c109-4d80-8d88-6b1799a301b1.jpg?v=1776255221",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/glam-flower-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Glam Flower 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/glam-flower-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-toilette-glam-flower-packshot-1.jpg?v=1756060287",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/glam-flower-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Glam Flower 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/glam-flower-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100092_1_50a5de18-5b79-4452-9d78-31899ec062ab.jpg?v=1776249144",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/glam-flower-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Golden Shadow 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/golden-shadow-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100259_1_ef2e8d2d-3288-4aa0-800d-ae681b41463f.jpg?v=1776248705",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/golden-shadow-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Golden Shadow 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1680,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 1680,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/golden-shadow"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030259_1_0a6cc9bc-1611-4568-9856-58f6d607cab1.jpg?v=1776255456",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/golden-shadow",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Golden Shadow 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4050,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 4050,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/golden-shadow-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050259_1_0584fda3-fd08-478f-8d1f-8330b8d3354f.jpg?v=1776255315",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/golden-shadow-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Héliotrope & Amande douce",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1740,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 200,
+        "price_usd_cents": 1740,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/heliotrope-et-amande-douce-body-mist-200ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/Heliotrope_Amandedouce.jpg?v=1745848154",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/heliotrope-et-amande-douce-body-mist-200ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Idées claires",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1500,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 1500,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/idees-claires-roll-on-10ml-fr"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/hwcUFU1005155-0-ncb-FR.jpg?v=1744632622",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/idees-claires-roll-on-10ml-fr",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Incense & Cuir 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8910,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8910,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/incense-cuir-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100206_1_62dc0832-0274-4ca5-812e-5975b411094e.jpg?v=1776255517",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/incense-cuir-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Jasmin & Fleur d'oranger 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4050,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 4050,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/jasmin-fleur-doranger-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/brume-vegan-jasmin-et-fleur-d_oranger-packshot1_06401c0e-07f9-4384-a49f-c990ae3be666.jpg?v=1773327035",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/jasmin-fleur-doranger-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Jasmin & Ylang 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3510,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3510,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/jasmin-ylang-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-cologne-naturel-jasmin-et-ylang-packshot-1.jpg?v=1729115417",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/jasmin-ylang-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "La Villa Calvi 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/la-villa-calvi-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/148.jpg?v=1773652818",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/la-villa-calvi-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Lâcher prise 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4050,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 4050,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/lacher-prise-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/brume-naturel-vegan-lacher-prise-packshot1.jpg?v=1727881829",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/lacher-prise-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Lâcher prise 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2610,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 2610,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/lacher-prise-brume"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/brume-naturel-lacher-prise-packshot1.jpg?v=1741273576",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/lacher-prise-brume",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Menthe & Vétiver",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1050,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 1050,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/leau-du-parc-brume-menthe-vetiver-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/1745571123_71a58634_5508026_47f15e2daaaf72_1024x_f6f57e41-552d-4a2c-9ffc-8f51d8f3dedc.webp?v=1745591456",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/leau-du-parc-brume-menthe-vetiver-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Mirage du désert 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/mirage-du-desert-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100103_1_ca390c13-1986-460c-aba1-217cac022f56.jpg?v=1776248043",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/mirage-du-desert-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Mirage du désert 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/mirage-du-desert-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-toilette-mirage-du-desert-packshot-1.jpg?v=1739446406",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/mirage-du-desert-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Mirage du désert 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1680,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 1680,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/mirage-du-desert-eau-de-toilette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030253_1_2.jpg?v=1776257470",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/mirage-du-desert-eau-de-toilette",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Mirage du désert 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/mirage-du-desert-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050103_1_d2c09bc6-cf1e-484e-ab84-e4f970103481.jpg?v=1776247466",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/mirage-du-desert-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Moment présent",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1500,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 1500,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/moment-present-roll-on-10ml-fr"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/image_7.jpg?v=1745591886",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/moment-present-roll-on-10ml-fr",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Moment présent",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1740,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 1740,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/moment-present-2"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/1747048715_8fe203d2_IMG_2394__1.jpg?v=1747050719",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/moment-present-2",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Musc & Jasmin 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8010,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8010,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/musc-jasmin-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100187_1_a04264fc-c78a-4540-88b1-5319e233f14b.jpg?v=1776256070",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/musc-jasmin-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Musc & Jasmin 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1710,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 1710,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/musc-jasmin-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-parfum-musc-et-jasmin-packshot-1.jpg?v=1760344416",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/musc-jasmin-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Musc & Jasmin 30 ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2610,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 2610,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/musc-jasmin"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030254_1_f1ab4d49-8d88-4986-8bff-64a452edfa5d.jpg?v=1776257345",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/musc-jasmin",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Musc & Jasmin 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4410,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 4410,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/musc-jasmin-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050187_1_c0648fae-fe92-45d5-a3ab-bd8a7e2797c0.jpg?v=1776247746",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/musc-jasmin-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Myrrhe & Encens",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2700,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 2700,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/myrrhe-encens"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-cologne-naturel-myrrhe-encens-packshot-1_2.jpg?v=1731066287",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/myrrhe-encens",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Neroli & Petitgrain 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3510,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3510,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/neroli-petitgrain-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-cologne-naturel-neroli-et-petit-grain-packshot-1.jpg?v=1729117818",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/neroli-petitgrain-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Nuage de Coton 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/nuage-de-coton-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100088_1_538b660d-261b-40d0-bcff-04010df08611.jpg?v=1776256732",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/nuage-de-coton-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Nuage de Coton 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/nuage-de-coton-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-toilette-nuage-de-coton-packshot-1.jpg?v=1755702420",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/nuage-de-coton-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Nuage de Coton 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1680,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 1680,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/nuage-de-coton-eau-de-toilette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030246_1_42af902e-8658-429f-afea-a0890616a3ca.jpg?v=1776256886",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/nuage-de-coton-eau-de-toilette",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Nuage de Coton 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/nuage-de-coton-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050088_1_f2cea361-bdb9-4ce5-9c0e-ef25c3515b4f.jpg?v=1776256781",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/nuage-de-coton-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Patchouli & Labdanum 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3510,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3510,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/patchouli-labdanum-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-cologne-naturel-patchouli-et-labdanum-packshot-1.jpg?v=1729117613",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/patchouli-labdanum-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Pochon 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 225,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 225,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/pochon-30ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/accessoire-pochon-30ml.jpg?v=1732614876",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/pochon-30ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Pochon 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 450,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 450,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/pochon-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/accessoire-pochon-50ml.jpg?v=1732614876",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/pochon-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Rose & Bergamote 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3510,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3510,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/rose-bergamote-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-cologne-naturel-rose-et-bergamote-packshot-1.jpg?v=1729116118",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/rose-bergamote-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Rose & Black Pepper 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8910,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8910,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/rose-black-pepper-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100204_1_705db474-6315-431b-ae35-b1f7e403d916.jpg?v=1776248841",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/rose-black-pepper-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Rose & Black Pepper 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/rose-black-pepper"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030204_1_e519a89e-afaa-498a-8cd2-3c5b20212c6e.jpg?v=1776246999",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/rose-black-pepper",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Rose & Black Pepper 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5310,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 5310,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/rose-black-pepper-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050204_1_12838f92-e492-4fd2-b8a6-7038f2986cbf.jpg?v=1776256001",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/rose-black-pepper-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Secret Garden 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/secret-garden-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100108_1_ef2d8253-6dd6-4ff1-8a67-658e2435c1de.jpg?v=1776256489",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/secret-garden-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Secret Garden 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/secret-garden-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/3I5A0636-edit-1_eae43636-c046-4bc7-a2b3-d6c3c67a41ca.png?v=1773310198",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/secret-garden-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Secret Garden 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1680,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 1680,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/secret-garden-eau-de-toilette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030249_1_6d5fd8de-a9e5-48db-8b88-2ae5e983d914.jpg?v=1776257202",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/secret-garden-eau-de-toilette",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Secret Garden 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/secret-garden-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050108_1_1d76d051-2f36-4069-8414-647116431e37.jpg?v=1776247526",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/secret-garden-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Shell Beach 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/shell-beach-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100087_1.jpg?v=1776247197",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/shell-beach-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Shell Beach 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/shell-beach-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-toilette-shell-beach-packshot-1.jpg?v=1755702646",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/shell-beach-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Shell Beach 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/shell-beach-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050087_1_e2af3bae-ba0e-4c5f-84b9-dcbf8e3ae402.jpg?v=1776247259",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/shell-beach-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Soleil & Ambre 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 6900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 6900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/soleil-ambre-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100090_1_5b5c7bdf-fe98-41ab-834e-5f2c2fa6c058.jpg?v=1776256588",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/soleil-ambre-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Soleil & Ambre 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 900,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 900,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/soleil-ambre-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-toilette-soleil-et-ambre-packshot-1.jpg?v=1763117802",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/soleil-ambre-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Soleil & Ambre 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1680,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 1680,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/soleil-dambre-eau-de-toilette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030248_1_2.jpg?v=1776257067",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/soleil-dambre-eau-de-toilette",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Soleil & Ambre 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/soleil-ambre-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050090_1_4486d6c1-74fc-428d-9f8a-ea659dad5512.jpg?v=1776256637",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/soleil-ambre-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Tonka & Amande",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2700,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 2700,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/tonka-amande"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-cologne-naturel-tonka-amande-et-packshot-1.jpg?v=1731068066",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/tonka-amande",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Vétiver & Iris 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8010,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8010,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/vetiver-iris-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100189_1_67f46733-424e-4c8a-8da0-12cbedb07043.jpg?v=1776248799",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/vetiver-iris-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Vétiver & Iris 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1710,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 1710,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/vetiver-iris-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-parfum-vetiver-et-iris-packshot-1.jpg?v=1729009813",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/vetiver-iris-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Vétiver & Iris 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2610,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 2610,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/vetiver-iris"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030256_1_976102f6-9849-4e8c-b3e7-4326b2ccb17a.jpg?v=1776257252",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/vetiver-iris",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Vétiver & Iris 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4410,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 4410,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/vetiver-iris-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050189_1_2af5bd83-44fb-4bc2-8fed-863918cadcec.jpg?v=1776256431",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/vetiver-iris-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Zeste d'Agrumes 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8010,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8010,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/zeste-dagrumes-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100104_1_2f8a12b1-d3b8-4769-b6b2-b35a66446b86.jpg?v=1776256368",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/zeste-dagrumes-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Zeste d'Agrumes 10ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 1140,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 10,
+        "price_usd_cents": 1140,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/zeste-dagrumes-10ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/eau-de-parfum-zeste-d-agrumes-packshot-1.jpg?v=1760344673",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/zeste-dagrumes-10ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Zeste d'Agrumes 30ml",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 2610,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 2610,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/eau-de-parfum-zeste-agrumes"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030258_1_b93ef1c2-6f81-43a6-8d4e-6e9a80087ab4.jpg?v=1776257294",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/eau-de-parfum-zeste-agrumes",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Zeste d'Agrumes 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 4410,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 4410,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/zeste-dagrumes-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050104_1_d21e402e-f314-4a08-9df2-746fbea567b2.jpg?v=1776247657",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/zeste-dagrumes-50ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Zeste d'Orange & Oud 100ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 8910,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 100,
+        "price_usd_cents": 8910,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/zeste-dorange-oud-100ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/100207_1_650008e3-aa64-4ca5-9626-3646dfa3cf60.jpg?v=1776248162",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/zeste-dorange-oud-100ml",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Zeste d'Orange & Oud 30ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 3150,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 30,
+        "price_usd_cents": 3150,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/zeste-dorange-oud"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/030207_1_e39acfdc-8100-4aef-bb3f-19bd5b966e0c.jpg?v=1776257402",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/zeste-dorange-oud",
+    "sources": [
+      "100bon"
+    ]
+  },
+  {
+    "brand": "100BON",
+    "name": "Zeste d'Orange & Oud 50ml",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 5310,
+    "prices": [
+      {
+        "retailer": "100bon-direct",
+        "size_ml": 50,
+        "price_usd_cents": 5310,
+        "is_decant": false,
+        "url": "https://www.100bon.com/products/zeste-dorange-oud-50ml"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0639/9534/7180/files/050207_1_9477f307-cdbb-42c8-8a48-6b7163e30963.jpg?v=1776255845",
+    "source": "100bon",
+    "source_url": "https://www.100bon.com/products/zeste-dorange-oud-50ml",
+    "sources": [
+      "100bon"
+    ]
+  }
+]

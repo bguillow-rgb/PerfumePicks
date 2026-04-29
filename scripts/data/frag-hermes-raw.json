@@ -1,0 +1,4096 @@
+[
+  {
+    "brand": "Hermès",
+    "name": "Amazone (1974) Hermès",
+    "release_year": 1974,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Galbanum",
+      "Cassia",
+      "Neroli",
+      "Brazilian Rosewood",
+      "Mandarin Orange",
+      "Bergamot",
+      "Violet Leaf"
+    ],
+    "heart_notes": [
+      "Hiacynth",
+      "Narcissus",
+      "Black Currant",
+      "Rose",
+      "Iris",
+      "Orris Root",
+      "Jasmine",
+      "Raspberry",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Vetiver",
+      "Neroli",
+      "Cedar",
+      "Sandalwood",
+      "Cinnamon",
+      "Ylang-Ylang",
+      "Amber"
+    ],
+    "top_accords": [
+      "green",
+      "woody",
+      "aromatic",
+      "earthy",
+      "fruity",
+      "floral"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "woody": 5,
+      "aromatic": 4,
+      "earthy": 4,
+      "fruity": 3,
+      "floral": 3,
+      "citrus": 3,
+      "powdery": 3,
+      "iris": 3,
+      "yellow floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4656.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Amazone-1974-4656.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Amazone (2017 re-launch) Hermès",
+    "release_year": 2017,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Cassis",
+      "Black Currant Blossom"
+    ],
+    "heart_notes": [
+      "Galbanum",
+      "Narcissus",
+      "Red Berries"
+    ],
+    "base_notes": [
+      "Vetiver"
+    ],
+    "top_accords": [
+      "green",
+      "search on or search on",
+      "aromatic",
+      "fruity",
+      "woody",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "aromatic": 4,
+      "fruity": 3,
+      "woody": 3,
+      "soft spicy": 3,
+      "yellow floral": 3,
+      "earthy": 2,
+      "floral": 2,
+      "balsamic": 2,
+      "search on or search on": 5
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43327.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Amazone-2017-re-launch-43327.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Aroma d'Orange Verte Hermès",
+    "release_year": 2003,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "sweet",
+      "fruity",
+      "woody",
+      "yellow floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "sweet": 3,
+      "fruity": 3,
+      "woody": 2,
+      "yellow floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4657.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Aroma-d-Orange-Verte-4657.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Bel Ami Hermès",
+    "release_year": 1986,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Sage",
+      "Bergamot",
+      "Cardamom",
+      "Lemon",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Carnation",
+      "Patchouli",
+      "Cedar",
+      "Orris Root",
+      "Basil",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Leather",
+      "Oakmoss",
+      "Styrax",
+      "Vetiver",
+      "Amber",
+      "Vanilla",
+      "Coconut"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "earthy",
+      "leather",
+      "citrus",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 5,
+      "earthy": 4,
+      "leather": 4,
+      "citrus": 4,
+      "warm spicy": 4,
+      "amber": 3,
+      "mossy": 3,
+      "animalic": 3,
+      "floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.25.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Bel-Ami-25.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Cabriole Hermès",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Honeysuckle"
+    ],
+    "heart_notes": [
+      "Osmanthus"
+    ],
+    "base_notes": [
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "fruity",
+      "floral",
+      "white floral",
+      "woody",
+      "yellow floral",
+      "lactonic"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "floral": 4,
+      "white floral": 4,
+      "woody": 3,
+      "yellow floral": 3,
+      "lactonic": 2,
+      "powdery": 2,
+      "soft spicy": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.76019.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Cabriole-76019.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Concentré d'Orange Verte Hermès",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "fresh spicy",
+      "woody",
+      "aromatic",
+      "green",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh spicy": 4,
+      "woody": 3,
+      "aromatic": 3,
+      "green": 3,
+      "sweet": 3,
+      "patchouli": 2,
+      "herbal": 2,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4658.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Concentre-d-Orange-Verte-4658.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Concentré de Pamplemousse Rose Hermès",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Rose"
+    ],
+    "base_notes": [
+      "Vetiver"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "woody",
+      "earthy",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 4,
+      "woody": 3,
+      "earthy": 3,
+      "fresh spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.72307.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Concentre-de-Pamplemousse-Rose-72307.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau D'Hermes Hermès",
+    "release_year": 1951,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot",
+      "Lavender",
+      "Lemon",
+      "Petitgrain",
+      "Sage"
+    ],
+    "heart_notes": [
+      "Cardamom",
+      "Cumin",
+      "Cinnamon",
+      "Bourbon Geranium",
+      "Jasmine",
+      "Coriander",
+      "Cloves"
+    ],
+    "base_notes": [
+      "Leather",
+      "Birch",
+      "Sandalwood",
+      "Cedar",
+      "Moss",
+      "Tonka Bean",
+      "Vanilla",
+      "Labdanum"
+    ],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "citrus",
+      "leather",
+      "warm spicy",
+      "woody"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "citrus": 4,
+      "leather": 4,
+      "warm spicy": 4,
+      "woody": 4,
+      "smoky": 3,
+      "animalic": 3,
+      "herbal": 3,
+      "cinnamon": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4660.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-D-Hermes-4660.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau d'Orange Douce Hermès",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Petitgrain",
+      "Green Notes",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Green Leaves",
+      "Mandarin Orange",
+      "Orange",
+      "Lime (Linden) Blossom"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Sandalwood",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "citrus",
+      "green",
+      "woody",
+      "aromatic",
+      "sweet",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "green": 4,
+      "woody": 3,
+      "aromatic": 3,
+      "sweet": 2,
+      "white floral": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24027.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-d-Orange-Douce-24027.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau d'Orange Verte Hermès",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "green",
+      "earthy",
+      "mossy",
+      "woody"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 3,
+      "green": 3,
+      "earthy": 3,
+      "mossy": 3,
+      "woody": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6065.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-d-Orange-Verte-6065.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau D'Orange Verte 1979 Hermès",
+    "release_year": 1979,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "white floral",
+      "aromatic",
+      "fresh spicy",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "white floral": 3,
+      "aromatic": 2,
+      "fresh spicy": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3019.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-D-Orange-Verte-1979-3019.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau de Basilic Pourpre Hermès",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Basil",
+      "Geranium"
+    ],
+    "base_notes": [
+      "Spices",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "fresh spicy",
+      "aromatic",
+      "citrus",
+      "green",
+      "warm spicy",
+      "herbal"
+    ],
+    "accord_intensity": {
+      "fresh spicy": 5,
+      "aromatic": 4,
+      "citrus": 3,
+      "green": 3,
+      "warm spicy": 3,
+      "herbal": 3,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.74600.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-de-Basilic-Pourpre-74600.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau de Citron Noir Hermès",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "smoky",
+      "woody",
+      "fresh",
+      "green"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "smoky": 3,
+      "woody": 2,
+      "fresh": 2,
+      "green": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49231.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-de-Citron-Noir-49231.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau de Cologne Hermes Hermès",
+    "release_year": 1953,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin Orange",
+      "Lemon",
+      "Basil",
+      "Mint",
+      "Bergamot",
+      "Coriander",
+      "Papaya",
+      "Mango"
+    ],
+    "heart_notes": [
+      "Orange Leaf",
+      "Lavender",
+      "Rosemary",
+      "Neroli",
+      "Honeysuckle",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Oakmoss",
+      "Sandalwood",
+      "Patchouli",
+      "Musk"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "green",
+      "woody",
+      "white floral"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "green": 3,
+      "woody": 3,
+      "white floral": 2,
+      "lavender": 2,
+      "herbal": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4661.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-de-Cologne-Hermes-4661.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau de Gentiane Blanche Hermès",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "floral",
+      "iris",
+      "powdery",
+      "sweet",
+      "musky",
+      "amber"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "iris": 4,
+      "powdery": 4,
+      "sweet": 4,
+      "musky": 3,
+      "amber": 3,
+      "smoky": 3,
+      "violet": 3,
+      "earthy": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6063.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-de-Gentiane-Blanche-6063.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau de Ginza Hermès",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "floral",
+      "fruity",
+      "fresh",
+      "cherry",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "fruity": 4,
+      "fresh": 3,
+      "cherry": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.97784.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-de-Ginza-97784.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau de Mandarine Ambrée Hermès",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Passionfruit"
+    ],
+    "base_notes": [
+      "Amber"
+    ],
+    "top_accords": [
+      "citrus",
+      "amber",
+      "fruity",
+      "sweet",
+      "tropical"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "amber": 4,
+      "fruity": 3,
+      "sweet": 3,
+      "tropical": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18183.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-de-Mandarine-Ambree-18183.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau de Narcisse Bleu Hermès",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "yellow floral",
+      "green",
+      "aromatic",
+      "balsamic",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "yellow floral": 5,
+      "green": 4,
+      "aromatic": 3,
+      "balsamic": 2,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18184.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-de-Narcisse-Bleu-18184.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau de Néroli Doré Hermès",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Bitter Orange"
+    ],
+    "heart_notes": [
+      "Neroli"
+    ],
+    "base_notes": [
+      "Saffron"
+    ],
+    "top_accords": [
+      "citrus",
+      "fresh",
+      "white floral",
+      "warm spicy",
+      "fresh spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "fresh": 3,
+      "white floral": 3,
+      "warm spicy": 3,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.35376.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-de-Neroli-Dore-35376.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau de Pamplemousse Rose Hermès",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "rose",
+      "fresh spicy",
+      "aromatic",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "rose": 2,
+      "fresh spicy": 2,
+      "aromatic": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6064.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-de-Pamplemousse-Rose-6064.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau de Rhubarbe Ecarlate Hermès",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Rhubarb"
+    ],
+    "heart_notes": [
+      "Red Berries",
+      "Lantana"
+    ],
+    "base_notes": [
+      "White Musk"
+    ],
+    "top_accords": [
+      "fruity",
+      "green",
+      "sweet",
+      "aromatic",
+      "sour",
+      "musky"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "green": 3,
+      "sweet": 3,
+      "aromatic": 3,
+      "sour": 3,
+      "musky": 3,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.35375.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-de-Rhubarbe-Ecarlate-35375.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Equipage Hermès",
+    "release_year": 1970,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Clary Sage",
+      "Brazilian Rosewood",
+      "Nutmeg Flower",
+      "Bergamot",
+      "Aldehydes",
+      "Orange",
+      "Tarragon",
+      "Marjoram"
+    ],
+    "heart_notes": [
+      "Carnation",
+      "Pine Tree Needles",
+      "Cinnamon",
+      "Lily-of-the-Valley",
+      "Jasmine",
+      "Hyssop",
+      "Liatris"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Vetiver",
+      "Patchouli",
+      "Tonka Bean",
+      "Musk",
+      "Vanilla",
+      "Amber"
+    ],
+    "top_accords": [
+      "aromatic",
+      "woody",
+      "warm spicy",
+      "fresh spicy",
+      "earthy",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "woody": 5,
+      "warm spicy": 4,
+      "fresh spicy": 3,
+      "earthy": 3,
+      "citrus": 3,
+      "floral": 3,
+      "mossy": 3,
+      "balsamic": 3,
+      "sweet": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Equipage-7.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Galop d'Hermes Hermès",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Quince",
+      "Saffron"
+    ],
+    "heart_notes": [
+      "Turkish Rose",
+      "Osmanthus"
+    ],
+    "base_notes": [
+      "Leather",
+      "White Musk"
+    ],
+    "top_accords": [
+      "leather",
+      "floral",
+      "fruity",
+      "rose",
+      "animalic",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "floral": 5,
+      "fruity": 4,
+      "rose": 4,
+      "animalic": 3,
+      "sweet": 3,
+      "musky": 3,
+      "warm spicy": 2,
+      "smoky": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.39584.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Galop-d-Hermes-39584.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hiris Hermès",
+    "release_year": 1999,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Iris",
+      "Coriander",
+      "Carnation",
+      "Amber"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Neroli",
+      "Rose"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Almond Tree",
+      "Honey",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "iris",
+      "powdery",
+      "woody",
+      "violet",
+      "floral",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "iris": 5,
+      "powdery": 4,
+      "woody": 4,
+      "violet": 3,
+      "floral": 3,
+      "earthy": 3,
+      "aromatic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.20.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hiris-20.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Parfum d'Hermes Hermès",
+    "release_year": 1984,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Hiacynth",
+      "Galbanum",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Bulgarian Rose",
+      "Ylang-Ylang",
+      "Iris",
+      "Egyptian Jasmine"
+    ],
+    "base_notes": [
+      "Myrrh",
+      "Incense",
+      "Sandalwood",
+      "Spices",
+      "Amber",
+      "Cedar",
+      "Vanilla",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "amber",
+      "woody",
+      "warm spicy",
+      "green",
+      "floral",
+      "rose"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 5,
+      "warm spicy": 4,
+      "green": 4,
+      "floral": 3,
+      "rose": 3,
+      "powdery": 3,
+      "balsamic": 3,
+      "aromatic": 3,
+      "aldehydic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4662.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Parfum-d-Hermes-4662.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Rocabar Hermès",
+    "release_year": 1998,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Cedar Essence",
+      "Juniper",
+      "Coriander",
+      "Lemon",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Italian Cypress",
+      "Cedar",
+      "Cardamom",
+      "Carnation",
+      "Violet"
+    ],
+    "base_notes": [
+      "Canada Balsam",
+      "Benzoin",
+      "Vanilla",
+      "Oakmoss",
+      "Patchouli"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "warm spicy",
+      "amber",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 5,
+      "fresh spicy": 3,
+      "warm spicy": 3,
+      "amber": 2,
+      "vanilla": 2,
+      "citrus": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.26.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Rocabar-26.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Rouge Hermès Hermès",
+    "release_year": 2000,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Rose",
+      "Ylang-Ylang",
+      "Iris"
+    ],
+    "heart_notes": [
+      "Sandalwood",
+      "Amber",
+      "Vanilla",
+      "Cedar"
+    ],
+    "base_notes": [
+      "Spices",
+      "Myrtle"
+    ],
+    "top_accords": [
+      "woody",
+      "powdery",
+      "rose",
+      "warm spicy",
+      "yellow floral",
+      "iris"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "powdery": 4,
+      "rose": 3,
+      "warm spicy": 3,
+      "yellow floral": 3,
+      "iris": 3,
+      "amber": 3,
+      "aromatic": 3,
+      "sweet": 3,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.21.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Rouge-Hermes-21.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Rouge Hermes Eau Delicate Hermès",
+    "release_year": 2002,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Vanilla"
+    ],
+    "base_notes": [
+      "Labdanum",
+      "Amber",
+      "Cedar"
+    ],
+    "top_accords": [
+      "amber",
+      "woody",
+      "aldehydic",
+      "rose",
+      "yellow floral",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 5,
+      "aldehydic": 4,
+      "rose": 4,
+      "yellow floral": 4,
+      "fresh": 3,
+      "sweet": 3,
+      "floral": 3,
+      "soapy": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Rouge-Hermes-Eau-Delicate-8.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "24 Faubourg Hermès",
+    "release_year": 1995,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Hiacynth",
+      "Orange",
+      "Ylang-Ylang",
+      "Peach",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Gardenia",
+      "Jasmine",
+      "Black Elder",
+      "Iris"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood",
+      "Patchouli",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "floral",
+      "citrus",
+      "woody",
+      "sweet",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "floral": 3,
+      "citrus": 3,
+      "woody": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "fresh spicy": 3,
+      "green": 3,
+      "amber": 3,
+      "yellow floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.27.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/24-Faubourg-27.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "24 Faubourg Chaine d'Ancre Hermès",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Ylang-Ylang",
+      "Hyacinth",
+      "Orange",
+      "Peach",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Black Elder",
+      "Iris",
+      "Gardenia",
+      "Orange Blossom",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Sandalwood",
+      "Amber",
+      "Patchouli",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "floral",
+      "woody",
+      "sweet",
+      "powdery",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "floral": 5,
+      "woody": 5,
+      "sweet": 5,
+      "powdery": 4,
+      "citrus": 4,
+      "iris": 3,
+      "yellow floral": 3,
+      "fresh spicy": 3,
+      "amber": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22475.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/24-Faubourg-Chaine-d-Ancre-22475.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "24 Faubourg Eau de Parfum Edition Numero 24 Hermès",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Peach",
+      "Hyacinth",
+      "Bergamot",
+      "Ylang-Ylang"
+    ],
+    "heart_notes": [
+      "Gardenia",
+      "Black Elder",
+      "Orange Blossom",
+      "Iris",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood",
+      "Patchouli",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "sweet",
+      "floral",
+      "powdery",
+      "woody"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 5,
+      "sweet": 3,
+      "floral": 3,
+      "powdery": 3,
+      "woody": 3,
+      "amber": 3,
+      "fresh spicy": 3,
+      "iris": 2,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.29590.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/24-Faubourg-Eau-de-Parfum-Edition-Numero-24-29590.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "24 Faubourg Eau Delicate Hermès",
+    "release_year": 2003,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "white floral",
+      "fresh spicy",
+      "aromatic",
+      "citrus",
+      "musky"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "fresh spicy": 4,
+      "aromatic": 3,
+      "citrus": 2,
+      "musky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/24-Faubourg-Eau-Delicate-22.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "24 Faubourg Extrait de Parfum Hermès",
+    "release_year": 1995,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "white floral",
+      "floral",
+      "iris",
+      "powdery",
+      "musky"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "white floral": 5,
+      "floral": 5,
+      "iris": 4,
+      "powdery": 4,
+      "musky": 3,
+      "violet": 3,
+      "earthy": 3,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43507.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/24-Faubourg-Extrait-de-Parfum-43507.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "24 Faubourg Jeu De Lignes et de Lumiere Hermès",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Hyacinth",
+      "Peach",
+      "Ylang-Ylang",
+      "Orange",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "Black Elder",
+      "Iris",
+      "Orange Blossom",
+      "Gardenia",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amber",
+      "Patchouli",
+      "Vanilla",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "floral",
+      "sweet",
+      "citrus",
+      "fresh spicy",
+      "white floral",
+      "woody"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "sweet": 4,
+      "citrus": 3,
+      "fresh spicy": 3,
+      "white floral": 3,
+      "woody": 3,
+      "green": 3,
+      "powdery": 3,
+      "fruity": 3,
+      "yellow floral": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22498.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/24-Faubourg-Jeu-De-Lignes-et-de-Lumiere-22498.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "24 Faubourg Jeu Des Omnibus Et Dames Blanches Hermès",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Hiacynth",
+      "Bergamot",
+      "Orange",
+      "Ylang-Ylang",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Orange Blossom",
+      "Gardenia",
+      "Black Elder",
+      "Jasmine",
+      "Iris"
+    ],
+    "base_notes": [
+      "Amber",
+      "Sandalwood",
+      "Patchouli",
+      "Vanilla"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "floral",
+      "sweet",
+      "woody",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 4,
+      "floral": 4,
+      "sweet": 4,
+      "woody": 3,
+      "powdery": 3,
+      "fresh spicy": 3,
+      "green": 3,
+      "yellow floral": 3,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.11431.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/24-Faubourg-Jeu-Des-Omnibus-Et-Dames-Blanches-11431.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eperon d'Or Limited Edition Hermès",
+    "release_year": 2011,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Hyacinth",
+      "Ylang-Ylang",
+      "Bergamot",
+      "Orange",
+      "Peach"
+    ],
+    "heart_notes": [
+      "Gardenia",
+      "African Orange Flower",
+      "Iris",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Amber",
+      "Vanille",
+      "Patchouli",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "white floral",
+      "citrus",
+      "floral",
+      "fresh spicy",
+      "woody",
+      "green"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "citrus": 4,
+      "floral": 4,
+      "fresh spicy": 4,
+      "woody": 4,
+      "green": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "yellow floral": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.13638.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eperon-d-Or-Limited-Edition-13638.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Barénia Hermès",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Miracle berry",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "White Ginger Lily"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Akigalawood",
+      "Oak"
+    ],
+    "top_accords": [
+      "woody",
+      "patchouli",
+      "warm spicy",
+      "oud",
+      "citrus",
+      "floral"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "patchouli": 3,
+      "warm spicy": 3,
+      "oud": 3,
+      "citrus": 3,
+      "floral": 3,
+      "fruity": 3,
+      "sweet": 2,
+      "earthy": 2,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.96428.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Barenia-96428.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Barénia Intense Hermès",
+    "release_year": 2025,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [
+      "Patchouli",
+      "Leather",
+      "White Ginger Lily",
+      "Oak"
+    ],
+    "top_accords": [
+      "woody",
+      "patchouli",
+      "leather",
+      "floral",
+      "earthy",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "patchouli": 4,
+      "leather": 4,
+      "floral": 3,
+      "earthy": 3,
+      "warm spicy": 3,
+      "animalic": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.111208.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Barenia-Intense-111208.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Caleche Hermès",
+    "release_year": 1961,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Cypress",
+      "Bergamot",
+      "Neroli",
+      "Orange Blossom",
+      "Lemon",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Ylang-Ylang",
+      "Rose",
+      "Jasmine",
+      "Gardenia",
+      "Lily-of-the-Valley"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Sandalwood",
+      "Vetiver",
+      "Musk",
+      "Cedar",
+      "Amber",
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "woody",
+      "white floral",
+      "citrus",
+      "aldehydic",
+      "fresh",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "white floral": 4,
+      "citrus": 4,
+      "aldehydic": 4,
+      "fresh": 3,
+      "aromatic": 3,
+      "earthy": 3,
+      "powdery": 3,
+      "iris": 3,
+      "mossy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.23.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Caleche-23.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Caleche Eau Delicate Hermès",
+    "release_year": 2003,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Ylang-Ylang"
+    ],
+    "heart_notes": [
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Cedar",
+      "Sandalwood"
+    ],
+    "top_accords": [
+      "woody",
+      "aldehydic",
+      "white floral",
+      "yellow floral",
+      "fresh",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aldehydic": 3,
+      "white floral": 3,
+      "yellow floral": 3,
+      "fresh": 3,
+      "powdery": 3,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.24.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Caleche-Eau-Delicate-24.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Caleche Fleurs de Mediterranee Hermès",
+    "release_year": 2003,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "floral",
+      "yellow floral",
+      "beeswax",
+      "white floral",
+      "honey",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "floral": 5,
+      "yellow floral": 4,
+      "beeswax": 4,
+      "white floral": 4,
+      "honey": 3,
+      "sweet": 3,
+      "powdery": 3,
+      "rose": 3,
+      "ozonic": 3,
+      "animalic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7345.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Caleche-Fleurs-de-Mediterranee-7345.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Caleche Parfum Hermès",
+    "release_year": 1961,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Neroli",
+      "Bergamot",
+      "Lemon",
+      "Mandarin Orange"
+    ],
+    "heart_notes": [
+      "Orris",
+      "Ylang-Ylang",
+      "Jasmine",
+      "Gardenia",
+      "Lily-of-the-Valley",
+      "Rose"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Sandalwood",
+      "Olibanum",
+      "Vetiver",
+      "Musk",
+      "Cypress",
+      "Amber",
+      "Cedar",
+      "Tonka Bean",
+      "Coumarin"
+    ],
+    "top_accords": [
+      "woody",
+      "white floral",
+      "citrus",
+      "fresh",
+      "aldehydic",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "white floral": 4,
+      "citrus": 4,
+      "fresh": 4,
+      "aldehydic": 3,
+      "aromatic": 3,
+      "earthy": 3,
+      "powdery": 3,
+      "amber": 3,
+      "mossy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.38348.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Caleche-Parfum-38348.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Caleche Soie de Parfum Hermès",
+    "release_year": 1992,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Aldehydes",
+      "Citron",
+      "Neroli",
+      "Bergamot"
+    ],
+    "heart_notes": [
+      "May Rose",
+      "Damask Rose",
+      "Iris",
+      "Jasmine",
+      "Lily-of-the-Valley",
+      "Orange Blossom"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Sandalwood",
+      "Vetiver",
+      "Cedar"
+    ],
+    "top_accords": [
+      "woody",
+      "white floral",
+      "citrus",
+      "aldehydic",
+      "fresh",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "white floral": 5,
+      "citrus": 5,
+      "aldehydic": 5,
+      "fresh": 5,
+      "earthy": 4,
+      "rose": 3,
+      "powdery": 3,
+      "mossy": 3,
+      "iris": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.29233.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Caleche-Soie-de-Parfum-29233.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Kelly Calèche Hermès",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Grapefruit",
+      "Narcissus",
+      "Lily-of-the-Valley"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Mimosa",
+      "Tuberose"
+    ],
+    "base_notes": [
+      "Leather",
+      "Iris"
+    ],
+    "top_accords": [
+      "leather",
+      "rose",
+      "citrus",
+      "animalic",
+      "iris",
+      "yellow floral"
+    ],
+    "accord_intensity": {
+      "leather": 5,
+      "rose": 4,
+      "citrus": 4,
+      "animalic": 3,
+      "iris": 3,
+      "yellow floral": 3,
+      "powdery": 3,
+      "floral": 3,
+      "white floral": 3,
+      "green": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1335.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Kelly-Caleche-1335.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Kelly Caleche Eau de Parfum Hermès",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "powdery",
+      "leather",
+      "rose",
+      "violet",
+      "floral",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "leather": 5,
+      "rose": 5,
+      "violet": 4,
+      "floral": 4,
+      "animalic": 3,
+      "iris": 3,
+      "yellow floral": 3,
+      "smoky": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5520.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Kelly-Caleche-Eau-de-Parfum-5520.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Bel Ami Vetiver Hermès",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "aromatic",
+      "amber",
+      "woody",
+      "warm spicy",
+      "leather",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "amber": 4,
+      "woody": 3,
+      "warm spicy": 3,
+      "leather": 3,
+      "earthy": 3,
+      "animalic": 3,
+      "balsamic": 3,
+      "powdery": 3,
+      "fresh spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22616.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Bel-Ami-Vetiver-22616.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Equipage Geranium Hermès",
+    "release_year": 2015,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "warm spicy",
+      "fresh spicy",
+      "aromatic",
+      "woody",
+      "rose",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "warm spicy": 5,
+      "fresh spicy": 4,
+      "aromatic": 4,
+      "woody": 4,
+      "rose": 3,
+      "powdery": 3,
+      "herbal": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.32042.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Equipage-Geranium-32042.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Rose Amazone Hermès",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Black currant leaf",
+      "Red Currant",
+      "Grapefruit",
+      "Mandarin Orange",
+      "Bergamot",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Rose",
+      "Blackberry",
+      "Raspberry",
+      "Floral Notes"
+    ],
+    "base_notes": [
+      "Woody Notes",
+      "Vanilla",
+      "Amber"
+    ],
+    "top_accords": [
+      "fruity",
+      "rose",
+      "citrus",
+      "green",
+      "sweet",
+      "floral"
+    ],
+    "accord_intensity": {
+      "fruity": 5,
+      "rose": 3,
+      "citrus": 3,
+      "green": 3,
+      "sweet": 3,
+      "floral": 2,
+      "fresh spicy": 2,
+      "aromatic": 2,
+      "woody": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.29174.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Rose-Amazone-29174.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau Claire des Merveilles Hermès",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "amber",
+      "floral",
+      "vanilla",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "amber": 4,
+      "floral": 4,
+      "vanilla": 4,
+      "powdery": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.9583.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-Claire-des-Merveilles-9583.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau des Merveilles Hermès",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Elemi resin",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Amber",
+      "Pepper",
+      "Pink Pepper",
+      "Violet"
+    ],
+    "base_notes": [
+      "Fir",
+      "Cedar",
+      "Madagascar Vetiver",
+      "Oakmoss",
+      "Benzoin"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "citrus",
+      "amber",
+      "conifer"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 4,
+      "fresh spicy": 4,
+      "citrus": 4,
+      "amber": 3,
+      "conifer": 3,
+      "sweet": 3,
+      "fresh": 3,
+      "earthy": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.9.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-des-Merveilles-9.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau des Merveilles 10th Anniversary Edition Hermès",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Bitter Orange",
+      "Italian Lemon",
+      "elemi"
+    ],
+    "heart_notes": [
+      "Pink Pepper",
+      "Pepper",
+      "Ambergris",
+      "Violet"
+    ],
+    "base_notes": [
+      "Fir",
+      "Cedar",
+      "Oakmoss",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "woody",
+      "citrus",
+      "fresh spicy",
+      "aromatic",
+      "fresh",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "citrus": 5,
+      "fresh spicy": 4,
+      "aromatic": 4,
+      "fresh": 3,
+      "soft spicy": 3,
+      "amber": 3,
+      "earthy": 3,
+      "conifer": 3,
+      "mossy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28936.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-des-Merveilles-10th-Anniversary-Edition-28936.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau des Merveilles Au Bal des Etoiles Hermès",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "fresh spicy",
+      "amber",
+      "fresh",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 5,
+      "fresh spicy": 4,
+      "amber": 3,
+      "fresh": 3,
+      "animalic": 2,
+      "aromatic": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.26760.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-des-Merveilles-Au-Bal-des-Etoiles-26760.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau des Merveilles Bleue Hermès",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "marine",
+      "woody",
+      "aromatic",
+      "salty",
+      "aquatic",
+      "patchouli"
+    ],
+    "accord_intensity": {
+      "marine": 5,
+      "woody": 4,
+      "aromatic": 4,
+      "salty": 3,
+      "aquatic": 3,
+      "patchouli": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.42747.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-des-Merveilles-Bleue-42747.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau des Merveilles Constellation Hermès",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Fir Resin",
+      "Orange",
+      "Pepper"
+    ],
+    "heart_notes": [
+      "Cedar",
+      "Oak",
+      "Amber"
+    ],
+    "base_notes": [
+      "Peru Balsam",
+      "Siam Benzoin",
+      "Woodsy Notes"
+    ],
+    "top_accords": [
+      "woody",
+      "amber",
+      "fresh spicy",
+      "balsamic",
+      "aromatic",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "amber": 3,
+      "fresh spicy": 3,
+      "balsamic": 3,
+      "aromatic": 3,
+      "citrus": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3176.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-des-Merveilles-Constellation-3176.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau Des Merveilles La Tete Dans Les Etoiles Hermès",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Lemon",
+      "elemi"
+    ],
+    "heart_notes": [
+      "Pink Pepper",
+      "Amber",
+      "Violet",
+      "Pepper"
+    ],
+    "base_notes": [
+      "Fir",
+      "Cedar",
+      "Vetiver",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "citrus",
+      "fresh spicy",
+      "earthy",
+      "amber"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 5,
+      "citrus": 4,
+      "fresh spicy": 4,
+      "earthy": 3,
+      "amber": 3,
+      "powdery": 3,
+      "conifer": 3,
+      "violet": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22497.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-Des-Merveilles-La-Tete-Dans-Les-Etoiles-22497.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau Des Merveilles Limited Edition 2009 Hermès",
+    "release_year": 2009,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "Lemon",
+      "elemi"
+    ],
+    "heart_notes": [
+      "Amber",
+      "Pepper",
+      "Pink Pepper",
+      "Violet"
+    ],
+    "base_notes": [
+      "Fir",
+      "Cedar",
+      "Vetiver",
+      "Oakmoss"
+    ],
+    "top_accords": [
+      "woody",
+      "aromatic",
+      "fresh spicy",
+      "citrus",
+      "amber",
+      "conifer"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "aromatic": 5,
+      "fresh spicy": 5,
+      "citrus": 4,
+      "amber": 4,
+      "conifer": 3,
+      "fresh": 3,
+      "sweet": 3,
+      "earthy": 3,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22496.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-Des-Merveilles-Limited-Edition-2009-22496.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau des Merveilles Limited Edition 2013 Hermès",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [
+      "Orange",
+      "elemi",
+      "Lemon"
+    ],
+    "heart_notes": [
+      "Amber",
+      "Pepper",
+      "Pink Pepper",
+      "Violet"
+    ],
+    "base_notes": [
+      "Fir",
+      "Moss",
+      "Cedar",
+      "Vetiver"
+    ],
+    "top_accords": [
+      "citrus",
+      "aromatic",
+      "fresh spicy",
+      "woody",
+      "amber",
+      "conifer"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "aromatic": 4,
+      "fresh spicy": 4,
+      "woody": 4,
+      "amber": 3,
+      "conifer": 3,
+      "sweet": 3,
+      "fresh": 3,
+      "balsamic": 3,
+      "earthy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22474.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-des-Merveilles-Limited-Edition-2013-22474.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Eau des Merveilles Pegase Hermès",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "woody",
+      "amber",
+      "aromatic",
+      "fresh",
+      "soft spicy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "woody": 5,
+      "amber": 4,
+      "aromatic": 3,
+      "fresh": 2,
+      "soft spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.7915.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Eau-des-Merveilles-Pegase-7915.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Elixir des Merveilles Hermès",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "woody",
+      "balsamic",
+      "citrus",
+      "sweet",
+      "warm spicy"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 4,
+      "balsamic": 4,
+      "citrus": 3,
+      "sweet": 2,
+      "warm spicy": 2,
+      "caramel": 2,
+      "vanilla": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3168.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Elixir-des-Merveilles-3168.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Elixir Des Merveilles Calligraphie Hermès",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "woody",
+      "balsamic",
+      "citrus",
+      "vanilla",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 5,
+      "balsamic": 4,
+      "citrus": 3,
+      "vanilla": 3,
+      "sweet": 3,
+      "powdery": 2,
+      "caramel": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52607.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Elixir-Des-Merveilles-Calligraphie-52607.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Elixir des Merveilles Limited Edition Collector Hermès",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "woody",
+      "balsamic",
+      "citrus",
+      "vanilla",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "woody": 5,
+      "balsamic": 4,
+      "citrus": 3,
+      "vanilla": 3,
+      "sweet": 2,
+      "warm spicy": 2,
+      "patchouli": 2,
+      "caramel": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28937.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Elixir-des-Merveilles-Limited-Edition-Collector-28937.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "L'Ambre des Merveilles Calligraphie Hermès",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "vanilla",
+      "patchouli",
+      "woody",
+      "balsamic",
+      "powdery"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "vanilla": 3,
+      "patchouli": 3,
+      "woody": 3,
+      "balsamic": 3,
+      "powdery": 2,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.42180.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/L-Ambre-des-Merveilles-Calligraphie-42180.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "L'Ambre des Merveilles Limited Edition Collector Hermès",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "vanilla",
+      "woody",
+      "powdery",
+      "patchouli",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "vanilla": 3,
+      "woody": 2,
+      "powdery": 2,
+      "patchouli": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28938.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/L-Ambre-des-Merveilles-Limited-Edition-Collector-28938.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "L'Ombre Des Merveilles Hermès",
+    "release_year": 2020,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Black Tea"
+    ],
+    "heart_notes": [
+      "Incense"
+    ],
+    "base_notes": [
+      "Tonka Bean"
+    ],
+    "top_accords": [
+      "amber",
+      "smoky",
+      "green",
+      "balsamic",
+      "warm spicy",
+      "vanilla"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "smoky": 4,
+      "green": 3,
+      "balsamic": 3,
+      "warm spicy": 3,
+      "vanilla": 3,
+      "fresh": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.59799.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/L-Ombre-Des-Merveilles-59799.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "L’Ambre des Merveilles Hermès",
+    "release_year": 2012,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "amber",
+      "vanilla",
+      "woody",
+      "patchouli",
+      "powdery",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "amber": 5,
+      "vanilla": 3,
+      "woody": 2,
+      "patchouli": 2,
+      "powdery": 2,
+      "balsamic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15949.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/L-Ambre-des-Merveilles-15949.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Parfum des Merveilles Hermès",
+    "release_year": 2005,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "amber",
+      "balsamic",
+      "earthy",
+      "patchouli",
+      "mossy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "amber": 4,
+      "balsamic": 4,
+      "earthy": 3,
+      "patchouli": 3,
+      "mossy": 3,
+      "warm spicy": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Parfum-des-Merveilles-10.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Parfum des Merveilles 2006 Hermès",
+    "release_year": 2006,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "woody",
+      "amber",
+      "balsamic",
+      "earthy",
+      "citrus",
+      "mossy"
+    ],
+    "accord_intensity": {
+      "woody": 5,
+      "amber": 4,
+      "balsamic": 3,
+      "earthy": 3,
+      "citrus": 3,
+      "mossy": 3,
+      "patchouli": 3,
+      "green": 3,
+      "warm spicy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5864.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Parfum-des-Merveilles-2006-5864.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "H24 Hermès",
+    "release_year": 2021,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "aromatic",
+      "yellow floral",
+      "soft spicy",
+      "woody",
+      "green",
+      "balsamic"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "yellow floral": 4,
+      "soft spicy": 3,
+      "woody": 3,
+      "green": 3,
+      "balsamic": 2,
+      "amber": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.65147.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/H24-65147.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "H24 Eau de Parfum Hermès",
+    "release_year": 2022,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "mossy",
+      "aromatic",
+      "woody",
+      "earthy",
+      "soft spicy",
+      "yellow floral"
+    ],
+    "accord_intensity": {
+      "mossy": 5,
+      "aromatic": 5,
+      "woody": 4,
+      "earthy": 4,
+      "soft spicy": 3,
+      "yellow floral": 3,
+      "balsamic": 3,
+      "green": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.75811.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/H24-Eau-de-Parfum-75811.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "H24 Herbes Vives Hermès",
+    "release_year": 2024,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [
+      "Herbal Notes"
+    ],
+    "heart_notes": [
+      "Pear"
+    ],
+    "base_notes": [
+      "Physcool®"
+    ],
+    "top_accords": [
+      "green",
+      "fruity",
+      "sweet",
+      "aquatic",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "fruity": 3,
+      "sweet": 3,
+      "aquatic": 2,
+      "fresh": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.89146.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/H24-Herbes-Vives-89146.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hermessence Agar Ebene Hermès",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "oud",
+      "fresh spicy",
+      "woody",
+      "aromatic",
+      "conifer",
+      "fresh"
+    ],
+    "accord_intensity": {
+      "oud": 5,
+      "fresh spicy": 4,
+      "woody": 4,
+      "aromatic": 3,
+      "conifer": 3,
+      "fresh": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48131.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hermessence-Agar-Ebene-48131.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hermessence Ambre Narguile Hermès",
+    "release_year": 2004,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "sweet",
+      "warm spicy",
+      "vanilla",
+      "cinnamon",
+      "amber",
+      "honey"
+    ],
+    "accord_intensity": {
+      "sweet": 5,
+      "warm spicy": 5,
+      "vanilla": 4,
+      "cinnamon": 4,
+      "amber": 4,
+      "honey": 4,
+      "rum": 3,
+      "caramel": 3,
+      "woody": 3,
+      "balsamic": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2669.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hermessence-Ambre-Narguile-2669.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hermessence Brin de Reglisse Hermès",
+    "release_year": 2007,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [
+      "Lavender",
+      "Licorice",
+      "Hay"
+    ],
+    "top_accords": [
+      "lavender",
+      "soft spicy",
+      "fresh spicy",
+      "green",
+      "herbal",
+      "sweet"
+    ],
+    "accord_intensity": {
+      "lavender": 5,
+      "soft spicy": 4,
+      "fresh spicy": 4,
+      "green": 4,
+      "herbal": 3,
+      "sweet": 3,
+      "aromatic": 3,
+      "anis": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2673.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hermessence-Brin-de-Reglisse-2673.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hermessence Cardamusc Hermès",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "musky",
+      "warm spicy",
+      "aromatic",
+      "powdery",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "musky": 5,
+      "warm spicy": 5,
+      "aromatic": 3,
+      "powdery": 3,
+      "animalic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48133.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hermessence-Cardamusc-48133.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hermessence Cedre Sambac Hermès",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "white floral",
+      "woody",
+      "floral",
+      "powdery",
+      "aromatic"
+    ],
+    "accord_intensity": {
+      "white floral": 5,
+      "woody": 5,
+      "floral": 2,
+      "powdery": 2,
+      "aromatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48132.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hermessence-Cedre-Sambac-48132.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hermessence Cuir d'Ange Hermès",
+    "release_year": 2014,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "powdery",
+      "leather",
+      "floral",
+      "animalic",
+      "violet",
+      "musky"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "leather": 5,
+      "floral": 4,
+      "animalic": 4,
+      "violet": 4,
+      "musky": 3,
+      "vanilla": 3,
+      "yellow floral": 3,
+      "smoky": 2,
+      "almond": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.26622.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hermessence-Cuir-d-Ange-26622.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hermessence Epice Marine Hermès",
+    "release_year": 2013,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "aromatic",
+      "fresh spicy",
+      "marine",
+      "warm spicy",
+      "woody",
+      "citrus"
+    ],
+    "accord_intensity": {
+      "aromatic": 5,
+      "fresh spicy": 4,
+      "marine": 4,
+      "warm spicy": 4,
+      "woody": 3,
+      "citrus": 3,
+      "earthy": 3,
+      "salty": 2,
+      "mossy": 2,
+      "aquatic": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18851.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hermessence-Epice-Marine-18851.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hermessence Iris Ukiyoé Hermès",
+    "release_year": 2010,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "citrus",
+      "iris",
+      "white floral",
+      "powdery",
+      "violet",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "citrus": 5,
+      "iris": 5,
+      "white floral": 4,
+      "powdery": 3,
+      "violet": 3,
+      "earthy": 3,
+      "rose": 3,
+      "sweet": 2,
+      "floral": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10514.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hermessence-Iris-Ukiyoe-10514.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hermessence Muguet Porcelaine Hermès",
+    "release_year": 2016,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [
+      "Green Notes",
+      "Pear"
+    ],
+    "heart_notes": [
+      "Lily-of-the-Valley",
+      "Hedione",
+      "Neroli"
+    ],
+    "base_notes": [
+      "Animal notes",
+      "White Musk"
+    ],
+    "top_accords": [
+      "green",
+      "fresh",
+      "white floral",
+      "musky",
+      "floral",
+      "animalic"
+    ],
+    "accord_intensity": {
+      "green": 5,
+      "fresh": 4,
+      "white floral": 4,
+      "musky": 3,
+      "floral": 3,
+      "animalic": 3,
+      "fruity": 2,
+      "sweet": 2
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.37474.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hermessence-Muguet-Porcelaine-37474.html",
+    "sources": [
+      "fragrantica"
+    ]
+  },
+  {
+    "brand": "Hermès",
+    "name": "Hermessence Musc Pallida Hermès",
+    "release_year": 2018,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "unisex",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [
+      "powdery",
+      "musky",
+      "iris",
+      "violet",
+      "earthy"
+    ],
+    "accord_intensity": {
+      "powdery": 5,
+      "musky": 5,
+      "iris": 5,
+      "violet": 3,
+      "earthy": 3
+    },
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48134.jpg",
+    "source": "fragrantica",
+    "source_url": "https://www.fragrantica.com/perfume/Hermes/Hermessence-Musc-Pallida-48134.html",
+    "sources": [
+      "fragrantica"
+    ]
+  }
+]

@@ -1,0 +1,2639 @@
+[
+  {
+    "brand": "Tom Ford",
+    "name": "Soleil Blanc Parfum",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 39000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 39000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-blanc-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TE9101_3000x3000_0.png?v=1777474607",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/soleil-blanc-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Oud Voyager Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-voyager-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-voyager-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-voyager-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 250,
+        "price_usd_cents": 89000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-voyager-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T2HB01_3000x3000_0.png?v=1777472482",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/oud-voyager-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Oud Wood Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-wood-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 7500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-wood-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-wood-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-wood-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 250,
+        "price_usd_cents": 89000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-wood-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T1XF01_2000x2000_0.png?v=1777477915",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/oud-wood-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Tobacco Vanille Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/tobacco-vanille-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 7500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/tobacco-vanille-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/tobacco-vanille-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 250,
+        "price_usd_cents": 89000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/tobacco-vanille-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T0CA01_2000x2000_0.png?v=1777459807",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/tobacco-vanille-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Ombré Leather Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ombre-leather-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ombre-leather-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 150,
+        "price_usd_cents": 28000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ombre-leather-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ombre-leather-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T5Y201_2000x2000_0.png?v=1777479611",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/ombre-leather-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Taormina Orange Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/taormina-orange-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/taormina-orange-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 7500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/taormina-orange-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T3Z501_3000x3000_0.png?v=1777476016",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/taormina-orange-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Neroli Portofino Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/neroli-portofino-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 7500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/neroli-portofino-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/neroli-portofino-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/neroli-portofino-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 250,
+        "price_usd_cents": 89000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/neroli-portofino-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T0M901_2000x2000_0.png?v=1777477912",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/neroli-portofino-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Lost Cherry Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 61500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 61500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/lost-cherry-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 9000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/lost-cherry-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 25500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/lost-cherry-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/lost-cherry-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T81201_2000x2000_0_b0465fd6-ce04-4f0c-a0a5-2c7e00484c4a.png?v=1777479611",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/lost-cherry-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Soleil Blanc Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-blanc-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 7500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-blanc-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-blanc-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 250,
+        "price_usd_cents": 89000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-blanc-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T40T01_2000x2000_0.png?v=1777474601",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/soleil-blanc-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Eau de Soleil Blanc Eau de Toilette",
+    "release_year": null,
+    "concentration": "edt",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 14000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 14000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/eau-de-soleil-blanc-eau-de-toilette"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 4500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/eau-de-soleil-blanc-eau-de-toilette"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 10000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/eau-de-soleil-blanc-eau-de-toilette"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 20000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/eau-de-soleil-blanc-eau-de-toilette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T06B01_3000x3000_0.png?v=1777467026",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/eau-de-soleil-blanc-eau-de-toilette",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Black Orchid Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 12500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 150,
+        "price_usd_cents": 28000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tfb_sku_T00501_2000x2000_0_e652350a-570d-4583-841b-e60db9a06583.png?v=1777468806",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Fucking Fabulous Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/fucking-fabulous-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 9000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/fucking-fabulous-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 25500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/fucking-fabulous-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 61500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/fucking-fabulous-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 250,
+        "price_usd_cents": 135000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/fucking-fabulous-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tfb_sku_T61501_2000x2000_0.png?v=1777472481",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/fucking-fabulous-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Vanilla Sex Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/vanilla-sex-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 9000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/vanilla-sex-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 25500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/vanilla-sex-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 61500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/vanilla-sex-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TCFC01_2000x2000_50.png?v=1777474603",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/vanilla-sex-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Figue Érotique Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/figue-erotique-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 25500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/figue-erotique-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 250,
+        "price_usd_cents": 135000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/figue-erotique-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T2KB01_3000x3000_0.png?v=1777411218",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/figue-erotique-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Soleil Neige Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-neige-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-neige-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 12500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-neige-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-neige-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T36D01_3000x3000_0.png?v=1777479615",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/soleil-neige-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Eau d’Ombré Leather Eau de Toilette",
+    "release_year": null,
+    "concentration": "edt",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 14000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 14000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/eau-dombre-leather-eau-de-toilette"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 4500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/eau-dombre-leather-eau-de-toilette"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 20000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/eau-dombre-leather-eau-de-toilette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TEF601_3000x3000_0.png?v=1777477927",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/eau-dombre-leather-eau-de-toilette",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Electric Cherry Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/electric-cherry-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 9000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/electric-cherry-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 25500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/electric-cherry-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 61500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/electric-cherry-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TCRN01_2000x2000_0.png?v=1777472479",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/electric-cherry-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Bitter Peach Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 25500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/bitter-peach-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/bitter-peach-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 9000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/bitter-peach-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T94101_2000x2000_0.png?v=1777479611",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/bitter-peach-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Bois Pacifique Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/bois-pacifique-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/bois-pacifique-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TEEX01_3000x3000_50.png?v=1777432850",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/bois-pacifique-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Ombré Leather Parfum",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 20500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ombre-leather-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 6700,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ombre-leather-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ombre-leather-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T9C801_2000x2000_0.png?v=1777398692",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/ombre-leather-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Oud Minérale Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-minerale-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-minerale-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-minerale-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TCWW01_2000x2000_0.png?v=1777461626",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/oud-minerale-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Mandarino di Amalfi Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/mandarino-di-amalfi-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T1Y501_2000x2000_0.png?v=1777363159",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/mandarino-di-amalfi-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Vanille Fatale Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/vanille-fatale-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 25500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/vanille-fatale-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TEA601_2000x2000_0.png?v=1777413668",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/vanille-fatale-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Oud Wood Parfum",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 39000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 39000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/oud-wood-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TAJK01_2000x2000_0.png?v=1777404052",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/oud-wood-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Ébène Fumé Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ebene-fume-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ebene-fume-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ebene-fume-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 7500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/ebene-fume-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T95P01_2000x2000_0.png?v=1777474601",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/ebene-fume-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Myrrhe Mystère Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/myrrhe-mystere-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/myrrhe-mystere-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/myrrhe-mystere-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TE9P01_2000x2000_0.png?v=1777472479",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/myrrhe-mystere-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Costa Azzurra Parfum",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/costa-azzurra-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TC6X01_2000x2000_0.png?v=1777363083",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/costa-azzurra-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "White Suede Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/white-suede-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 7500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/white-suede-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/white-suede-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/white-suede-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T77901_2000x2000_0.png?v=1777461625",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/white-suede-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Black Orchid Reserve Parfum",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 20500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-reserve-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-reserve-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 250,
+        "price_usd_cents": 89000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-reserve-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 48,
+        "price_usd_cents": 50000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-reserve-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T1Z101_3000x3000_0.png?v=1777476015",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/black-orchid-reserve-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Costa Azzurra Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/costa-azzurra-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/costa-azzurra-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T9AT01_2000x2000_0.png?v=1777472475",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/costa-azzurra-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Neroli Portofino Parfum",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 39000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 39000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/neroli-portofino-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TCXM01_2000x2000_0.png?v=1777363086",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/neroli-portofino-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Grey Vetiver Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/grey-vetiver-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/grey-vetiver-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T0J701_2000x2000_3.png?v=1777363099",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/grey-vetiver-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Amber Intrigue Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/amber-intrigue-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T0SD01_3000x3000_0.png?v=1777398692",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/amber-intrigue-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Black Orchid Discovery Collection ",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": null,
+    "prices": [],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T29B01_3000x3000_0.png?v=1777468807",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/black-orchid-discovery-collection",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Black Lacquer Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-lacquer-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 25500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-lacquer-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TAJP01_3000x3000_50.png?v=1777363097",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/black-lacquer-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Rose Exposed Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/rose-exposed-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/rose-exposed-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/rose-exposed-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T0KQ01_3000x3000_0_e448a77f-8418-49ec-acd9-b2346881e37a.png?v=1777363126",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/rose-exposed-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Noir de Noir Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/noir-de-noir-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/noir-de-noir-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T01H01_2000x2000_0_73505350-d49a-4e17-a082-04221e4ceb64.png?v=1777479611",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/noir-de-noir-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Bois Marocain Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/bois-marocain-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/bois-marocain-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TCAH01_2000x2000_0.png?v=1777363077",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/bois-marocain-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Tuscan Leather Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/tuscan-leather-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 44500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/tuscan-leather-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/tuscan-leather-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T00H01_2000x2000_0.png?v=1777477921",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/tuscan-leather-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Fucking Fabulous Parfum",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 53000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 53000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/fucking-fabulous-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TEKY01_3000x3000_0.png?v=1777363140",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/fucking-fabulous-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Café Rose Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/cafe-rose-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 5500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/cafe-rose-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 12500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/cafe-rose-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/cafe-rose-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TCY401_2000x2000_0.png?v=1777404063",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/cafe-rose-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Azure Lime Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/azure-lime-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TANP01_2000x2000_0.png?v=1777363081",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/azure-lime-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Soleil de Feu Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-de-feu-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/soleil-de-feu-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TCXJ01_2000x2000_0.png?v=1777465293",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/soleil-de-feu-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Velvet Orchid Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 24000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/velvet-orchid-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/velvet-orchid-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T1X401_2000x2000_0.png?v=1777398699",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/velvet-orchid-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Grey Vetiver Parfum",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/grey-vetiver-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 20500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/grey-vetiver-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tfb_sku_T9Y101_2000x2000_0.png?v=1777363147",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/grey-vetiver-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Black Orchid Parfum",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 20500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T90F01_2000x2000_0.png?v=1777468805",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/black-orchid-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Noir Extreme Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 16500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/noir-extreme-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 24000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/noir-extreme-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 150,
+        "price_usd_cents": 28000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/noir-extreme-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T2TL01_2000x2000_0.png?v=1777468807",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/noir-extreme-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Rose Prick Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/rose-prick-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 10,
+        "price_usd_cents": 9000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/rose-prick-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 25500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/rose-prick-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 61500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/rose-prick-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T8M101_2000x2000_0.png?v=1777467025",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/rose-prick-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Santal Blush Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 19500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/santal-blush-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/santal-blush-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TCRC01_2000x2000_0.png?v=1777477909",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/santal-blush-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Cherry Smoke Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 40500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 40500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/cherry-smoke-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 25500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/cherry-smoke-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TCRX01_2000x2000_3.png?v=1777479614",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/cherry-smoke-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Noir Extreme Parfum",
+    "release_year": null,
+    "concentration": "parfum",
+    "fragrance_family": null,
+    "gender": "masculine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 20500,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 20500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/noir-extreme-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/noir-extreme-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TC7A01_2000x2000_0.png?v=1777363139",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/noir-extreme-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Rose D'Amalfi Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/rose-damalfi-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 30,
+        "price_usd_cents": 16500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/rose-damalfi-eau-de-parfum"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 37500,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/rose-damalfi-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TAKH01_2000x2000_0.png?v=1777479611",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/rose-damalfi-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Fougère D'Argent Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": null,
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/fougere-dargent-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T6GX01_2000x2000_0.png?v=1777363097",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/fougere-dargent-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Black Orchid Eau de Toilette",
+    "release_year": null,
+    "concentration": "edt",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 14000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 14000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-toilette"
+      },
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 100,
+        "price_usd_cents": 20000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-toilette"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_TE6N01_2000x2000_0.png?v=1777477919",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-toilette",
+    "sources": [
+      "tomford"
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "name": "Jasmin Rouge Eau de Parfum",
+    "release_year": null,
+    "concentration": "edp",
+    "fragrance_family": null,
+    "gender": "feminine",
+    "top_notes": [],
+    "heart_notes": [],
+    "base_notes": [],
+    "top_accords": [],
+    "accord_intensity": {},
+    "community_longevity": null,
+    "community_sillage": null,
+    "community_projection": null,
+    "compliment_score": null,
+    "versatility_score": null,
+    "office_safe_score": null,
+    "price_tier": null,
+    "retail_msrp_usd_cents": 30000,
+    "prices": [
+      {
+        "retailer": "tomford-direct",
+        "size_ml": 50,
+        "price_usd_cents": 30000,
+        "is_decant": false,
+        "url": "https://www.tomfordbeauty.com/products/jasmin-rouge-eau-de-parfum"
+      }
+    ],
+    "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T0WT01_2000x2000_0.png?v=1777418408",
+    "source": "tomford",
+    "source_url": "https://www.tomfordbeauty.com/products/jasmin-rouge-eau-de-parfum",
+    "sources": [
+      "tomford"
+    ]
+  }
+]
