@@ -13,6 +13,8 @@ import Animated, {
   runOnJS,
   interpolate,
   Extrapolation,
+  useAnimatedReaction,
+  type SharedValue,
 } from 'react-native-reanimated';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
@@ -56,6 +58,24 @@ export default function TrainScreen() {
   const [stats, setStats] = useState<SessionStats>({ loved: 0, liked: 0, passed: 0 });
   const [genderFilter, setGenderFilter] = useState<GenderFilter>('all');
   const [lastAction, setLastAction] = useState<'pass' | 'like' | 'love' | null>(null);
+  const [liveDir, setLiveDir] = useState<'none' | 'left' | 'right' | 'down'>('none');
+
+  // Shared values written by SwipeCard during the gesture so buttons can
+  // react in real time without waiting for a commit.
+  const sharedDragX = useSharedValue(0);
+  const sharedDragY = useSharedValue(0);
+
+  useAnimatedReaction(
+    () => {
+      const x = sharedDragX.value;
+      const y = sharedDragY.value;
+      if (y > SWIPE_DOWN_THRESHOLD * 0.35) return 'down' as const;
+      if (x > SWIPE_THRESHOLD * 0.35) return 'right' as const;
+      if (x < -SWIPE_THRESHOLD * 0.35) return 'left' as const;
+      return 'none' as const;
+    },
+    (cur, prev) => { if (cur !== prev) runOnJS(setLiveDir)(cur); },
+  );
 
   const recordToStore = useSwipeStore((s) => s.record);
   const alreadySwiped = useSwipeStore((s) => s.swipes);
@@ -85,6 +105,9 @@ export default function TrainScreen() {
   const recordSwipe = useCallback((dir: 'left' | 'right' | 'down', fragrance?: MockFragrance) => {
     const action: 'pass' | 'like' | 'love' = dir === 'right' ? 'love' : dir === 'down' ? 'like' : 'pass';
     setLastAction(action);
+    setLiveDir('none');
+    sharedDragX.value = 0;
+    sharedDragY.value = 0;
     setTimeout(() => setLastAction(null), 450);
     setStats((s) => {
       if (dir === 'right') return { ...s, loved: s.loved + 1 };
@@ -151,21 +174,38 @@ export default function TrainScreen() {
                 key={deck[index].id}
                 fragrance={deck[index]}
                 onCommit={recordSwipe}
+                sharedDragX={sharedDragX}
+                sharedDragY={sharedDragY}
               />
             )}
 
             <View style={styles.actionRow}>
               <View style={styles.actionItem}>
-                <ActionButton tone="pass" onPress={() => recordSwipe('left', deck[index])} active={lastAction === 'pass'} />
-                <Text style={[styles.actionLabel, styles.actionLabelPass, lastAction === 'pass' && styles.actionLabelActive]}>Pass</Text>
+                <ActionButton
+                  tone="pass"
+                  onPress={() => recordSwipe('left', deck[index])}
+                  lit={liveDir === 'left' || lastAction === 'pass'}
+                  anyActive={liveDir !== 'none'}
+                />
+                <Text style={[styles.actionLabel, styles.actionLabelPass, (liveDir === 'left' || lastAction === 'pass') && styles.actionLabelLit, liveDir !== 'none' && liveDir !== 'left' && styles.actionLabelDim]}>Pass</Text>
               </View>
               <View style={styles.actionItem}>
-                <ActionButton tone="like" onPress={() => recordSwipe('down', deck[index])} active={lastAction === 'like'} />
-                <Text style={[styles.actionLabel, styles.actionLabelLike, lastAction === 'like' && styles.actionLabelActive]}>Like</Text>
+                <ActionButton
+                  tone="like"
+                  onPress={() => recordSwipe('down', deck[index])}
+                  lit={liveDir === 'down' || lastAction === 'like'}
+                  anyActive={liveDir !== 'none'}
+                />
+                <Text style={[styles.actionLabel, styles.actionLabelLike, (liveDir === 'down' || lastAction === 'like') && styles.actionLabelLit, liveDir !== 'none' && liveDir !== 'down' && styles.actionLabelDim]}>Like</Text>
               </View>
               <View style={styles.actionItem}>
-                <ActionButton tone="love" onPress={() => recordSwipe('right', deck[index])} active={lastAction === 'love'} />
-                <Text style={[styles.actionLabel, styles.actionLabelLove, lastAction === 'love' && styles.actionLabelActive]}>Love</Text>
+                <ActionButton
+                  tone="love"
+                  onPress={() => recordSwipe('right', deck[index])}
+                  lit={liveDir === 'right' || lastAction === 'love'}
+                  anyActive={liveDir !== 'none'}
+                />
+                <Text style={[styles.actionLabel, styles.actionLabelLove, (liveDir === 'right' || lastAction === 'love') && styles.actionLabelLit, liveDir !== 'none' && liveDir !== 'right' && styles.actionLabelDim]}>Love</Text>
               </View>
             </View>
             <Text style={styles.hint}>Swipe right to <Text style={styles.italic}>love</Text> · down to <Text style={styles.italic}>like</Text> · left to <Text style={styles.italic}>pass</Text></Text>
@@ -231,7 +271,12 @@ function DailyLimitReached({ onUpgrade, onBack }: { onUpgrade: () => void; onBac
   );
 }
 
-function SwipeCard({ fragrance, onCommit }: { fragrance: MockFragrance; onCommit: (dir: 'left' | 'right' | 'down', fragrance: MockFragrance) => void }) {
+function SwipeCard({ fragrance, onCommit, sharedDragX, sharedDragY }: {
+  fragrance: MockFragrance;
+  onCommit: (dir: 'left' | 'right' | 'down', fragrance: MockFragrance) => void;
+  sharedDragX: SharedValue<number>;
+  sharedDragY: SharedValue<number>;
+}) {
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
   const startX = useSharedValue(0);
@@ -244,9 +289,11 @@ function SwipeCard({ fragrance, onCommit }: { fragrance: MockFragrance; onCommit
     })
     .onUpdate((e) => {
       translateX.value = startX.value + e.translationX;
-      // Allow down swipes freely; dampen upward drags so the card feels anchored.
       const yDamp = e.translationY > 0 ? 0.9 : 0.3;
       translateY.value = startY.value + e.translationY * yDamp;
+      // Write to shared parent values so buttons can react live.
+      sharedDragX.value = translateX.value;
+      sharedDragY.value = translateY.value;
     })
     .onEnd((e) => {
       // Down swipe takes priority when dragging mostly downward.
@@ -271,6 +318,8 @@ function SwipeCard({ fragrance, onCommit }: { fragrance: MockFragrance; onCommit
       } else {
         translateX.value = withSpring(0, { damping: 14, stiffness: 140 });
         translateY.value = withSpring(0, { damping: 14, stiffness: 140 });
+        sharedDragX.value = withSpring(0, { damping: 14, stiffness: 140 });
+        sharedDragY.value = withSpring(0, { damping: 14, stiffness: 140 });
       }
     });
 
@@ -354,33 +403,46 @@ function BackgroundCard({ fragrance }: { fragrance: MockFragrance }) {
   );
 }
 
-function ActionButton({ tone, onPress, active = false }: { tone: 'pass' | 'like' | 'love'; onPress: () => void; active?: boolean }) {
+function ActionButton({ tone, onPress, lit = false, anyActive = false }: {
+  tone: 'pass' | 'like' | 'love';
+  onPress: () => void;
+  lit?: boolean;
+  anyActive?: boolean;
+}) {
+  // Greyed out when dragging in a different direction; lit when matching direction.
+  const dimmed = anyActive && !lit;
   const config = {
     pass: {
       icon: 'close' as const,
       baseStyle: styles.actionPass,
-      activeStyle: styles.actionPassActive,
-      color: active ? COLORS.white : COLORS.danger,
+      litStyle: styles.actionPassActive,
+      color: lit ? COLORS.white : dimmed ? COLORS.subtle : COLORS.danger,
     },
     like: {
       icon: 'bookmark-outline' as const,
       baseStyle: styles.actionLike,
-      activeStyle: styles.actionLikeActive,
-      color: active ? COLORS.white : LIKE_COLOR,
+      litStyle: styles.actionLikeActive,
+      color: lit ? COLORS.white : dimmed ? COLORS.subtle : LIKE_COLOR,
     },
     love: {
       icon: 'heart' as const,
       baseStyle: styles.actionLove,
-      activeStyle: styles.actionLoveActive,
+      litStyle: styles.actionLoveActive,
       color: COLORS.white,
     },
   }[tone];
   return (
     <Pressable
       onPress={onPress}
-      style={[styles.actionBtn, config.baseStyle, active && config.activeStyle, active && styles.actionBtnActive]}
+      style={[
+        styles.actionBtn,
+        config.baseStyle,
+        lit && config.litStyle,
+        lit && styles.actionBtnLit,
+        dimmed && styles.actionBtnDimmed,
+      ]}
     >
-      <Ionicons name={config.icon} size={active ? 30 : 26} color={config.color} />
+      <Ionicons name={config.icon} size={lit ? 30 : 26} color={config.color} />
     </Pressable>
   );
 }
@@ -546,7 +608,8 @@ const styles = StyleSheet.create({
   actionLabelPass: { color: COLORS.danger },
   actionLabelLike: { color: LIKE_COLOR },
   actionLabelLove: { color: COLORS.accent },
-  actionLabelActive: { opacity: 1 },
+  actionLabelLit: { opacity: 1 },
+  actionLabelDim: { opacity: 0.25 },
   actionBtn: {
     width: 60, height: 60, borderRadius: 30,
     alignItems: 'center', justifyContent: 'center',
@@ -554,7 +617,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.12, shadowRadius: 8, shadowOffset: { width: 0, height: 4 },
     elevation: 4,
   },
-  actionBtnActive: { transform: [{ scale: 1.14 }] },
+  actionBtnLit: { transform: [{ scale: 1.14 }] },
+  actionBtnDimmed: { opacity: 0.28 },
   actionPass: { backgroundColor: COLORS.card, borderWidth: 1, borderColor: COLORS.border },
   actionPassActive: { backgroundColor: COLORS.danger, borderColor: COLORS.danger },
   actionLike: { backgroundColor: COLORS.card, borderWidth: 1.5, borderColor: LIKE_COLOR },
