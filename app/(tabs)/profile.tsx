@@ -22,6 +22,8 @@ import type { User } from '@supabase/supabase-js';
 export default function ProfileScreen() {
   const router = useRouter();
   const isPro = useProStore((s) => s.isPro);
+  const activate = useProStore((s) => s.activate);
+  const deactivate = useProStore((s) => s.deactivate);
   const photoUri = useProfileStore((s) => s.photoUri);
   const monogram = useProfileStore((s) => s.getMonogram());
   const displayName = useProfileStore((s) => s.displayName);
@@ -128,6 +130,15 @@ export default function ProfileScreen() {
           <Row label="Privacy Policy" onPress={() => router.push('/legal/privacy')} />
           <Row label="Terms of Service" onPress={() => router.push('/legal/terms')} />
         </Section>
+
+        {__DEV__ && (
+          <Section title="Dev Tools">
+            <Row
+              label={isPro ? '✓ Pro active — tap to revoke' : 'Simulate Pro purchase'}
+              onPress={isPro ? deactivate : activate}
+            />
+          </Section>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
