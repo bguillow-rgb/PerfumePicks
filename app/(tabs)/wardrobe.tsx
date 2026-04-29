@@ -1,7 +1,7 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useCallback } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
+import { useRouter, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { MlMeter } from '@/src/components/fragrance/MlMeter';
@@ -32,6 +32,9 @@ interface WardrobeItemView {
 export default function WardrobeScreen() {
   const router = useRouter();
   const [activeFilter, setActiveFilter] = useState<ActiveFilter>('all');
+
+  // Always open on "All" when navigating to this tab.
+  useFocusEffect(useCallback(() => { setActiveFilter('all'); }, []));
 
   const storeItems = useWardrobeStore((s) => s.items);
   const addToStore = useWardrobeStore((s) => s.add);
