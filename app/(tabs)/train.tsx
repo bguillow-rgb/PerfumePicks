@@ -55,6 +55,7 @@ export default function TrainScreen() {
   const [index, setIndex] = useState(0);
   const [stats, setStats] = useState<SessionStats>({ loved: 0, liked: 0, passed: 0 });
   const [genderFilter, setGenderFilter] = useState<GenderFilter>('all');
+  const [lastAction, setLastAction] = useState<'pass' | 'like' | 'love' | null>(null);
 
   const recordToStore = useSwipeStore((s) => s.record);
   const alreadySwiped = useSwipeStore((s) => s.swipes);
@@ -82,6 +83,9 @@ export default function TrainScreen() {
   }, [started, genderFilter]);
 
   const recordSwipe = useCallback((dir: 'left' | 'right' | 'down', fragrance?: MockFragrance) => {
+    const action: 'pass' | 'like' | 'love' = dir === 'right' ? 'love' : dir === 'down' ? 'like' : 'pass';
+    setLastAction(action);
+    setTimeout(() => setLastAction(null), 450);
     setStats((s) => {
       if (dir === 'right') return { ...s, loved: s.loved + 1 };
       if (dir === 'down')  return { ...s, liked: s.liked + 1 };
@@ -91,11 +95,9 @@ export default function TrainScreen() {
     Haptics.impactAsync(
       dir === 'right' ? Haptics.ImpactFeedbackStyle.Medium : Haptics.ImpactFeedbackStyle.Light,
     );
-    // Persist to the swipe store so the recommendation engine on Today
-    // immediately reflects this signal.
     if (fragrance) {
-      const action = dir === 'right' ? 'love' : dir === 'down' ? 'like' : 'dislike';
-      recordToStore(fragrance.id, action);
+      const storeAction = dir === 'right' ? 'love' : dir === 'down' ? 'like' : 'dislike';
+      recordToStore(fragrance.id, storeAction);
     }
   }, [recordToStore]);
 
@@ -154,16 +156,16 @@ export default function TrainScreen() {
 
             <View style={styles.actionRow}>
               <View style={styles.actionItem}>
-                <ActionButton tone="pass" onPress={() => recordSwipe('left', deck[index])} />
-                <Text style={styles.actionLabel}>Pass</Text>
+                <ActionButton tone="pass" onPress={() => recordSwipe('left', deck[index])} active={lastAction === 'pass'} />
+                <Text style={[styles.actionLabel, styles.actionLabelPass, lastAction === 'pass' && styles.actionLabelActive]}>Pass</Text>
               </View>
               <View style={styles.actionItem}>
-                <ActionButton tone="like" onPress={() => recordSwipe('down', deck[index])} />
-                <Text style={styles.actionLabel}>Like</Text>
+                <ActionButton tone="like" onPress={() => recordSwipe('down', deck[index])} active={lastAction === 'like'} />
+                <Text style={[styles.actionLabel, styles.actionLabelLike, lastAction === 'like' && styles.actionLabelActive]}>Like</Text>
               </View>
               <View style={styles.actionItem}>
-                <ActionButton tone="love" onPress={() => recordSwipe('right', deck[index])} />
-                <Text style={styles.actionLabel}>Love</Text>
+                <ActionButton tone="love" onPress={() => recordSwipe('right', deck[index])} active={lastAction === 'love'} />
+                <Text style={[styles.actionLabel, styles.actionLabelLove, lastAction === 'love' && styles.actionLabelActive]}>Love</Text>
               </View>
             </View>
             <Text style={styles.hint}>Swipe right to <Text style={styles.italic}>love</Text> · down to <Text style={styles.italic}>like</Text> · left to <Text style={styles.italic}>pass</Text></Text>
@@ -352,15 +354,33 @@ function BackgroundCard({ fragrance }: { fragrance: MockFragrance }) {
   );
 }
 
-function ActionButton({ tone, onPress }: { tone: 'pass' | 'like' | 'love'; onPress: () => void }) {
+function ActionButton({ tone, onPress, active = false }: { tone: 'pass' | 'like' | 'love'; onPress: () => void; active?: boolean }) {
   const config = {
-    pass: { icon: 'close' as const,          style: styles.actionPass, color: COLORS.muted },
-    like: { icon: 'bookmark-outline' as const, style: styles.actionLike, color: LIKE_COLOR },
-    love: { icon: 'heart' as const,           style: styles.actionLove, color: COLORS.white },
+    pass: {
+      icon: 'close' as const,
+      baseStyle: styles.actionPass,
+      activeStyle: styles.actionPassActive,
+      color: active ? COLORS.white : COLORS.danger,
+    },
+    like: {
+      icon: 'bookmark-outline' as const,
+      baseStyle: styles.actionLike,
+      activeStyle: styles.actionLikeActive,
+      color: active ? COLORS.white : LIKE_COLOR,
+    },
+    love: {
+      icon: 'heart' as const,
+      baseStyle: styles.actionLove,
+      activeStyle: styles.actionLoveActive,
+      color: COLORS.white,
+    },
   }[tone];
   return (
-    <Pressable onPress={onPress} style={[styles.actionBtn, config.style]}>
-      <Ionicons name={config.icon} size={26} color={config.color} />
+    <Pressable
+      onPress={onPress}
+      style={[styles.actionBtn, config.baseStyle, active && config.activeStyle, active && styles.actionBtnActive]}
+    >
+      <Ionicons name={config.icon} size={active ? 30 : 26} color={config.color} />
     </Pressable>
   );
 }
@@ -518,8 +538,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 20,
   },
-  actionItem: { alignItems: 'center', gap: 6 },
-  actionLabel: { ...TYPE.caption, color: COLORS.muted, letterSpacing: 0.5 },
+  actionItem: { alignItems: 'center', gap: 8 },
+  actionLabel: {
+    fontSize: 13, fontWeight: '700', letterSpacing: 1,
+    textTransform: 'uppercase',
+  },
+  actionLabelPass: { color: COLORS.danger },
+  actionLabelLike: { color: LIKE_COLOR },
+  actionLabelLove: { color: COLORS.accent },
+  actionLabelActive: { opacity: 1 },
   actionBtn: {
     width: 60, height: 60, borderRadius: 30,
     alignItems: 'center', justifyContent: 'center',
@@ -527,9 +554,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.12, shadowRadius: 8, shadowOffset: { width: 0, height: 4 },
     elevation: 4,
   },
+  actionBtnActive: { transform: [{ scale: 1.14 }] },
   actionPass: { backgroundColor: COLORS.card, borderWidth: 1, borderColor: COLORS.border },
+  actionPassActive: { backgroundColor: COLORS.danger, borderColor: COLORS.danger },
   actionLike: { backgroundColor: COLORS.card, borderWidth: 1.5, borderColor: LIKE_COLOR },
+  actionLikeActive: { backgroundColor: LIKE_COLOR, borderColor: LIKE_COLOR },
   actionLove: { backgroundColor: COLORS.accent },
+  actionLoveActive: { backgroundColor: COLORS.accent, shadowOpacity: 0.35, shadowRadius: 14 },
   hint: {
     position: 'absolute', bottom: 56,
     ...TYPE.caption, color: COLORS.muted,
