@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable, Image, Dimensions, Alert } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -62,10 +62,28 @@ export default function FragranceDetailScreen() {
   }, [openLogWear]);
 
   // Live state from the persisted stores so the CTAs reflect reality.
-  const inWardrobe = useWardrobeStore((s) => fragrance ? s.getByFragrance(fragrance.id) : undefined);
-  const wearLogs = useWearLogStore((s) => fragrance ? s.forFragrance(fragrance.id) : []);
+  // Read raw arrays/maps (stable Zustand references) and derive inside useMemo
+  // — calling store methods like forFragrance() inside a selector returns a new
+  // array every render and causes infinite re-render loops.
+  const wardrobeItems = useWardrobeStore((s) => s.items);
+  const allLogs = useWearLogStore((s) => s.logs);
   const removeLog = useWearLogStore((s) => s.remove);
-  const fragranceNote = useFragranceNotesStore((s) => fragrance ? s.get(fragrance.id) : null);
+  const allNotes = useFragranceNotesStore((s) => s.notes);
+
+  const inWardrobe = useMemo(
+    () => fragrance ? wardrobeItems.find((i) => i.fragrance_id === fragrance.id) : undefined,
+    [wardrobeItems, fragrance],
+  );
+  const wearLogs = useMemo(
+    () => fragrance
+      ? allLogs.filter((l) => l.fragrance_id === fragrance.id).sort((a, b) => b.worn_on.localeCompare(a.worn_on))
+      : [],
+    [allLogs, fragrance],
+  );
+  const fragranceNote = useMemo(
+    () => fragrance ? (allNotes[fragrance.id] ?? null) : null,
+    [allNotes, fragrance],
+  );
 
   const handleWearLogLongPress = (log: WearLog) => {
     Alert.alert(prettyWearDate(log.worn_on), 'What would you like to do?', [
