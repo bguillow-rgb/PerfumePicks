@@ -256,10 +256,11 @@ function statusTextStyle(s: Status): any {
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.bg },
   headerWrap: {
-    paddingHorizontal: SPACING.lg,
+    paddingLeft: SPACING.lg,
+    paddingRight: SPACING.lg,
     paddingTop: SPACING.md,
     flexDirection: 'row',
-    alignItems: 'flex-end',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
   },
   title: { ...TYPE.displayLarge },
@@ -271,7 +272,7 @@ const styles = StyleSheet.create({
     alignItems: 'center', justifyContent: 'center',
   },
   pillRowOuter: { flexGrow: 0 },
-  pillRow: { paddingHorizontal: SPACING.lg, paddingVertical: SPACING.md },
+  pillRow: { paddingHorizontal: SPACING.lg, paddingVertical: SPACING.md, paddingRight: SPACING.xl },
   pill: {
     paddingHorizontal: 14,
     paddingVertical: 7,
@@ -281,9 +282,9 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.card,
     marginRight: 8,
   },
-  pillActive: { backgroundColor: COLORS.text, borderColor: COLORS.text },
+  pillActive: { backgroundColor: COLORS.accent, borderColor: COLORS.accent },
   pillText: { ...TYPE.label, color: COLORS.muted, fontSize: 13 },
-  pillTextActive: { color: COLORS.bg },
+  pillTextActive: { color: COLORS.white },
   container: { paddingBottom: SPACING.xxl },
   lowSection: {
     paddingHorizontal: SPACING.lg,
