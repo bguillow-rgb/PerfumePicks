@@ -175,13 +175,22 @@ export default function WardrobeScreen() {
         contentContainerStyle={styles.pillRow}
         style={styles.pillRowOuter}
       >
-        {PILLS.map((p) => (
-          <Pressable key={p.id} onPress={() => setActiveFilter(p.id)}>
-            <View style={[styles.pill, activeFilter === p.id && styles.pillActive]}>
-              <Text style={[styles.pillText, activeFilter === p.id && styles.pillTextActive]}>{p.label}</Text>
-            </View>
-          </Pressable>
-        ))}
+        {PILLS.map((p) => {
+          const active = activeFilter === p.id;
+          return (
+            <Pressable key={p.id} onPress={() => setActiveFilter(p.id)}>
+              <View style={[styles.pill, active && styles.pillActive]}>
+                <Text style={{
+                  fontFamily: 'Helvetica Neue',
+                  fontSize: 13,
+                  fontWeight: '600',
+                  letterSpacing: 0.3,
+                  color: active ? '#FFFFFF' : '#2A1F18',
+                }}>{p.label}</Text>
+              </View>
+            </Pressable>
+          );
+        })}
       </ScrollView>
 
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
