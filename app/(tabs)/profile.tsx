@@ -1,11 +1,14 @@
-import { ScrollView, View, Text, StyleSheet, Pressable, Image } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
+import { useState, useEffect } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
 import { useProfileStore } from '@/src/stores/useProfileStore';
 import { pickAndSetProfilePhoto, clearProfilePhoto } from '@/src/lib/profilePhoto';
+import { supabase } from '@/lib/supabase';
+import type { User } from '@supabase/supabase-js';
 
 /**
  * Profile tab — account, taste profile, settings, paywall entry.
@@ -23,12 +26,47 @@ export default function ProfileScreen() {
   const monogram = useProfileStore((s) => s.getMonogram());
   const displayName = useProfileStore((s) => s.displayName);
 
+  const [authUser, setAuthUser] = useState<User | null>(null);
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => setAuthUser(data.user));
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      setAuthUser(session?.user ?? null);
+    });
+    return () => sub.subscription.unsubscribe();
+  }, []);
+
+  const isGuest = !authUser || authUser.is_anonymous;
+  const userEmail = authUser?.email ?? null;
+  // Prefer user metadata name, then local displayName, then nothing
+  const userName = (authUser?.user_metadata?.full_name as string | undefined)
+    ?? (displayName.trim().length > 0 ? displayName : null);
+
+  const handleSignOut = () => {
+    Alert.alert('Sign Out', 'Are you sure you want to sign out?', [
+      { text: 'Cancel', style: 'cancel' },
+      {
+        text: 'Sign Out', style: 'destructive', onPress: async () => {
+          await supabase.auth.signOut();
+          router.replace('/auth/login');
+        },
+      },
+    ]);
+  };
+
   const handleChangePhoto = async () => {
     try {
-      await pickAndSetProfilePhoto();
-    } catch (e) {
-      // Picker errors fail silently — most often it's "permission denied"
-      // and the system already showed the user a settings prompt.
+      const result = await pickAndSetProfilePhoto();
+      if (result === null) {
+        // null means the picker returned without a photo — most likely a
+        // permission denial. Alert the user so they know what happened.
+        Alert.alert(
+          'Photo Access Needed',
+          'To add a profile photo, allow Perfume Picks to access your photo library in Settings.',
+          [{ text: 'OK' }],
+        );
+      }
+    } catch {
+      // Unexpected error — fail silently, picker already handled its own errors.
     }
   };
 
@@ -60,8 +98,10 @@ export default function ProfileScreen() {
           <Text style={styles.editPhotoHint}>
             {photoUri ? 'Tap to change · Hold to remove' : 'Tap to add a photo'}
           </Text>
-          <Text style={styles.name}>{displayName}</Text>
-          <Text style={styles.email}>Sign in to sync your wardrobe</Text>
+          {userName ? <Text style={styles.name}>{userName}</Text> : null}
+          <Text style={styles.email}>
+            {userEmail ?? (isGuest ? 'Sign in to sync your wardrobe' : '')}
+          </Text>
           {isPro ? (
             <View style={styles.proBadge}>
               <Text style={styles.proBadgeText}>PERFUME PICKS PRO</Text>
@@ -79,8 +119,9 @@ export default function ProfileScreen() {
         </Section>
 
         <Section title="Account">
-          <Row label="Sign in" onPress={() => router.push('/auth/login')} />
+          {isGuest && <Row label="Sign in" onPress={() => router.push('/auth/login')} />}
           <Row label="Subscription" onPress={() => router.push('/paywall')} />
+          {!isGuest && <Row label="Sign Out" onPress={handleSignOut} danger />}
         </Section>
 
         <Section title="About">
@@ -102,16 +143,22 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 function Row({
-  label, onPress, pro, disabled,
-}: { label: string; onPress?: () => void; pro?: boolean; disabled?: boolean }) {
+  label, onPress, pro, disabled, danger,
+}: { label: string; onPress?: () => void; pro?: boolean; disabled?: boolean; danger?: boolean }) {
+  const router = useRouter();
+  // Disabled Pro rows still navigate to the paywall — tapping locked content
+  // is the highest-intent conversion moment.
+  const handlePress = disabled && pro
+    ? () => router.push('/paywall')
+    : disabled ? undefined : onPress;
   return (
     <Pressable
       style={[styles.row, disabled && styles.rowDisabled]}
-      onPress={disabled ? undefined : onPress}
+      onPress={handlePress}
     >
-      <Text style={[styles.rowLabel, disabled && styles.rowLabelDisabled]}>{label}</Text>
+      <Text style={[styles.rowLabel, disabled && styles.rowLabelDisabled, danger && styles.rowLabelDanger]}>{label}</Text>
       {pro && <Text style={styles.proPill}>PRO</Text>}
-      <Ionicons name="chevron-forward" size={18} color={COLORS.muted} />
+      {!danger && <Ionicons name="chevron-forward" size={18} color={COLORS.muted} />}
     </Pressable>
   );
 }
@@ -198,6 +245,7 @@ const styles = StyleSheet.create({
   rowDisabled: { opacity: 0.5 },
   rowLabel: { ...TYPE.body, flex: 1 },
   rowLabelDisabled: { color: COLORS.subtle },
+  rowLabelDanger: { color: COLORS.danger },
   proPill: {
     ...TYPE.eyebrow,
     fontSize: 10,

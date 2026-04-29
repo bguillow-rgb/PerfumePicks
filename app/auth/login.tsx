@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Platform, Pressable } from 'react-native';
 import { Alert } from '@/src/components/ui/StyledAlert';
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useState, useEffect } from 'react';
 import * as AppleAuthentication from 'expo-apple-authentication';
@@ -44,6 +44,7 @@ export default function LoginScreen() {
   const insets = useSafeAreaInsets();
   const [loading, setLoading] = useState(false);
   const activatePro = useProStore((s) => s.activate);
+  const { returnTo } = useLocalSearchParams<{ returnTo?: string }>();
 
   // Comp Pro for owner/demo accounts after a successful sign-in. The allowlist
   // lives in the comped_users table (migration 013) and is opaque to the
@@ -62,7 +63,11 @@ export default function LoginScreen() {
 
   const goHome = async () => {
     await maybeCompPro();
-    router.replace('/(tabs)');
+    if (returnTo) {
+      router.replace(returnTo as any);
+    } else {
+      router.replace('/(tabs)');
+    }
   };
 
   // ── Google Sign-In (native SDK) ──
@@ -74,9 +79,14 @@ export default function LoginScreen() {
       );
       return;
     }
+    // Hoist statusCodes above the try block so the catch closure has a stable
+    // reference without needing to re-call loadGoogleSignIn() (which can throw).
+    let statusCodes: Record<string, string> = {};
     try {
       setLoading(true);
-      const { GoogleSignin, statusCodes } = loadGoogleSignIn();
+      const lib = loadGoogleSignIn();
+      statusCodes = lib.statusCodes;
+      const { GoogleSignin } = lib;
       await GoogleSignin.hasPlayServices();
 
       // Native Google sign-in: nonce checks skipped in Supabase config.
@@ -95,9 +105,8 @@ export default function LoginScreen() {
       if (error) throw error;
       goHome();
     } catch (e: any) {
-      const codes = (() => { try { return loadGoogleSignIn().statusCodes; } catch { return {}; } })();
-      if (e?.code === codes.SIGN_IN_CANCELLED) return;
-      if (e?.code === codes.IN_PROGRESS) return;
+      if (e?.code === statusCodes?.SIGN_IN_CANCELLED) return;
+      if (e?.code === statusCodes?.IN_PROGRESS) return;
       Alert.alert('Google Sign-In Error', e?.message ?? 'Unknown error');
     } finally {
       setLoading(false);
@@ -114,7 +123,9 @@ export default function LoginScreen() {
     try {
       setLoading(true);
 
-      const rawNonce = Math.random().toString(36).substring(2) + Date.now().toString(36);
+      const randomBytes = new Uint8Array(16);
+      Crypto.getRandomValues(randomBytes);
+      const rawNonce = Array.from(randomBytes, (b) => b.toString(16).padStart(2, '0')).join('');
       const hashedNonce = await Crypto.digestStringAsync(
         Crypto.CryptoDigestAlgorithm.SHA256,
         rawNonce

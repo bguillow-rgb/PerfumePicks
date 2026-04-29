@@ -1,3 +1,4 @@
+import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -13,9 +14,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 interface ProfileState {
   photoUri: string | null;
   displayName: string;
+  /** True once the "back up your wardrobe" upsell has been shown to a guest. */
+  hasSeenSyncUpsell: boolean;
   setPhotoUri: (uri: string | null) => void;
   setDisplayName: (name: string) => void;
-  /** Returns the 1-char monogram derived from displayName (or "B" fallback). */
+  markSyncUpsellSeen: () => void;
+  /** Returns the 1-char monogram derived from displayName (or "?" fallback). */
   getMonogram: () => string;
 }
 
@@ -23,19 +27,21 @@ export const useProfileStore = create<ProfileState>()(
   persist(
     (set, get) => ({
       photoUri: null,
-      displayName: 'Bob',
+      displayName: '',
+      hasSeenSyncUpsell: false,
       setPhotoUri: (uri) => set({ photoUri: uri }),
       setDisplayName: (name) => set({ displayName: name }),
+      markSyncUpsellSeen: () => set({ hasSeenSyncUpsell: true }),
       getMonogram: () => {
         const name = get().displayName.trim();
-        return name.length > 0 ? name[0].toUpperCase() : 'B';
+        return name.length > 0 ? name[0].toUpperCase() : '?';
       },
     }),
     {
-      name: 'perfumepicks-profile',
+      name: STORAGE_KEYS.profile,
       storage: createJSONStorage(() => AsyncStorage),
       // Only persist serializable fields.
-      partialize: (s) => ({ photoUri: s.photoUri, displayName: s.displayName }),
+      partialize: (s) => ({ photoUri: s.photoUri, displayName: s.displayName, hasSeenSyncUpsell: s.hasSeenSyncUpsell }),
     },
   ),
 );

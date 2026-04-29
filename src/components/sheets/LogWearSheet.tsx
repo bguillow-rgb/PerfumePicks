@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   View, Text, StyleSheet, Modal, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform,
 } from 'react-native';
@@ -6,13 +6,15 @@ import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import {
-  useWearLogStore, type Occasion, type Weather,
+  useWearLogStore, type Occasion, type Weather, type WearLog,
 } from '@/src/stores/useWearLogStore';
 import type { MockFragrance } from '@/src/mock/fragrances';
 
 interface Props {
   visible: boolean;
   fragrance: MockFragrance | null;
+  /** When provided, the sheet opens in edit mode pre-populated with this entry. */
+  editLog?: WearLog | null;
   onClose: () => void;
   onSaved?: (id: string) => void;
 }
@@ -41,29 +43,59 @@ const WEATHERS: { id: Weather; label: string; icon: keyof typeof Ionicons.glyphM
  * event for the recommendation engine + the wardrobe analytics. Date
  * defaults to today; everything else is optional.
  */
-export function LogWearSheet({ visible, fragrance, onClose, onSaved }: Props) {
+export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: Props) {
   const add = useWearLogStore((s) => s.add);
+  const update = useWearLogStore((s) => s.update);
+  const isEditing = !!editLog;
+
   const [occasion, setOccasion] = useState<Occasion | null>(null);
   const [weather, setWeather] = useState<Weather | null>(null);
   const [rating, setRating] = useState<number>(0);
   const [wearAgain, setWearAgain] = useState<boolean | null>(null);
   const [note, setNote] = useState('');
+  const [wornOn, setWornOn] = useState(new Date().toLocaleDateString('en-CA'));
+
+  // Reset or pre-populate when sheet opens.
+  useEffect(() => {
+    if (!visible) return;
+    if (editLog) {
+      setOccasion(editLog.occasion ?? null);
+      setWeather(editLog.weather ?? null);
+      setRating(editLog.rating ?? 0);
+      setWearAgain(editLog.would_wear_again ?? null);
+      setNote(editLog.note ?? '');
+      setWornOn(editLog.worn_on);
+    } else {
+      setOccasion(null);
+      setWeather(null);
+      setRating(0);
+      setWearAgain(null);
+      setNote('');
+      setWornOn(new Date().toLocaleDateString('en-CA'));
+    }
+  }, [visible, editLog]);
+
+  // Validate the date field — only accept YYYY-MM-DD strings.
+  const dateValid = /^\d{4}-\d{2}-\d{2}$/.test(wornOn);
 
   const handleSave = () => {
     if (!fragrance) return;
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    const id = add({
-      fragrance_id: fragrance.id,
-      worn_on: new Date().toISOString().slice(0, 10),
+    const patch = {
+      worn_on: wornOn,
       occasion,
       weather,
       rating: rating > 0 ? rating : null,
       would_wear_again: wearAgain,
       note: note.trim().length > 0 ? note.trim() : null,
-    });
-    onSaved?.(id);
-    // Reset for next time
-    setOccasion(null); setWeather(null); setRating(0); setWearAgain(null); setNote('');
+    };
+    if (isEditing && editLog) {
+      update(editLog.id, patch);
+      onSaved?.(editLog.id);
+    } else {
+      const id = add({ fragrance_id: fragrance.id, ...patch });
+      onSaved?.(id);
+    }
     onClose();
   };
 
@@ -80,13 +112,34 @@ export function LogWearSheet({ visible, fragrance, onClose, onSaved }: Props) {
           <View style={styles.handle} />
 
           <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false}>
-            <Text style={styles.eyebrow}>LOG A WEAR</Text>
-            <Text style={styles.cursive}>today's scent</Text>
+            <Text style={styles.eyebrow}>{isEditing ? 'EDIT WEAR' : 'LOG A WEAR'}</Text>
+            <Text style={styles.cursive}>{isEditing ? 'update entry' : "today's scent"}</Text>
             <Text style={styles.fragName}>{fragrance.name}</Text>
             <Text style={styles.fragBrand}>{fragrance.brand}</Text>
 
+            {/* Date */}
+            <Section label="Date worn">
+              <View style={styles.dateRow}>
+                <TextInput
+                  value={wornOn}
+                  onChangeText={setWornOn}
+                  placeholder="YYYY-MM-DD"
+                  placeholderTextColor={COLORS.subtle}
+                  keyboardType="numbers-and-punctuation"
+                  maxLength={10}
+                  style={[styles.dateInput, !dateValid && styles.dateInputError]}
+                />
+                <Pressable onPress={() => setWornOn(new Date().toLocaleDateString('en-CA'))} style={styles.dateTodayBtn}>
+                  <Text style={styles.dateTodayText}>Today</Text>
+                </Pressable>
+              </View>
+              {!dateValid && (
+                <Text style={styles.dateError}>Use YYYY-MM-DD format (e.g. 2025-04-27)</Text>
+              )}
+            </Section>
+
             {/* Rating */}
-            <Section label="How did it wear?">
+            <Section label="How did it wear? (optional)">
               <View style={styles.starsRow}>
                 {[1, 2, 3, 4, 5].map((n) => (
                   <Pressable
@@ -102,6 +155,11 @@ export function LogWearSheet({ visible, fragrance, onClose, onSaved }: Props) {
                   </Pressable>
                 ))}
               </View>
+              {rating === 0 && (
+                <Text style={{ ...TYPE.caption, textAlign: 'center', marginTop: 6, fontStyle: 'italic' }}>
+                  Tap a star to rate
+                </Text>
+              )}
             </Section>
 
             {/* Occasion */}
@@ -171,6 +229,7 @@ export function LogWearSheet({ visible, fragrance, onClose, onSaved }: Props) {
                 placeholder="A few words on how it felt today..."
                 placeholderTextColor={COLORS.subtle}
                 multiline
+                maxLength={500}
                 style={styles.noteInput}
               />
             </Section>
@@ -181,9 +240,9 @@ export function LogWearSheet({ visible, fragrance, onClose, onSaved }: Props) {
             <Pressable onPress={onClose} style={styles.cancelBtn}>
               <Text style={styles.cancelText}>Cancel</Text>
             </Pressable>
-            <Pressable onPress={handleSave} style={styles.saveBtn}>
-              <Ionicons name="bookmark" size={16} color={COLORS.white} style={{ marginRight: 6 }} />
-              <Text style={styles.saveText}>Save Wear</Text>
+            <Pressable onPress={handleSave} disabled={!dateValid} style={[styles.saveBtn, !dateValid && { opacity: 0.4 }]}>
+              <Ionicons name={isEditing ? 'checkmark' : 'bookmark'} size={16} color={COLORS.white} style={{ marginRight: 6 }} />
+              <Text style={styles.saveText}>{isEditing ? 'Update Wear' : 'Save Wear'}</Text>
             </Pressable>
           </View>
         </View>
@@ -263,6 +322,22 @@ const styles = StyleSheet.create({
   binaryBtnNo:  { backgroundColor: COLORS.danger,  borderColor: COLORS.danger },
   binaryText: { ...TYPE.label, color: COLORS.muted },
 
+  dateRow: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm },
+  dateInput: {
+    flex: 1, ...TYPE.body,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingHorizontal: 14, paddingVertical: 12,
+  },
+  dateInputError: { borderColor: COLORS.danger },
+  dateTodayBtn: {
+    paddingHorizontal: 14, paddingVertical: 12,
+    borderRadius: RADIUS.md,
+    borderWidth: 1, borderColor: COLORS.accent,
+  },
+  dateTodayText: { ...TYPE.label, color: COLORS.accent, fontSize: 12 },
+  dateError: { ...TYPE.caption, color: COLORS.danger, marginTop: 4, fontStyle: 'italic' },
   noteInput: {
     ...TYPE.body,
     backgroundColor: COLORS.card,

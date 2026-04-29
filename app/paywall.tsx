@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Pressable, ScrollView, ActivityIndicator } from 'react-native';
 import { Alert } from '@/src/components/ui/StyledAlert';
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useState, useEffect } from 'react';
 import { Ionicons } from '@expo/vector-icons';
@@ -50,14 +50,21 @@ const FEATURES = [
 
 export default function PaywallScreen() {
   const router = useRouter();
+  const { returnTo } = useLocalSearchParams<{ returnTo?: string }>();
   const insets = useSafeAreaInsets();
   const [selectedPlan, setSelectedPlan] = useState<Plan>('yearly');
-  const [isGuest, setIsGuest] = useState(false);
+  // Default true so the purchase button is safely gated until the async
+  // auth check resolves — prevents a race where a guest taps Purchase
+  // before we know they're anonymous.
+  const [isGuest, setIsGuest] = useState(true);
   const activate = useProStore((s) => s.activate);
+  const isPro = useProStore((s) => s.isPro);
   const {
     monthlyPackage,
     yearlyPackage,
     loading: rcLoading,
+    loadError: rcError,
+    retry: rcRetry,
     purchasing,
     buy,
     restore,
@@ -90,7 +97,7 @@ export default function PaywallScreen() {
         'Create an account or sign in to subscribe to Pro. Your purchase will be linked to your account.',
         [
           { text: 'Cancel', style: 'cancel' },
-          { text: 'Sign In', onPress: () => router.push('/auth/login') },
+          { text: 'Sign In', onPress: () => router.push('/auth/login?returnTo=/paywall') },
         ]
       );
       return;
@@ -103,7 +110,10 @@ export default function PaywallScreen() {
     if (pkg) {
       // Real RevenueCat purchase
       const success = await buy(pkg);
-      if (success) router.back();
+      if (success) {
+        if (returnTo) router.replace(returnTo as any);
+        else router.back();
+      }
     } else {
       // No packages available — RevenueCat not configured or no network
       Alert.alert('Unavailable', 'Subscriptions are not available right now. Please try again later.');
@@ -127,7 +137,10 @@ export default function PaywallScreen() {
 
     if (yearlyPackage || monthlyPackage) {
       const success = await restore();
-      if (success) router.back();
+      if (success) {
+        if (returnTo) router.replace(returnTo as any);
+        else router.back();
+      }
     } else {
       Alert.alert('Unavailable', 'Restore is not available right now. Please try again later.');
     }
@@ -148,6 +161,20 @@ export default function PaywallScreen() {
         <Ionicons name="close" size={24} color={COLORS.muted} />
       </Pressable>
 
+      {/* Already Pro state */}
+      {isPro && (
+        <View style={styles.alreadyProBox}>
+          <Ionicons name="sparkles" size={32} color={COLORS.accent} />
+          <Text style={styles.alreadyProTitle}>You're on Perfume Picks Pro</Text>
+          <Text style={styles.alreadyProBody}>
+            All features are unlocked. Manage your subscription in your Apple ID account settings.
+          </Text>
+          <Pressable style={styles.alreadyProBtn} onPress={() => router.back()}>
+            <Text style={styles.alreadyProBtnText}>Got it</Text>
+          </Pressable>
+        </View>
+      )}
+
       {/* Guest banner */}
       {isGuest && (
         <Pressable onPress={() => router.push('/auth/login')} style={styles.guestBanner}>
@@ -160,6 +187,12 @@ export default function PaywallScreen() {
       {/* Header */}
       <Text style={styles.header}>Perfume Picks Pro</Text>
       <Text style={styles.subheader}>Your personal fragrance concierge</Text>
+
+      {/* Social proof */}
+      <View style={styles.socialProof}>
+        <Text style={styles.socialRating}>★★★★★</Text>
+        <Text style={styles.socialRatingText}>Loved by fragrance enthusiasts</Text>
+      </View>
 
       {/* Pitch — one sentence, named differentiators only. Users scan paywalls
           rather than read them; we frontload the two claims no competitor can
@@ -185,16 +218,27 @@ export default function PaywallScreen() {
 
       {rcLoading ? (
         <ActivityIndicator color={COLORS.accent} style={{ marginVertical: SPACING.lg }} />
+      ) : rcError ? (
+        <View style={styles.errorBox}>
+          <Text style={styles.errorText}>Couldn't load subscription options.</Text>
+          <Pressable onPress={rcRetry} style={styles.retryBtn}>
+            <Text style={styles.retryText}>Try Again</Text>
+          </Pressable>
+        </View>
       ) : (
         <>
           {/* Plan selection */}
           <View style={styles.plans}>
             <Pressable
               onPress={() => setSelectedPlan('yearly')}
-              style={[styles.planCard, selectedPlan === 'yearly' && styles.planCardSelected]}
+              disabled={purchasing}
+              style={[styles.planCard, selectedPlan === 'yearly' && styles.planCardSelected, purchasing && { opacity: 0.5 }]}
             >
               <View style={styles.planBadge}>
                 <Text style={styles.planBadgeText}>BEST VALUE</Text>
+              </View>
+              <View style={styles.trialBadge}>
+                <Text style={styles.trialBadgeText}>7-DAY FREE TRIAL</Text>
               </View>
               <Text style={styles.planPrice}>{yearlyPrice}</Text>
               <Text style={styles.planPeriod}>per year</Text>
@@ -208,7 +252,8 @@ export default function PaywallScreen() {
 
             <Pressable
               onPress={() => setSelectedPlan('monthly')}
-              style={[styles.planCard, selectedPlan === 'monthly' && styles.planCardSelected]}
+              disabled={purchasing}
+              style={[styles.planCard, selectedPlan === 'monthly' && styles.planCardSelected, purchasing && { opacity: 0.5 }]}
             >
               <Text style={styles.planPrice}>{monthlyPrice}</Text>
               <Text style={styles.planPeriod}>per month</Text>
@@ -219,7 +264,7 @@ export default function PaywallScreen() {
           {/* Pre-purchase disclosure — Apple 3.1.2(a) requires this BEFORE the CTA. */}
           <Text style={styles.preCtaDisclosure}>
             {selectedPlan === 'yearly'
-              ? `Auto-renews at ${yearlyPrice}/year until canceled.`
+              ? `Free for 7 days, then ${yearlyPrice}/year. Cancel anytime before trial ends.`
               : `Auto-renews at ${monthlyPrice}/month until canceled.`}
           </Text>
 
@@ -227,7 +272,9 @@ export default function PaywallScreen() {
           <Button
             title={purchasing
               ? 'Processing...'
-              : `Start Pro — ${selectedPlan === 'yearly' ? `${yearlyPrice}/yr` : `${monthlyPrice}/mo`}`
+              : selectedPlan === 'yearly'
+                ? `Try Free for 7 Days — then ${yearlyPrice}/yr`
+                : `Start Pro — ${monthlyPrice}/mo`
             }
             onPress={handlePurchase}
             disabled={purchasing}
@@ -271,19 +318,35 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.sm,
   },
   header: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 28,
     fontWeight: '800',
     color: COLORS.accent,
     textAlign: 'center',
   },
   subheader: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 16,
     color: COLORS.muted,
     textAlign: 'center',
     marginTop: SPACING.xs,
+    marginBottom: SPACING.sm,
+  },
+  socialProof: {
+    alignItems: 'center',
     marginBottom: SPACING.lg,
+    gap: 2,
+  },
+  socialRating: {
+    fontSize: 18,
+    color: COLORS.accent,
+    letterSpacing: 3,
+  },
+  socialRatingText: {
+    fontFamily: 'CormorantGaramond_400Regular',
+    fontSize: 13,
+    color: COLORS.muted,
+    fontStyle: 'italic',
   },
   // Pitch card frames the two-sentence sell above the features grid. Gold
   // border on dark-green card echoes the section-title treatment from the
@@ -297,7 +360,7 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.lg,
   },
   pitchHeadline: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 18,
     fontWeight: '800',
     color: COLORS.text,
@@ -316,13 +379,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   featureTitle: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 15,
     fontWeight: '700',
     color: COLORS.text,
   },
   featureDesc: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 13,
     color: COLORS.muted,
     marginTop: 2,
@@ -352,39 +415,55 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.xs,
   },
   planBadgeText: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 10,
     fontWeight: '800',
     color: COLORS.white,
     letterSpacing: 1,
   },
+  trialBadge: {
+    backgroundColor: COLORS.blushSoft ?? '#f5ede8',
+    borderRadius: RADIUS.full,
+    paddingVertical: 3,
+    paddingHorizontal: 10,
+    marginBottom: SPACING.xs,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+  },
+  trialBadgeText: {
+    fontFamily: 'CormorantGaramond_400Regular',
+    fontSize: 10,
+    fontWeight: '800',
+    color: COLORS.accent,
+    letterSpacing: 1,
+  },
   planPrice: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 24,
     fontWeight: '800',
     color: COLORS.text,
   },
   planPeriod: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 13,
     color: COLORS.muted,
     marginTop: 2,
   },
   planSavings: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 11,
     color: COLORS.accent,
     marginTop: 4,
   },
   planPerMonth: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 11,
     color: COLORS.subtle,
     marginTop: 2,
     textAlign: 'center',
   },
   preCtaDisclosure: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 11,
     color: COLORS.subtle,
     textAlign: 'center',
@@ -404,7 +483,7 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.md,
   },
   guestBannerText: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 13,
     fontWeight: '700',
     color: COLORS.accent,
@@ -415,13 +494,13 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
   restoreText: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 14,
     fontWeight: '600',
     color: COLORS.muted,
   },
   legal: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 11,
     color: COLORS.subtle,
     textAlign: 'center',
@@ -437,7 +516,7 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.md,
   },
   legalLink: {
-    fontFamily: 'Cormorant',
+    fontFamily: 'CormorantGaramond_400Regular',
     fontSize: 11,
     color: COLORS.muted,
     textDecorationLine: 'underline',
@@ -445,5 +524,69 @@ const styles = StyleSheet.create({
   legalDot: {
     color: COLORS.subtle,
     fontSize: 11,
+  },
+  alreadyProBox: {
+    alignItems: 'center',
+    padding: SPACING.xl,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+    marginBottom: SPACING.lg,
+    gap: SPACING.sm,
+  },
+  alreadyProTitle: {
+    fontFamily: 'CormorantGaramond_400Regular',
+    fontSize: 20,
+    fontWeight: '700',
+    color: COLORS.text,
+    textAlign: 'center',
+  },
+  alreadyProBody: {
+    fontFamily: 'CormorantGaramond_400Regular',
+    fontSize: 14,
+    color: COLORS.muted,
+    textAlign: 'center',
+    lineHeight: 20,
+  },
+  alreadyProBtn: {
+    backgroundColor: COLORS.accent,
+    paddingVertical: 12,
+    paddingHorizontal: SPACING.xl,
+    borderRadius: RADIUS.full,
+    marginTop: SPACING.sm,
+  },
+  alreadyProBtnText: {
+    fontFamily: 'CormorantGaramond_400Regular',
+    fontSize: 14,
+    fontWeight: '700',
+    color: COLORS.white,
+    letterSpacing: 1,
+  },
+  errorBox: {
+    alignItems: 'center',
+    paddingVertical: SPACING.xl,
+    gap: SPACING.md,
+  },
+  errorText: {
+    fontFamily: 'CormorantGaramond_400Regular',
+    fontSize: 15,
+    color: COLORS.muted,
+    textAlign: 'center',
+  },
+  retryBtn: {
+    backgroundColor: COLORS.card,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+    borderRadius: RADIUS.full,
+    paddingVertical: 10,
+    paddingHorizontal: 28,
+  },
+  retryText: {
+    fontFamily: 'CormorantGaramond_400Regular',
+    fontSize: 14,
+    fontWeight: '700',
+    color: COLORS.accent,
+    letterSpacing: 1,
   },
 });

@@ -24,6 +24,7 @@
  * Pure function — easy to test.
  */
 
+import { SEASONAL_ACCORDS } from '@/src/constants/accords';
 import type { MockFragrance } from '@/src/mock/fragrances';
 import type { DerivedTasteProfile } from './tasteProfile';
 
@@ -106,13 +107,7 @@ function contextMatch(f: MockFragrance, ctx: RecContext): number {
 
   if (ctx.season) {
     weightSum += 1;
-    const seasonalAccords: Record<string, string[]> = {
-      summer: ['fresh','citrus','aquatic','green','floral'],
-      spring: ['floral','green','citrus','rose','jasmine'],
-      fall:   ['woody','spicy','warm-spicy','amber','tobacco'],
-      winter: ['amber','vanilla','oud','sweet','woody','warm-spicy','gourmand'],
-    };
-    const want = seasonalAccords[ctx.season] ?? [];
+    const want = SEASONAL_ACCORDS[ctx.season] ?? [];
     const overlap = f.top_accords.filter((a) => want.includes(a)).length;
     score += (overlap / Math.max(want.length, 1)) * 0.5;
   }

@@ -1,8 +1,15 @@
-import { ScrollView, View, Text, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { COLORS, SPACING, TYPE, FONTS } from '@/src/constants/theme';
+import { useRouter, useFocusEffect } from 'expo-router';
+import { useCallback, useMemo, useRef, useState, useEffect } from 'react';
+import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
+import { Ionicons } from '@expo/vector-icons';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
+import { WhatToWearSheet } from '@/src/components/sheets/WhatToWearSheet';
 import { useRecommendations, useNewArrivals } from '@/src/features/recommend/useRecommendations';
+import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
+import { useWearLogStore } from '@/src/stores/useWearLogStore';
+import { getFragrance } from '@/src/mock/fragrances';
 
 /**
  * Home / "Today" tab — the daily ritual surface.
@@ -17,11 +24,47 @@ import { useRecommendations, useNewArrivals } from '@/src/features/recommend/use
  * time-of-day-aware so the screen feels alive on each open.
  */
 export default function HomeScreen() {
-  // Live recommendations driven by the user's swipes + wear logs +
-  // wardrobe. Updates instantly when the user swipes in Train, logs a
-  // wear, or adds something new to their wardrobe.
-  const { heroPick, heroReason, todaysEdit, trending, hasSignals } = useRecommendations();
+  const router = useRouter();
+
+  // Live recommendations driven by the user's swipes + wear logs + wardrobe.
+  const live = useRecommendations();
   const newArrivals = useNewArrivals();
+
+  // Defer rec updates until the screen is focused so mid-scroll visual jumps
+  // don't happen when a swipe is recorded concurrently in Train.
+  const [displayed, setDisplayed] = useState(live);
+  const isFocused = useRef(false);
+  useFocusEffect(
+    useCallback(() => {
+      isFocused.current = true;
+      setDisplayed(live);
+      return () => { isFocused.current = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [live])
+  );
+
+  const { heroPick, heroReason, todaysEdit, trending, hasSignals } = displayed;
+
+  const [whatToWearOpen, setWhatToWearOpen] = useState(false);
+
+  // Allow manual dismiss of the onboarding card independent of hasSignals
+  const [onboardingDismissed, setOnboardingDismissed] = useState(false);
+  const showOnboarding = !hasSignals && !onboardingDismissed;
+
+  // P2: "Did you wear this?" nudge — shown when user owns fragrances but
+  // hasn't logged a wear today. Pick a random "have" item to suggest logging.
+  const wardrobeItems = useWardrobeStore((s) => s.items);
+  const wearLogs = useWearLogStore((s) => s.logs);
+  const wearNudge = useMemo(() => {
+    const haveItems = wardrobeItems.filter((i) => i.status === 'have');
+    if (haveItems.length === 0) return null;
+    const today = new Date().toLocaleDateString('en-CA');
+    const loggedToday = new Set(wearLogs.filter((l) => l.worn_on === today).map((l) => l.fragrance_id));
+    const unworn = haveItems.filter((i) => !loggedToday.has(i.fragrance_id));
+    if (unworn.length === 0) return null;
+    // Suggest the first item (stable — no random so the card doesn't jump on re-render).
+    return unworn[0];
+  }, [wardrobeItems, wearLogs]);
 
   const greeting = useGreeting();
 
@@ -58,12 +101,67 @@ export default function HomeScreen() {
           </Text>
         </View>
 
-        <Section eyebrow="WEAR TODAY" cursive="for you">
+        {/* Onboarding card — shown until the user has signals or dismisses it manually */}
+        {showOnboarding && (
+          <View style={styles.onboardingCard}>
+            <Pressable style={styles.onboardingDismiss} onPress={() => setOnboardingDismissed(true)} hitSlop={8}>
+              <Ionicons name="close" size={18} color={COLORS.muted} />
+            </Pressable>
+            <Text style={styles.onboardingTitle}>Welcome to Perfume Picks</Text>
+            <Text style={styles.onboardingBody}>
+              Tell us what you love and we'll personalise everything below.
+            </Text>
+            <View style={styles.onboardingActions}>
+              <Pressable style={styles.onboardingBtn} onPress={() => router.push('/quiz')}>
+                <Text style={styles.onboardingBtnText}>Take the Quiz</Text>
+              </Pressable>
+              <Pressable style={[styles.onboardingBtn, styles.onboardingBtnSecondary]} onPress={() => router.push('/(tabs)/train')}>
+                <Text style={[styles.onboardingBtnText, styles.onboardingBtnTextSecondary]}>Start Swiping</Text>
+              </Pressable>
+            </View>
+          </View>
+        )}
+
+        {/* P2: Wear nudge — shown when the user has bottles but hasn't logged today */}
+        {wearNudge && (() => {
+          const f = getFragrance(wearNudge.fragrance_id);
+          if (!f) return null;
+          return (
+            <Pressable
+              style={styles.wearNudge}
+              onPress={() => router.push(`/fragrance/${f.id}?openLogWear=true`)}
+            >
+              <Text style={styles.wearNudgeLabel}>DID YOU WEAR THIS TODAY?</Text>
+              <Text style={styles.wearNudgeName}>{f.name}</Text>
+              <Text style={styles.wearNudgeHint}>Tap to log a wear and track your collection →</Text>
+            </Pressable>
+          );
+        })()}
+
+        <Section
+          eyebrow="WEAR TODAY"
+          cursive="for you"
+          action={
+            <Pressable style={styles.askBtn} onPress={() => setWhatToWearOpen(true)}>
+              <Ionicons name="sparkles" size={11} color={COLORS.accent} />
+              <Text style={styles.askBtnText}>Ask →</Text>
+            </Pressable>
+          }
+        >
           {/* Section uses paddingLeft only (so the horizontal carousels below
               can bleed cards off the right edge). The hero card is full-width
               so it needs explicit right padding to stay centered. */}
           <View style={styles.heroWrap}>
-            {heroPick && <FragranceCard fragrance={heroPick} variant="hero" />}
+            {heroPick ? (
+              <FragranceCard fragrance={heroPick} variant="hero" />
+            ) : (
+              <View style={styles.sectionEmpty}>
+                <Text style={styles.sectionEmptyText}>Swipe a few fragrances in Train to get your first pick.</Text>
+                <Pressable style={styles.sectionEmptyBtn} onPress={() => router.push('/(tabs)/train')}>
+                  <Text style={styles.sectionEmptyBtnText}>Train My Nose →</Text>
+                </Pressable>
+              </View>
+            )}
           </View>
           {heroPick && (
             <Text style={styles.heroReason}>
@@ -76,9 +174,15 @@ export default function HomeScreen() {
         </Section>
 
         <Section eyebrow="TODAY'S EDIT" cursive="three picks">
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-            {todaysEdit.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
-          </ScrollView>
+          {todaysEdit.length > 0 ? (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+              {todaysEdit.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+            </ScrollView>
+          ) : (
+            <View style={[styles.sectionEmpty, { marginRight: SPACING.lg }]}>
+              <Text style={styles.sectionEmptyText}>Your edit appears once you've trained your nose a little.</Text>
+            </View>
+          )}
         </Section>
 
         <Section eyebrow="NEW ARRIVALS" cursive="just in">
@@ -88,9 +192,15 @@ export default function HomeScreen() {
         </Section>
 
         <Section eyebrow={hasSignals ? 'TRENDING IN YOUR TASTE' : 'EXPLORE'} cursive={hasSignals ? 'loved' : 'discover'}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-            {trending.map((f) => <FragranceCard key={f.id} fragrance={f} variant="small" />)}
-          </ScrollView>
+          {trending.length > 0 ? (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+              {trending.map((f) => <FragranceCard key={f.id} fragrance={f} variant="small" />)}
+            </ScrollView>
+          ) : (
+            <View style={[styles.sectionEmpty, { marginRight: SPACING.lg }]}>
+              <Text style={styles.sectionEmptyText}>More picks appear as your taste profile grows.</Text>
+            </View>
+          )}
         </Section>
 
         <View style={styles.footer}>
@@ -101,16 +211,18 @@ export default function HomeScreen() {
           <View style={styles.footerRule} />
         </View>
       </ScrollView>
+      <WhatToWearSheet visible={whatToWearOpen} onClose={() => setWhatToWearOpen(false)} />
     </SafeAreaView>
   );
 }
 
-function Section({ eyebrow, cursive, children }: { eyebrow: string; cursive?: string; children: React.ReactNode }) {
+function Section({ eyebrow, cursive, action, children }: { eyebrow: string; cursive?: string; action?: React.ReactNode; children: React.ReactNode }) {
   return (
     <View style={styles.section}>
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionEyebrow}>{eyebrow}</Text>
         {cursive && <Text style={styles.sectionCursive}>{cursive}</Text>}
+        {action && <View style={styles.sectionAction}>{action}</View>}
       </View>
       {children}
     </View>
@@ -124,10 +236,6 @@ function useGreeting(): string {
   if (h < 17) return 'GOOD AFTERNOON';
   if (h < 21) return 'GOOD EVENING';
   return 'TONIGHT';
-}
-
-function prettyDate(): string {
-  return new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 }
 
 // Long-form date for the editorial subtitle — written out so the lowercase
@@ -204,6 +312,51 @@ const styles = StyleSheet.create({
   },
   hScroll: { paddingRight: SPACING.lg },
   heroWrap: { paddingRight: SPACING.lg },
+  onboardingDismiss: { position: 'absolute', top: SPACING.md, right: SPACING.md },
+  onboardingCard: {
+    marginHorizontal: SPACING.lg,
+    marginTop: SPACING.lg,
+    padding: SPACING.lg,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+  },
+  onboardingTitle: { fontFamily: FONTS.serif, fontSize: 20, fontWeight: '600', color: COLORS.text, marginBottom: SPACING.xs },
+  onboardingBody: { ...TYPE.bodySmall, color: COLORS.muted, marginBottom: SPACING.md, lineHeight: 20 },
+  onboardingActions: { flexDirection: 'row', gap: SPACING.sm },
+  onboardingBtn: {
+    flex: 1, paddingVertical: 12,
+    backgroundColor: COLORS.accent,
+    borderRadius: RADIUS.full,
+    alignItems: 'center',
+  },
+  onboardingBtnSecondary: { backgroundColor: 'transparent', borderWidth: 1, borderColor: COLORS.accent },
+  onboardingBtnText: { ...TYPE.label, color: COLORS.white, fontSize: 12, letterSpacing: 1 },
+  onboardingBtnTextSecondary: { color: COLORS.accent },
+  wearNudge: {
+    marginHorizontal: SPACING.lg,
+    marginTop: SPACING.md,
+    padding: SPACING.md,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.accent,
+    gap: 3,
+  },
+  wearNudgeLabel: { ...TYPE.eyebrow, color: COLORS.accent, fontSize: 10 },
+  wearNudgeName: { fontFamily: FONTS.serif, fontSize: 18, fontWeight: '600', color: COLORS.text },
+  wearNudgeHint: { ...TYPE.caption, color: COLORS.muted, fontStyle: 'italic' },
+  sectionEmpty: {
+    paddingVertical: SPACING.lg,
+    paddingHorizontal: SPACING.md,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: 1, borderColor: COLORS.border,
+    gap: SPACING.sm,
+  },
+  sectionEmptyText: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic' },
+  sectionEmptyBtn: { alignSelf: 'flex-start' },
+  sectionEmptyBtnText: { ...TYPE.label, color: COLORS.accent, fontSize: 12, letterSpacing: 0.5 },
   heroReason: {
     ...TYPE.bodySmall,
     color: COLORS.muted,
@@ -228,4 +381,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.md,
     lineHeight: 18,
   },
+  sectionAction: { marginLeft: 'auto' },
+  askBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: RADIUS.full,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+    backgroundColor: COLORS.accentSoft,
+  },
+  askBtnText: { ...TYPE.label, fontSize: 11, color: COLORS.accent, letterSpacing: 0.5 },
 });

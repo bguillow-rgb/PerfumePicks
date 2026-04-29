@@ -1,13 +1,15 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { ScrollView, View, Text, StyleSheet, TextInput, Pressable, FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
+import { DISCOVER_ACCORDS } from '@/src/constants/accords';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import {
   MOCK_CATALOG, ALL_BRANDS, CURATED_EDITS, getFragrances, type MockFragrance,
 } from '@/src/mock/fragrances';
+import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 
 /**
  * Discover tab — search + browse the catalog.
@@ -20,21 +22,31 @@ import {
  */
 export default function DiscoverScreen() {
   const router = useRouter();
+  const { from } = useLocalSearchParams<{ from?: string }>();
   const [query, setQuery] = useState('');
   const [activeEdit, setActiveEdit] = useState(CURATED_EDITS[0].id);
+  const notesSearch = useFragranceNotesStore((s) => s.search);
+
+  // When navigated here from the wardrobe "+" button, pass context through so
+  // the fragrance detail page can navigate back to wardrobe after adding.
+  const fragranceHref = (id: string) =>
+    from === 'wardrobe' ? `/fragrance/${id}?from=wardrobe` : `/fragrance/${id}`;
 
   const searchResults = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return [];
+    // IDs matched by private notes text (body, social notes, layering combos)
+    const notesMatchIds = new Set(notesSearch(q).map((n) => n.fragrance_id));
     return MOCK_CATALOG.filter((f) =>
       f.name.toLowerCase().includes(q) ||
       f.brand.toLowerCase().includes(q) ||
       f.top_accords.some((a) => a.includes(q)) ||
       f.top_notes.some((n) => n.toLowerCase().includes(q)) ||
       f.heart_notes.some((n) => n.toLowerCase().includes(q)) ||
-      f.base_notes.some((n) => n.toLowerCase().includes(q)),
-    ).slice(0, 20);
-  }, [query]);
+      f.base_notes.some((n) => n.toLowerCase().includes(q)) ||
+      notesMatchIds.has(f.id),
+    );
+  }, [query, notesSearch]);
 
   const activeEditSet = CURATED_EDITS.find((e) => e.id === activeEdit) ?? CURATED_EDITS[0];
   const editFragrances = getFragrances(activeEditSet.ids);
@@ -63,7 +75,7 @@ export default function DiscoverScreen() {
       </View>
 
       {query.length > 0 ? (
-        <SearchResults results={searchResults} query={query} />
+        <SearchResults results={searchResults} query={query} fragranceHref={fragranceHref} />
       ) : (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
           <Section eyebrow="CURATED EDITS" cursive="for every mood">
@@ -83,21 +95,24 @@ export default function DiscoverScreen() {
               ))}
             </ScrollView>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-              {editFragrances.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+              {editFragrances.map((f) => (
+                <FragranceCard key={f.id} fragrance={f} onPress={() => router.push(fragranceHref(f.id) as any)} />
+              ))}
             </ScrollView>
           </Section>
 
           <Section eyebrow="BY HOUSE" cursive="explore brands">
             <View style={styles.brandGrid}>
               {ALL_BRANDS.map((b) => {
-                const sample = MOCK_CATALOG.find((f) => f.brand === b);
+                const count = MOCK_CATALOG.filter((f) => f.brand === b).length;
                 return (
                   <Pressable
                     key={b}
                     style={styles.brandTile}
-                    onPress={() => sample && router.push(`/fragrance/${sample.id}`)}
+                    onPress={() => router.push(`/brand/${encodeURIComponent(b)}` as any)}
                   >
                     <Text style={styles.brandTileLabel} numberOfLines={2}>{b}</Text>
+                    <Text style={styles.brandTileCount}>{count}</Text>
                   </Pressable>
                 );
               })}
@@ -106,13 +121,17 @@ export default function DiscoverScreen() {
 
           <Section eyebrow="BY ACCORD" cursive="follow your nose">
             <View style={styles.accordGrid}>
-              {['amber', 'rose', 'oud', 'vanilla', 'iris', 'leather', 'fruity', 'gourmand'].map((a) => {
+              {DISCOVER_ACCORDS.map((a) => {
                 const matching = MOCK_CATALOG.filter((f) => f.top_accords.includes(a));
                 return (
-                  <View key={a} style={styles.accordTile}>
+                  <Pressable
+                    key={a}
+                    style={({ pressed }) => [styles.accordTile, pressed && { opacity: 0.7 }]}
+                    onPress={() => setQuery(a)}
+                  >
                     <Text style={styles.accordTileLabel}>{a}</Text>
                     <Text style={styles.accordTileCount}>{matching.length}</Text>
-                  </View>
+                  </Pressable>
                 );
               })}
             </View>
@@ -125,7 +144,17 @@ export default function DiscoverScreen() {
   );
 }
 
-function SearchResults({ results, query }: { results: MockFragrance[]; query: string }) {
+const SEARCH_PAGE_SIZE = 20;
+
+function SearchResults({ results, query, fragranceHref }: { results: MockFragrance[]; query: string; fragranceHref: (id: string) => string }) {
+  const router = useRouter();
+  const [showAll, setShowAll] = useState(false);
+  const visible = showAll ? results : results.slice(0, SEARCH_PAGE_SIZE);
+  const hiddenCount = results.length - SEARCH_PAGE_SIZE;
+
+  // Reset show-all when query changes so stale expanded state doesn't carry over.
+  useEffect(() => { setShowAll(false); }, [query]);
+
   if (results.length === 0) {
     return (
       <View style={styles.empty}>
@@ -136,14 +165,26 @@ function SearchResults({ results, query }: { results: MockFragrance[]; query: st
   }
   return (
     <FlatList
-      data={results}
+      data={visible}
       keyExtractor={(f) => f.id}
       renderItem={({ item }) => (
         <View style={{ paddingHorizontal: SPACING.lg, marginBottom: SPACING.md }}>
-          <FragranceCard fragrance={item} />
+          <FragranceCard fragrance={item} onPress={() => router.push(fragranceHref(item.id) as any)} />
         </View>
       )}
       contentContainerStyle={{ paddingTop: SPACING.md, paddingBottom: SPACING.xxl }}
+      ListFooterComponent={
+        !showAll && hiddenCount > 0 ? (
+          <Pressable style={styles.showMoreRow} onPress={() => setShowAll(true)}>
+            <Text style={styles.showMoreText}>Showing top {SEARCH_PAGE_SIZE} of {results.length} results</Text>
+            <Text style={styles.showMoreCta}>Show all →</Text>
+          </Pressable>
+        ) : results.length > SEARCH_PAGE_SIZE ? (
+          <Text style={styles.showMoreText}>
+            Showing all {results.length} results
+          </Text>
+        ) : null
+      }
     />
   );
 }
@@ -208,6 +249,7 @@ const styles = StyleSheet.create({
     minHeight: 80,
   },
   brandTileLabel: { fontFamily: FONTS.serif, fontSize: 16, fontWeight: '600', color: COLORS.text, textAlign: 'center' },
+  brandTileCount: { ...TYPE.caption, color: COLORS.muted, marginTop: 4, textAlign: 'center' },
 
   accordGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm, paddingRight: SPACING.lg },
   accordTile: {
@@ -224,4 +266,12 @@ const styles = StyleSheet.create({
   empty: { padding: SPACING.xl, alignItems: 'center', gap: SPACING.sm },
   emptyText: { ...TYPE.heading, textAlign: 'center' },
   emptyHint: { ...TYPE.bodySmall, textAlign: 'center', fontStyle: 'italic' },
+  showMoreRow: {
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.lg,
+    alignItems: 'center',
+    gap: SPACING.xs,
+  },
+  showMoreText: { ...TYPE.caption, color: COLORS.muted, textAlign: 'center' },
+  showMoreCta: { ...TYPE.label, color: COLORS.accent, fontSize: 13, letterSpacing: 0.5 },
 });

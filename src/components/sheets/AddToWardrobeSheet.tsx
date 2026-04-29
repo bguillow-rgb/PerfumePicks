@@ -1,13 +1,22 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import {
-  View, Text, StyleSheet, Modal, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform,
+  View, Text, StyleSheet, Modal, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, LayoutAnimation, UIManager,
 } from 'react-native';
+
+// Enable LayoutAnimation on Android
+if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
+import { useRouter } from 'expo-router';
 import {
-  useWardrobeStore, type WardrobeStatus, type UnitType,
+  useWardrobeStore, type WardrobeStatus, type UnitType, type WardrobeItem,
 } from '@/src/stores/useWardrobeStore';
+import { useProfileStore } from '@/src/stores/useProfileStore';
+import { supabase } from '@/lib/supabase';
+import { Alert } from '@/src/components/ui/StyledAlert';
 import type { MockFragrance } from '@/src/mock/fragrances';
 
 interface Props {
@@ -15,6 +24,10 @@ interface Props {
   fragrance: MockFragrance | null;
   onClose: () => void;
   onSaved?: (id: string) => void;
+  /** Pre-select a status when the sheet opens (e.g. 'want' from the heart button). */
+  initialStatus?: WardrobeStatus;
+  /** When provided, the sheet operates in edit mode — pre-fills fields and calls update(). */
+  editItem?: WardrobeItem | null;
 }
 
 const STATUS_OPTIONS: { id: WardrobeStatus; label: string; helper: string }[] = [
@@ -38,13 +51,36 @@ const UNIT_OPTIONS: { id: UnitType; label: string; defaultMl: number }[] = [
  * Uses the system Modal with slide animation rather than a 3rd-party sheet
  * library — keeps deps lean and works fine for our needs.
  */
-export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved }: Props) {
+export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initialStatus, editItem }: Props) {
+  const router = useRouter();
   const add = useWardrobeStore((s) => s.add);
-  const [status, setStatus] = useState<WardrobeStatus>('have');
+  const update = useWardrobeStore((s) => s.update);
+  const wardrobeCount = useWardrobeStore((s) => s.items.length);
+  const hasSeenSyncUpsell = useProfileStore((s) => s.hasSeenSyncUpsell);
+  const markSyncUpsellSeen = useProfileStore((s) => s.markSyncUpsellSeen);
+  const [status, setStatus] = useState<WardrobeStatus>(initialStatus ?? 'have');
   const [unit, setUnit] = useState<UnitType>('bottle');
   const [sizeMl, setSizeMl] = useState('50');
   const [remainingMl, setRemainingMl] = useState('50');
   const [reorderMl, setReorderMl] = useState('');
+
+  // Reset all fields each time the sheet opens, pre-populating from editItem if present.
+  useEffect(() => {
+    if (!visible) return;
+    if (editItem) {
+      setStatus(editItem.status);
+      setUnit(editItem.unit_type);
+      setSizeMl(String(editItem.size_ml));
+      setRemainingMl(String(editItem.remaining_ml));
+      setReorderMl(editItem.reorder_threshold_ml != null ? String(editItem.reorder_threshold_ml) : '');
+    } else {
+      setStatus(initialStatus ?? 'have');
+      setUnit('bottle');
+      setSizeMl('50');
+      setRemainingMl('50');
+      setReorderMl('');
+    }
+  }, [visible, editItem, initialStatus]);
 
   // When the user picks a different unit, suggest a sensible default size.
   const handleUnitChange = (u: UnitType) => {
@@ -61,20 +97,46 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved }: Pro
     return Number.isFinite(size) && size > 0 && Number.isFinite(rem) && rem >= 0 && rem <= size;
   }, [fragrance, sizeMl, remainingMl]);
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!fragrance || !canSave) return;
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    const id = add({
-      fragrance_id: fragrance.id,
+    const patch = {
       status,
       unit_type: unit,
       size_ml: Number(sizeMl),
-      // For wishlist/tested, "remaining" is just the size (it's not in use).
       remaining_ml: status === 'have' ? Number(remainingMl) : Number(sizeMl),
       reorder_threshold_ml: reorderMl.trim() ? Number(reorderMl) : null,
-    });
+    };
+    let id: string;
+    if (editItem) {
+      update(editItem.id, patch);
+      id = editItem.id;
+    } else {
+      id = add({ fragrance_id: fragrance.id, ...patch });
+    }
     onSaved?.(id);
     onClose();
+
+    // After the first wardrobe add, nudge guest users to create an account so
+    // their collection is backed up. Show once only.
+    if (!hasSeenSyncUpsell && wardrobeCount === 0) {
+      markSyncUpsellSeen();
+      try {
+        const { data } = await supabase.auth.getUser();
+        if (data.user?.is_anonymous) {
+          Alert.alert(
+            'Back Up Your Wardrobe',
+            'Your collection is only on this device right now. Sign in to save it to the cloud.',
+            [
+              { text: 'Keep as Guest', style: 'cancel' },
+              { text: 'Sign In', onPress: () => router.push('/auth/login') },
+            ],
+          );
+        }
+      } catch {
+        // Skip silently if Supabase isn't configured.
+      }
+    }
   };
 
   if (!fragrance) return null;
@@ -90,8 +152,8 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved }: Pro
           <View style={styles.handle} />
 
           <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false}>
-            <Text style={styles.eyebrow}>ADD TO WARDROBE</Text>
-            <Text style={styles.cursive}>let's keep track</Text>
+            <Text style={styles.eyebrow}>{editItem ? 'EDIT WARDROBE' : 'ADD TO WARDROBE'}</Text>
+            <Text style={styles.cursive}>{editItem ? 'update details' : 'let\'s keep track'}</Text>
             <Text style={styles.fragName}>{fragrance.name}</Text>
             <Text style={styles.fragBrand}>{fragrance.brand}</Text>
 
@@ -101,7 +163,11 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved }: Pro
                 {STATUS_OPTIONS.map((s) => (
                   <Pressable
                     key={s.id}
-                    onPress={() => { Haptics.selectionAsync(); setStatus(s.id); }}
+                    onPress={() => {
+                      Haptics.selectionAsync();
+                      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+                      setStatus(s.id);
+                    }}
                     style={[styles.pillBig, status === s.id && styles.pillBigActive]}
                   >
                     <Text style={[styles.pillBigLabel, status === s.id && styles.pillBigLabelActive]}>
@@ -171,7 +237,7 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved }: Pro
               style={[styles.saveBtn, !canSave && styles.saveBtnDisabled]}
             >
               <Ionicons name="rose" size={16} color={COLORS.white} style={{ marginRight: 6 }} />
-              <Text style={styles.saveText}>Add to Wardrobe</Text>
+              <Text style={styles.saveText}>{editItem ? 'Save Changes' : 'Add to Wardrobe'}</Text>
             </Pressable>
           </View>
         </View>

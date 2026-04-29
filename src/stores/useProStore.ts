@@ -1,3 +1,4 @@
+import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -25,7 +26,7 @@ export const useProStore = create<ProState>()(
       setHasHydrated: (v) => set({ hasHydrated: v }),
     }),
     {
-      name: 'stick-picks-pro',
+      name: STORAGE_KEYS.pro,
       storage: createJSONStorage(() => AsyncStorage),
       // hasHydrated is runtime-only — don't serialize it
       partialize: (state) => ({ isPro: state.isPro, purchasedAt: state.purchasedAt }),

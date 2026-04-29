@@ -1,3 +1,4 @@
+import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -29,6 +30,8 @@ export interface WearLog {
 interface WearLogState {
   logs: WearLog[];
   add: (input: Omit<WearLog, 'id' | 'created_at'>) => string;
+  /** Patch an existing wear log entry (partial update). */
+  update: (id: string, patch: Partial<Omit<WearLog, 'id' | 'fragrance_id' | 'created_at'>>) => void;
   remove: (id: string) => void;
   /** All logs for one fragrance, newest first. */
   forFragrance: (fragrance_id: string) => WearLog[];
@@ -52,6 +55,10 @@ export const useWearLogStore = create<WearLogState>()(
         set((s) => ({ logs: [log, ...s.logs] }));
         return id;
       },
+      update: (id, patch) =>
+        set((s) => ({
+          logs: s.logs.map((l) => (l.id === id ? { ...l, ...patch } : l)),
+        })),
       remove: (id) =>
         set((s) => ({ logs: s.logs.filter((l) => l.id !== id) })),
       forFragrance: (fragrance_id) =>
@@ -71,7 +78,7 @@ export const useWearLogStore = create<WearLogState>()(
       },
     }),
     {
-      name: 'perfumepicks-wearlog',
+      name: STORAGE_KEYS.wearLog,
       storage: createJSONStorage(() => AsyncStorage),
       partialize: (s) => ({ logs: s.logs }),
     },

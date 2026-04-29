@@ -15,32 +15,40 @@ import { useProStore } from '@/src/stores/useProStore';
 export function useRevenueCat() {
   const [offering, setOffering] = useState<PurchasesOffering | null>(null);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
   const [purchasing, setPurchasing] = useState(false);
   const { activate, deactivate } = useProStore();
 
-  useEffect(() => {
-    (async () => {
-      try {
-        await initRevenueCat();
+  const load = useCallback(async () => {
+    setLoading(true);
+    setLoadError(false);
+    try {
+      await initRevenueCat();
 
-        // Check current entitlements
-        const info = await getCustomerInfo();
-        if (info && isProActive(info)) {
-          activate();
-        }
-
-        // Load offerings
-        const current = await getOfferings();
-        setOffering(current);
-      } catch (e) {
-        // RevenueCat not available (Expo Go / simulator without StoreKit config)
-        if (__DEV__) {
-          console.log('[RevenueCat] Not available in this environment:', (e as Error).message);
-        }
-      } finally {
-        setLoading(false);
+      // Check current entitlements — sync local Pro state with server truth
+      const info = await getCustomerInfo();
+      if (info) {
+        if (isProActive(info)) activate();
+        else deactivate();
       }
-    })();
+
+      // Load offerings
+      const current = await getOfferings();
+      setOffering(current);
+    } catch (e) {
+      // RevenueCat not available (Expo Go / simulator without StoreKit config)
+      if (__DEV__) {
+        console.log('[RevenueCat] Not available in this environment:', (e as Error).message);
+      }
+      setLoadError(true);
+    } finally {
+      setLoading(false);
+    }
+  }, [activate, deactivate]);
+
+  useEffect(() => {
+    load();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const monthlyPackage = offering?.availablePackages.find(
@@ -97,6 +105,8 @@ export function useRevenueCat() {
     monthlyPackage,
     yearlyPackage,
     loading,
+    loadError,
+    retry: load,
     purchasing,
     buy,
     restore,

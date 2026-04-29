@@ -1,3 +1,4 @@
+import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -62,6 +63,17 @@ export const useWardrobeStore = create<WardrobeState>()(
     (set, get) => ({
       items: [],
       add: (input) => {
+        // Deduplicate: if this fragrance is already in the wardrobe, update
+        // the existing entry rather than creating a duplicate row.
+        const existing = get().items.find((i) => i.fragrance_id === input.fragrance_id);
+        if (existing) {
+          set((s) => ({
+            items: s.items.map((i) =>
+              i.id === existing.id ? { ...i, ...input, updated_at: nowIso() } : i
+            ),
+          }));
+          return existing.id;
+        }
         const id = clientId();
         const item: WardrobeItem = {
           ...input,
@@ -90,7 +102,7 @@ export const useWardrobeStore = create<WardrobeState>()(
         ),
     }),
     {
-      name: 'perfumepicks-wardrobe',
+      name: STORAGE_KEYS.wardrobe,
       storage: createJSONStorage(() => AsyncStorage),
       partialize: (s) => ({ items: s.items }),
     },

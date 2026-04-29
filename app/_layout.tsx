@@ -29,6 +29,7 @@ import {
   CormorantGaramond_400Regular_Italic,
 } from '@expo-google-fonts/cormorant-garamond';
 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { COLORS } from '@/src/constants/theme';
 import { StyledAlertHost } from '@/src/components/ui/StyledAlert';
 import { HandwrittenSplash } from '@/src/components/splash/HandwrittenSplash';
@@ -173,6 +174,7 @@ export default function RootLayout() {
   if (!fontsLoaded) return null;
 
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
     <ThemeProvider value={PerfumePicksTheme}>
       <StatusBar style="dark" />
       <Stack screenOptions={{ headerShown: false }}>
@@ -182,6 +184,8 @@ export default function RootLayout() {
         <Stack.Screen name="quiz/results" />
         <Stack.Screen name="fragrance/[id]" />
         <Stack.Screen name="paywall" />
+        <Stack.Screen name="brand/[name]" />
+        <Stack.Screen name="rec/results" />
         <Stack.Screen name="legal/privacy" options={{ presentation: 'modal' }} />
         <Stack.Screen name="legal/terms" options={{ presentation: 'modal' }} />
       </Stack>
@@ -194,5 +198,6 @@ export default function RootLayout() {
       )}
       <StyledAlertHost />
     </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }

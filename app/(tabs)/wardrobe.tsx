@@ -1,12 +1,14 @@
 import { useState, useMemo, useEffect } from 'react';
-import { ScrollView, View, Text, StyleSheet, Pressable, Image } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { MlMeter } from '@/src/components/fragrance/MlMeter';
 import { SAMPLE_WARDROBE_IDS, getFragrance, type MockFragrance } from '@/src/mock/fragrances';
-import { useWardrobeStore, type WardrobeStatus, type UnitType } from '@/src/stores/useWardrobeStore';
+import { useWardrobeStore, type WardrobeStatus, type UnitType, type WardrobeItem } from '@/src/stores/useWardrobeStore';
+import { useWearLogStore } from '@/src/stores/useWearLogStore';
+import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 
 type Status = WardrobeStatus;
 
@@ -32,6 +34,11 @@ export default function WardrobeScreen() {
 
   const storeItems = useWardrobeStore((s) => s.items);
   const addToStore = useWardrobeStore((s) => s.add);
+  const removeFromStore = useWardrobeStore((s) => s.remove);
+  const wearCountMap = useWearLogStore((s) => s.countByFragrance());
+
+  const [editingItem, setEditingItem] = useState<WardrobeItem | null>(null);
+  const [editingFragrance, setEditingFragrance] = useState<MockFragrance | null>(null);
 
   // Seed once on first run if empty.
   useEffect(() => {
@@ -66,14 +73,45 @@ export default function WardrobeScreen() {
     return out;
   }, [storeItems]);
 
-  const visible = useMemo(
-    () => activeStatus === 'all' ? items : items.filter((i) => i.status === activeStatus),
-    [items, activeStatus],
+  const lowItemIds = useMemo(
+    () => new Set(items.filter((i) => i.status === 'have' && (i.remaining_ml / i.size_ml) < 0.2).map((i) => i.itemId)),
+    [items],
   );
+  const visible = useMemo(() => {
+    const filtered = activeStatus === 'all' ? items : items.filter((i) => i.status === activeStatus);
+    // Exclude items already shown in the Running Low banner to avoid duplication
+    if (activeStatus === 'all') return filtered.filter((i) => !lowItemIds.has(i.itemId));
+    return filtered;
+  }, [items, activeStatus, lowItemIds]);
 
   const totalMl = items.filter((i) => i.status === 'have').reduce((s, i) => s + i.remaining_ml, 0);
   const haveCount = items.filter((i) => i.status === 'have').length;
   const lowCount = items.filter((i) => i.status === 'have' && (i.remaining_ml / i.size_ml) < 0.2).length;
+
+  const handleLongPress = (item: WardrobeItemView) => {
+    const storeItem = storeItems.find((i) => i.id === item.itemId);
+    if (!storeItem) return;
+    Alert.alert(item.fragrance.name, 'What would you like to do?', [
+      {
+        text: 'Edit',
+        onPress: () => {
+          setEditingItem(storeItem);
+          setEditingFragrance(item.fragrance);
+        },
+      },
+      {
+        text: 'Delete',
+        style: 'destructive',
+        onPress: () => {
+          Alert.alert('Remove from Wardrobe', `Remove ${item.fragrance.name}?`, [
+            { text: 'Cancel', style: 'cancel' },
+            { text: 'Remove', style: 'destructive', onPress: () => removeFromStore(item.itemId) },
+          ]);
+        },
+      },
+      { text: 'Cancel', style: 'cancel' },
+    ]);
+  };
 
   const PILLS: { id: 'all' | Status; label: string }[] = [
     { id: 'all', label: 'All' },
@@ -91,11 +129,12 @@ export default function WardrobeScreen() {
             <Text style={styles.titleItalic}>my</Text>Wardrobe
           </Text>
           <Text style={styles.subtitle}>
-            {haveCount} fragrances · {totalMl.toFixed(0)} mL on hand
-            {lowCount > 0 && ` · ${lowCount} running low`}
+            {activeStatus === 'all' || activeStatus === 'have'
+              ? `${haveCount} fragrances · ${totalMl.toFixed(0)} mL on hand${lowCount > 0 ? ` · ${lowCount} running low` : ''}`
+              : `${visible.length} ${activeStatus === 'want' ? 'wishlisted' : activeStatus === 'tested' ? 'tested' : 'sold on'}`}
           </Text>
         </View>
-        <Pressable style={styles.addBtn} onPress={() => router.push('/(tabs)/discover')}>
+        <Pressable style={styles.addBtn} onPress={() => router.push({ pathname: '/(tabs)/discover', params: { from: 'wardrobe' } } as any)}>
           <Ionicons name="add" size={22} color={COLORS.white} />
         </Pressable>
       </View>
@@ -116,6 +155,18 @@ export default function WardrobeScreen() {
       </ScrollView>
 
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+        {/* Running Low section — surfaces items that need restocking */}
+        {activeStatus === 'all' && lowCount > 0 && (
+          <View style={styles.lowSection}>
+            <Text style={styles.lowSectionTitle}>RUNNING LOW</Text>
+            {items
+              .filter((i) => i.status === 'have' && (i.remaining_ml / i.size_ml) < 0.2)
+              .map((item) => (
+                <WardrobeRow key={item.itemId} item={item} wearCount={wearCountMap[item.fragrance.id] ?? 0} onPress={() => router.push(`/fragrance/${item.fragrance.id}`)} onLongPress={() => handleLongPress(item)} />
+              ))}
+          </View>
+        )}
+
         {visible.length === 0 ? (
           <View style={styles.empty}>
             <Text style={styles.emptyTitle}>Nothing here yet.</Text>
@@ -124,20 +175,27 @@ export default function WardrobeScreen() {
         ) : (
           <View style={styles.list}>
             {visible.map((item) => (
-              <WardrobeRow key={item.itemId} item={item} onPress={() => router.push(`/fragrance/${item.fragrance.id}`)} />
+              <WardrobeRow key={item.itemId} item={item} wearCount={wearCountMap[item.fragrance.id] ?? 0} onPress={() => router.push(`/fragrance/${item.fragrance.id}`)} onLongPress={() => handleLongPress(item)} />
             ))}
           </View>
         )}
       </ScrollView>
+
+      <AddToWardrobeSheet
+        visible={editingItem !== null}
+        fragrance={editingFragrance}
+        editItem={editingItem}
+        onClose={() => { setEditingItem(null); setEditingFragrance(null); }}
+      />
     </SafeAreaView>
   );
 }
 
-function WardrobeRow({ item, onPress }: { item: WardrobeItemView; onPress: () => void }) {
+function WardrobeRow({ item, wearCount, onPress, onLongPress }: { item: WardrobeItemView; wearCount: number; onPress: () => void; onLongPress?: () => void }) {
   const isLow = item.status === 'have' && (item.remaining_ml / item.size_ml) < 0.2;
 
   return (
-    <Pressable onPress={onPress} style={styles.row}>
+    <Pressable onPress={onPress} onLongPress={onLongPress} delayLongPress={400} style={styles.row}>
       <View style={styles.rowImageWrap}>
         <Image source={{ uri: item.fragrance.image_url }} style={styles.rowImage} />
       </View>
@@ -148,6 +206,9 @@ function WardrobeRow({ item, onPress }: { item: WardrobeItemView; onPress: () =>
           <View style={[styles.statusPill, statusStyle(item.status)]}>
             <Text style={[styles.statusText, statusTextStyle(item.status)]}>{statusLabel(item.status)}</Text>
           </View>
+          {wearCount > 0 && (
+            <Text style={styles.wornBadge}>Worn {wearCount}×</Text>
+          )}
           {isLow && (
             <View style={styles.lowPill}>
               <Ionicons name="alert-circle" size={11} color={COLORS.danger} />
@@ -217,6 +278,16 @@ const styles = StyleSheet.create({
   pillText: { ...TYPE.label, color: COLORS.muted, fontSize: 13 },
   pillTextActive: { color: COLORS.bg },
   container: { paddingBottom: SPACING.xxl },
+  lowSection: {
+    paddingHorizontal: SPACING.lg,
+    paddingTop: SPACING.md,
+    paddingBottom: SPACING.xs,
+    gap: SPACING.sm,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: COLORS.border,
+    marginBottom: SPACING.md,
+  },
+  lowSectionTitle: { ...TYPE.eyebrow, color: COLORS.danger, marginBottom: SPACING.xs },
   list: { paddingHorizontal: SPACING.lg, gap: SPACING.md },
   empty: {
     margin: SPACING.lg,
@@ -252,6 +323,7 @@ const styles = StyleSheet.create({
   rowMetaRow: { flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
   statusPill: { paddingHorizontal: 9, paddingVertical: 3, borderRadius: RADIUS.full },
   statusText: { fontSize: 10, fontWeight: '600', letterSpacing: 0.5 },
+  wornBadge: { fontSize: 10, color: COLORS.muted, fontWeight: '500', letterSpacing: 0.3 },
   lowPill: { flexDirection: 'row', alignItems: 'center', gap: 3 },
   lowText: { fontSize: 10, color: COLORS.danger, fontWeight: '600', letterSpacing: 0.5 },
   rowMeter: { width: 50, alignItems: 'center' },

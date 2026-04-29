@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { MOCK_CATALOG } from '@/src/mock/fragrances';
+import { useQuizStore } from '@/src/stores/useQuizStore';
 
 /**
  * Quiz results — uses the answers to filter the mock catalog into the
@@ -12,13 +13,15 @@ import { MOCK_CATALOG } from '@/src/mock/fragrances';
  */
 export default function QuizResults() {
   const router = useRouter();
-  const { answers } = useLocalSearchParams<{ answers: string }>();
-  const parsed = useMemo(() => {
-    try { return JSON.parse(answers ?? '{}') as Record<string, string>; } catch { return {}; }
-  }, [answers]);
+  const answers = useQuizStore((s) => s.answers);
 
-  const family = parsed.family;
-  const priceTier = Number(parsed.price ?? 0);
+  const family = answers.family;
+  const priceTier = Number(answers.price ?? 0);
+  const season = answers.season as string | undefined;
+  const longevity = Number(answers.longevity ?? 0);
+  const sillage = answers.sillage as string | undefined;
+  const avoid = answers.avoid as string | undefined;
+  const discovery = answers.discovery as string | undefined;
 
   const matches = useMemo(() => {
     return MOCK_CATALOG
@@ -27,12 +30,20 @@ export default function QuizResults() {
         if (family && f.fragrance_family === family) score += 0.5;
         if (priceTier && Math.abs(f.price_tier - priceTier) <= 1) score += 0.3;
         score += f.compliment_score * 0.2;
+        // Pro question signals
+        if (longevity && Math.abs(f.community_longevity - longevity) <= 1) score += 0.2;
+        if (sillage === 'intimate' && f.community_sillage <= 3) score += 0.15;
+        if (sillage === 'strong' && f.community_sillage >= 4) score += 0.15;
+        if (avoid === 'sweet' && f.top_accords.some((a) => ['gourmand','sweet','vanilla'].includes(a))) score -= 0.3;
+        if (avoid === 'heavy' && f.top_accords.some((a) => ['oud','leather','tobacco'].includes(a))) score -= 0.3;
+        if (discovery === 'classic' && f.community_longevity >= 4) score += 0.1;
+        if (discovery === 'wild') score += (1 - f.versatility_score) * 0.15;
         return { f, score };
       })
       .sort((a, b) => b.score - a.score)
       .slice(0, 5)
       .map((x) => x.f);
-  }, [family, priceTier]);
+  }, [family, priceTier, longevity, sillage, avoid, discovery]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -61,7 +72,7 @@ export default function QuizResults() {
         <Pressable style={styles.cta} onPress={() => router.replace('/(tabs)')}>
           <Text style={styles.ctaText}>Back to Today</Text>
         </Pressable>
-        <Pressable style={styles.secondaryCta} onPress={() => router.replace('/quiz')}>
+        <Pressable style={styles.secondaryCta} onPress={() => router.push('/quiz')}>
           <Text style={styles.secondaryCtaText}>Retake the Quiz</Text>
         </Pressable>
       </ScrollView>
