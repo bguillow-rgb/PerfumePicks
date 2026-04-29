@@ -274,9 +274,9 @@ const styles = StyleSheet.create({
     fontFamily: 'PinyonScript_400Regular',
     fontSize: 56,
     color: COLORS.accent,
-    lineHeight: 72,
+    lineHeight: 88,
     textAlign: 'center',
-    flexShrink: 1,                   // lets adjustsFontSizeToFit work cleanly
+    flexShrink: 1,
   },
   // Editorial subtitle — italic serif, lowercase, soft taupe. Reads as a
   // personal note ("good morning — saturday, april 25") rather than a label.
@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
     fontFamily: 'PinyonScript_400Regular',
     fontSize: 22,
     color: COLORS.accent,
-    lineHeight: 26,
+    lineHeight: 34,
   },
   hScroll: { paddingRight: SPACING.lg },
   heroWrap: { paddingRight: SPACING.lg },

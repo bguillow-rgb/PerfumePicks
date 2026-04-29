@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
     fontFamily: 'PinyonScript_400Regular',
     fontSize: 32,
     color: COLORS.accent,
-    lineHeight: 38,
+    lineHeight: 50,
   },
   question: {
     fontFamily: FONTS.serif, fontSize: 32, fontWeight: '600', color: COLORS.text,

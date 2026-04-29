@@ -427,7 +427,7 @@ const styles = StyleSheet.create({
   section: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl },
   sectionHeader: { flexDirection: 'row', alignItems: 'baseline', gap: 10, marginBottom: SPACING.md },
   sectionTitle: { ...TYPE.heading },
-  sectionCursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 22, color: COLORS.accent, lineHeight: 26 },
+  sectionCursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 22, color: COLORS.accent, lineHeight: 34 },
   hScroll: { paddingRight: SPACING.lg },
 
   accordWrap: {

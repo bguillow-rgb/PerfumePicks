@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
     fontSize: 56,
     color: COLORS.accent,
     textAlign: 'center',
-    lineHeight: 76,
+    lineHeight: 88,
   },
   brandRule: {
     width: 40,

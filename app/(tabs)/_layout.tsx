@@ -59,12 +59,12 @@ const profileIcon = StyleSheet.create({
   disc: {
     backgroundColor: COLORS.blushSoft,
     alignItems: 'center', justifyContent: 'center',
-    overflow: 'hidden',
   },
   monogram: {
     fontFamily: 'PinyonScript_400Regular',
     color: COLORS.accent,
     textAlign: 'center',
+    lineHeight: undefined, // let React Native auto-size so ascenders don't clip
   },
 });
 

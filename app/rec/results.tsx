@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
     fontFamily: 'PinyonScript_400Regular',
     fontSize: 22,
     color: COLORS.accent,
-    lineHeight: 26,
+    lineHeight: 34,
   },
 
   row: {

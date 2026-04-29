@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     fontFamily: 'PinyonScript_400Regular',
     fontSize: 36,
     color: COLORS.accent,
-    lineHeight: 40,
+    lineHeight: 56,
   },
   closeBtn: { marginTop: 4 },
   scroll: { flexShrink: 1 },
