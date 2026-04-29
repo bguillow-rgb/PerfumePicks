@@ -35,7 +35,14 @@ export default function WardrobeScreen() {
   const storeItems = useWardrobeStore((s) => s.items);
   const addToStore = useWardrobeStore((s) => s.add);
   const removeFromStore = useWardrobeStore((s) => s.remove);
-  const wearCountMap = useWearLogStore((s) => s.countByFragrance());
+  const wearLogs = useWearLogStore((s) => s.logs);
+  const wearCountMap = useMemo(() => {
+    const out: Record<string, number> = {};
+    for (const l of wearLogs) {
+      out[l.fragrance_id] = (out[l.fragrance_id] ?? 0) + 1;
+    }
+    return out;
+  }, [wearLogs]);
 
   const [editingItem, setEditingItem] = useState<WardrobeItem | null>(null);
   const [editingFragrance, setEditingFragrance] = useState<MockFragrance | null>(null);
