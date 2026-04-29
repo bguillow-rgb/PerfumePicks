@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   tier: { paddingVertical: SPACING.sm },
   headerRow: { flexDirection: 'row', alignItems: 'baseline', marginBottom: SPACING.sm, gap: 8 },
   eyebrow: { ...TYPE.eyebrow, fontSize: 11 },
-  cursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 22, color: COLORS.accent, lineHeight: 34 },
+  cursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 22, color: COLORS.accent, lineHeight: 34, paddingLeft: 6 },
   chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
   chip: {
     paddingHorizontal: 12,

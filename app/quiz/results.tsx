@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   container: { paddingBottom: SPACING.xxl },
   header: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.lg, alignItems: 'center' },
   eyebrow: { ...TYPE.eyebrow },
-  cursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 36, color: COLORS.accent, lineHeight: 56, marginTop: 4 },
+  cursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 36, color: COLORS.accent, lineHeight: 56, marginTop: 4, paddingLeft: 10 },
   headline: { fontFamily: FONTS.serif, fontSize: 28, fontWeight: '600', color: COLORS.text, textAlign: 'center', marginTop: SPACING.sm, lineHeight: 34 },
   italic: { fontStyle: 'italic', color: COLORS.accent },
   body: { ...TYPE.body, color: COLORS.muted, textAlign: 'center', marginTop: SPACING.md, paddingHorizontal: SPACING.md, fontStyle: 'italic' },

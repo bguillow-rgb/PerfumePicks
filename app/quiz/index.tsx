@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
   teaseBannerCta: { ...TYPE.label, color: COLORS.accent, fontSize: 12 },
   body: { flex: 1, paddingHorizontal: SPACING.lg, paddingTop: SPACING.xl },
   eyebrow: { ...TYPE.eyebrow },
-  cursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 32, color: COLORS.accent, lineHeight: 50, marginTop: 4 },
+  cursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 32, color: COLORS.accent, lineHeight: 50, marginTop: 4, paddingLeft: 8 },
   question: {
     fontFamily: FONTS.serif, fontSize: 32, fontWeight: '600', color: COLORS.text,
     marginTop: SPACING.sm, marginBottom: SPACING.xl, lineHeight: 38,

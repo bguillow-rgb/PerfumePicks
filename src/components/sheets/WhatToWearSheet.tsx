@@ -219,6 +219,7 @@ const styles = StyleSheet.create({
     fontSize: 36,
     color: COLORS.accent,
     lineHeight: 56,
+    paddingLeft: 10,
   },
   closeBtn: { marginTop: 4 },
   scroll: { flexShrink: 1 },

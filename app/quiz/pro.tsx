@@ -287,6 +287,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: COLORS.accent,
     lineHeight: 50,
+    paddingLeft: 8,
   },
   question: {
     fontFamily: FONTS.serif, fontSize: 32, fontWeight: '600', color: COLORS.text,

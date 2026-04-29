@@ -248,6 +248,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: COLORS.accent,
     lineHeight: 34,
+    paddingLeft: 6,
   },
 
   row: {

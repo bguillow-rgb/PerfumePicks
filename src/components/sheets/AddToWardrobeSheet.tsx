@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
   },
   body: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.md, paddingBottom: SPACING.xl },
   eyebrow: { ...TYPE.eyebrow },
-  cursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 28, color: COLORS.accent, lineHeight: 44, marginTop: 2 },
+  cursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 28, color: COLORS.accent, lineHeight: 44, marginTop: 2, paddingLeft: 8 },
   fragName: { fontFamily: FONTS.serif, fontSize: 26, fontWeight: '600', color: COLORS.text, marginTop: SPACING.sm, lineHeight: 30 },
   fragBrand: { ...TYPE.bodySmall, marginTop: 2 },
 
