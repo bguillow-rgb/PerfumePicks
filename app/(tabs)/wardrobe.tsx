@@ -84,23 +84,12 @@ export default function WardrobeScreen() {
     return out;
   }, [storeItems]);
 
-  const lowItemIds = useMemo(
-    () => new Set(items.filter((i) => i.status === 'have' && (i.remaining_ml / i.size_ml) < 0.2).map((i) => i.itemId)),
-    [items],
-  );
+
   const visible = useMemo(() => {
-    let filtered: WardrobeItemView[];
-    if (activeFilter === 'all') {
-      filtered = items;
-    } else if (activeFilter === 'worn') {
-      filtered = items.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0);
-    } else {
-      filtered = items.filter((i) => i.status === activeFilter);
-    }
-    // Exclude items already shown in the Running Low banner to avoid duplication
-    if (activeFilter === 'all') return filtered.filter((i) => !lowItemIds.has(i.itemId));
-    return filtered;
-  }, [items, activeFilter, lowItemIds, wearCountMap]);
+    if (activeFilter === 'all') return items;
+    if (activeFilter === 'worn') return items.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0);
+    return items.filter((i) => i.status === activeFilter);
+  }, [items, activeFilter, wearCountMap]);
 
   const totalMl = items.filter((i) => i.status === 'have').reduce((s, i) => s + i.remaining_ml, 0);
   const haveCount = items.filter((i) => i.status === 'have').length;
@@ -147,11 +136,13 @@ export default function WardrobeScreen() {
             <Text style={styles.titleItalic}>my</Text>Wardrobe
           </Text>
           <Text style={styles.subtitle}>
-            {activeFilter === 'all' || activeFilter === 'have'
-              ? `${haveCount} fragrances · ${totalMl.toFixed(0)} mL on hand${lowCount > 0 ? ` · ${lowCount} running low` : ''}`
-              : activeFilter === 'want'
-                ? `${visible.length} wishlisted`
-                : `${wornCount} worn`}
+            {activeFilter === 'all'
+              ? `${items.length} fragrance${items.length !== 1 ? 's' : ''}`
+              : activeFilter === 'have'
+                ? `${haveCount} on hand · ${totalMl.toFixed(0)} mL${lowCount > 0 ? ` · ${lowCount} running low` : ''}`
+                : activeFilter === 'want'
+                  ? `${visible.length} wishlisted`
+                  : `${wornCount} worn`}
           </Text>
         </View>
         <Pressable style={styles.addBtn} onPress={() => router.push({ pathname: '/(tabs)/discover', params: { from: 'wardrobe' } } as any)}>
@@ -175,17 +166,6 @@ export default function WardrobeScreen() {
       </ScrollView>
 
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
-        {/* Running Low section — surfaces items that need restocking */}
-        {activeFilter === 'all' && lowCount > 0 && (
-          <View style={styles.lowSection}>
-            <Text style={styles.lowSectionTitle}>RUNNING LOW</Text>
-            {items
-              .filter((i) => i.status === 'have' && (i.remaining_ml / i.size_ml) < 0.2)
-              .map((item) => (
-                <WardrobeRow key={item.itemId} item={item} wearCount={wearCountMap[item.fragrance.id] ?? 0} onPress={() => router.push(`/fragrance/${item.fragrance.id}`)} onLongPress={() => handleLongPress(item)} />
-              ))}
-          </View>
-        )}
 
         {visible.length === 0 ? (
           <View style={styles.empty}>
@@ -295,19 +275,9 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   pillActive: { backgroundColor: COLORS.accent, borderColor: COLORS.accent },
-  pillText: { ...TYPE.label, color: COLORS.muted, fontSize: 13 },
+  pillText: { fontSize: 13, fontWeight: '600', color: COLORS.text, letterSpacing: 0.3 },
   pillTextActive: { color: COLORS.white },
   container: { paddingBottom: SPACING.xxl },
-  lowSection: {
-    paddingHorizontal: SPACING.lg,
-    paddingTop: SPACING.md,
-    paddingBottom: SPACING.xs,
-    gap: SPACING.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: COLORS.border,
-    marginBottom: SPACING.md,
-  },
-  lowSectionTitle: { ...TYPE.eyebrow, color: COLORS.danger, marginBottom: SPACING.xs },
   list: { paddingHorizontal: SPACING.lg, gap: SPACING.md },
   empty: {
     margin: SPACING.lg,
