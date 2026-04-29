@@ -11,6 +11,7 @@ import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 
 type Status = WardrobeStatus;
+type ActiveFilter = 'all' | 'want' | 'have' | 'worn';
 
 interface WardrobeItemView {
   itemId: string;
@@ -30,7 +31,7 @@ interface WardrobeItemView {
  */
 export default function WardrobeScreen() {
   const router = useRouter();
-  const [activeStatus, setActiveStatus] = useState<'all' | Status>('all');
+  const [activeFilter, setActiveFilter] = useState<ActiveFilter>('all');
 
   const storeItems = useWardrobeStore((s) => s.items);
   const addToStore = useWardrobeStore((s) => s.add);
@@ -85,15 +86,23 @@ export default function WardrobeScreen() {
     [items],
   );
   const visible = useMemo(() => {
-    const filtered = activeStatus === 'all' ? items : items.filter((i) => i.status === activeStatus);
+    let filtered: WardrobeItemView[];
+    if (activeFilter === 'all') {
+      filtered = items;
+    } else if (activeFilter === 'worn') {
+      filtered = items.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0);
+    } else {
+      filtered = items.filter((i) => i.status === activeFilter);
+    }
     // Exclude items already shown in the Running Low banner to avoid duplication
-    if (activeStatus === 'all') return filtered.filter((i) => !lowItemIds.has(i.itemId));
+    if (activeFilter === 'all') return filtered.filter((i) => !lowItemIds.has(i.itemId));
     return filtered;
-  }, [items, activeStatus, lowItemIds]);
+  }, [items, activeFilter, lowItemIds, wearCountMap]);
 
   const totalMl = items.filter((i) => i.status === 'have').reduce((s, i) => s + i.remaining_ml, 0);
   const haveCount = items.filter((i) => i.status === 'have').length;
   const lowCount = items.filter((i) => i.status === 'have' && (i.remaining_ml / i.size_ml) < 0.2).length;
+  const wornCount = useMemo(() => items.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0).length, [items, wearCountMap]);
 
   const handleLongPress = (item: WardrobeItemView) => {
     const storeItem = storeItems.find((i) => i.id === item.itemId);
@@ -120,12 +129,11 @@ export default function WardrobeScreen() {
     ]);
   };
 
-  const PILLS: { id: 'all' | Status; label: string }[] = [
+  const PILLS: { id: ActiveFilter; label: string }[] = [
     { id: 'all', label: 'All' },
-    { id: 'have', label: 'Have' },
     { id: 'want', label: 'Want' },
-    { id: 'tested', label: 'Tested' },
-    { id: 'sold_on', label: 'Sold On' },
+    { id: 'have', label: 'Have' },
+    { id: 'worn', label: 'Worn' },
   ];
 
   return (
@@ -136,9 +144,11 @@ export default function WardrobeScreen() {
             <Text style={styles.titleItalic}>my</Text>Wardrobe
           </Text>
           <Text style={styles.subtitle}>
-            {activeStatus === 'all' || activeStatus === 'have'
+            {activeFilter === 'all' || activeFilter === 'have'
               ? `${haveCount} fragrances · ${totalMl.toFixed(0)} mL on hand${lowCount > 0 ? ` · ${lowCount} running low` : ''}`
-              : `${visible.length} ${activeStatus === 'want' ? 'wishlisted' : activeStatus === 'tested' ? 'tested' : 'sold on'}`}
+              : activeFilter === 'want'
+                ? `${visible.length} wishlisted`
+                : `${wornCount} worn`}
           </Text>
         </View>
         <Pressable style={styles.addBtn} onPress={() => router.push({ pathname: '/(tabs)/discover', params: { from: 'wardrobe' } } as any)}>
@@ -153,9 +163,9 @@ export default function WardrobeScreen() {
         style={styles.pillRowOuter}
       >
         {PILLS.map((p) => (
-          <Pressable key={p.id} onPress={() => setActiveStatus(p.id)}>
-            <View style={[styles.pill, activeStatus === p.id && styles.pillActive]}>
-              <Text style={[styles.pillText, activeStatus === p.id && styles.pillTextActive]}>{p.label}</Text>
+          <Pressable key={p.id} onPress={() => setActiveFilter(p.id)}>
+            <View style={[styles.pill, activeFilter === p.id && styles.pillActive]}>
+              <Text style={[styles.pillText, activeFilter === p.id && styles.pillTextActive]}>{p.label}</Text>
             </View>
           </Pressable>
         ))}
@@ -163,7 +173,7 @@ export default function WardrobeScreen() {
 
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         {/* Running Low section — surfaces items that need restocking */}
-        {activeStatus === 'all' && lowCount > 0 && (
+        {activeFilter === 'all' && lowCount > 0 && (
           <View style={styles.lowSection}>
             <Text style={styles.lowSectionTitle}>RUNNING LOW</Text>
             {items
