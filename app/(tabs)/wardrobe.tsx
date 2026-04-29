@@ -294,7 +294,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   pillActive: { backgroundColor: COLORS.accent, borderColor: COLORS.accent },
-  pillText: { fontSize: 13, fontWeight: '600', color: COLORS.text, letterSpacing: 0.3 },
+  pillText: { fontFamily: FONTS.body, fontSize: 13, fontWeight: '600', color: COLORS.text, letterSpacing: 0.3 },
   pillTextActive: { color: COLORS.white },
   container: { paddingBottom: SPACING.xxl },
   list: { paddingHorizontal: SPACING.lg, gap: SPACING.md },
