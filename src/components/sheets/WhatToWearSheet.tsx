@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-  View, Text, StyleSheet, Modal, Pressable, ScrollView, Dimensions,
+  View, Text, StyleSheet, Modal, Pressable, ScrollView,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import * as Haptics from 'expo-haptics';
@@ -35,13 +35,8 @@ const WEATHERS: { id: Weather; label: string; icon: string }[] = [
   { id: 'rainy',     label: 'Rainy',       icon: 'rainy-outline' },
 ];
 
-// Fixed 3-column chip width: screen minus sheet horizontal padding minus 2 gaps.
-const SHEET_INNER_W = Dimensions.get('window').width - 2 * SPACING.lg;
-const CHIP_W = (SHEET_INNER_W - 20) / 3; // 20px = 2 × 10px gap
-
 export function WhatToWearSheet({ visible, onClose }: Props) {
   const router = useRouter();
-  // Selections persist across re-opens — only reset after a successful navigation.
   const [occasion, setOccasion] = useState<Occasion | null>(null);
   const [weather, setWeather] = useState<Weather | null>(null);
 
@@ -50,7 +45,6 @@ export function WhatToWearSheet({ visible, onClose }: Props) {
     const params: Record<string, string> = {};
     if (occasion) params.occasion = occasion;
     if (weather)  params.weather  = weather;
-    // Reset after submit so next open is fresh.
     setOccasion(null);
     setWeather(null);
     onClose();
@@ -76,10 +70,8 @@ export function WhatToWearSheet({ visible, onClose }: Props) {
     >
       <Pressable style={styles.backdrop} onPress={onClose} />
       <View style={styles.sheet}>
-        {/* Handle */}
         <View style={styles.handle} />
 
-        {/* Header */}
         <View style={styles.header}>
           <View>
             <Text style={styles.eyebrow}>RECOMMENDATION</Text>
@@ -101,7 +93,6 @@ export function WhatToWearSheet({ visible, onClose }: Props) {
           {/* Occasion */}
           <View style={styles.group}>
             <Text style={styles.groupLabel}>OCCASION</Text>
-            <Text style={styles.groupHint}>Where are you headed? (optional)</Text>
             <View style={styles.chipGrid}>
               {OCCASIONS.map((o) => {
                 const active = occasion === o.id;
@@ -113,7 +104,7 @@ export function WhatToWearSheet({ visible, onClose }: Props) {
                   >
                     <Ionicons
                       name={o.icon as any}
-                      size={16}
+                      size={15}
                       color={active ? COLORS.white : COLORS.muted}
                     />
                     <Text style={[styles.chipText, active && styles.chipTextActive]}>
@@ -128,7 +119,6 @@ export function WhatToWearSheet({ visible, onClose }: Props) {
           {/* Weather */}
           <View style={styles.group}>
             <Text style={styles.groupLabel}>WEATHER</Text>
-            <Text style={styles.groupHint}>How does it feel outside? (optional)</Text>
             <View style={styles.chipGrid}>
               {WEATHERS.map((w) => {
                 const active = weather === w.id;
@@ -140,7 +130,7 @@ export function WhatToWearSheet({ visible, onClose }: Props) {
                   >
                     <Ionicons
                       name={w.icon as any}
-                      size={16}
+                      size={15}
                       color={active ? COLORS.white : COLORS.muted}
                     />
                     <Text style={[styles.chipText, active && styles.chipTextActive]}>
@@ -164,7 +154,6 @@ export function WhatToWearSheet({ visible, onClose }: Props) {
           )}
         </ScrollView>
 
-        {/* CTA — always accent; label signals intent */}
         <View style={styles.ctaWrap}>
           <Pressable style={styles.cta} onPress={handleFind}>
             <Ionicons name="sparkles" size={16} color={COLORS.white} style={{ marginRight: 8 }} />
@@ -219,36 +208,35 @@ const styles = StyleSheet.create({
     fontSize: 36,
     color: COLORS.accent,
     lineHeight: 56,
-    paddingLeft: 10,
+    paddingLeft: 8,
+
   },
   closeBtn: { marginTop: 4 },
   scroll: { flexShrink: 1 },
   scrollContent: { paddingHorizontal: SPACING.lg, paddingBottom: SPACING.lg },
-  group: { marginBottom: SPACING.xl },
-  groupLabel: { ...TYPE.eyebrow, marginBottom: 2 },
-  groupHint: { ...TYPE.bodySmall, color: COLORS.muted, marginBottom: SPACING.md },
+  group: { marginBottom: SPACING.lg },
+  groupLabel: { ...TYPE.eyebrow, marginBottom: SPACING.sm },
   chipGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 10,
+    gap: 8,
   },
   chip: {
-    width: CHIP_W,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
     gap: 6,
-    paddingVertical: 12,
+    paddingVertical: 11,
+    paddingHorizontal: 16,
     borderRadius: RADIUS.full,
     borderWidth: 1,
     borderColor: COLORS.border,
     backgroundColor: COLORS.card,
   },
   chipActive: {
-    backgroundColor: COLORS.text,
-    borderColor: COLORS.text,
+    backgroundColor: COLORS.accent,
+    borderColor: COLORS.accent,
   },
-  chipText: { ...TYPE.label, fontSize: 12, color: COLORS.muted, letterSpacing: 0.3 },
+  chipText: { ...TYPE.label, fontSize: 13, color: COLORS.muted, letterSpacing: 0.3 },
   chipTextActive: { color: COLORS.white },
   summaryRow: {
     flexDirection: 'row',
