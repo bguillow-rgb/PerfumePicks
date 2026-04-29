@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useCallback } from 'react';
-import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert, ActionSheetIOS, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -31,10 +31,10 @@ interface WardrobeItemView {
  */
 export default function WardrobeScreen() {
   const router = useRouter();
-  const [activeFilter, setActiveFilter] = useState<ActiveFilter>('all');
+  const [activeFilter, setActiveFilter] = useState<ActiveFilter>('have');
 
-  // Always open on "All" when navigating to this tab.
-  useFocusEffect(useCallback(() => { setActiveFilter('all'); }, []));
+  // Always open on "Have" (my collection) when navigating to this tab.
+  useFocusEffect(useCallback(() => { setActiveFilter('have'); }, []));
 
   const storeItems = useWardrobeStore((s) => s.items);
   const addToStore = useWardrobeStore((s) => s.add);
@@ -145,7 +145,25 @@ export default function WardrobeScreen() {
                   : `${wornCount} worn`}
           </Text>
         </View>
-        <Pressable style={styles.addBtn} onPress={() => router.push({ pathname: '/(tabs)/discover', params: { from: 'wardrobe' } } as any)}>
+        <Pressable
+          style={styles.addBtn}
+          onPress={() => {
+            const search = () => router.push({ pathname: '/(tabs)/discover', params: { from: 'wardrobe' } } as any);
+            const photo = () => Alert.alert('Coming Soon', 'Bottle photo recognition is on the way!');
+            if (Platform.OS === 'ios') {
+              ActionSheetIOS.showActionSheetWithOptions(
+                { options: ['Cancel', 'Take a photo of my bottle', 'Search for it'], cancelButtonIndex: 0 },
+                (i) => { if (i === 1) photo(); else if (i === 2) search(); },
+              );
+            } else {
+              Alert.alert('Add Fragrance', 'How would you like to add it?', [
+                { text: 'Take a photo', onPress: photo },
+                { text: 'Search for it', onPress: search },
+                { text: 'Cancel', style: 'cancel' },
+              ]);
+            }
+          }}
+        >
           <Ionicons name="add" size={22} color={COLORS.white} />
         </Pressable>
       </View>
