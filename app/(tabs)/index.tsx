@@ -50,6 +50,7 @@ export default function HomeScreen() {
   // Allow manual dismiss of the onboarding card independent of hasSignals
   const [onboardingDismissed, setOnboardingDismissed] = useState(false);
   const showOnboarding = !hasSignals && !onboardingDismissed;
+  const [nudgeDismissedId, setNudgeDismissedId] = useState<string | null>(null);
 
   // P2: "Did you wear this?" nudge — shown when user owns fragrances but
   // hasn't logged a wear today. Pick a random "have" item to suggest logging.
@@ -123,18 +124,27 @@ export default function HomeScreen() {
         )}
 
         {/* P2: Wear nudge — shown when the user has bottles but hasn't logged today */}
-        {wearNudge && (() => {
+        {wearNudge && wearNudge.fragrance_id !== nudgeDismissedId && (() => {
           const f = getFragrance(wearNudge.fragrance_id);
           if (!f) return null;
           return (
-            <Pressable
-              style={styles.wearNudge}
-              onPress={() => router.push(`/fragrance/${f.id}?openLogWear=true`)}
-            >
-              <Text style={styles.wearNudgeLabel}>DID YOU WEAR THIS TODAY?</Text>
-              <Text style={styles.wearNudgeName}>{f.name}</Text>
-              <Text style={styles.wearNudgeHint}>Tap to log a wear and track your collection →</Text>
-            </Pressable>
+            <View style={styles.wearNudge}>
+              <Pressable
+                style={styles.wearNudgeMain}
+                onPress={() => router.push(`/fragrance/${f.id}?openLogWear=true`)}
+              >
+                <Text style={styles.wearNudgeLabel}>DID YOU WEAR THIS TODAY?</Text>
+                <Text style={styles.wearNudgeName}>{f.name}</Text>
+                <Text style={styles.wearNudgeHint}>Tap to log →</Text>
+              </Pressable>
+              <Pressable
+                style={styles.wearNudgeNo}
+                onPress={() => setNudgeDismissedId(wearNudge.fragrance_id)}
+                hitSlop={12}
+              >
+                <Text style={styles.wearNudgeNoText}>No</Text>
+              </Pressable>
+            </View>
           );
         })()}
 
@@ -337,13 +347,28 @@ const styles = StyleSheet.create({
   wearNudge: {
     marginHorizontal: SPACING.lg,
     marginTop: SPACING.md,
-    padding: SPACING.md,
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: COLORS.card,
     borderRadius: RADIUS.md,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: COLORS.accent,
+    overflow: 'hidden',
+  },
+  wearNudgeMain: {
+    flex: 1,
+    padding: SPACING.md,
     gap: 3,
   },
+  wearNudgeNo: {
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.lg,
+    borderLeftWidth: StyleSheet.hairlineWidth,
+    borderLeftColor: COLORS.border,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  wearNudgeNoText: { ...TYPE.label, color: COLORS.muted, fontSize: 12, letterSpacing: 0.5 },
   wearNudgeLabel: { ...TYPE.eyebrow, color: COLORS.accent, fontSize: 10 },
   wearNudgeName: { fontFamily: FONTS.serif, fontSize: 18, fontWeight: '600', color: COLORS.text },
   wearNudgeHint: { ...TYPE.caption, color: COLORS.muted, fontStyle: 'italic' },
