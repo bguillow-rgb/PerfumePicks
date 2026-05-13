@@ -1,0 +1,39 @@
+---
+import { SITE } from '../../consts';
+
+// MobileApplication schema for the iOS app. Once Android ships, render this
+// twice with the relevant operatingSystem + downloadUrl, or emit an array.
+//
+// Conditional fields:
+// - downloadUrl is omitted until SITE.appStoreUrl is set, so we don\u2019t emit
+//   a broken link claim.
+// - aggregateRating is intentionally omitted until there are real ratings;
+//   fabricating ratings is a manual-action risk.
+const base: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: SITE.name,
+  description: SITE.description,
+  operatingSystem: 'iOS',
+  applicationCategory: 'LifestyleApplication',
+  applicationSubCategory: 'Fragrance',
+  // Free with optional Pro IAP. When pricing is confirmed, replace with
+  // detailed Offer including price, priceCurrency, and availability.
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+  },
+};
+
+if (SITE.appStoreUrl) {
+  base.downloadUrl = SITE.appStoreUrl;
+  base.installUrl = SITE.appStoreUrl;
+}
+---
+<script type="application/ld+json" set:html={JSON.stringify(base)} />

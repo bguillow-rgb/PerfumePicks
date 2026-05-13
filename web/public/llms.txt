@@ -1,0 +1,19 @@
+# Perfume Picks
+
+> Perfume Picks is an iOS app for fragrance collectors. It catalogs your
+> wardrobe, tracks every wear, gives weather- and occasion-aware picks from
+> bottles you already own, and builds a personal taste profile from your
+> collection. The app does not sell perfume. It links out to retailer pages
+> when users want to buy. Affiliate links are disclosed.
+
+## Site
+- [Home](https://perfumepicks.app/): app overview, features, FAQ
+- [About](https://perfumepicks.app/about): who runs Perfume Picks, editorial standards, what the app is and is not
+- [Articles](https://perfumepicks.app/articles): guides for fragrance collectors (wardrobe care, note theory, layering, season picks)
+- [Support](https://perfumepicks.app/support): account deletion, subscription cancellation, troubleshooting
+- [Privacy Policy](https://perfumepicks.app/privacy): data collection and handling
+- [Terms of Service](https://perfumepicks.app/terms): eligibility, subscriptions, affiliate disclosure
+- [Delete Account](https://perfumepicks.app/delete-account): how to permanently delete your account and data
+
+## Optional
+- [Sitemap](https://perfumepicks.app/sitemap-index.xml): full URL index updated on every build

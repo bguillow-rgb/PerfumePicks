@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../consts';
+---
+<BaseLayout
+  title="Page Not Found"
+  description="That page does not exist on perfumepicks.app."
+  path="/404"
+  noindex={true}
+>
+  <p class="brand">{SITE.name}</p>
+  <h1>Page Not Found</h1>
+  <p class="effective">That page does not exist.</p>
+
+  <p>
+    Try the <a href="/">home page</a>, take a closer look at the
+    <a href="/features">features</a>, read the
+    <a href="/about">about page</a>, browse the
+    <a href="/articles">articles index</a>, or visit
+    <a href="/support">support</a>.
+  </p>
+
+  <Footer />
+</BaseLayout>

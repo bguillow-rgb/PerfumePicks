@@ -1,0 +1,19 @@
+---
+import { SITE } from '../../consts';
+
+// Person schema for the founder. Used on /about so AI engines can confirm
+// the entity behind the brand. Empty sameAs entries are filtered.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.founder.name,
+  jobTitle: SITE.founder.role,
+  worksFor: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  sameAs: SITE.founder.sameAs.filter(Boolean),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { SITE } from '../consts';
+---
+<BaseLayout
+  title="Terms of Service"
+  description="Perfume Picks terms of service — eligibility, subscriptions, user-generated content, affiliate disclosure, and limitation of liability."
+  path="/terms"
+>
+  <Fragment slot="head">
+    <BreadcrumbSchema crumbs={[{ name: 'Terms of Service', url: `${SITE.url}/terms` }]} />
+  </Fragment>
+
+  <p class="brand">{SITE.name}</p>
+  <h1>Terms of Service</h1>
+  <p class="effective">Effective Date: May 13, 2026</p>
+
+  <p>
+    These Terms of Service ("Terms") govern your use of Perfume Picks ("the
+    app") and the website at <a href={SITE.url}>{SITE.url}</a>. By using the
+    app or the website, you agree to these Terms.
+  </p>
+
+  <h2>1. Eligibility</h2>
+  <p>
+    You must be at least 13 years of age to use Perfume Picks. By creating an
+    account or using the app, you represent that you meet this age requirement.
+  </p>
+
+  <h2>2. Account and Sign-In</h2>
+  <p>
+    You may sign in with Apple or Google, or continue as a guest. You are
+    responsible for activity under your account. Guest accounts store data
+    locally on your device; signing in enables cloud sync across devices.
+  </p>
+
+  <h2>3. Subscriptions</h2>
+  <p>
+    <strong>Perfume Picks Pro</strong> is an optional auto-renewing
+    subscription available as a monthly or yearly plan. Subscriptions are
+    managed by Apple through the App Store and processed by RevenueCat as our
+    subscription manager. Key terms:
+  </p>
+  <ul>
+    <li>Pricing is shown in-app at the time of purchase, in your local currency.</li>
+    <li>Payment is charged to your Apple ID account at confirmation of purchase.</li>
+    <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period.</li>
+    <li>You can manage subscriptions and turn off auto-renewal in <strong>Settings &rarr; Apple ID &rarr; Subscriptions</strong> on your iPhone.</li>
+    <li>Refund requests must be made through Apple. We cannot process refunds directly.</li>
+    <li>Price changes take effect at the next renewal and require notice and consent where required by Apple.</li>
+  </ul>
+
+  <h2>4. Free vs Pro</h2>
+  <p>
+    The Free tier is feature-limited; Pro unlocks additional features.
+    Current pricing and the up-to-date list of what each tier includes are
+    shown in-app at the time of purchase and may evolve as new features
+    ship. Continued use of an active subscription after a feature change
+    constitutes acceptance of the updated tier definition.
+  </p>
+
+  <h2>5. Affiliate Links and Retailer Disclosure</h2>
+  <p>
+    Fragrance detail pages and selected articles may include
+    <strong>&ldquo;Buy from&rdquo;</strong> links to third-party retailers
+    such as FragranceX, Sephora, Amazon Luxury Beauty, and others. These are
+    affiliate links: when you click one and complete a purchase, we may earn
+    a small commission from the retailer. <strong>This does not affect the
+    price you pay.</strong>
+  </p>
+  <p>
+    Affiliate links are clearly indicated on the page where they appear.
+    Perfume Picks is not a retailer and does not sell, distribute, or ship
+    fragrance. Your purchase contract is with the retailer, and any questions
+    about pricing, shipping, returns, or product authenticity must be
+    directed to them.
+  </p>
+  <p>
+    This disclosure is provided in accordance with the FTC's
+    <em>Guides Concerning the Use of Endorsements and Testimonials in Advertising</em>.
+  </p>
+
+  <h2>6. User Content</h2>
+  <p>
+    You retain ownership of content you create on Perfume Picks, including
+    wear logs, ratings, private notes, SOTD posts, and any reviews. By
+    submitting a Scent of the Day post or any other content that you make
+    public, you grant Perfume Picks a non-exclusive, royalty-free, worldwide
+    license to host, display, and distribute that content within the app and
+    on the website for the purpose of operating the service.
+  </p>
+  <p>
+    You may delete your public content at any time. Private notes and wear
+    logs remain solely under your control and are not licensed to us beyond
+    what is necessary to operate the app.
+  </p>
+  <p>
+    You agree not to submit content that is unlawful, defamatory, obscene,
+    harassing, abusive, objectionable, or infringes on the intellectual
+    property rights of others. We have zero tolerance for objectionable
+    content or abusive behavior.
+  </p>
+  <p>
+    Any user can report content through the in-app "Report" button. We review
+    reports within 24 hours and will remove violating content and, where
+    appropriate, restrict or terminate the offending account. We reserve the
+    right to remove content at our discretion.
+  </p>
+
+  <h2>7. Recommendations</h2>
+  <p>
+    Picks, similarity matches, layering suggestions, and dupe suggestions are
+    best-effort, based on catalog data and our taste-profile model. Personal
+    scent perception varies. Always sample before purchasing a full bottle.
+  </p>
+
+  <h2>8. Acceptable Use</h2>
+  <p>
+    No abuse, scraping, reverse-engineering, or interference with the service.
+    We may suspend or terminate accounts that violate these Terms.
+  </p>
+
+  <h2>9. Intellectual Property</h2>
+  <p>
+    The Perfume Picks name, logo, design, and code are our property. Fragrance
+    brand names, house names, product names, and bottle imagery are the
+    property of their respective owners and are used for informational and
+    identification purposes only.
+  </p>
+
+  <h2>10. Disclaimer of Warranties</h2>
+  <p>
+    Perfume Picks is provided "AS IS" and "AS AVAILABLE" without warranties
+    of any kind, express or implied. Fragrance notes, accords, and
+    performance information are general reference and may not reflect every
+    batch or reformulation. We make no claims about the safety, suitability,
+    or compatibility of any fragrance with any individual's skin or health.
+    If you have a known fragrance sensitivity or allergy, consult the
+    retailer or manufacturer before purchasing.
+  </p>
+
+  <h2>11. Limitation of Liability</h2>
+  <p>
+    To the maximum extent permitted by law, our total liability for any claim
+    related to the app or the website shall not exceed the amount you paid to
+    us in the prior twelve months. We are not liable for any indirect,
+    incidental, special, consequential, or punitive damages arising from or
+    related to your use of the service, including loss of data.
+  </p>
+
+  <h2>12. Account Deletion</h2>
+  <p>
+    You may delete your account at any time from the Profile screen within
+    the app. This permanently removes all your data and cannot be undone.
+    Deleting your account does not automatically cancel an active App Store
+    subscription &mdash; manage subscriptions in
+    <strong>Settings &rarr; Apple ID &rarr; Subscriptions</strong>.
+  </p>
+
+  <h2>13. Changes to These Terms</h2>
+  <p>
+    We may update these Terms from time to time. Material changes will be
+    communicated through the app. Continued use after changes constitutes
+    acceptance of the revised Terms.
+  </p>
+
+  <h2>14. Contact</h2>
+  <p>
+    For questions about these Terms, contact us at:
+    <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+  </p>
+
+  <Footer />
+</BaseLayout>

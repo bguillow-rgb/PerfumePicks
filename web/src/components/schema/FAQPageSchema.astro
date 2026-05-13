@@ -1,0 +1,30 @@
+---
+// FAQPage schema. Pass a flat array of {q, a}. Don\u2019t emit duplicate
+// FAQPage schema on the same page \u2014 Google treats that as an error.
+//
+// Use FAQPage for editorial Q&As authored by the site. QAPage is reserved
+// for user-generated forum-style content with a single accepted answer and
+// engagement signals; misuse is a manual-action risk.
+type FAQ = { q: string; a: string };
+interface Props {
+  faqs: FAQ[];
+}
+
+const { faqs } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: a,
+    },
+  })),
+};
+---
+{faqs.length > 0 && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

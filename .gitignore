@@ -3,6 +3,9 @@
 # dependencies
 node_modules/
 
+# Astro content/type cache (marketing site at /web)
+.astro/
+
 # Expo
 .expo/
 dist/

@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { SITE } from '../consts';
+---
+<BaseLayout
+  title="Privacy Policy"
+  description="Perfume Picks privacy policy — what data we collect, how it is used, and how to delete your account."
+  path="/privacy"
+>
+  <Fragment slot="head">
+    <BreadcrumbSchema crumbs={[{ name: 'Privacy Policy', url: `${SITE.url}/privacy` }]} />
+  </Fragment>
+
+  <p class="brand">{SITE.name}</p>
+  <h1>Privacy Policy</h1>
+  <p class="effective">Effective Date: May 13, 2026</p>
+
+  <p>
+    Perfume Picks ("we", "our", or "the app") is a fragrance wardrobe and
+    wear-log app for iOS, with a companion website at
+    <a href={SITE.url}>{SITE.url}</a>. This policy explains what we collect,
+    how we use it, and how to delete it &mdash; for both the app and the website.
+  </p>
+
+  <h2>1. Information We Collect</h2>
+  <p>
+    <strong>Account information.</strong> If you sign in with Apple or Google,
+    we receive your email and a unique identifier from the provider. Guest
+    accounts store only an anonymous identifier with no personal information.
+  </p>
+  <p>
+    <strong>User-generated content.</strong> Wardrobe entries, wear logs,
+    ratings, swipe feedback, quiz responses, taste-profile data, private notes,
+    and SOTD posts are stored in your account.
+  </p>
+  <p>
+    <strong>Device data.</strong> A device identifier and basic diagnostics
+    (OS version, device model, app version) are collected to deliver core
+    features and prevent abuse. We do not collect precise location.
+  </p>
+  <p>
+    <strong>Purchase information.</strong> Subscription transactions are
+    processed by Apple through the App Store and by RevenueCat as the
+    subscription manager. We receive a purchase confirmation but never see
+    your payment details.
+  </p>
+
+  <h2>2. How We Use Your Information</h2>
+  <ul>
+    <li>To run your wardrobe, wear log, and taste profile.</li>
+    <li>To suggest fragrances you already own based on weather, occasion, and recent wears.</li>
+    <li>To sync your wardrobe and wear history across devices.</li>
+    <li>To improve our taste-profile model using anonymized swipe and wear data.</li>
+    <li>To process subscription payments through the App Store via RevenueCat.</li>
+  </ul>
+
+  <h2>3. Privacy Posture</h2>
+  <p>
+    Your wardrobe, wear log, ratings, private notes, and taste profile are
+    <strong>private by default</strong>. Scent of the Day posts become public
+    only when you explicitly toggle that entry public. We do not run cross-user
+    advertising, and we do not sell personal information.
+  </p>
+
+  <h2>4. Third-Party Services</h2>
+  <p>
+    We rely on the following third parties to operate the app. Each receives
+    only the data necessary for the service it provides:
+  </p>
+  <ul>
+    <li><strong>Supabase</strong> &mdash; backend storage and authentication.</li>
+    <li><strong>RevenueCat</strong> &mdash; subscription management.</li>
+    <li><strong>Apple / Google</strong> &mdash; sign-in and payment processing.</li>
+    <li><strong>PostHog</strong> &mdash; anonymous usage analytics.</li>
+    <li><strong>Sentry</strong> &mdash; anonymous crash reporting.</li>
+  </ul>
+
+  <h2>5. Affiliate Link Tracking</h2>
+  <p>
+    When a fragrance detail page links out to a retailer such as FragranceX,
+    Sephora, or Amazon Luxury Beauty, the retailer may set cookies or
+    identifiers on the destination site that we have no control over. Perfume
+    Picks itself only records that an outbound click occurred &mdash; we do
+    not pass your account identity to the retailer.
+  </p>
+
+  <h2>6. Data Retention</h2>
+  <p>
+    Your data is retained as long as your account is active. You may delete
+    your account at any time from the Profile screen, which permanently
+    removes all associated data including wardrobe entries, wear logs, swipe
+    history, quiz results, taste profile, ratings, private notes, and SOTD
+    posts.
+  </p>
+
+  <h2>7. Your Rights</h2>
+  <p>
+    You may request a copy of your data, request correction or deletion, and
+    withdraw consent at any time. California residents and EU users have
+    additional rights under CCPA and GDPR respectively. Contact us using the
+    address below.
+  </p>
+
+  <h2>8. Children's Privacy</h2>
+  <p>
+    Perfume Picks is not directed to children under 13. We do not knowingly
+    collect information from anyone under 13.
+  </p>
+
+  <h2>9. Data Security</h2>
+  <p>
+    All data is transmitted over HTTPS and stored in secured, access-controlled
+    databases. Authentication tokens are stored securely on your device. We
+    follow industry-standard practices to protect your information.
+  </p>
+
+  <h2>10. How to Delete Your Account</h2>
+  <p>You may delete your account in two ways:</p>
+  <ul>
+    <li><strong>In-app:</strong> Profile &rarr; Settings &rarr; Delete Account.</li>
+    <li><strong>By email:</strong> if you cannot access the app, email
+      <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> from
+      your account email with the subject <strong>"Delete My Account"</strong>.
+      We will permanently remove your account within 7 days.</li>
+  </ul>
+
+  <h2>11. Changes to This Policy</h2>
+  <p>
+    We may update this policy from time to time. Material changes will be
+    communicated through the app. Continued use after changes constitutes
+    acceptance.
+  </p>
+
+  <h2>12. Contact</h2>
+  <p>
+    For questions about this privacy policy or your data, contact us at:
+    <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+  </p>
+
+  <Footer />
+</BaseLayout>

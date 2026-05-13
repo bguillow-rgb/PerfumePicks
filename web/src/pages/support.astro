@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { SITE } from '../consts';
+
+// Support FAQs for Perfume Picks — phrased as collector questions, structured
+// as H2 extraction targets, and emitted with FAQPage schema by the FAQ
+// component.
+const faqs = [
+  {
+    q: 'How do I add a fragrance to my wardrobe?',
+    a:
+      'Tap the plus button on the Wardrobe tab, search by fragrance or house, and pick the right entry from the results. Set status to Own, then add purchase price, bottle size, and remaining mL if you want cost-per-wear math. You can also long-press a fragrance from any browse list to add it directly.',
+  },
+  {
+    q: 'Why doesn\u2019t my fragrance appear in search?',
+    a:
+      'The catalog covers tens of thousands of fragrances but is not exhaustive. If a fragrance is missing, use the Suggest a Fragrance link at the bottom of the search results and include the house, name, year if known, and a source link. Curated additions usually land in the next catalog update.',
+  },
+  {
+    q: 'How do I cancel my Perfume Picks Pro subscription?',
+    a:
+      'Subscriptions are managed by Apple, not by Perfume Picks. On your iPhone or iPad open Settings, tap your name at the top, tap Subscriptions, then tap Perfume Picks Pro and Cancel Subscription. Cancellation takes effect at the end of the current billing period. Deleting your account in the app does not automatically cancel an active subscription — you must cancel it separately in iOS Settings.',
+  },
+  {
+    q: 'How do I export my wear history?',
+    a:
+      'Open the Profile tab and tap Export Data. You will receive a CSV of your wardrobe, wear log, ratings, and notes by email within a few minutes. The export is generated on demand and is yours to keep, with no expiry.',
+  },
+  {
+    q: 'What data does Perfume Picks collect?',
+    a:
+      'Your account identity from Apple or Google sign-in, the wardrobe and wear-log entries you create, basic device diagnostics, and anonymous usage analytics. We do not collect location, health, contacts, or financial data. Subscription payments are handled entirely by Apple. See the Privacy Policy for the full breakdown.',
+  },
+  {
+    q: 'How do I delete my Perfume Picks account?',
+    a:
+      'Open the app, go to the Profile tab, scroll to the bottom, and tap Delete Account, then confirm. This permanently deletes your wardrobe, wear log, swipe history, taste profile, ratings, and SOTD posts. The action cannot be undone. If you have lost access to the app, see the Delete Your Account page for an email-based option.',
+  },
+  {
+    q: 'How do I contact support?',
+    a:
+      `Email ${SITE.supportEmail} for any question, bug report, feature request, or feedback. Include your account email, your iOS version, and your app version (found at the bottom of the Profile tab). We answer every email, usually within a day.`,
+  },
+];
+---
+<BaseLayout
+  title="Support"
+  description="Perfume Picks support — wardrobe entry, missing fragrances, subscription, data export, account deletion, and contact."
+  path="/support"
+>
+  <Fragment slot="head">
+    <BreadcrumbSchema crumbs={[{ name: 'Support', url: `${SITE.url}/support` }]} />
+  </Fragment>
+
+  <p class="brand">{SITE.name}</p>
+  <h1>Support</h1>
+  <p class="effective">We answer every email. Usually within a day.</p>
+
+  <h2>Contact</h2>
+  <p>
+    For any question, bug report, feature request, or feedback:
+    <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+  </p>
+  <p>
+    Please include your account email, your iOS version, and your app version
+    (found at the bottom of the Profile tab) &mdash; it helps trace issues faster.
+  </p>
+
+  <FAQ faqs={faqs} heading="Common Questions" />
+
+  <Footer />
+</BaseLayout>

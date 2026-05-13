@@ -1,0 +1,77 @@
+---
+import { SITE, NAV } from '../consts';
+import OrganizationSchema from '../components/schema/OrganizationSchema.astro';
+import WebSiteSchema from '../components/schema/WebSiteSchema.astro';
+import Analytics from '../components/Analytics.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  // Canonical path on this site, e.g. '/about'. The full URL is constructed
+  // from SITE.url. Leave empty on the homepage to use SITE.url itself.
+  path?: string;
+  // Set true on pages that should not appear in search results (drafts,
+  // utility pages). Default is false.
+  noindex?: boolean;
+  // Set true on pages where the global Organization + WebSite schema should
+  // NOT be emitted (e.g. when an article emits its own and we don\u2019t want
+  // duplication). Default is false.
+  suppressGlobalSchema?: boolean;
+}
+
+const {
+  title,
+  description = SITE.description,
+  path = '',
+  noindex = false,
+  suppressGlobalSchema = false,
+} = Astro.props;
+
+const canonical = `${SITE.url}${path}`;
+const fullTitle =
+  title === SITE.name ? `${SITE.name} \u2014 ${SITE.tagline}` : `${title} \u2014 ${SITE.name}`;
+---
+<!doctype html>
+<html lang={SITE.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta name="theme-color" content={SITE.theme.bg} />
+
+    {!suppressGlobalSchema && <OrganizationSchema />}
+    {!suppressGlobalSchema && <WebSiteSchema />}
+
+    <Analytics />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="container">
+      <p class="nav">
+        {NAV.map((item, i) => (
+          <>
+            {i > 0 && <span> &middot; </span>}
+            <a href={item.href}>{item.label}</a>
+          </>
+        ))}
+      </p>
+      <slot />
+    </div>
+  </body>
+</html>

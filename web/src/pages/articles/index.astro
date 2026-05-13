@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../../components/Footer.astro';
+import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
+import { SITE } from '../../consts';
+
+// In dev mode, include drafts. In production, only published articles
+// surface in the index.
+const includeDrafts = import.meta.env.DEV;
+const articles = (
+  await getCollection('articles', ({ data }) =>
+    includeDrafts ? true : data.published
+  )
+).sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout
+  title="Blog"
+  description="The Perfume Picks blog — guides and references for fragrance collectors covering wardrobe care, longevity, layering, families, and more."
+  path="/articles"
+>
+  <Fragment slot="head">
+    <BreadcrumbSchema crumbs={[{ name: 'Blog', url: `${SITE.url}/articles` }]} />
+  </Fragment>
+
+  <p class="brand">{SITE.name}</p>
+  <h1>Blog</h1>
+  <p class="effective">Field-tested references for fragrance collectors.</p>
+
+  {articles.length === 0 ? (
+    <p>The first articles are being written now. Check back soon, or email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> if there is a topic you want covered.</p>
+  ) : (
+    <ul>
+      {articles.map((a) => (
+        <li>
+          <a href={`/articles/${a.slug}`}>{a.data.title}</a>
+          <p>{a.data.description}</p>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  <Footer />
+</BaseLayout>

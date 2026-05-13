@@ -1,0 +1,74 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+import ArticleSchema from '../components/schema/ArticleSchema.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { SITE } from '../consts';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  publishedAt: Date;
+  updatedAt?: Date;
+  author: string;
+  quickAnswer: string;
+  faqs: { q: string; a: string }[];
+  // Section label shown in breadcrumb between Home and the article (e.g.
+  // \u201CGuides\u201D, \u201CHumidor\u201D). Optional.
+  section?: { name: string; url: string };
+}
+
+const {
+  title,
+  description,
+  path,
+  publishedAt,
+  updatedAt,
+  author,
+  quickAnswer,
+  faqs,
+  section,
+} = Astro.props;
+
+const fullUrl = `${SITE.url}${path}`;
+const crumbs = [
+  ...(section ? [section] : []),
+  { name: title, url: fullUrl },
+];
+
+const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+<BaseLayout title={title} description={description} path={path}>
+  <Fragment slot="head">
+    <ArticleSchema
+      title={title}
+      description={description}
+      url={fullUrl}
+      publishedAt={publishedAt}
+      updatedAt={updatedAt}
+      author={author}
+    />
+    <BreadcrumbSchema crumbs={crumbs} />
+  </Fragment>
+
+  <p class="brand">{SITE.name}</p>
+  <h1>{title}</h1>
+  <p class="byline">
+    By <a href="/about">{author}</a> &middot; {updatedAt ? 'Updated' : 'Published'} {formattedDate}
+  </p>
+
+  <QuickAnswer text={quickAnswer} />
+
+  <slot />
+
+  <FAQ faqs={faqs} />
+
+  <Footer />
+</BaseLayout>

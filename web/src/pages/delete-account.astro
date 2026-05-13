@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { SITE } from '../consts';
+
+// Required public URL for App Store Review Guideline 5.1.1(v) — provide a
+// publicly reachable account-deletion endpoint.
+---
+<BaseLayout
+  title="Delete Your Account"
+  description="How to delete your Perfume Picks account and all associated data — in-app, by email, or by request."
+  path="/delete-account"
+>
+  <Fragment slot="head">
+    <BreadcrumbSchema crumbs={[{ name: 'Delete Your Account', url: `${SITE.url}/delete-account` }]} />
+  </Fragment>
+
+  <p class="brand">{SITE.name}</p>
+  <h1>Delete Your Account</h1>
+  <p class="effective">You can delete your Perfume Picks account and all associated data at any time.</p>
+
+  <h2>Option 1 &mdash; Delete From Inside the App (recommended)</h2>
+  <ol>
+    <li>Open Perfume Picks on your iPhone.</li>
+    <li>Sign in with the account you want to delete.</li>
+    <li>Tap the <strong>Profile</strong> tab.</li>
+    <li>Tap <strong>Settings</strong>.</li>
+    <li>Scroll to the bottom and tap <strong>Delete Account</strong>.</li>
+    <li>Confirm by tapping <strong>Delete</strong>.</li>
+  </ol>
+  <p>Your account and all data will be removed immediately.</p>
+
+  <h2>Option 2 &mdash; Email Request</h2>
+  <p>
+    If you have already uninstalled the app or cannot access it, send an
+    email to
+    <a href={`mailto:${SITE.supportEmail}?subject=Delete%20My%20Account`}>{SITE.supportEmail}</a>
+    from the email address associated with your account. Include the subject
+    line <strong>"Delete My Account"</strong>.
+  </p>
+  <p>
+    Account deletion typically completes within <strong>24 to 48 hours</strong>,
+    and always within <strong>7 days</strong>. You will receive a confirmation
+    when deletion is complete.
+  </p>
+
+  <h2>What gets deleted</h2>
+  <ul>
+    <li>Your sign-in identity (Apple or Google).</li>
+    <li>Your profile (display name, avatar, taste profile).</li>
+    <li>Your wardrobe (every fragrance entry with status, remaining mL, and purchase price).</li>
+    <li>Your wear log (every wear with date, occasion, weather, and notes).</li>
+    <li>Your Train My Nose swipe history.</li>
+    <li>Your quiz results.</li>
+    <li>Any ratings, private notes, and reviews you submitted.</li>
+    <li>Your Scent of the Day posts and your follow / follower relationships.</li>
+  </ul>
+
+  <h2>What is retained</h2>
+  <p>For legal, billing, and fraud-prevention purposes we may retain:</p>
+  <ul>
+    <li>Anonymized purchase records (held by Apple).</li>
+    <li>Anonymized aggregate analytics that cannot be traced back to you &mdash; for example, that someone in your country logged a wear on a given day, with no identifier attached.</li>
+  </ul>
+
+  <h2>Subscriptions</h2>
+  <p>
+    Deleting your account does <strong>not</strong> automatically cancel an
+    active App Store subscription. You must cancel the subscription
+    separately in <strong>Settings &rarr; Apple ID &rarr; Subscriptions</strong>
+    on your iPhone, or it will continue to renew.
+  </p>
+
+  <h2>Questions?</h2>
+  <p>
+    Email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+  </p>
+
+  <Footer />
+</BaseLayout>

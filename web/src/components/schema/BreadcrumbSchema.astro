@@ -1,0 +1,28 @@
+---
+import { SITE } from '../../consts';
+
+interface Crumb {
+  name: string;
+  url: string;
+}
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+
+// Always prepend Home so the chain is well-formed.
+const all: Crumb[] = [{ name: 'Home', url: SITE.url }, ...crumbs];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: all.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    item: c.url,
+  })),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,49 @@
+---
+import { SITE } from '../../consts';
+
+// Article schema with Speakable on the Quick Answer block (#quick-answer).
+// Speakable signals to AI engines and voice assistants which passage best
+// answers the target query.
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  publishedAt: Date;
+  updatedAt?: Date;
+  author: string;
+}
+
+const { title, description, url, publishedAt, updatedAt, author } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url,
+  datePublished: publishedAt.toISOString(),
+  dateModified: (updatedAt ?? publishedAt).toISOString(),
+  author: {
+    '@type': 'Person',
+    name: author,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE.url}/icon-512.png`,
+    },
+  },
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['#quick-answer'],
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': url,
+  },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

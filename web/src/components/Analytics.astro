@@ -1,0 +1,36 @@
+---
+import { SITE } from '../consts';
+
+// GA4 + GSC verification, both gated on production builds and on the
+// presence of an env-set ID. Local dev never fires analytics. Forks /
+// PR previews on platforms that don't set the env vars never fire.
+//
+// AI-referrer tracking uses GA4's built-in referrer dimension. Filter
+// reports by referrer matching:
+//   chatgpt.com OR chat.openai.com OR perplexity.ai OR
+//   gemini.google.com OR claude.ai OR copilot.microsoft.com
+// No special tracking code needed; the referrer header is captured
+// automatically by gtag's page_view event.
+
+const ga4Id = SITE.analytics.ga4Id;
+const gsc = SITE.analytics.gscVerification;
+
+const isProd = import.meta.env.PROD;
+const enableAnalytics = isProd && Boolean(ga4Id);
+---
+{gsc && <meta name="google-site-verification" content={gsc} />}
+
+{enableAnalytics && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+    <script is:inline define:vars={{ ga4Id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', ga4Id, {
+        anonymize_ip: true,
+        send_page_view: true,
+      });
+    </script>
+  </>
+)}

@@ -1,0 +1,52 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { SITE } from '../../consts';
+
+export async function getStaticPaths() {
+  // In dev mode, include drafts so you can preview unpublished article
+  // skeletons. In production builds, drafts are excluded so bracketed
+  // placeholder content never ships.
+  const includeDrafts = import.meta.env.DEV;
+  const all = await getCollection('articles', ({ data }) =>
+    includeDrafts ? true : data.published
+  );
+  return all.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'articles'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const data = entry.data;
+const path = `/articles/${entry.slug}`;
+---
+<ArticleLayout
+  title={data.title}
+  description={data.description}
+  path={path}
+  publishedAt={data.publishedAt}
+  updatedAt={data.updatedAt}
+  author={data.author}
+  quickAnswer={data.quickAnswer}
+  faqs={data.faqs}
+  section={{ name: 'Articles', url: `${SITE.url}/articles` }}
+>
+  <Content />
+
+  {data.relatedSlugs.length > 0 && (
+    <section>
+      <h2>Related</h2>
+      <ul>
+        {data.relatedSlugs.map((slug) => (
+          <li><a href={`/articles/${slug}`}>{slug.replace(/-/g, ' ')}</a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+</ArticleLayout>

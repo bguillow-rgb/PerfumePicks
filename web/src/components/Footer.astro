@@ -1,0 +1,14 @@
+---
+import { SITE } from '../consts';
+const year = new Date().getFullYear();
+---
+<hr class="footer-rule" />
+<p class="footer">
+  Questions? <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+</p>
+<p class="footer">
+  Perfume Picks is an independent journal app. We do not sell fragrance.
+  &ldquo;Buy from&rdquo; links to retailers may earn us a commission at no
+  cost to you.
+</p>
+<p class="footer">&copy; {year} {SITE.name}. All rights reserved.</p>
