@@ -2,7 +2,23 @@
 
 **Goal:** Ship a complete, production-ready v1 equivalent to StickPicks 13 — fully synced to Supabase, real catalog, all core loops working — then layer in the fragrance-specific differentiators that StickPicks never had.
 
-**Current state:** Local-only (AsyncStorage). Mock catalog (10 entries). Core UI shells exist. No Supabase sync. No auth enforcement.
+**Current state (2026-05-13):** Auth gate + login screen exist. `useAppSync` written but **not yet mounted** in `_layout.tsx`. Catalog store wired to Supabase but **15 files still import `MOCK_CATALOG` directly**. Wardrobe + wear-log stores still pure AsyncStorage (no Supabase write-through). SOTD social schema landed (`003`/`004` migrations) — no UI yet. Seed migration `014` exists (~size TBD). M1 ≈ 30% · M2 ≈ 55% · M3 ≈ 10% · M4/M5 ≈ 0%.
+
+---
+
+## Research Updates — 2026-05-13
+
+Based on `plans/Market-Research-Competitive-Analysis.md` (top-5 iOS apps + affiliate analysis). Deltas folded into the milestones below:
+
+- **Catalog seed target raised** from 200 → **≥2,500 fragrances at launch**, **5K stretch** before v1 ASO push. Aromoshelf already gets dinged in reviews for catalog gaps at smaller sizes.
+- **Image source decision is now an explicit M1 deliverable**: license **Fragella API** (74K fragrances, transparent-WebP, purchase links) or **Fragrances of the World** (36K, Michael Edwards). **Never scrape Fragrantica** (active DMCA program). User uploads with Parfumo-style ownership rules added as parallel M2 work.
+- **Affiliate "Buy from" links** added to **M2** as a real feature row. Stack: FragranceX (CJ, 45-day cookie) → Sephora (Rakuten, luxury) → Amazon Associates Luxury Beauty (10%, 24-hour cookie). Not direct sales; we link out only.
+- **`empty` wardrobe status** added to M2 — competitors (Sillage, Aromoshelf) ship "Empties"; tiny schema add, big collector signal.
+- **Weather-aware morning push moved from M5 → M3** (rules-based, no AI needed). Sillage already ships this; first-mover positioning matters.
+- **Layering log** and **compliments log** get explicit M3 UI surfaces (specs were in `FPR:F6` but had no milestone rows).
+- **Filter UX** elevated in M2 (Discover faceted filter is a recurring Parfumo complaint we can beat).
+- **Bottle scan** added to M5 backlog (not before — Scentra exists and reviews are bad; ML quality bar unclear).
+- **Don't build:** decant marketplace / direct subscription / brand-partner integrations — defer or skip.
 
 ---
 
@@ -56,11 +72,17 @@ Nothing user-facing changes visually. This is plumbing that every subsequent mil
 - [ ] On auth: fetch stored taste profile to seed local profile immediately (skip cold-start wait)
 
 ### Real Catalog
-- [ ] Replace `MOCK_CATALOG` / `getFragrance()` / `getFragrances()` with Supabase queries
-- [ ] Seed production `fragrances` + `brands` tables (minimum 200 fragrances to launch)
+- [ ] Replace `MOCK_CATALOG` / `getFragrance()` / `getFragrances()` with Supabase queries across all 15 import sites
+- [ ] Seed production `fragrances` + `brands` tables (**≥2,500 fragrances minimum; 5K stretch** before v1 ASO push)
 - [ ] `useFragrance(id)` hook — fetches from Supabase, caches with React Query
 - [ ] `useFragranceSearch(query)` hook — uses `fragrances_name_trgm_idx` (pg_trgm)
-- [ ] Fragrance images served from Supabase Storage or CDN
+
+### Catalog Image Source — **decide before seeding**
+- [ ] **Decision: licensed API vs. retailer feed vs. user-upload-only.** Recommended primary: **Fragella API** (74K fragrances, CDN-hosted bottle JPGs + transparent WebP, includes purchase-link metadata; pricing not public — sales call required). Fallback candidate: **Fragrances of the World** (Michael Edwards, 36K, retailer-grade).
+- [ ] Get written quote + licensing terms from Fragella; verify image-rights clause permits commercial display in our app
+- [ ] Get written quote from Fragrances of the World for comparison
+- [ ] **Never** scrape Fragrantica — active DMCA program; brand C&D risk for raw bottle photos
+- [ ] Images served from Supabase Storage CDN (mirror the licensed source to avoid third-party CDN dependency on hot paths)
 
 ---
 
@@ -91,6 +113,22 @@ Nothing user-facing changes visually. This is plumbing that every subsequent mil
 - [ ] Remove item with confirmation
 - [ ] Running-low indicator (< 20% remaining mL)
 - [ ] Purchase price entry (feeds cost-per-wear in Milestone 4)
+- [ ] **`empty` status** added to `WardrobeStatus` enum + filter pill (joins existing want/have/tested/sold) — surfaces cost-per-wear at the empty event; Sillage + Aromoshelf both ship "Empties" and it's a popular collector signal
+
+### Discover Filter UX — Complete (new)
+- [ ] Faceted filter sheet on Discover: brand, accord, family, year range, price tier, longevity, sillage, gender
+- [ ] Multi-select with active-filter chip row at top of results
+- [ ] "Clear all" affordance; persists per-session
+- [ ] Filter quality is the most common Parfumo complaint we can beat with a single sheet design
+
+### Affiliate "Buy from" Links — new (revenue line that isn't ads)
+- [ ] Apply to **CJ Affiliate** for **FragranceX** (1–10% commission, **45-day cookie**, daily product feed)
+- [ ] Apply to **Rakuten Advertising** for **Sephora** (5–10% luxury, 24-hour cookie — niche/luxury detail pages only)
+- [ ] Apply to **Amazon Associates Luxury Beauty** (10%, 24-hour cookie — broadest catalog; "Buy from" CTA only, NOT an image source per their Operating Agreement caching rules)
+- [ ] `fragrances.affiliate_links` JSONB column or `fragrance_retailer_links` table — store per-fragrance retailer + URL + tag
+- [ ] Fragrance detail page: "Buy from" section with retailer logos + price (if feed supplies it); deep-link via affiliate URL
+- [ ] Per FTC: visible "We may earn a commission" disclosure on the section
+- [ ] Click-tracking event to PostHog for attribution analytics
 
 ### Quiz — Complete
 - [ ] Quiz results write to `quiz_results` table
@@ -132,6 +170,23 @@ Nothing user-facing changes visually. This is plumbing that every subsequent mil
 - [ ] Live weather fetch via location (replace season proxy in `useDailyPicks`)
 - [ ] Results show 3–5 owned fragrances with one-line reasons
 - [ ] Tap "Wear this today" → logs wear directly from the result
+
+### Weather-Aware Morning Push — new in M3 (moved up from M5)
+- [ ] Opt-in push at user-configured morning time with weather-aware pick from wardrobe
+- [ ] **Rules-based** scoring (no Claude API yet — that's still M5): season + temp band + occasion proxy + accord weights
+- [ ] Deep-links to home screen with pick preselected
+- [ ] Sillage already ships this — moving up to claim first-mover positioning in the picker category
+
+### Layering Log — new (completes `FPR:F6` AC for layering)
+- [ ] Add layering entry from fragrance detail: pick a second fragrance you wore together
+- [ ] Freeform notes on the pairing
+- [ ] Layering history list per fragrance
+- [ ] Shows in private-notes screen alongside body/social notes
+
+### Compliments Log — new (completes `FPR:F6` AC for compliments)
+- [ ] Dedicated "Compliments" entry on fragrance detail (separate first-class entry from generic notes)
+- [ ] Each entry: date, what was said, where (work / date / event)
+- [ ] Compliments count badge on wardrobe card (signal of "high performance" bottles)
 
 ### Collection Note/Accord Analytics (part of F3)
 - [ ] Collection utilization rate on Profile ("You've worn 14 of 32 bottles")
@@ -205,11 +260,16 @@ Nothing user-facing changes visually. This is plumbing that every subsequent mil
 
 ### AI Personalization (F9)
 - [ ] Mood tagging on wear log entries
-- [ ] Morning recommendation push notification with weather-aware pick
 - [ ] Claude API integration: feed `user_taste_profiles` + recent wear history as context for recommendations
 - [ ] "Why this?" explanation on every recommendation card
 - [ ] Collaborative filtering: surface fragrances loved by users with similar taste profiles
 - [ ] Cold-start: rules-based until 20+ wear log entries, then AI takes over
+- [ ] Upgrade M3 weather-aware morning push from rules-based → Claude-API-aware once we have ≥20 wears per user
+
+### Bottle Scan — backlog (do not start before M5)
+- [ ] Camera → fragrance identification via vision model (Claude or fine-tuned model)
+- [ ] Confidence threshold + manual confirm; refuse low-confidence matches
+- [ ] Scentra exists and reviewers complain it doesn't identify well — ML quality bar is unclear; only build when we have evidence we can beat the bar
 
 ### Fragrance Relationship Map — Full (F4)
 - [ ] Full interactive network graph (nodes = fragrances, edges = shared notes/accords)
@@ -236,6 +296,15 @@ Nothing user-facing changes visually. This is plumbing that every subsequent mil
 | **4** | Retention & Virality | Wrapped, streaks, cost-per-wear, share cards |
 | **5** | AI & Scale | Claude-powered personalization, offline, full graph |
 
-**Milestones 1 + 2 = StickPicks 13 parity.**
-**Milestones 3 + 4 = PerfumePicks v1 launch.**
-**Milestone 5 = competitive moat.**
+**Milestones 1 + 2 = StickPicks 13 parity + monetization + Discover filter UX.**
+**Milestones 3 + 4 = PerfumePicks v1 launch (with weather push, layering log, compliments log claimed early).**
+**Milestone 5 = competitive moat (AI + bottle scan + full graph + offline).**
+
+---
+
+## Explicit "Do Not Build" List (from 2026-05-13 research)
+
+- **Decant marketplace** — Scentbird's lane; affiliate-link instead.
+- **Direct-sale subscription** — operational complexity is enormous for a software-only team.
+- **Brand-partner integrations** — Sommelier du Parfum's lane; defer until post-PMF.
+- **Scraping Fragrantica** — they enforce DMCA.
