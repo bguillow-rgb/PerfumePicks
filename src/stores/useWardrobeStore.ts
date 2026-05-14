@@ -35,6 +35,19 @@ export interface WardrobeItem {
 
 interface WardrobeState {
   items: WardrobeItem[];
+  /**
+   * Has this store been hydrated from the server in this session?
+   * False before sign-in completes, true after `hydrate()` runs.
+   * UIs that show "empty wardrobe" empty states should check this so
+   * a freshly-signed-in user doesn't see "empty" for the half-second
+   * before hydration completes.
+   */
+  hydrated: boolean;
+  /**
+   * Replace the local list wholesale with rows from Supabase.
+   * Called by `useAppSync` after sign-in or on sign-out (with []).
+   */
+  hydrate: (rows: WardrobeItem[]) => void;
   /** Add a new wardrobe item; returns the new id. */
   add: (input: Omit<WardrobeItem, 'id' | 'created_at' | 'updated_at'>) => string;
   /** Patch an existing item (partial update). */
@@ -62,6 +75,8 @@ export const useWardrobeStore = create<WardrobeState>()(
   persist(
     (set, get) => ({
       items: [],
+      hydrated: false,
+      hydrate: (rows) => set({ items: rows, hydrated: true }),
       add: (input) => {
         // Deduplicate: if this fragrance is already in the wardrobe, update
         // the existing entry rather than creating a duplicate row.

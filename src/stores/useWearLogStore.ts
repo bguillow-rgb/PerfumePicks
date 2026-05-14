@@ -29,6 +29,14 @@ export interface WearLog {
 
 interface WearLogState {
   logs: WearLog[];
+  /**
+   * Has this store been hydrated from the server in this session?
+   * Same semantics as `useWardrobeStore.hydrated` — UIs should check this
+   * before showing empty-state copy on a freshly-signed-in user.
+   */
+  hydrated: boolean;
+  /** Replace the local list wholesale with rows from Supabase. */
+  hydrate: (rows: WearLog[]) => void;
   add: (input: Omit<WearLog, 'id' | 'created_at'>) => string;
   /** Patch an existing wear log entry (partial update). */
   update: (id: string, patch: Partial<Omit<WearLog, 'id' | 'fragrance_id' | 'created_at'>>) => void;
@@ -49,6 +57,8 @@ export const useWearLogStore = create<WearLogState>()(
   persist(
     (set, get) => ({
       logs: [],
+      hydrated: false,
+      hydrate: (rows) => set({ logs: rows, hydrated: true }),
       add: (input) => {
         const id = clientId();
         const log: WearLog = { ...input, id, created_at: new Date().toISOString() };

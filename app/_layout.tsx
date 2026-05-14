@@ -44,6 +44,7 @@ import {
   resetAnalytics,
   setErrorUser,
 } from '@/src/lib/observability';
+import { useAppSync } from '@/src/lib/sync/useAppSync';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -170,6 +171,13 @@ export default function RootLayout() {
   }, []);
 
   useProtectedRoute(session, authLoading || showSplash);
+
+  // Hydrate user-scoped stores from Supabase on sign-in; clear on sign-out.
+  // The hook handles the demo-mode bypass when Supabase isn't configured.
+  // M1 Phase A — was the highest-leverage fix in the foundation milestone:
+  // the hook existed but was never mounted, so wardrobe / wear-log / swipe
+  // stores never saw the user's real data after sign-in.
+  useAppSync(session?.user?.id ?? null);
 
   if (!fontsLoaded) return null;
 
