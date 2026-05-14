@@ -1,11 +1,10 @@
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { FlatList, View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
-import { MOCK_CATALOG } from '@/src/mock/fragrances';
-import type { MockFragrance } from '@/src/mock/fragrances';
+import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 
 function prettyConcentration(c: string): string {
   return ({ parfum: 'Parfum', edp: 'EDP', edt: 'EDT', cologne: 'Cologne', extrait: 'Extrait' } as any)[c] ?? c;
@@ -14,12 +13,21 @@ function prettyConcentration(c: string): string {
 export default function BrandScreen() {
   const { name } = useLocalSearchParams<{ name: string }>();
   const router = useRouter();
+  const fetchByBrand = useCatalogStore((s) => s.fetchByBrand);
+  const [fragrances, setFragrances] = useState<Fragrance[]>([]);
 
-  const fragrances = useMemo(
-    () => MOCK_CATALOG.filter((f) => f.brand === name)
-      .sort((a, b) => b.release_year - a.release_year),
-    [name],
-  );
+  // Async catalog fetch instead of synchronous MOCK_CATALOG filter. Empty
+  // array shows the existing "no fragrances found" empty state during the
+  // (very short) round-trip.
+  useEffect(() => {
+    if (!name) return;
+    let cancelled = false;
+    fetchByBrand(name).then((rows) => {
+      if (cancelled) return;
+      setFragrances(rows.slice().sort((a, b) => b.release_year - a.release_year));
+    });
+    return () => { cancelled = true; };
+  }, [name, fetchByBrand]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -53,7 +61,7 @@ export default function BrandScreen() {
   );
 }
 
-function BrandRow({ fragrance, onPress }: { fragrance: MockFragrance; onPress: () => void }) {
+function BrandRow({ fragrance, onPress }: { fragrance: Fragrance; onPress: () => void }) {
   const price = (fragrance.retail_msrp_usd_cents / 100).toFixed(0);
   return (
     <Pressable style={styles.row} onPress={onPress}>

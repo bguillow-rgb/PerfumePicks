@@ -1,19 +1,22 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
-import { MOCK_CATALOG } from '@/src/mock/fragrances';
+import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useQuizStore } from '@/src/stores/useQuizStore';
 
 /**
- * Quiz results — uses the answers to filter the mock catalog into the
- * top 5 picks. Real version calls the recommendation engine.
+ * Quiz results — scores the top-200-popular catalog against the user's
+ * quiz answers. Lightweight, quiz-specific scoring (the full recommendation
+ * engine lives in src/features/recommend/score.ts and feeds the home rails).
  */
 export default function QuizResults() {
   const router = useRouter();
   const answers = useQuizStore((s) => s.answers);
+  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  const [catalog, setCatalog] = useState<Fragrance[]>([]);
 
   const family = answers.family;
   const priceTier = Number(answers.price ?? 0);
@@ -23,8 +26,16 @@ export default function QuizResults() {
   const avoid = answers.avoid as string | undefined;
   const discovery = answers.discovery as string | undefined;
 
+  useEffect(() => {
+    let cancelled = false;
+    fetchAllActive(200).then((rows) => {
+      if (!cancelled) setCatalog(rows);
+    });
+    return () => { cancelled = true; };
+  }, [fetchAllActive]);
+
   const matches = useMemo(() => {
-    return MOCK_CATALOG
+    return catalog
       .map((f) => {
         let score = 0;
         if (family && f.fragrance_family === family) score += 0.5;
@@ -43,7 +54,7 @@ export default function QuizResults() {
       .sort((a, b) => b.score - a.score)
       .slice(0, 5)
       .map((x) => x.f);
-  }, [family, priceTier, longevity, sillage, avoid, discovery]);
+  }, [catalog, family, priceTier, longevity, sillage, avoid, discovery]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>

@@ -61,6 +61,14 @@ interface CatalogState {
    */
   fetchByBrand: (brand: string, genders?: string[]) => Promise<Fragrance[]>;
 
+  /**
+   * Fetch up to `limit` active fragrances, ordered by popularity (sotd_count desc).
+   * Convenience for screens that need to iterate the catalog — Discover,
+   * Train stack builder, quiz results scoring, layering picker.
+   * Wraps `search('', limit)` so the same demo-mode + cache rules apply.
+   */
+  fetchAllActive: (limit?: number) => Promise<Fragrance[]>;
+
   _addToCache: (items: Fragrance[]) => void;
 }
 
@@ -238,6 +246,13 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     const results = (data ?? []).map(rowToFragrance);
     get()._addToCache(results);
     return results;
+  },
+
+  fetchAllActive: async (limit = 200) => {
+    // search('', limit) already handles demo-mode fallback, ordering by
+    // sotd_count, caching, and the is_active filter. One-liner wrapper so
+    // call sites read clean.
+    return get().search('', limit);
   },
 
   fetchByBrand: async (brand, genders) => {

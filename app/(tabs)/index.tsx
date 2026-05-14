@@ -9,7 +9,7 @@ import { WhatToWearSheet } from '@/src/components/sheets/WhatToWearSheet';
 import { useRecommendations, useNewArrivals } from '@/src/features/recommend/useRecommendations';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
-import { getFragrance } from '@/src/mock/fragrances';
+import { getFragranceFromStore } from '@/src/stores/useCatalogStore';
 
 /**
  * Home / "Today" tab — the daily ritual surface.
@@ -125,7 +125,7 @@ export default function HomeScreen() {
 
         {/* P2: Wear nudge — shown when the user has bottles but hasn't logged today */}
         {wearNudge && wearNudge.fragrance_id !== nudgeDismissedId && (() => {
-          const f = getFragrance(wearNudge.fragrance_id);
+          const f = getFragranceFromStore(wearNudge.fragrance_id);
           if (!f) return null;
           return (
             <View style={styles.wearNudge}>

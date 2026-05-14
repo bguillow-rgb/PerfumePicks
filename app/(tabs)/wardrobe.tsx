@@ -5,7 +5,7 @@ import { useRouter, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { MlMeter } from '@/src/components/fragrance/MlMeter';
-import { SAMPLE_WARDROBE_IDS, getFragrance, type MockFragrance } from '@/src/mock/fragrances';
+import { useCatalogStore, getFragranceFromStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useWardrobeStore, type WardrobeStatus, type UnitType, type WardrobeItem } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
@@ -23,7 +23,7 @@ const PILLS: { id: ActiveFilter; label: string }[] = [
 
 interface WardrobeItemView {
   itemId: string;
-  fragrance: MockFragrance;
+  fragrance: Fragrance;
   status: Status;
   size_ml: number;
   remaining_ml: number;
@@ -32,10 +32,13 @@ interface WardrobeItemView {
 /**
  * myWardrobe — collection grid with status filter pills + mL tracking.
  *
- * Reads from the persisted wardrobe store. On first mount (empty store),
- * seeds the store with SAMPLE_WARDROBE_IDS so the screen has demo content
- * to show — but every change after that is real (add via fragrance detail
- * page, delete, edit, etc.).
+ * Reads from the wardrobe store, which is hydrated from Supabase on
+ * sign-in via useAppSync. A brand-new user sees the empty state until
+ * they add their first fragrance from the discover/detail flow.
+ *
+ * Demo-content seeding (SAMPLE_WARDROBE_IDS) was removed when the catalog
+ * read layer moved to Supabase — demo data was misleading anyway and
+ * doesn't reflect what a real user sees on first launch.
  */
 export default function WardrobeScreen() {
   const router = useRouter();
@@ -57,28 +60,26 @@ export default function WardrobeScreen() {
   }, [wearLogs]);
 
   const [editingItem, setEditingItem] = useState<WardrobeItem | null>(null);
-  const [editingFragrance, setEditingFragrance] = useState<MockFragrance | null>(null);
+  const [editingFragrance, setEditingFragrance] = useState<Fragrance | null>(null);
 
-  // Seed once on first run if empty.
+  // Prime the catalog cache so synchronous getFragranceFromStore() lookups
+  // in the items selector below succeed on first render. Without this,
+  // wardrobe rows whose fragrances haven't been individually fetched yet
+  // are skipped silently — a fresh sign-in would show an empty wardrobe
+  // for a frame before the cache filled. fetchMany de-dupes against the
+  // cache so this is cheap on subsequent mounts.
+  const fetchMany = useCatalogStore((s) => s.fetchMany);
+  const cacheVersion = useCatalogStore((s) => Object.keys(s.cache).length);
   useEffect(() => {
-    if (storeItems.length > 0) return;
-    for (const { id: fragId, status, size_ml, remaining_ml } of SAMPLE_WARDROBE_IDS) {
-      addToStore({
-        fragrance_id: fragId,
-        status: status as WardrobeStatus,
-        unit_type: (size_ml < 5 ? 'sample' : size_ml < 30 ? 'decant' : 'bottle') as UnitType,
-        size_ml,
-        remaining_ml,
-        reorder_threshold_ml: status === 'have' ? size_ml * 0.2 : null,
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const ids = Array.from(new Set(storeItems.map((i) => i.fragrance_id)));
+    if (ids.length === 0) return;
+    fetchMany(ids).catch(() => { /* errors logged inside the store */ });
+  }, [storeItems, fetchMany]);
 
   const items: WardrobeItemView[] = useMemo(() => {
     const out: WardrobeItemView[] = [];
     for (const i of storeItems) {
-      const fragrance = getFragrance(i.fragrance_id);
+      const fragrance = getFragranceFromStore(i.fragrance_id);
       if (fragrance) {
         out.push({
           itemId: i.id,
@@ -90,7 +91,9 @@ export default function WardrobeScreen() {
       }
     }
     return out;
-  }, [storeItems]);
+    // cacheVersion as dep: when fetchMany adds new fragrances to the cache,
+    // re-run this selector so previously-skipped rows appear.
+  }, [storeItems, cacheVersion]);
 
 
   const visible = useMemo(() => {

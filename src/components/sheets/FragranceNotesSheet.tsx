@@ -12,11 +12,11 @@ import {
   type WeatherPref,
   type SkinPerf,
 } from '@/src/stores/useFragranceNotesStore';
-import { MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
+import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
   visible: boolean;
-  fragrance: MockFragrance | null;
+  fragrance: Fragrance | null;
   onClose: () => void;
 }
 
@@ -64,7 +64,7 @@ export function FragranceNotesSheet({ visible, fragrance, onClose }: Props) {
   // Layering tab state
   const [layerQuery, setLayerQuery] = useState('');
   const [layerNote, setLayerNote] = useState('');
-  const [selectedPair, setSelectedPair] = useState<MockFragrance | null>(null);
+  const [selectedPair, setSelectedPair] = useState<Fragrance | null>(null);
   const [showLayerSearch, setShowLayerSearch] = useState(false);
 
   // Pre-populate from store when sheet opens
@@ -113,15 +113,24 @@ export function FragranceNotesSheet({ visible, fragrance, onClose }: Props) {
   const toggle = <T,>(arr: T[], val: T): T[] =>
     arr.includes(val) ? arr.filter((x) => x !== val) : [...arr, val];
 
-  const layerResults = layerQuery.trim().length > 1
-    ? MOCK_CATALOG
-        .filter((f) => f.id !== fragrance?.id)
-        .filter((f) =>
-          f.name.toLowerCase().includes(layerQuery.toLowerCase()) ||
-          f.brand.toLowerCase().includes(layerQuery.toLowerCase()),
-        )
-        .slice(0, 6)
-    : [];
+  // Layer search runs against Supabase as the user types. 300ms-ish debounce
+  // is fine for a sheet — minimum 2 chars before firing. Results clear when
+  // the query is too short.
+  const search = useCatalogStore((s) => s.search);
+  const [layerResults, setLayerResults] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    const q = layerQuery.trim();
+    if (q.length <= 1) { setLayerResults([]); return; }
+    let cancelled = false;
+    const t = setTimeout(() => {
+      search(q, 8).then((rows) => {
+        if (cancelled) return;
+        // Exclude the fragrance the user is layering FROM, then cap at 6.
+        setLayerResults(rows.filter((f) => f.id !== fragrance?.id).slice(0, 6));
+      });
+    }, 200);
+    return () => { cancelled = true; clearTimeout(t); };
+  }, [layerQuery, fragrance?.id, search]);
 
   const existingNote = fragrance ? get(fragrance.id) : null;
   const layeringLogs = existingNote?.layering_logs ?? [];
