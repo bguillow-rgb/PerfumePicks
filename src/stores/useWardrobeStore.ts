@@ -2,6 +2,7 @@ import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { syncWrite, notifySyncFailure } from '@/src/lib/sync/syncWrite';
 
 /**
  * Local wardrobe store — the user's fragrance collection.
@@ -18,7 +19,7 @@ export type WardrobeStatus = 'have' | 'want' | 'tested' | 'sold_on';
 export type UnitType = 'bottle' | 'decant' | 'sample';
 
 export interface WardrobeItem {
-  /** Stable client id (uuid-style — no need for true uuid in demo). */
+  /** Stable client id (uuid v4 — same id used locally and on the server). */
   id: string;
   fragrance_id: string;
   status: WardrobeStatus;
@@ -31,6 +32,13 @@ export interface WardrobeItem {
   notes?: string | null;
   created_at: string;                // ISO timestamp
   updated_at: string;
+  /**
+   * True when the row hasn't successfully sync'd to Supabase yet.
+   * Set by `add`/`update`/`remove` on a failed `syncWrite`. The next
+   * foreground or sign-in should surface these in a retry banner
+   * (deferred — see M1 plan, Failure Policy section).
+   */
+  _unsynced?: boolean;
 }
 
 interface WardrobeState {
@@ -62,9 +70,24 @@ interface WardrobeState {
   runningLow: () => WardrobeItem[];
 }
 
+/**
+ * Generate a uuid v4 client-side so a locally-created row carries the same
+ * id all the way to Supabase. Without this, the server regenerates the id
+ * and the client cache and the server row drift apart.
+ *
+ * Standalone implementation — avoids pulling a `uuid` dep just for this.
+ * `crypto.randomUUID()` is available in Hermes / modern RN. Falls back to a
+ * Math.random based v4 if not.
+ */
 function clientId(): string {
-  // Good enough for local; Supabase generates real uuids server-side later.
-  return `w_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
+  if (typeof globalThis.crypto?.randomUUID === 'function') {
+    return globalThis.crypto.randomUUID();
+  }
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    const v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
 }
 
 function nowIso(): string {
@@ -82,11 +105,23 @@ export const useWardrobeStore = create<WardrobeState>()(
         // the existing entry rather than creating a duplicate row.
         const existing = get().items.find((i) => i.fragrance_id === input.fragrance_id);
         if (existing) {
+          const patch = { ...input, updated_at: nowIso() };
           set((s) => ({
-            items: s.items.map((i) =>
-              i.id === existing.id ? { ...i, ...input, updated_at: nowIso() } : i
-            ),
+            items: s.items.map((i) => (i.id === existing.id ? { ...i, ...patch } : i)),
           }));
+          // Fire-and-forget server sync; mark _unsynced + toast on failure.
+          syncWrite({ op: 'update', table: 'wardrobe_items', id: existing.id, patch }).then(
+            (r) => {
+              if (!r.ok) {
+                set((s) => ({
+                  items: s.items.map((i) =>
+                    i.id === existing.id ? { ...i, _unsynced: true } : i,
+                  ),
+                }));
+                notifySyncFailure('Wardrobe update');
+              }
+            },
+          );
           return existing.id;
         }
         const id = clientId();
@@ -97,14 +132,45 @@ export const useWardrobeStore = create<WardrobeState>()(
           updated_at: nowIso(),
         };
         set((s) => ({ items: [item, ...s.items] }));
+        // Server sync — server side needs user_id from auth.uid() in RLS
+        // so we don't pass it explicitly; the auth header on the supabase
+        // client is the source of identity. The migration's column default
+        // (`auth.uid()`) populates the row.
+        syncWrite({ op: 'insert', table: 'wardrobe_items', row: item }).then((r) => {
+          if (!r.ok) {
+            set((s) => ({
+              items: s.items.map((i) => (i.id === id ? { ...i, _unsynced: true } : i)),
+            }));
+            notifySyncFailure('Wardrobe item');
+          }
+        });
         return id;
       },
-      update: (id, patch) =>
+      update: (id, patch) => {
+        const merged = { ...patch, updated_at: nowIso() };
         set((s) => ({
-          items: s.items.map((i) => (i.id === id ? { ...i, ...patch, updated_at: nowIso() } : i)),
-        })),
-      remove: (id) =>
-        set((s) => ({ items: s.items.filter((i) => i.id !== id) })),
+          items: s.items.map((i) => (i.id === id ? { ...i, ...merged } : i)),
+        }));
+        syncWrite({ op: 'update', table: 'wardrobe_items', id, patch: merged }).then((r) => {
+          if (!r.ok) {
+            set((s) => ({
+              items: s.items.map((i) => (i.id === id ? { ...i, _unsynced: true } : i)),
+            }));
+            notifySyncFailure('Wardrobe update');
+          }
+        });
+      },
+      remove: (id) => {
+        set((s) => ({ items: s.items.filter((i) => i.id !== id) }));
+        syncWrite({ op: 'delete', table: 'wardrobe_items', id }).then((r) => {
+          if (!r.ok) {
+            // We've already deleted locally; without an offline queue, the
+            // best we can do is tell the user and log. The next hydrate from
+            // server will resurrect the row if the delete never landed.
+            notifySyncFailure('Wardrobe delete');
+          }
+        });
+      },
       getByFragrance: (fragrance_id) =>
         get().items.find((i) => i.fragrance_id === fragrance_id),
       inRotation: () => get().items.filter((i) => i.status === 'have'),

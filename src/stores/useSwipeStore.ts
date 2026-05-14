@@ -2,6 +2,7 @@ import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { syncWrite, notifySyncFailure } from '@/src/lib/sync/syncWrite';
 
 /**
  * Persisted swipe history from "Train My Nose".
@@ -74,16 +75,29 @@ export const useSwipeStore = create<SwipeState>()(
       },
       record: (fragrance_id, action) => {
         const today = new Date().toLocaleDateString('en-CA');
+        const created_at = new Date().toISOString();
         set((s) => {
           const isNewDay = s.dailySwipeDate !== today;
           return {
             swipes: {
               ...s.swipes,
-              [fragrance_id]: { fragrance_id, action, created_at: new Date().toISOString() },
+              [fragrance_id]: { fragrance_id, action, created_at },
             },
             dailySwipeCount: isNewDay ? 1 : s.dailySwipeCount + 1,
             dailySwipeDate: today,
           };
+        });
+        // Upsert against `swipe_feedback` keyed on (user_id, fragrance_id).
+        // Re-swipes overwrite the prior action server-side, mirroring the
+        // local-only behavior. Server-side `user_id` comes from auth.uid()
+        // via the column default + RLS.
+        syncWrite({
+          op: 'upsert',
+          table: 'swipe_feedback',
+          row: { fragrance_id, action, created_at },
+          onConflict: 'user_id,fragrance_id',
+        }).then((r) => {
+          if (!r.ok) notifySyncFailure('Swipe');
         });
       },
       clear: () => set({ swipes: {}, dailySwipeCount: 0, dailySwipeDate: '' }),

@@ -2,6 +2,7 @@ import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { syncWrite, notifySyncFailure } from '@/src/lib/sync/syncWrite';
 
 /**
  * Local wear-log store. Persisted to AsyncStorage. Mirrors the v1 schema's
@@ -25,6 +26,8 @@ export interface WearLog {
   would_wear_again?: boolean | null;
   note?: string | null;
   created_at: string;
+  /** See useWardrobeStore.WardrobeItem._unsynced. */
+  _unsynced?: boolean;
 }
 
 interface WearLogState {
@@ -49,8 +52,16 @@ interface WearLogState {
   countByFragrance: () => Record<string, number>;
 }
 
+/** uuid v4 generator; see useWardrobeStore.clientId for rationale. */
 function clientId(): string {
-  return `wl_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
+  if (typeof globalThis.crypto?.randomUUID === 'function') {
+    return globalThis.crypto.randomUUID();
+  }
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    const v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
 }
 
 export const useWearLogStore = create<WearLogState>()(
@@ -63,14 +74,35 @@ export const useWearLogStore = create<WearLogState>()(
         const id = clientId();
         const log: WearLog = { ...input, id, created_at: new Date().toISOString() };
         set((s) => ({ logs: [log, ...s.logs] }));
+        syncWrite({ op: 'insert', table: 'wear_logs', row: log }).then((r) => {
+          if (!r.ok) {
+            set((s) => ({
+              logs: s.logs.map((l) => (l.id === id ? { ...l, _unsynced: true } : l)),
+            }));
+            notifySyncFailure('Wear log');
+          }
+        });
         return id;
       },
-      update: (id, patch) =>
+      update: (id, patch) => {
         set((s) => ({
           logs: s.logs.map((l) => (l.id === id ? { ...l, ...patch } : l)),
-        })),
-      remove: (id) =>
-        set((s) => ({ logs: s.logs.filter((l) => l.id !== id) })),
+        }));
+        syncWrite({ op: 'update', table: 'wear_logs', id, patch }).then((r) => {
+          if (!r.ok) {
+            set((s) => ({
+              logs: s.logs.map((l) => (l.id === id ? { ...l, _unsynced: true } : l)),
+            }));
+            notifySyncFailure('Wear log update');
+          }
+        });
+      },
+      remove: (id) => {
+        set((s) => ({ logs: s.logs.filter((l) => l.id !== id) }));
+        syncWrite({ op: 'delete', table: 'wear_logs', id }).then((r) => {
+          if (!r.ok) notifySyncFailure('Wear log delete');
+        });
+      },
       forFragrance: (fragrance_id) =>
         get().logs
           .filter((l) => l.fragrance_id === fragrance_id)
