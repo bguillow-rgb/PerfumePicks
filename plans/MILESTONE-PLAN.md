@@ -6,6 +6,19 @@
 
 ---
 
+## Strategy Update — 2026-05-14 (hybrid data sources)
+
+**Catalog now uses a hybrid data model** instead of a single licensed API:
+
+- **Affiliate feeds (CJ FragranceX / Rakuten Sephora / Amazon Associates) supply images, price, retailer link, and our affiliate tag** — same integration powers M1 catalog seed AND M2 "Buy from" monetization.
+- **Fragella API (Basic, $12/mo) backfills notes pyramid, accord weights, longevity, sillage, perfumer** — the enthusiast-grade data affiliate feeds don't carry. Image-mirroring rights to our Supabase CDN confirmed in writing by Fragella support.
+- **Scraped niche-house data** (~50 houses already collected in `scripts/data/frag-*-raw.json` by another agent) covers fragrances neither source handles well.
+- See M1 "Catalog Data Sources — hybrid model" for the full per-field source priority table.
+
+Net: cleaner architecture, ~$144/yr Fragella spend (Basic tier only, not Pro), affiliate links serve both monetization AND catalog dependencies.
+
+---
+
 ## Research Updates — 2026-05-13
 
 Based on `plans/Market-Research-Competitive-Analysis.md` (top-5 iOS apps + affiliate analysis). Deltas folded into the milestones below:
@@ -77,12 +90,44 @@ Nothing user-facing changes visually. This is plumbing that every subsequent mil
 - [ ] `useFragrance(id)` hook — fetches from Supabase, caches with React Query
 - [ ] `useFragranceSearch(query)` hook — uses `fragrances_name_trgm_idx` (pg_trgm)
 
-### Catalog Image Source — **decide before seeding**
-- [ ] **Decision: licensed API vs. retailer feed vs. user-upload-only.** Recommended primary: **Fragella API** (74K fragrances, CDN-hosted bottle JPGs + transparent WebP, includes purchase-link metadata; pricing not public — sales call required). Fallback candidate: **Fragrances of the World** (Michael Edwards, 36K, retailer-grade).
-- [ ] Get written quote + licensing terms from Fragella; verify image-rights clause permits commercial display in our app
-- [ ] Get written quote from Fragrances of the World for comparison
-- [ ] **Never** scrape Fragrantica — active DMCA program; brand C&D risk for raw bottle photos
-- [ ] Images served from Supabase Storage CDN (mirror the licensed source to avoid third-party CDN dependency on hot paths)
+### Catalog Data Sources — hybrid model (DECIDED 2026-05-14)
+
+**Per-field source priority** (read at ETL time, never at app runtime — app reads from Supabase only):
+
+| Field | Primary | Fallback 1 | Fallback 2 |
+|---|---|---|---|
+| Bottle images | Affiliate feed (CJ FragranceX, Rakuten Sephora, Amazon Associates) | Fragella API | User-uploaded (M2) |
+| Price + retailer URL | Affiliate feed | — | — |
+| Purchase link (our affiliate tag) | Affiliate feed (we inject tags) | — | — |
+| Notes pyramid (top/middle/base) | Fragella API | Scraped niche-house data (`scripts/data/frag-*-raw.json`) | Hide in UI ("notes coming soon") |
+| Main accords + weights (Dominant/Prominent/Moderate) | Fragella API | Scraped data | Hide in UI |
+| Longevity / sillage | Fragella API | Scraped data | Community-aggregated (post-launch) |
+| Perfumer | Fragella API | Scraped data | — |
+| Release year | Affiliate feed or Fragella, whichever populated | — | Ingest-date as proxy for "New Arrivals" rail |
+| Brand alias normalization | Manual mapping table | — | — |
+
+**ETL guard:** if BOTH affiliate and Fragella return empty for a fragrance, skip it. Never ship half-data entries.
+
+**Subscriptions and access:**
+- [ ] **Apply to CJ Affiliate for FragranceX** (1–10% commission, 45-day cookie, daily product feed — primary affiliate). Requires live marketing site (`perfumepicks.app`).
+- [ ] **Apply to Rakuten Advertising for Sephora** (5–10% luxury, 24-hour cookie — secondary, for niche/luxury detail pages).
+- [ ] **Apply to Amazon Associates Luxury Beauty** (10% commission, 24-hour cookie — fallback; "Buy from" CTA only, NOT image source per their Operating Agreement).
+- [ ] **Subscribe to Fragella Basic ($12/mo)** when ETL code is ready to call them — do NOT pay before integration is ready. Email confirmation already received: commercial image rights + Supabase CDN mirroring both permitted while subscription active.
+
+**ETL pipeline (M1 deliverable):**
+- [ ] `scripts/etl/run-catalog-ingest.ts` — orchestrates the merge:
+  1. Pull from CJ FragranceX feed → write to `staging_affiliate` table (image URL, price, retailer URL, our affiliate tag)
+  2. Pull from Fragella API for each fragrance name → write to `staging_fragella` table (notes, accords, longevity, sillage, perfumer)
+  3. Merge `staging_affiliate` + `staging_fragella` + niche-house scrapes into final `fragrances` + `brands` tables, applying source priority above
+  4. Mirror images from affiliate CDNs / Fragella CDN → Supabase Storage CDN (caches forever while either upstream subscription is active)
+  5. Apply brand alias map (`Gianni Versace` → `Versace`, etc.)
+- [ ] Re-run pipeline weekly via scheduled job (delta only, not full re-ingest)
+- [ ] Replace `MOCK_CATALOG` / `getFragrance()` / `getFragrances()` with Supabase queries across all 15 import sites
+
+**Forbidden:**
+- [ ] **Never** scrape Fragrantica — active DMCA program; brand C&D risk for raw bottle photos.
+
+**Niche-house data:** ~50 raw scrapes already collected by another agent under `scripts/data/frag-*-raw.json` (Arquiste, Bruno Fazzolari, Imaginary Authors, Jorum Studio, Tom Ford, Xerjoff, Memo Paris, Carner Barcelona, etc.). Use these as the third source for niche houses where neither affiliate feeds nor Fragella have good coverage.
 
 ---
 
