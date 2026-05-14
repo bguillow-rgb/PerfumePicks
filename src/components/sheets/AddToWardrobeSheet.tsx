@@ -17,11 +17,11 @@ import {
 import { useProfileStore } from '@/src/stores/useProfileStore';
 import { supabase } from '@/lib/supabase';
 import { Alert } from '@/src/components/ui/StyledAlert';
-import type { MockFragrance } from '@/src/mock/fragrances';
+import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
   visible: boolean;
-  fragrance: MockFragrance | null;
+  fragrance: Fragrance | null;
   onClose: () => void;
   onSaved?: (id: string) => void;
   /** Pre-select a status when the sheet opens (e.g. 'want' from the heart button). */

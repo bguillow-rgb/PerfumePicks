@@ -8,11 +8,11 @@ import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import {
   useWearLogStore, type Occasion, type Weather, type WearLog,
 } from '@/src/stores/useWearLogStore';
-import type { MockFragrance } from '@/src/mock/fragrances';
+import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
   visible: boolean;
-  fragrance: MockFragrance | null;
+  fragrance: Fragrance | null;
   /** When provided, the sheet opens in edit mode pre-populated with this entry. */
   editLog?: WearLog | null;
   onClose: () => void;

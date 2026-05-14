@@ -25,7 +25,7 @@
  */
 
 import { SEASONAL_ACCORDS } from '@/src/constants/accords';
-import type { MockFragrance } from '@/src/mock/fragrances';
+import type { Fragrance } from '@/src/stores/useCatalogStore';
 import type { DerivedTasteProfile } from './tasteProfile';
 
 export type AdventureMode = 'classic' | 'middle' | 'surprise';
@@ -40,7 +40,7 @@ export interface RecContext {
 }
 
 export interface ScoredRec {
-  fragrance: MockFragrance;
+  fragrance: Fragrance;
   score: number;            // 0..1
   reason: string;            // human-readable explanation
   tags: string[];           // ['office-safe','compliment-getter',...]
@@ -54,7 +54,7 @@ function clamp01(n: number): number {
   return Math.max(0, Math.min(1, n));
 }
 
-function noteMatch(f: MockFragrance, profile: DerivedTasteProfile): number {
+function noteMatch(f: Fragrance, profile: DerivedTasteProfile): number {
   // Score = sum of liked-note weights for notes present in this fragrance,
   // normalized by the total liked weight + a small denominator floor.
   const totalLikedWeight = sum(Object.values(profile.liked_notes));
@@ -68,7 +68,7 @@ function noteMatch(f: MockFragrance, profile: DerivedTasteProfile): number {
   return clamp01(0.5 + hits / (totalLikedWeight * 1.4));
 }
 
-function accordMatch(f: MockFragrance, profile: DerivedTasteProfile): number {
+function accordMatch(f: Fragrance, profile: DerivedTasteProfile): number {
   const totalAccordWeight = sum(Object.values(profile.preferred_accords).map((v) => Math.abs(v)));
   if (totalAccordWeight === 0) return 0.5;
   let hits = 0;
@@ -81,7 +81,7 @@ function accordMatch(f: MockFragrance, profile: DerivedTasteProfile): number {
   return clamp01(0.5 + hits / (totalAccordWeight * 1.4));
 }
 
-function familyMatch(f: MockFragrance, profile: DerivedTasteProfile): number {
+function familyMatch(f: Fragrance, profile: DerivedTasteProfile): number {
   if (!f.fragrance_family) return 0.5;
   const total = sum(Object.values(profile.preferred_families).map((v) => Math.abs(v)));
   if (total === 0) return 0.5;
@@ -89,19 +89,19 @@ function familyMatch(f: MockFragrance, profile: DerivedTasteProfile): number {
   return clamp01(0.5 + w / (total * 1.2));
 }
 
-function priceMatch(f: MockFragrance, profile: DerivedTasteProfile): number {
+function priceMatch(f: Fragrance, profile: DerivedTasteProfile): number {
   if (profile.avg_price_tier == null) return 0.5;
   const diff = Math.abs(f.price_tier - profile.avg_price_tier);
   return clamp01(1 - diff / 4);    // tiers 1..5 → max diff 4
 }
 
-function performanceMatch(f: MockFragrance, profile: DerivedTasteProfile): number {
+function performanceMatch(f: Fragrance, profile: DerivedTasteProfile): number {
   if (profile.longevity_preference == null) return 0.5;
   const diff = Math.abs(f.community_longevity - profile.longevity_preference);
   return clamp01(1 - diff / 5);
 }
 
-function contextMatch(f: MockFragrance, ctx: RecContext): number {
+function contextMatch(f: Fragrance, ctx: RecContext): number {
   let score = 0.5;
   let weightSum = 0;
   const accords = f.top_accords ?? [];
@@ -152,7 +152,7 @@ function sum(arr: number[]): number {
 // ──────────────────────────────────────────────────────────────────────
 
 export function scoreFragrance(
-  f: MockFragrance,
+  f: Fragrance,
   profile: DerivedTasteProfile,
   ctx: RecContext = {},
   jitter = 0,
@@ -190,7 +190,7 @@ export function scoreFragrance(
 }
 
 function pickReason(
-  f: MockFragrance,
+  f: Fragrance,
   ctx: RecContext,
   s: { noteS: number; accordS: number; familyS: number; priceS: number; perfS: number; ctxS: number },
 ): string {
@@ -225,7 +225,7 @@ function pickReason(
 }
 
 export function rank(
-  candidates: MockFragrance[],
+  candidates: Fragrance[],
   profile: DerivedTasteProfile,
   ctx: RecContext = {},
   limit = 10,

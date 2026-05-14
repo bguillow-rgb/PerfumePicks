@@ -13,10 +13,10 @@
  * any signal change.
  */
 
-import type { MockFragrance } from '@/src/mock/fragrances';
+import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 export interface TasteSignal {
-  fragrance: MockFragrance;
+  fragrance: Fragrance;
   /** +1 for like/wear, -1 for dislike. Magnitude weights the contribution. */
   weight: number;
 }

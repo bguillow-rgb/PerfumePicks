@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
-import type { MockFragrance } from '@/src/mock/fragrances';
+import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
-  fragrance: MockFragrance;
+  fragrance: Fragrance;
   variant?: 'hero' | 'medium' | 'small';
   onPress?: () => void;
 }
@@ -24,7 +24,7 @@ export function FragranceCard({ fragrance, variant = 'medium', onPress }: Props)
   return <MediumCard fragrance={fragrance} onPress={handlePress} />;
 }
 
-function HeroCard({ fragrance, onPress }: { fragrance: MockFragrance; onPress: () => void }) {
+function HeroCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: () => void }) {
   return (
     <Pressable onPress={onPress} style={heroStyles.wrap}>
       <Image source={{ uri: fragrance.image_url }} style={heroStyles.image} />
@@ -42,7 +42,7 @@ function HeroCard({ fragrance, onPress }: { fragrance: MockFragrance; onPress: (
   );
 }
 
-function MediumCard({ fragrance, onPress }: { fragrance: MockFragrance; onPress: () => void }) {
+function MediumCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: () => void }) {
   return (
     <Pressable onPress={onPress} style={mediumStyles.wrap}>
       <View style={mediumStyles.imageWrap}>
@@ -61,7 +61,7 @@ function MediumCard({ fragrance, onPress }: { fragrance: MockFragrance; onPress:
   );
 }
 
-function SmallCard({ fragrance, onPress }: { fragrance: MockFragrance; onPress: () => void }) {
+function SmallCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: () => void }) {
   return (
     <Pressable onPress={onPress} style={smallStyles.wrap}>
       <View style={smallStyles.imageWrap}>
