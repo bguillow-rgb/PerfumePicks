@@ -51,11 +51,30 @@ export async function syncWrite(operation: SyncOp): Promise<SyncResult> {
     return { ok: true };
   }
 
+  // Resolve the current auth user so we can stamp user_id on inserts and
+  // upserts. Every user-scoped table (wardrobe_items, wear_logs,
+  // swipe_feedback, …) has `user_id not null references auth.users` AND an
+  // RLS `with check (auth.uid() = user_id)` policy — so the row MUST carry
+  // user_id and it MUST match the JWT. There is no column default.
+  //
+  // If there's no session, refuse the write rather than blowing past RLS
+  // with an unauth'd insert that would 401 anyway.
+  let userId: string | null = null;
+  if (operation.op === 'insert' || operation.op === 'upsert') {
+    const { data } = await supabase.auth.getUser();
+    userId = data.user?.id ?? null;
+    if (!userId) {
+      return { ok: false, error: 'Not signed in' };
+    }
+  }
+
   try {
     let response;
     switch (operation.op) {
       case 'insert':
-        response = await supabase.from(operation.table).insert(operation.row);
+        response = await supabase
+          .from(operation.table)
+          .insert({ ...operation.row, user_id: userId });
         break;
       case 'update':
         response = await supabase
@@ -69,7 +88,10 @@ export async function syncWrite(operation: SyncOp): Promise<SyncResult> {
       case 'upsert':
         response = await supabase
           .from(operation.table)
-          .upsert(operation.row, operation.onConflict ? { onConflict: operation.onConflict } : undefined);
+          .upsert(
+            { ...operation.row, user_id: userId },
+            operation.onConflict ? { onConflict: operation.onConflict } : undefined,
+          );
         break;
     }
 
