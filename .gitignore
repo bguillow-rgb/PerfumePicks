@@ -6,6 +6,9 @@ node_modules/
 # Astro content/type cache (marketing site at /web)
 .astro/
 
+# Claude Code worktree state — session-local, never commit
+.claude/worktrees/
+
 # Expo
 .expo/
 dist/
