@@ -1,0 +1,14 @@
+appId: host.exp.Exponent
+---
+- launchApp
+- tapOn: "Perfume Picks"
+- extendedWaitUntil:
+    visible: "Today"
+    timeout: 45000
+- tapOn: "Train"
+- extendedWaitUntil:
+    visible: "TRAIN MY NOSE"
+    timeout: 10000
+- takeScreenshot: train__intro
+- tapOn: "Begin a Session"
+- takeScreenshot: train__first-card

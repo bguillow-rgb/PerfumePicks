@@ -9,6 +9,8 @@ import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 interface Props {
   fragrance: Fragrance;
   variant?: 'hero' | 'medium' | 'small' | 'compact';
+  /** Optional subtitle shown below the name on compact cards (e.g. celebrity names). */
+  subtitle?: string;
   onPress?: () => void;
 }
 
@@ -26,12 +28,12 @@ interface Props {
  * Rationale: founder feedback — big photos "look bush league"; compact
  * cards show more product by default and feel Sephora/Nordstrom-curated.
  */
-export function FragranceCard({ fragrance, variant = 'medium', onPress }: Props) {
+export function FragranceCard({ fragrance, variant = 'medium', subtitle, onPress }: Props) {
   const router = useRouter();
   const handlePress = onPress ?? (() => router.push(`/fragrance/${fragrance.id}`));
 
   if (variant === 'hero') return <HeroCard fragrance={fragrance} onPress={handlePress} />;
-  if (variant === 'compact') return <CompactCard fragrance={fragrance} onPress={handlePress} />;
+  if (variant === 'compact') return <CompactCard fragrance={fragrance} subtitle={subtitle} onPress={handlePress} />;
   if (variant === 'small') return <SmallCard fragrance={fragrance} onPress={handlePress} />;
   return <MediumCard fragrance={fragrance} onPress={handlePress} />;
 }
@@ -85,14 +87,19 @@ function SmallCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: () =
   );
 }
 
-function CompactCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: () => void }) {
+/** Strip pipe-separated catalog noise from display name. */
+function cardDisplayName(raw: string): string {
+  const pipeIdx = raw.indexOf('|');
+  return pipeIdx > 0 ? raw.slice(0, pipeIdx).trim() : raw;
+}
+
+function CompactCard({ fragrance, subtitle, onPress }: { fragrance: Fragrance; subtitle?: string; onPress: () => void }) {
   const accord = fragrance.top_accords[0];
   const inWardrobe = useWardrobeStore((s) => s.getByFragrance(fragrance.id));
   const addToWardrobe = useWardrobeStore((s) => s.add);
 
   const handleWant = () => {
     if (inWardrobe) {
-      // Already in wardrobe — navigate to detail for editing
       onPress();
       return;
     }
@@ -106,19 +113,27 @@ function CompactCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: ()
     });
   };
 
+  // For ultra-long brands (>15 chars), drop letter-spacing so they fit
+  const brandText = fragrance.brand.toUpperCase();
+  const brandStyle = brandText.length > 15
+    ? [compactStyles.brand, { letterSpacing: 0.5 }]
+    : compactStyles.brand;
+
   return (
     <Pressable onPress={onPress} style={compactStyles.wrap}>
       <View style={compactStyles.imageWrap}>
         <Image source={{ uri: fragrance.image_url }} style={compactStyles.image} />
       </View>
       <View style={compactStyles.content}>
-        <Text style={compactStyles.brand} numberOfLines={1}>{fragrance.brand.toUpperCase()}</Text>
-        <Text style={compactStyles.name} numberOfLines={3}>{fragrance.name}</Text>
-        {accord && (
+        <Text style={brandStyle} numberOfLines={1}>{brandText}</Text>
+        <Text style={compactStyles.name} numberOfLines={2}>{cardDisplayName(fragrance.name)}</Text>
+        {subtitle ? (
+          <Text style={compactStyles.subtitle} numberOfLines={1}>{subtitle}</Text>
+        ) : accord ? (
           <View style={compactStyles.accordPill}>
             <Text style={compactStyles.accordText}>{accord}</Text>
           </View>
-        )}
+        ) : null}
       </View>
       <Pressable onPress={handleWant} hitSlop={8} style={compactStyles.heartBtn}>
         <Ionicons
@@ -266,5 +281,6 @@ const compactStyles = StyleSheet.create({
     backgroundColor: COLORS.card2,
   },
   accordText: { fontSize: 10, color: COLORS.muted, fontWeight: '500' },
+  subtitle: { ...TYPE.caption, fontSize: 10, color: COLORS.accent, fontStyle: 'italic' },
   heartBtn: { width: 32, height: 32, alignItems: 'center', justifyContent: 'center' },
 });

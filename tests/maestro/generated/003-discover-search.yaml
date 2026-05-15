@@ -1,0 +1,14 @@
+appId: host.exp.Exponent
+---
+- launchApp
+- tapOn: "Perfume Picks"
+- extendedWaitUntil:
+    visible: "Today"
+    timeout: 45000
+- tapOn: "Discover"
+- extendedWaitUntil:
+    visible: "Discover"
+    timeout: 10000
+- tapOn: "Search fragrances.*"
+- inputText: "chanel"
+- takeScreenshot: discover-search__results

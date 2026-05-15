@@ -76,20 +76,32 @@ export default function DiscoverScreen() {
   const [filterSheetOpen, setFilterSheetOpen] = useState(false);
   const [filters, setFilters] = useState<DiscoverFilters>(EMPTY_FILTERS);
 
-  // Celebrity Picks — fragrances worn by famous people.
-  const [celebrityPicks, setCelebrityPicks] = useState<Fragrance[]>([]);
+  // Celebrity Picks — fragrances worn by famous people, with celeb names.
+  const [celebrityPicks, setCelebrityPicks] = useState<{ fragrance: Fragrance; celebrities: string }[]>([]);
   useEffect(() => {
     if (!isSupabaseConfigured) return;
     (async () => {
       const { data } = await supabase
         .from('fragrance_celebrities')
-        .select('fragrance_id')
+        .select('fragrance_id, celebrity_name')
         .eq('verified', true)
-        .limit(50);
+        .limit(100);
       if (!data?.length) return;
-      const ids = [...new Set(data.map((r: any) => r.fragrance_id))];
+      // Group celebrity names by fragrance
+      const namesByFrag = new Map<string, string[]>();
+      for (const r of data as any[]) {
+        const names = namesByFrag.get(r.fragrance_id) ?? [];
+        names.push(r.celebrity_name);
+        namesByFrag.set(r.fragrance_id, names);
+      }
+      const ids = [...namesByFrag.keys()];
       const frags = await fetchMany(ids);
-      setCelebrityPicks(frags.slice(0, RAIL_SIZE));
+      setCelebrityPicks(
+        frags.slice(0, RAIL_SIZE).map((f) => ({
+          fragrance: f,
+          celebrities: (namesByFrag.get(f.id) ?? []).join(', '),
+        })),
+      );
     })();
   }, [fetchMany]);
 
@@ -288,8 +300,8 @@ export default function DiscoverScreen() {
           {celebrityPicks.length > 0 && (
             <Section eyebrow="CELEBRITY PICKS" cursive="famous fans">
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-                {celebrityPicks.map((f) => (
-                  <FragranceCard key={f.id} fragrance={f} variant="compact" onPress={() => router.push(fragranceHref(f.id) as any)} />
+                {celebrityPicks.map(({ fragrance: f, celebrities }) => (
+                  <FragranceCard key={f.id} fragrance={f} variant="compact" subtitle={celebrities} onPress={() => router.push(fragranceHref(f.id) as any)} />
                 ))}
               </ScrollView>
             </Section>
