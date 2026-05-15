@@ -10,6 +10,7 @@ import { useRecommendations, useNewArrivals } from '@/src/features/recommend/use
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { getFragranceFromStore } from '@/src/stores/useCatalogStore';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 /**
  * Home / "Today" tab — the daily ritual surface.
@@ -46,6 +47,20 @@ export default function HomeScreen() {
   const { heroPick, heroReason, todaysEdit, trending, hasSignals } = displayed;
 
   const [whatToWearOpen, setWhatToWearOpen] = useState(false);
+
+  // Streak counter — reads from profiles.current_streak on focus.
+  const [streak, setStreak] = useState(0);
+  useFocusEffect(
+    useCallback(() => {
+      if (!isSupabaseConfigured) return;
+      (async () => {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return;
+        const { data } = await supabase.from('profiles').select('current_streak').eq('id', user.id).maybeSingle();
+        if (data?.current_streak != null) setStreak(data.current_streak);
+      })();
+    }, [])
+  );
 
   // Allow manual dismiss of the onboarding card independent of hasSignals
   const [onboardingDismissed, setOnboardingDismissed] = useState(false);
@@ -100,6 +115,12 @@ export default function HomeScreen() {
           <Text style={styles.subtitle} numberOfLines={1}>
             {greeting.toLowerCase()} <Text style={styles.subtitleDash}>—</Text> {longDate().toLowerCase()}
           </Text>
+          {streak > 0 && (
+            <View style={styles.streakRow}>
+              <Ionicons name="flame" size={14} color={COLORS.accent} />
+              <Text style={styles.streakText}>{streak} day streak</Text>
+            </View>
+          )}
         </View>
 
         {/* Onboarding card — shown until the user has signals or dismisses it manually */}
@@ -302,6 +323,11 @@ const styles = StyleSheet.create({
     color: COLORS.accent,
     fontStyle: 'normal',
   },
+  streakRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 4,
+    alignSelf: 'center', marginTop: 6,
+  },
+  streakText: { ...TYPE.label, fontSize: 12, color: COLORS.accent, letterSpacing: 0.5 },
   section: {
     paddingLeft: SPACING.lg,
     marginTop: SPACING.lg,

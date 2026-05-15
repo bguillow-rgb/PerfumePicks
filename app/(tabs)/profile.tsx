@@ -234,8 +234,10 @@ export default function ProfileScreen() {
 
         <Section title="Taste Profile">
           <Row label="Take the quiz" onPress={() => router.push('/quiz')} />
-          <Row label="View taste insights" pro disabled={!isPro} />
+          <Row label="View taste insights" onPress={() => router.push('/taste-profile')} pro disabled={!isPro} />
         </Section>
+
+        <BadgesSection />
 
         <Section title="Account">
           {isGuest && <Row label="Sign in" onPress={() => router.push('/auth/login')} />}
@@ -269,6 +271,45 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       <Text style={styles.sectionTitle}>{title}</Text>
       <View style={styles.sectionBody}>{children}</View>
     </View>
+  );
+}
+
+const BADGE_ICONS: Record<string, keyof typeof Ionicons.glyphMap> = {
+  streak_7: 'flame', streak_30: 'flame', streak_100: 'flame', streak_365: 'flame',
+  first_wear: 'water', first_review: 'create', collector_10: 'rose',
+};
+const BADGE_LABELS: Record<string, string> = {
+  streak_7: '7-Day Streak', streak_30: '30-Day Streak', streak_100: '100-Day Streak', streak_365: '365-Day Streak',
+  first_wear: 'First Wear', first_review: 'First Review', collector_10: 'Collector',
+};
+
+function BadgesSection() {
+  const [badges, setBadges] = useState<{ badge_key: string; awarded_at: string }[]>([]);
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+    (async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase.from('user_badges').select('badge_key, awarded_at').eq('user_id', user.id);
+      if (data) setBadges(data);
+    })();
+  }, []);
+
+  if (badges.length === 0) return null;
+
+  return (
+    <Section title="Badges">
+      <View style={styles.sectionBody}>
+        <View style={styles.badgeGrid}>
+          {badges.map((b) => (
+            <View key={b.badge_key} style={styles.badgeItem}>
+              <Ionicons name={BADGE_ICONS[b.badge_key] ?? 'ribbon'} size={20} color={COLORS.accent} />
+              <Text style={styles.badgeLabel}>{BADGE_LABELS[b.badge_key] ?? b.badge_key}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
+    </Section>
   );
 }
 
@@ -395,6 +436,9 @@ const styles = StyleSheet.create({
   rowLabel: { ...TYPE.body, flex: 1 },
   rowLabelDisabled: { color: COLORS.subtle },
   rowLabelDanger: { color: COLORS.danger },
+  badgeGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.md, padding: SPACING.md },
+  badgeItem: { alignItems: 'center', gap: 4, width: 70 },
+  badgeLabel: { ...TYPE.caption, fontSize: 9, textAlign: 'center' },
   proPill: {
     ...TYPE.eyebrow,
     fontSize: 10,

@@ -10,6 +10,8 @@ import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet';
+import { ReviewSection } from '@/src/components/fragrance/ReviewSection';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import {
   useCatalogStore,
   getFragranceFromStore,
@@ -186,6 +188,17 @@ export default function FragranceDetailScreen() {
   const cheaperAlts = findCheaperAlternatives(fragrance, catalogPool);
   const headlinePrice = (fragrance.retail_msrp_usd_cents / 100).toFixed(0);
 
+  // Affiliate "Buy from" links from fragrance_retailer_links.
+  const [retailerLinks, setRetailerLinks] = useState<{ retailer: string; url: string; price_cents: number | null }[]>([]);
+  useEffect(() => {
+    if (!isSupabaseConfigured || !id) return;
+    supabase
+      .from('fragrance_retailer_links')
+      .select('retailer, url, price_cents')
+      .eq('fragrance_id', id)
+      .then(({ data }) => { if (data) setRetailerLinks(data); });
+  }, [id]);
+
   return (
     <View style={styles.safe}>
       <Stack.Screen options={{ headerShown: false }} />
@@ -261,6 +274,10 @@ export default function FragranceDetailScreen() {
           </View>
         </Section>
 
+        <Section title="Community Reviews" cursive="what others think">
+          <ReviewSection fragranceId={id} />
+        </Section>
+
         <Section title="Smells Like" cursive="discover similar">
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
             {similar.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
@@ -303,10 +320,24 @@ export default function FragranceDetailScreen() {
               </View>
             </View>
             <View style={styles.priceDivider} />
-            <Text style={styles.priceFootnote}>
-              Decant pricing across Sephora, Nordstrom, Luckyscent and FragranceX
-              appears once the data pipeline is wired up.
-            </Text>
+            {retailerLinks.length > 0 ? (
+              <View style={styles.retailerList}>
+                {retailerLinks.map((link, i) => (
+                  <Pressable key={i} style={styles.retailerRow}>
+                    <Text style={styles.retailerName}>{link.retailer}</Text>
+                    {link.price_cents != null && (
+                      <Text style={styles.retailerPrice}>${(link.price_cents / 100).toFixed(0)}</Text>
+                    )}
+                    <Ionicons name="open-outline" size={12} color={COLORS.muted} />
+                  </Pressable>
+                ))}
+                <Text style={styles.affiliateDisclosure}>We may earn a commission from purchases.</Text>
+              </View>
+            ) : (
+              <Text style={styles.priceFootnote}>
+                Buy-from links appear once retailer partnerships are live.
+              </Text>
+            )}
           </View>
         </Section>
 
@@ -565,6 +596,15 @@ const styles = StyleSheet.create({
   priceTierLabel: { ...TYPE.caption, marginTop: 4 },
   priceDivider: { height: 1, backgroundColor: COLORS.border, marginVertical: SPACING.md },
   priceFootnote: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic' },
+  retailerList: { gap: 8 },
+  retailerRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 8,
+    paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: COLORS.border,
+  },
+  retailerName: { ...TYPE.label, fontSize: 13, color: COLORS.text, flex: 1 },
+  retailerPrice: { ...TYPE.body, fontSize: 15, fontWeight: '600', color: COLORS.accent },
+  affiliateDisclosure: { ...TYPE.caption, fontSize: 9, color: COLORS.subtle, marginTop: 6, fontStyle: 'italic' },
 
   ctaWrap: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl, gap: SPACING.sm },
   cta: {
