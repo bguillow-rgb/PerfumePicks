@@ -194,6 +194,8 @@ export default function RootLayout() {
         <Stack.Screen name="brand/[name]" />
         <Stack.Screen name="rec/results" />
         <Stack.Screen name="taste-profile" />
+        <Stack.Screen name="wrapped" />
+        <Stack.Screen name="user/[id]" />
         <Stack.Screen name="legal/privacy" options={{ presentation: 'modal' }} />
         <Stack.Screen name="legal/terms" options={{ presentation: 'modal' }} />
       </Stack>

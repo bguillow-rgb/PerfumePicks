@@ -12,6 +12,7 @@ import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet';
 import { ReviewSection } from '@/src/components/fragrance/ReviewSection';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { EmptyState } from '@/src/components/ui/EmptyState';
 import {
   useCatalogStore,
   getFragranceFromStore,
@@ -423,6 +424,24 @@ export default function FragranceDetailScreen() {
             </View>
           </Section>
         )}
+
+        {/* Layering log stub */}
+        <Section title="Layering" cursive="pair it up">
+          <EmptyState
+            icon="layers-outline"
+            title="No layering entries yet"
+            subtitle="Record fragrance combos you love wearing together."
+          />
+        </Section>
+
+        {/* Compliments log stub */}
+        <Section title="Compliments" cursive="what they said">
+          <EmptyState
+            icon="chatbubble-ellipses-outline"
+            title="No compliments logged"
+            subtitle="Log when someone compliments your scent — it's data!"
+          />
+        </Section>
 
         <View style={styles.ctaWrap}>
           {inWardrobe ? (
