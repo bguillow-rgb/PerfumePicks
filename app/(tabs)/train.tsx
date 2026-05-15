@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo, useCallback } from 'react';
-import { View, Text, StyleSheet, Pressable, Image, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Image, Dimensions, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -93,11 +93,22 @@ export default function TrainScreen() {
   // gender + already-swiped filters still leave a meaningful deck. 200 is
   // plenty until the catalog grows past 1k, at which point we'd switch to
   // server-side shuffle anyway.
+  //
+  // poolReady distinguishes "still fetching" from "fetched and got nothing"
+  // so we don't render SESSION COMPLETE on the very first frame after the
+  // user taps Begin (when pool is still []). Without this, the user
+  // taps Begin → pool=[] → deck=[] → done=true → SESSION COMPLETE flashes
+  // immediately and they never see a card.
   const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
   const [pool, setPool] = useState<Fragrance[]>([]);
+  const [poolReady, setPoolReady] = useState(false);
   useEffect(() => {
     let cancelled = false;
-    fetchAllActive(200).then((rows) => { if (!cancelled) setPool(rows); });
+    fetchAllActive(200).then((rows) => {
+      if (cancelled) return;
+      setPool(rows);
+      setPoolReady(true);
+    });
     return () => { cancelled = true; };
   }, [fetchAllActive]);
 
@@ -136,6 +147,26 @@ export default function TrainScreen() {
   }, [recordToStore]);
 
   if (!started) return <Intro onStart={() => { setStarted(true); setIndex(0); setStats({ loved: 0, liked: 0, passed: 0 }); }} dailyLimitReached={dailyLimitReached} onUpgrade={() => router.push('/paywall')} />;
+
+  // Loading state — pool still fetching after Begin tapped. Without this
+  // gate, the SESSION COMPLETE branch renders immediately because deck=[]
+  // and index=0 satisfies `index >= deck.length` trivially.
+  if (!poolReady) {
+    return (
+      <SafeAreaView style={styles.safe} edges={['top']}>
+        <View style={[styles.headerRow]}>
+          <Pressable onPress={() => setStarted(false)}>
+            <Ionicons name="close" size={26} color={COLORS.text} />
+          </Pressable>
+          <Text style={styles.eyebrow}>TRAIN MY NOSE</Text>
+          <View style={{ width: 26 }} />
+        </View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <ActivityIndicator color={COLORS.accent} />
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   const done = index >= deck.length;
 
