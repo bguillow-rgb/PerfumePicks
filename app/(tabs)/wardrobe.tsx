@@ -48,7 +48,6 @@ export default function WardrobeScreen() {
   useFocusEffect(useCallback(() => { setActiveFilter('have'); }, []));
 
   const storeItems = useWardrobeStore((s) => s.items);
-  const addToStore = useWardrobeStore((s) => s.add);
   const removeFromStore = useWardrobeStore((s) => s.remove);
   const wearLogs = useWearLogStore((s) => s.logs);
   const wearCountMap = useMemo(() => {

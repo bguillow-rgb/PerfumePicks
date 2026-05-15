@@ -3,6 +3,8 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { syncWrite, notifySyncFailure } from '@/src/lib/sync/syncWrite';
+import { FREE_LIMITS } from '@/src/lib/limits';
+import { useProStore } from '@/src/stores/useProStore';
 
 /**
  * Local wardrobe store — the user's fragrance collection.
@@ -41,6 +43,13 @@ export interface WardrobeItem {
   _unsynced?: boolean;
 }
 
+/**
+ * Sentinel returned by `add()` when the free-tier wardrobe cap is hit.
+ * Callers (AddToWardrobeSheet, fragrance detail) check for this and
+ * route to the paywall instead of treating it as success.
+ */
+export const WARDROBE_CAP_HIT = '__cap_hit__' as const;
+
 interface WardrobeState {
   items: WardrobeItem[];
   /**
@@ -56,8 +65,13 @@ interface WardrobeState {
    * Called by `useAppSync` after sign-in or on sign-out (with []).
    */
   hydrate: (rows: WardrobeItem[]) => void;
-  /** Add a new wardrobe item; returns the new id. */
-  add: (input: Omit<WardrobeItem, 'id' | 'created_at' | 'updated_at'>) => string;
+  /**
+   * Add a new wardrobe item; returns the new id, OR the literal
+   * WARDROBE_CAP_HIT sentinel when a free user has reached FREE_LIMITS.wardrobeItems.
+   * Updates to existing rows are NOT counted against the cap (so users
+   * can still re-status / edit). Caller MUST check the return value.
+   */
+  add: (input: Omit<WardrobeItem, 'id' | 'created_at' | 'updated_at'>) => string | typeof WARDROBE_CAP_HIT;
   /** Patch an existing item (partial update). */
   update: (id: string, patch: Partial<WardrobeItem>) => void;
   /** Remove an item. */
@@ -101,9 +115,16 @@ export const useWardrobeStore = create<WardrobeState>()(
       hydrated: false,
       hydrate: (rows) => set({ items: rows, hydrated: true }),
       add: (input) => {
+        // Free-tier cap. Pro is unlimited. Server-side enforcement lives in
+        // a separate RLS policy that checks `is_pro_user(auth.uid())` — see
+        // migration `20260515_pro_gate_server_side.sql`.
+        const isPro = useProStore.getState().isPro;
+        const existing = get().items.find((i) => i.fragrance_id === input.fragrance_id);
+        if (!isPro && !existing && get().items.length >= FREE_LIMITS.wardrobeItems) {
+          return WARDROBE_CAP_HIT;
+        }
         // Deduplicate: if this fragrance is already in the wardrobe, update
         // the existing entry rather than creating a duplicate row.
-        const existing = get().items.find((i) => i.fragrance_id === input.fragrance_id);
         if (existing) {
           const patch = { ...input, updated_at: nowIso() };
           set((s) => ({

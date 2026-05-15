@@ -12,7 +12,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { useRouter } from 'expo-router';
 import {
-  useWardrobeStore, type WardrobeStatus, type UnitType, type WardrobeItem,
+  useWardrobeStore, WARDROBE_CAP_HIT,
+  type WardrobeStatus, type UnitType, type WardrobeItem,
 } from '@/src/stores/useWardrobeStore';
 import { useProfileStore } from '@/src/stores/useProfileStore';
 import { supabase } from '@/lib/supabase';
@@ -112,7 +113,17 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
       update(editItem.id, patch);
       id = editItem.id;
     } else {
-      id = add({ fragrance_id: fragrance.id, ...patch });
+      const result = add({ fragrance_id: fragrance.id, ...patch });
+      if (result === WARDROBE_CAP_HIT) {
+        // Free-tier cap: bail out before closing the sheet, route to paywall.
+        // The sheet stays mounted so the user lands back on it if they
+        // dismiss the paywall — their pending input isn't lost.
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+        onClose();
+        router.push('/paywall' as any);
+        return;
+      }
+      id = result;
     }
     onSaved?.(id);
     onClose();
