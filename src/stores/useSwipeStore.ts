@@ -97,7 +97,7 @@ export const useSwipeStore = create<SwipeState>()(
           row: { fragrance_id, action, created_at },
           onConflict: 'user_id,fragrance_id',
         }).then((r) => {
-          if (!r.ok) notifySyncFailure('Swipe');
+          if (!r.ok) notifySyncFailure('Swipe', r.error);
         });
       },
       clear: () => set({ swipes: {}, dailySwipeCount: 0, dailySwipeDate: '' }),

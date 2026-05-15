@@ -79,7 +79,7 @@ export const useWearLogStore = create<WearLogState>()(
             set((s) => ({
               logs: s.logs.map((l) => (l.id === id ? { ...l, _unsynced: true } : l)),
             }));
-            notifySyncFailure('Wear log');
+            notifySyncFailure('Wear log', r.error);
           }
         });
         return id;
@@ -93,14 +93,14 @@ export const useWearLogStore = create<WearLogState>()(
             set((s) => ({
               logs: s.logs.map((l) => (l.id === id ? { ...l, _unsynced: true } : l)),
             }));
-            notifySyncFailure('Wear log update');
+            notifySyncFailure('Wear log update', r.error);
           }
         });
       },
       remove: (id) => {
         set((s) => ({ logs: s.logs.filter((l) => l.id !== id) }));
         syncWrite({ op: 'delete', table: 'wear_logs', id }).then((r) => {
-          if (!r.ok) notifySyncFailure('Wear log delete');
+          if (!r.ok) notifySyncFailure('Wear log delete', r.error);
         });
       },
       forFragrance: (fragrance_id) =>

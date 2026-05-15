@@ -119,12 +119,20 @@ export async function syncWrite(operation: SyncOp): Promise<SyncResult> {
  * Imported here so the policy lives in one place; stores never reach into the
  * Alert primitive directly.
  */
-export function notifySyncFailure(what: string) {
+export function notifySyncFailure(what: string, error?: string) {
   // Lazy import to avoid a circular module graph at app start.
   const { Alert } = require('@/src/components/ui/StyledAlert');
+  // In dev, surface the actual server error so we can debug. In prod the
+  // user only sees the generic message — the detail goes to Sentry via
+  // captureException above.
+  const detail = __DEV__ && error ? `\n\n[dev] ${error}` : '';
   Alert.alert(
     "Couldn't sync",
-    `${what} saved locally. We'll retry on next launch.`,
+    `${what} saved locally. We'll retry on next launch.${detail}`,
     [{ text: 'OK', style: 'cancel' }],
   );
+  // Also log the full error to Metro so it's visible in the dev terminal.
+  if (__DEV__) {
+    console.warn(`[syncWrite] ${what} failed:`, error ?? '(no detail)');
+  }
 }

@@ -139,7 +139,7 @@ export const useWardrobeStore = create<WardrobeState>()(
                     i.id === existing.id ? { ...i, _unsynced: true } : i,
                   ),
                 }));
-                notifySyncFailure('Wardrobe update');
+                notifySyncFailure('Wardrobe update', r.error);
               }
             },
           );
@@ -162,7 +162,7 @@ export const useWardrobeStore = create<WardrobeState>()(
             set((s) => ({
               items: s.items.map((i) => (i.id === id ? { ...i, _unsynced: true } : i)),
             }));
-            notifySyncFailure('Wardrobe item');
+            notifySyncFailure('Wardrobe item', r.error);
           }
         });
         return id;
@@ -177,7 +177,7 @@ export const useWardrobeStore = create<WardrobeState>()(
             set((s) => ({
               items: s.items.map((i) => (i.id === id ? { ...i, _unsynced: true } : i)),
             }));
-            notifySyncFailure('Wardrobe update');
+            notifySyncFailure('Wardrobe update', r.error);
           }
         });
       },
@@ -188,7 +188,7 @@ export const useWardrobeStore = create<WardrobeState>()(
             // We've already deleted locally; without an offline queue, the
             // best we can do is tell the user and log. The next hydrate from
             // server will resurrect the row if the delete never landed.
-            notifySyncFailure('Wardrobe delete');
+            notifySyncFailure('Wardrobe delete', r.error);
           }
         });
       },
