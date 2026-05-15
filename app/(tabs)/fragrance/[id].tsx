@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { ScrollView, View, Text, StyleSheet, Pressable, Image, Dimensions, Alert } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image, Dimensions, Alert, ActivityIndicator } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
@@ -61,13 +61,24 @@ export default function FragranceDetailScreen() {
   const [fragrance, setFragrance] = useState<Fragrance | undefined>(() =>
     getFragranceFromStore(id ?? ''),
   );
+  // Loading flag distinguishes "haven't tried yet" from "tried and got nothing".
+  // Without this, the not-found screen renders for one frame on every cold
+  // open of a detail page that hasn't been cached yet.
+  const [lookupAttempted, setLookupAttempted] = useState(() => !!getFragranceFromStore(id ?? ''));
   useEffect(() => {
     if (!id) return;
+    let cancelled = false;
     // Always try a fetch — even if the cache hit, this no-ops via the
     // store's in-flight + cache de-dupe.
     fetchById(id).then((row) => {
+      if (cancelled) return;
       if (row) setFragrance(row);
+      setLookupAttempted(true);
+      if (!row && __DEV__) {
+        console.warn(`[fragrance-detail] fetchById('${id}') returned undefined — id not in catalog`);
+      }
     });
+    return () => { cancelled = true; };
   }, [id, fetchById]);
 
   // Catalog pool for the "cheaper alternatives" rail. We don't iterate
@@ -147,9 +158,24 @@ export default function FragranceDetailScreen() {
   };
 
   if (!fragrance) {
+    // Distinguish "still fetching" from "tried and got nothing." Without
+    // this the screen flashes "Fragrance not found" for one frame on
+    // every cold-open detail page before the async fetch completes.
+    if (!lookupAttempted) {
+      return (
+        <View style={styles.notFound}>
+          <ActivityIndicator color={COLORS.accent} />
+        </View>
+      );
+    }
     return (
       <View style={styles.notFound}>
         <Text style={styles.notFoundText}>Fragrance not found.</Text>
+        {__DEV__ && id && (
+          <Text style={[styles.notFoundText, { fontSize: 11, opacity: 0.6 }]}>
+            [dev] id: {id}
+          </Text>
+        )}
         <Pressable onPress={() => router.back()} style={styles.notFoundBtn}>
           <Text style={styles.notFoundBtnText}>Go Back</Text>
         </Pressable>
