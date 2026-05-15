@@ -64,6 +64,7 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
   const [sizeMl, setSizeMl] = useState('50');
   const [remainingMl, setRemainingMl] = useState('50');
   const [reorderMl, setReorderMl] = useState('');
+  const [priceCents, setPriceCents] = useState('');
 
   // Reset all fields each time the sheet opens, pre-populating from editItem if present.
   useEffect(() => {
@@ -74,12 +75,14 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
       setSizeMl(String(editItem.size_ml));
       setRemainingMl(String(editItem.remaining_ml));
       setReorderMl(editItem.reorder_threshold_ml != null ? String(editItem.reorder_threshold_ml) : '');
+      setPriceCents(editItem.purchase_price_cents != null ? String(editItem.purchase_price_cents / 100) : '');
     } else {
       setStatus(initialStatus ?? 'have');
       setUnit('bottle');
       setSizeMl('50');
       setRemainingMl('50');
       setReorderMl('');
+      setPriceCents('');
     }
   }, [visible, editItem, initialStatus]);
 
@@ -107,6 +110,7 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
       size_ml: Number(sizeMl),
       remaining_ml: status === 'have' ? Number(remainingMl) : Number(sizeMl),
       reorder_threshold_ml: reorderMl.trim() ? Number(reorderMl) : null,
+      purchase_price_cents: priceCents.trim() ? Math.round(Number(priceCents) * 100) : null,
     };
     let id: string;
     if (editItem) {
@@ -220,18 +224,34 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
                 </Section>
 
                 {status === 'have' && (
-                  <Section label="Reorder Alert (optional)">
-                    <View style={styles.reorderRow}>
-                      <Text style={styles.reorderHint}>Notify me when I drop below</Text>
-                      <MlInput
-                        label=""
-                        value={reorderMl}
-                        onChangeText={setReorderMl}
-                        placeholder="—"
-                        compact
-                      />
-                    </View>
-                  </Section>
+                  <>
+                    <Section label="Reorder Alert (optional)">
+                      <View style={styles.reorderRow}>
+                        <Text style={styles.reorderHint}>Notify me when I drop below</Text>
+                        <MlInput
+                          label=""
+                          value={reorderMl}
+                          onChangeText={setReorderMl}
+                          placeholder="—"
+                          compact
+                        />
+                      </View>
+                    </Section>
+
+                    <Section label="Purchase Price (optional)">
+                      <View style={styles.priceRow}>
+                        <Text style={styles.priceDollar}>$</Text>
+                        <TextInput
+                          value={priceCents}
+                          onChangeText={setPriceCents}
+                          placeholder="0.00"
+                          placeholderTextColor={COLORS.subtle}
+                          keyboardType="decimal-pad"
+                          style={styles.priceInput}
+                        />
+                      </View>
+                    </Section>
+                  </>
                 )}
               </>
             )}
@@ -356,6 +376,16 @@ const styles = StyleSheet.create({
 
   reorderRow: { flexDirection: 'row', alignItems: 'flex-end', gap: SPACING.sm },
   reorderHint: { ...TYPE.bodySmall, flex: 1, fontStyle: 'italic', paddingBottom: 14 },
+  priceRow: {
+    flexDirection: 'row', alignItems: 'center',
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingHorizontal: 12, paddingVertical: 10,
+    width: 140,
+  },
+  priceDollar: { ...TYPE.body, fontSize: 18, color: COLORS.muted, marginRight: 4 },
+  priceInput: { flex: 1, ...TYPE.body, fontSize: 18, padding: 0, color: COLORS.text },
 
   ctaWrap: {
     flexDirection: 'row', gap: SPACING.sm,

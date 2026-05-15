@@ -225,6 +225,13 @@ export default function FragranceDetailScreen() {
           </View>
         </View>
 
+        {wearLogs.length > 0 && (
+          <View style={styles.lastWornRow}>
+            <Ionicons name="time-outline" size={14} color={COLORS.muted} />
+            <Text style={styles.lastWornText}>Last worn {prettyWearDate(wearLogs[0].worn_on)}</Text>
+          </View>
+        )}
+
         <Section title="Notes" cursive="composition">
           <NotePyramid
             top_notes={fragrance.top_notes}
@@ -508,6 +515,11 @@ const styles = StyleSheet.create({
   heroMeta: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   heroMetaText: { ...TYPE.caption, color: COLORS.white, opacity: 0.9 },
   heroMetaDot: { color: COLORS.white, opacity: 0.6 },
+  lastWornRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    paddingHorizontal: SPACING.lg, paddingTop: SPACING.md,
+  },
+  lastWornText: { ...TYPE.caption, color: COLORS.muted },
 
   section: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl },
   sectionHeader: { flexDirection: 'row', alignItems: 'baseline', gap: 10, marginBottom: SPACING.md },

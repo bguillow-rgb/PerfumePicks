@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useCallback } from 'react';
-import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert, ActionSheetIOS, Platform } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert, ActionSheetIOS, Platform, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -8,7 +8,9 @@ import { MlMeter } from '@/src/components/fragrance/MlMeter';
 import { useCatalogStore, getFragranceFromStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useWardrobeStore, type WardrobeStatus, type UnitType, type WardrobeItem } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
+import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
+import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 
 type Status = WardrobeStatus;
 type ActiveFilter = 'all' | 'want' | 'have' | 'worn';
@@ -60,6 +62,9 @@ export default function WardrobeScreen() {
 
   const [editingItem, setEditingItem] = useState<WardrobeItem | null>(null);
   const [editingFragrance, setEditingFragrance] = useState<Fragrance | null>(null);
+  const [logWearFragrance, setLogWearFragrance] = useState<Fragrance | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const notesSearch = useFragranceNotesStore((s) => s.search);
 
   // Prime the catalog cache so synchronous getFragranceFromStore() lookups
   // in the items selector below succeed on first render. Without this,
@@ -96,10 +101,22 @@ export default function WardrobeScreen() {
 
 
   const visible = useMemo(() => {
-    if (activeFilter === 'all') return items;
-    if (activeFilter === 'worn') return items.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0);
-    return items.filter((i) => i.status === activeFilter);
-  }, [items, activeFilter, wearCountMap]);
+    let filtered = items;
+    if (activeFilter === 'worn') filtered = filtered.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0);
+    else if (activeFilter !== 'all') filtered = filtered.filter((i) => i.status === activeFilter);
+
+    const q = searchQuery.trim().toLowerCase();
+    if (q) {
+      const noteMatchIds = new Set(notesSearch(q).map((n) => n.fragrance_id));
+      filtered = filtered.filter((i) =>
+        i.fragrance.name.toLowerCase().includes(q) ||
+        i.fragrance.brand.toLowerCase().includes(q) ||
+        i.fragrance.top_accords.some((a) => a.toLowerCase().includes(q)) ||
+        noteMatchIds.has(i.fragrance.id),
+      );
+    }
+    return filtered;
+  }, [items, activeFilter, wearCountMap, searchQuery, notesSearch]);
 
   const totalMl = items.filter((i) => i.status === 'have').reduce((s, i) => s + i.remaining_ml, 0);
   const haveCount = items.filter((i) => i.status === 'have').length;
@@ -195,6 +212,27 @@ export default function WardrobeScreen() {
         })}
       </ScrollView>
 
+      {/* Search bar */}
+      <View style={styles.searchWrap}>
+        <View style={styles.searchBar}>
+          <Ionicons name="search-outline" size={16} color={COLORS.muted} />
+          <TextInput
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            placeholder="Search name, brand, notes..."
+            placeholderTextColor={COLORS.subtle}
+            style={styles.searchInput}
+            autoCapitalize="none"
+            returnKeyType="search"
+          />
+          {searchQuery.length > 0 && (
+            <Pressable onPress={() => setSearchQuery('')}>
+              <Ionicons name="close-circle" size={16} color={COLORS.muted} />
+            </Pressable>
+          )}
+        </View>
+      </View>
+
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
 
         {visible.length === 0 ? (
@@ -205,7 +243,7 @@ export default function WardrobeScreen() {
         ) : (
           <View style={styles.list}>
             {visible.map((item) => (
-              <WardrobeRow key={item.itemId} item={item} wearCount={wearCountMap[item.fragrance.id] ?? 0} onPress={() => router.push(`/fragrance/${item.fragrance.id}`)} onLongPress={() => handleLongPress(item)} />
+              <WardrobeRow key={item.itemId} item={item} wearCount={wearCountMap[item.fragrance.id] ?? 0} onPress={() => router.push(`/fragrance/${item.fragrance.id}`)} onLongPress={() => handleLongPress(item)} onSpray={() => setLogWearFragrance(item.fragrance)} />
             ))}
           </View>
         )}
@@ -217,11 +255,16 @@ export default function WardrobeScreen() {
         editItem={editingItem}
         onClose={() => { setEditingItem(null); setEditingFragrance(null); }}
       />
+      <LogWearSheet
+        visible={logWearFragrance !== null}
+        fragrance={logWearFragrance}
+        onClose={() => setLogWearFragrance(null)}
+      />
     </SafeAreaView>
   );
 }
 
-function WardrobeRow({ item, wearCount, onPress, onLongPress }: { item: WardrobeItemView; wearCount: number; onPress: () => void; onLongPress?: () => void }) {
+function WardrobeRow({ item, wearCount, onPress, onLongPress, onSpray }: { item: WardrobeItemView; wearCount: number; onPress: () => void; onLongPress?: () => void; onSpray?: () => void }) {
   const isLow = item.status === 'have' && (item.remaining_ml / item.size_ml) < 0.2;
 
   return (
@@ -247,10 +290,12 @@ function WardrobeRow({ item, wearCount, onPress, onLongPress }: { item: Wardrobe
           )}
         </View>
       </View>
-      {item.status === 'have' && (
-        <View style={styles.rowMeter}>
-          <MlMeter size_ml={item.size_ml} remaining_ml={item.remaining_ml} />
-        </View>
+      {item.status === 'have' ? (
+        <Pressable style={styles.sprayBtn} onPress={onSpray} hitSlop={8}>
+          <Ionicons name="water-outline" size={20} color={COLORS.accent} />
+        </Pressable>
+      ) : (
+        <View style={{ width: 36 }} />
       )}
     </Pressable>
   );
@@ -347,5 +392,18 @@ const styles = StyleSheet.create({
   wornBadge: { fontSize: 10, color: COLORS.muted, fontWeight: '500', letterSpacing: 0.3 },
   lowPill: { flexDirection: 'row', alignItems: 'center', gap: 3 },
   lowText: { fontSize: 10, color: COLORS.danger, fontWeight: '600', letterSpacing: 0.5 },
-  rowMeter: { width: 50, alignItems: 'center' },
+  sprayBtn: {
+    width: 36, height: 36, borderRadius: 18,
+    backgroundColor: COLORS.blushSoft,
+    alignItems: 'center', justifyContent: 'center',
+  },
+  searchWrap: { paddingHorizontal: SPACING.lg, paddingBottom: SPACING.sm },
+  searchBar: {
+    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingHorizontal: SPACING.md, paddingVertical: 10,
+  },
+  searchInput: { ...TYPE.body, flex: 1, padding: 0, fontSize: 14 },
 });
