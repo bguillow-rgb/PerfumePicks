@@ -9,7 +9,7 @@ export const SITE = {
     'Perfume Picks is an iOS app for fragrance collectors. Catalog your wardrobe, track every wear, get weather and occasion-aware picks from bottles you already own, and see a personal taste profile built from your collection.',
   url: 'https://perfumepicks.app',
   locale: 'en-US',
-  supportEmail: 'bguillow@gmail.com',
+  supportEmail: 'support@perfumepicks.app',
   // Set when the App Store listing is live. Until then, /download routes to a
   // \u201Ccoming soon\u201D state.
   appStoreUrl: '', // e.g. 'https://apps.apple.com/app/perfume-picks/id0000000000'
@@ -53,6 +53,10 @@ export const NAV = [
   { label: 'Blog', href: '/articles' },
   { label: 'About', href: '/about' },
   { label: 'Support', href: '/support' },
+];
+
+export const FOOTER_NAV = [
   { label: 'Privacy', href: '/privacy' },
   { label: 'Terms', href: '/terms' },
+  { label: 'Delete Account', href: '/delete-account' },
 ];

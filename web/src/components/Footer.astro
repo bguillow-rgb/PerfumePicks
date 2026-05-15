@@ -1,14 +1,19 @@
 ---
-import { SITE } from '../consts';
+import { SITE, FOOTER_NAV } from '../consts';
 const year = new Date().getFullYear();
 ---
 <hr class="footer-rule" />
-<p class="footer">
-  Questions? <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
-</p>
+<nav class="footer-nav" aria-label="Footer navigation">
+  {FOOTER_NAV.map((item) => (
+    <a href={item.href}>{item.label}</a>
+  ))}
+</nav>
 <p class="footer">
   Perfume Picks is an independent journal app. We do not sell fragrance.
-  &ldquo;Buy from&rdquo; links to retailers may earn us a commission at no
-  cost to you.
+  &ldquo;Buy from&rdquo; links to retailers may earn us a small commission
+  at no cost to you.
+</p>
+<p class="footer">
+  Questions? <a href={`mailto:${SITE.supportEmail}`} style="color:inherit;border-bottom:none;">{SITE.supportEmail}</a>
 </p>
 <p class="footer">&copy; {year} {SITE.name}. All rights reserved.</p>

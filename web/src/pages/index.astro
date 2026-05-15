@@ -72,19 +72,19 @@ const faqs = [
   </Fragment>
 
   <section class="hero">
-    <img src="/icon.png" alt="Perfume Picks app icon" class="hero-icon" width="96" height="96" />
-    <p class="brand">{SITE.name}</p>
+    <img src="/icon.png" alt="Perfume Picks app icon" class="hero-icon" width="80" height="80" />
     <h1>{SITE.tagline}</h1>
-    <p class="hero-tagline">Catalog your wardrobe. Log every wear. Wear the bottles you already own.</p>
+    <p class="hero-tagline">Catalog your wardrobe. Log every wear.<br/>Wear the bottles you already own.</p>
 
     <p class="badge">Coming soon to the App Store</p>
     <p class="hero-trust">No ads &middot; Your wardrobe stays yours &middot; iOS first</p>
 
     <img
-      src="/assets/screenshots/01-home.png"
-      alt="Perfume Picks home screen showing a daily pick drawn from the user's wardrobe with weather and occasion context"
+      src="/assets/screenshots/today.png"
+      alt="Perfume Picks Today screen — morning pick drawn from your wardrobe with weather and occasion context"
       class="hero-shot"
       loading="eager"
+      width="280"
     />
   </section>
 
@@ -135,9 +135,9 @@ const faqs = [
 
   <div class="cta-row">
     {SITE.appStoreUrl ? (
-      <a class="cta" href={SITE.appStoreUrl}>Download on iOS</a>
+      <a class="btn" href={SITE.appStoreUrl}>Download on iOS</a>
     ) : (
-      <span class="cta cta--disabled">App Store — Coming Soon</span>
+      <span class="btn btn--disabled">App Store — Coming Soon</span>
     )}
   </div>
 

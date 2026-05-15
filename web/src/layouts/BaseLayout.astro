@@ -8,15 +8,8 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
-  // Canonical path on this site, e.g. '/about'. The full URL is constructed
-  // from SITE.url. Leave empty on the homepage to use SITE.url itself.
   path?: string;
-  // Set true on pages that should not appear in search results (drafts,
-  // utility pages). Default is false.
   noindex?: boolean;
-  // Set true on pages where the global Organization + WebSite schema should
-  // NOT be emitted (e.g. when an article emits its own and we don\u2019t want
-  // duplication). Default is false.
   suppressGlobalSchema?: boolean;
 }
 
@@ -30,7 +23,9 @@ const {
 
 const canonical = `${SITE.url}${path}`;
 const fullTitle =
-  title === SITE.name ? `${SITE.name} \u2014 ${SITE.tagline}` : `${title} \u2014 ${SITE.name}`;
+  title === SITE.name ? `${SITE.name} — ${SITE.tagline}` : `${title} — ${SITE.name}`;
+
+const currentPath = path;
 ---
 <!doctype html>
 <html lang={SITE.locale}>
@@ -50,9 +45,19 @@ const fullTitle =
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
+    <meta property="og:image" content={`${SITE.url}/icon-512.png`} />
 
     <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
     <meta name="theme-color" content={SITE.theme.bg} />
+
+    <!-- Google Fonts: Cormorant Garamond (headings) + Pinyon Script (wordmark) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
 
     {!suppressGlobalSchema && <OrganizationSchema />}
     {!suppressGlobalSchema && <WebSiteSchema />}
@@ -63,14 +68,17 @@ const fullTitle =
   </head>
   <body>
     <div class="container">
-      <p class="nav">
-        {NAV.map((item, i) => (
-          <>
-            {i > 0 && <span> &middot; </span>}
-            <a href={item.href}>{item.label}</a>
-          </>
+      <header class="site-header">
+        <a href="/" class="site-wordmark">{SITE.name}</a>
+      </header>
+      <nav class="site-nav" aria-label="Main navigation">
+        {NAV.map((item) => (
+          <a
+            href={item.href}
+            aria-current={currentPath === item.href ? 'page' : undefined}
+          >{item.label}</a>
         ))}
-      </p>
+      </nav>
       <slot />
     </div>
   </body>
