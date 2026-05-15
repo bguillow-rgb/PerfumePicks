@@ -169,7 +169,7 @@ export default function WardrobeScreen() {
           style={styles.addBtn}
           onPress={() => {
             const search = () => router.push({ pathname: '/(tabs)/discover', params: { from: 'wardrobe' } } as any);
-            const photo = () => Alert.alert('Coming Soon', 'Bottle photo recognition is on the way!');
+            const photo = () => router.push('/scan' as any);
             if (Platform.OS === 'ios') {
               ActionSheetIOS.showActionSheetWithOptions(
                 { options: ['Cancel', 'Take a photo of my bottle', 'Search for it'], cancelButtonIndex: 0 },
