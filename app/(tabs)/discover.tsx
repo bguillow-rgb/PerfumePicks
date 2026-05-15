@@ -15,6 +15,7 @@ import {
 } from '@/src/stores/useCatalogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 import { DiscoverFilterSheet, type DiscoverFilters, EMPTY_FILTERS, filtersActive } from '@/src/components/sheets/DiscoverFilterSheet';
+import { EmptyState } from '@/src/components/ui/EmptyState';
 
 /**
  * Curated Edits — mood-based rails derived from the live catalog pool.
@@ -118,11 +119,29 @@ export default function DiscoverScreen() {
     return () => { cancelled = true; clearTimeout(t); };
   }, [query, notesSearch, searchStore, fetchMany]);
 
-  // Derive curated-edit fragrances from the pool using accord/score filters.
+  // Apply faceted filters to the pool.
+  const filteredPool = useMemo(() => {
+    let result = pool;
+    if (filters.genders.length > 0) {
+      result = result.filter((f) => filters.genders.includes(f.gender));
+    }
+    if (filters.accords.length > 0) {
+      result = result.filter((f) => f.top_accords.some((a) => filters.accords.includes(a)));
+    }
+    if (filters.priceTiers.length > 0) {
+      result = result.filter((f) => filters.priceTiers.includes(f.price_tier));
+    }
+    if (filters.yearMin != null && filters.yearMax != null) {
+      result = result.filter((f) => f.release_year >= filters.yearMin! && f.release_year <= filters.yearMax!);
+    }
+    return result;
+  }, [pool, filters]);
+
+  // Derive curated-edit fragrances from the filtered pool.
   const editFragrances = useMemo(() => {
     const meta = CURATED_EDITS_META.find((e) => e.id === activeEdit) ?? CURATED_EDITS_META[0];
-    return pool.filter(meta.filter).slice(0, RAIL_SIZE);
-  }, [pool, activeEdit]);
+    return filteredPool.filter(meta.filter).slice(0, RAIL_SIZE);
+  }, [filteredPool, activeEdit]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -172,6 +191,16 @@ export default function DiscoverScreen() {
             <Ionicons name="chevron-forward" size={16} color={COLORS.muted} />
           </Pressable>
 
+          {filtersActive(filters) && filteredPool.length === 0 && (
+            <EmptyState
+              icon="funnel-outline"
+              title="No matches"
+              subtitle="No fragrances match your filters. Try loosening them."
+              actionLabel="Clear Filters"
+              onAction={() => setFilters(EMPTY_FILTERS)}
+            />
+          )}
+
           <Section eyebrow="CURATED EDITS" cursive="for every mood">
             <ScrollView
               horizontal
@@ -198,7 +227,7 @@ export default function DiscoverScreen() {
           <Section eyebrow="BY HOUSE" cursive="explore brands">
             <View style={styles.brandGrid}>
               {ALL_BRANDS.map((b) => {
-                const count = pool.filter((f) => f.brand === b).length;
+                const count = filteredPool.filter((f) => f.brand === b).length;
                 return (
                   <Pressable
                     key={b}
@@ -216,7 +245,7 @@ export default function DiscoverScreen() {
           <Section eyebrow="BY ACCORD" cursive="follow your nose">
             <View style={styles.accordGrid}>
               {DISCOVER_ACCORDS.map((a) => {
-                const matching = pool.filter((f) => f.top_accords.includes(a));
+                const matching = filteredPool.filter((f) => f.top_accords.includes(a));
                 return (
                   <Pressable
                     key={a}

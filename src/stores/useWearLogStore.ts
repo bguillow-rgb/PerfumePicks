@@ -3,6 +3,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { syncWrite, notifySyncFailure } from '@/src/lib/sync/syncWrite';
+import { checkAndAwardBadges } from '@/src/lib/badges';
 
 /**
  * Local wear-log store. Persisted to AsyncStorage. Mirrors the v1 schema's

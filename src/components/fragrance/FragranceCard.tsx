@@ -91,14 +91,13 @@ function CompactCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: ()
       </View>
       <View style={compactStyles.content}>
         <Text style={compactStyles.brand} numberOfLines={1}>{fragrance.brand.toUpperCase()}</Text>
-        <Text style={compactStyles.name} numberOfLines={2}>{fragrance.name}</Text>
+        <Text style={compactStyles.name} numberOfLines={3}>{fragrance.name}</Text>
         {accord && (
           <View style={compactStyles.accordPill}>
             <Text style={compactStyles.accordText}>{accord}</Text>
           </View>
         )}
       </View>
-      <Text style={compactStyles.priceTier}>{'$'.repeat(fragrance.price_tier)}</Text>
     </Pressable>
   );
 }
@@ -200,13 +199,13 @@ const smallStyles = StyleSheet.create({
 
 const compactStyles = StyleSheet.create({
   wrap: {
-    width: 280,
-    height: 100,
+    width: 300,
+    height: 110,
     backgroundColor: COLORS.card,
     borderRadius: RADIUS.lg,
     borderWidth: 1,
     borderColor: COLORS.border,
-    padding: SPACING.sm,
+    padding: SPACING.md,
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.md,
@@ -221,14 +220,14 @@ const compactStyles = StyleSheet.create({
   },
   image: { width: '100%', height: '100%' },
   content: { flex: 1, justifyContent: 'center' },
-  brand: { ...TYPE.eyebrow, fontSize: 9, marginBottom: 2 },
+  brand: { ...TYPE.eyebrow, fontSize: 11, marginBottom: 2 },
   name: {
     fontFamily: FONTS.serif,
     fontWeight: '600',
-    fontSize: 16,
+    fontSize: 15,
     color: COLORS.text,
-    lineHeight: 20,
-    marginBottom: 6,
+    lineHeight: 19,
+    marginBottom: 4,
   },
   accordPill: {
     alignSelf: 'flex-start',
@@ -238,11 +237,4 @@ const compactStyles = StyleSheet.create({
     backgroundColor: COLORS.card2,
   },
   accordText: { fontSize: 10, color: COLORS.muted, fontWeight: '500' },
-  priceTier: {
-    fontSize: 12,
-    color: COLORS.muted,
-    fontWeight: '600',
-    letterSpacing: -0.5,
-    paddingRight: 4,
-  },
 });
