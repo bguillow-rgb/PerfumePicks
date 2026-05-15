@@ -13,6 +13,7 @@ import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet
 import { ReviewSection } from '@/src/components/fragrance/ReviewSection';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { handleAffiliateClick } from '@/src/lib/affiliate';
+import { CelebritySection } from '@/src/components/fragrance/CelebritySection';
 import { LayeringSection } from '@/src/components/fragrance/LayeringSection';
 import { ComplimentsSection } from '@/src/components/fragrance/ComplimentsSection';
 import {
@@ -298,6 +299,10 @@ export default function FragranceDetailScreen() {
               <ScoreTile label="Office Safe" value={fragrance.office_safe_score} />
             </View>
           </View>
+        </Section>
+
+        <Section title="Who Wears This" cursive="famous fans">
+          <CelebritySection fragranceId={id} />
         </Section>
 
         <Section title="Community Reviews" cursive="what others think">
