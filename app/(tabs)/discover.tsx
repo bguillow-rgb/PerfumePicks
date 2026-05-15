@@ -365,7 +365,7 @@ function SearchResults({ results, query, fragranceHref }: { results: Fragrance[]
       keyExtractor={(f) => f.id}
       renderItem={({ item }) => (
         <View style={{ paddingHorizontal: SPACING.lg, marginBottom: SPACING.md }}>
-          <FragranceCard fragrance={item} onPress={() => router.push(fragranceHref(item.id) as any)} />
+          <FragranceCard fragrance={item} variant="compact" onPress={() => router.push(fragranceHref(item.id) as any)} />
         </View>
       )}
       contentContainerStyle={{ paddingTop: SPACING.md, paddingBottom: SPACING.xxl }}

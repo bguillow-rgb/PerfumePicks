@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, StyleSheet, Pressable } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, RefreshControl } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { useCallback, useMemo, useRef, useState, useEffect } from 'react';
@@ -107,7 +107,21 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
-      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={false}
+            onRefresh={() => {
+              // Force a re-render by toggling focus state — the useFocusEffect
+              // will re-set displayed from live, picking up fresh data.
+              setDisplayed(live);
+            }}
+            tintColor={COLORS.accent}
+          />
+        }
+      >
         <View style={styles.header}>
           {/* Avatar lives in the bottom tab bar now — no duplicate here.
               Header is purely the editorial masthead. */}
@@ -219,8 +233,8 @@ export default function HomeScreen() {
             <Text style={styles.heroReason}>
               <Text style={styles.italic}>{hasSignals ? 'Why this:' : 'A starting point:'}</Text>{' '}
               {aiReason ?? heroReason ?? (hasSignals
-                ? 'tracks with the notes and accords you keep favoring'
-                : 'a celebrated pick to anchor your taste — start swiping in Train to refine it')}.
+                ? 'Tracks with the notes and accords you keep favoring.'
+                : 'A celebrated pick to anchor your taste — start swiping in Train to refine it.')}
             </Text>
           )}
         </Section>

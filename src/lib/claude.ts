@@ -40,9 +40,11 @@ interface BottleScanParams {
  */
 export async function getWhyThis(params: WhyThisParams): Promise<{ text: string | null; fallback: string }> {
   const resp = await callProxy({ type: 'why_this', ...params });
+  // Always use the deterministic fallback — it's specific to the fragrance
+  // and more useful than generic server messages like "AI temporarily unavailable."
   return {
     text: resp.text,
-    fallback: resp.fallback ?? deterministic_fallback(params.fragrance_context),
+    fallback: deterministic_fallback(params.fragrance_context),
   };
 }
 

@@ -55,7 +55,7 @@ export default function BrandScreen() {
           keyExtractor={(f) => f.id}
           renderItem={({ item }) => (
             <View style={styles.item}>
-              <FragranceCard fragrance={item} />
+              <FragranceCard fragrance={item} variant="compact" />
             </View>
           )}
           contentContainerStyle={styles.list}

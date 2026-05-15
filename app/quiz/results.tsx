@@ -75,7 +75,7 @@ export default function QuizResults() {
           {matches.map((f, i) => (
             <View key={f.id} style={{ marginBottom: SPACING.lg }}>
               <Text style={styles.rank}>No. {i + 1}</Text>
-              <FragranceCard fragrance={f} />
+              <FragranceCard fragrance={f} variant="compact" />
             </View>
           ))}
         </View>
