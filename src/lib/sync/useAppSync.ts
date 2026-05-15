@@ -3,8 +3,10 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useSwipeStore } from '@/src/stores/useSwipeStore';
+import { useProStore } from '@/src/stores/useProStore';
 import { deriveTasteProfile, type TasteSignal } from '@/src/features/recommend/tasteProfile';
 import { getFragranceFromStore } from '@/src/stores/useCatalogStore';
+import { captureException } from '@/src/lib/observability';
 
 /**
  * useAppSync — mounts once in _layout.tsx.
@@ -46,6 +48,7 @@ export function useAppSync(userId: string | null) {
           hydrateSwipes(userId),
         ]);
         await syncTasteProfile(userId);
+        await crossCheckProStatus();
       } catch (e) {
         console.warn('[useAppSync] sync error:', e);
       } finally {
@@ -174,4 +177,42 @@ async function syncTasteProfile(userId: string) {
     }, { onConflict: 'user_id' });
 
   if (error) console.warn('[useAppSync] taste profile upsert failed:', error.message);
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// Pro status cross-check
+// ─────────────────────────────────────────────────────────────────────
+
+/**
+ * Verify the client's Pro state agrees with the server. The server is
+ * authoritative (profiles.is_pro flipped by the RC webhook). If the two
+ * disagree, trust the server and log the mismatch to Sentry.
+ *
+ * This prevents a modded build from permanently keeping isPro=true in
+ * AsyncStorage and also catches the case where a subscription lapses
+ * server-side but the local flag hasn't been cleared.
+ */
+async function crossCheckProStatus() {
+  const { data, error } = await supabase.rpc('my_pro_status');
+  if (error) {
+    console.warn('[useAppSync] pro cross-check failed:', error.message);
+    return;
+  }
+  // my_pro_status() returns a table — data is an array of rows.
+  const row = Array.isArray(data) ? data[0] : data;
+  if (!row) return;
+
+  const serverPro = row.is_pro === true;
+  const clientPro = useProStore.getState().isPro;
+
+  if (serverPro && !clientPro) {
+    useProStore.getState().activate();
+    console.log('[useAppSync] Pro activated from server');
+  } else if (!serverPro && clientPro) {
+    useProStore.getState().deactivate();
+    captureException(new Error('Pro mismatch: client=true, server=false'), {
+      context: 'pro_cross_check',
+    });
+    console.warn('[useAppSync] Pro deactivated — server disagrees with client');
+  }
 }

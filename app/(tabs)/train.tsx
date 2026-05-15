@@ -1,5 +1,5 @@
-import { useState, useMemo, useCallback } from 'react';
-import { View, Text, StyleSheet, Pressable, Image, Dimensions } from 'react-native';
+import { useEffect, useState, useMemo, useCallback } from 'react';
+import { View, Text, StyleSheet, Pressable, Image, Dimensions, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -17,7 +17,7 @@ import Animated, {
   type SharedValue,
 } from 'react-native-reanimated';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
-import { MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
+import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useSwipeStore, FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStore';
 import { useProStore } from '@/src/stores/useProStore';
 
@@ -89,20 +89,45 @@ export default function TrainScreen() {
     return dailySwipeDate === today && dailySwipeCount >= FREE_DAILY_SWIPE_LIMIT;
   }, [isPro, dailySwipeCount, dailySwipeDate]);
 
-  // Shuffle the catalog once per session AND skip anything the user has
-  // already judged in past sessions — so a returning user always sees fresh
-  // bottles instead of being asked to re-rate the same ones.
-  // Gender filter is applied AFTER shuffle so the filtered deck is still random.
+  // Pull a session pool from the live catalog; pull a generous slice so
+  // gender + already-swiped filters still leave a meaningful deck. 200 is
+  // plenty until the catalog grows past 1k, at which point we'd switch to
+  // server-side shuffle anyway.
+  //
+  // poolReady distinguishes "still fetching" from "fetched and got nothing"
+  // so we don't render SESSION COMPLETE on the very first frame after the
+  // user taps Begin (when pool is still []). Without this, the user
+  // taps Begin → pool=[] → deck=[] → done=true → SESSION COMPLETE flashes
+  // immediately and they never see a card.
+  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  const [pool, setPool] = useState<Fragrance[]>([]);
+  const [poolReady, setPoolReady] = useState(false);
+  useEffect(() => {
+    if (!started) return;
+    setPool([]);
+    setPoolReady(false);
+    let cancelled = false;
+    fetchAllActive(200).then((rows) => {
+      if (cancelled) return;
+      setPool(rows);
+      setPoolReady(true);
+    });
+    return () => { cancelled = true; };
+  }, [fetchAllActive, started]);
+
+  // Shuffle the pool once per session AND skip anything the user has
+  // already judged in past sessions. Gender filter applied after shuffle so
+  // the filtered deck is still random.
   const deck = useMemo(() => {
-    const unswiped = MOCK_CATALOG.filter((f) => !alreadySwiped[f.id]);
+    const unswiped = pool.filter((f) => !alreadySwiped[f.id]);
     const filtered = genderFilter === 'all'
       ? unswiped
       : unswiped.filter((f) => f.gender === genderFilter || f.gender === 'unisex');
     return shuffle(filtered);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [started, genderFilter]);
+  }, [started, genderFilter, pool]);
 
-  const recordSwipe = useCallback((dir: 'left' | 'right' | 'down', fragrance?: MockFragrance) => {
+  const recordSwipe = useCallback((dir: 'left' | 'right' | 'down', fragrance?: Fragrance) => {
     const action: 'pass' | 'like' | 'love' = dir === 'right' ? 'love' : dir === 'down' ? 'like' : 'pass';
     setLastAction(action);
     setLiveDir('none');
@@ -125,6 +150,26 @@ export default function TrainScreen() {
   }, [recordToStore]);
 
   if (!started) return <Intro onStart={() => { setStarted(true); setIndex(0); setStats({ loved: 0, liked: 0, passed: 0 }); }} dailyLimitReached={dailyLimitReached} onUpgrade={() => router.push('/paywall')} />;
+
+  // Loading state — pool still fetching after Begin tapped. Without this
+  // gate, the SESSION COMPLETE branch renders immediately because deck=[]
+  // and index=0 satisfies `index >= deck.length` trivially.
+  if (!poolReady) {
+    return (
+      <SafeAreaView style={styles.safe} edges={['top']}>
+        <View style={[styles.headerRow]}>
+          <Pressable onPress={() => setStarted(false)}>
+            <Ionicons name="close" size={26} color={COLORS.text} />
+          </Pressable>
+          <Text style={styles.eyebrow}>TRAIN MY NOSE</Text>
+          <View style={{ width: 26 }} />
+        </View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <ActivityIndicator color={COLORS.accent} />
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   const done = index >= deck.length;
 
@@ -272,8 +317,8 @@ function DailyLimitReached({ onUpgrade, onBack }: { onUpgrade: () => void; onBac
 }
 
 function SwipeCard({ fragrance, onCommit, sharedDragX, sharedDragY }: {
-  fragrance: MockFragrance;
-  onCommit: (dir: 'left' | 'right' | 'down', fragrance: MockFragrance) => void;
+  fragrance: Fragrance;
+  onCommit: (dir: 'left' | 'right' | 'down', fragrance: Fragrance) => void;
   sharedDragX: SharedValue<number>;
   sharedDragY: SharedValue<number>;
 }) {
@@ -394,7 +439,7 @@ function SwipeCard({ fragrance, onCommit, sharedDragX, sharedDragY }: {
   );
 }
 
-function BackgroundCard({ fragrance }: { fragrance: MockFragrance }) {
+function BackgroundCard({ fragrance }: { fragrance: Fragrance }) {
   return (
     <View style={[styles.card, styles.cardBehind]} pointerEvents="none">
       <Image source={{ uri: fragrance.image_url }} style={styles.cardImage} />
@@ -641,6 +686,6 @@ const styles = StyleSheet.create({
   },
   statValue: { fontFamily: FONTS.serif, fontSize: 40, fontWeight: '700', color: COLORS.accent, lineHeight: 46 },
   // No letterSpacing on statLabel — it was causing single-word breaks ("LOVE\nD")
-  statLabel: { fontFamily: FONTS.sans ?? undefined, fontSize: 11, fontWeight: '600', color: COLORS.muted, marginTop: 6, textTransform: 'uppercase' },
+  statLabel: { fontFamily: FONTS.body, fontSize: 11, fontWeight: '600', color: COLORS.muted, marginTop: 6, textTransform: 'uppercase' },
   summaryBody: { ...TYPE.body, color: COLORS.muted, textAlign: 'center', paddingHorizontal: SPACING.md },
 });

@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { ScrollView, View, Text, StyleSheet, Pressable, Image, Dimensions, Alert } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image, Dimensions, Alert, ActivityIndicator } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
@@ -10,7 +10,17 @@ import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet';
-import { getFragrance, getFragrances, MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
+import { ReviewSection } from '@/src/components/fragrance/ReviewSection';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { handleAffiliateClick } from '@/src/lib/affiliate';
+import { CelebritySection } from '@/src/components/fragrance/CelebritySection';
+import { LayeringSection } from '@/src/components/fragrance/LayeringSection';
+import { ComplimentsSection } from '@/src/components/fragrance/ComplimentsSection';
+import {
+  useCatalogStore,
+  getFragranceFromStore,
+  type Fragrance,
+} from '@/src/stores/useCatalogStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore, type WearLog } from '@/src/stores/useWearLogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
@@ -25,17 +35,18 @@ const HERO_HEIGHT = SCREEN_W * 1.05;
  * Pulls from the mock catalog. Real version reads from Supabase + the
  * recommendation engine for "similar" + "dupes" sections.
  */
-/** Find cheaper alternatives using dupe_of field first, then accord overlap. */
-function findCheaperAlternatives(f: MockFragrance, limit = 5): MockFragrance[] {
+/** Find cheaper alternatives over a candidate pool (the active catalog
+ *  slice). Pool is passed in so the caller controls when/how it loads. */
+function findCheaperAlternatives(f: Fragrance, pool: Fragrance[], limit = 5): Fragrance[] {
   // 1. Explicit dupes (data pipeline will populate these)
-  const explicit = MOCK_CATALOG.filter(
+  const explicit = pool.filter(
     (c) => c.dupe_of === f.id && c.id !== f.id && c.price_tier < f.price_tier,
   );
   if (explicit.length >= limit) return explicit.slice(0, limit);
 
   // 2. Accord-overlap fallback — at least 2 matching top accords + lower tier
   const accordSet = new Set(f.top_accords);
-  const byOverlap = MOCK_CATALOG
+  const byOverlap = pool
     .filter((c) => c.id !== f.id && c.price_tier < f.price_tier)
     .map((c) => ({ fragrance: c, overlap: c.top_accords.filter((a) => accordSet.has(a)).length }))
     .filter((x) => x.overlap >= 2)
@@ -48,7 +59,55 @@ function findCheaperAlternatives(f: MockFragrance, limit = 5): MockFragrance[] {
 export default function FragranceDetailScreen() {
   const { id, from, openLogWear } = useLocalSearchParams<{ id: string; from?: string; openLogWear?: string }>();
   const router = useRouter();
-  const fragrance = getFragrance(id ?? '');
+  // Fragrance lookup: synchronous cache hit if the store already has it
+  // (FragranceCard tap from a list pre-cached it). Otherwise async fetch.
+  const fetchById = useCatalogStore((s) => s.fetchById);
+  const fetchMany = useCatalogStore((s) => s.fetchMany);
+  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  const [fragrance, setFragrance] = useState<Fragrance | undefined>(() =>
+    getFragranceFromStore(id ?? ''),
+  );
+  // Loading flag distinguishes "haven't tried yet" from "tried and got nothing".
+  // Without this, the not-found screen renders for one frame on every cold
+  // open of a detail page that hasn't been cached yet.
+  const [lookupAttempted, setLookupAttempted] = useState(() => !!getFragranceFromStore(id ?? ''));
+  useEffect(() => {
+    if (!id) return;
+    let cancelled = false;
+    // Always try a fetch — even if the cache hit, this no-ops via the
+    // store's in-flight + cache de-dupe.
+    fetchById(id).then((row) => {
+      if (cancelled) return;
+      if (row) setFragrance(row);
+      setLookupAttempted(true);
+      if (!row && __DEV__) {
+        console.warn(`[fragrance-detail] fetchById('${id}') returned undefined — id not in catalog`);
+      }
+    });
+    return () => { cancelled = true; };
+  }, [id, fetchById]);
+
+  // Catalog pool for the "cheaper alternatives" rail. We don't iterate
+  // the whole catalog at render time anymore.
+  const [catalogPool, setCatalogPool] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    fetchAllActive(200).then((rows) => { if (!cancelled) setCatalogPool(rows); });
+    return () => { cancelled = true; };
+  }, [fetchAllActive]);
+
+  // Similar fragrances are referenced by id array on the fragrance row.
+  // Resolve them via fetchMany (cache-aware).
+  const [similar, setSimilar] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    if (!fragrance?.similar_ids?.length) { setSimilar([]); return; }
+    let cancelled = false;
+    fetchMany(fragrance.similar_ids).then((rows) => {
+      if (!cancelled) setSimilar(rows);
+    });
+    return () => { cancelled = true; };
+  }, [fragrance?.similar_ids, fetchMany]);
+
   const [wardrobeSheetOpen, setWardrobeSheetOpen] = useState(false);
   const [wardrobeInitStatus, setWardrobeInitStatus] = useState<'have' | 'want'>('have');
   const [wearSheetOpen, setWearSheetOpen] = useState(false);
@@ -85,6 +144,29 @@ export default function FragranceDetailScreen() {
     [allNotes, fragrance],
   );
 
+  // "Similar in your wardrobe" — Jaccard on top notes between viewed fragrance and owned items.
+  const similarInWardrobe = useMemo(() => {
+    if (!fragrance) return [];
+    const myNotes = new Set([...fragrance.top_notes, ...fragrance.heart_notes, ...fragrance.base_notes].map((n) => n.toLowerCase()));
+    if (myNotes.size === 0) return [];
+
+    return wardrobeItems
+      .filter((i) => i.fragrance_id !== fragrance.id)
+      .map((i) => {
+        const f = getFragranceFromStore(i.fragrance_id);
+        if (!f) return null;
+        const theirNotes = new Set([...f.top_notes, ...f.heart_notes, ...f.base_notes].map((n) => n.toLowerCase()));
+        const intersection = [...myNotes].filter((n) => theirNotes.has(n)).length;
+        const union = new Set([...myNotes, ...theirNotes]).size;
+        const jaccard = union > 0 ? intersection / union : 0;
+        return { fragrance: f, jaccard };
+      })
+      .filter((x): x is { fragrance: Fragrance; jaccard: number } => x !== null && x.jaccard > 0.15)
+      .sort((a, b) => b.jaccard - a.jaccard)
+      .slice(0, 5)
+      .map((x) => x.fragrance);
+  }, [fragrance, wardrobeItems]);
+
   const handleWearLogLongPress = (log: WearLog) => {
     Alert.alert(prettyWearDate(log.worn_on), 'What would you like to do?', [
       {
@@ -105,9 +187,24 @@ export default function FragranceDetailScreen() {
   };
 
   if (!fragrance) {
+    // Distinguish "still fetching" from "tried and got nothing." Without
+    // this the screen flashes "Fragrance not found" for one frame on
+    // every cold-open detail page before the async fetch completes.
+    if (!lookupAttempted) {
+      return (
+        <View style={styles.notFound}>
+          <ActivityIndicator color={COLORS.accent} />
+        </View>
+      );
+    }
     return (
       <View style={styles.notFound}>
         <Text style={styles.notFoundText}>Fragrance not found.</Text>
+        {__DEV__ && id && (
+          <Text style={[styles.notFoundText, { fontSize: 11, opacity: 0.6 }]}>
+            [dev] id: {id}
+          </Text>
+        )}
         <Pressable onPress={() => router.back()} style={styles.notFoundBtn}>
           <Text style={styles.notFoundBtnText}>Go Back</Text>
         </Pressable>
@@ -115,9 +212,19 @@ export default function FragranceDetailScreen() {
     );
   }
 
-  const similar = getFragrances(fragrance.similar_ids);
-  const cheaperAlts = findCheaperAlternatives(fragrance);
+  const cheaperAlts = findCheaperAlternatives(fragrance, catalogPool);
   const headlinePrice = (fragrance.retail_msrp_usd_cents / 100).toFixed(0);
+
+  // Affiliate "Buy from" links from fragrance_retailer_links.
+  const [retailerLinks, setRetailerLinks] = useState<{ retailer: string; url: string; price_cents: number | null }[]>([]);
+  useEffect(() => {
+    if (!isSupabaseConfigured || !id) return;
+    supabase
+      .from('fragrance_retailer_links')
+      .select('retailer, url, price_cents')
+      .eq('fragrance_id', id)
+      .then(({ data }) => { if (data) setRetailerLinks(data); });
+  }, [id]);
 
   return (
     <View style={styles.safe}>
@@ -158,6 +265,13 @@ export default function FragranceDetailScreen() {
           </View>
         </View>
 
+        {wearLogs.length > 0 && (
+          <View style={styles.lastWornRow}>
+            <Ionicons name="time-outline" size={14} color={COLORS.muted} />
+            <Text style={styles.lastWornText}>Last worn {prettyWearDate(wearLogs[0].worn_on)}</Text>
+          </View>
+        )}
+
         <Section title="Notes" cursive="composition">
           <NotePyramid
             top_notes={fragrance.top_notes}
@@ -187,18 +301,35 @@ export default function FragranceDetailScreen() {
           </View>
         </Section>
 
+        <Section title="Who Wears This" cursive="famous fans">
+          <CelebritySection fragranceId={id} />
+        </Section>
+
+        <Section title="Community Reviews" cursive="what others think">
+          <ReviewSection fragranceId={id} />
+        </Section>
+
         <Section title="Smells Like" cursive="discover similar">
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-            {similar.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+            {similar.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
           </ScrollView>
         </Section>
+
+        {/* Similar in your wardrobe — Jaccard on notes */}
+        {similarInWardrobe.length > 0 && (
+          <Section title="Similar in Your Wardrobe" cursive="you own these">
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+              {similarInWardrobe.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
+            </ScrollView>
+          </Section>
+        )}
 
         {/* P5-25: Cheaper Alternatives — Pro-gated dupe finder */}
         <Section title="Cheaper Alternatives" cursive="find dupes">
           {isPro ? (
             cheaperAlts.length > 0 ? (
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-                {cheaperAlts.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+                {cheaperAlts.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
               </ScrollView>
             ) : (
               <View style={styles.dupesEmpty}>
@@ -229,10 +360,34 @@ export default function FragranceDetailScreen() {
               </View>
             </View>
             <View style={styles.priceDivider} />
-            <Text style={styles.priceFootnote}>
-              Decant pricing across Sephora, Nordstrom, Luckyscent and FragranceX
-              appears once the data pipeline is wired up.
-            </Text>
+            {retailerLinks.length > 0 ? (
+              <View style={styles.retailerList}>
+                {retailerLinks.map((link, i) => (
+                  <Pressable
+                    key={i}
+                    style={({ pressed }) => [styles.retailerRow, pressed && { opacity: 0.6 }]}
+                    onPress={() => handleAffiliateClick({
+                      fragrance_id: id,
+                      retailer: link.retailer,
+                      url: link.url,
+                      price_cents: link.price_cents,
+                      source_screen: 'fragrance_detail',
+                    })}
+                  >
+                    <Text style={styles.retailerName}>{link.retailer}</Text>
+                    {link.price_cents != null && (
+                      <Text style={styles.retailerPrice}>${(link.price_cents / 100).toFixed(0)}</Text>
+                    )}
+                    <Ionicons name="open-outline" size={12} color={COLORS.muted} />
+                  </Pressable>
+                ))}
+                <Text style={styles.affiliateDisclosure}>We may earn a commission from purchases.</Text>
+              </View>
+            ) : (
+              <Text style={styles.priceFootnote}>
+                Buy-from links appear once retailer partnerships are live.
+              </Text>
+            )}
           </View>
         </Section>
 
@@ -318,6 +473,14 @@ export default function FragranceDetailScreen() {
             </View>
           </Section>
         )}
+
+        <Section title="Layering" cursive="pair it up">
+          <LayeringSection fragranceId={id} />
+        </Section>
+
+        <Section title="Compliments" cursive="what they said">
+          <ComplimentsSection fragranceId={id} />
+        </Section>
 
         <View style={styles.ctaWrap}>
           {inWardrobe ? (
@@ -441,6 +604,11 @@ const styles = StyleSheet.create({
   heroMeta: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   heroMetaText: { ...TYPE.caption, color: COLORS.white, opacity: 0.9 },
   heroMetaDot: { color: COLORS.white, opacity: 0.6 },
+  lastWornRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    paddingHorizontal: SPACING.lg, paddingTop: SPACING.md,
+  },
+  lastWornText: { ...TYPE.caption, color: COLORS.muted },
 
   section: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl },
   sectionHeader: { flexDirection: 'row', alignItems: 'baseline', gap: 10, marginBottom: SPACING.md },
@@ -486,6 +654,15 @@ const styles = StyleSheet.create({
   priceTierLabel: { ...TYPE.caption, marginTop: 4 },
   priceDivider: { height: 1, backgroundColor: COLORS.border, marginVertical: SPACING.md },
   priceFootnote: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic' },
+  retailerList: { gap: 8 },
+  retailerRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 8,
+    paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: COLORS.border,
+  },
+  retailerName: { ...TYPE.label, fontSize: 13, color: COLORS.text, flex: 1 },
+  retailerPrice: { ...TYPE.body, fontSize: 15, fontWeight: '600', color: COLORS.accent },
+  affiliateDisclosure: { ...TYPE.caption, fontSize: 9, color: COLORS.subtle, marginTop: 6, fontStyle: 'italic' },
 
   ctaWrap: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl, gap: SPACING.sm },
   cta: {

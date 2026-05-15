@@ -21,7 +21,7 @@ import { useMemo } from 'react';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useSwipeStore } from '@/src/stores/useSwipeStore';
-import { getFragranceFromStore, type Fragrance as MockFragrance } from '@/src/stores/useCatalogStore';
+import { getFragranceFromStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { deriveTasteProfile, type TasteSignal } from './tasteProfile';
 import { scoreDailyCandidate, recencyModifier, type RecContext, type ScoredRec } from './score';
 
@@ -30,7 +30,7 @@ import { scoreDailyCandidate, recencyModifier, type RecContext, type ScoredRec }
 // ─────────────────────────────────────────────────────────────────────
 
 export interface DailyRail {
-  fragrance: MockFragrance;
+  fragrance: Fragrance;
   score: number;
   reason: string;
   tags: string[];

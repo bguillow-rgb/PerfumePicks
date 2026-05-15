@@ -1,17 +1,18 @@
 import { useState, useMemo, useEffect, useCallback } from 'react';
-import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert, ActionSheetIOS, Platform } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert, ActionSheetIOS, Platform, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
-import { MlMeter } from '@/src/components/fragrance/MlMeter';
-import { SAMPLE_WARDROBE_IDS, getFragrance, type MockFragrance } from '@/src/mock/fragrances';
+import { useCatalogStore, getFragranceFromStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useWardrobeStore, type WardrobeStatus, type UnitType, type WardrobeItem } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
+import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
+import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 
 type Status = WardrobeStatus;
-type ActiveFilter = 'all' | 'want' | 'have' | 'worn';
+type ActiveFilter = 'all' | 'want' | 'have' | 'worn' | 'empty';
 
 // Defined outside the component so it never gets recreated on re-render.
 const PILLS: { id: ActiveFilter; label: string }[] = [
@@ -19,11 +20,12 @@ const PILLS: { id: ActiveFilter; label: string }[] = [
   { id: 'want', label: 'Want' },
   { id: 'have', label: 'Have' },
   { id: 'worn', label: 'Worn' },
+  { id: 'empty', label: 'Empty' },
 ];
 
 interface WardrobeItemView {
   itemId: string;
-  fragrance: MockFragrance;
+  fragrance: Fragrance;
   status: Status;
   size_ml: number;
   remaining_ml: number;
@@ -32,10 +34,13 @@ interface WardrobeItemView {
 /**
  * myWardrobe — collection grid with status filter pills + mL tracking.
  *
- * Reads from the persisted wardrobe store. On first mount (empty store),
- * seeds the store with SAMPLE_WARDROBE_IDS so the screen has demo content
- * to show — but every change after that is real (add via fragrance detail
- * page, delete, edit, etc.).
+ * Reads from the wardrobe store, which is hydrated from Supabase on
+ * sign-in via useAppSync. A brand-new user sees the empty state until
+ * they add their first fragrance from the discover/detail flow.
+ *
+ * Demo-content seeding (SAMPLE_WARDROBE_IDS) was removed when the catalog
+ * read layer moved to Supabase — demo data was misleading anyway and
+ * doesn't reflect what a real user sees on first launch.
  */
 export default function WardrobeScreen() {
   const router = useRouter();
@@ -45,7 +50,6 @@ export default function WardrobeScreen() {
   useFocusEffect(useCallback(() => { setActiveFilter('have'); }, []));
 
   const storeItems = useWardrobeStore((s) => s.items);
-  const addToStore = useWardrobeStore((s) => s.add);
   const removeFromStore = useWardrobeStore((s) => s.remove);
   const wearLogs = useWearLogStore((s) => s.logs);
   const wearCountMap = useMemo(() => {
@@ -57,28 +61,29 @@ export default function WardrobeScreen() {
   }, [wearLogs]);
 
   const [editingItem, setEditingItem] = useState<WardrobeItem | null>(null);
-  const [editingFragrance, setEditingFragrance] = useState<MockFragrance | null>(null);
+  const [editingFragrance, setEditingFragrance] = useState<Fragrance | null>(null);
+  const [logWearFragrance, setLogWearFragrance] = useState<Fragrance | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const notesSearch = useFragranceNotesStore((s) => s.search);
 
-  // Seed once on first run if empty.
+  // Prime the catalog cache so synchronous getFragranceFromStore() lookups
+  // in the items selector below succeed on first render. Without this,
+  // wardrobe rows whose fragrances haven't been individually fetched yet
+  // are skipped silently — a fresh sign-in would show an empty wardrobe
+  // for a frame before the cache filled. fetchMany de-dupes against the
+  // cache so this is cheap on subsequent mounts.
+  const fetchMany = useCatalogStore((s) => s.fetchMany);
+  const cacheVersion = useCatalogStore((s) => Object.keys(s.cache).length);
   useEffect(() => {
-    if (storeItems.length > 0) return;
-    for (const { id: fragId, status, size_ml, remaining_ml } of SAMPLE_WARDROBE_IDS) {
-      addToStore({
-        fragrance_id: fragId,
-        status: status as WardrobeStatus,
-        unit_type: (size_ml < 5 ? 'sample' : size_ml < 30 ? 'decant' : 'bottle') as UnitType,
-        size_ml,
-        remaining_ml,
-        reorder_threshold_ml: status === 'have' ? size_ml * 0.2 : null,
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const ids = Array.from(new Set(storeItems.map((i) => i.fragrance_id)));
+    if (ids.length === 0) return;
+    fetchMany(ids).catch(() => { /* errors logged inside the store */ });
+  }, [storeItems, fetchMany]);
 
   const items: WardrobeItemView[] = useMemo(() => {
     const out: WardrobeItemView[] = [];
     for (const i of storeItems) {
-      const fragrance = getFragrance(i.fragrance_id);
+      const fragrance = getFragranceFromStore(i.fragrance_id);
       if (fragrance) {
         out.push({
           itemId: i.id,
@@ -90,14 +95,29 @@ export default function WardrobeScreen() {
       }
     }
     return out;
-  }, [storeItems]);
+    // cacheVersion as dep: when fetchMany adds new fragrances to the cache,
+    // re-run this selector so previously-skipped rows appear.
+  }, [storeItems, cacheVersion]);
 
 
   const visible = useMemo(() => {
-    if (activeFilter === 'all') return items;
-    if (activeFilter === 'worn') return items.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0);
-    return items.filter((i) => i.status === activeFilter);
-  }, [items, activeFilter, wearCountMap]);
+    let filtered = items;
+    if (activeFilter === 'worn') filtered = filtered.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0);
+    else if (activeFilter === 'empty') filtered = filtered.filter((i) => i.status === 'empty');
+    else if (activeFilter !== 'all') filtered = filtered.filter((i) => i.status === activeFilter);
+
+    const q = searchQuery.trim().toLowerCase();
+    if (q) {
+      const noteMatchIds = new Set(notesSearch(q).map((n) => n.fragrance_id));
+      filtered = filtered.filter((i) =>
+        i.fragrance.name.toLowerCase().includes(q) ||
+        i.fragrance.brand.toLowerCase().includes(q) ||
+        i.fragrance.top_accords.some((a) => a.toLowerCase().includes(q)) ||
+        noteMatchIds.has(i.fragrance.id),
+      );
+    }
+    return filtered;
+  }, [items, activeFilter, wearCountMap, searchQuery, notesSearch]);
 
   const totalMl = items.filter((i) => i.status === 'have').reduce((s, i) => s + i.remaining_ml, 0);
   const haveCount = items.filter((i) => i.status === 'have').length;
@@ -143,14 +163,16 @@ export default function WardrobeScreen() {
                 ? `${haveCount} on hand · ${totalMl.toFixed(0)} mL${lowCount > 0 ? ` · ${lowCount} running low` : ''}`
                 : activeFilter === 'want'
                   ? `${visible.length} wishlisted`
-                  : `${wornCount} worn`}
+                  : activeFilter === 'empty'
+                    ? `${visible.length} empty`
+                    : `${wornCount} worn`}
           </Text>
         </View>
         <Pressable
           style={styles.addBtn}
           onPress={() => {
             const search = () => router.push({ pathname: '/(tabs)/discover', params: { from: 'wardrobe' } } as any);
-            const photo = () => Alert.alert('Coming Soon', 'Bottle photo recognition is on the way!');
+            const photo = () => router.push('/scan' as any);
             if (Platform.OS === 'ios') {
               ActionSheetIOS.showActionSheetWithOptions(
                 { options: ['Cancel', 'Take a photo of my bottle', 'Search for it'], cancelButtonIndex: 0 },
@@ -193,17 +215,53 @@ export default function WardrobeScreen() {
         })}
       </ScrollView>
 
+      {/* Search bar */}
+      <View style={styles.searchWrap}>
+        <View style={styles.searchBar}>
+          <Ionicons name="search-outline" size={16} color={COLORS.muted} />
+          <TextInput
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            placeholder="Search name, brand, notes..."
+            placeholderTextColor={COLORS.subtle}
+            style={styles.searchInput}
+            autoCapitalize="none"
+            returnKeyType="search"
+          />
+          {searchQuery.length > 0 && (
+            <Pressable onPress={() => setSearchQuery('')}>
+              <Ionicons name="close-circle" size={16} color={COLORS.muted} />
+            </Pressable>
+          )}
+        </View>
+      </View>
+
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
 
         {visible.length === 0 ? (
           <View style={styles.empty}>
-            <Text style={styles.emptyTitle}>Nothing here yet.</Text>
-            <Text style={styles.emptyBody}>Switch filters or add a fragrance to get started.</Text>
+            <Ionicons name="rose-outline" size={32} color={COLORS.accent} style={{ marginBottom: SPACING.sm }} />
+            <Text style={styles.emptyTitle}>
+              {items.length === 0 ? 'Start your collection' : 'No matches'}
+            </Text>
+            <Text style={styles.emptyBody}>
+              {items.length === 0
+                ? 'Add your first fragrance — tap the + button above or discover something new.'
+                : searchQuery ? `No fragrances match "${searchQuery}".` : 'Try a different filter.'}
+            </Text>
+            {items.length === 0 && (
+              <Pressable
+                style={styles.emptyCta}
+                onPress={() => router.push({ pathname: '/(tabs)/discover', params: { from: 'wardrobe' } } as any)}
+              >
+                <Text style={styles.emptyCtaText}>Browse Fragrances</Text>
+              </Pressable>
+            )}
           </View>
         ) : (
           <View style={styles.list}>
             {visible.map((item) => (
-              <WardrobeRow key={item.itemId} item={item} wearCount={wearCountMap[item.fragrance.id] ?? 0} onPress={() => router.push(`/fragrance/${item.fragrance.id}`)} onLongPress={() => handleLongPress(item)} />
+              <WardrobeRow key={item.itemId} item={item} wearCount={wearCountMap[item.fragrance.id] ?? 0} onPress={() => router.push(`/fragrance/${item.fragrance.id}`)} onLongPress={() => handleLongPress(item)} onSpray={() => setLogWearFragrance(item.fragrance)} />
             ))}
           </View>
         )}
@@ -215,11 +273,16 @@ export default function WardrobeScreen() {
         editItem={editingItem}
         onClose={() => { setEditingItem(null); setEditingFragrance(null); }}
       />
+      <LogWearSheet
+        visible={logWearFragrance !== null}
+        fragrance={logWearFragrance}
+        onClose={() => setLogWearFragrance(null)}
+      />
     </SafeAreaView>
   );
 }
 
-function WardrobeRow({ item, wearCount, onPress, onLongPress }: { item: WardrobeItemView; wearCount: number; onPress: () => void; onLongPress?: () => void }) {
+function WardrobeRow({ item, wearCount, onPress, onLongPress, onSpray }: { item: WardrobeItemView; wearCount: number; onPress: () => void; onLongPress?: () => void; onSpray?: () => void }) {
   const isLow = item.status === 'have' && (item.remaining_ml / item.size_ml) < 0.2;
 
   return (
@@ -245,17 +308,19 @@ function WardrobeRow({ item, wearCount, onPress, onLongPress }: { item: Wardrobe
           )}
         </View>
       </View>
-      {item.status === 'have' && (
-        <View style={styles.rowMeter}>
-          <MlMeter size_ml={item.size_ml} remaining_ml={item.remaining_ml} />
-        </View>
+      {item.status === 'have' ? (
+        <Pressable style={styles.sprayBtn} onPress={onSpray} hitSlop={8}>
+          <Ionicons name="water-outline" size={20} color={COLORS.accent} />
+        </Pressable>
+      ) : (
+        <View style={{ width: 36 }} />
       )}
     </Pressable>
   );
 }
 
 function statusLabel(s: Status): string {
-  return ({ have: 'In Rotation', want: 'Wishlist', tested: 'Tested', sold_on: 'Sold On' }[s]);
+  return ({ have: 'In Rotation', want: 'Wishlist', tested: 'Tested', sold_on: 'Sold On', empty: 'Empty' }[s]);
 }
 function statusStyle(s: Status): any {
   return ({
@@ -263,6 +328,7 @@ function statusStyle(s: Status): any {
     want: { backgroundColor: COLORS.blushSoft },
     tested: { backgroundColor: COLORS.card2 },
     sold_on: { backgroundColor: COLORS.card2 },
+    empty: { backgroundColor: COLORS.card2 },
   }[s]);
 }
 function statusTextStyle(s: Status): any {
@@ -271,6 +337,7 @@ function statusTextStyle(s: Status): any {
     want: { color: COLORS.burgundy },
     tested: { color: COLORS.muted },
     sold_on: { color: COLORS.muted },
+    empty: { color: COLORS.muted },
   }[s]);
 }
 
@@ -318,7 +385,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyTitle: { ...TYPE.heading, marginBottom: SPACING.sm },
-  emptyBody: { ...TYPE.bodySmall, textAlign: 'center' },
+  emptyBody: { ...TYPE.bodySmall, textAlign: 'center', marginBottom: SPACING.md },
+  emptyCta: {
+    backgroundColor: COLORS.accent, paddingHorizontal: SPACING.xl,
+    paddingVertical: 12, borderRadius: RADIUS.full,
+  },
+  emptyCtaText: { ...TYPE.label, color: COLORS.white, letterSpacing: 1.5 },
   row: {
     backgroundColor: COLORS.card,
     borderRadius: RADIUS.lg,
@@ -345,5 +417,18 @@ const styles = StyleSheet.create({
   wornBadge: { fontSize: 10, color: COLORS.muted, fontWeight: '500', letterSpacing: 0.3 },
   lowPill: { flexDirection: 'row', alignItems: 'center', gap: 3 },
   lowText: { fontSize: 10, color: COLORS.danger, fontWeight: '600', letterSpacing: 0.5 },
-  rowMeter: { width: 50, alignItems: 'center' },
+  sprayBtn: {
+    width: 36, height: 36, borderRadius: 18,
+    backgroundColor: COLORS.blushSoft,
+    alignItems: 'center', justifyContent: 'center',
+  },
+  searchWrap: { paddingHorizontal: SPACING.lg, paddingBottom: SPACING.sm },
+  searchBar: {
+    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingHorizontal: SPACING.md, paddingVertical: 10,
+  },
+  searchInput: { ...TYPE.body, flex: 1, padding: 0, fontSize: 14 },
 });

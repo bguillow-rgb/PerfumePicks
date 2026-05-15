@@ -1,0 +1,14 @@
+appId: host.exp.Exponent
+---
+- launchApp
+- tapOn: "Perfume Picks"
+- extendedWaitUntil:
+    visible: "Today"
+    timeout: 45000
+- tapOn: "You"
+- extendedWaitUntil:
+    visible: "Take the quiz"
+    timeout: 10000
+- takeScreenshot: profile__top
+- scroll
+- takeScreenshot: profile__bottom

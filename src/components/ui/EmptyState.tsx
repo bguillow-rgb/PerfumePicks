@@ -1,26 +1,34 @@
-import { View, Text, StyleSheet } from 'react-native';
-import { COLORS, FONTS, SPACING } from '@/src/constants/theme';
-import { Button } from './Button';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { COLORS, FONTS, SPACING, TYPE, RADIUS } from '@/src/constants/theme';
 
 interface EmptyStateProps {
   title: string;
   subtitle?: string;
+  /** Ionicons icon name shown above the title. */
+  icon?: keyof typeof Ionicons.glyphMap;
   actionLabel?: string;
   onAction?: () => void;
 }
 
-export function EmptyState({ title, subtitle, actionLabel, onAction }: EmptyStateProps) {
+/**
+ * Shared empty-state card used across M2 stub screens.
+ * Reduces 50 design decisions to 50 copy decisions.
+ */
+export function EmptyState({ title, subtitle, icon, actionLabel, onAction }: EmptyStateProps) {
   return (
     <View style={styles.container}>
+      {icon && (
+        <View style={styles.iconCircle}>
+          <Ionicons name={icon} size={28} color={COLORS.accent} />
+        </View>
+      )}
       <Text style={styles.title}>{title}</Text>
       {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
       {actionLabel && onAction && (
-        <Button
-          title={actionLabel}
-          onPress={onAction}
-          variant="secondary"
-          style={{ marginTop: SPACING.md }}
-        />
+        <Pressable style={styles.cta} onPress={onAction}>
+          <Text style={styles.ctaText}>{actionLabel}</Text>
+        </Pressable>
       )}
     </View>
   );
@@ -28,24 +36,40 @@ export function EmptyState({ title, subtitle, actionLabel, onAction }: EmptyStat
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    margin: SPACING.lg,
     padding: SPACING.xl,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    alignItems: 'center',
+    gap: SPACING.sm,
+  },
+  iconCircle: {
+    width: 64, height: 64, borderRadius: 32,
+    backgroundColor: COLORS.blushSoft,
+    alignItems: 'center', justifyContent: 'center',
+    marginBottom: SPACING.sm,
   },
   title: {
-    fontFamily: FONTS.body,
-    fontSize: 18,
-    fontWeight: '700',
+    fontFamily: FONTS.serif,
+    fontSize: 20,
+    fontWeight: '600',
     color: COLORS.text,
     textAlign: 'center',
   },
   subtitle: {
-    fontFamily: FONTS.body,
-    fontSize: 14,
+    ...TYPE.bodySmall,
     color: COLORS.muted,
     textAlign: 'center',
-    marginTop: SPACING.sm,
-    lineHeight: 20,
+    paddingHorizontal: SPACING.md,
   },
+  cta: {
+    marginTop: SPACING.sm,
+    backgroundColor: COLORS.accent,
+    paddingHorizontal: SPACING.xl,
+    paddingVertical: 12,
+    borderRadius: RADIUS.full,
+  },
+  ctaText: { ...TYPE.label, color: COLORS.white, letterSpacing: 1.5 },
 });

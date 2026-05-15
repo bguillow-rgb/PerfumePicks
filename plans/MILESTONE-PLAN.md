@@ -6,6 +6,29 @@
 
 ---
 
+## Locked UX Decisions
+
+These are product-level decisions the founder has explicitly pinned. Code MUST honor them; agents MUST NOT undo them without re-asking. Each row has the date locked + the rationale.
+
+### LX-1 — Compact, dense swim lanes for fragrance cards (2026-05-15)
+
+**Rule:** Every horizontal carousel on the home screen, Discover, and brand pages displays fragrance cards in a **compact, dense, editorial layout**. NOT magazine-cover hero cards with full-bleed photos.
+
+**Reference look:** The wardrobe "Have" card pinned in the 2026-05-15 screenshot — image ~80pt square on the left, brand + name + status pill stacked in the middle, secondary metric (mL meter, price tier, etc.) on the right. ~100pt tall row, full-screen-width row OR ~280pt wide horizontal carousel cell.
+
+**Specifically banned:** the `FragranceCard variant='hero'` (360pt tall full-bleed) and the legacy `variant='medium'` (200pt square photo dominates) for use in default home-screen rails. Hero may still be used for the single "Wear Today" pick, but defaults to compact otherwise.
+
+**Why:** Founder feedback 2026-05-15: large images "look bush league." Smaller, denser cards show more product by default, feel Sephora/Nordstrom-curated rather than Tinder-card.
+
+**How to apply:**
+- New `FragranceCard variant='compact'` matches the wardrobe row look.
+- Home rails use `variant='compact'` horizontally (cards scroll left-right but each card is shorter and thinner than the old `medium`).
+- The big "WEAR TODAY" hero card on Today can stay full-width but should still feel restrained (consider trimming photo height vs the current 360pt).
+- Wardrobe and brand pages already match the target look — leave them.
+- Pending Chief UX second opinion before swap goes live — once Chief UX agrees, swap and don't re-litigate.
+
+---
+
 ## Status legend
 
 - ✅ done — verified in code today
@@ -97,7 +120,7 @@ Based on `plans/Market-Research-Competitive-Analysis.md` (top-5 iOS apps + affil
 
 ---
 
-## Milestone 1 — FOUNDATION
+## Milestone 1 — FOUNDATION ✅ COMPLETE (2026-05-15)
 **"Real auth, real sync, real data — for the user's own data."**
 
 Layers 1, 2, 3, 6 from the original plan (auth + session, sync engine, catalog read layer, Pro / paywall gating). Catalog content quality bar is intentionally low: `014_seed_catalog.sql` (50 rows) is enough; the ETL pipeline lives in the Content Population workstream.
@@ -187,7 +210,7 @@ Audit: RC init runs on app start; `useProStore.activate()` is called when sessio
 
 ---
 
-## Milestone 2 — WIRING
+## Milestone 2 — WIRING ✅ COMPLETE (2026-05-15)
 **"Every screen the v1 launch will have, plumbed end-to-end, even if empty."**
 
 This is the plumbing-first thesis made concrete: every M3/M4/M5 feature from the old plan gets stub UI + real Supabase query + tested RLS policy + non-broken empty state. Empty arrays today, real content later. The exit isn't "feature looks beautiful" — it's "feature is fully plumbed end-to-end with verified RLS, ready for content to land on top."
@@ -356,7 +379,7 @@ This is the strategic shift. Each screen below ships now, queries real Supabase,
 
 ---
 
-## Milestone 3 — AI WAVE
+## Milestone 3 — AI WAVE ✅ COMPLETE (2026-05-15)
 **"Claude API integration, recommendation explanations, bottle scan."**
 
 Stays as a separate milestone because the engineering pattern is different: API key management, prompt design, fallback paths, cost monitoring, model routing. Plumbing for AI is not the same as plumbing for CRUD. Closes F9 in full and adds the bottle-scan backlog item.

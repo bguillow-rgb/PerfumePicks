@@ -1,0 +1,9 @@
+appId: host.exp.Exponent
+---
+- launchApp
+- tapOn: "Perfume Picks"
+- extendedWaitUntil:
+    visible: "Today"
+    timeout: 45000
+- tapOn: "Wardrobe"
+- takeScreenshot: wardrobe__initial

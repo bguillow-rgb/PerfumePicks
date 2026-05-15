@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, StyleSheet, Pressable } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, RefreshControl } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { useCallback, useMemo, useRef, useState, useEffect } from 'react';
@@ -9,7 +9,9 @@ import { WhatToWearSheet } from '@/src/components/sheets/WhatToWearSheet';
 import { useRecommendations, useNewArrivals } from '@/src/features/recommend/useRecommendations';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
-import { getFragrance } from '@/src/mock/fragrances';
+import { getFragranceFromStore } from '@/src/stores/useCatalogStore';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { getWhyThis } from '@/src/lib/claude';
 
 /**
  * Home / "Today" tab — the daily ritual surface.
@@ -47,6 +49,40 @@ export default function HomeScreen() {
 
   const [whatToWearOpen, setWhatToWearOpen] = useState(false);
 
+  // AI "Why this?" — fetches an explanation from Claude when there's a hero pick.
+  const [aiReason, setAiReason] = useState<string | null>(null);
+  useEffect(() => {
+    if (!heroPick || !hasSignals) { setAiReason(null); return; }
+    let cancelled = false;
+    getWhyThis({
+      taste_profile: {}, // useAppSync already synced — the Edge Function reads from DB
+      fragrance_context: {
+        name: heroPick.name,
+        brand: heroPick.brand,
+        top_accords: heroPick.top_accords,
+        fragrance_family: heroPick.fragrance_family,
+        top_notes: heroPick.top_notes,
+      },
+    }).then(({ text, fallback }) => {
+      if (!cancelled) setAiReason(text ?? fallback);
+    });
+    return () => { cancelled = true; };
+  }, [heroPick?.id, hasSignals]);
+
+  // Streak counter — reads from profiles.current_streak on focus.
+  const [streak, setStreak] = useState(0);
+  useFocusEffect(
+    useCallback(() => {
+      if (!isSupabaseConfigured) return;
+      (async () => {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return;
+        const { data } = await supabase.from('profiles').select('current_streak').eq('id', user.id).maybeSingle();
+        if (data?.current_streak != null) setStreak(data.current_streak);
+      })();
+    }, [])
+  );
+
   // Allow manual dismiss of the onboarding card independent of hasSignals
   const [onboardingDismissed, setOnboardingDismissed] = useState(false);
   const showOnboarding = !hasSignals && !onboardingDismissed;
@@ -71,7 +107,21 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
-      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={false}
+            onRefresh={() => {
+              // Force a re-render by toggling focus state — the useFocusEffect
+              // will re-set displayed from live, picking up fresh data.
+              setDisplayed(live);
+            }}
+            tintColor={COLORS.accent}
+          />
+        }
+      >
         <View style={styles.header}>
           {/* Avatar lives in the bottom tab bar now — no duplicate here.
               Header is purely the editorial masthead. */}
@@ -100,6 +150,12 @@ export default function HomeScreen() {
           <Text style={styles.subtitle} numberOfLines={1}>
             {greeting.toLowerCase()} <Text style={styles.subtitleDash}>—</Text> {longDate().toLowerCase()}
           </Text>
+          {streak > 0 && (
+            <View style={styles.streakRow}>
+              <Ionicons name="flame" size={14} color={COLORS.accent} />
+              <Text style={styles.streakText}>{streak} day streak</Text>
+            </View>
+          )}
         </View>
 
         {/* Onboarding card — shown until the user has signals or dismisses it manually */}
@@ -125,7 +181,7 @@ export default function HomeScreen() {
 
         {/* P2: Wear nudge — shown when the user has bottles but hasn't logged today */}
         {wearNudge && wearNudge.fragrance_id !== nudgeDismissedId && (() => {
-          const f = getFragrance(wearNudge.fragrance_id);
+          const f = getFragranceFromStore(wearNudge.fragrance_id);
           if (!f) return null;
           return (
             <View style={styles.wearNudge}>
@@ -176,9 +232,9 @@ export default function HomeScreen() {
           {heroPick && (
             <Text style={styles.heroReason}>
               <Text style={styles.italic}>{hasSignals ? 'Why this:' : 'A starting point:'}</Text>{' '}
-              {heroReason || (hasSignals
-                ? 'tracks with the notes and accords you keep favoring'
-                : 'a celebrated pick to anchor your taste — start swiping in Train to refine it')}.
+              {aiReason ?? heroReason ?? (hasSignals
+                ? 'Tracks with the notes and accords you keep favoring.'
+                : 'A celebrated pick to anchor your taste — start swiping in Train to refine it.')}
             </Text>
           )}
         </Section>
@@ -186,7 +242,7 @@ export default function HomeScreen() {
         <Section eyebrow="TODAY'S EDIT" cursive="three picks">
           {todaysEdit.length > 0 ? (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-              {todaysEdit.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+              {todaysEdit.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
             </ScrollView>
           ) : (
             <View style={[styles.sectionEmpty, { marginRight: SPACING.lg }]}>
@@ -197,14 +253,14 @@ export default function HomeScreen() {
 
         <Section eyebrow="NEW ARRIVALS" cursive="just in">
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-            {newArrivals.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+            {newArrivals.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
           </ScrollView>
         </Section>
 
         <Section eyebrow={hasSignals ? 'TRENDING IN YOUR TASTE' : 'EXPLORE'} cursive={hasSignals ? 'loved' : 'discover'}>
           {trending.length > 0 ? (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-              {trending.map((f) => <FragranceCard key={f.id} fragrance={f} variant="small" />)}
+              {trending.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
             </ScrollView>
           ) : (
             <View style={[styles.sectionEmpty, { marginRight: SPACING.lg }]}>
@@ -302,6 +358,11 @@ const styles = StyleSheet.create({
     color: COLORS.accent,
     fontStyle: 'normal',
   },
+  streakRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 4,
+    alignSelf: 'center', marginTop: 6,
+  },
+  streakText: { ...TYPE.label, fontSize: 12, color: COLORS.accent, letterSpacing: 0.5 },
   section: {
     paddingLeft: SPACING.lg,
     marginTop: SPACING.lg,

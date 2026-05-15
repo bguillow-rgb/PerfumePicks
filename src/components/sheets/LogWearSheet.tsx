@@ -8,11 +8,11 @@ import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import {
   useWearLogStore, type Occasion, type Weather, type WearLog,
 } from '@/src/stores/useWearLogStore';
-import type { MockFragrance } from '@/src/mock/fragrances';
+import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
   visible: boolean;
-  fragrance: MockFragrance | null;
+  fragrance: Fragrance | null;
   /** When provided, the sheet opens in edit mode pre-populated with this entry. */
   editLog?: WearLog | null;
   onClose: () => void;
@@ -54,6 +54,8 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
   const [wearAgain, setWearAgain] = useState<boolean | null>(null);
   const [note, setNote] = useState('');
   const [wornOn, setWornOn] = useState(new Date().toLocaleDateString('en-CA'));
+  const [isPublic, setIsPublic] = useState(false);
+  const [mood, setMood] = useState<string | null>(null);
 
   // Reset or pre-populate when sheet opens.
   useEffect(() => {
@@ -65,6 +67,8 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
       setWearAgain(editLog.would_wear_again ?? null);
       setNote(editLog.note ?? '');
       setWornOn(editLog.worn_on);
+      setIsPublic(editLog.is_public ?? false);
+      setMood((editLog as any).mood ?? null);
     } else {
       setOccasion(null);
       setWeather(null);
@@ -72,6 +76,8 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
       setWearAgain(null);
       setNote('');
       setWornOn(new Date().toLocaleDateString('en-CA'));
+      setIsPublic(false);
+      setMood(null);
     }
   }, [visible, editLog]);
 
@@ -88,7 +94,9 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
       rating: rating > 0 ? rating : null,
       would_wear_again: wearAgain,
       note: note.trim().length > 0 ? note.trim() : null,
-    };
+      is_public: isPublic,
+      mood,
+    } as any;
     if (isEditing && editLog) {
       update(editLog.id, patch);
       onSaved?.(editLog.id);
@@ -221,6 +229,44 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
               </View>
             </Section>
 
+            {/* Mood */}
+            <Section label="How are you feeling? (optional)">
+              <View style={styles.pillRow}>
+                {(['happy', 'relaxed', 'confident', 'romantic', 'focused'] as const).map((m) => (
+                  <Pressable
+                    key={m}
+                    onPress={() => { Haptics.selectionAsync(); setMood(mood === m ? null : m); }}
+                    style={[styles.pill, mood === m && styles.pillActive]}
+                  >
+                    <Text style={[styles.pillText, mood === m && styles.pillTextActive]}>
+                      {m[0].toUpperCase() + m.slice(1)}
+                    </Text>
+                  </Pressable>
+                ))}
+              </View>
+            </Section>
+
+            {/* Share to feed */}
+            <Section label="Share to feed">
+              <Pressable
+                onPress={() => { Haptics.selectionAsync(); setIsPublic(!isPublic); }}
+                style={styles.shareRow}
+              >
+                <Ionicons
+                  name={isPublic ? 'globe' : 'globe-outline'}
+                  size={20}
+                  color={isPublic ? COLORS.accent : COLORS.muted}
+                />
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.shareLabel}>Post as Scent of the Day</Text>
+                  <Text style={styles.shareHint}>Visible to other users in the SOTD feed</Text>
+                </View>
+                <View style={[styles.shareToggle, isPublic && styles.shareToggleOn]}>
+                  <View style={[styles.shareKnob, isPublic && styles.shareKnobOn]} />
+                </View>
+              </Pressable>
+            </Section>
+
             {/* Note */}
             <Section label="Notes (optional)">
               <TextInput
@@ -338,6 +384,20 @@ const styles = StyleSheet.create({
   },
   dateTodayText: { ...TYPE.label, color: COLORS.accent, fontSize: 12 },
   dateError: { ...TYPE.caption, color: COLORS.danger, marginTop: 4, fontStyle: 'italic' },
+  shareRow: { flexDirection: 'row', alignItems: 'center', gap: SPACING.md },
+  shareLabel: { ...TYPE.body, fontSize: 14 },
+  shareHint: { ...TYPE.caption, fontSize: 11, marginTop: 1 },
+  shareToggle: {
+    width: 44, height: 26, borderRadius: 13,
+    backgroundColor: COLORS.card2,
+    justifyContent: 'center', paddingHorizontal: 2,
+  },
+  shareToggleOn: { backgroundColor: COLORS.accent },
+  shareKnob: {
+    width: 22, height: 22, borderRadius: 11,
+    backgroundColor: COLORS.white,
+  },
+  shareKnobOn: { alignSelf: 'flex-end' },
   noteInput: {
     ...TYPE.body,
     backgroundColor: COLORS.card,

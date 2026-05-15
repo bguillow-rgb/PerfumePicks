@@ -12,16 +12,17 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { useRouter } from 'expo-router';
 import {
-  useWardrobeStore, type WardrobeStatus, type UnitType, type WardrobeItem,
+  useWardrobeStore, WARDROBE_CAP_HIT,
+  type WardrobeStatus, type UnitType, type WardrobeItem,
 } from '@/src/stores/useWardrobeStore';
 import { useProfileStore } from '@/src/stores/useProfileStore';
 import { supabase } from '@/lib/supabase';
 import { Alert } from '@/src/components/ui/StyledAlert';
-import type { MockFragrance } from '@/src/mock/fragrances';
+import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
   visible: boolean;
-  fragrance: MockFragrance | null;
+  fragrance: Fragrance | null;
   onClose: () => void;
   onSaved?: (id: string) => void;
   /** Pre-select a status when the sheet opens (e.g. 'want' from the heart button). */
@@ -35,6 +36,7 @@ const STATUS_OPTIONS: { id: WardrobeStatus; label: string; helper: string }[] = 
   { id: 'want',    label: 'Wishlist',    helper: 'Want to try it' },
   { id: 'tested',  label: 'Tested',      helper: 'Sampled, undecided' },
   { id: 'sold_on', label: 'Sold On',     helper: 'Loved + ready to buy' },
+  { id: 'empty',   label: 'Empty',       helper: 'Finished the bottle' },
 ];
 
 const UNIT_OPTIONS: { id: UnitType; label: string; defaultMl: number }[] = [
@@ -63,6 +65,7 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
   const [sizeMl, setSizeMl] = useState('50');
   const [remainingMl, setRemainingMl] = useState('50');
   const [reorderMl, setReorderMl] = useState('');
+  const [priceCents, setPriceCents] = useState('');
 
   // Reset all fields each time the sheet opens, pre-populating from editItem if present.
   useEffect(() => {
@@ -73,12 +76,14 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
       setSizeMl(String(editItem.size_ml));
       setRemainingMl(String(editItem.remaining_ml));
       setReorderMl(editItem.reorder_threshold_ml != null ? String(editItem.reorder_threshold_ml) : '');
+      setPriceCents(editItem.purchase_price_cents != null ? String(editItem.purchase_price_cents / 100) : '');
     } else {
       setStatus(initialStatus ?? 'have');
       setUnit('bottle');
       setSizeMl('50');
       setRemainingMl('50');
       setReorderMl('');
+      setPriceCents('');
     }
   }, [visible, editItem, initialStatus]);
 
@@ -106,13 +111,24 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
       size_ml: Number(sizeMl),
       remaining_ml: status === 'have' ? Number(remainingMl) : Number(sizeMl),
       reorder_threshold_ml: reorderMl.trim() ? Number(reorderMl) : null,
+      purchase_price_cents: priceCents.trim() ? Math.round(Number(priceCents) * 100) : null,
     };
     let id: string;
     if (editItem) {
       update(editItem.id, patch);
       id = editItem.id;
     } else {
-      id = add({ fragrance_id: fragrance.id, ...patch });
+      const result = add({ fragrance_id: fragrance.id, ...patch });
+      if (result === WARDROBE_CAP_HIT) {
+        // Free-tier cap: bail out before closing the sheet, route to paywall.
+        // The sheet stays mounted so the user lands back on it if they
+        // dismiss the paywall — their pending input isn't lost.
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+        onClose();
+        router.push('/paywall' as any);
+        return;
+      }
+      id = result;
     }
     onSaved?.(id);
     onClose();
@@ -209,18 +225,34 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
                 </Section>
 
                 {status === 'have' && (
-                  <Section label="Reorder Alert (optional)">
-                    <View style={styles.reorderRow}>
-                      <Text style={styles.reorderHint}>Notify me when I drop below</Text>
-                      <MlInput
-                        label=""
-                        value={reorderMl}
-                        onChangeText={setReorderMl}
-                        placeholder="—"
-                        compact
-                      />
-                    </View>
-                  </Section>
+                  <>
+                    <Section label="Reorder Alert (optional)">
+                      <View style={styles.reorderRow}>
+                        <Text style={styles.reorderHint}>Notify me when I drop below</Text>
+                        <MlInput
+                          label=""
+                          value={reorderMl}
+                          onChangeText={setReorderMl}
+                          placeholder="—"
+                          compact
+                        />
+                      </View>
+                    </Section>
+
+                    <Section label="Purchase Price (optional)">
+                      <View style={styles.priceRow}>
+                        <Text style={styles.priceDollar}>$</Text>
+                        <TextInput
+                          value={priceCents}
+                          onChangeText={setPriceCents}
+                          placeholder="0.00"
+                          placeholderTextColor={COLORS.subtle}
+                          keyboardType="decimal-pad"
+                          style={styles.priceInput}
+                        />
+                      </View>
+                    </Section>
+                  </>
                 )}
               </>
             )}
@@ -345,6 +377,16 @@ const styles = StyleSheet.create({
 
   reorderRow: { flexDirection: 'row', alignItems: 'flex-end', gap: SPACING.sm },
   reorderHint: { ...TYPE.bodySmall, flex: 1, fontStyle: 'italic', paddingBottom: 14 },
+  priceRow: {
+    flexDirection: 'row', alignItems: 'center',
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingHorizontal: 12, paddingVertical: 10,
+    width: 140,
+  },
+  priceDollar: { ...TYPE.body, fontSize: 18, color: COLORS.muted, marginRight: 4 },
+  priceInput: { flex: 1, ...TYPE.body, fontSize: 18, padding: 0, color: COLORS.text },
 
   ctaWrap: {
     flexDirection: 'row', gap: SPACING.sm,

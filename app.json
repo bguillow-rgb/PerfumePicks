@@ -67,14 +67,11 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "REPLACE_WITH_NEW_EAS_PROJECT_ID"
+        "projectId": "45707459-d6b8-4aa8-8ddf-5a5894dde578"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
-    },
-    "updates": {
-      "url": "https://u.expo.dev/REPLACE_WITH_NEW_EAS_PROJECT_ID"
     }
   }
 }

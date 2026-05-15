@@ -1,0 +1,45 @@
+appId: host.exp.Exponent
+---
+- launchApp
+- tapOn: "Perfume Picks"
+- extendedWaitUntil:
+    visible: "WEAR TODAY"
+    timeout: 45000
+
+# === HOME SCREEN ===
+- takeScreenshot: 01-home__initial
+- scroll
+- takeScreenshot: 02-home__after-scroll
+- scroll
+- takeScreenshot: 03-home__bottom
+
+# === DISCOVER TAB ===
+- tapOn: "Discover, tab, 2 of 6"
+- extendedWaitUntil:
+    visible: "Discover"
+    timeout: 15000
+- takeScreenshot: 04-discover__initial
+- scroll
+- takeScreenshot: 05-discover__scrolled
+- scroll
+- takeScreenshot: 06-discover__more
+
+# === TRAIN TAB ===
+- tapOn: "Train, tab, 3 of 6"
+- extendedWaitUntil:
+    visible: "TRAIN MY NOSE"
+    timeout: 15000
+- takeScreenshot: 07-train__intro
+
+# === WARDROBE TAB ===
+- tapOn: "Wardrobe, tab, 4 of 6"
+- takeScreenshot: 08-wardrobe__initial
+
+# === PROFILE TAB ===
+- tapOn: "You, tab, 6 of 6"
+- extendedWaitUntil:
+    visible: "TASTE PROFILE"
+    timeout: 15000
+- takeScreenshot: 09-profile__top
+- scroll
+- takeScreenshot: 10-profile__bottom

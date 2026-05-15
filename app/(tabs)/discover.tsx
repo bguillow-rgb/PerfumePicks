@@ -6,10 +6,63 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { DISCOVER_ACCORDS } from '@/src/constants/accords';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
+// ALL_BRANDS removed — now derived dynamically from the pool so brand
+// names match the actual Supabase brands.name values.
 import {
-  MOCK_CATALOG, ALL_BRANDS, CURATED_EDITS, getFragrances, type MockFragrance,
-} from '@/src/mock/fragrances';
+  useCatalogStore,
+  type Fragrance,
+} from '@/src/stores/useCatalogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
+import { DiscoverFilterSheet, type DiscoverFilters, EMPTY_FILTERS, filtersActive } from '@/src/components/sheets/DiscoverFilterSheet';
+import { EmptyState } from '@/src/components/ui/EmptyState';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+
+/** Cap celebrity names to 2 + "& N more" to prevent subtitle overflow. */
+function capNames(names: string[]): string {
+  if (names.length <= 2) return names.join(', ');
+  return `${names[0]}, ${names[1]} & ${names.length - 2} more`;
+}
+
+/**
+ * Curated Edits — mood-based rails derived from the live catalog pool.
+ *
+ * Each edit defines a filter function that selects fragrances from the pool.
+ * This replaces the old hardcoded slug-based CURATED_EDITS which shipped
+ * mock slugs that failed against UUID primary keys in production.
+ */
+const CURATED_EDITS_META = [
+  {
+    id: 'boudoir',
+    label: 'Boudoir',
+    filter: (f: Fragrance) =>
+      f.top_accords.some((a) => ['amber', 'vanilla', 'oud', 'sweet', 'warm-spicy', 'musk'].includes(a)) &&
+      (f.gender === 'feminine' || f.gender === 'unisex'),
+  },
+  {
+    id: 'office',
+    label: 'Office',
+    filter: (f: Fragrance) => f.office_safe_score >= 0.6,
+  },
+  {
+    id: 'date-night',
+    label: 'Date Night',
+    filter: (f: Fragrance) => f.compliment_score >= 0.6,
+  },
+  {
+    id: 'summer',
+    label: 'Summer',
+    filter: (f: Fragrance) =>
+      f.top_accords.some((a) => ['fresh', 'citrus', 'aquatic', 'green', 'floral'].includes(a)),
+  },
+  {
+    id: 'winter',
+    label: 'Winter',
+    filter: (f: Fragrance) =>
+      f.top_accords.some((a) => ['amber', 'vanilla', 'oud', 'woody', 'warm-spicy', 'gourmand'].includes(a)),
+  },
+] as const;
+
+const RAIL_SIZE = 10;
 
 /**
  * Discover tab — search + browse the catalog.
@@ -24,32 +77,149 @@ export default function DiscoverScreen() {
   const router = useRouter();
   const { from } = useLocalSearchParams<{ from?: string }>();
   const [query, setQuery] = useState('');
-  const [activeEdit, setActiveEdit] = useState(CURATED_EDITS[0].id);
+  const [activeEdit, setActiveEdit] = useState<string>(CURATED_EDITS_META[0].id);
   const notesSearch = useFragranceNotesStore((s) => s.search);
+  const [filterSheetOpen, setFilterSheetOpen] = useState(false);
+  const [filters, setFilters] = useState<DiscoverFilters>(EMPTY_FILTERS);
+
+  // Celebrity Picks — fragrances worn by famous people, with celeb names.
+  const [celebrityPicks, setCelebrityPicks] = useState<{ fragrance: Fragrance; celebrities: string }[]>([]);
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+    (async () => {
+      const { data } = await supabase
+        .from('fragrance_celebrities')
+        .select('fragrance_id, celebrity_name')
+        .eq('verified', true)
+        .limit(100);
+      if (!data?.length) return;
+      // Group celebrity names by fragrance
+      const namesByFrag = new Map<string, string[]>();
+      for (const r of data as any[]) {
+        const names = namesByFrag.get(r.fragrance_id) ?? [];
+        names.push(r.celebrity_name);
+        namesByFrag.set(r.fragrance_id, names);
+      }
+      const ids = [...namesByFrag.keys()];
+      const frags = await fetchMany(ids);
+      setCelebrityPicks(
+        frags.slice(0, RAIL_SIZE).map((f) => ({
+          fragrance: f,
+          celebrities: capNames(namesByFrag.get(f.id) ?? []),
+        })),
+      );
+    })();
+  }, [fetchMany]);
+
+  // Pull the active catalog pool once so the "By House" + "By Accord"
+  // counts and the curated-edit fallback have real data behind them.
+  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  const fetchMany = useCatalogStore((s) => s.fetchMany);
+  const searchStore = useCatalogStore((s) => s.search);
+  const [pool, setPool] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    fetchAllActive(200).then((rows) => { if (!cancelled) setPool(rows); });
+    return () => { cancelled = true; };
+  }, [fetchAllActive]);
 
   // When navigated here from the wardrobe "+" button, pass context through so
   // the fragrance detail page can navigate back to wardrobe after adding.
   const fragranceHref = (id: string) =>
     from === 'wardrobe' ? `/fragrance/${id}?from=wardrobe` : `/fragrance/${id}`;
 
-  const searchResults = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return [];
-    // IDs matched by private notes text (body, social notes, layering combos)
-    const notesMatchIds = new Set(notesSearch(q).map((n) => n.fragrance_id));
-    return MOCK_CATALOG.filter((f) =>
-      f.name.toLowerCase().includes(q) ||
-      f.brand.toLowerCase().includes(q) ||
-      f.top_accords.some((a) => a.includes(q)) ||
-      f.top_notes.some((n) => n.toLowerCase().includes(q)) ||
-      f.heart_notes.some((n) => n.toLowerCase().includes(q)) ||
-      f.base_notes.some((n) => n.toLowerCase().includes(q)) ||
-      notesMatchIds.has(f.id),
-    );
-  }, [query, notesSearch]);
+  // Debounced async search against Supabase; falls back to MOCK_CATALOG
+  // in demo mode via the store's search() method.
+  const [searchResults, setSearchResults] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    const q = query.trim();
+    if (!q) { setSearchResults([]); return; }
+    let cancelled = false;
+    const t = setTimeout(() => {
+      searchStore(q, 30).then((rows) => {
+        if (cancelled) return;
+        // Augment with private-note matches: any of our owned fragrances
+        // whose notes text contains the query also surface.
+        const notesMatchIds = notesSearch(q.toLowerCase()).map((n) => n.fragrance_id);
+        if (notesMatchIds.length === 0) { setSearchResults(rows); return; }
+        // Fetch any note-matches that aren't already in the results.
+        const have = new Set(rows.map((r) => r.id));
+        const missing = notesMatchIds.filter((id) => !have.has(id));
+        if (missing.length === 0) { setSearchResults(rows); return; }
+        fetchMany(missing).then((extra) => {
+          if (!cancelled) setSearchResults([...rows, ...extra]);
+        });
+      });
+    }, 250);
+    return () => { cancelled = true; clearTimeout(t); };
+  }, [query, notesSearch, searchStore, fetchMany]);
 
-  const activeEditSet = CURATED_EDITS.find((e) => e.id === activeEdit) ?? CURATED_EDITS[0];
-  const editFragrances = getFragrances(activeEditSet.ids);
+  // Apply faceted filters to the pool.
+  const filteredPool = useMemo(() => {
+    let result = pool;
+    if (filters.genders.length > 0) {
+      result = result.filter((f) => filters.genders.includes(f.gender));
+    }
+    if (filters.accords.length > 0) {
+      result = result.filter((f) => f.top_accords.some((a) => filters.accords.includes(a)));
+    }
+    if (filters.priceTiers.length > 0) {
+      result = result.filter((f) => filters.priceTiers.includes(f.price_tier));
+    }
+    if (filters.yearMin != null && filters.yearMax != null) {
+      result = result.filter((f) => f.release_year >= filters.yearMin! && f.release_year <= filters.yearMax!);
+    }
+    return result;
+  }, [pool, filters]);
+
+  // Scent twins — users with similar taste
+  const [scentTwins, setScentTwins] = useState<{ twin_user_id: string; overlap_count: number; jaccard: number; display_name?: string }[]>([]);
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+    (async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase.rpc('get_scent_twins', { target_user: user.id });
+      if (!data?.length) return;
+      // Fetch display names for twins
+      const ids = data.map((t: any) => t.twin_user_id);
+      const { data: profiles } = await supabase.from('profiles').select('id, display_name').in('id', ids);
+      const nameMap = new Map((profiles ?? []).map((p: any) => [p.id, p.display_name]));
+      setScentTwins(data.map((t: any) => ({ ...t, display_name: nameMap.get(t.twin_user_id) ?? null })));
+    })();
+  }, []);
+
+  // Collaborative filtering recs — fragrances loved by similar users
+  const [collabRecs, setCollabRecs] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+    (async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase.rpc('get_collab_recs', { target_user: user.id, rec_limit: 10 });
+      if (!data?.length) return;
+      const ids = data.map((r: any) => r.fragrance_id);
+      const frags = await fetchMany(ids);
+      setCollabRecs(frags);
+    })();
+  }, [fetchMany]);
+
+  // Derive brand list + counts dynamically from the pool.
+  const topBrands = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const f of filteredPool) {
+      counts.set(f.brand, (counts.get(f.brand) ?? 0) + 1);
+    }
+    return [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 20);
+  }, [filteredPool]);
+
+  // Derive curated-edit fragrances from the filtered pool.
+  const editFragrances = useMemo(() => {
+    const meta = CURATED_EDITS_META.find((e) => e.id === activeEdit) ?? CURATED_EDITS_META[0];
+    return filteredPool.filter(meta.filter).slice(0, RAIL_SIZE);
+  }, [filteredPool, activeEdit]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -72,19 +242,50 @@ export default function DiscoverScreen() {
             </Pressable>
           )}
         </View>
+        {/* Filter chip row */}
+        <View style={styles.filterRow}>
+          <Pressable style={[styles.filterBtn, filtersActive(filters) && styles.filterBtnActive]} onPress={() => setFilterSheetOpen(true)}>
+            <Ionicons name="funnel-outline" size={14} color={filtersActive(filters) ? COLORS.white : COLORS.muted} />
+            <Text style={[styles.filterBtnText, filtersActive(filters) && styles.filterBtnTextActive]}>
+              {filtersActive(filters) ? 'Filtered' : 'Filter'}
+            </Text>
+          </Pressable>
+          {filtersActive(filters) && (
+            <Pressable onPress={() => setFilters(EMPTY_FILTERS)}>
+              <Text style={styles.clearFiltersText}>Clear</Text>
+            </Pressable>
+          )}
+        </View>
       </View>
 
       {query.length > 0 ? (
         <SearchResults results={searchResults} query={query} fragranceHref={fragranceHref} />
       ) : (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+          {/* SOTD feed entry point */}
+          <Pressable style={styles.feedBanner} onPress={() => router.push('/feed' as any)}>
+            <Ionicons name="globe-outline" size={18} color={COLORS.accent} />
+            <Text style={styles.feedBannerText}>Scent of the Day Feed</Text>
+            <Ionicons name="chevron-forward" size={16} color={COLORS.muted} />
+          </Pressable>
+
+          {filtersActive(filters) && filteredPool.length === 0 && (
+            <EmptyState
+              icon="funnel-outline"
+              title="No matches"
+              subtitle="No fragrances match your filters. Try loosening them."
+              actionLabel="Clear Filters"
+              onAction={() => setFilters(EMPTY_FILTERS)}
+            />
+          )}
+
           <Section eyebrow="CURATED EDITS" cursive="for every mood">
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={styles.editPillRow}
             >
-              {CURATED_EDITS.map((e) => (
+              {CURATED_EDITS_META.map((e) => (
                 <Pressable key={e.id} onPress={() => setActiveEdit(e.id)}>
                   <View style={[styles.editPill, activeEdit === e.id && styles.editPillActive]}>
                     <Text style={[styles.editPillText, activeEdit === e.id && styles.editPillTextActive]}>
@@ -96,33 +297,41 @@ export default function DiscoverScreen() {
             </ScrollView>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
               {editFragrances.map((f) => (
-                <FragranceCard key={f.id} fragrance={f} onPress={() => router.push(fragranceHref(f.id) as any)} />
+                <FragranceCard key={f.id} fragrance={f} variant="compact" onPress={() => router.push(fragranceHref(f.id) as any)} />
               ))}
             </ScrollView>
           </Section>
 
+          {/* Celebrity Picks — fragrances worn by famous people */}
+          {celebrityPicks.length > 0 && (
+            <Section eyebrow="CELEBRITY PICKS" cursive="famous fans">
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+                {celebrityPicks.map(({ fragrance: f, celebrities }) => (
+                  <FragranceCard key={f.id} fragrance={f} variant="compact" subtitle={celebrities} onPress={() => router.push(fragranceHref(f.id) as any)} />
+                ))}
+              </ScrollView>
+            </Section>
+          )}
+
           <Section eyebrow="BY HOUSE" cursive="explore brands">
             <View style={styles.brandGrid}>
-              {ALL_BRANDS.map((b) => {
-                const count = MOCK_CATALOG.filter((f) => f.brand === b).length;
-                return (
-                  <Pressable
-                    key={b}
-                    style={styles.brandTile}
-                    onPress={() => router.push(`/brand/${encodeURIComponent(b)}` as any)}
-                  >
-                    <Text style={styles.brandTileLabel} numberOfLines={2}>{b}</Text>
-                    <Text style={styles.brandTileCount}>{count}</Text>
-                  </Pressable>
-                );
-              })}
+              {topBrands.map(([brand, count]) => (
+                <Pressable
+                  key={brand}
+                  style={styles.brandTile}
+                  onPress={() => router.push(`/brand/${encodeURIComponent(brand)}` as any)}
+                >
+                  <Text style={styles.brandTileLabel} numberOfLines={2}>{brand}</Text>
+                  <Text style={styles.brandTileCount}>{count}</Text>
+                </Pressable>
+              ))}
             </View>
           </Section>
 
           <Section eyebrow="BY ACCORD" cursive="follow your nose">
             <View style={styles.accordGrid}>
               {DISCOVER_ACCORDS.map((a) => {
-                const matching = MOCK_CATALOG.filter((f) => f.top_accords.includes(a));
+                const matching = filteredPool.filter((f) => f.top_accords.includes(a));
                 return (
                   <Pressable
                     key={a}
@@ -137,16 +346,56 @@ export default function DiscoverScreen() {
             </View>
           </Section>
 
+          {/* Collaborative filtering recs */}
+          {collabRecs.length > 0 && (
+            <Section eyebrow="RECOMMENDED FOR YOU" cursive="taste-matched">
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+                {collabRecs.map((f) => (
+                  <FragranceCard key={f.id} fragrance={f} variant="compact" onPress={() => router.push(fragranceHref(f.id) as any)} />
+                ))}
+              </ScrollView>
+            </Section>
+          )}
+
+          {/* Scent twins */}
+          {scentTwins.length > 0 && (
+            <Section eyebrow="YOUR SCENT TWINS" cursive="kindred noses">
+              <View style={styles.twinsGrid}>
+                {scentTwins.slice(0, 6).map((t) => (
+                  <Pressable
+                    key={t.twin_user_id}
+                    style={styles.twinCard}
+                    onPress={() => router.push(`/user/${t.twin_user_id}` as any)}
+                  >
+                    <View style={styles.twinAvatar}>
+                      <Text style={styles.twinAvatarLetter}>
+                        {(t.display_name?.[0] ?? '?').toUpperCase()}
+                      </Text>
+                    </View>
+                    <Text style={styles.twinName} numberOfLines={1}>{t.display_name || 'Perfume Lover'}</Text>
+                    <Text style={styles.twinOverlap}>{t.overlap_count} shared</Text>
+                  </Pressable>
+                ))}
+              </View>
+            </Section>
+          )}
+
           <View style={{ height: SPACING.xxl }} />
         </ScrollView>
       )}
+      <DiscoverFilterSheet
+        visible={filterSheetOpen}
+        filters={filters}
+        onApply={setFilters}
+        onClose={() => setFilterSheetOpen(false)}
+      />
     </SafeAreaView>
   );
 }
 
 const SEARCH_PAGE_SIZE = 20;
 
-function SearchResults({ results, query, fragranceHref }: { results: MockFragrance[]; query: string; fragranceHref: (id: string) => string }) {
+function SearchResults({ results, query, fragranceHref }: { results: Fragrance[]; query: string; fragranceHref: (id: string) => string }) {
   const router = useRouter();
   const [showAll, setShowAll] = useState(false);
   const visible = showAll ? results : results.slice(0, SEARCH_PAGE_SIZE);
@@ -169,7 +418,7 @@ function SearchResults({ results, query, fragranceHref }: { results: MockFragran
       keyExtractor={(f) => f.id}
       renderItem={({ item }) => (
         <View style={{ paddingHorizontal: SPACING.lg, marginBottom: SPACING.md }}>
-          <FragranceCard fragrance={item} onPress={() => router.push(fragranceHref(item.id) as any)} />
+          <FragranceCard fragrance={item} variant="compact" onPress={() => router.push(fragranceHref(item.id) as any)} />
         </View>
       )}
       contentContainerStyle={{ paddingTop: SPACING.md, paddingBottom: SPACING.xxl }}
@@ -220,6 +469,45 @@ const styles = StyleSheet.create({
   sectionEyebrow: { ...TYPE.eyebrow },
   sectionCursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 22, color: COLORS.accent, lineHeight: 34, paddingLeft: 6 },
   hScroll: { paddingRight: SPACING.lg },
+  filterRow: {
+    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
+    paddingHorizontal: SPACING.lg, paddingTop: SPACING.sm,
+  },
+  filterBtn: {
+    flexDirection: 'row', alignItems: 'center', gap: 4,
+    paddingHorizontal: 12, paddingVertical: 7,
+    borderRadius: RADIUS.full,
+    borderWidth: 1, borderColor: COLORS.border,
+    backgroundColor: COLORS.card,
+  },
+  filterBtnActive: { backgroundColor: COLORS.accent, borderColor: COLORS.accent },
+  filterBtnText: { ...TYPE.label, fontSize: 12, color: COLORS.muted },
+  filterBtnTextActive: { color: COLORS.white },
+  clearFiltersText: { ...TYPE.label, fontSize: 12, color: COLORS.accent },
+  twinsGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm, paddingRight: SPACING.lg },
+  twinCard: {
+    width: '30%', alignItems: 'center',
+    backgroundColor: COLORS.card, borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingVertical: SPACING.md, paddingHorizontal: SPACING.sm,
+  },
+  twinAvatar: {
+    width: 44, height: 44, borderRadius: 22,
+    backgroundColor: COLORS.blushSoft,
+    alignItems: 'center', justifyContent: 'center',
+    marginBottom: 6,
+  },
+  twinAvatarLetter: { fontFamily: FONTS.serif, fontSize: 20, color: COLORS.accent },
+  twinName: { ...TYPE.label, fontSize: 11, color: COLORS.text, textAlign: 'center' },
+  twinOverlap: { ...TYPE.caption, fontSize: 9, marginTop: 2, color: COLORS.accent },
+  feedBanner: {
+    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
+    marginHorizontal: SPACING.lg, marginTop: SPACING.md, marginBottom: SPACING.sm,
+    padding: SPACING.md,
+    backgroundColor: COLORS.card, borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+  },
+  feedBannerText: { ...TYPE.label, fontSize: 13, color: COLORS.text, flex: 1 },
 
   editPillRow: { paddingRight: SPACING.lg, paddingBottom: SPACING.md, gap: 8 },
   editPill: {

@@ -133,7 +133,7 @@ export default function TabLayout() {
         },
         tabBarLabelStyle: {
           fontFamily: 'Cormorant',
-          fontSize: 11,
+          fontSize: 10,
           fontWeight: '600',
           includeFontPadding: false,
           textAlign: 'center',
@@ -149,6 +149,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Today',
+          tabBarTestID: 'tab-today',
           tabBarIcon: ({ color, size }) => <TabIcon name="sparkles-outline" color={color} size={size} />,
         }}
       />
@@ -156,6 +157,7 @@ export default function TabLayout() {
         name="discover"
         options={{
           title: 'Discover',
+          tabBarTestID: 'tab-discover',
           tabBarIcon: ({ color, size }) => <TabIcon name="search-outline" color={color} size={size} />,
         }}
       />
@@ -166,13 +168,14 @@ export default function TabLayout() {
         name="train"
         options={{
           title: 'Train',
+          tabBarTestID: 'tab-train',
           tabBarIcon: ({ focused }) => <TrainTabIcon focused={focused} />,
           // The 38px disc is taller than the line icons (≈22px) so the label
           // lands closer than the other tabs' rhythm. Push it down so the
           // gap between icon and label visually matches the rest of the bar.
           tabBarLabelStyle: {
             fontFamily: 'Cormorant',
-            fontSize: 11,
+            fontSize: 10,
             fontWeight: '600',
             includeFontPadding: false,
             textAlign: 'center',
@@ -184,24 +187,7 @@ export default function TabLayout() {
         name="wardrobe"
         options={{
           title: 'Wardrobe',
-          // "my" set in italic serif as a feminine flourish — mirrors the
-          // StickPicks "myHumidor" treatment but feels editorial here.
-          tabBarLabel: ({ color }) => (
-            <Text
-              numberOfLines={1}
-              style={{
-                fontFamily: 'Cormorant',
-                fontSize: 11,
-                lineHeight: 14,
-                fontWeight: '600',
-                textAlign: 'center',
-                includeFontPadding: false,
-                color,
-              }}
-            >
-              <Text style={{ fontStyle: 'italic' }}>my</Text>Wardrobe
-            </Text>
-          ),
+          tabBarTestID: 'tab-wardrobe',
           tabBarIcon: ({ color, size }) => <TabIcon name="rose-outline" color={color} size={size} />,
         }}
       />
@@ -214,6 +200,7 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: 'You',
+          tabBarTestID: 'tab-profile',
           // Custom avatar icon (champagne ring + monogram or photo) instead
           // of a generic person line icon. Wire imageUri once the user can
           // upload one — currently falls back to a cursive monogram.

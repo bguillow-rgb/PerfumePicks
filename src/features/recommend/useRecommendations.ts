@@ -27,12 +27,16 @@
  * ─────────────────────────────────────────────────────────────────────────
  */
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useSwipeStore } from '@/src/stores/useSwipeStore';
 import { useQuizStore } from '@/src/stores/useQuizStore';
-import { MOCK_CATALOG, getFragrance, type MockFragrance } from '@/src/mock/fragrances';
+import {
+  useCatalogStore,
+  getFragranceFromStore,
+  type Fragrance,
+} from '@/src/stores/useCatalogStore';
 import { deriveTasteProfile, type TasteSignal } from './tasteProfile';
 import { rank, type RecContext, type ScoredRec } from './score';
 
@@ -90,7 +94,7 @@ function buildSignals(
 ): TasteSignal[] {
   const out: TasteSignal[] = [];
   for (const w of wears) {
-    const f = getFragrance(w.fragrance_id);
+    const f = getFragranceFromStore(w.fragrance_id);
     if (!f) continue;
     const weight = w.rating != null && w.rating >= 4
       ? SIGNAL_WEIGHTS.wear_high_rating
@@ -98,13 +102,13 @@ function buildSignals(
     out.push({ fragrance: f, weight });
   }
   for (const i of wardrobeItems) {
-    const f = getFragrance(i.fragrance_id);
+    const f = getFragranceFromStore(i.fragrance_id);
     if (!f) continue;
     const w = (SIGNAL_WEIGHTS as any)[i.status] ?? 1;
     out.push({ fragrance: f, weight: w });
   }
   for (const sw of swipes) {
-    const f = getFragrance(sw.fragrance_id);
+    const f = getFragranceFromStore(sw.fragrance_id);
     if (!f) continue;
     if (sw.action === 'love')    out.push({ fragrance: f, weight: SIGNAL_WEIGHTS.swipe_love });
     if (sw.action === 'like')    out.push({ fragrance: f, weight: SIGNAL_WEIGHTS.swipe_like });
@@ -201,9 +205,21 @@ export function useRecommendations(ctx?: RecContext) {
     [items],
   );
 
+  // Pull the top-popularity slice of the live catalog into local state.
+  // useCatalogStore.fetchAllActive handles demo-mode fallback to MOCK_CATALOG.
+  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  const [catalogPool, setCatalogPool] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    fetchAllActive(MAX_CANDIDATES).then((rows) => {
+      if (!cancelled) setCatalogPool(rows);
+    });
+    return () => { cancelled = true; };
+  }, [fetchAllActive]);
+
   const candidates = useMemo(
-    () => MOCK_CATALOG.filter((f) => !owned.has(f.id)).slice(0, MAX_CANDIDATES),
-    [owned],
+    () => catalogPool.filter((f) => !owned.has(f.id)),
+    [catalogPool, owned],
   );
 
   const ranked: ScoredRec[] = useMemo(
@@ -251,16 +267,22 @@ export function useRecommendations(ctx?: RecContext) {
   }, [ranked, recentLikeSet, profile]);
 }
 
-/** Get the user's recent additions (last 30 days from the catalog) — used
- *  for the "New Arrivals" rail. With a real catalog this reads off
- *  `fragrances.created_at`. With the mock catalog we just use newest-by-
- *  release-year as a proxy so the rail shows something relevant. */
-export function useNewArrivals(limit = 6): MockFragrance[] {
-  return useMemo(
-    () =>
-      [...MOCK_CATALOG]
-        .sort((a, b) => b.release_year - a.release_year)
-        .slice(0, limit),
-    [limit],
-  );
+/**
+ * Recent catalog additions for the "New Arrivals" rail. In production this
+ * pulls the top-popularity slice and sorts client-side by release_year
+ * descending as a proxy until the ETL pipeline populates a real
+ * `created_at`. Demo mode falls back to MOCK_CATALOG via fetchAllActive.
+ */
+export function useNewArrivals(limit = 6): Fragrance[] {
+  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  const [rows, setRows] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    fetchAllActive(limit * 4).then((r) => {
+      if (cancelled) return;
+      setRows([...r].sort((a, b) => b.release_year - a.release_year).slice(0, limit));
+    });
+    return () => { cancelled = true; };
+  }, [fetchAllActive, limit]);
+  return rows;
 }

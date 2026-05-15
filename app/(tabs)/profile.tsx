@@ -1,13 +1,14 @@
-import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
 import { useProfileStore } from '@/src/stores/useProfileStore';
 import { pickAndSetProfilePhoto, clearProfilePhoto } from '@/src/lib/profilePhoto';
-import { supabase } from '@/lib/supabase';
+import { restorePurchases, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { User } from '@supabase/supabase-js';
 
 /**
@@ -72,6 +73,87 @@ export default function ProfileScreen() {
     }
   };
 
+  const handleRestorePurchases = async () => {
+    try {
+      const { isPro: restored } = await restorePurchases();
+      if (restored) {
+        activate();
+        Alert.alert('Restored', 'Your Pro subscription has been restored.');
+      } else {
+        Alert.alert('No Purchase Found', "We couldn't find an active Pro subscription for this account.");
+      }
+    } catch (e: any) {
+      Alert.alert('Restore Error', e?.message ?? 'Something went wrong');
+    }
+  };
+
+  const handleDeleteAccount = () => {
+    Alert.alert(
+      'Delete Account',
+      'This will permanently delete your account and all your data. This cannot be undone.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Delete Account',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              const { data: { session } } = await supabase.auth.getSession();
+              if (!session) {
+                Alert.alert('Error', 'You must be signed in to delete your account.');
+                return;
+              }
+              const resp = await supabase.functions.invoke('delete-account');
+              if (resp.error) throw resp.error;
+              await supabase.auth.signOut();
+              router.replace('/auth/login');
+            } catch (e: any) {
+              Alert.alert('Error', e?.message ?? 'Account deletion failed. Please contact support.');
+            }
+          },
+        },
+      ],
+    );
+  };
+
+  // Editable display name — debounced write to profiles table.
+  const [editingName, setEditingName] = useState(false);
+  const [nameInput, setNameInput] = useState(displayName);
+  const nameTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const saveName = (name: string) => {
+    useProfileStore.getState().setDisplayName(name);
+    if (!isSupabaseConfigured || !authUser) return;
+    if (nameTimeout.current) clearTimeout(nameTimeout.current);
+    nameTimeout.current = setTimeout(async () => {
+      await supabase.from('profiles').update({ display_name: name.trim() }).eq('id', authUser.id);
+    }, 800);
+  };
+
+  // Editable bio — same pattern.
+  const [editingBio, setEditingBio] = useState(false);
+  const [bioInput, setBioInput] = useState('');
+  const bioTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const saveBio = (bio: string) => {
+    setBioInput(bio);
+    if (!isSupabaseConfigured || !authUser) return;
+    if (bioTimeout.current) clearTimeout(bioTimeout.current);
+    bioTimeout.current = setTimeout(async () => {
+      await supabase.from('profiles').update({ bio: bio.trim() }).eq('id', authUser.id);
+    }, 800);
+  };
+
+  // Load bio from profiles on mount.
+  useEffect(() => {
+    if (!isSupabaseConfigured || !authUser) return;
+    supabase.from('profiles').select('display_name, bio').eq('id', authUser.id).maybeSingle().then(({ data }) => {
+      if (data?.display_name && !displayName) {
+        useProfileStore.getState().setDisplayName(data.display_name);
+        setNameInput(data.display_name);
+      }
+      if (data?.bio) setBioInput(data.bio);
+    });
+  }, [authUser?.id]);
+
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -100,10 +182,45 @@ export default function ProfileScreen() {
           <Text style={styles.editPhotoHint}>
             {photoUri ? 'Tap to change · Hold to remove' : 'Tap to add a photo'}
           </Text>
-          {userName ? <Text style={styles.name}>{userName}</Text> : null}
+          {editingName ? (
+            <TextInput
+              value={nameInput}
+              onChangeText={(t) => { setNameInput(t); saveName(t); }}
+              onBlur={() => setEditingName(false)}
+              autoFocus
+              style={[styles.name, styles.nameInput]}
+              placeholder="Your name"
+              placeholderTextColor={COLORS.subtle}
+              returnKeyType="done"
+              onSubmitEditing={() => setEditingName(false)}
+            />
+          ) : (
+            <Pressable onPress={() => { setNameInput(displayName); setEditingName(true); }}>
+              <Text style={styles.name}>{userName || 'Tap to add name'}</Text>
+            </Pressable>
+          )}
           <Text style={styles.email}>
             {userEmail ?? (isGuest ? 'Sign in to sync your wardrobe' : '')}
           </Text>
+          {editingBio ? (
+            <TextInput
+              value={bioInput}
+              onChangeText={saveBio}
+              onBlur={() => setEditingBio(false)}
+              autoFocus
+              style={styles.bioInput}
+              placeholder="A short bio..."
+              placeholderTextColor={COLORS.subtle}
+              multiline
+              maxLength={160}
+              returnKeyType="done"
+              blurOnSubmit
+            />
+          ) : (
+            <Pressable onPress={() => setEditingBio(true)}>
+              <Text style={styles.bio}>{bioInput || 'Tap to add a bio'}</Text>
+            </Pressable>
+          )}
           {isPro ? (
             <View style={styles.proBadge}>
               <Text style={styles.proBadgeText}>PERFUME PICKS PRO</Text>
@@ -117,13 +234,18 @@ export default function ProfileScreen() {
 
         <Section title="Taste Profile">
           <Row label="Take the quiz" onPress={() => router.push('/quiz')} />
-          <Row label="View taste insights" pro disabled={!isPro} />
+          <Row label="View taste insights" onPress={() => router.push('/taste-profile')} pro disabled={!isPro} />
+          <Row label="Perfume Wrapped" onPress={() => router.push('/wrapped')} pro disabled={!isPro} />
         </Section>
+
+        <BadgesSection />
 
         <Section title="Account">
           {isGuest && <Row label="Sign in" onPress={() => router.push('/auth/login')} />}
           <Row label="Subscription" onPress={() => router.push('/paywall')} />
+          <Row label="Restore Purchases" onPress={handleRestorePurchases} />
           {!isGuest && <Row label="Sign Out" onPress={handleSignOut} danger />}
+          {!isGuest && <Row label="Delete Account" onPress={handleDeleteAccount} danger />}
         </Section>
 
         <Section title="About">
@@ -150,6 +272,45 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       <Text style={styles.sectionTitle}>{title}</Text>
       <View style={styles.sectionBody}>{children}</View>
     </View>
+  );
+}
+
+const BADGE_ICONS: Record<string, keyof typeof Ionicons.glyphMap> = {
+  streak_7: 'flame', streak_30: 'flame', streak_100: 'flame', streak_365: 'flame',
+  first_wear: 'water', first_review: 'create', collector_10: 'rose',
+};
+const BADGE_LABELS: Record<string, string> = {
+  streak_7: '7-Day Streak', streak_30: '30-Day Streak', streak_100: '100-Day Streak', streak_365: '365-Day Streak',
+  first_wear: 'First Wear', first_review: 'First Review', collector_10: 'Collector',
+};
+
+function BadgesSection() {
+  const [badges, setBadges] = useState<{ badge_key: string; awarded_at: string }[]>([]);
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+    (async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase.from('user_badges').select('badge_key, awarded_at').eq('user_id', user.id);
+      if (data) setBadges(data);
+    })();
+  }, []);
+
+  if (badges.length === 0) return null;
+
+  return (
+    <Section title="Badges">
+      <View style={styles.sectionBody}>
+        <View style={styles.badgeGrid}>
+          {badges.map((b) => (
+            <View key={b.badge_key} style={styles.badgeItem}>
+              <Ionicons name={BADGE_ICONS[b.badge_key] ?? 'ribbon'} size={20} color={COLORS.accent} />
+              <Text style={styles.badgeLabel}>{BADGE_LABELS[b.badge_key] ?? b.badge_key}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
+    </Section>
   );
 }
 
@@ -219,8 +380,27 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     marginBottom: SPACING.sm,
   },
-  name: { ...TYPE.displayMedium, marginBottom: 4 },
-  email: { ...TYPE.bodySmall, marginBottom: SPACING.md },
+  name: { ...TYPE.displayMedium, marginBottom: 4, textAlign: 'center' },
+  nameInput: {
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.accent,
+    paddingVertical: 4,
+    minWidth: 160,
+  },
+  email: { ...TYPE.bodySmall, marginBottom: SPACING.sm },
+  bio: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic', marginBottom: SPACING.md, textAlign: 'center' },
+  bioInput: {
+    ...TYPE.bodySmall,
+    color: COLORS.text,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    borderRadius: RADIUS.md,
+    padding: SPACING.sm,
+    marginBottom: SPACING.md,
+    minHeight: 48,
+    textAlignVertical: 'top',
+    width: '100%',
+  },
   upgradeBtn: {
     backgroundColor: COLORS.accent,
     paddingHorizontal: SPACING.xl,
@@ -257,6 +437,9 @@ const styles = StyleSheet.create({
   rowLabel: { ...TYPE.body, flex: 1 },
   rowLabelDisabled: { color: COLORS.subtle },
   rowLabelDanger: { color: COLORS.danger },
+  badgeGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.md, padding: SPACING.md },
+  badgeItem: { alignItems: 'center', gap: 4, width: 70 },
+  badgeLabel: { ...TYPE.caption, fontSize: 9, textAlign: 'center' },
   proPill: {
     ...TYPE.eyebrow,
     fontSize: 10,
