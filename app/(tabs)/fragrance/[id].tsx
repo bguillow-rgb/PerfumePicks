@@ -142,6 +142,29 @@ export default function FragranceDetailScreen() {
     [allNotes, fragrance],
   );
 
+  // "Similar in your wardrobe" — Jaccard on top notes between viewed fragrance and owned items.
+  const similarInWardrobe = useMemo(() => {
+    if (!fragrance) return [];
+    const myNotes = new Set([...fragrance.top_notes, ...fragrance.heart_notes, ...fragrance.base_notes].map((n) => n.toLowerCase()));
+    if (myNotes.size === 0) return [];
+
+    return wardrobeItems
+      .filter((i) => i.fragrance_id !== fragrance.id)
+      .map((i) => {
+        const f = getFragranceFromStore(i.fragrance_id);
+        if (!f) return null;
+        const theirNotes = new Set([...f.top_notes, ...f.heart_notes, ...f.base_notes].map((n) => n.toLowerCase()));
+        const intersection = [...myNotes].filter((n) => theirNotes.has(n)).length;
+        const union = new Set([...myNotes, ...theirNotes]).size;
+        const jaccard = union > 0 ? intersection / union : 0;
+        return { fragrance: f, jaccard };
+      })
+      .filter((x): x is { fragrance: Fragrance; jaccard: number } => x !== null && x.jaccard > 0.15)
+      .sort((a, b) => b.jaccard - a.jaccard)
+      .slice(0, 5)
+      .map((x) => x.fragrance);
+  }, [fragrance, wardrobeItems]);
+
   const handleWearLogLongPress = (log: WearLog) => {
     Alert.alert(prettyWearDate(log.worn_on), 'What would you like to do?', [
       {
@@ -285,6 +308,15 @@ export default function FragranceDetailScreen() {
             {similar.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
           </ScrollView>
         </Section>
+
+        {/* Similar in your wardrobe — Jaccard on notes */}
+        {similarInWardrobe.length > 0 && (
+          <Section title="Similar in Your Wardrobe" cursive="you own these">
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+              {similarInWardrobe.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
+            </ScrollView>
+          </Section>
+        )}
 
         {/* P5-25: Cheaper Alternatives — Pro-gated dupe finder */}
         <Section title="Cheaper Alternatives" cursive="find dupes">
