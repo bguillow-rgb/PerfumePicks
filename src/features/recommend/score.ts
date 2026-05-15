@@ -238,3 +238,42 @@ export function rank(
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
 }
+
+// ──────────────────────────────────────────────────────────────────────
+// Daily-pick scoring (used by useDailyPicks for the wardrobe carousel)
+// ──────────────────────────────────────────────────────────────────────
+
+/**
+ * Recency modifier: rewards rotation, gently penalizes recent wears.
+ *   never worn → +0.15  ("never tried" signal)
+ *   30+ days   → +0.10  (overdue)
+ *   14-29 days → +0.00  (neutral)
+ *   7-13 days  → -0.05  (recent)
+ *   <7 days    → -0.15  (just worn — push it down so the carousel rotates)
+ */
+export function recencyModifier(lastWornIso: string | null): number {
+  if (!lastWornIso) return 0.15;
+  const days = Math.floor(
+    (Date.now() - new Date(lastWornIso).getTime()) / 86_400_000,
+  );
+  if (days >= 30) return 0.10;
+  if (days >= 14) return 0;
+  if (days >= 7)  return -0.05;
+  return -0.15;
+}
+
+/**
+ * Score a candidate for the daily-pick carousel: base scoreFragrance plus
+ * a recency modifier. No diversity jitter — daily picks should be stable
+ * across re-renders of the same day.
+ */
+export function scoreDailyCandidate(
+  f: Fragrance,
+  profile: DerivedTasteProfile,
+  ctx: RecContext,
+  lastWornIso: string | null,
+): ScoredRec {
+  const base = scoreFragrance(f, profile, ctx, 0);
+  const adjusted = clamp01(base.score + recencyModifier(lastWornIso));
+  return { ...base, score: adjusted };
+}
