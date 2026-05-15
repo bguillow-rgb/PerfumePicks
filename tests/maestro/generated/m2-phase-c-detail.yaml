@@ -1,0 +1,35 @@
+appId: host.exp.Exponent
+---
+- launchApp
+- tapOn: "Perfume Picks"
+- extendedWaitUntil:
+    visible: "WEAR TODAY"
+    timeout: 45000
+
+# Go to Discover and search for a known fragrance
+- tapOn: "Discover, tab, 2 of 6"
+- extendedWaitUntil:
+    visible: "Search fragrances, notes, brands..."
+    timeout: 15000
+- tapOn: "Search fragrances, notes, brands..."
+- inputText: "Rose Shot"
+- extendedWaitUntil:
+    visible: "Rose Shot"
+    timeout: 10000
+- tapOn: "Rose Shot"
+- extendedWaitUntil:
+    visible: "Notes"
+    timeout: 15000
+- takeScreenshot: m2c-11-detail__hero
+- scroll
+- takeScreenshot: m2c-12-detail__notes-accords
+- scroll
+- takeScreenshot: m2c-13-detail__performance
+- scroll
+- takeScreenshot: m2c-14-detail__reviews-similar
+- scroll
+- takeScreenshot: m2c-15-detail__pricing
+- scroll
+- takeScreenshot: m2c-16-detail__notes-wears
+- scroll
+- takeScreenshot: m2c-17-detail__layering-cta

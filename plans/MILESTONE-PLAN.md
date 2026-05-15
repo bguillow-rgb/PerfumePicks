@@ -120,7 +120,7 @@ Based on `plans/Market-Research-Competitive-Analysis.md` (top-5 iOS apps + affil
 
 ---
 
-## Milestone 1 — FOUNDATION
+## Milestone 1 — FOUNDATION ✅ COMPLETE (2026-05-15)
 **"Real auth, real sync, real data — for the user's own data."**
 
 Layers 1, 2, 3, 6 from the original plan (auth + session, sync engine, catalog read layer, Pro / paywall gating). Catalog content quality bar is intentionally low: `014_seed_catalog.sql` (50 rows) is enough; the ETL pipeline lives in the Content Population workstream.
@@ -210,7 +210,7 @@ Audit: RC init runs on app start; `useProStore.activate()` is called when sessio
 
 ---
 
-## Milestone 2 — WIRING
+## Milestone 2 — WIRING ✅ COMPLETE (2026-05-15)
 **"Every screen the v1 launch will have, plumbed end-to-end, even if empty."**
 
 This is the plumbing-first thesis made concrete: every M3/M4/M5 feature from the old plan gets stub UI + real Supabase query + tested RLS policy + non-broken empty state. Empty arrays today, real content later. The exit isn't "feature looks beautiful" — it's "feature is fully plumbed end-to-end with verified RLS, ready for content to land on top."
@@ -379,7 +379,7 @@ This is the strategic shift. Each screen below ships now, queries real Supabase,
 
 ---
 
-## Milestone 3 — AI WAVE
+## Milestone 3 — AI WAVE ✅ COMPLETE (2026-05-15)
 **"Claude API integration, recommendation explanations, bottle scan."**
 
 Stays as a separate milestone because the engineering pattern is different: API key management, prompt design, fallback paths, cost monitoring, model routing. Plumbing for AI is not the same as plumbing for CRUD. Closes F9 in full and adds the bottle-scan backlog item.

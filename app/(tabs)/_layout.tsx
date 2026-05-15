@@ -149,6 +149,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Today',
+          tabBarTestID: 'tab-today',
           tabBarIcon: ({ color, size }) => <TabIcon name="sparkles-outline" color={color} size={size} />,
         }}
       />
@@ -156,6 +157,7 @@ export default function TabLayout() {
         name="discover"
         options={{
           title: 'Discover',
+          tabBarTestID: 'tab-discover',
           tabBarIcon: ({ color, size }) => <TabIcon name="search-outline" color={color} size={size} />,
         }}
       />
@@ -166,6 +168,7 @@ export default function TabLayout() {
         name="train"
         options={{
           title: 'Train',
+          tabBarTestID: 'tab-train',
           tabBarIcon: ({ focused }) => <TrainTabIcon focused={focused} />,
           // The 38px disc is taller than the line icons (≈22px) so the label
           // lands closer than the other tabs' rhythm. Push it down so the
@@ -184,6 +187,7 @@ export default function TabLayout() {
         name="wardrobe"
         options={{
           title: 'Wardrobe',
+          tabBarTestID: 'tab-wardrobe',
           tabBarIcon: ({ color, size }) => <TabIcon name="rose-outline" color={color} size={size} />,
         }}
       />
@@ -196,6 +200,7 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: 'You',
+          tabBarTestID: 'tab-profile',
           // Custom avatar icon (champagne ring + monogram or photo) instead
           // of a generic person line icon. Wire imageUri once the user can
           // upload one — currently falls back to a cursive monogram.

@@ -29,19 +29,28 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
   auth: { persistSession: false },
 });
 
+// Brand alias map — normalizes variant names to canonical form.
+const BRAND_ALIASES: Record<string, string> = JSON.parse(
+  fs.readFileSync(path.join(DATA_DIR, 'brand-aliases.json'), 'utf-8'),
+);
+function canonicalBrand(raw: string): string {
+  return BRAND_ALIASES[raw] ?? BRAND_ALIASES[raw.trim()] ?? raw.trim();
+}
+
 function brandSlug(name: string): string { return normalize(name).replace(/\s+/g, '-'); }
 function fragranceSlug(brand: string, name: string): string {
   return `${normalize(brand)}-${normalize(name)}`.replace(/\s+/g, '-');
 }
 
 async function ensureBrand(name: string): Promise<string> {
-  const slug = brandSlug(name);
+  const canonical = canonicalBrand(name);
+  const slug = brandSlug(canonical);
   const { data: existing } = await supabase
     .from('brands').select('id').eq('slug', slug).maybeSingle();
   if (existing?.id) return existing.id;
   const { data: inserted, error } = await supabase
     .from('brands')
-    .insert({ name, slug })
+    .insert({ name: canonical, slug })
     .select('id').single();
   if (error) throw error;
   return inserted.id;
@@ -112,10 +121,11 @@ async function main() {
 
   for (const [i, r] of rows.entries()) {
     try {
-      let brandId = brandCache.get(r.brand);
+      const cBrand = canonicalBrand(r.brand);
+      let brandId = brandCache.get(cBrand);
       if (!brandId) {
         brandId = await ensureBrand(r.brand);
-        brandCache.set(r.brand, brandId);
+        brandCache.set(cBrand, brandId);
       }
       const fragId = await upsertFragrance(brandId, r);
       await upsertPrices(fragId, r);

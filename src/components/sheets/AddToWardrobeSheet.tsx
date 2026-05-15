@@ -36,6 +36,7 @@ const STATUS_OPTIONS: { id: WardrobeStatus; label: string; helper: string }[] = 
   { id: 'want',    label: 'Wishlist',    helper: 'Want to try it' },
   { id: 'tested',  label: 'Tested',      helper: 'Sampled, undecided' },
   { id: 'sold_on', label: 'Sold On',     helper: 'Loved + ready to buy' },
+  { id: 'empty',   label: 'Empty',       helper: 'Finished the bottle' },
 ];
 
 const UNIT_OPTIONS: { id: UnitType; label: string; defaultMl: number }[] = [

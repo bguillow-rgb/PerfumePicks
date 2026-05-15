@@ -17,7 +17,7 @@ import { useProStore } from '@/src/stores/useProStore';
  * `wardrobe_items` table) so the migration to a real backend is mechanical.
  */
 
-export type WardrobeStatus = 'have' | 'want' | 'tested' | 'sold_on';
+export type WardrobeStatus = 'have' | 'want' | 'tested' | 'sold_on' | 'empty';
 export type UnitType = 'bottle' | 'decant' | 'sample';
 
 export interface WardrobeItem {

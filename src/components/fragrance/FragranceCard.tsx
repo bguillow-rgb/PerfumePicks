@@ -87,10 +87,16 @@ function SmallCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: () =
   );
 }
 
-/** Strip pipe-separated catalog noise from display name. */
+/** Strip catalog noise from display name:
+ *  - Pipe-separated suffixes: "Dancing Light | Eau de Parfum 100ml | Jasmine"
+ *  - Dash-separated concentrations: "Y2K® - Extrait de Parfum" */
 function cardDisplayName(raw: string): string {
+  // Strip pipe suffixes first
   const pipeIdx = raw.indexOf('|');
-  return pipeIdx > 0 ? raw.slice(0, pipeIdx).trim() : raw;
+  let name = pipeIdx > 0 ? raw.slice(0, pipeIdx).trim() : raw;
+  // Strip " - Eau de ...", " - Extrait ...", " - Parfum ..." suffixes
+  name = name.replace(/\s+-\s+(Eau de |Extrait de |Parfum|Cologne|EdT|EdP|EDP|EDT).*/i, '');
+  return name;
 }
 
 function CompactCard({ fragrance, subtitle, onPress }: { fragrance: Fragrance; subtitle?: string; onPress: () => void }) {
@@ -113,11 +119,15 @@ function CompactCard({ fragrance, subtitle, onPress }: { fragrance: Fragrance; s
     });
   };
 
-  // For ultra-long brands (>15 chars), drop letter-spacing so they fit
+  // For long brands, progressively tighten spacing and shrink font to fit.
+  // "OLFACTIVE STUDIO" (16 chars) needs tighter spacing.
+  // "RÉGIME DES FLEURS" (18 chars) also needs a smaller font.
   const brandText = fragrance.brand.toUpperCase();
-  const brandStyle = brandText.length > 15
-    ? [compactStyles.brand, { letterSpacing: 0.5 }]
-    : compactStyles.brand;
+  const brandStyle = brandText.length > 17
+    ? [compactStyles.brand, { letterSpacing: 0.3, fontSize: 9.5 }]
+    : brandText.length > 15
+      ? [compactStyles.brand, { letterSpacing: 0.5 }]
+      : compactStyles.brand;
 
   return (
     <Pressable onPress={onPress} style={compactStyles.wrap}>
@@ -125,7 +135,7 @@ function CompactCard({ fragrance, subtitle, onPress }: { fragrance: Fragrance; s
         <Image source={{ uri: fragrance.image_url }} style={compactStyles.image} />
       </View>
       <View style={compactStyles.content}>
-        <Text style={brandStyle} numberOfLines={1}>{brandText}</Text>
+        <Text style={brandStyle} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8}>{brandText}</Text>
         <Text style={compactStyles.name} numberOfLines={2}>{cardDisplayName(fragrance.name)}</Text>
         {subtitle ? (
           <Text style={compactStyles.subtitle} numberOfLines={1}>{subtitle}</Text>

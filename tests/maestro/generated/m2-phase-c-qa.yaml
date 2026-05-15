@@ -1,0 +1,73 @@
+appId: host.exp.Exponent
+---
+- launchApp
+- tapOn: "Perfume Picks"
+- extendedWaitUntil:
+    visible: "WEAR TODAY"
+    timeout: 45000
+
+# === F1 / F5 / F10: HOME SCREEN (streak, recs, morning pick) ===
+- takeScreenshot: m2c-01-home__top
+- scroll
+- takeScreenshot: m2c-02-home__scroll1
+- scroll
+- takeScreenshot: m2c-03-home__bottom
+
+# === F1: DISCOVER TAB (search, filter, brands, accords) ===
+- tapOn: "Discover, tab, 2 of 6"
+- extendedWaitUntil:
+    visible: "Discover"
+    timeout: 15000
+- takeScreenshot: m2c-04-discover__top
+- scroll
+- takeScreenshot: m2c-05-discover__brands
+- scroll
+- takeScreenshot: m2c-06-discover__accords
+
+# === F9: TRAIN TAB (swipe deck) ===
+- tapOn: "Train, tab, 3 of 6"
+- extendedWaitUntil:
+    visible: "TRAIN MY NOSE"
+    timeout: 15000
+- takeScreenshot: m2c-07-train__intro
+
+# === F1 / F6: WARDROBE TAB (collection, empty state) ===
+- tapOn: "Wardrobe, tab, 4 of 6"
+- extendedWaitUntil:
+    visible: "Start your collection"
+    timeout: 15000
+- takeScreenshot: m2c-08-wardrobe__empty
+
+# === F3 / F8 / F10: PROFILE TAB (badges, taste, wrapped, account) ===
+- tapOn: "You, tab, 6 of 6"
+- extendedWaitUntil:
+    visible: "TASTE PROFILE"
+    timeout: 15000
+- takeScreenshot: m2c-09-profile__top
+- scroll
+- takeScreenshot: m2c-10-profile__bottom
+
+# === F1: FRAGRANCE DETAIL (tap hero card on home screen) ===
+- tapOn: "Today, tab, 1 of 6"
+- extendedWaitUntil:
+    visible: "WEAR TODAY"
+    timeout: 10000
+# Tap the hero Wear Today card — it's always the first tappable card
+- tapOn:
+    point: "50%, 30%"
+- extendedWaitUntil:
+    visible: "Notes"
+    timeout: 15000
+- takeScreenshot: m2c-11-detail__hero
+- scroll
+- takeScreenshot: m2c-12-detail__notes-accords
+- scroll
+- takeScreenshot: m2c-13-detail__performance
+- scroll
+- takeScreenshot: m2c-14-detail__reviews-similar
+- scroll
+- takeScreenshot: m2c-15-detail__pricing-notes
+- scroll
+- takeScreenshot: m2c-16-detail__wears-layering
+- scroll
+- takeScreenshot: m2c-17-detail__cta

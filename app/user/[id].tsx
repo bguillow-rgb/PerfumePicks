@@ -25,6 +25,8 @@ export default function UserProfileScreen() {
   const router = useRouter();
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [wearCount, setWearCount] = useState(0);
+  const [followerCount, setFollowerCount] = useState(0);
+  const [followingCount, setFollowingCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [isFollowing, setIsFollowing] = useState(false);
   const [myUserId, setMyUserId] = useState<string | null>(null);
@@ -32,13 +34,17 @@ export default function UserProfileScreen() {
   useEffect(() => {
     if (!isSupabaseConfigured || !id) { setLoading(false); return; }
     (async () => {
-      const [profileRes, wearsRes, userRes] = await Promise.all([
+      const [profileRes, wearsRes, userRes, followersRes, followingRes] = await Promise.all([
         supabase.from('profiles').select('display_name, bio, current_streak, total_sotd_count').eq('id', id).maybeSingle(),
         supabase.from('wear_logs').select('id', { count: 'exact', head: true }).eq('user_id', id),
         supabase.auth.getUser(),
+        supabase.from('follows').select('follower_id', { count: 'exact', head: true }).eq('followee_id', id),
+        supabase.from('follows').select('followee_id', { count: 'exact', head: true }).eq('follower_id', id),
       ]);
       if (profileRes.data) setProfile(profileRes.data);
       setWearCount(wearsRes.count ?? 0);
+      setFollowerCount(followersRes.count ?? 0);
+      setFollowingCount(followingRes.count ?? 0);
       const me = userRes.data.user?.id ?? null;
       setMyUserId(me);
       // Check if already following
@@ -55,11 +61,13 @@ export default function UserProfileScreen() {
   const handleFollow = async () => {
     if (!myUserId || !id || myUserId === id) return;
     if (isFollowing) {
-      await supabase.from('follows').delete().eq('follower_id', myUserId).eq('followee_id', id);
       setIsFollowing(false);
+      setFollowerCount((c) => Math.max(0, c - 1));
+      await supabase.from('follows').delete().eq('follower_id', myUserId).eq('followee_id', id);
     } else {
-      await supabase.from('follows').insert({ follower_id: myUserId, followee_id: id });
       setIsFollowing(true);
+      setFollowerCount((c) => c + 1);
+      await supabase.from('follows').insert({ follower_id: myUserId, followee_id: id });
     }
   };
 
@@ -96,16 +104,20 @@ export default function UserProfileScreen() {
 
         <View style={styles.statsRow}>
           <View style={styles.statCard}>
+            <Text style={styles.statValue}>{followerCount}</Text>
+            <Text style={styles.statLabel}>Followers</Text>
+          </View>
+          <View style={styles.statCard}>
+            <Text style={styles.statValue}>{followingCount}</Text>
+            <Text style={styles.statLabel}>Following</Text>
+          </View>
+          <View style={styles.statCard}>
             <Text style={styles.statValue}>{wearCount}</Text>
             <Text style={styles.statLabel}>Wears</Text>
           </View>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>{profile?.current_streak ?? 0}</Text>
             <Text style={styles.statLabel}>Streak</Text>
-          </View>
-          <View style={styles.statCard}>
-            <Text style={styles.statValue}>{profile?.total_sotd_count ?? 0}</Text>
-            <Text style={styles.statLabel}>SOTD</Text>
           </View>
         </View>
 
@@ -147,7 +159,7 @@ const styles = StyleSheet.create({
   followBtnTextActive: { color: COLORS.white },
   statsRow: { flexDirection: 'row', gap: SPACING.md, marginBottom: SPACING.lg },
   statCard: {
-    width: 90, paddingVertical: SPACING.md,
+    flex: 1, paddingVertical: SPACING.md,
     backgroundColor: COLORS.card, borderRadius: RADIUS.lg,
     borderWidth: 1, borderColor: COLORS.border,
     alignItems: 'center',

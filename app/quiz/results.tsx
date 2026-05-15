@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useRef } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -6,6 +6,8 @@ import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useQuizStore } from '@/src/stores/useQuizStore';
+import { syncWrite } from '@/src/lib/sync/syncWrite';
+import { useProStore } from '@/src/stores/useProStore';
 
 /**
  * Quiz results — scores the top-200-popular catalog against the user's
@@ -33,6 +35,19 @@ export default function QuizResults() {
     });
     return () => { cancelled = true; };
   }, [fetchAllActive]);
+
+  // Persist quiz results to Supabase once per mount.
+  const isPro = useProStore((s) => s.isPro);
+  const persisted = useRef(false);
+  useEffect(() => {
+    if (persisted.current || !answers || Object.keys(answers).length === 0) return;
+    persisted.current = true;
+    syncWrite({
+      op: 'insert',
+      table: 'quiz_results',
+      row: { tier: isPro ? 'pro' : 'free', answers },
+    });
+  }, [answers, isPro]);
 
   const matches = useMemo(() => {
     return catalog

@@ -1,10 +1,12 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { useRecommendations } from '@/src/features/recommend/useRecommendations';
+import { useWearLogStore } from '@/src/stores/useWearLogStore';
+import { getMorningPick } from '@/src/lib/claude';
 import type { RecContext, ScoredRec } from '@/src/features/recommend/score';
 
 /**
@@ -29,6 +31,29 @@ export default function RecResultsScreen() {
 
   const { heroPick, heroReason, topPicks, hasSignals } = useRecommendations(ctx);
 
+  // For seasoned users (≥20 wear logs), upgrade the hero reason with a
+  // Claude-generated explanation. Falls back to the rules-based heroReason.
+  const wearCount = useWearLogStore((s) => s.logs.length);
+  const [aiReason, setAiReason] = useState<string | null>(null);
+  useEffect(() => {
+    if (wearCount < 20 || !heroPick) return;
+    let cancelled = false;
+    getMorningPick({
+      taste_profile: {},
+      fragrance_context: {
+        name: heroPick.name,
+        brand: heroPick.brand,
+        top_accords: heroPick.top_accords,
+        fragrance_family: heroPick.fragrance_family,
+      },
+      wear_history: [],
+    }).then(({ text }) => {
+      if (!cancelled && text) setAiReason(text);
+    });
+    return () => { cancelled = true; };
+  }, [heroPick, wearCount]);
+
+  const displayReason = aiReason ?? heroReason;
   const contextLabel = buildContextLabel(occasion, weather);
   const restPicks = topPicks.slice(1);
 
@@ -82,7 +107,7 @@ export default function RecResultsScreen() {
             />
             <Text style={styles.heroReason}>
               <Text style={styles.italic}>Why this: </Text>
-              {heroReason || 'a thoughtful pick for today'}.
+              {displayReason || 'a thoughtful pick for today'}.
             </Text>
           </View>
         ) : (

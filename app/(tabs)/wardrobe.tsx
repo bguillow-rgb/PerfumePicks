@@ -12,7 +12,7 @@ import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 
 type Status = WardrobeStatus;
-type ActiveFilter = 'all' | 'want' | 'have' | 'worn';
+type ActiveFilter = 'all' | 'want' | 'have' | 'worn' | 'empty';
 
 // Defined outside the component so it never gets recreated on re-render.
 const PILLS: { id: ActiveFilter; label: string }[] = [
@@ -20,6 +20,7 @@ const PILLS: { id: ActiveFilter; label: string }[] = [
   { id: 'want', label: 'Want' },
   { id: 'have', label: 'Have' },
   { id: 'worn', label: 'Worn' },
+  { id: 'empty', label: 'Empty' },
 ];
 
 interface WardrobeItemView {
@@ -102,6 +103,7 @@ export default function WardrobeScreen() {
   const visible = useMemo(() => {
     let filtered = items;
     if (activeFilter === 'worn') filtered = filtered.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0);
+    else if (activeFilter === 'empty') filtered = filtered.filter((i) => i.status === 'empty');
     else if (activeFilter !== 'all') filtered = filtered.filter((i) => i.status === activeFilter);
 
     const q = searchQuery.trim().toLowerCase();
@@ -161,7 +163,9 @@ export default function WardrobeScreen() {
                 ? `${haveCount} on hand · ${totalMl.toFixed(0)} mL${lowCount > 0 ? ` · ${lowCount} running low` : ''}`
                 : activeFilter === 'want'
                   ? `${visible.length} wishlisted`
-                  : `${wornCount} worn`}
+                  : activeFilter === 'empty'
+                    ? `${visible.length} empty`
+                    : `${wornCount} worn`}
           </Text>
         </View>
         <Pressable
@@ -316,7 +320,7 @@ function WardrobeRow({ item, wearCount, onPress, onLongPress, onSpray }: { item:
 }
 
 function statusLabel(s: Status): string {
-  return ({ have: 'In Rotation', want: 'Wishlist', tested: 'Tested', sold_on: 'Sold On' }[s]);
+  return ({ have: 'In Rotation', want: 'Wishlist', tested: 'Tested', sold_on: 'Sold On', empty: 'Empty' }[s]);
 }
 function statusStyle(s: Status): any {
   return ({
@@ -324,6 +328,7 @@ function statusStyle(s: Status): any {
     want: { backgroundColor: COLORS.blushSoft },
     tested: { backgroundColor: COLORS.card2 },
     sold_on: { backgroundColor: COLORS.card2 },
+    empty: { backgroundColor: COLORS.card2 },
   }[s]);
 }
 function statusTextStyle(s: Status): any {
@@ -332,6 +337,7 @@ function statusTextStyle(s: Status): any {
     want: { color: COLORS.burgundy },
     tested: { color: COLORS.muted },
     sold_on: { color: COLORS.muted },
+    empty: { color: COLORS.muted },
   }[s]);
 }
 

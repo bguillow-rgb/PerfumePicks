@@ -1,0 +1,97 @@
+{
+  "_comment": "Brand alias map: maps variant brand names to the canonical name used in the catalog. The insert script normalizes incoming brand names through this map before upserting to the brands table. Canonical names are whatever appears in enriched-candidates.json.",
+
+  "By Kilian": "Kilian",
+  "Kilian Paris": "Kilian",
+  "KILIAN": "Kilian",
+
+  "Thierry Mugler": "Mugler",
+  "MUGLER": "Mugler",
+
+  "Annick Goutal": "Goutal",
+  "Maison Goutal": "Goutal",
+
+  "Gianni Versace": "Versace",
+  "VERSACE": "Versace",
+
+  "Maison Martin Margiela": "Maison Margiela",
+  "MMM": "Maison Margiela",
+  "Replica": "Maison Margiela",
+
+  "Maison Francis Kurkdjian Paris": "Maison Francis Kurkdjian",
+  "MFK": "Maison Francis Kurkdjian",
+
+  "Frédéric Malle": "Frederic Malle",
+  "Editions de Parfums Frédéric Malle": "Frederic Malle",
+
+  "Parfums Christian Dior": "Dior",
+  "Christian Dior": "Dior",
+  "DIOR": "Dior",
+
+  "Chloe": "Chloé",
+
+  "Hermes": "Hermès",
+  "HERMÈS": "Hermès",
+
+  "Lancome": "Lancôme",
+  "LANCÔME": "Lancôme",
+
+  "Bvlgari": "Bulgari",
+  "BVLGARI": "Bulgari",
+
+  "Issey Miyake": "Issey Miyake",
+
+  "Jean-Paul Gaultier": "Jean Paul Gaultier",
+  "JPG": "Jean Paul Gaultier",
+
+  "Dolce and Gabbana": "Dolce & Gabbana",
+  "D&G": "Dolce & Gabbana",
+  "DOLCE&GABBANA": "Dolce & Gabbana",
+
+  "YSL": "Yves Saint Laurent",
+  "Saint Laurent": "Yves Saint Laurent",
+
+  "Viktor and Rolf": "Viktor & Rolf",
+  "Viktor&Rolf": "Viktor & Rolf",
+
+  "Van Cleef & Arpels": "Van Cleef & Arpels",
+  "Van Cleef and Arpels": "Van Cleef & Arpels",
+
+  "Clive Christian": "Clive Christian",
+  "Initio": "Initio Parfums Privés",
+  "INITIO": "Initio Parfums Privés",
+
+  "Acqua di Parma": "Acqua di Parma",
+  "ADP": "Acqua di Parma",
+
+  "Juliette Has A Gun": "Juliette Has a Gun",
+  "JHAG": "Juliette Has a Gun",
+
+  "Atelier Cologne": "Atelier Cologne",
+
+  "Tom Ford Private Blend": "Tom Ford",
+  "Tom Ford Beauty": "Tom Ford",
+  "TOM FORD": "Tom Ford",
+
+  "Narciso Rodriguez for Her": "Narciso Rodriguez",
+  "NARCISO RODRIGUEZ": "Narciso Rodriguez",
+
+  "Marc Jacobs Fragrances": "Marc Jacobs",
+
+  "Roja Dove": "Roja Parfums",
+  "ROJA": "Roja Parfums",
+
+  "Nina Ricci Parfums": "Nina Ricci",
+
+  "The Different Company": "The Different Company",
+  "Olfactive Studio": "Olfactive Studio",
+  "Régime des Fleurs": "Regime des Fleurs",
+  "Regime Des Fleurs": "Regime des Fleurs",
+  "RÉGIME DES FLEURS": "Regime des Fleurs",
+  "Perfumehead": "Perfumehead",
+  "The 7 Virtues": "The 7 Virtues",
+  "Orto Parisi": "Orto Parisi",
+  "Tauer Perfumes": "Tauer Perfumes",
+  "Rogue Perfumery": "Rogue Perfumery",
+  "Xyrena": "Xyrena"
+}

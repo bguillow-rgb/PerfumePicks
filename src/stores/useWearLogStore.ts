@@ -82,6 +82,9 @@ export const useWearLogStore = create<WearLogState>()(
               logs: s.logs.map((l) => (l.id === id ? { ...l, _unsynced: true } : l)),
             }));
             notifySyncFailure('Wear log', r.error);
+          } else {
+            // Check streak thresholds and award badges (7/30/100/365 day).
+            checkAndAwardBadges().catch(() => {});
           }
         });
         return id;

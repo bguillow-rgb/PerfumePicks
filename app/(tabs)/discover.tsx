@@ -17,6 +17,12 @@ import { DiscoverFilterSheet, type DiscoverFilters, EMPTY_FILTERS, filtersActive
 import { EmptyState } from '@/src/components/ui/EmptyState';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
+/** Cap celebrity names to 2 + "& N more" to prevent subtitle overflow. */
+function capNames(names: string[]): string {
+  if (names.length <= 2) return names.join(', ');
+  return `${names[0]}, ${names[1]} & ${names.length - 2} more`;
+}
+
 /**
  * Curated Edits — mood-based rails derived from the live catalog pool.
  *
@@ -99,7 +105,7 @@ export default function DiscoverScreen() {
       setCelebrityPicks(
         frags.slice(0, RAIL_SIZE).map((f) => ({
           fragrance: f,
-          celebrities: (namesByFrag.get(f.id) ?? []).join(', '),
+          celebrities: capNames(namesByFrag.get(f.id) ?? []),
         })),
       );
     })();

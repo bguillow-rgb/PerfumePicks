@@ -14,34 +14,32 @@ appId: host.exp.Exponent
 - takeScreenshot: 03-home__bottom
 
 # === DISCOVER TAB ===
-- tapOn:
-    point: "22%,97%"
+- tapOn: "Discover, tab, 2 of 6"
 - extendedWaitUntil:
-    visible: "CURATED EDITS"
-    timeout: 10000
+    visible: "Discover"
+    timeout: 15000
 - takeScreenshot: 04-discover__initial
 - scroll
 - takeScreenshot: 05-discover__scrolled
+- scroll
+- takeScreenshot: 06-discover__more
 
 # === TRAIN TAB ===
-- tapOn:
-    point: "50%,97%"
+- tapOn: "Train, tab, 3 of 6"
 - extendedWaitUntil:
     visible: "TRAIN MY NOSE"
-    timeout: 10000
-- takeScreenshot: 06-train__intro
+    timeout: 15000
+- takeScreenshot: 07-train__intro
 
 # === WARDROBE TAB ===
-- tapOn:
-    point: "72%,97%"
-- takeScreenshot: 07-wardrobe__initial
+- tapOn: "Wardrobe, tab, 4 of 6"
+- takeScreenshot: 08-wardrobe__initial
 
 # === PROFILE TAB ===
-- tapOn:
-    point: "90%,97%"
+- tapOn: "You, tab, 6 of 6"
 - extendedWaitUntil:
-    visible: "Take the quiz"
-    timeout: 10000
-- takeScreenshot: 08-profile__top
+    visible: "TASTE PROFILE"
+    timeout: 15000
+- takeScreenshot: 09-profile__top
 - scroll
-- takeScreenshot: 09-profile__bottom
+- takeScreenshot: 10-profile__bottom

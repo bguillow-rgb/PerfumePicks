@@ -8,7 +8,7 @@ import { EmptyState } from '@/src/components/ui/EmptyState';
 import { useSOTDFeed, type SOTDEntry } from '@/src/hooks/useSOTDFeed';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
-type FeedTab = 'today' | 'following';
+type FeedTab = 'today' | 'following' | 'trending';
 
 /**
  * SOTD Feed — public wear log entries from the community.
@@ -34,7 +34,16 @@ export default function FeedScreen() {
 
   const visibleEntries = tab === 'following'
     ? entries.filter((e) => followingIds.has(e.user_id))
-    : entries;
+    : tab === 'trending'
+      ? (() => {
+          const weekAgo = new Date();
+          weekAgo.setDate(weekAgo.getDate() - 7);
+          const cutoff = weekAgo.toISOString().slice(0, 10);
+          return [...entries]
+            .filter((e) => e.worn_on >= cutoff)
+            .sort((a, b) => (b.reaction_count ?? 0) - (a.reaction_count ?? 0));
+        })()
+      : entries;
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -53,13 +62,16 @@ export default function FeedScreen() {
         <Pressable style={[styles.tabPill, tab === 'following' && styles.tabPillActive]} onPress={() => setTab('following')}>
           <Text style={[styles.tabText, tab === 'following' && styles.tabTextActive]}>Following</Text>
         </Pressable>
+        <Pressable style={[styles.tabPill, tab === 'trending' && styles.tabPillActive]} onPress={() => setTab('trending')}>
+          <Text style={[styles.tabText, tab === 'trending' && styles.tabTextActive]}>Trending</Text>
+        </Pressable>
       </View>
 
       {visibleEntries.length === 0 && !loading ? (
         <EmptyState
           icon="globe-outline"
-          title={tab === 'following' ? 'No wears from people you follow' : 'No public wears yet'}
-          subtitle={tab === 'following' ? 'Follow some users to see their scent of the day here.' : "Be the first! Toggle 'Post as Scent of the Day' when logging a wear."}
+          title={tab === 'following' ? 'No wears from people you follow' : tab === 'trending' ? 'No trending wears this week' : 'No public wears yet'}
+          subtitle={tab === 'following' ? 'Follow some users to see their scent of the day here.' : tab === 'trending' ? 'Trending wears are ranked by reactions over the last 7 days.' : "Be the first! Toggle 'Post as Scent of the Day' when logging a wear."}
         />
       ) : (
         <FlatList
