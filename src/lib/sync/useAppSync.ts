@@ -198,9 +198,11 @@ async function crossCheckProStatus() {
     console.warn('[useAppSync] pro cross-check failed:', error.message);
     return;
   }
-  if (!data) return;
+  // my_pro_status() returns a table — data is an array of rows.
+  const row = Array.isArray(data) ? data[0] : data;
+  if (!row) return;
 
-  const serverPro = data.is_pro === true;
+  const serverPro = row.is_pro === true;
   const clientPro = useProStore.getState().isPro;
 
   if (serverPro && !clientPro) {
