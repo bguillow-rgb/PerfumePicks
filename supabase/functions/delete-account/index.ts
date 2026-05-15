@@ -50,11 +50,11 @@ Deno.serve(async (req) => {
     // 2. Delete user-owned rows. Best-effort — if any single delete fails we still
     // attempt the others so we don't leave the account in a half-deleted state.
     const tables = [
-      "humidor_items",
-      "journal_entries",
-      "scan_images",
+      "wardrobe_items",
+      "wear_logs",
+      "swipe_feedback",
       "quiz_results",
-      "cigar_reviews",
+      "user_taste_profiles",
     ];
     await Promise.all(
       tables.map((t) =>
@@ -70,7 +70,7 @@ Deno.serve(async (req) => {
     );
 
     // 3. Best-effort: clear user's storage objects (avatars, scan uploads, journal photos)
-    const buckets = ["cigar-images", "scan-uploads", "journal-photos"];
+    const buckets = ["avatars"];
     for (const bucket of buckets) {
       try {
         const { data: files } = await admin.storage
