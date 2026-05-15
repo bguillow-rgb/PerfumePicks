@@ -11,6 +11,7 @@ import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { getFragranceFromStore } from '@/src/stores/useCatalogStore';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { getWhyThis } from '@/src/lib/claude';
 
 /**
  * Home / "Today" tab — the daily ritual surface.
@@ -47,6 +48,26 @@ export default function HomeScreen() {
   const { heroPick, heroReason, todaysEdit, trending, hasSignals } = displayed;
 
   const [whatToWearOpen, setWhatToWearOpen] = useState(false);
+
+  // AI "Why this?" — fetches an explanation from Claude when there's a hero pick.
+  const [aiReason, setAiReason] = useState<string | null>(null);
+  useEffect(() => {
+    if (!heroPick || !hasSignals) { setAiReason(null); return; }
+    let cancelled = false;
+    getWhyThis({
+      taste_profile: {}, // useAppSync already synced — the Edge Function reads from DB
+      fragrance_context: {
+        name: heroPick.name,
+        brand: heroPick.brand,
+        top_accords: heroPick.top_accords,
+        fragrance_family: heroPick.fragrance_family,
+        top_notes: heroPick.top_notes,
+      },
+    }).then(({ text, fallback }) => {
+      if (!cancelled) setAiReason(text ?? fallback);
+    });
+    return () => { cancelled = true; };
+  }, [heroPick?.id, hasSignals]);
 
   // Streak counter — reads from profiles.current_streak on focus.
   const [streak, setStreak] = useState(0);
@@ -197,7 +218,7 @@ export default function HomeScreen() {
           {heroPick && (
             <Text style={styles.heroReason}>
               <Text style={styles.italic}>{hasSignals ? 'Why this:' : 'A starting point:'}</Text>{' '}
-              {heroReason || (hasSignals
+              {aiReason ?? heroReason ?? (hasSignals
                 ? 'tracks with the notes and accords you keep favoring'
                 : 'a celebrated pick to anchor your taste — start swiping in Train to refine it')}.
             </Text>

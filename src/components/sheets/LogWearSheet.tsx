@@ -55,6 +55,7 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
   const [note, setNote] = useState('');
   const [wornOn, setWornOn] = useState(new Date().toLocaleDateString('en-CA'));
   const [isPublic, setIsPublic] = useState(false);
+  const [mood, setMood] = useState<string | null>(null);
 
   // Reset or pre-populate when sheet opens.
   useEffect(() => {
@@ -67,6 +68,7 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
       setNote(editLog.note ?? '');
       setWornOn(editLog.worn_on);
       setIsPublic(editLog.is_public ?? false);
+      setMood((editLog as any).mood ?? null);
     } else {
       setOccasion(null);
       setWeather(null);
@@ -75,6 +77,7 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
       setNote('');
       setWornOn(new Date().toLocaleDateString('en-CA'));
       setIsPublic(false);
+      setMood(null);
     }
   }, [visible, editLog]);
 
@@ -92,7 +95,8 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
       would_wear_again: wearAgain,
       note: note.trim().length > 0 ? note.trim() : null,
       is_public: isPublic,
-    };
+      mood,
+    } as any;
     if (isEditing && editLog) {
       update(editLog.id, patch);
       onSaved?.(editLog.id);
@@ -222,6 +226,23 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
                   <Ionicons name="close" size={18} color={wearAgain === false ? COLORS.white : COLORS.muted} />
                   <Text style={[styles.binaryText, wearAgain === false && { color: COLORS.white }]}>No</Text>
                 </Pressable>
+              </View>
+            </Section>
+
+            {/* Mood */}
+            <Section label="How are you feeling? (optional)">
+              <View style={styles.pillRow}>
+                {(['happy', 'relaxed', 'confident', 'romantic', 'focused'] as const).map((m) => (
+                  <Pressable
+                    key={m}
+                    onPress={() => { Haptics.selectionAsync(); setMood(mood === m ? null : m); }}
+                    style={[styles.pill, mood === m && styles.pillActive]}
+                  >
+                    <Text style={[styles.pillText, mood === m && styles.pillTextActive]}>
+                      {m[0].toUpperCase() + m.slice(1)}
+                    </Text>
+                  </Pressable>
+                ))}
               </View>
             </Section>
 
