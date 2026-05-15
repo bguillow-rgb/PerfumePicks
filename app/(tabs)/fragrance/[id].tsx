@@ -10,7 +10,11 @@ import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet';
-import { getFragrance, getFragrances, MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
+import {
+  useCatalogStore,
+  getFragranceFromStore,
+  type Fragrance,
+} from '@/src/stores/useCatalogStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore, type WearLog } from '@/src/stores/useWearLogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
@@ -25,17 +29,18 @@ const HERO_HEIGHT = SCREEN_W * 1.05;
  * Pulls from the mock catalog. Real version reads from Supabase + the
  * recommendation engine for "similar" + "dupes" sections.
  */
-/** Find cheaper alternatives using dupe_of field first, then accord overlap. */
-function findCheaperAlternatives(f: MockFragrance, limit = 5): MockFragrance[] {
+/** Find cheaper alternatives over a candidate pool (the active catalog
+ *  slice). Pool is passed in so the caller controls when/how it loads. */
+function findCheaperAlternatives(f: Fragrance, pool: Fragrance[], limit = 5): Fragrance[] {
   // 1. Explicit dupes (data pipeline will populate these)
-  const explicit = MOCK_CATALOG.filter(
+  const explicit = pool.filter(
     (c) => c.dupe_of === f.id && c.id !== f.id && c.price_tier < f.price_tier,
   );
   if (explicit.length >= limit) return explicit.slice(0, limit);
 
   // 2. Accord-overlap fallback — at least 2 matching top accords + lower tier
   const accordSet = new Set(f.top_accords);
-  const byOverlap = MOCK_CATALOG
+  const byOverlap = pool
     .filter((c) => c.id !== f.id && c.price_tier < f.price_tier)
     .map((c) => ({ fragrance: c, overlap: c.top_accords.filter((a) => accordSet.has(a)).length }))
     .filter((x) => x.overlap >= 2)
@@ -48,7 +53,44 @@ function findCheaperAlternatives(f: MockFragrance, limit = 5): MockFragrance[] {
 export default function FragranceDetailScreen() {
   const { id, from, openLogWear } = useLocalSearchParams<{ id: string; from?: string; openLogWear?: string }>();
   const router = useRouter();
-  const fragrance = getFragrance(id ?? '');
+  // Fragrance lookup: synchronous cache hit if the store already has it
+  // (FragranceCard tap from a list pre-cached it). Otherwise async fetch.
+  const fetchById = useCatalogStore((s) => s.fetchById);
+  const fetchMany = useCatalogStore((s) => s.fetchMany);
+  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  const [fragrance, setFragrance] = useState<Fragrance | undefined>(() =>
+    getFragranceFromStore(id ?? ''),
+  );
+  useEffect(() => {
+    if (!id) return;
+    // Always try a fetch — even if the cache hit, this no-ops via the
+    // store's in-flight + cache de-dupe.
+    fetchById(id).then((row) => {
+      if (row) setFragrance(row);
+    });
+  }, [id, fetchById]);
+
+  // Catalog pool for the "cheaper alternatives" rail. We don't iterate
+  // the whole catalog at render time anymore.
+  const [catalogPool, setCatalogPool] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    fetchAllActive(200).then((rows) => { if (!cancelled) setCatalogPool(rows); });
+    return () => { cancelled = true; };
+  }, [fetchAllActive]);
+
+  // Similar fragrances are referenced by id array on the fragrance row.
+  // Resolve them via fetchMany (cache-aware).
+  const [similar, setSimilar] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    if (!fragrance?.similar_ids?.length) { setSimilar([]); return; }
+    let cancelled = false;
+    fetchMany(fragrance.similar_ids).then((rows) => {
+      if (!cancelled) setSimilar(rows);
+    });
+    return () => { cancelled = true; };
+  }, [fragrance?.similar_ids, fetchMany]);
+
   const [wardrobeSheetOpen, setWardrobeSheetOpen] = useState(false);
   const [wardrobeInitStatus, setWardrobeInitStatus] = useState<'have' | 'want'>('have');
   const [wearSheetOpen, setWearSheetOpen] = useState(false);
@@ -115,8 +157,7 @@ export default function FragranceDetailScreen() {
     );
   }
 
-  const similar = getFragrances(fragrance.similar_ids);
-  const cheaperAlts = findCheaperAlternatives(fragrance);
+  const cheaperAlts = findCheaperAlternatives(fragrance, catalogPool);
   const headlinePrice = (fragrance.retail_msrp_usd_cents / 100).toFixed(0);
 
   return (

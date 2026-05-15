@@ -6,9 +6,14 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { DISCOVER_ACCORDS } from '@/src/constants/accords';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
+// CURATED_EDITS + ALL_BRANDS are static curation lists (constants), not
+// catalog data — fine to keep importing them from the mock module since
+// they don't reference fragrance objects at runtime.
+import { ALL_BRANDS, CURATED_EDITS } from '@/src/mock/fragrances';
 import {
-  MOCK_CATALOG, ALL_BRANDS, CURATED_EDITS, getFragrances, type MockFragrance,
-} from '@/src/mock/fragrances';
+  useCatalogStore,
+  type Fragrance,
+} from '@/src/stores/useCatalogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 
 /**
@@ -27,29 +32,61 @@ export default function DiscoverScreen() {
   const [activeEdit, setActiveEdit] = useState(CURATED_EDITS[0].id);
   const notesSearch = useFragranceNotesStore((s) => s.search);
 
+  // Pull the active catalog pool once so the "By House" + "By Accord"
+  // counts and the curated-edit fallback have real data behind them.
+  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  const fetchMany = useCatalogStore((s) => s.fetchMany);
+  const searchStore = useCatalogStore((s) => s.search);
+  const [pool, setPool] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    fetchAllActive(200).then((rows) => { if (!cancelled) setPool(rows); });
+    return () => { cancelled = true; };
+  }, [fetchAllActive]);
+
   // When navigated here from the wardrobe "+" button, pass context through so
   // the fragrance detail page can navigate back to wardrobe after adding.
   const fragranceHref = (id: string) =>
     from === 'wardrobe' ? `/fragrance/${id}?from=wardrobe` : `/fragrance/${id}`;
 
-  const searchResults = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return [];
-    // IDs matched by private notes text (body, social notes, layering combos)
-    const notesMatchIds = new Set(notesSearch(q).map((n) => n.fragrance_id));
-    return MOCK_CATALOG.filter((f) =>
-      f.name.toLowerCase().includes(q) ||
-      f.brand.toLowerCase().includes(q) ||
-      f.top_accords.some((a) => a.includes(q)) ||
-      f.top_notes.some((n) => n.toLowerCase().includes(q)) ||
-      f.heart_notes.some((n) => n.toLowerCase().includes(q)) ||
-      f.base_notes.some((n) => n.toLowerCase().includes(q)) ||
-      notesMatchIds.has(f.id),
-    );
-  }, [query, notesSearch]);
+  // Debounced async search against Supabase; falls back to MOCK_CATALOG
+  // in demo mode via the store's search() method.
+  const [searchResults, setSearchResults] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    const q = query.trim();
+    if (!q) { setSearchResults([]); return; }
+    let cancelled = false;
+    const t = setTimeout(() => {
+      searchStore(q, 30).then((rows) => {
+        if (cancelled) return;
+        // Augment with private-note matches: any of our owned fragrances
+        // whose notes text contains the query also surface.
+        const notesMatchIds = notesSearch(q.toLowerCase()).map((n) => n.fragrance_id);
+        if (notesMatchIds.length === 0) { setSearchResults(rows); return; }
+        // Fetch any note-matches that aren't already in the results.
+        const have = new Set(rows.map((r) => r.id));
+        const missing = notesMatchIds.filter((id) => !have.has(id));
+        if (missing.length === 0) { setSearchResults(rows); return; }
+        fetchMany(missing).then((extra) => {
+          if (!cancelled) setSearchResults([...rows, ...extra]);
+        });
+      });
+    }, 250);
+    return () => { cancelled = true; clearTimeout(t); };
+  }, [query, notesSearch, searchStore, fetchMany]);
 
   const activeEditSet = CURATED_EDITS.find((e) => e.id === activeEdit) ?? CURATED_EDITS[0];
-  const editFragrances = getFragrances(activeEditSet.ids);
+  // Curated edits reference fragrance ids; resolve via fetchMany so they
+  // work against the live catalog (and demo mode via the store fallback).
+  const [editFragrances, setEditFragrances] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    if (!activeEditSet.ids?.length) { setEditFragrances([]); return; }
+    let cancelled = false;
+    fetchMany(activeEditSet.ids).then((rows) => {
+      if (!cancelled) setEditFragrances(rows);
+    });
+    return () => { cancelled = true; };
+  }, [activeEditSet.ids, fetchMany]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -104,7 +141,7 @@ export default function DiscoverScreen() {
           <Section eyebrow="BY HOUSE" cursive="explore brands">
             <View style={styles.brandGrid}>
               {ALL_BRANDS.map((b) => {
-                const count = MOCK_CATALOG.filter((f) => f.brand === b).length;
+                const count = pool.filter((f) => f.brand === b).length;
                 return (
                   <Pressable
                     key={b}
@@ -122,7 +159,7 @@ export default function DiscoverScreen() {
           <Section eyebrow="BY ACCORD" cursive="follow your nose">
             <View style={styles.accordGrid}>
               {DISCOVER_ACCORDS.map((a) => {
-                const matching = MOCK_CATALOG.filter((f) => f.top_accords.includes(a));
+                const matching = pool.filter((f) => f.top_accords.includes(a));
                 return (
                   <Pressable
                     key={a}
@@ -146,7 +183,7 @@ export default function DiscoverScreen() {
 
 const SEARCH_PAGE_SIZE = 20;
 
-function SearchResults({ results, query, fragranceHref }: { results: MockFragrance[]; query: string; fragranceHref: (id: string) => string }) {
+function SearchResults({ results, query, fragranceHref }: { results: Fragrance[]; query: string; fragranceHref: (id: string) => string }) {
   const router = useRouter();
   const [showAll, setShowAll] = useState(false);
   const visible = showAll ? results : results.slice(0, SEARCH_PAGE_SIZE);
