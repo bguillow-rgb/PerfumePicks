@@ -236,8 +236,23 @@ export default function WardrobeScreen() {
 
         {visible.length === 0 ? (
           <View style={styles.empty}>
-            <Text style={styles.emptyTitle}>Nothing here yet.</Text>
-            <Text style={styles.emptyBody}>Switch filters or add a fragrance to get started.</Text>
+            <Ionicons name="rose-outline" size={32} color={COLORS.accent} style={{ marginBottom: SPACING.sm }} />
+            <Text style={styles.emptyTitle}>
+              {items.length === 0 ? 'Start your collection' : 'No matches'}
+            </Text>
+            <Text style={styles.emptyBody}>
+              {items.length === 0
+                ? 'Add your first fragrance — tap the + button above or discover something new.'
+                : searchQuery ? `No fragrances match "${searchQuery}".` : 'Try a different filter.'}
+            </Text>
+            {items.length === 0 && (
+              <Pressable
+                style={styles.emptyCta}
+                onPress={() => router.push({ pathname: '/(tabs)/discover', params: { from: 'wardrobe' } } as any)}
+              >
+                <Text style={styles.emptyCtaText}>Browse Fragrances</Text>
+              </Pressable>
+            )}
           </View>
         ) : (
           <View style={styles.list}>
@@ -364,7 +379,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyTitle: { ...TYPE.heading, marginBottom: SPACING.sm },
-  emptyBody: { ...TYPE.bodySmall, textAlign: 'center' },
+  emptyBody: { ...TYPE.bodySmall, textAlign: 'center', marginBottom: SPACING.md },
+  emptyCta: {
+    backgroundColor: COLORS.accent, paddingHorizontal: SPACING.xl,
+    paddingVertical: 12, borderRadius: RADIUS.full,
+  },
+  emptyCtaText: { ...TYPE.label, color: COLORS.white, letterSpacing: 1.5 },
   row: {
     backgroundColor: COLORS.card,
     borderRadius: RADIUS.lg,

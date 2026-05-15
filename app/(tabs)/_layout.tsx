@@ -133,7 +133,7 @@ export default function TabLayout() {
         },
         tabBarLabelStyle: {
           fontFamily: 'Cormorant',
-          fontSize: 11,
+          fontSize: 10,
           fontWeight: '600',
           includeFontPadding: false,
           textAlign: 'center',
@@ -172,7 +172,7 @@ export default function TabLayout() {
           // gap between icon and label visually matches the rest of the bar.
           tabBarLabelStyle: {
             fontFamily: 'Cormorant',
-            fontSize: 11,
+            fontSize: 10,
             fontWeight: '600',
             includeFontPadding: false,
             textAlign: 'center',
@@ -184,24 +184,6 @@ export default function TabLayout() {
         name="wardrobe"
         options={{
           title: 'Wardrobe',
-          // "my" set in italic serif as a feminine flourish — mirrors the
-          // StickPicks "myHumidor" treatment but feels editorial here.
-          tabBarLabel: ({ color }) => (
-            <Text
-              numberOfLines={1}
-              style={{
-                fontFamily: 'Cormorant',
-                fontSize: 11,
-                lineHeight: 14,
-                fontWeight: '600',
-                textAlign: 'center',
-                includeFontPadding: false,
-                color,
-              }}
-            >
-              <Text style={{ fontStyle: 'italic' }}>my</Text>Wardrobe
-            </Text>
-          ),
           tabBarIcon: ({ color, size }) => <TabIcon name="rose-outline" color={color} size={size} />,
         }}
       />
