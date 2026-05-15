@@ -1,7 +1,10 @@
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { useRouter } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
+import * as Haptics from 'expo-haptics';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
+import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 
 interface Props {
   fragrance: Fragrance;
@@ -84,6 +87,25 @@ function SmallCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: () =
 
 function CompactCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: () => void }) {
   const accord = fragrance.top_accords[0];
+  const inWardrobe = useWardrobeStore((s) => s.getByFragrance(fragrance.id));
+  const addToWardrobe = useWardrobeStore((s) => s.add);
+
+  const handleWant = () => {
+    if (inWardrobe) {
+      // Already in wardrobe — navigate to detail for editing
+      onPress();
+      return;
+    }
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    addToWardrobe({
+      fragrance_id: fragrance.id,
+      status: 'want',
+      unit_type: 'bottle',
+      size_ml: 50,
+      remaining_ml: 50,
+    });
+  };
+
   return (
     <Pressable onPress={onPress} style={compactStyles.wrap}>
       <View style={compactStyles.imageWrap}>
@@ -98,6 +120,13 @@ function CompactCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: ()
           </View>
         )}
       </View>
+      <Pressable onPress={handleWant} hitSlop={8} style={compactStyles.heartBtn}>
+        <Ionicons
+          name={inWardrobe ? 'heart' : 'heart-outline'}
+          size={18}
+          color={inWardrobe ? COLORS.accent : COLORS.muted}
+        />
+      </Pressable>
     </Pressable>
   );
 }
@@ -237,4 +266,5 @@ const compactStyles = StyleSheet.create({
     backgroundColor: COLORS.card2,
   },
   accordText: { fontSize: 10, color: COLORS.muted, fontWeight: '500' },
+  heartBtn: { width: 32, height: 32, alignItems: 'center', justifyContent: 'center' },
 });

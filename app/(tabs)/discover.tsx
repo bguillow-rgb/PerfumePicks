@@ -6,9 +6,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { DISCOVER_ACCORDS } from '@/src/constants/accords';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
-// ALL_BRANDS is a static curation list (constant), not catalog data —
-// fine to keep importing from the mock module.
-import { ALL_BRANDS } from '@/src/mock/fragrances';
+// ALL_BRANDS removed — now derived dynamically from the pool so brand
+// names match the actual Supabase brands.name values.
 import {
   useCatalogStore,
   type Fragrance,
@@ -170,6 +169,17 @@ export default function DiscoverScreen() {
     })();
   }, [fetchMany]);
 
+  // Derive brand list + counts dynamically from the pool.
+  const topBrands = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const f of filteredPool) {
+      counts.set(f.brand, (counts.get(f.brand) ?? 0) + 1);
+    }
+    return [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 20);
+  }, [filteredPool]);
+
   // Derive curated-edit fragrances from the filtered pool.
   const editFragrances = useMemo(() => {
     const meta = CURATED_EDITS_META.find((e) => e.id === activeEdit) ?? CURATED_EDITS_META[0];
@@ -259,19 +269,16 @@ export default function DiscoverScreen() {
 
           <Section eyebrow="BY HOUSE" cursive="explore brands">
             <View style={styles.brandGrid}>
-              {ALL_BRANDS.map((b) => {
-                const count = filteredPool.filter((f) => f.brand === b).length;
-                return (
-                  <Pressable
-                    key={b}
-                    style={styles.brandTile}
-                    onPress={() => router.push(`/brand/${encodeURIComponent(b)}` as any)}
-                  >
-                    <Text style={styles.brandTileLabel} numberOfLines={2}>{b}</Text>
-                    <Text style={styles.brandTileCount}>{count}</Text>
-                  </Pressable>
-                );
-              })}
+              {topBrands.map(([brand, count]) => (
+                <Pressable
+                  key={brand}
+                  style={styles.brandTile}
+                  onPress={() => router.push(`/brand/${encodeURIComponent(brand)}` as any)}
+                >
+                  <Text style={styles.brandTileLabel} numberOfLines={2}>{brand}</Text>
+                  <Text style={styles.brandTileCount}>{count}</Text>
+                </Pressable>
+              ))}
             </View>
           </Section>
 

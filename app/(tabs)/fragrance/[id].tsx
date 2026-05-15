@@ -12,6 +12,7 @@ import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet';
 import { ReviewSection } from '@/src/components/fragrance/ReviewSection';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { handleAffiliateClick } from '@/src/lib/affiliate';
 import { LayeringSection } from '@/src/components/fragrance/LayeringSection';
 import { ComplimentsSection } from '@/src/components/fragrance/ComplimentsSection';
 import {
@@ -357,7 +358,17 @@ export default function FragranceDetailScreen() {
             {retailerLinks.length > 0 ? (
               <View style={styles.retailerList}>
                 {retailerLinks.map((link, i) => (
-                  <Pressable key={i} style={styles.retailerRow}>
+                  <Pressable
+                    key={i}
+                    style={({ pressed }) => [styles.retailerRow, pressed && { opacity: 0.6 }]}
+                    onPress={() => handleAffiliateClick({
+                      fragrance_id: id,
+                      retailer: link.retailer,
+                      url: link.url,
+                      price_cents: link.price_cents,
+                      source_screen: 'fragrance_detail',
+                    })}
+                  >
                     <Text style={styles.retailerName}>{link.retailer}</Text>
                     {link.price_cents != null && (
                       <Text style={styles.retailerPrice}>${(link.price_cents / 100).toFixed(0)}</Text>
