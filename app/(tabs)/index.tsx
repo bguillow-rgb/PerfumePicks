@@ -186,7 +186,7 @@ export default function HomeScreen() {
         <Section eyebrow="TODAY'S EDIT" cursive="three picks">
           {todaysEdit.length > 0 ? (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-              {todaysEdit.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+              {todaysEdit.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
             </ScrollView>
           ) : (
             <View style={[styles.sectionEmpty, { marginRight: SPACING.lg }]}>
@@ -197,14 +197,14 @@ export default function HomeScreen() {
 
         <Section eyebrow="NEW ARRIVALS" cursive="just in">
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-            {newArrivals.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+            {newArrivals.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
           </ScrollView>
         </Section>
 
         <Section eyebrow={hasSignals ? 'TRENDING IN YOUR TASTE' : 'EXPLORE'} cursive={hasSignals ? 'loved' : 'discover'}>
           {trending.length > 0 ? (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-              {trending.map((f) => <FragranceCard key={f.id} fragrance={f} variant="small" />)}
+              {trending.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
             </ScrollView>
           ) : (
             <View style={[styles.sectionEmpty, { marginRight: SPACING.lg }]}>

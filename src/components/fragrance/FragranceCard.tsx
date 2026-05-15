@@ -5,7 +5,7 @@ import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
   fragrance: Fragrance;
-  variant?: 'hero' | 'medium' | 'small';
+  variant?: 'hero' | 'medium' | 'small' | 'compact';
   onPress?: () => void;
 }
 
@@ -28,6 +28,7 @@ export function FragranceCard({ fragrance, variant = 'medium', onPress }: Props)
   const handlePress = onPress ?? (() => router.push(`/fragrance/${fragrance.id}`));
 
   if (variant === 'hero') return <HeroCard fragrance={fragrance} onPress={handlePress} />;
+  if (variant === 'compact') return <CompactCard fragrance={fragrance} onPress={handlePress} />;
   if (variant === 'small') return <SmallCard fragrance={fragrance} onPress={handlePress} />;
   return <MediumCard fragrance={fragrance} onPress={handlePress} />;
 }
@@ -77,6 +78,27 @@ function SmallCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: () =
       </View>
       <Text style={smallStyles.brand} numberOfLines={1}>{fragrance.brand}</Text>
       <Text style={smallStyles.name} numberOfLines={2}>{fragrance.name}</Text>
+    </Pressable>
+  );
+}
+
+function CompactCard({ fragrance, onPress }: { fragrance: Fragrance; onPress: () => void }) {
+  const accord = fragrance.top_accords[0];
+  return (
+    <Pressable onPress={onPress} style={compactStyles.wrap}>
+      <View style={compactStyles.imageWrap}>
+        <Image source={{ uri: fragrance.image_url }} style={compactStyles.image} />
+      </View>
+      <View style={compactStyles.content}>
+        <Text style={compactStyles.brand} numberOfLines={1}>{fragrance.brand.toUpperCase()}</Text>
+        <Text style={compactStyles.name} numberOfLines={2}>{fragrance.name}</Text>
+        {accord && (
+          <View style={compactStyles.accordPill}>
+            <Text style={compactStyles.accordText}>{accord}</Text>
+          </View>
+        )}
+      </View>
+      <Text style={compactStyles.priceTier}>{'$'.repeat(fragrance.price_tier)}</Text>
     </Pressable>
   );
 }
@@ -173,5 +195,54 @@ const smallStyles = StyleSheet.create({
     fontWeight: '600',
     color: COLORS.text,
     lineHeight: 18,
+  },
+});
+
+const compactStyles = StyleSheet.create({
+  wrap: {
+    width: 280,
+    height: 100,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    padding: SPACING.sm,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
+    marginRight: SPACING.md,
+  },
+  imageWrap: {
+    width: 80,
+    height: 80,
+    borderRadius: RADIUS.md,
+    overflow: 'hidden',
+    backgroundColor: COLORS.card2,
+  },
+  image: { width: '100%', height: '100%' },
+  content: { flex: 1, justifyContent: 'center' },
+  brand: { ...TYPE.eyebrow, fontSize: 9, marginBottom: 2 },
+  name: {
+    fontFamily: FONTS.serif,
+    fontWeight: '600',
+    fontSize: 16,
+    color: COLORS.text,
+    lineHeight: 20,
+    marginBottom: 6,
+  },
+  accordPill: {
+    alignSelf: 'flex-start',
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: RADIUS.full,
+    backgroundColor: COLORS.card2,
+  },
+  accordText: { fontSize: 10, color: COLORS.muted, fontWeight: '500' },
+  priceTier: {
+    fontSize: 12,
+    color: COLORS.muted,
+    fontWeight: '600',
+    letterSpacing: -0.5,
+    paddingRight: 4,
   },
 });

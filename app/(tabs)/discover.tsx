@@ -6,15 +6,55 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { DISCOVER_ACCORDS } from '@/src/constants/accords';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
-// CURATED_EDITS + ALL_BRANDS are static curation lists (constants), not
-// catalog data — fine to keep importing them from the mock module since
-// they don't reference fragrance objects at runtime.
-import { ALL_BRANDS, CURATED_EDITS } from '@/src/mock/fragrances';
+// ALL_BRANDS is a static curation list (constant), not catalog data —
+// fine to keep importing from the mock module.
+import { ALL_BRANDS } from '@/src/mock/fragrances';
 import {
   useCatalogStore,
   type Fragrance,
 } from '@/src/stores/useCatalogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
+
+/**
+ * Curated Edits — mood-based rails derived from the live catalog pool.
+ *
+ * Each edit defines a filter function that selects fragrances from the pool.
+ * This replaces the old hardcoded slug-based CURATED_EDITS which shipped
+ * mock slugs that failed against UUID primary keys in production.
+ */
+const CURATED_EDITS_META = [
+  {
+    id: 'boudoir',
+    label: 'Boudoir',
+    filter: (f: Fragrance) =>
+      f.top_accords.some((a) => ['amber', 'vanilla', 'oud', 'sweet', 'warm-spicy', 'musk'].includes(a)) &&
+      (f.gender === 'feminine' || f.gender === 'unisex'),
+  },
+  {
+    id: 'office',
+    label: 'Office',
+    filter: (f: Fragrance) => f.office_safe_score >= 0.6,
+  },
+  {
+    id: 'date-night',
+    label: 'Date Night',
+    filter: (f: Fragrance) => f.compliment_score >= 0.6,
+  },
+  {
+    id: 'summer',
+    label: 'Summer',
+    filter: (f: Fragrance) =>
+      f.top_accords.some((a) => ['fresh', 'citrus', 'aquatic', 'green', 'floral'].includes(a)),
+  },
+  {
+    id: 'winter',
+    label: 'Winter',
+    filter: (f: Fragrance) =>
+      f.top_accords.some((a) => ['amber', 'vanilla', 'oud', 'woody', 'warm-spicy', 'gourmand'].includes(a)),
+  },
+] as const;
+
+const RAIL_SIZE = 10;
 
 /**
  * Discover tab — search + browse the catalog.
@@ -29,7 +69,7 @@ export default function DiscoverScreen() {
   const router = useRouter();
   const { from } = useLocalSearchParams<{ from?: string }>();
   const [query, setQuery] = useState('');
-  const [activeEdit, setActiveEdit] = useState(CURATED_EDITS[0].id);
+  const [activeEdit, setActiveEdit] = useState<string>(CURATED_EDITS_META[0].id);
   const notesSearch = useFragranceNotesStore((s) => s.search);
 
   // Pull the active catalog pool once so the "By House" + "By Accord"
@@ -75,18 +115,11 @@ export default function DiscoverScreen() {
     return () => { cancelled = true; clearTimeout(t); };
   }, [query, notesSearch, searchStore, fetchMany]);
 
-  const activeEditSet = CURATED_EDITS.find((e) => e.id === activeEdit) ?? CURATED_EDITS[0];
-  // Curated edits reference fragrance ids; resolve via fetchMany so they
-  // work against the live catalog (and demo mode via the store fallback).
-  const [editFragrances, setEditFragrances] = useState<Fragrance[]>([]);
-  useEffect(() => {
-    if (!activeEditSet.ids?.length) { setEditFragrances([]); return; }
-    let cancelled = false;
-    fetchMany(activeEditSet.ids).then((rows) => {
-      if (!cancelled) setEditFragrances(rows);
-    });
-    return () => { cancelled = true; };
-  }, [activeEditSet.ids, fetchMany]);
+  // Derive curated-edit fragrances from the pool using accord/score filters.
+  const editFragrances = useMemo(() => {
+    const meta = CURATED_EDITS_META.find((e) => e.id === activeEdit) ?? CURATED_EDITS_META[0];
+    return pool.filter(meta.filter).slice(0, RAIL_SIZE);
+  }, [pool, activeEdit]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -121,7 +154,7 @@ export default function DiscoverScreen() {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={styles.editPillRow}
             >
-              {CURATED_EDITS.map((e) => (
+              {CURATED_EDITS_META.map((e) => (
                 <Pressable key={e.id} onPress={() => setActiveEdit(e.id)}>
                   <View style={[styles.editPill, activeEdit === e.id && styles.editPillActive]}>
                     <Text style={[styles.editPillText, activeEdit === e.id && styles.editPillTextActive]}>
@@ -133,7 +166,7 @@ export default function DiscoverScreen() {
             </ScrollView>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
               {editFragrances.map((f) => (
-                <FragranceCard key={f.id} fragrance={f} onPress={() => router.push(fragranceHref(f.id) as any)} />
+                <FragranceCard key={f.id} fragrance={f} variant="compact" onPress={() => router.push(fragranceHref(f.id) as any)} />
               ))}
             </ScrollView>
           </Section>

@@ -256,7 +256,7 @@ export default function FragranceDetailScreen() {
 
         <Section title="Smells Like" cursive="discover similar">
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-            {similar.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+            {similar.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
           </ScrollView>
         </Section>
 
@@ -265,7 +265,7 @@ export default function FragranceDetailScreen() {
           {isPro ? (
             cheaperAlts.length > 0 ? (
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-                {cheaperAlts.map((f) => <FragranceCard key={f.id} fragrance={f} />)}
+                {cheaperAlts.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
               </ScrollView>
             ) : (
               <View style={styles.dupesEmpty}>

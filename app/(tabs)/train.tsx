@@ -103,6 +103,9 @@ export default function TrainScreen() {
   const [pool, setPool] = useState<Fragrance[]>([]);
   const [poolReady, setPoolReady] = useState(false);
   useEffect(() => {
+    if (!started) return;
+    setPool([]);
+    setPoolReady(false);
     let cancelled = false;
     fetchAllActive(200).then((rows) => {
       if (cancelled) return;
@@ -110,7 +113,7 @@ export default function TrainScreen() {
       setPoolReady(true);
     });
     return () => { cancelled = true; };
-  }, [fetchAllActive]);
+  }, [fetchAllActive, started]);
 
   // Shuffle the pool once per session AND skip anything the user has
   // already judged in past sessions. Gender filter applied after shuffle so
