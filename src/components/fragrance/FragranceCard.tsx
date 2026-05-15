@@ -10,10 +10,18 @@ interface Props {
 }
 
 /**
- * Single fragrance card. Three sizes:
+ * Single fragrance card. Variants:
  *   - hero    — full-width, used for "Wear Today" on the home screen
- *   - medium  — ~280px wide, used in horizontal carousels
- *   - small   — fixed 160 wide, grid use
+ *   - medium  — ~280px wide, used in horizontal carousels [LEGACY — see LX-1]
+ *   - small   — fixed 160 wide, grid use [LEGACY — see LX-1]
+ *   - compact — horizontal row, ~100pt tall, image-left + text-middle.
+ *               This is the default for home rails per LX-1.
+ *
+ * LOCKED UX DECISION LX-1 (2026-05-15, plans/MILESTONE-PLAN.md):
+ * Home / Discover / brand swim lanes use `variant='compact'`. Do NOT
+ * revert to large bottle-photo cards without re-asking the founder.
+ * Rationale: founder feedback — big photos "look bush league"; compact
+ * cards show more product by default and feel Sephora/Nordstrom-curated.
  */
 export function FragranceCard({ fragrance, variant = 'medium', onPress }: Props) {
   const router = useRouter();

@@ -6,6 +6,29 @@
 
 ---
 
+## Locked UX Decisions
+
+These are product-level decisions the founder has explicitly pinned. Code MUST honor them; agents MUST NOT undo them without re-asking. Each row has the date locked + the rationale.
+
+### LX-1 — Compact, dense swim lanes for fragrance cards (2026-05-15)
+
+**Rule:** Every horizontal carousel on the home screen, Discover, and brand pages displays fragrance cards in a **compact, dense, editorial layout**. NOT magazine-cover hero cards with full-bleed photos.
+
+**Reference look:** The wardrobe "Have" card pinned in the 2026-05-15 screenshot — image ~80pt square on the left, brand + name + status pill stacked in the middle, secondary metric (mL meter, price tier, etc.) on the right. ~100pt tall row, full-screen-width row OR ~280pt wide horizontal carousel cell.
+
+**Specifically banned:** the `FragranceCard variant='hero'` (360pt tall full-bleed) and the legacy `variant='medium'` (200pt square photo dominates) for use in default home-screen rails. Hero may still be used for the single "Wear Today" pick, but defaults to compact otherwise.
+
+**Why:** Founder feedback 2026-05-15: large images "look bush league." Smaller, denser cards show more product by default, feel Sephora/Nordstrom-curated rather than Tinder-card.
+
+**How to apply:**
+- New `FragranceCard variant='compact'` matches the wardrobe row look.
+- Home rails use `variant='compact'` horizontally (cards scroll left-right but each card is shorter and thinner than the old `medium`).
+- The big "WEAR TODAY" hero card on Today can stay full-width but should still feel restrained (consider trimming photo height vs the current 360pt).
+- Wardrobe and brand pages already match the target look — leave them.
+- Pending Chief UX second opinion before swap goes live — once Chief UX agrees, swap and don't re-litigate.
+
+---
+
 ## Status legend
 
 - ✅ done — verified in code today
