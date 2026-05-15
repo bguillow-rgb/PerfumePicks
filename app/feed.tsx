@@ -1,18 +1,40 @@
-import { View, Text, StyleSheet, Pressable, FlatList, Image, RefreshControl } from 'react-native';
+import { useState, useEffect, useCallback } from 'react';
+import { View, Text, StyleSheet, Pressable, FlatList, Image, RefreshControl, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { EmptyState } from '@/src/components/ui/EmptyState';
 import { useSOTDFeed, type SOTDEntry } from '@/src/hooks/useSOTDFeed';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+
+type FeedTab = 'today' | 'following';
 
 /**
  * SOTD Feed — public wear log entries from the community.
+ * Today = all public wears. Following = wears from followed users.
  * Compact card layout per LX-1.
  */
 export default function FeedScreen() {
   const router = useRouter();
+  const [tab, setTab] = useState<FeedTab>('today');
   const { entries, loading, hasMore, loadMore, refresh } = useSOTDFeed();
+
+  // Following feed — filter to followed users
+  const [followingIds, setFollowingIds] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+    (async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase.from('follows').select('followee_id').eq('follower_id', user.id);
+      if (data) setFollowingIds(new Set(data.map((r) => r.followee_id)));
+    })();
+  }, []);
+
+  const visibleEntries = tab === 'following'
+    ? entries.filter((e) => followingIds.has(e.user_id))
+    : entries;
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -24,15 +46,24 @@ export default function FeedScreen() {
         <View style={{ width: 26 }} />
       </View>
 
-      {entries.length === 0 && !loading ? (
+      <View style={styles.tabRow}>
+        <Pressable style={[styles.tabPill, tab === 'today' && styles.tabPillActive]} onPress={() => setTab('today')}>
+          <Text style={[styles.tabText, tab === 'today' && styles.tabTextActive]}>Today</Text>
+        </Pressable>
+        <Pressable style={[styles.tabPill, tab === 'following' && styles.tabPillActive]} onPress={() => setTab('following')}>
+          <Text style={[styles.tabText, tab === 'following' && styles.tabTextActive]}>Following</Text>
+        </Pressable>
+      </View>
+
+      {visibleEntries.length === 0 && !loading ? (
         <EmptyState
           icon="globe-outline"
-          title="No public wears yet"
-          subtitle="Be the first! Toggle 'Post as Scent of the Day' when logging a wear."
+          title={tab === 'following' ? 'No wears from people you follow' : 'No public wears yet'}
+          subtitle={tab === 'following' ? 'Follow some users to see their scent of the day here.' : "Be the first! Toggle 'Post as Scent of the Day' when logging a wear."}
         />
       ) : (
         <FlatList
-          data={entries}
+          data={visibleEntries}
           keyExtractor={(e) => e.id}
           renderItem={({ item }) => <FeedCard entry={item} onPress={() => router.push(`/fragrance/${item.fragrance_id}`)} onUserPress={() => router.push(`/user/${item.user_id}`)} />}
           contentContainerStyle={styles.list}
@@ -118,6 +149,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.lg, paddingVertical: SPACING.md,
   },
   title: { ...TYPE.heading, textAlign: 'center' },
+  tabRow: {
+    flexDirection: 'row', gap: SPACING.sm,
+    paddingHorizontal: SPACING.lg, paddingBottom: SPACING.md,
+  },
+  tabPill: {
+    paddingHorizontal: 16, paddingVertical: 7,
+    borderRadius: RADIUS.full, borderWidth: 1, borderColor: COLORS.border,
+    backgroundColor: COLORS.card,
+  },
+  tabPillActive: { backgroundColor: COLORS.text, borderColor: COLORS.text },
+  tabText: { ...TYPE.label, fontSize: 13, color: COLORS.muted },
+  tabTextActive: { color: COLORS.bg },
   list: { paddingHorizontal: SPACING.lg, paddingBottom: SPACING.xxl, gap: SPACING.md },
 
   card: {

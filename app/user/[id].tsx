@@ -26,19 +26,42 @@ export default function UserProfileScreen() {
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [wearCount, setWearCount] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [myUserId, setMyUserId] = useState<string | null>(null);
 
   useEffect(() => {
     if (!isSupabaseConfigured || !id) { setLoading(false); return; }
     (async () => {
-      const [profileRes, wearsRes] = await Promise.all([
+      const [profileRes, wearsRes, userRes] = await Promise.all([
         supabase.from('profiles').select('display_name, bio, current_streak, total_sotd_count').eq('id', id).maybeSingle(),
         supabase.from('wear_logs').select('id', { count: 'exact', head: true }).eq('user_id', id),
+        supabase.auth.getUser(),
       ]);
       if (profileRes.data) setProfile(profileRes.data);
       setWearCount(wearsRes.count ?? 0);
+      const me = userRes.data.user?.id ?? null;
+      setMyUserId(me);
+      // Check if already following
+      if (me && me !== id) {
+        const { data: followRow } = await supabase
+          .from('follows').select('follower_id')
+          .eq('follower_id', me).eq('followee_id', id).maybeSingle();
+        setIsFollowing(!!followRow);
+      }
       setLoading(false);
     })();
   }, [id]);
+
+  const handleFollow = async () => {
+    if (!myUserId || !id || myUserId === id) return;
+    if (isFollowing) {
+      await supabase.from('follows').delete().eq('follower_id', myUserId).eq('followee_id', id);
+      setIsFollowing(false);
+    } else {
+      await supabase.from('follows').insert({ follower_id: myUserId, followee_id: id });
+      setIsFollowing(true);
+    }
+  };
 
   if (loading) return null;
 
@@ -61,6 +84,15 @@ export default function UserProfileScreen() {
         </View>
 
         {profile?.bio && <Text style={styles.bio}>{profile.bio}</Text>}
+
+        {myUserId && myUserId !== id && (
+          <Pressable style={[styles.followBtn, isFollowing && styles.followBtnActive]} onPress={handleFollow}>
+            <Ionicons name={isFollowing ? 'checkmark' : 'person-add-outline'} size={14} color={isFollowing ? COLORS.white : COLORS.accent} />
+            <Text style={[styles.followBtnText, isFollowing && styles.followBtnTextActive]}>
+              {isFollowing ? 'Following' : 'Follow'}
+            </Text>
+          </Pressable>
+        )}
 
         <View style={styles.statsRow}>
           <View style={styles.statCard}>
@@ -103,7 +135,16 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.md,
   },
   avatarLetter: { fontFamily: FONTS.serif, fontSize: 36, color: COLORS.accent },
-  bio: { ...TYPE.bodySmall, color: COLORS.muted, textAlign: 'center', paddingHorizontal: SPACING.xl, marginBottom: SPACING.lg },
+  bio: { ...TYPE.bodySmall, color: COLORS.muted, textAlign: 'center', paddingHorizontal: SPACING.xl, marginBottom: SPACING.md },
+  followBtn: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    paddingHorizontal: SPACING.xl, paddingVertical: 10,
+    borderRadius: RADIUS.full, borderWidth: 1.5, borderColor: COLORS.accent,
+    marginBottom: SPACING.lg,
+  },
+  followBtnActive: { backgroundColor: COLORS.accent },
+  followBtnText: { ...TYPE.label, fontSize: 13, color: COLORS.accent, letterSpacing: 0.5 },
+  followBtnTextActive: { color: COLORS.white },
   statsRow: { flexDirection: 'row', gap: SPACING.md, marginBottom: SPACING.lg },
   statCard: {
     width: 90, paddingVertical: SPACING.md,

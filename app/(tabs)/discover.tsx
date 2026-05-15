@@ -16,6 +16,7 @@ import {
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 import { DiscoverFilterSheet, type DiscoverFilters, EMPTY_FILTERS, filtersActive } from '@/src/components/sheets/DiscoverFilterSheet';
 import { EmptyState } from '@/src/components/ui/EmptyState';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 /**
  * Curated Edits — mood-based rails derived from the live catalog pool.
@@ -136,6 +137,38 @@ export default function DiscoverScreen() {
     }
     return result;
   }, [pool, filters]);
+
+  // Scent twins — users with similar taste
+  const [scentTwins, setScentTwins] = useState<{ twin_user_id: string; overlap_count: number; jaccard: number; display_name?: string }[]>([]);
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+    (async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase.rpc('get_scent_twins', { target_user: user.id });
+      if (!data?.length) return;
+      // Fetch display names for twins
+      const ids = data.map((t: any) => t.twin_user_id);
+      const { data: profiles } = await supabase.from('profiles').select('id, display_name').in('id', ids);
+      const nameMap = new Map((profiles ?? []).map((p: any) => [p.id, p.display_name]));
+      setScentTwins(data.map((t: any) => ({ ...t, display_name: nameMap.get(t.twin_user_id) ?? null })));
+    })();
+  }, []);
+
+  // Collaborative filtering recs — fragrances loved by similar users
+  const [collabRecs, setCollabRecs] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+    (async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase.rpc('get_collab_recs', { target_user: user.id, rec_limit: 10 });
+      if (!data?.length) return;
+      const ids = data.map((r: any) => r.fragrance_id);
+      const frags = await fetchMany(ids);
+      setCollabRecs(frags);
+    })();
+  }, [fetchMany]);
 
   // Derive curated-edit fragrances from the filtered pool.
   const editFragrances = useMemo(() => {
@@ -260,6 +293,40 @@ export default function DiscoverScreen() {
             </View>
           </Section>
 
+          {/* Collaborative filtering recs */}
+          {collabRecs.length > 0 && (
+            <Section eyebrow="RECOMMENDED FOR YOU" cursive="taste-matched">
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+                {collabRecs.map((f) => (
+                  <FragranceCard key={f.id} fragrance={f} variant="compact" onPress={() => router.push(fragranceHref(f.id) as any)} />
+                ))}
+              </ScrollView>
+            </Section>
+          )}
+
+          {/* Scent twins */}
+          {scentTwins.length > 0 && (
+            <Section eyebrow="YOUR SCENT TWINS" cursive="kindred noses">
+              <View style={styles.twinsGrid}>
+                {scentTwins.slice(0, 6).map((t) => (
+                  <Pressable
+                    key={t.twin_user_id}
+                    style={styles.twinCard}
+                    onPress={() => router.push(`/user/${t.twin_user_id}` as any)}
+                  >
+                    <View style={styles.twinAvatar}>
+                      <Text style={styles.twinAvatarLetter}>
+                        {(t.display_name?.[0] ?? '?').toUpperCase()}
+                      </Text>
+                    </View>
+                    <Text style={styles.twinName} numberOfLines={1}>{t.display_name || 'Perfume Lover'}</Text>
+                    <Text style={styles.twinOverlap}>{t.overlap_count} shared</Text>
+                  </Pressable>
+                ))}
+              </View>
+            </Section>
+          )}
+
           <View style={{ height: SPACING.xxl }} />
         </ScrollView>
       )}
@@ -364,6 +431,22 @@ const styles = StyleSheet.create({
   filterBtnText: { ...TYPE.label, fontSize: 12, color: COLORS.muted },
   filterBtnTextActive: { color: COLORS.white },
   clearFiltersText: { ...TYPE.label, fontSize: 12, color: COLORS.accent },
+  twinsGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm, paddingRight: SPACING.lg },
+  twinCard: {
+    width: '30%', alignItems: 'center',
+    backgroundColor: COLORS.card, borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingVertical: SPACING.md, paddingHorizontal: SPACING.sm,
+  },
+  twinAvatar: {
+    width: 44, height: 44, borderRadius: 22,
+    backgroundColor: COLORS.blushSoft,
+    alignItems: 'center', justifyContent: 'center',
+    marginBottom: 6,
+  },
+  twinAvatarLetter: { fontFamily: FONTS.serif, fontSize: 20, color: COLORS.accent },
+  twinName: { ...TYPE.label, fontSize: 11, color: COLORS.text, textAlign: 'center' },
+  twinOverlap: { ...TYPE.caption, fontSize: 9, marginTop: 2, color: COLORS.accent },
   feedBanner: {
     flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
     marginHorizontal: SPACING.lg, marginTop: SPACING.md, marginBottom: SPACING.sm,
