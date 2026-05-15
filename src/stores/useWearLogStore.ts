@@ -25,6 +25,7 @@ export interface WearLog {
   rating?: number | null;     // 0..5
   would_wear_again?: boolean | null;
   note?: string | null;
+  is_public?: boolean;
   created_at: string;
   /** See useWardrobeStore.WardrobeItem._unsynced. */
   _unsynced?: boolean;

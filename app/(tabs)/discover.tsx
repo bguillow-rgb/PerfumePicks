@@ -14,6 +14,7 @@ import {
   type Fragrance,
 } from '@/src/stores/useCatalogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
+import { DiscoverFilterSheet, type DiscoverFilters, EMPTY_FILTERS, filtersActive } from '@/src/components/sheets/DiscoverFilterSheet';
 
 /**
  * Curated Edits — mood-based rails derived from the live catalog pool.
@@ -71,6 +72,8 @@ export default function DiscoverScreen() {
   const [query, setQuery] = useState('');
   const [activeEdit, setActiveEdit] = useState<string>(CURATED_EDITS_META[0].id);
   const notesSearch = useFragranceNotesStore((s) => s.search);
+  const [filterSheetOpen, setFilterSheetOpen] = useState(false);
+  const [filters, setFilters] = useState<DiscoverFilters>(EMPTY_FILTERS);
 
   // Pull the active catalog pool once so the "By House" + "By Accord"
   // counts and the curated-edit fallback have real data behind them.
@@ -142,12 +145,33 @@ export default function DiscoverScreen() {
             </Pressable>
           )}
         </View>
+        {/* Filter chip row */}
+        <View style={styles.filterRow}>
+          <Pressable style={[styles.filterBtn, filtersActive(filters) && styles.filterBtnActive]} onPress={() => setFilterSheetOpen(true)}>
+            <Ionicons name="funnel-outline" size={14} color={filtersActive(filters) ? COLORS.white : COLORS.muted} />
+            <Text style={[styles.filterBtnText, filtersActive(filters) && styles.filterBtnTextActive]}>
+              {filtersActive(filters) ? 'Filtered' : 'Filter'}
+            </Text>
+          </Pressable>
+          {filtersActive(filters) && (
+            <Pressable onPress={() => setFilters(EMPTY_FILTERS)}>
+              <Text style={styles.clearFiltersText}>Clear</Text>
+            </Pressable>
+          )}
+        </View>
       </View>
 
       {query.length > 0 ? (
         <SearchResults results={searchResults} query={query} fragranceHref={fragranceHref} />
       ) : (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+          {/* SOTD feed entry point */}
+          <Pressable style={styles.feedBanner} onPress={() => router.push('/feed' as any)}>
+            <Ionicons name="globe-outline" size={18} color={COLORS.accent} />
+            <Text style={styles.feedBannerText}>Scent of the Day Feed</Text>
+            <Ionicons name="chevron-forward" size={16} color={COLORS.muted} />
+          </Pressable>
+
           <Section eyebrow="CURATED EDITS" cursive="for every mood">
             <ScrollView
               horizontal
@@ -210,6 +234,12 @@ export default function DiscoverScreen() {
           <View style={{ height: SPACING.xxl }} />
         </ScrollView>
       )}
+      <DiscoverFilterSheet
+        visible={filterSheetOpen}
+        filters={filters}
+        onApply={setFilters}
+        onClose={() => setFilterSheetOpen(false)}
+      />
     </SafeAreaView>
   );
 }
@@ -290,6 +320,29 @@ const styles = StyleSheet.create({
   sectionEyebrow: { ...TYPE.eyebrow },
   sectionCursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 22, color: COLORS.accent, lineHeight: 34, paddingLeft: 6 },
   hScroll: { paddingRight: SPACING.lg },
+  filterRow: {
+    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
+    paddingHorizontal: SPACING.lg, paddingTop: SPACING.sm,
+  },
+  filterBtn: {
+    flexDirection: 'row', alignItems: 'center', gap: 4,
+    paddingHorizontal: 12, paddingVertical: 7,
+    borderRadius: RADIUS.full,
+    borderWidth: 1, borderColor: COLORS.border,
+    backgroundColor: COLORS.card,
+  },
+  filterBtnActive: { backgroundColor: COLORS.accent, borderColor: COLORS.accent },
+  filterBtnText: { ...TYPE.label, fontSize: 12, color: COLORS.muted },
+  filterBtnTextActive: { color: COLORS.white },
+  clearFiltersText: { ...TYPE.label, fontSize: 12, color: COLORS.accent },
+  feedBanner: {
+    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
+    marginHorizontal: SPACING.lg, marginTop: SPACING.md, marginBottom: SPACING.sm,
+    padding: SPACING.md,
+    backgroundColor: COLORS.card, borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+  },
+  feedBannerText: { ...TYPE.label, fontSize: 13, color: COLORS.text, flex: 1 },
 
   editPillRow: { paddingRight: SPACING.lg, paddingBottom: SPACING.md, gap: 8 },
   editPill: {
