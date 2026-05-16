@@ -72,6 +72,18 @@ export const EVENTS = {
 
   // ─── Affiliate "Buy from" (M2 Phase C) ───────────────────────────────
   AFFILIATE_OUTBOUND_CLICKED: 'affiliate_outbound_clicked',
+
+  // ─── Perfume Concierge (Scan) ────────────────────────────────────────
+  SCAN_STARTED:              'scan_started',
+  SCAN_COMPLETED:            'scan_completed',
+  SCAN_CONFIRMED:            'scan_confirmed',
+  SCAN_REJECTED:             'scan_rejected',
+  SCAN_DESCRIBE_OPENED:      'scan_describe_opened',
+  SCAN_DESCRIBE_SUBMITTED:   'scan_describe_submitted',
+  SCAN_DESCRIBE_NO_MATCH:    'scan_describe_no_match',
+  SCAN_DEEPER_STARTED:       'scan_deeper_started',
+  SCAN_DEEPER_COMPLETED:     'scan_deeper_completed',
+  SCAN_SUGGEST_SUBMITTED:    'scan_suggest_submitted',
 } as const;
 
 export type EventName = typeof EVENTS[keyof typeof EVENTS];
