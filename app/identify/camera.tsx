@@ -53,14 +53,14 @@ const LOADING_MESSAGES = [
   'Almost there…',
 ];
 
-type ScreenState = 'launching' | 'idle' | 'scanning';
+type ScreenState = 'tips' | 'idle' | 'scanning';
 
 export default function CameraScreen() {
   const router = useRouter();
   const isPro = useProStore((s) => s.isPro);
   const { remaining, limitReached, guestLimitReached, isAnonymous, loading } =
     useScanCount();
-  const [state, setState] = useState<ScreenState>('launching');
+  const [state, setState] = useState<ScreenState>('tips');
   const [photoUri, setPhotoUri] = useState<string | null>(null);
   const [loadingMsg, setLoadingMsg] = useState(LOADING_MESSAGES[0]);
   const launched = useRef(false);
@@ -76,12 +76,12 @@ export default function CameraScreen() {
     return () => clearInterval(iv);
   }, [state]);
 
-  // Open camera immediately on mount
+  // Show tips briefly, then auto-launch camera
   useFocusEffect(
     useCallback(() => {
       if (launched.current) return;
       launched.current = true;
-      const t = setTimeout(() => launchCamera(), 150);
+      const t = setTimeout(() => launchCamera(), 1500);
       return () => clearTimeout(t);
     }, [])
   );
@@ -233,11 +233,35 @@ export default function CameraScreen() {
     );
   }
 
-  // ── Launching state: blank while camera opens ──
-  if (state === 'launching') {
+  // ── Tips state: shown briefly before camera auto-launches ──
+  if (state === 'tips') {
     return (
       <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
-        <View style={styles.center} />
+        <View style={styles.header}>
+          <Pressable onPress={() => router.back()} hitSlop={12}>
+            <Ionicons name="close" size={28} color={COLORS.text} />
+          </Pressable>
+          <Text style={styles.headerTitle}>PERFUME CONCIERGE</Text>
+          <View style={{ width: 28 }} />
+        </View>
+        <View style={styles.center}>
+          <View style={styles.iconCircle}>
+            <Ionicons name="sparkles" size={36} color={COLORS.accent} />
+          </View>
+          <Text style={styles.tipsHeading}>FOR THE BEST MATCH</Text>
+          <View style={styles.tipsCard}>
+            <Tip icon="scan-outline" text="Fill the frame with the bottle" />
+            <Tip icon="sunny-outline" text="Even, bright lighting works best" />
+            <Tip icon="hand-left-outline" text="Keep the label visible and in focus" />
+          </View>
+          <Text style={styles.tipsHint}>Opening camera…</Text>
+
+          {/* Let user tap to launch immediately */}
+          <Pressable style={styles.primaryBtn} onPress={launchCamera}>
+            <Ionicons name="camera" size={18} color={COLORS.white} />
+            <Text style={styles.primaryBtnText}>Open Camera Now</Text>
+          </Pressable>
+        </View>
       </SafeAreaView>
     );
   }
@@ -280,6 +304,15 @@ export default function CameraScreen() {
         )}
       </View>
     </SafeAreaView>
+  );
+}
+
+function Tip({ icon, text }: { icon: keyof typeof Ionicons.glyphMap; text: string }) {
+  return (
+    <View style={styles.tipRow}>
+      <Ionicons name={icon} size={16} color={COLORS.accent} />
+      <Text style={styles.tipText}>{text}</Text>
+    </View>
   );
 }
 
@@ -354,6 +387,22 @@ const styles = StyleSheet.create({
   quota: {
     ...TYPE.caption, color: COLORS.subtle,
     textAlign: 'center', marginTop: SPACING.sm,
+  },
+  // Tips
+  tipsHeading: {
+    ...TYPE.eyebrow, fontSize: 12, letterSpacing: 2.5,
+    marginBottom: SPACING.sm,
+  },
+  tipsCard: {
+    backgroundColor: COLORS.card, borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+    padding: SPACING.md, gap: 10, width: '100%',
+  },
+  tipRow: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm },
+  tipText: { ...TYPE.bodySmall, color: COLORS.text, flex: 1 },
+  tipsHint: {
+    ...TYPE.caption, color: COLORS.subtle, fontStyle: 'italic',
+    marginTop: SPACING.sm,
   },
   // Scanning
   shimmerWrap: {
