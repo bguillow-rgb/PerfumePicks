@@ -5,6 +5,8 @@ import * as Haptics from 'expo-haptics';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
+import { useProStore } from '@/src/stores/useProStore';
+import { ProGate } from '@/src/components/ui/ProGate';
 
 interface Review {
   id: string;
@@ -102,10 +104,16 @@ export function ReviewSection({ fragranceId }: Props) {
           {reviews.length} review{reviews.length !== 1 ? 's' : ''}
         </Text>
         {!myReview && userId && (
-          <Pressable onPress={() => setShowForm(!showForm)} style={styles.writeBtn}>
-            <Ionicons name="create-outline" size={14} color={COLORS.accent} />
-            <Text style={styles.writeBtnText}>Write a Review</Text>
-          </Pressable>
+          useProStore.getState().isPro ? (
+            <Pressable onPress={() => setShowForm(!showForm)} style={styles.writeBtn}>
+              <Ionicons name="create-outline" size={14} color={COLORS.accent} />
+              <Text style={styles.writeBtnText}>Write a Review</Text>
+            </Pressable>
+          ) : (
+            <ProGate variant="replace" label="Write reviews with Pro">
+              <View />
+            </ProGate>
+          )
         )}
       </View>
 

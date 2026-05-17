@@ -7,6 +7,7 @@ import { NotePyramid } from '@/src/components/fragrance/NotePyramid';
 import { AccordChip } from '@/src/components/fragrance/AccordChip';
 import { PerfBar } from '@/src/components/fragrance/PerfBar';
 import { FactStripCard } from '@/src/components/fragrance/FactStripCard';
+import { ProGate } from '@/src/components/ui/ProGate';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
@@ -312,12 +313,17 @@ export default function FragranceDetailScreen() {
           />
         </Section>
 
-        {/* ── 5. Accords ── */}
+        {/* ── 5. Accords (chips free, intensity bars Pro) ── */}
         <Section title="Accords">
           <View style={styles.accordWrap}>
             {fragrance.top_accords.map((a) => (
-              <AccordChip key={a} label={a} intensity={fragrance.accord_intensity[a] ?? 3} />
+              <AccordChip key={a} label={a} intensity={fragrance.accord_intensity[a] ?? 3} showIntensity={isPro} />
             ))}
+            {!isPro && fragrance.top_accords.length > 0 && (
+              <ProGate variant="replace" label="Unlock accord intensity with Pro">
+                <View />
+              </ProGate>
+            )}
           </View>
         </Section>
 
@@ -419,13 +425,17 @@ export default function FragranceDetailScreen() {
             <Text style={styles.myStuffEmptyHint}>No wears logged yet</Text>
           )}
 
-          {/* Layering */}
+          {/* Layering — Pro gated */}
           <Text style={styles.myStuffSubhead}>Layering</Text>
-          <LayeringSection fragranceId={id} />
+          <ProGate variant="replace" label="Unlock layering pairs with Pro">
+            <LayeringSection fragranceId={id} />
+          </ProGate>
 
-          {/* Compliments */}
+          {/* Compliments — Pro gated */}
           <Text style={styles.myStuffSubhead}>Compliments</Text>
-          <ComplimentsSection fragranceId={id} />
+          <ProGate variant="replace" label="Unlock compliments log with Pro">
+            <ComplimentsSection fragranceId={id} />
+          </ProGate>
         </View>
 
         {/* ── 8. Who Wears This / Celebrity ── */}
@@ -501,12 +511,14 @@ export default function FragranceDetailScreen() {
           </Section>
         )}
 
-        {/* ── 13. Community Sentiment (collapsed, holds score tiles) ── */}
-        <CommunitySentiment
-          compliment_score={fragrance.compliment_score}
-          versatility_score={fragrance.versatility_score}
-          office_safe_score={fragrance.office_safe_score}
-        />
+        {/* ── 13. Community Sentiment (collapsed, Pro-gated score tiles) ── */}
+        <ProGate variant="overlay" label="Unlock community sentiment scores">
+          <CommunitySentiment
+            compliment_score={fragrance.compliment_score}
+            versatility_score={fragrance.versatility_score}
+            office_safe_score={fragrance.office_safe_score}
+          />
+        </ProGate>
 
         {/* ── 14. Cheaper Alternatives (Pro-gated, bottom of page) ── */}
         <Section title="Cheaper Alternatives">

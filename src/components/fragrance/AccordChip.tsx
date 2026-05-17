@@ -5,15 +5,17 @@ import { COLORS, RADIUS, TYPE } from '@/src/constants/theme';
  * Accord chip with intensity meter beneath it.
  * Used on the fragrance detail page.
  */
-export function AccordChip({ label, intensity }: { label: string; intensity: number }) {
+export function AccordChip({ label, intensity, showIntensity = true }: { label: string; intensity: number; showIntensity?: boolean }) {
   return (
     <View style={styles.wrap}>
       <View style={styles.pill}>
         <Text style={styles.label}>{label.replace(/-/g, ' ')}</Text>
       </View>
-      <View style={styles.bar}>
-        <View style={[styles.barFill, { width: `${(intensity / 5) * 100}%` }]} />
-      </View>
+      {showIntensity && (
+        <View style={styles.bar}>
+          <View style={[styles.barFill, { width: `${(intensity / 5) * 100}%` }]} />
+        </View>
+      )}
     </View>
   );
 }
