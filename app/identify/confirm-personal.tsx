@@ -37,6 +37,7 @@ import { COLORS, FONTS, RADIUS, SPACING, TYPE } from '@/src/constants/theme';
 import { getDeviceId } from '@/src/lib/deviceId';
 import { track, EVENTS } from '@/src/lib/observability';
 import { supabase } from '@/lib/supabase';
+import { useCatalogStore } from '@/src/stores/useCatalogStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 
 type ConfidenceTier = 'likely' | 'best_guess' | 'possible' | 'none';
@@ -104,16 +105,27 @@ export default function ConfirmPersonalScreen() {
     try {
       // Mark scan as confirmed
       if (params.scanId) {
-        await supabase
+        supabase
           .from('scan_images')
           .update({ user_confirmed: true })
-          .eq('id', params.scanId);
+          .eq('id', params.scanId)
+          .then(() => {});
       }
 
-      // Add to wardrobe as "have" — catalog match or not
-      if (hasCatalogMatch) {
+      // Resolve a fragrance_id — use the AI match, or search catalog by name
+      let fragranceId = params.fragranceId || '';
+      if (!fragranceId && n) {
+        const searchQuery = b ? `${b} ${n}` : n;
+        const matches = await useCatalogStore.getState().search(searchQuery, 5);
+        if (matches.length > 0) {
+          fragranceId = matches[0].id;
+        }
+      }
+
+      // Add to wardrobe as "have"
+      if (fragranceId) {
         useWardrobeStore.getState().add({
-          fragrance_id: params.fragranceId,
+          fragrance_id: fragranceId,
           status: 'have',
           unit_type: 'bottle',
           size_ml: 0,
@@ -122,13 +134,12 @@ export default function ConfirmPersonalScreen() {
       }
 
       track(EVENTS.SCAN_CONFIRMED, {
-        fragrance_id: params.fragranceId ?? null,
+        fragrance_id: fragranceId || null,
         confidence,
-        edited: hasCatalogMatch ? (b !== params.brand || n !== params.name) : false,
       });
 
-      // Submit suggestion for catalog silently in background (no alerts)
-      if (suggestForCatalog && b && n) {
+      // Submit suggestion for catalog silently in background
+      if (suggestForCatalog && b && n && !hasCatalogMatch) {
         const deviceId = await getDeviceId();
         const { data: { user } } = await supabase.auth.getUser();
 
@@ -139,12 +150,12 @@ export default function ConfirmPersonalScreen() {
           name: n,
           concentration: concentration.trim() || null,
           scan_image_id: params.scanId || null,
-        }).then(() => {});  // fire and forget
+        }).then(() => {});
       }
 
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
-      // Always go to wardrobe Have tab
+      // Go to wardrobe — same screen as the tab
       router.replace('/(tabs)/wardrobe' as any);
     } catch (e: any) {
       Alert.alert('Error', e?.message ?? 'Failed to save. Please try again.');
