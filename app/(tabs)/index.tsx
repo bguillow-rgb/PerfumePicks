@@ -12,6 +12,7 @@ import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { getFragranceFromStore } from '@/src/stores/useCatalogStore';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { getWhyThis } from '@/src/lib/claude';
+import { useProStore } from '@/src/stores/useProStore';
 
 /**
  * Home / "Today" tab — the daily ritual surface.
@@ -49,13 +50,19 @@ export default function HomeScreen() {
 
   const [whatToWearOpen, setWhatToWearOpen] = useState(false);
 
-  // AI "Why this?" — fetches an explanation from Claude when there's a hero pick.
+  // AI "Why this?" — Pro users get Claude reasoning, free users get static fallback.
+  const isPro = useProStore((s) => s.isPro);
   const [aiReason, setAiReason] = useState<string | null>(null);
   useEffect(() => {
     if (!heroPick || !hasSignals) { setAiReason(null); return; }
+    // Free users: skip the API call entirely (saves AI costs)
+    if (!isPro) {
+      setAiReason(null);
+      return;
+    }
     let cancelled = false;
     getWhyThis({
-      taste_profile: {}, // useAppSync already synced — the Edge Function reads from DB
+      taste_profile: {},
       fragrance_context: {
         name: heroPick.name,
         brand: heroPick.brand,
@@ -67,7 +74,7 @@ export default function HomeScreen() {
       if (!cancelled) setAiReason(text ?? fallback);
     });
     return () => { cancelled = true; };
-  }, [heroPick?.id, hasSignals]);
+  }, [heroPick?.id, hasSignals, isPro]);
 
   // Streak counter — reads from profiles.current_streak on focus.
   const [streak, setStreak] = useState(0);

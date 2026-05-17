@@ -7,6 +7,7 @@ import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { EmptyState } from '@/src/components/ui/EmptyState';
 import { useSOTDFeed, type SOTDEntry } from '@/src/hooks/useSOTDFeed';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { useProStore } from '@/src/stores/useProStore';
 
 type FeedTab = 'today' | 'following' | 'trending';
 
@@ -32,7 +33,10 @@ export default function FeedScreen() {
     })();
   }, []);
 
-  const visibleEntries = tab === 'following'
+  const isPro = useProStore((s) => s.isPro);
+  const FREE_FEED_CAP = 8;
+
+  const allVisible = tab === 'following'
     ? entries.filter((e) => followingIds.has(e.user_id))
     : tab === 'trending'
       ? (() => {
@@ -44,6 +48,10 @@ export default function FeedScreen() {
             .sort((a, b) => (b.reaction_count ?? 0) - (a.reaction_count ?? 0));
         })()
       : entries;
+
+  // Free users: cap at 8 posts/day across all tabs
+  const visibleEntries = isPro ? allVisible : allVisible.slice(0, FREE_FEED_CAP);
+  const feedCapped = !isPro && allVisible.length > FREE_FEED_CAP;
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -83,7 +91,13 @@ export default function FeedScreen() {
           onEndReachedThreshold={0.5}
           refreshControl={<RefreshControl refreshing={loading} onRefresh={refresh} tintColor={COLORS.accent} />}
           ListFooterComponent={
-            hasMore && entries.length > 0 ? (
+            feedCapped ? (
+              <Pressable style={styles.feedCapCard} onPress={() => router.push('/paywall')}>
+                <Ionicons name="lock-closed" size={16} color={COLORS.accent} />
+                <Text style={styles.feedCapText}>Unlock the full feed with Pro</Text>
+                <Text style={styles.feedCapCta}>Upgrade →</Text>
+              </Pressable>
+            ) : hasMore && entries.length > 0 ? (
               <Text style={styles.loadingMore}>Loading more...</Text>
             ) : entries.length > 0 ? (
               <Text style={styles.loadingMore}>You've reached the end</Text>
@@ -210,4 +224,12 @@ const styles = StyleSheet.create({
   noteText: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic', lineHeight: 18 },
 
   loadingMore: { ...TYPE.caption, textAlign: 'center', paddingVertical: SPACING.lg },
+  feedCapCard: {
+    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
+    backgroundColor: COLORS.card, borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.accent,
+    padding: SPACING.lg, marginHorizontal: SPACING.md, marginVertical: SPACING.lg,
+  },
+  feedCapText: { ...TYPE.bodySmall, flex: 1, color: COLORS.text },
+  feedCapCta: { ...TYPE.label, color: COLORS.accent, fontSize: 12 },
 });

@@ -9,6 +9,8 @@ import {
   useWearLogStore, type Occasion, type Weather, type WearLog,
 } from '@/src/stores/useWearLogStore';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
+import { useProStore } from '@/src/stores/useProStore';
+import { useRouter } from 'expo-router';
 
 interface Props {
   visible: boolean;
@@ -246,25 +248,39 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
               </View>
             </Section>
 
-            {/* Share to feed */}
+            {/* Share to feed — Pro only */}
             <Section label="Share to feed">
-              <Pressable
-                onPress={() => { Haptics.selectionAsync(); setIsPublic(!isPublic); }}
-                style={styles.shareRow}
-              >
-                <Ionicons
-                  name={isPublic ? 'globe' : 'globe-outline'}
-                  size={20}
-                  color={isPublic ? COLORS.accent : COLORS.muted}
-                />
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.shareLabel}>Post as Scent of the Day</Text>
-                  <Text style={styles.shareHint}>Visible to other users in the SOTD feed</Text>
-                </View>
-                <View style={[styles.shareToggle, isPublic && styles.shareToggleOn]}>
-                  <View style={[styles.shareKnob, isPublic && styles.shareKnobOn]} />
-                </View>
-              </Pressable>
+              {useProStore.getState().isPro ? (
+                <Pressable
+                  onPress={() => { Haptics.selectionAsync(); setIsPublic(!isPublic); }}
+                  style={styles.shareRow}
+                >
+                  <Ionicons
+                    name={isPublic ? 'globe' : 'globe-outline'}
+                    size={20}
+                    color={isPublic ? COLORS.accent : COLORS.muted}
+                  />
+                  <View style={{ flex: 1 }}>
+                    <Text style={styles.shareLabel}>Post as Scent of the Day</Text>
+                    <Text style={styles.shareHint}>Visible to other users in the SOTD feed</Text>
+                  </View>
+                  <View style={[styles.shareToggle, isPublic && styles.shareToggleOn]}>
+                    <View style={[styles.shareKnob, isPublic && styles.shareKnobOn]} />
+                  </View>
+                </Pressable>
+              ) : (
+                <Pressable
+                  onPress={() => useRouter().push('/paywall')}
+                  style={styles.shareRow}
+                >
+                  <Ionicons name="lock-closed" size={16} color={COLORS.accent} />
+                  <View style={{ flex: 1 }}>
+                    <Text style={styles.shareLabel}>Post as Scent of the Day</Text>
+                    <Text style={styles.shareHint}>Unlock feed posting with Pro</Text>
+                  </View>
+                  <Ionicons name="chevron-forward" size={14} color={COLORS.accent} />
+                </Pressable>
+              )}
             </Section>
 
             {/* Note */}

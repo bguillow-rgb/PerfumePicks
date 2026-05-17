@@ -149,7 +149,7 @@ export default function TrainScreen() {
     }
   }, [recordToStore]);
 
-  if (!started) return <Intro onStart={() => { setStarted(true); setIndex(0); setStats({ loved: 0, liked: 0, passed: 0 }); }} dailyLimitReached={dailyLimitReached} onUpgrade={() => router.push('/paywall')} />;
+  if (!started) return <Intro onStart={() => { setStarted(true); setIndex(0); setStats({ loved: 0, liked: 0, passed: 0 }); }} dailyLimitReached={dailyLimitReached} onUpgrade={() => router.push('/paywall')} swipesUsed={dailySwipeCount} isPro={isPro} />;
 
   // Loading state — pool still fetching after Begin tapped. Without this
   // gate, the SESSION COMPLETE branch renders immediately because deck=[]
@@ -260,7 +260,11 @@ export default function TrainScreen() {
   );
 }
 
-function Intro({ onStart, dailyLimitReached, onUpgrade }: { onStart: () => void; dailyLimitReached: boolean; onUpgrade: () => void }) {
+function Intro({ onStart, dailyLimitReached, onUpgrade, swipesUsed, isPro }: {
+  onStart: () => void; dailyLimitReached: boolean; onUpgrade: () => void;
+  swipesUsed: number; isPro: boolean;
+}) {
+  const remaining = Math.max(0, FREE_DAILY_SWIPE_LIMIT - swipesUsed);
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
       <View style={styles.introContainer}>
@@ -275,6 +279,14 @@ function Intro({ onStart, dailyLimitReached, onUpgrade }: { onStart: () => void;
           Swipe right on fragrances that intrigue you, left on those that don't.
           Every swipe sharpens your taste profile and refines your daily picks.
         </Text>
+
+        {/* Swipe count banner — free users only */}
+        {!isPro && !dailyLimitReached && swipesUsed > 0 && (
+          <View style={styles.swipeBanner}>
+            <Text style={styles.swipeBannerText}>{remaining}/{FREE_DAILY_SWIPE_LIMIT} swipes remaining today</Text>
+          </View>
+        )}
+
         {dailyLimitReached ? (
           <>
             <Pressable style={[styles.cta, { backgroundColor: COLORS.text }]} onPress={onUpgrade}>
@@ -287,7 +299,7 @@ function Intro({ onStart, dailyLimitReached, onUpgrade }: { onStart: () => void;
             <Pressable style={styles.cta} onPress={onStart}>
               <Text style={styles.ctaText}>Begin a Session</Text>
             </Pressable>
-            <Text style={styles.footnote}>10 free swipes / day · Unlimited with Pro</Text>
+            <Text style={styles.footnote}>{isPro ? 'Unlimited swipes' : `${remaining} free swipes / day · Unlimited with Pro`}</Text>
           </>
         )}
       </View>
@@ -562,6 +574,16 @@ const styles = StyleSheet.create({
   },
   ctaText: { ...TYPE.label, color: COLORS.white, letterSpacing: 2 },
   footnote: { ...TYPE.caption, marginTop: 4 },
+  swipeBanner: {
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.full,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+    paddingVertical: 6,
+    paddingHorizontal: 16,
+    marginBottom: SPACING.sm,
+  },
+  swipeBannerText: { ...TYPE.caption, color: COLORS.accent, fontSize: 12, textAlign: 'center' },
 
   headerRow: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',

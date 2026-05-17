@@ -147,9 +147,15 @@ function CompactCard({ fragrance, subtitle, onPress }: { fragrance: Fragrance; s
       </View>
       <Pressable onPress={handleWant} hitSlop={8} style={compactStyles.heartBtn}>
         <Ionicons
-          name={inWardrobe ? 'heart' : 'heart-outline'}
+          name={
+            inWardrobe?.status === 'have' ? 'checkmark-circle' :
+            inWardrobe ? 'heart' : 'heart-outline'
+          }
           size={18}
-          color={inWardrobe ? COLORS.accent : COLORS.muted}
+          color={
+            inWardrobe?.status === 'have' ? COLORS.success :
+            inWardrobe ? COLORS.accent : COLORS.muted
+          }
         />
       </Pressable>
     </Pressable>

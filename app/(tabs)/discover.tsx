@@ -13,6 +13,8 @@ import {
   type Fragrance,
 } from '@/src/stores/useCatalogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
+import { useProStore } from '@/src/stores/useProStore';
+import { ProGate } from '@/src/components/ui/ProGate';
 import { DiscoverFilterSheet, type DiscoverFilters, EMPTY_FILTERS, filtersActive } from '@/src/components/sheets/DiscoverFilterSheet';
 import { EmptyState } from '@/src/components/ui/EmptyState';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
@@ -101,7 +103,7 @@ export default function DiscoverScreen() {
         namesByFrag.set(r.fragrance_id, names);
       }
       const ids = [...namesByFrag.keys()];
-      const frags = await fetchMany(ids);
+      const frags = await fetchManyRef(ids);
       setCelebrityPicks(
         frags.slice(0, RAIL_SIZE).map((f) => ({
           fragrance: f,
@@ -109,12 +111,12 @@ export default function DiscoverScreen() {
         })),
       );
     })();
-  }, [fetchMany]);
+  }, [fetchManyRef]);
 
   // Pull the active catalog pool once so the "By House" + "By Accord"
   // counts and the curated-edit fallback have real data behind them.
   const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
-  const fetchMany = useCatalogStore((s) => s.fetchMany);
+  const fetchManyRef = useCatalogStore((s) => s.fetchMany);
   const searchStore = useCatalogStore((s) => s.search);
   const [pool, setPool] = useState<Fragrance[]>([]);
   useEffect(() => {
@@ -146,7 +148,7 @@ export default function DiscoverScreen() {
         const have = new Set(rows.map((r) => r.id));
         const missing = notesMatchIds.filter((id) => !have.has(id));
         if (missing.length === 0) { setSearchResults(rows); return; }
-        fetchMany(missing).then((extra) => {
+        fetchManyRef(missing).then((extra) => {
           if (!cancelled) setSearchResults([...rows, ...extra]);
         });
       });
@@ -199,7 +201,7 @@ export default function DiscoverScreen() {
       const { data } = await supabase.rpc('get_collab_recs', { target_user: user.id, rec_limit: 10 });
       if (!data?.length) return;
       const ids = data.map((r: any) => r.fragrance_id);
-      const frags = await fetchMany(ids);
+      const frags = await fetchManyRef(ids);
       setCollabRecs(frags);
     })();
   }, [fetchMany]);
@@ -346,22 +348,25 @@ export default function DiscoverScreen() {
             </View>
           </Section>
 
-          {/* Collaborative filtering recs */}
+          {/* Collaborative filtering recs — free top 3, Pro full */}
           {collabRecs.length > 0 && (
             <Section eyebrow="RECOMMENDED FOR YOU" cursive="taste-matched">
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-                {collabRecs.map((f) => (
+                {(useProStore.getState().isPro ? collabRecs : collabRecs.slice(0, 3)).map((f) => (
                   <FragranceCard key={f.id} fragrance={f} variant="compact" onPress={() => router.push(fragranceHref(f.id) as any)} />
                 ))}
               </ScrollView>
+              {!useProStore.getState().isPro && collabRecs.length > 3 && (
+                <ProGate variant="replace" label="See all collab picks with Pro"><View /></ProGate>
+              )}
             </Section>
           )}
 
-          {/* Scent twins */}
+          {/* Scent twins — free top 3, Pro full */}
           {scentTwins.length > 0 && (
             <Section eyebrow="YOUR SCENT TWINS" cursive="kindred noses">
               <View style={styles.twinsGrid}>
-                {scentTwins.slice(0, 6).map((t) => (
+                {scentTwins.slice(0, useProStore.getState().isPro ? 6 : 3).map((t) => (
                   <Pressable
                     key={t.twin_user_id}
                     style={styles.twinCard}
@@ -377,6 +382,9 @@ export default function DiscoverScreen() {
                   </Pressable>
                 ))}
               </View>
+              {!useProStore.getState().isPro && scentTwins.length > 3 && (
+                <ProGate variant="replace" label="See all your scent twins with Pro"><View /></ProGate>
+              )}
             </Section>
           )}
 

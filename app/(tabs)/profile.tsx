@@ -240,7 +240,20 @@ export default function ProfileScreen() {
           <Row label="Perfume Wrapped" onPress={() => router.push('/wrapped')} pro disabled={!isPro} />
         </Section>
 
-        <BadgesSection />
+        {isPro ? (
+          <BadgesSection />
+        ) : (
+          <Section title="Badges & Streaks">
+            <Pressable
+              style={{ flexDirection: 'row', alignItems: 'center', gap: SPACING.sm, backgroundColor: COLORS.card, borderRadius: RADIUS.lg, borderWidth: 1, borderColor: COLORS.border, padding: SPACING.md }}
+              onPress={() => router.push('/paywall')}
+            >
+              <Ionicons name="lock-closed" size={14} color={COLORS.accent} />
+              <Text style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.text, flex: 1 }}>Unlock badges & streaks with Pro</Text>
+              <Ionicons name="chevron-forward" size={14} color={COLORS.accent} />
+            </Pressable>
+          </Section>
+        )}
 
         <Section title="Account">
           {isGuest && <Row label="Sign in" onPress={() => router.push('/auth/login')} />}
