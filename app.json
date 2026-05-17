@@ -54,12 +54,6 @@
       "expo-font",
       "@react-native-google-signin/google-signin",
       [
-        "react-native-vision-camera",
-        {
-          "cameraPermissionText": "Perfume Picks uses the camera to identify fragrance bottles with the Perfume Concierge."
-        }
-      ],
-      [
         "expo-build-properties",
         {
           "ios": {

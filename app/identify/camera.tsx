@@ -1,12 +1,13 @@
 /**
  * Perfume Concierge — Live camera viewfinder with overlaid tips.
  *
- * Uses react-native-vision-camera for a real live viewfinder (requires
- * EAS dev build, not Expo Go). Tips overlaid directly on the camera feed.
- * Matches Pour Picks' camera.tsx architecture exactly.
+ * Uses expo-camera CameraView for a real live viewfinder (requires EAS
+ * dev build, not Expo Go). Tips overlaid directly on the camera feed.
+ * Matches Pour Picks' camera.tsx architecture.
  */
 
 import { Ionicons } from '@expo/vector-icons';
+import { CameraView, useCameraPermissions } from 'expo-camera';
 import * as Haptics from 'expo-haptics';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as ImagePicker from 'expo-image-picker';
@@ -30,11 +31,6 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import {
-  Camera,
-  useCameraDevice,
-  useCameraPermission,
-} from 'react-native-vision-camera';
 
 import { COLORS, FONTS, RADIUS, SPACING } from '@/src/constants/theme';
 import { identifyBottle } from '@/src/features/identify/identifyService';
@@ -64,9 +60,8 @@ export default function CameraScreen() {
   const { remaining, limitReached, guestLimitReached, isAnonymous } =
     useScanCount();
 
-  const { hasPermission, requestPermission } = useCameraPermission();
-  const device = useCameraDevice('back');
-  const cameraRef = useRef<Camera>(null);
+  const [permission, requestPermission] = useCameraPermissions();
+  const cameraRef = useRef<CameraView>(null);
 
   const [state, setState] = useState<ScreenState>('viewfinder');
   const [photoUri, setPhotoUri] = useState<string | null>(null);
@@ -75,10 +70,10 @@ export default function CameraScreen() {
 
   // Request permission on mount
   useEffect(() => {
-    if (hasPermission === false) {
+    if (permission && !permission.granted && permission.canAskAgain) {
       requestPermission();
     }
-  }, [hasPermission]);
+  }, [permission]);
 
   // Rotate loading messages while scanning
   useEffect(() => {
@@ -173,12 +168,16 @@ export default function CameraScreen() {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
 
     try {
-      const photo = await cameraRef.current.takePhoto({
-        qualityPrioritization: 'balanced',
-        flash: 'off',
+      const photo = await cameraRef.current.takePictureAsync({
+        quality: 0.85,
       });
 
-      await processAndIdentify(normalizeFileUri(photo.path));
+      if (!photo?.uri) {
+        setCapturing(false);
+        return;
+      }
+
+      await processAndIdentify(photo.uri);
     } catch (e) {
       console.warn('[camera] capture error:', e);
       Alert.alert('Error', 'Could not capture photo. Please try again.');
@@ -200,7 +199,7 @@ export default function CameraScreen() {
     await processAndIdentify(pickerResult.assets[0].uri);
   };
 
-  // ── Scanning state: shimmer over photo on dark bg ──
+  // ── Scanning state: shimmer over photo ──
   if (state === 'scanning') {
     return (
       <View style={styles.dark}>
@@ -218,8 +217,19 @@ export default function CameraScreen() {
     );
   }
 
-  // ── Permission denied and can't ask again ──
-  if (hasPermission === false) {
+  // ── Permission not yet granted ──
+  if (!permission) {
+    return (
+      <View style={styles.dark}>
+        <View style={styles.center}>
+          <ActivityIndicator color={COLORS.accent} size="large" />
+        </View>
+      </View>
+    );
+  }
+
+  // ── Permission denied, can't ask again ──
+  if (!permission.granted && !permission.canAskAgain) {
     return (
       <View style={styles.dark}>
         <View style={[styles.topBar, { paddingTop: insets.top + 8 }]}>
@@ -233,19 +243,19 @@ export default function CameraScreen() {
           <Text style={styles.permSub}>
             Open Settings and allow camera access to scan bottles.
           </Text>
-          <Pressable style={styles.permBtn} onPress={() => Linking.openSettings()}>
-            <Text style={styles.permBtnText}>Open Settings</Text>
+          <Pressable style={styles.goldBtn} onPress={() => Linking.openSettings()}>
+            <Text style={styles.goldBtnText}>Open Settings</Text>
           </Pressable>
           <Pressable style={{ paddingVertical: 12 }} onPress={() => router.back()}>
-            <Text style={styles.permBackText}>Go Back</Text>
+            <Text style={styles.ghostText}>Go Back</Text>
           </Pressable>
         </View>
       </View>
     );
   }
 
-  // ── No device (simulator without camera) ──
-  if (!device) {
+  // ── Permission denied but can still ask ──
+  if (!permission.granted) {
     return (
       <View style={styles.dark}>
         <View style={[styles.topBar, { paddingTop: insets.top + 8 }]}>
@@ -254,14 +264,16 @@ export default function CameraScreen() {
           </Pressable>
         </View>
         <View style={styles.center}>
-          <Ionicons name="camera-reverse-outline" size={56} color="rgba(255,255,255,0.5)" />
-          <Text style={styles.permTitle}>Camera unavailable</Text>
-          <Text style={styles.permSub}>No camera found on this device.</Text>
-          <Pressable style={styles.permBtn} onPress={handleGallery}>
-            <Text style={styles.permBtnText}>Choose from Library</Text>
+          <Ionicons name="camera-outline" size={56} color="rgba(255,255,255,0.5)" />
+          <Text style={styles.permTitle}>Camera access needed</Text>
+          <Text style={styles.permSub}>
+            Allow camera access to scan perfume bottles.
+          </Text>
+          <Pressable style={styles.goldBtn} onPress={requestPermission}>
+            <Text style={styles.goldBtnText}>Allow Camera</Text>
           </Pressable>
           <Pressable style={{ paddingVertical: 12 }} onPress={() => router.back()}>
-            <Text style={styles.permBackText}>Go Back</Text>
+            <Text style={styles.ghostText}>Go Back</Text>
           </Pressable>
         </View>
       </View>
@@ -271,12 +283,10 @@ export default function CameraScreen() {
   // ── Live viewfinder with overlaid tips ──
   return (
     <View style={styles.dark}>
-      <Camera
+      <CameraView
         ref={cameraRef}
         style={StyleSheet.absoluteFill}
-        device={device}
-        isActive={state === 'viewfinder'}
-        photo
+        facing="back"
       />
 
       {/* Top bar: back + gallery */}
@@ -434,8 +444,7 @@ const styles = StyleSheet.create({
     color: '#fff', textAlign: 'center',
   },
   scanHint: {
-    fontFamily: FONTS.body,
-    fontSize: 12,
+    fontFamily: FONTS.body, fontSize: 12,
     color: 'rgba(255,255,255,0.5)',
     fontStyle: 'italic',
   },
@@ -452,8 +461,7 @@ const styles = StyleSheet.create({
   },
 
   permTitle: {
-    fontFamily: FONTS.serif,
-    fontSize: 22, fontWeight: '600',
+    fontFamily: FONTS.serif, fontSize: 22, fontWeight: '600',
     color: '#fff', textAlign: 'center',
   },
   permSub: {
@@ -461,18 +469,17 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.6)',
     textAlign: 'center', paddingHorizontal: SPACING.lg,
   },
-  permBtn: {
+  goldBtn: {
     backgroundColor: COLORS.accent,
     borderRadius: RADIUS.full,
     paddingVertical: 14, paddingHorizontal: 40,
     marginTop: SPACING.md,
   },
-  permBtnText: {
-    fontFamily: FONTS.body,
-    fontSize: 15, fontWeight: '700',
+  goldBtnText: {
+    fontFamily: FONTS.body, fontSize: 15, fontWeight: '700',
     color: '#fff', letterSpacing: 0.5,
   },
-  permBackText: {
+  ghostText: {
     fontFamily: FONTS.body, fontSize: 14,
     color: 'rgba(255,255,255,0.5)',
   },
