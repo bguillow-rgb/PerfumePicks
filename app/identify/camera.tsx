@@ -1,25 +1,27 @@
 /**
- * Perfume Concierge — Camera screen.
+ * Perfume Concierge — Camera screen with live viewfinder.
  *
- * Mirrors Pour Picks flow exactly:
- *   1. Native camera opens IMMEDIATELY on mount (via expo-image-picker)
- *   2. User takes photo — no confirmation step
- *   3. Shimmer loading while AI identifies
- *   4. ALWAYS routes to confirm-personal with fields filled in (or empty)
- *
- * If user cancels the camera, we go back. Gallery fallback available
- * from the idle state (shown if camera was cancelled or for retry).
+ * Mirrors Pour Picks flow:
+ *   - Live camera viewfinder fills the screen (dark bg)
+ *   - Tips overlaid on the viewfinder in a semi-transparent card
+ *   - "Perfume Concierge" capture button at bottom
+ *   - Gallery picker icon in top-right
+ *   - Back button top-left
+ *   - After capture → shimmer loading → always route to confirm-personal
  */
 
 import { Ionicons } from '@expo/vector-icons';
+import { CameraView, useCameraPermissions } from 'expo-camera';
 import * as Haptics from 'expo-haptics';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as ImagePicker from 'expo-image-picker';
-import { useFocusEffect, useRouter } from 'expo-router';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRouter } from 'expo-router';
+import { useEffect, useRef, useState } from 'react';
 import {
+  ActivityIndicator,
   Alert,
   Image,
+  Linking,
   Pressable,
   StyleSheet,
   Text,
@@ -32,7 +34,7 @@ import Animated, {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { COLORS, FONTS, RADIUS, SPACING, TYPE } from '@/src/constants/theme';
 import { identifyBottle } from '@/src/features/identify/identifyService';
@@ -53,17 +55,32 @@ const LOADING_MESSAGES = [
   'Almost there…',
 ];
 
-type ScreenState = 'tips' | 'idle' | 'scanning';
+type ScreenState = 'viewfinder' | 'scanning' | 'permission_needed';
 
 export default function CameraScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const isPro = useProStore((s) => s.isPro);
-  const { remaining, limitReached, guestLimitReached, isAnonymous, loading } =
+  const { remaining, limitReached, guestLimitReached, isAnonymous } =
     useScanCount();
-  const [state, setState] = useState<ScreenState>('tips');
+  const [permission, requestPermission] = useCameraPermissions();
+
+  const cameraRef = useRef<CameraView>(null);
+  const [state, setState] = useState<ScreenState>('viewfinder');
   const [photoUri, setPhotoUri] = useState<string | null>(null);
   const [loadingMsg, setLoadingMsg] = useState(LOADING_MESSAGES[0]);
-  const launched = useRef(false);
+  const [capturing, setCapturing] = useState(false);
+
+  // Request permission on mount
+  useEffect(() => {
+    if (!permission) return;
+    if (!permission.granted && !permission.canAskAgain) {
+      setState('permission_needed');
+    }
+    if (!permission.granted && permission.canAskAgain) {
+      requestPermission();
+    }
+  }, [permission]);
 
   // Rotate loading messages while scanning
   useEffect(() => {
@@ -75,16 +92,6 @@ export default function CameraScreen() {
     }, 1600);
     return () => clearInterval(iv);
   }, [state]);
-
-  // Show tips briefly, then auto-launch camera
-  useFocusEffect(
-    useCallback(() => {
-      if (launched.current) return;
-      launched.current = true;
-      const t = setTimeout(() => launchCamera(), 1500);
-      return () => clearTimeout(t);
-    }, [])
-  );
 
   const checkQuota = (): boolean => {
     if (isPro) return true;
@@ -127,7 +134,6 @@ export default function CameraScreen() {
           : Haptics.NotificationFeedbackType.Warning
       );
 
-      // ALWAYS route to confirm — match or not
       router.replace({
         pathname: '/identify/confirm-personal',
         params: {
@@ -145,7 +151,6 @@ export default function CameraScreen() {
       captureException(e, { area: 'identify_bottle' });
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
 
-      // Even on error, route to confirm with empty fields
       router.replace({
         pathname: '/identify/confirm-personal',
         params: {
@@ -162,41 +167,33 @@ export default function CameraScreen() {
     }
   };
 
-  const launchCamera = async () => {
-    if (!checkQuota()) {
-      setState('idle');
-      return;
-    }
+  const handleCapture = async () => {
+    if (capturing) return;
+    if (!checkQuota()) return;
 
-    const { status } = await ImagePicker.requestCameraPermissionsAsync();
-    if (status !== 'granted') {
-      Alert.alert(
-        'Camera Access Needed',
-        'Allow camera access in Settings to scan bottles.'
-      );
-      setState('idle');
-      return;
-    }
-
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-
-    const pickerResult = await ImagePicker.launchCameraAsync({
-      quality: 1,
-      base64: false,
-      allowsEditing: false,
-    });
-
-    if (pickerResult.canceled || !pickerResult.assets?.[0]?.uri) {
-      // User cancelled camera — show idle with retry options
-      setState('idle');
-      return;
-    }
-
+    setCapturing(true);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-    await processAndIdentify(pickerResult.assets[0].uri);
+
+    try {
+      const photo = await cameraRef.current?.takePictureAsync({
+        quality: 0.85,
+        skipProcessing: false,
+      });
+
+      if (!photo?.uri) {
+        setCapturing(false);
+        return;
+      }
+
+      await processAndIdentify(photo.uri);
+    } catch (e) {
+      console.warn('[camera] capture error:', e);
+      Alert.alert('Error', 'Could not capture photo. Please try again.');
+      setCapturing(false);
+    }
   };
 
-  const launchGallery = async () => {
+  const handleGallery = async () => {
     if (!checkQuota()) return;
 
     Haptics.selectionAsync();
@@ -213,11 +210,11 @@ export default function CameraScreen() {
   // ── Scanning state: shimmer over photo ──
   if (state === 'scanning') {
     return (
-      <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
-        <View style={styles.header}>
-          <View style={{ width: 28 }} />
-          <Text style={styles.headerTitle}>PERFUME CONCIERGE</Text>
-          <View style={{ width: 28 }} />
+      <View style={styles.darkContainer}>
+        <View style={[styles.topBar, { paddingTop: insets.top + 8 }]}>
+          <View style={{ width: 40 }} />
+          <Text style={styles.topBarTitle}>PERFUME CONCIERGE</Text>
+          <View style={{ width: 40 }} />
         </View>
         <View style={styles.center}>
           {photoUri && (
@@ -229,89 +226,109 @@ export default function CameraScreen() {
           <Text style={styles.scanningTitle}>Identifying your fragrance</Text>
           <Text style={styles.scanningHint}>{loadingMsg}</Text>
         </View>
-      </SafeAreaView>
+      </View>
     );
   }
 
-  // ── Tips state: shown briefly before camera auto-launches ──
-  if (state === 'tips') {
+  // ── Permission needed: can't ask again ──
+  if (state === 'permission_needed' || (permission && !permission.granted && !permission.canAskAgain)) {
     return (
-      <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
-        <View style={styles.header}>
+      <View style={styles.darkContainer}>
+        <View style={[styles.topBar, { paddingTop: insets.top + 8 }]}>
           <Pressable onPress={() => router.back()} hitSlop={12}>
-            <Ionicons name="close" size={28} color={COLORS.text} />
+            <Ionicons name="arrow-back" size={24} color="#fff" />
           </Pressable>
-          <Text style={styles.headerTitle}>PERFUME CONCIERGE</Text>
-          <View style={{ width: 28 }} />
+          <Text style={styles.topBarTitle}>PERFUME CONCIERGE</Text>
+          <View style={{ width: 40 }} />
         </View>
         <View style={styles.center}>
-          <View style={styles.iconCircle}>
-            <Ionicons name="sparkles" size={36} color={COLORS.accent} />
-          </View>
-          <Text style={styles.tipsHeading}>FOR THE BEST MATCH</Text>
-          <View style={styles.tipsCard}>
-            <Tip icon="scan-outline" text="Fill the frame with the bottle" />
-            <Tip icon="sunny-outline" text="Even, bright lighting works best" />
-            <Tip icon="hand-left-outline" text="Keep the label visible and in focus" />
-          </View>
-          <Text style={styles.tipsHint}>Opening camera…</Text>
-
-          {/* Let user tap to launch immediately */}
-          <Pressable style={styles.primaryBtn} onPress={launchCamera}>
-            <Ionicons name="camera" size={18} color={COLORS.white} />
-            <Text style={styles.primaryBtnText}>Open Camera Now</Text>
+          <Ionicons name="camera-outline" size={56} color="rgba(255,255,255,0.5)" />
+          <Text style={styles.permTitle}>Camera access needed</Text>
+          <Text style={styles.permSub}>
+            Open Settings and allow camera access to scan bottles.
+          </Text>
+          <Pressable
+            style={styles.permBtn}
+            onPress={() => Linking.openSettings()}
+          >
+            <Text style={styles.permBtnText}>Open Settings</Text>
+          </Pressable>
+          <Pressable style={styles.permBackBtn} onPress={() => router.back()}>
+            <Text style={styles.permBackText}>Go Back</Text>
           </Pressable>
         </View>
-      </SafeAreaView>
+      </View>
     );
   }
 
-  // ── Idle state: shown after camera cancel or for retry ──
+  // ── Permission loading ──
+  if (!permission?.granted) {
+    return (
+      <View style={styles.darkContainer}>
+        <View style={styles.center}>
+          <ActivityIndicator color={COLORS.accent} size="large" />
+        </View>
+      </View>
+    );
+  }
+
+  // ── Live viewfinder with overlaid tips ──
   return (
-    <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
-      <View style={styles.header}>
-        <Pressable onPress={() => router.back()} hitSlop={12}>
-          <Ionicons name="close" size={28} color={COLORS.text} />
+    <View style={styles.darkContainer}>
+      <CameraView
+        ref={cameraRef}
+        style={StyleSheet.absoluteFill}
+        facing="back"
+      />
+
+      {/* Top bar: back + gallery */}
+      <View style={[styles.topBar, { paddingTop: insets.top + 8 }]}>
+        <Pressable onPress={() => router.back()} hitSlop={12} style={styles.topBarBtn}>
+          <Ionicons name="arrow-back" size={22} color="#fff" />
         </Pressable>
-        <Text style={styles.headerTitle}>PERFUME CONCIERGE</Text>
-        <View style={{ width: 28 }} />
+        <View style={{ flex: 1 }} />
+        <Pressable onPress={handleGallery} hitSlop={12} style={styles.topBarBtn}>
+          <Ionicons name="images-outline" size={20} color="#fff" />
+        </Pressable>
       </View>
 
-      <View style={styles.center}>
-        <View style={styles.iconCircle}>
-          <Ionicons name="sparkles" size={36} color={COLORS.accent} />
+      {/* Bottom overlay: tips card + capture button */}
+      <View style={[styles.bottomOverlay, { paddingBottom: insets.bottom + 16 }]}>
+        {/* Tips card */}
+        <View style={styles.tipsCard}>
+          <Text style={styles.tipsHeading}>FOR THE BEST MATCH</Text>
+          <Text style={styles.tipLine}>• Fill the frame with the front label</Text>
+          <Text style={styles.tipLine}>• Use even, bright light — avoid glare</Text>
+          <Text style={styles.tipLine}>• Hold steady, keep text in focus</Text>
+          <Text style={styles.tipsHint}>
+            Tap Perfume Concierge when you're ready — AI handles the rest.
+          </Text>
         </View>
-        <Text style={styles.heroTitle}>Identify a Fragrance</Text>
-        <Text style={styles.heroSub}>
-          Take a photo of a perfume bottle and we'll identify it instantly.
-        </Text>
 
-        <Pressable style={styles.primaryBtn} onPress={launchCamera}>
-          <Ionicons name="camera" size={18} color={COLORS.white} />
-          <Text style={styles.primaryBtnText}>Take Photo</Text>
-        </Pressable>
-
-        <Pressable style={styles.secondaryBtn} onPress={launchGallery}>
-          <Ionicons name="images-outline" size={16} color={COLORS.muted} />
-          <Text style={styles.secondaryBtnText}>Choose from Library</Text>
-        </Pressable>
-
-        {!loading && !isPro && remaining !== null && (
+        {/* Scan quota */}
+        {!isPro && remaining !== null && (
           <Text style={styles.quota}>
             {remaining} scan{remaining === 1 ? '' : 's'} remaining
-            {isAnonymous ? ' · Sign in for more' : ' · Unlimited with Pro'}
+            {isAnonymous ? ' · Sign in for more' : ''}
           </Text>
         )}
-      </View>
-    </SafeAreaView>
-  );
-}
 
-function Tip({ icon, text }: { icon: keyof typeof Ionicons.glyphMap; text: string }) {
-  return (
-    <View style={styles.tipRow}>
-      <Ionicons name={icon} size={16} color={COLORS.accent} />
-      <Text style={styles.tipText}>{text}</Text>
+        {/* Capture button */}
+        <Pressable
+          style={[styles.captureBtn, capturing && { opacity: 0.6 }]}
+          onPress={handleCapture}
+          disabled={capturing}
+        >
+          {capturing ? (
+            <ActivityIndicator color="#fff" />
+          ) : (
+            <>
+              <Ionicons name="sparkles" size={16} color="#fff" />
+              <Text style={styles.captureBtnText}>Perfume Concierge</Text>
+            </>
+          )}
+        </Pressable>
+      </View>
     </View>
   );
 }
@@ -336,15 +353,105 @@ function ShimmerOverlay() {
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: COLORS.bg },
-  header: {
+  darkContainer: {
+    flex: 1,
+    backgroundColor: '#000',
+  },
+
+  // Top bar
+  topBar: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: SPACING.lg,
-    paddingVertical: SPACING.md,
+    paddingHorizontal: 16,
+    paddingBottom: 8,
   },
-  headerTitle: { ...TYPE.eyebrow, letterSpacing: 2 },
+  topBarTitle: {
+    fontFamily: FONTS.body,
+    fontSize: 11,
+    fontWeight: '600',
+    color: COLORS.accent,
+    letterSpacing: 3,
+    textTransform: 'uppercase',
+  },
+  topBarBtn: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(0,0,0,0.45)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  // Bottom overlay
+  bottomOverlay: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 10,
+    paddingHorizontal: 16,
+    gap: 10,
+  },
+  tipsCard: {
+    backgroundColor: 'rgba(0,0,0,0.65)',
+    borderRadius: RADIUS.lg,
+    borderWidth: 1,
+    borderColor: 'rgba(184,146,75,0.4)',
+    padding: 14,
+  },
+  tipsHeading: {
+    fontFamily: FONTS.body,
+    fontSize: 11,
+    fontWeight: '600',
+    color: COLORS.accent,
+    letterSpacing: 2.5,
+    marginBottom: 8,
+  },
+  tipLine: {
+    fontFamily: FONTS.body,
+    fontSize: 13,
+    color: 'rgba(255,255,255,0.9)',
+    lineHeight: 20,
+    marginBottom: 2,
+  },
+  tipsHint: {
+    fontFamily: FONTS.body,
+    fontSize: 12,
+    color: 'rgba(255,255,255,0.5)',
+    fontStyle: 'italic',
+    marginTop: 6,
+  },
+  quota: {
+    fontFamily: FONTS.body,
+    fontSize: 11,
+    color: 'rgba(255,255,255,0.5)',
+    textAlign: 'center',
+  },
+  captureBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    backgroundColor: COLORS.accent,
+    borderRadius: RADIUS.full,
+    paddingVertical: 16,
+    minWidth: 240,
+    alignSelf: 'center',
+  },
+  captureBtnText: {
+    fontFamily: FONTS.body,
+    fontSize: 15,
+    fontWeight: '700',
+    color: '#fff',
+    letterSpacing: 1,
+  },
+
+  // Center content (scanning + permission)
   center: {
     flex: 1,
     alignItems: 'center',
@@ -352,74 +459,73 @@ const styles = StyleSheet.create({
     padding: SPACING.xl,
     gap: SPACING.md,
   },
-  iconCircle: {
-    width: 84, height: 84, borderRadius: 42,
-    backgroundColor: COLORS.card,
-    borderWidth: 1, borderColor: COLORS.accent,
-    alignItems: 'center', justifyContent: 'center',
-    marginBottom: SPACING.sm,
+  scanningTitle: {
+    fontFamily: FONTS.serif,
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#fff',
+    textAlign: 'center',
   },
-  heroTitle: {
-    fontFamily: FONTS.serif, fontSize: 26, fontWeight: '600',
-    color: COLORS.text, textAlign: 'center', lineHeight: 32,
+  scanningHint: {
+    fontFamily: FONTS.body,
+    fontSize: 12,
+    color: 'rgba(255,255,255,0.5)',
+    fontStyle: 'italic',
   },
-  heroSub: {
-    ...TYPE.bodySmall, color: COLORS.muted,
-    textAlign: 'center', paddingHorizontal: SPACING.sm,
-  },
-  primaryBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: 8,
-    backgroundColor: COLORS.accent,
-    paddingHorizontal: 40, paddingVertical: 16,
-    borderRadius: RADIUS.full, minWidth: 240, justifyContent: 'center',
-    marginTop: SPACING.lg,
-  },
-  primaryBtnText: {
-    ...TYPE.label, color: COLORS.white, letterSpacing: 1.5, fontSize: 14,
-  },
-  secondaryBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    paddingVertical: SPACING.sm,
-  },
-  secondaryBtnText: {
-    ...TYPE.label, color: COLORS.muted, fontSize: 12, letterSpacing: 0.5,
-  },
-  quota: {
-    ...TYPE.caption, color: COLORS.subtle,
-    textAlign: 'center', marginTop: SPACING.sm,
-  },
-  // Tips
-  tipsHeading: {
-    ...TYPE.eyebrow, fontSize: 12, letterSpacing: 2.5,
-    marginBottom: SPACING.sm,
-  },
-  tipsCard: {
-    backgroundColor: COLORS.card, borderRadius: RADIUS.lg,
-    borderWidth: 1, borderColor: COLORS.border,
-    padding: SPACING.md, gap: 10, width: '100%',
-  },
-  tipRow: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm },
-  tipText: { ...TYPE.bodySmall, color: COLORS.text, flex: 1 },
-  tipsHint: {
-    ...TYPE.caption, color: COLORS.subtle, fontStyle: 'italic',
-    marginTop: SPACING.sm,
-  },
-  // Scanning
   shimmerWrap: {
-    width: 220, height: 280, borderRadius: RADIUS.lg,
-    overflow: 'hidden', marginBottom: SPACING.lg,
+    width: 220,
+    height: 280,
+    borderRadius: RADIUS.lg,
+    overflow: 'hidden',
+    marginBottom: SPACING.lg,
   },
   scanImage: { width: '100%', height: '100%' },
   shimmerClip: { ...StyleSheet.absoluteFillObject, overflow: 'hidden' },
   shimmerBar: {
-    position: 'absolute', left: 0, right: 0, height: 6,
-    backgroundColor: COLORS.accent, opacity: 0.5, borderRadius: 3,
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    height: 6,
+    backgroundColor: COLORS.accent,
+    opacity: 0.6,
+    borderRadius: 3,
   },
-  scanningTitle: {
-    fontFamily: FONTS.serif, fontSize: 20, fontWeight: '600',
-    color: COLORS.text, textAlign: 'center',
+
+  // Permission screen
+  permTitle: {
+    fontFamily: FONTS.serif,
+    fontSize: 22,
+    fontWeight: '600',
+    color: '#fff',
+    textAlign: 'center',
   },
-  scanningHint: {
-    ...TYPE.caption, color: COLORS.muted, fontStyle: 'italic',
+  permSub: {
+    fontFamily: FONTS.body,
+    fontSize: 14,
+    color: 'rgba(255,255,255,0.6)',
+    textAlign: 'center',
+    paddingHorizontal: SPACING.lg,
+  },
+  permBtn: {
+    backgroundColor: COLORS.accent,
+    borderRadius: RADIUS.full,
+    paddingVertical: 14,
+    paddingHorizontal: 40,
+    marginTop: SPACING.md,
+  },
+  permBtnText: {
+    fontFamily: FONTS.body,
+    fontSize: 15,
+    fontWeight: '700',
+    color: '#fff',
+    letterSpacing: 0.5,
+  },
+  permBackBtn: {
+    paddingVertical: SPACING.sm,
+  },
+  permBackText: {
+    fontFamily: FONTS.body,
+    fontSize: 14,
+    color: 'rgba(255,255,255,0.5)',
   },
 });
