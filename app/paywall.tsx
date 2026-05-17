@@ -7,44 +7,44 @@ import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { supabase } from '@/lib/supabase';
 import { Button } from '@/src/components/ui/Button';
-import { COLORS, SPACING, RADIUS } from '@/src/constants/theme';
+import { COLORS, SPACING, RADIUS, FONTS, TYPE } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
 import { useRevenueCat } from '@/src/hooks/useRevenueCat';
 
 type Plan = 'monthly' | 'yearly';
 
-// Copy is tight on purpose. Users scan, not read. Each bullet earns its spot
-// by naming the one thing that distinguishes Pro from free and from other apps.
-const FEATURES = [
+// ── 3 honest pillars — every claim maps to a real isPro check ──
+
+const PILLARS = [
   {
-    icon: 'sparkles-outline' as const,
-    title: 'Unlimited Train My Nose',
-    desc: 'Sharpen your taste with unlimited swipes — free is 10 per day.',
+    eyebrow: 'KNOW EVERY FRAGRANCE',
+    cursive: 'go deep',
+    icon: 'sparkles' as const,
+    bullets: [
+      { title: 'Cheaper alternatives & dupes', sub: 'Find lookalikes 30%+ cheaper, ranked by accord overlap.', lead: true },
+      { title: 'Accord intensity + score tiles', sub: 'See exactly how loud each note is — and the compliments, versatility, and office-safe scores the community gives.' },
+      { title: 'Who wears it', sub: 'Verified celebrity associations and the lore behind every bottle.' },
+    ],
   },
   {
-    icon: 'flask-outline' as const,
-    title: '9-Question Precision Quiz',
-    desc: 'Ten matches scored against your palate. Free is 3 questions, 3 picks.',
+    eyebrow: 'TRACK EVERYTHING',
+    cursive: 'never miss a wear',
+    icon: 'bookmark' as const,
+    bullets: [
+      { title: 'Unlimited wardrobe, swipes & scans', sub: 'No 20-bottle cap. No 10-swipe-a-day limit. No 10-scan-a-day limit.', lead: true },
+      { title: '9-question Precision Quiz', sub: 'Three free questions get you started — six more unlock your full taste profile.' },
+      { title: 'Wrapped, badges & streaks', sub: 'Your year in fragrance, achievements as you log, and streak rewards.' },
+    ],
   },
   {
-    icon: 'rose-outline' as const,
-    title: 'Unlimited Wardrobe',
-    desc: 'Track every bottle, decant and sample with mL meters and reorder alerts.',
-  },
-  {
-    icon: 'analytics-outline' as const,
-    title: 'Taste Profile Insights',
-    desc: 'See your top notes, accords, and avoid list — your scent identity at a glance.',
-  },
-  {
-    icon: 'pricetags-outline' as const,
-    title: 'Dupes & Decant Intelligence',
-    desc: 'Find lookalikes 30%+ cheaper, plus best-value mL across every retailer.',
-  },
-  {
-    icon: 'sunny-outline' as const,
-    title: 'Wear Today + Layering',
-    desc: 'A daily pick tuned to weather, season and occasion — and pairs that layer well.',
+    eyebrow: 'AI IN YOUR POCKET',
+    cursive: 'your nose, smarter',
+    icon: 'flask' as const,
+    bullets: [
+      { title: '"Why this?" explained', sub: 'Specific reasoning behind every daily pick — the exact notes and patterns we matched.', lead: true },
+      { title: 'Perfume Concierge bottle scan', sub: 'Point your camera at any bottle and ID it instantly. Unlimited scans.' },
+      { title: 'Layering pairs & taste profile', sub: 'Get layering suggestions and your full top-notes / top-accords / avoid list.' },
+    ],
   },
 ];
 
@@ -53,9 +53,6 @@ export default function PaywallScreen() {
   const { returnTo } = useLocalSearchParams<{ returnTo?: string }>();
   const insets = useSafeAreaInsets();
   const [selectedPlan, setSelectedPlan] = useState<Plan>('yearly');
-  // Default true so the purchase button is safely gated until the async
-  // auth check resolves — prevents a race where a guest taps Purchase
-  // before we know they're anonymous.
   const [isGuest, setIsGuest] = useState(true);
   const activate = useProStore((s) => s.activate);
   const isPro = useProStore((s) => s.isPro);
@@ -77,15 +74,8 @@ export default function PaywallScreen() {
     })();
   }, []);
 
-  // Locked launch pricing for Perfume Picks: $4.99/mo, $39.99/yr (7-day
-  // free trial). These fallbacks must match the App Store Connect product
-  // prices so the paywall and Apple purchase sheet never show different
-  // numbers. DO NOT iterate post-spec — paywall pricing oscillation was
-  // a documented source of late-stage churn in StickPicks.
   const yearlyPrice = yearlyPackage?.product.priceString ?? '$39.99';
   const monthlyPrice = monthlyPackage?.product.priceString ?? '$4.99';
-  // Per-month equivalent of the annual plan — Apple 3.1.2(a) requires this
-  // to be shown alongside the annual price.
   const yearlyPerMonth = yearlyPackage
     ? `$${(yearlyPackage.product.price / 12).toFixed(2)}/month billed annually`
     : '$3.33/month billed annually';
@@ -108,14 +98,12 @@ export default function PaywallScreen() {
     const pkg = selectedPlan === 'yearly' ? yearlyPackage : monthlyPackage;
 
     if (pkg) {
-      // Real RevenueCat purchase
       const success = await buy(pkg);
       if (success) {
         if (returnTo) router.replace(returnTo as any);
         else router.back();
       }
     } else {
-      // No packages available — RevenueCat not configured or no network
       Alert.alert('Unavailable', 'Subscriptions are not available right now. Please try again later.');
     }
   }
@@ -148,9 +136,7 @@ export default function PaywallScreen() {
 
   return (
     <ScrollView
-      style={[styles.screen]}
-      // Regular stack push (not a modal) — add insets.top so the close X and
-      // header clear the status bar / notch.
+      style={styles.screen}
       contentContainerStyle={{
         paddingTop: insets.top + SPACING.md,
         paddingBottom: insets.bottom + 40,
@@ -161,7 +147,7 @@ export default function PaywallScreen() {
         <Ionicons name="close" size={24} color={COLORS.muted} />
       </Pressable>
 
-      {/* Already Pro state */}
+      {/* Already Pro */}
       {isPro && (
         <View style={styles.alreadyProBox}>
           <Ionicons name="sparkles" size={32} color={COLORS.accent} />
@@ -194,28 +180,34 @@ export default function PaywallScreen() {
         <Text style={styles.socialRatingText}>Loved by fragrance enthusiasts</Text>
       </View>
 
-      {/* Pitch — one sentence, named differentiators only. Users scan paywalls
-          rather than read them; we frontload the two claims no competitor can
-          make and let the bullets do the rest. */}
-      <View style={styles.pitchCard}>
-        <Text style={styles.pitchHeadline}>
-          The only fragrance app that learns your nose — and finds the dupes.
-        </Text>
-      </View>
+      {/* ── 3 Pillar cards ── */}
+      <View style={styles.pillars}>
+        {PILLARS.map((pillar) => (
+          <View key={pillar.eyebrow} style={styles.pillarCard}>
+            <Text style={styles.pillarEyebrow}>{pillar.eyebrow}</Text>
+            <Text style={styles.pillarCursive}>{pillar.cursive}</Text>
 
-      {/* Features */}
-      <View style={styles.features}>
-        {FEATURES.map((f) => (
-          <View key={f.title} style={styles.featureRow}>
-            <Ionicons name={f.icon} size={22} color={COLORS.accent} />
-            <View style={styles.featureText}>
-              <Text style={styles.featureTitle}>{f.title}</Text>
-              <Text style={styles.featureDesc}>{f.desc}</Text>
+            <View style={styles.pillarBullets}>
+              {pillar.bullets.map((bullet) => (
+                <View key={bullet.title} style={styles.bulletRow}>
+                  <Ionicons
+                    name={pillar.icon}
+                    size={(bullet as any).lead ? 24 : 18}
+                    color={COLORS.accent}
+                    style={{ marginTop: 2 }}
+                  />
+                  <View style={styles.bulletText}>
+                    <Text style={styles.bulletTitle}>{bullet.title}</Text>
+                    <Text style={styles.bulletSub}>{bullet.sub}</Text>
+                  </View>
+                </View>
+              ))}
             </View>
           </View>
         ))}
       </View>
 
+      {/* Plan cards + CTA */}
       {rcLoading ? (
         <ActivityIndicator color={COLORS.accent} style={{ marginVertical: SPACING.lg }} />
       ) : rcError ? (
@@ -227,8 +219,8 @@ export default function PaywallScreen() {
         </View>
       ) : (
         <>
-          {/* Plan selection */}
           <View style={styles.plans}>
+            {/* Yearly */}
             <Pressable
               onPress={() => setSelectedPlan('yearly')}
               disabled={purchasing}
@@ -236,9 +228,6 @@ export default function PaywallScreen() {
             >
               <View style={styles.planBadge}>
                 <Text style={styles.planBadgeText}>BEST VALUE</Text>
-              </View>
-              <View style={styles.trialBadge}>
-                <Text style={styles.trialBadgeText}>7-DAY FREE TRIAL</Text>
               </View>
               <Text style={styles.planPrice}>{yearlyPrice}</Text>
               <Text style={styles.planPeriod}>per year</Text>
@@ -250,6 +239,7 @@ export default function PaywallScreen() {
               </Text>
             </Pressable>
 
+            {/* Monthly */}
             <Pressable
               onPress={() => setSelectedPlan('monthly')}
               disabled={purchasing}
@@ -261,11 +251,12 @@ export default function PaywallScreen() {
             </Pressable>
           </View>
 
-          {/* Pre-purchase disclosure — Apple 3.1.2(a) requires this BEFORE the CTA. */}
+          {/* Pre-purchase disclosure */}
           <Text style={styles.preCtaDisclosure}>
             {selectedPlan === 'yearly'
               ? `Free for 7 days, then ${yearlyPrice}/year. Cancel anytime before trial ends.`
               : `Auto-renews at ${monthlyPrice}/month until canceled.`}
+            {' '}Yearly plan includes a 7-day free trial.
           </Text>
 
           {/* CTA */}
@@ -348,48 +339,59 @@ const styles = StyleSheet.create({
     color: COLORS.muted,
     fontStyle: 'italic',
   },
-  // Pitch card frames the two-sentence sell above the features grid. Gold
-  // border on dark-green card echoes the section-title treatment from the
-  // cigar detail page — reads as editorial, not marketing.
-  pitchCard: {
-    backgroundColor: COLORS.card,
-    borderWidth: 1,
-    borderColor: COLORS.accent,
-    borderRadius: RADIUS.md,
-    padding: SPACING.md,
-    marginBottom: SPACING.lg,
-  },
-  pitchHeadline: {
-    fontFamily: 'CormorantGaramond_400Regular',
-    fontSize: 18,
-    fontWeight: '800',
-    color: COLORS.text,
-    lineHeight: 24,
-  },
-  features: {
+
+  // ── Pillars ──
+  pillars: {
     gap: SPACING.md,
     marginBottom: SPACING.lg,
   },
-  featureRow: {
+  pillarCard: {
+    backgroundColor: COLORS.card,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    borderRadius: RADIUS.lg,
+    padding: SPACING.lg,
+  },
+  pillarEyebrow: {
+    ...TYPE.eyebrow,
+    fontSize: 10,
+    color: COLORS.muted,
+    letterSpacing: 2.5,
+  },
+  pillarCursive: {
+    fontFamily: 'PinyonScript_400Regular',
+    fontSize: 18,
+    color: COLORS.accent,
+    paddingLeft: 6,
+    marginTop: 2,
+    marginBottom: SPACING.md,
+  },
+  pillarBullets: {
+    gap: SPACING.md,
+  },
+  bulletRow: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
   },
-  featureText: {
+  bulletText: {
     flex: 1,
   },
-  featureTitle: {
-    fontFamily: 'CormorantGaramond_400Regular',
-    fontSize: 15,
+  bulletTitle: {
+    fontFamily: FONTS.serif,
+    fontSize: 16,
     fontWeight: '700',
     color: COLORS.text,
   },
-  featureDesc: {
-    fontFamily: 'CormorantGaramond_400Regular',
+  bulletSub: {
+    fontFamily: FONTS.body,
     fontSize: 13,
     color: COLORS.muted,
     marginTop: 2,
+    lineHeight: 18,
   },
+
+  // ── Plans ──
   plans: {
     flexDirection: 'row',
     gap: SPACING.sm,
@@ -405,7 +407,6 @@ const styles = StyleSheet.create({
   },
   planCardSelected: {
     borderColor: COLORS.accent,
-    backgroundColor: COLORS.card,
   },
   planBadge: {
     backgroundColor: COLORS.accent,
@@ -415,26 +416,10 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.xs,
   },
   planBadgeText: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 10,
     fontWeight: '800',
     color: COLORS.white,
-    letterSpacing: 1,
-  },
-  trialBadge: {
-    backgroundColor: COLORS.blushSoft ?? '#f5ede8',
-    borderRadius: RADIUS.full,
-    paddingVertical: 3,
-    paddingHorizontal: 10,
-    marginBottom: SPACING.xs,
-    borderWidth: 1,
-    borderColor: COLORS.accent,
-  },
-  trialBadgeText: {
-    fontFamily: 'CormorantGaramond_400Regular',
-    fontSize: 10,
-    fontWeight: '800',
-    color: COLORS.accent,
     letterSpacing: 1,
   },
   planPrice: {
@@ -444,31 +429,33 @@ const styles = StyleSheet.create({
     color: COLORS.text,
   },
   planPeriod: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 13,
     color: COLORS.muted,
     marginTop: 2,
   },
   planSavings: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 11,
     color: COLORS.accent,
     marginTop: 4,
   },
   planPerMonth: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 11,
     color: COLORS.subtle,
     marginTop: 2,
     textAlign: 'center',
   },
   preCtaDisclosure: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 11,
     color: COLORS.subtle,
     textAlign: 'center',
     marginTop: SPACING.md,
   },
+
+  // ── Guest / Restore / Legal ──
   guestBanner: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -483,7 +470,7 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.md,
   },
   guestBannerText: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 13,
     fontWeight: '700',
     color: COLORS.accent,
@@ -494,13 +481,13 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
   restoreText: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 14,
     fontWeight: '600',
     color: COLORS.muted,
   },
   legal: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 11,
     color: COLORS.subtle,
     textAlign: 'center',
@@ -516,7 +503,7 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.md,
   },
   legalLink: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 11,
     color: COLORS.muted,
     textDecorationLine: 'underline',
@@ -536,14 +523,14 @@ const styles = StyleSheet.create({
     gap: SPACING.sm,
   },
   alreadyProTitle: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.serif,
     fontSize: 20,
     fontWeight: '700',
     color: COLORS.text,
     textAlign: 'center',
   },
   alreadyProBody: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 14,
     color: COLORS.muted,
     textAlign: 'center',
@@ -557,7 +544,7 @@ const styles = StyleSheet.create({
     marginTop: SPACING.sm,
   },
   alreadyProBtnText: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 14,
     fontWeight: '700',
     color: COLORS.white,
@@ -569,7 +556,7 @@ const styles = StyleSheet.create({
     gap: SPACING.md,
   },
   errorText: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 15,
     color: COLORS.muted,
     textAlign: 'center',
@@ -583,7 +570,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 28,
   },
   retryText: {
-    fontFamily: 'CormorantGaramond_400Regular',
+    fontFamily: FONTS.body,
     fontSize: 14,
     fontWeight: '700',
     color: COLORS.accent,
