@@ -359,8 +359,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.accent,
     alignItems: 'center', justifyContent: 'center',
   },
-  pillRowOuter: { flexGrow: 0 },
-  pillRow: { paddingHorizontal: SPACING.lg, paddingVertical: SPACING.md, paddingRight: SPACING.xl },
+  pillRowOuter: { flexGrow: 0, maxHeight: 52 },
+  pillRow: { paddingHorizontal: SPACING.lg, paddingVertical: SPACING.md, paddingRight: SPACING.xxl, gap: SPACING.sm },
   pill: {
     paddingHorizontal: 14,
     paddingVertical: 7,
