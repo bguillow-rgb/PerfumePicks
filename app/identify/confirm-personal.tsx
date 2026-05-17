@@ -168,7 +168,17 @@ export default function ConfirmPersonalScreen() {
       if (hasCatalogMatch) {
         router.replace(`/(tabs)/fragrance/${params.fragranceId}` as any);
       } else {
-        router.replace('/(tabs)/wardrobe' as any);
+        // No catalog match — still show success and go to wardrobe.
+        // The fragrance isn't in our catalog so we can't add a wardrobe item
+        // with a fragrance_id, but we've submitted the suggestion above.
+        Alert.alert(
+          'Noted!',
+          suggestForCatalog
+            ? "We'll review this fragrance for our catalog. You'll be able to add it to your wardrobe once it's approved."
+            : 'Fragrance submitted.',
+          [{ text: 'OK', onPress: () => router.replace('/(tabs)/wardrobe' as any) }]
+        );
+        return;
       }
     } catch (e: any) {
       Alert.alert('Error', e?.message ?? 'Failed to save. Please try again.');
