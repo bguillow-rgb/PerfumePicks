@@ -110,28 +110,7 @@ export default function ConfirmPersonalScreen() {
           .eq('id', params.scanId);
       }
 
-      // If catalog match and unedited → add to wardrobe + navigate to detail
-      if (hasCatalogMatch && b === params.brand && n === params.name) {
-        useWardrobeStore.getState().add({
-          fragrance_id: params.fragranceId,
-          status: 'have',
-          unit_type: 'bottle',
-          size_ml: 0,
-          remaining_ml: 0,
-        });
-
-        track(EVENTS.SCAN_CONFIRMED, {
-          fragrance_id: params.fragranceId,
-          confidence,
-          edited: false,
-        });
-
-        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-        router.replace(`/(tabs)/fragrance/${params.fragranceId}` as any);
-        return;
-      }
-
-      // Catalog match but user edited, or no match — add wardrobe item if we have a catalog ID
+      // Add to wardrobe as "have" — catalog match or not
       if (hasCatalogMatch) {
         useWardrobeStore.getState().add({
           fragrance_id: params.fragranceId,
@@ -140,46 +119,33 @@ export default function ConfirmPersonalScreen() {
           size_ml: 0,
           remaining_ml: 0,
         });
-        track(EVENTS.SCAN_CONFIRMED, {
-          fragrance_id: params.fragranceId,
-          confidence,
-          edited: true,
-        });
       }
 
-      // Submit suggestion for catalog
+      track(EVENTS.SCAN_CONFIRMED, {
+        fragrance_id: params.fragranceId ?? null,
+        confidence,
+        edited: hasCatalogMatch ? (b !== params.brand || n !== params.name) : false,
+      });
+
+      // Submit suggestion for catalog silently in background (no alerts)
       if (suggestForCatalog && b && n) {
         const deviceId = await getDeviceId();
         const { data: { user } } = await supabase.auth.getUser();
 
-        await supabase.from('fragrance_submissions').insert({
+        supabase.from('fragrance_submissions').insert({
           user_id: user?.id ?? null,
           device_id: deviceId,
           brand: b,
           name: n,
           concentration: concentration.trim() || null,
           scan_image_id: params.scanId || null,
-        });
-        track(EVENTS.SCAN_SUGGEST_SUBMITTED, { brand: b, name: n });
+        }).then(() => {});  // fire and forget
       }
 
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
-      if (hasCatalogMatch) {
-        router.replace(`/(tabs)/fragrance/${params.fragranceId}` as any);
-      } else {
-        // No catalog match — still show success and go to wardrobe.
-        // The fragrance isn't in our catalog so we can't add a wardrobe item
-        // with a fragrance_id, but we've submitted the suggestion above.
-        Alert.alert(
-          'Noted!',
-          suggestForCatalog
-            ? "We'll review this fragrance for our catalog. You'll be able to add it to your wardrobe once it's approved."
-            : 'Fragrance submitted.',
-          [{ text: 'OK', onPress: () => router.replace('/(tabs)/wardrobe' as any) }]
-        );
-        return;
-      }
+      // Always go to wardrobe Have tab
+      router.replace('/(tabs)/wardrobe' as any);
     } catch (e: any) {
       Alert.alert('Error', e?.message ?? 'Failed to save. Please try again.');
     } finally {

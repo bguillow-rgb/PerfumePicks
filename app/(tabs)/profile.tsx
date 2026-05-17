@@ -3,6 +3,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { useState, useEffect, useRef } from 'react';
 import { Ionicons } from '@expo/vector-icons';
+import * as Application from 'expo-application';
+import * as Updates from 'expo-updates';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
 import { useProfileStore } from '@/src/stores/useProfileStore';
@@ -253,6 +255,8 @@ export default function ProfileScreen() {
           <Row label="Terms of Service" onPress={() => router.push('/legal/terms')} />
         </Section>
 
+        <Text style={styles.buildFooter}>{getBuildFooter()}</Text>
+
         {__DEV__ && (
           <Section title="Dev Tools">
             <Row
@@ -264,6 +268,20 @@ export default function ProfileScreen() {
       </ScrollView>
     </SafeAreaView>
   );
+}
+
+function getBuildFooter(): string {
+  const version = Application.nativeApplicationVersion ?? '?';
+  const build = Application.nativeBuildVersion ?? '?';
+  let bundle = 'embedded';
+  if (!Updates.isEmbeddedLaunch && Updates.createdAt) {
+    const d = Updates.createdAt;
+    const month = d.toLocaleString(undefined, { month: 'short' });
+    const day = d.getDate();
+    const time = d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+    bundle = `OTA ${month} ${day}, ${time}`;
+  }
+  return `v${version} · build ${build} · ${bundle}`;
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -449,5 +467,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.accent,
     borderRadius: RADIUS.full,
+  },
+  buildFooter: {
+    ...TYPE.caption,
+    fontSize: 10,
+    color: COLORS.subtle,
+    textAlign: 'center',
+    marginTop: SPACING.lg,
+    marginBottom: SPACING.md,
+    opacity: 0.6,
   },
 });
