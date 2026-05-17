@@ -6,6 +6,7 @@ import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { NotePyramid } from '@/src/components/fragrance/NotePyramid';
 import { AccordChip } from '@/src/components/fragrance/AccordChip';
 import { PerfBar } from '@/src/components/fragrance/PerfBar';
+import { FactStripCard } from '@/src/components/fragrance/FactStripCard';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
@@ -265,14 +266,45 @@ export default function FragranceDetailScreen() {
           </View>
         </View>
 
-        {wearLogs.length > 0 && (
-          <View style={styles.lastWornRow}>
-            <Ionicons name="time-outline" size={14} color={COLORS.muted} />
-            <Text style={styles.lastWornText}>Last worn {prettyWearDate(wearLogs[0].worn_on)}</Text>
-          </View>
-        )}
+        {/* ── 2. CTA Row — visible on first paint, no scrolling ── */}
+        <View style={styles.ctaRow}>
+          {inWardrobe ? (
+            <Pressable
+              style={[styles.ctaPrimary, styles.ctaInWardrobe]}
+              onPress={() => { setWardrobeInitStatus('have'); setWardrobeSheetOpen(true); }}
+            >
+              <Ionicons name="checkmark-circle" size={18} color={COLORS.white} style={{ marginRight: 8 }} />
+              <Text style={styles.ctaText}>In Your Wardrobe</Text>
+            </Pressable>
+          ) : (
+            <Pressable
+              style={styles.ctaPrimary}
+              onPress={() => { setWardrobeInitStatus('have'); setWardrobeSheetOpen(true); }}
+            >
+              <Ionicons name="rose" size={16} color={COLORS.white} style={{ marginRight: 8 }} />
+              <Text style={styles.ctaText}>Add to Wardrobe</Text>
+            </Pressable>
+          )}
+          <Pressable style={styles.ctaSecondary} onPress={() => setWearSheetOpen(true)}>
+            <Ionicons name="bookmark-outline" size={16} color={COLORS.text} style={{ marginRight: 6 }} />
+            <Text style={styles.ctaSecondaryText}>Log a Wear</Text>
+          </Pressable>
+        </View>
 
-        <Section title="Notes" cursive="composition">
+        {/* ── 3. Fact Strip card (2×3 grid) ── */}
+        <View style={styles.sectionPad}>
+          <FactStripCard
+            concentration={fragrance.concentration}
+            fragrance_family={fragrance.fragrance_family}
+            release_year={fragrance.release_year}
+            community_longevity={fragrance.community_longevity}
+            community_sillage={fragrance.community_sillage}
+            community_projection={fragrance.community_projection}
+          />
+        </View>
+
+        {/* ── 4. Notes (horizontal rows) ── */}
+        <Section title="Notes">
           <NotePyramid
             top_notes={fragrance.top_notes}
             heart_notes={fragrance.heart_notes}
@@ -280,7 +312,8 @@ export default function FragranceDetailScreen() {
           />
         </Section>
 
-        <Section title="Accords" cursive="character">
+        {/* ── 5. Accords ── */}
+        <Section title="Accords">
           <View style={styles.accordWrap}>
             {fragrance.top_accords.map((a) => (
               <AccordChip key={a} label={a} intensity={fragrance.accord_intensity[a] ?? 3} />
@@ -288,64 +321,125 @@ export default function FragranceDetailScreen() {
           </View>
         </Section>
 
-        <Section title="Performance" cursive="how it wears">
+        {/* ── 6. Performance (bars only — score tiles moved to Community Sentiment) ── */}
+        <Section title="Performance">
           <View style={styles.perfCard}>
             <PerfBar label="Longevity" value={fragrance.community_longevity} />
             <PerfBar label="Sillage" value={fragrance.community_sillage} />
             <PerfBar label="Projection" value={fragrance.community_projection} />
-            <View style={styles.scoreRow}>
-              <ScoreTile label="Compliments" value={fragrance.compliment_score} />
-              <ScoreTile label="Versatility" value={fragrance.versatility_score} />
-              <ScoreTile label="Office Safe" value={fragrance.office_safe_score} />
-            </View>
           </View>
         </Section>
 
-        <Section title="Who Wears This" cursive="famous fans">
+        {/* ── 7. MY STUFF block ── */}
+        <View style={styles.myStuffBlock}>
+          <Text style={styles.myStuffEyebrow}>MY STUFF</Text>
+
+          {/* My Notes */}
+          <Text style={styles.myStuffSubhead}>My Notes</Text>
+          <Pressable style={styles.notesCard} onPress={() => setNotesSheetOpen(true)}>
+            {fragranceNote && (fragranceNote.body || fragranceNote.occasion_prefs.length > 0 || fragranceNote.layering_logs.length > 0) ? (
+              <View style={styles.notesPreview}>
+                {fragranceNote.body ? (
+                  <Text style={styles.notesBody} numberOfLines={3}>{fragranceNote.body}</Text>
+                ) : null}
+                {fragranceNote.occasion_prefs.length > 0 && (
+                  <View style={styles.notesChipRow}>
+                    {fragranceNote.occasion_prefs.slice(0, 4).map((o) => (
+                      <View key={o} style={styles.notesChip}>
+                        <Text style={styles.notesChipText}>{o}</Text>
+                      </View>
+                    ))}
+                    {fragranceNote.occasion_prefs.length > 4 && (
+                      <Text style={styles.notesChipMore}>+{fragranceNote.occasion_prefs.length - 4}</Text>
+                    )}
+                  </View>
+                )}
+                {fragranceNote.layering_logs.length > 0 && (
+                  <Text style={styles.notesLayeringHint}>
+                    {fragranceNote.layering_logs.length} layering combo{fragranceNote.layering_logs.length > 1 ? 's' : ''} saved
+                  </Text>
+                )}
+                <View style={styles.notesEditRow}>
+                  <Ionicons name="create-outline" size={14} color={COLORS.accent} />
+                  <Text style={styles.notesEditText}>Edit notes</Text>
+                </View>
+              </View>
+            ) : (
+              <View style={styles.notesEmpty}>
+                <Ionicons name="journal-outline" size={22} color={COLORS.muted} />
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.notesEmptyTitle}>Add your private notes</Text>
+                  <Text style={styles.notesEmptyBody}>Occasions, weather, skin performance, layering combos</Text>
+                </View>
+                <Ionicons name="chevron-forward" size={16} color={COLORS.muted} />
+              </View>
+            )}
+          </Pressable>
+
+          {/* Your Wears */}
+          <Text style={styles.myStuffSubhead}>
+            {wearLogs.length > 0
+              ? `Your Wears · last worn ${prettyWearDate(wearLogs[0].worn_on)}`
+              : 'Your Wears'}
+          </Text>
+          {wearLogs.length > 0 ? (
+            <View style={styles.wearList}>
+              {wearLogs.slice(0, 5).map((w) => (
+                <Pressable
+                  key={w.id}
+                  style={styles.wearRow}
+                  onLongPress={() => handleWearLogLongPress(w)}
+                  delayLongPress={400}
+                >
+                  <Ionicons name="bookmark" size={14} color={COLORS.accent} />
+                  <Text style={styles.wearDate}>{prettyWearDate(w.worn_on)}</Text>
+                  {w.occasion && <Text style={styles.wearMeta}>· {w.occasion}</Text>}
+                  {w.rating != null && (
+                    <View style={styles.wearStars}>
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Ionicons
+                          key={i}
+                          name={i < w.rating! ? 'star' : 'star-outline'}
+                          size={11}
+                          color={COLORS.accent}
+                        />
+                      ))}
+                    </View>
+                  )}
+                  <Ionicons name="ellipsis-horizontal" size={14} color={COLORS.border} style={{ marginLeft: 'auto' }} />
+                </Pressable>
+              ))}
+              {wearLogs.length > 5 && (
+                <View style={styles.wearMore}>
+                  <Text style={styles.wearMoreText}>+{wearLogs.length - 5} more wears</Text>
+                </View>
+              )}
+            </View>
+          ) : (
+            <Text style={styles.myStuffEmptyHint}>No wears logged yet</Text>
+          )}
+
+          {/* Layering */}
+          <Text style={styles.myStuffSubhead}>Layering</Text>
+          <LayeringSection fragranceId={id} />
+
+          {/* Compliments */}
+          <Text style={styles.myStuffSubhead}>Compliments</Text>
+          <ComplimentsSection fragranceId={id} />
+        </View>
+
+        {/* ── 8. Who Wears This / Celebrity ── */}
+        <Section title="Who Wears This">
           <CelebritySection fragranceId={id} />
         </Section>
 
-        <Section title="Community Reviews" cursive="what others think">
+        {/* ── 9. Community Reviews ── */}
+        <Section title="Community Reviews">
           <ReviewSection fragranceId={id} />
         </Section>
 
-        <Section title="Smells Like" cursive="discover similar">
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-            {similar.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
-          </ScrollView>
-        </Section>
-
-        {/* Similar in your wardrobe — Jaccard on notes */}
-        {similarInWardrobe.length > 0 && (
-          <Section title="Similar in Your Wardrobe" cursive="you own these">
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-              {similarInWardrobe.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
-            </ScrollView>
-          </Section>
-        )}
-
-        {/* P5-25: Cheaper Alternatives — Pro-gated dupe finder */}
-        <Section title="Cheaper Alternatives" cursive="find dupes">
-          {isPro ? (
-            cheaperAlts.length > 0 ? (
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-                {cheaperAlts.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
-              </ScrollView>
-            ) : (
-              <View style={styles.dupesEmpty}>
-                <Text style={styles.dupesEmptyText}>No cheaper alternatives found in the current catalog.</Text>
-              </View>
-            )
-          ) : (
-            <Pressable style={styles.dupesLocked} onPress={() => router.push('/paywall')}>
-              <Ionicons name="lock-closed" size={16} color={COLORS.accent} />
-              <Text style={styles.dupesLockedText}>Unlock with Pro to find cheaper alternatives that smell just as good</Text>
-              <Text style={styles.dupesLockedCta}>Upgrade →</Text>
-            </Pressable>
-          )}
-        </Section>
-
-        <Section title="Pricing" cursive="where to buy">
+        {/* ── 10. Pricing + affiliate ── */}
+        <Section title="Pricing">
           <View style={styles.priceCard}>
             <View style={styles.priceRow}>
               <View>
@@ -391,120 +485,49 @@ export default function FragranceDetailScreen() {
           </View>
         </Section>
 
-        {/* F6: Private per-fragrance notes */}
-        <Section title="My Notes" cursive="private journal">
-          <Pressable style={styles.notesCard} onPress={() => setNotesSheetOpen(true)}>
-            {fragranceNote && (fragranceNote.body || fragranceNote.occasion_prefs.length > 0 || fragranceNote.layering_logs.length > 0) ? (
-              <View style={styles.notesPreview}>
-                {fragranceNote.body ? (
-                  <Text style={styles.notesBody} numberOfLines={3}>{fragranceNote.body}</Text>
-                ) : null}
-                {fragranceNote.occasion_prefs.length > 0 && (
-                  <View style={styles.notesChipRow}>
-                    {fragranceNote.occasion_prefs.slice(0, 4).map((o) => (
-                      <View key={o} style={styles.notesChip}>
-                        <Text style={styles.notesChipText}>{o}</Text>
-                      </View>
-                    ))}
-                    {fragranceNote.occasion_prefs.length > 4 && (
-                      <Text style={styles.notesChipMore}>+{fragranceNote.occasion_prefs.length - 4}</Text>
-                    )}
-                  </View>
-                )}
-                {fragranceNote.layering_logs.length > 0 && (
-                  <Text style={styles.notesLayeringHint}>
-                    {fragranceNote.layering_logs.length} layering combo{fragranceNote.layering_logs.length > 1 ? 's' : ''} saved
-                  </Text>
-                )}
-                <View style={styles.notesEditRow}>
-                  <Ionicons name="create-outline" size={14} color={COLORS.accent} />
-                  <Text style={styles.notesEditText}>Edit notes</Text>
-                </View>
-              </View>
-            ) : (
-              <View style={styles.notesEmpty}>
-                <Ionicons name="journal-outline" size={22} color={COLORS.muted} />
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.notesEmptyTitle}>Add your private notes</Text>
-                  <Text style={styles.notesEmptyBody}>Occasions, weather, skin performance, layering combos</Text>
-                </View>
-                <Ionicons name="chevron-forward" size={16} color={COLORS.muted} />
-              </View>
-            )}
-          </Pressable>
+        {/* ── 11. Smells Like (similar) ── */}
+        <Section title="Smells Like">
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+            {similar.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
+          </ScrollView>
         </Section>
 
-        {/* Wear log preview — shows up only if the user has logged this
-            fragrance before. Encourages re-engagement and shows the data
-            captured by the LogWearSheet is being put to use. */}
-        {wearLogs.length > 0 && (
-          <Section title="Your Wears" cursive={`${wearLogs.length} logged`}>
-            <View style={styles.wearList}>
-              {wearLogs.slice(0, 5).map((w) => (
-                <Pressable
-                  key={w.id}
-                  style={styles.wearRow}
-                  onLongPress={() => handleWearLogLongPress(w)}
-                  delayLongPress={400}
-                >
-                  <Ionicons name="bookmark" size={14} color={COLORS.accent} />
-                  <Text style={styles.wearDate}>{prettyWearDate(w.worn_on)}</Text>
-                  {w.occasion && <Text style={styles.wearMeta}>· {w.occasion}</Text>}
-                  {w.rating != null && (
-                    <View style={styles.wearStars}>
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Ionicons
-                          key={i}
-                          name={i < w.rating! ? 'star' : 'star-outline'}
-                          size={11}
-                          color={COLORS.accent}
-                        />
-                      ))}
-                    </View>
-                  )}
-                  <Ionicons name="ellipsis-horizontal" size={14} color={COLORS.border} style={{ marginLeft: 'auto' }} />
-                </Pressable>
-              ))}
-              {wearLogs.length > 5 && (
-                <View style={styles.wearMore}>
-                  <Text style={styles.wearMoreText}>+{wearLogs.length - 5} more wears</Text>
-                </View>
-              )}
-            </View>
+        {/* ── 12. Similar in Your Wardrobe ── */}
+        {similarInWardrobe.length > 0 && (
+          <Section title="Similar in Your Wardrobe">
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+              {similarInWardrobe.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
+            </ScrollView>
           </Section>
         )}
 
-        <Section title="Layering" cursive="pair it up">
-          <LayeringSection fragranceId={id} />
-        </Section>
+        {/* ── 13. Community Sentiment (collapsed, holds score tiles) ── */}
+        <CommunitySentiment
+          compliment_score={fragrance.compliment_score}
+          versatility_score={fragrance.versatility_score}
+          office_safe_score={fragrance.office_safe_score}
+        />
 
-        <Section title="Compliments" cursive="what they said">
-          <ComplimentsSection fragranceId={id} />
-        </Section>
-
-        <View style={styles.ctaWrap}>
-          {inWardrobe ? (
-            <Pressable
-              style={[styles.cta, styles.ctaInWardrobe]}
-              onPress={() => { setWardrobeInitStatus('have'); setWardrobeSheetOpen(true); }}
-            >
-              <Ionicons name="checkmark-circle" size={18} color={COLORS.white} style={{ marginRight: 8 }} />
-              <Text style={styles.ctaText}>In Your Wardrobe</Text>
-            </Pressable>
+        {/* ── 14. Cheaper Alternatives (Pro-gated, bottom of page) ── */}
+        <Section title="Cheaper Alternatives">
+          {isPro ? (
+            cheaperAlts.length > 0 ? (
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+                {cheaperAlts.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
+              </ScrollView>
+            ) : (
+              <View style={styles.dupesEmpty}>
+                <Text style={styles.dupesEmptyText}>No cheaper alternatives found in the current catalog.</Text>
+              </View>
+            )
           ) : (
-            <Pressable
-              style={styles.cta}
-              onPress={() => { setWardrobeInitStatus('have'); setWardrobeSheetOpen(true); }}
-            >
-              <Ionicons name="rose" size={16} color={COLORS.white} style={{ marginRight: 8 }} />
-              <Text style={styles.ctaText}>Add to Wardrobe</Text>
+            <Pressable style={styles.dupesLocked} onPress={() => router.push('/paywall')}>
+              <Ionicons name="lock-closed" size={16} color={COLORS.accent} />
+              <Text style={styles.dupesLockedText}>Unlock with Pro to find cheaper alternatives that smell just as good</Text>
+              <Text style={styles.dupesLockedCta}>Upgrade →</Text>
             </Pressable>
           )}
-          <Pressable style={styles.secondaryCta} onPress={() => setWearSheetOpen(true)}>
-            <Ionicons name="bookmark-outline" size={16} color={COLORS.text} style={{ marginRight: 8 }} />
-            <Text style={styles.secondaryCtaText}>Log a Wear</Text>
-          </Pressable>
-        </View>
+        </Section>
       </ScrollView>
 
       <AddToWardrobeSheet
@@ -546,14 +569,44 @@ function prettyWearDate(iso: string): string {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
-function Section({ title, cursive, children }: { title: string; cursive?: string; children: React.ReactNode }) {
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <View style={styles.section}>
-      <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>{title}</Text>
-        {cursive && <Text style={styles.sectionCursive}>{cursive}</Text>}
-      </View>
+      <Text style={styles.sectionTitle}>{title}</Text>
       {children}
+    </View>
+  );
+}
+
+function CommunitySentiment({ compliment_score, versatility_score, office_safe_score }: {
+  compliment_score: number; versatility_score: number; office_safe_score: number;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const summary = [
+    compliment_score > 0.6 ? 'Strong compliments' : compliment_score > 0.3 ? 'Moderate compliments' : 'Few compliments',
+    versatility_score > 0.6 ? 'versatile' : 'situational',
+    office_safe_score > 0.6 ? 'office-friendly' : 'bold for office',
+  ].join(', ');
+
+  return (
+    <View style={styles.section}>
+      <Pressable
+        style={styles.sentimentHeader}
+        onPress={() => setExpanded(!expanded)}
+      >
+        <View style={{ flex: 1 }}>
+          <Text style={styles.sectionTitle}>Community Sentiment</Text>
+          {!expanded && <Text style={styles.sentimentSummary}>{summary}</Text>}
+        </View>
+        <Ionicons name={expanded ? 'chevron-up' : 'chevron-down'} size={18} color={COLORS.muted} />
+      </Pressable>
+      {expanded && (
+        <View style={styles.scoreRow}>
+          <ScoreTile label="Compliments" value={compliment_score} />
+          <ScoreTile label="Versatility" value={versatility_score} />
+          <ScoreTile label="Office Safe" value={office_safe_score} />
+        </View>
+      )}
     </View>
   );
 }
@@ -611,9 +664,47 @@ const styles = StyleSheet.create({
   lastWornText: { ...TYPE.caption, color: COLORS.muted },
 
   section: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl },
-  sectionHeader: { flexDirection: 'row', alignItems: 'baseline', gap: 10, marginBottom: SPACING.md },
-  sectionTitle: { ...TYPE.heading },
-  sectionCursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 22, color: COLORS.accent, lineHeight: 34, paddingLeft: 6 },
+  sectionTitle: { ...TYPE.heading, marginBottom: SPACING.md },
+  sectionPad: { paddingHorizontal: SPACING.lg, marginTop: SPACING.md },
+
+  // CTA row — directly under hero
+  ctaRow: {
+    flexDirection: 'row',
+    gap: SPACING.md,
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.md,
+  },
+  ctaPrimary: {
+    flex: 3,
+    backgroundColor: COLORS.accent,
+    height: 48,
+    borderRadius: RADIUS.full,
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+  },
+  ctaSecondary: {
+    flex: 2,
+    backgroundColor: COLORS.card,
+    borderWidth: 1, borderColor: COLORS.border,
+    height: 48,
+    borderRadius: RADIUS.full,
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+  },
+  ctaSecondaryText: { ...TYPE.label, fontSize: 13, letterSpacing: 0.5 },
+
+  // My Stuff block
+  myStuffBlock: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl },
+  myStuffEyebrow: { ...TYPE.eyebrow, fontSize: 11, marginBottom: SPACING.md },
+  myStuffSubhead: {
+    fontFamily: FONTS.serif, fontSize: 16, fontWeight: '600',
+    color: COLORS.text, marginTop: SPACING.lg, marginBottom: SPACING.sm,
+  },
+  myStuffEmptyHint: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic' },
+
+  // Community Sentiment
+  sentimentHeader: {
+    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
+  },
+  sentimentSummary: { ...TYPE.caption, color: COLORS.muted, marginTop: 2 },
   hScroll: { paddingRight: SPACING.lg },
 
   accordWrap: {

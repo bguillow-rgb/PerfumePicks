@@ -8,62 +8,53 @@ interface Props {
 }
 
 /**
- * Notes pyramid — three tiers of chips, each labeled in editorial eyebrow
- * type with a soft cursive accent on the tier name.
+ * Notes pyramid — three horizontal rows in a single card.
+ * Compact layout: label column (56pt) + notes joined with · separator.
  */
 export function NotePyramid({ top_notes, heart_notes, base_notes }: Props) {
   return (
-    <View style={styles.wrap}>
-      <Tier label="Top" cursive="top" notes={top_notes} />
-      <View style={styles.divider} />
-      <Tier label="Heart" cursive="heart" notes={heart_notes} />
-      <View style={styles.divider} />
-      <Tier label="Base" cursive="base" notes={base_notes} />
+    <View style={styles.card}>
+      <Row label="TOP" notes={top_notes} />
+      <Row label="HEART" notes={heart_notes} />
+      <Row label="BASE" notes={base_notes} />
     </View>
   );
 }
 
-function Tier({ label, cursive, notes }: { label: string; cursive: string; notes: string[] }) {
+function Row({ label, notes }: { label: string; notes: string[] }) {
   return (
-    <View style={styles.tier}>
-      <View style={styles.headerRow}>
-        <Text style={styles.eyebrow}>{label.toUpperCase()}</Text>
-        <Text style={styles.cursive}>{cursive}</Text>
-      </View>
-      <View style={styles.chipRow}>
-        {notes.length === 0 && <Text style={styles.empty}>—</Text>}
-        {notes.map((n) => (
-          <View key={n} style={styles.chip}>
-            <Text style={styles.chipText}>{n}</Text>
-          </View>
-        ))}
-      </View>
+    <View style={styles.row}>
+      <Text style={styles.label}>{label}</Text>
+      <Text style={styles.notes} numberOfLines={1} ellipsizeMode="tail">
+        {notes.length > 0 ? notes.join(' · ') : '—'}
+      </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  wrap: {
+  card: {
     backgroundColor: COLORS.card,
     borderRadius: RADIUS.lg,
     borderWidth: 1,
     borderColor: COLORS.border,
-    padding: SPACING.lg,
+    padding: SPACING.md,
+    gap: SPACING.sm,
   },
-  tier: { paddingVertical: SPACING.sm },
-  headerRow: { flexDirection: 'row', alignItems: 'baseline', marginBottom: SPACING.sm, gap: 8 },
-  eyebrow: { ...TYPE.eyebrow, fontSize: 11 },
-  cursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 22, color: COLORS.accent, lineHeight: 34, paddingLeft: 6 },
-  chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
-  chip: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: RADIUS.full,
-    backgroundColor: COLORS.card2,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: COLORS.border,
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
   },
-  chipText: { fontFamily: FONTS.body, fontSize: 13, color: COLORS.text, fontWeight: '400' },
-  empty: { ...TYPE.bodySmall },
-  divider: { height: StyleSheet.hairlineWidth, backgroundColor: COLORS.border, marginVertical: SPACING.sm },
+  label: {
+    ...TYPE.eyebrow,
+    fontSize: 10,
+    width: 56,
+  },
+  notes: {
+    fontFamily: FONTS.body,
+    fontSize: 13,
+    color: COLORS.text,
+    flex: 1,
+  },
 });
