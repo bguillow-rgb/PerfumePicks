@@ -12,7 +12,7 @@
  *   5. Persist the scan to scan_images for the training loop.
  */
 
-import { readAsStringAsync } from 'expo-file-system';
+import { readAsStringAsync } from 'expo-file-system/legacy';
 
 import { getDeviceId } from '@/src/lib/deviceId';
 import { track, EVENTS } from '@/src/lib/observability';

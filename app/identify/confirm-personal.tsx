@@ -1,12 +1,14 @@
 /**
  * Perfume Concierge — Confirm / Add screen.
  *
+ * Universal post-scan landing. Every scan routes here, matched or not.
  * Mirrors Pour Picks' confirm-personal.tsx:
- *   - Editable brand/name/concentration before save
- *   - Catalog-match mode: pre-fills from catalog, "Likely match" badge
- *   - Add mode: blank form for user to fill
- *   - Suggest-for-catalog toggle for unrecognized fragrances
- *   - Photo persisted from scan
+ *   - Confidence badge (Likely match / Best guess / Possible match)
+ *   - Photo preview from scan
+ *   - Editable Brand, Name, Concentration fields (pre-filled by AI or empty)
+ *   - Suggest-for-catalog toggle when no catalog match
+ *   - "Describe instead" fallback for empty/bad AI reads
+ *   - Cancel discards the scan
  */
 
 import { Ionicons } from '@expo/vector-icons';
@@ -14,6 +16,7 @@ import * as Haptics from 'expo-haptics';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useState } from 'react';
 import {
+  ActivityIndicator,
   Alert,
   Image,
   KeyboardAvoidingView,
@@ -28,11 +31,29 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { DescribeFragranceSheet } from '@/src/components/identify/DescribeFragranceSheet';
+import { SuggestFragranceSheet } from '@/src/components/identify/SuggestFragranceSheet';
 import { COLORS, FONTS, RADIUS, SPACING, TYPE } from '@/src/constants/theme';
 import { getDeviceId } from '@/src/lib/deviceId';
 import { track, EVENTS } from '@/src/lib/observability';
 import { supabase } from '@/lib/supabase';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
+
+type ConfidenceTier = 'likely' | 'best_guess' | 'possible' | 'none';
+
+function getConfidenceTier(c: number): ConfidenceTier {
+  if (c >= 0.7) return 'likely';
+  if (c >= 0.4) return 'best_guess';
+  if (c > 0) return 'possible';
+  return 'none';
+}
+
+const TIER_LABELS: Record<ConfidenceTier, string> = {
+  likely: 'Likely match',
+  best_guess: 'Best guess',
+  possible: 'Possible match',
+  none: '',
+};
 
 const CONCENTRATIONS = [
   'Eau de Parfum',
@@ -52,23 +73,28 @@ export default function ConfirmPersonalScreen() {
     name: string;
     concentration: string;
     confidence: string;
+    reasoning: string;
     imageUri: string;
   }>();
 
   const hasCatalogMatch = !!params.fragranceId;
   const confidence = parseFloat(params.confidence || '0');
+  const tier = getConfidenceTier(confidence);
+  const hasAIRead = !!(params.brand || params.name);
 
   const [brand, setBrand] = useState(params.brand || '');
   const [name, setName] = useState(params.name || '');
   const [concentration, setConcentration] = useState(params.concentration || '');
   const [suggestForCatalog, setSuggestForCatalog] = useState(!hasCatalogMatch);
   const [saving, setSaving] = useState(false);
+  const [describeVisible, setDescribeVisible] = useState(false);
+  const [suggestVisible, setSuggestVisible] = useState(false);
 
   const handleSave = async () => {
     const b = brand.trim();
     const n = name.trim();
-    if (!b || !n) {
-      Alert.alert('Missing info', 'Brand and fragrance name are required.');
+    if (!n) {
+      Alert.alert('Name required', 'Enter a fragrance name to continue.');
       return;
     }
 
@@ -76,15 +102,23 @@ export default function ConfirmPersonalScreen() {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
 
     try {
-      // If catalog match exists and user didn't edit, navigate to detail
+      // Mark scan as confirmed
+      if (params.scanId) {
+        await supabase
+          .from('scan_images')
+          .update({ user_confirmed: true })
+          .eq('id', params.scanId);
+      }
+
+      // If catalog match and unedited → add to wardrobe + navigate to detail
       if (hasCatalogMatch && b === params.brand && n === params.name) {
-        // Mark scan as confirmed
-        if (params.scanId) {
-          await supabase
-            .from('scan_images')
-            .update({ user_confirmed: true })
-            .eq('id', params.scanId);
-        }
+        useWardrobeStore.getState().add({
+          fragrance_id: params.fragranceId,
+          status: 'want',
+          unit_type: 'bottle',
+          size_ml: 0,
+          remaining_ml: 0,
+        });
 
         track(EVENTS.SCAN_CONFIRMED, {
           fragrance_id: params.fragranceId,
@@ -97,23 +131,15 @@ export default function ConfirmPersonalScreen() {
         return;
       }
 
-      // User edited or no catalog match — add to wardrobe as want + submit suggestion
-      const addItem = useWardrobeStore.getState().add;
+      // Catalog match but user edited, or no match — add wardrobe item if we have a catalog ID
       if (hasCatalogMatch) {
-        // They edited a catalog match — still add the catalog fragrance
-        addItem({
+        useWardrobeStore.getState().add({
           fragrance_id: params.fragranceId,
           status: 'want',
           unit_type: 'bottle',
           size_ml: 0,
           remaining_ml: 0,
         });
-        if (params.scanId) {
-          await supabase
-            .from('scan_images')
-            .update({ user_confirmed: true })
-            .eq('id', params.scanId);
-        }
         track(EVENTS.SCAN_CONFIRMED, {
           fragrance_id: params.fragranceId,
           confidence,
@@ -121,12 +147,10 @@ export default function ConfirmPersonalScreen() {
         });
       }
 
-      // Submit suggestion for catalog if toggled on
-      if (suggestForCatalog) {
+      // Submit suggestion for catalog
+      if (suggestForCatalog && b && n) {
         const deviceId = await getDeviceId();
-        const {
-          data: { user },
-        } = await supabase.auth.getUser();
+        const { data: { user } } = await supabase.auth.getUser();
 
         await supabase.from('fragrance_submissions').insert({
           user_id: user?.id ?? null,
@@ -136,7 +160,6 @@ export default function ConfirmPersonalScreen() {
           concentration: concentration.trim() || null,
           scan_image_id: params.scanId || null,
         });
-
         track(EVENTS.SCAN_SUGGEST_SUBMITTED, { brand: b, name: n });
       }
 
@@ -145,18 +168,40 @@ export default function ConfirmPersonalScreen() {
       if (hasCatalogMatch) {
         router.replace(`/(tabs)/fragrance/${params.fragranceId}` as any);
       } else {
-        Alert.alert(
-          'Added!',
-          suggestForCatalog
-            ? "We'll review this fragrance for our catalog."
-            : 'Fragrance noted.',
-          [{ text: 'OK', onPress: () => router.replace('/(tabs)/wardrobe' as any) }]
-        );
+        router.replace('/(tabs)/wardrobe' as any);
       }
     } catch (e: any) {
       Alert.alert('Error', e?.message ?? 'Failed to save. Please try again.');
     } finally {
       setSaving(false);
+    }
+  };
+
+  const handleCancel = () => {
+    Alert.alert(
+      'Discard this scan?',
+      'This will count toward your free scans.',
+      [
+        { text: 'Keep editing', style: 'cancel' },
+        {
+          text: 'Discard',
+          style: 'destructive',
+          onPress: () => router.replace('/(tabs)' as any),
+        },
+      ]
+    );
+  };
+
+  // Describe sheet matched a fragrance → navigate to detail
+  const handleDescribeMatch = (result: any) => {
+    setDescribeVisible(false);
+    if (result.fragranceId) {
+      router.replace(`/(tabs)/fragrance/${result.fragranceId}` as any);
+    } else {
+      // Fill in whatever the describe path found
+      if (result.displayBrand && result.displayBrand !== 'Unknown') setBrand(result.displayBrand);
+      if (result.displayName && result.displayName !== 'Unknown') setName(result.displayName);
+      if (result.displayConcentration) setConcentration(result.displayConcentration);
     }
   };
 
@@ -167,12 +212,10 @@ export default function ConfirmPersonalScreen() {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <View style={styles.header}>
-          <Pressable onPress={() => router.back()} hitSlop={12}>
-            <Ionicons name="arrow-back" size={24} color={COLORS.text} />
+          <Pressable onPress={handleCancel} hitSlop={12}>
+            <Ionicons name="close" size={24} color={COLORS.text} />
           </Pressable>
-          <Text style={styles.headerTitle}>
-            {hasCatalogMatch ? 'CONFIRM FRAGRANCE' : 'ADD FRAGRANCE'}
-          </Text>
+          <Text style={styles.headerTitle}>PERFUME CONCIERGE</Text>
           <View style={{ width: 24 }} />
         </View>
 
@@ -182,39 +225,48 @@ export default function ConfirmPersonalScreen() {
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="interactive"
         >
+          {/* Confidence badge */}
+          {tier !== 'none' && (
+            <View style={[styles.badge, tier === 'likely' && styles.badgeLikely]}>
+              <Ionicons
+                name={tier === 'likely' ? 'checkmark-circle' : 'help-circle'}
+                size={14}
+                color={tier === 'likely' ? COLORS.accent : COLORS.muted}
+              />
+              <Text style={[styles.badgeText, tier === 'likely' && { color: COLORS.accent }]}>
+                {TIER_LABELS[tier]}
+              </Text>
+            </View>
+          )}
+
+          {/* Heading */}
+          <Text style={styles.heading}>
+            {hasCatalogMatch ? 'Confirm or edit' : hasAIRead ? 'We read this from the label' : 'Add fragrance details'}
+          </Text>
+          <Text style={styles.subheading}>
+            {hasCatalogMatch
+              ? 'Editing will save a personal copy.'
+              : 'Fill in what you know — we\'ll suggest it for the catalog.'}
+          </Text>
+
           {/* Photo preview */}
           {params.imageUri ? (
             <Image source={{ uri: params.imageUri }} style={styles.photo} />
           ) : null}
 
-          {/* Catalog match badge */}
-          {hasCatalogMatch && (
-            <View style={styles.matchBadge}>
-              <Ionicons name="checkmark-circle" size={14} color={COLORS.accent} />
-              <Text style={styles.matchBadgeText}>
-                Likely match · {Math.round(confidence * 100)}% confident
-              </Text>
+          {/* AI reasoning (if any) */}
+          {params.reasoning && hasAIRead ? (
+            <View style={styles.reasoningCard}>
+              <Ionicons name="sparkles" size={12} color={COLORS.accent} />
+              <Text style={styles.reasoningText}>{params.reasoning}</Text>
             </View>
-          )}
+          ) : null}
 
-          {/* Brand */}
-          <Text style={styles.label}>Brand / House *</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="e.g. Tom Ford"
-            placeholderTextColor={COLORS.subtle}
-            value={brand}
-            onChangeText={setBrand}
-            autoCapitalize="words"
-            autoCorrect={false}
-            returnKeyType="next"
-          />
-
-          {/* Fragrance name */}
+          {/* Name field (required) */}
           <Text style={styles.label}>Fragrance Name *</Text>
           <TextInput
-            style={styles.input}
-            placeholder="e.g. Lost Cherry"
+            style={[styles.input, !name.trim() && styles.inputError]}
+            placeholder="e.g. Lost Cherry, Baccarat Rouge 540"
             placeholderTextColor={COLORS.subtle}
             value={name}
             onChangeText={setName}
@@ -222,41 +274,59 @@ export default function ConfirmPersonalScreen() {
             autoCorrect={false}
             returnKeyType="next"
           />
+          {!name.trim() && <Text style={styles.errorHint}>Name required</Text>}
 
-          {/* Concentration picker */}
+          {/* Brand field */}
           <Text style={styles.label}>
-            Concentration{' '}
-            <Text style={styles.labelDim}>(optional)</Text>
+            Brand / House <Text style={styles.labelDim}>(optional)</Text>
           </Text>
-          <View style={styles.concRow}>
+          <TextInput
+            style={styles.input}
+            placeholder="e.g. Tom Ford, Maison Francis Kurkdjian"
+            placeholderTextColor={COLORS.subtle}
+            value={brand}
+            onChangeText={setBrand}
+            autoCapitalize="words"
+            autoCorrect={false}
+            returnKeyType="done"
+          />
+
+          {/* Concentration pills */}
+          <Text style={styles.label}>
+            Concentration <Text style={styles.labelDim}>(optional)</Text>
+          </Text>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.pillRow}
+          >
             {CONCENTRATIONS.map((c) => {
+              const short = c
+                .replace('Eau de ', '')
+                .replace('Extrait de ', 'Extrait ')
+                .replace('Eau ', '');
               const active = concentration === c;
               return (
                 <Pressable
                   key={c}
-                  style={[styles.concPill, active && styles.concPillActive]}
+                  style={[styles.pill, active && styles.pillActive]}
                   onPress={() => setConcentration(active ? '' : c)}
                 >
-                  <Text
-                    style={[
-                      styles.concPillText,
-                      active && styles.concPillTextActive,
-                    ]}
-                  >
-                    {c.replace('Eau de ', '').replace('Extrait de ', 'Extrait ')}
+                  <Text style={[styles.pillText, active && styles.pillTextActive]}>
+                    {short}
                   </Text>
                 </Pressable>
               );
             })}
-          </View>
+          </ScrollView>
 
-          {/* Suggest for catalog toggle */}
+          {/* Suggest toggle (only when no catalog match) */}
           {!hasCatalogMatch && (
             <View style={styles.toggleRow}>
               <View style={{ flex: 1 }}>
                 <Text style={styles.toggleLabel}>Suggest for catalog</Text>
                 <Text style={styles.toggleHint}>
-                  We'll review and add it if we can verify it
+                  We'll review and may add it. Your scan is never shared.
                 </Text>
               </View>
               <Switch
@@ -267,22 +337,62 @@ export default function ConfirmPersonalScreen() {
               />
             </View>
           )}
+
+          {/* Describe fallback — shown when AI couldn't fill fields */}
+          {!hasAIRead && (
+            <Pressable
+              style={styles.describeLink}
+              onPress={() => setDescribeVisible(true)}
+            >
+              <Ionicons name="chatbubble-outline" size={16} color={COLORS.accent} />
+              <Text style={styles.describeLinkText}>
+                Describe it in words instead
+              </Text>
+            </Pressable>
+          )}
         </ScrollView>
 
-        {/* Save button */}
+        {/* Action buttons */}
         <View style={styles.footer}>
           <Pressable
-            style={[styles.saveBtn, saving && { opacity: 0.6 }]}
+            style={[styles.saveBtn, (saving || !name.trim()) && { opacity: 0.5 }]}
             onPress={handleSave}
-            disabled={saving}
+            disabled={saving || !name.trim()}
           >
-            <Ionicons name="checkmark" size={18} color={COLORS.white} />
-            <Text style={styles.saveBtnText}>
-              {hasCatalogMatch ? 'Confirm' : 'Save'}
-            </Text>
+            {saving ? (
+              <ActivityIndicator color={COLORS.white} />
+            ) : (
+              <>
+                <Ionicons name="checkmark" size={18} color={COLORS.white} />
+                <Text style={styles.saveBtnText}>
+                  {hasCatalogMatch ? 'Confirm' : 'Add to wardrobe'}
+                </Text>
+              </>
+            )}
+          </Pressable>
+
+          <Pressable style={styles.cancelBtn} onPress={handleCancel}>
+            <Text style={styles.cancelBtnText}>Cancel</Text>
           </Pressable>
         </View>
       </KeyboardAvoidingView>
+
+      {/* Sheets */}
+      <DescribeFragranceSheet
+        visible={describeVisible}
+        onClose={() => setDescribeVisible(false)}
+        onMatch={handleDescribeMatch}
+        onNoMatch={() => {
+          setDescribeVisible(false);
+          setSuggestVisible(true);
+        }}
+      />
+      <SuggestFragranceSheet
+        visible={suggestVisible}
+        onClose={() => setSuggestVisible(false)}
+        scanId={params.scanId}
+        prefill={{ brand, name, concentration }}
+      />
     </SafeAreaView>
   );
 }
@@ -290,127 +400,106 @@ export default function ConfirmPersonalScreen() {
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.bg },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: SPACING.lg,
-    paddingVertical: SPACING.md,
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+    paddingHorizontal: SPACING.lg, paddingVertical: SPACING.md,
   },
   headerTitle: { ...TYPE.eyebrow, letterSpacing: 2 },
   content: {
-    paddingHorizontal: SPACING.lg,
-    paddingBottom: SPACING.xxl,
-    gap: 4,
+    paddingHorizontal: SPACING.lg, paddingBottom: SPACING.xxl, gap: 2,
   },
+
+  // Badge
+  badge: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    backgroundColor: COLORS.card, borderRadius: RADIUS.full,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingVertical: 6, paddingHorizontal: 14,
+    alignSelf: 'flex-start', marginBottom: SPACING.sm,
+  },
+  badgeLikely: { borderColor: COLORS.accent },
+  badgeText: { ...TYPE.caption, color: COLORS.muted },
+
+  // Heading
+  heading: {
+    fontFamily: FONTS.serif, fontSize: 24, fontWeight: '600',
+    color: COLORS.text, lineHeight: 30, marginBottom: 4,
+  },
+  subheading: {
+    ...TYPE.bodySmall, color: COLORS.muted, marginBottom: SPACING.md,
+  },
+
+  // Photo
   photo: {
-    width: '100%',
-    height: 200,
-    borderRadius: RADIUS.lg,
-    marginBottom: SPACING.md,
+    width: '100%', height: 200, borderRadius: RADIUS.lg,
+    marginBottom: SPACING.md, backgroundColor: COLORS.card,
   },
-  matchBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-    backgroundColor: COLORS.card,
-    borderRadius: RADIUS.full,
-    borderWidth: 1,
-    borderColor: COLORS.accent,
-    paddingVertical: 6,
-    paddingHorizontal: 14,
-    alignSelf: 'flex-start',
-    marginBottom: SPACING.md,
+
+  // Reasoning
+  reasoningCard: {
+    flexDirection: 'row', alignItems: 'flex-start', gap: 8,
+    backgroundColor: COLORS.card, borderRadius: RADIUS.md,
+    borderWidth: 1, borderColor: COLORS.border,
+    padding: SPACING.sm, marginBottom: SPACING.md,
   },
-  matchBadgeText: {
-    ...TYPE.caption,
-    color: COLORS.accent,
-  },
+  reasoningText: { ...TYPE.caption, color: COLORS.muted, flex: 1, lineHeight: 18 },
+
+  // Form
   label: {
-    fontFamily: FONTS.body,
-    fontSize: 13,
-    fontWeight: '600',
-    color: COLORS.text,
-    marginTop: SPACING.md,
-    marginBottom: 4,
+    fontFamily: FONTS.body, fontSize: 13, fontWeight: '600',
+    color: COLORS.text, marginTop: SPACING.md, marginBottom: 4,
   },
-  labelDim: {
-    fontFamily: FONTS.body,
-    fontWeight: '400',
-    color: COLORS.subtle,
-  },
+  labelDim: { fontFamily: FONTS.body, fontWeight: '400', color: COLORS.subtle },
   input: {
-    backgroundColor: COLORS.card,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    borderRadius: RADIUS.md,
-    paddingVertical: 12,
-    paddingHorizontal: 14,
-    fontFamily: FONTS.body,
-    fontSize: 16,
-    color: COLORS.text,
+    backgroundColor: COLORS.card, borderWidth: 1, borderColor: COLORS.border,
+    borderRadius: RADIUS.md, paddingVertical: 12, paddingHorizontal: 14,
+    fontFamily: FONTS.body, fontSize: 16, color: COLORS.text,
   },
-  concRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
-    marginTop: 4,
+  inputError: { borderColor: COLORS.danger },
+  errorHint: { ...TYPE.caption, color: COLORS.danger, marginTop: 2 },
+
+  // Concentration pills
+  pillRow: { gap: 8, paddingVertical: 4 },
+  pill: {
+    paddingVertical: 6, paddingHorizontal: 14,
+    borderRadius: RADIUS.full, borderWidth: 1,
+    borderColor: COLORS.border, backgroundColor: COLORS.card,
   },
-  concPill: {
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    borderRadius: RADIUS.full,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    backgroundColor: COLORS.card,
-  },
-  concPillActive: {
-    borderColor: COLORS.accent,
-    backgroundColor: COLORS.accent,
-  },
-  concPillText: {
-    ...TYPE.caption,
-    color: COLORS.muted,
-    fontSize: 12,
-  },
-  concPillTextActive: {
-    color: COLORS.white,
-  },
+  pillActive: { borderColor: COLORS.accent, backgroundColor: COLORS.accent },
+  pillText: { ...TYPE.caption, color: COLORS.muted, fontSize: 13 },
+  pillTextActive: { color: COLORS.white },
+
+  // Toggle
   toggleRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SPACING.md,
-    marginTop: SPACING.lg,
-    paddingVertical: SPACING.sm,
+    flexDirection: 'row', alignItems: 'center', gap: SPACING.md,
+    marginTop: SPACING.lg, paddingVertical: SPACING.sm,
   },
   toggleLabel: {
-    fontFamily: FONTS.body,
-    fontSize: 14,
-    fontWeight: '600',
-    color: COLORS.text,
+    fontFamily: FONTS.body, fontSize: 14, fontWeight: '600', color: COLORS.text,
   },
-  toggleHint: {
-    ...TYPE.caption,
-    color: COLORS.subtle,
-    marginTop: 2,
+  toggleHint: { ...TYPE.caption, color: COLORS.subtle, marginTop: 2 },
+
+  // Describe link
+  describeLink: {
+    flexDirection: 'row', alignItems: 'center', gap: 8,
+    marginTop: SPACING.lg, paddingVertical: SPACING.sm,
   },
+  describeLinkText: {
+    ...TYPE.label, color: COLORS.accent, letterSpacing: 0.3,
+  },
+
+  // Footer
   footer: {
-    paddingHorizontal: SPACING.lg,
-    paddingBottom: SPACING.lg,
-    paddingTop: SPACING.sm,
+    paddingHorizontal: SPACING.lg, paddingBottom: SPACING.lg,
+    paddingTop: SPACING.sm, gap: SPACING.sm, alignItems: 'center',
   },
   saveBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-    backgroundColor: COLORS.accent,
-    borderRadius: RADIUS.full,
-    paddingVertical: 14,
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+    gap: 8, backgroundColor: COLORS.accent,
+    borderRadius: RADIUS.full, paddingVertical: 14, width: '100%',
   },
   saveBtnText: {
-    ...TYPE.label,
-    color: COLORS.white,
-    letterSpacing: 0.5,
-    fontSize: 16,
+    ...TYPE.label, color: COLORS.white, letterSpacing: 0.5, fontSize: 16,
   },
+  cancelBtn: { paddingVertical: SPACING.sm },
+  cancelBtnText: { ...TYPE.label, color: COLORS.muted, letterSpacing: 0.5 },
 });
