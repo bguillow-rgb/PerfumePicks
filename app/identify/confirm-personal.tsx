@@ -114,7 +114,7 @@ export default function ConfirmPersonalScreen() {
       if (hasCatalogMatch && b === params.brand && n === params.name) {
         useWardrobeStore.getState().add({
           fragrance_id: params.fragranceId,
-          status: 'want',
+          status: 'have',
           unit_type: 'bottle',
           size_ml: 0,
           remaining_ml: 0,
@@ -135,7 +135,7 @@ export default function ConfirmPersonalScreen() {
       if (hasCatalogMatch) {
         useWardrobeStore.getState().add({
           fragrance_id: params.fragranceId,
-          status: 'want',
+          status: 'have',
           unit_type: 'bottle',
           size_ml: 0,
           remaining_ml: 0,
