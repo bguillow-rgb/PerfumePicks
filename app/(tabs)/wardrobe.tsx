@@ -373,7 +373,7 @@ const styles = StyleSheet.create({
   pillActive: { backgroundColor: COLORS.accent, borderColor: COLORS.accent },
   pillText: { fontFamily: 'Helvetica Neue', fontSize: 13, fontWeight: '600', color: COLORS.text, letterSpacing: 0.3 },
   pillTextActive: { fontFamily: 'Helvetica Neue', color: COLORS.white },
-  container: { paddingBottom: SPACING.xxl },
+  container: { paddingTop: SPACING.sm, paddingBottom: SPACING.xxl },
   list: { paddingHorizontal: SPACING.lg, gap: SPACING.md },
   empty: {
     margin: SPACING.lg,
