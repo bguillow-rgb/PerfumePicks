@@ -19,6 +19,7 @@
       "bundleIdentifier": "com.bobguillow.perfumepicks",
       "appleTeamId": "ZNS5TNLB2D",
       "infoPlist": {
+        "NSCameraUsageDescription": "Perfume Picks uses the camera to identify fragrance bottles with the Perfume Concierge.",
         "NSPhotoLibraryUsageDescription": "Perfume Picks needs access to your photo library so you can attach photos to your fragrance wardrobe and profile.",
         "NSPhotoLibraryAddUsageDescription": "Perfume Picks saves wardrobe photos to your library when you choose to keep them.",
         "CFBundleURLTypes": [
@@ -52,6 +53,12 @@
       "expo-apple-authentication",
       "expo-font",
       "@react-native-google-signin/google-signin",
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "Perfume Picks uses the camera to identify fragrance bottles with the Perfume Concierge."
+        }
+      ],
       [
         "expo-build-properties",
         {

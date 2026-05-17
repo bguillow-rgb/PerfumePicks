@@ -1,14 +1,9 @@
 /**
- * Perfume Concierge — Camera screen.
+ * Perfume Concierge — Live camera viewfinder with overlaid tips.
  *
- * expo-camera requires a native build (EAS) and crashes in Expo Go.
- * So we use expo-image-picker for capture but present tips on a dark
- * camera-style screen first — matching the Pour Picks visual feel.
- *
- * Flow:
- *   1. Dark screen with tips overlaid (mimics viewfinder)
- *   2. User taps "Perfume Concierge" → native camera opens
- *   3. After capture → shimmer loading → always route to confirm-personal
+ * Uses react-native-vision-camera for a real live viewfinder (requires
+ * EAS dev build, not Expo Go). Tips overlaid directly on the camera feed.
+ * Matches Pour Picks' camera.tsx architecture exactly.
  */
 
 import { Ionicons } from '@expo/vector-icons';
@@ -16,11 +11,12 @@ import * as Haptics from 'expo-haptics';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
   Image,
+  Linking,
   Pressable,
   StyleSheet,
   Text,
@@ -34,6 +30,11 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import {
+  Camera,
+  useCameraDevice,
+  useCameraPermission,
+} from 'react-native-vision-camera';
 
 import { COLORS, FONTS, RADIUS, SPACING } from '@/src/constants/theme';
 import { identifyBottle } from '@/src/features/identify/identifyService';
@@ -54,7 +55,7 @@ const LOADING_MESSAGES = [
   'Almost there…',
 ];
 
-type ScreenState = 'ready' | 'scanning';
+type ScreenState = 'viewfinder' | 'scanning';
 
 export default function CameraScreen() {
   const router = useRouter();
@@ -63,10 +64,21 @@ export default function CameraScreen() {
   const { remaining, limitReached, guestLimitReached, isAnonymous } =
     useScanCount();
 
-  const [state, setState] = useState<ScreenState>('ready');
+  const { hasPermission, requestPermission } = useCameraPermission();
+  const device = useCameraDevice('back');
+  const cameraRef = useRef<Camera>(null);
+
+  const [state, setState] = useState<ScreenState>('viewfinder');
   const [photoUri, setPhotoUri] = useState<string | null>(null);
   const [loadingMsg, setLoadingMsg] = useState(LOADING_MESSAGES[0]);
   const [capturing, setCapturing] = useState(false);
+
+  // Request permission on mount
+  useEffect(() => {
+    if (hasPermission === false) {
+      requestPermission();
+    }
+  }, [hasPermission]);
 
   // Rotate loading messages while scanning
   useEffect(() => {
@@ -153,43 +165,26 @@ export default function CameraScreen() {
     }
   };
 
-  const handleCapture = async () => {
-    if (capturing) return;
+  const handleCapture = useCallback(async () => {
+    if (capturing || !cameraRef.current) return;
     if (!checkQuota()) return;
 
     setCapturing(true);
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
 
     try {
-      const { status } = await ImagePicker.requestCameraPermissionsAsync();
-      if (status !== 'granted') {
-        Alert.alert(
-          'Camera Access Needed',
-          'Allow camera access in Settings to scan bottles.'
-        );
-        setCapturing(false);
-        return;
-      }
-
-      const pickerResult = await ImagePicker.launchCameraAsync({
-        quality: 1,
-        base64: false,
-        allowsEditing: false,
+      const photo = await cameraRef.current.takePhoto({
+        qualityPrioritization: 'balanced',
+        flash: 'off',
       });
 
-      if (pickerResult.canceled || !pickerResult.assets?.[0]?.uri) {
-        setCapturing(false);
-        return;
-      }
-
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-      await processAndIdentify(pickerResult.assets[0].uri);
+      await processAndIdentify(normalizeFileUri(photo.path));
     } catch (e) {
       console.warn('[camera] capture error:', e);
       Alert.alert('Error', 'Could not capture photo. Please try again.');
       setCapturing(false);
     }
-  };
+  }, [capturing]);
 
   const handleGallery = async () => {
     if (!checkQuota()) return;
@@ -223,10 +218,68 @@ export default function CameraScreen() {
     );
   }
 
-  // ── Ready state: dark "viewfinder" style with overlaid tips ──
+  // ── Permission denied and can't ask again ──
+  if (hasPermission === false) {
+    return (
+      <View style={styles.dark}>
+        <View style={[styles.topBar, { paddingTop: insets.top + 8 }]}>
+          <Pressable onPress={() => router.back()} hitSlop={12} style={styles.topBtn}>
+            <Ionicons name="arrow-back" size={22} color="#fff" />
+          </Pressable>
+        </View>
+        <View style={styles.center}>
+          <Ionicons name="camera-outline" size={56} color="rgba(255,255,255,0.5)" />
+          <Text style={styles.permTitle}>Camera access needed</Text>
+          <Text style={styles.permSub}>
+            Open Settings and allow camera access to scan bottles.
+          </Text>
+          <Pressable style={styles.permBtn} onPress={() => Linking.openSettings()}>
+            <Text style={styles.permBtnText}>Open Settings</Text>
+          </Pressable>
+          <Pressable style={{ paddingVertical: 12 }} onPress={() => router.back()}>
+            <Text style={styles.permBackText}>Go Back</Text>
+          </Pressable>
+        </View>
+      </View>
+    );
+  }
+
+  // ── No device (simulator without camera) ──
+  if (!device) {
+    return (
+      <View style={styles.dark}>
+        <View style={[styles.topBar, { paddingTop: insets.top + 8 }]}>
+          <Pressable onPress={() => router.back()} hitSlop={12} style={styles.topBtn}>
+            <Ionicons name="arrow-back" size={22} color="#fff" />
+          </Pressable>
+        </View>
+        <View style={styles.center}>
+          <Ionicons name="camera-reverse-outline" size={56} color="rgba(255,255,255,0.5)" />
+          <Text style={styles.permTitle}>Camera unavailable</Text>
+          <Text style={styles.permSub}>No camera found on this device.</Text>
+          <Pressable style={styles.permBtn} onPress={handleGallery}>
+            <Text style={styles.permBtnText}>Choose from Library</Text>
+          </Pressable>
+          <Pressable style={{ paddingVertical: 12 }} onPress={() => router.back()}>
+            <Text style={styles.permBackText}>Go Back</Text>
+          </Pressable>
+        </View>
+      </View>
+    );
+  }
+
+  // ── Live viewfinder with overlaid tips ──
   return (
     <View style={styles.dark}>
-      {/* Top bar */}
+      <Camera
+        ref={cameraRef}
+        style={StyleSheet.absoluteFill}
+        device={device}
+        isActive={state === 'viewfinder'}
+        photo
+      />
+
+      {/* Top bar: back + gallery */}
       <View style={[styles.topBar, { paddingTop: insets.top + 8 }]}>
         <Pressable onPress={() => router.back()} hitSlop={12} style={styles.topBtn}>
           <Ionicons name="arrow-back" size={22} color="#fff" />
@@ -237,10 +290,7 @@ export default function CameraScreen() {
         </Pressable>
       </View>
 
-      {/* Center spacer — mimics viewfinder area */}
-      <View style={{ flex: 1 }} />
-
-      {/* Bottom overlay: tips + button */}
+      {/* Bottom overlay: tips card + capture button */}
       <View style={[styles.bottom, { paddingBottom: insets.bottom + 16 }]}>
         <View style={styles.tipsCard}>
           <Text style={styles.tipsHeading}>FOR THE BEST MATCH</Text>
@@ -298,9 +348,12 @@ function ShimmerOverlay() {
 }
 
 const styles = StyleSheet.create({
-  dark: { flex: 1, backgroundColor: '#111' },
+  dark: { flex: 1, backgroundColor: '#000' },
 
   topBar: {
+    position: 'absolute',
+    top: 0, left: 0, right: 0,
+    zIndex: 10,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
@@ -308,16 +361,19 @@ const styles = StyleSheet.create({
   },
   topBtn: {
     width: 40, height: 40, borderRadius: 20,
-    backgroundColor: 'rgba(255,255,255,0.12)',
+    backgroundColor: 'rgba(0,0,0,0.45)',
     alignItems: 'center', justifyContent: 'center',
   },
 
   bottom: {
+    position: 'absolute',
+    bottom: 0, left: 0, right: 0,
+    zIndex: 10,
     paddingHorizontal: 16,
     gap: 10,
   },
   tipsCard: {
-    backgroundColor: 'rgba(0,0,0,0.55)',
+    backgroundColor: 'rgba(0,0,0,0.65)',
     borderRadius: RADIUS.lg,
     borderWidth: 1,
     borderColor: 'rgba(184,146,75,0.4)',
@@ -357,7 +413,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.accent,
     borderRadius: RADIUS.full,
     paddingVertical: 16,
-    alignSelf: 'center',
     width: '100%',
   },
   captureBtnText: {
@@ -376,8 +431,7 @@ const styles = StyleSheet.create({
   scanTitle: {
     fontFamily: FONTS.serif,
     fontSize: 20, fontWeight: '600',
-    color: '#fff',
-    textAlign: 'center',
+    color: '#fff', textAlign: 'center',
   },
   scanHint: {
     fontFamily: FONTS.body,
@@ -388,13 +442,38 @@ const styles = StyleSheet.create({
   shimmerWrap: {
     width: 220, height: 280,
     borderRadius: RADIUS.lg,
-    overflow: 'hidden',
-    marginBottom: SPACING.lg,
+    overflow: 'hidden', marginBottom: SPACING.lg,
   },
   scanImage: { width: '100%', height: '100%' },
   shimmerClip: { ...StyleSheet.absoluteFillObject, overflow: 'hidden' },
   shimmerBar: {
     position: 'absolute', left: 0, right: 0, height: 6,
     backgroundColor: COLORS.accent, opacity: 0.6, borderRadius: 3,
+  },
+
+  permTitle: {
+    fontFamily: FONTS.serif,
+    fontSize: 22, fontWeight: '600',
+    color: '#fff', textAlign: 'center',
+  },
+  permSub: {
+    fontFamily: FONTS.body, fontSize: 14,
+    color: 'rgba(255,255,255,0.6)',
+    textAlign: 'center', paddingHorizontal: SPACING.lg,
+  },
+  permBtn: {
+    backgroundColor: COLORS.accent,
+    borderRadius: RADIUS.full,
+    paddingVertical: 14, paddingHorizontal: 40,
+    marginTop: SPACING.md,
+  },
+  permBtnText: {
+    fontFamily: FONTS.body,
+    fontSize: 15, fontWeight: '700',
+    color: '#fff', letterSpacing: 0.5,
+  },
+  permBackText: {
+    fontFamily: FONTS.body, fontSize: 14,
+    color: 'rgba(255,255,255,0.5)',
   },
 });
