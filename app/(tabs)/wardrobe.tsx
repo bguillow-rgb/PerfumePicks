@@ -236,7 +236,7 @@ export default function WardrobeScreen() {
         </View>
       </View>
 
-      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
 
         {visible.length === 0 ? (
           <View style={styles.empty}>
