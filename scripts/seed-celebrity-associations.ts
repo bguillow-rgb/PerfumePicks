@@ -96,7 +96,6 @@ async function main() {
       .from('fragrances')
       .select('id')
       .ilike('name', `%${fragranceName}%`)
-      .eq('is_active', true)
       .limit(1);
 
     if (!matches?.length) {
