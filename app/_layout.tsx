@@ -46,7 +46,6 @@ import {
   resetAnalytics,
   setErrorUser,
 } from '@/src/lib/observability';
-import { useAppSync } from '@/src/lib/sync/useAppSync';
 
 export { ErrorBoundary } from 'expo-router';
 
