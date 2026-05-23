@@ -233,7 +233,7 @@ export default function FragranceDetailScreen() {
     if (!fragrance) return '';
     const q = encodeURIComponent(`${fragrance.brand} ${fragrance.name}`);
     const dest = encodeURIComponent(`https://www.fragranceshop.com/search#q=${q}`);
-    return `https://www.anrdoezrs.net/click-7966973-317600?url=${dest}`;
+    return `https://www.anrdoezrs.net/click-7966973-16941446?url=${dest}`;
   }, [fragrance?.brand, fragrance?.name]);
 
   return (
@@ -273,6 +273,24 @@ export default function FragranceDetailScreen() {
               <Text style={styles.heroMetaText}>{fragrance.release_year}</Text>
             </View>
           </View>
+
+          {/* Buy button — bottom-right of hero, always visible */}
+          <Pressable
+            style={({ pressed }) => [styles.heroBuyBtn, pressed && { opacity: 0.75 }]}
+            onPress={() => {
+              const link = retailerLinks[0] ?? { retailer: 'FragranceShop', url: fragranceShopFallbackUrl, price_cents: null };
+              handleAffiliateClick({
+                fragrance_id: id,
+                retailer: link.retailer,
+                url: link.url,
+                price_cents: link.price_cents,
+                source_screen: 'fragrance_detail_hero',
+              });
+            }}
+          >
+            <Ionicons name="bag-outline" size={14} color={COLORS.white} />
+            <Text style={styles.heroBuyBtnText}>Buy</Text>
+          </Pressable>
         </View>
 
         {wearLogs.length > 0 && (
@@ -624,6 +642,14 @@ const styles = StyleSheet.create({
     alignItems: 'center', justifyContent: 'center',
   },
   heroContent: { position: 'absolute', left: 0, right: 0, bottom: 0, padding: SPACING.lg },
+  heroBuyBtn: {
+    position: 'absolute', bottom: SPACING.lg + 80, right: SPACING.lg,
+    flexDirection: 'row', alignItems: 'center', gap: 5,
+    backgroundColor: COLORS.accent,
+    paddingHorizontal: 14, paddingVertical: 8,
+    borderRadius: RADIUS.full,
+  },
+  heroBuyBtnText: { color: COLORS.white, fontWeight: '700', fontSize: 13, letterSpacing: 0.5 },
   heroBrand: { ...TYPE.eyebrow, color: COLORS.accentSoft, marginBottom: 6 },
   heroName: { fontFamily: FONTS.serif, fontWeight: '700', fontSize: 38, color: COLORS.white, lineHeight: 44, marginBottom: SPACING.sm },
   heroMeta: { flexDirection: 'row', alignItems: 'center', gap: 8 },
