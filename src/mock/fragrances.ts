@@ -42,6 +42,7 @@ export interface MockFragrance {
 
 
 
+
 export const MOCK_CATALOG: MockFragrance[] = [
   {
     id: 'heretic-parfum-til-death',
@@ -72221,7 +72222,7 @@ export const MOCK_CATALOG: MockFragrance[] = [
   {
     id: 'tom-ford-black-orchid-discovery-collection',
     brand: 'Tom Ford',
-    name: 'Black Orchid Discovery Collection ',
+    name: 'Black Orchid Discovery Collection',
     concentration: 'edp',
     fragrance_family: 'floral',
     gender: 'unisex',
@@ -82971,8 +82972,7 @@ export const MOCK_CATALOG: MockFragrance[] = [
   {
     id: 'toskovat-vestibule-terror-betrayal-collection-60ml-preorder',
     brand: 'Toskovat',
-    name: 'Vestibule Terror (Betrayal Collection)
- - 60ml preorder',
+    name: 'Vestibule Terror (Betrayal Collection)  - 60ml preorder',
     concentration: 'edp',
     fragrance_family: 'floral',
     gender: 'unisex',
@@ -119172,7 +119172,7 @@ export const MOCK_CATALOG: MockFragrance[] = [
   {
     id: 'roja-parfums-roja-parfums-elysium',
     brand: 'Roja Parfums',
-    name: 'ROJA PARFUMS ELYSIUM™  ',
+    name: 'ROJA PARFUMS ELYSIUM™',
     concentration: 'parfum',
     fragrance_family: 'floral',
     gender: 'unisex',
