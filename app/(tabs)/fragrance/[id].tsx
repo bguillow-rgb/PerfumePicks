@@ -226,6 +226,15 @@ export default function FragranceDetailScreen() {
       .then(({ data }) => { if (data) setRetailerLinks(data); });
   }, [id]);
 
+  // CJ deep-link fallback for fragrances not yet in the retailer DB.
+  // Publisher ID 7966973, FragranceShop advertiser ID 317600.
+  const fragranceShopFallbackUrl = useMemo(() => {
+    if (!fragrance) return '';
+    const q = encodeURIComponent(`${fragrance.brand} ${fragrance.name}`);
+    const dest = encodeURIComponent(`https://www.fragranceshop.com/search#q=${q}`);
+    return `https://www.anrdoezrs.net/click-7966973-317600?url=${dest}`;
+  }, [fragrance?.brand, fragrance?.name]);
+
   return (
     <View style={styles.safe}>
       <Stack.Screen options={{ headerShown: false }} />
@@ -384,9 +393,22 @@ export default function FragranceDetailScreen() {
                 <Text style={styles.affiliateDisclosure}>We may earn a commission from purchases.</Text>
               </View>
             ) : (
-              <Text style={styles.priceFootnote}>
-                Buy-from links appear once retailer partnerships are live.
-              </Text>
+              <View style={styles.retailerList}>
+                <Pressable
+                  style={({ pressed }) => [styles.retailerRow, pressed && { opacity: 0.6 }]}
+                  onPress={() => handleAffiliateClick({
+                    fragrance_id: id,
+                    retailer: 'FragranceShop',
+                    url: fragranceShopFallbackUrl,
+                    price_cents: null,
+                    source_screen: 'fragrance_detail',
+                  })}
+                >
+                  <Text style={styles.retailerName}>FragranceShop</Text>
+                  <Ionicons name="open-outline" size={12} color={COLORS.muted} />
+                </Pressable>
+                <Text style={styles.affiliateDisclosure}>We may earn a commission from purchases.</Text>
+              </View>
             )}
           </View>
         </Section>
