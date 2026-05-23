@@ -216,8 +216,12 @@ function parseName(title: string, brand: string): string {
   // strip brand prefix (case-insensitive)
   const brandRe = new RegExp('^' + brand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*', 'i');
   name = name.replace(brandRe, '');
-  // strip trailing " - Eau de Parfum 3.4 oz" style suffixes
+  // strip trailing concentration + size suffixes in two passes:
+  // pass 1: "- Eau de Parfum 3.4 oz" style (dash-separated)
   name = name.replace(/\s*[-–]\s*(Eau\s+de\s+(Parfum|Toilette|Cologne)|Parfum|Extrait|Cologne|Body\s+Mist|Hair\s+Mist).*$/i, '');
+  // pass 2: inline concentration / spray / size with no dash
+  // e.g. "Bleu de Chanel Eau de Parfum Spray 3.4 oz" → "Bleu de Chanel"
+  name = name.replace(/\s+(Eau\s+de\s+(Parfum|Toilette|Cologne)|Parfum|Extrait|Cologne|Spray|Mist|Roll-?On|\d[\d.]*\s*(oz|ml|fl\.?\s*oz)).*$/i, '');
   return name.trim() || title.trim();
 }
 

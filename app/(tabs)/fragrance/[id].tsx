@@ -217,22 +217,31 @@ export default function FragranceDetailScreen() {
   const [hasCelebrities, setHasCelebrities] = useState(false);
 
   // Affiliate "Buy from" links from fragrance_retailer_links.
+  // fragrance_retailer_links.fragrance_id is a UUID — resolve slug → UUID first.
   const [retailerLinks, setRetailerLinks] = useState<{ retailer: string; url: string; price_cents: number | null }[]>([]);
   useEffect(() => {
     if (!isSupabaseConfigured || !id) return;
     supabase
-      .from('fragrance_retailer_links')
-      .select('retailer, url, price_cents')
-      .eq('fragrance_id', id)
-      .then(({ data }) => { if (data) setRetailerLinks(data); });
+      .from('fragrances')
+      .select('id')
+      .eq('slug', id)
+      .maybeSingle()
+      .then(({ data: fragRow }) => {
+        if (!fragRow?.id) return;
+        supabase
+          .from('fragrance_retailer_links')
+          .select('retailer, url, price_cents')
+          .eq('fragrance_id', fragRow.id)
+          .then(({ data }) => { if (data?.length) setRetailerLinks(data); });
+      });
   }, [id]);
 
-  // CJ deep-link fallback for fragrances not yet in the retailer DB.
-  // Publisher ID 7966973, FragranceShop advertiser ID 317600.
+  // CJ deep-link fallback: search on FragranceShop using ?s= query param.
+  // Publisher ID 7966973, FragranceShop advertiser ID 16941446.
   const fragranceShopFallbackUrl = useMemo(() => {
     if (!fragrance) return '';
     const q = encodeURIComponent(`${fragrance.brand} ${fragrance.name}`);
-    const dest = encodeURIComponent(`https://www.fragranceshop.com/search#q=${q}`);
+    const dest = encodeURIComponent(`https://www.fragranceshop.com/?s=${q}`);
     return `https://www.anrdoezrs.net/click-7966973-16941446?url=${dest}`;
   }, [fragrance?.brand, fragrance?.name]);
 
