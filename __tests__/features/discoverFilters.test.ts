@@ -5,8 +5,8 @@ describe('filtersActive()', () => {
     expect(filtersActive(EMPTY_FILTERS)).toBe(false);
   });
 
-  it('returns true when families array is non-empty', () => {
-    const filters: DiscoverFilters = { ...EMPTY_FILTERS, families: ['Floral'] };
+  it('returns true when genders array is non-empty', () => {
+    const filters: DiscoverFilters = { ...EMPTY_FILTERS, genders: ['feminine'] };
     expect(filtersActive(filters)).toBe(true);
   });
 
@@ -20,34 +20,34 @@ describe('filtersActive()', () => {
     expect(filtersActive(filters)).toBe(true);
   });
 
-  it('returns true when longevityMin is set', () => {
-    const filters: DiscoverFilters = { ...EMPTY_FILTERS, longevityMin: 6 };
+  it('returns true when yearMin is set', () => {
+    const filters: DiscoverFilters = { ...EMPTY_FILTERS, yearMin: 2010 };
     expect(filtersActive(filters)).toBe(true);
   });
 
-  it('returns true when sillageMin is set', () => {
-    const filters: DiscoverFilters = { ...EMPTY_FILTERS, sillageMin: 4 };
+  it('returns true when yearMax is set', () => {
+    const filters: DiscoverFilters = { ...EMPTY_FILTERS, yearMax: 2020 };
     expect(filtersActive(filters)).toBe(true);
   });
 
   it('returns false when all fields are cleared', () => {
     const filters: DiscoverFilters = {
-      families: [],
+      genders: [],
       accords: [],
       priceTiers: [],
-      longevityMin: null,
-      sillageMin: null,
+      yearMin: null,
+      yearMax: null,
     };
     expect(filtersActive(filters)).toBe(false);
   });
 
   it('returns true with multiple active fields', () => {
     const filters: DiscoverFilters = {
-      families: ['Woody', 'Oriental'],
+      genders: ['unisex', 'feminine'],
       accords: ['oud'],
       priceTiers: [4, 5],
-      longevityMin: 7,
-      sillageMin: null,
+      yearMin: 2010,
+      yearMax: 2020,
     };
     expect(filtersActive(filters)).toBe(true);
   });
