@@ -109,7 +109,9 @@ const FRAGRANCE_SELECT = '*, brands(name)';
 
 export const useCatalogStore = create<CatalogState>()((set, get) => ({
   cache: {},
-  items: isSupabaseConfigured ? [] : MOCK_CATALOG,
+  // Always seed items from MOCK_CATALOG — it is the fragrance data source.
+  // Supabase is auth/user-data only; no fragrances DB yet.
+  items: MOCK_CATALOG,
   fetching: new Set(),
 
   _addToCache: (newItems) => {
@@ -117,21 +119,23 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     for (const f of newItems) patch[f.id] = f;
     set((s) => {
       const cache = { ...s.cache, ...patch };
-      return { cache, items: Object.values(cache) };
+      // Keep MOCK_CATALOG as base; Supabase entries supplement it
+      const supabaseItems = Object.values(cache).filter((f) => !MOCK_CATALOG.some((m) => m.id === f.id));
+      return { cache, items: [...MOCK_CATALOG, ...supabaseItems] };
     });
   },
 
   getById: (id) => {
-    if (!isSupabaseConfigured) {
-      return MOCK_CATALOG.find((f) => f.id === id);
-    }
-    return get().cache[id];
+    // Always check MOCK_CATALOG first — primary data source
+    return MOCK_CATALOG.find((f) => f.id === id) ?? get().cache[id];
   },
 
   fetchById: async (id) => {
-    if (!isSupabaseConfigured) {
-      return MOCK_CATALOG.find((f) => f.id === id);
-    }
+    // Check MOCK_CATALOG first regardless of Supabase config
+    const mock = MOCK_CATALOG.find((f) => f.id === id);
+    if (mock) return mock;
+
+    if (!isSupabaseConfigured) return undefined;
 
     const cached = get().cache[id];
     if (cached) return cached;
@@ -168,47 +172,16 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
 
   search: async (query, limit = 20, genders) => {
     const q = query.trim().toLowerCase();
-
-    if (!isSupabaseConfigured) {
-      let results = !q ? MOCK_CATALOG : MOCK_CATALOG.filter((f) =>
-        f.name.toLowerCase().includes(q) ||
-        f.brand.toLowerCase().includes(q) ||
-        f.top_notes.some((n) => n.toLowerCase().includes(q)) ||
-        f.top_accords.some((a) => a.toLowerCase().includes(q)),
-      );
-      if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
-      return results.slice(0, limit);
-    }
-
-    if (!q) {
-      let qb = supabase
-        .from('fragrances')
-        .select(FRAGRANCE_SELECT)
-        .eq('is_active', true)
-        .order('created_at', { ascending: false })
-        .limit(limit);
-      if (genders?.length) qb = qb.or(`gender.in.(${genders.join(',')}),gender.is.null`);
-      const { data, error } = await qb;
-      if (error || !data) return [];
-      const results = data.map(rowToFragrance);
-      get()._addToCache(results);
-      return results;
-    }
-
-    // pg_trgm fuzzy search on name, then filter brand client-side for simplicity
-    let qb = supabase
-      .from('fragrances')
-      .select(FRAGRANCE_SELECT)
-      .eq('is_active', true)
-      .ilike('name', `%${q}%`)
-      .limit(limit);
-    if (genders?.length) qb = qb.or(`gender.in.(${genders.join(',')}),gender.is.null`);
-    const { data, error } = await qb;
-
-    if (error) { console.warn('[catalog] search error:', error.message); return []; }
-    const results = (data ?? []).map(rowToFragrance);
-    get()._addToCache(results);
-    return results;
+    // Always search MOCK_CATALOG — it is the authoritative fragrance source.
+    // Supabase fragrances table is not yet populated; skip it.
+    let results = !q ? MOCK_CATALOG : MOCK_CATALOG.filter((f) =>
+      f.name.toLowerCase().includes(q) ||
+      f.brand.toLowerCase().includes(q) ||
+      f.top_notes.some((n) => n.toLowerCase().includes(q)) ||
+      f.top_accords.some((a) => a.toLowerCase().includes(q)),
+    );
+    if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
+    return results.slice(0, limit);
   },
 
   fetchMany: async (ids) => {
