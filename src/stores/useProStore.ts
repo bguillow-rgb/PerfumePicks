@@ -13,6 +13,11 @@ interface ProState {
   /** Deactivate Pro (for testing / refund) */
   deactivate: () => void;
   setHasHydrated: (v: boolean) => void;
+  /**
+   * Sync from the server source of truth (profiles.is_pro).
+   * Called by useAppSync on sign-in. Server wins over local state.
+   */
+  syncFromServer: (serverIsPro: boolean) => void;
 }
 
 export const useProStore = create<ProState>()(
@@ -24,6 +29,10 @@ export const useProStore = create<ProState>()(
       activate: () => set({ isPro: true, purchasedAt: new Date().toISOString() }),
       deactivate: () => set({ isPro: false, purchasedAt: null }),
       setHasHydrated: (v) => set({ hasHydrated: v }),
+      syncFromServer: (serverIsPro) => set((s) => ({
+        isPro: serverIsPro,
+        purchasedAt: serverIsPro ? (s.purchasedAt ?? new Date().toISOString()) : null,
+      })),
     }),
     {
       name: STORAGE_KEYS.pro,

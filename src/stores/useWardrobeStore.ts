@@ -5,6 +5,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Crypto from 'expo-crypto';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { syncWrite, syncDelete } from '@/src/lib/sync/syncWrite';
+import { FREE_WARDROBE_CAP } from '@/src/lib/limits';
+import { useProStore } from '@/src/stores/useProStore';
 
 /**
  * Local wardrobe store — the user's fragrance collection.
@@ -43,8 +45,8 @@ interface WardrobeState {
   items: WardrobeItem[];
   /** Hydrate from Supabase on sign-in; call with [] on sign-out. */
   hydrate: (rows: WardrobeItem[]) => void;
-  /** Add a new wardrobe item; returns the new id. */
-  add: (input: Omit<WardrobeItem, 'id' | 'created_at' | 'updated_at' | '_unsynced'>) => string;
+  /** Add a new wardrobe item; returns the new id, or null if the free-tier cap is reached. */
+  add: (input: Omit<WardrobeItem, 'id' | 'created_at' | 'updated_at' | '_unsynced'>) => string | null;
   /** Patch an existing item (partial update). */
   update: (id: string, patch: Partial<WardrobeItem>) => void;
   /** Remove an item. */
@@ -74,6 +76,11 @@ export const useWardrobeStore = create<WardrobeState>()(
         // Deduplicate: if this fragrance is already in the wardrobe, update
         // the existing entry rather than creating a duplicate row.
         const existing = get().items.find((i) => i.fragrance_id === input.fragrance_id);
+        if (!existing) {
+          // Free-tier cap: non-Pro users cannot exceed FREE_WARDROBE_CAP items.
+          const isPro = useProStore.getState().isPro;
+          if (!isPro && get().items.length >= FREE_WARDROBE_CAP) return null;
+        }
         if (existing) {
           const updated = { ...existing, ...input, updated_at: nowIso(), _unsynced: false };
           set((s) => ({
