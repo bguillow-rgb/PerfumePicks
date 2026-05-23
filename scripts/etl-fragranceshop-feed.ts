@@ -45,6 +45,7 @@ const CJ_SFTP_USER     = '7966973';
 const CJ_SFTP_PASSWORD = process.env.CJ_SFTP_PASSWORD || '';
 const CJ_REMOTE_PATH   = '/outgoing/productcatalog/317600/FragranceShop_com_-CJ_Product_Feed-shopping.txt.zip';
 const RETAILER_ID      = 'fragranceshop';
+const RETAILER_ADV_ID  = '317600';  // FragranceShop's CJ advertiser ID
 
 const SUPABASE_URL      = process.env.SUPABASE_URL || process.env.EXPO_PUBLIC_SUPABASE_URL || '';
 const SUPABASE_KEY      = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
@@ -200,6 +201,16 @@ function parsePriceCents(priceStr: string, salePriceStr: string): number | null 
  * Example: "Acqua Di Parma Colonia Pura Cologne for Men - Eau de Cologne 3.4 oz"
  * → name: "Colonia Pura Cologne for Men"  (brand stripped from front)
  */
+const CJ_DOMAINS = ['dpbolvw.net', 'kqzyfj.com', 'tkqlhce.com', 'anrdoezrs.net', 'lduhtrp.net', 'jdoqocy.com'];
+
+/** Replace whatever publisher ID is baked into the feed URL with ours. */
+function rewriteCjUrl(url: string): string {
+  if (!CJ_DOMAINS.some((d) => url.includes(d))) return url;
+  const match = url.match(/[?&]url=([^&]+)/);
+  if (!match) return url;
+  return `https://www.anrdoezrs.net/click-${CJ_SFTP_USER}-${RETAILER_ADV_ID}?url=${match[1]}`;
+}
+
 function parseName(title: string, brand: string): string {
   let name = title;
   // strip brand prefix (case-insensitive)
@@ -235,7 +246,7 @@ function parseRow(row: FeedRow): ParsedProduct | null {
     gender:        parseGender(row.GENDER, row.TITLE),
     price_cents:   parsePriceCents(row.PRICE, row.SALE_PRICE),
     image_url:     row.IMAGE_LINK?.trim() || '',
-    retailer_url:  row.LINK.trim(),       // CJ tracking URL — already affiliate-tagged
+    retailer_url:  rewriteCjUrl(row.LINK.trim()),  // rewrite to our publisher ID
     in_stock:      (row.AVAILABILITY || '').toLowerCase() === 'in stock',
     description:   row.DESCRIPTION?.trim() || '',
     external_id:   row.ID?.trim() || '',
