@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import {
   View, Text, StyleSheet, Modal, Pressable, TextInput,
   ScrollView, KeyboardAvoidingView, Platform,
@@ -24,7 +24,13 @@ interface Props {
 export function LayeringSheet({ visible, fragrance, onClose, onSaved }: Props) {
   const add = useLayeringStore((s) => s.add);
   const catalogItems = useCatalogStore((s) => s.items);
-  const existing = useLayeringStore((s) => fragrance ? s.forFragrance(fragrance.id) : []);
+  const allEntries = useLayeringStore((s) => s.entries);
+  const existing = useMemo(
+    () => fragrance
+      ? allEntries.filter((e) => e.fragrance_a_id === fragrance.id || e.fragrance_b_id === fragrance.id)
+      : [],
+    [allEntries, fragrance?.id],
+  );
 
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<Fragrance | null>(null);
