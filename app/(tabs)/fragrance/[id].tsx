@@ -216,23 +216,18 @@ export default function FragranceDetailScreen() {
   const headlinePrice = (fragrance.retail_msrp_usd_cents / 100).toFixed(0);
   const [hasCelebrities, setHasCelebrities] = useState(false);
 
-  // Affiliate "Buy from" links from fragrance_retailer_links.
-  // fragrance_retailer_links.fragrance_id is a UUID — resolve slug → UUID first.
+  // Affiliate "Buy from" links — single joined query (fragrance_retailer_links
+  // uses UUID FK, but we can join through fragrances on slug in one round trip).
   const [retailerLinks, setRetailerLinks] = useState<{ retailer: string; url: string; price_cents: number | null }[]>([]);
   useEffect(() => {
     if (!isSupabaseConfigured || !id) return;
     supabase
-      .from('fragrances')
-      .select('id')
-      .eq('slug', id)
-      .maybeSingle()
-      .then(({ data: fragRow }) => {
-        if (!fragRow?.id) return;
-        supabase
-          .from('fragrance_retailer_links')
-          .select('retailer, url, price_cents')
-          .eq('fragrance_id', fragRow.id)
-          .then(({ data }) => { if (data?.length) setRetailerLinks(data); });
+      .from('fragrance_retailer_links')
+      .select('retailer, url, price_cents, fragrances!inner(slug)')
+      .eq('fragrances.slug', id)
+      .then(({ data, error }) => {
+        if (error) { console.warn('[retailer-links]', error.message); return; }
+        if (data?.length) setRetailerLinks(data.map(({ retailer, url, price_cents }) => ({ retailer, url, price_cents })));
       });
   }, [id]);
 
