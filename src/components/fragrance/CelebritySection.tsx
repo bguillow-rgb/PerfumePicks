@@ -12,6 +12,7 @@ interface Celebrity {
 
 interface Props {
   fragranceId: string;
+  onHasData?: () => void;
 }
 
 const CATEGORY_ICONS: Record<string, keyof typeof Ionicons.glyphMap> = {
@@ -31,7 +32,7 @@ const CATEGORY_ICONS: Record<string, keyof typeof Ionicons.glyphMap> = {
  * Horizontal row of celebrity chips — compact, editorial.
  * Only renders when fragrance_celebrities has verified rows.
  */
-export function CelebritySection({ fragranceId }: Props) {
+export function CelebritySection({ fragranceId, onHasData }: Props) {
   const [celebrities, setCelebrities] = useState<Celebrity[]>([]);
 
   useEffect(() => {
@@ -42,7 +43,12 @@ export function CelebritySection({ fragranceId }: Props) {
       .eq('fragrance_id', fragranceId)
       .eq('verified', true)
       .order('celebrity_name')
-      .then(({ data }) => { if (data) setCelebrities(data); });
+      .then(({ data }) => {
+        if (data?.length) {
+          setCelebrities(data);
+          onHasData?.();
+        }
+      });
   }, [fragranceId]);
 
   if (celebrities.length === 0) return null;

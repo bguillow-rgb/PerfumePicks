@@ -180,7 +180,7 @@ export function ReviewSection({ fragranceId }: Props) {
       ))}
 
       {reviews.length === 0 && !showForm && (
-        <Text style={styles.emptyText}>No reviews yet. Be the first!</Text>
+        <Text style={styles.emptyText}>This one's still undiscovered here. Leave the first word.</Text>
       )}
     </View>
   );

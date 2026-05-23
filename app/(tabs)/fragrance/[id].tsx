@@ -214,6 +214,7 @@ export default function FragranceDetailScreen() {
 
   const cheaperAlts = findCheaperAlternatives(fragrance, catalogPool);
   const headlinePrice = (fragrance.retail_msrp_usd_cents / 100).toFixed(0);
+  const [hasCelebrities, setHasCelebrities] = useState(false);
 
   // Affiliate "Buy from" links from fragrance_retailer_links.
   const [retailerLinks, setRetailerLinks] = useState<{ retailer: string; url: string; price_cents: number | null }[]>([]);
@@ -310,18 +311,24 @@ export default function FragranceDetailScreen() {
           </View>
         </Section>
 
-        <Section title="Who Wears This" cursive="famous fans">
-          <CelebritySection fragranceId={id} />
-        </Section>
+        {hasCelebrities && (
+          <Section title="Who Wears This" cursive="famous fans">
+            <CelebritySection fragranceId={id} onHasData={() => setHasCelebrities(true)} />
+          </Section>
+        )}
 
         <Section title="Community Reviews" cursive="what others think">
           <ReviewSection fragranceId={id} />
         </Section>
 
         <Section title="Smells Like" cursive="discover similar">
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-            {similar.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
-          </ScrollView>
+          {similar.length > 0 ? (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+              {similar.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
+            </ScrollView>
+          ) : (
+            <Text style={styles.sectionTeaser}>Olfactive matches coming soon for this fragrance.</Text>
+          )}
         </Section>
 
         {/* Similar in your wardrobe — Jaccard on notes */}
@@ -333,26 +340,22 @@ export default function FragranceDetailScreen() {
           </Section>
         )}
 
-        {/* P5-25: Cheaper Alternatives — Pro-gated dupe finder */}
-        <Section title="Cheaper Alternatives" cursive="find dupes">
-          {isPro ? (
-            cheaperAlts.length > 0 ? (
+        {/* Cheaper Alternatives — Pro-gated dupe finder. Hidden when Pro + no results. */}
+        {(!isPro || cheaperAlts.length > 0) && (
+          <Section title="Cheaper Alternatives" cursive="find dupes">
+            {isPro ? (
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
                 {cheaperAlts.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
               </ScrollView>
             ) : (
-              <View style={styles.dupesEmpty}>
-                <Text style={styles.dupesEmptyText}>No cheaper alternatives found in the current catalog.</Text>
-              </View>
-            )
-          ) : (
-            <Pressable style={styles.dupesLocked} onPress={() => router.push('/paywall')}>
-              <Ionicons name="lock-closed" size={16} color={COLORS.accent} />
-              <Text style={styles.dupesLockedText}>Unlock with Pro to find cheaper alternatives that smell just as good</Text>
-              <Text style={styles.dupesLockedCta}>Upgrade →</Text>
-            </Pressable>
-          )}
-        </Section>
+              <Pressable style={styles.dupesLocked} onPress={() => router.push('/paywall')}>
+                <Ionicons name="lock-closed" size={16} color={COLORS.accent} />
+                <Text style={styles.dupesLockedText}>Unlock with Pro to find cheaper alternatives that smell just as good</Text>
+                <Text style={styles.dupesLockedCta}>Upgrade →</Text>
+              </Pressable>
+            )}
+          </Section>
+        )}
 
         <Section title="Pricing" cursive="where to buy">
           <View style={styles.priceCard}>
@@ -719,6 +722,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
   },
   secondaryCtaText: { ...TYPE.label, letterSpacing: 1.5 },
+  sectionTeaser: { ...TYPE.bodySmall, color: COLORS.subtle, fontStyle: 'italic' },
+
   dupesLocked: {
     flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
     backgroundColor: COLORS.card,
