@@ -8,25 +8,22 @@ import { MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
  * In demo mode (no env vars), falls back to MOCK_CATALOG so the app
  * stays fully functional without credentials.
  *
- * The Fragrance type is intentionally compatible with MockFragrance so
- * the scoring engine (score.ts), recommendation hooks, and components
- * all work without changes. The only differences vs the DB schema are:
- *   - `brand` is a string (joined from brands table), not brand_id UUID
- *   - `similar_ids` is the client name (schema column: similar_fragrance_ids)
+ * In production (Supabase configured), fragrances are loaded from the
+ * `fragrances` table populated by the CJ/FragranceShop ETL. Real product
+ * images, descriptions, and affiliate buy links come from that feed.
  *
- * Usage:
- *   const { getById, search, fetchById } = useCatalogStore.getState();
- *   const fragrance = getById(id) ?? await fetchById(id);
+ * App-level fragrance ID = `slug` (unique, human-readable, stable across
+ * both MOCK_CATALOG and Supabase). UUID is Supabase-internal only.
  */
 
 export type Fragrance = MockFragrance;  // same shape, keeps all consumers working
 
 interface CatalogState {
-  /** In-memory cache: fragrance_id → Fragrance */
+  /** In-memory cache: slug → Fragrance */
   cache: Record<string, Fragrance>;
   /**
-   * Flat array view of the cache. In demo mode returns MOCK_CATALOG.
-   * Use this for rendering lists; it re-renders when cache changes.
+   * Flat array view of the cache.
+   * Demo mode: MOCK_CATALOG. Production: populated lazily as searches run.
    */
   items: Fragrance[];
   /** IDs currently being fetched (prevents duplicate in-flight requests) */
@@ -36,41 +33,38 @@ interface CatalogState {
   getById: (id: string) => Fragrance | undefined;
 
   /**
-   * Async fetch by ID. Checks cache first, then hits Supabase.
+   * Async fetch by ID (slug). Checks cache first, then hits Supabase.
    * Falls back to MOCK_CATALOG in demo mode.
    */
   fetchById: (id: string) => Promise<Fragrance | undefined>;
 
   /**
    * Full-text search against the catalog.
-   * Uses pg_trgm index in production; filters MOCK_CATALOG in demo mode.
+   * Uses Supabase ilike in production; filters MOCK_CATALOG in demo mode.
    * Returns up to `limit` results.
    * Optional `genders` filters to ['feminine','unisex'] etc. Defaults to all.
    */
   search: (query: string, limit?: number, genders?: string[]) => Promise<Fragrance[]>;
 
   /**
-   * Fetch multiple fragrances by ID array. Results are cached.
+   * Fetch multiple fragrances by ID (slug) array. Results are cached.
    */
   fetchMany: (ids: string[]) => Promise<Fragrance[]>;
 
   /**
    * Fetch multiple fragrances by slug array. Results are cached.
-   * Falls back to full MOCK_CATALOG in demo mode (slugs aren't in mock IDs).
    */
   fetchBySlugs: (slugs: string[]) => Promise<Fragrance[]>;
 
   /**
    * Fetch all fragrances for a given brand name.
-   * Optional genders filter. Falls back to MOCK_CATALOG in demo mode.
+   * Optional genders filter.
    */
   fetchByBrand: (brand: string, genders?: string[]) => Promise<Fragrance[]>;
 
   /**
-   * Fetch up to `limit` active fragrances, ordered by newest first.
-   * Convenience for screens that need to iterate the catalog — Discover,
-   * Train stack builder, quiz results scoring, layering picker.
-   * Wraps `search('', limit)` so the same demo-mode + cache rules apply.
+   * Fetch up to `limit` active fragrances, ordered by name.
+   * Convenience for Discover, Train stack builder, quiz results, layering picker.
    */
   fetchAllActive: (limit?: number) => Promise<Fragrance[]>;
 
@@ -79,12 +73,13 @@ interface CatalogState {
 
 function rowToFragrance(row: any): Fragrance {
   return {
-    id:                   row.id,
+    // Use slug as the app-level ID — stable, human-readable, shared with MOCK_CATALOG
+    id:                   row.slug ?? row.id,
     brand:                row.brands?.name ?? row.brand ?? '',
     name:                 row.name,
-    concentration:        row.concentration,
-    fragrance_family:     row.fragrance_family,
-    gender:               row.gender,
+    concentration:        row.concentration ?? 'edp',
+    fragrance_family:     row.fragrance_family ?? 'floral',
+    gender:               row.gender ?? 'unisex',
     top_notes:            row.top_notes ?? [],
     heart_notes:          row.heart_notes ?? [],
     base_notes:           row.base_notes ?? [],
@@ -105,13 +100,13 @@ function rowToFragrance(row: any): Fragrance {
   };
 }
 
-const FRAGRANCE_SELECT = '*, brands(name)';
+const FRAGRANCE_SELECT = 'id, slug, name, concentration, fragrance_family, gender, top_notes, heart_notes, base_notes, top_accords, accord_intensity, community_longevity, community_sillage, community_projection, compliment_score, versatility_score, office_safe_score, price_tier, retail_msrp_usd_cents, image_url, similar_fragrance_ids, dupe_of, release_year, brands(name)';
 
 export const useCatalogStore = create<CatalogState>()((set, get) => ({
   cache: {},
-  // Always seed items from MOCK_CATALOG — it is the fragrance data source.
-  // Supabase is auth/user-data only; no fragrances DB yet.
-  items: MOCK_CATALOG,
+  // Demo mode seeds from MOCK_CATALOG immediately.
+  // Production mode starts empty — populated lazily as searches/fetches run.
+  items: isSupabaseConfigured ? [] : MOCK_CATALOG,
   fetching: new Set(),
 
   _addToCache: (newItems) => {
@@ -119,29 +114,32 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     for (const f of newItems) patch[f.id] = f;
     set((s) => {
       const cache = { ...s.cache, ...patch };
-      // Keep MOCK_CATALOG as base; Supabase entries supplement it
-      const supabaseItems = Object.values(cache).filter((f) => !MOCK_CATALOG.some((m) => m.id === f.id));
-      return { cache, items: [...MOCK_CATALOG, ...supabaseItems] };
+      if (!isSupabaseConfigured) {
+        // Demo: MOCK_CATALOG is base; Supabase entries supplement
+        const extra = Object.values(cache).filter((f) => !MOCK_CATALOG.some((m) => m.id === f.id));
+        return { cache, items: [...MOCK_CATALOG, ...extra] };
+      }
+      return { cache, items: Object.values(cache) };
     });
   },
 
   getById: (id) => {
-    // Always check MOCK_CATALOG first — primary data source
-    return MOCK_CATALOG.find((f) => f.id === id) ?? get().cache[id];
+    const cached = get().cache[id];
+    if (cached) return cached;
+    if (!isSupabaseConfigured) return MOCK_CATALOG.find((f) => f.id === id);
+    return undefined;
   },
 
   fetchById: async (id) => {
-    // Check MOCK_CATALOG first regardless of Supabase config
-    const mock = MOCK_CATALOG.find((f) => f.id === id);
-    if (mock) return mock;
-
-    if (!isSupabaseConfigured) return undefined;
+    // Demo mode: check mock catalog
+    if (!isSupabaseConfigured) {
+      return MOCK_CATALOG.find((f) => f.id === id);
+    }
 
     const cached = get().cache[id];
     if (cached) return cached;
 
     if (get().fetching.has(id)) {
-      // Wait briefly then return from cache (another call is already in flight)
       await new Promise((r) => setTimeout(r, 300));
       return get().cache[id];
     }
@@ -151,7 +149,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       const { data, error } = await supabase
         .from('fragrances')
         .select(FRAGRANCE_SELECT)
-        .eq('id', id)
+        .eq('slug', id)
         .eq('is_active', true)
         .maybeSingle();
 
@@ -172,16 +170,38 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
 
   search: async (query, limit = 20, genders) => {
     const q = query.trim().toLowerCase();
-    // Always search MOCK_CATALOG — it is the authoritative fragrance source.
-    // Supabase fragrances table is not yet populated; skip it.
-    let results = !q ? MOCK_CATALOG : MOCK_CATALOG.filter((f) =>
-      f.name.toLowerCase().includes(q) ||
-      f.brand.toLowerCase().includes(q) ||
-      f.top_notes.some((n) => n.toLowerCase().includes(q)) ||
-      f.top_accords.some((a) => a.toLowerCase().includes(q)),
-    );
-    if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
-    return results.slice(0, limit);
+
+    if (!isSupabaseConfigured) {
+      let results = !q ? MOCK_CATALOG : MOCK_CATALOG.filter((f) =>
+        f.name.toLowerCase().includes(q) ||
+        f.brand.toLowerCase().includes(q) ||
+        f.top_notes.some((n) => n.toLowerCase().includes(q)) ||
+        f.top_accords.some((a) => a.toLowerCase().includes(q)),
+      );
+      if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
+      return results.slice(0, limit);
+    }
+
+    // Production: query Supabase
+    let qb = supabase
+      .from('fragrances')
+      .select(FRAGRANCE_SELECT)
+      .eq('is_active', true)
+      .order('name', { ascending: true })
+      .limit(limit);
+
+    if (q) {
+      qb = qb.ilike('name', `%${q}%`);
+    }
+    if (genders?.length) {
+      qb = qb.in('gender', genders);
+    }
+
+    const { data, error } = await qb;
+    if (error) { console.warn('[catalog] search error:', error.message); return []; }
+    const results = (data ?? []).map(rowToFragrance);
+    get()._addToCache(results);
+    return results;
   },
 
   fetchMany: async (ids) => {
@@ -198,14 +218,14 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       const { data, error } = await supabase
         .from('fragrances')
         .select(FRAGRANCE_SELECT)
-        .in('id', missing)
+        .in('slug', missing)
         .eq('is_active', true);
 
       if (!error && data) get()._addToCache(data.map(rowToFragrance));
     }
 
     return ids.flatMap((id) => {
-      const f = get().cache[id] ?? MOCK_CATALOG.find((m) => m.id === id);
+      const f = get().cache[id];
       return f ? [f] : [];
     });
   },
@@ -214,7 +234,6 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     if (!slugs.length) return [];
 
     if (!isSupabaseConfigured) {
-      // Demo mode: return first N mock items as stand-ins
       return MOCK_CATALOG.slice(0, slugs.length);
     }
 
@@ -231,9 +250,6 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
   },
 
   fetchAllActive: async (limit = 200) => {
-    // search('', limit) already handles demo-mode fallback, ordering,
-    // caching, and the is_active filter. One-liner wrapper so
-    // call sites read clean.
     return get().search('', limit);
   },
 
@@ -244,7 +260,6 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       return results;
     }
 
-    // First resolve brand_id from brands table
     const { data: brandRow } = await supabase
       .from('brands')
       .select('id')
@@ -261,7 +276,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       .order('name', { ascending: true })
       .limit(200);
 
-    if (genders?.length) qb = qb.or(`gender.in.(${genders.join(',')}),gender.is.null`);
+    if (genders?.length) qb = qb.in('gender', genders);
 
     const { data, error } = await qb;
     if (error) { console.warn('[catalog] fetchByBrand error:', error.message); return []; }
@@ -273,8 +288,6 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
 
 /**
  * Convenience: synchronous getFragrance() compatible with existing call sites.
- * Returns from cache (fast path) or falls back to mock catalog.
- * For async-safe fetching, use useCatalogStore.getState().fetchById(id).
  */
 export function getFragranceFromStore(id: string): Fragrance | undefined {
   return useCatalogStore.getState().getById(id);
