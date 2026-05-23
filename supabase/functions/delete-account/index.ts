@@ -55,6 +55,8 @@ Deno.serve(async (req) => {
       "swipe_feedback",
       "quiz_results",
       "user_taste_profiles",
+      "follows",
+      "wear_log_reactions",
     ];
     await Promise.all(
       tables.map((t) =>

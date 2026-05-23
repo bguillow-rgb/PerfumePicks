@@ -1,0 +1,36 @@
+appId: host.exp.Exponent
+---
+- launchApp
+
+- tapOn:
+    text: "Discover"
+
+- tapOn:
+    id: "discover-search-input"
+
+- inputText: "Aventus"
+
+- assertVisible:
+    text: "Aventus"
+
+- tapOn:
+    index: 0
+    text: "Aventus"
+
+- assertVisible:
+    text: "Notes"
+
+- tapOn:
+    text: "Add to Wardrobe"
+
+- assertVisible:
+    text: "STATUS"
+
+- tapOn:
+    text: "I own it"
+
+- tapOn:
+    text: "Save"
+
+- assertNotVisible:
+    text: "STATUS"

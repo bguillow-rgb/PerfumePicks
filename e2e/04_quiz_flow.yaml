@@ -1,0 +1,55 @@
+appId: host.exp.Exponent
+---
+- launchApp
+
+- tapOn:
+    text: "Profile"
+
+- tapOn:
+    text: "Take the quiz"
+
+- assertVisible:
+    text: "quiz"
+    optional: true
+
+- tapOn:
+    index: 0
+    id: "quiz-option"
+
+- tapOn:
+    text: "Continue"
+    optional: true
+
+- tapOn:
+    text: "Next"
+    optional: true
+
+- tapOn:
+    index: 0
+    id: "quiz-option"
+    optional: true
+
+- tapOn:
+    text: "Continue"
+    optional: true
+
+- tapOn:
+    index: 0
+    id: "quiz-option"
+    optional: true
+
+- tapOn:
+    text: "Continue"
+    optional: true
+
+- tapOn:
+    index: 0
+    id: "quiz-option"
+    optional: true
+
+- tapOn:
+    text: "See My Picks"
+    optional: true
+
+- assertVisible:
+    text: "YOUR PICKS"

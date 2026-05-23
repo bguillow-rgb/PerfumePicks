@@ -1,0 +1,33 @@
+appId: host.exp.Exponent
+---
+- launchApp
+
+- tapOn:
+    text: "Discover"
+
+- tapOn:
+    id: "discover-search-input"
+
+- inputText: "Aventus"
+
+- tapOn:
+    index: 0
+    text: "Aventus"
+
+- scrollDown
+
+- tapOn:
+    text: "Write a review"
+
+- assertVisible:
+    text: "WRITE A REVIEW"
+
+- tapOn:
+    index: 4
+    id: "star-rating-button"
+
+- tapOn:
+    text: "Submit Review"
+
+- assertNotVisible:
+    text: "WRITE A REVIEW"

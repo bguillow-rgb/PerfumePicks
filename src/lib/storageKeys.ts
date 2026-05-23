@@ -12,4 +12,5 @@ export const STORAGE_KEYS = {
   wearLog: 'perfumepicks-wearlog',
   quiz: 'perfumepicks-quiz',
   fragranceNotes: 'perfumepicks-fragrance-notes',
+  reviews: 'perfumepicks-reviews',
 } as const;

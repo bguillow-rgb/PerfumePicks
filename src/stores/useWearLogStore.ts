@@ -26,6 +26,7 @@ export interface WearLog {
   rating?: number | null;     // 0..5
   would_wear_again?: boolean | null;
   note?: string | null;
+  is_public?: boolean;        // share to SOTD feed — default false
   created_at: string;
   _unsynced?: boolean;
 }

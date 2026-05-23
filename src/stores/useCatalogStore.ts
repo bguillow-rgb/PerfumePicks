@@ -24,6 +24,11 @@ export type Fragrance = MockFragrance;  // same shape, keeps all consumers worki
 interface CatalogState {
   /** In-memory cache: fragrance_id → Fragrance */
   cache: Record<string, Fragrance>;
+  /**
+   * Flat array view of the cache. In demo mode returns MOCK_CATALOG.
+   * Use this for rendering lists; it re-renders when cache changes.
+   */
+  items: Fragrance[];
   /** IDs currently being fetched (prevents duplicate in-flight requests) */
   fetching: Set<string>;
 
@@ -104,12 +109,16 @@ const FRAGRANCE_SELECT = '*, brands(name)';
 
 export const useCatalogStore = create<CatalogState>()((set, get) => ({
   cache: {},
+  items: isSupabaseConfigured ? [] : MOCK_CATALOG,
   fetching: new Set(),
 
-  _addToCache: (items) => {
+  _addToCache: (newItems) => {
     const patch: Record<string, Fragrance> = {};
-    for (const f of items) patch[f.id] = f;
-    set((s) => ({ cache: { ...s.cache, ...patch } }));
+    for (const f of newItems) patch[f.id] = f;
+    set((s) => {
+      const cache = { ...s.cache, ...patch };
+      return { cache, items: Object.values(cache) };
+    });
   },
 
   getById: (id) => {

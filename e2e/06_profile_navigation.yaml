@@ -1,0 +1,23 @@
+appId: host.exp.Exponent
+---
+- launchApp
+
+- tapOn:
+    text: "Profile"
+
+- assertVisible:
+    text: "TASTE PROFILE"
+
+- tapOn:
+    text: "Subscription"
+
+- assertVisible:
+    text: "Pro"
+
+- back
+
+- tapOn:
+    text: "View taste insights"
+
+- assertVisible:
+    id: "screen-root"

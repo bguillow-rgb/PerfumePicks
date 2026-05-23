@@ -38,6 +38,7 @@ import { Session } from '@supabase/supabase-js';
 import { initRevenueCat, identifyUser, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { useProStore } from '@/src/stores/useProStore';
 import { useAppSync } from '@/src/lib/sync/useAppSync';
+import { useBadgeCheck } from '@/src/lib/useBadgeCheck';
 import {
   initAnalytics,
   initErrorReporting,
@@ -173,6 +174,7 @@ export default function RootLayout() {
 
   useProtectedRoute(session, authLoading || showSplash);
   useAppSync(session?.user?.id ?? null);
+  useBadgeCheck();
 
   // Hydrate user-scoped stores from Supabase on sign-in; clear on sign-out.
   // The hook handles the demo-mode bypass when Supabase isn't configured.

@@ -1,0 +1,16 @@
+appId: host.exp.Exponent
+---
+- launchApp:
+    clearState: true
+
+- assertVisible:
+    text: "Perfume Picks"
+
+- assertVisible:
+    text: "Take the Quiz"
+
+- tapOn:
+    text: "Start Swiping"
+
+- assertVisible:
+    id: "swipe-deck"
