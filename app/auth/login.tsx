@@ -17,11 +17,15 @@ import { useProStore } from '@/src/stores/useProStore';
 // configure() even runs in demo mode.
 const GOOGLE_IOS_CLIENT_ID = process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID;
 const GOOGLE_WEB_CLIENT_ID = process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID;
+// A real Google OAuth client ID always ends with .apps.googleusercontent.com.
+// Placeholder values like "your-google-ios-client-id" or "REPLACE_WITH_..." do
+// NOT match this pattern, so they are treated as unconfigured and the button
+// shows a user-friendly alert instead of crashing the native module.
 const isGoogleConfigured =
   !!GOOGLE_IOS_CLIENT_ID &&
   !!GOOGLE_WEB_CLIENT_ID &&
-  !GOOGLE_IOS_CLIENT_ID.startsWith('REPLACE_') &&
-  !GOOGLE_WEB_CLIENT_ID.startsWith('REPLACE_');
+  GOOGLE_IOS_CLIENT_ID.endsWith('.apps.googleusercontent.com') &&
+  GOOGLE_WEB_CLIENT_ID.endsWith('.apps.googleusercontent.com');
 
 let _googleConfigured = false;
 function loadGoogleSignIn() {
