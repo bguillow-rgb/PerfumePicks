@@ -4,6 +4,10 @@
 
 export const SITE = {
   name: 'Perfume Picks',
+  // Legal operating entity behind the app/site. Surfaced in the footer and
+  // Organization schema (legalName) for brand-entity consistency, and mirrors
+  // the App Store developer display name.
+  legalEntity: 'Timberline Ventures LLC',
   tagline: 'The Fragrance Collector\u2019s Wardrobe',
   description:
     'Perfume Picks is an iOS app for fragrance collectors. Catalog your wardrobe, track every wear, get weather and occasion-aware picks from bottles you already own, and see a personal taste profile built from your collection.',
