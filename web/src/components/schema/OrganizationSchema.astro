@@ -9,7 +9,7 @@ const schema = {
   url: SITE.url,
   logo: `${SITE.url}/icon-512.png`,
   email: SITE.supportEmail,
-  sameAs: SITE.founder.sameAs.filter(Boolean),
+  sameAs: [...SITE.orgSameAs, ...SITE.founder.sameAs].filter(Boolean),
   founder: {
     '@type': 'Person',
     name: SITE.founder.name,

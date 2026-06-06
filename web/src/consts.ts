@@ -31,6 +31,11 @@ export const SITE = {
       // 'https://x.com/...',
     ],
   },
+  // Organization-level sameAs — canonical identifiers for the brand entity.
+  // Used in OrganizationSchema. Wikidata QID closes the Knowledge-Graph chain.
+  orgSameAs: [
+    'https://www.wikidata.org/wiki/Q140083290',
+  ],
   // Analytics + tracking. All values come from env vars at build time so
   // local builds and forks don't fire analytics.
   analytics: {
