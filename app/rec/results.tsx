@@ -138,6 +138,14 @@ export default function RecResultsScreen() {
           </View>
         )}
 
+        <View style={styles.methodNote}>
+          <Ionicons name="hand-left-outline" size={14} color={COLORS.muted} />
+          <Text style={styles.methodText}>
+            No AI guesswork. These come straight from your swipes, quiz answers,
+            and wears — and the notes & accords each scent actually shares.
+          </Text>
+        </View>
+
         <View style={{ height: SPACING.xxl }} />
       </ScrollView>
     </View>
@@ -245,6 +253,18 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
   },
   nudgeText: { ...TYPE.bodySmall, color: COLORS.muted, flex: 1, lineHeight: 19 },
+
+  methodNote: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: SPACING.sm,
+    marginHorizontal: SPACING.lg,
+    marginTop: SPACING.lg,
+    paddingTop: SPACING.md,
+    borderTopWidth: 1,
+    borderTopColor: COLORS.border,
+  },
+  methodText: { ...TYPE.caption, color: COLORS.muted, flex: 1, lineHeight: 17 },
 
   heroSection: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.lg },
   heroLabel: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: SPACING.sm },

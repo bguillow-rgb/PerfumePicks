@@ -1,5 +1,7 @@
-import { useEffect, useState, useCallback } from 'react';
-import { LogBox } from 'react-native';
+import { useEffect, useState, useCallback, useRef } from 'react';
+import { LogBox, AppState, type AppStateStatus } from 'react-native';
+import * as Notifications from 'expo-notifications';
+import * as Updates from 'expo-updates';
 
 if (__DEV__) {
   LogBox.ignoreLogs([
@@ -118,6 +120,41 @@ export default function RootLayout() {
     });
   }, []);
 
+  // OTA update check — runs on launch and every time the app comes to foreground.
+  // Logs errors in dev so we can diagnose channel/runtime mismatches instead of
+  // silently swallowing them.
+  useEffect(() => {
+    if (__DEV__) return;
+
+    const checkForUpdate = async () => {
+      try {
+        const check = await Updates.checkForUpdateAsync();
+        if (check.isAvailable) {
+          await Updates.fetchUpdateAsync();
+          await Updates.reloadAsync();
+        }
+      } catch (e: any) {
+        // Log in dev; in prod this surfaces in Sentry via initErrorReporting().
+        console.warn('[OTA] Update check failed:', e?.message ?? e);
+      }
+    };
+
+    // Check on launch.
+    checkForUpdate();
+
+    // Re-check every time the app comes to the foreground (handles the case
+    // where the user never fully kills the app).
+    let lastState: AppStateStatus = AppState.currentState;
+    const sub = AppState.addEventListener('change', (next) => {
+      if (lastState.match(/inactive|background/) && next === 'active') {
+        checkForUpdate();
+      }
+      lastState = next;
+    });
+
+    return () => sub.remove();
+  }, []);
+
   useEffect(() => {
     // Demo mode (no Supabase) — skip the whole auth subscription path.
     if (!isSupabaseConfigured) {
@@ -171,16 +208,29 @@ export default function RootLayout() {
     setShowSplash(false);
   }, []);
 
+  // ── Notification deep-link handler ────────────────────────────────────────
+  // When the user taps a notification, route to the relevant screen.
+  // We keep a ref to the router so the effect closure stays fresh.
+  const router = useRouter();
+  const routerRef = useRef(router);
+  useEffect(() => { routerRef.current = router; }, [router]);
+
+  useEffect(() => {
+    const sub = Notifications.addNotificationResponseReceivedListener((response) => {
+      const screen = response.notification.request.content.data?.screen as string | undefined;
+      if (screen === 'wardrobe') {
+        routerRef.current.push('/(tabs)/wardrobe');
+      } else {
+        // Default: go to Today tab
+        routerRef.current.push('/(tabs)');
+      }
+    });
+    return () => sub.remove();
+  }, []);
+
   useProtectedRoute(session, authLoading || showSplash);
   useAppSync(session?.user?.id ?? null);
   useBadgeCheck();
-
-  // Hydrate user-scoped stores from Supabase on sign-in; clear on sign-out.
-  // The hook handles the demo-mode bypass when Supabase isn't configured.
-  // M1 Phase A — was the highest-leverage fix in the foundation milestone:
-  // the hook existed but was never mounted, so wardrobe / wear-log / swipe
-  // stores never saw the user's real data after sign-in.
-  useAppSync(session?.user?.id ?? null);
 
   if (!fontsLoaded) return null;
 
@@ -198,8 +248,9 @@ export default function RootLayout() {
         <Stack.Screen name="rec/results" />
         <Stack.Screen name="taste-profile" />
         <Stack.Screen name="wrapped" />
+        <Stack.Screen name="compare" />
         <Stack.Screen name="feed" />
-        <Stack.Screen name="scan" options={{ presentation: 'fullScreenModal' }} />
+        <Stack.Screen name="scan" options={{ presentation: 'modal', headerShown: false }} />
         <Stack.Screen name="user/[id]" />
         <Stack.Screen name="legal/privacy" options={{ presentation: 'modal' }} />
         <Stack.Screen name="legal/terms" options={{ presentation: 'modal' }} />

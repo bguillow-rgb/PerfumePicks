@@ -1,6 +1,8 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useLayoutEffect, useMemo, useCallback, Component } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable, Image, Dimensions, Alert, ActivityIndicator } from 'react-native';
-import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
+import { GestureDetector, Gesture } from 'react-native-gesture-handler';
+import Animated, { useSharedValue, useAnimatedStyle, withSpring, withTiming, runOnJS } from 'react-native-reanimated';
+import { Stack, useLocalSearchParams, useRouter, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { NotePyramid } from '@/src/components/fragrance/NotePyramid';
@@ -11,8 +13,10 @@ import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet';
 import { ReviewSection } from '@/src/components/fragrance/ReviewSection';
+import { DupeList } from '@/src/components/fragrance/DupeList';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { handleAffiliateClick } from '@/src/lib/affiliate';
+import * as WebBrowser from 'expo-web-browser';
 import { CelebritySection } from '@/src/components/fragrance/CelebritySection';
 import { LayeringSection } from '@/src/components/fragrance/LayeringSection';
 import { ComplimentsSection } from '@/src/components/fragrance/ComplimentsSection';
@@ -20,8 +24,11 @@ import {
   useCatalogStore,
   getFragranceFromStore,
   type Fragrance,
+  type DupeResult,
+  type SimilarResult,
 } from '@/src/stores/useCatalogStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
+import { useCompareStore, COMPARE_MAX } from '@/src/stores/useCompareStore';
 import { useWearLogStore, type WearLog } from '@/src/stores/useWearLogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 import { useProStore } from '@/src/stores/useProStore';
@@ -35,35 +42,73 @@ const HERO_HEIGHT = SCREEN_W * 1.05;
  * Pulls from the mock catalog. Real version reads from Supabase + the
  * recommendation engine for "similar" + "dupes" sections.
  */
-/** Find cheaper alternatives over a candidate pool (the active catalog
- *  slice). Pool is passed in so the caller controls when/how it loads. */
-function findCheaperAlternatives(f: Fragrance, pool: Fragrance[], limit = 5): Fragrance[] {
-  // 1. Explicit dupes (data pipeline will populate these)
-  const explicit = pool.filter(
-    (c) => c.dupe_of === f.id && c.id !== f.id && c.price_tier < f.price_tier,
-  );
-  if (explicit.length >= limit) return explicit.slice(0, limit);
-
-  // 2. Accord-overlap fallback — at least 2 matching top accords + lower tier
-  const accordSet = new Set(f.top_accords);
-  const byOverlap = pool
-    .filter((c) => c.id !== f.id && c.price_tier < f.price_tier)
-    .map((c) => ({ fragrance: c, overlap: c.top_accords.filter((a) => accordSet.has(a)).length }))
-    .filter((x) => x.overlap >= 2)
-    .sort((a, b) => b.overlap - a.overlap || a.fragrance.price_tier - b.fragrance.price_tier)
-    .map((x) => x.fragrance);
-
-  return [...explicit, ...byOverlap].slice(0, limit);
+/** Auto-generate a 2-sentence "About this fragrance" blurb from catalog data. */
+function buildAboutCopy(f: Fragrance): string {
+  const accord1 = f.top_accords[0] ?? '';
+  const accord2 = f.top_accords[1] ?? '';
+  const family = f.fragrance_family?.toLowerCase() ?? 'fragrance';
+  const note1 = f.top_notes[0] ?? '';
+  const note2 = f.top_notes[1] ?? '';
+  const longevity = f.community_longevity;
+  const sillage = f.community_sillage;
+  const longevityDesc = longevity >= 3.5 ? 'long-lasting' : longevity >= 2 ? 'moderate longevity' : 'light-wearing';
+  const sillageDesc = sillage >= 3.5 ? 'strong projection' : sillage >= 2 ? 'moderate sillage' : 'skin-close sillage';
+  const line1 = `${f.name} is a ${family} built around ${accord1}${accord2 ? ` and ${accord2}` : ''}.`;
+  const line2 = note1 && note2
+    ? `${longevityDesc.charAt(0).toUpperCase() + longevityDesc.slice(1)} with ${sillageDesc}, opening with ${note1} and ${note2}.`
+    : `${longevityDesc.charAt(0).toUpperCase() + longevityDesc.slice(1)} with ${sillageDesc}.`;
+  return `${line1} ${line2}`;
 }
 
-export default function FragranceDetailScreen() {
+// ── Error boundary ────────────────────────────────────────────────────────────
+// Catches any render-time exception in the detail screen and shows a graceful
+// "go back" fallback instead of a white screen. Also logs the error so we can
+// track down the root cause without needing a debug build.
+class DetailErrorBoundary extends Component<
+  { children: React.ReactNode; onReset: () => void },
+  { error: Error | null }
+> {
+  constructor(props: any) {
+    super(props);
+    this.state = { error: null };
+  }
+  static getDerivedStateFromError(error: Error) {
+    return { error };
+  }
+  componentDidCatch(error: Error, info: any) {
+    console.error('[FragranceDetail] render error:', error.message, error.stack, info?.componentStack);
+  }
+  render() {
+    if (this.state.error) {
+      return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FAF6F0', gap: 16, padding: 32 }}>
+          <Text style={{ color: '#2A1F18', fontSize: 16, fontWeight: '600', textAlign: 'center' }}>Something went wrong loading this fragrance.</Text>
+          <Text style={{ color: '#9a8478', fontSize: 11, textAlign: 'center' }}>{this.state.error.message}</Text>
+          <Pressable
+            onPress={() => { this.setState({ error: null }); this.props.onReset(); }}
+            style={{ backgroundColor: '#B8924B', borderRadius: 20, paddingHorizontal: 24, paddingVertical: 10 }}
+          >
+            <Text style={{ color: '#fff', fontWeight: '600' }}>Go Back</Text>
+          </Pressable>
+        </View>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+function FragranceDetailScreen() {
   const { id, from, openLogWear } = useLocalSearchParams<{ id: string; from?: string; openLogWear?: string }>();
   const router = useRouter();
   // Fragrance lookup: synchronous cache hit if the store already has it
   // (FragranceCard tap from a list pre-cached it). Otherwise async fetch.
   const fetchById = useCatalogStore((s) => s.fetchById);
-  const fetchMany = useCatalogStore((s) => s.fetchMany);
-  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  const compareIds = useCompareStore((s) => s.ids);
+  const toggleCompare = useCompareStore((s) => s.toggle);
+  const inCompare = !!id && compareIds.includes(id);
+  const fetchDupes = useCatalogStore((s) => s.fetchDupes);
+  const fetchDupeCount = useCatalogStore((s) => s.fetchDupeCount);
+  const fetchSimilars = useCatalogStore((s) => s.fetchSimilars);
   const [fragrance, setFragrance] = useState<Fragrance | undefined>(() =>
     getFragranceFromStore(id ?? ''),
   );
@@ -87,26 +132,27 @@ export default function FragranceDetailScreen() {
     return () => { cancelled = true; };
   }, [id, fetchById]);
 
-  // Catalog pool for the "cheaper alternatives" rail. We don't iterate
-  // the whole catalog at render time anymore.
-  const [catalogPool, setCatalogPool] = useState<Fragrance[]>([]);
+  // Budget Dupes — server-computed, slug-keyed, freemium. get_dupes returns the
+  // top FREE_DUPE_LIMIT closest dupes for non-Pro (all for Pro); the public
+  // count drives the locked footer ("N more dupes — unlock with Pro").
+  const [dupes, setDupes] = useState<DupeResult[]>([]);
+  const [dupeCount, setDupeCount] = useState(0);
   useEffect(() => {
+    if (!id) { setDupes([]); setDupeCount(0); return; }
     let cancelled = false;
-    fetchAllActive(200).then((rows) => { if (!cancelled) setCatalogPool(rows); });
+    fetchDupes(id).then((rows) => { if (!cancelled) setDupes(rows); });
+    fetchDupeCount(id).then((n) => { if (!cancelled) setDupeCount(n); });
     return () => { cancelled = true; };
-  }, [fetchAllActive]);
+  }, [id, fetchDupes, fetchDupeCount]);
 
-  // Similar fragrances are referenced by id array on the fragrance row.
-  // Resolve them via fetchMany (cache-aware).
-  const [similar, setSimilar] = useState<Fragrance[]>([]);
+  // "Smells Like" similars — server-computed via get_similars (joins UUID->slug).
+  const [similar, setSimilar] = useState<SimilarResult[]>([]);
   useEffect(() => {
-    if (!fragrance?.similar_ids?.length) { setSimilar([]); return; }
+    if (!id) { setSimilar([]); return; }
     let cancelled = false;
-    fetchMany(fragrance.similar_ids).then((rows) => {
-      if (!cancelled) setSimilar(rows);
-    });
+    fetchSimilars(id).then((rows) => { if (!cancelled) setSimilar(rows); });
     return () => { cancelled = true; };
-  }, [fragrance?.similar_ids, fetchMany]);
+  }, [id, fetchSimilars]);
 
   const [wardrobeSheetOpen, setWardrobeSheetOpen] = useState(false);
   const [wardrobeInitStatus, setWardrobeInitStatus] = useState<'have' | 'want'>('have');
@@ -125,6 +171,7 @@ export default function FragranceDetailScreen() {
   // — calling store methods like forFragrance() inside a selector returns a new
   // array every render and causes infinite re-render loops.
   const wardrobeItems = useWardrobeStore((s) => s.items);
+  const addToWardrobe = useWardrobeStore((s) => s.add);
   const allLogs = useWearLogStore((s) => s.logs);
   const removeLog = useWearLogStore((s) => s.remove);
   const allNotes = useFragranceNotesStore((s) => s.notes);
@@ -166,6 +213,89 @@ export default function FragranceDetailScreen() {
       .slice(0, 5)
       .map((x) => x.fragrance);
   }, [fragrance, wardrobeItems]);
+
+  // ── Hooks that previously lived after the !fragrance guard ──────────
+  // React requires all hooks to be called unconditionally (same order every
+  // render). Moving them here fixes the "Rendered more hooks than during the
+  // previous render" crash that produced a white screen on cache-miss navigations.
+  const [hasCelebrities, setHasCelebrities] = useState(false);
+  const [hasReviews, setHasReviews] = useState(false);
+  const [hasLayering, setHasLayering] = useState(false);
+  const [hasCompliments, setHasCompliments] = useState(false);
+
+  // Stable callbacks — inline `() => setSomeState(true)` recreated every render
+  // causes child components' useCallback(load, [onHasData]) to re-run their
+  // Supabase queries on every parent re-render (7-8 re-renders per page open
+  // = 21+ extra queries and a re-render cascade). useCallback breaks the cycle.
+  const onHasCelebrities = useCallback(() => setHasCelebrities(true), []);
+  const onHasReviews = useCallback(() => setHasReviews(true), []);
+  const onHasLayering = useCallback(() => setHasLayering(true), []);
+  const onHasCompliments = useCallback(() => setHasCompliments(true), []);
+
+  const [retailerLinks, setRetailerLinks] = useState<{ retailer: string; url: string; price_cents: number | null }[]>([]);
+  useEffect(() => {
+    if (!isSupabaseConfigured || !id) return;
+    setRetailerLinks([]);
+    supabase
+      .from('fragrance_retailer_links')
+      .select('retailer, url, price_cents, fragrances!inner(slug)')
+      .eq('fragrances.slug', id)
+      .then(({ data, error }) => {
+        if (error) { console.warn('[retailer-links]', error.message); return; }
+        if (data?.length) {
+          setRetailerLinks(data.map(({ retailer, url, price_cents }) => ({ retailer, url, price_cents })));
+          WebBrowser.warmUpAsync().catch(() => {});
+        }
+      });
+  }, [id]);
+
+  const translateX = useSharedValue(0);
+  // Reset BEFORE first paint — useEffect fires after paint so the screen
+  // would flash white for one frame. useLayoutEffect runs synchronously
+  // before the native layer commits the first frame.
+  // Reset on mount AND when id changes — Expo Router may reuse this screen
+  // instance when navigating between detail pages (params update, no remount),
+  // so empty deps [] would leave translateX at SCREEN_W from a previous swipe.
+  // Belt-and-suspenders: reset translateX every time this screen gains focus.
+  // The swipe-back gesture animates translateX to SCREEN_W then calls router.back().
+  // Expo Router reuses this tab-route component — if the user returns to this
+  // fragrance (same or different id), translateX is still at SCREEN_W → white screen.
+  // useFocusEffect fires synchronously on focus, before the first paint commit.
+  useFocusEffect(useCallback(() => { translateX.value = 0; }, []));
+  // Belt #2: also reset when id param changes (e.g. tapping a similar fragrance link).
+  useLayoutEffect(() => { translateX.value = 0; }, [id]);
+
+  const swipeAnimStyle = useAnimatedStyle(() => ({
+    transform: [{ translateX: translateX.value }],
+  }));
+
+  // Stable back handler + gesture — RNGH requires gestures to be stable across
+  // renders. Recreating Gesture.Pan() on every render (which happened when it
+  // was defined after the guard) forces RNGH to re-attach the handler on every
+  // state update, which can corrupt gesture state after several navigations.
+  const goBack = useCallback(() => router.back(), [router]);
+  const swipeBack = useMemo(() =>
+    Gesture.Pan()
+      .activeOffsetX(15)
+      .failOffsetY([-15, 15])
+      .onUpdate((e) => {
+        if (e.translationX > 0) translateX.value = e.translationX;
+      })
+      .onEnd((e) => {
+        const THRESHOLD = SCREEN_W * 0.35;
+        if (e.translationX > THRESHOLD || e.velocityX > 800) {
+          translateX.value = withTiming(SCREEN_W, { duration: 180 }, () => {
+            // Reset BEFORE navigating back so if the user returns to this screen
+            // (same id, no id change), translateX starts at 0 not SCREEN_W.
+            translateX.value = 0;
+            runOnJS(goBack)();
+          });
+        } else {
+          translateX.value = withSpring(0, { damping: 20, stiffness: 300 });
+        }
+      }),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [goBack]);
 
   const handleWearLogLongPress = (log: WearLog) => {
     Alert.alert(prettyWearDate(log.worn_on), 'What would you like to do?', [
@@ -212,45 +342,16 @@ export default function FragranceDetailScreen() {
     );
   }
 
-  const cheaperAlts = findCheaperAlternatives(fragrance, catalogPool);
   const headlinePrice = (fragrance.retail_msrp_usd_cents / 100).toFixed(0);
-  const [hasCelebrities, setHasCelebrities] = useState(false);
-
-  // Affiliate "Buy from" links — single joined query (fragrance_retailer_links
-  // uses UUID FK, but we can join through fragrances on slug in one round trip).
-  const [retailerLinks, setRetailerLinks] = useState<{ retailer: string; url: string; price_cents: number | null }[]>([]);
-  useEffect(() => {
-    if (!isSupabaseConfigured || !id) return;
-    supabase
-      .from('fragrance_retailer_links')
-      .select('retailer, url, price_cents, fragrances!inner(slug)')
-      .eq('fragrances.slug', id)
-      .then(({ data, error }) => {
-        if (error) { console.warn('[retailer-links]', error.message); return; }
-        if (data?.length) setRetailerLinks(data.map(({ retailer, url, price_cents }) => ({ retailer, url, price_cents })));
-      });
-  }, [id]);
-
-  // CJ deep-link fallback: search on FragranceShop using ?s= query param.
-  // Publisher ID 7966973, FragranceShop advertiser ID 16941446.
-  const fragranceShopFallbackUrl = useMemo(() => {
-    if (!fragrance) return '';
-    const q = encodeURIComponent(`${fragrance.brand} ${fragrance.name}`);
-    const dest = encodeURIComponent(`https://www.fragranceshop.com/?s=${q}`);
-    return `https://www.anrdoezrs.net/click-7966973-16941446?url=${dest}`;
-  }, [fragrance?.brand, fragrance?.name]);
 
   return (
-    <View style={styles.safe}>
+    <GestureDetector gesture={swipeBack}>
+    <Animated.View style={[styles.safe, swipeAnimStyle]}>
       <Stack.Screen options={{ headerShown: false }} />
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.hero}>
           <Image source={{ uri: fragrance.image_url }} style={styles.heroImage} />
           <View style={styles.heroOverlay} />
-
-          <Pressable style={styles.backBtn} onPress={() => router.back()}>
-            <Ionicons name="chevron-back" size={26} color={COLORS.white} />
-          </Pressable>
           <Pressable
             style={styles.heartBtn}
             onPress={() => {
@@ -268,7 +369,12 @@ export default function FragranceDetailScreen() {
 
           <View style={styles.heroContent}>
             <Text style={styles.heroBrand}>{fragrance.brand.toUpperCase()}</Text>
-            <Text style={styles.heroName}>{fragrance.name}</Text>
+            <Text
+              style={styles.heroName}
+              numberOfLines={3}
+              adjustsFontSizeToFit
+              minimumFontScale={0.72}
+            >{fragrance.name}</Text>
             <View style={styles.heroMeta}>
               <Text style={styles.heroMetaText}>{prettyConcentration(fragrance.concentration)}</Text>
               <Text style={styles.heroMetaDot}>·</Text>
@@ -278,23 +384,89 @@ export default function FragranceDetailScreen() {
             </View>
           </View>
 
-          {/* Buy button — bottom-right of hero, always visible */}
+        </View>
+
+        {/* ── Action Rail — Buy / Add to Wardrobe / Log a Wear ── */}
+        <View style={styles.actionRail}>
+          {/* Row 1: Buy — full width */}
           <Pressable
-            style={({ pressed }) => [styles.heroBuyBtn, pressed && { opacity: 0.75 }]}
-            onPress={() => {
-              const link = retailerLinks[0] ?? { retailer: 'FragranceShop', url: fragranceShopFallbackUrl, price_cents: null };
-              handleAffiliateClick({
-                fragrance_id: id,
-                retailer: link.retailer,
-                url: link.url,
-                price_cents: link.price_cents,
-                source_screen: 'fragrance_detail_hero',
-              });
-            }}
+            style={({ pressed }) => [
+              styles.actionBtnBuyFull,
+              retailerLinks.length === 0 && styles.actionBtnDisabled,
+              pressed && { opacity: 0.75 },
+            ]}
+            disabled={retailerLinks.length === 0}
+            onPress={() => retailerLinks.length > 0 && handleAffiliateClick({
+              fragrance_id: id,
+              retailer: retailerLinks[0].retailer,
+              url: retailerLinks[0].url,
+              price_cents: retailerLinks[0].price_cents,
+              source_screen: 'fragrance_detail_rail',
+            })}
           >
-            <Ionicons name="bag-outline" size={14} color={COLORS.white} />
-            <Text style={styles.heroBuyBtnText}>Buy</Text>
+            <Ionicons name="bag-outline" size={16} color={retailerLinks.length > 0 ? COLORS.white : COLORS.muted} />
+            <Text style={[styles.actionBtnText, retailerLinks.length === 0 && styles.actionBtnTextMuted]}>
+              {retailerLinks.length > 0
+                ? `Buy from ${retailerLinks[0].retailer}${retailerLinks[0].price_cents ? ` · $${(retailerLinks[0].price_cents / 100).toFixed(0)}` : ''}`
+                : 'No retailer link yet'}
+            </Text>
           </Pressable>
+
+          {/* Row 2: Wardrobe + Log a Wear */}
+          <View style={styles.actionRow2}>
+            <Pressable
+              style={({ pressed }) => [styles.actionBtnHalf, styles.actionBtnSecondary, pressed && { opacity: 0.75 }]}
+              onPress={() => { setWardrobeInitStatus('have'); setWardrobeSheetOpen(true); }}
+              accessibilityLabel={inWardrobe ? 'In Wardrobe' : 'Add to Wardrobe'}
+            >
+              <Ionicons
+                name={inWardrobe ? 'checkmark-circle' : 'rose-outline'}
+                size={15}
+                color={inWardrobe ? COLORS.success : COLORS.text}
+              />
+              <Text style={[styles.actionBtnText, styles.actionBtnTextDark]}>
+                {inWardrobe ? 'In Wardrobe' : 'Add to Wardrobe'}
+              </Text>
+            </Pressable>
+
+            <Pressable
+              style={({ pressed }) => [styles.actionBtnHalf, styles.actionBtnSecondary, pressed && { opacity: 0.75 }]}
+              onPress={() => setWearSheetOpen(true)}
+              accessibilityLabel="Log a Wear"
+            >
+              <Ionicons name="bookmark-outline" size={15} color={COLORS.text} />
+              <Text style={[styles.actionBtnText, styles.actionBtnTextDark]}>Log a Wear</Text>
+            </Pressable>
+          </View>
+
+          {/* Row 3: Compare toggle + open tray */}
+          <View style={styles.actionRow2}>
+            <Pressable
+              style={({ pressed }) => [styles.actionBtnHalf, styles.actionBtnSecondary, inCompare && styles.actionBtnCompareOn, pressed && { opacity: 0.75 }]}
+              onPress={() => {
+                const ok = toggleCompare(id);
+                if (!ok) Alert.alert('Compare full', `You can compare up to ${COMPARE_MAX} at once.`);
+              }}
+              accessibilityLabel={inCompare ? 'Remove from compare' : 'Add to compare'}
+            >
+              <Ionicons name={inCompare ? 'checkmark-circle' : 'git-compare-outline'} size={15} color={inCompare ? COLORS.success : COLORS.text} />
+              <Text style={[styles.actionBtnText, styles.actionBtnTextDark]}>
+                {inCompare ? 'In Compare' : 'Compare'}
+              </Text>
+            </Pressable>
+
+            <Pressable
+              style={({ pressed }) => [styles.actionBtnHalf, styles.actionBtnSecondary, compareIds.length < 2 && styles.actionBtnDisabled, pressed && { opacity: 0.75 }]}
+              disabled={compareIds.length < 2}
+              onPress={() => router.push('/compare' as any)}
+              accessibilityLabel="Open comparison"
+            >
+              <Ionicons name="albums-outline" size={15} color={compareIds.length < 2 ? COLORS.muted : COLORS.text} />
+              <Text style={[styles.actionBtnText, compareIds.length < 2 ? styles.actionBtnTextMuted : styles.actionBtnTextDark]}>
+                View ({compareIds.length})
+              </Text>
+            </Pressable>
+          </View>
         </View>
 
         {wearLogs.length > 0 && (
@@ -304,54 +476,77 @@ export default function FragranceDetailScreen() {
           </View>
         )}
 
-        <Section title="Notes" cursive="composition">
-          <NotePyramid
-            top_notes={fragrance.top_notes}
-            heart_notes={fragrance.heart_notes}
-            base_notes={fragrance.base_notes}
-          />
-        </Section>
-
-        <Section title="Accords" cursive="character">
-          <View style={styles.accordWrap}>
-            {fragrance.top_accords.map((a) => (
-              <AccordChip key={a} label={a} intensity={fragrance.accord_intensity[a] ?? 3} />
-            ))}
-          </View>
-        </Section>
-
-        <Section title="Performance" cursive="how it wears">
-          <View style={styles.perfCard}>
-            <PerfBar label="Longevity" value={fragrance.community_longevity} />
-            <PerfBar label="Sillage" value={fragrance.community_sillage} />
-            <PerfBar label="Projection" value={fragrance.community_projection} />
-            <View style={styles.scoreRow}>
-              <ScoreTile label="Compliments" value={fragrance.compliment_score} />
-              <ScoreTile label="Versatility" value={fragrance.versatility_score} />
-              <ScoreTile label="Office Safe" value={fragrance.office_safe_score} />
+        {/* R13: About this fragrance — top 3 accords + auto-generated identity copy */}
+        {fragrance.top_accords.length > 0 && (
+          <Section title="About this fragrance" cursive="identity">
+            <View style={styles.aboutCard}>
+              <View style={styles.aboutAccords}>
+                {fragrance.top_accords.slice(0, 3).map((a) => (
+                  <View key={a} style={styles.aboutChip}>
+                    <Text style={styles.aboutChipText}>{a.replace('-', ' ')}</Text>
+                  </View>
+                ))}
+              </View>
+              <Text style={styles.aboutCopy}>{buildAboutCopy(fragrance)}</Text>
             </View>
-          </View>
-        </Section>
-
-        {hasCelebrities && (
-          <Section title="Who Wears This" cursive="famous fans">
-            <CelebritySection fragranceId={id} onHasData={() => setHasCelebrities(true)} />
           </Section>
         )}
 
-        <Section title="Community Reviews" cursive="what others think">
-          <ReviewSection fragranceId={id} />
-        </Section>
+        {(fragrance.top_notes.length > 0 || fragrance.heart_notes.length > 0 || fragrance.base_notes.length > 0) && (
+          <Section title="Notes" cursive="composition">
+            <NotePyramid
+              top_notes={fragrance.top_notes}
+              heart_notes={fragrance.heart_notes}
+              base_notes={fragrance.base_notes}
+            />
+          </Section>
+        )}
 
-        <Section title="Smells Like" cursive="discover similar">
-          {similar.length > 0 ? (
+        {fragrance.top_accords.length > 0 && (
+          <Section title="Accords" cursive="character">
+            <View style={styles.accordWrap}>
+              {fragrance.top_accords.map((a) => (
+                <AccordChip key={a} label={a} intensity={fragrance.accord_intensity[a] ?? 3} />
+              ))}
+            </View>
+          </Section>
+        )}
+
+        {(fragrance.community_longevity > 0 || fragrance.community_sillage > 0 || fragrance.community_projection > 0) && (
+          <Section title="Performance" cursive="how it wears">
+            <View style={styles.perfCard}>
+              <PerfBar label="Longevity" value={fragrance.community_longevity} />
+              <PerfBar label="Sillage" value={fragrance.community_sillage} />
+              <PerfBar label="Projection" value={fragrance.community_projection} />
+              <View style={styles.scoreRow}>
+                <ScoreTile label="Compliments" value={fragrance.compliment_score} />
+                <ScoreTile label="Versatility" value={fragrance.versatility_score} />
+                <ScoreTile label="Office Safe" value={fragrance.office_safe_score} />
+              </View>
+            </View>
+          </Section>
+        )}
+
+        {hasCelebrities && (
+          <Section title="Who Wears This" cursive="famous fans">
+            <CelebritySection fragranceId={id} onHasData={onHasCelebrities} />
+          </Section>
+        )}
+
+        {/* Always mount so onHasData fires; display:none hides until data arrives */}
+        <View style={hasReviews ? undefined : { display: 'none' }}>
+          <Section title="Community Reviews" cursive="what others think">
+            <ReviewSection fragranceId={id} onHasData={onHasReviews} />
+          </Section>
+        </View>
+
+        {similar.length > 0 && (
+          <Section title="Smells Like" cursive="discover similar">
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
               {similar.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
             </ScrollView>
-          ) : (
-            <Text style={styles.sectionTeaser}>Olfactive matches coming soon for this fragrance.</Text>
-          )}
-        </Section>
+          </Section>
+        )}
 
         {/* Similar in your wardrobe — Jaccard on notes */}
         {similarInWardrobe.length > 0 && (
@@ -362,81 +557,65 @@ export default function FragranceDetailScreen() {
           </Section>
         )}
 
-        {/* Cheaper Alternatives — Pro-gated dupe finder. Hidden when Pro + no results. */}
-        {(!isPro || cheaperAlts.length > 0) && (
-          <Section title="Cheaper Alternatives" cursive="find dupes">
-            {isPro ? (
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-                {cheaperAlts.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
-              </ScrollView>
-            ) : (
-              <Pressable style={styles.dupesLocked} onPress={() => router.push('/paywall')}>
-                <Ionicons name="lock-closed" size={16} color={COLORS.accent} />
-                <Text style={styles.dupesLockedText}>Unlock with Pro to find cheaper alternatives that smell just as good</Text>
-                <Text style={styles.dupesLockedCta}>Upgrade →</Text>
-              </Pressable>
-            )}
+        {/* R14: Budget Dupes — ranked, freemium. Everyone sees the top closest
+            dupe (match % + savings); the rest are gated behind a locked footer.
+            Hidden only when the catalog genuinely has no dupes for this scent. */}
+        {dupeCount > 0 && (
+          <Section title="Budget Dupes" cursive="spend less, smell similar">
+            <DupeList
+              dupes={dupes}
+              loading={dupes.length === 0 && dupeCount > 0}
+              lockedCount={isPro ? 0 : Math.max(0, dupeCount - dupes.length)}
+              onUnlock={() => router.push('/paywall')}
+            />
           </Section>
         )}
 
-        <Section title="Pricing" cursive="where to buy">
+        {(fragrance.retail_msrp_usd_cents > 0 || retailerLinks.length > 0) && <Section title="Pricing" cursive="where to buy">
           <View style={styles.priceCard}>
-            <View style={styles.priceRow}>
-              <View>
-                <Text style={styles.priceLabel}>Retail · 50ml</Text>
-                <Text style={styles.priceValue}>${headlinePrice}</Text>
-              </View>
-              <View style={styles.priceTier}>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <View key={i} style={[styles.priceDot, i < fragrance.price_tier && styles.priceDotActive]} />
-                ))}
-                <Text style={styles.priceTierLabel}>Tier {fragrance.price_tier}</Text>
-              </View>
-            </View>
-            <View style={styles.priceDivider} />
-            {retailerLinks.length > 0 ? (
-              <View style={styles.retailerList}>
-                {retailerLinks.map((link, i) => (
-                  <Pressable
-                    key={i}
-                    style={({ pressed }) => [styles.retailerRow, pressed && { opacity: 0.6 }]}
-                    onPress={() => handleAffiliateClick({
-                      fragrance_id: id,
-                      retailer: link.retailer,
-                      url: link.url,
-                      price_cents: link.price_cents,
-                      source_screen: 'fragrance_detail',
-                    })}
-                  >
-                    <Text style={styles.retailerName}>{link.retailer}</Text>
-                    {link.price_cents != null && (
-                      <Text style={styles.retailerPrice}>${(link.price_cents / 100).toFixed(0)}</Text>
-                    )}
-                    <Ionicons name="open-outline" size={12} color={COLORS.muted} />
-                  </Pressable>
-                ))}
-                <Text style={styles.affiliateDisclosure}>We may earn a commission from purchases.</Text>
-              </View>
-            ) : (
-              <View style={styles.retailerList}>
-                <Pressable
-                  style={({ pressed }) => [styles.retailerRow, pressed && { opacity: 0.6 }]}
-                  onPress={() => handleAffiliateClick({
-                    fragrance_id: id,
-                    retailer: 'FragranceShop',
-                    url: fragranceShopFallbackUrl,
-                    price_cents: null,
-                    source_screen: 'fragrance_detail',
-                  })}
-                >
-                  <Text style={styles.retailerName}>FragranceShop</Text>
-                  <Ionicons name="open-outline" size={12} color={COLORS.muted} />
-                </Pressable>
-                <Text style={styles.affiliateDisclosure}>We may earn a commission from purchases.</Text>
+            {fragrance.retail_msrp_usd_cents > 0 && (
+              <View style={styles.priceRow}>
+                <View>
+                  <Text style={styles.priceLabel}>Retail · 50ml</Text>
+                  <Text style={styles.priceValue}>${headlinePrice}</Text>
+                </View>
+                <View style={styles.priceTier}>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <View key={i} style={[styles.priceDot, i < fragrance.price_tier && styles.priceDotActive]} />
+                  ))}
+                  <Text style={styles.priceTierLabel}>Tier {fragrance.price_tier}</Text>
+                </View>
               </View>
             )}
+            {retailerLinks.length > 0 && (
+              <>
+                {fragrance.retail_msrp_usd_cents > 0 && <View style={styles.priceDivider} />}
+                <View style={styles.retailerList}>
+                  {retailerLinks.map((link, i) => (
+                    <Pressable
+                      key={i}
+                      style={({ pressed }) => [styles.retailerRow, pressed && { opacity: 0.6 }]}
+                      onPress={() => handleAffiliateClick({
+                        fragrance_id: id,
+                        retailer: link.retailer,
+                        url: link.url,
+                        price_cents: link.price_cents,
+                        source_screen: 'fragrance_detail',
+                      })}
+                    >
+                      <Text style={styles.retailerName}>{link.retailer}</Text>
+                      {link.price_cents != null && (
+                        <Text style={styles.retailerPrice}>${(link.price_cents / 100).toFixed(0)}</Text>
+                      )}
+                      <Ionicons name="open-outline" size={12} color={COLORS.muted} />
+                    </Pressable>
+                  ))}
+                  <Text style={styles.affiliateDisclosure}>We may earn a commission from purchases.</Text>
+                </View>
+              </>
+            )}
           </View>
-        </Section>
+        </Section>}
 
         {/* F6: Private per-fragrance notes */}
         <Section title="My Notes" cursive="private journal">
@@ -521,19 +700,24 @@ export default function FragranceDetailScreen() {
           </Section>
         )}
 
-        <Section title="Layering" cursive="pair it up">
-          <LayeringSection fragranceId={id} />
-        </Section>
+        <View style={hasLayering ? undefined : { display: 'none' }}>
+          <Section title="Layering" cursive="pair it up">
+            <LayeringSection fragranceId={id} onHasData={onHasLayering} />
+          </Section>
+        </View>
 
-        <Section title="Compliments" cursive="what they said">
-          <ComplimentsSection fragranceId={id} />
-        </Section>
+        <View style={hasCompliments ? undefined : { display: 'none' }}>
+          <Section title="Compliments" cursive="what they said">
+            <ComplimentsSection fragranceId={id} onHasData={onHasCompliments} />
+          </Section>
+        </View>
 
         <View style={styles.ctaWrap}>
           {inWardrobe ? (
             <Pressable
               style={[styles.cta, styles.ctaInWardrobe]}
               onPress={() => { setWardrobeInitStatus('have'); setWardrobeSheetOpen(true); }}
+              accessibilityLabel="In Your Wardrobe"
             >
               <Ionicons name="checkmark-circle" size={18} color={COLORS.white} style={{ marginRight: 8 }} />
               <Text style={styles.ctaText}>In Your Wardrobe</Text>
@@ -542,17 +726,23 @@ export default function FragranceDetailScreen() {
             <Pressable
               style={styles.cta}
               onPress={() => { setWardrobeInitStatus('have'); setWardrobeSheetOpen(true); }}
+              accessibilityLabel="Add to Wardrobe"
             >
               <Ionicons name="rose" size={16} color={COLORS.white} style={{ marginRight: 8 }} />
               <Text style={styles.ctaText}>Add to Wardrobe</Text>
             </Pressable>
           )}
-          <Pressable style={styles.secondaryCta} onPress={() => setWearSheetOpen(true)}>
+          <Pressable style={styles.secondaryCta} onPress={() => setWearSheetOpen(true)} accessibilityLabel="Log a Wear">
             <Ionicons name="bookmark-outline" size={16} color={COLORS.text} style={{ marginRight: 8 }} />
             <Text style={styles.secondaryCtaText}>Log a Wear</Text>
           </Pressable>
         </View>
       </ScrollView>
+
+      {/* Fixed back button — outside ScrollView so always visible regardless of scroll depth */}
+      <Pressable style={styles.backBtn} onPress={() => router.back()} accessibilityLabel="Back">
+        <Ionicons name="chevron-back" size={26} color={COLORS.white} />
+      </Pressable>
 
       <AddToWardrobeSheet
         visible={wardrobeSheetOpen}
@@ -572,13 +762,31 @@ export default function FragranceDetailScreen() {
         fragrance={fragrance}
         editLog={editingLog}
         onClose={() => { setWearSheetOpen(false); setEditingLog(null); }}
+        onSaved={() => {
+          // Auto-add to wardrobe as 'tested' when the user logs a wear for a
+          // fragrance they haven't added yet. This ensures the fragrance shows
+          // up in the wardrobe "Tried" filter (which filters by wear count > 0).
+          if (!inWardrobe && fragrance && !editingLog) {
+            addToWardrobe({ fragrance_id: fragrance.id, status: 'tested', size_ml: 0, remaining_ml: 0 });
+          }
+        }}
       />
       <FragranceNotesSheet
         visible={notesSheetOpen}
         fragrance={fragrance}
         onClose={() => setNotesSheetOpen(false)}
       />
-    </View>
+    </Animated.View>
+    </GestureDetector>
+  );
+}
+
+export default function FragranceDetailScreenWithBoundary() {
+  const router = useRouter();
+  return (
+    <DetailErrorBoundary onReset={() => router.back()}>
+      <FragranceDetailScreen />
+    </DetailErrorBoundary>
   );
 }
 
@@ -626,6 +834,61 @@ const styles = StyleSheet.create({
   notFoundBtn: { backgroundColor: COLORS.accent, paddingHorizontal: SPACING.xl, paddingVertical: 12, borderRadius: RADIUS.full },
   notFoundBtnText: { color: COLORS.white, fontWeight: '600' },
 
+  actionRail: {
+    gap: SPACING.sm,
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.md,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: COLORS.border,
+  },
+  actionBtnBuyFull: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 7,
+    paddingVertical: 14,
+    borderRadius: RADIUS.full,
+    backgroundColor: COLORS.accent,
+  },
+  actionRow2: {
+    flexDirection: 'row',
+    gap: SPACING.sm,
+  },
+  actionBtnHalf: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    paddingVertical: 12,
+    borderRadius: RADIUS.full,
+  },
+  actionBtnSecondary: {
+    backgroundColor: COLORS.card,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  actionBtnDisabled: {
+    backgroundColor: COLORS.card,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  actionBtnCompareOn: {
+    borderColor: COLORS.success,
+  },
+  actionBtnText: {
+    ...TYPE.label,
+    fontSize: 12,
+    letterSpacing: 0.5,
+    color: COLORS.white,
+  },
+  actionBtnTextMuted: {
+    color: COLORS.muted,
+  },
+  actionBtnTextDark: {
+    color: COLORS.text,
+  },
+
   hero: {
     width: SCREEN_W, height: HERO_HEIGHT,
     backgroundColor: COLORS.card2,
@@ -638,6 +901,7 @@ const styles = StyleSheet.create({
     width: 38, height: 38, borderRadius: 19,
     backgroundColor: 'rgba(0,0,0,0.32)',
     alignItems: 'center', justifyContent: 'center',
+    zIndex: 10,
   },
   heartBtn: {
     position: 'absolute', top: 56, right: SPACING.lg,
@@ -646,16 +910,8 @@ const styles = StyleSheet.create({
     alignItems: 'center', justifyContent: 'center',
   },
   heroContent: { position: 'absolute', left: 0, right: 0, bottom: 0, padding: SPACING.lg },
-  heroBuyBtn: {
-    position: 'absolute', bottom: SPACING.lg + 80, right: SPACING.lg,
-    flexDirection: 'row', alignItems: 'center', gap: 5,
-    backgroundColor: COLORS.accent,
-    paddingHorizontal: 14, paddingVertical: 8,
-    borderRadius: RADIUS.full,
-  },
-  heroBuyBtnText: { color: COLORS.white, fontWeight: '700', fontSize: 13, letterSpacing: 0.5 },
   heroBrand: { ...TYPE.eyebrow, color: COLORS.accentSoft, marginBottom: 6 },
-  heroName: { fontFamily: FONTS.serif, fontWeight: '700', fontSize: 38, color: COLORS.white, lineHeight: 44, marginBottom: SPACING.sm },
+  heroName: { fontFamily: FONTS.serif, fontWeight: '700', fontSize: 30, color: COLORS.white, lineHeight: 36, marginBottom: SPACING.sm },
   heroMeta: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   heroMetaText: { ...TYPE.caption, color: COLORS.white, opacity: 0.9 },
   heroMetaDot: { color: COLORS.white, opacity: 0.6 },
@@ -754,22 +1010,24 @@ const styles = StyleSheet.create({
   secondaryCtaText: { ...TYPE.label, letterSpacing: 1.5 },
   sectionTeaser: { ...TYPE.bodySmall, color: COLORS.subtle, fontStyle: 'italic' },
 
-  dupesLocked: {
-    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
-    backgroundColor: COLORS.card,
-    borderRadius: RADIUS.lg,
-    borderWidth: 1, borderColor: COLORS.accent,
-    padding: SPACING.lg,
-  },
-  dupesLockedText: { ...TYPE.bodySmall, flex: 1, color: COLORS.text },
-  dupesLockedCta: { ...TYPE.label, color: COLORS.accent, fontSize: 12 },
-  dupesEmpty: {
+  // R13: About this fragrance
+  aboutCard: {
     backgroundColor: COLORS.card,
     borderRadius: RADIUS.lg,
     borderWidth: 1, borderColor: COLORS.border,
     padding: SPACING.lg,
+    gap: SPACING.md,
+    marginRight: SPACING.lg,
   },
-  dupesEmptyText: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic' },
+  aboutAccords: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm },
+  aboutChip: {
+    paddingHorizontal: 12, paddingVertical: 5,
+    borderRadius: RADIUS.full,
+    backgroundColor: COLORS.blushSoft,
+    borderWidth: 1, borderColor: COLORS.accent,
+  },
+  aboutChipText: { ...TYPE.label, fontSize: 12, color: COLORS.accent, letterSpacing: 0.5 },
+  aboutCopy: { ...TYPE.bodySmall, color: COLORS.muted, lineHeight: 20, fontStyle: 'italic' },
 
   notesCard: {
     backgroundColor: COLORS.card,

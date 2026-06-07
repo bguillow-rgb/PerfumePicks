@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
+import { useCustomFragranceStore, isCustomFragranceId } from '@/src/stores/useCustomFragranceStore';
 
 /**
  * Supabase-backed fragrance catalog store.
@@ -17,6 +18,18 @@ import { MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
  */
 
 export type Fragrance = MockFragrance;  // same shape, keeps all consumers working
+
+/** A dupe result: a full Fragrance plus the relationship metadata from get_dupes(). */
+export type DupeResult = Fragrance & {
+  match_pct: number;
+  price_delta_cents: number;     // original MSRP - dupe MSRP (positive = savings)
+  dupe_source: 'algo' | 'seed' | 'editorial';
+  is_loose: boolean;             // match_pct < 70 → label "Loose match", hide the %
+  locked: boolean;              // reserved for a future blurred-row treatment; today locked rows are withheld server-side
+};
+
+/** A "Smells Like" result: a full Fragrance plus its similarity score. */
+export type SimilarResult = Fragrance & { similarity: number };
 
 interface CatalogState {
   /** In-memory cache: slug → Fragrance */
@@ -66,9 +79,37 @@ interface CatalogState {
    * Fetch up to `limit` active fragrances, ordered by name.
    * Convenience for Discover, Train stack builder, quiz results, layering picker.
    */
-  fetchAllActive: (limit?: number) => Promise<Fragrance[]>;
+  fetchAllActive: (limit?: number, genders?: string[]) => Promise<Fragrance[]>;
+
+  /**
+   * Fetch a page of enriched fragrances (top_accords non-empty) for the Train deck.
+   * Supports pagination via offset. Results are cached.
+   */
+  fetchEnriched: (limit?: number, offset?: number, genders?: string[]) => Promise<Fragrance[]>;
+
+  /**
+   * Pro-gated ranked dupes for an original (by slug). Resolves UUID->slug
+   * server-side via the get_dupes() RPC. Non-Pro callers get the top
+   * FREE_DUPE_LIMIT rows (the rest are withheld in Postgres, not the client).
+   * Use fetchDupeCount() to compute how many remain locked.
+   */
+  fetchDupes: (slug: string) => Promise<DupeResult[]>;
+
+  /** Public count of dupes available for an original — powers the Pro upsell teaser. */
+  fetchDupeCount: (slug: string) => Promise<number>;
+
+  /** Public "Smells Like" rail for a fragrance (by slug), via the get_similars() RPC. */
+  fetchSimilars: (slug: string, limit?: number) => Promise<SimilarResult[]>;
 
   _addToCache: (items: Fragrance[]) => void;
+}
+
+/** Strip bundles, gift-sets, and tester units — not real purchasable products. */
+function isBundle(f: Fragrance): boolean {
+  if (f.brand === 'BUNDLE & SAVE') return true;
+  const nameLower = f.name.toLowerCase();
+  return nameLower.includes('tester') || nameLower.includes(' set ') ||
+    nameLower.startsWith('set ') || nameLower.endsWith(' set');
 }
 
 function rowToFragrance(row: any): Fragrance {
@@ -126,11 +167,16 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
   getById: (id) => {
     const cached = get().cache[id];
     if (cached) return cached;
+    // User-added bottles live on-device, not in the catalog or Supabase.
+    if (isCustomFragranceId(id)) return useCustomFragranceStore.getState().getById(id);
     if (!isSupabaseConfigured) return MOCK_CATALOG.find((f) => f.id === id);
     return undefined;
   },
 
   fetchById: async (id) => {
+    // User-added bottles live on-device, not in the catalog or Supabase.
+    if (isCustomFragranceId(id)) return useCustomFragranceStore.getState().getById(id);
+
     // Demo mode: check mock catalog
     if (!isSupabaseConfigured) {
       return MOCK_CATALOG.find((f) => f.id === id);
@@ -179,27 +225,72 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         f.top_accords.some((a) => a.toLowerCase().includes(q)),
       );
       if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
-      return results.slice(0, limit);
+      return results.filter((f) => !isBundle(f)).slice(0, limit);
     }
 
     // Production: query Supabase
+    if (q) {
+      // PostgREST or() doesn't support joined columns, so run two queries:
+      // 1) fragrance name match, 2) brand name match via brand_id lookup
+      const { data: brandRows } = await supabase
+        .from('brands')
+        .select('id')
+        .ilike('name', `%${q}%`);
+
+      const brandIds = (brandRows ?? []).map((b: any) => b.id);
+
+      let nameQb = supabase
+        .from('fragrances')
+        .select(FRAGRANCE_SELECT)
+        .eq('is_active', true)
+        .ilike('name', `%${q}%`)
+        .order('name', { ascending: true })
+        .limit(limit);
+      if (genders?.length) nameQb = nameQb.in('gender', genders);
+
+      const namePromise = nameQb;
+      const brandPromise = brandIds.length > 0
+        ? (() => {
+            let bqb = supabase
+              .from('fragrances')
+              .select(FRAGRANCE_SELECT)
+              .eq('is_active', true)
+              .in('brand_id', brandIds)
+              .order('name', { ascending: true })
+              .limit(limit);
+            if (genders?.length) bqb = bqb.in('gender', genders);
+            return bqb;
+          })()
+        : Promise.resolve({ data: [] as any[], error: null });
+
+      const [nameRes, brandRes] = await Promise.all([namePromise, brandPromise]);
+      if (nameRes.error) console.warn('[catalog] search name error:', nameRes.error.message);
+      if (brandRes.error) console.warn('[catalog] search brand error:', brandRes.error?.message);
+
+      const seen = new Set<string>();
+      const merged: Fragrance[] = [];
+      for (const row of [...(nameRes.data ?? []), ...(brandRes.data ?? [])]) {
+        const slug = row.slug ?? row.id;
+        if (!seen.has(slug)) { seen.add(slug); merged.push(rowToFragrance(row)); }
+      }
+      merged.sort((a, b) => a.name.localeCompare(b.name));
+      const results = merged.filter((f) => !isBundle(f)).slice(0, limit);
+      get()._addToCache(results);
+      return results;
+    }
+
+    // No query — fetch all active
     let qb = supabase
       .from('fragrances')
       .select(FRAGRANCE_SELECT)
       .eq('is_active', true)
       .order('name', { ascending: true })
       .limit(limit);
-
-    if (q) {
-      qb = qb.ilike('name', `%${q}%`);
-    }
-    if (genders?.length) {
-      qb = qb.in('gender', genders);
-    }
+    if (genders?.length) qb = qb.in('gender', genders);
 
     const { data, error } = await qb;
     if (error) { console.warn('[catalog] search error:', error.message); return []; }
-    const results = (data ?? []).map(rowToFragrance);
+    const results = (data ?? []).map(rowToFragrance).filter((f) => !isBundle(f));
     get()._addToCache(results);
     return results;
   },
@@ -249,8 +340,32 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     return results;
   },
 
-  fetchAllActive: async (limit = 200) => {
-    return get().search('', limit);
+  fetchAllActive: async (limit = 200, genders?) => {
+    return get().search('', limit, genders);
+  },
+
+  fetchEnriched: async (limit = 500, offset = 0, genders?) => {
+    if (!isSupabaseConfigured) {
+      let results = MOCK_CATALOG.filter((f) => f.top_accords.length > 0);
+      if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
+      return results.filter((f) => !isBundle(f)).slice(offset, offset + limit);
+    }
+
+    let qb = supabase
+      .from('fragrances')
+      .select(FRAGRANCE_SELECT)
+      .eq('is_active', true)
+      .neq('top_accords', '{}')
+      .order('id', { ascending: true })
+      .range(offset, offset + limit - 1);
+
+    if (genders?.length) qb = qb.in('gender', genders);
+
+    const { data, error } = await qb;
+    if (error) { console.warn('[catalog] fetchEnriched error:', error.message); return []; }
+    const results = (data ?? []).map(rowToFragrance).filter((f) => !isBundle(f));
+    get()._addToCache(results);
+    return results;
   },
 
   fetchByBrand: async (brand, genders) => {
@@ -281,6 +396,41 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     const { data, error } = await qb;
     if (error) { console.warn('[catalog] fetchByBrand error:', error.message); return []; }
     const results = (data ?? []).map(rowToFragrance);
+    get()._addToCache(results);
+    return results;
+  },
+
+  fetchDupes: async (slug) => {
+    if (!isSupabaseConfigured || !slug) return [];
+    const { data, error } = await supabase.rpc('get_dupes', { p_slug: slug });
+    if (error) { console.warn('[catalog] fetchDupes error:', error.message); return []; }
+    const results = ((data ?? []) as any[]).map((r) => ({
+      ...rowToFragrance({ ...r, brands: { name: r.brand_name } }),
+      match_pct: r.match_pct,
+      price_delta_cents: r.price_delta_cents,
+      dupe_source: r.source,
+      is_loose: r.is_loose,
+      locked: r.locked ?? false,
+    })) as DupeResult[];
+    get()._addToCache(results);
+    return results;
+  },
+
+  fetchDupeCount: async (slug) => {
+    if (!isSupabaseConfigured || !slug) return 0;
+    const { data, error } = await supabase.rpc('get_dupe_count', { p_slug: slug });
+    if (error) { console.warn('[catalog] fetchDupeCount error:', error.message); return 0; }
+    return (data as number) ?? 0;
+  },
+
+  fetchSimilars: async (slug, limit = 12) => {
+    if (!isSupabaseConfigured || !slug) return [];
+    const { data, error } = await supabase.rpc('get_similars', { p_slug: slug, p_limit: limit });
+    if (error) { console.warn('[catalog] fetchSimilars error:', error.message); return []; }
+    const results = ((data ?? []) as any[]).map((r) => ({
+      ...rowToFragrance({ ...r, brands: { name: r.brand_name } }),
+      similarity: r.similarity,
+    })) as SimilarResult[];
     get()._addToCache(results);
     return results;
   },

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Pressable, Image, ActivityIndicator, Alert, Animated as RNAnimated } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Image, Alert, Animated as RNAnimated, TextInput, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,7 +10,11 @@ import * as Haptics from 'expo-haptics';
 import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming, Easing } from 'react-native-reanimated';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { scanBottle } from '@/src/lib/claude';
-import { useCatalogStore } from '@/src/stores/useCatalogStore';
+import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
+import { useWardrobeStore, WARDROBE_CAP_HIT } from '@/src/stores/useWardrobeStore';
+import { useCustomFragranceStore } from '@/src/stores/useCustomFragranceStore';
+import { useScanStore, FREE_DAILY_SCAN_LIMIT } from '@/src/stores/useScanStore';
+import { useProStore } from '@/src/stores/useProStore';
 
 type ScanState = 'ready' | 'scanning' | 'result' | 'no_match';
 type Confidence = 'exact' | 'likely' | 'guess' | 'unsure';
@@ -38,7 +42,14 @@ export default function ScanScreen() {
   const [state, setState] = useState<ScanState>('ready');
   const [photoUri, setPhotoUri] = useState<string | null>(null);
   const [result, setResult] = useState<{ brand: string | null; name: string | null; confidence: number } | null>(null);
+  const [quickAddName, setQuickAddName] = useState('');
+  const [quickAddBrand, setQuickAddBrand] = useState('');
+  const [isAdding, setIsAdding] = useState(false);
   const search = useCatalogStore((s) => s.search);
+  const isPro = useProStore((s) => s.isPro);
+  const recordScan = useScanStore((s) => s.recordScan);
+  const getRemainingScans = useScanStore((s) => s.getRemainingScans);
+  const isAtLimit = useScanStore((s) => s.isAtLimit);
 
   // Toast animation
   const toastOpacity = useRef(new RNAnimated.Value(0)).current;
@@ -51,7 +62,25 @@ export default function ScanScreen() {
     ]).start();
   };
 
+  const checkScanLimit = (): boolean => {
+    if (isPro) return true;
+    if (isAtLimit()) {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+      Alert.alert(
+        'Daily Limit Reached',
+        `You've used all ${FREE_DAILY_SCAN_LIMIT} free scans today. Upgrade to Pro for unlimited scans.`,
+        [
+          { text: 'Not Now', style: 'cancel' },
+          { text: 'Upgrade', onPress: () => router.push('/paywall') },
+        ],
+      );
+      return false;
+    }
+    return true;
+  };
+
   const handleCapture = async () => {
+    if (!checkScanLimit()) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
 
     const { status } = await ImagePicker.requestCameraPermissionsAsync();
@@ -87,6 +116,7 @@ export default function ScanScreen() {
       });
 
       const scanResult = await scanBottle({ image_base64: base64 });
+      recordScan();
       setResult(scanResult);
 
       if (scanResult.confidence >= 0.5 && scanResult.name) {
@@ -94,6 +124,8 @@ export default function ScanScreen() {
         setState('result');
       } else {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+        if (scanResult.name) setQuickAddName(scanResult.name);
+        if (scanResult.brand) setQuickAddBrand(scanResult.brand);
         setState('no_match');
       }
     } catch (e) {
@@ -104,6 +136,7 @@ export default function ScanScreen() {
   };
 
   const handleGallery = async () => {
+    if (!checkScanLimit()) return;
     Haptics.selectionAsync();
     const pickerResult = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ['images'],
@@ -126,11 +159,14 @@ export default function ScanScreen() {
         encoding: FileSystem.EncodingType.Base64,
       });
       const scanResult = await scanBottle({ image_base64: base64 });
+      recordScan();
       setResult(scanResult);
       if (scanResult.confidence >= 0.5 && scanResult.name) {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
         setState('result');
       } else {
+        if (scanResult.name) setQuickAddName(scanResult.name);
+        if (scanResult.brand) setQuickAddBrand(scanResult.brand);
         setState('no_match');
       }
     } catch {
@@ -147,14 +183,68 @@ export default function ScanScreen() {
       setTimeout(() => router.replace(`/fragrance/${matches[0].id}` as any), 1800);
     } else {
       Alert.alert('Not in Catalog', `"${result.name}" by ${result.brand ?? 'Unknown'} isn't in our catalog yet.`);
-      router.back();
+      router.canGoBack() ? router.back() : router.replace('/(tabs)' as any);
     }
   };
 
   const handleRetry = () => {
     setPhotoUri(null);
     setResult(null);
+    setQuickAddName('');
+    setQuickAddBrand('');
     setState('ready');
+  };
+
+  const handleQuickAdd = async () => {
+    const name = quickAddName.trim();
+    if (!name) return;
+    setIsAdding(true);
+    try {
+      const brand = quickAddBrand.trim();
+      const query = brand ? `${name} ${brand}` : name;
+      const matches = await search(query, 5);
+      const best = matches[0] ?? null;
+
+      // If not in catalog, create a custom entry so the user isn't blocked.
+      // Copy the scan photo to permanent storage so it survives app restarts.
+      let customImageUrl = '';
+      if (!best && photoUri) {
+        try {
+          const dest = `${FileSystem.documentDirectory}custom-frag-${Date.now()}.jpg`;
+          await FileSystem.copyAsync({ from: photoUri, to: dest });
+          customImageUrl = dest;
+        } catch { /* no image — that's fine */ }
+      }
+      // Custom entries persist on-device via the custom-fragrance store so the
+      // bottle (and its photo) survives a cold restart — the detail screen
+      // resolves it through the catalog store's custom fallback.
+      const fragrance: Fragrance = best ?? useCustomFragranceStore.getState().add({
+        name,
+        brand,
+        image_url: customImageUrl,
+      });
+
+      const wardrobeId = useWardrobeStore.getState().add({
+        fragrance_id: fragrance.id,
+        status: 'have',
+        unit_type: 'bottle',
+        size_ml: 0,
+        remaining_ml: 0,
+      });
+      if (wardrobeId === WARDROBE_CAP_HIT) {
+        router.push('/paywall');
+        return;
+      }
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      showToast();
+      // For catalog matches navigate to detail; for custom items go to wardrobe
+      setTimeout(() => {
+        if (best) router.replace(`/fragrance/${best.id}` as any);
+        else router.replace('/(tabs)/wardrobe' as any);
+      }, 1600);
+    } finally {
+      setIsAdding(false);
+    }
   };
 
   const tier = result ? getConfidenceTier(result.confidence) : 'unsure';
@@ -162,7 +252,7 @@ export default function ScanScreen() {
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
       <View style={styles.header}>
-        <Pressable onPress={() => router.back()} hitSlop={12}>
+        <Pressable onPress={() => router.back()} hitSlop={12} accessibilityLabel="Close scan">
           <Ionicons name="close" size={28} color={COLORS.text} />
         </Pressable>
         <Text style={styles.headerTitle}>Perfume Concierge</Text>
@@ -184,14 +274,27 @@ export default function ScanScreen() {
             <Tip icon="sunny-outline" text="Even, bright lighting works best" />
             <Tip icon="hand-left-outline" text="Hold steady, keep the label visible" />
           </View>
-          <Pressable style={styles.conciergeBtn} onPress={handleCapture}>
+          <Pressable style={styles.conciergeBtn} onPress={handleCapture} accessibilityLabel="Perfume Concierge">
             <Ionicons name="sparkles" size={16} color={COLORS.white} />
             <Text style={styles.conciergeBtnText}>Perfume Concierge</Text>
           </Pressable>
-          <Pressable style={styles.galleryBtn} onPress={handleGallery}>
+          <Pressable style={styles.galleryBtn} onPress={handleGallery} accessibilityLabel="Choose from Library">
             <Ionicons name="images-outline" size={16} color={COLORS.muted} />
             <Text style={styles.galleryBtnText}>Choose from Library</Text>
           </Pressable>
+          <Pressable
+            style={styles.galleryBtn}
+            onPress={() => { setPhotoUri(null); setState('no_match'); }}
+            accessibilityLabel="Add a fragrance manually"
+          >
+            <Ionicons name="create-outline" size={16} color={COLORS.muted} />
+            <Text style={styles.galleryBtnText}>Add a fragrance manually</Text>
+          </Pressable>
+          {!isPro && (
+            <Text style={styles.scanLimitHint}>
+              {getRemainingScans()} / {FREE_DAILY_SCAN_LIMIT} free scans remaining today
+            </Text>
+          )}
         </View>
       )}
 
@@ -234,23 +337,71 @@ export default function ScanScreen() {
         </View>
       )}
 
-      {/* ── No match state ── */}
+      {/* ── No match → quick-add form ── */}
       {state === 'no_match' && (
-        <View style={styles.center}>
-          {photoUri && <Image source={{ uri: photoUri }} style={styles.resultImage} />}
-          <Ionicons name="help-circle-outline" size={48} color={COLORS.muted} />
-          <Text style={styles.heroTitle}>Couldn't identify this bottle</Text>
-          <Text style={styles.heroSub}>Try a clearer photo with the label visible, or search manually.</Text>
-          <View style={styles.btnRow}>
-            <Pressable style={styles.confirmBtn} onPress={handleRetry}>
-              <Ionicons name="camera" size={16} color={COLORS.white} />
-              <Text style={styles.confirmBtnText}>Retake Photo</Text>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={{ flex: 1 }}
+        >
+          <ScrollView
+            contentContainerStyle={styles.quickAddScroll}
+            keyboardShouldPersistTaps="handled"
+            showsVerticalScrollIndicator={false}
+          >
+            {photoUri && (
+              <Image source={{ uri: photoUri }} style={styles.quickAddThumb} resizeMode="cover" />
+            )}
+            <Text style={styles.quickAddTitle}>Add it manually</Text>
+            <Text style={styles.quickAddSub}>
+              {photoUri
+                ? "Couldn't read the label — type what you know and we'll match it."
+                : "Type what you know — we'll match it to our catalog, or add it to your wardrobe as-is."}
+            </Text>
+
+            <View style={styles.fieldGroup}>
+              <Text style={styles.fieldLabel}>FRAGRANCE NAME</Text>
+              <TextInput
+                style={styles.fieldInput}
+                value={quickAddName}
+                onChangeText={setQuickAddName}
+                placeholder="e.g. Libre"
+                placeholderTextColor={COLORS.subtle}
+                autoCorrect={false}
+                autoCapitalize="words"
+                returnKeyType="next"
+              />
+            </View>
+
+            <View style={styles.fieldGroup}>
+              <Text style={styles.fieldLabel}>BRAND</Text>
+              <TextInput
+                style={styles.fieldInput}
+                value={quickAddBrand}
+                onChangeText={setQuickAddBrand}
+                placeholder="e.g. Yves Saint Laurent"
+                placeholderTextColor={COLORS.subtle}
+                autoCorrect={false}
+                autoCapitalize="words"
+                returnKeyType="done"
+                onSubmitEditing={handleQuickAdd}
+              />
+            </View>
+
+            <Pressable
+              style={[styles.confirmBtn, { marginTop: SPACING.lg, minWidth: '100%' }, (!quickAddName.trim() || isAdding) && { opacity: 0.5 }]}
+              onPress={handleQuickAdd}
+              disabled={!quickAddName.trim() || isAdding}
+            >
+              <Ionicons name="add-circle" size={18} color={COLORS.white} />
+              <Text style={styles.confirmBtnText}>{isAdding ? 'Finding…' : 'Add to Wardrobe'}</Text>
             </Pressable>
-            <Pressable style={styles.rejectBtn} onPress={() => router.replace('/(tabs)/discover' as any)}>
-              <Text style={styles.rejectBtnText}>Search Manually</Text>
+
+            <Pressable style={styles.rejectBtn} onPress={handleRetry}>
+              <Ionicons name="camera-outline" size={14} color={COLORS.muted} />
+              <Text style={[styles.rejectBtnText, { marginLeft: 4 }]}>Retake Photo</Text>
             </Pressable>
-          </View>
-        </View>
+          </ScrollView>
+        </KeyboardAvoidingView>
       )}
 
       {/* Toast */}
@@ -328,6 +479,7 @@ const styles = StyleSheet.create({
     paddingVertical: SPACING.sm,
   },
   galleryBtnText: { ...TYPE.label, color: COLORS.muted, fontSize: 12, letterSpacing: 0.5 },
+  scanLimitHint: { ...TYPE.caption, color: COLORS.subtle, fontStyle: 'italic', marginTop: SPACING.xs },
 
   // Shimmer
   shimmerWrap: { width: 220, height: 280, borderRadius: RADIUS.lg, overflow: 'hidden', marginBottom: SPACING.lg },
@@ -362,6 +514,20 @@ const styles = StyleSheet.create({
   confirmBtnText: { ...TYPE.label, color: COLORS.white, letterSpacing: 1 },
   rejectBtn: { paddingVertical: SPACING.sm },
   rejectBtnText: { ...TYPE.label, color: COLORS.muted, letterSpacing: 0.5 },
+
+  // Quick-add form
+  quickAddScroll: { alignItems: 'center', padding: SPACING.xl, paddingTop: SPACING.lg, gap: SPACING.md },
+  quickAddThumb: { width: 120, height: 160, borderRadius: RADIUS.lg, marginBottom: SPACING.sm },
+  quickAddTitle: { fontFamily: FONTS.serif, fontSize: 24, fontWeight: '600', color: COLORS.text, textAlign: 'center' },
+  quickAddSub: { ...TYPE.bodySmall, color: COLORS.muted, textAlign: 'center', paddingHorizontal: SPACING.sm, marginBottom: SPACING.sm },
+  fieldGroup: { width: '100%', gap: 6 },
+  fieldLabel: { ...TYPE.eyebrow, fontSize: 10, color: COLORS.muted, letterSpacing: 1.5 },
+  fieldInput: {
+    backgroundColor: COLORS.card, borderRadius: RADIUS.md,
+    borderWidth: 1, borderColor: COLORS.border,
+    paddingHorizontal: SPACING.md, paddingVertical: 14,
+    ...TYPE.body, color: COLORS.text,
+  },
 
   // Toast
   toast: {

@@ -13,4 +13,7 @@ export const STORAGE_KEYS = {
   quiz: 'perfumepicks-quiz',
   fragranceNotes: 'perfumepicks-fragrance-notes',
   reviews: 'perfumepicks-reviews',
+  scan: 'perfumepicks-scan',
+  notifications: 'perfumepicks-notifications',
+  customFragrances: 'perfumepicks-custom-fragrances',
 } as const;
