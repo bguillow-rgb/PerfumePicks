@@ -145,9 +145,21 @@ describe('useWearLogStore', () => {
       expect(useWearLogStore.getState().unsyncedCount()).toBe(2);
     });
 
-    it('returns 0 when all synced', () => {
+    it('returns 0 when every log is synced', () => {
       useWearLogStore.getState().add(makeLogInput('frag-1', '2026-05-22'));
+      // add() marks logs _unsynced: true by default; clear it to simulate a
+      // successful server write.
+      useWearLogStore.setState({
+        logs: useWearLogStore.getState().logs.map((l) => ({ ...l, _unsynced: false })),
+      });
       expect(useWearLogStore.getState().unsyncedCount()).toBe(0);
+    });
+
+    it('marks a demo-mode add as unsynced (no backend to write to)', () => {
+      // Without Supabase configured, add() pre-flags _unsynced so the log
+      // survives the hydration merge on the next sign-in.
+      useWearLogStore.getState().add(makeLogInput('frag-1', '2026-05-22'));
+      expect(useWearLogStore.getState().unsyncedCount()).toBe(1);
     });
   });
 });

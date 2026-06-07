@@ -9,12 +9,19 @@ import { useProStore } from '@/src/stores/useProStore';
 import { useWearLogStore, type Occasion } from '@/src/stores/useWearLogStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
+import {
+  computeWrappedStats,
+  topKey,
+  SEASONS,
+  type WrappedStats,
+} from '@/src/features/wrapped/wrappedStats';
 
 /**
  * Perfume Wrapped — your year in fragrance.
  * Pro-gated. Computed CLIENT-SIDE from the local wear log (keyed by slug, same
  * as the catalog) so it's always available on a rolling trailing-12-months
- * window — no December dead-stub, no RPC UUID/slug mismatch.
+ * window — no December dead-stub, no RPC UUID/slug mismatch. The stat math
+ * lives in `@/src/features/wrapped/wrappedStats` so it stays unit-testable.
  */
 
 const OCCASION_LABEL: Record<Occasion, string> = {
@@ -27,38 +34,6 @@ const OCCASION_LABEL: Record<Occasion, string> = {
   travel: 'travel',
 };
 
-const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'] as const;
-type Season = (typeof SEASONS)[number];
-
-function seasonForMonth(month: number): Season {
-  // month is 0-indexed
-  if (month <= 1 || month === 11) return 'Winter';
-  if (month <= 4) return 'Spring';
-  if (month <= 7) return 'Summer';
-  return 'Fall';
-}
-
-function topKey<T extends string>(counts: Record<T, number>): T | null {
-  let best: T | null = null;
-  let bestN = 0;
-  for (const k in counts) {
-    if (counts[k] > bestN) { bestN = counts[k]; best = k as T; }
-  }
-  return best;
-}
-
-interface WrappedStats {
-  totalWears: number;
-  uniqueFragrances: number;
-  topFragranceId: string | null;
-  topFragranceCount: number;
-  topBrand: string | null;
-  topOccasion: Occasion | null;
-  seasonal: Record<Season, number>;
-  pctCollectionWorn: number | null;
-  longestStreak: number;
-}
-
 export default function WrappedScreen() {
   const router = useRouter();
   const isPro = useProStore((s) => s.isPro);
@@ -68,62 +43,10 @@ export default function WrappedScreen() {
   const fetchById = useCatalogStore((s) => s.fetchById);
   const [hero, setHero] = useState<Fragrance | undefined>(undefined);
 
-  const stats: WrappedStats = useMemo(() => {
-    const cutoff = new Date();
-    cutoff.setFullYear(cutoff.getFullYear() - 1);
-    const cutoffStr = cutoff.toISOString().slice(0, 10);
-
-    const window = logs.filter((l) => l.worn_on >= cutoffStr);
-
-    const fragCounts: Record<string, number> = {};
-    const occCounts: Record<string, number> = {};
-    const brandCounts: Record<string, number> = {};
-    const seasonal: Record<Season, number> = { Winter: 0, Spring: 0, Summer: 0, Fall: 0 };
-    const days = new Set<string>();
-
-    for (const l of window) {
-      fragCounts[l.fragrance_id] = (fragCounts[l.fragrance_id] ?? 0) + 1;
-      if (l.occasion) occCounts[l.occasion] = (occCounts[l.occasion] ?? 0) + 1;
-      const m = Number(l.worn_on.slice(5, 7)) - 1;
-      if (m >= 0 && m <= 11) seasonal[seasonForMonth(m)]++;
-      days.add(l.worn_on);
-      const frag = getById(l.fragrance_id);
-      if (frag?.brand) brandCounts[frag.brand] = (brandCounts[frag.brand] ?? 0) + 1;
-    }
-
-    const topFragranceId = topKey(fragCounts);
-
-    // Longest streak of consecutive calendar days with at least one wear.
-    const sortedDays = [...days].sort();
-    let longestStreak = sortedDays.length > 0 ? 1 : 0;
-    let run = longestStreak;
-    for (let i = 1; i < sortedDays.length; i++) {
-      const prev = new Date(sortedDays[i - 1] + 'T00:00:00');
-      const cur = new Date(sortedDays[i] + 'T00:00:00');
-      const diff = Math.round((cur.getTime() - prev.getTime()) / 86_400_000);
-      if (diff === 1) { run++; longestStreak = Math.max(longestStreak, run); }
-      else run = 1;
-    }
-
-    // % of "have" collection worn in the window.
-    const haveIds = wardrobe.filter((i) => i.status === 'have').map((i) => i.fragrance_id);
-    const wornHave = haveIds.filter((id) => fragCounts[id] > 0).length;
-    const pctCollectionWorn = haveIds.length > 0
-      ? Math.round((wornHave / haveIds.length) * 100)
-      : null;
-
-    return {
-      totalWears: window.length,
-      uniqueFragrances: Object.keys(fragCounts).length,
-      topFragranceId,
-      topFragranceCount: topFragranceId ? fragCounts[topFragranceId] : 0,
-      topBrand: topKey(brandCounts),
-      topOccasion: topKey(occCounts) as Occasion | null,
-      seasonal,
-      pctCollectionWorn,
-      longestStreak,
-    };
-  }, [logs, wardrobe, getById]);
+  const stats: WrappedStats = useMemo(
+    () => computeWrappedStats(logs, wardrobe, (id) => getById(id)?.brand),
+    [logs, wardrobe, getById],
+  );
 
   // Resolve the hero fragrance (may need a network fetch if not cached).
   useEffect(() => {

@@ -5,6 +5,7 @@ import * as Haptics from 'expo-haptics';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
+import { QUICK_TAGS, sortReviewsByQuickTake } from '@/src/features/reviews/quickTake';
 
 interface Review {
   id: string;
@@ -25,18 +26,6 @@ interface Props {
   fragranceId: string;
   onHasData?: () => void;
 }
-
-/** One-tap descriptors (PRD §7.7) — "just say what it smells like." */
-const QUICK_TAGS = [
-  'Compliment magnet',
-  'Office-safe',
-  'Smells expensive',
-  'Too strong',
-  'Long-lasting',
-  'Short-lived',
-  'Versatile',
-  'Unique',
-] as const;
 
 /**
  * Community reviews section for fragrance detail.
@@ -73,9 +62,7 @@ export function ReviewSection({ fragranceId, onHasData }: Props) {
     if (data) {
       // Quick-takes first (PRD §7.7) — pithy "smells like" statements float
       // above plain reviews; helpful_count order is preserved within groups.
-      const hasTake = (r: Review) => !!(r.quick_take || (r.tags && r.tags.length > 0));
-      const sorted = [...data].sort((a, b) => Number(hasTake(b)) - Number(hasTake(a)));
-      setReviews(sorted);
+      setReviews(sortReviewsByQuickTake(data));
       if (data.length > 0) onHasData?.();
       if (user) {
         const mine = data.find((r) => r.user_id === user.id);

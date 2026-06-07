@@ -132,8 +132,13 @@ describe('useWardrobeStore', () => {
   });
 
   describe('unsyncedCount()', () => {
-    it('returns 0 when no unsynced items', () => {
+    it('returns 0 when every item is synced', () => {
       useWardrobeStore.getState().add(makeItem('frag-1'));
+      // add() marks demo-mode items _unsynced: true (no backend to write to);
+      // clear it to simulate a successful server write.
+      useWardrobeStore.setState({
+        items: useWardrobeStore.getState().items.map((i) => ({ ...i, _unsynced: false })),
+      });
       expect(useWardrobeStore.getState().unsyncedCount()).toBe(0);
     });
 
@@ -142,8 +147,15 @@ describe('useWardrobeStore', () => {
       useWardrobeStore.getState().add(makeItem('frag-2'));
       const items = useWardrobeStore.getState().items;
       useWardrobeStore.setState({
-        items: items.map((item, i) => i === 0 ? { ...item, _unsynced: true } : item),
+        items: items.map((item, i) => i === 0 ? { ...item, _unsynced: true } : { ...item, _unsynced: false }),
       });
+      expect(useWardrobeStore.getState().unsyncedCount()).toBe(1);
+    });
+
+    it('marks a demo-mode add as unsynced (no backend to write to)', () => {
+      // Without Supabase configured, add() pre-flags _unsynced so the item
+      // survives the hydration merge on the next sign-in.
+      useWardrobeStore.getState().add(makeItem('frag-1'));
       expect(useWardrobeStore.getState().unsyncedCount()).toBe(1);
     });
   });
