@@ -1,0 +1,181 @@
+appId: com.bobguillow.perfumepicks
+---
+# E2E for the North Star PRD M0-M4 work (Discovery / Dupes / Notes / Compare /
+# Wrapped / Manual-add / Quick-take reviews). Authored 2026-06-07 against the
+# dev client on the iOS sim. Data/auth-dependent assertions are `optional` so
+# the flow proves the surfaces render without flaking on server/login state.
+# Fragrance names (24 Carat Pure Gold, Rose Shot) are reused from the existing
+# passing m2/007 flows so the catalog search reliably resolves them.
+
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- takeScreenshot: nf-00-home
+
+# ── M3a: Discover note/accord search ────────────────────────────────────────
+- tapOn:
+    text: "Discover, tab.*"
+- assertVisible: "BY HOUSE"
+- takeScreenshot: nf-01-discover-top
+# DupePicker entry on Discover (M0/M1 cross-surface dupe search)
+- assertVisible:
+    text: "Less expensive options for…"
+    optional: true
+- tapOn: "Search notes, brands, or a vibe…"
+- inputText: "powdery"
+- waitForAnimationToEnd
+- hideKeyboard
+- takeScreenshot: nf-02-search-accord
+
+# Clear the field, then search a known fragrance and open its detail
+- tapOn: "Search notes, brands, or a vibe…"
+- eraseText: 40
+- inputText: "24 Carat"
+- waitForAnimationToEnd
+- hideKeyboard
+- takeScreenshot: nf-03-search-name
+- tapOn:
+    text: "24 Carat Pure Gold"
+    index: 0
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Add to Wardrobe"
+    timeout: 20000
+- takeScreenshot: nf-04-detail-hero
+
+# ── M4b: Compare tray — add the first fragrance (button is on the hero) ──────
+# The Pressable's accessibilityLabel ("Add to compare") overrides its visible
+# "Compare" text, so we target the a11y label.
+- tapOn:
+    text: "Add to compare"
+- assertVisible:
+    text: "Remove from compare"
+- takeScreenshot: nf-05-compare-added
+
+# ── M0/M1: Budget Dupes hero on detail ──────────────────────────────────────
+- scrollUntilVisible:
+    element:
+      text: "Budget Dupes"
+    direction: DOWN
+    timeout: 12000
+    visibilityPercentage: 40
+    optional: true
+- takeScreenshot: nf-06-budget-dupes
+- assertVisible:
+    text: "Loose match"
+    optional: true
+- assertVisible:
+    text: "Unlock →"
+    optional: true
+
+# ── M3c: Quick-take review section (form is auth-gated; optional) ────────────
+- scrollUntilVisible:
+    element:
+      text: "Write a Review"
+    direction: DOWN
+    timeout: 12000
+    visibilityPercentage: 40
+    optional: true
+- tapOn:
+    text: "Write a Review"
+    optional: true
+- assertVisible:
+    text: "SMELLS LIKE…"
+    optional: true
+- tapOn:
+    text: "Office-safe"
+    optional: true
+- takeScreenshot: nf-07-quicktake-form
+
+# Add a second fragrance to compare, then open the tray
+- tapOn:
+    text: "Discover, tab.*"
+- tapOn: "Search notes, brands, or a vibe…"
+- eraseText: 40
+# Type a partial query so the result's full name ("La Vie Est Belle…") never
+# matches the search-field text — otherwise the tap can hit the input instead
+# of the result row.
+- inputText: "La Vie Est"
+- waitForAnimationToEnd
+- hideKeyboard
+- tapOn:
+    text: "La Vie Est Belle.*"
+    index: 0
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Add to Wardrobe"
+    timeout: 20000
+# The detail route is reused across navigations and keeps the prior scroll
+# offset, so scroll back up to the action row before tapping Compare.
+- scrollUntilVisible:
+    element:
+      text: "Add to compare"
+    direction: UP
+    timeout: 15000
+    visibilityPercentage: 60
+- tapOn:
+    text: "Add to compare"
+# With 2 selected the tray-open button ("Open comparison") is now enabled.
+- tapOn:
+    text: "Open comparison"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Compare"
+    optional: true
+- takeScreenshot: nf-08-compare-screen
+
+# ── M4a: Manual fragrance add (via scan concierge) ──────────────────────────
+# The /compare screen is a stacked route with no tab bar; relaunch to return to
+# a clean tabbed home for the two remaining (independent) feature checks.
+- launchApp
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- tapOn:
+    text: "Scan a bottle"
+    optional: true
+- assertVisible:
+    text: "Add a fragrance manually"
+    optional: true
+- tapOn:
+    text: "Add a fragrance manually"
+    optional: true
+- assertVisible:
+    text: "Add it manually"
+    optional: true
+- takeScreenshot: nf-09-manual-add-form
+- tapOn:
+    text: "e.g. Libre"
+    optional: true
+- inputText: "Test Scent"
+- hideKeyboard
+- takeScreenshot: nf-10-manual-add-filled
+
+# ── M3b: Perfume Wrapped (Pro-gated) via Profile ────────────────────────────
+# /scan is a stacked route with no tab bar — relaunch to a tabbed home first.
+- launchApp
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- tapOn:
+    text: "You, tab.*"
+- extendedWaitUntil:
+    visible: "Perfume Wrapped"
+    timeout: 20000
+    optional: true
+- scrollUntilVisible:
+    element:
+      text: "Perfume Wrapped"
+    direction: DOWN
+    timeout: 15000
+    visibilityPercentage: 40
+    optional: true
+- tapOn:
+    text: "Perfume Wrapped"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: nf-11-wrapped

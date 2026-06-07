@@ -329,11 +329,11 @@ export default function DiscoverScreen() {
               renders immediately — this is the headline feature of the app. */}
           <View style={styles.dupeHero}>
             <Text style={styles.dupeHeroEyebrow}>SMELL RICH, SPEND LESS</Text>
-            <Text style={styles.dupeHeroTitle}>Find a cheaper version</Text>
+            <Text style={styles.dupeHeroTitle}>Less expensive options</Text>
             <Text style={styles.dupeHeroSub}>
-              Pick a fragrance you love — we'll rank the closest, cheaper dupes by match and savings.
+              Pick a fragrance you love — we'll rank the ones that smell the same for less, by match and savings.
             </Text>
-            <DupePicker placeholder="Find a cheaper version of…" />
+            <DupePicker placeholder="Less expensive options for…" />
           </View>
 
           {/* Suppress all data-driven sections until pool is ready */}
