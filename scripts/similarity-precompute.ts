@@ -1,25 +1,37 @@
 /**
- * Compute similarity matrix and update fragrances.similar_fragrance_ids + dupe_of.
+ * similarity-precompute v2
  *
- * Per spec § 6 Similarity Engine:
- *   similarity =
- *     (note_overlap         * 0.35) +
- *     (accord_overlap       * 0.30) +
- *     (performance_similarity * 0.15) +
- *     (price_similarity     * 0.10) +
- *     (family_match         * 0.10)
+ * Computes the similarity matrix and writes:
+ *   - fragrance_similars   (the "Similar fragrances" rail, top-N per fragrance)
  *
- * Per spec § 7 Dupes Engine:
- *   if similarity > 0.75 AND price_diff > 30%:
- *     mark as dupe (the cheaper one is the dupe of the more expensive one)
+ * It does NOT write dupes. A "dupe" is a deliberate clone of a SPECIFIC
+ * fragrance — human community knowledge, not a similarity score. Accord/note
+ * overlap produces confident FALSE dupe claims (e.g. "Montale Starry Night is
+ * a dupe of J.Lo Enduring Glow"), so fragrance_dupes is CURATED ONLY
+ * (seed/editorial, via scripts/import-dupe-seeds.ts). This job never touches it.
  *
- * For ~2000 fragrances this is 2M pairs — runs in seconds in JS, <30s on a
- * laptop. No need for SQL/vector DB at this scale.
+ * v2 design:
+ *   1. Writes to the FK-constrained relational table, NOT the old
+ *      fragrances.similar_fragrance_ids uuid[] column. The app keys on slug and
+ *      resolves via the get_similars() RPC, which joins UUID -> slug server-side.
+ *   2. Atomic staging -> swap. We bulk-insert into the UNLOGGED staging table,
+ *      then call swap_similars() which replaces live rows in a single
+ *      transaction. No split-brain on a mid-run crash.
  *
- * Run after every insert tranche.
+ * Similarity model:
+ *   0.35 note_overlap + 0.30 accord_jaccard + 0.15 performance + 0.10 price +
+ *   0.10 family_match
+ *
+ * Usage:
+ *   npx tsx scripts/similarity-precompute.ts            # write similars
+ *   npx tsx scripts/similarity-precompute.ts --dry-run  # compute + report only
  */
 
+import * as path from 'path';
+import * as dotenv from 'dotenv';
 import { createClient } from '@supabase/supabase-js';
+
+dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
 const SUPABASE_URL = process.env.SUPABASE_URL || process.env.EXPO_PUBLIC_SUPABASE_URL || '';
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
@@ -32,9 +44,11 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
   auth: { persistSession: false },
 });
 
-const TOP_N_SIMILAR = 12;          // store top 12 for the "Smells Like" rail
-const DUPE_SIM_THRESHOLD = 0.75;
-const DUPE_PRICE_DIFF_PCT = 0.30;
+const DRY_RUN = process.argv.includes('--dry-run');
+
+const TOP_N_SIMILAR = 12;          // store top 12 for the "Similar fragrances" rail
+const SIMILAR_FLOOR = 0.25;        // ignore weak pairs entirely
+const INSERT_CHUNK = 500;
 
 type Frag = {
   id: string;
@@ -49,6 +63,10 @@ type Frag = {
   price_tier: number | null;
   retail_msrp_usd_cents: number | null;
 };
+
+function hasNotes(f: Frag): boolean {
+  return (f.top_notes?.length ?? 0) + (f.heart_notes?.length ?? 0) + (f.base_notes?.length ?? 0) > 0;
+}
 
 function jaccard(a: string[], b: string[]): number {
   if (!a.length && !b.length) return 0;
@@ -95,71 +113,87 @@ function similarity(a: Frag, b: Frag): number {
   );
 }
 
-async function main() {
-  const { data: rows, error } = await supabase
-    .from('fragrances')
-    .select('id,fragrance_family,top_notes,heart_notes,base_notes,top_accords,community_longevity,community_sillage,community_projection,price_tier,retail_msrp_usd_cents')
-    .eq('is_active', true);
-  if (error) throw error;
-  const all = (rows ?? []) as Frag[];
-  console.log(`Computing similarity over ${all.length} fragrances (${all.length * all.length} pairs)...`);
+async function fetchAllActive(): Promise<Frag[]> {
+  const all: Frag[] = [];
+  const COLS =
+    'id,fragrance_family,top_notes,heart_notes,base_notes,top_accords,community_longevity,community_sillage,community_projection,price_tier,retail_msrp_usd_cents';
+  for (let page = 0; ; page++) {
+    const { data, error } = await supabase
+      .from('fragrances')
+      .select(COLS)
+      .eq('is_active', true)
+      .order('id', { ascending: true })
+      .range(page * 1000, page * 1000 + 999);
+    if (error) throw error;
+    all.push(...((data ?? []) as Frag[]));
+    if ((data ?? []).length < 1000) break;
+  }
+  return all;
+}
 
-  const updates: { id: string; similar_fragrance_ids: string[]; dupe_of: string | null; dupe_confidence: number | null }[] = [];
+type SimilarRow = { fragrance_id: string; similar_id: string; similarity: number; rank: number };
+
+async function bulkInsert<T extends object>(table: string, rows: T[]): Promise<void> {
+  for (let i = 0; i < rows.length; i += INSERT_CHUNK) {
+    const chunk = rows.slice(i, i + INSERT_CHUNK);
+    const { error } = await supabase.from(table).insert(chunk);
+    if (error) throw new Error(`insert into ${table} failed at ${i}: ${error.message}`);
+    console.log(`  ${table}: inserted ${Math.min(i + INSERT_CHUNK, rows.length)}/${rows.length}`);
+  }
+}
+
+async function main() {
+  const all = await fetchAllActive();
+  const withNotes = all.filter(hasNotes).length;
+  console.log(
+    `Computing similarity over ${all.length} fragrances (${all.length} with note pyramids, ` +
+    `${all.length * all.length} pairs)...`,
+  );
+
+  const similarRows: SimilarRow[] = [];
 
   for (const a of all) {
-    const scored: { id: string; sim: number; b: Frag }[] = [];
+    const scored: { id: string; sim: number }[] = [];
     for (const b of all) {
       if (a.id === b.id) continue;
       const sim = similarity(a, b);
-      if (sim > 0.25) scored.push({ id: b.id, sim, b });
+      if (sim > SIMILAR_FLOOR) scored.push({ id: b.id, sim });
     }
     scored.sort((x, y) => y.sim - x.sim);
     const top = scored.slice(0, TOP_N_SIMILAR);
 
-    // Dupe detection: among the top-similar, find one with sim > threshold
-    // AND meaningfully cheaper than `a`. The DUPE points to the more expensive
-    // "original" — i.e. dupe_of stores the OG, dupe_confidence stores similarity.
-    let dupe_of: string | null = null;
-    let dupe_confidence: number | null = null;
-    if (a.retail_msrp_usd_cents != null) {
-      for (const s of top) {
-        if (s.sim < DUPE_SIM_THRESHOLD) break;          // sorted desc, can stop
-        if (s.b.retail_msrp_usd_cents == null) continue;
-        // a is cheaper than b by ≥ 30% → a is a dupe OF b
-        if ((s.b.retail_msrp_usd_cents - a.retail_msrp_usd_cents) / s.b.retail_msrp_usd_cents >= DUPE_PRICE_DIFF_PCT) {
-          dupe_of = s.b.id;
-          dupe_confidence = Number(s.sim.toFixed(2));
-          break;
-        }
-      }
-    }
-
-    updates.push({
-      id: a.id,
-      similar_fragrance_ids: top.map((s) => s.id),
-      dupe_of,
-      dupe_confidence,
+    top.forEach((s, idx) => {
+      similarRows.push({
+        fragrance_id: a.id,
+        similar_id: s.id,
+        similarity: Number(s.sim.toFixed(3)),
+        rank: idx,
+      });
     });
   }
 
-  // Apply in chunks to avoid huge single requests
-  const CHUNK = 100;
-  for (let i = 0; i < updates.length; i += CHUNK) {
-    const chunk = updates.slice(i, i + CHUNK);
-    for (const u of chunk) {
-      const { error: upErr } = await supabase
-        .from('fragrances')
-        .update({
-          similar_fragrance_ids: u.similar_fragrance_ids,
-          dupe_of: u.dupe_of,
-          dupe_confidence: u.dupe_confidence,
-        })
-        .eq('id', u.id);
-      if (upErr) console.warn(`  update failed for ${u.id}:`, upErr.message);
+  console.log(
+    `Computed ${similarRows.length} similar rows ` +
+    `(${withNotes} frags had notes to match on).`,
+  );
+
+  if (DRY_RUN) {
+    console.log('DRY RUN — no writes. Sample similar pairs:');
+    for (const s of similarRows.slice(0, 20)) {
+      console.log(`  ${s.fragrance_id} ~ ${s.similar_id} (${(s.similarity * 100).toFixed(0)}%, rank ${s.rank})`);
     }
-    console.log(`  updated [${Math.min(i + CHUNK, updates.length)}/${updates.length}]`);
+    return;
   }
-  console.log(`Done. ${updates.filter((u) => u.dupe_of).length} dupes detected.`);
+
+  // ── Similars: stage → atomic swap ──
+  console.log('\nStaging similars...');
+  await supabase.from('fragrance_similars_staging').delete().neq('fragrance_id', '00000000-0000-0000-0000-000000000000');
+  await bulkInsert('fragrance_similars_staging', similarRows);
+  const { data: simSwapped, error: simErr } = await supabase.rpc('swap_similars');
+  if (simErr) throw new Error(`swap_similars failed: ${simErr.message}`);
+  console.log(`  ✓ swap_similars committed ${simSwapped} rows.`);
+
+  console.log('\nDone. (Dupes are curated-only — see scripts/import-dupe-seeds.ts)');
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

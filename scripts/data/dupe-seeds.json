@@ -1,0 +1,103 @@
+{
+  "_README": "Curated designer-original -> cheaper-dupe seed pairs. FOUNDER CURATES THIS. match_pct is an EDITORIAL judgment (community consensus on how close the dupe smells), not an algorithmic score. source='editorial' = hand-picked marquee clone we stand behind; source='seed' = solid community-known pair. The importer (scripts/import-dupe-seeds.ts) resolves each {brand,name} to a catalog UUID and inserts into fragrance_dupes. Pairs whose dupe or original is not in the catalog are reported as UNRESOLVED so we know what to ingest. Both sides must exist; the dupe side must be purchasable to actually render.",
+  "pairs": [
+    {
+      "original": { "brand": "Creed", "name": "Aventus" },
+      "dupe": { "brand": "Armaf", "name": "Club De Nuit Intense Cologne for Men" },
+      "match_pct": 88,
+      "source": "editorial",
+      "note": "The legendary Aventus clone — fruity pineapple-smoke opening; the single most-cited dupe in the hobby."
+    },
+    {
+      "original": { "brand": "Maison Francis Kurkdjian", "name": "Baccarat Rouge 540" },
+      "dupe": { "brand": "Armaf", "name": "Club de Nuit Iconic" },
+      "match_pct": 84,
+      "source": "editorial",
+      "note": "Sweet saffron-amberwood BR540 profile at a fraction of the price."
+    },
+    {
+      "original": { "brand": "Dior", "name": "Sauvage" },
+      "dupe": { "brand": "Lattafa", "name": "Asad" },
+      "match_pct": 80,
+      "source": "editorial",
+      "note": "Ambroxan-forward fresh-spicy Sauvage vibe; arguably richer in the dry-down."
+    },
+    {
+      "original": { "brand": "Viktor&Rolf", "name": "Spicebomb Extreme" },
+      "dupe": { "brand": "Lattafa", "name": "Khamrah" },
+      "match_pct": 78,
+      "source": "seed",
+      "note": "Warm cinnamon-vanilla-tobacco; gourmand-spicy cousin of Spicebomb Extreme."
+    },
+    {
+      "original": { "brand": "Parfums de Marly", "name": "Layton" },
+      "dupe": { "brand": "Maison Alhambra", "name": "Salvador" },
+      "match_pct": 82,
+      "source": "seed",
+      "note": "Apple-lavender-vanilla Layton profile; one of the closest budget renditions."
+    },
+    {
+      "original": { "brand": "Parfums de Marly", "name": "Herod" },
+      "dupe": { "brand": "Maison Alhambra", "name": "The Tux" },
+      "match_pct": 80,
+      "source": "seed",
+      "note": "Cinnamon-tobacco-vanilla; reads as a near-clone of Herod."
+    },
+    {
+      "original": { "brand": "Initio", "name": "Oud for Greatness" },
+      "dupe": { "brand": "Armaf", "name": "Bucephalus X" },
+      "match_pct": 80,
+      "source": "seed",
+      "note": "Saffron-oud-nutmeg; the go-to OFG budget alternative."
+    },
+    {
+      "original": { "brand": "Tom Ford", "name": "Tobacco Vanille" },
+      "dupe": { "brand": "Maison Alhambra", "name": "Tobacco Honey" },
+      "match_pct": 79,
+      "source": "seed",
+      "note": "Spiced tobacco-vanilla-honey; warm-cozy Tobacco Vanille stand-in."
+    },
+    {
+      "original": { "brand": "Tom Ford", "name": "Oud Wood" },
+      "dupe": { "brand": "Lattafa", "name": "Oud Mood Unisex" },
+      "match_pct": 76,
+      "source": "seed",
+      "note": "Smooth rosewood-oud; lighter but recognizably Oud Wood-adjacent."
+    },
+    {
+      "original": { "brand": "Yves Saint Laurent", "name": "Y Eau de Parfum" },
+      "dupe": { "brand": "Maison Alhambra", "name": "The King" },
+      "match_pct": 80,
+      "source": "seed",
+      "note": "Fresh apple-sage-amberwood; a clean Y EDP impression."
+    },
+    {
+      "original": { "brand": "Giorgio Armani", "name": "Acqua di Gio Profumo" },
+      "dupe": { "brand": "Armaf", "name": "Aqua Perfay" },
+      "match_pct": 77,
+      "source": "seed",
+      "note": "Marine-incense profile echoing the dark Profumo flanker."
+    },
+    {
+      "original": { "brand": "Chanel", "name": "Bleu de Chanel" },
+      "dupe": { "brand": "Maison Alhambra", "name": "Blue de Chance" },
+      "match_pct": 76,
+      "source": "seed",
+      "note": "Citrus-incense-woody; an accessible Bleu de Chanel rendition."
+    },
+    {
+      "original": { "brand": "Versace", "name": "Eros" },
+      "dupe": { "brand": "Lattafa", "name": "Hayaati" },
+      "match_pct": 75,
+      "source": "seed",
+      "note": "Mint-vanilla-tonka; the blue sweet Eros lane on a budget."
+    },
+    {
+      "original": { "brand": "Jean Paul Gaultier", "name": "Le Male" },
+      "dupe": { "brand": "Maison Alhambra", "name": "Jean Lowe Homme" },
+      "match_pct": 78,
+      "source": "seed",
+      "note": "Lavender-vanilla-mint barbershop; a faithful Le Male homage."
+    }
+  ]
+}
