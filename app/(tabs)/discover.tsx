@@ -1,11 +1,13 @@
 import { useState, useMemo, useEffect } from 'react';
-import { ScrollView, View, Text, StyleSheet, TextInput, Pressable, FlatList } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, TextInput, Pressable, FlatList, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { DISCOVER_ACCORDS } from '@/src/constants/accords';
+import { interpretMood, rankByMood, MOOD_SUGGESTIONS } from '@/src/constants/moodLexicon';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
+import { DupePicker } from '@/src/components/fragrance/DupePicker';
 // ALL_BRANDS removed — now derived dynamically from the pool so brand
 // names match the actual Supabase brands.name values.
 import {
@@ -82,6 +84,12 @@ export default function DiscoverScreen() {
   const [filterSheetOpen, setFilterSheetOpen] = useState(false);
   const [filters, setFilters] = useState<DiscoverFilters>(EMPTY_FILTERS);
 
+  // Catalog store selectors — declared up front so the effects below (celebrity
+  // picks, collab recs) can reference them without a use-before-declaration TDZ.
+  const fetchEnriched = useCatalogStore((s) => s.fetchEnriched);
+  const fetchMany = useCatalogStore((s) => s.fetchMany);
+  const searchStore = useCatalogStore((s) => s.search);
+
   // Celebrity Picks — fragrances worn by famous people, with celeb names.
   const [celebrityPicks, setCelebrityPicks] = useState<{ fragrance: Fragrance; celebrities: string }[]>([]);
   useEffect(() => {
@@ -113,46 +121,64 @@ export default function DiscoverScreen() {
 
   // Pull the active catalog pool once so the "By House" + "By Accord"
   // counts and the curated-edit fallback have real data behind them.
-  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
-  const fetchMany = useCatalogStore((s) => s.fetchMany);
-  const searchStore = useCatalogStore((s) => s.search);
   const [pool, setPool] = useState<Fragrance[]>([]);
+  const [poolLoading, setPoolLoading] = useState(true);
   useEffect(() => {
     let cancelled = false;
-    fetchAllActive(200).then((rows) => { if (!cancelled) setPool(rows); });
+    // Use fetchEnriched so all pool frags have real accord/score data —
+    // curated edits and accord filters need populated top_accords to work.
+    fetchEnriched(8000, 0, ['feminine', 'unisex']).then((rows) => {
+      if (!cancelled) { setPool(rows); setPoolLoading(false); }
+    });
     return () => { cancelled = true; };
-  }, [fetchAllActive]);
+  }, [fetchEnriched]);
 
   // When navigated here from the wardrobe "+" button, pass context through so
   // the fragrance detail page can navigate back to wardrobe after adding.
   const fragranceHref = (id: string) =>
     from === 'wardrobe' ? `/fragrance/${id}?from=wardrobe` : `/fragrance/${id}`;
 
+  // Mood/vibe interpretation of the query (PRD §7.2). Non-null only when the
+  // query carries vibe words; drives the mood-ranked branch + banner below.
+  const mood = useMemo(() => interpretMood(query), [query]);
+
   // Debounced async search against Supabase; falls back to MOCK_CATALOG
   // in demo mode via the store's search() method.
   const [searchResults, setSearchResults] = useState<Fragrance[]>([]);
+  // `searching` is true from the moment query is set until results arrive.
+  // We pass null to SearchResults during this window to suppress "No matches".
+  const [searching, setSearching] = useState(false);
   useEffect(() => {
     const q = query.trim();
-    if (!q) { setSearchResults([]); return; }
+    if (!q) { setSearchResults([]); setSearching(false); return; }
+    // Mood branch: rank the already-loaded enriched pool by accord/score match
+    // instead of a literal keyword lookup. Falls through to literal search if
+    // the pool isn't ready yet.
+    if (mood && pool.length > 0) {
+      setSearchResults(rankByMood(pool, mood, 200));
+      setSearching(false);
+      return;
+    }
+    setSearching(true);
     let cancelled = false;
     const t = setTimeout(() => {
-      searchStore(q, 30).then((rows) => {
+      searchStore(q, 200, ['feminine', 'unisex']).then((rows) => {
         if (cancelled) return;
         // Augment with private-note matches: any of our owned fragrances
         // whose notes text contains the query also surface.
         const notesMatchIds = notesSearch(q.toLowerCase()).map((n) => n.fragrance_id);
-        if (notesMatchIds.length === 0) { setSearchResults(rows); return; }
+        if (notesMatchIds.length === 0) { setSearchResults(rows); setSearching(false); return; }
         // Fetch any note-matches that aren't already in the results.
         const have = new Set(rows.map((r) => r.id));
         const missing = notesMatchIds.filter((id) => !have.has(id));
-        if (missing.length === 0) { setSearchResults(rows); return; }
+        if (missing.length === 0) { setSearchResults(rows); setSearching(false); return; }
         fetchMany(missing).then((extra) => {
-          if (!cancelled) setSearchResults([...rows, ...extra]);
+          if (!cancelled) { setSearchResults([...rows, ...extra]); setSearching(false); }
         });
       });
     }, 250);
     return () => { cancelled = true; clearTimeout(t); };
-  }, [query, notesSearch, searchStore, fetchMany]);
+  }, [query, mood, pool, notesSearch, searchStore, fetchMany]);
 
   // Apply faceted filters to the pool.
   const filteredPool = useMemo(() => {
@@ -207,12 +233,15 @@ export default function DiscoverScreen() {
   // Derive brand list + counts dynamically from the pool.
   const topBrands = useMemo(() => {
     const counts = new Map<string, number>();
+    const images = new Map<string, string>();
     for (const f of filteredPool) {
       counts.set(f.brand, (counts.get(f.brand) ?? 0) + 1);
+      if (!images.has(f.brand) && f.image_url) images.set(f.brand, f.image_url);
     }
     return [...counts.entries()]
       .sort((a, b) => b[1] - a[1])
-      .slice(0, 20);
+      .slice(0, 20)
+      .map(([brand, count]) => ({ brand, count, imageUrl: images.get(brand) ?? null }));
   }, [filteredPool]);
 
   // Derive curated-edit fragrances from the filtered pool.
@@ -230,7 +259,7 @@ export default function DiscoverScreen() {
           <TextInput
             value={query}
             onChangeText={setQuery}
-            placeholder="Search fragrances, notes, brands..."
+            placeholder="Search notes, brands, or a vibe…"
             placeholderTextColor={COLORS.subtle}
             style={styles.searchInput}
             autoCapitalize="none"
@@ -244,7 +273,7 @@ export default function DiscoverScreen() {
         </View>
         {/* Filter chip row */}
         <View style={styles.filterRow}>
-          <Pressable style={[styles.filterBtn, filtersActive(filters) && styles.filterBtnActive]} onPress={() => setFilterSheetOpen(true)}>
+          <Pressable style={[styles.filterBtn, filtersActive(filters) && styles.filterBtnActive]} onPress={() => setFilterSheetOpen(true)} accessibilityLabel={filtersActive(filters) ? 'Filtered' : 'Filter'}>
             <Ionicons name="funnel-outline" size={14} color={filtersActive(filters) ? COLORS.white : COLORS.muted} />
             <Text style={[styles.filterBtnText, filtersActive(filters) && styles.filterBtnTextActive]}>
               {filtersActive(filters) ? 'Filtered' : 'Filter'}
@@ -256,19 +285,36 @@ export default function DiscoverScreen() {
             </Pressable>
           )}
         </View>
+        {query.length === 0 && (
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.vibeRow}
+          >
+            {MOOD_SUGGESTIONS.map((v) => (
+              <Pressable key={v} style={styles.vibeChip} onPress={() => setQuery(v)}>
+                <Ionicons name="sparkles-outline" size={12} color={COLORS.accent} />
+                <Text style={styles.vibeChipText}>{v}</Text>
+              </Pressable>
+            ))}
+          </ScrollView>
+        )}
       </View>
 
       {query.length > 0 ? (
-        <SearchResults results={searchResults} query={query} fragranceHref={fragranceHref} />
+        <View style={styles.resultsWrap}>
+          {mood && (
+            <View style={styles.moodBanner}>
+              <Ionicons name="sparkles-outline" size={14} color={COLORS.accent} />
+              <Text style={styles.moodBannerText}>
+                Showing <Text style={styles.moodBannerEmph}>{mood.labels.join(', ')}</Text> scents
+              </Text>
+            </View>
+          )}
+          <SearchResults results={searching ? null : searchResults} query={query} fragranceHref={fragranceHref} />
+        </View>
       ) : (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
-          {/* SOTD feed entry point */}
-          <Pressable style={styles.feedBanner} onPress={() => router.push('/feed' as any)}>
-            <Ionicons name="globe-outline" size={18} color={COLORS.accent} />
-            <Text style={styles.feedBannerText}>Scent of the Day Feed</Text>
-            <Ionicons name="chevron-forward" size={16} color={COLORS.muted} />
-          </Pressable>
-
           {filtersActive(filters) && filteredPool.length === 0 && (
             <EmptyState
               icon="funnel-outline"
@@ -279,28 +325,19 @@ export default function DiscoverScreen() {
             />
           )}
 
-          <Section eyebrow="CURATED EDITS" cursive="for every mood">
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.editPillRow}
-            >
-              {CURATED_EDITS_META.map((e) => (
-                <Pressable key={e.id} onPress={() => setActiveEdit(e.id)}>
-                  <View style={[styles.editPill, activeEdit === e.id && styles.editPillActive]}>
-                    <Text style={[styles.editPillText, activeEdit === e.id && styles.editPillTextActive]}>
-                      {e.label}
-                    </Text>
-                  </View>
-                </Pressable>
-              ))}
-            </ScrollView>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-              {editFragrances.map((f) => (
-                <FragranceCard key={f.id} fragrance={f} variant="compact" onPress={() => router.push(fragranceHref(f.id) as any)} />
-              ))}
-            </ScrollView>
-          </Section>
+          {/* Dupe-finder hero (PRD §7.1, surface 2). Pool-independent, so it
+              renders immediately — this is the headline feature of the app. */}
+          <View style={styles.dupeHero}>
+            <Text style={styles.dupeHeroEyebrow}>SMELL RICH, SPEND LESS</Text>
+            <Text style={styles.dupeHeroTitle}>Find a cheaper version</Text>
+            <Text style={styles.dupeHeroSub}>
+              Pick a fragrance you love — we'll rank the closest, cheaper dupes by match and savings.
+            </Text>
+            <DupePicker placeholder="Find a cheaper version of…" />
+          </View>
+
+          {/* Suppress all data-driven sections until pool is ready */}
+          {poolLoading ? null : <>
 
           {/* Celebrity Picks — fragrances worn by famous people */}
           {celebrityPicks.length > 0 && (
@@ -315,14 +352,19 @@ export default function DiscoverScreen() {
 
           <Section eyebrow="BY HOUSE" cursive="explore brands">
             <View style={styles.brandGrid}>
-              {topBrands.map(([brand, count]) => (
+              {topBrands.map(({ brand, count, imageUrl }) => (
                 <Pressable
                   key={brand}
                   style={styles.brandTile}
                   onPress={() => router.push(`/brand/${encodeURIComponent(brand)}` as any)}
+                  accessibilityLabel={brand}
                 >
-                  <Text style={styles.brandTileLabel} numberOfLines={2}>{brand}</Text>
-                  <Text style={styles.brandTileCount}>{count}</Text>
+                  {imageUrl ? (
+                    <Image source={{ uri: imageUrl }} style={styles.brandTileImage} resizeMode="cover" />
+                  ) : null}
+                  <View style={[styles.brandTileOverlay, !imageUrl && styles.brandTileOverlayPlain]} />
+                  <Text style={[styles.brandTileLabel, imageUrl && styles.brandTileLabelOnImage]} numberOfLines={2}>{brand}</Text>
+                  <Text style={[styles.brandTileCount, imageUrl && styles.brandTileCountOnImage]}>{count}</Text>
                 </Pressable>
               ))}
             </View>
@@ -344,6 +386,30 @@ export default function DiscoverScreen() {
                 );
               })}
             </View>
+          </Section>
+
+          {/* R17: Browse by Mood — Curated Edits demoted below search surfaces */}
+          <Section eyebrow="BROWSE BY MOOD" cursive="curated edits">
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.editPillRow}
+            >
+              {CURATED_EDITS_META.map((e) => (
+                <Pressable key={e.id} onPress={() => setActiveEdit(e.id)}>
+                  <View style={[styles.editPill, activeEdit === e.id && styles.editPillActive]}>
+                    <Text style={[styles.editPillText, activeEdit === e.id && styles.editPillTextActive]}>
+                      {e.label}
+                    </Text>
+                  </View>
+                </Pressable>
+              ))}
+            </ScrollView>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+              {editFragrances.map((f) => (
+                <FragranceCard key={f.id} fragrance={f} variant="compact" onPress={() => router.push(fragranceHref(f.id) as any)} />
+              ))}
+            </ScrollView>
           </Section>
 
           {/* Collaborative filtering recs */}
@@ -381,6 +447,7 @@ export default function DiscoverScreen() {
           )}
 
           <View style={{ height: SPACING.xxl }} />
+          </>}
         </ScrollView>
       )}
       <DiscoverFilterSheet
@@ -395,15 +462,17 @@ export default function DiscoverScreen() {
 
 const SEARCH_PAGE_SIZE = 20;
 
-function SearchResults({ results, query, fragranceHref }: { results: Fragrance[]; query: string; fragranceHref: (id: string) => string }) {
+function SearchResults({ results, query, fragranceHref }: { results: Fragrance[] | null; query: string; fragranceHref: (id: string) => string }) {
   const router = useRouter();
   const [showAll, setShowAll] = useState(false);
-  const visible = showAll ? results : results.slice(0, SEARCH_PAGE_SIZE);
-  const hiddenCount = results.length - SEARCH_PAGE_SIZE;
+  const visible = showAll ? (results ?? []) : (results ?? []).slice(0, SEARCH_PAGE_SIZE);
+  const hiddenCount = (results?.length ?? 0) - SEARCH_PAGE_SIZE;
 
   // Reset show-all when query changes so stale expanded state doesn't carry over.
   useEffect(() => { setShowAll(false); }, [query]);
 
+  // null = still searching (debounce window) — render nothing to avoid flash.
+  if (results === null) return null;
   if (results.length === 0) {
     return (
       <View style={styles.empty}>
@@ -425,12 +494,12 @@ function SearchResults({ results, query, fragranceHref }: { results: Fragrance[]
       ListFooterComponent={
         !showAll && hiddenCount > 0 ? (
           <Pressable style={styles.showMoreRow} onPress={() => setShowAll(true)}>
-            <Text style={styles.showMoreText}>Showing top {SEARCH_PAGE_SIZE} of {results.length} results</Text>
+            <Text style={styles.showMoreText}>Showing top {SEARCH_PAGE_SIZE} of {results?.length} results</Text>
             <Text style={styles.showMoreCta}>Show all →</Text>
           </Pressable>
-        ) : results.length > SEARCH_PAGE_SIZE ? (
+        ) : (results?.length ?? 0) > SEARCH_PAGE_SIZE ? (
           <Text style={styles.showMoreText}>
-            Showing all {results.length} results
+            Showing all {results?.length} results
           </Text>
         ) : null
       }
@@ -484,6 +553,25 @@ const styles = StyleSheet.create({
   filterBtnText: { ...TYPE.label, fontSize: 12, color: COLORS.muted },
   filterBtnTextActive: { color: COLORS.white },
   clearFiltersText: { ...TYPE.label, fontSize: 12, color: COLORS.accent },
+  vibeRow: { paddingTop: SPACING.sm, paddingRight: SPACING.lg, gap: 8 },
+  vibeChip: {
+    flexDirection: 'row', alignItems: 'center', gap: 4,
+    paddingHorizontal: 12, paddingVertical: 7,
+    borderRadius: RADIUS.full,
+    borderWidth: 1, borderColor: COLORS.border,
+    backgroundColor: COLORS.card,
+    marginRight: 8,
+  },
+  vibeChipText: { ...TYPE.label, fontSize: 12, color: COLORS.text },
+  resultsWrap: { flex: 1 },
+  moodBanner: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    marginHorizontal: SPACING.lg, marginTop: SPACING.md,
+    paddingHorizontal: SPACING.md, paddingVertical: SPACING.sm,
+    backgroundColor: COLORS.blushSoft, borderRadius: RADIUS.md,
+  },
+  moodBannerText: { ...TYPE.bodySmall, color: COLORS.muted, flex: 1 },
+  moodBannerEmph: { color: COLORS.text, fontWeight: '700' },
   twinsGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm, paddingRight: SPACING.lg },
   twinCard: {
     width: '30%', alignItems: 'center',
@@ -509,6 +597,20 @@ const styles = StyleSheet.create({
   },
   feedBannerText: { ...TYPE.label, fontSize: 13, color: COLORS.text, flex: 1 },
 
+  dupeHero: {
+    marginHorizontal: SPACING.lg,
+    marginTop: SPACING.lg,
+    padding: SPACING.lg,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+    gap: SPACING.sm,
+  },
+  dupeHeroEyebrow: { ...TYPE.eyebrow },
+  dupeHeroTitle: { fontFamily: FONTS.serif, fontSize: 26, fontWeight: '700', color: COLORS.text },
+  dupeHeroSub: { ...TYPE.bodySmall, color: COLORS.muted, lineHeight: 19, marginBottom: SPACING.xs },
+
   editPillRow: { paddingRight: SPACING.lg, paddingBottom: SPACING.md, gap: 8 },
   editPill: {
     paddingHorizontal: 14, paddingVertical: 7,
@@ -528,16 +630,40 @@ const styles = StyleSheet.create({
   },
   brandTile: {
     width: '47%',
-    paddingVertical: SPACING.lg,
-    paddingHorizontal: SPACING.md,
+    aspectRatio: 1,
     backgroundColor: COLORS.card,
     borderRadius: RADIUS.md,
     borderWidth: 1, borderColor: COLORS.border,
-    alignItems: 'center', justifyContent: 'center',
-    minHeight: 80,
+    overflow: 'hidden',
+    alignItems: 'center', justifyContent: 'flex-end',
+    paddingBottom: SPACING.sm,
+    paddingHorizontal: SPACING.sm,
   },
-  brandTileLabel: { fontFamily: FONTS.serif, fontSize: 16, fontWeight: '600', color: COLORS.text, textAlign: 'center' },
-  brandTileCount: { ...TYPE.caption, color: COLORS.muted, marginTop: 4, textAlign: 'center' },
+  brandTileImage: {
+    ...StyleSheet.absoluteFillObject,
+    width: '100%', height: '100%',
+  },
+  brandTileOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(10,6,2,0.68)',
+  },
+  brandTileOverlayPlain: {
+    backgroundColor: 'transparent',
+  },
+  brandTileLabel: { fontFamily: FONTS.serif, fontSize: 15, fontWeight: '700', color: COLORS.text, textAlign: 'center' },
+  brandTileLabelOnImage: {
+    color: '#ffffff',
+    textShadowColor: 'rgba(0,0,0,0.8)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 4,
+  },
+  brandTileCount: { ...TYPE.caption, color: COLORS.muted, marginTop: 2, textAlign: 'center' },
+  brandTileCountOnImage: {
+    color: 'rgba(255,255,255,0.9)',
+    textShadowColor: 'rgba(0,0,0,0.6)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 3,
+  },
 
   accordGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm, paddingRight: SPACING.lg },
   accordTile: {

@@ -14,6 +14,8 @@ interface Review {
   rating_sillage: number | null;
   rating_value: number | null;
   body: string | null;
+  quick_take: string | null;
+  tags: string[] | null;
   helpful_count: number;
   created_at: string;
   profiles?: { display_name: string | null } | null;
@@ -21,21 +23,39 @@ interface Review {
 
 interface Props {
   fragranceId: string;
+  onHasData?: () => void;
 }
+
+/** One-tap descriptors (PRD §7.7) — "just say what it smells like." */
+const QUICK_TAGS = [
+  'Compliment magnet',
+  'Office-safe',
+  'Smells expensive',
+  'Too strong',
+  'Long-lasting',
+  'Short-lived',
+  'Versatile',
+  'Unique',
+] as const;
 
 /**
  * Community reviews section for fragrance detail.
  * Shows review form + list of reviews sorted by helpful_count.
  * Compact card-based layout per LX-1.
  */
-export function ReviewSection({ fragranceId }: Props) {
+export function ReviewSection({ fragranceId, onHasData }: Props) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [myReview, setMyReview] = useState<Review | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [rating, setRating] = useState(0);
+  const [quickTake, setQuickTake] = useState('');
+  const [tags, setTags] = useState<string[]>([]);
   const [body, setBody] = useState('');
   const [submitting, setSubmitting] = useState(false);
+
+  const toggleTag = (tag: string) =>
+    setTags((cur) => (cur.includes(tag) ? cur.filter((t) => t !== tag) : [...cur, tag]));
   const wardrobeItems = useWardrobeStore((s) => s.items);
 
   const loadReviews = useCallback(async () => {
@@ -45,19 +65,24 @@ export function ReviewSection({ fragranceId }: Props) {
 
     const { data } = await supabase
       .from('fragrance_reviews')
-      .select('*, profiles(display_name)')
+      .select('*, profiles!fragrance_reviews_user_id_profiles_fkey(display_name)')
       .eq('fragrance_id', fragranceId)
       .order('helpful_count', { ascending: false })
       .limit(20);
 
     if (data) {
-      setReviews(data);
+      // Quick-takes first (PRD §7.7) — pithy "smells like" statements float
+      // above plain reviews; helpful_count order is preserved within groups.
+      const hasTake = (r: Review) => !!(r.quick_take || (r.tags && r.tags.length > 0));
+      const sorted = [...data].sort((a, b) => Number(hasTake(b)) - Number(hasTake(a)));
+      setReviews(sorted);
+      if (data.length > 0) onHasData?.();
       if (user) {
         const mine = data.find((r) => r.user_id === user.id);
         if (mine) setMyReview(mine);
       }
     }
-  }, [fragranceId]);
+  }, [fragranceId, onHasData]);
 
   useEffect(() => { loadReviews(); }, [loadReviews]);
 
@@ -68,6 +93,8 @@ export function ReviewSection({ fragranceId }: Props) {
       user_id: userId,
       fragrance_id: fragranceId,
       rating_overall: rating,
+      quick_take: quickTake.trim() || null,
+      tags,
       body: body.trim() || null,
     }, { onConflict: 'user_id,fragrance_id' });
     setSubmitting(false);
@@ -79,6 +106,8 @@ export function ReviewSection({ fragranceId }: Props) {
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     setShowForm(false);
     setRating(0);
+    setQuickTake('');
+    setTags([]);
     setBody('');
     loadReviews();
   };
@@ -102,7 +131,7 @@ export function ReviewSection({ fragranceId }: Props) {
           {reviews.length} review{reviews.length !== 1 ? 's' : ''}
         </Text>
         {!myReview && userId && (
-          <Pressable onPress={() => setShowForm(!showForm)} style={styles.writeBtn}>
+          <Pressable onPress={() => setShowForm(!showForm)} style={styles.writeBtn} accessibilityLabel="Write a Review">
             <Ionicons name="create-outline" size={14} color={COLORS.accent} />
             <Text style={styles.writeBtnText}>Write a Review</Text>
           </Pressable>
@@ -124,10 +153,32 @@ export function ReviewSection({ fragranceId }: Props) {
               </Pressable>
             ))}
           </View>
+          <Text style={styles.formLabel}>SMELLS LIKE…</Text>
+          <TextInput
+            value={quickTake}
+            onChangeText={setQuickTake}
+            placeholder="One line — e.g. “warm vanilla & smoke”"
+            placeholderTextColor={COLORS.subtle}
+            style={styles.quickInput}
+            maxLength={140}
+          />
+
+          <Text style={styles.formLabel}>QUICK TAGS</Text>
+          <View style={styles.tagWrap}>
+            {QUICK_TAGS.map((t) => {
+              const on = tags.includes(t);
+              return (
+                <Pressable key={t} onPress={() => toggleTag(t)} style={[styles.tagChip, on && styles.tagChipOn]}>
+                  <Text style={[styles.tagChipText, on && styles.tagChipTextOn]}>{t}</Text>
+                </Pressable>
+              );
+            })}
+          </View>
+
           <TextInput
             value={body}
             onChangeText={setBody}
-            placeholder="Share your thoughts (optional)"
+            placeholder="More thoughts (optional)"
             placeholderTextColor={COLORS.subtle}
             multiline
             style={styles.bodyInput}
@@ -164,6 +215,18 @@ export function ReviewSection({ fragranceId }: Props) {
               ))}
             </View>
           </View>
+          {r.quick_take && (
+            <Text style={styles.quickTake}>“{r.quick_take}”</Text>
+          )}
+          {r.tags && r.tags.length > 0 && (
+            <View style={styles.reviewTagWrap}>
+              {r.tags.map((t) => (
+                <View key={t} style={styles.reviewTag}>
+                  <Text style={styles.reviewTagText}>{t}</Text>
+                </View>
+              ))}
+            </View>
+          )}
           {r.body && <Text style={styles.reviewBody} numberOfLines={4}>{r.body}</Text>}
           <View style={styles.reviewFooter}>
             <Text style={styles.reviewDate}>
@@ -200,6 +263,21 @@ const styles = StyleSheet.create({
   },
   formLabel: { ...TYPE.eyebrow, fontSize: 10 },
   starRow: { flexDirection: 'row', gap: 4 },
+  quickInput: {
+    ...TYPE.body,
+    backgroundColor: COLORS.bg, borderRadius: RADIUS.md,
+    paddingHorizontal: SPACING.sm, paddingVertical: 10,
+  },
+  tagWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
+  tagChip: {
+    paddingHorizontal: 10, paddingVertical: 6,
+    borderRadius: RADIUS.full,
+    borderWidth: 1, borderColor: COLORS.border,
+    backgroundColor: COLORS.bg,
+  },
+  tagChipOn: { backgroundColor: COLORS.accent, borderColor: COLORS.accent },
+  tagChipText: { ...TYPE.label, fontSize: 11, color: COLORS.muted },
+  tagChipTextOn: { color: COLORS.white },
   bodyInput: {
     ...TYPE.body, minHeight: 60,
     backgroundColor: COLORS.bg, borderRadius: RADIUS.md,
@@ -220,6 +298,14 @@ const styles = StyleSheet.create({
   reviewAuthor: { ...TYPE.label, fontSize: 12, color: COLORS.text },
   ownsBadge: { color: COLORS.accent, fontWeight: '500' },
   reviewStars: { flexDirection: 'row', gap: 1 },
+  quickTake: { fontFamily: FONTS.serif, fontSize: 15, color: COLORS.text, fontStyle: 'italic', lineHeight: 21 },
+  reviewTagWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 5, marginTop: 2 },
+  reviewTag: {
+    paddingHorizontal: 8, paddingVertical: 3,
+    borderRadius: RADIUS.full,
+    backgroundColor: COLORS.blushSoft,
+  },
+  reviewTagText: { ...TYPE.caption, fontSize: 10, color: COLORS.accent },
   reviewBody: { ...TYPE.bodySmall, color: COLORS.text, lineHeight: 18 },
   reviewFooter: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 2 },
   reviewDate: { ...TYPE.caption, fontSize: 10 },

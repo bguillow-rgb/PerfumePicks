@@ -1,15 +1,29 @@
-import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert, TextInput } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Pressable, Image, Alert, TextInput, Switch, Linking } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
+import Constants from 'expo-constants';
+import * as Updates from 'expo-updates';
 import { useState, useEffect, useRef } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
 import { useProfileStore } from '@/src/stores/useProfileStore';
+import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
+import { useWearLogStore } from '@/src/stores/useWearLogStore';
+import { useSwipeStore } from '@/src/stores/useSwipeStore';
+import { useTasteProfile } from '@/src/features/recommend/useRecommendations';
 import { pickAndSetProfilePhoto, clearProfilePhoto } from '@/src/lib/profilePhoto';
 import { restorePurchases, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { User } from '@supabase/supabase-js';
+import { useNotificationStore } from '@/src/stores/useNotificationStore';
+import {
+  requestNotificationPermission,
+  scheduleSotdNotification,
+  cancelSotdNotification,
+  scheduleAddBottlesNotification,
+  cancelAddBottlesNotification,
+} from '@/src/lib/notifications';
 
 /**
  * Profile tab — account, taste profile, settings, paywall entry.
@@ -49,6 +63,7 @@ export default function ProfileScreen() {
       { text: 'Cancel', style: 'cancel' },
       {
         text: 'Sign Out', style: 'destructive', onPress: async () => {
+          deactivate();
           await supabase.auth.signOut();
           router.replace('/auth/login');
         },
@@ -164,7 +179,7 @@ export default function ProfileScreen() {
               same persisted store. */}
           <Pressable
             onPress={handleChangePhoto}
-            onLongPress={photoUri ? clearProfilePhoto : undefined}
+            onLongPress={photoUri ? () => { clearProfilePhoto(); } : undefined}
             style={styles.avatarTouch}
           >
             <View style={styles.avatar}>
@@ -232,6 +247,8 @@ export default function ProfileScreen() {
           )}
         </View>
 
+        <ProfileStatsRow />
+
         <Section title="Taste Profile">
           <Row label="Take the quiz" onPress={() => router.push('/quiz')} />
           <Row label="View taste insights" onPress={() => router.push('/taste-profile')} pro disabled={!isPro} />
@@ -248,9 +265,11 @@ export default function ProfileScreen() {
           {!isGuest && <Row label="Delete Account" onPress={handleDeleteAccount} danger />}
         </Section>
 
+        <NotificationsSection />
+
         <Section title="About">
           <Row label="Privacy Policy" onPress={() => router.push('/legal/privacy')} />
-          <Row label="Terms of Service" onPress={() => router.push('/legal/terms')} />
+          <Row label="Terms of Use" onPress={() => router.push('/legal/terms')} />
         </Section>
 
         {__DEV__ && (
@@ -261,8 +280,48 @@ export default function ProfileScreen() {
             />
           </Section>
         )}
+
+        <VersionFooter />
       </ScrollView>
     </SafeAreaView>
+  );
+}
+
+function ProfileStatsRow() {
+  const wardrobeCount = useWardrobeStore((s) => s.items.filter((i) => i.status === 'have').length);
+  const wearCount = useWearLogStore((s) => s.logs.length);
+  const swipesMap = useSwipeStore((s) => s.swipes);
+  const swipeCount = Object.keys(swipesMap).length;
+  const profile = useTasteProfile();
+  const topAccord = Object.entries(profile.preferred_accords)
+    .sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
+
+  return (
+    <View style={styles.statsRow}>
+      <View style={styles.statItem}>
+        <Text style={styles.statValue}>{wardrobeCount}</Text>
+        <Text style={styles.statLabel}>owned</Text>
+      </View>
+      <View style={styles.statDivider} />
+      <View style={styles.statItem}>
+        <Text style={styles.statValue}>{swipeCount}</Text>
+        <Text style={styles.statLabel}>swipes</Text>
+      </View>
+      <View style={styles.statDivider} />
+      <View style={styles.statItem}>
+        <Text style={styles.statValue}>{wearCount}</Text>
+        <Text style={styles.statLabel}>wears</Text>
+      </View>
+      {topAccord && (
+        <>
+          <View style={styles.statDivider} />
+          <View style={[styles.statItem, { flex: 1.4 }]}>
+            <Text style={[styles.statValue, { fontSize: 13 }]} numberOfLines={1}>{topAccord}</Text>
+            <Text style={styles.statLabel}>top accord</Text>
+          </View>
+        </>
+      )}
+    </View>
   );
 }
 
@@ -314,6 +373,88 @@ function BadgesSection() {
   );
 }
 
+function NotificationsSection() {
+  const permissionStatus = useNotificationStore((s) => s.permissionStatus);
+  const sotdEnabled = useNotificationStore((s) => s.sotdEnabled);
+  const addBottlesEnabled = useNotificationStore((s) => s.addBottlesEnabled);
+  const setSotdEnabled = useNotificationStore((s) => s.setSotdEnabled);
+  const setAddBottlesEnabled = useNotificationStore((s) => s.setAddBottlesEnabled);
+
+  const handleSotdToggle = async (value: boolean) => {
+    setSotdEnabled(value);
+    if (value) {
+      if (permissionStatus !== 'granted') {
+        const granted = await requestNotificationPermission();
+        if (!granted) {
+          setSotdEnabled(false);
+          Linking.openSettings();
+          return;
+        }
+      }
+      await scheduleSotdNotification();
+    } else {
+      await cancelSotdNotification();
+    }
+  };
+
+  const handleAddBottlesToggle = async (value: boolean) => {
+    setAddBottlesEnabled(value);
+    if (value) {
+      if (permissionStatus !== 'granted') {
+        const granted = await requestNotificationPermission();
+        if (!granted) {
+          setAddBottlesEnabled(false);
+          Linking.openSettings();
+          return;
+        }
+      }
+      await scheduleAddBottlesNotification();
+    } else {
+      await cancelAddBottlesNotification();
+    }
+  };
+
+  return (
+    <Section title="Notifications">
+      <ToggleRow
+        label="Scent of the Day"
+        hint="Daily 8am reminder"
+        value={sotdEnabled}
+        onValueChange={handleSotdToggle}
+      />
+      <ToggleRow
+        label="Add your bottles"
+        hint="One-time nudge to build your wardrobe"
+        value={addBottlesEnabled}
+        onValueChange={handleAddBottlesToggle}
+      />
+    </Section>
+  );
+}
+
+function ToggleRow({ label, hint, value, onValueChange }: {
+  label: string;
+  hint: string;
+  value: boolean;
+  onValueChange: (v: boolean) => void;
+}) {
+  return (
+    <View style={styles.toggleRow}>
+      <View style={styles.toggleRowText}>
+        <Text style={styles.rowLabel}>{label}</Text>
+        <Text style={styles.toggleHint}>{hint}</Text>
+      </View>
+      <Switch
+        value={value}
+        onValueChange={onValueChange}
+        trackColor={{ false: COLORS.border, true: COLORS.accent }}
+        thumbColor={COLORS.white}
+        ios_backgroundColor={COLORS.border}
+      />
+    </View>
+  );
+}
+
 function Row({
   label, onPress, pro, disabled, danger,
 }: { label: string; onPress?: () => void; pro?: boolean; disabled?: boolean; danger?: boolean }) {
@@ -327,11 +468,24 @@ function Row({
     <Pressable
       style={[styles.row, disabled && styles.rowDisabled]}
       onPress={handlePress}
+      accessibilityLabel={label}
     >
       <Text style={[styles.rowLabel, disabled && styles.rowLabelDisabled, danger && styles.rowLabelDanger]}>{label}</Text>
       {pro && <Text style={styles.proPill}>PRO</Text>}
       {!danger && <Ionicons name="chevron-forward" size={18} color={COLORS.muted} />}
     </Pressable>
+  );
+}
+
+function VersionFooter() {
+  const appVersion = Constants.expoConfig?.version ?? '—';
+  const updateId = Updates.updateId;
+  const shortId = updateId ? updateId.slice(0, 8) : 'embedded';
+  const channel = Updates.channel ?? 'dev';
+  return (
+    <Text style={styles.versionFooter}>
+      v{appVersion} · {channel} · {shortId}
+    </Text>
   );
 }
 
@@ -437,6 +591,17 @@ const styles = StyleSheet.create({
   rowLabel: { ...TYPE.body, flex: 1 },
   rowLabelDisabled: { color: COLORS.subtle },
   rowLabelDanger: { color: COLORS.danger },
+  toggleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.sm + 2,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: COLORS.border,
+    gap: SPACING.md,
+  },
+  toggleRowText: { flex: 1 },
+  toggleHint: { ...TYPE.caption, color: COLORS.muted, marginTop: 2 },
   badgeGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.md, padding: SPACING.md },
   badgeItem: { alignItems: 'center', gap: 4, width: 70 },
   badgeLabel: { ...TYPE.caption, fontSize: 9, textAlign: 'center' },
@@ -449,5 +614,50 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.accent,
     borderRadius: RADIUS.full,
+  },
+  statsRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: SPACING.lg,
+    marginTop: SPACING.lg,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    paddingVertical: SPACING.md,
+  },
+  statItem: {
+    flex: 1,
+    alignItems: 'center',
+    gap: 3,
+    paddingHorizontal: SPACING.xs,
+  },
+  statValue: {
+    fontFamily: FONTS.serif,
+    fontSize: 22,
+    fontWeight: '700',
+    color: COLORS.accent,
+    lineHeight: 26,
+  },
+  statLabel: {
+    ...TYPE.caption,
+    fontSize: 9,
+    color: COLORS.muted,
+    textTransform: 'uppercase',
+    letterSpacing: 0.8,
+  },
+  statDivider: {
+    width: 1,
+    height: 28,
+    backgroundColor: COLORS.border,
+  },
+  versionFooter: {
+    ...TYPE.caption,
+    fontSize: 10,
+    color: COLORS.subtle,
+    textAlign: 'center',
+    marginTop: SPACING.xl,
+    marginBottom: SPACING.sm,
+    fontStyle: 'italic',
   },
 });
