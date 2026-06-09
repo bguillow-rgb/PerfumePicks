@@ -232,15 +232,42 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
 
     // Production: query Supabase
     if (q) {
-      // PostgREST or() doesn't support joined columns, so run two queries:
-      // 1) fragrance name match, 2) brand name match via brand_id lookup
-      const { data: brandRows } = await supabase
-        .from('brands')
-        .select('id')
-        .ilike('name', `%${q}%`);
+      // Brand + name combined search. Matching the whole query against the
+      // fragrance name OR the brand name independently fails for the most
+      // natural input — "burberry goddess" — because the bottle is stored as
+      // name "Goddess" under brand "Burberry", so neither column contains the
+      // full string. Fix: detect which tokens name a brand, strip them, and
+      // match the remaining tokens against the fragrance name *within* those
+      // brands.
+      const tokens = q.split(/\s+/).filter(Boolean);
+      // Sanitize before interpolating into a PostgREST .or() string (that string
+      // is parsed structurally — raw commas/parens/dots would break it). Require
+      // >=3 chars so stop-words like "le"/"no" don't match half the brand table.
+      const brandTokens = tokens
+        .map((t) => t.replace(/[^a-z0-9]/gi, ''))
+        .filter((t) => t.length >= 3);
 
-      const brandIds = (brandRows ?? []).map((b: any) => b.id);
+      let matchedBrands: { id: string; name: string }[] = [];
+      if (brandTokens.length > 0) {
+        const orFilter = brandTokens.map((t) => `name.ilike.*${t}*`).join(',');
+        const { data: brandRows } = await supabase
+          .from('brands')
+          .select('id, name')
+          .or(orFilter);
+        matchedBrands = (brandRows ?? []) as { id: string; name: string }[];
+      }
+      const brandIds = [...new Set(matchedBrands.map((b) => b.id))];
 
+      // Tokens "explained" by a matched brand name → not part of the bottle name.
+      const consumed = new Set<string>();
+      for (const b of matchedBrands) {
+        const bn = b.name.toLowerCase();
+        for (const t of tokens) if (t.length >= 3 && bn.includes(t)) consumed.add(t);
+      }
+      const nameRemainder = tokens.filter((t) => !consumed.has(t)).join(' ').trim();
+
+      // 1) Fragrance-name match on the full query (handles names that literally
+      //    contain the whole string, and pure-name queries with no brand token).
       let nameQb = supabase
         .from('fragrances')
         .select(FRAGRANCE_SELECT)
@@ -250,6 +277,8 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         .limit(limit);
       if (genders?.length) nameQb = nameQb.in('gender', genders);
 
+      // 2) Within matched brands, narrow by the leftover name tokens — or return
+      //    the whole brand when the query was brand-only (nameRemainder empty).
       const namePromise = nameQb;
       const brandPromise = brandIds.length > 0
         ? (() => {
@@ -260,6 +289,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
               .in('brand_id', brandIds)
               .order('name', { ascending: true })
               .limit(limit);
+            if (nameRemainder) bqb = bqb.ilike('name', `%${nameRemainder}%`);
             if (genders?.length) bqb = bqb.in('gender', genders);
             return bqb;
           })()
