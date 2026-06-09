@@ -96,7 +96,15 @@ export default function QuizResults() {
             {matches.map((f, i) => (
               <View key={f.id} style={{ marginBottom: SPACING.lg }}>
                 <Text style={styles.rank}>No. {i + 1}</Text>
-                <FragranceCard fragrance={f} variant="compact" />
+                {/* Tag the detail route so its back button returns here (quiz
+                    results lives in the root stack, outside the tab navigator —
+                    a plain router.back() from the tabs detail screen would land
+                    on the Today tab instead). */}
+                <FragranceCard
+                  fragrance={f}
+                  variant="compact"
+                  onPress={() => router.push(`/fragrance/${f.id}?from=quiz`)}
+                />
               </View>
             ))}
           </View>

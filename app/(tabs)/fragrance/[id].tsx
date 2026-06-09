@@ -274,7 +274,14 @@ function FragranceDetailScreen() {
   // renders. Recreating Gesture.Pan() on every render (which happened when it
   // was defined after the guard) forces RNGH to re-attach the handler on every
   // state update, which can corrupt gesture state after several navigations.
-  const goBack = useCallback(() => router.back(), [router]);
+  // Quiz results live in the root stack (outside the tab navigator), so a plain
+  // router.back() from this tabs-nested detail screen pops to the Today tab
+  // instead of returning to the quiz. Route back explicitly when we came from
+  // there. (Mirrors the from==='wardrobe' post-add flow below.)
+  const goBack = useCallback(() => {
+    if (from === 'quiz') { router.replace('/quiz/results'); return; }
+    router.back();
+  }, [router, from]);
   const swipeBack = useMemo(() =>
     Gesture.Pan()
       .activeOffsetX(15)
@@ -463,8 +470,16 @@ function FragranceDetailScreen() {
 
             <Pressable
               style={({ pressed }) => [styles.actionBtnHalf, styles.actionBtnSecondary, compareIds.length < 2 && styles.actionBtnDisabled, pressed && { opacity: 0.75 }]}
-              disabled={compareIds.length < 2}
-              onPress={() => router.push('/compare' as any)}
+              onPress={() => {
+                if (compareIds.length < 2) {
+                  Alert.alert(
+                    'Add one more to compare',
+                    'Tap “Compare” on at least two fragrances, then “View” opens them side-by-side.',
+                  );
+                  return;
+                }
+                router.push('/compare' as any);
+              }}
               accessibilityLabel="Open comparison"
             >
               <Ionicons name="albums-outline" size={15} color={compareIds.length < 2 ? COLORS.muted : COLORS.text} />
@@ -518,7 +533,13 @@ function FragranceDetailScreen() {
           </Section>
         )}
 
-        {(fragrance.community_longevity > 0 || fragrance.community_sillage > 0 || fragrance.community_projection > 0) && (
+        {/* Only render when the DB actually had performance data. Bottles with
+            all-null community_* get neutral 3.0 defaults from the store (so the
+            rec engine never sees NaN) — rendering those would be fabricated
+            "moderate" bars + fake 50/50/50 scores. has_community_data is
+            undefined for mock/custom fragrances → treated as "show". */}
+        {(fragrance.has_community_data ?? true) &&
+          (fragrance.community_longevity > 0 || fragrance.community_sillage > 0 || fragrance.community_projection > 0) && (
           <Section title="Performance" cursive="how it wears">
             <View style={styles.perfCard}>
               <PerfBar label="Longevity" value={fragrance.community_longevity} />
@@ -746,7 +767,7 @@ function FragranceDetailScreen() {
       </ScrollView>
 
       {/* Fixed back button — outside ScrollView so always visible regardless of scroll depth */}
-      <Pressable style={styles.backBtn} onPress={() => router.back()} accessibilityLabel="Back">
+      <Pressable style={styles.backBtn} onPress={goBack} accessibilityLabel="Back">
         <Ionicons name="chevron-back" size={26} color={COLORS.white} />
       </Pressable>
 
