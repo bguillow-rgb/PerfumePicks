@@ -343,6 +343,11 @@ create unlogged table if not exists fragrance_similars_staging (
   rank         int not null
 );
 
+-- Staging tables are service-role-only: enable RLS with no policies so they are
+-- never reachable by anon/authenticated (service role bypasses RLS for the swap).
+alter table fragrance_dupes_staging    enable row level security;
+alter table fragrance_similars_staging enable row level security;
+
 -- Swap algo dupes: clear only source='algo', re-insert from staging, and skip
 -- any pair that already exists as seed/editorial (ON CONFLICT DO NOTHING).
 create or replace function swap_algo_dupes()
