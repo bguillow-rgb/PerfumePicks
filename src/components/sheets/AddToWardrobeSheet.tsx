@@ -36,7 +36,6 @@ const STATUS_OPTIONS: { id: WardrobeStatus; label: string; helper: string }[] = 
   { id: 'want',    label: 'Wishlist',    helper: 'Want to try it' },
   { id: 'tested',  label: 'Tested',      helper: 'Sampled, undecided' },
   { id: 'sold_on', label: 'Sold On',     helper: 'Loved + ready to buy' },
-  { id: 'empty',   label: 'Empty',       helper: 'Finished the bottle' },
 ];
 
 const UNIT_OPTIONS: { id: UnitType; label: string; defaultMl: number }[] = [
@@ -185,6 +184,7 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
                       setStatus(s.id);
                     }}
                     style={[styles.pillBig, status === s.id && styles.pillBigActive]}
+                    accessibilityLabel={s.label}
                   >
                     <Text style={[styles.pillBigLabel, status === s.id && styles.pillBigLabelActive]}>
                       {s.label}
@@ -267,6 +267,7 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
               onPress={handleSave}
               disabled={!canSave}
               style={[styles.saveBtn, !canSave && styles.saveBtnDisabled]}
+              accessibilityLabel={editItem ? 'Save Changes' : 'Save to Wardrobe'}
             >
               <Ionicons name="rose" size={16} color={COLORS.white} style={{ marginRight: 6 }} />
               <Text style={styles.saveText}>{editItem ? 'Save Changes' : 'Add to Wardrobe'}</Text>

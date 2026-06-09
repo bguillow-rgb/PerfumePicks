@@ -3,6 +3,7 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useWardrobeStore, setWardrobeUserId } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore, setWearLogUserId } from '@/src/stores/useWearLogStore';
 import { useSwipeStore, setSwipeUserId } from '@/src/stores/useSwipeStore';
+import { useProfileStore } from '@/src/stores/useProfileStore';
 import { deriveTasteProfile, type TasteSignal } from '@/src/features/recommend/tasteProfile';
 import { getFragranceFromStore } from '@/src/stores/useCatalogStore';
 
@@ -22,20 +23,30 @@ import { getFragranceFromStore } from '@/src/stores/useCatalogStore';
 export function useAppSync(userId: string | null) {
   // Prevent concurrent syncs if userId reference changes rapidly (e.g. token refresh)
   const syncingRef = useRef(false);
+  // Track the previous userId so we only wipe stores on a real sign-out transition
+  // (non-null → null), not on first launch where userId starts as null.
+  const prevUserIdRef = useRef<string | null | undefined>(undefined);
 
   useEffect(() => {
     if (!isSupabaseConfigured || !userId) {
-      // Sign-out: clear all remote-backed stores so a new sign-in starts fresh.
-      if (!userId) {
+      // Only clear stores when transitioning FROM a real user TO signed-out.
+      // Do NOT wipe on first render (prevUserIdRef is undefined) or when the
+      // user was never signed in — that would erase locally-added wardrobe items.
+      const wasSignedIn = prevUserIdRef.current != null && prevUserIdRef.current !== undefined;
+      prevUserIdRef.current = userId;
+      if (!userId && wasSignedIn) {
         setWardrobeUserId(null);
         setWearLogUserId(null);
         setSwipeUserId(null);
         useWardrobeStore.getState().hydrate([]);
         useWearLogStore.getState().hydrate([]);
         useSwipeStore.getState().hydrate([]);
+        useProfileStore.getState().setDisplayName('');
+        useProfileStore.getState().setPhotoUri(null);
       }
       return;
     }
+    prevUserIdRef.current = userId;
 
     // Register userId so write-through helpers can include it in rows.
     setWardrobeUserId(userId);
@@ -87,7 +98,15 @@ async function hydrateWardrobe(userId: string) {
     .order('created_at', { ascending: false });
 
   if (error) { console.warn('[useAppSync] wardrobe fetch failed:', error.message); return; }
-  if (data) useWardrobeStore.getState().hydrate(data);
+  // Merge: preserve locally-created items that never made it to Supabase
+  // (write failed, marked _unsynced) so they survive a sign-out → sign-in cycle.
+  // This mirrors the same pattern used in hydrateWearLogs.
+  const rows = data ?? [];
+  const remoteIds = new Set(rows.map((r: any) => r.id));
+  const unsynced = useWardrobeStore.getState().items.filter(
+    (i) => i._unsynced && !remoteIds.has(i.id),
+  );
+  useWardrobeStore.getState().hydrate([...unsynced, ...rows]);
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -103,7 +122,17 @@ async function hydrateWearLogs(userId: string) {
     .limit(500);   // cap at 500 most recent — enough for all analytics
 
   if (error) { console.warn('[useAppSync] wear logs fetch failed:', error.message); return; }
-  if (data) useWearLogStore.getState().hydrate(data);
+  if (data) {
+    // Preserve locally-created logs that Supabase hasn't accepted yet (e.g. a log
+    // for a fragrance the user tried but hasn't added to their wardrobe, where a
+    // server-side FK or RLS may have rejected the write-through).
+    // Without this merge, hydrate() replaces the full array and those logs vanish.
+    const remoteIds = new Set(data.map((r: any) => r.id));
+    const unsynced = useWearLogStore.getState().logs.filter(
+      (l) => l._unsynced && !remoteIds.has(l.id),
+    );
+    useWearLogStore.getState().hydrate([...unsynced, ...data]);
+  }
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -117,7 +146,21 @@ async function hydrateSwipes(userId: string) {
     .eq('user_id', userId);
 
   if (error) { console.warn('[useAppSync] swipes fetch failed:', error.message); return; }
-  if (data) useSwipeStore.getState().hydrate(data);
+  if (!data) return;
+
+  // Merge remote with local swipes that haven't synced yet.
+  // For each fragrance, keep whichever record has the newer created_at so
+  // swipes done just before closing the app (persisted in AsyncStorage but
+  // not yet written to Supabase) are not lost on the next cold launch.
+  const localSwipes = useSwipeStore.getState().list();
+  const remoteMap = new Map(data.map((r: any) => [r.fragrance_id, r]));
+  for (const local of localSwipes) {
+    const remote = remoteMap.get(local.fragrance_id);
+    if (!remote || local.created_at > remote.created_at) {
+      remoteMap.set(local.fragrance_id, local);
+    }
+  }
+  useSwipeStore.getState().hydrate([...remoteMap.values()]);
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -131,6 +174,7 @@ const SIGNAL_WEIGHTS = {
   want: 1,
   tested: 0.5,
   sold_on: 2.5,
+  swipe_love: 2.5,
   swipe_like: 1,
   swipe_dislike: -1.5,
 } as const;
@@ -159,8 +203,10 @@ async function syncTasteProfile(userId: string) {
   for (const sw of swipes) {
     const f = getFragranceFromStore(sw.fragrance_id);
     if (!f) continue;
+    if (sw.action === 'love')    signals.push({ fragrance: f, weight: SIGNAL_WEIGHTS.swipe_love });
     if (sw.action === 'like')    signals.push({ fragrance: f, weight: SIGNAL_WEIGHTS.swipe_like });
     if (sw.action === 'dislike') signals.push({ fragrance: f, weight: SIGNAL_WEIGHTS.swipe_dislike });
+    // 'skip' is intentionally unweighted — a neutral pass carries no signal.
   }
 
   if (signals.length === 0) return;

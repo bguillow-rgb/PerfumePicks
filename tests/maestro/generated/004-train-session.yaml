@@ -1,14 +1,36 @@
-appId: host.exp.Exponent
+appId: com.bobguillow.perfumepicks
 ---
+# P0: Train My Nose — intro, begin session, swipe actions present.
+# Verified: "Begin a Session", action buttons "Pass"/"Like"/"Love".
+# Deck ordering: NOT alphabetical (fetchEnriched + shuffle) — verify first cards.
 - launchApp
-- tapOn: "Perfume Picks"
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
 - extendedWaitUntil:
-    visible: "Today"
-    timeout: 45000
-- tapOn: "Train"
-- extendedWaitUntil:
-    visible: "TRAIN MY NOSE"
-    timeout: 10000
-- takeScreenshot: train__intro
-- tapOn: "Begin a Session"
-- takeScreenshot: train__first-card
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- tapOn:
+    text: "Taste, tab.*"
+- takeScreenshot: 004-train__intro
+# Begin session may already be in-session if prior swipes; both handled
+- tapOn:
+    text: "Begin a Session"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: 004-train__deck-first-card
+# Tap Love (right) then Like then Pass to exercise all three actions
+- tapOn:
+    text: "Love"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: 004-train__after-love
+- tapOn:
+    text: "Like"
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    text: "Pass"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: 004-train__after-three-swipes

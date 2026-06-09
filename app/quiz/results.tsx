@@ -17,8 +17,9 @@ import { useProStore } from '@/src/stores/useProStore';
 export default function QuizResults() {
   const router = useRouter();
   const answers = useQuizStore((s) => s.answers);
-  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  const fetchEnriched = useCatalogStore((s) => s.fetchEnriched);
   const [catalog, setCatalog] = useState<Fragrance[]>([]);
+  const [catalogLoading, setCatalogLoading] = useState(true);
 
   const family = answers.family;
   const priceTier = Number(answers.price ?? 0);
@@ -30,11 +31,11 @@ export default function QuizResults() {
 
   useEffect(() => {
     let cancelled = false;
-    fetchAllActive(200).then((rows) => {
-      if (!cancelled) setCatalog(rows);
+    fetchEnriched(1000, 0, ['feminine', 'unisex']).then((rows) => {
+      if (!cancelled) { setCatalog(rows); setCatalogLoading(false); }
     });
     return () => { cancelled = true; };
-  }, [fetchAllActive]);
+  }, [fetchEnriched]);
 
   // Persist quiz results to Supabase once per mount.
   const isPro = useProStore((s) => s.isPro);
@@ -42,28 +43,32 @@ export default function QuizResults() {
   useEffect(() => {
     if (persisted.current || !answers || Object.keys(answers).length === 0) return;
     persisted.current = true;
-    syncWrite({
-      op: 'insert',
-      table: 'quiz_results',
-      row: { tier: isPro ? 'pro' : 'free', answers },
-    });
+    syncWrite('quiz_results', { tier: isPro ? 'pro' : 'free', answers });
   }, [answers, isPro]);
 
   const matches = useMemo(() => {
     return catalog
       .map((f) => {
+        // Enriched data is patchy — coerce nullable numerics so a missing field
+        // never turns the whole score into NaN (which sorts unpredictably).
+        const priceTierVal = f.price_tier ?? 0;
+        const complimentScore = f.compliment_score ?? 0;
+        const longevityVal = f.community_longevity ?? 0;
+        const sillageVal = f.community_sillage ?? 0;
+        const versatility = f.versatility_score ?? 0;
+        const accords = f.top_accords ?? [];
         let score = 0;
         if (family && f.fragrance_family === family) score += 0.5;
-        if (priceTier && Math.abs(f.price_tier - priceTier) <= 1) score += 0.3;
-        score += f.compliment_score * 0.2;
+        if (priceTier && Math.abs(priceTierVal - priceTier) <= 1) score += 0.3;
+        score += complimentScore * 0.2;
         // Pro question signals
-        if (longevity && Math.abs(f.community_longevity - longevity) <= 1) score += 0.2;
-        if (sillage === 'intimate' && f.community_sillage <= 3) score += 0.15;
-        if (sillage === 'strong' && f.community_sillage >= 4) score += 0.15;
-        if (avoid === 'sweet' && f.top_accords.some((a) => ['gourmand','sweet','vanilla'].includes(a))) score -= 0.3;
-        if (avoid === 'heavy' && f.top_accords.some((a) => ['oud','leather','tobacco'].includes(a))) score -= 0.3;
-        if (discovery === 'classic' && f.community_longevity >= 4) score += 0.1;
-        if (discovery === 'wild') score += (1 - f.versatility_score) * 0.15;
+        if (longevity && Math.abs(longevityVal - longevity) <= 1) score += 0.2;
+        if (sillage === 'intimate' && sillageVal <= 3) score += 0.15;
+        if (sillage === 'strong' && sillageVal >= 4) score += 0.15;
+        if (avoid === 'sweet' && accords.some((a) => ['gourmand','sweet','vanilla'].includes(a))) score -= 0.3;
+        if (avoid === 'heavy' && accords.some((a) => ['oud','leather','tobacco'].includes(a))) score -= 0.3;
+        if (discovery === 'classic' && longevityVal >= 4) score += 0.1;
+        if (discovery === 'wild') score += (1 - versatility) * 0.15;
         return { f, score };
       })
       .sort((a, b) => b.score - a.score)
@@ -86,14 +91,16 @@ export default function QuizResults() {
           </Text>
         </View>
 
-        <View style={styles.results}>
-          {matches.map((f, i) => (
-            <View key={f.id} style={{ marginBottom: SPACING.lg }}>
-              <Text style={styles.rank}>No. {i + 1}</Text>
-              <FragranceCard fragrance={f} variant="compact" />
-            </View>
-          ))}
-        </View>
+        {!catalogLoading && (
+          <View style={styles.results}>
+            {matches.map((f, i) => (
+              <View key={f.id} style={{ marginBottom: SPACING.lg }}>
+                <Text style={styles.rank}>No. {i + 1}</Text>
+                <FragranceCard fragrance={f} variant="compact" />
+              </View>
+            ))}
+          </View>
+        )}
 
         <Pressable style={styles.cta} onPress={() => router.replace('/(tabs)')}>
           <Text style={styles.ctaText}>Back to Today</Text>

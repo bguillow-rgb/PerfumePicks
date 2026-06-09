@@ -1,9 +1,35 @@
-appId: host.exp.Exponent
+appId: com.bobguillow.perfumepicks
 ---
+# P0: Wardrobe loads; filter pills (All/Want/Have/Tried); search.
 - launchApp
-- tapOn: "Perfume Picks"
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
 - extendedWaitUntil:
-    visible: "Today"
-    timeout: 45000
-- tapOn: "Wardrobe"
-- takeScreenshot: wardrobe__initial
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- tapOn:
+    text: "Wardrobe, tab.*"
+- waitForAnimationToEnd
+- takeScreenshot: 005-wardrobe__initial
+- tapOn:
+    text: "Have"
+    optional: true
+- takeScreenshot: 005-wardrobe__have-filter
+- tapOn:
+    text: "Want"
+    optional: true
+- takeScreenshot: 005-wardrobe__want-filter
+- tapOn:
+    text: "Tried"
+    optional: true
+- takeScreenshot: 005-wardrobe__tried-filter
+- tapOn:
+    text: "All"
+    optional: true
+# Search within wardrobe
+- tapOn:
+    text: "Search name, brand, notes..."
+    optional: true
+- inputText: "Dior"
+- takeScreenshot: 005-wardrobe__search

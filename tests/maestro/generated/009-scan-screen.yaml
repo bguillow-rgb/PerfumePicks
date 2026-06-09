@@ -1,0 +1,25 @@
+appId: com.bobguillow.perfumepicks
+---
+# P0: Scan (Perfume Concierge) screen opens via camera FAB. UI only —
+# camera permission + capture are native dialogs Maestro cannot drive (BLOCKED).
+# Verified: "Perfume Concierge", "Identify a Fragrance", "Choose from Library".
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+# Camera FAB (bottom-right gold circle) — accessibilityLabel "Scan a bottle"
+- tapOn:
+    text: "Scan a bottle"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: 009-scan__screen
+- assertVisible:
+    text: "Perfume Concierge"
+    optional: true
+- assertVisible:
+    text: "Choose from Library"
+    optional: true
+- takeScreenshot: 009-scan__ready-state

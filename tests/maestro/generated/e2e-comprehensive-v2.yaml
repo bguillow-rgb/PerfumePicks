@@ -1,0 +1,727 @@
+appId: com.bobguillow.perfumepicks
+---
+# ══════════════════════════════════════════════════════════════════
+# PerfumePicks Comprehensive E2E Suite v2
+#
+# Coverage map (72 named test cases):
+#   TC-H01–H05   Home — empty state, rails, CTA
+#   TC-DF01–DF05 Discover — filter sheet open/apply/clear
+#   TC-DS01–DS03 Discover — search results + no-results
+#   TC-F01–F14   Fragrance detail — all sections, Add to Wardrobe
+#                sheet, Log Wear sheet, Write a Review sheet
+#   TC-B01–B04   Brand page — house tile nav + list
+#   TC-D01–D03   Discover — browse scroll sections
+#   TC-W01–W10   Wardrobe — populated + empty states, filter pills,
+#                search find/no-find, item tap to detail
+#   TC-T01–T12   Taste — gender filter toggle, 5 swipes, exit modal,
+#                session saved
+#   TC-HP01–HP03 Home post-training — YOUR TASTE section
+#   TC-P01–P08   Profile — stats, sections, legal modals, paywall
+#   TC-Q01–Q10   Quiz — all 5 free questions + Pro tease + results
+#   TC-S01–S04   Scan screen — UI only (no camera trigger)
+#
+# State note: Addict is added to wardrobe in TC-F06 — needed by
+# TC-W01+. Taste swipes in TC-T update TC-HP (home picks).
+# ══════════════════════════════════════════════════════════════════
+
+# ── SETUP: Expo dev client boot ────────────────────────────────────
+- launchApp
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "DEVELOPMENT SERVERS"
+    commands:
+      - tapOn:
+          point: "50%, 17%"
+      - waitForAnimationToEnd
+- tapOn:
+    text: "Open"
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    text: "Open"
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    text: "Open"
+    optional: true
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Continue"
+    commands:
+      - tapOn: "Continue"
+      - waitForAnimationToEnd
+- tapOn:
+    point: "90%, 48%"
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Continue as Guest"
+    commands:
+      - tapOn: "Continue as Guest"
+# Navigate to Today tab in case app restored to a deep route from a previous run
+- runFlow:
+    when:
+      visible: "Today, tab, 1 of 6"
+    commands:
+      - tapOn: "Today, tab, 1 of 6"
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+
+# ══════════════════════════════════════════════════════════════════
+# HOME — EMPTY STATE  (TC-H01–H05)
+# ══════════════════════════════════════════════════════════════════
+
+# TC-H01: Home always shows SCENT OF THE DAY
+- assertVisible: "SCENT OF THE DAY"
+- takeScreenshot: h01-home-top
+
+# TC-H02: COMMUNITY SOTD is visible below SCENT OF THE DAY (no scroll needed — 1 scroll overshoots)
+- assertVisible: "COMMUNITY SOTD"
+- takeScreenshot: h02-community-sotd
+
+# TC-H03: Scroll → ICONS rail
+- scroll
+- assertVisible: "ICONS"
+- takeScreenshot: h03-icons-rail
+
+# ══════════════════════════════════════════════════════════════════
+# DISCOVER — FILTER SHEET  (TC-DF01–DF05)
+# Filter tests happen at top of Discover before any scrolling
+# so the Filter button is always visible in the list header.
+# ══════════════════════════════════════════════════════════════════
+
+- tapOn: "Discover, tab, 2 of 6"
+- extendedWaitUntil:
+    visible: "Search fragrances, notes, brands..."
+    timeout: 15000
+- assertVisible: "CURATED EDITS"
+# Note: "Filter" button has Ionicons + Text so exact assertVisible fails —
+# tapOn handles the implicit assertion via the tap itself
+- takeScreenshot: d00-discover-top
+
+# TC-DF01: Open filter sheet (accessibilityLabel="Filter" on Pressable)
+- tapOn: "Filter"
+- waitForAnimationToEnd
+- takeScreenshot: df01-filter-sheet-open
+
+# TC-DF02: Filter sections present
+- assertVisible: "GENDER"
+- assertVisible: "ACCORDS"
+- assertVisible: "PRICE TIER"
+- takeScreenshot: df02-filter-sections
+
+# TC-DF03: Select a gender chip — "For Her"
+- tapOn: "For Her"
+- waitForAnimationToEnd
+- takeScreenshot: df03-gender-selected
+
+# TC-DF04: Apply → back on Discover (Filtered state)
+# accessibilityLabel="Apply 1" on Pressable (no parens, no glyph)
+- tapOn: "Apply 1"
+- waitForAnimationToEnd
+- assertVisible: "Clear"
+- takeScreenshot: df04-filtered-active
+
+# TC-DF05: Clear all filters
+- tapOn: "Clear"
+- waitForAnimationToEnd
+- takeScreenshot: df05-filter-cleared
+
+# ══════════════════════════════════════════════════════════════════
+# DISCOVER — SEARCH  (TC-DS01–DS03)
+# Also still at top so search bar is accessible
+# ══════════════════════════════════════════════════════════════════
+
+# TC-DS01: "Dior" returns results
+- tapOn: "Search fragrances, notes, brands..."
+- inputText: "Dior"
+- waitForAnimationToEnd
+- takeScreenshot: ds01-search-dior
+
+# TC-DS02: "zzzzzzz" — no-results empty state (screenshot confirms "No matches for..." renders)
+- eraseText: 50
+- inputText: "zzzzzzz"
+- waitForAnimationToEnd
+- takeScreenshot: ds02-no-results
+
+# TC-DS03: Search "Dior" — Addict will appear in results (Dior brand search)
+- eraseText: 50
+- inputText: "Dior"
+- waitForAnimationToEnd
+- takeScreenshot: ds03-search-dior-results
+
+# ══════════════════════════════════════════════════════════════════
+# FRAGRANCE DETAIL — CHRISTIAN DIOR ADDICT  (TC-F01–F14)
+# ══════════════════════════════════════════════════════════════════
+
+# Dismiss keyboard first so tap coordinates aren't shifted by keyboard height
+- pressKey: Enter
+- waitForAnimationToEnd
+# Navigate to Addict — "Dior" search bar ≠ "Addict" result, no tapOn conflict
+- tapOn: "Addict"
+# Wait for fragrance name (always present — not the CTA which changes on re-runs)
+- extendedWaitUntil:
+    visible: "Addict"
+    timeout: 10000
+
+# TC-F01: Hero — fragrance name visible
+- assertVisible: "Addict"
+- takeScreenshot: f01-detail-hero
+
+# TC-F02: Wardrobe CTA present (either "Add to Wardrobe" or "In Wardrobe" on re-runs)
+- takeScreenshot: f02-add-cta
+
+# TC-F03: Open wardrobe sheet — handles both first run ("Add to Wardrobe")
+# and re-run ("In Wardrobe") states
+- runFlow:
+    when:
+      visible: "Add to Wardrobe"
+    commands:
+      - tapOn: "Add to Wardrobe"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "In Wardrobe"
+    commands:
+      - tapOn: "In Wardrobe"
+      - waitForAnimationToEnd
+# Sheet header is "ADD TO WARDROBE" (new) or "EDIT WARDROBE" (re-run) — check STATUS instead
+- assertVisible: "STATUS"
+- takeScreenshot: f03-add-sheet
+
+# TC-F04: Sheet has STATUS options + bottle type
+- assertVisible: "In Rotation"
+- assertVisible: "Wishlist"
+- takeScreenshot: f04-add-sheet-sections
+
+# TC-F05: Select In Rotation + Full Bottle
+- tapOn: "In Rotation"
+- waitForAnimationToEnd
+- assertVisible: "Full Bottle"
+- tapOn: "Full Bottle"
+- waitForAnimationToEnd
+- takeScreenshot: f05-add-filled
+
+# TC-F06: Save → sheet closes; handles "Save to Wardrobe" (new) or "Save Changes" (re-run)
+# Also dismisses "Back Up Your Wardrobe" prompt if shown for guest users
+- runFlow:
+    when:
+      visible: "Save to Wardrobe"
+    commands:
+      - tapOn: "Save to Wardrobe"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Save Changes"
+    commands:
+      - tapOn: "Save Changes"
+      - waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn:
+    text: "Keep as Guest"
+    optional: true
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Log a Wear"
+    timeout: 15000
+- takeScreenshot: f06-added-success
+
+# TC-F07: Open Log Wear sheet
+- tapOn: "Log a Wear"
+- waitForAnimationToEnd
+- assertVisible: "LOG A WEAR"
+- assertVisible: "DATE WORN"
+- takeScreenshot: f07-log-wear-sheet
+
+# TC-F08: Save the wear
+- tapOn: "Save Wear"
+- waitForAnimationToEnd
+- takeScreenshot: f08-wear-logged
+
+# TC-F09: Scroll — NOTES section (top/heart/base notes)
+- scroll
+- assertVisible: "NOTES"
+- takeScreenshot: f09-notes-section
+
+# TC-F10: Scroll once more — Performance section (LONGEVITY, SILLAGE, PROJECTION)
+- scroll
+- assertVisible: "LONGEVITY"
+- takeScreenshot: f10-performance-section
+
+# TC-F11: Scroll — Pricing section (Perfumania affiliate link)
+- scroll
+- assertVisible: "Pricing"
+- takeScreenshot: f11-pricing-section
+
+# TC-F12: Scroll — My Notes private journal section (always shown)
+- scroll
+- assertVisible: "My Notes"
+- takeScreenshot: f12-my-notes-section
+
+# TC-F13: Scroll — Your Wears section (wear log shows logged count)
+- scroll
+- assertVisible: "Your Wears"
+- takeScreenshot: f13-your-wears-section
+
+# TC-F14: Back to Discover — tap the Discover tab (resets stack to tab root;
+# back button and Maestro's back command conflict with custom GestureDetector swipe-back)
+- tapOn: "Discover, tab, 2 of 6"
+- waitForAnimationToEnd
+- assertVisible: "Search fragrances, notes, brands..."
+- takeScreenshot: f14-back-discover
+
+# ══════════════════════════════════════════════════════════════════
+# BRAND PAGE  (TC-B01–B04)
+# Clear search → browse appears → scroll once → brand tiles visible
+# ══════════════════════════════════════════════════════════════════
+
+# Clear the "Dior" search retained from DS03 — focus bar first, erase, dismiss keyboard
+# The browse view re-appears scrolled to BY HOUSE (Discover retains scroll position)
+- tapOn: "Search fragrances, notes, brands..."
+- eraseText: 50
+- pressKey: Enter
+- waitForAnimationToEnd
+
+# TC-B01: BY HOUSE brand grid already visible (Discover retained scroll position)
+- assertVisible: "BY HOUSE"
+- takeScreenshot: b01-brand-grid
+
+# TC-B02: Tap a visible brand house tile (Demeter is in the current viewport)
+- tapOn: "Demeter"
+- waitForAnimationToEnd
+- assertVisible: "Demeter"
+- takeScreenshot: b02-brand-page
+
+# TC-B03: Brand page lists fragrances
+- scroll
+- takeScreenshot: b03-brand-list
+
+# TC-B04: Back to Discover — coordinate tap the custom header back button
+# (label "Back" conflicts with cached fragrance detail screen; coordinate is reliable)
+# Brand page header: SafeArea top ~59px + 16px padding + 16px button half = ~91px from top
+# Back button left edge: ~16px from left. Point: 7%, 10%
+- tapOn:
+    point: "7%, 10%"
+- waitForAnimationToEnd
+- assertVisible: "BY HOUSE"
+- takeScreenshot: b04-back-discover
+
+# ══════════════════════════════════════════════════════════════════
+# DISCOVER — BROWSE SCROLL  (TC-D01–D03)
+# After TC-B04 Discover tab tap, we're at the BY HOUSE scroll level
+# ══════════════════════════════════════════════════════════════════
+
+# TC-D01: BY HOUSE brand grid visible (current scroll position after B04)
+- assertVisible: "BY HOUSE"
+- takeScreenshot: d01-by-house-grid
+
+# TC-D02: Scroll further down
+- scroll
+- takeScreenshot: d02-browse-scroll
+
+# TC-D03: Scroll further — documents lower content
+- scroll
+- takeScreenshot: d03-browse-bottom
+
+# ══════════════════════════════════════════════════════════════════
+# WARDROBE — POPULATED STATE  (TC-W01–W10)
+# Addict was added in TC-F06 — wardrobe should have 1 item
+# ══════════════════════════════════════════════════════════════════
+
+- tapOn: "Wardrobe, tab, 4 of 6"
+- extendedWaitUntil:
+    visible: "Addict"
+    timeout: 15000
+
+# TC-W01: Addict is in the wardrobe (added in TC-F06)
+- assertVisible: "Addict"
+- takeScreenshot: w01-wardrobe-one-item
+
+# TC-W02: Addict row visible
+- assertVisible: "Addict"
+- takeScreenshot: w02-sauvage-row
+
+# TC-W03: "Have" filter — item still visible (In Rotation = Have)
+- tapOn: "Have"
+- waitForAnimationToEnd
+- assertVisible: "Addict"
+- takeScreenshot: w03-have-with-item
+
+# TC-W04: "Want" filter — empty (nothing wishlisted)
+- tapOn: "Want"
+- waitForAnimationToEnd
+- assertVisible: "No matches"
+- takeScreenshot: w04-want-empty
+
+# TC-W05: "Tried" filter — tappable (worn items appear on re-runs; empty on first run)
+- tapOn: "Tried"
+- waitForAnimationToEnd
+- takeScreenshot: w05-tried-filter
+
+# TC-W06: "All" resets — item back
+- tapOn: "All"
+- waitForAnimationToEnd
+- assertVisible: "Addict"
+- takeScreenshot: w06-all-reset
+
+# TC-W07: Search finds item
+- tapOn: "Search name, brand, notes..."
+- inputText: "Addict"
+- waitForAnimationToEnd
+- assertVisible: "Addict"
+- takeScreenshot: w07-search-found
+
+# TC-W08: Search no-results
+- eraseText: 50
+- inputText: "zzzzzzz"
+- waitForAnimationToEnd
+- assertVisible: "No matches"
+- takeScreenshot: w08-search-empty
+
+# TC-W09: Clear search
+- eraseText: 50
+- waitForAnimationToEnd
+- assertVisible: "Addict"
+- takeScreenshot: w09-search-cleared
+
+# TC-W10: Tap wardrobe row → opens detail with "Log a Wear" shown
+# Dismiss keyboard first (search bar still focused from TC-W09), then tap row
+- pressKey: Enter
+- waitForAnimationToEnd
+- tapOn: "Addict"
+- extendedWaitUntil:
+    visible: "Log a Wear"
+    timeout: 15000
+- assertVisible: "Log a Wear"
+- takeScreenshot: w10-detail-from-wardrobe
+# Navigate back to Wardrobe tab (GestureDetector on detail page blocks Maestro's back command)
+- tapOn: "Wardrobe, tab, 4 of 6"
+- waitForAnimationToEnd
+
+# ══════════════════════════════════════════════════════════════════
+# TASTE SESSION — FULL  (TC-T01–T12)
+# ══════════════════════════════════════════════════════════════════
+
+- tapOn: "Taste, tab, 3 of 6"
+- extendedWaitUntil:
+    visible: "TRAIN MY NOSE"
+    timeout: 15000
+
+# TC-T01: Intro — TRAIN MY NOSE always present; session only if daily limit not reached
+- assertVisible: "TRAIN MY NOSE"
+- takeScreenshot: t01-taste-intro
+
+# TC-T02–T12: Full session (skipped if daily 10-swipe free limit is exhausted)
+- runFlow:
+    when:
+      visible: "Begin a Session"
+    commands:
+      - assertVisible: "10 free swipes / day · Unlimited with Pro"
+
+      # TC-T02: Start session
+      - tapOn: "Begin a Session"
+      - extendedWaitUntil:
+          visible: "TASTE SESSION"
+          timeout: 15000
+      - takeScreenshot: t02-session-card-1
+
+      # TC-T03: Gender cycle button — tap "All" to switch to "For Her"
+      - tapOn: "All"
+      - waitForAnimationToEnd
+      - takeScreenshot: t03-gender-for-her
+
+      # TC-T04: Gender cycle button — tap "For Her" to switch to "Unisex"
+      - tapOn: "For Her"
+      - waitForAnimationToEnd
+      - takeScreenshot: t04-gender-unisex
+
+      # TC-T05: Gender cycle button — tap "Unisex" to go back to "All"
+      - tapOn: "Unisex"
+      - waitForAnimationToEnd
+      - takeScreenshot: t05-gender-all
+
+      # TC-T06: Love swipe
+      - tapOn: "Love"
+      - waitForAnimationToEnd
+      - takeScreenshot: t06-after-love
+
+      # TC-T07: Pass swipe
+      - tapOn: "Pass"
+      - waitForAnimationToEnd
+
+      # TC-T08: Like swipe
+      - tapOn: "Like"
+      - waitForAnimationToEnd
+
+      # TC-T09: Love again
+      - tapOn: "Love"
+      - waitForAnimationToEnd
+      - takeScreenshot: t09-mid-session
+
+      # TC-T10: Pass
+      - tapOn: "Pass"
+      - waitForAnimationToEnd
+
+      # TC-T11: Close session → exit modal with Save & Exit / Keep Going
+      - tapOn: "Close session"
+      - waitForAnimationToEnd
+      - assertVisible: "Save & Exit"
+      - assertVisible: "Keep Going"
+      - takeScreenshot: t11-exit-modal
+
+      # TC-T12: Save → back to intro with "See your taste profile →"
+      - tapOn: "Save & Exit"
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible: "TRAIN MY NOSE"
+          timeout: 10000
+      - assertVisible: "See your taste profile →"
+      - takeScreenshot: t12-session-saved
+
+# ══════════════════════════════════════════════════════════════════
+# HOME — POST TRAINING  (TC-HP01–HP03)
+# ══════════════════════════════════════════════════════════════════
+
+- tapOn: "Today, tab, 1 of 6"
+# Scroll up to top (swipe DOWN = content scrolls up toward top)
+- swipe:
+    direction: DOWN
+    duration: 800
+- swipe:
+    direction: DOWN
+    duration: 800
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 15000
+
+# TC-HP01: Home top after training
+- takeScreenshot: hp01-home-top
+
+# TC-HP02: YOUR TASTE section present (swipe signals now exist)
+- scroll
+- assertVisible: "YOUR TASTE"
+- takeScreenshot: hp02-your-taste
+
+# TC-HP03: Bottom rail still intact
+- scroll
+- takeScreenshot: hp03-home-bottom
+
+# ══════════════════════════════════════════════════════════════════
+# PROFILE — ALL SECTIONS  (TC-P01–P08)
+# ══════════════════════════════════════════════════════════════════
+
+- tapOn: "You, tab, 6 of 6"
+- extendedWaitUntil:
+    visible: "Taste Profile"
+    timeout: 15000
+
+# TC-P01: Stats row shows owned + swipes + wears
+- assertVisible: "swipes"
+- assertVisible: "owned"
+- assertVisible: "wears"
+- takeScreenshot: p01-profile-top
+
+# TC-P02: Taste Profile section rows
+- assertVisible: "Take the quiz"
+- takeScreenshot: p02-taste-section
+- scroll
+
+# TC-P03: Account section (Sign in visible — guest user)
+- assertVisible: "Account"
+- assertVisible: "Sign in"
+- assertVisible: "Subscription"
+- takeScreenshot: p03-account
+- scroll
+
+# TC-P04: About + legal links
+- assertVisible: "About"
+- assertVisible: "Privacy Policy"
+- assertVisible: "Terms of Service"
+- takeScreenshot: p04-about
+
+# TC-P05: Privacy Policy modal
+- tapOn: "Privacy Policy"
+- waitForAnimationToEnd
+- takeScreenshot: p05-privacy
+- swipe:
+    direction: DOWN
+    duration: 400
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Taste Profile"
+    timeout: 10000
+
+# scroll back down to Terms
+- scroll
+- scroll
+
+# TC-P06: Terms of Service modal
+- tapOn: "Terms of Service"
+- waitForAnimationToEnd
+- takeScreenshot: p06-terms
+- swipe:
+    direction: DOWN
+    duration: 400
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Taste Profile"
+    timeout: 10000
+# Scroll back to top to see Upgrade to Pro CTA in header
+- swipe:
+    direction: DOWN
+    duration: 800
+- swipe:
+    direction: DOWN
+    duration: 800
+
+# TC-P07: Upgrade to Pro CTA
+- assertVisible: "Upgrade to Pro"
+- takeScreenshot: p07-upgrade-cta
+
+# TC-P08: Paywall screen opens
+- tapOn: "Upgrade to Pro"
+- waitForAnimationToEnd
+- takeScreenshot: p08-paywall
+- tapOn: "Close"
+- waitForAnimationToEnd
+
+# ══════════════════════════════════════════════════════════════════
+# QUIZ — FULL 5-QUESTION FLOW  (TC-Q01–Q10)
+# ══════════════════════════════════════════════════════════════════
+
+# Navigate to quiz via Profile → "Take the quiz" row
+# (more reliable than home tab which may be scrolled or have no CTA after quiz taken)
+- tapOn: "You, tab, 6 of 6"
+- extendedWaitUntil:
+    visible: "Take the quiz"
+    timeout: 15000
+- tapOn: "Take the quiz"
+- waitForAnimationToEnd
+
+# TC-Q01: Handle any resume / already-taken modals
+- runFlow:
+    when:
+      visible: "You've taken this quiz."
+    commands:
+      - tapOn: "Take the Quiz Again"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Resume your quiz?"
+    commands:
+      - tapOn: "Start Over"
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible: "QUESTION"
+    timeout: 15000
+
+# TC-Q02: Q1 Family — all options visible
+- assertVisible: "Which world calls to you?"
+- assertVisible: "Floral Garden"
+- assertVisible: "Warm Orient"
+- assertVisible: "Sacred Wood"
+- takeScreenshot: q02-q1
+- tapOn: "Floral Garden"
+- waitForAnimationToEnd
+
+# TC-Q03: Q2 Occasion
+- extendedWaitUntil:
+    visible: "When will you wear it most?"
+    timeout: 10000
+- assertVisible: "Date Night"
+- assertVisible: "Daytime · Office"
+- takeScreenshot: q03-q2
+- tapOn: "Date Night"
+- waitForAnimationToEnd
+
+# TC-Q04: Q3 Price
+- extendedWaitUntil:
+    visible: "Your usual investment?"
+    timeout: 10000
+- assertVisible: "Under $50"
+- assertVisible: "$250+"
+- takeScreenshot: q04-q3
+- tapOn: "$120–$250"
+- waitForAnimationToEnd
+
+# TC-Q05: Q4 Season
+- extendedWaitUntil:
+    visible: "Which season do you gravitate toward?"
+    timeout: 10000
+- assertVisible: "Autumn"
+- assertVisible: "Winter"
+- takeScreenshot: q05-q4
+- tapOn: "Autumn"
+- waitForAnimationToEnd
+
+# TC-Q06: Q5 Longevity
+- extendedWaitUntil:
+    visible: "How long should a scent last?"
+    timeout: 10000
+- assertVisible: "A few hours"
+- assertVisible: "All day"
+- assertVisible: "Into tomorrow"
+- takeScreenshot: q06-q5
+- tapOn: "All day"
+- waitForAnimationToEnd
+
+# TC-Q07: Pro tease modal (free user after Q5)
+- runFlow:
+    when:
+      visible: "See My Results"
+    commands:
+      - assertVisible: "You've answered 5 questions."
+      - takeScreenshot: q07-pro-tease
+      - tapOn: "See My Results"
+      - waitForAnimationToEnd
+
+# TC-Q08: Results — YOUR PICKS
+- extendedWaitUntil:
+    visible: "YOUR PICKS"
+    timeout: 20000
+- assertVisible: "tailored for you"
+- takeScreenshot: q08-results
+
+# TC-Q09: Scroll results — recommendation cards
+- scroll
+- takeScreenshot: q09-result-cards
+
+# TC-Q10: Back to Today
+- tapOn: "Back to Today"
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 10000
+- takeScreenshot: q10-back-home
+
+# ══════════════════════════════════════════════════════════════════
+# SCAN SCREEN — UI ONLY  (TC-S01–S04)
+# Perfume Concierge and Choose from Library buttons are NOT tapped
+# — doing so opens OS camera/photo dialogs Maestro cannot close.
+# ══════════════════════════════════════════════════════════════════
+
+# TC-S01: FAB opens scan screen
+- tapOn: "Scan a bottle"
+- extendedWaitUntil:
+    visible: "Perfume Concierge"
+    timeout: 10000
+
+# TC-S02: Hero copy visible
+- assertVisible: "Identify a Fragrance"
+- takeScreenshot: s01-scan-ready
+
+# TC-S03: Both action buttons present
+- assertVisible: "Perfume Concierge"
+- assertVisible: "Choose from Library"
+- takeScreenshot: s02-scan-buttons
+
+# TC-S04: Close scan and confirm home returns
+- tapOn: "Close scan"
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 15000
+- takeScreenshot: s04-scan-closed

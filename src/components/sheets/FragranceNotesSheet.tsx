@@ -97,11 +97,15 @@ export function FragranceNotesSheet({ visible, fragrance, onClose }: Props) {
   };
 
   const handleAddLayering = () => {
-    if (!fragrance || !selectedPair) return;
+    if (!fragrance) return;
+    const pairedName = selectedPair
+      ? `${selectedPair.brand} ${selectedPair.name}`
+      : layerQuery.trim();
+    if (!pairedName) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     addLayeringEntry(fragrance.id, {
-      paired_fragrance_id: selectedPair.id,
-      paired_fragrance_name: `${selectedPair.brand} ${selectedPair.name}`,
+      paired_fragrance_id: selectedPair?.id ?? '',
+      paired_fragrance_name: pairedName,
       note: layerNote.trim(),
     });
     setLayerQuery('');
@@ -275,7 +279,7 @@ export function FragranceNotesSheet({ visible, fragrance, onClose }: Props) {
                           setShowLayerSearch(true);
                         }}
                         onFocus={() => setShowLayerSearch(true)}
-                        placeholder="Search fragrance to layer with..."
+                        placeholder="Fragrance name (search or type freely)"
                         placeholderTextColor={COLORS.subtle}
                         style={styles.layerSearchInput}
                       />
@@ -321,8 +325,8 @@ export function FragranceNotesSheet({ visible, fragrance, onClose }: Props) {
 
                   <Pressable
                     onPress={handleAddLayering}
-                    disabled={!selectedPair}
-                    style={[styles.addLayerBtn, !selectedPair && { opacity: 0.4 }]}
+                    disabled={!selectedPair && !layerQuery.trim()}
+                    style={[styles.addLayerBtn, (!selectedPair && !layerQuery.trim()) && { opacity: 0.4 }]}
                   >
                     <Ionicons name="add" size={16} color={COLORS.white} style={{ marginRight: 4 }} />
                     <Text style={styles.addLayerBtnText}>Add Combination</Text>

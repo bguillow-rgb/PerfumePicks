@@ -1,26 +1,21 @@
 import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
+import * as FileSystem from 'expo-file-system/legacy';
 import { useProfileStore } from '@/src/stores/useProfileStore';
+
+const AVATAR_PATH = FileSystem.documentDirectory + 'profile_avatar.jpg';
 
 /**
  * Pick a photo from the library, present iOS's built-in square crop UI, then
- * downsize to a tidy 320×320 JPEG before storing the URI.
+ * downsize to a tidy 320×320 JPEG and save to the documents directory so the
+ * file persists across app launches (cache directory gets evicted by the OS).
  *
- * Why we resize: the avatar appears at ~26-44px in most places. Storing a
- * 4032×3024 photo would waste space and slow image decoding. 320×320 is
- * sharp on every screen size at every avatar size, and JPEG-q-85 keeps the
- * file under ~30 KB.
- *
- * Returns the new URI on success, or null if the user cancelled.
+ * Returns the saved URI on success, or null if the user cancelled / permission denied.
  */
 export async function pickAndSetProfilePhoto(): Promise<string | null> {
-  // 1. Permissions — iOS shows the access prompt the first time.
   const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
   if (!perm.granted) return null;
 
-  // 2. Picker with the system square-crop UI. aspect:[1,1] forces a circle-
-  //    friendly result (we display in a circular mask but the underlying
-  //    image still has corners — square crop avoids weird offsets).
   const picked = await ImagePicker.launchImageLibraryAsync({
     mediaTypes: ImagePicker.MediaTypeOptions.Images,
     allowsEditing: true,
@@ -29,22 +24,31 @@ export async function pickAndSetProfilePhoto(): Promise<string | null> {
   });
   if (picked.canceled || !picked.assets?.[0]) return null;
 
-  const original = picked.assets[0].uri;
-
-  // 3. Downsize to 320×320 JPEG so AsyncStorage isn't bloated and the image
-  //    decodes instantly even on the lowest-spec iPhone we support.
   const resized = await ImageManipulator.manipulateAsync(
-    original,
+    picked.assets[0].uri,
     [{ resize: { width: 320, height: 320 } }],
     { compress: 0.85, format: ImageManipulator.SaveFormat.JPEG },
   );
 
-  // 4. Save into the persisted profile store. Avatars across the app
-  //    re-render automatically.
-  useProfileStore.getState().setPhotoUri(resized.uri);
-  return resized.uri;
+  // Copy to documents directory for persistence. Delete first — copyAsync
+  // may throw if the destination already exists on some OS versions.
+  let savedUri = resized.uri;
+  try {
+    await FileSystem.deleteAsync(AVATAR_PATH, { idempotent: true });
+    await FileSystem.copyAsync({ from: resized.uri, to: AVATAR_PATH });
+    savedUri = AVATAR_PATH;
+  } catch (e) {
+    console.warn('[profilePhoto] copy to documents failed, using cache URI:', e);
+    // Fall through — at least the image shows for this session
+  }
+
+  useProfileStore.getState().setPhotoUri(savedUri);
+  return savedUri;
 }
 
-export function clearProfilePhoto(): void {
+export async function clearProfilePhoto(): Promise<void> {
+  try {
+    await FileSystem.deleteAsync(AVATAR_PATH, { idempotent: true });
+  } catch {}
   useProfileStore.getState().setPhotoUri(null);
 }

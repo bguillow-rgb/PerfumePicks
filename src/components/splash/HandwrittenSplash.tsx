@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import MaskedView from '@react-native-masked-view/masked-view';
-import Svg, { Path, Rect, Ellipse } from 'react-native-svg';
+import Svg, { Path, Rect, Ellipse, Circle, Defs, LinearGradient, Stop, RadialGradient } from 'react-native-svg';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -17,93 +17,180 @@ import Animated, {
 import { COLORS, FONTS } from '@/src/constants/theme';
 
 /**
- * Fountain pen nib SVG — used as the "writing instrument" on the splash.
- * Drawn so the TIP of the nib sits at SVG coordinate (12, 56). The pen body
- * extends UP-RIGHT, as if held in a right hand. Wrapped in a non-animated
- * View so its parent Animated.View can translate the whole pen along the
- * wordmark's leading edge.
+ * Antique fountain pen — detailed illustration, nib tip at SVG (12, 88).
+ *
+ * Anatomy (bottom-left tip → upper-right cap end):
+ *   Nib → section collar → barrel → cap
+ *
+ * Pen is drawn at ~32° from horizontal so it looks naturally held.
+ * Total SVG: 160 × 100. Rendered at 112 × 70.
  */
 function FountainPen() {
   return (
-    <View style={penStyles.penWrap} pointerEvents="none">
-      <Svg width="48" height="64" viewBox="0 0 48 64" fill="none">
-        {/* Soft shadow under the nib so it lifts off the ivory bg */}
-        <Ellipse cx="14" cy="59" rx="8" ry="2" fill="rgba(42,31,24,0.15)" />
+    <View style={penStyles.wrap} pointerEvents="none">
+      <Svg width={112} height={70} viewBox="0 0 160 100" fill="none">
+        <Defs>
+          {/* Barrel gradient — deep ebony with a cylindrical highlight */}
+          <LinearGradient id="barrel" x1="0%" y1="0%" x2="100%" y2="100%">
+            <Stop offset="0%" stopColor="#3A1A0A" />
+            <Stop offset="30%" stopColor="#1E0D05" />
+            <Stop offset="55%" stopColor="#5A2A10" />
+            <Stop offset="100%" stopColor="#1E0D05" />
+          </LinearGradient>
+          {/* Nib gold gradient */}
+          <LinearGradient id="nib" x1="100%" y1="0%" x2="0%" y2="100%">
+            <Stop offset="0%" stopColor="#E8C878" />
+            <Stop offset="50%" stopColor="#B8924B" />
+            <Stop offset="100%" stopColor="#8E6E36" />
+          </LinearGradient>
+          {/* Cap gradient */}
+          <LinearGradient id="cap" x1="0%" y1="0%" x2="100%" y2="100%">
+            <Stop offset="0%" stopColor="#4A2010" />
+            <Stop offset="40%" stopColor="#1E0D05" />
+            <Stop offset="70%" stopColor="#3A1A0A" />
+            <Stop offset="100%" stopColor="#1E0D05" />
+          </LinearGradient>
+          {/* Gold ring gradient */}
+          <LinearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="0%">
+            <Stop offset="0%" stopColor="#8E6E36" />
+            <Stop offset="40%" stopColor="#E8C878" />
+            <Stop offset="70%" stopColor="#D4B179" />
+            <Stop offset="100%" stopColor="#8E6E36" />
+          </LinearGradient>
+          {/* Ink glow at nib tip */}
+          <RadialGradient id="inkglow" cx="50%" cy="50%" r="50%">
+            <Stop offset="0%" stopColor="#D4B179" stopOpacity="0.9" />
+            <Stop offset="60%" stopColor="#B8924B" stopOpacity="0.4" />
+            <Stop offset="100%" stopColor="#B8924B" stopOpacity="0" />
+          </RadialGradient>
+        </Defs>
 
-        {/* Pen barrel — burgundy with a subtle taper */}
+        {/* ── Ink glow at nib contact point ── */}
+        <Ellipse cx="12" cy="88" rx="6" ry="3" fill="url(#inkglow)" />
+
+        {/* ── NIB ── gold teardrop; point at (12, 90) */}
+        {/* Left tine */}
+        <Path d="M 12 90 L 22 72 L 26 75 Z" fill="url(#nib)" />
+        {/* Right tine */}
+        <Path d="M 12 90 L 26 75 L 30 70 Z" fill="#D4B179" opacity="0.85" />
+        {/* Nib centre highlight */}
         <Path
-          d="M 32 4 L 42 14 L 22 50 L 14 50 Z"
-          fill="#5C2A2A"
+          d="M 14 87 L 24 71"
+          stroke="#F0DC9A"
+          strokeWidth="0.6"
+          strokeLinecap="round"
+          opacity="0.7"
         />
-        {/* Barrel highlight — thin lighter line for sheen */}
+        {/* Nib slit — hairline down the centre */}
         <Path
-          d="M 31 6 L 39 14 L 22 44"
-          stroke="rgba(255,255,255,0.18)"
-          strokeWidth="0.8"
+          d="M 12 90 L 23 73"
+          stroke="#5C2A0A"
+          strokeWidth="0.7"
+          strokeLinecap="round"
+        />
+        {/* Breather hole */}
+        <Ellipse cx="22" cy="74" rx="1.2" ry="1.8"
+          fill="#5C2A0A" transform="rotate(-32 22 74)" />
+
+        {/* ── SECTION / COLLAR (connects nib to barrel) ── */}
+        {/* Dark grip section */}
+        <Path d="M 22 73 L 30 68 L 42 56 L 35 51 Z" fill="#140804" />
+        {/* Collar gold ring at top of section */}
+        <Path
+          d="M 34 52 L 42 57 L 44 54 L 36 49 Z"
+          fill="url(#ring)"
+        />
+
+        {/* ── BARREL ── long tapered body */}
+        {/* Main barrel shape — slightly tapered, 4-sided */}
+        <Path
+          d="M 36 50 L 44 55 L 130 8 L 123 3 Z"
+          fill="url(#barrel)"
+        />
+        {/* Barrel highlight — thin specular stripe */}
+        <Path
+          d="M 40 48 L 44 52 L 128 6"
+          stroke="rgba(255,255,255,0.10)"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          fill="none"
+        />
+        {/* Subtle secondary highlight for cylindrical sheen */}
+        <Path
+          d="M 37 52 L 126 5"
+          stroke="rgba(90,42,16,0.6)"
+          strokeWidth="1"
           strokeLinecap="round"
           fill="none"
         />
 
-        {/* Champagne-gold collar where nib meets barrel */}
+        {/* Gold trim ring at barrel centre */}
         <Path
-          d="M 14 50 L 22 50 L 19 56 L 12 54 Z"
+          d="M 82 27 L 88 31 L 91 27 L 85 23 Z"
+          fill="url(#ring)"
+        />
+        {/* Second thin ring just above */}
+        <Path
+          d="M 86 24 L 92 28 L 93 26 L 87 22 Z"
           fill="#B8924B"
         />
 
-        {/* Nib — gold teardrop, point at (12, 58) */}
+        {/* ── CAP ── slightly wider than barrel, rounded end */}
+        {/* Cap body */}
         <Path
-          d="M 12 54 L 19 54 L 12 60 Z"
+          d="M 122 3 L 130 8 L 155 -4 L 148 -9 Z"
+          fill="url(#cap)"
+        />
+        {/* Cap band / trim ring */}
+        <Path
+          d="M 122 3 L 128 7 L 131 4 L 125 0 Z"
+          fill="url(#ring)"
+        />
+        {/* Cap clip — thin gold strip along the top */}
+        <Path
+          d="M 131 3 L 155 -7 L 154 -9 L 130 1 Z"
+          fill="#C4A060"
+          opacity="0.9"
+        />
+        <Path
+          d="M 130 1 L 154 -9"
+          stroke="#E8C878"
+          strokeWidth="0.5"
+          opacity="0.5"
+        />
+        {/* Cap end — rounded */}
+        <Ellipse
+          cx="151" cy="-5" rx="5" ry="3"
+          fill="#2A0E06"
+          transform="rotate(-32 151 -5)"
+        />
+        {/* Cap end gold trim */}
+        <Path
+          d="M 148 -9 L 155 -4 L 157 -7 L 150 -12 Z"
           fill="#B8924B"
         />
 
-        {/* Nib slit — fine dark line down the center for realism */}
-        <Path
-          d="M 14 55 L 13 59"
-          stroke="#5C2A2A"
-          strokeWidth="0.6"
-          strokeLinecap="round"
-        />
-
-        {/* Tiny gold ferrule at the cap end */}
-        <Rect x="33" y="2" width="3" height="3" rx="1" fill="#D4B179" />
+        {/* ── SECTION shadow ── grounding shadow under nib */}
+        <Ellipse cx="13" cy="91" rx="7" ry="1.5" fill="rgba(42,31,24,0.18)" />
       </Svg>
     </View>
   );
 }
 
 const penStyles = StyleSheet.create({
-  penWrap: { width: 48, height: 64 },
+  wrap: { width: 112, height: 70 },
 });
 
-/**
- * Handwriting splash for Perfume Picks.
- *
- * The "writing" illusion is built from three layered animations:
- *
- *   1. The wordmark "Perfume Picks" is rendered in cursive (Pinyon Script).
- *
- *   2. A horizontal MASK over the wordmark animates from 0 → 100% width,
- *      revealing the cursive text left-to-right at handwriting speed
- *      (~1.6s for the full wordmark — slightly faster than a real signature
- *      so the splash doesn't drag).
- *
- *   3. A small "pen tip" — a glowing dot with a soft champagne-gold halo —
- *      tracks the leading edge of the reveal mask, so it looks like the
- *      letters are appearing under the pen.
- *
- *   4. After the wordmark finishes, the divider rule and the editorial
- *      "FRAGRANCE, REFINED" tagline fade in.
- *
- * Total runtime ~3.0s including the fade-out. onFinish() lets the parent
- * mount the (tabs) UI underneath at the right moment.
- */
+// ─────────────────────────────────────────────
+//  Splash component
+// ─────────────────────────────────────────────
 
 const { width: SCREEN_W } = Dimensions.get('window');
 const WORDMARK_WIDTH = Math.min(SCREEN_W - 48, 360);
 const WORDMARK_HEIGHT = 110;
 
-const WRITE_DURATION_MS = 1600;
-const POST_HOLD_MS = 700;
+const WRITE_DURATION_MS = 1900;
+const POST_HOLD_MS = 650;
 const FADE_OUT_MS = 500;
 const TOTAL_MS = WRITE_DURATION_MS + POST_HOLD_MS + FADE_OUT_MS + 200;
 
@@ -114,114 +201,72 @@ interface Props {
 }
 
 export function HandwrittenSplash({ fontsLoaded, onReady, onFinish }: Props) {
-  // 0 → 1 reveal progress for the wordmark
   const writeProgress = useSharedValue(0);
-  // Tagline + divider fade
   const taglineOpacity = useSharedValue(0);
-  // Whole-splash fade-out
-  const containerOpacity = useSharedValue(0);
-  // Subtle shimmer on the pen tip (loops while writing)
-  const shimmer = useSharedValue(0);
-  // Slight breathing on the wordmark after it finishes — feels alive, not static
+  // Start at 1 (fully opaque) so the splash immediately covers the home screen
+  // behind it. The native splash hides first, then we're already visible — no
+  // transparent frame where the wordmark on the home screen bleeds through.
+  const containerOpacity = useSharedValue(1);
+  // Stroke cadence — drives vertical oscillation
+  const strokeTick = useSharedValue(0);
   const wordmarkScale = useSharedValue(1);
 
   useEffect(() => {
     if (!fontsLoaded) return;
 
-    // 1. Fade in the whole stage
-    containerOpacity.value = withTiming(1, { duration: 350, easing: Easing.out(Easing.cubic) });
-
-    // 2. Write the wordmark — easeInOut so it accelerates into the middle and
-    //    slows toward the end of each word, mimicking pen pressure.
     writeProgress.value = withTiming(1, {
       duration: WRITE_DURATION_MS,
-      easing: Easing.bezier(0.45, 0.05, 0.55, 0.95),
+      easing: Easing.bezier(0.42, 0, 0.58, 1),
     });
 
-    // Pen-tip shimmer — gentle pulse on a loop, ends when writing ends
-    shimmer.value = withRepeat(
+    // Stroke tick oscillates ~6× per second — drives the natural up/down bob
+    strokeTick.value = withRepeat(
       withSequence(
-        withTiming(1, { duration: 350, easing: Easing.inOut(Easing.quad) }),
-        withTiming(0.4, { duration: 350, easing: Easing.inOut(Easing.quad) }),
+        withTiming(1, { duration: 160, easing: Easing.inOut(Easing.quad) }),
+        withTiming(0, { duration: 160, easing: Easing.inOut(Easing.quad) }),
       ),
       -1,
-      true,
+      false,
     );
 
-    // After the writing finishes: fade in tagline, then breathe the wordmark
     taglineOpacity.value = withDelay(
-      WRITE_DURATION_MS + 100,
+      WRITE_DURATION_MS + 80,
       withTiming(1, { duration: 500, easing: Easing.out(Easing.cubic) }),
     );
 
     wordmarkScale.value = withDelay(
       WRITE_DURATION_MS,
       withSequence(
-        withTiming(1.02, { duration: 600, easing: Easing.inOut(Easing.quad) }),
+        withTiming(1.015, { duration: 600, easing: Easing.inOut(Easing.quad) }),
         withTiming(1.0, { duration: 600, easing: Easing.inOut(Easing.quad) }),
       ),
     );
 
-    // 3. Fade everything out + signal the parent. Use a setTimeout instead
-    //    of a second `containerOpacity.value = withDelay(...)` because in
-    //    Reanimated, consecutive assignments to the same shared value cancel
-    //    each other — chaining via a JS timer keeps both the fade-in (above)
-    //    and the fade-out independent.
     const fadeAt = WRITE_DURATION_MS + POST_HOLD_MS;
     const fadeOutTimer = setTimeout(() => {
       containerOpacity.value = withTiming(
         0,
         { duration: FADE_OUT_MS, easing: Easing.in(Easing.cubic) },
-        (finished) => {
-          if (finished) runOnJS(onFinish)();
-        },
+        (finished) => { if (finished) runOnJS(onFinish)(); },
       );
     }, fadeAt);
 
     return () => {
       clearTimeout(fadeOutTimer);
-      // Cancel future repeats if the component unmounts mid-flight
-      shimmer.value = 0;
+      strokeTick.value = 0;
     };
   }, [fontsLoaded]);
 
-  const containerStyle = useAnimatedStyle(() => ({
-    opacity: containerOpacity.value,
-  }));
+  const containerStyle = useAnimatedStyle(() => ({ opacity: containerOpacity.value }));
 
-  // The mask uncovers the wordmark from x=0 to x=WORDMARK_WIDTH.
-  // We give a small over-shoot (1.04) so the right tail of the final letter
-  // doesn't clip when the pen reaches the end.
   const maskStyle = useAnimatedStyle(() => ({
     width: interpolate(
       writeProgress.value,
       [0, 1],
-      [0, WORDMARK_WIDTH * 1.04],
+      [0, WORDMARK_WIDTH * 1.06],
       Extrapolation.CLAMP,
     ),
   }));
-
-  // Pen rides the leading edge of the reveal. Subtle vertical wiggle and
-  // tilt jitter so the pen feels hand-held — derived from the same shimmer
-  // value that already loops at handwriting cadence.
-  const penTipStyle = useAnimatedStyle(() => {
-    // Tiny vertical bob (±1.5px) sourced from the shimmer loop — looks like
-    // natural hand bounce without going Disney-cartoonish.
-    const wiggleY = interpolate(shimmer.value, [0, 0.5, 1], [-1.5, 0.5, -1], Extrapolation.CLAMP);
-    // Subtle tilt jitter (±2°) on top of the writing angle (-22°).
-    const baseTilt = -22;
-    const tiltJitter = interpolate(shimmer.value, [0, 0.5, 1], [-1.5, 1, -1], Extrapolation.CLAMP);
-    return {
-      transform: [
-        { translateX: interpolate(writeProgress.value, [0, 1], [0, WORDMARK_WIDTH], Extrapolation.CLAMP) },
-        { translateY: wiggleY },
-        { rotate: `${baseTilt + tiltJitter}deg` },
-      ],
-      opacity: writeProgress.value < 1
-        ? 1
-        : interpolate(writeProgress.value, [1, 1.001], [1, 0], Extrapolation.CLAMP),
-    };
-  });
 
   const wordmarkBreathStyle = useAnimatedStyle(() => ({
     transform: [{ scale: wordmarkScale.value }],
@@ -230,23 +275,77 @@ export function HandwrittenSplash({ fontsLoaded, onReady, onFinish }: Props) {
   const taglineStyle = useAnimatedStyle(() => ({
     opacity: taglineOpacity.value,
     transform: [
-      { translateY: interpolate(taglineOpacity.value, [0, 1], [6, 0], Extrapolation.CLAMP) },
+      { translateY: interpolate(taglineOpacity.value, [0, 1], [8, 0], Extrapolation.CLAMP) },
     ],
   }));
 
-  // While fonts are loading, render the container with onLayout so the parent
-  // can hide the native launch screen — but no animation yet.
+  const penStyle = useAnimatedStyle(() => {
+    const p = writeProgress.value; // 0 → 1
+
+    // ── Horizontal travel ──────────────────────────────────────────────────
+    const x = interpolate(p, [0, 1], [0, WORDMARK_WIDTH + 8], Extrapolation.CLAMP);
+
+    // ── Natural handwriting arc ────────────────────────────────────────────
+    // A real cursive signature has:
+    //  • slow lift-strokes (pen rises ~4-6px on upstrokes)
+    //  • press-strokes pulling down (pen dips ~2px on downstrokes)
+    //  • brief "lifts" between words where the pen barely touches paper
+    //
+    // We model this with two superimposed sine waves:
+    //   A: slow baseline arc (one gentle curve across the whole word)
+    //   B: per-letter oscillation (~7 cycles for "Perfume Picks")
+    //   C: "space" lift — pen rises between the two words
+    const TWO_PI = Math.PI * 2;
+
+    // Slow arc — peak lift in the middle of each word, gentle dip at connections
+    const slowArc = Math.sin(p * Math.PI * 2.4) * 5;
+
+    // Per-letter bob — 7 letters in "Perfume" + 5 in "Picks" ≈ 12 oscillations
+    const letterBob = Math.sin(p * TWO_PI * 6) * 3.5;
+
+    // Stroke tick provides the live hand-tremor feel during writing
+    const tick = strokeTick.value;
+    const tremor = (tick - 0.5) * 3; // ±1.5px live tremor
+
+    // Word-gap lift: around p=0.56 (between the two words) the pen lifts
+    const wordGapDist = Math.abs(p - 0.56);
+    const wordLift = wordGapDist < 0.06
+      ? interpolate(wordGapDist, [0, 0.06], [-8, 0], Extrapolation.CLAMP)
+      : 0;
+
+    const y = slowArc + letterBob + tremor + wordLift;
+
+    // Pen disappears as it finishes (lifts off after the last stroke)
+    const penOpacity = p < 0.96
+      ? 1
+      : interpolate(p, [0.96, 1], [1, 0], Extrapolation.CLAMP);
+
+    // ── Rotation ──────────────────────────────────────────────────────────
+    // Base angle: ~-28° (pen tilted like a right-handed writer).
+    // On upstrokes the pen tilts slightly more vertical (-32°);
+    // on downstrokes it relaxes toward horizontal (-24°).
+    // letterBob drives this — when the pen is rising the tilt increases.
+    const baseTilt = -28;
+    const strokeTilt = letterBob * 0.7; // ±2.5°
+
+    return {
+      opacity: penOpacity,
+      transform: [
+        { translateX: x },
+        { translateY: y },
+        { rotate: `${baseTilt + strokeTilt}deg` },
+      ],
+    };
+  });
+
   return (
     <Animated.View style={[styles.container, containerStyle]} onLayout={() => onReady?.()}>
       <View style={styles.ornamentTop} />
 
-      {/* Wordmark + reveal mask + pen tip, all stacked */}
       <Animated.View style={[styles.wordmarkSlot, wordmarkBreathStyle]}>
         <MaskedView
           style={styles.maskedRoot}
           maskElement={
-            // The mask child is BLACK where the wordmark should show through.
-            // We grow this black rectangle from 0 → full width.
             <View style={styles.maskHost}>
               <Animated.View style={[styles.maskReveal, maskStyle]} />
             </View>
@@ -262,11 +361,9 @@ export function HandwrittenSplash({ fontsLoaded, onReady, onFinish }: Props) {
           </Text>
         </MaskedView>
 
-        {/* Fountain pen — tracks the leading edge of the reveal. The pen's
-            nib tip sits exactly at the writing edge (penTip anchor positions
-            the SVG so its nib point coincides with the wordmark baseline).
-            A subtle wiggle + tilt jitter makes the writing feel hand-drawn. */}
-        <Animated.View pointerEvents="none" style={[styles.penTipWrap, penTipStyle]}>
+        {/* Pen anchored so nib tip (SVG 12, 88 → rendered ~8.4, 61.6)
+            sits exactly on the wordmark writing baseline. */}
+        <Animated.View pointerEvents="none" style={[styles.penWrap, penStyle]}>
           <FountainPen />
         </Animated.View>
       </Animated.View>
@@ -325,7 +422,8 @@ const styles = StyleSheet.create({
   },
   maskReveal: {
     height: '100%',
-    backgroundColor: 'black', // any opaque color works; alpha mask uses luminance
+    backgroundColor: 'black',
+    width: 0, // static initial state; Reanimated maskStyle overrides on animation start
   },
   wordmarkText: {
     fontFamily: 'PinyonScript_400Regular',
@@ -333,23 +431,19 @@ const styles = StyleSheet.create({
     color: COLORS.accent,
     textAlign: 'center',
     width: WORDMARK_WIDTH,
-    // Pinyon Script descenders sit low — extra line height prevents clipping.
     lineHeight: WORDMARK_HEIGHT,
     includeFontPadding: false,
   },
-  // The fountain pen SVG is 48×64 and its NIB TIP is at SVG (12, 60).
-  // We anchor the wrapper so the nib tip lands exactly on the writing edge:
-  // shift left by 12 (nib x) and up by 60 (nib y) from the wordmark baseline,
-  // then push down by half the wordmark height so the nib sits on the
-  // visual baseline of the cursive script.
-  penTipWrap: {
+  // Pen nib tip is at SVG (12, 88). Rendered at 0.7× scale → (8.4, 61.6).
+  // We offset so the tip sits on the wordmark's visual baseline (centre of slot).
+  penWrap: {
     position: 'absolute',
     left: 0,
     top: '50%',
-    width: 48,
-    height: 64,
-    marginLeft: -12,
-    marginTop: -42, // nib at writing midline
+    width: 112,
+    height: 70,
+    marginLeft: -8,    // nib x offset
+    marginTop: -44,    // nib y sits on writing line
   },
   divider: {
     width: 40,

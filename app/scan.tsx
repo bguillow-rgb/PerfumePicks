@@ -5,7 +5,7 @@ import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import * as Haptics from 'expo-haptics';
 import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming, Easing } from 'react-native-reanimated';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
@@ -48,8 +48,15 @@ export default function ScanScreen() {
   const search = useCatalogStore((s) => s.search);
   const isPro = useProStore((s) => s.isPro);
   const recordScan = useScanStore((s) => s.recordScan);
-  const getRemainingScans = useScanStore((s) => s.getRemainingScans);
   const isAtLimit = useScanStore((s) => s.isAtLimit);
+  // Subscribe to the raw count/date so the "remaining" hint re-renders after a
+  // scan — selecting the getter function alone is a stable ref and never updates.
+  const dailyScanCount = useScanStore((s) => s.dailyScanCount);
+  const dailyScanDate = useScanStore((s) => s.dailyScanDate);
+  const remainingScans = Math.max(
+    0,
+    FREE_DAILY_SCAN_LIMIT - (dailyScanDate === new Date().toLocaleDateString('en-CA') ? dailyScanCount : 0),
+  );
 
   // Toast animation
   const toastOpacity = useRef(new RNAnimated.Value(0)).current;
@@ -292,7 +299,7 @@ export default function ScanScreen() {
           </Pressable>
           {!isPro && (
             <Text style={styles.scanLimitHint}>
-              {getRemainingScans()} / {FREE_DAILY_SCAN_LIMIT} free scans remaining today
+              {remainingScans} / {FREE_DAILY_SCAN_LIMIT} free scans remaining today
             </Text>
           )}
         </View>

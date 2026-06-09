@@ -1,0 +1,31 @@
+appId: com.bobguillow.perfumepicks
+---
+# P0: All five bottom tabs navigate. Tabs: Today, Discover, Taste, Wardrobe, You.
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- tapOn:
+    text: "Not now"
+    optional: true
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- tapOn:
+    text: "Discover, tab.*"
+- assertVisible: "BY HOUSE"
+- takeScreenshot: 002-nav__discover
+- tapOn:
+    text: "Taste, tab.*"
+- takeScreenshot: 002-nav__taste
+- tapOn:
+    text: "Wardrobe, tab.*"
+- takeScreenshot: 002-nav__wardrobe
+- tapOn:
+    text: "You, tab.*"
+- assertVisible: "Subscription"
+- takeScreenshot: 002-nav__you
+- tapOn:
+    text: "Today, tab.*"
+- assertVisible: "SCENT OF THE DAY"
+- takeScreenshot: 002-nav__back-home

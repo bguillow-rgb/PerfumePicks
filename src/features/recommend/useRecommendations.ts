@@ -37,12 +37,12 @@ import {
   getFragranceFromStore,
   type Fragrance,
 } from '@/src/stores/useCatalogStore';
-import { deriveTasteProfile, type TasteSignal } from './tasteProfile';
+import { deriveTasteProfile, type TasteSignal, type DerivedTasteProfile } from './tasteProfile';
 import { rank, type RecContext, type ScoredRec } from './score';
 
-// Cap candidates to avoid O(n²) scoring blowup when the catalog grows.
-// 200 is safe at ~50 fragrances today; revisit if catalog exceeds 500.
-const MAX_CANDIDATES = 200;
+// Cap candidates for scoring. Supabase max_rows must be set to ≥ this value
+// in Project Settings → API. Raise to 10 000 in the dashboard to unlock full catalog.
+const MAX_CANDIDATES = 3000;
 
 /** Weight each signal type. Wears outweigh wishlists outweigh single likes. */
 const SIGNAL_WEIGHTS = {
@@ -207,15 +207,16 @@ export function useRecommendations(ctx?: RecContext) {
 
   // Pull the top-popularity slice of the live catalog into local state.
   // useCatalogStore.fetchAllActive handles demo-mode fallback to MOCK_CATALOG.
-  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+  // Filter by gender preference from quiz: 'fem' → feminine+unisex, 'masc' → masculine+unisex, else all.
+  const fetchEnriched = useCatalogStore((s) => s.fetchEnriched);
   const [catalogPool, setCatalogPool] = useState<Fragrance[]>([]);
   useEffect(() => {
     let cancelled = false;
-    fetchAllActive(MAX_CANDIDATES).then((rows) => {
+    fetchEnriched(8000, 0, ['feminine', 'unisex']).then((rows) => {
       if (!cancelled) setCatalogPool(rows);
     });
     return () => { cancelled = true; };
-  }, [fetchAllActive]);
+  }, [fetchEnriched]);
 
   const candidates = useMemo(
     () => catalogPool.filter((f) => !owned.has(f.id)),
@@ -268,21 +269,179 @@ export function useRecommendations(ctx?: RecContext) {
 }
 
 /**
- * Recent catalog additions for the "New Arrivals" rail. In production this
- * pulls the top-popularity slice and sorts client-side by release_year
- * descending as a proxy until the ETL pipeline populates a real
- * `created_at`. Demo mode falls back to MOCK_CATALOG via fetchAllActive.
+ * Lightweight hook: derives the user's taste profile from local signals only.
+ * Does NOT fetch the catalog — safe to call on any screen without triggering
+ * the full recommendation pipeline.
  */
-export function useNewArrivals(limit = 6): Fragrance[] {
-  const fetchAllActive = useCatalogStore((s) => s.fetchAllActive);
+export function useTasteProfile(): DerivedTasteProfile {
+  const logs = useWearLogStore((s) => s.logs);
+  const items = useWardrobeStore((s) => s.items);
+  const swipesMap = useSwipeStore((s) => s.swipes);
+  const answers = useQuizStore((s) => s.answers);
+
+  return useMemo(() => {
+    const wears = logs.map((l) => ({ fragrance_id: l.fragrance_id, rating: l.rating ?? null }));
+    const itemsForProfile = items.map((i) => ({ fragrance_id: i.fragrance_id, status: i.status }));
+    const swipes = Object.values(swipesMap).map((x) => ({ fragrance_id: x.fragrance_id, action: x.action }));
+    const base = deriveTasteProfile(buildSignals(wears, itemsForProfile, swipes));
+
+    const result = { ...base };
+    if (answers.family) {
+      result.preferred_families = {
+        ...result.preferred_families,
+        [answers.family]: (result.preferred_families[answers.family] ?? 0) + 1.5,
+      };
+      result.signal_count = result.signal_count + 1;
+    }
+    if (answers.price && result.avg_price_tier === null) result.avg_price_tier = Number(answers.price);
+    if (answers.longevity && result.longevity_preference === null) result.longevity_preference = Number(answers.longevity);
+    return result;
+  }, [logs, items, swipesMap, answers.family, answers.price, answers.longevity]);
+}
+
+/**
+ * "Icons" rail — top-quality fragrances by community scores.
+ * Sorted by (compliment + versatility + office_safe) DESC as a proxy for
+ * broadly beloved, well-regarded bottles. Honest label, honest data.
+ */
+export function useIcons(limit = 6): Fragrance[] {
+  const fetchEnriched = useCatalogStore((s) => s.fetchEnriched);
   const [rows, setRows] = useState<Fragrance[]>([]);
   useEffect(() => {
     let cancelled = false;
-    fetchAllActive(limit * 4).then((r) => {
+    fetchEnriched(limit * 6, 0, ['feminine', 'unisex']).then((r) => {
       if (cancelled) return;
-      setRows([...r].sort((a, b) => b.release_year - a.release_year).slice(0, limit));
+      const sorted = [...r].sort((a, b) =>
+        (b.compliment_score + b.versatility_score + b.office_safe_score) -
+        (a.compliment_score + a.versatility_score + a.office_safe_score)
+      );
+      setRows(sorted.slice(0, limit));
     });
     return () => { cancelled = true; };
-  }, [fetchAllActive, limit]);
+  }, [fetchEnriched, limit]);
   return rows;
+}
+
+/**
+ * "New Arrivals" rail — most recently released fragrances in the catalog.
+ * Used as a fallback for Community SOTD when the feed has no entries yet,
+ * so the rail looks meaningfully different from the Icons rail (which sorts
+ * by quality/community scores, not recency).
+ */
+export function useNewArrivals(limit = 8): Fragrance[] {
+  const fetchEnriched = useCatalogStore((s) => s.fetchEnriched);
+  const [rows, setRows] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    fetchEnriched(limit * 6, 0, ['feminine', 'unisex']).then((r) => {
+      if (cancelled) return;
+      const sorted = [...r].sort((a, b) => b.release_year - a.release_year);
+      // Deduplicate by name+brand — different SKUs of the same fragrance look identical
+      const seen = new Set<string>();
+      const deduped = sorted.filter((f) => {
+        const key = `${f.brand}::${f.name}`.toLowerCase();
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+      setRows(deduped.slice(0, limit));
+    });
+    return () => { cancelled = true; };
+  }, [fetchEnriched, limit]);
+  return rows;
+}
+
+export interface WardrobePick {
+  fragrance: Fragrance;
+  reason: string;
+  lastWorn: string | null;
+}
+
+/**
+ * "Your Wardrobe Picks" — re-ranks fragrances the user owns (status=have)
+ * by today's taste score. Tiebreaker: items not worn in 30+ days surface
+ * first to encourage rotation.
+ */
+export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: boolean } {
+  const items = useWardrobeStore((s) => s.items);
+  const logs = useWearLogStore((s) => s.logs);
+  const swipesMap = useSwipeStore((s) => s.swipes);
+  const answers = useQuizStore((s) => s.answers);
+  const fetchMany = useCatalogStore((s) => s.fetchMany);
+
+  const ownedItems = useMemo(
+    () => items.filter((i) => i.status === 'have'),
+    [items],
+  );
+
+  // Eagerly fetch wardrobe fragrances that aren't in the catalog cache yet.
+  // Without this, getFragranceFromStore returns undefined for items the user
+  // added while offline or on a fresh device, so candidates is always empty
+  // and the card shows "Building your picks" even with a full wardrobe.
+  const [fetchedFragrances, setFetchedFragrances] = useState<Fragrance[]>([]);
+  const [fetchDone, setFetchDone] = useState(false);
+  useEffect(() => {
+    const ids = ownedItems.map((i) => i.fragrance_id);
+    if (!ids.length) { setFetchDone(true); return; }
+    let cancelled = false;
+    fetchMany(ids).then((rows) => {
+      if (!cancelled) { setFetchedFragrances(rows); setFetchDone(true); }
+    });
+    return () => { cancelled = true; };
+  }, [ownedItems, fetchMany]);
+
+  const lastWornMap = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const log of logs) {
+      const existing = map.get(log.fragrance_id);
+      if (!existing || log.worn_on > existing) map.set(log.fragrance_id, log.worn_on);
+    }
+    return map;
+  }, [logs]);
+
+  const profile = useMemo(() => {
+    const wears = logs.map((l) => ({ fragrance_id: l.fragrance_id, rating: l.rating ?? null }));
+    const itemsForProfile = items.map((i) => ({ fragrance_id: i.fragrance_id, status: i.status }));
+    const swipes = Object.values(swipesMap).map((x) => ({ fragrance_id: x.fragrance_id, action: x.action }));
+    return deriveTasteProfile(buildSignals(wears, itemsForProfile, swipes));
+  }, [logs, items, swipesMap]);
+
+  const ctx = useMemo<RecContext>(() => {
+    const base = defaultContext();
+    if (answers.season) (base as any).season = answers.season;
+    if (answers.occasion) (base as any).occasion = answers.occasion;
+    return base;
+  }, [answers.season, answers.occasion]);
+
+  const picks = useMemo(() => {
+    // Build a lookup from freshly-fetched fragrances, fall back to sync cache.
+    const fetchedMap = new Map<string, Fragrance>(fetchedFragrances.map((f) => [f.id, f]));
+    const candidates = ownedItems
+      .map((item) => fetchedMap.get(item.fragrance_id) ?? getFragranceFromStore(item.fragrance_id))
+      .filter(Boolean) as Fragrance[];
+
+    if (candidates.length === 0) return [];
+
+    const scored = rank(candidates, profile, ctx, candidates.length);
+    const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toLocaleDateString('en-CA');
+
+    return [...scored]
+      .sort((a, b) => {
+        const scoreDiff = b.score - a.score;
+        if (Math.abs(scoreDiff) > 0.05) return scoreDiff;
+        // Tiebreaker: items not worn recently float up
+        const aStale = (lastWornMap.get(a.fragrance.id) ?? '1970-01-01') < thirtyDaysAgo;
+        const bStale = (lastWornMap.get(b.fragrance.id) ?? '1970-01-01') < thirtyDaysAgo;
+        if (aStale !== bStale) return aStale ? -1 : 1;
+        return b.score - a.score;
+      })
+      .slice(0, limit)
+      .map((r) => ({
+        fragrance: r.fragrance,
+        reason: r.reason,
+        lastWorn: lastWornMap.get(r.fragrance.id) ?? null,
+      }));
+  }, [ownedItems, fetchedFragrances, profile, ctx, lastWornMap, limit]);
+
+  return { picks, loading: ownedItems.length > 0 && !fetchDone };
 }

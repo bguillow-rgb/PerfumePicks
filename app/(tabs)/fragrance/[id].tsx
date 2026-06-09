@@ -4,6 +4,7 @@ import { GestureDetector, Gesture } from 'react-native-gesture-handler';
 import Animated, { useSharedValue, useAnimatedStyle, withSpring, withTiming, runOnJS } from 'react-native-reanimated';
 import { Stack, useLocalSearchParams, useRouter, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { NotePyramid } from '@/src/components/fragrance/NotePyramid';
 import { AccordChip } from '@/src/components/fragrance/AccordChip';
@@ -351,7 +352,12 @@ function FragranceDetailScreen() {
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.hero}>
           <Image source={{ uri: fragrance.image_url }} style={styles.heroImage} />
-          <View style={styles.heroOverlay} />
+          <LinearGradient
+            colors={['transparent', 'rgba(0,0,0,0.28)', 'rgba(0,0,0,0.62)']}
+            locations={[0.4, 0.72, 1]}
+            style={styles.heroScrim}
+            pointerEvents="none"
+          />
           <Pressable
             style={styles.heartBtn}
             onPress={() => {
@@ -767,7 +773,7 @@ function FragranceDetailScreen() {
           // fragrance they haven't added yet. This ensures the fragrance shows
           // up in the wardrobe "Tried" filter (which filters by wear count > 0).
           if (!inWardrobe && fragrance && !editingLog) {
-            addToWardrobe({ fragrance_id: fragrance.id, status: 'tested', size_ml: 0, remaining_ml: 0 });
+            addToWardrobe({ fragrance_id: fragrance.id, status: 'tested', unit_type: 'sample', size_ml: 0, remaining_ml: 0 });
           }
         }}
       />
@@ -895,7 +901,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   heroImage: { ...StyleSheet.absoluteFillObject, width: '100%', height: '100%' },
-  heroOverlay: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(42,31,24,0.42)' },
+  heroScrim: { ...StyleSheet.absoluteFillObject },
   backBtn: {
     position: 'absolute', top: 56, left: SPACING.lg,
     width: 38, height: 38, borderRadius: 19,

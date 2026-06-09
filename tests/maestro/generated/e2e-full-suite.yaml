@@ -1,0 +1,402 @@
+appId: com.bobguillow.perfumepicks
+---
+# ══════════════════════════════════════════════════════════════════
+# PerfumePicks Full E2E Suite
+# Covers: all 5 tabs, Discover search + fragrance detail, full
+#         Taste swipe session, Wardrobe filters, Profile sections,
+#         Quiz (5Q → results), Scan screen UI.
+# Guest user (anonymous sign-in). No wardrobe data.
+#
+# SETUP NOTES: same Expo dev-client quirks as P0 suite — see
+# e2e-p0-critical-paths.yaml for full comments on each step.
+# ══════════════════════════════════════════════════════════════════
+
+# ── SETUP: Boot Expo dev client ────────────────────────────────────
+- launchApp
+- waitForAnimationToEnd
+- tapOn:
+    label: "http://localhost:8083"
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    label: "Open"
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    label: "Open"
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    label: "Open"
+    optional: true
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Continue"
+    commands:
+      - tapOn: "Continue"
+      - waitForAnimationToEnd
+- tapOn:
+    point: "90%, 48%"
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Continue as Guest"
+    commands:
+      - tapOn: "Continue as Guest"
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+
+# ══════════════════════════════════════════════════════════════════
+# HOME TAB (TC-H01–H06)
+# ══════════════════════════════════════════════════════════════════
+
+# TC-H01: SOTD section renders
+- assertVisible: "SCENT OF THE DAY"
+- takeScreenshot: home-01-top
+
+# TC-H02: Home scrolls — COMMUNITY SOTD + ICONS rails present
+- scroll
+- takeScreenshot: home-02-mid
+- scroll
+- takeScreenshot: home-03-bottom
+
+# Scroll back to top — swipe down
+- scroll:
+    direction: UP
+- scroll:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC-H03: Quiz CTA visible (wardrobe is empty → Discover card shown)
+- assertVisible: "Take the Taste Quiz"
+- takeScreenshot: home-04-quiz-cta
+
+# ══════════════════════════════════════════════════════════════════
+# DISCOVER TAB — Browse (TC-D01–D05)
+# ══════════════════════════════════════════════════════════════════
+
+- tapOn: "Discover, tab, 2 of 6"
+- extendedWaitUntil:
+    visible: "Search fragrances, notes, brands..."
+    timeout: 15000
+
+# TC-D01: Discover lands with search bar + CURATED EDITS
+- assertVisible: "CURATED EDITS"
+- assertVisible: "Filter"
+- takeScreenshot: disc-01-top
+
+# TC-D02: Scroll → BY ACCORD visible
+- scroll
+- assertVisible: "BY ACCORD"
+- takeScreenshot: disc-02-accords
+
+# TC-D03: Scroll further → BROWSE BY MOOD visible
+- scroll
+- takeScreenshot: disc-03-mood
+
+# Scroll back to top for search test
+- scroll:
+    direction: UP
+- scroll:
+    direction: UP
+- waitForAnimationToEnd
+
+# ── Discover Search (TC-D04–D05) ───────────────────────────────────
+
+# TC-D04: Searching "Dior" returns results
+- tapOn: "Search fragrances, notes, brands..."
+- typeText: "Dior"
+- waitForAnimationToEnd
+- takeScreenshot: disc-04-search-dior
+
+# TC-D05: Fragrance detail from search — tap "Sauvage"
+- clearText
+- typeText: "Sauvage"
+- waitForAnimationToEnd
+- takeScreenshot: disc-05-search-sauvage
+# Tap the first Sauvage result
+- tapOn: "Sauvage"
+- extendedWaitUntil:
+    visible: "Dior"
+    timeout: 10000
+
+# ══════════════════════════════════════════════════════════════════
+# FRAGRANCE DETAIL (TC-F01–F05)
+# ══════════════════════════════════════════════════════════════════
+
+# TC-F01: Hero + brand + name visible
+- assertVisible: "Dior"
+- takeScreenshot: frag-01-top
+
+# TC-F02: Scroll — notes pyramid + action buttons
+- scroll
+- takeScreenshot: frag-02-notes
+
+# TC-F03: Scroll — similar frags / retailer links
+- scroll
+- takeScreenshot: frag-03-similar
+
+# TC-F04: Scroll — compliments / layering / reviews section
+- scroll
+- takeScreenshot: frag-04-bottom
+
+# TC-F05: Back to Discover search results
+- back
+- waitForAnimationToEnd
+- assertVisible: "Search fragrances, notes, brands..."
+
+# ══════════════════════════════════════════════════════════════════
+# TASTE SESSION (TC-T01–T10)
+# ══════════════════════════════════════════════════════════════════
+
+- tapOn: "Taste, tab, 3 of 6"
+- extendedWaitUntil:
+    visible: "TRAIN MY NOSE"
+    timeout: 15000
+
+# TC-T01: Taste intro screen elements
+- assertVisible: "Begin a Session"
+- takeScreenshot: taste-01-intro
+
+# TC-T02: Start session
+- tapOn: "Begin a Session"
+- extendedWaitUntil:
+    visible: "TASTE SESSION"
+    timeout: 15000
+- takeScreenshot: taste-02-session-card1
+
+# TC-T03–T07: Swipe 5 cards via action buttons
+- tapOn: "Love"
+- waitForAnimationToEnd
+- takeScreenshot: taste-03-after-love
+
+- tapOn: "Pass"
+- waitForAnimationToEnd
+
+- tapOn: "Like"
+- waitForAnimationToEnd
+
+- tapOn: "Love"
+- waitForAnimationToEnd
+
+- tapOn: "Pass"
+- waitForAnimationToEnd
+- takeScreenshot: taste-04-mid-session
+
+# TC-T08: End session → exit modal
+- tapOn: "End Session"
+- waitForAnimationToEnd
+- takeScreenshot: taste-05-exit-modal
+
+# TC-T09: Save & Exit
+- tapOn: "Save & Exit"
+- waitForAnimationToEnd
+- takeScreenshot: taste-06-after-save
+
+# TC-T10: Back at Taste intro with updated signal count
+- extendedWaitUntil:
+    visible: "TRAIN MY NOSE"
+    timeout: 10000
+- takeScreenshot: taste-07-signals-updated
+
+# ══════════════════════════════════════════════════════════════════
+# WARDROBE TAB (TC-W01–W06)
+# ══════════════════════════════════════════════════════════════════
+
+- tapOn: "Wardrobe, tab, 4 of 6"
+- extendedWaitUntil:
+    visible: "Start your collection"
+    timeout: 15000
+
+# TC-W01: Empty state + filter pills
+- assertVisible: "Browse Fragrances"
+- assertVisible: "All"
+- assertVisible: "Want"
+- assertVisible: "Have"
+- assertVisible: "Tried"
+- takeScreenshot: wardrobe-01-empty
+
+# TC-W02: Want filter
+- tapOn: "Want"
+- waitForAnimationToEnd
+- takeScreenshot: wardrobe-02-want
+
+# TC-W03: Have filter
+- tapOn: "Have"
+- waitForAnimationToEnd
+- takeScreenshot: wardrobe-03-have
+
+# TC-W04: Tried filter
+- tapOn: "Tried"
+- waitForAnimationToEnd
+- takeScreenshot: wardrobe-04-tried
+
+# TC-W05: All filter resets
+- tapOn: "All"
+- waitForAnimationToEnd
+- takeScreenshot: wardrobe-05-all-reset
+
+# TC-W06: Tapping Browse Fragrances → Discover tab
+- tapOn: "Browse Fragrances"
+- extendedWaitUntil:
+    visible: "Search fragrances, notes, brands..."
+    timeout: 10000
+- takeScreenshot: wardrobe-06-browse-cta
+
+# ══════════════════════════════════════════════════════════════════
+# PROFILE TAB (TC-P01–P08)
+# ══════════════════════════════════════════════════════════════════
+
+- tapOn: "You, tab, 6 of 6"
+- extendedWaitUntil:
+    visible: "Taste Profile"
+    timeout: 15000
+
+# TC-P01: Profile top — avatar, stats, Taste Profile section
+- assertVisible: "Taste Profile"
+- takeScreenshot: profile-01-top
+- scroll
+
+# TC-P02: Account section visible
+- assertVisible: "Account"
+- takeScreenshot: profile-02-account
+- scroll
+
+# TC-P03: About section + legal links
+- assertVisible: "About"
+- assertVisible: "Privacy Policy"
+- assertVisible: "Terms of Service"
+- takeScreenshot: profile-03-about
+
+# TC-P04: Open Privacy Policy modal
+- tapOn: "Privacy Policy"
+- waitForAnimationToEnd
+- takeScreenshot: profile-04-privacy-modal
+# Close by swiping down (modal presentation)
+- swipe:
+    direction: DOWN
+    duration: 300
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Taste Profile"
+    timeout: 10000
+
+# ══════════════════════════════════════════════════════════════════
+# QUIZ FLOW (TC-Q01–Q10)
+# ══════════════════════════════════════════════════════════════════
+
+- tapOn: "Today, tab, 1 of 6"
+- extendedWaitUntil:
+    visible: "Take the Taste Quiz"
+    timeout: 15000
+- tapOn: "Take the Taste Quiz"
+- waitForAnimationToEnd
+
+# Handle resume modals if prior quiz answers saved
+- runFlow:
+    when:
+      visible: "You've taken this quiz."
+    commands:
+      - tapOn: "Take the Quiz Again"
+      - waitForAnimationToEnd
+
+- runFlow:
+    when:
+      visible: "Resume your quiz?"
+    commands:
+      - tapOn: "Start Over"
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible: "QUESTION"
+    timeout: 15000
+
+# TC-Q01: Q1 — Which world calls to you? (Family)
+- assertVisible: "Which world calls to you?"
+- takeScreenshot: quiz-01-q1
+- tapOn: "Floral Garden"
+- waitForAnimationToEnd
+
+# TC-Q02: Q2 — When will you wear it most? (Occasion)
+- extendedWaitUntil:
+    visible: "When will you wear it most?"
+    timeout: 10000
+- takeScreenshot: quiz-02-q2
+- tapOn: "Date Night"
+- waitForAnimationToEnd
+
+# TC-Q03: Q3 — Your usual investment? (Price)
+- extendedWaitUntil:
+    visible: "Your usual investment?"
+    timeout: 10000
+- takeScreenshot: quiz-03-q3
+- tapOn: "$50–$120"
+- waitForAnimationToEnd
+
+# TC-Q04: Q4 — Which season? (Season)
+- extendedWaitUntil:
+    visible: "Which season do you gravitate toward?"
+    timeout: 10000
+- takeScreenshot: quiz-04-q4
+- tapOn: "Autumn"
+- waitForAnimationToEnd
+
+# TC-Q05: Q5 — How long should it last? (Longevity)
+- extendedWaitUntil:
+    visible: "How long should a scent last?"
+    timeout: 10000
+- takeScreenshot: quiz-05-q5
+- tapOn: "All day"
+- waitForAnimationToEnd
+
+# Handle Pro tease modal (free users hit it after Q5)
+- runFlow:
+    when:
+      visible: "See My Results"
+    commands:
+      - tapOn: "See My Results"
+      - waitForAnimationToEnd
+
+# TC-Q06: Results page
+- extendedWaitUntil:
+    visible: "YOUR PICKS"
+    timeout: 20000
+- assertVisible: "tailored for you"
+- takeScreenshot: quiz-06-results
+
+# TC-Q07: Back to Today
+- tapOn: "Back to Today"
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 10000
+- takeScreenshot: quiz-07-back-home
+
+# ══════════════════════════════════════════════════════════════════
+# SCAN SCREEN (TC-S01–S04)
+# ══════════════════════════════════════════════════════════════════
+
+# TC-S01: Open scan via FAB (accessibilityLabel = "Scan a bottle")
+- tapOn: "Scan a bottle"
+- extendedWaitUntil:
+    visible: "Perfume Concierge"
+    timeout: 10000
+
+# TC-S02: Scan screen UI elements present
+- assertVisible: "Identify a Fragrance"
+- takeScreenshot: scan-01-ready
+
+# TC-S03: Action buttons visible
+- assertVisible: "Perfume Concierge"
+- assertVisible: "Choose from Library"
+- takeScreenshot: scan-02-buttons
+
+# TC-S04: Close scan screen (close button: top-left, ~8% x, ~8% y)
+- tapOn:
+    point: "8%, 8%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 10000
+- takeScreenshot: scan-03-closed

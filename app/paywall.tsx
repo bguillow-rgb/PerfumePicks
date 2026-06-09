@@ -15,36 +15,39 @@ type Plan = 'monthly' | 'yearly';
 
 // Copy is tight on purpose. Users scan, not read. Each bullet earns its spot
 // by naming the one thing that distinguishes Pro from free and from other apps.
+// Lead with the two features that have real dollar/habit ROI (dupes + training),
+// then the supporting features. Never list "unlimited X" as the primary pitch —
+// that frames Pro as limit-removal rather than genuine added value.
 const FEATURES = [
+  {
+    icon: 'pricetags-outline' as const,
+    title: 'Find Cheaper Dupes Instantly',
+    desc: 'Every fragrance detail page surfaces alternatives that smell nearly identical — often 30–70% less. One find pays for a year of Pro.',
+  },
   {
     icon: 'sparkles-outline' as const,
     title: 'Unlimited Train My Nose',
-    desc: 'Sharpen your taste with unlimited swipes — free is 10 per day.',
+    desc: 'The more you swipe, the sharper your recommendations get. Free is capped at 10 swipes a day — Pro removes the ceiling.',
+  },
+  {
+    icon: 'analytics-outline' as const,
+    title: 'Your Full Scent Profile',
+    desc: 'See every accord, note, and house you gravitate toward — plus what to avoid. Your taste in one view.',
   },
   {
     icon: 'flask-outline' as const,
-    title: '9-Question Precision Quiz',
-    desc: 'Ten matches scored against your palate. Free is 3 questions, 3 picks.',
+    title: 'Deep-Dive Quiz',
+    desc: 'Ten questions instead of five means matches scored against your sillage preference, gender lean, and discovery appetite.',
   },
   {
     icon: 'rose-outline' as const,
     title: 'Unlimited Wardrobe',
-    desc: 'Track every bottle, decant and sample with mL meters and reorder alerts.',
-  },
-  {
-    icon: 'analytics-outline' as const,
-    title: 'Taste Profile Insights',
-    desc: 'See your top notes, accords, and avoid list — your scent identity at a glance.',
-  },
-  {
-    icon: 'pricetags-outline' as const,
-    title: 'Dupes & Decant Intelligence',
-    desc: 'Find lookalikes 30%+ cheaper, plus best-value mL across every retailer.',
+    desc: 'Track every bottle, decant, and sample you own, want, or have tried — no cap.',
   },
   {
     icon: 'sunny-outline' as const,
-    title: 'Wear Today + Layering',
-    desc: 'A daily pick tuned to weather, season and occasion — and pairs that layer well.',
+    title: 'Layering Suggestions',
+    desc: 'Fragrance pairs that complement each other, pulled from your wardrobe and what works for your taste.',
   },
 ];
 
@@ -77,62 +80,51 @@ export default function PaywallScreen() {
     })();
   }, []);
 
-  // Locked launch pricing for Perfume Picks: $4.99/mo, $39.99/yr (7-day
+  // Locked launch pricing for Perfume Picks: $2.99/mo, $24.99/yr (7-day
   // free trial). These fallbacks must match the App Store Connect product
   // prices so the paywall and Apple purchase sheet never show different
   // numbers. DO NOT iterate post-spec — paywall pricing oscillation was
   // a documented source of late-stage churn in StickPicks.
-  const yearlyPrice = yearlyPackage?.product.priceString ?? '$39.99';
-  const monthlyPrice = monthlyPackage?.product.priceString ?? '$4.99';
+  const yearlyPrice = yearlyPackage?.product.priceString ?? '$24.99';
+  const monthlyPrice = monthlyPackage?.product.priceString ?? '$2.99';
   // Per-month equivalent of the annual plan — Apple 3.1.2(a) requires this
   // to be shown alongside the annual price.
   const yearlyPerMonth = yearlyPackage
     ? `$${(yearlyPackage.product.price / 12).toFixed(2)}/month billed annually`
-    : '$3.33/month billed annually';
+    : '$2.08/month billed annually';
+
+  // Whether RevenueCat actually returned purchasable products. When false we
+  // must NOT present a live Subscribe button over the hardcoded fallback
+  // prices — tapping it can only fail (Apple 2.1 rejection risk). Show a retry.
+  const packagesAvailable = !!(yearlyPackage || monthlyPackage);
 
   async function handlePurchase() {
-    if (isGuest) {
-      Alert.alert(
-        'Account Required',
-        'Create an account or sign in to subscribe to Pro. Your purchase will be linked to your account.',
-        [
-          { text: 'Cancel', style: 'cancel' },
-          { text: 'Sign In', onPress: () => router.push('/auth/login?returnTo=/paywall') },
-        ]
-      );
-      return;
-    }
-
+    // §5.1.1(v) — guests must be able to purchase without signing in first.
+    // RevenueCat binds anonymous purchases to $RCAnonymousID; the entitlement
+    // still activates. Sign-in is offered below as an optional sync step.
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
     const pkg = selectedPlan === 'yearly' ? yearlyPackage : monthlyPackage;
 
-    if (pkg) {
-      // Real RevenueCat purchase
-      const success = await buy(pkg);
+    if (!pkg && rcError) {
+      // RC errored on load — retry once silently before giving up
+      await rcRetry();
+    }
+    const freshPkg = selectedPlan === 'yearly' ? yearlyPackage : monthlyPackage;
+    if (freshPkg) {
+      const success = await buy(freshPkg);
       if (success) {
         if (returnTo) router.replace(returnTo as any);
         else router.back();
       }
     } else {
-      // No packages available — RevenueCat not configured or no network
-      Alert.alert('Unavailable', 'Subscriptions are not available right now. Please try again later.');
+      Alert.alert('Unavailable', 'Subscriptions are not available right now. Check your connection and try again.');
     }
   }
 
   async function handleRestore() {
-    if (isGuest) {
-      Alert.alert(
-        'Account Required',
-        'Sign in to restore a previous purchase.',
-        [
-          { text: 'Cancel', style: 'cancel' },
-          { text: 'Sign In', onPress: () => router.push('/auth/login') },
-        ]
-      );
-      return;
-    }
-
+    // §5.1.1(v) — Restore must work for guests. RC restores anonymous
+    // purchases tied to the same Apple ID without requiring app-side accounts.
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
     if (yearlyPackage || monthlyPackage) {
@@ -157,7 +149,7 @@ export default function PaywallScreen() {
       }}
     >
       {/* Close */}
-      <Pressable onPress={() => router.back()} hitSlop={12} style={styles.closeBtn}>
+      <Pressable onPress={() => router.back()} hitSlop={12} style={styles.closeBtn} accessibilityLabel="Close">
         <Ionicons name="close" size={24} color={COLORS.muted} />
       </Pressable>
 
@@ -175,31 +167,17 @@ export default function PaywallScreen() {
         </View>
       )}
 
-      {/* Guest banner */}
-      {isGuest && (
-        <Pressable onPress={() => router.push('/auth/login')} style={styles.guestBanner}>
-          <Ionicons name="person-outline" size={16} color={COLORS.accent} />
-          <Text style={styles.guestBannerText}>Sign in or create an account to subscribe</Text>
-          <Ionicons name="chevron-forward" size={14} color={COLORS.accent} />
-        </Pressable>
-      )}
 
       {/* Header */}
       <Text style={styles.header}>Perfume Picks Pro</Text>
-      <Text style={styles.subheader}>Your personal fragrance concierge</Text>
-
-      {/* Social proof */}
-      <View style={styles.socialProof}>
-        <Text style={styles.socialRating}>★★★★★</Text>
-        <Text style={styles.socialRatingText}>Loved by fragrance enthusiasts</Text>
-      </View>
+      <Text style={styles.subheader}>Find dupes. Train your nose. Know your taste.</Text>
 
       {/* Pitch — one sentence, named differentiators only. Users scan paywalls
           rather than read them; we frontload the two claims no competitor can
           make and let the bullets do the rest. */}
       <View style={styles.pitchCard}>
         <Text style={styles.pitchHeadline}>
-          The only fragrance app that learns your nose — and finds the dupes.
+          The only app that learns your nose and finds you cheaper alternatives that smell just as good.
         </Text>
       </View>
 
@@ -218,13 +196,6 @@ export default function PaywallScreen() {
 
       {rcLoading ? (
         <ActivityIndicator color={COLORS.accent} style={{ marginVertical: SPACING.lg }} />
-      ) : rcError ? (
-        <View style={styles.errorBox}>
-          <Text style={styles.errorText}>Couldn't load subscription options.</Text>
-          <Pressable onPress={rcRetry} style={styles.retryBtn}>
-            <Text style={styles.retryText}>Try Again</Text>
-          </Pressable>
-        </View>
       ) : (
         <>
           {/* Plan selection */}
@@ -246,7 +217,7 @@ export default function PaywallScreen() {
               <Text style={styles.planSavings}>
                 {yearlyPackage && monthlyPackage
                   ? `Save ${Math.round((1 - yearlyPackage.product.price / (monthlyPackage.product.price * 12)) * 100)}%`
-                  : 'Save 33%'}
+                  : 'Save 30%'}
               </Text>
             </Pressable>
 
@@ -268,19 +239,45 @@ export default function PaywallScreen() {
               : `Auto-renews at ${monthlyPrice}/month until canceled.`}
           </Text>
 
-          {/* CTA */}
-          <Button
-            title={purchasing
-              ? 'Processing...'
-              : selectedPlan === 'yearly'
-                ? `Try Free for 7 Days — then ${yearlyPrice}/yr`
-                : `Start Pro — ${monthlyPrice}/mo`
-            }
-            onPress={handlePurchase}
-            disabled={purchasing}
-            loading={purchasing}
-            style={{ marginTop: SPACING.xs }}
-          />
+          {/* CTA — when RC failed to return products, show a retry instead of a
+              live Subscribe button that can only fail. */}
+          {packagesAvailable ? (
+            <Button
+              title={purchasing
+                ? 'Processing...'
+                : selectedPlan === 'yearly'
+                  ? `Try Free for 7 Days — then ${yearlyPrice}/yr`
+                  : `Start Pro — ${monthlyPrice}/mo`
+              }
+              onPress={handlePurchase}
+              disabled={purchasing}
+              loading={purchasing}
+              style={{ marginTop: SPACING.xs }}
+            />
+          ) : (
+            <>
+              <Text style={styles.preCtaDisclosure}>
+                Subscriptions couldn’t be loaded. Check your connection and try again.
+              </Text>
+              <Button
+                title={rcLoading ? 'Loading…' : 'Retry'}
+                onPress={() => rcRetry()}
+                disabled={rcLoading}
+                loading={rcLoading}
+                style={{ marginTop: SPACING.xs }}
+              />
+            </>
+          )}
+
+          {/* §5.1.1(v) — sign-in is optional, never a gate. Guests can purchase
+              above; this hint just explains the cross-device sync benefit. */}
+          {isGuest && (
+            <Pressable onPress={() => router.push('/auth/login')} style={styles.guestSyncHint}>
+              <Text style={styles.guestSyncHintText}>
+                Sign in to sync your membership across devices (optional)
+              </Text>
+            </Pressable>
+          )}
         </>
       )}
 
@@ -300,7 +297,7 @@ export default function PaywallScreen() {
         </Pressable>
         <Text style={styles.legalDot}>{'\u00B7'}</Text>
         <Pressable onPress={() => router.push('/legal/terms')}>
-          <Text style={styles.legalLink}>Terms of Service</Text>
+          <Text style={styles.legalLink}>Terms of Use</Text>
         </Pressable>
       </View>
     </ScrollView>
@@ -469,24 +466,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: SPACING.md,
   },
-  guestBanner: {
-    flexDirection: 'row',
+  guestSyncHint: {
     alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-    backgroundColor: COLORS.card,
-    borderWidth: 1,
-    borderColor: COLORS.accent,
-    borderRadius: RADIUS.md,
-    paddingVertical: 10,
-    paddingHorizontal: SPACING.md,
-    marginBottom: SPACING.md,
+    paddingVertical: SPACING.sm,
+    marginTop: SPACING.xs,
   },
-  guestBannerText: {
+  guestSyncHintText: {
     fontFamily: 'CormorantGaramond_400Regular',
-    fontSize: 13,
-    fontWeight: '700',
-    color: COLORS.accent,
+    fontSize: 12,
+    color: COLORS.muted,
+    textDecorationLine: 'underline',
+    textAlign: 'center',
   },
   restoreBtn: {
     alignItems: 'center',

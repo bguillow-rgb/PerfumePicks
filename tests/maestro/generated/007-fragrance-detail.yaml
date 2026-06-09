@@ -1,0 +1,49 @@
+appId: com.bobguillow.perfumepicks
+---
+# P0: Fragrance detail opens from Discover search; core sections render.
+# Real labels (verified 2026-06-07 build): "About this fragrance", "Notes",
+# "Add to Wardrobe", "Log a Wear", affiliate "Buy from <retailer> · $NN".
+# NOTE: the first tap on a search result only dismisses the keyboard (iOS),
+# so we hideKeyboard first, then tap the card once.
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- tapOn:
+    text: "Discover, tab.*"
+- assertVisible: "BY HOUSE"
+- tapOn: "Search fragrances, notes, brands..."
+- inputText: "Lattafa"
+- waitForAnimationToEnd
+- hideKeyboard
+- takeScreenshot: 007-detail__search
+- tapOn:
+    text: "24 Carat Pure Gold"
+    index: 0
+- waitForAnimationToEnd
+- takeScreenshot: 007-detail__hero
+- assertVisible:
+    text: "Buy from.*"
+    optional: true
+- assertVisible: "Add to Wardrobe"
+- assertVisible: "Log a Wear"
+- takeScreenshot: 007-detail__cta
+- scrollUntilVisible:
+    element:
+      text: "About this fragrance"
+    direction: DOWN
+    timeout: 15000
+    visibilityPercentage: 60
+    optional: true
+- takeScreenshot: 007-detail__about
+- scrollUntilVisible:
+    element:
+      text: "Notes"
+    direction: DOWN
+    timeout: 15000
+    visibilityPercentage: 60
+    optional: true
+- takeScreenshot: 007-detail__notes

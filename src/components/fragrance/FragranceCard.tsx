@@ -5,6 +5,7 @@ import * as Haptics from 'expo-haptics';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
+import { useRetailerLinksStore } from '@/src/stores/useRetailerLinksStore';
 
 interface Props {
   fragrance: Fragrance;
@@ -103,6 +104,7 @@ function CompactCard({ fragrance, subtitle, onPress }: { fragrance: Fragrance; s
   const accord = fragrance.top_accords[0];
   const inWardrobe = useWardrobeStore((s) => s.getByFragrance(fragrance.id));
   const addToWardrobe = useWardrobeStore((s) => s.add);
+  const buyPrice = useRetailerLinksStore((s) => s.priceBySlug.get(fragrance.id) ?? null);
 
   const handleWant = () => {
     if (inWardrobe) {
@@ -130,20 +132,28 @@ function CompactCard({ fragrance, subtitle, onPress }: { fragrance: Fragrance; s
       : compactStyles.brand;
 
   return (
-    <Pressable onPress={onPress} style={compactStyles.wrap}>
+    <Pressable onPress={onPress} style={compactStyles.wrap} accessibilityLabel={fragrance.name}>
       <View style={compactStyles.imageWrap}>
         <Image source={{ uri: fragrance.image_url }} style={compactStyles.image} />
       </View>
       <View style={compactStyles.content}>
         <Text style={brandStyle} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8}>{brandText}</Text>
         <Text style={compactStyles.name} numberOfLines={2}>{cardDisplayName(fragrance.name)}</Text>
-        {subtitle ? (
-          <Text style={compactStyles.subtitle} numberOfLines={1}>{subtitle}</Text>
-        ) : accord ? (
-          <View style={compactStyles.accordPill}>
-            <Text style={compactStyles.accordText}>{accord}</Text>
-          </View>
-        ) : null}
+        <View style={compactStyles.bottomRow}>
+          {subtitle ? (
+            <Text style={compactStyles.subtitle} numberOfLines={1}>{subtitle}</Text>
+          ) : accord ? (
+            <View style={compactStyles.accordPill}>
+              <Text style={compactStyles.accordText}>{accord}</Text>
+            </View>
+          ) : null}
+          {buyPrice !== null && (
+            <View style={compactStyles.buyPill}>
+              <Ionicons name="bag-outline" size={9} color={COLORS.white} />
+              <Text style={compactStyles.buyPillText}>${Math.round(buyPrice / 100)}</Text>
+            </View>
+          )}
+        </View>
       </View>
       <Pressable onPress={handleWant} hitSlop={8} style={compactStyles.heartBtn}>
         <Ionicons
@@ -293,4 +303,14 @@ const compactStyles = StyleSheet.create({
   accordText: { fontSize: 10, color: COLORS.muted, fontWeight: '500' },
   subtitle: { ...TYPE.caption, fontSize: 10, color: COLORS.accent, fontStyle: 'italic' },
   heartBtn: { width: 32, height: 32, alignItems: 'center', justifyContent: 'center' },
+  bottomRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  buyPill: {
+    flexDirection: 'row', alignItems: 'center', gap: 3,
+    backgroundColor: COLORS.accent,
+    paddingHorizontal: 7, paddingVertical: 3,
+    borderRadius: RADIUS.full,
+  },
+  buyPillText: {
+    fontSize: 10, fontWeight: '700', color: COLORS.white, letterSpacing: 0.3,
+  },
 });

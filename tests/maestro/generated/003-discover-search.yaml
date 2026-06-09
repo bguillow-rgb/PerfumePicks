@@ -1,14 +1,29 @@
-appId: host.exp.Exponent
+appId: com.bobguillow.perfumepicks
 ---
+# P0/P1: Discover loads, search returns results, no-results + misspelling edge cases.
 - launchApp
-- tapOn: "Perfume Picks"
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
 - extendedWaitUntil:
-    visible: "Today"
-    timeout: 45000
-- tapOn: "Discover"
-- extendedWaitUntil:
-    visible: "Discover"
-    timeout: 10000
-- tapOn: "Search fragrances.*"
-- inputText: "chanel"
-- takeScreenshot: discover-search__results
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- tapOn:
+    text: "Discover, tab.*"
+- assertVisible: "BY HOUSE"
+- takeScreenshot: 003-discover__sections
+# Real search
+- tapOn: "Search fragrances, notes, brands..."
+- inputText: "Dior"
+- takeScreenshot: 003-discover__search-dior
+- eraseText: 50
+# Misspelling edge (P1) — "Savage" instead of "Sauvage"
+- inputText: "Savage"
+- takeScreenshot: 003-discover__search-misspelling
+- eraseText: 50
+# No-results edge (P1)
+- inputText: "zzzzfakeperfume"
+- assertVisible:
+    text: "No matches.*"
+    optional: true
+- takeScreenshot: 003-discover__no-results

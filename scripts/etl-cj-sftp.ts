@@ -35,6 +35,7 @@ import { parse as csvParse } from 'csv-parse/sync';
 import {
   type AffiliateProduct,
   isDupe,
+  isJunkListing,
   parseConcentration,
   parseGender,
   fragranceSlug,
@@ -268,6 +269,7 @@ function rowToProduct(row: FeedRow, feed: FeedConfig): AffiliateProduct | null {
   if (!row.BRAND || !row.TITLE || !row.LINK) return null;
   if (!isFragrance(row)) return null;
   if (isDupe(row.TITLE)) return null;
+  if (isJunkListing(row.TITLE)) return null;   // testers + body-care
 
   const brand = row.BRAND.trim();
   const name  = parseName(row.TITLE, brand);

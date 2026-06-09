@@ -7,6 +7,13 @@ import { isSupabaseConfigured } from '@/lib/supabase';
 import { syncWrite, syncDelete } from '@/src/lib/sync/syncWrite';
 import { FREE_WARDROBE_CAP } from '@/src/lib/limits';
 import { useProStore } from '@/src/stores/useProStore';
+import { cancelAddBottlesNotification } from '@/src/lib/notifications';
+
+/**
+ * Sentinel returned by `add()` when the free-tier wardrobe cap is reached.
+ * Callers check `result === WARDROBE_CAP_HIT` to route to the paywall.
+ */
+export const WARDROBE_CAP_HIT: null = null;
 
 /**
  * Local wardrobe store — the user's fragrance collection.
@@ -17,7 +24,12 @@ import { useProStore } from '@/src/stores/useProStore';
  * is marked `_unsynced: true`; a retry banner can surface this.
  */
 
-export type WardrobeStatus = 'have' | 'want' | 'tested' | 'sold_on';
+// 'empty' is a transition state (a bottle finished — remaining_ml hits 0), NOT
+// a creation choice. The DB CHECK constraint already accepts it (migration
+// 202605220011), so prod rows can carry it — the type MUST include it so the
+// app can safely hydrate those rows. It is intentionally absent from the
+// add-to-wardrobe picker; users don't "add" an empty bottle.
+export type WardrobeStatus = 'have' | 'want' | 'tested' | 'sold_on' | 'empty';
 export type UnitType = 'bottle' | 'decant' | 'sample';
 
 export interface WardrobeItem {
@@ -98,13 +110,22 @@ export const useWardrobeStore = create<WardrobeState>()(
         }
 
         const id = Crypto.randomUUID();
-        const item: WardrobeItem = { ...input, id, created_at: nowIso(), updated_at: nowIso() };
+        // If we can't write to Supabase right now, pre-mark as _unsynced so the
+        // item is preserved in the hydration merge on the next sign-in.
+        const canSync = isSupabaseConfigured && !!_currentUserId;
+        const item: WardrobeItem = { ...input, id, created_at: nowIso(), updated_at: nowIso(), _unsynced: !canSync };
         set((s) => ({ items: [item, ...s.items] }));
+        // Cancel the "add your bottles" nudge — user has added their first item.
+        cancelAddBottlesNotification().catch(() => {});
 
-        if (isSupabaseConfigured && _currentUserId) {
-          syncWrite('wardrobe_items', { ...item, user_id: _currentUserId }, 'id').then((r) => {
+        if (canSync) {
+          const { _unsynced: _, ...row } = item;
+          syncWrite('wardrobe_items', { ...row, user_id: _currentUserId! }, 'id').then((r) => {
             if (!r.ok) set((s) => ({
               items: s.items.map((i) => i.id === id ? { ...i, _unsynced: true } : i),
+            }));
+            else set((s) => ({
+              items: s.items.map((i) => i.id === id ? { ...i, _unsynced: false } : i),
             }));
           });
         }

@@ -254,37 +254,37 @@ export default function DiscoverScreen() {
     <SafeAreaView style={styles.safe} edges={['top']}>
       <View style={styles.headerWrap}>
         <Text style={styles.title}>Discover</Text>
-        <View style={styles.searchBar}>
-          <Ionicons name="search-outline" size={18} color={COLORS.muted} />
-          <TextInput
-            value={query}
-            onChangeText={setQuery}
-            placeholder="Search notes, brands, or a vibe…"
-            placeholderTextColor={COLORS.subtle}
-            style={styles.searchInput}
-            autoCapitalize="none"
-            returnKeyType="search"
-          />
-          {query.length > 0 && (
-            <Pressable onPress={() => setQuery('')}>
-              <Ionicons name="close-circle" size={18} color={COLORS.muted} />
-            </Pressable>
-          )}
-        </View>
-        {/* Filter chip row */}
-        <View style={styles.filterRow}>
+        {/* Search + inline filter button */}
+        <View style={styles.searchRow}>
+          <View style={[styles.searchBar, styles.searchBarFlex]}>
+            <Ionicons name="search-outline" size={18} color={COLORS.muted} />
+            <TextInput
+              value={query}
+              onChangeText={setQuery}
+              placeholder="Search notes, brands, or a vibe…"
+              placeholderTextColor={COLORS.subtle}
+              style={styles.searchInput}
+              autoCapitalize="none"
+              returnKeyType="search"
+            />
+            {query.length > 0 && (
+              <Pressable onPress={() => setQuery('')}>
+                <Ionicons name="close-circle" size={18} color={COLORS.muted} />
+              </Pressable>
+            )}
+          </View>
           <Pressable style={[styles.filterBtn, filtersActive(filters) && styles.filterBtnActive]} onPress={() => setFilterSheetOpen(true)} accessibilityLabel={filtersActive(filters) ? 'Filtered' : 'Filter'}>
-            <Ionicons name="funnel-outline" size={14} color={filtersActive(filters) ? COLORS.white : COLORS.muted} />
+            <Ionicons name="funnel-outline" size={16} color={filtersActive(filters) ? COLORS.white : COLORS.muted} />
             <Text style={[styles.filterBtnText, filtersActive(filters) && styles.filterBtnTextActive]}>
               {filtersActive(filters) ? 'Filtered' : 'Filter'}
             </Text>
           </Pressable>
-          {filtersActive(filters) && (
-            <Pressable onPress={() => setFilters(EMPTY_FILTERS)}>
-              <Text style={styles.clearFiltersText}>Clear</Text>
-            </Pressable>
-          )}
         </View>
+        {filtersActive(filters) && (
+          <Pressable style={styles.clearFiltersBtn} onPress={() => setFilters(EMPTY_FILTERS)}>
+            <Text style={styles.clearFiltersText}>Clear filters</Text>
+          </Pressable>
+        )}
         {query.length === 0 && (
           <ScrollView
             horizontal
@@ -523,6 +523,7 @@ const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.bg },
   headerWrap: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.md, paddingBottom: SPACING.sm },
   title: { ...TYPE.displayLarge, marginBottom: SPACING.md },
+  searchRow: { flexDirection: 'row', alignItems: 'stretch', gap: SPACING.sm },
   searchBar: {
     flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
     backgroundColor: COLORS.card,
@@ -531,6 +532,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.md,
     paddingVertical: 12,
   },
+  searchBarFlex: { flex: 1 },
   searchInput: { ...TYPE.body, flex: 1, padding: 0 },
   container: { paddingBottom: SPACING.xxl },
   section: { paddingLeft: SPACING.lg, marginTop: SPACING.xl },
@@ -538,20 +540,17 @@ const styles = StyleSheet.create({
   sectionEyebrow: { ...TYPE.eyebrow },
   sectionCursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 22, color: COLORS.accent, lineHeight: 34, paddingLeft: 6 },
   hScroll: { paddingRight: SPACING.lg },
-  filterRow: {
-    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
-    paddingHorizontal: SPACING.lg, paddingTop: SPACING.sm,
-  },
   filterBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: 4,
-    paddingHorizontal: 12, paddingVertical: 7,
-    borderRadius: RADIUS.full,
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5,
+    paddingHorizontal: SPACING.md,
+    borderRadius: RADIUS.md,
     borderWidth: 1, borderColor: COLORS.border,
     backgroundColor: COLORS.card,
   },
   filterBtnActive: { backgroundColor: COLORS.accent, borderColor: COLORS.accent },
-  filterBtnText: { ...TYPE.label, fontSize: 12, color: COLORS.muted },
+  filterBtnText: { ...TYPE.label, fontSize: 13, color: COLORS.muted },
   filterBtnTextActive: { color: COLORS.white },
+  clearFiltersBtn: { alignSelf: 'flex-start', paddingTop: SPACING.sm },
   clearFiltersText: { ...TYPE.label, fontSize: 12, color: COLORS.accent },
   vibeRow: { paddingTop: SPACING.sm, paddingRight: SPACING.lg, gap: 8 },
   vibeChip: {

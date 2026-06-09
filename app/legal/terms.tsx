@@ -21,11 +21,11 @@ export default function TermsScreen() {
         showsVerticalScrollIndicator
       >
         <Text style={styles.wordmark}>Perfume Picks</Text>
-        <Text style={styles.title}>Terms of Service</Text>
+        <Text style={styles.title}>Terms of Use</Text>
         <Text style={styles.effective}>Effective Date: April 25, 2026</Text>
 
         <Text style={styles.body}>
-          These Terms of Service ("Terms") govern your use of Perfume Picks ("the app"). By using the app, you agree to these Terms.
+          These Terms of Use ("Terms") govern your use of Perfume Picks ("the app"). By using the app, you agree to these Terms.
         </Text>
 
         <Text style={styles.h2}>1. Eligibility</Text>

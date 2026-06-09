@@ -1,10 +1,19 @@
-import { useEffect, useState } from 'react';
-import { FlatList, View, Text, StyleSheet, Pressable, Image } from 'react-native';
+import { useEffect, useState, useMemo } from 'react';
+import { FlatList, ScrollView, View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
+
+type BrandSort = 'popular' | 'newest' | 'price_asc' | 'price_desc' | 'az';
+const SORT_PILLS: { id: BrandSort; label: string }[] = [
+  { id: 'popular',    label: 'Popular' },
+  { id: 'newest',     label: 'Newest' },
+  { id: 'price_desc', label: 'Price ↓' },
+  { id: 'price_asc',  label: 'Price ↑' },
+  { id: 'az',         label: 'A–Z' },
+];
 
 function prettyConcentration(c: string): string {
   return ({ parfum: 'Parfum', edp: 'EDP', edt: 'EDT', cologne: 'Cologne', extrait: 'Extrait' } as any)[c] ?? c;
@@ -15,19 +24,33 @@ export default function BrandScreen() {
   const router = useRouter();
   const fetchByBrand = useCatalogStore((s) => s.fetchByBrand);
   const [fragrances, setFragrances] = useState<Fragrance[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [activeSort, setActiveSort] = useState<BrandSort>('popular');
 
-  // Async catalog fetch instead of synchronous MOCK_CATALOG filter. Empty
-  // array shows the existing "no fragrances found" empty state during the
-  // (very short) round-trip.
   useEffect(() => {
     if (!name) return;
     let cancelled = false;
+    setLoading(true);
     fetchByBrand(name).then((rows) => {
       if (cancelled) return;
-      setFragrances(rows.slice().sort((a, b) => b.release_year - a.release_year));
+      setFragrances(rows);
+      setLoading(false);
     });
     return () => { cancelled = true; };
   }, [name, fetchByBrand]);
+
+  const sorted = useMemo(() => {
+    return [...fragrances].sort((a, b) => {
+      switch (activeSort) {
+        case 'popular':    return (b.compliment_score ?? 0) - (a.compliment_score ?? 0);
+        case 'newest':     return (b.release_year ?? 0) - (a.release_year ?? 0);
+        case 'price_asc':  return (a.price_tier ?? 0) - (b.price_tier ?? 0);
+        case 'price_desc': return (b.price_tier ?? 0) - (a.price_tier ?? 0);
+        case 'az':         return a.name.localeCompare(b.name);
+        default:           return 0;
+      }
+    });
+  }, [fragrances, activeSort]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -35,7 +58,7 @@ export default function BrandScreen() {
 
       {/* Header */}
       <View style={styles.header}>
-        <Pressable onPress={() => router.back()} style={styles.backBtn}>
+        <Pressable onPress={() => router.back()} style={styles.backBtn} accessibilityLabel="Back">
           <Ionicons name="chevron-back" size={26} color={COLORS.text} />
         </Pressable>
         <View style={styles.headerText}>
@@ -44,17 +67,48 @@ export default function BrandScreen() {
         </View>
       </View>
 
+      {/* Sort bar */}
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={{ height: 48 }}
+        contentContainerStyle={{ paddingHorizontal: SPACING.lg, gap: 8, flexDirection: 'row', alignItems: 'center' }}
+      >
+        {SORT_PILLS.map((p) => {
+          const active = activeSort === p.id;
+          return (
+            <Pressable
+              key={p.id}
+              onPress={() => setActiveSort(p.id)}
+              style={{
+                paddingHorizontal: 13, paddingVertical: 6,
+                borderRadius: 999,
+                borderWidth: 1,
+                borderColor: active ? COLORS.accent : COLORS.border,
+                backgroundColor: active ? COLORS.accentSoft : COLORS.bg,
+              }}
+            >
+              <Text style={{ fontSize: 12, fontWeight: '600', color: active ? COLORS.accent : COLORS.muted }}>
+                {p.label}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </ScrollView>
+
       <FlatList
-        data={fragrances}
+        data={sorted}
         keyExtractor={(f) => f.id}
         contentContainerStyle={styles.list}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <BrandRow fragrance={item} onPress={() => router.push(`/fragrance/${item.id}`)} />}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
         ListEmptyComponent={
-          <View style={styles.empty}>
-            <Text style={styles.emptyText}>No fragrances found for this house.</Text>
-          </View>
+          !loading ? (
+            <View style={styles.empty}>
+              <Text style={styles.emptyText}>No fragrances found for this house.</Text>
+            </View>
+          ) : null
         }
       />
     </SafeAreaView>
@@ -62,7 +116,9 @@ export default function BrandScreen() {
 }
 
 function BrandRow({ fragrance, onPress }: { fragrance: Fragrance; onPress: () => void }) {
-  const price = (fragrance.retail_msrp_usd_cents / 100).toFixed(0);
+  const priceLabel = fragrance.retail_msrp_usd_cents
+    ? `$${(fragrance.retail_msrp_usd_cents / 100).toFixed(0)}`
+    : null;
   return (
     <Pressable style={styles.row} onPress={onPress}>
       <View style={styles.imageWrap}>
@@ -86,7 +142,7 @@ function BrandRow({ fragrance, onPress }: { fragrance: Fragrance; onPress: () =>
         </View>
       </View>
       <View style={styles.priceCol}>
-        <Text style={styles.price}>${price}</Text>
+        {priceLabel && <Text style={styles.price}>{priceLabel}</Text>}
         <View style={styles.tierDots}>
           {Array.from({ length: 5 }).map((_, i) => (
             <View key={i} style={[styles.dot, i < fragrance.price_tier && styles.dotActive]} />

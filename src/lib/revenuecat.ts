@@ -5,8 +5,8 @@
  * 1. Create a project at https://app.revenuecat.com
  * 2. Add an Apple App Store app with bundle ID com.bobguillow.perfumepicks
  * 3. Create Products in App Store Connect, then mirror in RevenueCat:
- *    - pp_pro_monthly  → $4.99/month auto-renewing (locked, do not iterate)
- *    - pp_pro_yearly   → $39.99/year auto-renewing (locked, do not iterate)
+ *    - perfumepicks_pro_monthly  → $2.99/month auto-renewing (locked, do not iterate)
+ *    - perfumepicks_pro_yearly   → $24.99/year auto-renewing (locked, do not iterate)
  *    Both ship with a 7-day free trial.
  * 4. Create an Entitlement called "pro"
  * 5. Attach both products to the "pro" entitlement
@@ -29,8 +29,8 @@ const ENTITLEMENT_ID = 'pro';
 
 // ── Product IDs (must match App Store Connect / Google Play Console) ────────
 export const PRODUCT_IDS = {
-  monthly: 'pp_pro_monthly',
-  yearly: 'pp_pro_yearly',
+  monthly: 'perfumepicks_pro_monthly',
+  yearly: 'perfumepicks_pro_yearly',
 } as const;
 
 // ── Init ─────────────────────────────────────────────────────────────────────

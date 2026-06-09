@@ -1,0 +1,39 @@
+appId: com.bobguillow.perfumepicks
+---
+# P0: Taste Quiz — free tier is 5 questions (verified "1 of 5" / "5 free questions").
+# CTA on Home: "Take the Taste Quiz →". If the quiz was already taken, the entry
+# screen offers "View My Results" / "Take the Quiz Again" — we branch to retake.
+# Q1 verified: "Which world calls to you?" with 5 option cards.
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- scrollUntilVisible:
+    element:
+      text: ".*Take the Taste Quiz.*"
+    direction: DOWN
+    timeout: 20000
+    visibilityPercentage: 30
+    centerElement: true
+- tapOn:
+    text: ".*Take the Taste Quiz.*"
+- waitForAnimationToEnd
+# Branch: if quiz already taken, restart it
+- tapOn:
+    text: "Take the Quiz Again"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: 008-quiz__q1
+# Answer 5 questions. Option labels vary per question, so tap the first
+# option card by relative position and capture each step.
+- repeat:
+    times: 5
+    commands:
+      - takeScreenshot: 008-quiz__step
+      - tapOn:
+          point: "50%,42%"
+      - waitForAnimationToEnd
+- takeScreenshot: 008-quiz__results

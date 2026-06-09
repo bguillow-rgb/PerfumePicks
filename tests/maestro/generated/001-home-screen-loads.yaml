@@ -1,12 +1,28 @@
-appId: host.exp.Exponent
+appId: com.bobguillow.perfumepicks
 ---
+# P0: App launches and Home/Today renders core rails.
+# Verified strings: "SCENT OF THE DAY", "YOUR TASTE", tab "Today".
 - launchApp
-- tapOn: "Perfume Picks"
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
 - extendedWaitUntil:
-    visible: "WEAR TODAY"
-    timeout: 45000
-- takeScreenshot: home-screen__initial
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- takeScreenshot: 001-home__initial
+- scrollUntilVisible:
+    element:
+      text: "YOUR TASTE"
+    direction: DOWN
+    timeout: 20000
+    optional: true
+- takeScreenshot: 001-home__your-taste
+- scrollUntilVisible:
+    element:
+      text: "COMMUNITY SOTD"
+    direction: DOWN
+    timeout: 20000
+    optional: true
+- takeScreenshot: 001-home__community-sotd
 - scroll
-- takeScreenshot: home-screen__after-scroll
-- scroll
-- takeScreenshot: home-screen__bottom
+- takeScreenshot: 001-home__bottom

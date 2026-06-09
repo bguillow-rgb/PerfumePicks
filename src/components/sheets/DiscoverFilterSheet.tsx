@@ -156,6 +156,7 @@ export function DiscoverFilterSheet({ visible, filters, onApply, onClose }: Prop
             <Pressable
               onPress={() => { onApply(draft); onClose(); }}
               style={styles.applyBtn}
+              accessibilityLabel={activeCount > 0 ? `Apply ${activeCount}` : 'Apply'}
             >
               <Ionicons name="funnel" size={14} color={COLORS.white} style={{ marginRight: 6 }} />
               <Text style={styles.applyText}>

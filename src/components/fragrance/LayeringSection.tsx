@@ -16,13 +16,14 @@ interface LayeringEntry {
 
 interface Props {
   fragranceId: string;
+  onHasData?: () => void;
 }
 
 /**
  * Layering section on fragrance detail — shows pairs worn together.
  * Add entry via a simple inline form (partner fragrance name + notes).
  */
-export function LayeringSection({ fragranceId }: Props) {
+export function LayeringSection({ fragranceId, onHasData }: Props) {
   const [entries, setEntries] = useState<LayeringEntry[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [partnerName, setPartnerName] = useState('');
@@ -37,8 +38,11 @@ export function LayeringSection({ fragranceId }: Props) {
       .or(`fragrance_a_id.eq.${fragranceId},fragrance_b_id.eq.${fragranceId}`)
       .order('created_at', { ascending: false })
       .limit(10);
-    if (data) setEntries(data);
-  }, [fragranceId]);
+    if (data) {
+      setEntries(data);
+      if (data.length > 0) onHasData?.();
+    }
+  }, [fragranceId, onHasData]);
 
   useEffect(() => { load(); }, [load]);
 

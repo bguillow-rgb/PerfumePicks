@@ -54,7 +54,7 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
   const [wearAgain, setWearAgain] = useState<boolean | null>(null);
   const [note, setNote] = useState('');
   const [wornOn, setWornOn] = useState(new Date().toLocaleDateString('en-CA'));
-  const [isPublic, setIsPublic] = useState(false);
+  const [isPublic, setIsPublic] = useState(true);
   const [mood, setMood] = useState<string | null>(null);
 
   // Reset or pre-populate when sheet opens.
@@ -76,7 +76,7 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
       setWearAgain(null);
       setNote('');
       setWornOn(new Date().toLocaleDateString('en-CA'));
-      setIsPublic(false);
+      setIsPublic(true);
       setMood(null);
     }
   }, [visible, editLog]);
@@ -286,7 +286,7 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
             <Pressable onPress={onClose} style={styles.cancelBtn}>
               <Text style={styles.cancelText}>Cancel</Text>
             </Pressable>
-            <Pressable onPress={handleSave} disabled={!dateValid} style={[styles.saveBtn, !dateValid && { opacity: 0.4 }]}>
+            <Pressable onPress={handleSave} disabled={!dateValid} style={[styles.saveBtn, !dateValid && { opacity: 0.4 }]} accessibilityLabel={isEditing ? 'Update Wear' : 'Save Wear'}>
               <Ionicons name={isEditing ? 'checkmark' : 'bookmark'} size={16} color={COLORS.white} style={{ marginRight: 6 }} />
               <Text style={styles.saveText}>{isEditing ? 'Update Wear' : 'Save Wear'}</Text>
             </Pressable>

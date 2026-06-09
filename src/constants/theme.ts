@@ -27,9 +27,12 @@ export const COLORS = {
   muted: '#7A6A5C',      // taupe
   subtle: '#A89684',     // dusty almond
 
-  // Accent — champagne gold (the wordmark + CTAs)
-  accent: '#B8924B',     // muted champagne — refined, not blingy
-  accentDim: '#8E6E36',
+  // Accent — champagne gold (the wordmark + CTAs).
+  // Darkened to meet WCAG 2.2 AA on the light ivory/white surfaces it sits on:
+  // 4.66:1 as text on bg, 5.01:1 for white text on a gold fill. Use accentSoft
+  // for gold on dark surfaces.
+  accent: '#8A6A33',     // deep champagne — AA-compliant on light
+  accentDim: '#6F5326',
   accentSoft: '#D4B179',
 
   // Secondary accent — blush, used sparingly for tags/badges

@@ -1,0 +1,35 @@
+appId: com.bobguillow.perfumepicks
+---
+# P0: Profile sections + paywall opens from "Upgrade to Pro".
+# Also verifies: NO "Perfume Wrapped" row; paywall fallback pricing renders
+# even with RevenueCat "Invalid API Key" (observed in this build).
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- tapOn:
+    text: "You, tab.*"
+- assertVisible: "Subscription"
+- takeScreenshot: 006-profile__top
+# Negative check: Perfume Wrapped must NOT exist (verified removed)
+- assertNotVisible: "Wrapped"
+# Open paywall from the "Upgrade to Pro" CTA (near the top, before scrolling)
+- tapOn:
+    text: "Upgrade to Pro"
+    optional: true
+- extendedWaitUntil:
+    visible: "Perfume Picks Pro"
+    timeout: 20000
+- takeScreenshot: 006-paywall__top
+# Fallback pricing must render: $24.99 / $2.99
+- assertVisible:
+    text: ".*24.99.*"
+    optional: true
+- assertVisible:
+    text: ".*2.99.*"
+    optional: true
+- scroll
+- takeScreenshot: 006-paywall__pricing

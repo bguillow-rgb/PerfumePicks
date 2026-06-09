@@ -15,13 +15,14 @@ interface Compliment {
 
 interface Props {
   fragranceId: string;
+  onHasData?: () => void;
 }
 
 /**
  * Compliments section on fragrance detail — log when someone comments
  * on what you're wearing. Shows count + list.
  */
-export function ComplimentsSection({ fragranceId }: Props) {
+export function ComplimentsSection({ fragranceId, onHasData }: Props) {
   const [entries, setEntries] = useState<Compliment[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [whatSaid, setWhatSaid] = useState('');
@@ -39,8 +40,11 @@ export function ComplimentsSection({ fragranceId }: Props) {
       .eq('fragrance_id', fragranceId)
       .order('created_at', { ascending: false })
       .limit(10);
-    if (data) setEntries(data);
-  }, [fragranceId]);
+    if (data) {
+      setEntries(data);
+      if (data.length > 0) onHasData?.();
+    }
+  }, [fragranceId, onHasData]);
 
   useEffect(() => { load(); }, [load]);
 

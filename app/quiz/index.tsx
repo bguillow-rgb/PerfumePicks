@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { View, Text, StyleSheet, Pressable, ScrollView } from 'react-native';
+import { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, Pressable, ScrollView, Modal } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,16 +10,14 @@ import { useQuizStore } from '@/src/stores/useQuizStore';
 import { useProStore } from '@/src/stores/useProStore';
 
 /**
- * Fragrance taste quiz — 3 questions for free users, 9 for Pro.
+ * Fragrance taste quiz — 5 questions for free users, 9 for Pro.
  *
- * Free users see questions 1–3. After answering Q3 they hit a paywall
- * intercept. Answers are preserved in the transient useQuizStore so if they
- * subscribe and return (returnTo='/quiz'), the quiz resumes from Q4.
+ * Free Q1–5:  family, occasion, price, season, longevity.
+ * Pro Q6–10: sillage, off-notes, gender, discovery, compliments.
  *
- * Pro users see all 9 questions and get a more precise results ranking.
- *
- * Each answer feeds the user_taste_profile (preferred_families,
- * preferred_accords, avg_price_tier, longevity, season, etc.).
+ * R6: Free gate at 5 (was 3). Season + longevity promoted to free tier.
+ * R7: Resume modal on mount when prior answers exist.
+ * R8: Post-Q5 Pro tease modal replaces inline banner + paywall auto-intercept.
  */
 
 interface QuizQuestion {
@@ -29,7 +27,7 @@ interface QuizQuestion {
   options: { id: string; label: string; description?: string }[];
 }
 
-/** First 3 questions — available to everyone. */
+/** Questions 1–5 — available to all users. */
 const FREE_QUESTIONS: QuizQuestion[] = [
   {
     id: 'family',
@@ -65,10 +63,6 @@ const FREE_QUESTIONS: QuizQuestion[] = [
       { id: '4', label: '$250+', description: 'Niche house treasures' },
     ],
   },
-];
-
-/** Questions 4–9 — Pro only. */
-const PRO_QUESTIONS: QuizQuestion[] = [
   {
     id: 'season',
     question: 'Which season do you gravitate toward?',
@@ -91,6 +85,10 @@ const PRO_QUESTIONS: QuizQuestion[] = [
       { id: '5', label: 'Into tomorrow', description: 'Beast mode — make a statement' },
     ],
   },
+];
+
+/** Questions 6–10 — Pro only. */
+const PRO_QUESTIONS: QuizQuestion[] = [
   {
     id: 'sillage',
     question: 'How much space should it fill?',
@@ -133,53 +131,81 @@ const PRO_QUESTIONS: QuizQuestion[] = [
       { id: 'wild', label: 'Push my limits', description: 'Challenging, weird, unforgettable' },
     ],
   },
+  {
+    id: 'compliments',
+    question: 'How important are compliments to you?',
+    cursive: 'impact',
+    options: [
+      { id: 'essential', label: 'Essential', description: 'I wear it for the reaction' },
+      { id: 'love_them', label: 'Love getting them', description: 'A great bonus when it happens' },
+      { id: 'secondary', label: 'Nice but not the goal', description: 'I wear what I love regardless' },
+      { id: 'private', label: 'Purely personal', description: 'I dress my skin for myself only' },
+    ],
+  },
 ];
 
 const ALL_QUESTIONS = [...FREE_QUESTIONS, ...PRO_QUESTIONS];
-const FREE_QUESTION_COUNT = FREE_QUESTIONS.length;
+const FREE_QUESTION_COUNT = FREE_QUESTIONS.length; // 5
 
 export default function QuizScreen() {
   const router = useRouter();
-  // returnTo is set when the user arrives from a paywall intercept — use it for the back destination
   const { returnTo } = useLocalSearchParams<{ returnTo?: string }>();
   const { setAnswer, reset, answers } = useQuizStore();
   const isPro = useProStore((s) => s.isPro);
 
-  // If a Pro user arrives via paywall returnTo, resume from Q4.
-  // For free users, always clamp to 0 — they can't resume into Pro questions.
   const questions = isPro ? ALL_QUESTIONS : FREE_QUESTIONS;
-  const resumeStep = isPro && Object.keys(answers).length >= FREE_QUESTION_COUNT
-    ? FREE_QUESTION_COUNT
-    : 0;
-  const [step, setStep] = useState(resumeStep);
+  const [step, setStep] = useState(0);
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  // showTease: shown to free users after Q2, teasing the 6 Pro questions before the paywall
-  const [showTease, setShowTease] = useState(false);
+  const [resumeModalVisible, setResumeModalVisible] = useState(false);
+  const [proTeaseModalVisible, setProTeaseModalVisible] = useState(false);
+
+  const answeredCount = Object.keys(answers).length;
+
+  // R7: Show resume gate on mount when prior answers exist.
+  // Never auto-skip — always surface the choice.
+  useEffect(() => {
+    if (answeredCount > 0) {
+      setResumeModalVisible(true);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const total = questions.length;
   const q = questions[step];
   const progress = (step + 1) / total;
 
+  const handleContinue = () => {
+    setResumeModalVisible(false);
+    // Already finished all questions in their tier → go straight to results
+    if (answeredCount >= questions.length) {
+      router.replace('/quiz/results');
+      return;
+    }
+    setStep(Math.min(answeredCount, questions.length - 1));
+  };
+
+  const handleStartOver = () => {
+    reset();
+    setStep(0);
+    setResumeModalVisible(false);
+  };
+
   const handleSelect = (optId: string) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    setSelectedId(optId);       // immediate visual highlight
-    if (step === 0) reset();   // fresh run clears prior answers
+    setSelectedId(optId);
+    if (step === 0) reset(); // fresh run clears prior answers
     setAnswer(q.id, optId);
 
     setTimeout(() => {
       const nextStep = step + 1;
-      setSelectedId(null);       // clear highlight on step transition
-      if (!isPro && nextStep === FREE_QUESTION_COUNT - 1) {
-        // Free user just answered Q2 — show the Pro tease before Q3
-        setShowTease(true);
-        setStep(nextStep);
-        return;
-      }
+      setSelectedId(null);
+
+      // R8: Free user answered Q5 — show Pro tease modal instead of auto-paywall
       if (!isPro && nextStep === FREE_QUESTION_COUNT) {
-        // Free user answered Q3 — intercept with paywall
-        router.push('/paywall?returnTo=/quiz');
+        setProTeaseModalVisible(true);
         return;
       }
+
       if (nextStep < questions.length) {
         setStep(nextStep);
       } else {
@@ -190,10 +216,88 @@ export default function QuizScreen() {
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
+
+      {/* R7: Resume gate modal */}
+      <Modal visible={resumeModalVisible} transparent animationType="fade">
+        <View style={styles.overlay}>
+          <View style={styles.modal}>
+            {answeredCount >= questions.length ? (
+              // Already finished — offer results or retake
+              <>
+                <Text style={styles.modalTitle}>You've taken this quiz.</Text>
+                <Text style={styles.modalBody}>
+                  See your last results or start fresh with a new run.
+                </Text>
+                <Pressable style={styles.modalBtnPrimary} onPress={handleContinue}>
+                  <Text style={styles.modalBtnPrimaryText}>View My Results</Text>
+                </Pressable>
+                <Pressable style={styles.modalBtnSecondary} onPress={handleStartOver}>
+                  <Text style={styles.modalBtnSecondaryText}>Take the Quiz Again</Text>
+                </Pressable>
+              </>
+            ) : (
+              // Mid-quiz — offer to resume or restart
+              <>
+                <Text style={styles.modalTitle}>Resume your quiz?</Text>
+                <Text style={styles.modalBody}>
+                  You answered {answeredCount} of {questions.length} questions.{'\n'}Continue where you left off or start fresh?
+                </Text>
+                <Pressable style={styles.modalBtnPrimary} onPress={handleContinue}>
+                  <Text style={styles.modalBtnPrimaryText}>Continue</Text>
+                </Pressable>
+                <Pressable style={styles.modalBtnSecondary} onPress={handleStartOver}>
+                  <Text style={styles.modalBtnSecondaryText}>Start Over</Text>
+                </Pressable>
+              </>
+            )}
+          </View>
+        </View>
+      </Modal>
+
+      {/* R8: Pro tease modal — shown after Q5 for free users */}
+      <Modal visible={proTeaseModalVisible} transparent animationType="fade">
+        <View style={styles.overlay}>
+          <View style={styles.modal}>
+            <Ionicons name="sparkles-outline" size={28} color={COLORS.accent} style={{ marginBottom: SPACING.xs }} />
+            <Text style={styles.modalTitle}>You've answered 5 questions.</Text>
+            <Text style={styles.modalBody}>
+              Unlock 5 deeper questions + Taste Insights with Pro.
+            </Text>
+            <View style={styles.teaseRows}>
+              <View style={styles.teaseRow}>
+                <Ionicons name="lock-closed-outline" size={13} color={COLORS.muted} />
+                <Text style={styles.teaseRowText}>Presence · how much space it fills</Text>
+              </View>
+              <View style={styles.teaseRow}>
+                <Ionicons name="lock-closed-outline" size={13} color={COLORS.muted} />
+                <Text style={styles.teaseRowText}>Off-notes · what you want to avoid</Text>
+              </View>
+            </View>
+            <Pressable
+              style={styles.modalBtnPrimary}
+              onPress={() => {
+                setProTeaseModalVisible(false);
+                router.push('/paywall?returnTo=/quiz');
+              }}
+            >
+              <Text style={styles.modalBtnPrimaryText}>Unlock Pro</Text>
+            </Pressable>
+            <Pressable
+              style={styles.modalBtnSecondary}
+              onPress={() => {
+                setProTeaseModalVisible(false);
+                router.replace('/quiz/results');
+              }}
+            >
+              <Text style={styles.modalBtnSecondaryText}>See My Results</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+
       <View style={styles.headerRow}>
         <Pressable onPress={() => {
           if (step === 0) {
-            // If we arrived via returnTo (e.g. from paywall), go to home not back to paywall
             if (returnTo) router.replace('/(tabs)');
             else router.back();
           } else {
@@ -207,18 +311,6 @@ export default function QuizScreen() {
         </View>
         <Text style={styles.progressText}>{step + 1} of {total}</Text>
       </View>
-
-      {/* Pro tease banner — shown on Q3 for free users, right before the paywall intercept */}
-      {!isPro && showTease && step === FREE_QUESTION_COUNT - 1 && (
-        <Pressable style={styles.teaseBanner} onPress={() => router.push('/paywall?returnTo=/quiz')}>
-          <Ionicons name="sparkles-outline" size={16} color={COLORS.accent} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.teaseBannerTitle}>6 deeper questions unlock with Pro</Text>
-            <Text style={styles.teaseBannerBody}>Season, longevity, sillage, and more — your most precise match yet.</Text>
-          </View>
-          <Text style={styles.teaseBannerCta}>Unlock →</Text>
-        </Pressable>
-      )}
 
       <Animated.View
         key={q.id}
@@ -238,6 +330,7 @@ export default function QuizScreen() {
                 key={o.id}
                 style={[styles.option, isSelected && styles.optionSelected]}
                 onPress={() => handleSelect(o.id)}
+                accessibilityLabel={o.label}
               >
                 <View style={{ flex: 1 }}>
                   <Text style={[styles.optionLabel, isSelected && styles.optionLabelSelected]}>{o.label}</Text>
@@ -262,17 +355,67 @@ const styles = StyleSheet.create({
   progressTrack: { flex: 1, height: 3, backgroundColor: COLORS.border, borderRadius: 2, overflow: 'hidden' },
   progressFill: { height: '100%', backgroundColor: COLORS.accent, borderRadius: 2 },
   progressText: { ...TYPE.caption },
-  teaseBanner: {
-    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
-    marginHorizontal: SPACING.lg, marginBottom: SPACING.md,
-    backgroundColor: COLORS.card,
-    borderWidth: 1, borderColor: COLORS.accent,
-    borderRadius: RADIUS.md,
-    padding: SPACING.md,
+  // Modals (R7 + R8)
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: SPACING.lg,
   },
-  teaseBannerTitle: { fontFamily: FONTS.serif, fontSize: 14, fontWeight: '600', color: COLORS.text },
-  teaseBannerBody: { ...TYPE.caption, color: COLORS.muted, marginTop: 2, fontStyle: 'italic' },
-  teaseBannerCta: { ...TYPE.label, color: COLORS.accent, fontSize: 12 },
+  modal: {
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    padding: SPACING.xl,
+    width: '100%',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  modalTitle: {
+    fontFamily: FONTS.serif,
+    fontSize: 20,
+    fontWeight: '600',
+    color: COLORS.text,
+    textAlign: 'center',
+  },
+  modalBody: {
+    ...TYPE.bodySmall,
+    color: COLORS.muted,
+    textAlign: 'center',
+    lineHeight: 20,
+    marginBottom: SPACING.xs,
+  },
+  teaseRows: { width: '100%', gap: SPACING.xs, marginBottom: SPACING.sm },
+  teaseRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    backgroundColor: COLORS.bg,
+    borderRadius: RADIUS.md,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.border,
+  },
+  teaseRowText: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic' },
+  modalBtnPrimary: {
+    width: '100%',
+    paddingVertical: 13,
+    backgroundColor: COLORS.accent,
+    borderRadius: RADIUS.full,
+    alignItems: 'center',
+    marginTop: SPACING.xs,
+  },
+  modalBtnPrimaryText: { ...TYPE.label, color: COLORS.white, fontSize: 13, letterSpacing: 1 },
+  modalBtnSecondary: {
+    width: '100%',
+    paddingVertical: 10,
+    alignItems: 'center',
+  },
+  modalBtnSecondaryText: { ...TYPE.label, color: COLORS.muted, fontSize: 12, letterSpacing: 0.5 },
+  // Quiz body
   body: { flex: 1, paddingHorizontal: SPACING.lg, paddingTop: SPACING.xl },
   eyebrow: { ...TYPE.eyebrow },
   cursive: { fontFamily: 'PinyonScript_400Regular', fontSize: 32, color: COLORS.accent, lineHeight: 50, marginTop: 4, paddingLeft: 8 },

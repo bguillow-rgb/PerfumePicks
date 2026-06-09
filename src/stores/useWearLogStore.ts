@@ -59,13 +59,18 @@ export const useWearLogStore = create<WearLogState>()(
 
       add: (input) => {
         const id = Crypto.randomUUID();
-        const log: WearLog = { ...input, id, created_at: new Date().toISOString() };
+        // Default _unsynced: true so hydrateWearLogs preserves this log even
+        // if the Supabase write hasn't happened yet (user not signed in, or
+        // write fails due to FK/RLS on a non-wardrobe fragrance).
+        const log: WearLog = { ...input, id, created_at: new Date().toISOString(), _unsynced: true };
         set((s) => ({ logs: [log, ...s.logs] }));
         if (isSupabaseConfigured && _currentUserId) {
           const { _unsynced: _, ...row } = log;
           syncWrite('wear_logs', { ...row, user_id: _currentUserId }, 'id').then((r) => {
-            if (!r.ok) set((s) => ({
-              logs: s.logs.map((l) => l.id === id ? { ...l, _unsynced: true } : l),
+            // Clear _unsynced flag only on success; leave it on failure so
+            // hydrateWearLogs can preserve it across restarts.
+            set((s) => ({
+              logs: s.logs.map((l) => l.id === id ? { ...l, _unsynced: !r.ok } : l),
             }));
           });
         }
