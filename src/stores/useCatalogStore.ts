@@ -129,6 +129,8 @@ function rowToFragrance(row: any): Fragrance {
     community_longevity:  row.community_longevity ?? 3,
     community_sillage:    row.community_sillage ?? 3,
     community_projection: row.community_projection ?? 3,
+    // Did the DB actually have performance data, or are the 3.0s above defaults?
+    has_community_data:   (row.community_longevity ?? row.community_sillage ?? row.community_projection) != null,
     compliment_score:     row.compliment_score ?? 0.5,
     versatility_score:    row.versatility_score ?? 0.5,
     office_safe_score:    row.office_safe_score ?? 0.5,
@@ -356,6 +358,10 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       .select(FRAGRANCE_SELECT)
       .eq('is_active', true)
       .neq('top_accords', '{}')
+      // Soft sort: buyable bottles first (affiliate-linked), unbuyable tail after.
+      // Stable secondary order on id keeps .range() pagination consistent across
+      // pages — buyable rows fill the early pages, the unbuyable tail follows.
+      .order('purchasable', { ascending: false })
       .order('id', { ascending: true })
       .range(offset, offset + limit - 1);
 
