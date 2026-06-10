@@ -166,7 +166,7 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
         <View style={styles.sheet}>
           <View style={styles.handle} />
 
-          <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false}>
+          <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets>
             <Text style={styles.eyebrow}>{editItem ? 'EDIT WARDROBE' : 'ADD TO WARDROBE'}</Text>
             <Text style={styles.cursive}>{editItem ? 'update details' : 'let\'s keep track'}</Text>
             <Text style={styles.fragName}>{fragrance.name}</Text>

@@ -180,7 +180,7 @@ export function FragranceNotesSheet({ visible, fragrance, onClose }: Props) {
             </Pressable>
           </View>
 
-          <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+          <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets>
             {tab === 'notes' ? (
               <>
                 {/* Freeform body note */}

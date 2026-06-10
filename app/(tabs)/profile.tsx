@@ -12,7 +12,7 @@ import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useSwipeStore } from '@/src/stores/useSwipeStore';
 import { useTasteProfile } from '@/src/features/recommend/useRecommendations';
-import { pickAndSetProfilePhoto, clearProfilePhoto } from '@/src/lib/profilePhoto';
+import { pickAndSetProfilePhoto, clearProfilePhoto, resolveAvatarUri } from '@/src/lib/profilePhoto';
 import { restorePurchases, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { User } from '@supabase/supabase-js';
@@ -184,7 +184,7 @@ export default function ProfileScreen() {
           >
             <View style={styles.avatar}>
               {photoUri ? (
-                <Image source={{ uri: photoUri }} style={styles.avatarImage} />
+                <Image source={{ uri: resolveAvatarUri(photoUri)! }} style={styles.avatarImage} />
               ) : (
                 <Text style={styles.avatarMonogram}>{monogram}</Text>
               )}

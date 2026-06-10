@@ -64,7 +64,7 @@ export function EditWardrobeSheet({ visible, item, fragrance, onClose, onDelete 
         <View style={styles.sheet}>
           <View style={styles.handle} />
 
-          <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false}>
+          <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets>
             <Text style={styles.eyebrow}>EDIT</Text>
             <Text style={styles.cursive}>update your entry</Text>
             <Text style={styles.fragName}>{fragrance.name}</Text>

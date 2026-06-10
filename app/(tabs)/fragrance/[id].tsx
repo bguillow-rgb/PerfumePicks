@@ -513,6 +513,22 @@ function FragranceDetailScreen() {
           </Section>
         )}
 
+        {/* R14: Budget Dupes — object-anchored to THIS fragrance, surfaced high
+            (right after identity) as the headline "spend less, smell similar"
+            hook. Everyone sees the top closest dupe (match % + savings); the
+            rest are gated behind a locked Pro footer. Hidden only when the
+            catalog genuinely has no dupes for this scent. */}
+        {dupeCount > 0 && (
+          <Section title="Budget Dupes" cursive="spend less, smell similar">
+            <DupeList
+              dupes={dupes}
+              loading={dupes.length === 0 && dupeCount > 0}
+              lockedCount={isPro ? 0 : Math.max(0, dupeCount - dupes.length)}
+              onUnlock={() => router.push('/paywall')}
+            />
+          </Section>
+        )}
+
         {(fragrance.top_notes.length > 0 || fragrance.heart_notes.length > 0 || fragrance.base_notes.length > 0) && (
           <Section title="Notes" cursive="composition">
             <NotePyramid
@@ -581,20 +597,6 @@ function FragranceDetailScreen() {
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
               {similarInWardrobe.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
             </ScrollView>
-          </Section>
-        )}
-
-        {/* R14: Budget Dupes — ranked, freemium. Everyone sees the top closest
-            dupe (match % + savings); the rest are gated behind a locked footer.
-            Hidden only when the catalog genuinely has no dupes for this scent. */}
-        {dupeCount > 0 && (
-          <Section title="Budget Dupes" cursive="spend less, smell similar">
-            <DupeList
-              dupes={dupes}
-              loading={dupes.length === 0 && dupeCount > 0}
-              lockedCount={isPro ? 0 : Math.max(0, dupeCount - dupes.length)}
-              onUnlock={() => router.push('/paywall')}
-            />
           </Section>
         )}
 

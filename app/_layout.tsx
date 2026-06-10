@@ -229,7 +229,7 @@ export default function RootLayout() {
   }, []);
 
   useProtectedRoute(session, authLoading || showSplash);
-  useAppSync(session?.user?.id ?? null);
+  useAppSync(session?.user?.id ?? null, !!session?.user?.is_anonymous);
   useBadgeCheck();
 
   if (!fontsLoaded) return null;

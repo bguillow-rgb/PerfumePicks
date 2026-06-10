@@ -2,8 +2,42 @@ import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as FileSystem from 'expo-file-system/legacy';
 import { useProfileStore } from '@/src/stores/useProfileStore';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
-const AVATAR_PATH = FileSystem.documentDirectory + 'profile_avatar.jpg';
+/** Persist the avatar reference to the user's profiles row so it re-hydrates
+ *  after sign-out/sign-in on this device. (Local-filename refs only resolve on
+ *  the device that picked the photo; remote http URLs would resolve anywhere.) */
+async function persistAvatarRef(ref: string | null): Promise<void> {
+  if (!isSupabaseConfigured) return;
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return;
+  const { error } = await supabase
+    .from('profiles')
+    .update({ avatar_url: ref })
+    .eq('id', user.id);
+  if (error) console.warn('[profilePhoto] avatar_url persist failed:', error.message);
+}
+
+const AVATAR_FILENAME = 'profile_avatar.jpg';
+const AVATAR_PATH = FileSystem.documentDirectory + AVATAR_FILENAME;
+
+/**
+ * Resolve a persisted avatar reference into a usable URI.
+ *
+ * iOS rotates the app's container UUID across reinstalls (and sometimes OTA
+ * updates), so a previously-persisted *absolute* documentDirectory path goes
+ * stale and the image fails to load. We now persist only the bare filename and
+ * rebuild the path against the CURRENT documentDirectory here — which also
+ * heals any legacy absolute path already saved in the store (we take its
+ * basename and re-prepend today's container dir). Remote http(s) URIs pass
+ * through untouched.
+ */
+export function resolveAvatarUri(stored: string | null | undefined): string | null {
+  if (!stored) return null;
+  if (stored.startsWith('http')) return stored;
+  const filename = stored.split('/').pop() || AVATAR_FILENAME;
+  return FileSystem.documentDirectory + filename;
+}
 
 /**
  * Pick a photo from the library, present iOS's built-in square crop UI, then
@@ -32,18 +66,22 @@ export async function pickAndSetProfilePhoto(): Promise<string | null> {
 
   // Copy to documents directory for persistence. Delete first — copyAsync
   // may throw if the destination already exists on some OS versions.
-  let savedUri = resized.uri;
+  // Persist only the filename (not the absolute container path) so the avatar
+  // survives container-UUID changes. Falls back to the cache URI just for this
+  // session if the copy fails.
+  let storedRef = resized.uri;
   try {
     await FileSystem.deleteAsync(AVATAR_PATH, { idempotent: true });
     await FileSystem.copyAsync({ from: resized.uri, to: AVATAR_PATH });
-    savedUri = AVATAR_PATH;
+    storedRef = AVATAR_FILENAME;
   } catch (e) {
     console.warn('[profilePhoto] copy to documents failed, using cache URI:', e);
     // Fall through — at least the image shows for this session
   }
 
-  useProfileStore.getState().setPhotoUri(savedUri);
-  return savedUri;
+  useProfileStore.getState().setPhotoUri(storedRef);
+  await persistAvatarRef(storedRef);
+  return resolveAvatarUri(storedRef);
 }
 
 export async function clearProfilePhoto(): Promise<void> {
@@ -51,4 +89,5 @@ export async function clearProfilePhoto(): Promise<void> {
     await FileSystem.deleteAsync(AVATAR_PATH, { idempotent: true });
   } catch {}
   useProfileStore.getState().setPhotoUri(null);
+  await persistAvatarRef(null);
 }

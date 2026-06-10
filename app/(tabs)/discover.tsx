@@ -7,7 +7,6 @@ import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { DISCOVER_ACCORDS } from '@/src/constants/accords';
 import { interpretMood, rankByMood, MOOD_SUGGESTIONS } from '@/src/constants/moodLexicon';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
-import { DupePicker } from '@/src/components/fragrance/DupePicker';
 // ALL_BRANDS removed — now derived dynamically from the pool so brand
 // names match the actual Supabase brands.name values.
 import {
@@ -325,17 +324,6 @@ export default function DiscoverScreen() {
             />
           )}
 
-          {/* Dupe-finder hero (PRD §7.1, surface 2). Pool-independent, so it
-              renders immediately — this is the headline feature of the app. */}
-          <View style={styles.dupeHero}>
-            <Text style={styles.dupeHeroEyebrow}>SMELL RICH, SPEND LESS</Text>
-            <Text style={styles.dupeHeroTitle}>Less expensive options</Text>
-            <Text style={styles.dupeHeroSub}>
-              Pick a fragrance you love — we'll rank the ones that smell the same for less, by match and savings.
-            </Text>
-            <DupePicker placeholder="Less expensive options for…" />
-          </View>
-
           {/* Suppress all data-driven sections until pool is ready */}
           {poolLoading ? null : <>
 
@@ -487,7 +475,7 @@ function SearchResults({ results, query, fragranceHref }: { results: Fragrance[]
       keyExtractor={(f) => f.id}
       renderItem={({ item }) => (
         <View style={{ paddingHorizontal: SPACING.lg, marginBottom: SPACING.md }}>
-          <FragranceCard fragrance={item} variant="compact" onPress={() => router.push(fragranceHref(item.id) as any)} />
+          <FragranceCard fragrance={item} variant="compact" fullWidth onPress={() => router.push(fragranceHref(item.id) as any)} />
         </View>
       )}
       contentContainerStyle={{ paddingTop: SPACING.md, paddingBottom: SPACING.xxl }}
@@ -595,20 +583,6 @@ const styles = StyleSheet.create({
     borderWidth: 1, borderColor: COLORS.border,
   },
   feedBannerText: { ...TYPE.label, fontSize: 13, color: COLORS.text, flex: 1 },
-
-  dupeHero: {
-    marginHorizontal: SPACING.lg,
-    marginTop: SPACING.lg,
-    padding: SPACING.lg,
-    backgroundColor: COLORS.card,
-    borderRadius: RADIUS.lg,
-    borderWidth: 1,
-    borderColor: COLORS.accent,
-    gap: SPACING.sm,
-  },
-  dupeHeroEyebrow: { ...TYPE.eyebrow },
-  dupeHeroTitle: { fontFamily: FONTS.serif, fontSize: 26, fontWeight: '700', color: COLORS.text },
-  dupeHeroSub: { ...TYPE.bodySmall, color: COLORS.muted, lineHeight: 19, marginBottom: SPACING.xs },
 
   editPillRow: { paddingRight: SPACING.lg, paddingBottom: SPACING.md, gap: 8 },
   editPill: {

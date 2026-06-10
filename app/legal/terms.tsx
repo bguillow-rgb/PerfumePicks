@@ -22,7 +22,7 @@ export default function TermsScreen() {
       >
         <Text style={styles.wordmark}>Perfume Picks</Text>
         <Text style={styles.title}>Terms of Use</Text>
-        <Text style={styles.effective}>Effective Date: April 25, 2026</Text>
+        <Text style={styles.effective}>Effective Date: June 9, 2026</Text>
 
         <Text style={styles.body}>
           These Terms of Use ("Terms") govern your use of Perfume Picks ("the app"). By using the app, you agree to these Terms.
@@ -54,40 +54,48 @@ export default function TermsScreen() {
 
         <Text style={styles.h2}>5. Recommendations</Text>
         <Text style={styles.body}>
-          Recommendations, similarity matches, and dupe suggestions are best-effort, based on community data and our taste-profile model. Personal scent perception varies — always sample before purchasing a full bottle.
+          Recommendations, similarity matches, dupe suggestions, and layering ideas are best-effort, based on community data and our taste-profile model. They are informational only and are not a guarantee of accuracy, suitability, or satisfaction. Personal scent perception varies widely — always sample before purchasing a full bottle. Any decision you make based on the app is your own, and you rely on it at your own risk.
         </Text>
 
-        <Text style={styles.h2}>6. User Content</Text>
+        <Text style={styles.h2}>6. Third-Party Purchases & Affiliate Links</Text>
+        <Text style={styles.body}>
+          Perfume Picks is not a retailer. We do not sell, ship, or fulfill any fragrance. Some links in the app are affiliate links — if you click one and buy, we may earn a small commission, which does not change the price you pay.
+        </Text>
+        <Text style={styles.body}>
+          Any purchase you make is a contract between you and the third-party retailer. We are not responsible for their pricing, availability, shipping, returns, product authenticity, formulation, or any other aspect of that transaction. If a fragrance you buy doesn't meet your expectations, is reformulated, or smells different than you hoped, that is not something we are liable for. All purchase and return questions must go to the retailer.
+        </Text>
+
+        <Text style={styles.h2}>7. User Content</Text>
         <Text style={styles.body}>
           You retain ownership of content you create (wear logs, ratings, notes). By submitting public ratings, you grant Perfume Picks a non-exclusive, royalty-free license to display them within the app.
         </Text>
 
-        <Text style={styles.h2}>7. Acceptable Use</Text>
+        <Text style={styles.h2}>8. Acceptable Use</Text>
         <Text style={styles.body}>
           No abuse, scraping, reverse-engineering, or interference. We may suspend accounts that violate these Terms.
         </Text>
 
-        <Text style={styles.h2}>8. Intellectual Property</Text>
+        <Text style={styles.h2}>9. Intellectual Property</Text>
         <Text style={styles.body}>
           The Perfume Picks name, logo, design, and code are our property. Brand and product names are the property of their respective owners and used for informational purposes only.
         </Text>
 
-        <Text style={styles.h2}>9. Disclaimer of Warranties</Text>
+        <Text style={styles.h2}>10. Disclaimer of Warranties</Text>
         <Text style={styles.body}>
-          The app is provided "AS IS". Notes, accords, and performance information are general reference and may not reflect every batch.
+          The app is provided "AS IS" and "AS AVAILABLE", without warranties of any kind, express or implied. Notes, accords, and performance information are general reference and may not reflect every batch or reformulation. We make no claims about the safety, suitability, or compatibility of any fragrance with your skin or health. If you have a known fragrance sensitivity or allergy, consult the retailer or manufacturer before purchasing.
         </Text>
 
-        <Text style={styles.h2}>10. Limitation of Liability</Text>
+        <Text style={styles.h2}>11. Limitation of Liability</Text>
         <Text style={styles.body}>
-          To the maximum extent permitted by law, our total liability for any claim shall not exceed the amount you paid to us in the prior twelve months.
+          To the maximum extent permitted by law, your use of the app is at your sole risk, and our total liability for any claim related to the app shall not exceed the amount you paid to us in the prior twelve months. We are not liable for any indirect, incidental, special, consequential, or punitive damages — including dissatisfaction with a fragrance you purchased, money spent on products, or loss of data — arising from or related to your use of the app or any recommendation it provides.
         </Text>
 
-        <Text style={styles.h2}>11. Account Deletion</Text>
+        <Text style={styles.h2}>12. Account Deletion</Text>
         <Text style={styles.body}>
           Delete your account anytime from the Profile screen. This permanently removes all your data and cannot be undone.
         </Text>
 
-        <Text style={styles.h2}>12. Contact</Text>
+        <Text style={styles.h2}>13. Contact</Text>
         <Text style={styles.body}>
           Questions? support@perfumepicks.app
         </Text>

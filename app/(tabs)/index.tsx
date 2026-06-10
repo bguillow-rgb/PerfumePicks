@@ -12,9 +12,12 @@ import { type DerivedTasteProfile } from '@/src/features/recommend/tasteProfile'
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useSwipeStore } from '@/src/stores/useSwipeStore';
-import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { touchLoginStreak } from '@/src/lib/sync/useAppSync';
+import { AppState } from 'react-native';
 import { useSOTDFeed, SOTDEntry } from '@/src/hooks/useSOTDFeed';
 import { useProStore } from '@/src/stores/useProStore';
+import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
+import { FirstRunOverlay } from '@/src/components/onboarding/FirstRunOverlay';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 /**
@@ -35,19 +38,27 @@ export default function HomeScreen() {
   const newArrivals = useNewArrivals(8);
   const { picks: wardrobePicks, loading: wardrobePicksLoading } = useWardrobePicks(3);
 
-  // Streak counter — reads from profiles.current_streak on focus.
+  // Login streak — distinct from the wear streak (profiles.current_streak, which
+  // still powers badges + Wrapped). The visible Home pill counts consecutive days
+  // the user *opened the app*, which is what people expect a streak to mean.
+  // touch_login_streak() is idempotent per local calendar day, so calling it on
+  // every focus + foreground only advances the count once per day.
   const [streak, setStreak] = useState(0);
   useFocusEffect(
     useCallback(() => {
-      if (!isSupabaseConfigured) return;
-      (async () => {
-        const { data: { user } } = await supabase.auth.getUser();
-        if (!user) return;
-        const { data } = await supabase.from('profiles').select('current_streak').eq('id', user.id).maybeSingle();
-        if (data?.current_streak != null) setStreak(data.current_streak);
-      })();
+      touchLoginStreak().then((s) => { if (s != null) setStreak(s); });
     }, [])
   );
+  // Catch the overnight case: app left backgrounded on Home, then foregrounded
+  // after midnight — focus won't re-fire, so AppState 'active' refreshes the pill.
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'active') {
+        touchLoginStreak().then((s) => { if (s != null) setStreak(s); });
+      }
+    });
+    return () => sub.remove();
+  }, []);
 
   const wardrobeItems = useWardrobeStore((s) => s.items);
   const wearLogs = useWearLogStore((s) => s.logs);
@@ -55,6 +66,19 @@ export default function HomeScreen() {
   const swipesMap = useSwipeStore((s) => s.swipes);
   const swipeCount = Object.keys(swipesMap).length;
   const tasteProfile = useTasteProfile();
+
+  // Cold-start detection: no wardrobe, no swipes, no quiz signal. These users
+  // get a single unified "start here" hero (the two value paths) instead of
+  // two competing empty-state CTAs (quiz card + empty SOTD card).
+  const isNewUser =
+    wardrobeItems.length === 0 && swipeCount === 0 && tasteProfile.signal_count === 0;
+
+  // First-run tap-through overlay — once per install, only after persistence
+  // has hydrated (so returning users never see a flash).
+  const hasSeenOnboarding = useOnboardingStore((s) => s.hasSeenOnboarding);
+  const onboardingHydrated = useOnboardingStore((s) => s.hydrated);
+  const completeOnboarding = useOnboardingStore((s) => s.complete);
+  const showOnboarding = onboardingHydrated && !hasSeenOnboarding;
 
   const greeting = useGreeting();
   const { entries: sotdEntries, loading: sotdLoading, refresh: refreshSOTD } = useSOTDFeed();
@@ -107,13 +131,19 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        {/* ── Discover card — shown FIRST when wardrobe is empty ── */}
-        {ownedCount === 0 && <DiscoverCard isPro={isPro} router={router} />}
+        {/* ── New-user "Start here" — unified two-path value prop ── */}
+        {isNewUser && <GetStartedHero router={router} />}
 
-        {/* ── Scent of the Day ── */}
+        {/* ── Discover card — shown FIRST when wardrobe is empty (but the user
+               has already engaged; true new users see GetStartedHero instead) ── */}
+        {!isNewUser && ownedCount === 0 && <DiscoverCard isPro={isPro} router={router} />}
+
+        {/* ── Scent of the Day (hidden for true new users — GetStartedHero
+               already owns the wardrobe call-to-action above) ── */}
+        {!isNewUser && (
         <Section eyebrow="SCENT OF THE DAY" cursive="from your wardrobe">
           {ownedCount === 0 ? (
-            // Empty state — nothing in wardrobe
+            // Empty state — nothing in wardrobe, but the user has swiped/quizzed
             <View style={[styles.sotdEmpty, { marginRight: SPACING.lg }]}>
               <Ionicons name="flask-outline" size={32} color={COLORS.accent} style={{ marginBottom: SPACING.sm }} />
               <Text style={styles.sotdEmptyTitle}>Your wardrobe is empty</Text>
@@ -164,6 +194,11 @@ export default function HomeScreen() {
             </View>
           )}
         </Section>
+        )}
+
+        {/* ── Budget Dupes — object-anchored from wishlist; surfaced high
+               as the headline "smell rich for less" hook ── */}
+        <HomeDupeModule />
 
         {/* ── Taste Profile Teaser ── */}
         {tasteProfile.signal_count > 0 && (
@@ -175,9 +210,6 @@ export default function HomeScreen() {
             onTrain={() => router.push('/(tabs)/train' as any)}
           />
         )}
-
-        {/* ── Don't Pay a Fortune — dupe finder, seeded from wishlist ── */}
-        <HomeDupeModule />
 
         {/* ── Community SOTD ── */}
         <Section
@@ -228,7 +260,69 @@ export default function HomeScreen() {
           <View style={styles.footerRule} />
         </View>
       </ScrollView>
+
+      <FirstRunOverlay visible={showOnboarding} onDone={completeOnboarding} />
     </SafeAreaView>
+  );
+}
+
+// ─── Get Started Hero (cold-start, no wardrobe / no swipes) ──────────────────
+
+/**
+ * The first thing a brand-new user sees. Names the two value paths explicitly
+ * — "add your wardrobe → daily what-to-wear" and "train your nose → best
+ * matches for you" — so the payoff is clear before they invest any effort.
+ * Replaces the two competing empty-state CTAs that used to sit at the top.
+ */
+function GetStartedHero({ router }: { router: ReturnType<typeof useRouter> }) {
+  return (
+    <Section eyebrow="WELCOME" cursive="start here">
+      <View style={[styles.startWrap, { marginRight: SPACING.lg }]}>
+        <Text style={styles.startLede}>
+          Two ways to get fragrance picks made just for you. Do either — or both.
+        </Text>
+
+        {/* Path A — wardrobe */}
+        <Pressable
+          style={({ pressed }) => [styles.pathCard, pressed && { opacity: 0.9 }]}
+          onPress={() => router.push('/(tabs)/wardrobe')}
+        >
+          <View style={styles.pathIcon}>
+            <Ionicons name="flask-outline" size={24} color={COLORS.accent} />
+          </View>
+          <View style={styles.pathText}>
+            <Text style={styles.pathTitle}>Add your wardrobe</Text>
+            <Text style={styles.pathBody}>
+              Tell us the bottles you own — we'll pick what to wear each day, and why.
+            </Text>
+          </View>
+          <Ionicons name="chevron-forward" size={18} color={COLORS.muted} />
+        </Pressable>
+
+        {/* Path B — train */}
+        <Pressable
+          style={({ pressed }) => [styles.pathCard, pressed && { opacity: 0.9 }]}
+          onPress={() => router.push('/(tabs)/train')}
+        >
+          <View style={styles.pathIcon}>
+            <Ionicons name="rose-outline" size={24} color={COLORS.accent} />
+          </View>
+          <View style={styles.pathText}>
+            <Text style={styles.pathTitle}>Train your nose</Text>
+            <Text style={styles.pathBody}>
+              Swipe through scents — the more you swipe, the better we match you.
+            </Text>
+          </View>
+          <Ionicons name="chevron-forward" size={18} color={COLORS.muted} />
+        </Pressable>
+
+        {/* Tertiary — quiz quick-start */}
+        <Pressable style={styles.startQuiz} onPress={() => router.push('/quiz')} hitSlop={6}>
+          <Ionicons name="sparkles-outline" size={13} color={COLORS.accent} />
+          <Text style={styles.startQuizText}>Not sure? Take the 5-question taste quiz →</Text>
+        </Pressable>
+      </View>
+    </Section>
   );
 }
 
@@ -467,12 +561,23 @@ function DiscoverCard({ isPro, router }: { isPro: boolean; router: ReturnType<ty
  * Home dupe module (PRD §7.1, surface 3 — founder's idea). Seeds the dupe
  * finder from the user's priciest wishlist ('want') item when present, so the
  * first thing they see is "you wishlisted X — here's how to smell like it for
- * less." Falls back to an open search prompt when the wishlist is empty.
+ * less." Renders nothing at all when there's no wishlist item that actually has
+ * cheaper alternatives — we never show a bare "no dupes" card or a naked search
+ * prompt; the surface only exists when it can deliver an object-anchored dupe.
  */
 function HomeDupeModule() {
   const wardrobeItems = useWardrobeStore((s) => s.items);
   const fetchById = useCatalogStore((s) => s.fetchById);
+  const fetchDupeCount = useCatalogStore((s) => s.fetchDupeCount);
   const [seed, setSeed] = useState<Fragrance | undefined>(undefined);
+  // What the picker is *currently* showing — diverges from `seed` once the user
+  // clears or changes the picker. Drives the header copy so clearing the picker
+  // reverts the module to its default prompt.
+  const [current, setCurrent] = useState<Fragrance | undefined>(undefined);
+  // True only while we're resolving the wishlist seed + checking it has dupes.
+  // Keeps the picker hidden so we don't flash an empty search box before the
+  // seeded chip, or seed a perfume we then can't show alternatives for.
+  const [resolving, setResolving] = useState(false);
 
   // Seed from the first wishlist ('want') item, if any.
   const wantId = useMemo(
@@ -481,25 +586,45 @@ function HomeDupeModule() {
   );
 
   useEffect(() => {
-    if (!wantId) { setSeed(undefined); return; }
+    if (!wantId) { setSeed(undefined); setCurrent(undefined); setResolving(false); return; }
     let cancelled = false;
-    fetchById(wantId).then((f) => { if (!cancelled) setSeed(f); });
+    setResolving(true);
+    (async () => {
+      const f = await fetchById(wantId);
+      // Only seed the module from the wishlist item if we actually have cheaper
+      // alternatives for it. Otherwise the header would promise "here's how to
+      // smell like it for less" while the body says "no close dupes yet" — so we
+      // fall back to the neutral open-search prompt and never name the perfume.
+      const count = f ? await fetchDupeCount(f.id) : 0;
+      if (cancelled) return;
+      if (f && count > 0) { setSeed(f); setCurrent(f); }
+      else { setSeed(undefined); setCurrent(undefined); }
+      setResolving(false);
+    })();
     return () => { cancelled = true; };
-  }, [wantId, fetchById]);
+  }, [wantId, fetchById, fetchDupeCount]);
+
+  // No wishlist item with cheaper alternatives → render nothing. We never show a
+  // "no dupes" card or a naked search prompt; the module only exists when it can
+  // lead with a real, object-anchored dupe.
+  if (resolving || !seed) return null;
 
   return (
-    <Section eyebrow="DON'T PAY A FORTUNE" cursive="smell rich for less">
+    <Section eyebrow="BUDGET DUPES" cursive="smell rich for less">
       <View style={[styles.dupeModule, { marginRight: SPACING.lg }]}>
         <Text style={styles.dupeModuleSub}>
-          {seed
-            ? `You wishlisted ${seed.name}. Here's how to smell like it for less.`
-            : "Pick a pricey fragrance you love — we'll rank the ones that smell the same for less."}
+          {current && current.id !== seed.id
+            ? `Here's how to smell like ${current.name} for less.`
+            : `You wishlisted ${seed.name}. Here's how to smell like it for less.`}
         </Text>
         {/* key remounts the picker once the async seed resolves, since
             DupePicker reads initialOriginal only in its useState initializer. */}
-        {wantId && !seed ? null : (
-          <DupePicker key={seed?.id ?? 'search'} initialOriginal={seed} placeholder="Less expensive options for…" />
-        )}
+        <DupePicker
+          key={seed.id}
+          initialOriginal={seed}
+          onOriginalChange={setCurrent}
+          placeholder="Less expensive options for…"
+        />
       </View>
     </Section>
   );
@@ -789,6 +914,56 @@ const styles = StyleSheet.create({
   sectionAction: { marginLeft: 'auto' },
   hScroll: { paddingRight: SPACING.lg },
   seeAllLink: { ...TYPE.label, fontSize: 11, color: COLORS.accent, letterSpacing: 0.5 },
+
+  // ── Get Started hero (cold start) ──
+  startWrap: {
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+    padding: SPACING.lg,
+    gap: SPACING.md,
+  },
+  startLede: {
+    ...TYPE.bodySmall,
+    color: COLORS.text,
+    lineHeight: 21,
+  },
+  pathCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
+    backgroundColor: COLORS.bg,
+    borderRadius: RADIUS.md,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    padding: SPACING.md,
+  },
+  pathIcon: {
+    width: 44, height: 44,
+    borderRadius: RADIUS.md,
+    backgroundColor: COLORS.blushSoft,
+    borderWidth: 1,
+    borderColor: COLORS.blush,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  pathText: { flex: 1, gap: 2 },
+  pathTitle: {
+    fontFamily: FONTS.serif,
+    fontSize: 16,
+    fontWeight: '600',
+    color: COLORS.text,
+  },
+  pathBody: { ...TYPE.caption, fontSize: 12, color: COLORS.muted, lineHeight: 17 },
+  startQuiz: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    paddingTop: SPACING.xs,
+  },
+  startQuizText: { ...TYPE.caption, fontSize: 12, color: COLORS.accent, fontStyle: 'italic' },
 
   // ── SOTD empty state ──
   sotdEmpty: {

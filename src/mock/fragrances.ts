@@ -37,6 +37,15 @@ export interface MockFragrance {
   similar_ids: string[];
   dupe_of?: string | null;
   release_year: number;
+  /**
+   * True when the source row carried real community performance data. False
+   * when community_longevity/sillage/projection were all null and got filled
+   * with the neutral 3.0 defaults (kept so the rec engine never sees NaN).
+   * Undefined for mock/custom fragrances (treated as "show" by consumers).
+   * Lets the detail screen hide the Performance section instead of rendering
+   * fabricated "moderate" bars on bottles we have no performance data for.
+   */
+  has_community_data?: boolean;
 }
 
 

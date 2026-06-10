@@ -69,7 +69,7 @@ export function LayeringSheet({ visible, fragrance, onClose, onSaved }: Props) {
       >
         <View style={styles.sheet}>
           <View style={styles.handle} />
-          <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+          <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets>
             <Text style={styles.eyebrow}>LOG A LAYER</Text>
             <Text style={styles.cursive}>pair & record</Text>
             <Text style={styles.fragName}>{fragrance.name}</Text>

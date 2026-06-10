@@ -353,6 +353,7 @@ export default function ScanScreen() {
           <ScrollView
             contentContainerStyle={styles.quickAddScroll}
             keyboardShouldPersistTaps="handled"
+            automaticallyAdjustKeyboardInsets
             showsVerticalScrollIndicator={false}
           >
             {photoUri && (

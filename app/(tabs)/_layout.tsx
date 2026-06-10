@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { useProfileStore } from '@/src/stores/useProfileStore';
+import { resolveAvatarUri } from '@/src/lib/profilePhoto';
 import { useSwipeStore, FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStore';
 import { useProStore } from '@/src/stores/useProStore';
 import { useRetailerLinksStore } from '@/src/stores/useRetailerLinksStore';
@@ -37,7 +38,7 @@ function ProfileTabIcon({ focused }: { focused: boolean }) {
   // moment the user picks a new photo (or clears it back to monogram).
   const photoUri = useProfileStore((s) => s.photoUri);
   const monogram = useProfileStore((s) => s.getMonogram());
-  const imageUri = photoUri;
+  const imageUri = resolveAvatarUri(photoUri);
   const size = 26;
   return (
     <View

@@ -79,7 +79,7 @@ export function ReviewSheet({ visible, fragrance, existing, onClose, onSaved }: 
       >
         <View style={styles.sheet}>
           <View style={styles.handle} />
-          <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false}>
+          <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets>
             <Text style={styles.eyebrow}>{existing ? 'EDIT REVIEW' : 'WRITE A REVIEW'}</Text>
             <Text style={styles.cursive}>{existing ? 'update your take' : 'share your verdict'}</Text>
             <Text style={styles.fragName}>{fragrance.name}</Text>

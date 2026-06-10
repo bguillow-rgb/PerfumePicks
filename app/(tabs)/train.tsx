@@ -20,6 +20,7 @@ import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useSwipeStore, FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStore';
 import { useProStore } from '@/src/stores/useProStore';
+import { recomputeTasteProfile } from '@/src/lib/sync/useAppSync';
 
 /**
  * Train My Nose — swipe right to love, down to like, left to pass.
@@ -251,6 +252,9 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
   }, []);
 
   const handleEndSession = useCallback(() => {
+    // Recompute the taste profile from this session's swipes so the profile
+    // screen and recommendations reflect them (fire-and-forget; upsert is async).
+    recomputeTasteProfile().catch(() => {});
     setSessionSavedVisible(true);
     endSessionTimer.current = setTimeout(() => {
       setSessionSavedVisible(false);
@@ -506,10 +510,16 @@ function Intro({ onStart, onClose, dailyLimitReached, onUpgrade, onViewProfile }
 
         {dailyLimitReached ? (
           <>
+            <Text style={styles.body}>
+              You get <Text style={styles.italic}>10 free swipes a day</Text> — you've used today's.
+              They reset tomorrow, free. Go Pro for unlimited swipes anytime.
+            </Text>
             <Pressable style={[styles.cta, { backgroundColor: COLORS.text }]} onPress={onUpgrade}>
               <Text style={styles.ctaText}>Unlock Unlimited Swipes</Text>
             </Pressable>
-            <Text style={styles.footnote}>You've used your 10 free swipes today. Resets tomorrow.</Text>
+            <Pressable onPress={onClose} hitSlop={8} style={styles.tasteProfileLink}>
+              <Text style={styles.tasteProfileLinkText}>Maybe tomorrow</Text>
+            </Pressable>
           </>
         ) : (
           <>

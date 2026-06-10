@@ -3,6 +3,7 @@ import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, FONTS } from '@/src/constants/theme';
 import { useProfileStore } from '@/src/stores/useProfileStore';
+import { resolveAvatarUri } from '@/src/lib/profilePhoto';
 
 /**
  * ProfileAvatar — top-right circular profile button.
@@ -31,7 +32,7 @@ export function ProfileAvatar({ imageUri, monogram, size = 40 }: Props) {
   // every other avatar in the app the moment the photo or name changes.
   const storedPhoto = useProfileStore((s) => s.photoUri);
   const storedMonogram = useProfileStore((s) => s.getMonogram());
-  const finalImage = imageUri !== undefined ? imageUri : storedPhoto;
+  const finalImage = resolveAvatarUri(imageUri !== undefined ? imageUri : storedPhoto);
   const finalMonogram = monogram ?? storedMonogram;
 
   return (

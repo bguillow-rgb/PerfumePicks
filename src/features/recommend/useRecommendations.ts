@@ -91,10 +91,15 @@ function buildSignals(
   wears: { fragrance_id: string; rating: number | null }[],
   wardrobeItems: { fragrance_id: string; status: string }[],
   swipes: { fragrance_id: string; action: string }[],
+  // Resolve a fragrance by id. Defaults to the synchronous in-memory cache,
+  // but callers can pass a resolver backed by an eager fetchMany so signals
+  // aren't silently dropped when the catalog cache hasn't loaded that row yet
+  // (the cause of "I swiped 40 times but my taste profile shows 1 signal").
+  resolve: (id: string) => Fragrance | undefined = getFragranceFromStore,
 ): TasteSignal[] {
   const out: TasteSignal[] = [];
   for (const w of wears) {
-    const f = getFragranceFromStore(w.fragrance_id);
+    const f = resolve(w.fragrance_id);
     if (!f) continue;
     const weight = w.rating != null && w.rating >= 4
       ? SIGNAL_WEIGHTS.wear_high_rating
@@ -102,13 +107,13 @@ function buildSignals(
     out.push({ fragrance: f, weight });
   }
   for (const i of wardrobeItems) {
-    const f = getFragranceFromStore(i.fragrance_id);
+    const f = resolve(i.fragrance_id);
     if (!f) continue;
     const w = (SIGNAL_WEIGHTS as any)[i.status] ?? 1;
     out.push({ fragrance: f, weight: w });
   }
   for (const sw of swipes) {
-    const f = getFragranceFromStore(sw.fragrance_id);
+    const f = resolve(sw.fragrance_id);
     if (!f) continue;
     if (sw.action === 'love')    out.push({ fragrance: f, weight: SIGNAL_WEIGHTS.swipe_love });
     if (sw.action === 'like')    out.push({ fragrance: f, weight: SIGNAL_WEIGHTS.swipe_like });
@@ -278,12 +283,35 @@ export function useTasteProfile(): DerivedTasteProfile {
   const items = useWardrobeStore((s) => s.items);
   const swipesMap = useSwipeStore((s) => s.swipes);
   const answers = useQuizStore((s) => s.answers);
+  const fetchMany = useCatalogStore((s) => s.fetchMany);
+
+  // Eagerly fetch every fragrance referenced by wears/wardrobe/swipes that
+  // isn't in the synchronous catalog cache yet. In production the cache is
+  // populated lazily, so without this the swipe signals are silently dropped
+  // (buildSignals' resolver returns undefined) and the taste profile collapses
+  // to "1 signal collected" even after dozens of swipes.
+  const [fetchedFragrances, setFetchedFragrances] = useState<Fragrance[]>([]);
+  useEffect(() => {
+    const ids = new Set<string>();
+    logs.forEach((l) => ids.add(l.fragrance_id));
+    items.forEach((i) => ids.add(i.fragrance_id));
+    Object.values(swipesMap).forEach((x) => ids.add(x.fragrance_id));
+    const missing = [...ids].filter((id) => !getFragranceFromStore(id));
+    if (!missing.length) return;
+    let cancelled = false;
+    fetchMany(missing).then((rows) => {
+      if (!cancelled) setFetchedFragrances(rows);
+    });
+    return () => { cancelled = true; };
+  }, [logs, items, swipesMap, fetchMany]);
 
   return useMemo(() => {
+    const fetchedMap = new Map<string, Fragrance>(fetchedFragrances.map((f) => [f.id, f]));
+    const resolve = (id: string) => fetchedMap.get(id) ?? getFragranceFromStore(id);
     const wears = logs.map((l) => ({ fragrance_id: l.fragrance_id, rating: l.rating ?? null }));
     const itemsForProfile = items.map((i) => ({ fragrance_id: i.fragrance_id, status: i.status }));
     const swipes = Object.values(swipesMap).map((x) => ({ fragrance_id: x.fragrance_id, action: x.action }));
-    const base = deriveTasteProfile(buildSignals(wears, itemsForProfile, swipes));
+    const base = deriveTasteProfile(buildSignals(wears, itemsForProfile, swipes, resolve));
 
     const result = { ...base };
     if (answers.family) {
@@ -296,7 +324,7 @@ export function useTasteProfile(): DerivedTasteProfile {
     if (answers.price && result.avg_price_tier === null) result.avg_price_tier = Number(answers.price);
     if (answers.longevity && result.longevity_preference === null) result.longevity_preference = Number(answers.longevity);
     return result;
-  }, [logs, items, swipesMap, answers.family, answers.price, answers.longevity]);
+  }, [logs, items, swipesMap, fetchedFragrances, answers.family, answers.price, answers.longevity]);
 }
 
 /**

@@ -11,6 +11,9 @@ interface Props {
   /** Optional pre-selected original (e.g. Home module seeds it from a wishlist item). */
   initialOriginal?: Fragrance;
   placeholder?: string;
+  /** Fires whenever the selected original changes (pick or clear), so a parent
+   *  can keep surrounding copy in sync with what's actually selected. */
+  onOriginalChange?: (f: Fragrance | undefined) => void;
 }
 
 /**
@@ -21,7 +24,7 @@ interface Props {
  * get_dupe_count gives us the total so we can show how many remain locked.
  * Consumed by the Discover hero and the Home module.
  */
-export function DupePicker({ initialOriginal, placeholder = 'Less expensive options for…' }: Props) {
+export function DupePicker({ initialOriginal, placeholder = 'Less expensive options for…', onOriginalChange }: Props) {
   const router = useRouter();
   const search = useCatalogStore((s) => s.search);
   const fetchDupes = useCatalogStore((s) => s.fetchDupes);
@@ -72,26 +75,36 @@ export function DupePicker({ initialOriginal, placeholder = 'Less expensive opti
     setSelected(f);
     setResults([]);
     setQuery('');
+    onOriginalChange?.(f);
   };
 
   const reset = () => {
     setSelected(undefined);
     setDupes([]);
     setDupeCount(0);
+    onOriginalChange?.(undefined);
   };
 
   return (
     <View style={styles.wrap}>
       {/* Search field OR selected-original chip */}
       {selected ? (
-        <Pressable style={styles.selectedChip} onPress={reset}>
-          <Image source={{ uri: selected.image_url }} style={styles.selectedImage} />
-          <View style={styles.selectedText}>
-            <Text style={styles.selectedBrand} numberOfLines={1}>{selected.brand.toUpperCase()}</Text>
-            <Text style={styles.selectedName} numberOfLines={1}>{selected.name}</Text>
-          </View>
-          <Ionicons name="close-circle" size={20} color={COLORS.subtle} />
-        </Pressable>
+        <View style={styles.selectedChip}>
+          <Pressable
+            style={styles.selectedTap}
+            onPress={() => router.push(`/fragrance/${selected.id}`)}
+            hitSlop={6}
+          >
+            <Image source={{ uri: selected.image_url }} style={styles.selectedImage} />
+            <View style={styles.selectedText}>
+              <Text style={styles.selectedBrand} numberOfLines={1}>{selected.brand.toUpperCase()}</Text>
+              <Text style={styles.selectedName} numberOfLines={1}>{selected.name}</Text>
+            </View>
+          </Pressable>
+          <Pressable onPress={reset} hitSlop={10} accessibilityLabel="Clear selection">
+            <Ionicons name="close-circle" size={20} color={COLORS.subtle} />
+          </Pressable>
+        </View>
       ) : (
         <View style={styles.searchBox}>
           <Ionicons name="search" size={18} color={COLORS.subtle} />
@@ -187,6 +200,7 @@ const styles = StyleSheet.create({
     padding: 6,
     paddingRight: SPACING.md,
   },
+  selectedTap: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: SPACING.sm },
   selectedImage: { width: 36, height: 36, borderRadius: RADIUS.full, backgroundColor: COLORS.card },
   selectedText: { flex: 1 },
   selectedBrand: { ...TYPE.eyebrow, fontSize: 9 },

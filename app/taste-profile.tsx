@@ -5,7 +5,7 @@ import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { EmptyState } from '@/src/components/ui/EmptyState';
-import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { recomputeTasteProfile } from '@/src/lib/sync/useAppSync';
 
 /**
  * My Taste Profile — reads user_taste_profiles from Supabase.
@@ -29,16 +29,12 @@ export default function TasteProfileScreen() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!isSupabaseConfigured) { setLoading(false); return; }
+    // Recompute from local signals (swipes + wardrobe + wears) on every entry so
+    // the profile reflects swipes done this session. This also upserts to
+    // Supabase in the background, so other surfaces (recs) stay fresh too.
     (async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) { setLoading(false); return; }
-      const { data: row } = await supabase
-        .from('user_taste_profiles')
-        .select('*')
-        .eq('user_id', user.id)
-        .maybeSingle();
-      if (row) setData(row);
+      const profile = await recomputeTasteProfile();
+      setData(profile);
       setLoading(false);
     })();
   }, []);

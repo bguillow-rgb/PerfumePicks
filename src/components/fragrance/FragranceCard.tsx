@@ -12,6 +12,10 @@ interface Props {
   variant?: 'hero' | 'medium' | 'small' | 'compact';
   /** Optional subtitle shown below the name on compact cards (e.g. celebrity names). */
   subtitle?: string;
+  /** Compact cards default to a fixed 300pt rail width. Set true in vertical
+   *  lists (e.g. Discover search results) so the card fills the row width and
+   *  lines up with full-bleed elements like the mood banner. */
+  fullWidth?: boolean;
   onPress?: () => void;
 }
 
@@ -29,12 +33,12 @@ interface Props {
  * Rationale: founder feedback — big photos "look bush league"; compact
  * cards show more product by default and feel Sephora/Nordstrom-curated.
  */
-export function FragranceCard({ fragrance, variant = 'medium', subtitle, onPress }: Props) {
+export function FragranceCard({ fragrance, variant = 'medium', subtitle, fullWidth, onPress }: Props) {
   const router = useRouter();
   const handlePress = onPress ?? (() => router.push(`/fragrance/${fragrance.id}`));
 
   if (variant === 'hero') return <HeroCard fragrance={fragrance} onPress={handlePress} />;
-  if (variant === 'compact') return <CompactCard fragrance={fragrance} subtitle={subtitle} onPress={handlePress} />;
+  if (variant === 'compact') return <CompactCard fragrance={fragrance} subtitle={subtitle} fullWidth={fullWidth} onPress={handlePress} />;
   if (variant === 'small') return <SmallCard fragrance={fragrance} onPress={handlePress} />;
   return <MediumCard fragrance={fragrance} onPress={handlePress} />;
 }
@@ -100,7 +104,7 @@ function cardDisplayName(raw: string): string {
   return name;
 }
 
-function CompactCard({ fragrance, subtitle, onPress }: { fragrance: Fragrance; subtitle?: string; onPress: () => void }) {
+function CompactCard({ fragrance, subtitle, fullWidth, onPress }: { fragrance: Fragrance; subtitle?: string; fullWidth?: boolean; onPress: () => void }) {
   const accord = fragrance.top_accords[0];
   const inWardrobe = useWardrobeStore((s) => s.getByFragrance(fragrance.id));
   const addToWardrobe = useWardrobeStore((s) => s.add);
@@ -132,7 +136,11 @@ function CompactCard({ fragrance, subtitle, onPress }: { fragrance: Fragrance; s
       : compactStyles.brand;
 
   return (
-    <Pressable onPress={onPress} style={compactStyles.wrap} accessibilityLabel={fragrance.name}>
+    <Pressable
+      onPress={onPress}
+      style={[compactStyles.wrap, fullWidth && compactStyles.wrapFullWidth]}
+      accessibilityLabel={fragrance.name}
+    >
       <View style={compactStyles.imageWrap}>
         <Image source={{ uri: fragrance.image_url }} style={compactStyles.image} />
       </View>
@@ -274,6 +282,12 @@ const compactStyles = StyleSheet.create({
     alignItems: 'center',
     gap: SPACING.md,
     marginRight: SPACING.md,
+  },
+  // Vertical-list variant: fill the row and drop the rail's right margin so the
+  // card lines up with full-bleed siblings (e.g. the Discover mood banner).
+  wrapFullWidth: {
+    width: '100%',
+    marginRight: 0,
   },
   imageWrap: {
     width: 80,
