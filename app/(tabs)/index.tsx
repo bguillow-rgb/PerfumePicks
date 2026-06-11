@@ -559,21 +559,22 @@ function DiscoverCard({ isPro, router }: { isPro: boolean; router: ReturnType<ty
 
 /**
  * Home dupe module (PRD §7.1, surface 3 — founder's idea). Seeds the dupe
- * finder from the user's priciest wishlist ('want') item when present, so the
- * first thing they see is "you wishlisted X — here's how to smell like it for
- * less." Renders nothing at all when there's no wishlist item that actually has
- * cheaper alternatives — we never show a bare "no dupes" card or a naked search
- * prompt; the surface only exists when it can deliver an object-anchored dupe.
+ * finder from the user's own wardrobe: their first wishlist ('want') item, else
+ * their first owned ('have') item — but only when that scent actually has
+ * cheaper alternatives. Renders nothing otherwise. We deliberately do NOT fall
+ * back to a featured/default original: anchoring the module to a scent the user
+ * never picked reads as stale leftover copy (e.g. it kept showing Baccarat Rouge
+ * 540 after the user emptied their wardrobe). The surface only exists when it
+ * can lead with one of the user's OWN object-anchored bottles.
  */
 function HomeDupeModule() {
   const wardrobeItems = useWardrobeStore((s) => s.items);
   const fetchById = useCatalogStore((s) => s.fetchById);
   const fetchDupeCount = useCatalogStore((s) => s.fetchDupeCount);
-  const fetchFeaturedDupeOriginal = useCatalogStore((s) => s.fetchFeaturedDupeOriginal);
   const [seed, setSeed] = useState<Fragrance | undefined>(undefined);
   // True only when the seed came from the user's own wishlist ('want'), so the
-  // copy can say "you wishlisted X". A 'have' or featured-default seed gets the
-  // neutral "smell like X for less" framing instead.
+  // copy can say "you wishlisted X". A 'have' seed gets the neutral "smell like
+  // X for less" framing instead.
   const [seedFromWant, setSeedFromWant] = useState(false);
   // What the picker is *currently* showing — diverges from `seed` once the user
   // clears or changes the picker. Drives the header copy so clearing the picker
@@ -610,16 +611,11 @@ function HomeDupeModule() {
         return count > 0 ? f : undefined;
       };
 
-      // 'want' → 'have' → featured default (the original with the most curated
-      // dupes). The module is object-anchored at every tier, so the user always
-      // leads with a real, named bottle and never a naked search prompt.
+      // 'want' → 'have', from the user's own wardrobe only. No featured/default
+      // fallback — see the component doc comment.
       let f = await tryCandidate(wantId);
-      let fromWant = !!f;
+      const fromWant = !!f;
       if (!f) f = await tryCandidate(haveId);
-      if (!f) {
-        const featuredSlug = await fetchFeaturedDupeOriginal();
-        f = featuredSlug ? await fetchById(featuredSlug) : undefined;
-      }
 
       if (cancelled) return;
       setSeed(f);
@@ -628,11 +624,11 @@ function HomeDupeModule() {
       setResolving(false);
     })();
     return () => { cancelled = true; };
-  }, [wantId, haveId, fetchById, fetchDupeCount, fetchFeaturedDupeOriginal]);
+  }, [wantId, haveId, fetchById, fetchDupeCount]);
 
-  // Nothing seedable (catalog has no curated dupes at all) → render nothing. We
-  // never show a "no dupes" card or a naked search prompt; the module only
-  // exists when it can lead with a real, object-anchored dupe.
+  // No wardrobe scent with cheaper alternatives → render nothing. We never show
+  // a "no dupes" card or a naked search prompt; the module only exists when it
+  // can lead with one of the user's own object-anchored bottles.
   if (resolving || !seed) return null;
 
   const onSeed = current && current.id === seed.id;
