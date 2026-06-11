@@ -17,7 +17,7 @@ import { AppState } from 'react-native';
 import { useSOTDFeed, SOTDEntry } from '@/src/hooks/useSOTDFeed';
 import { useProStore } from '@/src/stores/useProStore';
 import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
-import { FirstRunOverlay } from '@/src/components/onboarding/FirstRunOverlay';
+import { FirstRunFlow } from '@/src/components/onboarding/FirstRunFlow';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 /**
@@ -261,7 +261,7 @@ export default function HomeScreen() {
         </View>
       </ScrollView>
 
-      <FirstRunOverlay visible={showOnboarding} onDone={completeOnboarding} />
+      <FirstRunFlow visible={showOnboarding} onDone={completeOnboarding} />
     </SafeAreaView>
   );
 }
