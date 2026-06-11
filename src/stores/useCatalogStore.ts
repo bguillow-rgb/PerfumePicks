@@ -129,6 +129,42 @@ function isBundle(f: Fragrance): boolean {
     nameLower.startsWith('set ') || nameLower.endsWith(' set');
 }
 
+function escapeRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * How well a fragrance NAME matches the query — higher is more relevant.
+ *   5 exact ("Sauvage")  4 prefix ("Sauvage Elixir")  3 whole-word ("Eau Sauvage")
+ *   2 substring          1 brand-only (name doesn't contain the query at all)
+ * Pure-alphabetical ordering buried flagships (Dior Sauvage 6th, Creed Aventus 3rd);
+ * this lifts the exact/closest name to the top.
+ */
+function nameRelevance(name: string, q: string): number {
+  const n = name.toLowerCase();
+  if (n === q) return 5;
+  if (n.startsWith(q)) return 4;
+  if (new RegExp(`\\b${escapeRegex(q)}\\b`).test(n)) return 3;
+  if (n.includes(q)) return 2;
+  return 1;
+}
+
+/**
+ * Rank search results by: name relevance, then buyable first (real products with a
+ * buy button), then shortest name (the flagship carries the fewest extra words —
+ * "Sauvage" vs "Orchidee Sauvage"), then alphabetical as a stable tiebreak.
+ */
+function compareSearchRelevance(a: Fragrance, b: Fragrance, q: string): number {
+  const ra = nameRelevance(a.name, q);
+  const rb = nameRelevance(b.name, q);
+  if (ra !== rb) return rb - ra;
+  const pa = (a as any).purchasable ? 1 : 0;
+  const pb = (b as any).purchasable ? 1 : 0;
+  if (pa !== pb) return pb - pa;
+  if (a.name.length !== b.name.length) return a.name.length - b.name.length;
+  return a.name.localeCompare(b.name);
+}
+
 function rowToFragrance(row: any): Fragrance {
   return {
     // Use slug as the app-level ID — stable, human-readable, shared with MOCK_CATALOG
@@ -157,10 +193,11 @@ function rowToFragrance(row: any): Fragrance {
     similar_ids:          row.similar_fragrance_ids ?? [],
     dupe_of:              row.dupe_of ?? null,
     release_year:         row.release_year ?? 2020,
-  };
+    purchasable:          row.purchasable ?? false,
+  } as Fragrance;
 }
 
-const FRAGRANCE_SELECT = 'id, slug, name, concentration, fragrance_family, gender, top_notes, heart_notes, base_notes, top_accords, accord_intensity, community_longevity, community_sillage, community_projection, compliment_score, versatility_score, office_safe_score, price_tier, retail_msrp_usd_cents, image_url, similar_fragrance_ids, dupe_of, release_year, brands(name)';
+const FRAGRANCE_SELECT = 'id, slug, name, concentration, fragrance_family, gender, top_notes, heart_notes, base_notes, top_accords, accord_intensity, community_longevity, community_sillage, community_projection, compliment_score, versatility_score, office_safe_score, price_tier, retail_msrp_usd_cents, image_url, similar_fragrance_ids, dupe_of, release_year, purchasable, brands(name)';
 
 export const useCatalogStore = create<CatalogState>()((set, get) => ({
   cache: {},
@@ -283,6 +320,11 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       }
       const nameRemainder = tokens.filter((t) => !consumed.has(t)).join(' ').trim();
 
+      // Over-fetch a candidate pool, then rank client-side (see compareSearchRelevance).
+      // Alphabetical truncation in Postgres could otherwise cut the flagship before
+      // ranking — e.g. "Sauvage" among many "*-sauvage" names sorts late.
+      const fetchLimit = Math.max(limit * 4, 60);
+
       // 1) Fragrance-name match on the full query (handles names that literally
       //    contain the whole string, and pure-name queries with no brand token).
       let nameQb = supabase
@@ -291,7 +333,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         .eq('is_active', true)
         .ilike('name', `%${q}%`)
         .order('name', { ascending: true })
-        .limit(limit);
+        .limit(fetchLimit);
       if (genders?.length) nameQb = nameQb.in('gender', genders);
 
       // 2) Within matched brands, narrow by the leftover name tokens — or return
@@ -304,8 +346,9 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
               .select(FRAGRANCE_SELECT)
               .eq('is_active', true)
               .in('brand_id', brandIds)
+              .order('purchasable', { ascending: false })
               .order('name', { ascending: true })
-              .limit(limit);
+              .limit(fetchLimit);
             if (nameRemainder) bqb = bqb.ilike('name', `%${nameRemainder}%`);
             if (genders?.length) bqb = bqb.in('gender', genders);
             return bqb;
@@ -322,7 +365,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         const slug = row.slug ?? row.id;
         if (!seen.has(slug)) { seen.add(slug); merged.push(rowToFragrance(row)); }
       }
-      merged.sort((a, b) => a.name.localeCompare(b.name));
+      merged.sort((a, b) => compareSearchRelevance(a, b, q));
       const results = merged.filter((f) => !isBundle(f)).slice(0, limit);
       get()._addToCache(results);
       return results;
