@@ -76,7 +76,7 @@ language sql
 security definer
 stable
 set search_path = public
-as $$
+as $get_dupes$
   with const as (
     select 1 as free_limit               -- FREE_DUPE_LIMIT: top-N revealed to non-Pro (A/B here)
   ),
@@ -134,7 +134,7 @@ as $$
   from ranked r, const c
   where is_pro_user(auth.uid()) or r.rn <= c.free_limit
   order by r.rn;
-$$;
+$get_dupes$;
 
 grant execute on function get_dupes(text) to anon, authenticated;
 comment on function get_dupes(text) is
@@ -146,7 +146,7 @@ language sql
 security definer
 stable
 set search_path = public
-as $$
+as $get_dupe_count$
   select count(*)::int
   from fragrances o
   join fragrance_dupes fd on fd.original_id = o.id
@@ -155,7 +155,7 @@ as $$
     and d.is_active = true
     and d.purchasable = true
     and fd.source in ('seed', 'editorial', 'clone_house');   -- VERIFIED only
-$$;
+$get_dupe_count$;
 
 grant execute on function get_dupe_count(text) to anon, authenticated;
 comment on function get_dupe_count(text) is
@@ -170,7 +170,7 @@ language sql
 security definer
 stable
 set search_path = public
-as $$
+as $get_featured$
   select o.slug
   from fragrances o
   join fragrance_dupes fd on fd.original_id = o.id
@@ -183,7 +183,7 @@ as $$
   order by count(*) desc,
            coalesce(o.retail_msrp_usd_cents, 0) desc
   limit 1;
-$$;
+$get_featured$;
 
 grant execute on function get_featured_dupe_original() to anon, authenticated;
 
@@ -229,7 +229,7 @@ language sql
 security definer
 stable
 set search_path = public
-as $$
+as $get_community$
   select
     d.slug as id, d.slug as slug, d.name, b.name as brand_name,
     d.concentration, d.fragrance_family, d.gender,
@@ -255,7 +255,7 @@ as $$
   order by fd.match_pct desc,
            (coalesce(o.retail_msrp_usd_cents,0) - coalesce(d.retail_msrp_usd_cents,0)) desc
   limit p_limit;
-$$;
+$get_community$;
 
 grant execute on function get_community_dupes(text, int) to anon, authenticated;
 comment on function get_community_dupes(text, int) is
@@ -267,7 +267,7 @@ language sql
 security definer
 stable
 set search_path = public
-as $$
+as $get_community_count$
   select count(*)::int
   from fragrances o
   join fragrance_dupes fd on fd.original_id = o.id
@@ -276,7 +276,7 @@ as $$
     and d.is_active = true
     and d.purchasable = true
     and fd.source = 'community';
-$$;
+$get_community_count$;
 
 grant execute on function get_community_dupe_count(text) to anon, authenticated;
 comment on function get_community_dupe_count(text) is
