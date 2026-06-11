@@ -569,53 +569,80 @@ function HomeDupeModule() {
   const wardrobeItems = useWardrobeStore((s) => s.items);
   const fetchById = useCatalogStore((s) => s.fetchById);
   const fetchDupeCount = useCatalogStore((s) => s.fetchDupeCount);
+  const fetchFeaturedDupeOriginal = useCatalogStore((s) => s.fetchFeaturedDupeOriginal);
   const [seed, setSeed] = useState<Fragrance | undefined>(undefined);
+  // True only when the seed came from the user's own wishlist ('want'), so the
+  // copy can say "you wishlisted X". A 'have' or featured-default seed gets the
+  // neutral "smell like X for less" framing instead.
+  const [seedFromWant, setSeedFromWant] = useState(false);
   // What the picker is *currently* showing — diverges from `seed` once the user
   // clears or changes the picker. Drives the header copy so clearing the picker
   // reverts the module to its default prompt.
   const [current, setCurrent] = useState<Fragrance | undefined>(undefined);
-  // True only while we're resolving the wishlist seed + checking it has dupes.
-  // Keeps the picker hidden so we don't flash an empty search box before the
-  // seeded chip, or seed a perfume we then can't show alternatives for.
+  // True only while we're resolving the seed + checking it has dupes. Keeps the
+  // picker hidden so we don't flash an empty search box before the seeded chip,
+  // or seed a perfume we then can't show alternatives for.
   const [resolving, setResolving] = useState(false);
 
-  // Seed from the first wishlist ('want') item, if any.
+  // Preferred seed sources, in priority order: first wishlist ('want') item,
+  // then first owned ('have') item. Each is only used if it actually has dupes.
   const wantId = useMemo(
     () => wardrobeItems.find((i) => i.status === 'want')?.fragrance_id,
     [wardrobeItems],
   );
+  const haveId = useMemo(
+    () => wardrobeItems.find((i) => i.status === 'have')?.fragrance_id,
+    [wardrobeItems],
+  );
 
   useEffect(() => {
-    if (!wantId) { setSeed(undefined); setCurrent(undefined); setResolving(false); return; }
     let cancelled = false;
     setResolving(true);
     (async () => {
-      const f = await fetchById(wantId);
-      // Only seed the module from the wishlist item if we actually have cheaper
-      // alternatives for it. Otherwise the header would promise "here's how to
-      // smell like it for less" while the body says "no close dupes yet" — so we
-      // fall back to the neutral open-search prompt and never name the perfume.
-      const count = f ? await fetchDupeCount(f.id) : 0;
+      // Resolve a candidate id to a Fragrance *only if* it has cheaper dupes —
+      // otherwise the header would promise "smell like it for less" with nothing
+      // to show. Returns undefined when the candidate has no dupes.
+      const tryCandidate = async (id?: string): Promise<Fragrance | undefined> => {
+        if (!id) return undefined;
+        const f = await fetchById(id);
+        if (!f) return undefined;
+        const count = await fetchDupeCount(f.id);
+        return count > 0 ? f : undefined;
+      };
+
+      // 'want' → 'have' → featured default (the original with the most curated
+      // dupes). The module is object-anchored at every tier, so the user always
+      // leads with a real, named bottle and never a naked search prompt.
+      let f = await tryCandidate(wantId);
+      let fromWant = !!f;
+      if (!f) f = await tryCandidate(haveId);
+      if (!f) {
+        const featuredSlug = await fetchFeaturedDupeOriginal();
+        f = featuredSlug ? await fetchById(featuredSlug) : undefined;
+      }
+
       if (cancelled) return;
-      if (f && count > 0) { setSeed(f); setCurrent(f); }
-      else { setSeed(undefined); setCurrent(undefined); }
+      setSeed(f);
+      setCurrent(f);
+      setSeedFromWant(fromWant);
       setResolving(false);
     })();
     return () => { cancelled = true; };
-  }, [wantId, fetchById, fetchDupeCount]);
+  }, [wantId, haveId, fetchById, fetchDupeCount, fetchFeaturedDupeOriginal]);
 
-  // No wishlist item with cheaper alternatives → render nothing. We never show a
-  // "no dupes" card or a naked search prompt; the module only exists when it can
-  // lead with a real, object-anchored dupe.
+  // Nothing seedable (catalog has no curated dupes at all) → render nothing. We
+  // never show a "no dupes" card or a naked search prompt; the module only
+  // exists when it can lead with a real, object-anchored dupe.
   if (resolving || !seed) return null;
 
+  const onSeed = current && current.id === seed.id;
   return (
     <Section eyebrow="BUDGET DUPES" cursive="smell rich for less">
       <View style={[styles.dupeModule, { marginRight: SPACING.lg }]}>
         <Text style={styles.dupeModuleSub}>
-          {current && current.id !== seed.id
-            ? `Here's how to smell like ${current.name} for less.`
-            : `You wishlisted ${seed.name}. Here's how to smell like it for less.`}
+          {onSeed && seedFromWant
+            ? `You wishlisted ${seed.name}. Here's how to smell like it for less.`
+            : `Here's how to smell like ${(current ?? seed).name} for less.`}
         </Text>
         {/* key remounts the picker once the async seed resolves, since
             DupePicker reads initialOriginal only in its useState initializer. */}

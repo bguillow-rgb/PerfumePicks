@@ -109,6 +109,7 @@ function FragranceDetailScreen() {
   const inCompare = !!id && compareIds.includes(id);
   const fetchDupes = useCatalogStore((s) => s.fetchDupes);
   const fetchDupeCount = useCatalogStore((s) => s.fetchDupeCount);
+  const fetchCommunityDupes = useCatalogStore((s) => s.fetchCommunityDupes);
   const fetchSimilars = useCatalogStore((s) => s.fetchSimilars);
   const [fragrance, setFragrance] = useState<Fragrance | undefined>(() =>
     getFragranceFromStore(id ?? ''),
@@ -145,6 +146,18 @@ function FragranceDetailScreen() {
     fetchDupeCount(id).then((n) => { if (!cancelled) setDupeCount(n); });
     return () => { cancelled = true; };
   }, [id, fetchDupes, fetchDupeCount]);
+
+  // Community Dupes — the crowd-consensus fallback, shown ONLY when there is no
+  // verified (Budget) dupe. Opinion-only, fully visible, explicitly unverified.
+  const [communityDupes, setCommunityDupes] = useState<DupeResult[]>([]);
+  useEffect(() => {
+    // Wait for the verified count to resolve; only fetch community when it's 0,
+    // so we never render both surfaces for the same original.
+    if (!id || dupeCount > 0) { setCommunityDupes([]); return; }
+    let cancelled = false;
+    fetchCommunityDupes(id).then((rows) => { if (!cancelled) setCommunityDupes(rows); });
+    return () => { cancelled = true; };
+  }, [id, dupeCount, fetchCommunityDupes]);
 
   // "Smells Like" similars — server-computed via get_similars (joins UUID->slug).
   const [similar, setSimilar] = useState<SimilarResult[]>([]);
@@ -526,6 +539,22 @@ function FragranceDetailScreen() {
               lockedCount={isPro ? 0 : Math.max(0, dupeCount - dupes.length)}
               onUnlock={() => router.push('/paywall')}
             />
+          </Section>
+        )}
+
+        {/* Community Dupes — the crowd-consensus fallback. Rendered ONLY when
+            there's no verified Budget Dupe (dupeCount === 0, enforced by the
+            fetch effect) so the two never compete. Explicitly framed as
+            unverified community opinion, with no Pro gate (goodwill/coverage). */}
+        {dupeCount === 0 && communityDupes.length > 0 && (
+          <Section title="Community Dupes" cursive="what the crowd says">
+            <View style={styles.communityDisclaimer}>
+              <Ionicons name="people-outline" size={13} color={COLORS.muted} />
+              <Text style={styles.communityDisclaimerText}>
+                Unverified — these are community comparisons, not confirmed matches. Tastes vary; sample before you buy.
+              </Text>
+            </View>
+            <DupeList dupes={communityDupes} />
           </Section>
         )}
 
@@ -1057,6 +1086,20 @@ const styles = StyleSheet.create({
   },
   aboutChipText: { ...TYPE.label, fontSize: 12, color: COLORS.accent, letterSpacing: 0.5 },
   aboutCopy: { ...TYPE.bodySmall, color: COLORS.muted, lineHeight: 20, fontStyle: 'italic' },
+
+  communityDisclaimer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 6,
+    marginBottom: SPACING.sm,
+  },
+  communityDisclaimerText: {
+    ...TYPE.bodySmall,
+    flex: 1,
+    color: COLORS.muted,
+    lineHeight: 17,
+    fontStyle: 'italic',
+  },
 
   notesCard: {
     backgroundColor: COLORS.card,

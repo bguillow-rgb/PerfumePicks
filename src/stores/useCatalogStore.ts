@@ -98,6 +98,23 @@ interface CatalogState {
   /** Public count of dupes available for an original — powers the Pro upsell teaser. */
   fetchDupeCount: (slug: string) => Promise<number>;
 
+  /**
+   * COMMUNITY-tier dupes for an original (source='community') via get_community_dupes.
+   * Opinion-only crowd consensus, fully visible (no freemium gate). The UI must
+   * label these as unverified and only show them when fetchDupeCount() === 0.
+   */
+  fetchCommunityDupes: (slug: string, limit?: number) => Promise<DupeResult[]>;
+
+  /** Public count of community-tier dupes — lets the UI decide whether to render the section. */
+  fetchCommunityDupeCount: (slug: string) => Promise<number>;
+
+  /**
+   * Slug of the original with the most curated dupes (tiebreak: priciest).
+   * Default seed for the Home Budget Dupes module when the user has no wardrobe
+   * item with dupes. Null when the catalog has no curated dupes.
+   */
+  fetchFeaturedDupeOriginal: () => Promise<string | null>;
+
   /** Public "Smells Like" rail for a fragrance (by slug), via the get_similars() RPC. */
   fetchSimilars: (slug: string, limit?: number) => Promise<SimilarResult[]>;
 
@@ -456,6 +473,36 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     if (!isSupabaseConfigured || !slug) return 0;
     const { data, error } = await supabase.rpc('get_dupe_count', { p_slug: slug });
     if (error) { console.warn('[catalog] fetchDupeCount error:', error.message); return 0; }
+    return (data as number) ?? 0;
+  },
+
+  fetchFeaturedDupeOriginal: async () => {
+    if (!isSupabaseConfigured) return null;
+    const { data, error } = await supabase.rpc('get_featured_dupe_original');
+    if (error) { console.warn('[catalog] fetchFeaturedDupeOriginal error:', error.message); return null; }
+    return (data as string) ?? null;
+  },
+
+  fetchCommunityDupes: async (slug, limit = 12) => {
+    if (!isSupabaseConfigured || !slug) return [];
+    const { data, error } = await supabase.rpc('get_community_dupes', { p_slug: slug, p_limit: limit });
+    if (error) { console.warn('[catalog] fetchCommunityDupes error:', error.message); return []; }
+    const results = ((data ?? []) as any[]).map((r) => ({
+      ...rowToFragrance({ ...r, brands: { name: r.brand_name } }),
+      match_pct: r.match_pct,
+      price_delta_cents: r.price_delta_cents,
+      dupe_source: r.source,
+      is_loose: r.is_loose,
+      locked: r.locked ?? false,
+    })) as DupeResult[];
+    get()._addToCache(results);
+    return results;
+  },
+
+  fetchCommunityDupeCount: async (slug) => {
+    if (!isSupabaseConfigured || !slug) return 0;
+    const { data, error } = await supabase.rpc('get_community_dupe_count', { p_slug: slug });
+    if (error) { console.warn('[catalog] fetchCommunityDupeCount error:', error.message); return 0; }
     return (data as number) ?? 0;
   },
 
