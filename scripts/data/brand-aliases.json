@@ -19,6 +19,7 @@
   "Replica": "Maison Margiela",
 
   "Maison Francis Kurkdjian Paris": "Maison Francis Kurkdjian",
+  "Maison Francis Kurkdijan": "Maison Francis Kurkdjian",
   "MFK": "Maison Francis Kurkdjian",
 
   "Frédéric Malle": "Frederic Malle",
@@ -45,10 +46,12 @@
   "JPG": "Jean Paul Gaultier",
 
   "Dolce and Gabbana": "Dolce & Gabbana",
+  "Dolce &amp; Gabbana": "Dolce & Gabbana",
   "D&G": "Dolce & Gabbana",
   "DOLCE&GABBANA": "Dolce & Gabbana",
 
   "YSL": "Yves Saint Laurent",
+  "YSL - Yves Saint Laurent": "Yves Saint Laurent",
   "Saint Laurent": "Yves Saint Laurent",
 
   "Viktor and Rolf": "Viktor & Rolf",
@@ -93,5 +96,9 @@
   "Orto Parisi": "Orto Parisi",
   "Tauer Perfumes": "Tauer Perfumes",
   "Rogue Perfumery": "Rogue Perfumery",
-  "Xyrena": "Xyrena"
+  "Xyrena": "Xyrena",
+
+  "lattafa": "Lattafa",
+  "LATTAFA": "Lattafa",
+  "Marmol and Son": "Marmol & Son"
 }
