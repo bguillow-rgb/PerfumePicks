@@ -331,6 +331,9 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         .from('fragrances')
         .select(FRAGRANCE_SELECT)
         .eq('is_active', true)
+        // Hide AromaPassions inspired-by dupes from keyword search — they surface
+        // only via Budget Dupes, never alongside the original they clone. NULL-safe.
+        .or('source.is.null,source.neq.aromapassions')
         .ilike('name', `%${q}%`)
         .order('name', { ascending: true })
         .limit(fetchLimit);
@@ -345,6 +348,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
               .from('fragrances')
               .select(FRAGRANCE_SELECT)
               .eq('is_active', true)
+              .or('source.is.null,source.neq.aromapassions')
               .in('brand_id', brandIds)
               .order('purchasable', { ascending: false })
               .order('name', { ascending: true })
@@ -371,11 +375,12 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       return results;
     }
 
-    // No query — fetch all active
+    // No query — fetch all active (default browse list). Dupes stay out of here too.
     let qb = supabase
       .from('fragrances')
       .select(FRAGRANCE_SELECT)
       .eq('is_active', true)
+      .or('source.is.null,source.neq.aromapassions')
       .order('name', { ascending: true })
       .limit(limit);
     if (genders?.length) qb = qb.in('gender', genders);
