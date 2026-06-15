@@ -83,7 +83,7 @@ Always include in the App Store Connect review notes:
 ```
 Guest mode: tap "Continue as Guest" on the login screen to explore without an account.
 Test account: [email] / [password]   ← provide a real non-anonymous test account
-In-app purchases: use the sandbox environment. Products are pp_pro_monthly ($2.99) and pp_pro_yearly ($24.99).
+In-app purchases: use the sandbox environment. Products are perfumepicks_pro_monthly ($2.99) and perfumepicks_pro_yearly ($24.99).
 ```
 
 ---
@@ -169,7 +169,7 @@ Pour Picks avoided §1.4.3 (alcohol content) issues by using neutral framing:
 - [ ] Terms of Use URL: live public URL (also pasted into description text)
 - [ ] Age rating questionnaire completed (likely 4+ or 9+ — no alcohol/restricted content in fragrance)
 - [ ] Privacy nutrition labels filled accurately
-- [ ] `pp_pro_monthly` + `pp_pro_yearly` (or equivalent) attached to version
+- [ ] `perfumepicks_pro_monthly` + `perfumepicks_pro_yearly` attached to version (must match `src/lib/revenuecat.ts` exactly — these IDs are locked)
 - [ ] Review notes written with guest flow instructions
 
 ### EAS / build

@@ -40,7 +40,7 @@ const MARQUEE_HOUSES = [
   'Jean Paul Gaultier', 'Paco Rabanne', 'Dolce & Gabbana', 'Givenchy',
   'Guerlain', 'Hermès', 'Prada', 'Valentino', 'Carolina Herrera', 'Xerjoff',
   'Mugler', 'Viktor & Rolf', 'Burberry', 'Calvin Klein', 'Marc Jacobs',
-  'Azzaro', 'Bvlgari', 'Lancôme', 'Montblanc', 'Lattafa',
+  'Azzaro', 'Bvlgari', 'Lancôme', 'Lattafa',
 ];
 
 /**
