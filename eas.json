@@ -33,7 +33,6 @@
         "EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID": "307052163679-qthrjn2865cin6devcg2re9dpmbrhfh5.apps.googleusercontent.com",
         "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "307052163679-f4hubfdggn04mv2kuplvv9v7s46co2nc.apps.googleusercontent.com",
         "EXPO_PUBLIC_REVENUECAT_APPLE_KEY": "appl_KhgCHPkwhZTbsPrSqpzHsSkDUPX",
-        "EXPO_PUBLIC_SENTRY_DSN": "",
         "EXPO_PUBLIC_POSTHOG_API_KEY": "phc_xmy5xjAqj8KgQeP5C9akHaWAxWgvpzntEbeUbow3rZR7",
         "EXPO_PUBLIC_POSTHOG_HOST": "https://us.i.posthog.com",
         "SENTRY_DISABLE_AUTO_UPLOAD": "true"
@@ -48,7 +47,6 @@
         "EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID": "307052163679-qthrjn2865cin6devcg2re9dpmbrhfh5.apps.googleusercontent.com",
         "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "307052163679-f4hubfdggn04mv2kuplvv9v7s46co2nc.apps.googleusercontent.com",
         "EXPO_PUBLIC_REVENUECAT_APPLE_KEY": "appl_KhgCHPkwhZTbsPrSqpzHsSkDUPX",
-        "EXPO_PUBLIC_SENTRY_DSN": "",
         "EXPO_PUBLIC_POSTHOG_API_KEY": "phc_xmy5xjAqj8KgQeP5C9akHaWAxWgvpzntEbeUbow3rZR7",
         "EXPO_PUBLIC_POSTHOG_HOST": "https://us.i.posthog.com",
         "SENTRY_DISABLE_AUTO_UPLOAD": "true"
