@@ -214,12 +214,17 @@ export default function ScanScreen() {
 
       // If not in catalog, create a custom entry so the user isn't blocked.
       // Copy the scan photo to permanent storage so it survives app restarts.
+      // Persist only the bare filename (not the absolute container path) so the
+      // photo survives iOS rotating the app container UUID on reinstall/OTA.
+      // The custom store rebuilds the path against the current documentDirectory
+      // at read time (resolveCustomImageUri).
       let customImageUrl = '';
       if (!best && photoUri) {
         try {
-          const dest = `${FileSystem.documentDirectory}custom-frag-${Date.now()}.jpg`;
+          const filename = `custom-frag-${Date.now()}.jpg`;
+          const dest = `${FileSystem.documentDirectory}${filename}`;
           await FileSystem.copyAsync({ from: photoUri, to: dest });
-          customImageUrl = dest;
+          customImageUrl = filename;
         } catch { /* no image — that's fine */ }
       }
       // Custom entries persist on-device via the custom-fragrance store so the

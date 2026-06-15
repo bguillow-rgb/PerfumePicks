@@ -25,6 +25,25 @@ function capNames(names: string[]): string {
 }
 
 /**
+ * Recognizable houses to pin to the front of the "By House" grid, in display
+ * order. Without this, brands are ranked by raw SKU count — which lets a niche
+ * house that dumped hundreds of variants (e.g. Sucreabeille ~700) bury marquee
+ * designer houses like Chanel (~74) and Dior (~42). "By House" is an editorial
+ * surface, so we pin known houses first and backfill the rest by count.
+ * Matched case-insensitively against the pool's canonical brand names
+ * (already normalized via scripts/data/brand-aliases.json at ETL time); any
+ * name not present in the pool is simply skipped.
+ */
+const MARQUEE_HOUSES = [
+  'Chanel', 'Dior', 'Tom Ford', 'Creed', 'Yves Saint Laurent', 'Versace',
+  'Giorgio Armani', 'Gucci', 'Maison Francis Kurkdjian', 'Parfums de Marly',
+  'Jean Paul Gaultier', 'Paco Rabanne', 'Dolce & Gabbana', 'Givenchy',
+  'Guerlain', 'Hermès', 'Prada', 'Valentino', 'Carolina Herrera', 'Xerjoff',
+  'Mugler', 'Viktor & Rolf', 'Burberry', 'Calvin Klein', 'Marc Jacobs',
+  'Azzaro', 'Bvlgari', 'Lancôme', 'Montblanc', 'Lattafa',
+];
+
+/**
  * Curated Edits — mood-based rails derived from the live catalog pool.
  *
  * Each edit defines a filter function that selects fragrances from the pool.
@@ -237,10 +256,26 @@ export default function DiscoverScreen() {
       counts.set(f.brand, (counts.get(f.brand) ?? 0) + 1);
       if (!images.has(f.brand) && f.image_url) images.set(f.brand, f.image_url);
     }
-    return [...counts.entries()]
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 20)
-      .map(([brand, count]) => ({ brand, count, imageUrl: images.get(brand) ?? null }));
+    const toEntry = (brand: string) => ({
+      brand,
+      count: counts.get(brand) ?? 0,
+      imageUrl: images.get(brand) ?? null,
+    });
+    // Pin recognizable houses first (in MARQUEE_HOUSES order), matched
+    // case-insensitively to the pool's canonical brand names, so a niche house
+    // with hundreds of SKUs can't bury Chanel/Dior. Backfill the rest by count.
+    const byLower = new Map<string, string>();
+    for (const b of counts.keys()) byLower.set(b.toLowerCase(), b);
+    const pinned: string[] = [];
+    const pinnedSet = new Set<string>();
+    for (const name of MARQUEE_HOUSES) {
+      const actual = byLower.get(name.toLowerCase());
+      if (actual && !pinnedSet.has(actual)) { pinned.push(actual); pinnedSet.add(actual); }
+    }
+    const backfill = [...counts.keys()]
+      .filter((b) => !pinnedSet.has(b))
+      .sort((a, b) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0));
+    return [...pinned, ...backfill].slice(0, 20).map(toEntry);
   }, [filteredPool]);
 
   // Derive curated-edit fragrances from the filtered pool.

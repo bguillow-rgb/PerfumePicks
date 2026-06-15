@@ -11,6 +11,7 @@ import { useProStore } from '@/src/stores/useProStore';
 import { useRetailerLinksStore } from '@/src/stores/useRetailerLinksStore';
 import { useNotificationStore } from '@/src/stores/useNotificationStore';
 import { useSessionStore } from '@/src/stores/useSessionStore';
+import { useCompareStore } from '@/src/stores/useCompareStore';
 import {
   requestNotificationPermission,
   scheduleSotdNotification,
@@ -158,6 +159,81 @@ const fabStyles = StyleSheet.create({
   },
 });
 
+/**
+ * Floating compare pill — bottom-left, visible on all tabs ONLY while the
+ * compare tray holds ≥1 fragrance. The tray is otherwise reachable only via the
+ * "View" button on a detail page, so a user who queues bottles and navigates
+ * away loses access. This persistent affordance fixes that. Dark pill + gold
+ * count badge differentiate it from the gold round Scan FAB on the right.
+ */
+function CompareFAB() {
+  const router = useRouter();
+  const count = useCompareStore((s) => s.ids.length);
+  if (count < 1) return null;
+  return (
+    <Pressable
+      style={({ pressed }) => [compareFab.pill, pressed && { opacity: 0.85, transform: [{ scale: 0.97 }] }]}
+      onPress={() => {
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        router.push('/compare' as any);
+      }}
+      accessibilityRole="button"
+      accessibilityLabel={`Open compare, ${count} selected`}
+    >
+      <Ionicons name="git-compare-outline" size={18} color={COLORS.white} />
+      <Text style={compareFab.label}>Compare</Text>
+      <View style={compareFab.badge}>
+        <Text style={compareFab.badgeText}>{count}</Text>
+      </View>
+    </Pressable>
+  );
+}
+
+const compareFab = StyleSheet.create({
+  pill: {
+    position: 'absolute',
+    bottom: 80,
+    left: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 7,
+    height: 44,
+    paddingLeft: 14,
+    paddingRight: 10,
+    borderRadius: 22,
+    backgroundColor: COLORS.text,
+    shadowColor: COLORS.black,
+    shadowOpacity: 0.22,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 6,
+    zIndex: 100,
+  },
+  label: {
+    fontFamily: FONTS.serif,
+    fontSize: 14,
+    fontWeight: '600',
+    color: COLORS.white,
+    letterSpacing: 0.3,
+  },
+  badge: {
+    minWidth: 22,
+    height: 22,
+    borderRadius: 11,
+    paddingHorizontal: 6,
+    backgroundColor: COLORS.accent,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  badgeText: {
+    fontFamily: FONTS.serif,
+    fontSize: 12,
+    fontWeight: '700',
+    color: COLORS.white,
+    lineHeight: 16,
+  },
+});
+
 export default function TabLayout() {
   const isPro = useProStore((s) => s.isPro);
   const loadRetailerLinks = useRetailerLinksStore((s) => s.load);
@@ -300,6 +376,7 @@ export default function TabLayout() {
         />
       </Tabs>
       <ScanFAB />
+      <CompareFAB />
 
       {/* ── Notification permission prompt ─────────────────────────────── */}
       <Modal

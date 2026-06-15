@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Crypto from 'expo-crypto';
+import * as FileSystem from 'expo-file-system/legacy';
 import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 
@@ -42,6 +43,29 @@ interface CustomFragranceState {
   remove: (id: string) => void;
 }
 
+/**
+ * Resolve a stored custom-bottle image reference into a usable URI.
+ *
+ * iOS rotates the app's container UUID across reinstalls (and sometimes OTA
+ * updates), so an *absolute* documentDirectory path saved earlier goes stale
+ * and the photo renders blank on home/wardrobe/detail. We persist only the bare
+ * filename going forward and rebuild the path against the CURRENT
+ * documentDirectory at read time — which also heals any legacy absolute path
+ * already in the store (take its basename, re-prepend today's container dir).
+ * Empty stays empty; remote http(s) URIs pass through untouched. Mirrors
+ * resolveAvatarUri() in src/lib/profilePhoto.ts.
+ */
+export function resolveCustomImageUri(stored: string | undefined): string {
+  if (!stored) return '';
+  if (stored.startsWith('http')) return stored;
+  const filename = stored.split('/').pop() || '';
+  return filename ? `${FileSystem.documentDirectory}${filename}` : '';
+}
+
+function withResolvedImage(frag: Fragrance): Fragrance {
+  return { ...frag, image_url: resolveCustomImageUri(frag.image_url) };
+}
+
 function buildFragrance(input: CustomFragranceInput): Fragrance {
   const slug = input.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   return {
@@ -73,9 +97,12 @@ export const useCustomFragranceStore = create<CustomFragranceState>()(
         return frag;
       },
 
-      getById: (id) => get().items[id],
+      getById: (id) => {
+        const frag = get().items[id];
+        return frag ? withResolvedImage(frag) : undefined;
+      },
 
-      all: () => Object.values(get().items),
+      all: () => Object.values(get().items).map(withResolvedImage),
 
       remove: (id) => set((s) => {
         const { [id]: _, ...rest } = s.items;
