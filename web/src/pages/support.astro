@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import { SITE } from '../consts';
 
-// Support FAQs for Perfume Picks — phrased as collector questions, structured
+// Support FAQs for Perfume Picks, phrased as collector questions, structured
 // as H2 extraction targets, and emitted with FAQPage schema by the FAQ
 // component.
 const faqs = [
@@ -22,7 +22,7 @@ const faqs = [
   {
     q: 'How do I cancel my Perfume Picks Pro subscription?',
     a:
-      'Subscriptions are managed by Apple, not by Perfume Picks. On your iPhone or iPad open Settings, tap your name at the top, tap Subscriptions, then tap Perfume Picks Pro and Cancel Subscription. Cancellation takes effect at the end of the current billing period. Deleting your account in the app does not automatically cancel an active subscription — you must cancel it separately in iOS Settings.',
+      'Subscriptions are managed by Apple, not by Perfume Picks. On your iPhone or iPad open Settings, tap your name at the top, tap Subscriptions, then tap Perfume Picks Pro and Cancel Subscription. Cancellation takes effect at the end of the current billing period. Deleting your account in the app does not automatically cancel an active subscription, you must cancel it separately in iOS Settings.',
   },
   {
     q: 'How do I export my wear history?',
@@ -48,7 +48,7 @@ const faqs = [
 ---
 <BaseLayout
   title="Support"
-  description="Perfume Picks support — wardrobe entry, missing fragrances, subscription, data export, account deletion, and contact."
+  description="Perfume Picks support, wardrobe entry, missing fragrances, subscription, data export, account deletion, and contact."
   path="/support"
 >
   <Fragment slot="head">
@@ -66,7 +66,7 @@ const faqs = [
   </p>
   <p>
     Please include your account email, your iOS version, and your app version
-    (found at the bottom of the Profile tab) &mdash; it helps trace issues faster.
+    (found at the bottom of the Profile tab), it helps trace issues faster.
   </p>
 
   <FAQ faqs={faqs} heading="Common Questions" />

@@ -1,4 +1,4 @@
-/* Perfume Picks marketing site — shared stylesheet.
+/* Perfume Picks marketing site, shared stylesheet.
    Design mirrors the in-app palette defined in src/constants/theme.ts.
    Typography: Cormorant Garamond (headings/display) + Pinyon Script (wordmark)
    loaded via Google Fonts in BaseLayout. Body text uses system-ui, matching
@@ -108,7 +108,7 @@ a:hover {
 .site-nav a:hover { color: var(--accent); border-bottom: none; }
 .site-nav a[aria-current="page"] { color: var(--accent); }
 
-/* ─── Typography — headings use Cormorant Garamond ───────────────────────── */
+/* ─── Typography, headings use Cormorant Garamond ───────────────────────── */
 h1, h2, h3, h4 {
   font-family: 'Cormorant Garamond', Georgia, serif;
   color: var(--text);
@@ -168,7 +168,7 @@ strong { color: var(--text); font-weight: 700; }
 /* ─── Eyebrow label (all-caps, gold, 3px tracking) ───────────────────────── */
 .eyebrow {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 3px;
@@ -184,7 +184,7 @@ strong { color: var(--text); font-weight: 700; }
   border: 1px solid var(--accent);
   color: var(--accent);
   background: transparent;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -222,7 +222,7 @@ strong { color: var(--text); font-weight: 700; }
   color: var(--subtle);
   margin: 0 0 32px;
 }
-/* Hero screenshot — styled phone frame */
+/* Hero screenshot, styled phone frame */
 .hero-shot {
   display: block;
   width: 100%;
@@ -271,7 +271,7 @@ strong { color: var(--text); font-weight: 700; }
   font-size: 15px;
 }
 
-/* ─── Feature grid — homepage 4-tile block ────────────────────────────────── */
+/* ─── Feature grid, homepage 4-tile block ────────────────────────────────── */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -308,7 +308,7 @@ strong { color: var(--text); font-weight: 700; }
   line-height: 1.6;
 }
 
-/* ─── /features — alternating image/copy rows ─────────────────────────────── */
+/* ─── /features, alternating image/copy rows ─────────────────────────────── */
 .feature-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -358,7 +358,7 @@ strong { color: var(--text); font-weight: 700; }
   box-shadow: 0 16px 40px rgba(42,31,24,0.10);
 }
 .screenshot-placeholder .placeholder-label {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -388,7 +388,7 @@ strong { color: var(--text); font-weight: 700; }
   margin: 0;
   flex-wrap: wrap;
 }
-/* Primary button — filled gold, matches app */
+/* Primary button, filled gold, matches app */
 .btn {
   display: inline-block;
   padding: 14px 28px;
@@ -491,11 +491,10 @@ strong { color: var(--text); font-weight: 700; }
   padding: 20px 24px;
   margin: 24px 0 36px;
   border-radius: var(--radius-md);
-  border-left: 3px solid var(--accent);
 }
 .quick-answer .label {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 3px;
@@ -545,7 +544,7 @@ th, td {
 th {
   background: var(--card2);
   color: var(--accent);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;

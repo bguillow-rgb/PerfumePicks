@@ -1,4 +1,4 @@
-# perfumepicks.app — robots.txt
+# perfumepicks.app, robots.txt
 #
 # Default policy: allow everyone, including AI crawlers. The site has no
 # private content. AI engines (ChatGPT/Perplexity/Gemini/Claude/Copilot) are
@@ -8,7 +8,7 @@
 User-agent: *
 Allow: /
 
-# AI crawlers — explicitly allowed.
+# AI crawlers, explicitly allowed.
 User-agent: GPTBot
 Allow: /
 

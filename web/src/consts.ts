@@ -19,7 +19,7 @@ export const SITE = {
   appStoreUrl: '', // e.g. 'https://apps.apple.com/app/perfume-picks/id0000000000'
   bundleId: 'com.bobguillow.perfumepicks',
   appleTeamId: 'ZNS5TNLB2D',
-  // Founder / publisher \u2014 used for Person and Organization schema. The
+  // Founder / publisher, used for Person and Organization schema. The
   // /about page is the canonical entity anchor.
   founder: {
     name: 'Bob Guillow',
@@ -31,7 +31,7 @@ export const SITE = {
       // 'https://x.com/...',
     ],
   },
-  // Organization-level sameAs — canonical identifiers for the brand entity.
+  // Organization-level sameAs, canonical identifiers for the brand entity.
   // Used in OrganizationSchema. Wikidata QID closes the Knowledge-Graph chain.
   orgSameAs: [
     'https://www.wikidata.org/wiki/Q140083290',
@@ -43,7 +43,7 @@ export const SITE = {
     gscVerification: import.meta.env.PUBLIC_GSC_VERIFICATION ?? '',
     indexNowKey: import.meta.env.PUBLIC_INDEXNOW_KEY ?? '',
   },
-  // Brand colors \u2014 ivory / champagne gold / blush. Mirrors the in-app
+  // Brand colors, ivory / champagne gold / blush. Mirrors the in-app
   // palette in src/constants/theme.ts. The luxury fragrance category trades
   // in light backgrounds (Sephora, Nordstrom, every brand site).
   theme: {

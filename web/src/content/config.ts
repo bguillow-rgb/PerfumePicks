@@ -24,7 +24,7 @@ const articles = defineCollection({
       .string()
       .transform((s) => new Date(s))
       .optional(),
-    author: z.string().default('Bob Guillow'),
+    author: z.string().default('Perfume Picks'),
     // Internal-link targets in the cluster topology. The article's
     // ArticleLayout renders these as a "Related" block at the bottom.
     relatedSlugs: z.array(z.string()).default([]),
