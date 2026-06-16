@@ -98,6 +98,62 @@
       "match_pct": 78,
       "source": "seed",
       "note": "Lavender-vanilla-mint barbershop; a faithful Le Male homage."
+    },
+    {
+      "original": { "brand": "Maison Francis Kurkdjian", "name": "Baccarat Rouge 540" },
+      "dupe": { "brand": "Fragrance World", "name": "Barakkat Rouge 540 Perfume for Unisex" },
+      "match_pct": 86,
+      "source": "editorial",
+      "note": "The most direct BR540 clone in the budget tier — saffron-amberwood-jasmine, near-identical opening."
+    },
+    {
+      "original": { "brand": "Maison Francis Kurkdjian", "name": "Baccarat Rouge 540" },
+      "dupe": { "brand": "Armaf", "name": "Club de Nuit Untold Unisex" },
+      "match_pct": 80,
+      "source": "seed",
+      "note": "Sweet saffron-amber BR540 lane; longer-lasting, slightly more synthetic."
+    },
+    {
+      "original": { "brand": "Parfums de Marly", "name": "Delina" },
+      "dupe": { "brand": "Lattafa", "name": "Yara" },
+      "match_pct": 83,
+      "source": "editorial",
+      "note": "The famous Delina dupe — Turkish rose, lychee and vanilla; the single most-cited budget rendition."
+    },
+    {
+      "original": { "brand": "Parfums de Marly", "name": "Layton" },
+      "dupe": { "brand": "Armaf", "name": "Club De Nuit Milestone" },
+      "match_pct": 82,
+      "source": "editorial",
+      "note": "Apple-lavender-vanilla Layton profile; the go-to Club de Nuit take on Layton."
+    },
+    {
+      "original": { "brand": "Carolina Herrera", "name": "Good Girl" },
+      "dupe": { "brand": "Maison Alhambra", "name": "Reyna" },
+      "match_pct": 84,
+      "source": "editorial",
+      "note": "Tonka-cocoa-jasmine Good Girl profile; the most-recommended budget clone."
+    },
+    {
+      "original": { "brand": "Paco Rabanne", "name": "1 Million" },
+      "dupe": { "brand": "Armaf", "name": "Tag Him Prestige Edition" },
+      "match_pct": 80,
+      "source": "seed",
+      "note": "Cinnamon-leather-grapefruit; a well-known 1 Million stand-in."
+    },
+    {
+      "original": { "brand": "Jean Paul Gaultier", "name": "Le Male Elixir" },
+      "dupe": { "brand": "Maison Alhambra", "name": "Jean Lowe Immortel" },
+      "match_pct": 84,
+      "source": "editorial",
+      "note": "Honey-lavender-vanilla; the standout Le Male Elixir clone."
+    },
+    {
+      "original": { "brand": "Creed", "name": "Aventus" },
+      "dupe": { "brand": "Rasasi", "name": "Hawas" },
+      "match_pct": 78,
+      "source": "seed",
+      "note": "Fresh fruity-aquatic Aventus cousin; brighter and more wearable office-side."
     }
   ]
 }

@@ -78,6 +78,28 @@ interface ShopifyProduct {
   images:       Array<{ src: string }>;
 }
 
+// ─── Product-type guard ───────────────────────────────────────────────────────
+//
+// The authoritative non-fragrance signal is Perfumania's Shopify `product_type`,
+// NOT the title. Skincare/makeup like "Advanced Night Repair" have no skip
+// keyword in the title and used to leak into the catalog (461 rows). These two
+// classifiers mirror scripts/deactivate-non-fragrance.ts exactly so the ETL and
+// the cleanup agree on what counts as a fragrance.
+
+/** A genuine wearable-fragrance product type — trust it, never reject. */
+function isFragranceType(pt: string): boolean {
+  const t = (pt || '').toLowerCase().trim();
+  return /\b(fragrance|perfume|cologne|parfum|toilette|eau de|elixir|extrait|essence)\b/.test(t) || t === 'oil';
+}
+
+/** True only for skincare/makeup/bath/accessory product types (Bucket A). */
+function isNonFragranceType(pt: string): boolean {
+  const t = (pt || '').toLowerCase().trim();
+  if (!t) return false;            // blank type → defer to title-based cleanTitle
+  if (isFragranceType(t)) return false;
+  return /(beauty|moisturi|body cream|body lotion|dusting powder|after\s*shave|aftershave|concentrate|thermale|skin|makeup|cosmetic|accessor|lip balm|\bcream\b|\blotion\b|serum|cleanser|toner|\bmask\b|deodorant)/.test(t);
+}
+
 // ─── Title cleaning ───────────────────────────────────────────────────────────
 
 /** Suffixes to strip from the end of a product title */
@@ -190,7 +212,12 @@ async function main(): Promise<void> {
   let dupeCount = 0;
   let skipCount = 0;
 
+  let typeSkipCount = 0;
   for (const p of shopifyProducts) {
+    // Reject skincare/makeup/bath/accessory by authoritative feed product_type
+    // before any title cleaning — this is the gate that stops the 461-row leak.
+    if (isNonFragranceType(p.product_type)) { typeSkipCount++; continue; }
+
     const name = cleanTitle(p.title, p.vendor);
     if (!name) {
       if (isDupe(p.title)) dupeCount++;
@@ -224,6 +251,7 @@ async function main(): Promise<void> {
   console.log(
     `Candidates after cleaning: ${products.length}` +
     ` | dupes skipped: ${dupeCount}` +
+    ` | non-fragrance type skipped: ${typeSkipCount}` +
     ` | other skipped: ${skipCount}`,
   );
 

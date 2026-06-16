@@ -1,0 +1,90 @@
+name: Daily SEO content
+
+# Generates one research-backed, schema-compliant article per day, rebuilds the
+# site into /docs (GitHub Pages), commits, and pushes. The push to /docs triggers
+# the existing indexnow.yml (Bing/Yandex) and pages.yml (deploy) workflows, and
+# this job also pings Google's Indexing API directly for the new article.
+# Manual runs are allowed via the "Run workflow" button.
+on:
+  schedule:
+    - cron: '0 11 * * *' # 11:00 UTC daily (staggered off the other Timberline sites)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-content
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate today's article
+        id: write
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/daily-post.mjs
+
+      - name: Detect content changes
+        id: changes
+        working-directory: .
+        run: |
+          if [ "${{ steps.write.outputs.wrote }}" = "true" ] || \
+             ! git diff --quiet -- web/src/content; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build + deploy to /docs
+        if: steps.changes.outputs.changed == 'true'
+        # The build bakes PUBLIC_* vars into the static HTML. .env is gitignored
+        # and absent in CI, so set the public identifiers here. GA4 + GSC come
+        # from repo Variables (set them in Settings → Variables); empty values
+        # simply disable analytics. The IndexNow key is public by design.
+        env:
+          PUBLIC_GA4_ID: ${{ vars.PUBLIC_GA4_ID }}
+          PUBLIC_GSC_VERIFICATION: ${{ vars.PUBLIC_GSC_VERIFICATION }}
+          PUBLIC_INDEXNOW_KEY: 6459c4aceebc6ca8fcb832a1df09ad12
+        run: bash scripts/deploy-to-docs.sh
+
+      # Push the new article straight to Google's Indexing API so it gets spidered
+      # ASAP instead of waiting for sitemap rediscovery. Only fires when a NEW
+      # article was written today. No-ops cleanly until GOOGLE_INDEXING_SA_KEY is
+      # set. See scripts/google-index.mjs for the SA / owner-verification
+      # requirements + policy caveat.
+      - name: Ping Google Indexing API
+        if: steps.write.outputs.slug != ''
+        env:
+          GOOGLE_INDEXING_SA_KEY: ${{ secrets.GOOGLE_INDEXING_SA_KEY }}
+        run: node scripts/google-index.mjs --article "${{ steps.write.outputs.slug }}" || true
+
+      - name: Commit & push
+        if: steps.changes.outputs.changed == 'true'
+        working-directory: .
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs web/src/content
+          git commit -m "Daily content: ${{ steps.write.outputs.slug || 'relink' }}"
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            echo "push attempt $i failed (likely a concurrent push) — retrying"
+            sleep 5
+          done
+          echo "::error::Could not push after 5 attempts"
+          exit 1

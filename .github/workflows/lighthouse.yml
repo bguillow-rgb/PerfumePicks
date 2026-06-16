@@ -1,0 +1,24 @@
+name: Lighthouse CI
+
+# Core Web Vitals + SEO audit of the live site. Runs weekly and on demand.
+# Asserts LCP/CLS/TBT and category scores so regressions show up as a red run.
+
+on:
+  schedule:
+    - cron: '0 7 * * 1' # Mondays ~07:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.14.x
+          lhci autorun
+        env:
+          LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.sha }}

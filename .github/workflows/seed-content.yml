@@ -1,0 +1,85 @@
+name: Seed content (one-shot)
+
+# Manually build out the article cluster fast: generate a batch of detail
+# articles and/or a pillar, refresh the relatedSlugs mesh, rebuild /docs, commit,
+# and push. The docs push triggers indexnow.yml + pages.yml. Trigger from the
+# Actions tab ("Run workflow"). NOT on a schedule — this is a one-shot tool.
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Number of detail articles to generate'
+        required: false
+        default: '10'
+      pillar:
+        description: 'Also generate a pillar article?'
+        type: boolean
+        required: false
+        default: false
+      topic:
+        description: 'Optional theme hint to bias the batch toward a cluster gap'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-content # share the daily group so the two never push concurrently
+  cancel-in-progress: false
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Seed content
+        id: seed
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/seed-content.mjs --count ${{ github.event.inputs.count }} ${{ github.event.inputs.pillar == 'true' && '--pillar' || '' }} ${{ github.event.inputs.topic != '' && format('--topic {0}', toJSON(github.event.inputs.topic)) || '' }}
+
+      - name: Detect content changes
+        id: changes
+        working-directory: .
+        run: |
+          if ! git diff --quiet -- web/src/content; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build + deploy to /docs
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          PUBLIC_GA4_ID: ${{ vars.PUBLIC_GA4_ID }}
+          PUBLIC_GSC_VERIFICATION: ${{ vars.PUBLIC_GSC_VERIFICATION }}
+          PUBLIC_INDEXNOW_KEY: 6459c4aceebc6ca8fcb832a1df09ad12
+        run: bash scripts/deploy-to-docs.sh
+
+      - name: Commit & push
+        if: steps.changes.outputs.changed == 'true'
+        working-directory: .
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs web/src/content
+          git commit -m "Seed content batch"
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            echo "push attempt $i failed (likely a concurrent push) — retrying"
+            sleep 5
+          done
+          echo "::error::Could not push after 5 attempts"
+          exit 1

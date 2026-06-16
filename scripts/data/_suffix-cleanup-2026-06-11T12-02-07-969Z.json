@@ -1,0 +1,318 @@
+{
+  "renames": [
+    {
+      "id": "8250c7d7-5b03-4d67-aab0-e9b3c48e1a87",
+      "old": "Hareem Al Sultan Gold Perfume for Women - Perfume Oil",
+      "neu": "Hareem Al Sultan Gold"
+    },
+    {
+      "id": "3a1d6f34-0c9c-409e-a138-7419f0107756",
+      "old": "Jameel Concentrated Perfume Oil Perfume for Unisex - Perfume Oil",
+      "neu": "Jameel Concentrated Perfume Oil"
+    },
+    {
+      "id": "dd1c50ce-bf9e-48c2-b2f6-0102ed5a4bc5",
+      "old": "Mykonos Breeze Shimmer Perfume for Women - Fragrance",
+      "neu": "Mykonos Breeze Shimmer"
+    },
+    {
+      "id": "4f4a10b6-ca8a-43a4-9e41-510fbe834799",
+      "old": "Bella Vita Rosa Perfume for Women - Fragrance",
+      "neu": "Bella Vita Rosa"
+    },
+    {
+      "id": "422c374e-737f-4edc-a26a-c370d41c362f",
+      "old": "Sexy Skin Wild Flower Perfume for Women - Fragrance",
+      "neu": "Sexy Skin Wild Flower"
+    },
+    {
+      "id": "08acfaa2-689b-4a4e-b783-4d6e6ef34eed",
+      "old": "Love Romantic Blush Perfume for Women - Fragrance",
+      "neu": "Love Romantic Blush"
+    },
+    {
+      "id": "9b8c55ed-374d-4c75-9b17-f790f62459e5",
+      "old": "Sexy Skin Metallique Martini Perfume for Women - Fragrance",
+      "neu": "Sexy Skin Metallique Martini"
+    },
+    {
+      "id": "86659a4a-f8e6-42cb-9830-1143ac4b6a9f",
+      "old": "DKNY Be Delicious Ice Pop Berry Bliss Perfume for Women - Fragrance",
+      "neu": "DKNY Be Delicious Ice Pop Berry Bliss"
+    },
+    {
+      "id": "e5d696f3-1cb0-41e9-a190-7c9b12192f55",
+      "old": "DKNY Be Delicious Ice Pop Very Cherry Perfume for Women - Fragrance",
+      "neu": "DKNY Be Delicious Ice Pop Very Cherry"
+    },
+    {
+      "id": "1f60af0d-e28e-4090-b740-51851ef049b8",
+      "old": "19 Perfume for Unisex - Perfume",
+      "neu": "19"
+    },
+    {
+      "id": "581f7c82-4b4c-486c-97c0-66ac4a53bffd",
+      "old": "11 Perfume for Unisex - Perfume",
+      "neu": "11"
+    },
+    {
+      "id": "9a13235c-58a7-4088-879d-9405e48e11ee",
+      "old": "White 33 Perfume for Unisex - Perfume",
+      "neu": "White 33"
+    },
+    {
+      "id": "b5b8fb08-f958-4844-9e8f-f1968ede6216",
+      "old": "Alhan Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Alhan"
+    },
+    {
+      "id": "a3cc158a-bf21-4fbc-9aa8-255b7bb5b2c4",
+      "old": "White Diamonds Lustre Perfume for Women - Fragrance",
+      "neu": "White Diamonds Lustre"
+    },
+    {
+      "id": "9d06422d-1c6f-4cbe-9e64-e59d3cea8660",
+      "old": "Sexy Skin Solar Warmth Perfume for Women - Fragrance",
+      "neu": "Sexy Skin Solar Warmth"
+    },
+    {
+      "id": "6c9ca9e1-7a64-4e60-aaf6-6e9fb37f5459",
+      "old": "Sexy Skin Tropical Breeze Perfume for Women - Fragrance",
+      "neu": "Sexy Skin Tropical Breeze"
+    },
+    {
+      "id": "2a445b1e-28d8-4dbd-afbe-c04cecddb1b0",
+      "old": "Body Fantasies Signature Pink Sweet Pea Perfume for Women - Body",
+      "neu": "Body Fantasies Signature Pink Sweet Pea"
+    },
+    {
+      "id": "094b35a5-f613-47e2-9201-d6b4e30be30e",
+      "old": "Mera Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Mera"
+    },
+    {
+      "id": "ea48421b-8dc4-4428-9ef6-01c1066ac66b",
+      "old": "Sexy Skin Metallique Rose Perfume for Women - Fragrance",
+      "neu": "Sexy Skin Metallique Rose"
+    },
+    {
+      "id": "a005b385-7560-4509-b678-7847d9ec262f",
+      "old": "Afraa Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Afraa"
+    },
+    {
+      "id": "415dd2d0-c679-4ea5-9971-21bb17a6cbb5",
+      "old": "Mushreqah Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Mushreqah"
+    },
+    {
+      "id": "7c79f85e-2fab-4038-87b6-a2e86c07e685",
+      "old": "Attar Al Oudh Red Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Attar Al Oudh Red"
+    },
+    {
+      "id": "ec34b9cf-5900-40fb-bbbc-28586e840c97",
+      "old": "Saji Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Saji"
+    },
+    {
+      "id": "a5761eb8-9794-442b-bd6e-c7d104e9b70e",
+      "old": "Wahami Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Wahami"
+    },
+    {
+      "id": "cb822757-71f0-4f72-9226-cfca69ed7f59",
+      "old": "Sexy Skin Metallique Champagne Perfume for Women - Fragrance",
+      "neu": "Sexy Skin Metallique Champagne"
+    },
+    {
+      "id": "f1e97a87-4bd5-4e5c-b382-faa317d4a461",
+      "old": "Sonia Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Sonia"
+    },
+    {
+      "id": "a5e785de-c562-4438-a787-9c8f95b2184b",
+      "old": "Sexy Skin Sweet Sugar Perfume for Women - Fragrance",
+      "neu": "Sexy Skin Sweet Sugar"
+    },
+    {
+      "id": "ce2eeb7c-9b46-4c01-adfc-94f56cb87286",
+      "old": "Attar Mubakhar Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Attar Mubakhar"
+    },
+    {
+      "id": "7b8b720a-ba54-43a5-9714-311565fcdcbc",
+      "old": "Miami Vibes Shimmer Perfume for Women - Fragrance",
+      "neu": "Miami Vibes Shimmer"
+    },
+    {
+      "id": "8aad29b3-635e-400b-8abc-8f9e0bed0c9b",
+      "old": "Perfume for Women - Pdt",
+      "neu": "Perfume"
+    },
+    {
+      "id": "0d9a005d-1461-4e30-9ecd-15367e6ad0aa",
+      "old": "Body Fantasies Vanilla Perfume for Women - Body",
+      "neu": "Body Fantasies Vanilla"
+    },
+    {
+      "id": "a270e7a6-921a-413c-97d2-c7bd84c6ad9d",
+      "old": "Body Fantasies Coconut Perfume for Women - Body",
+      "neu": "Body Fantasies Coconut"
+    },
+    {
+      "id": "dd4266f5-1867-4806-9b92-457b5ee09962",
+      "old": "CH Leau Perfume for Women - Eau Fraiche",
+      "neu": "CH Leau"
+    },
+    {
+      "id": "89a0cc3c-2059-4e6f-9c0c-de726ef216d6",
+      "old": "Delicious All American Apple Perfume for Women - Body",
+      "neu": "Delicious All American Apple"
+    },
+    {
+      "id": "f6c8a1b9-dc7c-4f99-b0af-b7a0cbccc803",
+      "old": "Body Fantasies Signature Japanese Cherry Blossom Perfume for Women - Body",
+      "neu": "Body Fantasies Signature Japanese Cherry Blossom"
+    },
+    {
+      "id": "0b79a846-ced8-4586-8d6b-03736da1b013",
+      "old": "Body Fantasies Signature Fresh White Musk Perfume for Women - Body",
+      "neu": "Body Fantasies Signature Fresh White Musk"
+    },
+    {
+      "id": "90a96ea3-89c6-404b-87f3-56bf5183b90a",
+      "old": "Body Fantasies Romance & Dreams Perfume for Women - Body",
+      "neu": "Body Fantasies Romance & Dreams"
+    },
+    {
+      "id": "0a342f87-2097-4ac1-8f7b-27626cab3c28",
+      "old": "Spring Flower Perfume for Women - Millesime",
+      "neu": "Spring Flower"
+    },
+    {
+      "id": "f99f5f06-211e-41b1-8604-c4866041d87f",
+      "old": "Hareem Al Sultan Silver Perfume for Women - Perfume Oil",
+      "neu": "Hareem Al Sultan Silver"
+    },
+    {
+      "id": "d540f373-163b-4fbb-b8b7-8a7972085cf1",
+      "old": "Attar Al Noor Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Attar Al Noor"
+    },
+    {
+      "id": "728d7470-a49d-4c80-9368-2cece2309529",
+      "old": "Attar Al Shams Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Attar Al Shams"
+    },
+    {
+      "id": "9efe668d-abb0-4bd4-b7f9-f7a56056ad8d",
+      "old": "Sexy Skin Metallique Mojito Perfume for Women - Fragrance",
+      "neu": "Sexy Skin Metallique Mojito"
+    },
+    {
+      "id": "34281156-7930-4914-b7c2-82c8ac062ef3",
+      "old": "Attar Royal Musk Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Attar Royal Musk"
+    },
+    {
+      "id": "bd1a3c2c-d323-48b3-9f84-9d4f83c94d13",
+      "old": "Private Collection I Woody Floral Perfume for Women - Perfume",
+      "neu": "Private Collection I Woody Floral"
+    },
+    {
+      "id": "59ba5f9f-a74f-459a-b1a4-67963e182a8e",
+      "old": "Body Fantasies Signature Twilight Mist Perfume for Women - Body Spray 8.0 oz",
+      "neu": "Body Fantasies Signature Twilight Mist"
+    },
+    {
+      "id": "f8e52374-a415-422d-959e-9d31084c440f",
+      "old": "Love Sheer Attraction Perfume for Women - Fragrance",
+      "neu": "Love Sheer Attraction"
+    },
+    {
+      "id": "6ec498c3-9afb-4cbc-aa3c-7ef302a58fda",
+      "old": "Ibiza Radiant Shimmer Perfume for Women - Fragrance",
+      "neu": "Ibiza Radiant Shimmer"
+    },
+    {
+      "id": "e3b98427-8945-481a-8caa-1f062408b92d",
+      "old": "Love Nirvana Dream Perfume for Women - Fragrance",
+      "neu": "Love Nirvana Dream"
+    },
+    {
+      "id": "d96e59df-0523-4008-ad28-8822b338d0e5",
+      "old": "Tuleen Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Tuleen"
+    },
+    {
+      "id": "0a870649-737b-4313-b78f-44ee5bf651c1",
+      "old": "Maraseil Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Maraseil"
+    },
+    {
+      "id": "870ae60c-1fe9-4006-bd2e-84a75304b54a",
+      "old": "Rabwa Perfume for Unisex - Concentrated Perfume Oil",
+      "neu": "Rabwa"
+    },
+    {
+      "id": "cb23c144-776a-457f-a7fe-05e7bf26e269",
+      "old": "Chocolat Mat Perfume for Women - Shower Cream",
+      "neu": "Chocolat Mat"
+    },
+    {
+      "id": "a3169d11-b4ec-4252-855e-e733b1af7603",
+      "old": "Body Fantasies Pink Vanilla Kiss Perfume for Women - Body",
+      "neu": "Body Fantasies Pink Vanilla Kiss"
+    },
+    {
+      "id": "50952fc4-e88a-41b0-be2c-1349fdcb06ab",
+      "old": "Body Fantasies Sweet Sunrise Perfume for Women - Body",
+      "neu": "Body Fantasies Sweet Sunrise"
+    },
+    {
+      "id": "7f746320-9483-4c6d-899c-f8a180721a80",
+      "old": "Body Fantasies Cotton Candy Perfume for Women - Body",
+      "neu": "Body Fantasies Cotton Candy"
+    },
+    {
+      "id": "160699d1-6931-4194-9fac-5281be0360f1",
+      "old": "Jadore LOr Perfume for Women - Essence de",
+      "neu": "Jadore LOr"
+    },
+    {
+      "id": "c90931cf-61f2-4ffe-b0d9-549bd7eedf5d",
+      "old": "Al Fursan Perfume for Women - Concentrated Perfume Oil",
+      "neu": "Al Fursan"
+    },
+    {
+      "id": "208e16f3-f8b9-4aa2-96d9-86eec27f277f",
+      "old": "Love Sunkissed Flirtation Perfume for Women - Fragrance",
+      "neu": "Love Sunkissed Flirtation"
+    },
+    {
+      "id": "a4667ad0-4513-4f90-8e39-b4ffc32e2d52",
+      "old": "Seductive Dream Perfume for Women - Fragrance",
+      "neu": "Seductive Dream"
+    },
+    {
+      "id": "89916b8b-44bf-41f7-8404-117546ce6be1",
+      "old": "Love Passion Kiss Perfume for Women - Fragrance",
+      "neu": "Love Passion Kiss"
+    },
+    {
+      "id": "c463ef2a-a4da-44bf-afa6-a7d38874a06c",
+      "old": "Realities Perfume for Women - eau-de",
+      "neu": "Realities"
+    }
+  ],
+  "merges": [
+    {
+      "id": "4bfe5ebe-8d3f-4e4c-84a5-b835319acf59",
+      "old_name": "Giorgio Cologne for Men - Extraordinary Eau de Toilette Spray 4.0 oz",
+      "old_is_active": true,
+      "old_merged_into": null,
+      "winner": "be020772-d4fc-493b-9895-c72250b0a4fb"
+    }
+  ]
+}

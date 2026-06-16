@@ -17,6 +17,7 @@ import { restorePurchases, getCustomerInfo, isProActive } from '@/src/lib/revenu
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { User } from '@supabase/supabase-js';
 import { useNotificationStore } from '@/src/stores/useNotificationStore';
+import { FeedbackSheet } from '@/src/components/feedback/FeedbackSheet';
 import {
   requestNotificationPermission,
   scheduleSotdNotification,
@@ -43,6 +44,7 @@ export default function ProfileScreen() {
   const monogram = useProfileStore((s) => s.getMonogram());
   const displayName = useProfileStore((s) => s.displayName);
 
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [authUser, setAuthUser] = useState<User | null>(null);
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setAuthUser(data.user));
@@ -268,6 +270,7 @@ export default function ProfileScreen() {
         <NotificationsSection />
 
         <Section title="About">
+          <Row label="Send feedback" onPress={() => setFeedbackOpen(true)} />
           <Row label="Privacy Policy" onPress={() => router.push('/legal/privacy')} />
           <Row label="Terms of Use" onPress={() => router.push('/legal/terms')} />
         </Section>
@@ -283,6 +286,7 @@ export default function ProfileScreen() {
 
         <VersionFooter />
       </ScrollView>
+      <FeedbackSheet visible={feedbackOpen} onClose={() => setFeedbackOpen(false)} />
     </SafeAreaView>
   );
 }

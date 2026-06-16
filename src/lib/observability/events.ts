@@ -72,6 +72,11 @@ export const EVENTS = {
 
   // ─── Affiliate "Buy from" (M2 Phase C) ───────────────────────────────
   AFFILIATE_OUTBOUND_CLICKED: 'affiliate_outbound_clicked',
+
+  // ─── Feedback (direct line to founder) ───────────────────────────────
+  FEEDBACK_OPENED:    'feedback_opened',
+  FEEDBACK_SUBMITTED: 'feedback_submitted',
+  FEEDBACK_FAILED:    'feedback_failed',
 } as const;
 
 export type EventName = typeof EVENTS[keyof typeof EVENTS];
