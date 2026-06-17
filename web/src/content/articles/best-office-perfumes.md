@@ -13,8 +13,7 @@ quickAnswer: "The best office perfumes have low-to-moderate sillage, clean or su
 publishedAt: "2026-05-15"
 author: "Perfume Picks"
 relatedSlugs:
-  - "how-to-build-a-fragrance-wardrobe"
-  - "how-long-does-perfume-last"
+  - "how-to-rotate-your-perfume-collection"
 faqs:
   - q: "What fragrance families are best for the office?"
     a: "Soft woods, light musks, clean aquatics, and green chypres are the most universally appropriate. These families project close to skin, read as professional rather than personal, and are unlikely to trigger headaches or sensitivities in colleagues. Heavy orientals, gourmands, and strongly animalic fragrances are the families most likely to cause problems in shared spaces."
