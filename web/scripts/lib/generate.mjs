@@ -3,6 +3,7 @@
 // Keeps the prompt and validation in one place so both produce schema-compliant,
 // AEO-optimized content. Tuned for the Perfume Picks vertical.
 import { readFileSync } from 'node:fs';
+import { humanizeArticle } from './humanize.mjs';
 
 // The audience + niche this site writes for. Baked here (not in consts.ts)
 // because the generation voice is editorial, not site config.
@@ -190,7 +191,8 @@ export async function generateArticle({
   let lastErr;
   for (let i = 1; i <= attempts; i++) {
     try {
-      return await callOnce({ apiKey, model, site, tier, existingList, existingSlugs, today, topicHint });
+      const draft = await callOnce({ apiKey, model, site, tier, existingList, existingSlugs, today, topicHint });
+      return await humanizeArticle({ apiKey, model, article: draft });
     } catch (e) {
       lastErr = e;
       console.error(`generateArticle: attempt ${i}/${attempts} failed: ${e.message}`);
