@@ -14,6 +14,7 @@ publishedAt: "2026-05-15"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-rotate-your-perfume-collection"
+  - "how-to-layer-perfumes"
   - "how-to-store-perfume-collection"
 faqs:
   - q: "How many fragrances should be in a wardrobe?"
