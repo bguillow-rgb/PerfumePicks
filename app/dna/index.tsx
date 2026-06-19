@@ -48,6 +48,7 @@ export default function DnaPickerScreen() {
   const { width } = useWindowDimensions();
 
   const pickerEnabled = useDnaPickerEnabled();
+  const hasExistingDna = useTasteProfileStore((s) => !!s.dna);
   const completeOnboarding = useOnboardingStore((s) => s.complete);
   const retakeMode = useOnboardingStore((s) => s.retakeMode);
   const endRetake = useOnboardingStore((s) => s.endRetake);
@@ -439,7 +440,7 @@ export default function DnaPickerScreen() {
             <Ionicons name="close" size={24} color={COLORS.muted} />
           </Pressable>
         )}
-        <Text style={styles.cursive}>{retakeMode ? 'retake' : "let's begin"}</Text>
+        <Text style={styles.cursive}>{hasExistingDna ? 'retake' : "let's begin"}</Text>
         <Text style={styles.title}>Pick the ones you love</Text>
         <Text style={styles.sub}>
           {selectedCount === 0

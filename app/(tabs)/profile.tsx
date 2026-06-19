@@ -14,6 +14,7 @@ import { useSwipeStore } from '@/src/stores/useSwipeStore';
 import { useTasteProfile } from '@/src/features/recommend/useRecommendations';
 import { MyDnaCard } from '@/src/components/dna/MyDnaCard';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
+import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
 import { pickAndSetProfilePhoto, clearProfilePhoto, resolveAvatarUri } from '@/src/lib/profilePhoto';
 import { restorePurchases, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
@@ -262,7 +263,15 @@ export default function ProfileScreen() {
 
         <Section title="Taste Profile">
           {!hasDna && (
-            <Row label="Discover your Fragrance DNA" onPress={() => router.push('/dna')} />
+            <Row
+              label="Discover your Fragrance DNA"
+              onPress={() => {
+                // The root layout bounces onboarded users out of /dna unless
+                // they're in retake mode — set it so the picker actually opens.
+                useOnboardingStore.getState().startRetake();
+                router.push('/dna');
+              }}
+            />
           )}
           <Row label="Take the quiz" onPress={() => router.push('/quiz')} />
           <Row label="View taste insights" onPress={() => router.push('/taste-profile')} pro disabled={!isPro} />
