@@ -437,7 +437,7 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
       )}
       {sessionSavedVisible && (
         <View style={styles.savedToast} pointerEvents="none">
-          <Text style={styles.savedToastText}>Session saved — your taste profile just got sharper. Come back anytime to keep training.</Text>
+          <Text style={styles.savedToastText}>Session saved. Your taste profile just got sharper. Come back anytime to keep training.</Text>
         </View>
       )}
     </SafeAreaView>
@@ -511,7 +511,7 @@ function Intro({ onStart, onClose, dailyLimitReached, onUpgrade, onViewProfile }
         {dailyLimitReached ? (
           <>
             <Text style={styles.body}>
-              You get <Text style={styles.italic}>10 free swipes a day</Text> — you've used today's.
+              You get <Text style={styles.italic}>10 free swipes a day</Text> and you've used today's.
               They reset tomorrow, free. Go Pro for unlimited swipes anytime.
             </Text>
             <Pressable style={[styles.cta, { backgroundColor: COLORS.text }]} onPress={onUpgrade}>

@@ -68,7 +68,7 @@ export default function WrappedScreen() {
     if (hero) lines.push(`Signature scent: ${hero.brand} ${hero.name} (${stats.topFragranceCount}×)`);
     if (stats.topOccasion) lines.push(`Mostly for ${OCCASION_LABEL[stats.topOccasion]}`);
     if (seasonPeak) lines.push(`Biggest season: ${seasonPeak}`);
-    lines.push('— via Perfume Picks');
+    lines.push('via Perfume Picks');
     Share.share({ message: lines.join('\n') }).catch(() => {});
   };
 
@@ -94,7 +94,7 @@ export default function WrappedScreen() {
         <EmptyState
           icon="calendar-outline"
           title="Keep logging"
-          subtitle="Log a few more wears and your Wrapped will come to life — it updates as you go."
+          subtitle="Log a few more wears and your Wrapped will come to life. It updates as you go."
         />
       ) : (
         <ScrollView contentContainerStyle={styles.body}>

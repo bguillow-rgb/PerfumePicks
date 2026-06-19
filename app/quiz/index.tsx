@@ -80,9 +80,9 @@ const FREE_QUESTIONS: QuizQuestion[] = [
     cursive: 'lasting',
     options: [
       { id: '2', label: 'A few hours', description: 'Skin-close and intimate' },
-      { id: '3', label: 'Half a day', description: 'Moderate — a gentle presence' },
+      { id: '3', label: 'Half a day', description: 'Moderate, a gentle presence' },
       { id: '4', label: 'All day', description: 'Confident and consistent' },
-      { id: '5', label: 'Into tomorrow', description: 'Beast mode — make a statement' },
+      { id: '5', label: 'Into tomorrow', description: 'Beast mode, make a statement' },
     ],
   },
 ];
@@ -94,7 +94,7 @@ const PRO_QUESTIONS: QuizQuestion[] = [
     question: 'How much space should it fill?',
     cursive: 'presence',
     options: [
-      { id: 'intimate', label: 'Just for you', description: 'A whisper — only on close contact' },
+      { id: 'intimate', label: 'Just for you', description: 'A whisper, only on close contact' },
       { id: 'moderate', label: 'Subtle trail', description: 'Detectable when you move' },
       { id: 'strong', label: 'Walks in first', description: 'The room knows you arrived' },
     ],
@@ -117,7 +117,7 @@ const PRO_QUESTIONS: QuizQuestion[] = [
     options: [
       { id: 'fem', label: 'Classically feminine', description: 'Florals, powders, delicate musks' },
       { id: 'masc', label: 'Classically masculine', description: 'Fougères, woods, aquatics' },
-      { id: 'androgynous', label: 'Right down the middle', description: 'Unisex — no leaning either way' },
+      { id: 'androgynous', label: 'Right down the middle', description: 'Unisex, no leaning either way' },
       { id: 'contrast', label: 'I like the contrast', description: 'Wearing something unexpected' },
     ],
   },
@@ -126,7 +126,7 @@ const PRO_QUESTIONS: QuizQuestion[] = [
     question: 'How adventurous is your nose?',
     cursive: 'explore',
     options: [
-      { id: 'classic', label: 'Classics only', description: 'Proven icons — I know what I like' },
+      { id: 'classic', label: 'Classics only', description: 'Proven icons, I know what I like' },
       { id: 'curated', label: 'Guided exploration', description: 'Surprise me, but stay in my lane' },
       { id: 'wild', label: 'Push my limits', description: 'Challenging, weird, unforgettable' },
     ],

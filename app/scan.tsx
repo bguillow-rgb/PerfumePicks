@@ -367,8 +367,8 @@ export default function ScanScreen() {
             <Text style={styles.quickAddTitle}>Add it manually</Text>
             <Text style={styles.quickAddSub}>
               {photoUri
-                ? "Couldn't read the label — type what you know and we'll match it."
-                : "Type what you know — we'll match it to our catalog, or add it to your wardrobe as-is."}
+                ? "Couldn't read the label. Type what you know and we'll match it."
+                : "Type what you know and we'll match it to our catalog, or add it to your wardrobe as is."}
             </Text>
 
             <View style={styles.fieldGroup}>
@@ -420,7 +420,7 @@ export default function ScanScreen() {
       {/* Toast */}
       <RNAnimated.View style={[styles.toast, { opacity: toastOpacity }]} pointerEvents="none">
         <Ionicons name="checkmark-circle" size={16} color={COLORS.accent} />
-        <Text style={styles.toastText}>Identified — opening details</Text>
+        <Text style={styles.toastText}>Identified. Opening details</Text>
       </RNAnimated.View>
     </SafeAreaView>
   );

@@ -500,7 +500,7 @@ function SearchResults({ results, query, fragranceHref }: { results: Fragrance[]
     return (
       <View style={styles.empty}>
         <Text style={styles.emptyText}>No matches for "{query}"</Text>
-        <Text style={styles.emptyHint}>Try a brand, note, or accord — or take the quiz.</Text>
+        <Text style={styles.emptyHint}>Try a brand, note, or accord. Or take the quiz.</Text>
       </View>
     );
   }

@@ -299,7 +299,7 @@ export default function ProfileScreen() {
         {__DEV__ && (
           <Section title="Dev Tools">
             <Row
-              label={isPro ? '✓ Pro active — tap to revoke' : 'Simulate Pro purchase'}
+              label={isPro ? '✓ Pro active, tap to revoke' : 'Simulate Pro purchase'}
               onPress={isPro ? deactivate : activate}
             />
           </Section>

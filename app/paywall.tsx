@@ -22,17 +22,17 @@ const FEATURES = [
   {
     icon: 'pricetags-outline' as const,
     title: 'Find Cheaper Dupes Instantly',
-    desc: 'Every fragrance detail page surfaces alternatives that smell nearly identical — often 30–70% less. One find pays for a year of Pro.',
+    desc: 'Every fragrance detail page surfaces alternatives that smell nearly identical, often 30-70% less. One find pays for a year of Pro.',
   },
   {
     icon: 'sparkles-outline' as const,
     title: 'Unlimited Train My Nose',
-    desc: 'The more you swipe, the sharper your recommendations get. Free is capped at 10 swipes a day — Pro removes the ceiling.',
+    desc: 'The more you swipe, the sharper your recommendations get. Free is capped at 10 swipes a day. Pro removes the ceiling.',
   },
   {
     icon: 'analytics-outline' as const,
     title: 'Your Full Scent Profile',
-    desc: 'See every accord, note, and house you gravitate toward — plus what to avoid. Your taste in one view.',
+    desc: 'See every accord, note, and house you gravitate toward, plus what to avoid. Your taste in one view.',
   },
   {
     icon: 'flask-outline' as const,
@@ -42,7 +42,7 @@ const FEATURES = [
   {
     icon: 'rose-outline' as const,
     title: 'Unlimited Wardrobe',
-    desc: 'Track every bottle, decant, and sample you own, want, or have tried — no cap.',
+    desc: 'Track every bottle, decant, and sample you own, want, or have tried, with no cap.',
   },
   {
     icon: 'sunny-outline' as const,
@@ -247,8 +247,8 @@ export default function PaywallScreen() {
               title={purchasing
                 ? 'Processing...'
                 : selectedPlan === 'yearly'
-                  ? `Try Free for 7 Days — then ${yearlyPrice}/yr`
-                  : `Start Pro — ${monthlyPrice}/mo`
+                  ? `Try Free for 7 Days, then ${yearlyPrice}/yr`
+                  : `Start Pro · ${monthlyPrice}/mo`
               }
               onPress={handlePurchase}
               disabled={purchasing}

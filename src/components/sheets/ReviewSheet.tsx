@@ -104,7 +104,7 @@ export function ReviewSheet({ visible, fragrance, existing, onClose, onSaved }: 
                 ))}
               </View>
               {rating === 0 && (
-                <Text style={styles.ratingHint}>Tap a star — rating is required</Text>
+                <Text style={styles.ratingHint}>Tap a star to rate</Text>
               )}
               {rating > 0 && (
                 <Text style={styles.ratingLabel}>{RATING_LABELS[rating]}</Text>

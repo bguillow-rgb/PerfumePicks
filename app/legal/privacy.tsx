@@ -49,11 +49,11 @@ export default function PrivacyScreen() {
         <Text style={styles.body}>
           We rely on the following third parties to operate the app. Each receives only the data necessary for the service it provides:
         </Text>
-        <Text style={styles.bullet}>•  <Text style={styles.bold}>Supabase</Text> — backend storage and authentication</Text>
-        <Text style={styles.bullet}>•  <Text style={styles.bold}>RevenueCat</Text> — subscription management</Text>
-        <Text style={styles.bullet}>•  <Text style={styles.bold}>Apple / Google</Text> — sign-in and payment processing</Text>
-        <Text style={styles.bullet}>•  <Text style={styles.bold}>PostHog</Text> — anonymous usage analytics</Text>
-        <Text style={styles.bullet}>•  <Text style={styles.bold}>Sentry</Text> — anonymous crash reporting</Text>
+        <Text style={styles.bullet}>•  <Text style={styles.bold}>Supabase</Text>: backend storage and authentication</Text>
+        <Text style={styles.bullet}>•  <Text style={styles.bold}>RevenueCat</Text>: subscription management</Text>
+        <Text style={styles.bullet}>•  <Text style={styles.bold}>Apple / Google</Text>: sign-in and payment processing</Text>
+        <Text style={styles.bullet}>•  <Text style={styles.bold}>PostHog</Text>: anonymous usage analytics</Text>
+        <Text style={styles.bullet}>•  <Text style={styles.bold}>Sentry</Text>: anonymous crash reporting</Text>
 
         <Text style={styles.h2}>4. Data Retention</Text>
         <Text style={styles.body}>

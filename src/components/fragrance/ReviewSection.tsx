@@ -144,7 +144,7 @@ export function ReviewSection({ fragranceId, onHasData }: Props) {
           <TextInput
             value={quickTake}
             onChangeText={setQuickTake}
-            placeholder="One line — e.g. “warm vanilla & smoke”"
+            placeholder="One line, like “warm vanilla & smoke”"
             placeholderTextColor={COLORS.subtle}
             style={styles.quickInput}
             maxLength={140}

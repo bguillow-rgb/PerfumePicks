@@ -169,7 +169,7 @@ export default function HomeScreen() {
               <Ionicons name="flask-outline" size={32} color={COLORS.accent} style={{ marginBottom: SPACING.sm }} />
               <Text style={styles.sotdEmptyTitle}>Your wardrobe is empty</Text>
               <Text style={styles.sotdEmptyBody}>
-                Add the bottles you own and we'll tell you what to wear today — and why.
+                Add the bottles you own and we'll tell you what to wear today, and why.
               </Text>
               <Pressable style={styles.sotdEmptyCta} onPress={() => router.push('/(tabs)/wardrobe')}>
                 <Text style={styles.sotdEmptyCtaText}>Add to Wardrobe →</Text>
@@ -298,7 +298,7 @@ function GetStartedHero({ router }: { router: ReturnType<typeof useRouter> }) {
     <Section eyebrow="WELCOME" cursive="start here">
       <View style={[styles.startWrap, { marginRight: SPACING.lg }]}>
         <Text style={styles.startLede}>
-          Two ways to get fragrance picks made just for you. Do either — or both.
+          Two ways to get fragrance picks made just for you. Do either, or both.
         </Text>
 
         {/* Path A — wardrobe */}
@@ -312,7 +312,7 @@ function GetStartedHero({ router }: { router: ReturnType<typeof useRouter> }) {
           <View style={styles.pathText}>
             <Text style={styles.pathTitle}>Add your wardrobe</Text>
             <Text style={styles.pathBody}>
-              Tell us the bottles you own — we'll pick what to wear each day, and why.
+              Tell us the bottles you own and we'll pick what to wear each day, and why.
             </Text>
           </View>
           <Ionicons name="chevron-forward" size={18} color={COLORS.muted} />
@@ -329,7 +329,7 @@ function GetStartedHero({ router }: { router: ReturnType<typeof useRouter> }) {
           <View style={styles.pathText}>
             <Text style={styles.pathTitle}>Train your nose</Text>
             <Text style={styles.pathBody}>
-              Swipe through scents — the more you swipe, the better we match you.
+              Swipe through scents. The more you swipe, the better we match you.
             </Text>
           </View>
           <Ionicons name="chevron-forward" size={18} color={COLORS.muted} />
@@ -550,7 +550,7 @@ function DiscoverCard({ isPro, router }: { isPro: boolean; router: ReturnType<ty
             <Text style={styles.discoverBody}>
               {isPro
                 ? 'Answer 10 questions and we\'ll build your full taste profile.'
-                : 'Answer 5 free questions — or go deeper with 10 on Pro.'}
+                : 'Answer 5 free questions, or go deeper with 10 on Pro.'}
             </Text>
           </View>
           <View style={styles.discoverIconWrap}>
@@ -565,7 +565,7 @@ function DiscoverCard({ isPro, router }: { isPro: boolean; router: ReturnType<ty
           <Pressable style={styles.proTeaser} onPress={() => router.push('/paywall' as any)}>
             <Ionicons name="lock-closed-outline" size={12} color={COLORS.accent} />
             <Text style={styles.proTeaserText}>
-              Pro: 10 questions — sillage, off-notes, identity & more →
+              Pro: 10 questions on sillage, off-notes, identity and more →
             </Text>
           </Pressable>
         )}

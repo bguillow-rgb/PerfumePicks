@@ -184,7 +184,7 @@ export default function LoginScreen() {
       <Text style={styles.wordmark}>Perfume Picks</Text>
       <View style={styles.brandRule} />
       <Text style={styles.tagline}>
-        Sign in to sync your wardrobe across devices — or continue as a guest to explore.
+        Sign in to sync your wardrobe across devices, or continue as a guest to explore.
       </Text>
 
       <View style={styles.buttons}>

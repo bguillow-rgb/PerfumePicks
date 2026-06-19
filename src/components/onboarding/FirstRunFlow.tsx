@@ -79,17 +79,17 @@ const TOUR_SLIDES: Slide[] = [
   {
     icon: 'flask-outline',
     title: 'Build your wardrobe',
-    body: 'Add the bottles you own. Each morning we pick your Scent of the Day from your collection — and tell you why it fits.',
+    body: 'Add the bottles you own. Each morning we pick your Scent of the Day from your collection, and tell you why it fits.',
   },
   {
     icon: 'rose-outline',
     title: 'Train your nose',
-    body: 'Swipe through fragrances in Taste. The more you swipe, the sharper your matches get — so we surface the best scents for you.',
+    body: 'Swipe through fragrances in Taste. The more you swipe, the sharper your matches get.',
   },
   {
     icon: 'pricetag-outline',
     title: "Don't pay a fortune",
-    body: 'Love something pricey? We rank the dupes that smell the same for less — so you can smell rich without the splurge.',
+    body: 'Love something pricey? We rank the dupes that smell the same for less, so you can smell rich without the splurge.',
   },
 ];
 
@@ -161,7 +161,7 @@ export function FirstRunFlow({
             </View>
             <Text style={styles.welcomeTitle}>Welcome to Perfume Picks</Text>
             <Text style={styles.welcomeBody}>
-              Three quick questions so we can learn what you love — then we'll tell you exactly what to wear and what to buy next.
+              Three quick questions so we can learn what you love. Then we'll tell you exactly what to wear and what to buy next.
             </Text>
             <Pressable
               testID="firstrun-get-started"

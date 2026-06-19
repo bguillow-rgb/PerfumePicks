@@ -215,7 +215,7 @@ function pickReason(
   }
   if (top === s.noteS && s.noteS > 0.65) {
     const topNote = f.top_notes[0] ?? 'rose';
-    return `${topNote} sits at the top — a note you keep coming back to`;
+    return `${topNote} sits up top, a note you keep coming back to`;
   }
   if (top === s.familyS && s.familyS > 0.65) {
     return `firmly in your ${f.fragrance_family} wheelhouse`;

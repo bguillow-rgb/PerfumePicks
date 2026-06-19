@@ -47,7 +47,7 @@ export function DnaReveal({ dna, onContinue }: DnaRevealProps) {
     track(EVENTS.DNA_REVEAL_SHARED, { archetype: dna.archetype.primary });
     try {
       await Share.share({
-        message: `My Fragrance DNA is "${copy.name}" — ${identity} (via Perfume Picks)`,
+        message: `My Fragrance DNA is "${copy.name}". ${identity} (via Perfume Picks)`,
       });
     } catch {
       // user dismissed the share sheet — nothing to do.

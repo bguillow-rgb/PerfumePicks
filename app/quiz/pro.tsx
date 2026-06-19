@@ -99,7 +99,7 @@ const PRO_QUESTIONS: QuizQuestion[] = [
     options: [
       { id: 'feminine', label: 'Feminine', description: 'Soft, floral, traditionally feminine' },
       { id: 'masculine', label: 'Masculine', description: 'Bold, woody, traditionally masculine' },
-      { id: 'unisex', label: 'Gender-free', description: 'Beyond labels — whatever feels right' },
+      { id: 'unisex', label: 'Gender-free', description: 'Beyond labels, whatever feels right' },
       { id: 'any', label: 'No preference', description: 'Show me everything' },
     ],
   },

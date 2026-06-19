@@ -360,7 +360,7 @@ export default function DnaPickerScreen() {
           <Text style={styles.cursive}>your picks</Text>
           <Text style={styles.title}>Do you own these, or want them?</Text>
           <Text style={styles.sub}>
-            Tap the ⭐ on the one you love most — it counts a little extra.
+            Tap the ⭐ on the one you love most. It counts a little extra.
           </Text>
 
           {selectedFrags.map((f) => {
@@ -444,9 +444,9 @@ export default function DnaPickerScreen() {
         <Text style={styles.title}>Pick the ones you love</Text>
         <Text style={styles.sub}>
           {selectedCount === 0
-            ? 'Tap a few you recognize and like — three makes this sharp.'
+            ? 'Tap a few you recognize and like. Three makes this sharp.'
             : selectedCount === 1
-              ? 'Nice — one or two more makes this sharper.'
+              ? 'Nice. One or two more makes this sharper.'
               : `${selectedCount} picked. Add more, or continue.`}
         </Text>
       </View>
