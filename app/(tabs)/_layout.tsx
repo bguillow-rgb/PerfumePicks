@@ -57,6 +57,9 @@ function ProfileTabIcon({ focused }: { focused: boolean }) {
       <View style={[profileIcon.disc, { width: size, height: size, borderRadius: size / 2 }]}>
         {imageUri ? (
           <Image source={{ uri: imageUri }} style={{ width: '100%', height: '100%', borderRadius: size / 2 }} />
+        ) : monogram === '?' ? (
+          // No name yet — a clean person glyph reads better than a cursive "?".
+          <Ionicons name="person" size={size * 0.62} color={COLORS.accent} />
         ) : (
           <Text style={[profileIcon.monogram, { fontSize: size * 0.6, lineHeight: size * 0.95 }]}>
             {monogram}
