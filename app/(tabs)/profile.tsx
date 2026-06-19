@@ -13,6 +13,7 @@ import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useSwipeStore } from '@/src/stores/useSwipeStore';
 import { useTasteProfile } from '@/src/features/recommend/useRecommendations';
 import { MyDnaCard } from '@/src/components/dna/MyDnaCard';
+import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { pickAndSetProfilePhoto, clearProfilePhoto, resolveAvatarUri } from '@/src/lib/profilePhoto';
 import { restorePurchases, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
@@ -44,6 +45,7 @@ export default function ProfileScreen() {
   const photoUri = useProfileStore((s) => s.photoUri);
   const monogram = useProfileStore((s) => s.getMonogram());
   const displayName = useProfileStore((s) => s.displayName);
+  const hasDna = useTasteProfileStore((s) => !!s.dna);
 
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [authUser, setAuthUser] = useState<User | null>(null);
@@ -188,6 +190,10 @@ export default function ProfileScreen() {
             <View style={styles.avatar}>
               {photoUri ? (
                 <Image source={{ uri: resolveAvatarUri(photoUri)! }} style={styles.avatarImage} />
+              ) : monogram === '?' ? (
+                // No name yet — a clean person glyph reads better than a
+                // cursive "?", which looks like a rendering error.
+                <Ionicons name="person" size={46} color={COLORS.accent} />
               ) : (
                 <Text style={styles.avatarMonogram}>{monogram}</Text>
               )}
@@ -255,6 +261,9 @@ export default function ProfileScreen() {
         <MyDnaCard />
 
         <Section title="Taste Profile">
+          {!hasDna && (
+            <Row label="Discover your Fragrance DNA" onPress={() => router.push('/dna')} />
+          )}
           <Row label="Take the quiz" onPress={() => router.push('/quiz')} />
           <Row label="View taste insights" onPress={() => router.push('/taste-profile')} pro disabled={!isPro} />
           <Row label="Perfume Wrapped" onPress={() => router.push('/wrapped')} pro disabled={!isPro} />

@@ -45,6 +45,10 @@ export function ProfileAvatar({ imageUri, monogram, size = 40 }: Props) {
         <View style={[styles.avatar, { width: size, height: size, borderRadius: size / 2 }]}>
           {finalImage ? (
             <Image source={{ uri: finalImage }} style={[styles.image, { borderRadius: size / 2 }]} />
+          ) : finalMonogram === '?' ? (
+            // No name yet — a clean person glyph reads better than a cursive
+            // "?", which looks like a rendering error.
+            <Ionicons name="person" size={size * 0.5} color={COLORS.accent} />
           ) : (
             <Text
               style={[
