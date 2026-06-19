@@ -1,0 +1,191 @@
+# M5 gate: the QUESTION FALLBACK front door + the RETAKE loop.
+#
+# Two halves, one flow:
+#   1. Fallback (S1b): a fresh install that can't recognize any bottles taps
+#      "I'm new to fragrance", answers the 3 seed questions, and gets the SAME
+#      reveal → first-match → app as the picker path. Proves the question path
+#      derives a real DNA envelope (not a dead end).
+#   2. Retake: the onboarded user opens the re-viewable "My Fragrance DNA" home
+#      from the You tab, taps Retake, is let back into /dna (retakeMode guard),
+#      re-picks, and re-reveals. Proves the atomic draft commit + route re-entry.
+#
+# Self-contained: clearState re-establishes the DNA front door, then completes
+# onboarding via the fallback, so the persisted state is valid for any flow that
+# runs after it.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp:
+    clearState: true
+
+# Dev-client: reconnect to metro after clearState wipes the saved URL.
+- runFlow:
+    when:
+      visible:
+        text: "http://localhost:8081"
+    commands:
+      - tapOn:
+          text: "http://localhost:8081"
+
+# Dismiss the Expo dev menu (native overlay, not readable by maestro).
+- extendedWaitUntil:
+    visible:
+      text: "__sleep_for_bundle__"
+    timeout: 25000
+    optional: true
+- tapOn:
+    point: "91%,50%"
+- waitForAnimationToEnd
+
+# Real mode: continue as guest. Optional so demo builds skip it.
+- extendedWaitUntil:
+    visible:
+      text: "Continue as Guest"
+    timeout: 60000
+    optional: true
+- runFlow:
+    when:
+      visible:
+        text: "Continue as Guest"
+    commands:
+      - tapOn:
+          text: "Continue as Guest"
+
+# The picker grid is the front door.
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 90000
+- assertVisible:
+    text: "Pick the ones you love"
+
+# Warmup tap (absorbs a dropped first interaction during driver reconnect).
+- tapOn:
+    text: "Pick the ones you love"
+- waitForAnimationToEnd
+
+# ── Half 1: the question fallback ────────────────────────────────────────────
+# "I'm new to fragrance" → the 3 mandatory seed questions.
+- tapOn:
+    id: "dna-new-to-fragrance"
+- extendedWaitUntil:
+    visible:
+      text: "Welcome to Perfume Picks"
+    timeout: 15000
+- tapOn:
+    id: "firstrun-get-started"
+
+# Q1 family → Sacred Wood (woody seeds).
+- extendedWaitUntil:
+    visible:
+      text: "Which world calls to you?"
+    timeout: 15000
+- tapOn:
+    id: "firstrun-opt-family-woody"
+
+# Q2 occasion → Date Night.
+- extendedWaitUntil:
+    visible:
+      text: "When will you wear it most?"
+    timeout: 15000
+- tapOn:
+    id: "firstrun-opt-occasion-date"
+
+# Q3 price → $120–$250 (designer luxury — a real ceiling).
+- extendedWaitUntil:
+    visible:
+      text: "Your usual investment?"
+    timeout: 15000
+- tapOn:
+    id: "firstrun-opt-price-3"
+
+# Last answer hands back to the DNA front door: reading beat → THE REVEAL.
+- extendedWaitUntil:
+    visible:
+      id: "dna-reveal-archetype"
+    timeout: 25000
+- tapOn:
+    id: "dna-reveal-continue"
+- extendedWaitUntil:
+    visible:
+      id: "dna-first-rec"
+    timeout: 15000
+- tapOn:
+    id: "dna-rec-skip"
+
+# Onboarding complete → Today.
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 30000
+- extendedWaitUntil:
+    visible:
+      text: "start here"
+    timeout: 15000
+
+# ── Half 2: the retake loop ──────────────────────────────────────────────────
+# Open the re-viewable My Fragrance DNA home from the You tab.
+- tapOn:
+    id: "tab-profile"
+- extendedWaitUntil:
+    visible:
+      id: "my-dna-card"
+    timeout: 15000
+- tapOn:
+    id: "my-dna-card"
+- extendedWaitUntil:
+    visible:
+      text: "My Taste Profile"
+    timeout: 15000
+- assertVisible:
+    text: "MY FRAGRANCE DNA"
+
+# Retake → route guard lets the onboarded user back into /dna (retakeMode).
+- tapOn:
+    id: "dna-retake"
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 20000
+# The retake header exposes the cancel ✕ (proves we entered in retake mode).
+- assertVisible:
+    id: "dna-retake-cancel"
+
+# Re-pick three tiles and re-reveal. commitDraft swaps the live DNA atomically.
+- tapOn:
+    id: "dna-tile"
+    index: 0
+- tapOn:
+    id: "dna-tile"
+    index: 1
+- tapOn:
+    id: "dna-tile"
+    index: 2
+- tapOn:
+    id: "dna-tile-favorite"
+    index: 0
+- tapOn:
+    id: "dna-picker-continue"
+- extendedWaitUntil:
+    visible:
+      id: "dna-refine-continue"
+    timeout: 15000
+- tapOn:
+    id: "dna-refine-continue"
+- extendedWaitUntil:
+    visible:
+      id: "dna-reveal-archetype"
+    timeout: 20000
+- tapOn:
+    id: "dna-reveal-continue"
+- extendedWaitUntil:
+    visible:
+      id: "dna-first-rec"
+    timeout: 15000
+- tapOn:
+    id: "dna-rec-skip"
+
+# Retake committed → back to Today, onboarding still complete.
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 30000

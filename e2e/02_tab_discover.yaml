@@ -1,0 +1,22 @@
+# Smoke: Today -> Discover tab renders the brand/house browser.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 90000
+# Warmup tap: a freshly-spawned Maestro/XCUITest process can drop its first
+# interaction during driver reconnect. Re-tapping the current tab absorbs it.
+- tapOn:
+    id: "tab-today"
+- waitForAnimationToEnd
+- tapOn:
+    id: "tab-discover"
+- extendedWaitUntil:
+    visible:
+      text: "BY HOUSE"
+    timeout: 15000
+- assertVisible:
+    text: "Filter"

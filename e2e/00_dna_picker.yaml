@@ -1,0 +1,130 @@
+# M2 — Fragrance DNA picker is the required front door of a fresh install.
+# Runs FIRST (00_) on a wiped state so it establishes the persisted anon
+# session + hasSeenOnboarding=true that flows 01-07 rely on (they launchApp
+# expecting tab-today immediately, with no onboarding gate in the way).
+#
+# clearState lands on the guest-auth screen (real Supabase dev client). We tap
+# "Continue as Guest"; in demo builds that screen is absent, so the tap is
+# guarded by an optional runFlow. After auth, the onboarding redirect in
+# useProtectedRoute sends us to /dna — the picker grid is the first thing shown.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp:
+    clearState: true
+
+# Dev-client only: clearState wipes the saved metro URL, dropping us on the
+# Expo dev-client server picker. Reconnect to metro so the JS bundle loads.
+# Standalone/production builds skip this (the picker isn't present).
+- runFlow:
+    when:
+      visible:
+        text: "http://localhost:8081"
+    commands:
+      - tapOn:
+          text: "http://localhost:8081"
+
+# The clearState reload pops up the Expo developer menu — a native overlay that
+# maestro CANNOT read by id/text and which masks the entire app hierarchy
+# beneath it (only its own "Perfume Picks" header is exposed). So we can't
+# anchor on anything underneath while it's up. Instead: wait blind for the
+# bundle to load + the menu to settle (an optional wait on an absent sentinel is
+# our only "sleep"), then dismiss the menu by tapping its close (✕) button by
+# point. Standalone/demo builds have no dev menu — the ✕ tap lands on empty
+# header space and is harmless.
+- extendedWaitUntil:
+    visible:
+      text: "__sleep_for_bundle__"
+    timeout: 25000
+    optional: true
+- tapOn:
+    point: "91%,50%"
+- waitForAnimationToEnd
+
+# Real mode: continue as guest (now visible). clearState wiped onboarding, so a
+# fresh session lands here. Optional so demo builds, already at the grid, skip.
+- extendedWaitUntil:
+    visible:
+      text: "Continue as Guest"
+    timeout: 60000
+    optional: true
+- runFlow:
+    when:
+      visible:
+        text: "Continue as Guest"
+    commands:
+      - tapOn:
+          text: "Continue as Guest"
+
+# The picker grid is the required front door. First launch downloads the JS
+# bundle from metro (slow), so allow a long wait.
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 90000
+- assertVisible:
+    text: "Pick the ones you love"
+
+# Warmup tap: a freshly-spawned XCUITest process can drop its first interaction
+# during driver reconnect. Tapping the header absorbs it.
+- tapOn:
+    text: "Pick the ones you love"
+- waitForAnimationToEnd
+
+# Pick three recognizable tiles.
+- tapOn:
+    id: "dna-tile"
+    index: 0
+- tapOn:
+    id: "dna-tile"
+    index: 1
+- tapOn:
+    id: "dna-tile"
+    index: 2
+
+# Favorite the first pick (star appears only on selected tiles).
+- tapOn:
+    id: "dna-tile-favorite"
+    index: 0
+
+# Continue becomes enabled once at least one is picked.
+- assertVisible:
+    id: "dna-picker-continue"
+- tapOn:
+    id: "dna-picker-continue"
+
+# Refine step: own/want + favorite confirm.
+- extendedWaitUntil:
+    visible:
+      id: "dna-refine-continue"
+    timeout: 15000
+- assertVisible:
+    text: "Do you own these, or want them?"
+- tapOn:
+    id: "dna-refine-continue"
+
+# M3: refine → "Reading your palate" beat → THE REVEAL → first match → Skip to
+# app. Onboarding now completes via the skip-to-app valve, not the refine button.
+- extendedWaitUntil:
+    visible:
+      id: "dna-reveal-archetype"
+    timeout: 20000
+- tapOn:
+    id: "dna-reveal-continue"
+- extendedWaitUntil:
+    visible:
+      id: "dna-first-rec"
+    timeout: 15000
+- tapOn:
+    id: "dna-rec-skip"
+
+# Onboarding complete → Today tab, session + hasSeenOnboarding now persisted.
+# A freshly-onboarded guest has no wardrobe yet, so Today shows the new-user
+# "start here" welcome hero (not SCENT OF THE DAY, which needs a wardrobe).
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 30000
+- extendedWaitUntil:
+    visible:
+      text: "start here"
+    timeout: 15000

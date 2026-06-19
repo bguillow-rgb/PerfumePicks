@@ -39,6 +39,7 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { Session } from '@supabase/supabase-js';
 import { initRevenueCat, identifyUser, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { useProStore } from '@/src/stores/useProStore';
+import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
 import { useAppSync } from '@/src/lib/sync/useAppSync';
 import { useBadgeCheck } from '@/src/lib/useBadgeCheck';
 import {
@@ -73,23 +74,45 @@ const PerfumePicksTheme = {
 function useProtectedRoute(session: Session | null, isLoading: boolean) {
   const segments = useSegments();
   const router = useRouter();
+  const hasSeenOnboarding = useOnboardingStore((s) => s.hasSeenOnboarding);
+  const onboardingHydrated = useOnboardingStore((s) => s.hydrated);
+  const retakeMode = useOnboardingStore((s) => s.retakeMode);
 
   useEffect(() => {
     if (isLoading) return;
 
-    // Demo mode: when Supabase isn't configured (no env vars), skip the auth
-    // gate entirely so the app boots straight to (tabs) for UI review on a
-    // physical device. Production builds set EXPO_PUBLIC_SUPABASE_URL via
-    // eas.json and re-enable the real gate below.
-    if (!isSupabaseConfigured) return;
-
     const inAuthGroup = segments[0] === 'auth';
-    if (!session && !inAuthGroup) {
-      router.replace('/auth/login');
-    } else if (session && inAuthGroup && !session.user?.is_anonymous) {
-      router.replace('/(tabs)');
+    const inDnaGroup = segments[0] === 'dna';
+
+    // Auth gate (real mode only). In demo mode (no env vars) we skip it so the
+    // app boots without credentials for UI review on a physical device.
+    if (isSupabaseConfigured) {
+      if (!session && !inAuthGroup) {
+        router.replace('/auth/login');
+        return;
+      }
+      if (session && inAuthGroup && !session.user?.is_anonymous) {
+        router.replace('/(tabs)');
+        return;
+      }
     }
-  }, [session, segments, isLoading]);
+
+    // Onboarding gate (BOTH modes): the Fragrance DNA picker is the required
+    // front door. `(tabs)` and Today's hooks mount only after it completes. In
+    // real mode this runs once a (guest/real) session exists, so it sits behind
+    // the auth gate above; in demo mode it always runs.
+    if (!onboardingHydrated) return;
+    const authedOrDemo = !isSupabaseConfigured || !!session;
+    if (authedOrDemo && !inAuthGroup) {
+      if (!hasSeenOnboarding && !inDnaGroup) {
+        router.replace('/dna');
+      } else if (hasSeenOnboarding && inDnaGroup && !retakeMode) {
+        // Onboarded users are normally bounced out of `/dna`, EXCEPT when they
+        // deliberately re-entered to retake their DNA.
+        router.replace('/(tabs)');
+      }
+    }
+  }, [session, segments, isLoading, hasSeenOnboarding, onboardingHydrated, retakeMode]);
 }
 
 export default function RootLayout() {
@@ -240,6 +263,7 @@ export default function RootLayout() {
       <StatusBar style="dark" />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="dna" options={{ gestureEnabled: false }} />
         <Stack.Screen name="auth/login" options={{ presentation: 'modal', gestureEnabled: false }} />
         <Stack.Screen name="quiz/index" />
         <Stack.Screen name="quiz/results" />

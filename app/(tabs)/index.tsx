@@ -16,9 +16,9 @@ import { touchLoginStreak } from '@/src/lib/sync/useAppSync';
 import { AppState } from 'react-native';
 import { useSOTDFeed, SOTDEntry } from '@/src/hooks/useSOTDFeed';
 import { useProStore } from '@/src/stores/useProStore';
-import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
-import { FirstRunFlow } from '@/src/components/onboarding/FirstRunFlow';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
+import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
+import { journeyLine } from '@/src/features/dna/revealCopy';
 
 /**
  * Home / "Today" tab — daily ritual surface.
@@ -67,18 +67,23 @@ export default function HomeScreen() {
   const swipeCount = Object.keys(swipesMap).length;
   const tasteProfile = useTasteProfile();
 
-  // Cold-start detection: no wardrobe, no swipes, no quiz signal. These users
-  // get a single unified "start here" hero (the two value paths) instead of
-  // two competing empty-state CTAs (quiz card + empty SOTD card).
+  // Cold-start detection: no *behavioral* engagement — empty wardrobe, no
+  // swipes, no wears. These users get a single unified "start here" hero (the
+  // two value paths) instead of two competing empty-state CTAs (quiz card +
+  // empty SOTD card). Note: NEITHER a derived Fragrance DNA NOR the 3 seed-quiz
+  // answers are counted here — a freshly-onboarded DNA guest (picker OR question
+  // fallback) still has an empty wardrobe and benefits from the build-your-
+  // wardrobe guidance, even though their DNA already seeds the discovery rails.
   const isNewUser =
-    wardrobeItems.length === 0 && swipeCount === 0 && tasteProfile.signal_count === 0;
+    wardrobeItems.length === 0 &&
+    swipeCount === 0 &&
+    wearLogs.length === 0;
 
-  // First-run tap-through overlay — once per install, only after persistence
-  // has hydrated (so returning users never see a flash).
-  const hasSeenOnboarding = useOnboardingStore((s) => s.hasSeenOnboarding);
-  const onboardingHydrated = useOnboardingStore((s) => s.hydrated);
-  const completeOnboarding = useOnboardingStore((s) => s.complete);
-  const showOnboarding = onboardingHydrated && !hasSeenOnboarding;
+  // Forward-pointing Journey line — derived from the live DNA. Renders as a
+  // single chip on Today that *navigates* to the Journey home in You; the full
+  // ladder lives there (one surface).
+  const liveDna = useTasteProfileStore((s) => s.dna);
+  const journeyChipLine = useMemo(() => journeyLine(liveDna?.journey ?? null), [liveDna]);
 
   const greeting = useGreeting();
   const { entries: sotdEntries, loading: sotdLoading, refresh: refreshSOTD } = useSOTDFeed();
@@ -96,7 +101,7 @@ export default function HomeScreen() {
   }, [wearLogs, heroPick, today]);
 
   return (
-    <SafeAreaView style={styles.safe} edges={['top']}>
+    <SafeAreaView style={styles.safe} edges={['top']} testID="today-screen">
       <ScrollView
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
@@ -130,6 +135,22 @@ export default function HomeScreen() {
             )}
           </View>
         </View>
+
+        {/* ── Forward-pointing Journey chip — navigates to the Journey home in
+               You (one surface; no inline ladder here) ── */}
+        {journeyChipLine && (
+          <Pressable
+            testID="today-journey-chip"
+            accessibilityRole="button"
+            accessibilityLabel={journeyChipLine}
+            style={({ pressed }) => [styles.journeyChip, pressed && { opacity: 0.85 }]}
+            onPress={() => router.push('/taste-profile' as any)}
+          >
+            <Ionicons name="trail-sign-outline" size={16} color={COLORS.accent} />
+            <Text style={styles.journeyChipText} numberOfLines={2}>{journeyChipLine}</Text>
+            <Ionicons name="chevron-forward" size={16} color={COLORS.muted} />
+          </Pressable>
+        )}
 
         {/* ── New-user "Start here" — unified two-path value prop ── */}
         {isNewUser && <GetStartedHero router={router} />}
@@ -260,8 +281,6 @@ export default function HomeScreen() {
           <View style={styles.footerRule} />
         </View>
       </ScrollView>
-
-      <FirstRunFlow visible={showOnboarding} onDone={completeOnboarding} />
     </SafeAreaView>
   );
 }
@@ -346,7 +365,7 @@ function SOTDHeroCard({ pick, loggedToday, onPress, onLogWear }: {
   })();
 
   return (
-    <Pressable style={({ pressed }) => [heroCard.wrap, pressed && { opacity: 0.9 }]} onPress={onPress}>
+    <Pressable testID="today-scent-hero" style={({ pressed }) => [heroCard.wrap, pressed && { opacity: 0.9 }]} onPress={onPress}>
       {/* Image */}
       <View style={heroCard.imgWrap}>
         {fragrance.image_url ? (
@@ -912,6 +931,28 @@ const styles = StyleSheet.create({
   },
   greetingDot: { ...TYPE.caption, color: COLORS.muted, fontSize: 12 },
   streakText: { ...TYPE.label, fontSize: 11, color: COLORS.accent, letterSpacing: 0.5 },
+
+  // ── Journey chip ──
+  journeyChip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    marginHorizontal: SPACING.lg,
+    marginTop: SPACING.xs,
+    marginBottom: SPACING.xs,
+    paddingVertical: SPACING.sm,
+    paddingHorizontal: SPACING.md,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.border,
+  },
+  journeyChipText: {
+    ...TYPE.body,
+    flex: 1,
+    color: COLORS.text,
+    fontSize: 13,
+  },
 
   // ── Sections ──
   section: {

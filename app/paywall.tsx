@@ -140,6 +140,7 @@ export default function PaywallScreen() {
 
   return (
     <ScrollView
+      testID="paywall-screen"
       style={[styles.screen]}
       // Regular stack push (not a modal) — add insets.top so the close X and
       // header clear the status bar / notch.

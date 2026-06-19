@@ -1,0 +1,38 @@
+# M4 gate: the derived Fragrance DNA is DURABLE across a cold relaunch.
+#
+# Runs AFTER 00_dna_picker (like 01-07 do): that flow completes the DNA front
+# door, which persists the envelope to AsyncStorage (useTasteProfileStore) plus
+# the anonymous session + hasSeenOnboarding. This flow then does a plain
+# `launchApp` (NO clearState) — a cold kill + restart — and proves the DNA
+# survived: Today boots seeded, and the "My Fragrance DNA" card on the You tab
+# renders the archetype the user landed on, tapping through to the re-viewable
+# taste-profile home. (Relaunch-without-clearState is its own maestro invocation;
+# an in-flow second launchApp wedges the dev-client, so the harness keeps each
+# launch in a separate flow.)
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+
+# Persisted guest session + completed onboarding → boots straight to Today.
+- extendedWaitUntil:
+    visible: { id: "tab-today" }
+    timeout: 90000
+- assertVisible:
+    text: "start here"
+
+# The persisted DNA surfaces on the You tab as the re-viewable "My Fragrance DNA"
+# card. Its presence after a cold relaunch proves the envelope survived.
+- tapOn: { id: "tab-profile" }
+- extendedWaitUntil:
+    visible: { id: "my-dna-card" }
+    timeout: 15000
+- assertVisible:
+    text: "MY FRAGRANCE DNA"
+- assertVisible:
+    id: "my-dna-archetype"
+
+# Tapping the card opens the taste-profile home (re-viewable surface).
+- tapOn: { id: "my-dna-card" }
+- assertVisible:
+    text: "My Taste Profile"

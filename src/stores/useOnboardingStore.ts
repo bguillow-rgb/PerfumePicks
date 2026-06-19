@@ -12,7 +12,16 @@ import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 interface OnboardingState {
   hasSeenOnboarding: boolean;
   hydrated: boolean;
+  /**
+   * True while an already-onboarded user is re-running the DNA front door (a
+   * "retake"). Lets the route guard permit re-entry into `/dna` even though
+   * onboarding is complete. Deliberately NOT persisted — a retake never
+   * survives a relaunch; an abandoned retake must not trap the user in `/dna`.
+   */
+  retakeMode: boolean;
   complete: () => void;
+  startRetake: () => void;
+  endRetake: () => void;
 }
 
 export const useOnboardingStore = create<OnboardingState>()(
@@ -20,7 +29,10 @@ export const useOnboardingStore = create<OnboardingState>()(
     (set) => ({
       hasSeenOnboarding: false,
       hydrated: false,
+      retakeMode: false,
       complete: () => set({ hasSeenOnboarding: true }),
+      startRetake: () => set({ retakeMode: true }),
+      endRetake: () => set({ retakeMode: false }),
     }),
     {
       name: STORAGE_KEYS.onboarding,

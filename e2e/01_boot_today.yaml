@@ -1,0 +1,18 @@
+# Smoke: cold boot lands on the Today tab (past guest-auth, native dev client).
+# The native client carries a persisted anonymous session + completed onboarding
+# (established by 00_dna_picker), so launchApp boots straight to the tab bar with
+# no auth or DNA gate. First launch downloads the JS bundle from metro (slow) —
+# hence the 90s wait on tab-today.
+#
+# That onboarded guest has no wardrobe yet, so Today shows the new-user "start
+# here" welcome hero — SCENT OF THE DAY only appears once a wardrobe exists.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 90000
+- assertVisible:
+    text: "start here"

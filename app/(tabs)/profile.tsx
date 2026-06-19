@@ -12,6 +12,7 @@ import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useSwipeStore } from '@/src/stores/useSwipeStore';
 import { useTasteProfile } from '@/src/features/recommend/useRecommendations';
+import { MyDnaCard } from '@/src/components/dna/MyDnaCard';
 import { pickAndSetProfilePhoto, clearProfilePhoto, resolveAvatarUri } from '@/src/lib/profilePhoto';
 import { restorePurchases, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
@@ -250,6 +251,8 @@ export default function ProfileScreen() {
         </View>
 
         <ProfileStatsRow />
+
+        <MyDnaCard />
 
         <Section title="Taste Profile">
           <Row label="Take the quiz" onPress={() => router.push('/quiz')} />

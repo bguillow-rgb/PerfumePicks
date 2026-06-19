@@ -1,0 +1,87 @@
+# M7 gate: the Today daily loop + the forward-pointing Journey chip.
+#
+# Proves:
+#   1. After finishing onboarding via the picker spine, the app lands on Today.
+#   2. The forward Journey chip (testID today-journey-chip) is present and, when
+#      tapped, NAVIGATES to the You DNA home (taste-profile) — it is NOT an inline
+#      ladder (Chief UX: one surface).
+#
+# The Today's Scent hero (today-scent-hero) only renders once the wardrobe has an
+# owned pick, so a fresh guest sees the new-user hero instead — we assert the
+# chip + navigation, which is the M7 deliverable, not the SOTD card itself.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp:
+    clearState: true
+- runFlow:
+    when:
+      visible:
+        text: "http://localhost:8081"
+    commands:
+      - tapOn:
+          text: "http://localhost:8081"
+- extendedWaitUntil:
+    visible:
+      text: "__sleep_for_bundle__"
+    timeout: 25000
+    optional: true
+- tapOn:
+    point: "91%,50%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Continue as Guest"
+    timeout: 60000
+    optional: true
+- runFlow:
+    when:
+      visible:
+        text: "Continue as Guest"
+    commands:
+      - tapOn:
+          text: "Continue as Guest"
+
+# ── Picker grid → pick 3 + favorite → continue ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 90000
+- tapOn: { id: "dna-tile", index: 0 }
+- tapOn: { id: "dna-tile", index: 1 }
+- tapOn: { id: "dna-tile", index: 2 }
+- tapOn: { id: "dna-tile-favorite", index: 0 }
+- tapOn: { id: "dna-picker-continue" }
+
+# ── Refine → reveal → first rec → skip into the app ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-refine-continue"
+    timeout: 15000
+- tapOn: { id: "dna-refine-continue" }
+- extendedWaitUntil:
+    visible:
+      id: "dna-reveal-archetype"
+    timeout: 20000
+- tapOn: { id: "dna-reveal-continue" }
+- extendedWaitUntil:
+    visible:
+      id: "dna-first-rec"
+    timeout: 15000
+- tapOn: { id: "dna-rec-skip" }
+
+# ── Lands on Today ──
+- extendedWaitUntil:
+    visible:
+      id: "today-screen"
+    timeout: 20000
+
+# ── The forward Journey chip is present → tap it → lands on You DNA home ──
+- extendedWaitUntil:
+    visible:
+      id: "today-journey-chip"
+    timeout: 10000
+- tapOn: { id: "today-journey-chip" }
+- extendedWaitUntil:
+    visible:
+      id: "taste-profile-screen"
+    timeout: 15000

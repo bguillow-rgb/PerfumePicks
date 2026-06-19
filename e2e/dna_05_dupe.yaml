@@ -1,0 +1,92 @@
+# M6 gate: the TRAIT-ROUTED monetization CTA.
+#
+# Proves two things the spec pins as non-negotiable:
+#   1. The activation spine is FREE — pick → reveal → first rec are all reachable
+#      WITHOUT ever hitting the paywall. We assert the paywall sheet is NOT on
+#      screen at the reveal and at the first rec.
+#   2. The first rec shows a trait-routed CTA (testID dna-rec-cta — stable
+#      regardless of which of dupe/original/sample the picks routed to), and
+#      tapping it lands on the fragrance detail with the routed buyer strip
+#      (dna-routed-cta) — the dupe/original/sample surface.
+#
+# The CTA *kind* depends on the derived traits (non-deterministic across picks),
+# so we assert the stable testIDs, not a specific kind.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp:
+    clearState: true
+- runFlow:
+    when:
+      visible:
+        text: "http://localhost:8081"
+    commands:
+      - tapOn:
+          text: "http://localhost:8081"
+- extendedWaitUntil:
+    visible:
+      text: "__sleep_for_bundle__"
+    timeout: 25000
+    optional: true
+- tapOn:
+    point: "91%,50%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Continue as Guest"
+    timeout: 60000
+    optional: true
+- runFlow:
+    when:
+      visible:
+        text: "Continue as Guest"
+    commands:
+      - tapOn:
+          text: "Continue as Guest"
+
+# ── Picker grid → pick 3 + favorite → continue ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 90000
+- tapOn: { id: "dna-tile", index: 0 }
+- tapOn: { id: "dna-tile", index: 1 }
+- tapOn: { id: "dna-tile", index: 2 }
+- tapOn: { id: "dna-tile-favorite", index: 0 }
+- tapOn: { id: "dna-picker-continue" }
+
+# ── Refine → reveal ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-refine-continue"
+    timeout: 15000
+- tapOn: { id: "dna-refine-continue" }
+
+# ── THE REVEAL — activation, must be free (no paywall) ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-reveal-archetype"
+    timeout: 20000
+# Paywall must NOT have intercepted the activation spine.
+- assertNotVisible:
+    id: "paywall-screen"
+- tapOn: { id: "dna-reveal-continue" }
+
+# ── First rec — also free; trait-routed CTA present ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-first-rec"
+    timeout: 15000
+- assertNotVisible:
+    id: "paywall-screen"
+- assertVisible:
+    id: "dna-rec-cta"
+
+# ── Tap the routed CTA → lands on the bottle with the routed buyer strip ──
+- tapOn: { id: "dna-rec-cta" }
+- extendedWaitUntil:
+    visible:
+      id: "dna-routed-cta"
+    timeout: 20000
+# Still no paywall — the buyer strip + first dupe line are part of the free spine.
+- assertNotVisible:
+    id: "paywall-screen"

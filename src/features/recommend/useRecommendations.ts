@@ -39,6 +39,8 @@ import {
 } from '@/src/stores/useCatalogStore';
 import { deriveTasteProfile, type TasteSignal, type DerivedTasteProfile } from './tasteProfile';
 import { rank, type RecContext, type ScoredRec } from './score';
+import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
+import { blendProfiles } from '@/src/features/dna/blend';
 
 // Cap candidates for scoring. Supabase max_rows must be set to ≥ this value
 // in Project Settings → API. Raise to 10 000 in the dashboard to unlock full catalog.
@@ -132,6 +134,7 @@ export function useRecommendations(ctx?: RecContext) {
   const items = useWardrobeStore((s) => s.items);
   const swipesMap = useSwipeStore((s) => s.swipes);
   const answers = useQuizStore((s) => s.answers);
+  const dna = useTasteProfileStore((s) => s.dna);
 
   // Compute effective context once, layering in quiz answers (P5-22/P5-23)
   // and most-common recent-wear weather (P5-24) on top of the caller's ctx
@@ -199,8 +202,10 @@ export function useRecommendations(ctx?: RecContext) {
     if (answers.longevity && result.longevity_preference === null) {
       result.longevity_preference = Number(answers.longevity);
     }
-    return result;
-  }, [logs, items, swipesMap, answers.family, answers.price, answers.longevity]);
+    // M1 blend: fold the explicit Fragrance DNA over the passive profile,
+    // weighted by DNA confidence. DNA absent → `result` verbatim (no regression).
+    return blendProfiles(dna, result);
+  }, [logs, items, swipesMap, answers.family, answers.price, answers.longevity, dna]);
 
   // Don't recommend fragrances the user already owns ("have") — they're in
   // your wardrobe, no need to surface them again. Wishlist items can still
@@ -283,6 +288,7 @@ export function useTasteProfile(): DerivedTasteProfile {
   const items = useWardrobeStore((s) => s.items);
   const swipesMap = useSwipeStore((s) => s.swipes);
   const answers = useQuizStore((s) => s.answers);
+  const dna = useTasteProfileStore((s) => s.dna);
   const fetchMany = useCatalogStore((s) => s.fetchMany);
 
   // Eagerly fetch every fragrance referenced by wears/wardrobe/swipes that
@@ -323,8 +329,8 @@ export function useTasteProfile(): DerivedTasteProfile {
     }
     if (answers.price && result.avg_price_tier === null) result.avg_price_tier = Number(answers.price);
     if (answers.longevity && result.longevity_preference === null) result.longevity_preference = Number(answers.longevity);
-    return result;
-  }, [logs, items, swipesMap, fetchedFragrances, answers.family, answers.price, answers.longevity]);
+    return blendProfiles(dna, result);
+  }, [logs, items, swipesMap, fetchedFragrances, answers.family, answers.price, answers.longevity, dna]);
 }
 
 /**

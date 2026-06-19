@@ -17,4 +17,7 @@ export const STORAGE_KEYS = {
   notifications: 'perfumepicks-notifications',
   customFragrances: 'perfumepicks-custom-fragrances',
   onboarding: 'perfumepicks-onboarding',
+  dnaProfile: 'perfumepicks-dna-profile',
+  dnaPickStream: 'perfumepicks-dna-pick-stream',
+  dnaAppId: 'perfumepicks-dna-app-id',
 } as const;

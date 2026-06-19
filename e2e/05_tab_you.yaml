@@ -1,0 +1,33 @@
+# Smoke: Today -> You tab renders the profile (account, subscription, taste
+# profile summary).
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 90000
+- tapOn:
+    id: "tab-today"
+- waitForAnimationToEnd
+- tapOn:
+    id: "tab-profile"
+- extendedWaitUntil:
+    visible:
+      text: "ACCOUNT"
+    timeout: 15000
+# The You tab is a long scroll list; the My Fragrance DNA card now sits near the
+# top, so the Account rows live below the fold. Scroll each into view.
+- scrollUntilVisible:
+    element:
+      text: "TASTE PROFILE"
+    direction: DOWN
+    timeout: 15000
+- scrollUntilVisible:
+    element:
+      text: "Subscription"
+    direction: DOWN
+    timeout: 15000
+- assertVisible:
+    text: "Subscription"

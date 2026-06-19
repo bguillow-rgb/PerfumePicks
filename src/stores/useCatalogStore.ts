@@ -118,6 +118,14 @@ interface CatalogState {
   /** Public "Smells Like" rail for a fragrance (by slug), via the get_similars() RPC. */
   fetchSimilars: (slug: string, limit?: number) => Promise<SimilarResult[]>;
 
+  /**
+   * Candidate pool for the Fragrance DNA picker grid — recognizable, imaged,
+   * accord-bearing bottles. Demo mode returns the eligible slice of MOCK_CATALOG
+   * (the picker logic resolves popularity from the seed list). Production selects
+   * rows at/above the reshuffle fame floor; falls back to enriched on any error.
+   */
+  fetchPickerCandidates: (minTier?: number) => Promise<Fragrance[]>;
+
   _addToCache: (items: Fragrance[]) => void;
 }
 
@@ -562,6 +570,39 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       ...rowToFragrance({ ...r, brands: { name: r.brand_name } }),
       similarity: r.similarity,
     })) as SimilarResult[];
+    get()._addToCache(results);
+    return results;
+  },
+
+  fetchPickerCandidates: async (minTier = 3) => {
+    if (!isSupabaseConfigured) {
+      // Picker logic (popularity resolver) handles tier; here we only ensure a
+      // displayable image + real accords so a tile can render and aggregate.
+      return MOCK_CATALOG.filter(
+        (f) => !!f.image_url && f.top_accords.length > 0 && !isBundle(f),
+      );
+    }
+    // Production: fetch a BROAD enriched + imaged pool. Recognizability is then
+    // enforced CLIENT-SIDE by the picker's popularity resolver (seed-list match
+    // by brand+name), so the grid never depends on whether the popularity_tier /
+    // dna_eligible columns are populated in this environment. We still request
+    // popularity_tier so the resolver can prefer it when present; if the column
+    // doesn't exist the select errors and we fall back to plain enriched.
+    void minTier;
+    const { data, error } = await supabase
+      .from('fragrances')
+      .select(FRAGRANCE_SELECT + ', popularity_tier')
+      .eq('is_active', true)
+      .neq('top_accords', '{}')
+      .not('image_url', 'is', null)
+      .limit(600);
+    if (error) {
+      console.warn('[catalog] fetchPickerCandidates error, falling back to enriched:', error.message);
+      return get().fetchEnriched(600);
+    }
+    const results = ((data ?? []) as any[])
+      .map((row) => ({ ...rowToFragrance(row), popularity_tier: row.popularity_tier }) as Fragrance)
+      .filter((f) => !!f.image_url && !isBundle(f));
     get()._addToCache(results);
     return results;
   },

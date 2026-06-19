@@ -1,0 +1,20 @@
+# Shared helper: dismiss the Expo dev-client launch menu.
+#
+# 00_dna_picker runs `launchApp: clearState`, which wipes the dev-launcher's
+# "menu acknowledged" flag. After that the native dev-menu intro sheet auto-shows
+# on EVERY launch and masks the entire app hierarchy (maestro can only read its
+# "Perfume Picks" header — not the tab bar or any screen beneath it). It is a
+# native overlay maestro cannot target by id/text, so we blind-wait for it to
+# settle, then tap its close (✕) button by point. The intro sheet's ✕ sits at a
+# stable ~91%,50%. Since the menu reliably shows at launch, this never mis-taps
+# the app underneath.
+appId: com.bobguillow.perfumepicks
+---
+- extendedWaitUntil:
+    visible:
+      text: "__settle_for_dev_menu__"
+    timeout: 7000
+    optional: true
+- tapOn:
+    point: "91%,50%"
+- waitForAnimationToEnd

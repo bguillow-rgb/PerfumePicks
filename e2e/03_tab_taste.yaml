@@ -1,0 +1,21 @@
+# Smoke: Today -> Taste tab renders the "Train My Nose" session entry.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 90000
+# Warmup tap absorbs the cold-process dropped-first-interaction race.
+- tapOn:
+    id: "tab-today"
+- waitForAnimationToEnd
+- tapOn:
+    id: "tab-taste"
+- extendedWaitUntil:
+    visible:
+      text: "TRAIN MY NOSE"
+    timeout: 15000
+- assertVisible:
+    text: "Begin a Session"

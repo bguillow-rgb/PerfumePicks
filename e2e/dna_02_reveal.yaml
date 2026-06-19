@@ -1,0 +1,80 @@
+# M3 gate: pick → continue → refine → Reading beat → THE REVEAL → first rec →
+# Skip to app → Today. Verifies the activation moment end-to-end on the sim:
+# no infinite spinner, a real archetype reveal, exactly one first match, and the
+# Apple-reviewer skip valve landing on the Today tab.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp:
+    clearState: true
+- runFlow:
+    when:
+      visible:
+        text: "http://localhost:8081"
+    commands:
+      - tapOn:
+          text: "http://localhost:8081"
+- extendedWaitUntil:
+    visible:
+      text: "__sleep_for_bundle__"
+    timeout: 25000
+    optional: true
+- tapOn:
+    point: "91%,50%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Continue as Guest"
+    timeout: 60000
+    optional: true
+- runFlow:
+    when:
+      visible:
+        text: "Continue as Guest"
+    commands:
+      - tapOn:
+          text: "Continue as Guest"
+# ── Picker grid ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 90000
+- tapOn: { id: "dna-tile", index: 0 }
+- tapOn: { id: "dna-tile", index: 1 }
+- tapOn: { id: "dna-tile", index: 2 }
+- tapOn: { id: "dna-tile-favorite", index: 0 }
+- tapOn: { id: "dna-picker-continue" }
+# ── Refine (own/want + favorite) ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-refine-continue"
+    timeout: 15000
+- tapOn: { id: "dna-refine-continue" }
+# ── S3 Reading beat (compute cover) ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-reading"
+    timeout: 8000
+    optional: true
+# ── S4 THE REVEAL ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-reveal-archetype"
+    timeout: 20000
+- assertVisible:
+    id: "dna-trait-chip"
+- tapOn: { id: "dna-reveal-continue" }
+# ── S6 First rec ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-first-rec"
+    timeout: 15000
+- assertVisible:
+    id: "dna-rec-cta"
+- tapOn: { id: "dna-rec-skip" }
+# ── Lands on Today ──
+- extendedWaitUntil:
+    visible:
+      id: "today-screen"
+    timeout: 20000
+- assertVisible:
+    text: "start here"

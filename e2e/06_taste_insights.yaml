@@ -1,0 +1,32 @@
+# Smoke: You -> "View taste insights" is Pro-gated for a guest account, so it
+# opens the Perfume Picks Pro paywall. Closing the modal returns to the profile.
+# Exercises the modal-dismiss (Close) UX gate.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 90000
+- tapOn:
+    id: "tab-today"
+- waitForAnimationToEnd
+- tapOn:
+    id: "tab-profile"
+- extendedWaitUntil:
+    visible:
+      text: "View taste insights"
+    timeout: 15000
+- tapOn:
+    text: "View taste insights"
+- extendedWaitUntil:
+    visible:
+      text: "Perfume Picks Pro"
+    timeout: 15000
+- tapOn:
+    text: "Close"
+- extendedWaitUntil:
+    visible:
+      text: "View taste insights"
+    timeout: 15000

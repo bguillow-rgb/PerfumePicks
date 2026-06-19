@@ -9,6 +9,7 @@ import { useWardrobeStore, type WardrobeStatus, type WardrobeItem } from '@/src/
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
+import { WardrobeStrategy } from '@/src/components/dna/WardrobeStrategy';
 
 type Status = WardrobeStatus;
 type ActiveFilter = 'all' | 'want' | 'have' | 'worn';
@@ -114,6 +115,12 @@ export default function WardrobeScreen() {
   const haveCount = items.filter((i) => i.status === 'have').length;
   const lowCount = items.filter((i) => i.status === 'have' && (i.remaining_ml / i.size_ml) < 0.2).length;
 
+  // Owned bottles drive the wardrobe-strategy diagnostic (six roles + biggest gap).
+  const ownedFrags = useMemo(
+    () => items.filter((i) => i.status === 'have').map((i) => i.fragrance),
+    [items],
+  );
+
   const sortLabel = SORT_OPTIONS.find((s) => s.id === activeSort)?.label ?? 'Sort';
 
 
@@ -210,6 +217,18 @@ export default function WardrobeScreen() {
         keyExtractor={(item) => item.itemId}
         contentContainerStyle={styles.listContent}
         showsVerticalScrollIndicator={false}
+        ListHeaderComponent={
+          searchQuery.trim().length === 0 ? (
+            <View style={{ marginBottom: SPACING.sm }}>
+              <WardrobeStrategy
+                owned={ownedFrags}
+                onFillGap={(slot) =>
+                  router.push({ pathname: '/(tabs)/discover', params: { from: 'wardrobe', slot } } as any)
+                }
+              />
+            </View>
+          ) : null
+        }
         renderItem={({ item }) => (
           <WardrobeRow
             item={item}

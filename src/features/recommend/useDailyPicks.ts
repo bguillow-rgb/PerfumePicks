@@ -24,6 +24,8 @@ import { useSwipeStore } from '@/src/stores/useSwipeStore';
 import { getFragranceFromStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { deriveTasteProfile, type TasteSignal } from './tasteProfile';
 import { scoreDailyCandidate, recencyModifier, type RecContext, type ScoredRec } from './score';
+import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
+import { blendProfiles } from '@/src/features/dna/blend';
 
 // ─────────────────────────────────────────────────────────────────────
 // Types
@@ -143,6 +145,7 @@ export function useDailyPicks(weatherOverride?: RecContext['weather']): DailyPic
   const logs    = useWearLogStore((s) => s.logs);
   const items   = useWardrobeStore((s) => s.items);
   const swipesMap = useSwipeStore((s) => s.swipes);
+  const dna     = useTasteProfileStore((s) => s.dna);
 
   // Build context once per render (stable values only — no new object each time)
   const season  = useMemo(() => currentSeason(), []);
@@ -191,8 +194,9 @@ export function useDailyPicks(weatherOverride?: RecContext['weather']): DailyPic
     const wears   = logs.map((l) => ({ fragrance_id: l.fragrance_id, rating: l.rating }));
     const wardrobe = items.map((i) => ({ fragrance_id: i.fragrance_id, status: i.status }));
     const swipes  = Object.values(swipesMap).map((x) => ({ fragrance_id: x.fragrance_id, action: x.action }));
-    return deriveTasteProfile(buildSignals(wears, wardrobe, swipes));
-  }, [logs, items, swipesMap]);
+    // M1 blend: DNA over passive taste, weighted by confidence. Null → no-op.
+    return blendProfiles(dna, deriveTasteProfile(buildSignals(wears, wardrobe, swipes)));
+  }, [logs, items, swipesMap, dna]);
 
   // Score every owned fragrance (excluding worn today)
   const candidates = useMemo(

@@ -1,0 +1,27 @@
+# Smoke: Today -> Wardrobe tab renders the collection with filter chips, and
+# the Want/Have filter chips respond to taps.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 90000
+- tapOn:
+    id: "tab-today"
+- waitForAnimationToEnd
+- tapOn:
+    id: "tab-wardrobe"
+- extendedWaitUntil:
+    visible:
+      text: "Have"
+    timeout: 15000
+- assertVisible:
+    text: "Tried"
+- tapOn:
+    text: "Want"
+- waitForAnimationToEnd
+- tapOn:
+    text: "Have"
+- waitForAnimationToEnd

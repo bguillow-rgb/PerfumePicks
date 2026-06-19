@@ -6,6 +6,17 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { EmptyState } from '@/src/components/ui/EmptyState';
 import { recomputeTasteProfile } from '@/src/lib/sync/useAppSync';
+import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
+import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
+import {
+  ARCHETYPE_COPY,
+  LOW_CONFIDENCE_IDENTITY,
+  TRAIT_CHIP_LABEL,
+  journeyLine,
+  topTraits,
+} from '@/src/features/dna/revealCopy';
+import type { FragranceDNA } from '@/src/features/dna/types';
+import { JourneyLadder } from '@/src/components/dna/JourneyLadder';
 
 /**
  * My Taste Profile — reads user_taste_profiles from Supabase.
@@ -27,6 +38,15 @@ export default function TasteProfileScreen() {
   const router = useRouter();
   const [data, setData] = useState<TasteData | null>(null);
   const [loading, setLoading] = useState(true);
+  const dna = useTasteProfileStore((s) => s.dna);
+
+  // Re-enter the DNA front door as a retake: flag retake mode (so the route
+  // guard lets an onboarded user back into /dna) and clear any stale draft.
+  const handleRetake = () => {
+    useOnboardingStore.getState().startRetake();
+    useTasteProfileStore.getState().retake();
+    router.push('/dna');
+  };
 
   useEffect(() => {
     // Recompute from local signals (swipes + wardrobe + wears) on every entry so
@@ -70,10 +90,20 @@ export default function TasteProfileScreen() {
   const maxNote = topNotes.length > 0 ? topNotes[0][1] : 1;
   const maxAccord = topAccords.length > 0 ? topAccords[0][1] : 1;
 
+  const archetype = dna ? ARCHETYPE_COPY[dna.archetype.primary] : null;
+  const lowConfidence = dna ? dna.confidence < 0.35 : false;
+  const identityLine = dna
+    ? (lowConfidence ? LOW_CONFIDENCE_IDENTITY : archetype!.identity)
+    : null;
+  const journey = dna ? journeyLine(dna.journey) : null;
+  const traitChips = dna ? topTraits(dna.traits.values) : [];
+
+  const hasSignals = !!data && data.signal_count > 0;
+
   if (loading) return null;
 
   return (
-    <SafeAreaView style={styles.safe} edges={['top']}>
+    <SafeAreaView style={styles.safe} edges={['top']} testID="taste-profile-screen">
       <View style={styles.header}>
         <Pressable onPress={() => router.back()}>
           <Ionicons name="chevron-back" size={26} color={COLORS.text} />
@@ -82,7 +112,7 @@ export default function TasteProfileScreen() {
         <View style={{ width: 26 }} />
       </View>
 
-      {!data || data.signal_count === 0 ? (
+      {!dna && !hasSignals ? (
         <EmptyState
           icon="sparkles-outline"
           title="No taste data yet"
@@ -92,6 +122,43 @@ export default function TasteProfileScreen() {
         />
       ) : (
         <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false}>
+          {/* My Fragrance DNA — the re-viewable passport home */}
+          {dna && archetype && (
+            <View style={styles.dnaCard}>
+              <Text style={styles.dnaEyebrow}>MY FRAGRANCE DNA</Text>
+              <View style={styles.dnaBadge}>
+                <Ionicons name="sparkles" size={16} color={COLORS.accent} />
+                <Text style={styles.dnaArchetype}>{archetype.name}</Text>
+              </View>
+              <Text style={styles.dnaIdentity}>{identityLine}</Text>
+              {journey && <Text style={styles.dnaJourney}>{journey}</Text>}
+              {traitChips.length > 0 && (
+                <View style={styles.dnaTraitRow}>
+                  {traitChips.map((t) => (
+                    <View key={t} style={styles.dnaTraitChip}>
+                      <Text style={styles.dnaTraitText}>{TRAIT_CHIP_LABEL[t]}</Text>
+                    </View>
+                  ))}
+                </View>
+              )}
+              <Pressable testID="dna-retake" style={styles.retakeBtn} onPress={handleRetake}>
+                <Ionicons name="refresh" size={16} color={COLORS.text} />
+                <Text style={styles.retakeText}>Retake</Text>
+              </Pressable>
+            </View>
+          )}
+
+          {/* Fragrance Journey — the full predictive ladder (one surface) */}
+          {dna && <JourneyLadder dna={dna} />}
+
+          {!hasSignals && (
+            <Text style={styles.signalHint}>
+              Swipe in Train My Nose or build your wardrobe to sharpen your profile.
+            </Text>
+          )}
+
+          {hasSignals && data && (
+          <>
           <Text style={styles.signalCount}>{data.signal_count} signals collected</Text>
 
           {/* Top Notes */}
@@ -161,6 +228,8 @@ export default function TasteProfileScreen() {
               </View>
             )}
           </View>
+          </>
+          )}
 
           <View style={{ height: SPACING.xxl }} />
         </ScrollView>
@@ -187,6 +256,35 @@ const styles = StyleSheet.create({
   title: { ...TYPE.heading, textAlign: 'center' },
   body: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.md },
   signalCount: { ...TYPE.caption, color: COLORS.accent, textAlign: 'center', marginBottom: SPACING.lg },
+  signalHint: { ...TYPE.caption, color: COLORS.muted, textAlign: 'center', marginBottom: SPACING.lg },
+
+  dnaCard: {
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+    padding: SPACING.lg,
+    marginBottom: SPACING.xl,
+  },
+  dnaEyebrow: { ...TYPE.eyebrow, marginBottom: SPACING.sm },
+  dnaBadge: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: SPACING.sm },
+  dnaArchetype: { fontFamily: FONTS.serif, fontSize: 26, fontWeight: '700', color: COLORS.text },
+  dnaIdentity: { ...TYPE.body, color: COLORS.text, marginBottom: SPACING.sm },
+  dnaJourney: { ...TYPE.bodySmall, color: COLORS.muted, marginBottom: SPACING.md },
+  dnaTraitRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: SPACING.md },
+  dnaTraitChip: {
+    paddingHorizontal: 12, paddingVertical: 6,
+    borderRadius: RADIUS.full,
+    backgroundColor: COLORS.card2,
+  },
+  dnaTraitText: { fontSize: 12, fontWeight: '600', color: COLORS.text },
+  retakeBtn: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,
+    paddingVertical: SPACING.sm,
+    borderRadius: RADIUS.full,
+    borderWidth: 1, borderColor: COLORS.border,
+    backgroundColor: COLORS.card2,
+  },
+  retakeText: { ...TYPE.label, color: COLORS.text },
 
   section: { marginBottom: SPACING.xl },
   sectionLabel: { ...TYPE.eyebrow, marginBottom: SPACING.md },

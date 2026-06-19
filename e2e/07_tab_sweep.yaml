@@ -1,0 +1,46 @@
+# Smoke: full tab-bar regression — sweep all five tabs in one session and
+# confirm each renders its signature surface, then return to Today.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 90000
+# Onboarded guest with no wardrobe → new-user welcome hero, not SCENT OF THE DAY.
+- assertVisible:
+    text: "start here"
+- tapOn:
+    id: "tab-today"
+- waitForAnimationToEnd
+- tapOn:
+    id: "tab-discover"
+- extendedWaitUntil:
+    visible:
+      text: "BY HOUSE"
+    timeout: 15000
+- tapOn:
+    id: "tab-taste"
+- extendedWaitUntil:
+    visible:
+      text: "TRAIN MY NOSE"
+    timeout: 15000
+- tapOn:
+    id: "tab-wardrobe"
+- extendedWaitUntil:
+    visible:
+      text: "Have"
+    timeout: 15000
+- tapOn:
+    id: "tab-profile"
+- extendedWaitUntil:
+    visible:
+      text: "ACCOUNT"
+    timeout: 15000
+- tapOn:
+    id: "tab-today"
+- extendedWaitUntil:
+    visible:
+      text: "start here"
+    timeout: 15000

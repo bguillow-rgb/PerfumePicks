@@ -1,0 +1,82 @@
+# M8 gate: the full Fragrance Journey ladder in the You DNA home.
+#
+# Proves: after onboarding, opening the You DNA home (taste-profile) surfaces the
+# full editorial Journey ladder (testID journey-ladder) with a "You are here"
+# marker (journey-you-are-here) — the single surface where the predictive ladder
+# lives (the Today chip just points here).
+appId: com.bobguillow.perfumepicks
+---
+- launchApp:
+    clearState: true
+- runFlow:
+    when:
+      visible:
+        text: "http://localhost:8081"
+    commands:
+      - tapOn:
+          text: "http://localhost:8081"
+- extendedWaitUntil:
+    visible:
+      text: "__sleep_for_bundle__"
+    timeout: 25000
+    optional: true
+- tapOn:
+    point: "91%,50%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Continue as Guest"
+    timeout: 60000
+    optional: true
+- runFlow:
+    when:
+      visible:
+        text: "Continue as Guest"
+    commands:
+      - tapOn:
+          text: "Continue as Guest"
+
+# ── Picker spine → app ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 90000
+- tapOn: { id: "dna-tile", index: 0 }
+- tapOn: { id: "dna-tile", index: 1 }
+- tapOn: { id: "dna-tile", index: 2 }
+- tapOn: { id: "dna-tile-favorite", index: 0 }
+- tapOn: { id: "dna-picker-continue" }
+- extendedWaitUntil:
+    visible:
+      id: "dna-refine-continue"
+    timeout: 15000
+- tapOn: { id: "dna-refine-continue" }
+- extendedWaitUntil:
+    visible:
+      id: "dna-reveal-archetype"
+    timeout: 20000
+- tapOn: { id: "dna-reveal-continue" }
+- extendedWaitUntil:
+    visible:
+      id: "dna-first-rec"
+    timeout: 15000
+- tapOn: { id: "dna-rec-skip" }
+- extendedWaitUntil:
+    visible:
+      id: "today-screen"
+    timeout: 20000
+
+# ── Open the You DNA home via the forward Journey chip ──
+- extendedWaitUntil:
+    visible:
+      id: "today-journey-chip"
+    timeout: 10000
+- tapOn: { id: "today-journey-chip" }
+
+# ── The full Journey ladder is present, with the "You are here" rung ──
+- extendedWaitUntil:
+    visible:
+      id: "journey-ladder"
+    timeout: 15000
+- assertVisible:
+    id: "journey-you-are-here"

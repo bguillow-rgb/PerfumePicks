@@ -4,6 +4,8 @@ import { useWardrobeStore, setWardrobeUserId } from '@/src/stores/useWardrobeSto
 import { useWearLogStore, setWearLogUserId } from '@/src/stores/useWearLogStore';
 import { useSwipeStore, setSwipeUserId } from '@/src/stores/useSwipeStore';
 import { useProfileStore } from '@/src/stores/useProfileStore';
+import { setTasteProfileUserId, hydrateTasteProfile, useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
+import { setPickStreamUserId, useDnaPickStreamStore } from '@/src/stores/useDnaPickStreamStore';
 import { deriveTasteProfile, EMPTY_TASTE_PROFILE, type TasteSignal, type DerivedTasteProfile } from '@/src/features/recommend/tasteProfile';
 import { getFragranceFromStore } from '@/src/stores/useCatalogStore';
 
@@ -43,6 +45,8 @@ export function useAppSync(userId: string | null, isAnonymous: boolean = false) 
         setWardrobeUserId(null);
         setWearLogUserId(null);
         setSwipeUserId(null);
+        setTasteProfileUserId(null);
+        setPickStreamUserId(null);
         useWardrobeStore.getState().hydrate([]);
         useWearLogStore.getState().hydrate([]);
         useSwipeStore.getState().hydrate([]);
@@ -75,12 +79,20 @@ export function useAppSync(userId: string | null, isAnonymous: boolean = false) 
     setWardrobeUserId(userId);
     setWearLogUserId(userId);
     setSwipeUserId(userId);
+    setTasteProfileUserId(userId);
+    setPickStreamUserId(userId);
+    // Drain any pick-stream rows captured offline / pre-sign-in now that the
+    // user_id + a session are available for the idempotent mirror.
+    useDnaPickStreamStore.getState().flush();
 
     // On a hard account switch, eagerly reset the (global) profile store so the
     // previous account's name/photo can't flash before hydrateProfile resolves.
+    // Same for the DNA — clear it before hydrateTasteProfile pulls the signed-in
+    // account's copy, so one account's Fragrance DNA can't bleed into another.
     if (switchedAccount) {
       useProfileStore.getState().setDisplayName('');
       useProfileStore.getState().setPhotoUri(null);
+      useTasteProfileStore.getState().clearDna();
     }
 
     if (syncingRef.current) return;
@@ -100,6 +112,9 @@ export function useAppSync(userId: string | null, isAnonymous: boolean = false) 
           // never on a same-user token refresh, which would clobber a photo the
           // user just picked this session before its server write lands.
           (firstRun || switchedAccount) ? hydrateProfile(userId) : Promise.resolve(),
+          // Pull the durable Fragrance DNA for this account (last-write-wins on
+          // the envelope's updatedAt, so a DNA just made on-device is kept).
+          (firstRun || switchedAccount) ? hydrateTasteProfile(userId) : Promise.resolve(),
         ]);
         await syncTasteProfile(userId);
       } catch (e) {

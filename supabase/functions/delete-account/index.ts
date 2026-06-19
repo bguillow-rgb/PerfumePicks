@@ -55,6 +55,7 @@ Deno.serve(async (req) => {
       "swipe_feedback",
       "quiz_results",
       "user_taste_profiles",
+      "dna_picker_events",
       "follows",
       "wear_log_reactions",
     ];

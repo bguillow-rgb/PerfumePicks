@@ -33,6 +33,9 @@ import { useCompareStore, COMPARE_MAX } from '@/src/stores/useCompareStore';
 import { useWearLogStore, type WearLog } from '@/src/stores/useWearLogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 import { useProStore } from '@/src/stores/useProStore';
+import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
+import { routeDnaCta, ctaForKind } from '@/src/features/dna/ctaRouting';
+import { track, EVENTS } from '@/src/lib/observability';
 
 const { width: SCREEN_W } = Dimensions.get('window');
 const HERO_HEIGHT = SCREEN_W * 1.05;
@@ -99,7 +102,7 @@ class DetailErrorBoundary extends Component<
 }
 
 function FragranceDetailScreen() {
-  const { id, from, openLogWear } = useLocalSearchParams<{ id: string; from?: string; openLogWear?: string }>();
+  const { id, from, openLogWear, intent } = useLocalSearchParams<{ id: string; from?: string; openLogWear?: string; intent?: string }>();
   const router = useRouter();
   // Fragrance lookup: synchronous cache hit if the store already has it
   // (FragranceCard tap from a list pre-cached it). Otherwise async fetch.
@@ -174,6 +177,17 @@ function FragranceDetailScreen() {
   const [editingLog, setEditingLog] = useState<WearLog | null>(null);
   const [notesSheetOpen, setNotesSheetOpen] = useState(false);
   const isPro = useProStore((s) => s.isPro);
+
+  // Trait-routed buyer CTA (M6). An explicit `intent` route param (carried from
+  // the first rec) wins; otherwise route off the live DNA's strongest buyer
+  // trait. Null when the user has no DNA yet (pre-onboarding deep link).
+  const liveDna = useTasteProfileStore((s) => s.dna);
+  const buyerCta = useMemo(() => {
+    if (intent === 'dupe' || intent === 'original' || intent === 'sample') {
+      return ctaForKind(intent);
+    }
+    return liveDna ? routeDnaCta(liveDna.traits.values) : null;
+  }, [intent, liveDna]);
 
   // Auto-open LogWearSheet when navigated with openLogWear=true (e.g. from Today nudge).
   useEffect(() => {
@@ -503,6 +517,46 @@ function FragranceDetailScreen() {
           </View>
         </View>
 
+        {/* M6: trait-routed buyer strip. Same bottle, same reasons for everyone
+            — only this strip changes by buyer trait (dupe / original / sample).
+            For the value-hunter it points down to the Budget Dupes; for the
+            luxury/explorer buyer it's a direct buy/sample tap (affiliate). */}
+        {buyerCta && (
+          <Pressable
+            style={styles.buyerStrip}
+            testID="dna-routed-cta"
+            accessibilityLabel={buyerCta.label}
+            disabled={buyerCta.kind !== 'dupe' && retailerLinks.length === 0}
+            onPress={() => {
+              track(EVENTS.DNA_CTA_TAPPED, { kind: buyerCta.kind, fragrance_id: id, surface: 'fragrance_detail' });
+              if (buyerCta.kind !== 'dupe' && retailerLinks.length > 0) {
+                handleAffiliateClick({
+                  fragrance_id: id,
+                  retailer: retailerLinks[0].retailer,
+                  url: retailerLinks[0].url,
+                  price_cents: retailerLinks[0].price_cents,
+                  source_screen: 'dna_routed_cta',
+                });
+              }
+            }}
+          >
+            <Ionicons
+              name={buyerCta.kind === 'dupe' ? 'pricetags-outline' : buyerCta.kind === 'sample' ? 'flask-outline' : 'diamond-outline'}
+              size={18}
+              color={COLORS.accent}
+            />
+            <View style={{ flex: 1 }}>
+              <Text style={styles.buyerStripLabel} testID={`dna-routed-cta-${buyerCta.kind}`}>{buyerCta.label}</Text>
+              <Text style={styles.buyerStripSub}>{buyerCta.sub}</Text>
+            </View>
+            <Ionicons
+              name={buyerCta.kind === 'dupe' ? 'arrow-down' : 'arrow-forward'}
+              size={16}
+              color={COLORS.muted}
+            />
+          </Pressable>
+        )}
+
         {wearLogs.length > 0 && (
           <View style={styles.lastWornRow}>
             <Ionicons name="time-outline" size={14} color={COLORS.muted} />
@@ -532,7 +586,7 @@ function FragranceDetailScreen() {
             rest are gated behind a locked Pro footer. Hidden only when the
             catalog genuinely has no dupes for this scent. */}
         {dupeCount > 0 && (
-          <Section title="Budget Dupes" cursive="spend less, smell similar">
+          <Section title="Budget Dupes" cursive="spend less, smell similar" testID="budget-dupes">
             <DupeList
               dupes={dupes}
               loading={dupes.length === 0 && dupeCount > 0}
@@ -859,9 +913,9 @@ function prettyWearDate(iso: string): string {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
-function Section({ title, cursive, children }: { title: string; cursive?: string; children: React.ReactNode }) {
+function Section({ title, cursive, children, testID }: { title: string; cursive?: string; children: React.ReactNode; testID?: string }) {
   return (
-    <View style={styles.section}>
+    <View style={styles.section} testID={testID}>
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>{title}</Text>
         {cursive && <Text style={styles.sectionCursive}>{cursive}</Text>}
@@ -978,6 +1032,22 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.lg, paddingTop: SPACING.md,
   },
   lastWornText: { ...TYPE.caption, color: COLORS.muted },
+
+  buyerStrip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
+    marginHorizontal: SPACING.lg,
+    marginTop: SPACING.md,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.md,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+    backgroundColor: COLORS.blushSoft,
+  },
+  buyerStripLabel: { ...TYPE.label, fontSize: 14, color: COLORS.text },
+  buyerStripSub: { ...TYPE.caption, color: COLORS.muted, marginTop: 1 },
 
   section: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl },
   sectionHeader: { flexDirection: 'row', alignItems: 'baseline', gap: 10, marginBottom: SPACING.md },

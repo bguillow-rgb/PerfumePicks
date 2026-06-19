@@ -1,0 +1,83 @@
+# M9 gate: Wardrobe Strategy + Completion on the Wardrobe tab.
+#
+# Proves two spec invariants:
+#   1. The biggest-gap forward action (testID wardrobe-gap) is present from cold
+#      start — with 0 owned bottles the gap is the signature slot, the "what to buy
+#      next" hook.
+#   2. The completion % (testID wardrobe-completion) is SUPPRESSED at cold start
+#      (owned < COMPLETION_FLOOR) — a "% complete" number is noise with no wardrobe,
+#      so we assert it is NOT visible.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp:
+    clearState: true
+- runFlow:
+    when:
+      visible:
+        text: "http://localhost:8081"
+    commands:
+      - tapOn:
+          text: "http://localhost:8081"
+- extendedWaitUntil:
+    visible:
+      text: "__sleep_for_bundle__"
+    timeout: 25000
+    optional: true
+- tapOn:
+    point: "91%,50%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Continue as Guest"
+    timeout: 60000
+    optional: true
+- runFlow:
+    when:
+      visible:
+        text: "Continue as Guest"
+    commands:
+      - tapOn:
+          text: "Continue as Guest"
+
+# ── Picker spine → app ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 90000
+- tapOn: { id: "dna-tile", index: 0 }
+- tapOn: { id: "dna-tile", index: 1 }
+- tapOn: { id: "dna-tile", index: 2 }
+- tapOn: { id: "dna-tile-favorite", index: 0 }
+- tapOn: { id: "dna-picker-continue" }
+- extendedWaitUntil:
+    visible:
+      id: "dna-refine-continue"
+    timeout: 15000
+- tapOn: { id: "dna-refine-continue" }
+- extendedWaitUntil:
+    visible:
+      id: "dna-reveal-archetype"
+    timeout: 20000
+- tapOn: { id: "dna-reveal-continue" }
+- extendedWaitUntil:
+    visible:
+      id: "dna-first-rec"
+    timeout: 15000
+- tapOn: { id: "dna-rec-skip" }
+- extendedWaitUntil:
+    visible:
+      id: "today-screen"
+    timeout: 20000
+
+# ── Go to the Wardrobe tab ──
+- tapOn: { id: "tab-wardrobe" }
+- extendedWaitUntil:
+    visible:
+      id: "wardrobe-strategy"
+    timeout: 15000
+
+# ── Cold-start: the gap forward action is present, the % is suppressed ──
+- assertVisible:
+    id: "wardrobe-gap"
+- assertNotVisible:
+    id: "wardrobe-completion"

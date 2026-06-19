@@ -95,7 +95,21 @@ const TOUR_SLIDES: Slide[] = [
 
 type Phase = 'welcome' | 'quiz' | 'tour';
 
-export function FirstRunFlow({ visible, onDone }: { visible: boolean; onDone: () => void }) {
+export function FirstRunFlow({
+  visible,
+  onDone,
+  onQuizComplete,
+}: {
+  visible: boolean;
+  onDone: () => void;
+  /**
+   * When provided, the 3 seed answers feed the DNA front door instead of the
+   * feature tour: after the last question the flow hands control back so the
+   * caller can derive a Fragrance DNA and run the reveal (the S1b path). When
+   * absent, the classic welcome → quiz → tour flow runs.
+   */
+  onQuizComplete?: () => void;
+}) {
   const { width } = useWindowDimensions();
   const setAnswer = useQuizStore((s) => s.setAnswer);
   const reset = useQuizStore((s) => s.reset);
@@ -120,6 +134,9 @@ export function FirstRunFlow({ visible, onDone }: { visible: boolean; onDone: ()
       setSelectedId(null);
       if (next < SEED_QUESTIONS.length) {
         setQuizStep(next);
+      } else if (onQuizComplete) {
+        // DNA front door owns the payoff (reveal) — skip the feature tour.
+        onQuizComplete();
       } else {
         setPhase('tour');
       }
@@ -147,6 +164,7 @@ export function FirstRunFlow({ visible, onDone }: { visible: boolean; onDone: ()
               Three quick questions so we can learn what you love — then we'll tell you exactly what to wear and what to buy next.
             </Text>
             <Pressable
+              testID="firstrun-get-started"
               style={({ pressed }) => [styles.cta, pressed && { opacity: 0.85 }]}
               onPress={() => setPhase('quiz')}
             >
@@ -182,6 +200,7 @@ export function FirstRunFlow({ visible, onDone }: { visible: boolean; onDone: ()
                   return (
                     <Pressable
                       key={o.id}
+                      testID={`firstrun-opt-${q.id}-${o.id}`}
                       style={[styles.option, isSelected && styles.optionSelected]}
                       onPress={() => handleSelect(o.id)}
                       accessibilityLabel={o.label}

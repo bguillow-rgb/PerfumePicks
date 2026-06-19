@@ -19,6 +19,19 @@ export const EVENTS = {
   QUIZ_COMPLETED:         'quiz_completed',
   QUIZ_RESULT_VIEWED:     'quiz_result_viewed',
 
+  // ─── Fragrance DNA (reveal + first rec) ──────────────────────────────
+  DNA_COMPUTE_FAILED:     'dna_compute_failed',
+  DNA_REVEAL_VIEWED:      'dna_reveal_viewed',
+  DNA_REVEAL_SHARED:      'dna_reveal_shared',
+  DNA_FIRST_REC_VIEWED:   'dna_first_rec_viewed',
+  DNA_FIRST_REC_REROLL:   'dna_first_rec_reroll',
+  DNA_CTA_TAPPED:         'dna_cta_tapped',
+  DNA_SKIP_TO_APP:        'dna_skip_to_app',
+  // Failure / degraded-path observability (M11 ship gate).
+  DNA_FIRST_REC_EMPTY_POOL:    'first_rec_empty_pool',
+  DNA_PICKER_RESHUFFLE_CAP_HIT: 'picker_reshuffle_cap_hit',
+  DNA_PERSIST_FAILED_QUEUED:    'persist_failed_queued',
+
   // ─── Discover ────────────────────────────────────────────────────────
   DISCOVER_SEARCH_QUERY:  'discover_search_query',
   DISCOVER_BRAND_OPENED:  'discover_brand_opened',
