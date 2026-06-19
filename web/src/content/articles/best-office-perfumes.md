@@ -13,6 +13,7 @@ quickAnswer: "The best office perfumes have low-to-moderate sillage, clean or su
 publishedAt: "2026-05-15"
 author: "Perfume Picks"
 relatedSlugs:
+  - "fragrance-notes-explained"
   - "how-to-rotate-your-perfume-collection"
 faqs:
   - q: "What fragrance families are best for the office?"
