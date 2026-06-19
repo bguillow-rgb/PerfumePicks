@@ -18,7 +18,10 @@ import { useSOTDFeed, SOTDEntry } from '@/src/hooks/useSOTDFeed';
 import { useProStore } from '@/src/stores/useProStore';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
+import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
 import { journeyLine } from '@/src/features/dna/revealCopy';
+import { rankWithRelaxation, type RankedDnaRec } from '@/src/features/dna/score';
+import type { DnaCatalogFragrance } from '@/src/features/dna/types';
 
 /**
  * Home / "Today" tab — daily ritual surface.
@@ -152,8 +155,14 @@ export default function HomeScreen() {
           </Pressable>
         )}
 
-        {/* ── New-user "Start here" — unified two-path value prop ── */}
-        {isNewUser && <GetStartedHero router={router} />}
+        {/* ── Your Fragrance DNA — recs ranked from the live DNA, with a retake
+               button. This is the payoff for finishing the picker: the home
+               surface populates with bottles matched to the scents you liked. ── */}
+        {liveDna && <DnaPicksModule router={router} />}
+
+        {/* ── New-user "Start here" — unified two-path value prop. Suppressed once
+               a DNA exists; the DNA picks card above becomes the primary surface. ── */}
+        {isNewUser && !liveDna && <GetStartedHero router={router} />}
 
         {/* ── Discover card — shown FIRST when wardrobe is empty (but the user
                has already engaged; true new users see GetStartedHero instead) ── */}
@@ -344,6 +353,125 @@ function GetStartedHero({ router }: { router: ReturnType<typeof useRouter> }) {
     </Section>
   );
 }
+
+// ─── Your Fragrance DNA picks (post-onboarding home payoff) ──────────────────
+
+/**
+ * Ranks the recognizable catalog against the user's live Fragrance DNA and shows
+ * the top matches as a horizontal card rail, plus a Retake button. This is what
+ * populates Home after the picker: bottles matched to the scents you liked, not a
+ * generic "two ways to start" prompt. Renders nothing until a DNA exists.
+ */
+function DnaPicksModule({ router }: { router: ReturnType<typeof useRouter> }) {
+  const dna = useTasteProfileStore((s) => s.dna);
+  const fetchPickerCandidates = useCatalogStore((s) => s.fetchPickerCandidates);
+  const startRetake = useOnboardingStore((s) => s.startRetake);
+  const [recs, setRecs] = useState<RankedDnaRec[]>([]);
+
+  useEffect(() => {
+    if (!dna) { setRecs([]); return; }
+    let alive = true;
+    (async () => {
+      const pool = await fetchPickerCandidates();
+      if (!alive) return;
+      const { recs: ranked } = rankWithRelaxation(pool as unknown as DnaCatalogFragrance[], dna);
+      setRecs(ranked.slice(0, 10));
+    })();
+    return () => { alive = false; };
+  }, [dna, fetchPickerCandidates]);
+
+  if (!dna) return null;
+
+  const onRetake = () => { startRetake(); router.push('/dna'); };
+
+  return (
+    <Section
+      eyebrow="YOUR FRAGRANCE DNA"
+      cursive="made for you"
+      action={
+        <Pressable onPress={onRetake} hitSlop={8} testID="today-dna-retake">
+          <Text style={styles.seeAllLink}>Retake →</Text>
+        </Pressable>
+      }
+    >
+      {recs.length === 0 ? (
+        <View style={[styles.dnaEmpty, { marginRight: SPACING.lg }]}>
+          <Text style={styles.dnaEmptyText}>
+            Lining up bottles that match your taste. Pull to refresh in a moment.
+          </Text>
+        </View>
+      ) : (
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
+          {recs.map((r) => {
+            const f = r.fragrance as unknown as Fragrance;
+            return (
+              <DnaPickCard
+                key={f.id}
+                fragrance={f}
+                reason={r.reasons[0]}
+                onPress={() => router.push(`/(tabs)/fragrance/${f.id}` as any)}
+              />
+            );
+          })}
+        </ScrollView>
+      )}
+    </Section>
+  );
+}
+
+function DnaPickCard({ fragrance, reason, onPress }: {
+  fragrance: Fragrance;
+  reason?: string;
+  onPress: () => void;
+}) {
+  return (
+    <Pressable style={({ pressed }) => [dnaPick.wrap, pressed && { opacity: 0.85 }]} onPress={onPress}>
+      <View style={dnaPick.imgWrap}>
+        {fragrance.image_url ? (
+          <Image source={{ uri: fragrance.image_url }} style={dnaPick.img} resizeMode="cover" />
+        ) : (
+          <View style={[dnaPick.img, dnaPick.imgPlaceholder]}>
+            <Ionicons name="flask-outline" size={22} color={COLORS.accent} />
+          </View>
+        )}
+      </View>
+      <View style={dnaPick.info}>
+        <Text style={dnaPick.brand} numberOfLines={1}>{fragrance.brand.toUpperCase()}</Text>
+        <Text style={dnaPick.name} numberOfLines={1}>{fragrance.name}</Text>
+        {reason ? (
+          <View style={dnaPick.reasonRow}>
+            <Ionicons name="sparkles" size={10} color={COLORS.accent} />
+            <Text style={dnaPick.reason} numberOfLines={2}>{reason}</Text>
+          </View>
+        ) : null}
+      </View>
+    </Pressable>
+  );
+}
+
+const dnaPick = StyleSheet.create({
+  wrap: {
+    width: 150,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    overflow: 'hidden',
+    marginRight: SPACING.sm,
+  },
+  imgWrap: { width: '100%', height: 150 },
+  img: { width: '100%', height: '100%' },
+  imgPlaceholder: {
+    backgroundColor: COLORS.card2 ?? COLORS.card,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  info: { padding: SPACING.sm, gap: 2 },
+  brand: { ...TYPE.eyebrow, fontSize: 9, color: COLORS.accent },
+  name: { fontFamily: FONTS.serif, fontSize: 14, fontWeight: '600', color: COLORS.text },
+  reasonRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 4, marginTop: 3 },
+  reason: { ...TYPE.caption, fontSize: 10, color: COLORS.muted, fontStyle: 'italic', lineHeight: 14, flex: 1 },
+});
 
 // ─── SOTD Hero Card (#1 pick) ─────────────────────────────────────────────────
 
@@ -1028,6 +1156,16 @@ const styles = StyleSheet.create({
     paddingTop: SPACING.xs,
   },
   startQuizText: { ...TYPE.caption, fontSize: 12, color: COLORS.accent, fontStyle: 'italic' },
+
+  // ── DNA picks empty (recs still resolving) ──
+  dnaEmpty: {
+    padding: SPACING.lg,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  dnaEmptyText: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic', lineHeight: 19 },
 
   // ── SOTD empty state ──
   sotdEmpty: {

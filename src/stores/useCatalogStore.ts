@@ -582,12 +582,16 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         (f) => !!f.image_url && f.top_accords.length > 0 && !isBundle(f),
       );
     }
-    // Production: fetch a BROAD enriched + imaged pool. Recognizability is then
-    // enforced CLIENT-SIDE by the picker's popularity resolver (seed-list match
-    // by brand+name), so the grid never depends on whether the popularity_tier /
-    // dna_eligible columns are populated in this environment. We still request
-    // popularity_tier so the resolver can prefer it when present; if the column
-    // doesn't exist the select errors and we fall back to plain enriched.
+    // Production: fetch an enriched + imaged pool, ORDERED by recognizability so
+    // the famous anchors are guaranteed to be in the page. This matters: the
+    // catalog is ~9k enriched rows but only ~100 are recognizable (tier >= 3), so
+    // an UNORDERED `limit` returns an arbitrary slice that contains only a handful
+    // of famous bottles — which starved the tier-4 grid to 3-4 tiles. Ordering by
+    // popularity_tier desc (nulls last) puts the recognizable pool at the top of
+    // the page; the grid's client-side resolver still does the final tier gating,
+    // so this stays correct even in an env where the column is unpopulated (the
+    // order becomes a no-op and we fall back to the broad seed-list match). If the
+    // column doesn't exist the select errors and we fall back to plain enriched.
     void minTier;
     const { data, error } = await supabase
       .from('fragrances')
@@ -595,6 +599,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       .eq('is_active', true)
       .neq('top_accords', '{}')
       .not('image_url', 'is', null)
+      .order('popularity_tier', { ascending: false, nullsFirst: false })
       .limit(600);
     if (error) {
       console.warn('[catalog] fetchPickerCandidates error, falling back to enriched:', error.message);
