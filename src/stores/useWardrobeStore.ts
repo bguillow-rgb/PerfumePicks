@@ -57,8 +57,15 @@ interface WardrobeState {
   items: WardrobeItem[];
   /** Hydrate from Supabase on sign-in; call with [] on sign-out. */
   hydrate: (rows: WardrobeItem[]) => void;
-  /** Add a new wardrobe item; returns the new id, or null if the free-tier cap is reached. */
-  add: (input: Omit<WardrobeItem, 'id' | 'created_at' | 'updated_at' | '_unsynced'>) => string | null;
+  /**
+   * Add a new wardrobe item; returns the new id, or null if the free-tier cap
+   * is reached. Pass `{ bypassCap: true }` for system-driven adds (e.g. owned
+   * bottles confirmed during the DNA flow) that shouldn't count against the cap.
+   */
+  add: (
+    input: Omit<WardrobeItem, 'id' | 'created_at' | 'updated_at' | '_unsynced'>,
+    opts?: { bypassCap?: boolean },
+  ) => string | null;
   /** Patch an existing item (partial update). */
   update: (id: string, patch: Partial<WardrobeItem>) => void;
   /** Remove an item. */
@@ -84,11 +91,11 @@ export const useWardrobeStore = create<WardrobeState>()(
 
       hydrate: (rows) => set({ items: rows }),
 
-      add: (input) => {
+      add: (input, opts) => {
         // Deduplicate: if this fragrance is already in the wardrobe, update
         // the existing entry rather than creating a duplicate row.
         const existing = get().items.find((i) => i.fragrance_id === input.fragrance_id);
-        if (!existing) {
+        if (!existing && !opts?.bypassCap) {
           // Free-tier cap: non-Pro users cannot exceed FREE_WARDROBE_CAP items.
           const isPro = useProStore.getState().isPro;
           if (!isPro && get().items.length >= FREE_WARDROBE_CAP) return null;

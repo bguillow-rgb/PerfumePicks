@@ -34,6 +34,7 @@ import { ReadingState } from '@/src/components/dna/ReadingState';
 import { DnaReveal } from '@/src/components/dna/DnaReveal';
 import { FirstRec } from '@/src/components/dna/FirstRec';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
+import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useDnaPickStreamStore } from '@/src/stores/useDnaPickStreamStore';
 import { track, EVENTS } from '@/src/lib/observability';
 
@@ -151,6 +152,26 @@ export default function DnaPickerScreen() {
         relation: relations[f.id] ?? 'own',
         favorite: favoriteId === f.id,
       }));
+
+    // Bottles the user confirmed they OWN seed the wardrobe as "have". This is
+    // the only place the picker writes to the collection — want/favorite stay
+    // taste-only signals. add() dedupes by fragrance, so a retake won't dupe.
+    // bypassCap: an owned bottle the user told us about shouldn't be blocked by
+    // the free-tier wardrobe cap.
+    const addToWardrobe = useWardrobeStore.getState().add;
+    for (const p of picks) {
+      if (p.relation !== 'own') continue;
+      addToWardrobe(
+        {
+          fragrance_id: p.fragrance.id,
+          status: 'have',
+          unit_type: 'bottle',
+          size_ml: 100,
+          remaining_ml: 100,
+        },
+        { bypassCap: true },
+      );
+    }
 
     const avoided = hardNoIds
       .map((id) => byId.get(id))
