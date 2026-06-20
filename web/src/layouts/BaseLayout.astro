@@ -52,11 +52,12 @@ const currentPath = path;
     <link rel="apple-touch-icon" href="/icon.png" />
     <meta name="theme-color" content={SITE.theme.bg} />
 
-    <!-- Google Fonts: Cormorant Garamond (headings) + Pinyon Script (wordmark) -->
+    <!-- Google Fonts: Playfair Display (high-contrast fashion serif, display +
+         wordmark) + Jost (geometric perfume-house sans, body + couture labels) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Pinyon+Script&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
 
@@ -71,15 +72,16 @@ const currentPath = path;
     <div class="container">
       <header class="site-header">
         <a href="/" class="site-wordmark">{SITE.name}</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          {NAV.map((item) => (
+            <a
+              href={item.href}
+              aria-current={currentPath === item.href ? 'page' : undefined}
+            >{item.label}</a>
+          ))}
+        </nav>
       </header>
-      <nav class="site-nav" aria-label="Main navigation">
-        {NAV.map((item) => (
-          <a
-            href={item.href}
-            aria-current={currentPath === item.href ? 'page' : undefined}
-          >{item.label}</a>
-        ))}
-      </nav>
+      <div class="rule-jewel" aria-hidden="true"></div>
       <slot />
     </div>
   </body>
