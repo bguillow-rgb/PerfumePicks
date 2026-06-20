@@ -14,6 +14,7 @@ quickAnswer: "Perfume longevity on skin ranges from two hours for light colognes
 publishedAt: "2026-05-15"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-decant-perfume"
   - "fragrance-notes-explained"
   - "how-to-store-perfume-collection"
 faqs:

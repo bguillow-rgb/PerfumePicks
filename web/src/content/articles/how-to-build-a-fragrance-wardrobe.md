@@ -15,6 +15,7 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-rotate-your-perfume-collection"
   - "how-to-layer-perfumes"
+  - "how-to-decant-perfume"
   - "how-to-store-perfume-collection"
 faqs:
   - q: "How many fragrances should be in a wardrobe?"

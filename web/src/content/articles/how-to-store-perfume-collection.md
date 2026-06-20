@@ -15,6 +15,7 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-long-does-perfume-last"
   - "how-to-build-a-fragrance-wardrobe"
+  - "how-to-decant-perfume"
   - "how-to-rotate-your-perfume-collection"
 faqs:
   - q: "Can I store perfume in the fridge?"
