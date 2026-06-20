@@ -520,11 +520,11 @@ export default function DnaPickerScreen() {
       </ScrollView>
 
       <View style={styles.escapes}>
-        <Pressable onPress={handleReshuffle} hitSlop={8} testID="dna-reshuffle">
-          <Text style={styles.escapeText}>Show me different ones</Text>
+        <Pressable onPress={handleReshuffle} hitSlop={8} style={styles.escapeBtn} testID="dna-reshuffle">
+          <Text style={styles.escapeText} numberOfLines={1}>Show me others</Text>
         </Pressable>
-        <Pressable onPress={() => setStep('fallback')} hitSlop={8} testID="dna-new-to-fragrance">
-          <Text style={styles.escapeText}>I'm new to fragrance</Text>
+        <Pressable onPress={() => setStep('fallback')} hitSlop={8} style={styles.escapeBtn} testID="dna-new-to-fragrance">
+          <Text style={[styles.escapeText, styles.escapeRight]} numberOfLines={1}>New to fragrance?</Text>
         </Pressable>
       </View>
 
@@ -630,10 +630,14 @@ const styles = StyleSheet.create({
   escapes: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: SPACING.md,
     paddingHorizontal: SPACING.lg,
     paddingVertical: SPACING.sm,
   },
+  escapeBtn: { flexShrink: 1 },
   escapeText: { ...TYPE.bodySmall, color: COLORS.accent, textDecorationLine: 'underline' },
+  escapeRight: { textAlign: 'right' },
 
   footer: {
     paddingHorizontal: SPACING.lg,

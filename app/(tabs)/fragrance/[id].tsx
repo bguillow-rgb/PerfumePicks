@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useMemo, useCallback, Component } from 'react';
+import { useState, useEffect, useLayoutEffect, useMemo, useCallback, useRef, Component } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable, Image, Dimensions, Alert, ActivityIndicator } from 'react-native';
 import { GestureDetector, Gesture } from 'react-native-gesture-handler';
 import Animated, { useSharedValue, useAnimatedStyle, withSpring, withTiming, runOnJS } from 'react-native-reanimated';
@@ -142,6 +142,15 @@ function FragranceDetailScreen() {
   // count drives the locked footer ("N more dupes — unlock with Pro").
   const [dupes, setDupes] = useState<DupeResult[]>([]);
   const [dupeCount, setDupeCount] = useState(0);
+  // Scroll plumbing so the "Find the dupe" CTA actually jumps to the Budget
+  // Dupes section (its down-arrow promises movement — a dead tap is worse than
+  // no CTA). scrollRef drives the scroll; dupeSectionY caches the section's
+  // measured Y offset from onLayout.
+  const scrollRef = useRef<ScrollView>(null);
+  const dupeSectionY = useRef(0);
+  const scrollToDupes = useCallback(() => {
+    scrollRef.current?.scrollTo({ y: Math.max(0, dupeSectionY.current - 12), animated: true });
+  }, []);
   useEffect(() => {
     if (!id) { setDupes([]); setDupeCount(0); return; }
     let cancelled = false;
@@ -183,11 +192,20 @@ function FragranceDetailScreen() {
   // trait. Null when the user has no DNA yet (pre-onboarding deep link).
   const liveDna = useTasteProfileStore((s) => s.dna);
   const buyerCta = useMemo(() => {
+    let cta;
     if (intent === 'dupe' || intent === 'original' || intent === 'sample') {
-      return ctaForKind(intent);
+      cta = ctaForKind(intent);
+    } else {
+      cta = liveDna ? routeDnaCta(liveDna.traits.values) : null;
     }
-    return liveDna ? routeDnaCta(liveDna.traits.values) : null;
-  }, [intent, liveDna]);
+    // Never promise a dupe we don't have. The "Find the dupe" CTA points down to
+    // the Budget Dupes section, which only renders when dupeCount > 0 — so if
+    // there's no verified dupe, fall back to the safe sample CTA. dupeCount
+    // starts at 0 and resolves async, so a dupe-having bottle briefly shows the
+    // sample fallback then upgrades to the dupe CTA: it under-promises, never lies.
+    if (cta?.kind === 'dupe' && dupeCount === 0) return ctaForKind('sample');
+    return cta;
+  }, [intent, liveDna, dupeCount]);
 
   // Auto-open LogWearSheet when navigated with openLogWear=true (e.g. from Today nudge).
   useEffect(() => {
@@ -383,7 +401,7 @@ function FragranceDetailScreen() {
     <GestureDetector gesture={swipeBack}>
     <Animated.View style={[styles.safe, swipeAnimStyle]}>
       <Stack.Screen options={{ headerShown: false }} />
-      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+      <ScrollView ref={scrollRef} contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.hero}>
           <Image source={{ uri: fragrance.image_url }} style={styles.heroImage} />
           <LinearGradient
@@ -529,7 +547,12 @@ function FragranceDetailScreen() {
             disabled={buyerCta.kind !== 'dupe' && retailerLinks.length === 0}
             onPress={() => {
               track(EVENTS.DNA_CTA_TAPPED, { kind: buyerCta.kind, fragrance_id: id, surface: 'fragrance_detail' });
-              if (buyerCta.kind !== 'dupe' && retailerLinks.length > 0) {
+              if (buyerCta.kind === 'dupe') {
+                // The down-arrow promises movement — jump to the Budget Dupes
+                // section below. It only renders when dupeCount > 0, which is
+                // exactly when this CTA shows the dupe kind, so the target exists.
+                scrollToDupes();
+              } else if (retailerLinks.length > 0) {
                 handleAffiliateClick({
                   fragrance_id: id,
                   retailer: retailerLinks[0].retailer,
@@ -586,14 +609,16 @@ function FragranceDetailScreen() {
             rest are gated behind a locked Pro footer. Hidden only when the
             catalog genuinely has no dupes for this scent. */}
         {dupeCount > 0 && (
-          <Section title="Budget Dupes" cursive="spend less, smell similar" testID="budget-dupes">
-            <DupeList
-              dupes={dupes}
-              loading={dupes.length === 0 && dupeCount > 0}
-              lockedCount={isPro ? 0 : Math.max(0, dupeCount - dupes.length)}
-              onUnlock={() => router.push('/paywall')}
-            />
-          </Section>
+          <View onLayout={(e) => { dupeSectionY.current = e.nativeEvent.layout.y; }}>
+            <Section title="Budget Dupes" cursive="spend less, smell similar" testID="budget-dupes">
+              <DupeList
+                dupes={dupes}
+                loading={dupes.length === 0 && dupeCount > 0}
+                lockedCount={isPro ? 0 : Math.max(0, dupeCount - dupes.length)}
+                onUnlock={() => router.push('/paywall')}
+              />
+            </Section>
+          </View>
         )}
 
         {/* Community Dupes — the crowd-consensus fallback. Rendered ONLY when

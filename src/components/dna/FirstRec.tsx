@@ -6,10 +6,10 @@ import Animated, { FadeIn } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { COLORS, FONTS, RADIUS, SPACING, TYPE } from '@/src/constants/theme';
-import type { Fragrance } from '@/src/stores/useCatalogStore';
+import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import type { RankedDnaRec } from '@/src/features/dna/score';
 import type { FragranceDNA } from '@/src/features/dna/types';
-import { routeDnaCta, type DnaCtaKind } from '@/src/features/dna/ctaRouting';
+import { routeDnaCta, ctaForKind, type DnaCtaKind } from '@/src/features/dna/ctaRouting';
 import { track, EVENTS } from '@/src/lib/observability';
 
 /**
@@ -43,12 +43,29 @@ export function FirstRec({ recs, dna, onCta, onMyDna, onSkip }: FirstRecProps) {
   const [idx, setIdx] = useState(0);
   const [rerolls, setRerolls] = useState(0);
 
+  const fetchDupeCount = useCatalogStore((s) => s.fetchDupeCount);
+
   const rec = recs[Math.min(idx, recs.length - 1)];
   const frag = rec.fragrance as unknown as Fragrance;
   const price = priceLabel(frag.retail_msrp_usd_cents);
+
+  // Does THIS bottle actually have a verified dupe? Null while resolving. We
+  // never promise a dupe we can't deliver, so the dupe CTA only shows once this
+  // is confirmed true; until then it falls back to the safe sample CTA below.
+  const [hasDupe, setHasDupe] = useState<boolean | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    setHasDupe(null);
+    fetchDupeCount(frag.id).then((n) => { if (!cancelled) setHasDupe(n > 0); });
+    return () => { cancelled = true; };
+  }, [frag.id, fetchDupeCount]);
+
   // Trait-routed CTA — the reasons above stay monetization-blind; only THIS
   // button changes by buyer trait (valueHunter→dupe, luxury→original, explorer→sample).
-  const cta = routeDnaCta(dna.traits.values);
+  // A dupe-routed CTA is downgraded to the sample CTA unless a dupe is confirmed
+  // to exist for this bottle, so the button never says "Find the dupe" with none.
+  const baseCta = routeDnaCta(dna.traits.values);
+  const cta = baseCta.kind === 'dupe' && hasDupe !== true ? ctaForKind('sample') : baseCta;
   // Cap the re-roll cycle to the free window AND the available pool.
   const rerollPool = Math.min(recs.length, REROLL_FREE_CAP + 1);
   const canReroll = rerollPool > 1 && rerolls < REROLL_FREE_CAP;
