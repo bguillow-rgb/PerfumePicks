@@ -15,6 +15,7 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-build-a-fragrance-wardrobe"
   - "how-to-decant-perfume"
+  - "how-to-test-perfume-before-buying"
 faqs:
   - q: "Should you layer perfumes on skin or on clothes?"
     a: "Skin is the better canvas for layering because body heat activates each composition differently and lets the scents genuinely merge. Applying one layer to skin and a lighter complementary layer to clothing (wrist cuff, collar) can extend longevity further without overcrowding a single application point."

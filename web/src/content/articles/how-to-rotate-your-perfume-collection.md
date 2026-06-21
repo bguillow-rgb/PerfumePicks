@@ -14,6 +14,7 @@ publishedAt: "2026-06-17"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-build-a-fragrance-wardrobe"
+  - "how-to-test-perfume-before-buying"
   - "best-office-perfumes"
   - "how-to-store-perfume-collection"
 faqs:
