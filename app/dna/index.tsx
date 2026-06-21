@@ -553,7 +553,7 @@ export default function DnaPickerScreen() {
           testID="dna-picker-continue"
         >
           <Text style={styles.ctaText}>
-            {selectedCount === 0 ? 'Pick at least one' : 'Continue'}
+            {selectedCount === 0 ? 'Pick at least one' : `Continue with ${selectedCount}`}
           </Text>
           {selectedCount > 0 && <Ionicons name="arrow-forward" size={15} color={COLORS.white} />}
         </Pressable>
