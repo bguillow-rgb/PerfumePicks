@@ -34,6 +34,8 @@ export const ARCHETYPE_COPY: Record<ArchetypeKey, ArchetypeCopy> = {
     identity: 'Your taste runs warm and magnetic. These are the fragrances made to be noticed up close.',
     visual: { icon: 'flame', tint: '#8E2C4E' },
   },
+  // LEGACY ONLY — no longer elected by the scorer (see archetype.ts). Kept so DNA
+  // already persisted as the_crowd_pleaser still renders until it re-derives.
   the_crowd_pleaser: {
     name: 'The Crowd-Pleaser',
     identity: 'You go for the scents everyone loves. Easy to wear, and always a safe bet.',

@@ -64,11 +64,14 @@ const SCORERS: { key: ArchetypeKey; score: (s: Signals) => number }[] = [
     // dateNight↑ expressive↑ complimentSeeking↑ · amber/oriental
     score: (s) => s.o.dateNight + s.t.expressive + s.t.complimentSeeking + 0.5 * s.luxeFrac,
   },
-  {
-    key: 'the_crowd_pleaser',
-    // complimentSeeking↑ versatile↑ adventurous↓ · sweet/fresh
-    score: (s) => s.t.complimentSeeking + s.o.versatile + lo(s.t.adventurous) + 0.5 * s.freshFrac,
-  },
+  // the_crowd_pleaser is intentionally NOT scored. The DNA picker is curated to
+  // recognizable, popular bottles by design ("every tile is one you recognize",
+  // tier ≥ 3), so compliment/versatility/popularity signals sit high across the
+  // ENTIRE pool — "you like popular things" is true of nearly every user and
+  // tells them nothing. It became a meaningless catch-all, so we removed it from
+  // election. The key + copy are kept for any DNA already persisted as one; those
+  // re-derive to a real archetype on the next recompute. Reintroduce only if the
+  // picker ever surfaces genuinely non-mainstream bottles to contrast against.
   {
     key: 'the_connoisseur',
     // collector↑ luxury↑ adventurous↑ · niche
