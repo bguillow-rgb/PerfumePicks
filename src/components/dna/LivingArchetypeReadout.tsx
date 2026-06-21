@@ -2,21 +2,22 @@ import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS } from '@/src/constants/theme';
 import { ARCHETYPE_COPY } from '@/src/features/dna/revealCopy';
-import { swapProgress } from '@/src/features/dna';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import type { FragranceDNA } from '@/src/features/dna/types';
 
 /**
  * Living-archetype readout (PRD §6.6) — makes the M2 recompute engine visible.
  *
- * Renders three states purely from the persisted DNA (no re-derivation):
+ * Renders two states purely from the persisted DNA (no re-derivation):
  *   - `pendingShift`  → the one-time "You've shifted" nudge (full variant only).
- *   - `leadSince`     → "leaning toward X" + a swap-progress meter.
  *   - `leaning`       → a subtle "leaning toward X" line (challenger crossed the
- *                       reveal ratio but isn't on the swap clock yet).
+ *                       reveal ratio but hasn't yet cleared the swap margin).
+ *
+ * The archetype swaps the instant a challenger clears SWAP_MARGIN (no cooldown),
+ * so there is no progress meter — the lean is just a brief tease before the flip.
  *
  * `compact` is the one-liner used inside MyDnaCard on the You tab; `full` is the
- * richer block (banner + meter) used on the My-DNA home (taste-profile).
+ * richer block used on the My-DNA home (taste-profile).
  */
 export function LivingArchetypeReadout({
   dna,
@@ -26,7 +27,7 @@ export function LivingArchetypeReadout({
   variant?: 'compact' | 'full';
 }) {
   const acknowledge = useTasteProfileStore((s) => s.acknowledgeArchetypeShift);
-  const { challenger, leaning, leadSince, pendingShift } = dna.archetype;
+  const { challenger, leaning, pendingShift } = dna.archetype;
 
   // ── The committed swap: surface it once, then let the user dismiss it ───────
   if (pendingShift) {
@@ -66,8 +67,8 @@ export function LivingArchetypeReadout({
     );
   }
 
-  // ── The lean: a runner-up pulling ahead, not yet committed ──────────────────
-  if (!challenger || !(leaning || leadSince)) return null;
+  // ── The lean: a runner-up pulling ahead, not yet over the swap margin ───────
+  if (!challenger || !leaning) return null;
   const challengerName = ARCHETYPE_COPY[challenger].name;
 
   if (variant === 'compact') {
@@ -81,11 +82,6 @@ export function LivingArchetypeReadout({
     );
   }
 
-  // Drive the meter WIDTH off the swap clock, but never show the raw number —
-  // the boutique voice is editorial, not a gamified XP bar (chief-UX).
-  const pct = leadSince
-    ? Math.max(0, Math.min(100, Math.round(swapProgress(dna.archetype) * 100)))
-    : 0;
   return (
     <View style={styles.leanBlock} testID="dna-leaning">
       <View style={styles.leanHeader}>
@@ -94,21 +90,9 @@ export function LivingArchetypeReadout({
           Leaning toward <Text style={styles.leanName}>{challengerName}</Text>
         </Text>
       </View>
-      {!!leadSince && (
-        <>
-          <View style={styles.track} testID="dna-swap-progress">
-            <View style={[styles.fill, { width: `${pct}%` }]} />
-          </View>
-          <Text style={styles.leanCaption}>
-            If this holds, {challengerName} becomes your DNA.
-          </Text>
-        </>
-      )}
     </View>
   );
 }
-
-const METER_HEIGHT = 6;
 
 const styles = StyleSheet.create({
   // compact (MyDnaCard)
@@ -157,13 +141,4 @@ const styles = StyleSheet.create({
   leanHeader: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm },
   leanText: { ...TYPE.bodySmall, color: COLORS.muted },
   leanName: { ...TYPE.label, color: COLORS.accent },
-  track: {
-    height: METER_HEIGHT,
-    backgroundColor: COLORS.card2,
-    borderRadius: METER_HEIGHT / 2,
-    overflow: 'hidden',
-    marginTop: SPACING.sm,
-  },
-  fill: { height: '100%', backgroundColor: COLORS.accent, borderRadius: METER_HEIGHT / 2 },
-  leanCaption: { ...TYPE.caption, color: COLORS.subtle, marginTop: SPACING.xs + 2 },
 });

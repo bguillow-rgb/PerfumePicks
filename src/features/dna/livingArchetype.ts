@@ -1,27 +1,25 @@
 /**
  * Living archetype — the "lean → swap" mechanic (PRD §6.6).
  *
- * deriveArchetype only ever surfaces the #1 archetype. But taste drifts, and a
- * hard flip the instant a runner-up edges ahead would feel jumpy and arbitrary.
- * This layer adds deliberate hysteresis on top of the raw ranking:
+ * deriveArchetype only ever surfaces the #1 archetype. This layer commits the
+ * persisted `primary` and exposes the runner-up:
  *
- *   1. The runner-up that is pulling ahead is exposed as a `challenger`, shown
- *      as a live "leaning toward X" indicator once it reaches LEAN_REVEAL_RATIO
- *      of the current archetype's score.
- *   2. The committed `primary` only swaps after the challenger has stayed ahead
- *      by SWAP_MARGIN for SWAP_COOLDOWN_DAYS — tracked via `leadSince`.
+ *   1. The runner-up pulling ahead is exposed as a `challenger`, shown as a live
+ *      "leaning toward X" indicator once it reaches LEAN_REVEAL_RATIO of the
+ *      current archetype's score.
+ *   2. The committed `primary` swaps the moment the challenger clears SWAP_MARGIN
+ *      — no time cooldown, so the archetype always tracks the user's picks. The
+ *      margin is the sole anti-flap guard (see signals.ts).
  *
- * This module is pure + deterministic (clock injected as `nowIso`). The store
- * persists `primary`/`challenger`/`leadSince` across recomputes; this function
- * advances that state one step. Covered by unit suite T-U9.
+ * This module is pure + deterministic. The store persists `primary`/`challenger`
+ * across recomputes; this function advances that state one step. Covered by unit
+ * suite T-U9.
  */
 
 import type { ArchetypeScore } from './archetype';
 import { ARCHETYPE_COPY } from './revealCopy';
-import { LEAN_REVEAL_RATIO, SWAP_MARGIN, SWAP_COOLDOWN_DAYS } from './signals';
+import { LEAN_REVEAL_RATIO, SWAP_MARGIN } from './signals';
 import type { DnaArchetype } from './types';
-
-const DAY_MS = 86_400_000;
 
 /** The top-ranked archetype that is NOT `current`. */
 function topChallenger(ranked: ArchetypeScore[], current: DnaArchetype['primary']): ArchetypeScore | null {
@@ -44,42 +42,25 @@ export interface LivingArchetypeResult {
 /**
  * Advance the living-archetype state by one recompute.
  *
- * @param prev     the persisted archetype state (primary + challenger + leadSince).
+ * @param prev     the persisted archetype state (primary + challenger).
  * @param ranked   fresh `rankArchetypes(...)` output, strongest-first.
  * @param modifier fresh dominant-secondary-trait modifier for this recompute.
- * @param nowIso   injected clock.
  */
 export function applyLivingArchetype(
   prev: DnaArchetype,
   ranked: ArchetypeScore[],
   modifier: string | null,
-  nowIso: string,
 ): LivingArchetypeResult {
   let primary = prev.primary;
-  let leadSince = prev.leadSince ?? null;
   let swapped = false;
 
   const challenger = topChallenger(ranked, primary);
   const currentScore = scoreOf(ranked, primary);
 
-  if (challenger && currentScore > 0) {
-    const ahead = challenger.score >= currentScore * (1 + SWAP_MARGIN);
-    if (ahead) {
-      // start (or keep) the swap clock
-      if (leadSince == null) leadSince = nowIso;
-      const heldDays = (Date.parse(nowIso) - Date.parse(leadSince)) / DAY_MS;
-      if (heldDays >= SWAP_COOLDOWN_DAYS) {
-        // commit the swap — the challenger has earned it
-        primary = challenger.key;
-        leadSince = null;
-        swapped = true;
-      }
-    } else {
-      // challenger fell back inside the margin → reset the clock
-      leadSince = null;
-    }
-  } else {
-    leadSince = null;
+  // Swap immediately once the challenger clears the margin — no cooldown clock.
+  if (challenger && currentScore > 0 && challenger.score >= currentScore * (1 + SWAP_MARGIN)) {
+    primary = challenger.key;
+    swapped = true;
   }
 
   // recompute the surfaced challenger against the (possibly swapped) primary
@@ -89,7 +70,7 @@ export function applyLivingArchetype(
     primary,
     modifier,
     challenger: surfaced ? surfaced.key : null,
-    leadSince,
+    leadSince: null,
   };
   // Persist the lean flag + the one-time shift nudge so the readout can render
   // purely from stored state (the raw scores are not persisted).
@@ -101,14 +82,12 @@ export function applyLivingArchetype(
   return { archetype, swapped };
 }
 
-// ── Display helpers (consumed by M4 readout UI; pure, unit-testable now) ──────
-
-/** clamp to [0,1]. */
-const clamp01 = (n: number): number => (n < 0 ? 0 : n > 1 ? 1 : n);
+// ── Display helpers (consumed by the readout UI; pure, unit-testable) ─────────
 
 /**
  * Should the "leaning toward X" line show? True once the challenger reaches
- * LEAN_REVEAL_RATIO of the current archetype's score.
+ * LEAN_REVEAL_RATIO of the current archetype's score (but hasn't yet cleared the
+ * SWAP_MARGIN, at which point it would have swapped in).
  */
 export function isLeaning(archetype: DnaArchetype, ranked: ArchetypeScore[]): boolean {
   if (!archetype.challenger) return false;
@@ -122,14 +101,4 @@ export function isLeaning(archetype: DnaArchetype, ranked: ArchetypeScore[]): bo
 export function leaningLabel(archetype: DnaArchetype, ranked: ArchetypeScore[]): string | null {
   if (!isLeaning(archetype, ranked) || !archetype.challenger) return null;
   return ARCHETYPE_COPY[archetype.challenger].name;
-}
-
-/**
- * Progress of the swap clock in [0,1] — how close the challenger is to
- * committing. 0 when no clock is running, 1 at the cooldown threshold.
- */
-export function swapProgress(archetype: DnaArchetype, now: number = Date.now()): number {
-  if (!archetype.leadSince) return 0;
-  const heldDays = (now - Date.parse(archetype.leadSince)) / DAY_MS;
-  return clamp01(heldDays / SWAP_COOLDOWN_DAYS);
 }

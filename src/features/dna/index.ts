@@ -16,7 +16,6 @@ export {
   applyLivingArchetype,
   isLeaning,
   leaningLabel,
-  swapProgress,
 } from './livingArchetype';
 export type { LivingArchetypeResult } from './livingArchetype';
 export {
@@ -53,7 +52,6 @@ export {
   LIVING_DNA_ENABLED,
   LEAN_REVEAL_RATIO,
   SWAP_MARGIN,
-  SWAP_COOLDOWN_DAYS,
 } from './signals';
 export type {
   DnaSignal,

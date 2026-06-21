@@ -36,12 +36,14 @@ export const RECENCY_TAU_DAYS = 30;
 
 /** Show the "leaning toward X" line once challenger/current ≥ this ratio. */
 export const LEAN_REVEAL_RATIO = 0.85;
-/** Challenger must beat current by this margin to start the swap clock. */
+/**
+ * Challenger must beat current by this margin to commit a swap. There is NO time
+ * cooldown: the archetype swaps the moment this margin is cleared, so it always
+ * tracks the user's picks. The margin alone is the anti-flap guard — to swap
+ * back, the old archetype must itself clear the margin, creating a dead band that
+ * stops ordinary noise from oscillating the identity.
+ */
 export const SWAP_MARGIN = 0.05;
-/** Challenger must stay ahead this many days before the swap commits. */
-export const SWAP_COOLDOWN_DAYS = 2; // light anti-jitter only — with 5 deliberate
-// bottles the picks carry real signal, so the archetype should track taste
-// promptly rather than lag two weeks behind it.
 
 /**
  * Master flag for the engine. OFF in M1 (engine ships dark); M2 flips it on when

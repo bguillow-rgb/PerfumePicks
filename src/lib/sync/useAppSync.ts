@@ -482,7 +482,6 @@ export function recomputeLivingDNA(trigger: RecomputeTrigger = 'swipe'): void {
       prevDna.archetype,
       archetypeScores,
       dna.archetype.modifier,
-      dna.updatedAt,
     );
     dna.archetype = result.archetype;
     swapped = result.swapped;

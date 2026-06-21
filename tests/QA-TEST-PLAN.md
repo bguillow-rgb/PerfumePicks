@@ -1,14 +1,27 @@
 # PerfumePicks QA Test Plan
 
-**Version:** 1.1
-**Last updated:** 2026-06-20
-**Coverage:** Features F1-F10 + Fragrance DNA (onboarding spine + Living DNA), all screens, all sheets, all cross-cutting concerns
+**Version:** 1.2
+**Last updated:** 2026-06-21
+**Coverage:** Features F1-F10 + Fragrance DNA (onboarding spine + Living DNA) + Scent Preferences + Feedback, all screens, all sheets, all cross-cutting concerns
 **Platform:** React Native / Expo (iOS + Android)
 
+> **v1.2 changelog (current-state reconciliation, commit d88cf18).** Reworked
+> [Screen: Fragrance DNA](#screen-fragrance-dna): the picker now **lazy-loads on
+> scroll** (no reshuffle button) and **caps selection at 5**; the reveal
+> "See my top match" opens the **top-match fragrance detail directly** (the
+> first-match interstitial is gone); the trait-routed buyer strip is **dupe-only**
+> (the "$6 sample" and "adventurous" routes were removed, default is Original);
+> and the detail screen lives on the **root stack** for real back-history. Added
+> [Screen: Scent Preferences](#screen-scent-preferences) (budget/avoid/occasion/
+> season constraints) and the [Feedback Bubble](#feedback-bubble). Added F5
+> cases for the **weekday-aware SOTD occasion** inference (weekends never read as
+> "office"). Removed testIDs: `dna-reshuffle`, `dna-first-rec`, `dna-rec-buy`,
+> `dna-rec-cta`, `dna-rec-not-me`, `dna-rec-my-dna`, `dna-rec-skip`.
+>
 > **v1.1 changelog (DNA reconciliation).** Added [Screen: Fragrance DNA](#screen-fragrance-dna)
-> covering the picker → refine → reveal → first-rec onboarding spine, the unified
+> covering the picker → refine → reveal onboarding spine, the unified
 > DNA hero card on Today, the Living-DNA recompute (shift/lean), and the
-> "Buy the bottle" affiliate CTA on the first match. Updated [Home/Today](#screen-hometoday-tab)
+> affiliate Buy CTA on the first match. Updated [Home/Today](#screen-hometoday-tab)
 > for the unified DNA card and the removal of the legacy "Take the Taste Quiz"
 > Discover card. The legacy [Quiz](#screen-quiz) is now a **secondary** path
 > (still reachable from the You tab + `/quiz` route) and is **no longer surfaced
@@ -45,6 +58,8 @@
 25. [Screen: Taste Profile](#screen-taste-profile)
 25a. [Screen: Fragrance DNA](#screen-fragrance-dna)
 26. [Screen: Wrapped](#screen-wrapped)
+26a. [Screen: Scent Preferences](#screen-scent-preferences)
+26b. [Feedback Bubble](#feedback-bubble)
 27. [Sheets: AddToWardrobe](#sheet-addtowardrobe)
 28. [Sheets: LogWear](#sheet-logwear)
 29. [Sheets: FragranceNotes](#sheet-fragrancenotes)
@@ -245,6 +260,7 @@
 - [ ] AC-044: Date night rules: higher sillage, sensual accords
 - [ ] AC-045: Formal rules: classic/timeless compositions
 - [ ] AC-046: Rules-based scoring for <20 wears; Claude-powered for >=20 wears
+- [ ] AC-046a: When no occasion is chosen, the SOTD context infers occasion from the **current weekday + hour** (`inferOccasionFromTime`): evenings (>=20:00 or <03:00) → `evening`; Sat/Sun daytime → `casual` (never `office`); weekday 09:00-17:00 → `office`; otherwise `casual`. A quiz/preference occasion overrides the inference. The "Why today" reason copy must reflect this — it never says "discreet enough for the office" on a weekend.
 
 ### Test Cases
 
@@ -266,6 +282,10 @@
 | TC-076 | Rules-based path (<20 wears) | 1. Have fewer than 20 wear logs total 2. Get recommendations | Recommendations use rules-based scoring; no AI call made | P0 |
 | TC-077 | AI-powered path (>=20 wears) | 1. Have 20+ wear logs 2. Get recommendations | Recommendations use Claude-powered reasoning; "Why this?" text present | P1 |
 | TC-078 | Season auto-detection | 1. Open WhatToWear in January 2. Observe pre-filled season | Season defaults to winter (Northern Hemisphere) | P2 |
+| TC-078a | Weekend SOTD reason is not "office" | 1. No occasion set 2. Open Today on a Sat/Sun afternoon | Inferred occasion is `casual`; the "Why today" reason never reads "discreet enough for the office" | P1 |
+| TC-078b | Weekday daytime infers office | 1. No occasion set 2. Open Today on a weekday between 09:00-17:00 | Inferred occasion is `office`; reason reflects an office-appropriate pick | P2 |
+| TC-078c | Evening infers evening | 1. No occasion set 2. Open Today after 20:00 (any day) | Inferred occasion is `evening`; reason reflects a richer/evening pick | P2 |
+| TC-078d | Preference occasion overrides inference | 1. Set occasion in Scent Preferences 2. Open Today on a weekend | The preference occasion wins over the weekday/hour inference | P1 |
 
 ---
 
@@ -1012,78 +1032,99 @@
 
 ## Screen: Fragrance DNA
 
-> **PRIMARY ONBOARDING (v1.1).** Fragrance DNA is the new-user spine and the
-> living identity surface. Flow: **picker grid → refine → reveal → first-rec →
-> Today (unified DNA card)**. After onboarding it stays alive via the Living-DNA
-> recompute (archetype **shift** when taste clearly moves, soft **lean** while it
-> drifts) driven by swipes/swaps. The "Buy the bottle" affiliate CTA on the first
-> match is the primary revenue moment in this flow.
+> **PRIMARY ONBOARDING (v1.2).** Fragrance DNA is the new-user spine and the
+> living identity surface. Flow: **picker grid → refine → reading beat → reveal →
+> top-match fragrance detail → Today (unified DNA card)**. After onboarding it
+> stays alive via the Living-DNA recompute (archetype **shift** when taste clearly
+> moves, soft **lean** while it drifts) driven by picks/swipes/wears/wardrobe with
+> recency decay. The reveal's "See my top match" CTA opens the matched bottle's
+> **full fragrance detail page directly** (`dna/index.tsx:262` `handleRecOpen` →
+> `router.replace('/(tabs)')` then `router.push('/fragrance/<id>')`). There is **no
+> separate first-match interstitial** anymore — the old `FirstRec` component was
+> deleted. The affiliate "Buy from <retailer> · $price" pill is the primary buy
+> moment, and it lives on that fragrance detail page (`fragrance/[id].tsx:450`).
+>
+> **v1.2 picker delta (commit d88cf18).** The picker now **lazy-loads the full
+> recognizable pool** (tier ≥ 3, built once via `buildPickerList`) in batches of
+> `PICKER_GRID_SIZE` (12) as the user scrolls toward the bottom
+> (`dna/index.tsx:277` `handleScroll`). The old **reshuffle / "Show me others"**
+> mechanism is **gone** — `reshufflePickerGrid`, `PICKER_RESHUFFLE_CAP`, and the
+> `picker_reshuffle_cap_hit` event no longer exist. Selection is **capped at 5
+> picks (`MAX_PICKS`), minimum 1 to continue**; tapping a 6th *new* tile is blocked
+> with a warning haptic (de-select always works — `dna/index.tsx:291`). Ordering
+> is most-famous-first. A **long-press** on a tile records a hard-no and removes it
+> from the list (`dna/index.tsx:305`).
 >
 > **Real testIDs** (assert these exactly): picker — `dna-picker-grid`, `dna-tile`,
-> `dna-tile-favorite`, `dna-reshuffle`, `dna-new-to-fragrance`, `dna-picker-continue`;
-> refine — `dna-refine-row`, `dna-rel-<rel>`, `dna-refine-favorite`,
+> `dna-tile-favorite`, `dna-new-to-fragrance`, `dna-picker-continue`; refine —
+> `dna-refine-row`, `dna-rel-<rel>` (own/want/like), `dna-refine-favorite`,
 > `dna-refine-back`, `dna-refine-continue`, `dna-retake-cancel`; reveal —
 > `dna-reveal-emblem`, `dna-reveal-archetype`, `dna-trait-chip`, `dna-reveal-share`,
-> `dna-reveal-continue`; first-rec — `dna-first-rec`, `dna-rec-buy`, `dna-rec-cta`,
-> `dna-rec-not-me`, `dna-rec-my-dna`, `dna-rec-skip`; Living DNA —
-> `dna-shift-banner`, `dna-shift-compact`, `dna-shift-ack`, `dna-leaning`,
-> `dna-leaning-compact`, `dna-swap-progress`; Today card — `today-unified-dna`,
-> `today-dna-archetype`, `today-dna-retake`, `today-dna-learn-more`.
+> `dna-reveal-continue`; routed buyer CTA (on fragrance detail) — `dna-routed-cta`,
+> `dna-routed-cta-<kind>`; Living DNA readout — `dna-shift-banner`,
+> `dna-shift-compact`, `dna-shift-ack`, `dna-leaning`, `dna-leaning-compact`,
+> `dna-swap-progress`; Today card — `today-unified-dna`, `today-dna-archetype`,
+> `today-dna-retake`, `today-dna-learn-more`. **Removed testIDs** (no longer in
+> code — delete any case asserting them): `dna-reshuffle`, `dna-first-rec`,
+> `dna-rec-buy`, `dna-rec-cta`, `dna-rec-not-me`, `dna-rec-my-dna`, `dna-rec-skip`.
 
 ### User Stories
 - US-072: As a new user, I want to build my Fragrance DNA by picking bottles I'm drawn to (instead of answering an abstract quiz) so that onboarding feels like taste, not a survey.
 - US-073: As a user, I want to refine my picks (rate how each relates to me, mark a favorite) so that my DNA is precise.
 - US-074: As a user, I want a reveal moment that names my archetype with an emblem and identity line so that my taste feels seen and shareable.
-- US-075: As a user, I want a first matched bottle with a clear reason and a prominent "Buy the bottle" CTA so that I can act on my DNA immediately.
+- US-075: As a user, I want continuing from my reveal to drop me straight onto my top-match bottle's full detail page (with its Buy pill) so that I can act on my DNA immediately, with real back-history to my DNA reveal.
 - US-076: As a returning user, I want my DNA to stay alive — shifting archetype when my taste clearly moves and leaning while it drifts — so that it reflects who I am now, not who I was at onboarding.
 
 ### Acceptance Criteria
-- [ ] AC-257: Picker grid (`dna-picker-grid`) shows recognizable bottles only; tapping tiles (`dna-tile`) selects them; a favorite can be marked (`dna-tile-favorite`); Continue (`dna-picker-continue`) is gated until the minimum selection is met.
-- [ ] AC-258: Reshuffle (`dna-reshuffle`) swaps the grid; "new to fragrance" (`dna-new-to-fragrance`) routes to the fallback path.
-- [ ] AC-259: Refine step lists picked bottles as rows (`dna-refine-row`) with relationship options (`dna-rel-*`) and a favorite toggle (`dna-refine-favorite`); Back (`dna-refine-back`) and Continue (`dna-refine-continue`) both work.
-- [ ] AC-260: Reveal shows the archetype emblem (`dna-reveal-emblem`), name (`dna-reveal-archetype`), trait chips (`dna-trait-chip`), a Share action (`dna-reveal-share`), and Continue (`dna-reveal-continue`).
-- [ ] AC-261: First-rec (`dna-first-rec`) shows a matched bottle with a reason. When an affiliate link exists, a gold "BUY THE BOTTLE · $price" primary CTA (`dna-rec-buy`) fires `handleAffiliateClick` with `source_screen: 'first_rec'`; the trait CTA (`dna-rec-cta`) is demoted to an underlined secondary link. When no link exists, the trait CTA is promoted to primary.
-- [ ] AC-262: First-rec secondary actions: "Not me" (`dna-rec-not-me`), "See my DNA" (`dna-rec-my-dna`), and Skip (`dna-rec-skip`) all advance/exit correctly into Today.
-- [ ] AC-263: Trait-routed CTA copy/destination matches routing — valueHunter→dupe, luxury→original, adventurous→sample.
-- [ ] AC-264: Living DNA — a clear taste move surfaces a shift banner (`dna-shift-banner` / compact `dna-shift-compact`) that can be acknowledged (`dna-shift-ack`); a soft drift surfaces a lean (`dna-leaning` / `dna-leaning-compact`) with swap progress (`dna-swap-progress`).
-- [ ] AC-265: DNA persists across app restarts; retake from Today (`today-dna-retake`) re-enters the spine and recomputes.
+- [ ] AC-257: Picker grid (`dna-picker-grid`) shows recognizable bottles only (tier ≥ 3), most-famous-first; tapping tiles (`dna-tile`) selects them; a favorite can be marked (`dna-tile-favorite`); Continue (`dna-picker-continue`) is disabled until at least one pick is made.
+- [ ] AC-258: The grid **lazy-loads** the next batch of 12 as the user scrolls near the bottom (no reshuffle button exists); the whole recognizable pool is reachable by scrolling. "New to fragrance?" (`dna-new-to-fragrance`) routes to the question fallback. A long-press on a tile removes it (hard-no).
+- [ ] AC-258a: Selection is **capped at 5** (`MAX_PICKS`). Tapping a 6th distinct tile is rejected with a warning haptic and no state change; de-selecting an already-picked tile always works. Header copy reflects the count ("Five picked — that's the max", etc.).
+- [ ] AC-259: Refine step lists picked bottles as rows (`dna-refine-row`) with relationship options (`dna-rel-own` / `dna-rel-want` / `dna-rel-like`) and a favorite toggle (`dna-refine-favorite`); Back (`dna-refine-back`) returns to the grid with picks preserved; Continue (`dna-refine-continue`) starts the reading beat. "I own it" seeds the wardrobe as `have`; "I want it" seeds it as `want` (bypassing the free-tier cap).
+- [ ] AC-260: Reveal shows the archetype emblem (`dna-reveal-emblem`), name (`dna-reveal-archetype`), trait chips (`dna-trait-chip`), a Share action (`dna-reveal-share`), and a "See my top match" Continue (`dna-reveal-continue`).
+- [ ] AC-261: Tapping reveal Continue finishes onboarding (free, never paywalled) and opens the **top-match fragrance detail page directly** — `router.replace('/(tabs)')` then `router.push('/fragrance/<id>')`. If there is no ranked match it lands on Today instead. There is no first-match interstitial.
+- [ ] AC-262: On that fragrance detail page, the affiliate Buy pill ("Buy from <retailer> · $price") fires `handleAffiliateClick` with `source_screen: 'fragrance_detail_rail'`. Back from the detail returns to the (now-onboarded) app, with real history.
+- [ ] AC-263: The **trait-routed buyer strip** (`dna-routed-cta`) on fragrance detail renders **only for the value-hunter dupe case** — i.e. the live DNA's strongest buyer trait routes to `dupe` AND a verified dupe exists (`dupeCount > 0`). It is a jump-down to the Budget Dupes section (down-arrow). The `original` case renders nothing extra (the top Buy pill already covers it). Routing: valueHunter→dupe, luxury→original, default (no buyer trait)→original. There is **no "$6 sample"** route and **no "adventurous" route** anymore.
+- [ ] AC-264: Living DNA — a clear taste move surfaces a shift banner (`dna-shift-banner` / compact `dna-shift-compact`) that can be acknowledged (`dna-shift-ack`); a soft drift surfaces a lean (`dna-leaning` / `dna-leaning-compact`) with swap progress (`dna-swap-progress`). The compact readout rides inside the Today unified DNA card; the full readout lives on the My-DNA home (taste-profile) and MyDnaCard.
+- [ ] AC-265: DNA persists across app restarts; retake from Today (`today-dna-retake`) re-enters the spine (sets retake mode, routes to `/dna`) and recomputes; the live DNA stays on the OLD archetype until the new reveal commits (atomic draft).
+- [ ] AC-266: The recompute engine recomputes on app foreground, on a one-time launch migration, and (debounced ~1s) after swipe/wear/wardrobe signal bursts. Signals are weighted `base × deliberateFactor × recencyFactor` (recency half-life ~30 days; deliberate picks/loves outweigh passive likes/left-swipes 1.5×). Dislikes route to the avoided channel.
 
 ### Test Cases
 
 | ID | Scenario | Steps | Expected Result | Priority |
 |---|---|---|---|---|
-| TC-511 | Picker grid loads | 1. Start DNA (new guest after auth) | `dna-picker-grid` renders a grid of recognizable bottles | P0 |
-| TC-512 | Select tiles | 1. Tap `dna-tile` index 0,1,2 | Tiles show selected state; selection count increments | P0 |
-| TC-513 | Mark favorite | 1. Tap `dna-tile-favorite` index 0 | That tile marked as favorite | P1 |
-| TC-514 | Continue gated by minimum | 1. Select fewer than minimum | `dna-picker-continue` disabled/blocked until minimum met | P0 |
+| TC-511 | Picker grid loads | 1. Start DNA (new guest after auth) | `dna-picker-grid` renders a grid of recognizable bottles, most-famous-first | P0 |
+| TC-512 | Select tiles | 1. Tap `dna-tile` index 0,1,2 | Tiles show selected state; selection count increments; header copy updates | P0 |
+| TC-513 | Mark favorite | 1. Select a tile 2. Tap its `dna-tile-favorite` star | That tile marked as favorite (gold star) | P1 |
+| TC-514 | Continue gated by minimum 1 | 1. Land on grid with 0 picks | `dna-picker-continue` reads "Pick at least one" and is disabled until ≥1 pick | P0 |
+| TC-514a | Selection capped at 5 | 1. Select 5 tiles 2. Tap a 6th distinct tile | 6th tap rejected (warning haptic), still 5 selected; header reads "Five picked — that's the max" | P0 |
+| TC-514b | De-select past cap works | 1. With 5 selected, tap an already-selected tile | It de-selects (count → 4); selecting a new tile now works again | P1 |
 | TC-515 | Continue advances to refine | 1. Select 3 + favorite 2. Tap `dna-picker-continue` | Advances to refine step (`dna-refine-continue` visible) | P0 |
-| TC-516 | Reshuffle grid | 1. Tap `dna-reshuffle` | Grid swaps to a fresh set of bottles | P1 |
-| TC-517 | New-to-fragrance fallback | 1. Tap `dna-new-to-fragrance` | Routes to fallback path (no abstract quiz) | P1 |
-| TC-518 | Refine rows render | 1. On refine step | One `dna-refine-row` per picked bottle, each with `dna-rel-*` options | P0 |
-| TC-519 | Set relationship | 1. Tap a `dna-rel-<rel>` option on a row | Selection recorded for that bottle | P1 |
+| TC-516 | Lazy-load on scroll | 1. Scroll the grid toward the bottom | Next batch of 12 tiles appends in place; no reshuffle button exists anywhere | P1 |
+| TC-516a | Whole pool reachable | 1. Keep scrolling to the end | Grid stops appending only when the full recognizable pool is exhausted | P2 |
+| TC-516b | Long-press removes a tile | 1. Long-press a `dna-tile` | Heavy haptic; tile recorded as hard-no and removed from the list | P2 |
+| TC-517 | New-to-fragrance fallback | 1. Tap `dna-new-to-fragrance` | Routes to the question fallback (FirstRunFlow), not the abstract quiz | P1 |
+| TC-518 | Refine rows render | 1. On refine step | One `dna-refine-row` per picked bottle, each with `dna-rel-own/want/like` options | P0 |
+| TC-519 | Set relationship seeds wardrobe | 1. Set a row to "I own it" 2. Continue + finish | That fragrance lands in the wardrobe as `have` (want → `want`), bypassing the cap | P1 |
 | TC-520 | Refine favorite toggle | 1. Tap `dna-refine-favorite` | Favorite updated on refine | P1 |
-| TC-521 | Refine back | 1. Tap `dna-refine-back` | Returns to picker with selections preserved | P1 |
-| TC-522 | Refine continue → reveal | 1. Tap `dna-refine-continue` | Advances to reveal (`dna-reveal-archetype` visible) | P0 |
+| TC-521 | Refine back preserves picks | 1. Tap `dna-refine-back` | Returns to grid with selections preserved | P1 |
+| TC-522 | Refine continue → reading → reveal | 1. Tap `dna-refine-continue` | "Reading your palate" beat (~1.4s min) then reveal (`dna-reveal-archetype` visible) | P0 |
 | TC-523 | Reveal renders archetype | 1. On reveal | `dna-reveal-emblem` + `dna-reveal-archetype` (name) + identity + `dna-trait-chip`s shown | P0 |
 | TC-524 | Reveal share | 1. Tap `dna-reveal-share` | Share sheet opens with archetype card | P2 |
-| TC-525 | Reveal continue → first-rec | 1. Tap `dna-reveal-continue` | Advances to first-rec (`dna-first-rec` visible) | P0 |
-| TC-526 | First-rec renders match + reason | 1. On first-rec | Matched bottle with brand/name and a sparkles reason line | P0 |
-| TC-527 | Buy the bottle CTA (affiliate exists) | 1. First-rec with a retailer link | Gold "BUY THE BOTTLE · $price" primary (`dna-rec-buy`) present; trait CTA demoted to underlined secondary | P0 |
-| TC-528 | Buy CTA fires affiliate click | 1. Tap `dna-rec-buy` | `handleAffiliateClick` fires with `fragrance_id`, `retailer`, `url`, `price_cents`, `source_screen: 'first_rec'`; opens retailer; then advances via `onBuy` | P0 |
-| TC-529 | Trait CTA promoted when no link | 1. First-rec with NO retailer link | Trait CTA (`dna-rec-cta`) is the primary button; no `dna-rec-buy` | P1 |
-| TC-530 | Trait CTA routing — value hunter | 1. DNA scores valueHunter 2. Tap `dna-rec-cta` | Routes to dupe destination | P1 |
-| TC-531 | Trait CTA routing — luxury | 1. DNA scores luxury 2. Tap `dna-rec-cta` | Routes to original/buy destination | P1 |
-| TC-532 | Trait CTA routing — adventurous | 1. DNA scores adventurous 2. Tap `dna-rec-cta` | Routes to sample destination | P1 |
-| TC-533 | First-rec "Not me" | 1. Tap `dna-rec-not-me` | Advances past the match (does not buy) | P1 |
-| TC-534 | First-rec "See my DNA" | 1. Tap `dna-rec-my-dna` | Navigates to DNA/taste-profile surface | P1 |
-| TC-535 | First-rec skip → Today | 1. Tap `dna-rec-skip` | Exits onboarding; lands on `today-screen` with `today-unified-dna` | P0 |
+| TC-525 | Reveal continue → top-match detail | 1. Tap `dna-reveal-continue` ("See my top match") | Onboarding completes; lands on the top-match **fragrance detail page** (not an interstitial) | P0 |
+| TC-526 | Reveal continue with no match → Today | 1. Reveal where no rec ranked 2. Tap Continue | Onboarding completes and lands on `today-screen` (no crash) | P1 |
+| TC-527 | Buy pill on the matched detail | 1. From reveal, land on detail with a retailer link | "Buy from <retailer> · $price" pill present; tapping fires `handleAffiliateClick` (`source_screen: 'fragrance_detail_rail'`) | P0 |
+| TC-528 | Routed buyer strip — dupe case only | 1. DNA's strongest buyer trait = valueHunter 2. Open a bottle that HAS a verified dupe | `dna-routed-cta` ("Find the dupe") shows; tapping scrolls down to Budget Dupes | P1 |
+| TC-529 | No routed strip without a dupe | 1. valueHunter DNA 2. Open a bottle with `dupeCount === 0` | No `dna-routed-cta` rendered (falls back to Original, which shows nothing extra) | P1 |
+| TC-530 | Routed strip absent for luxury/default | 1. DNA routes to `original` (luxury or no buyer trait) 2. Open any bottle | No second buyer card; only the top Buy pill. The old "Get the original" card is gone | P0 |
+| TC-531 | No sample/adventurous route | 1. Inspect routing for any DNA | CTA kinds are only `dupe` / `original`; no "$6 sample" CTA, no adventurous route | P1 |
 | TC-536 | DNA persists across restart | 1. Complete DNA 2. Kill + relaunch app | DNA retained; Today shows unified DNA card without re-onboarding | P0 |
-| TC-537 | Retake from Today | 1. Tap `today-dna-retake` | Re-enters the DNA spine (picker) | P1 |
-| TC-538 | Living DNA — shift banner | 1. Swipe/swap so taste clearly moves to a new archetype 2. Open DNA readout | `dna-shift-banner` (or `dna-shift-compact`) surfaces the new archetype | P1 |
-| TC-539 | Living DNA — acknowledge shift | 1. Tap `dna-shift-ack` | Shift accepted; archetype updates; banner dismissed | P1 |
-| TC-540 | Living DNA — leaning state | 1. Drift partway (not enough to shift) 2. View readout | `dna-leaning` / `dna-leaning-compact` shown with `dna-swap-progress` toward next archetype | P1 |
-| TC-541 | Living DNA — recency weighting | 1. Many old swipes one direction, recent swipes another | Recent deliberate signal weighted higher (lean/shift follows recent taste) | P2 |
-| TC-542 | First-rec accessibility | 1. Largest Dynamic Type on first-rec | Buy CTA + reason readable, no clipped/overlapping buttons; back-nav reachable | P1 |
+| TC-537 | Retake from Today | 1. Tap `today-dna-retake` | Re-enters the DNA spine (picker); live DNA unchanged until new reveal commits | P1 |
+| TC-538 | Living DNA — shift banner | 1. Drive signals so taste clearly moves to a new archetype 2. Open the My-DNA readout | `dna-shift-banner` (or `dna-shift-compact` on Today) surfaces the new archetype | P1 |
+| TC-539 | Living DNA — acknowledge shift | 1. Tap `dna-shift-ack` | Shift acknowledged; banner dismissed | P1 |
+| TC-540 | Living DNA — leaning state | 1. Drift partway (challenger ≥ 0.85× current, not yet swapped) 2. View readout | `dna-leaning` / `dna-leaning-compact` shown; `dna-swap-progress` meter when the swap clock is running | P1 |
+| TC-541 | Living DNA — recency + recompute trigger | 1. Old signals one direction, recent the other 2. Background/foreground the app | Foreground schedules a recompute; recent deliberate signal weighted higher (lean/shift follows recent taste) | P2 |
+| TC-542 | Top-match detail accessibility | 1. Largest Dynamic Type on the matched detail | Buy pill + reason readable, no clipped/overlapping buttons; back-nav reachable | P1 |
+| TC-543 | Back-history from detail | 1. Reveal → matched detail → tap a dupe/similar → Back | Back returns to the matched bottle (not Home); each detail gets a fresh mount | P1 |
 
 ---
 
@@ -1107,6 +1148,73 @@
 | TC-364 | Wrapped -- before December | 1. Date is before December 1 2. Open Wrapped | Not available; countdown or "Available in December" message | P1 |
 | TC-365 | Wrapped -- insufficient wears | 1. Have <10 wears 2. Open Wrapped | "Start tracking to unlock Wrapped" prompt | P0 |
 | TC-366 | Wrapped -- all stats present | 1. Open valid Wrapped | All 10 stat categories present (most worn, top 5, total wears, etc.) | P0 |
+
+---
+
+## Screen: Scent Preferences
+
+> The third taste layer beside Fragrance DNA (identity) and Train Your Nose
+> (learned taste): the user's *stated constraints*. Reached from the Profile
+> tab's "Scent Preferences" row (`router.push('/preferences')`, not Pro-gated).
+> Every choice writes straight to the persisted `useScentPreferencesStore` and
+> is read by the rec engine (`useRecommendations`) on the next render — there is
+> **no explicit save step**; "Done" just navigates back.
+
+### User Stories
+- US-077: As a user, I want to set hard scent boundaries — a price ceiling, notes I never want, my usual occasion and season — so that every pick the app makes respects my real-world limits, on top of my Fragrance DNA.
+
+### Acceptance Criteria
+- [ ] AC-267: The screen (`preferences-screen`) has a Back affordance (`preferences-back`) and a "Done" button (`preferences-done`); both call `router.back()`. There is no separate save action.
+- [ ] AC-268: BUDGET is a single-select of six tiers (`pref-budget-1`..`pref-budget-5`, `pref-budget-none` for "No limit"); selecting one sets `budget`, and selecting the same value model allows clearing back to no-limit.
+- [ ] AC-269: AVOID is a multi-select of accord groups (`pref-avoid-<groupId>`); each tap toggles that group in the persisted `avoid[]`; any number can be active at once.
+- [ ] AC-270: OCCASION is single-select (`pref-occasion-casual/office/date/evening/formal/workout/travel`, plus `pref-occasion-none`); it sets the preference occasion that **overrides** the time-inferred occasion in SOTD (AC-046a).
+- [ ] AC-271: SEASON is single-select (`pref-season-spring/summer/fall/winter`, plus `pref-season-none` for "All year"); it biases picks toward a time of year.
+- [ ] AC-272: All four sections persist across app restarts and immediately influence recommendations without a reload.
+
+### Test Cases
+
+| ID | Scenario | Steps | Expected Result | Priority |
+|---|---|---|---|---|
+| TC-366a | Open Scent Preferences | 1. Profile tab 2. Tap "Scent Preferences" row | `preferences-screen` opens (no paywall); four sections: Budget, Avoid, Occasion, Season | P0 |
+| TC-366b | Set budget ceiling | 1. Tap `pref-budget-3` | $$$ becomes active (single-select); persisted to `budget` | P1 |
+| TC-366c | Toggle multiple avoids | 1. Tap two `pref-avoid-*` chips | Both stay active simultaneously; both recorded in `avoid[]` | P1 |
+| TC-366d | Occasion overrides SOTD | 1. Set `pref-occasion-evening` 2. Return to Today | "Why today" reason reflects evening, overriding the weekday/hour inference | P1 |
+| TC-366e | Preferences persist | 1. Set budget + avoid + occasion + season 2. Kill + relaunch 3. Reopen Preferences | All selections restored from the persisted store | P0 |
+| TC-366f | No save step, Done navigates back | 1. Change a chip 2. Tap `preferences-done` (or `preferences-back`) | Returns to Profile; change already saved (no "unsaved changes" prompt) | P1 |
+| TC-366g | Recs respect avoid immediately | 1. Avoid a note 2. Open WhatToWear / Today | Picks no longer surface fragrances dominated by the avoided note | P1 |
+
+---
+
+## Feedback Bubble
+
+> An always-on, low-friction line to the founder. A floating bubble
+> (`<FeedbackBubble />`, accessibilityLabel "Send feedback") rides bottom-right
+> on every main tab, stacked just above the gold Scan FAB and kept visually
+> secondary to it. It opens the same `FeedbackSheet` reachable from the Profile
+> row. Submitting writes to the shared Pour Picks feedback hub via
+> `submitFeedback` and fires `FEEDBACK_OPENED` / `FEEDBACK_SUBMITTED` /
+> `FEEDBACK_FAILED`.
+
+### User Stories
+- US-078: As a user, I want a one-tap way to send feedback to the founder from anywhere in the app so that reporting a bug or an idea takes no effort.
+
+### Acceptance Criteria
+- [ ] AC-273: The feedback bubble is present on every main tab, positioned above the Scan FAB and below it in visual weight (smaller, card surface + gold border); the Scan FAB stays the dominant corner action.
+- [ ] AC-274: Tapping the bubble opens the Feedback sheet (slide-up pageSheet) titled "Send Feedback" with four category chips (Something broke / Idea-request / I love it / Other; default "Idea / request"), a required message field, and an optional email field.
+- [ ] AC-275: Submit is disabled until the message is ≥4 characters; the field caps at 2000 chars with a live count. Submitting fires `FEEDBACK_SUBMITTED` with the category and shows a "Thank you" state that auto-closes after ~1.4s.
+- [ ] AC-276: A failed submit fires `FEEDBACK_FAILED` (with a reason), gives a warning haptic, and re-enables the form (text preserved) so the user can retry. The same sheet is also reachable from the Profile "Send Feedback" row.
+
+### Test Cases
+
+| ID | Scenario | Steps | Expected Result | Priority |
+|---|---|---|---|---|
+| TC-366h | Bubble present on tabs, above Scan FAB | 1. Open Today/Discover/Wardrobe/Profile | "Send feedback" bubble visible bottom-right, stacked above the gold Scan FAB and smaller than it | P1 |
+| TC-366i | Bubble opens feedback sheet | 1. Tap the feedback bubble | "Send Feedback" sheet slides up with category chips + message + email fields; `FEEDBACK_OPENED` fired | P0 |
+| TC-366j | Submit gated by min length | 1. Type 1-3 chars | Send button stays disabled until message ≥4 chars | P0 |
+| TC-366k | Successful submit → thank-you | 1. Pick a category 2. Type a valid message 3. Send | `FEEDBACK_SUBMITTED` fired with category; "Thank you" state shows then auto-closes (~1.4s) | P0 |
+| TC-366l | Failed submit re-enables form | 1. Force a submit failure (offline) 2. Send | `FEEDBACK_FAILED` fired; warning haptic; form re-enabled with text preserved for retry | P1 |
+| TC-366m | Char cap at 2000 | 1. Paste a >2000-char message | Input truncates at 2000; live counter reads "2000 / 2000" | P2 |
+| TC-366n | Profile row opens same sheet | 1. Profile → "Send Feedback" row | Same Feedback sheet opens (parity with the bubble) | P2 |
 
 ---
 
@@ -1565,6 +1673,9 @@
 | User Profile (Public) | US-050 | AC-179 to AC-182 | TC-350 to TC-357 |
 | Taste Profile | US-051 | AC-183 to AC-185 | TC-358 to TC-361 |
 | Wrapped | US-052 | AC-186 to AC-189 | TC-362 to TC-366 |
+| Scent Preferences | US-077 | AC-267 to AC-272 | TC-366a to TC-366g |
+| Feedback Bubble | US-078 | AC-273 to AC-276 | TC-366h to TC-366n |
+| Fragrance DNA | US-072 to US-076 | AC-257 to AC-266 | TC-511 to TC-543 |
 | AddToWardrobe Sheet | US-053 | AC-190 to AC-194 | TC-367 to TC-377 |
 | LogWear Sheet | US-054 | AC-195 to AC-202 | TC-378 to TC-388 |
 | FragranceNotes Sheet | US-055 | AC-203 to AC-207 | TC-389 to TC-395 |
@@ -1580,4 +1691,4 @@
 | Accessibility | US-068 | AC-243 to AC-247 | TC-474 to TC-485 |
 | Performance | US-069 | AC-248 to AC-251 | TC-486 to TC-495 |
 | Data Integrity/Sync | US-070 to US-071 | AC-252 to AC-256 | TC-496 to TC-510 |
-| **TOTALS** | **71** | **256** | **510** |
+| **TOTALS** | **78** | **276** | **560** |

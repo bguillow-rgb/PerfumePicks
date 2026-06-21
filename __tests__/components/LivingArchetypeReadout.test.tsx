@@ -12,7 +12,6 @@ jest.mock('@/src/lib/sync/syncWrite', () => ({
 jest.mock('@/lib/supabase', () => ({ isSupabaseConfigured: false, supabase: {} }));
 
 const NOW = '2026-06-20T00:00:00.000Z';
-const daysAgo = (d: number) => new Date(Date.parse(NOW) - d * 86_400_000).toISOString();
 
 function dna(archetype: Partial<DnaArchetype>): FragranceDNA {
   return {
@@ -65,28 +64,21 @@ describe('LivingArchetypeReadout — shift nudge', () => {
 });
 
 describe('LivingArchetypeReadout — leaning', () => {
-  it('shows "Leaning toward X" without a meter when leaning but no clock', () => {
-    const d = dna({ challenger: 'the_rebel', leaning: true, leadSince: null });
+  it('shows "Leaning toward X" as a tease (no progress meter, swaps are instant)', () => {
+    const d = dna({ challenger: 'the_rebel', leaning: true });
     render(<LivingArchetypeReadout dna={d} variant="full" />);
     expect(screen.getByText('The Rebel')).toBeTruthy();
     expect(screen.queryByTestId('dna-swap-progress')).toBeNull();
   });
 
-  it('shows the swap-progress meter once the clock is running', () => {
-    const d = dna({ challenger: 'the_rebel', leaning: true, leadSince: daysAgo(7) });
-    render(<LivingArchetypeReadout dna={d} variant="full" />);
-    expect(screen.getByTestId('dna-swap-progress')).toBeTruthy();
-    expect(screen.getByText(/becomes your DNA/)).toBeTruthy();
-  });
-
   it('renders nothing when there is no challenger and no shift', () => {
-    const d = dna({ challenger: null, leaning: false, leadSince: null });
+    const d = dna({ challenger: null, leaning: false });
     const { toJSON } = render(<LivingArchetypeReadout dna={d} variant="full" />);
     expect(toJSON()).toBeNull();
   });
 
   it('renders nothing when a challenger exists but is not leaning', () => {
-    const d = dna({ challenger: 'the_rebel', leaning: false, leadSince: null });
+    const d = dna({ challenger: 'the_rebel', leaning: false });
     const { toJSON } = render(<LivingArchetypeReadout dna={d} variant="compact" />);
     expect(toJSON()).toBeNull();
   });
