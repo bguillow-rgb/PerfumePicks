@@ -390,7 +390,11 @@ export default function DnaPickerScreen() {
           <Text style={styles.eyebrow}>ALMOST THERE</Text>
         </View>
 
-        <ScrollView contentContainerStyle={styles.refineBody} showsVerticalScrollIndicator={false}>
+        <ScrollView
+          key="dna-refine-scroll"
+          contentContainerStyle={styles.refineBody}
+          showsVerticalScrollIndicator={false}
+        >
           <Text style={styles.cursive}>your picks</Text>
           <Text style={styles.title}>Own it, want it, or just love the scent?</Text>
           <Text style={styles.sub}>
@@ -488,6 +492,7 @@ export default function DnaPickerScreen() {
       </View>
 
       <ScrollView
+        key="dna-grid-scroll"
         contentContainerStyle={[styles.grid, { paddingBottom: SPACING.xl }]}
         showsVerticalScrollIndicator={false}
         onScroll={handleScroll}
