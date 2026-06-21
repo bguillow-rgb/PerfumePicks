@@ -728,7 +728,6 @@ function FragranceDetailScreen() {
                       <Ionicons name="open-outline" size={12} color={COLORS.muted} />
                     </Pressable>
                   ))}
-                  <Text style={styles.affiliateDisclosure}>We may earn a commission from purchases.</Text>
                 </View>
               </>
             )}
@@ -1107,7 +1106,6 @@ const styles = StyleSheet.create({
   },
   retailerName: { ...TYPE.label, fontSize: 13, color: COLORS.text, flex: 1 },
   retailerPrice: { ...TYPE.body, fontSize: 15, fontWeight: '600', color: COLORS.accent },
-  affiliateDisclosure: { ...TYPE.caption, fontSize: 9, color: COLORS.subtle, marginTop: 6, fontStyle: 'italic' },
 
   ctaWrap: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl, gap: SPACING.sm },
   cta: {
