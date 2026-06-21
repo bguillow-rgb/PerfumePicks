@@ -39,7 +39,9 @@ export const LEAN_REVEAL_RATIO = 0.85;
 /** Challenger must beat current by this margin to start the swap clock. */
 export const SWAP_MARGIN = 0.05;
 /** Challenger must stay ahead this many days before the swap commits. */
-export const SWAP_COOLDOWN_DAYS = 14; // half the recency window — deliberate hysteresis
+export const SWAP_COOLDOWN_DAYS = 2; // light anti-jitter only — with 5 deliberate
+// bottles the picks carry real signal, so the archetype should track taste
+// promptly rather than lag two weeks behind it.
 
 /**
  * Master flag for the engine. OFF in M1 (engine ships dark); M2 flips it on when
