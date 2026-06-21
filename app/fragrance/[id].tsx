@@ -13,13 +13,11 @@ import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 import { LogWearSheet } from '@/src/components/sheets/LogWearSheet';
 import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet';
-import { ReviewSection } from '@/src/components/fragrance/ReviewSection';
 import { DupeList } from '@/src/components/fragrance/DupeList';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { handleAffiliateClick } from '@/src/lib/affiliate';
 import * as WebBrowser from 'expo-web-browser';
 import { CelebritySection } from '@/src/components/fragrance/CelebritySection';
-import { LayeringSection } from '@/src/components/fragrance/LayeringSection';
 import { ComplimentsSection } from '@/src/components/fragrance/ComplimentsSection';
 import {
   useCatalogStore,
@@ -265,8 +263,6 @@ function FragranceDetailScreen() {
   // render). Moving them here fixes the "Rendered more hooks than during the
   // previous render" crash that produced a white screen on cache-miss navigations.
   const [hasCelebrities, setHasCelebrities] = useState(false);
-  const [hasReviews, setHasReviews] = useState(false);
-  const [hasLayering, setHasLayering] = useState(false);
   const [hasCompliments, setHasCompliments] = useState(false);
 
   // Stable callbacks — inline `() => setSomeState(true)` recreated every render
@@ -274,8 +270,6 @@ function FragranceDetailScreen() {
   // Supabase queries on every parent re-render (7-8 re-renders per page open
   // = 21+ extra queries and a re-render cascade). useCallback breaks the cycle.
   const onHasCelebrities = useCallback(() => setHasCelebrities(true), []);
-  const onHasReviews = useCallback(() => setHasReviews(true), []);
-  const onHasLayering = useCallback(() => setHasLayering(true), []);
   const onHasCompliments = useCallback(() => setHasCompliments(true), []);
 
   const [retailerLinks, setRetailerLinks] = useState<{ retailer: string; url: string; price_cents: number | null }[]>([]);
@@ -659,18 +653,13 @@ function FragranceDetailScreen() {
           </Section>
         )}
 
-        {hasCelebrities && (
+        {/* Always mount so onHasData fires; display:none hides until data arrives */}
+        <View style={hasCelebrities ? undefined : { display: 'none' }}>
           <Section title="Who Wears This" cursive="famous fans">
             <CelebritySection fragranceId={id} onHasData={onHasCelebrities} />
           </Section>
-        )}
-
-        {/* Always mount so onHasData fires; display:none hides until data arrives */}
-        <View style={hasReviews ? undefined : { display: 'none' }}>
-          <Section title="Community Reviews" cursive="what others think">
-            <ReviewSection fragranceId={id} onHasData={onHasReviews} />
-          </Section>
         </View>
+
 
         {similar.length > 0 && (
           <Section title="Smells Like" cursive="discover similar">
@@ -816,12 +805,6 @@ function FragranceDetailScreen() {
             </View>
           </Section>
         )}
-
-        <View style={hasLayering ? undefined : { display: 'none' }}>
-          <Section title="Layering" cursive="pair it up">
-            <LayeringSection fragranceId={id} onHasData={onHasLayering} />
-          </Section>
-        </View>
 
         <View style={hasCompliments ? undefined : { display: 'none' }}>
           <Section title="Compliments" cursive="what they said">

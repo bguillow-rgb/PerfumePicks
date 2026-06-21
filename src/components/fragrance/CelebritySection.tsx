@@ -37,15 +37,24 @@ export function CelebritySection({ fragranceId, onHasData }: Props) {
 
   useEffect(() => {
     if (!isSupabaseConfigured) return;
+    // `fragranceId` is the app-level slug (see catalog store: UUID is Supabase-
+    // internal only). fragrance_celebrities keys on the UUID, so resolve through
+    // the FK by slug rather than matching the slug against a UUID column.
     supabase
       .from('fragrance_celebrities')
-      .select('celebrity_name, category, image_url')
-      .eq('fragrance_id', fragranceId)
+      .select('celebrity_name, category, image_url, fragrances!inner(slug)')
+      .eq('fragrances.slug', fragranceId)
       .eq('verified', true)
       .order('celebrity_name')
       .then(({ data }) => {
         if (data?.length) {
-          setCelebrities(data);
+          setCelebrities(
+            data.map((c) => ({
+              celebrity_name: c.celebrity_name,
+              category: c.category,
+              image_url: c.image_url,
+            })),
+          );
           onHasData?.();
         }
       });

@@ -783,11 +783,9 @@ function FeaturedFragranceCard({ fragrance, onPress }: { fragrance: Fragrance; o
 // ─── Community Card ───────────────────────────────────────────────────────────
 
 function CommunityCard({ entry, onPress }: { entry: SOTDEntry; onPress: () => void }) {
-  const displayName = entry.profiles?.display_name ?? 'Anonymous';
   const fragranceName = entry.fragrances?.name ?? '—';
   const brandName = entry.fragrances?.brands?.name ?? '';
   const imageUrl = entry.fragrances?.image_url ?? null;
-  const initials = displayName.slice(0, 2).toUpperCase();
   const relDate = (() => {
     const todayStr = new Date().toLocaleDateString('en-CA');
     const yesterdayStr = new Date(Date.now() - 86400000).toLocaleDateString('en-CA');
@@ -810,12 +808,6 @@ function CommunityCard({ entry, onPress }: { entry: SOTDEntry; onPress: () => vo
       <View style={communityCard.info}>
         <Text style={communityCard.name} numberOfLines={1}>{fragranceName}</Text>
         {brandName ? <Text style={communityCard.brand} numberOfLines={1}>{brandName}</Text> : null}
-        <View style={communityCard.userRow}>
-          <View style={communityCard.avatar}>
-            <Text style={communityCard.avatarText}>{initials}</Text>
-          </View>
-          <Text style={communityCard.userName} numberOfLines={1}>{displayName}</Text>
-        </View>
         <Text style={communityCard.date}>{relDate}</Text>
       </View>
     </Pressable>
@@ -843,13 +835,6 @@ const communityCard = StyleSheet.create({
   name: { fontFamily: FONTS.serif, fontSize: 13, fontWeight: '600', color: COLORS.text },
   brand: { ...TYPE.caption, color: COLORS.muted, fontSize: 10 },
   userRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 5 },
-  avatar: {
-    width: 18, height: 18, borderRadius: 9,
-    backgroundColor: COLORS.blushSoft,
-    alignItems: 'center', justifyContent: 'center',
-    borderWidth: 0.5, borderColor: COLORS.blush,
-  },
-  avatarText: { fontFamily: FONTS.serif, fontSize: 9, color: COLORS.accent, fontWeight: '600' },
   userName: { ...TYPE.caption, fontSize: 10, color: COLORS.muted, flex: 1 },
   date: { ...TYPE.caption, fontSize: 9, color: COLORS.subtle ?? COLORS.muted, fontStyle: 'italic' },
 });
