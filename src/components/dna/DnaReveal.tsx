@@ -128,7 +128,7 @@ export function DnaReveal({ dna, onContinue }: DnaRevealProps) {
           }}
           testID="dna-reveal-continue"
         >
-          <Text style={styles.ctaText}>See my first match</Text>
+          <Text style={styles.ctaText}>See my top match</Text>
           <Ionicons name="arrow-forward" size={15} color={COLORS.white} />
         </Pressable>
       </View>

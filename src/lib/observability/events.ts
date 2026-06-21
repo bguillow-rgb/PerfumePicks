@@ -29,8 +29,10 @@ export const EVENTS = {
   DNA_SKIP_TO_APP:        'dna_skip_to_app',
   // Failure / degraded-path observability (M11 ship gate).
   DNA_FIRST_REC_EMPTY_POOL:    'first_rec_empty_pool',
-  DNA_PICKER_RESHUFFLE_CAP_HIT: 'picker_reshuffle_cap_hit',
   DNA_PERSIST_FAILED_QUEUED:    'persist_failed_queued',
+  // Living DNA recompute (M2 — unified pool + living archetype).
+  DNA_RECOMPUTED:         'dna_recomputed',
+  DNA_ARCHETYPE_CHANGED:  'dna_archetype_changed',
 
   // ─── Discover ────────────────────────────────────────────────────────
   DISCOVER_SEARCH_QUERY:  'discover_search_query',
@@ -85,6 +87,9 @@ export const EVENTS = {
 
   // ─── Affiliate "Buy from" (M2 Phase C) ───────────────────────────────
   AFFILIATE_OUTBOUND_CLICKED: 'affiliate_outbound_clicked',
+  // Fired when an outbound buy link looks dead (browser failed to open, or a CJ
+  // affiliate link no longer redirects — i.e. pulled from the feed).
+  AFFILIATE_LINK_FAILED:      'affiliate_link_failed',
 
   // ─── Feedback (direct line to founder) ───────────────────────────────
   FEEDBACK_OPENED:    'feedback_opened',

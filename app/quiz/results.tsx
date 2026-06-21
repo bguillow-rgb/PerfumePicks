@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, useRef } from 'react';
 import { ScrollView, View, Text, StyleSheet, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
@@ -110,6 +111,32 @@ export default function QuizResults() {
           </View>
         )}
 
+        {/* Inline Pro upsell — carries the value-prop that used to interrupt the
+            quiz as a post-Q5 modal. Free users see their results first, then the
+            invitation to sharpen them. */}
+        {!isPro && (
+          <View style={styles.proBanner}>
+            <View style={styles.proBannerHead}>
+              <Ionicons name="sparkles-outline" size={18} color={COLORS.accent} />
+              <Text style={styles.proBannerTitle}>Sharpen these with Pro</Text>
+            </View>
+            <Text style={styles.proBannerBody}>
+              Unlock 5 deeper questions + Taste Insights to refine your picks.
+            </Text>
+            <View style={styles.proBannerRow}>
+              <Ionicons name="lock-closed-outline" size={13} color={COLORS.muted} />
+              <Text style={styles.proBannerRowText}>Presence · how much space it fills</Text>
+            </View>
+            <View style={styles.proBannerRow}>
+              <Ionicons name="lock-closed-outline" size={13} color={COLORS.muted} />
+              <Text style={styles.proBannerRowText}>Off-notes · what you want to avoid</Text>
+            </View>
+            <Pressable style={styles.proBannerBtn} onPress={() => router.push('/paywall?returnTo=/quiz')}>
+              <Text style={styles.proBannerBtnText}>Unlock Pro</Text>
+            </Pressable>
+          </View>
+        )}
+
         <Pressable style={styles.cta} onPress={() => router.replace('/(tabs)')}>
           <Text style={styles.ctaText}>Back to Today</Text>
         </Pressable>
@@ -132,6 +159,39 @@ const styles = StyleSheet.create({
   body: { ...TYPE.body, color: COLORS.muted, textAlign: 'center', marginTop: SPACING.md, paddingHorizontal: SPACING.md, fontStyle: 'italic' },
   results: { paddingHorizontal: SPACING.lg, marginTop: SPACING.xl },
   rank: { ...TYPE.eyebrow, color: COLORS.accent, marginBottom: 6 },
+  proBanner: {
+    marginHorizontal: SPACING.lg,
+    marginTop: SPACING.lg,
+    padding: SPACING.lg,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    gap: SPACING.sm,
+  },
+  proBannerHead: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm },
+  proBannerTitle: { fontFamily: FONTS.serif, fontSize: 19, fontWeight: '600', color: COLORS.text },
+  proBannerBody: { ...TYPE.bodySmall, color: COLORS.muted, lineHeight: 20 },
+  proBannerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    backgroundColor: COLORS.bg,
+    borderRadius: RADIUS.md,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.border,
+  },
+  proBannerRowText: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic' },
+  proBannerBtn: {
+    paddingVertical: 13,
+    backgroundColor: COLORS.accent,
+    borderRadius: RADIUS.full,
+    alignItems: 'center',
+    marginTop: SPACING.xs,
+  },
+  proBannerBtnText: { ...TYPE.label, color: COLORS.white, fontSize: 13, letterSpacing: 1 },
   cta: { backgroundColor: COLORS.accent, paddingVertical: 16, borderRadius: RADIUS.full, alignItems: 'center', marginHorizontal: SPACING.lg, marginTop: SPACING.md },
   ctaText: { ...TYPE.label, color: COLORS.white, letterSpacing: 2 },
   secondaryCta: { paddingVertical: 14, alignItems: 'center', marginTop: SPACING.sm },

@@ -10,9 +10,9 @@
  *      doubling up, exactly like the bourbon greedy fill.
  *   3. Quiet tiebreak: higher popularity, then `compliment_score`.
  *
- * Reshuffle pivots the LANE the rejected grid over-represented (by pre-loading
- * those cells as "already filled"), excludes already-shown ids, and stays above
- * the fame floor — it changes the style, never lowers the fame.
+ * The screen renders the full greedy-ordered list (see `buildPickerList`) and
+ * lazy-reveals it in batches as the user scrolls — there is no reshuffle; the
+ * whole recognizable pool is reachable by scrolling.
  */
 
 import {
@@ -22,8 +22,10 @@ import {
   resolvePopularityTier,
 } from './popularity';
 
+/** Batch size the screen reveals per scroll-to-bottom. */
 export const PICKER_GRID_SIZE = 12;
-export const PICKER_RESHUFFLE_CAP = 3;
+/** Hard ceiling on how many bottles a user can pick (min 1 to continue). */
+export const MAX_PICKS = 5;
 
 /** Structural shape a tile needs — a subset of MockFragrance. */
 export interface PickerCandidate {
@@ -151,31 +153,13 @@ export function buildPickerGrid(catalog: PickerCandidate[], opts: BuildOptions =
 }
 
 /**
- * Reshuffle: "show me different ones." Excludes everything shown so far, floors
- * the recognizability at tier 3, and pre-loads the cells the shown grid
- * over-represented so the next grid pivots the lane (gender / projection / family
- * spread) without lowering the fame. `reshuffleCount` seeds the jitter so each
- * press yields a fresh set. Returns `[]` only when the recognizable pool is dry —
- * the caller routes an empty reshuffle (or the cap) to the question fallback.
+ * The full recognizable pool, greedily ordered for coverage spread, for the
+ * lazy-scroll picker. Floors recognizability at tier 3 (same fame floor the old
+ * reshuffle used) so every imaged, accord-bearing, reasonably-famous bottle is
+ * reachable by scrolling. The top of the list stays the most famous (the pool is
+ * pre-sorted popularity-desc and the greedy fill takes the earliest low-cost
+ * candidate first), and the spread surfaces variety further down.
  */
-export function reshufflePickerGrid(
-  catalog: PickerCandidate[],
-  shown: PickerCandidate[],
-  reshuffleCount: number,
-  size: number = PICKER_GRID_SIZE,
-): PickerCandidate[] {
-  const excludeIds = new Set(shown.map((c) => c.id));
-  // Pre-load the lanes the rejected grid leaned on so the greedy fill steps away.
-  const seedCells = new Map<string, number>();
-  for (const c of shown) {
-    const cell = cellKey(c);
-    seedCells.set(cell, (seedCells.get(cell) ?? 0) + 1);
-  }
-  return buildPickerGrid(catalog, {
-    size,
-    minTier: RESHUFFLE_TIER_FLOOR,
-    excludeIds,
-    seedCells,
-    rngSeed: reshuffleCount * 1009 + 17,
-  });
+export function buildPickerList(catalog: PickerCandidate[]): PickerCandidate[] {
+  return buildPickerGrid(catalog, { size: catalog.length, minTier: RESHUFFLE_TIER_FLOOR });
 }

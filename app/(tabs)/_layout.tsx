@@ -12,6 +12,7 @@ import { useRetailerLinksStore } from '@/src/stores/useRetailerLinksStore';
 import { useNotificationStore } from '@/src/stores/useNotificationStore';
 import { useSessionStore } from '@/src/stores/useSessionStore';
 import { useCompareStore } from '@/src/stores/useCompareStore';
+import { FeedbackBubble } from '@/src/components/feedback/FeedbackBubble';
 import {
   requestNotificationPermission,
   scheduleSotdNotification,
@@ -361,11 +362,6 @@ export default function TabLayout() {
             tabBarIcon: ({ color, size }) => <TabIcon name="rose-outline" color={color} size={size} />,
           }}
         />
-        {/* Fragrance detail — lives inside tabs so the tab bar stays visible */}
-        <Tabs.Screen
-          name="fragrance/[id]"
-          options={{ href: null }}
-        />
         <Tabs.Screen
           name="profile"
           options={{
@@ -379,6 +375,7 @@ export default function TabLayout() {
         />
       </Tabs>
       <ScanFAB />
+      <FeedbackBubble />
       <CompareFAB />
 
       {/* ── Notification permission prompt ─────────────────────────────── */}

@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Crypto from 'expo-crypto';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { syncWrite, syncDelete } from '@/src/lib/sync/syncWrite';
+import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
 import { FREE_WARDROBE_CAP } from '@/src/lib/limits';
 import { useProStore } from '@/src/stores/useProStore';
 import { cancelAddBottlesNotification } from '@/src/lib/notifications';
@@ -113,6 +114,7 @@ export const useWardrobeStore = create<WardrobeState>()(
               }));
             });
           }
+          scheduleLivingDnaRecompute('wardrobe');
           return existing.id;
         }
 
@@ -136,6 +138,7 @@ export const useWardrobeStore = create<WardrobeState>()(
             }));
           });
         }
+        scheduleLivingDnaRecompute('wardrobe');
         return id;
       },
 
@@ -151,6 +154,7 @@ export const useWardrobeStore = create<WardrobeState>()(
             }));
           });
         }
+        scheduleLivingDnaRecompute('wardrobe');
       },
 
       remove: (id) => {
@@ -158,6 +162,7 @@ export const useWardrobeStore = create<WardrobeState>()(
         if (isSupabaseConfigured) {
           syncDelete('wardrobe_items', id);
         }
+        scheduleLivingDnaRecompute('wardrobe');
       },
 
       getByFragrance: (fragrance_id) =>

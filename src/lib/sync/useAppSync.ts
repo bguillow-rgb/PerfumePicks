@@ -8,6 +8,18 @@ import { setTasteProfileUserId, hydrateTasteProfile, useTasteProfileStore } from
 import { setPickStreamUserId, useDnaPickStreamStore } from '@/src/stores/useDnaPickStreamStore';
 import { deriveTasteProfile, EMPTY_TASTE_PROFILE, type TasteSignal, type DerivedTasteProfile } from '@/src/features/recommend/tasteProfile';
 import { getFragranceFromStore } from '@/src/stores/useCatalogStore';
+import { RECOMMENDATION_SIGNAL_WEIGHTS, LIVING_DNA_ENABLED } from '@/src/features/dna/signals';
+import { deriveLivingDNA, applyLivingArchetype } from '@/src/features/dna';
+import type {
+  DnaPick,
+  DnaCatalogFragrance,
+} from '@/src/features/dna/types';
+import type { SwipeInput, WearInput, WardrobeInput } from '@/src/features/dna/signals';
+import { track, EVENTS } from '@/src/lib/observability';
+import {
+  registerLivingDnaRecompute,
+  type RecomputeTrigger,
+} from '@/src/lib/sync/recomputeScheduler';
 
 /**
  * useAppSync — mounts once in _layout.tsx.
@@ -315,17 +327,9 @@ async function hydrateSwipes(userId: string, switchedAccount = false) {
 // Taste Profile — recompute from hydrated stores + upsert
 // ─────────────────────────────────────────────────────────────────────
 
-const SIGNAL_WEIGHTS = {
-  wear_high_rating: 3,
-  wear_default: 1.5,
-  have: 2,
-  want: 1,
-  tested: 0.5,
-  sold_on: 2.5,
-  swipe_love: 2.5,
-  swipe_like: 1,
-  swipe_dislike: -1.5,
-} as const;
+// Single source of truth — see features/dna/signals.ts. (Was: love 2.5 here /
+// 1.5 in useRecommendations; now reconciled to love 2.0, like 0.8.)
+const SIGNAL_WEIGHTS = RECOMMENDATION_SIGNAL_WEIGHTS;
 
 /**
  * Recompute the taste profile from the current local stores and (when a userId
@@ -402,3 +406,107 @@ export async function recomputeTasteProfile(): Promise<DerivedTasteProfile> {
   }
   return syncTasteProfile(userId);
 }
+
+// ─────────────────────────────────────────────────────────────────────
+// Living DNA — recompute the whole envelope from the unified signal pool
+// ─────────────────────────────────────────────────────────────────────
+
+/** A fragrance from the local catalog satisfies the engine's structural subset. */
+const asCatalog = (f: ReturnType<typeof getFragranceFromStore>): DnaCatalogFragrance =>
+  f as unknown as DnaCatalogFragrance;
+
+/**
+ * Rebuild the living DNA from the current stores (PRD §7.2). The onboarding
+ * picks (the DNA's `seeds`) + every swipe / wear / wardrobe record collapse into
+ * ONE recency-weighted pool, re-derive the full envelope, then advance the §6.6
+ * living-archetype state (lean → swap) against the previously committed archetype.
+ *
+ * No-ops when the engine is dark (LIVING_DNA_ENABLED=false) or before onboarding
+ * has produced a DNA — there is nothing to recompute without a seed set. Resolves
+ * fragrances synchronously from the catalog store; uncached ids are skipped (the
+ * seed signal they carry simply doesn't contribute this pass).
+ */
+export function recomputeLivingDNA(trigger: RecomputeTrigger = 'swipe'): void {
+  if (!LIVING_DNA_ENABLED) return;
+
+  const prevDna = useTasteProfileStore.getState().dna;
+  if (!prevDna) return; // onboarding hasn't run — no seeds to pool
+
+  // seeds → weighted picks (carry seededAt so recency decays the oldest picks)
+  const picks: DnaPick[] = [];
+  for (const s of prevDna.seeds) {
+    const f = getFragranceFromStore(s.id);
+    if (!f) continue;
+    picks.push({
+      fragrance: asCatalog(f),
+      relation: s.relation,
+      favorite: s.favorite,
+      seededAt: s.seededAt,
+    });
+  }
+
+  const swipes: SwipeInput[] = [];
+  for (const sw of useSwipeStore.getState().list()) {
+    const f = getFragranceFromStore(sw.fragrance_id);
+    if (!f) continue;
+    swipes.push({ fragrance: asCatalog(f), action: sw.action, ts: sw.created_at });
+  }
+
+  const wears: WearInput[] = [];
+  for (const w of useWearLogStore.getState().logs) {
+    const f = getFragranceFromStore(w.fragrance_id);
+    if (!f) continue;
+    wears.push({ fragrance: asCatalog(f), rating: w.rating, ts: w.created_at });
+  }
+
+  const wardrobe: WardrobeInput[] = [];
+  for (const i of useWardrobeStore.getState().items) {
+    if (i.status === 'empty') continue; // an empty slot carries no taste signal
+    const f = getFragranceFromStore(i.fragrance_id);
+    if (!f) continue;
+    wardrobe.push({ fragrance: asCatalog(f), status: i.status, ts: i.created_at });
+  }
+
+  const { dna, archetypeScores } = deriveLivingDNA({
+    picks,
+    swipes,
+    wears,
+    wardrobe,
+    source: 'hybrid',
+  });
+
+  // Advance the living-archetype lean/swap against the prior committed state.
+  let swapped = false;
+  if (archetypeScores && archetypeScores.length > 0) {
+    const result = applyLivingArchetype(
+      prevDna.archetype,
+      archetypeScores,
+      dna.archetype.modifier,
+      dna.updatedAt,
+    );
+    dna.archetype = result.archetype;
+    swapped = result.swapped;
+  }
+
+  useTasteProfileStore.getState().commitRecompute(dna);
+
+  track(EVENTS.DNA_RECOMPUTED, {
+    trigger,
+    signal_count: picks.length + swipes.length + wears.length + wardrobe.length,
+    confidence: dna.confidence,
+  });
+  if (swapped) {
+    // The committed archetype changed — fire the one-time "You've shifted"
+    // observable (the readout nudge UI lands in M4).
+    track(EVENTS.DNA_ARCHETYPE_CHANGED, {
+      from: prevDna.archetype.primary,
+      to: dna.archetype.primary,
+      trigger,
+    });
+  }
+}
+
+// Register the worker with the decoupled scheduler exactly once, at module load.
+// Signal sources call scheduleLivingDnaRecompute() (no import cycle) and this
+// runs after the debounce window.
+registerLivingDnaRecompute(recomputeLivingDNA);

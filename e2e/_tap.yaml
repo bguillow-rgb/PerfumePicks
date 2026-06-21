@@ -1,0 +1,6 @@
+appId: com.bobguillow.perfumepicks
+---
+- tapOn:
+    point: "50%,95%"
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/11_first_rec

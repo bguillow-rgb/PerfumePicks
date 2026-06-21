@@ -8,9 +8,9 @@ appId: com.bobguillow.perfumepicks
     visible:
       id: "tab-today"
     timeout: 90000
-# Onboarded guest with no wardrobe → new-user welcome hero, not SCENT OF THE DAY.
+# Onboarded guest has a live DNA → unified DNA hero card is Today's signature surface.
 - assertVisible:
-    text: "start here"
+    id: "today-unified-dna"
 - tapOn:
     id: "tab-today"
 - waitForAnimationToEnd
@@ -24,7 +24,7 @@ appId: com.bobguillow.perfumepicks
     id: "tab-taste"
 - extendedWaitUntil:
     visible:
-      text: "TRAIN MY NOSE"
+      text: "TASTE SESSION"
     timeout: 15000
 - tapOn:
     id: "tab-wardrobe"
@@ -34,13 +34,15 @@ appId: com.bobguillow.perfumepicks
     timeout: 15000
 - tapOn:
     id: "tab-profile"
+# The profile (You) tab's signature top surface is the re-viewable My Fragrance
+# DNA card; the "Account" section sits far below the fold.
 - extendedWaitUntil:
     visible:
-      text: "ACCOUNT"
+      id: "my-dna-card"
     timeout: 15000
 - tapOn:
     id: "tab-today"
 - extendedWaitUntil:
     visible:
-      text: "start here"
+      id: "today-unified-dna"
     timeout: 15000

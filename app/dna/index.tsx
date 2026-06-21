@@ -7,6 +7,8 @@ import {
   ScrollView,
   ActivityIndicator,
   useWindowDimensions,
+  type NativeScrollEvent,
+  type NativeSyntheticEvent,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -20,9 +22,9 @@ import { useDnaPickerStore } from '@/src/stores/useDnaPickerStore';
 import { useDnaPickerEnabled } from '@/src/features/dna/killSwitch';
 import { FirstRunFlow } from '@/src/components/onboarding/FirstRunFlow';
 import {
-  buildPickerGrid,
-  reshufflePickerGrid,
-  PICKER_RESHUFFLE_CAP,
+  buildPickerList,
+  PICKER_GRID_SIZE,
+  MAX_PICKS,
   type PickerCandidate,
 } from '@/src/features/quiz/pickerGrid';
 import { deriveFragranceDNA } from '@/src/features/dna/deriveDna';
@@ -32,13 +34,12 @@ import type { DnaCatalogFragrance, DnaPick, FragranceDNA } from '@/src/features/
 import { useQuizStore } from '@/src/stores/useQuizStore';
 import { ReadingState } from '@/src/components/dna/ReadingState';
 import { DnaReveal } from '@/src/components/dna/DnaReveal';
-import { FirstRec } from '@/src/components/dna/FirstRec';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useDnaPickStreamStore } from '@/src/stores/useDnaPickStreamStore';
 import { track, EVENTS } from '@/src/lib/observability';
 
-type Step = 'loading' | 'grid' | 'refine' | 'reading' | 'reveal' | 'firstRec' | 'fallback';
+type Step = 'loading' | 'grid' | 'refine' | 'reading' | 'reveal' | 'fallback';
 
 /** Minimum visual duration of the "Reading your palate" beat (compute is instant). */
 const READING_MIN_MS = 1400;
@@ -68,9 +69,9 @@ export default function DnaPickerScreen() {
 
   const [step, setStep] = useState<Step>('loading');
   const [pool, setPool] = useState<PickerCandidate[]>([]);
-  const [grid, setGrid] = useState<PickerCandidate[]>([]);
-  const [shown, setShown] = useState<PickerCandidate[]>([]);
-  const [reshuffleCount, setReshuffleCount] = useState(0);
+  // Full greedy-ordered recognizable list; we lazy-reveal `visibleCount` of it.
+  const [list, setList] = useState<PickerCandidate[]>([]);
+  const [visibleCount, setVisibleCount] = useState(PICKER_GRID_SIZE);
   const [dna, setDna] = useState<FragranceDNA | null>(null);
   const [recs, setRecs] = useState<RankedDnaRec[]>([]);
 
@@ -79,19 +80,18 @@ export default function DnaPickerScreen() {
     resetPicker();
   }, [resetPicker]);
 
-  // Load the candidate pool and build grid 1.
+  // Load the candidate pool and build the full ordered list once.
   useEffect(() => {
     let alive = true;
     (async () => {
       const candidates = (await fetchPickerCandidates(3)) as unknown as PickerCandidate[];
       if (!alive) return;
-      const first = buildPickerGrid(candidates);
+      const ordered = buildPickerList(candidates);
       setPool(candidates);
-      setGrid(first);
-      setShown(first);
-      // Preload tile images so the required first screen doesn't pop-in.
-      Image.prefetch(first.map((c) => c.image_url).filter(Boolean));
-      setStep(first.length > 0 ? 'grid' : 'fallback');
+      setList(ordered);
+      // Preload the first batch so the required first screen doesn't pop-in.
+      Image.prefetch(ordered.slice(0, PICKER_GRID_SIZE).map((c) => c.image_url).filter(Boolean));
+      setStep(ordered.length > 0 ? 'grid' : 'fallback');
     })();
     return () => {
       alive = false;
@@ -142,7 +142,7 @@ export default function DnaPickerScreen() {
     // Resolve picker ids → catalog fragrances (every Fragrance satisfies the
     // DnaCatalogFragrance structural subset the engine reads).
     const byId = new Map<string, PickerCandidate>();
-    for (const f of [...pool, ...shown]) byId.set(f.id, f);
+    for (const f of pool) byId.set(f.id, f);
 
     const picks: DnaPick[] = selectedIds
       .map((id) => byId.get(id))
@@ -153,24 +153,36 @@ export default function DnaPickerScreen() {
         favorite: favoriteId === f.id,
       }));
 
-    // Bottles the user confirmed they OWN seed the wardrobe as "have". This is
-    // the only place the picker writes to the collection — want/favorite stay
-    // taste-only signals. add() dedupes by fragrance, so a retake won't dupe.
-    // bypassCap: an owned bottle the user told us about shouldn't be blocked by
-    // the free-tier wardrobe cap.
+    // The picker seeds the wardrobe from the refine relation: "I own it" → "have"
+    // (in-rotation), "I want it" → "want" (wishlist). favorite stays a taste-only
+    // signal. add() dedupes by fragrance, so a retake won't dupe. bypassCap: a
+    // bottle the user told us about shouldn't be blocked by the free-tier cap.
     const addToWardrobe = useWardrobeStore.getState().add;
     for (const p of picks) {
-      if (p.relation !== 'own') continue;
-      addToWardrobe(
-        {
-          fragrance_id: p.fragrance.id,
-          status: 'have',
-          unit_type: 'bottle',
-          size_ml: 100,
-          remaining_ml: 100,
-        },
-        { bypassCap: true },
-      );
+      if (p.relation === 'own') {
+        addToWardrobe(
+          {
+            fragrance_id: p.fragrance.id,
+            status: 'have',
+            unit_type: 'bottle',
+            size_ml: 100,
+            remaining_ml: 100,
+          },
+          { bypassCap: true },
+        );
+      } else if (p.relation === 'want') {
+        // Wishlist entry — no physical bottle yet, so quantities are zero.
+        addToWardrobe(
+          {
+            fragrance_id: p.fragrance.id,
+            status: 'want',
+            unit_type: 'bottle',
+            size_ml: 0,
+            remaining_ml: 0,
+          },
+          { bypassCap: true },
+        );
+      }
     }
 
     const avoided = hardNoIds
@@ -178,7 +190,11 @@ export default function DnaPickerScreen() {
       .filter((f): f is PickerCandidate => !!f)
       .map((f) => f as unknown as DnaCatalogFragrance);
 
-    const { dna: computed, events } = deriveFragranceDNA({ picks, avoided, source: 'picker' });
+    // The full offered pool is the reference for relative trait scoring — it's
+    // what makes WHICH bottles the user picked (vs everything they were shown)
+    // actually move the archetype, instead of everyone landing crowd-pleaser.
+    const referencePool = pool.map((f) => f as unknown as DnaCatalogFragrance);
+    const { dna: computed, events } = deriveFragranceDNA({ picks, referencePool, avoided, source: 'picker' });
     if (events.includes('dna_compute_failed')) {
       track(EVENTS.DNA_COMPUTE_FAILED, { pick_count: picks.length });
     }
@@ -208,7 +224,7 @@ export default function DnaPickerScreen() {
     const elapsed = Date.now() - startedAt;
     const wait = Math.max(0, READING_MIN_MS - elapsed);
     setTimeout(() => setStep('reveal'), wait);
-  }, [pool, shown, selectedIds, relations, favoriteId, hardNoIds, commitDerived]);
+  }, [pool, selectedIds, relations, favoriteId, hardNoIds, commitDerived]);
 
   // S1b — the non-recognizer / kill-switch path. The 3 seed answers (already in
   // useQuizStore from FirstRunFlow) choose representative seeds and run through
@@ -238,61 +254,60 @@ export default function DnaPickerScreen() {
     setTimeout(() => setStep('reveal'), wait);
   }, [pool, commitDerived]);
 
-  // Trait-routed first-rec CTA (M6). Finishes onboarding (free — this is the
-  // activation spine, never paywalled) and opens the bottle with the buyer
-  // intent so the detail page can lead with the matching action.
-  const handleRecCta = useCallback(
-    (kind: 'dupe' | 'original' | 'sample', id: string) => {
+  // Continuing from the reveal opens the top match's full detail page: finish
+  // onboarding (free — the activation spine, never paywalled), land in the app,
+  // then push the detail on top one frame later so the push isn't dropped on the
+  // pre-swap navigator (replacing the root stack + pushing in the same tick
+  // races — the push hits the pre-swap navigator and is silently dropped).
+  const handleRecOpen = useCallback(
+    (id: string) => {
       useTasteProfileStore.getState().commitDraft();
       endRetake();
       completeOnboarding();
       router.replace('/(tabs)');
-      // Defer the detail push until the tab stack has committed. Replacing the
-      // root stack and pushing in the same tick races — the push is applied to
-      // the pre-swap navigator and silently dropped, leaving the user on Today
-      // instead of the routed bottle (the monetization surface). One frame later
-      // the tabs stack is live and the push lands.
       requestAnimationFrame(() => {
-        router.push(`/fragrance/${id}?intent=${kind}`);
+        router.push(`/fragrance/${id}`);
       });
     },
     [completeOnboarding, endRetake, router],
   );
 
-  const handleReshuffle = useCallback(() => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    const nextCount = reshuffleCount + 1;
-    if (nextCount > PICKER_RESHUFFLE_CAP) {
-      track(EVENTS.DNA_PICKER_RESHUFFLE_CAP_HIT, { cap: PICKER_RESHUFFLE_CAP });
-      setStep('fallback');
-      return;
-    }
-    const next = reshufflePickerGrid(pool, shown, nextCount);
-    if (next.length === 0) {
-      // Recognizable pool exhausted — no dead end, route to the question fallback.
-      setStep('fallback');
-      return;
-    }
-    setReshuffleCount(nextCount);
-    setGrid(next);
-    setShown((prev) => [...prev, ...next]);
-    Image.prefetch(next.map((c) => c.image_url).filter(Boolean));
-  }, [pool, shown, reshuffleCount]);
+  // Lazy-reveal the next batch as the user nears the bottom — the whole
+  // recognizable pool is reachable by scrolling, no reshuffle needed.
+  const handleScroll = useCallback(
+    (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+      if (visibleCount >= list.length) return;
+      const { layoutMeasurement, contentOffset, contentSize } = e.nativeEvent;
+      const distanceToBottom = contentSize.height - (contentOffset.y + layoutMeasurement.height);
+      if (distanceToBottom < 500) {
+        const next = Math.min(visibleCount + PICKER_GRID_SIZE, list.length);
+        Image.prefetch(list.slice(visibleCount, next).map((c) => c.image_url).filter(Boolean));
+        setVisibleCount(next);
+      }
+    },
+    [visibleCount, list],
+  );
 
   const handleTap = useCallback(
     (id: string) => {
+      // Cap selections at MAX_PICKS — block (with a warning buzz) only when
+      // adding a NEW pick past the ceiling; de-selecting always works.
+      if (!selectedIds.includes(id) && selectedIds.length >= MAX_PICKS) {
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+        return;
+      }
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
       toggleSelect(id);
     },
-    [toggleSelect],
+    [selectedIds, toggleSelect],
   );
 
   const handleLongPress = useCallback(
     (id: string) => {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
       addHardNo(id);
-      // Drop the rejected tile from the visible grid.
-      setGrid((g) => g.filter((c) => c.id !== id));
+      // Drop the rejected tile from the list entirely.
+      setList((l) => l.filter((c) => c.id !== id));
     },
     [addHardNo],
   );
@@ -310,10 +325,14 @@ export default function DnaPickerScreen() {
   const gap = SPACING.sm;
   const tileW = (width - SPACING.lg * 2 - gap * (COLS - 1)) / COLS;
 
+  // Selected rows for the refine step — read from the full pool so a pick stays
+  // resolvable even if its tile scrolled far down (or was never the first batch).
   const selectedFrags = useMemo(
-    () => shown.filter((c) => selectedIds.includes(c.id)),
-    [shown, selectedIds],
+    () => pool.filter((c) => selectedIds.includes(c.id)),
+    [pool, selectedIds],
   );
+
+  const visible = useMemo(() => list.slice(0, visibleCount), [list, visibleCount]);
 
   if (step === 'fallback') {
     return (
@@ -333,19 +352,13 @@ export default function DnaPickerScreen() {
     return (
       <DnaReveal
         dna={dna}
-        onContinue={() => (recs.length > 0 ? setStep('firstRec') : finishOnboarding())}
-      />
-    );
-  }
-
-  if (step === 'firstRec' && dna && recs.length > 0) {
-    return (
-      <FirstRec
-        recs={recs}
-        dna={dna}
-        onCta={handleRecCta}
-        onMyDna={() => setStep('reveal')}
-        onSkip={finishOnboarding}
+        // Continue from the reveal opens the top match's full detail page
+        // directly (onboarding complete, lands in the app with detail on top).
+        // No separate "first match" interstitial — it was redundant with the
+        // home DNA card and its label read wrong on a retake.
+        onContinue={() =>
+          recs.length > 0 ? handleRecOpen(recs[0].fragrance.id) : finishOnboarding()
+        }
       />
     );
   }
@@ -379,7 +392,7 @@ export default function DnaPickerScreen() {
 
         <ScrollView contentContainerStyle={styles.refineBody} showsVerticalScrollIndicator={false}>
           <Text style={styles.cursive}>your picks</Text>
-          <Text style={styles.title}>Do you own these, or want them?</Text>
+          <Text style={styles.title}>Own it, want it, or just love the scent?</Text>
           <Text style={styles.sub}>
             Tap the ⭐ on the one you love most. It counts a little extra.
           </Text>
@@ -394,7 +407,7 @@ export default function DnaPickerScreen() {
                   <Text style={styles.refineBrand}>{f.brand}</Text>
                   <Text style={styles.refineName} numberOfLines={1}>{f.name}</Text>
                   <View style={styles.relRow}>
-                    {(['own', 'want'] as const).map((r) => (
+                    {(['own', 'want', 'like'] as const).map((r) => (
                       <Pressable
                         key={r}
                         onPress={() => {
@@ -405,7 +418,7 @@ export default function DnaPickerScreen() {
                         testID={`dna-rel-${r}`}
                       >
                         <Text style={[styles.relChipText, rel === r && styles.relChipTextOn]}>
-                          {r === 'own' ? 'I own it' : 'I want it'}
+                          {r === 'own' ? 'I own it' : r === 'want' ? 'I want it' : 'Just like it'}
                         </Text>
                       </Pressable>
                     ))}
@@ -465,19 +478,23 @@ export default function DnaPickerScreen() {
         <Text style={styles.title}>Pick the ones you love</Text>
         <Text style={styles.sub}>
           {selectedCount === 0
-            ? 'Tap a few you recognize and like. Three makes this sharp.'
+            ? 'Scroll and tap up to five you recognize and love. Three makes this sharp.'
             : selectedCount === 1
               ? 'Nice. One or two more makes this sharper.'
-              : `${selectedCount} picked. Add more, or continue.`}
+              : selectedCount >= MAX_PICKS
+                ? `Five picked — that's the max. Continue when ready.`
+                : `${selectedCount} picked. Add a few more, or continue.`}
         </Text>
       </View>
 
       <ScrollView
         contentContainerStyle={[styles.grid, { paddingBottom: SPACING.xl }]}
         showsVerticalScrollIndicator={false}
+        onScroll={handleScroll}
+        scrollEventThrottle={64}
         testID="dna-picker-grid"
       >
-        {grid.map((f) => {
+        {visible.map((f) => {
           const isSel = selectedIds.includes(f.id);
           const isFav = favoriteId === f.id;
           return (
@@ -520,11 +537,8 @@ export default function DnaPickerScreen() {
       </ScrollView>
 
       <View style={styles.escapes}>
-        <Pressable onPress={handleReshuffle} hitSlop={8} style={styles.escapeBtn} testID="dna-reshuffle">
-          <Text style={styles.escapeText} numberOfLines={1}>Show me others</Text>
-        </Pressable>
         <Pressable onPress={() => setStep('fallback')} hitSlop={8} style={styles.escapeBtn} testID="dna-new-to-fragrance">
-          <Text style={[styles.escapeText, styles.escapeRight]} numberOfLines={1}>New to fragrance?</Text>
+          <Text style={styles.escapeText} numberOfLines={1}>New to fragrance?</Text>
         </Pressable>
       </View>
 
@@ -629,15 +643,13 @@ const styles = StyleSheet.create({
 
   escapes: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
-    gap: SPACING.md,
     paddingHorizontal: SPACING.lg,
     paddingVertical: SPACING.sm,
   },
   escapeBtn: { flexShrink: 1 },
   escapeText: { ...TYPE.bodySmall, color: COLORS.accent, textDecorationLine: 'underline' },
-  escapeRight: { textAlign: 'right' },
 
   footer: {
     paddingHorizontal: SPACING.lg,
@@ -674,7 +686,7 @@ const styles = StyleSheet.create({
   refineImg: { width: 54, height: 66, borderRadius: RADIUS.sm, backgroundColor: COLORS.blushSoft },
   refineBrand: { ...TYPE.caption, color: COLORS.muted },
   refineName: { fontFamily: FONTS.serif, fontSize: 16, fontWeight: '600', color: COLORS.text },
-  relRow: { flexDirection: 'row', gap: SPACING.xs, marginTop: 6 },
+  relRow: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.xs, marginTop: 6 },
   relChip: {
     paddingHorizontal: SPACING.sm,
     paddingVertical: 5,

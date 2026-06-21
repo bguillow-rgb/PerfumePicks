@@ -1,4 +1,5 @@
-# Smoke: Today -> Taste tab renders the "Train My Nose" session entry.
+# Smoke: Today -> Taste tab routes straight into the swipe session (no "Begin a
+# Session" interstitial); its signature surface is the "TASTE SESSION" header.
 appId: com.bobguillow.perfumepicks
 ---
 - launchApp
@@ -15,7 +16,5 @@ appId: com.bobguillow.perfumepicks
     id: "tab-taste"
 - extendedWaitUntil:
     visible:
-      text: "TRAIN MY NOSE"
+      text: "TASTE SESSION"
     timeout: 15000
-- assertVisible:
-    text: "Begin a Session"

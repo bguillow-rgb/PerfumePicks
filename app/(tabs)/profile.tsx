@@ -273,7 +273,7 @@ export default function ProfileScreen() {
               }}
             />
           )}
-          <Row label="Take the quiz" onPress={() => router.push('/quiz')} />
+          <Row label="Scent Preferences" onPress={() => router.push('/preferences')} />
           <Row label="View taste insights" onPress={() => router.push('/taste-profile')} pro disabled={!isPro} />
           <Row label="Perfume Wrapped" onPress={() => router.push('/wrapped')} pro disabled={!isPro} />
         </Section>

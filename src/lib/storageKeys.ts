@@ -11,6 +11,7 @@ export const STORAGE_KEYS = {
   swipes: 'perfumepicks-swipes',
   wearLog: 'perfumepicks-wearlog',
   quiz: 'perfumepicks-quiz',
+  scentPreferences: 'perfumepicks-scent-preferences',
   fragranceNotes: 'perfumepicks-fragrance-notes',
   reviews: 'perfumepicks-reviews',
   scan: 'perfumepicks-scan',

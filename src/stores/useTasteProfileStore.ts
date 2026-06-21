@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { syncWrite } from '@/src/lib/sync/syncWrite';
-import type { FragranceDNA, TraitKey } from '@/src/features/dna/types';
+import type { FragranceDNA } from '@/src/features/dna/types';
 
 /**
  * useTasteProfileStore — the live, durable home of the user's Fragrance DNA.
@@ -35,14 +35,6 @@ interface PendingWrite {
   updatedAt: string;
 }
 
-/** A behavioral nudge applied to the live DNA between full retakes. */
-export interface BehaviorSignal {
-  /** Trait to nudge, e.g. a love-swipe on a niche bottle bumps `adventurous`. */
-  trait: TraitKey;
-  /** Signed delta, small (±0.02..0.1). Clamped into [0,1]. */
-  delta: number;
-}
-
 interface TasteProfileState {
   /** The committed, live DNA the recommender reads. Null until the front door. */
   dna: FragranceDNA | null;
@@ -61,8 +53,20 @@ interface TasteProfileState {
   commitDraft: () => void;
   /** Start a fresh retake — clears any stale draft. The live `dna` is untouched. */
   retake: () => void;
-  /** Nudge a trait on the live DNA from a behavior signal. Re-enqueues a write. */
-  applyBehaviorSignal: (signal: BehaviorSignal) => void;
+  /**
+   * Commit a freshly recomputed living DNA (PRD §7.2 / §6.6). Unlike `setDna`
+   * this does NOT clear `draft` — a recompute fires from background signals
+   * (swipe/wear/wardrobe/foreground) and must not disturb an in-progress retake.
+   * Replaces the old `applyBehaviorSignal` trait-nudge: the whole envelope is
+   * re-derived from the unified signal pool, not patched axis-by-axis.
+   */
+  commitRecompute: (dna: FragranceDNA) => void;
+  /**
+   * Clear the one-time "You've shifted" nudge after the user has seen it
+   * (PRD §6.6). No-op when there's no pending shift. Persists so the nudge
+   * doesn't resurface on relaunch or another device.
+   */
+  acknowledgeArchetypeShift: () => void;
   /** Hydrate from the server WITHOUT enqueuing a write (used on sign-in). */
   hydrateDna: (dna: FragranceDNA) => void;
   /** Wipe DNA (sign-out / account switch flush). */
@@ -146,22 +150,20 @@ export const useTasteProfileStore = create<TasteProfileState>()(
 
       retake: () => set({ draft: null }),
 
-      applyBehaviorSignal: ({ trait, delta }) => {
-        const { dna } = get();
-        if (!dna) return;
-        const current = dna.traits.values[trait];
-        if (current == null) return; // app can't derive this axis — leave null
-        const next = Math.max(0, Math.min(1, current + delta));
-        const updated: FragranceDNA = {
-          ...dna,
-          traits: {
-            ...dna.traits,
-            values: { ...dna.traits.values, [trait]: next },
-          },
-          updatedAt: new Date().toISOString(),
+      commitRecompute: (dna) => {
+        set({ dna });
+        enqueue(dna);
+      },
+
+      acknowledgeArchetypeShift: () => {
+        const cur = get().dna;
+        if (!cur?.archetype.pendingShift) return;
+        const dna: FragranceDNA = {
+          ...cur,
+          archetype: { ...cur.archetype, pendingShift: null },
         };
-        set({ dna: updated });
-        enqueue(updated);
+        set({ dna });
+        enqueue(dna);
       },
 
       hydrateDna: (dna) => set({ dna }),

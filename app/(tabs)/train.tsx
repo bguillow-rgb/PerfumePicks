@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
-import { View, Text, StyleSheet, Pressable, Image, Dimensions, ActivityIndicator, Modal } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Image, Dimensions, ActivityIndicator, Modal, InteractionManager } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -21,6 +21,7 @@ import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useSwipeStore, FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStore';
 import { useProStore } from '@/src/stores/useProStore';
 import { recomputeTasteProfile } from '@/src/lib/sync/useAppSync';
+import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
 
 /**
  * Train My Nose — swipe right to love, down to like, left to pass.
@@ -54,20 +55,20 @@ const GENDER_LABEL: Record<GenderFilter, string> = {
 };
 
 /**
- * TrainScreen — outer shell only. Handles the pre-session state (Intro,
- * daily-limit check). All Reanimated hooks live in SwipeSession below so
- * they are only initialised when the user explicitly starts a session.
+ * TrainScreen — outer shell only. The Taste tab routes straight into the
+ * swipe session (no "Begin a Session" interstitial); the motivation that
+ * the old Intro carried now lives as a one-line, dismissible "why" banner
+ * on the deck itself (see SwipeSession.whyCopy).
  *
- * Why this matters: useSharedValue + useAnimatedReaction register native
- * UI-thread worklets on first mount. When the Train tab is lazily mounted
- * for the very first time, this initialisation blocks the initial React
- * paint and the tab shows blank for several seconds before Intro appears.
- * Moving the heavy hooks into a child component that only mounts on "Begin"
- * makes the Intro render instant.
+ * Why the brief loader: useSharedValue + useAnimatedReaction in SwipeSession
+ * register native UI-thread worklets on first mount, which blocks the initial
+ * React paint and shows a blank tab for a beat. We defer mounting SwipeSession
+ * until after the tab transition settles (InteractionManager) so the tab paints
+ * instantly with a light loader, then drops into the deck.
  */
 export default function TrainScreen() {
   const router = useRouter();
-  const [started, setStarted] = useState(false);
+  const [interactive, setInteractive] = useState(false);
 
   const isPro = useProStore((s) => s.isPro);
   const dailySwipeCount = useSwipeStore((s) => s.dailySwipeCount);
@@ -79,15 +80,25 @@ export default function TrainScreen() {
     return dailySwipeDate === today && dailySwipeCount >= FREE_DAILY_SWIPE_LIMIT;
   }, [isPro, dailySwipeCount, dailySwipeDate, today]);
 
-  if (!started) {
+  useEffect(() => {
+    const handle = InteractionManager.runAfterInteractions(() => setInteractive(true));
+    return () => handle.cancel();
+  }, []);
+
+  if (!interactive) {
     return (
-      <Intro
-        onStart={() => setStarted(true)}
-        onClose={() => router.navigate('/')}
-        dailyLimitReached={dailyLimitReached}
-        onUpgrade={() => router.push('/paywall')}
-        onViewProfile={() => router.push('/taste-profile' as any)}
-      />
+      <SafeAreaView style={styles.safe} edges={['top']}>
+        <View style={styles.headerRow}>
+          <Pressable onPress={() => router.navigate('/')} accessibilityLabel="Close">
+            <Ionicons name="close" size={26} color={COLORS.text} />
+          </Pressable>
+          <Text style={styles.eyebrow}>TASTE SESSION</Text>
+          <View style={{ width: 26 }} />
+        </View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <ActivityIndicator color={COLORS.accent} />
+        </View>
+      </SafeAreaView>
     );
   }
 
@@ -95,7 +106,7 @@ export default function TrainScreen() {
     <SwipeSession
       isPro={isPro}
       dailyLimitReached={dailyLimitReached}
-      onExit={() => setStarted(false)}
+      onExit={() => router.navigate('/')}
       onUpgrade={() => router.push('/paywall')}
     />
   );
@@ -111,6 +122,16 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
   const [index, setIndex] = useState(0);
   const [stats, setStats] = useState<SessionStats>({ loved: 0, liked: 0, passed: 0 });
   const [genderFilter, setGenderFilter] = useState<GenderFilter>('all');
+  // The "why" carried over from the removed Intro: a single, humanized line of
+  // motivation, shown once on the first card and dismissible. Returning users
+  // (any prior swipe signal) get the "sharpening" framing; new users get the
+  // "teach us" framing. Instructions themselves still live on the deck hints.
+  const [whyVisible, setWhyVisible] = useState(true);
+  const [whyCopy] = useState(() =>
+    Object.keys(useSwipeStore.getState().swipes).length > 0
+      ? 'Your taste is sharpening — each swipe tunes your daily pick, Discover & quiz.'
+      : 'Swipe to teach us what you love — it sharpens your daily pick, Discover & quiz.',
+  );
   const [lastAction, setLastAction] = useState<'pass' | 'like' | 'love' | null>(null);
   const [liveDir, setLiveDir] = useState<'none' | 'left' | 'right' | 'down'>('none');
   const [exitModalVisible, setExitModalVisible] = useState(false);
@@ -255,6 +276,9 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
     // Recompute the taste profile from this session's swipes so the profile
     // screen and recommendations reflect them (fire-and-forget; upsert is async).
     recomputeTasteProfile().catch(() => {});
+    // Sharpen the living DNA at session-end too (debounced — coalesces with the
+    // per-swipe triggers from this session into one recompute).
+    scheduleLivingDnaRecompute('session_end');
     setSessionSavedVisible(true);
     endSessionTimer.current = setTimeout(() => {
       setSessionSavedVisible(false);
@@ -382,6 +406,15 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
         <DailyLimitReached onUpgrade={onUpgrade} onBack={onExit} />
       ) : (
         <View style={styles.deckArea}>
+          {index === 0 && whyVisible && (
+            <View style={styles.whyBanner}>
+              <Ionicons name="sparkles" size={15} color={COLORS.accent} />
+              <Text style={styles.whyBannerText}>{whyCopy}</Text>
+              <Pressable onPress={() => setWhyVisible(false)} hitSlop={10} accessibilityLabel="Dismiss">
+                <Ionicons name="close" size={16} color={COLORS.muted} />
+              </Pressable>
+            </View>
+          )}
           {deck[index + 1] && (
             <BackgroundCard fragrance={deck[index + 1]} />
           )}
@@ -440,102 +473,6 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
           <Text style={styles.savedToastText}>Session saved. Your taste profile just got sharper. Come back anytime to keep training.</Text>
         </View>
       )}
-    </SafeAreaView>
-  );
-}
-
-function Intro({ onStart, onClose, dailyLimitReached, onUpgrade, onViewProfile }: {
-  onStart: () => void;
-  onClose: () => void;
-  dailyLimitReached: boolean;
-  onUpgrade: () => void;
-  onViewProfile: () => void;
-}) {
-  const swipesMap = useSwipeStore((s) => s.swipes);
-  const signalCount = Object.keys(swipesMap).length;
-  const isReturning = signalCount > 0;
-
-  return (
-    <SafeAreaView style={styles.safe} edges={['top']}>
-      <View style={styles.introCloseRow}>
-        <Pressable onPress={onClose} hitSlop={12}>
-          <Ionicons name="close" size={26} color={COLORS.muted} />
-        </Pressable>
-      </View>
-      <View style={styles.introContainer}>
-        <View style={styles.iconCircle}>
-          <Ionicons name="sparkles" size={36} color={COLORS.accent} />
-        </View>
-        <Text style={styles.eyebrow}>TRAIN MY NOSE</Text>
-        {isReturning ? (
-          <Text style={styles.headline}>
-            Your taste is <Text style={styles.italic}>sharpening</Text>.
-          </Text>
-        ) : (
-          <Text style={styles.headline}>
-            Teach us what you <Text style={styles.italic}>love</Text>.
-          </Text>
-        )}
-
-        {/* 3-outcome value prop row */}
-        <View style={styles.outcomesRow}>
-          <View style={styles.outcomeItem}>
-            <Ionicons name="water-outline" size={22} color={COLORS.accent} />
-            <Text style={styles.outcomeLabel}>Wear Today{'\n'}sharpens</Text>
-          </View>
-          <View style={styles.outcomeSep} />
-          <View style={styles.outcomeItem}>
-            <Ionicons name="search-outline" size={22} color={COLORS.accent} />
-            <Text style={styles.outcomeLabel}>Discover{'\n'}improves</Text>
-          </View>
-          <View style={styles.outcomeSep} />
-          <View style={styles.outcomeItem}>
-            <Ionicons name="flask-outline" size={22} color={COLORS.accent} />
-            <Text style={styles.outcomeLabel}>Quiz gets{'\n'}smarter</Text>
-          </View>
-        </View>
-
-        {isReturning ? (
-          <View style={styles.signalRow}>
-            <Ionicons name="pulse-outline" size={12} color={COLORS.accent} />
-            <Text style={styles.signalText}>
-              {signalCount} signal{signalCount !== 1 ? 's' : ''} training your taste
-            </Text>
-          </View>
-        ) : (
-          <Text style={styles.body}>
-            Swipe right on fragrances that intrigue you, left on those that don't.
-          </Text>
-        )}
-
-        {dailyLimitReached ? (
-          <>
-            <Text style={styles.body}>
-              You get <Text style={styles.italic}>10 free swipes a day</Text> and you've used today's.
-              They reset tomorrow, free. Go Pro for unlimited swipes anytime.
-            </Text>
-            <Pressable style={[styles.cta, { backgroundColor: COLORS.text }]} onPress={onUpgrade}>
-              <Text style={styles.ctaText}>Unlock Unlimited Swipes</Text>
-            </Pressable>
-            <Pressable onPress={onClose} hitSlop={8} style={styles.tasteProfileLink}>
-              <Text style={styles.tasteProfileLinkText}>Maybe tomorrow</Text>
-            </Pressable>
-          </>
-        ) : (
-          <>
-            <Pressable style={styles.cta} onPress={onStart}>
-              <Text style={styles.ctaText}>Begin a Session</Text>
-            </Pressable>
-            <Text style={styles.footnote}>10 free swipes / day · Unlimited with Pro</Text>
-          </>
-        )}
-
-        {isReturning && (
-          <Pressable onPress={onViewProfile} style={styles.tasteProfileLink} hitSlop={8}>
-            <Text style={styles.tasteProfileLinkText}>See your taste profile →</Text>
-          </Pressable>
-        )}
-      </View>
     </SafeAreaView>
   );
 }
@@ -876,15 +813,6 @@ const hintCard = StyleSheet.create({
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.bg },
-  introCloseRow: {
-    paddingHorizontal: SPACING.lg,
-    paddingTop: SPACING.sm,
-    alignItems: 'flex-start',
-  },
-  introContainer: {
-    flex: 1, alignItems: 'center', justifyContent: 'center',
-    paddingHorizontal: SPACING.xl,
-  },
   iconCircle: {
     width: 84, height: 84, borderRadius: 42,
     backgroundColor: COLORS.card,
@@ -893,10 +821,6 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.lg,
   },
   eyebrow: { ...TYPE.eyebrow, marginBottom: SPACING.md, textAlign: 'center' },
-  headline: {
-    fontFamily: FONTS.serif, fontSize: 32, color: COLORS.text,
-    textAlign: 'center', marginBottom: SPACING.md, lineHeight: 38, fontWeight: '600',
-  },
   italic: { fontStyle: 'italic', color: COLORS.accent, fontFamily: 'CormorantGaramond_400Regular_Italic' },
   body: {
     ...TYPE.body, textAlign: 'center', color: COLORS.muted,
@@ -910,66 +834,6 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.sm,
   },
   ctaText: { ...TYPE.label, color: COLORS.white, letterSpacing: 2 },
-  footnote: { ...TYPE.caption, marginTop: 4 },
-
-  // Intro — 3-outcome value prop row
-  outcomesRow: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-    gap: 0,
-    marginBottom: SPACING.lg,
-    marginTop: SPACING.xs,
-    paddingHorizontal: SPACING.md,
-  },
-  outcomeItem: {
-    flex: 1,
-    alignItems: 'center',
-    gap: SPACING.xs,
-    paddingHorizontal: 4,
-  },
-  outcomeLabel: {
-    ...TYPE.caption,
-    fontSize: 11,
-    color: COLORS.muted,
-    textAlign: 'center',
-    lineHeight: 15,
-  },
-  outcomeSep: {
-    width: 1,
-    height: 36,
-    backgroundColor: COLORS.border,
-    alignSelf: 'center',
-    marginTop: 4,
-  },
-  signalRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 5,
-    marginBottom: SPACING.lg,
-    paddingHorizontal: SPACING.md,
-    paddingVertical: SPACING.sm,
-    backgroundColor: COLORS.card,
-    borderRadius: RADIUS.full,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-  },
-  signalText: {
-    ...TYPE.caption,
-    fontSize: 12,
-    color: COLORS.accent,
-  },
-  tasteProfileLink: {
-    marginTop: SPACING.md,
-    paddingVertical: SPACING.xs,
-  },
-  tasteProfileLinkText: {
-    ...TYPE.label,
-    fontSize: 12,
-    color: COLORS.accent,
-    letterSpacing: 0.3,
-    textDecorationLine: 'underline',
-  },
 
   // R11: overlay + exit modal
   overlay: {
@@ -1031,6 +895,21 @@ const styles = StyleSheet.create({
   genderPillTextActive: { color: COLORS.bg },
 
   deckArea: { flex: 1, alignItems: 'center', justifyContent: 'flex-start' },
+
+  whyBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    backgroundColor: COLORS.card,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.border,
+    borderRadius: RADIUS.md,
+    paddingVertical: SPACING.sm,
+    paddingHorizontal: SPACING.md,
+    marginHorizontal: SPACING.lg,
+    marginBottom: SPACING.sm,
+  },
+  whyBannerText: { ...TYPE.caption, flex: 1, color: COLORS.muted },
 
   card: {
     position: 'absolute',

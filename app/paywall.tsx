@@ -20,6 +20,11 @@ type Plan = 'monthly' | 'yearly';
 // that frames Pro as limit-removal rather than genuine added value.
 const FEATURES = [
   {
+    icon: 'finger-print-outline' as const,
+    title: 'A Living Fragrance DNA',
+    desc: 'Your taste, mapped from the bottles you pick, wear, and swipe — a profile that keeps sharpening every time you use the app, and powers every recommendation.',
+  },
+  {
     icon: 'pricetags-outline' as const,
     title: 'Find Cheaper Dupes Instantly',
     desc: 'Every fragrance detail page surfaces alternatives that smell nearly identical, often 30-70% less. One find pays for a year of Pro.',
@@ -27,17 +32,12 @@ const FEATURES = [
   {
     icon: 'sparkles-outline' as const,
     title: 'Unlimited Train My Nose',
-    desc: 'The more you swipe, the sharper your recommendations get. Free is capped at 10 swipes a day. Pro removes the ceiling.',
+    desc: 'Every swipe feeds your DNA and sharpens your matches. Free is capped at 10 swipes a day — Pro removes the ceiling.',
   },
   {
     icon: 'analytics-outline' as const,
     title: 'Your Full Scent Profile',
-    desc: 'See every accord, note, and house you gravitate toward, plus what to avoid. Your taste in one view.',
-  },
-  {
-    icon: 'flask-outline' as const,
-    title: 'Deep-Dive Quiz',
-    desc: 'Ten questions instead of five means matches scored against your sillage preference, gender lean, and discovery appetite.',
+    desc: 'See every accord, note, and house your DNA gravitates toward — plus the notes you’ve ruled out in Scent Preferences. Your taste in one view.',
   },
   {
     icon: 'rose-outline' as const,
@@ -171,14 +171,14 @@ export default function PaywallScreen() {
 
       {/* Header */}
       <Text style={styles.header}>Perfume Picks Pro</Text>
-      <Text style={styles.subheader}>Find dupes. Train your nose. Know your taste.</Text>
+      <Text style={styles.subheader}>Your Fragrance DNA. Cheaper dupes. A sharper nose.</Text>
 
       {/* Pitch — one sentence, named differentiators only. Users scan paywalls
           rather than read them; we frontload the two claims no competitor can
           make and let the bullets do the rest. */}
       <View style={styles.pitchCard}>
         <Text style={styles.pitchHeadline}>
-          The only app that learns your nose and finds you cheaper alternatives that smell just as good.
+          The only app that learns your taste into a Fragrance DNA — then finds you cheaper bottles that smell just as good.
         </Text>
       </View>
 

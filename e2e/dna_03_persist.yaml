@@ -15,11 +15,13 @@ appId: com.bobguillow.perfumepicks
 - runFlow: helpers/dismiss_dev_menu.yaml
 
 # Persisted guest session + completed onboarding → boots straight to Today.
+# The persisted DNA seeds liveDna, so Today shows the unified DNA hero card
+# (the "start here" hero is suppressed once a DNA exists).
 - extendedWaitUntil:
     visible: { id: "tab-today" }
     timeout: 90000
 - assertVisible:
-    text: "start here"
+    id: "today-unified-dna"
 
 # The persisted DNA surfaces on the You tab as the re-viewable "My Fragrance DNA"
 # card. Its presence after a cold relaunch proves the envelope survived.

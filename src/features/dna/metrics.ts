@@ -29,6 +29,16 @@ export function pickWeight(relation: SeedRelation, favorite: boolean): number {
   return favorite ? base * FAVORITE_MULTIPLIER : base;
 }
 
+/**
+ * The single weight chokepoint every derivation helper reads. A Living DNA pool
+ * pick carries a pre-resolved `weight` (base × deliberate × recency); a plain
+ * onboarding pick has none → falls back to `pickWeight`, keeping the legacy
+ * derivation byte-identical (the no-regression guarantee).
+ */
+export function resolvePickWeight(p: DnaPick): number {
+  return p.weight ?? pickWeight(p.relation, p.favorite);
+}
+
 /** Accords that read as "expensive/luxe" — used for smellsLuxe + luxury. */
 const LUXE_ACCORDS = ['oud', 'amber', 'leather', 'incense', 'resin', 'saffron', 'oudh'];
 /** Families/accords that read as evening / date-night. */
@@ -61,6 +71,38 @@ export const isWarmFrag = (f: DnaCatalogFragrance): boolean =>
 export const isColdFrag = (f: DnaCatalogFragrance): boolean =>
   hasAny(f.top_accords, COLD_ACCORDS) || hasAny([f.fragrance_family], EVENING_FAMILIES);
 
+/**
+ * Build a percentile function over a reference pool for a numeric accessor.
+ *
+ * Returns a fn mapping a raw value → its midrank percentile (0..1) within the
+ * pool: fraction strictly below, plus half the ties. A value at the pool's low
+ * end → ~0, the high end → ~1, the median → ~0.5. This is the lever that makes
+ * the DNA respond to WHICH bottles a user picked from the set they were shown:
+ * the onboarding picker only ever offers popular bottles, so absolute popularity
+ * is near-constant across users and can't differentiate them — but picking the
+ * least-popular / priciest / loudest bottle *on offer* reads high here. Missing
+ * values and an empty pool both resolve to the neutral 0.5.
+ */
+export function poolPercentile(
+  pool: DnaCatalogFragrance[],
+  get: (f: DnaCatalogFragrance) => number | null | undefined,
+): (raw: number | null | undefined) => number {
+  const vals = pool
+    .map(get)
+    .filter((v): v is number => typeof v === 'number' && Number.isFinite(v))
+    .sort((a, b) => a - b);
+  return (raw) => {
+    if (typeof raw !== 'number' || !Number.isFinite(raw) || vals.length === 0) return 0.5;
+    let below = 0;
+    let equal = 0;
+    for (const v of vals) {
+      if (v < raw) below++;
+      else if (v === raw) equal++;
+    }
+    return (below + equal / 2) / vals.length;
+  };
+}
+
 /** Weighted mean of a per-fragrance accessor across picks (0 when no weight). */
 export function weightedMean(
   picks: DnaPick[],
@@ -69,7 +111,7 @@ export function weightedMean(
   let sum = 0;
   let wsum = 0;
   for (const p of picks) {
-    const w = pickWeight(p.relation, p.favorite);
+    const w = resolvePickWeight(p);
     sum += w * get(p.fragrance);
     wsum += w;
   }
@@ -84,7 +126,7 @@ export function weightedFraction(
   let hit = 0;
   let wsum = 0;
   for (const p of picks) {
-    const w = pickWeight(p.relation, p.favorite);
+    const w = resolvePickWeight(p);
     if (pred(p.fragrance)) hit += w;
     wsum += w;
   }
@@ -115,7 +157,7 @@ export function tasteBreadth(picks: DnaPick[]): number {
 export function modalGender(picks: DnaPick[]): 'masculine' | 'feminine' | 'unisex' {
   const tally: Record<string, number> = {};
   for (const p of picks) {
-    const w = pickWeight(p.relation, p.favorite);
+    const w = resolvePickWeight(p);
     tally[p.fragrance.gender] = (tally[p.fragrance.gender] ?? 0) + w;
   }
   let best: 'masculine' | 'feminine' | 'unisex' = 'unisex';

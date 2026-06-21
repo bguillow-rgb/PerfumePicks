@@ -66,12 +66,12 @@ appId: com.bobguillow.perfumepicks
       id: "today-screen"
     timeout: 20000
 
-# ── Open the You DNA home via the forward Journey chip ──
+# ── Open the You DNA home via the DNA card's Journey "Learn more →" link ──
 - extendedWaitUntil:
     visible:
-      id: "today-journey-chip"
+      id: "today-dna-learn-more"
     timeout: 10000
-- tapOn: { id: "today-journey-chip" }
+- tapOn: { id: "today-dna-learn-more" }
 
 # ── The full Journey ladder is present, with the "You are here" rung ──
 - extendedWaitUntil:

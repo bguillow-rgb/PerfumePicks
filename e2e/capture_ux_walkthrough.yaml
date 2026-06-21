@@ -1,0 +1,103 @@
+# UX audit capture: walk every major surface, screenshot each.
+# App is currently in the DNA retake picker — capture that flow first, then
+# land on Today and tour the tabs. Runs the latest local bundle off Metro.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+- extendedWaitUntil:
+    visible:
+      text: "Pick the ones you love"
+    timeout: 90000
+
+# ── DNA picker grid ──
+- takeScreenshot: ux-shots/dna_01_grid
+- tapOn:
+    id: "dna-tile"
+    index: 0
+- tapOn:
+    id: "dna-tile"
+    index: 1
+- tapOn:
+    id: "dna-tile"
+    index: 2
+- takeScreenshot: ux-shots/dna_02_grid_selected
+- tapOn:
+    id: "dna-picker-continue"
+- waitForAnimationToEnd
+
+# ── DNA refine (own/want + favorite) ──
+- takeScreenshot: ux-shots/dna_03_refine
+- tapOn:
+    id: "dna-refine-continue"
+- waitForAnimationToEnd
+
+# ── Reading → reveal ──
+- extendedWaitUntil:
+    visible:
+      id: "dna-first-rec"
+    timeout: 20000
+    optional: true
+- takeScreenshot: ux-shots/dna_04_reveal_or_rec
+- tapOn:
+    text: "Skip to app →"
+    optional: true
+- tapOn:
+    text: "Continue"
+    optional: true
+- waitForAnimationToEnd
+
+# ── Today ──
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 30000
+- takeScreenshot: ux-shots/01_today_top
+- scroll
+- takeScreenshot: ux-shots/02_today_mid
+- scroll
+- takeScreenshot: ux-shots/03_today_bottom
+
+# ── Discover ──
+- tapOn:
+    id: "tab-discover"
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/04_discover_top
+- scroll
+- takeScreenshot: ux-shots/05_discover_mid
+
+# ── Taste ──
+- tapOn:
+    id: "tab-taste"
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/06_taste_top
+- scroll
+- takeScreenshot: ux-shots/07_taste_mid
+
+# ── Wardrobe ──
+- tapOn:
+    id: "tab-wardrobe"
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/08_wardrobe_top
+
+# ── You / profile ──
+- tapOn:
+    id: "tab-profile"
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/09_you_top
+- scroll
+- takeScreenshot: ux-shots/10_you_mid
+
+# ── Fragrance detail ──
+- tapOn:
+    id: "tab-today"
+- waitForAnimationToEnd
+- tapOn:
+    id: "today-scent-hero"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/12_fragrance_detail_top
+- scroll
+- takeScreenshot: ux-shots/13_fragrance_detail_mid
+- scroll
+- takeScreenshot: ux-shots/14_fragrance_detail_bottom

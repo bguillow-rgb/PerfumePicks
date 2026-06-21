@@ -13,17 +13,14 @@ appId: com.bobguillow.perfumepicks
 - waitForAnimationToEnd
 - tapOn:
     id: "tab-profile"
+# The You tab's signature top surface is the re-viewable My Fragrance DNA card.
 - extendedWaitUntil:
     visible:
-      text: "ACCOUNT"
+      id: "my-dna-card"
     timeout: 15000
-# The You tab is a long scroll list; the My Fragrance DNA card now sits near the
-# top, so the Account rows live below the fold. Scroll each into view.
-- scrollUntilVisible:
-    element:
-      text: "TASTE PROFILE"
-    direction: DOWN
-    timeout: 15000
+# It is a long scroll list; the Account rows live below the fold. Section titles
+# render uppercase via CSS but the underlying text nodes are title-case, so
+# assert the literal row label ("Subscription"), not the styled header.
 - scrollUntilVisible:
     element:
       text: "Subscription"

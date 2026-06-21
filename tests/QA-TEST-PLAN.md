@@ -1,9 +1,18 @@
 # PerfumePicks QA Test Plan
 
-**Version:** 1.0
-**Last updated:** 2026-05-15
-**Coverage:** Features F1-F10, all screens, all sheets, all cross-cutting concerns
+**Version:** 1.1
+**Last updated:** 2026-06-20
+**Coverage:** Features F1-F10 + Fragrance DNA (onboarding spine + Living DNA), all screens, all sheets, all cross-cutting concerns
 **Platform:** React Native / Expo (iOS + Android)
+
+> **v1.1 changelog (DNA reconciliation).** Added [Screen: Fragrance DNA](#screen-fragrance-dna)
+> covering the picker → refine → reveal → first-rec onboarding spine, the unified
+> DNA hero card on Today, the Living-DNA recompute (shift/lean), and the
+> "Buy the bottle" affiliate CTA on the first match. Updated [Home/Today](#screen-hometoday-tab)
+> for the unified DNA card and the removal of the legacy "Take the Taste Quiz"
+> Discover card. The legacy [Quiz](#screen-quiz) is now a **secondary** path
+> (still reachable from the You tab + `/quiz` route) and is **no longer surfaced
+> on Today** — see the deprecation note in that section.
 
 ---
 
@@ -34,6 +43,7 @@
 23. [Screen: Brand Page](#screen-brand-page)
 24. [Screen: User Profile (Public)](#screen-user-profile-public)
 25. [Screen: Taste Profile](#screen-taste-profile)
+25a. [Screen: Fragrance DNA](#screen-fragrance-dna)
 26. [Screen: Wrapped](#screen-wrapped)
 27. [Sheets: AddToWardrobe](#sheet-addtowardrobe)
 28. [Sheets: LogWear](#sheet-logwear)
@@ -488,6 +498,7 @@
 
 ### User Stories
 - US-034: As a user, I want to see a personalized home screen with today's picks, recent activity, and quick actions so that I can engage with my collection immediately.
+- US-034a: As a user who has completed Fragrance DNA, I want my DNA — archetype, matched picks, and journey — surfaced as ONE authored hero card on Today so that my home reads as my taste made visible, not loose recommendations.
 
 ### Acceptance Criteria
 - [ ] AC-100: "What should I wear?" shortcut visible and tappable
@@ -495,6 +506,10 @@
 - [ ] AC-102: Recent wear history summary
 - [ ] AC-103: Streak counter visible when active
 - [ ] AC-104: Morning pick card for Pro users with 20+ wears
+- [ ] AC-104a: After DNA onboarding, Today shows the unified DNA hero card (`today-unified-dna`): archetype header (emblem + name + identity), a horizontal picks rail, and a Journey footer with "Learn more →".
+- [ ] AC-104b: The legacy "Take the Taste Quiz" Discover card is REMOVED from Today. The quiz is no longer surfaced on the home screen (secondary path only — see [Quiz](#screen-quiz)).
+- [ ] AC-104c: The standalone journey chip is GONE; the journey now lives inside the unified DNA card footer (`today-dna-learn-more`), which navigates to the Taste Profile (You DNA home), not an inline ladder.
+- [ ] AC-104d: The archetype name never truncates at large Dynamic Type — Retake sits on its own eyebrow row so the name keeps full card width (`numberOfLines=2`).
 
 ### Test Cases
 
@@ -508,6 +523,16 @@
 | TC-175 | Streak counter -- no streak | 1. Skip a day after logging wears 2. Open Home tab | Streak counter hidden or shows 0 | P1 |
 | TC-176 | Home screen scroll performance | 1. Open Home tab with populated data 2. Scroll up and down rapidly | Smooth scrolling at 60fps; no jank | P1 |
 | TC-177 | Home tab icon | 1. View tab bar | Today tab shows sparkles-outline icon | P2 |
+| TC-177a | Unified DNA card renders after onboarding | 1. Complete DNA onboarding 2. Land on Today | `today-unified-dna` card renders with archetype header, picks rail, and journey footer | P0 |
+| TC-177b | DNA card archetype header | 1. View unified DNA card | Tinted emblem ring + archetype name (`today-dna-archetype`) + identity line; "YOUR FRAGRANCE DNA" eyebrow + "Retake →" (`today-dna-retake`) | P0 |
+| TC-177c | DNA card picks rail | 1. View unified DNA card | Horizontal rail of matched bottles, each with a tint bar, brand/name, and a one-line reason; tap a pick → fragrance detail | P0 |
+| TC-177d | DNA card journey footer → Taste Profile | 1. Tap "Learn more →" (`today-dna-learn-more`) | Navigates to Taste Profile (`taste-profile-screen`); NOT an inline ladder | P0 |
+| TC-177e | Retake from DNA card | 1. Tap "Retake →" (`today-dna-retake`) | Starts DNA retake flow (routes into `/dna` onboarding spine) | P1 |
+| TC-177f | Archetype name no truncation at large Dynamic Type | 1. Set iOS text size to largest 2. View unified DNA card | Archetype name wraps to 2 lines, never clips to "The Cro…"; Retake stays on its own row | P0 |
+| TC-177g | DNA picks rail empty state | 1. DNA computed but no matched recs yet 2. View card | Friendly empty copy ("Lining up bottles that match your taste…") instead of a blank rail | P1 |
+| TC-177h | Journey footer hidden when no journey | 1. DNA with no journey data 2. View card | Journey footer + divider omitted; card still renders header + picks | P2 |
+| TC-177i | Legacy Taste Quiz Discover card removed from Today | 1. Open Today as any user | No "Take the Taste Quiz" card/CTA anywhere on Today | P0 |
+| TC-177j | New-user hero before DNA | 1. Fresh guest, no DNA 2. View Today | New-user hero shown (GetStartedHero) with no tertiary "quiz" link; DNA card absent until onboarding done | P1 |
 
 ---
 
@@ -875,8 +900,16 @@
 
 ## Screen: Quiz
 
+> **⚠️ DEPRECATED AS PRIMARY ONBOARDING (v1.1).** The Taste Quiz is **no longer the
+> new-user onboarding path** and is **no longer surfaced on Today** (the "Take the
+> Taste Quiz" Discover card was removed). New users are onboarded via the
+> [Fragrance DNA](#screen-fragrance-dna) spine (picker → refine → reveal → first-rec).
+> The Quiz remains a **secondary path** reachable from the You/Profile tab and the
+> `/quiz` route; its test cases below still apply when entered via those surfaces.
+> Do NOT assert the quiz anywhere on the Today/home screen.
+
 ### User Stories
-- US-047: As a new user, I want to take a taste quiz so that the app can learn my preferences quickly.
+- US-047: As a returning user, I want to take the taste quiz from the You tab so that the app can refine my preferences (secondary path — DNA is primary onboarding).
 - US-048: As a Pro user, I want to answer all 9 quiz questions for more precise recommendations.
 
 ### Acceptance Criteria
@@ -902,6 +935,8 @@
 | TC-341 | Quiz -- haptic feedback on selection | 1. Tap a quiz option | Haptic feedback fires | P2 |
 | TC-342 | Pro quiz route (/quiz/pro) | 1. Be a Pro user 2. Navigate to /quiz/pro | Pro-specific quiz flow loads | P1 |
 | TC-343 | Quiz results route (/quiz/results) | 1. Complete quiz 2. Observe route | Results screen renders at /quiz/results | P0 |
+| TC-343a | Quiz NOT surfaced on Today | 1. Open Today as new and returning users | No quiz entry point anywhere on Today; quiz only reachable via You/Profile tab + `/quiz` route | P0 |
+| TC-343b | Quiz entry from You/Profile tab | 1. Open You/Profile tab 2. Tap the taste-quiz row | Quiz loads at `/quiz` | P1 |
 
 ---
 
@@ -972,6 +1007,83 @@
 | TC-359 | Taste Profile -- free user | 1. Be a free user 2. Attempt to open Taste Profile | Paywall shown; content not accessible | P0 |
 | TC-360 | Taste Profile content | 1. Open Taste Profile with 10+ fragrances in wardrobe | Top notes, accords, families all visualized | P0 |
 | TC-361 | Taste Profile -- empty wardrobe | 1. Have no fragrances 2. Open Taste Profile | "Add fragrances to see your taste profile" empty state | P1 |
+
+---
+
+## Screen: Fragrance DNA
+
+> **PRIMARY ONBOARDING (v1.1).** Fragrance DNA is the new-user spine and the
+> living identity surface. Flow: **picker grid → refine → reveal → first-rec →
+> Today (unified DNA card)**. After onboarding it stays alive via the Living-DNA
+> recompute (archetype **shift** when taste clearly moves, soft **lean** while it
+> drifts) driven by swipes/swaps. The "Buy the bottle" affiliate CTA on the first
+> match is the primary revenue moment in this flow.
+>
+> **Real testIDs** (assert these exactly): picker — `dna-picker-grid`, `dna-tile`,
+> `dna-tile-favorite`, `dna-reshuffle`, `dna-new-to-fragrance`, `dna-picker-continue`;
+> refine — `dna-refine-row`, `dna-rel-<rel>`, `dna-refine-favorite`,
+> `dna-refine-back`, `dna-refine-continue`, `dna-retake-cancel`; reveal —
+> `dna-reveal-emblem`, `dna-reveal-archetype`, `dna-trait-chip`, `dna-reveal-share`,
+> `dna-reveal-continue`; first-rec — `dna-first-rec`, `dna-rec-buy`, `dna-rec-cta`,
+> `dna-rec-not-me`, `dna-rec-my-dna`, `dna-rec-skip`; Living DNA —
+> `dna-shift-banner`, `dna-shift-compact`, `dna-shift-ack`, `dna-leaning`,
+> `dna-leaning-compact`, `dna-swap-progress`; Today card — `today-unified-dna`,
+> `today-dna-archetype`, `today-dna-retake`, `today-dna-learn-more`.
+
+### User Stories
+- US-072: As a new user, I want to build my Fragrance DNA by picking bottles I'm drawn to (instead of answering an abstract quiz) so that onboarding feels like taste, not a survey.
+- US-073: As a user, I want to refine my picks (rate how each relates to me, mark a favorite) so that my DNA is precise.
+- US-074: As a user, I want a reveal moment that names my archetype with an emblem and identity line so that my taste feels seen and shareable.
+- US-075: As a user, I want a first matched bottle with a clear reason and a prominent "Buy the bottle" CTA so that I can act on my DNA immediately.
+- US-076: As a returning user, I want my DNA to stay alive — shifting archetype when my taste clearly moves and leaning while it drifts — so that it reflects who I am now, not who I was at onboarding.
+
+### Acceptance Criteria
+- [ ] AC-257: Picker grid (`dna-picker-grid`) shows recognizable bottles only; tapping tiles (`dna-tile`) selects them; a favorite can be marked (`dna-tile-favorite`); Continue (`dna-picker-continue`) is gated until the minimum selection is met.
+- [ ] AC-258: Reshuffle (`dna-reshuffle`) swaps the grid; "new to fragrance" (`dna-new-to-fragrance`) routes to the fallback path.
+- [ ] AC-259: Refine step lists picked bottles as rows (`dna-refine-row`) with relationship options (`dna-rel-*`) and a favorite toggle (`dna-refine-favorite`); Back (`dna-refine-back`) and Continue (`dna-refine-continue`) both work.
+- [ ] AC-260: Reveal shows the archetype emblem (`dna-reveal-emblem`), name (`dna-reveal-archetype`), trait chips (`dna-trait-chip`), a Share action (`dna-reveal-share`), and Continue (`dna-reveal-continue`).
+- [ ] AC-261: First-rec (`dna-first-rec`) shows a matched bottle with a reason. When an affiliate link exists, a gold "BUY THE BOTTLE · $price" primary CTA (`dna-rec-buy`) fires `handleAffiliateClick` with `source_screen: 'first_rec'`; the trait CTA (`dna-rec-cta`) is demoted to an underlined secondary link. When no link exists, the trait CTA is promoted to primary.
+- [ ] AC-262: First-rec secondary actions: "Not me" (`dna-rec-not-me`), "See my DNA" (`dna-rec-my-dna`), and Skip (`dna-rec-skip`) all advance/exit correctly into Today.
+- [ ] AC-263: Trait-routed CTA copy/destination matches routing — valueHunter→dupe, luxury→original, adventurous→sample.
+- [ ] AC-264: Living DNA — a clear taste move surfaces a shift banner (`dna-shift-banner` / compact `dna-shift-compact`) that can be acknowledged (`dna-shift-ack`); a soft drift surfaces a lean (`dna-leaning` / `dna-leaning-compact`) with swap progress (`dna-swap-progress`).
+- [ ] AC-265: DNA persists across app restarts; retake from Today (`today-dna-retake`) re-enters the spine and recomputes.
+
+### Test Cases
+
+| ID | Scenario | Steps | Expected Result | Priority |
+|---|---|---|---|---|
+| TC-511 | Picker grid loads | 1. Start DNA (new guest after auth) | `dna-picker-grid` renders a grid of recognizable bottles | P0 |
+| TC-512 | Select tiles | 1. Tap `dna-tile` index 0,1,2 | Tiles show selected state; selection count increments | P0 |
+| TC-513 | Mark favorite | 1. Tap `dna-tile-favorite` index 0 | That tile marked as favorite | P1 |
+| TC-514 | Continue gated by minimum | 1. Select fewer than minimum | `dna-picker-continue` disabled/blocked until minimum met | P0 |
+| TC-515 | Continue advances to refine | 1. Select 3 + favorite 2. Tap `dna-picker-continue` | Advances to refine step (`dna-refine-continue` visible) | P0 |
+| TC-516 | Reshuffle grid | 1. Tap `dna-reshuffle` | Grid swaps to a fresh set of bottles | P1 |
+| TC-517 | New-to-fragrance fallback | 1. Tap `dna-new-to-fragrance` | Routes to fallback path (no abstract quiz) | P1 |
+| TC-518 | Refine rows render | 1. On refine step | One `dna-refine-row` per picked bottle, each with `dna-rel-*` options | P0 |
+| TC-519 | Set relationship | 1. Tap a `dna-rel-<rel>` option on a row | Selection recorded for that bottle | P1 |
+| TC-520 | Refine favorite toggle | 1. Tap `dna-refine-favorite` | Favorite updated on refine | P1 |
+| TC-521 | Refine back | 1. Tap `dna-refine-back` | Returns to picker with selections preserved | P1 |
+| TC-522 | Refine continue → reveal | 1. Tap `dna-refine-continue` | Advances to reveal (`dna-reveal-archetype` visible) | P0 |
+| TC-523 | Reveal renders archetype | 1. On reveal | `dna-reveal-emblem` + `dna-reveal-archetype` (name) + identity + `dna-trait-chip`s shown | P0 |
+| TC-524 | Reveal share | 1. Tap `dna-reveal-share` | Share sheet opens with archetype card | P2 |
+| TC-525 | Reveal continue → first-rec | 1. Tap `dna-reveal-continue` | Advances to first-rec (`dna-first-rec` visible) | P0 |
+| TC-526 | First-rec renders match + reason | 1. On first-rec | Matched bottle with brand/name and a sparkles reason line | P0 |
+| TC-527 | Buy the bottle CTA (affiliate exists) | 1. First-rec with a retailer link | Gold "BUY THE BOTTLE · $price" primary (`dna-rec-buy`) present; trait CTA demoted to underlined secondary | P0 |
+| TC-528 | Buy CTA fires affiliate click | 1. Tap `dna-rec-buy` | `handleAffiliateClick` fires with `fragrance_id`, `retailer`, `url`, `price_cents`, `source_screen: 'first_rec'`; opens retailer; then advances via `onBuy` | P0 |
+| TC-529 | Trait CTA promoted when no link | 1. First-rec with NO retailer link | Trait CTA (`dna-rec-cta`) is the primary button; no `dna-rec-buy` | P1 |
+| TC-530 | Trait CTA routing — value hunter | 1. DNA scores valueHunter 2. Tap `dna-rec-cta` | Routes to dupe destination | P1 |
+| TC-531 | Trait CTA routing — luxury | 1. DNA scores luxury 2. Tap `dna-rec-cta` | Routes to original/buy destination | P1 |
+| TC-532 | Trait CTA routing — adventurous | 1. DNA scores adventurous 2. Tap `dna-rec-cta` | Routes to sample destination | P1 |
+| TC-533 | First-rec "Not me" | 1. Tap `dna-rec-not-me` | Advances past the match (does not buy) | P1 |
+| TC-534 | First-rec "See my DNA" | 1. Tap `dna-rec-my-dna` | Navigates to DNA/taste-profile surface | P1 |
+| TC-535 | First-rec skip → Today | 1. Tap `dna-rec-skip` | Exits onboarding; lands on `today-screen` with `today-unified-dna` | P0 |
+| TC-536 | DNA persists across restart | 1. Complete DNA 2. Kill + relaunch app | DNA retained; Today shows unified DNA card without re-onboarding | P0 |
+| TC-537 | Retake from Today | 1. Tap `today-dna-retake` | Re-enters the DNA spine (picker) | P1 |
+| TC-538 | Living DNA — shift banner | 1. Swipe/swap so taste clearly moves to a new archetype 2. Open DNA readout | `dna-shift-banner` (or `dna-shift-compact`) surfaces the new archetype | P1 |
+| TC-539 | Living DNA — acknowledge shift | 1. Tap `dna-shift-ack` | Shift accepted; archetype updates; banner dismissed | P1 |
+| TC-540 | Living DNA — leaning state | 1. Drift partway (not enough to shift) 2. View readout | `dna-leaning` / `dna-leaning-compact` shown with `dna-swap-progress` toward next archetype | P1 |
+| TC-541 | Living DNA — recency weighting | 1. Many old swipes one direction, recent swipes another | Recent deliberate signal weighted higher (lean/shift follows recent taste) | P2 |
+| TC-542 | First-rec accessibility | 1. Largest Dynamic Type on first-rec | Buy CTA + reason readable, no clipped/overlapping buttons; back-nav reachable | P1 |
 
 ---
 

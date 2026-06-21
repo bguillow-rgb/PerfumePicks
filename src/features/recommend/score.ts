@@ -37,7 +37,20 @@ export interface RecContext {
   /** Hour 0..23 — used to hint mood (morning=fresh, evening=warm, etc.). */
   timeOfDay?: number;
   adventureMode?: AdventureMode;
+  /**
+   * Scent Preferences constraints (stated, not inferred). `avoidAccords` is the
+   * flat set of raw `top_accords` the user wants to steer clear of; any candidate
+   * carrying one is penalised. `maxPriceTier` is a spend ceiling (1..5).
+   */
+  avoidAccords?: string[];
+  maxPriceTier?: number;
 }
+
+// Penalty applied when a candidate trips a stated Scent Preference. Sized to
+// bury the offender beneath honest matches without hard-removing it (so rails
+// never empty when the whole pool trips a constraint).
+const AVOID_PENALTY = 0.4;
+const OVER_BUDGET_PENALTY = 0.3;
 
 export interface ScoredRec {
   fragrance: Fragrance;
@@ -173,7 +186,17 @@ export function scoreFragrance(
     0.10 * perfS +
     0.05 * ctxS;
 
-  const score = clamp01(base + jitter);
+  // Stated Scent Preferences — applied as penalties on top of the taste fit.
+  let penalty = 0;
+  if (ctx.avoidAccords && ctx.avoidAccords.length > 0) {
+    const accords = f.top_accords ?? [];
+    if (accords.some((a) => ctx.avoidAccords!.includes(a))) penalty -= AVOID_PENALTY;
+  }
+  if (ctx.maxPriceTier != null && f.price_tier > ctx.maxPriceTier) {
+    penalty -= OVER_BUDGET_PENALTY;
+  }
+
+  const score = clamp01(base + jitter + penalty);
 
   // Reason: pick the strongest signal that fired
   const reason = pickReason(f, ctx, { noteS, accordS, familyS, priceS, perfS, ctxS });

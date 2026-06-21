@@ -32,6 +32,8 @@ import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useSwipeStore } from '@/src/stores/useSwipeStore';
 import { useQuizStore } from '@/src/stores/useQuizStore';
+import { useScentPreferencesStore } from '@/src/stores/useScentPreferencesStore';
+import { expandAvoidAccords } from '@/src/constants/accords';
 import {
   useCatalogStore,
   getFragranceFromStore,
@@ -41,23 +43,19 @@ import { deriveTasteProfile, type TasteSignal, type DerivedTasteProfile } from '
 import { rank, type RecContext, type ScoredRec } from './score';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { blendProfiles } from '@/src/features/dna/blend';
+import { RECOMMENDATION_SIGNAL_WEIGHTS } from '@/src/features/dna/signals';
 
 // Cap candidates for scoring. Supabase max_rows must be set to ≥ this value
 // in Project Settings → API. Raise to 10 000 in the dashboard to unlock full catalog.
 const MAX_CANDIDATES = 3000;
 
-/** Weight each signal type. Wears outweigh wishlists outweigh single likes. */
-const SIGNAL_WEIGHTS = {
-  wear_high_rating: 3,
-  wear_default: 1.5,
-  have: 2,
-  want: 1,
-  tested: 0.5,
-  sold_on: 2.5,
-  swipe_love: 1.5,   // right swipe — strong positive signal
-  swipe_like: 0.8,   // down swipe — soft positive signal
-  swipe_dislike: -1.5,
-} as const;
+/**
+ * Weight each signal type. Wears outweigh wishlists outweigh single likes.
+ * Single source of truth lives in features/dna/signals.ts so this path and the
+ * useAppSync passive-profile path can never diverge again (was: love 1.5 here /
+ * 2.5 there).
+ */
+const SIGNAL_WEIGHTS = RECOMMENDATION_SIGNAL_WEIGHTS;
 
 function currentSeason(): RecContext['season'] {
   const m = new Date().getMonth(); // 0..11
@@ -67,20 +65,25 @@ function currentSeason(): RecContext['season'] {
   return 'winter';
 }
 
-// P5-23: infer a plausible occasion from the current hour so the context
+// P5-23: infer a plausible occasion from the current day + hour so the context
 // feels alive even without a quiz answer. Quiz answer overrides this.
-function inferOccasionFromTime(hour: number): RecContext['occasion'] {
-  if (hour >= 9 && hour < 17) return 'office';
+// Weekends never read as "office" — Sat/Sun daytime is casual, so the SOTD
+// reason doesn't say "discreet enough for the office" on a Sunday.
+function inferOccasionFromTime(hour: number, day: number): RecContext['occasion'] {
+  const isWeekend = day === 0 || day === 6;
   if (hour >= 20 || hour < 3) return 'evening';
+  if (isWeekend) return 'casual';
+  if (hour >= 9 && hour < 17) return 'office';
   return 'casual';
 }
 
 function defaultContext(): RecContext {
-  const hour = new Date().getHours();
+  const now = new Date();
+  const hour = now.getHours();
   return {
     season: currentSeason(),
     timeOfDay: hour,
-    occasion: inferOccasionFromTime(hour),
+    occasion: inferOccasionFromTime(hour, now.getDay()),
     adventureMode: 'middle',
   };
 }
@@ -134,24 +137,36 @@ export function useRecommendations(ctx?: RecContext) {
   const items = useWardrobeStore((s) => s.items);
   const swipesMap = useSwipeStore((s) => s.swipes);
   const answers = useQuizStore((s) => s.answers);
+  const prefAvoid = useScentPreferencesStore((s) => s.avoid);
+  const prefBudget = useScentPreferencesStore((s) => s.budget);
+  const prefOccasion = useScentPreferencesStore((s) => s.occasion);
+  const prefSeason = useScentPreferencesStore((s) => s.season);
   const dna = useTasteProfileStore((s) => s.dna);
 
-  // Compute effective context once, layering in quiz answers (P5-22/P5-23)
-  // and most-common recent-wear weather (P5-24) on top of the caller's ctx
-  // or the time-of-day default.
+  // Compute effective context once, layering in stated Scent Preferences and
+  // most-common recent-wear weather (P5-24) on top of the caller's ctx or the
+  // time-of-day default.
   const effectiveCtx = useMemo<RecContext>(() => {
     const base = ctx ?? defaultContext();
     const result: RecContext = { ...base };
 
-    // P5-22 + P5-23: quiz answers override the defaults when the caller
-    // hasn't already pinned season/occasion explicitly.
-    if (!ctx?.season && answers.season) {
-      result.season = answers.season as RecContext['season'];
+    // Scent Preferences pin season/occasion when the caller hasn't already
+    // explicitly chosen them (the stated constraint beats the time-of-day guess).
+    if (!ctx?.season && prefSeason) {
+      result.season = prefSeason;
     }
-    if (!ctx?.occasion && answers.occasion) {
-      result.occasion = answers.occasion as RecContext['occasion'];
+    if (!ctx?.occasion && prefOccasion) {
+      result.occasion = prefOccasion;
     }
-    // Quiz discovery answer drives adventure mode.
+    // Avoid list + spend ceiling become hard-ish scoring constraints.
+    if (prefAvoid.length > 0) {
+      result.avoidAccords = expandAvoidAccords(prefAvoid);
+    }
+    if (prefBudget != null) {
+      result.maxPriceTier = prefBudget;
+    }
+    // Quiz discovery answer drives adventure mode (legacy signal; harmless when
+    // unset now that the quiz is retired).
     if (!ctx?.adventureMode && answers.discovery) {
       const map: Record<string, RecContext['adventureMode']> = {
         classic: 'classic',
@@ -177,7 +192,7 @@ export function useRecommendations(ctx?: RecContext) {
     return result;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ctx?.season, ctx?.weather, ctx?.occasion, ctx?.timeOfDay, ctx?.adventureMode,
-      answers.season, answers.occasion, answers.discovery, logs]);
+      prefSeason, prefOccasion, prefAvoid, prefBudget, answers.discovery, logs]);
 
   const profile = useMemo(() => {
     const wears = logs.map((l) => ({ fragrance_id: l.fragrance_id, rating: l.rating ?? null }));
@@ -400,7 +415,11 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
   const items = useWardrobeStore((s) => s.items);
   const logs = useWearLogStore((s) => s.logs);
   const swipesMap = useSwipeStore((s) => s.swipes);
-  const answers = useQuizStore((s) => s.answers);
+  // Only the context constraints (season/occasion) bias the wardrobe carousel —
+  // avoid/budget are acquisition constraints and must not bury bottles the user
+  // already owns.
+  const prefOccasion = useScentPreferencesStore((s) => s.occasion);
+  const prefSeason = useScentPreferencesStore((s) => s.season);
   const fetchMany = useCatalogStore((s) => s.fetchMany);
 
   const ownedItems = useMemo(
@@ -442,10 +461,10 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
 
   const ctx = useMemo<RecContext>(() => {
     const base = defaultContext();
-    if (answers.season) (base as any).season = answers.season;
-    if (answers.occasion) (base as any).occasion = answers.occasion;
+    if (prefSeason) base.season = prefSeason;
+    if (prefOccasion) base.occasion = prefOccasion;
     return base;
-  }, [answers.season, answers.occasion]);
+  }, [prefSeason, prefOccasion]);
 
   const picks = useMemo(() => {
     // Build a lookup from freshly-fetched fragrances, fall back to sync cache.

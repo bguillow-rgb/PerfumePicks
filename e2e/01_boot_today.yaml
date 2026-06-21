@@ -4,8 +4,9 @@
 # no auth or DNA gate. First launch downloads the JS bundle from metro (slow) —
 # hence the 90s wait on tab-today.
 #
-# That onboarded guest has no wardrobe yet, so Today shows the new-user "start
-# here" welcome hero — SCENT OF THE DAY only appears once a wardrobe exists.
+# That onboarded guest carries a live DNA, so Today surfaces the unified DNA hero
+# card (today-unified-dna) — the "start here" welcome hero is suppressed once a
+# DNA exists (app/(tabs)/index.tsx: isNewUser && !liveDna).
 appId: com.bobguillow.perfumepicks
 ---
 - launchApp
@@ -15,4 +16,4 @@ appId: com.bobguillow.perfumepicks
       id: "tab-today"
     timeout: 90000
 - assertVisible:
-    text: "start here"
+    id: "today-unified-dna"

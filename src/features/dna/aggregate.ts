@@ -12,7 +12,7 @@
  */
 
 import type { DnaCatalogFragrance, DnaPick } from './types';
-import { modalGender, pickWeight } from './metrics';
+import { modalGender, resolvePickWeight } from './metrics';
 
 export interface AggregateResult {
   accords: Record<string, number>;
@@ -76,7 +76,7 @@ export function aggregateFromFragrances(
 
   for (const p of picks) {
     const f = p.fragrance;
-    const w = pickWeight(p.relation, p.favorite);
+    const w = resolvePickWeight(p);
     wsum += w;
 
     for (const a of f.top_accords) {
@@ -124,7 +124,7 @@ function weightedTargetTier(picks: DnaPick[]): number {
   let sum = 0;
   let wsum = 0;
   for (const p of picks) {
-    const w = pickWeight(p.relation, p.favorite);
+    const w = resolvePickWeight(p);
     sum += w * p.fragrance.price_tier;
     wsum += w;
   }

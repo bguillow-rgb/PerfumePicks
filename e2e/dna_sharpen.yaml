@@ -1,0 +1,61 @@
+# M2 QA gate — the DNA is LIVING: training sharpens it in place.
+#
+# M2 flips LIVING_DNA_ENABLED on and wires recompute triggers (swipe/wear/
+# wardrobe/foreground, debounced) into the unified signal pool. This flow proves
+# the loop end-to-end on the real client: capture the committed DNA, run a Train
+# session of love-swipes, then reopen the DNA surface — the recompute has fired
+# (per-swipe debounce + session-end), re-derived the envelope, and re-committed
+# it. The before/after screenshots are the visual proof of movement; the
+# archetype card still rendering after the recompute proves it didn't regress the
+# surface.
+#
+# Assumes the onboarded guest session from 00_dna_picker is present.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+- extendedWaitUntil:
+    visible: { id: "tab-today" }
+    timeout: 90000
+
+# ── BEFORE: the committed DNA on the You tab ────────────────────────────────
+- tapOn: { id: "tab-today" }     # warmup tap absorbs the cold-process drop race
+- waitForAnimationToEnd
+- tapOn: { id: "tab-profile" }
+- extendedWaitUntil:
+    visible: { id: "my-dna-card" }
+    timeout: 15000
+- assertVisible: { id: "my-dna-archetype" }
+- takeScreenshot: ux-shots/m2_dna_before
+
+# ── TRAIN: a session of love-swipes feeds the living pool ───────────────────
+# The Taste tab routes straight into the swipe deck (no "Begin a Session"
+# interstitial); its header is "TASTE SESSION" and the Love action is live.
+- tapOn: { id: "tab-taste" }
+- extendedWaitUntil:
+    visible: { text: "TASTE SESSION" }
+    timeout: 15000
+- extendedWaitUntil:
+    visible: { text: "Love" }
+    timeout: 15000
+# Love-swipe the deck. Each tap records a swipe → schedules a debounced
+# recompute; the burst coalesces into one (kept under the 10/day free cap so the
+# session UI stays live for an explicit End Session).
+- repeat:
+    times: 9
+    commands:
+      - tapOn: { text: "Love" }
+      - waitForAnimationToEnd
+# Session-end fires an explicit recompute trigger too.
+- tapOn: { text: "End Session" }
+- waitForAnimationToEnd
+
+# ── AFTER: reopen the DNA surface; the recompute has re-committed it ─────────
+- tapOn: { id: "tab-profile" }
+- extendedWaitUntil:
+    visible: { id: "my-dna-card" }
+    timeout: 15000
+# The card still renders its archetype after the live recompute — the surface
+# consumed the re-derived envelope without regressing.
+- assertVisible: { id: "my-dna-archetype" }
+- takeScreenshot: ux-shots/m2_dna_after

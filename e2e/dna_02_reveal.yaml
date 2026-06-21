@@ -71,10 +71,10 @@ appId: com.bobguillow.perfumepicks
 - assertVisible:
     id: "dna-rec-cta"
 - tapOn: { id: "dna-rec-skip" }
-# ── Lands on Today ──
+# ── Lands on Today → unified DNA card is the post-onboarding payoff ──
 - extendedWaitUntil:
     visible:
       id: "today-screen"
     timeout: 20000
 - assertVisible:
-    text: "start here"
+    id: "today-unified-dna"

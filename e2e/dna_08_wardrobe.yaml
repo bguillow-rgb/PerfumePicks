@@ -1,12 +1,16 @@
 # M9 gate: Wardrobe Strategy + Completion on the Wardrobe tab.
 #
-# Proves two spec invariants:
-#   1. The biggest-gap forward action (testID wardrobe-gap) is present from cold
-#      start — with 0 owned bottles the gap is the signature slot, the "what to buy
-#      next" hook.
-#   2. The completion % (testID wardrobe-completion) is SUPPRESSED at cold start
-#      (owned < COMPLETION_FLOOR) — a "% complete" number is noise with no wardrobe,
-#      so we assert it is NOT visible.
+# Proves the DNA-driven Wardrobe Strategy card surfaces on the Wardrobe tab after
+# onboarding. NOTE (v1.1): the picker spine seeds the wardrobe — picked tiles
+# default to relation 'own' (app/dna/index.tsx) and are added as "have", so a
+# guest who completes the picker lands with 3 owned bottles, NOT a cold-start 0.
+# Invariants under that seeded reality:
+#   1. The Wardrobe Strategy card (testID wardrobe-strategy) renders — the M9
+#      deliverable, the DNA's "complete your collection" surface.
+#   2. The completion coverage row (testID wardrobe-completion) IS visible, because
+#      onboarding seeds owned ≥ COMPLETION_FLOOR (3). (The biggest-gap action is
+#      now data-dependent — it only renders when a slot is actually empty — so it
+#      is no longer a stable cold-start invariant and is not asserted here.)
 appId: com.bobguillow.perfumepicks
 ---
 - launchApp:
@@ -76,8 +80,6 @@ appId: com.bobguillow.perfumepicks
       id: "wardrobe-strategy"
     timeout: 15000
 
-# ── Cold-start: the gap forward action is present, the % is suppressed ──
+# ── Seeded wardrobe (3 owned from the picker): coverage row IS shown ──
 - assertVisible:
-    id: "wardrobe-gap"
-- assertNotVisible:
     id: "wardrobe-completion"

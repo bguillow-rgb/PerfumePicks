@@ -17,6 +17,7 @@ import {
 } from '@/src/features/dna/revealCopy';
 import type { FragranceDNA } from '@/src/features/dna/types';
 import { JourneyLadder } from '@/src/components/dna/JourneyLadder';
+import { LivingArchetypeReadout } from '@/src/components/dna/LivingArchetypeReadout';
 
 /**
  * My Taste Profile — reads user_taste_profiles from Supabase.
@@ -131,6 +132,7 @@ export default function TasteProfileScreen() {
                 <Text style={styles.dnaArchetype}>{archetype.name}</Text>
               </View>
               <Text style={styles.dnaIdentity}>{identityLine}</Text>
+              <LivingArchetypeReadout dna={dna} variant="full" />
               {journey && <Text style={styles.dnaJourney}>{journey}</Text>}
               {traitChips.length > 0 && (
                 <View style={styles.dnaTraitRow}>

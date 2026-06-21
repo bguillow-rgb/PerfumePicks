@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { ARCHETYPE_COPY } from '@/src/features/dna/revealCopy';
+import { LivingArchetypeReadout } from '@/src/components/dna/LivingArchetypeReadout';
 
 /**
  * My Fragrance DNA — the re-viewable home of the derived DNA on the You tab.
@@ -33,6 +34,7 @@ export function MyDnaCard() {
         <Text style={styles.eyebrow}>MY FRAGRANCE DNA</Text>
         <Text style={styles.archetype} testID="my-dna-archetype">{copy.name}</Text>
         <Text style={styles.identity} numberOfLines={2}>{copy.identity}</Text>
+        <LivingArchetypeReadout dna={dna} variant="compact" />
       </View>
       <Ionicons name="chevron-forward" size={20} color={COLORS.accent} />
     </Pressable>

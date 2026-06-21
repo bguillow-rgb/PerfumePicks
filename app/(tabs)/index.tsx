@@ -19,9 +19,9 @@ import { useProStore } from '@/src/stores/useProStore';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
-import { journeyLine } from '@/src/features/dna/revealCopy';
 import { rankWithRelaxation, type RankedDnaRec } from '@/src/features/dna/score';
 import type { DnaCatalogFragrance } from '@/src/features/dna/types';
+import { UnifiedDnaCard } from '@/src/components/dna/UnifiedDnaCard';
 
 /**
  * Home / "Today" tab — daily ritual surface.
@@ -82,11 +82,8 @@ export default function HomeScreen() {
     swipeCount === 0 &&
     wearLogs.length === 0;
 
-  // Forward-pointing Journey line — derived from the live DNA. Renders as a
-  // single chip on Today that *navigates* to the Journey home in You; the full
-  // ladder lives there (one surface).
+  // Live DNA drives the unified DNA hero card (archetype + picks + journey).
   const liveDna = useTasteProfileStore((s) => s.dna);
-  const journeyChipLine = useMemo(() => journeyLine(liveDna?.journey ?? null), [liveDna]);
 
   const greeting = useGreeting();
   const { entries: sotdEntries, loading: sotdLoading, refresh: refreshSOTD } = useSOTDFeed();
@@ -139,34 +136,14 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        {/* ── Forward-pointing Journey chip — navigates to the Journey home in
-               You (one surface; no inline ladder here) ── */}
-        {journeyChipLine && (
-          <Pressable
-            testID="today-journey-chip"
-            accessibilityRole="button"
-            accessibilityLabel={journeyChipLine}
-            style={({ pressed }) => [styles.journeyChip, pressed && { opacity: 0.85 }]}
-            onPress={() => router.push('/taste-profile' as any)}
-          >
-            <Ionicons name="trail-sign-outline" size={16} color={COLORS.accent} />
-            <Text style={styles.journeyChipText} numberOfLines={2}>{journeyChipLine}</Text>
-            <Ionicons name="chevron-forward" size={16} color={COLORS.muted} />
-          </Pressable>
-        )}
-
-        {/* ── Your Fragrance DNA — recs ranked from the live DNA, with a retake
-               button. This is the payoff for finishing the picker: the home
-               surface populates with bottles matched to the scents you liked. ── */}
+        {/* ── Your Fragrance DNA — the unified hero card: archetype identity +
+               matched bottles + forward journey footer, all in one authored
+               surface. The payoff for finishing the picker. ── */}
         {liveDna && <DnaPicksModule router={router} />}
 
         {/* ── New-user "Start here" — unified two-path value prop. Suppressed once
                a DNA exists; the DNA picks card above becomes the primary surface. ── */}
         {isNewUser && !liveDna && <GetStartedHero router={router} />}
-
-        {/* ── Discover card — shown FIRST when wardrobe is empty (but the user
-               has already engaged; true new users see GetStartedHero instead) ── */}
-        {!isNewUser && ownedCount === 0 && <DiscoverCard isPro={isPro} router={router} />}
 
         {/* ── Scent of the Day (hidden for true new users — GetStartedHero
                already owns the wardrobe call-to-action above) ── */}
@@ -204,8 +181,8 @@ export default function HomeScreen() {
               <SOTDHeroCard
                 pick={heroPick}
                 loggedToday={heroLoggedToday}
-                onPress={() => router.push(`/(tabs)/fragrance/${heroPick.fragrance.id}` as any)}
-                onLogWear={() => router.push(`/(tabs)/fragrance/${heroPick.fragrance.id}?openLogWear=true` as any)}
+                onPress={() => router.push(`/fragrance/${heroPick.fragrance.id}` as any)}
+                onLogWear={() => router.push(`/fragrance/${heroPick.fragrance.id}?openLogWear=true` as any)}
               />
 
               {/* #2 + #3 sub-picks */}
@@ -216,7 +193,7 @@ export default function HomeScreen() {
                       key={pick.fragrance.id}
                       pick={pick}
                       rank={i + 2}
-                      onPress={() => router.push(`/(tabs)/fragrance/${pick.fragrance.id}` as any)}
+                      onPress={() => router.push(`/fragrance/${pick.fragrance.id}` as any)}
                     />
                   ))}
                 </View>
@@ -256,7 +233,7 @@ export default function HomeScreen() {
           {sotdEntries.length > 0 ? (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
               {sotdEntries.slice(0, 10).map((entry) => (
-                <CommunityCard key={entry.id} entry={entry} onPress={() => router.push(`/(tabs)/fragrance/${entry.fragrance_id}` as any)} />
+                <CommunityCard key={entry.id} entry={entry} onPress={() => router.push(`/fragrance/${entry.fragrance_id}` as any)} />
               ))}
             </ScrollView>
           ) : (
@@ -265,15 +242,12 @@ export default function HomeScreen() {
                 <FeaturedFragranceCard
                   key={f.id}
                   fragrance={f}
-                  onPress={() => router.push(`/(tabs)/fragrance/${f.id}` as any)}
+                  onPress={() => router.push(`/fragrance/${f.id}` as any)}
                 />
               ))}
             </ScrollView>
           )}
         </Section>
-
-        {/* ── Discover card — shown AFTER community sotd when wardrobe has items ── */}
-        {ownedCount > 0 && <DiscoverCard isPro={isPro} router={router} />}
 
         {/* ── Icons ── */}
         <Section eyebrow="ICONS" cursive="beloved">
@@ -343,12 +317,6 @@ function GetStartedHero({ router }: { router: ReturnType<typeof useRouter> }) {
           </View>
           <Ionicons name="chevron-forward" size={18} color={COLORS.muted} />
         </Pressable>
-
-        {/* Tertiary — quiz quick-start */}
-        <Pressable style={styles.startQuiz} onPress={() => router.push('/quiz')} hitSlop={6}>
-          <Ionicons name="sparkles-outline" size={13} color={COLORS.accent} />
-          <Text style={styles.startQuizText}>Not sure? Take the 5-question taste quiz →</Text>
-        </Pressable>
       </View>
     </Section>
   );
@@ -382,96 +350,16 @@ function DnaPicksModule({ router }: { router: ReturnType<typeof useRouter> }) {
 
   if (!dna) return null;
 
-  const onRetake = () => { startRetake(); router.push('/dna'); };
-
   return (
-    <Section
-      eyebrow="YOUR FRAGRANCE DNA"
-      cursive="made for you"
-      action={
-        <Pressable onPress={onRetake} hitSlop={8} testID="today-dna-retake">
-          <Text style={styles.seeAllLink}>Retake →</Text>
-        </Pressable>
-      }
-    >
-      {recs.length === 0 ? (
-        <View style={[styles.dnaEmpty, { marginRight: SPACING.lg }]}>
-          <Text style={styles.dnaEmptyText}>
-            Lining up bottles that match your taste. Pull to refresh in a moment.
-          </Text>
-        </View>
-      ) : (
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-          {recs.map((r) => {
-            const f = r.fragrance as unknown as Fragrance;
-            return (
-              <DnaPickCard
-                key={f.id}
-                fragrance={f}
-                reason={r.reasons[0]}
-                onPress={() => router.push(`/(tabs)/fragrance/${f.id}` as any)}
-              />
-            );
-          })}
-        </ScrollView>
-      )}
-    </Section>
+    <UnifiedDnaCard
+      dna={dna}
+      recs={recs}
+      onRetake={() => { startRetake(); router.push('/dna'); }}
+      onLearnMore={() => router.push('/taste-profile' as any)}
+      onPickPress={(id) => router.push(`/fragrance/${id}` as any)}
+    />
   );
 }
-
-function DnaPickCard({ fragrance, reason, onPress }: {
-  fragrance: Fragrance;
-  reason?: string;
-  onPress: () => void;
-}) {
-  return (
-    <Pressable style={({ pressed }) => [dnaPick.wrap, pressed && { opacity: 0.85 }]} onPress={onPress}>
-      <View style={dnaPick.imgWrap}>
-        {fragrance.image_url ? (
-          <Image source={{ uri: fragrance.image_url }} style={dnaPick.img} resizeMode="cover" />
-        ) : (
-          <View style={[dnaPick.img, dnaPick.imgPlaceholder]}>
-            <Ionicons name="flask-outline" size={22} color={COLORS.accent} />
-          </View>
-        )}
-      </View>
-      <View style={dnaPick.info}>
-        <Text style={dnaPick.brand} numberOfLines={1}>{fragrance.brand.toUpperCase()}</Text>
-        <Text style={dnaPick.name} numberOfLines={1}>{fragrance.name}</Text>
-        {reason ? (
-          <View style={dnaPick.reasonRow}>
-            <Ionicons name="sparkles" size={10} color={COLORS.accent} />
-            <Text style={dnaPick.reason} numberOfLines={2}>{reason}</Text>
-          </View>
-        ) : null}
-      </View>
-    </Pressable>
-  );
-}
-
-const dnaPick = StyleSheet.create({
-  wrap: {
-    width: 150,
-    backgroundColor: COLORS.card,
-    borderRadius: RADIUS.md,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    overflow: 'hidden',
-    marginRight: SPACING.sm,
-  },
-  imgWrap: { width: '100%', height: 150 },
-  img: { width: '100%', height: '100%' },
-  imgPlaceholder: {
-    backgroundColor: COLORS.card2 ?? COLORS.card,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  info: { padding: SPACING.sm, gap: 2 },
-  brand: { ...TYPE.eyebrow, fontSize: 9, color: COLORS.accent },
-  name: { fontFamily: FONTS.serif, fontSize: 14, fontWeight: '600', color: COLORS.text },
-  reasonRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 4, marginTop: 3 },
-  reason: { ...TYPE.caption, fontSize: 10, color: COLORS.muted, fontStyle: 'italic', lineHeight: 14, flex: 1 },
-});
 
 // ─── SOTD Hero Card (#1 pick) ─────────────────────────────────────────────────
 
@@ -665,42 +553,6 @@ const subCard = StyleSheet.create({
 });
 
 // ─── Community Card ───────────────────────────────────────────────────────────
-
-// ─── Discover Card ───────────────────────────────────────────────────────────
-
-function DiscoverCard({ isPro, router }: { isPro: boolean; router: ReturnType<typeof useRouter> }) {
-  return (
-    <Section eyebrow="DISCOVER" cursive="your signature">
-      <View style={[styles.discoverCard, { marginRight: SPACING.lg }]}>
-        <View style={styles.discoverTop}>
-          <View style={styles.discoverTextWrap}>
-            <Text style={styles.discoverTitle}>Find your perfect fragrance</Text>
-            <Text style={styles.discoverBody}>
-              {isPro
-                ? 'Answer 10 questions and we\'ll build your full taste profile.'
-                : 'Answer 5 free questions, or go deeper with 10 on Pro.'}
-            </Text>
-          </View>
-          <View style={styles.discoverIconWrap}>
-            <Ionicons name="sparkles" size={28} color={COLORS.accent} />
-          </View>
-        </View>
-        <Pressable style={styles.discoverBtn} onPress={() => router.push('/quiz')}>
-          <Text style={styles.discoverBtnText}>Take the Taste Quiz</Text>
-          <Ionicons name="arrow-forward" size={14} color={COLORS.white} />
-        </Pressable>
-        {!isPro && (
-          <Pressable style={styles.proTeaser} onPress={() => router.push('/paywall' as any)}>
-            <Ionicons name="lock-closed-outline" size={12} color={COLORS.accent} />
-            <Text style={styles.proTeaserText}>
-              Pro: 10 questions on sillage, off-notes, identity and more →
-            </Text>
-          </Pressable>
-        )}
-      </View>
-    </Section>
-  );
-}
 
 // ─── Don't Pay a Fortune (dupe finder module) ───────────────────────────────
 
@@ -1060,28 +912,6 @@ const styles = StyleSheet.create({
   greetingDot: { ...TYPE.caption, color: COLORS.muted, fontSize: 12 },
   streakText: { ...TYPE.label, fontSize: 11, color: COLORS.accent, letterSpacing: 0.5 },
 
-  // ── Journey chip ──
-  journeyChip: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SPACING.sm,
-    marginHorizontal: SPACING.lg,
-    marginTop: SPACING.xs,
-    marginBottom: SPACING.xs,
-    paddingVertical: SPACING.sm,
-    paddingHorizontal: SPACING.md,
-    backgroundColor: COLORS.card,
-    borderRadius: RADIUS.md,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: COLORS.border,
-  },
-  journeyChipText: {
-    ...TYPE.body,
-    flex: 1,
-    color: COLORS.text,
-    fontSize: 13,
-  },
-
   // ── Sections ──
   section: {
     paddingLeft: SPACING.lg,
@@ -1148,24 +978,6 @@ const styles = StyleSheet.create({
     color: COLORS.text,
   },
   pathBody: { ...TYPE.caption, fontSize: 12, color: COLORS.muted, lineHeight: 17 },
-  startQuiz: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 6,
-    paddingTop: SPACING.xs,
-  },
-  startQuizText: { ...TYPE.caption, fontSize: 12, color: COLORS.accent, fontStyle: 'italic' },
-
-  // ── DNA picks empty (recs still resolving) ──
-  dnaEmpty: {
-    padding: SPACING.lg,
-    backgroundColor: COLORS.card,
-    borderRadius: RADIUS.lg,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-  },
-  dnaEmptyText: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic', lineHeight: 19 },
 
   // ── SOTD empty state ──
   sotdEmpty: {
@@ -1213,67 +1025,6 @@ const styles = StyleSheet.create({
     gap: SPACING.md,
   },
   dupeModuleSub: { ...TYPE.bodySmall, color: COLORS.muted, lineHeight: 19 },
-
-  // ── Discover card ──
-  discoverCard: {
-    backgroundColor: COLORS.card,
-    borderRadius: RADIUS.lg,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    padding: SPACING.lg,
-    gap: SPACING.md,
-  },
-  discoverTop: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    gap: SPACING.md,
-  },
-  discoverTextWrap: { flex: 1, gap: SPACING.xs },
-  discoverIconWrap: {
-    width: 52, height: 52,
-    backgroundColor: COLORS.blushSoft,
-    borderRadius: RADIUS.md,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: COLORS.blush,
-  },
-  discoverTitle: {
-    fontFamily: FONTS.serif,
-    fontSize: 20,
-    fontWeight: '600',
-    color: COLORS.text,
-    lineHeight: 26,
-  },
-  discoverBody: {
-    ...TYPE.bodySmall,
-    color: COLORS.muted,
-    lineHeight: 20,
-  },
-  discoverBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-    backgroundColor: COLORS.accent,
-    paddingVertical: 14,
-    borderRadius: RADIUS.full,
-  },
-  discoverBtnText: { ...TYPE.label, color: COLORS.white, fontSize: 13, letterSpacing: 1 },
-  proTeaser: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-    paddingTop: SPACING.xs,
-  },
-  proTeaserText: {
-    ...TYPE.caption,
-    fontSize: 11,
-    color: COLORS.accent,
-    fontStyle: 'italic',
-    flex: 1,
-    lineHeight: 16,
-  },
 
   // ── Footer ──
   footer: {

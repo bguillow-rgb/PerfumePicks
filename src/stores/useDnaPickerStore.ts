@@ -10,7 +10,9 @@ import { create } from 'zustand';
  * `FragranceDNA` lands in M4, not the raw picker state.
  */
 
-export type PickRelation = 'own' | 'want';
+// 'like' = drawn to the scent, but neither owned nor wanted → feeds DNA, never
+// seeds the wardrobe. Mirrors SeedRelation in features/dna/types.
+export type PickRelation = 'own' | 'want' | 'like';
 
 interface DnaPickerState {
   /** Positively selected fragrance ids (the picks). */

@@ -80,3 +80,38 @@ export async function submitFeedback(input: FeedbackInput): Promise<SubmitResult
   if (error) return { ok: false, reason: error.message };
   return { ok: true };
 }
+
+export interface DeadLinkReport {
+  retailer: string;
+  url: string;
+  fragranceId: string;
+  /** 'open_failed' | 'no_redirect' | 'http_404' | 'timeout' | 'network' | ... */
+  reason: string;
+  sourceScreen?: string;
+}
+
+/**
+ * Surfaces a broken buy link to the founder immediately via the same hub that
+ * powers in-app feedback (a row here iMessages the founder). Tagged kind
+ * 'link_dead' so it's filterable from real user feedback. Best-effort and
+ * fully swallowed — a reporting failure must never bubble into a buy tap.
+ */
+export async function reportDeadLink(report: DeadLinkReport): Promise<void> {
+  try {
+    const context = await gatherContext();
+    await feedbackHub.from('feedback').insert({
+      app: APP_TAG,
+      kind: 'link_dead',
+      category: report.retailer,
+      message:
+        `Dead buy link (${report.reason}) — ${report.retailer}\n` +
+        `fragrance: ${report.fragranceId}\n` +
+        `from: ${report.sourceScreen ?? 'unknown'}\n` +
+        `${report.url}`,
+      email: null,
+      ...context,
+    });
+  } catch {
+    /* never throw from a click handler */
+  }
+}

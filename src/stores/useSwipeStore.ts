@@ -4,6 +4,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { syncWrite } from '@/src/lib/sync/syncWrite';
+import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
 
 /**
  * Persisted swipe history from "Train My Nose".
@@ -76,6 +77,10 @@ export const useSwipeStore = create<SwipeState>()(
             'user_id,fragrance_id',
           );
         }
+        // A swipe sharpens the living DNA — debounced so a swipe burst coalesces
+        // into one recompute (effectively at session-end). A 'skip' still pokes
+        // the scheduler; the engine drops it (neutral pass = no signal).
+        scheduleLivingDnaRecompute('swipe');
       },
 
       clear: () => set({ swipes: {}, dailySwipeCount: 0, dailySwipeDate: '' }),

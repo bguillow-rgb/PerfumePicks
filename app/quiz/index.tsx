@@ -145,7 +145,6 @@ const PRO_QUESTIONS: QuizQuestion[] = [
 ];
 
 const ALL_QUESTIONS = [...FREE_QUESTIONS, ...PRO_QUESTIONS];
-const FREE_QUESTION_COUNT = FREE_QUESTIONS.length; // 5
 
 export default function QuizScreen() {
   const router = useRouter();
@@ -157,7 +156,6 @@ export default function QuizScreen() {
   const [step, setStep] = useState(0);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [resumeModalVisible, setResumeModalVisible] = useState(false);
-  const [proTeaseModalVisible, setProTeaseModalVisible] = useState(false);
 
   const answeredCount = Object.keys(answers).length;
 
@@ -200,12 +198,9 @@ export default function QuizScreen() {
       const nextStep = step + 1;
       setSelectedId(null);
 
-      // R8: Free user answered Q5 — show Pro tease modal instead of auto-paywall
-      if (!isPro && nextStep === FREE_QUESTION_COUNT) {
-        setProTeaseModalVisible(true);
-        return;
-      }
-
+      // Free users finish at Q5 and go straight to their results — the Pro
+      // upsell (deeper questions + Taste Insights) now lives as an inline
+      // banner on the results screen rather than a blocking modal here.
       if (nextStep < questions.length) {
         setStep(nextStep);
       } else {
@@ -250,47 +245,6 @@ export default function QuizScreen() {
                 </Pressable>
               </>
             )}
-          </View>
-        </View>
-      </Modal>
-
-      {/* R8: Pro tease modal — shown after Q5 for free users */}
-      <Modal visible={proTeaseModalVisible} transparent animationType="fade">
-        <View style={styles.overlay}>
-          <View style={styles.modal}>
-            <Ionicons name="sparkles-outline" size={28} color={COLORS.accent} style={{ marginBottom: SPACING.xs }} />
-            <Text style={styles.modalTitle}>You've answered 5 questions.</Text>
-            <Text style={styles.modalBody}>
-              Unlock 5 deeper questions + Taste Insights with Pro.
-            </Text>
-            <View style={styles.teaseRows}>
-              <View style={styles.teaseRow}>
-                <Ionicons name="lock-closed-outline" size={13} color={COLORS.muted} />
-                <Text style={styles.teaseRowText}>Presence · how much space it fills</Text>
-              </View>
-              <View style={styles.teaseRow}>
-                <Ionicons name="lock-closed-outline" size={13} color={COLORS.muted} />
-                <Text style={styles.teaseRowText}>Off-notes · what you want to avoid</Text>
-              </View>
-            </View>
-            <Pressable
-              style={styles.modalBtnPrimary}
-              onPress={() => {
-                setProTeaseModalVisible(false);
-                router.push('/paywall?returnTo=/quiz');
-              }}
-            >
-              <Text style={styles.modalBtnPrimaryText}>Unlock Pro</Text>
-            </Pressable>
-            <Pressable
-              style={styles.modalBtnSecondary}
-              onPress={() => {
-                setProTeaseModalVisible(false);
-                router.replace('/quiz/results');
-              }}
-            >
-              <Text style={styles.modalBtnSecondaryText}>See My Results</Text>
-            </Pressable>
           </View>
         </View>
       </Modal>
@@ -387,19 +341,6 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     marginBottom: SPACING.xs,
   },
-  teaseRows: { width: '100%', gap: SPACING.xs, marginBottom: SPACING.sm },
-  teaseRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SPACING.sm,
-    backgroundColor: COLORS.bg,
-    borderRadius: RADIUS.md,
-    paddingHorizontal: SPACING.md,
-    paddingVertical: SPACING.sm,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: COLORS.border,
-  },
-  teaseRowText: { ...TYPE.bodySmall, color: COLORS.muted, fontStyle: 'italic' },
   modalBtnPrimary: {
     width: '100%',
     paddingVertical: 13,

@@ -1,0 +1,37 @@
+appId: com.bobguillow.perfumepicks
+---
+- tapOn:
+    text: "Skip to app →"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/01_today_top
+- scroll
+- takeScreenshot: ux-shots/02_today_mid
+- scroll
+- takeScreenshot: ux-shots/03_today_bottom
+- tapOn:
+    id: "tab-discover"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/04_discover_top
+- scroll
+- takeScreenshot: ux-shots/05_discover_mid
+- tapOn:
+    id: "tab-taste"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/06_taste_top
+- scroll
+- takeScreenshot: ux-shots/07_taste_mid
+- tapOn:
+    id: "tab-wardrobe"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/08_wardrobe_top
+- tapOn:
+    id: "tab-profile"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/09_you_top
+- scroll
+- takeScreenshot: ux-shots/10_you_mid

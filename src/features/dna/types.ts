@@ -27,12 +27,22 @@ export type DnaSource = 'picker' | 'question_fallback' | 'hybrid';
 
 export type GenderLean = 'masculine' | 'feminine' | 'unisex';
 
-export type SeedRelation = 'own' | 'want';
+// 'like' = a pure taste signal: the user is drawn to the scent but neither owns
+// it nor wants to buy it. It feeds the DNA at full weight (pickWeight treats any
+// non-'want' relation as 1.0) but is deliberately NOT seeded into the wardrobe.
+export type SeedRelation = 'own' | 'want' | 'like';
 
 export interface DnaSeed {
   id: string;
   relation: SeedRelation;
   favorite: boolean;
+  /**
+   * ISO timestamp the seed entered the pool. Drives recency decay in the Living
+   * DNA engine (newer signals weigh more). Optional for back-compat: legacy DNAs
+   * persisted before this field are backfilled at read/migration time; a missing
+   * value is treated as "fresh" (no decay) so old DNAs never silently decay.
+   */
+  seededAt?: string;
 }
 
 export interface DnaGender {
@@ -106,10 +116,38 @@ export type ArchetypeKey =
   | 'the_classicist'
   | 'the_rebel';
 
+/** A committed archetype change, surfaced once as the "You've shifted" nudge. */
+export interface ArchetypeShift {
+  from: ArchetypeKey;
+  to: ArchetypeKey;
+}
+
 export interface DnaArchetype {
   primary: ArchetypeKey;
   /** Strongest secondary trait (snake_case key) — populated, no longer deferred. */
   modifier: string | null;
+  /**
+   * Living-archetype "lean" (PRD §6.6). The runner-up archetype currently
+   * pulling ahead, surfaced as a "leaning toward X" indicator before a swap
+   * commits. Optional so a fresh derivation (no prior state) stays byte-identical
+   * to the legacy archetype — preserves the T-U4 no-regression guarantee.
+   */
+  challenger?: ArchetypeKey | null;
+  /** ISO timestamp the challenger first pulled ahead by SWAP_MARGIN; null when not leading. */
+  leadSince?: string | null;
+  /**
+   * True once the `challenger` has crossed LEAN_REVEAL_RATIO of the primary's
+   * score — the persisted signal the readout uses to show "leaning toward X"
+   * without re-deriving the ranking (the raw scores aren't persisted).
+   */
+  leaning?: boolean;
+  /**
+   * Set on the single recompute where the committed `primary` swapped. Drives the
+   * one-time "You've shifted" nudge; cleared by `acknowledgeArchetypeShift` once
+   * the user has seen it. Carried forward across non-swap recomputes so an
+   * unacknowledged nudge is never silently wiped.
+   */
+  pendingShift?: ArchetypeShift | null;
 }
 
 export type JourneySource = 'editorial' | 'cohort';
@@ -211,4 +249,12 @@ export interface DnaPick {
   fragrance: DnaCatalogFragrance;
   relation: SeedRelation;
   favorite: boolean;
+  /**
+   * Pre-resolved effective weight. When set (Living DNA pool), the derivation
+   * helpers use it verbatim instead of `pickWeight(relation, favorite)`. Absent
+   * for plain onboarding picks → legacy weighting path is byte-identical.
+   */
+  weight?: number;
+  /** ISO timestamp this pick entered the pool (recency anchor). */
+  seededAt?: string;
 }

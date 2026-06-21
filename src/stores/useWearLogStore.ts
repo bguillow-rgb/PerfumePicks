@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Crypto from 'expo-crypto';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { syncWrite, syncDelete } from '@/src/lib/sync/syncWrite';
+import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
 
 /**
  * Wear-log store. Persisted to AsyncStorage; writes through to `wear_logs`
@@ -74,6 +75,7 @@ export const useWearLogStore = create<WearLogState>()(
             }));
           });
         }
+        scheduleLivingDnaRecompute('wear');
         return id;
       },
 
@@ -88,6 +90,7 @@ export const useWearLogStore = create<WearLogState>()(
             }));
           });
         }
+        scheduleLivingDnaRecompute('wear');
       },
 
       remove: (id) => {

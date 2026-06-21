@@ -38,6 +38,13 @@ const lo = (n: number): number => 1 - n;
 /**
  * Ordered so ties resolve deterministically (earlier wins). Each scorer is a
  * weighted sum of the archetype's signature from the A3.1 table.
+ *
+ * NOTE: the spread between users now comes from the TRAITS being scored relative
+ * to the offered pool (see deriveTraits) — that is what fixed "everyone lands
+ * crowd-pleaser". We deliberately do NOT normalize these sums to means: doing so
+ * lets the_signature_wearer (whose `1 − breadth` term maxes for any tight/cold
+ * collection) swamp every small wardrobe, just trading one degenerate winner for
+ * another.
  */
 const SCORERS: { key: ArchetypeKey; score: (s: Signals) => number }[] = [
   {
@@ -116,24 +123,36 @@ function buildSignals(traits: DnaTraits, outcomes: DnaOutcomes, picks: DnaPick[]
   return { t, o: outcomes, floralFrac, freshFrac, luxeFrac };
 }
 
+export interface ArchetypeScore {
+  key: ArchetypeKey;
+  score: number;
+}
+
+/**
+ * Score every archetype and return them sorted strongest-first. The sort is
+ * STABLE on ties (preserves SCORERS order), so `rankArchetypes(...)[0].key`
+ * equals the legacy argmax (which kept the earliest scorer on a tie) — this is
+ * what makes the living-archetype layer a no-regression change. The runner-up
+ * (`[1]`) feeds the §6.6 lean/swap mechanic.
+ */
+export function rankArchetypes(
+  traits: DnaTraits,
+  outcomes: DnaOutcomes,
+  picks: DnaPick[],
+): ArchetypeScore[] {
+  const s = buildSignals(traits, outcomes, picks);
+  return SCORERS.map(({ key, score }, i) => ({ key, score: score(s), i }))
+    .sort((a, b) => b.score - a.score || a.i - b.i)
+    .map(({ key, score }) => ({ key, score }));
+}
+
 export function deriveArchetype(
   traits: DnaTraits,
   outcomes: DnaOutcomes,
   picks: DnaPick[],
 ): DnaArchetype {
-  const s = buildSignals(traits, outcomes, picks);
-
-  let bestKey: ArchetypeKey = SCORERS[0].key;
-  let bestScore = -Infinity;
-  for (const { key, score } of SCORERS) {
-    const val = score(s);
-    if (val > bestScore) {
-      bestScore = val;
-      bestKey = key;
-    }
-  }
-
-  return { primary: bestKey, modifier: dominantSecondaryTrait(traits) };
+  const ranked = rankArchetypes(traits, outcomes, picks);
+  return { primary: ranked[0].key, modifier: dominantSecondaryTrait(traits) };
 }
 
 /** snake_case key of the second-strongest trait → the `modifier` (V1.1 A1 example). */

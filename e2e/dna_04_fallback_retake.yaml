@@ -112,14 +112,15 @@ appId: com.bobguillow.perfumepicks
 - tapOn:
     id: "dna-rec-skip"
 
-# Onboarding complete → Today.
+# Onboarding complete → Today. A live DNA now exists, so the unified DNA hero
+# card is the payoff (the "start here" hero is suppressed once a DNA exists).
 - extendedWaitUntil:
     visible:
       id: "tab-today"
     timeout: 30000
 - extendedWaitUntil:
     visible:
-      text: "start here"
+      id: "today-unified-dna"
     timeout: 15000
 
 # ── Half 2: the retake loop ──────────────────────────────────────────────────

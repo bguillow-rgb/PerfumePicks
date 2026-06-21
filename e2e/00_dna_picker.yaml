@@ -98,7 +98,7 @@ appId: com.bobguillow.perfumepicks
       id: "dna-refine-continue"
     timeout: 15000
 - assertVisible:
-    text: "Do you own these, or want them?"
+    text: "Own it, want it, or just love the scent?"
 - tapOn:
     id: "dna-refine-continue"
 
@@ -118,13 +118,14 @@ appId: com.bobguillow.perfumepicks
     id: "dna-rec-skip"
 
 # Onboarding complete → Today tab, session + hasSeenOnboarding now persisted.
-# A freshly-onboarded guest has no wardrobe yet, so Today shows the new-user
-# "start here" welcome hero (not SCENT OF THE DAY, which needs a wardrobe).
+# A freshly-onboarded guest now has a live DNA, so Today surfaces the unified
+# DNA hero card (today-unified-dna) as the payoff — the "start here" welcome hero
+# is suppressed once a DNA exists (app/(tabs)/index.tsx: isNewUser && !liveDna).
 - extendedWaitUntil:
     visible:
       id: "tab-today"
     timeout: 30000
 - extendedWaitUntil:
     visible:
-      text: "start here"
+      id: "today-unified-dna"
     timeout: 15000

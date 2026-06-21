@@ -89,27 +89,49 @@ describe('useTasteProfileStore', () => {
     expect(useTasteProfileStore.getState().dna).toEqual(live);
   });
 
-  it('applyBehaviorSignal nudges a derivable trait and clamps to [0,1]', () => {
-    useTasteProfileStore.getState().setDna(makeDna());
-    useTasteProfileStore.getState().applyBehaviorSignal({ trait: 'adventurous', delta: 0.1 });
-    expect(useTasteProfileStore.getState().dna?.traits.values.adventurous).toBeCloseTo(0.4);
+  it('commitRecompute replaces the live dna + enqueues a write, without touching draft', () => {
+    const initial = makeDna();
+    useTasteProfileStore.getState().setDna(initial);
+    // a retake is in progress
+    const draft = makeDna({ archetype: { primary: 'the_executive', modifier: null } });
+    useTasteProfileStore.getState().setDraft(draft);
 
-    useTasteProfileStore.getState().applyBehaviorSignal({ trait: 'adventurous', delta: 5 });
-    expect(useTasteProfileStore.getState().dna?.traits.values.adventurous).toBe(1);
+    const recomputed = makeDna({
+      archetype: { primary: 'the_seducer', modifier: null },
+      updatedAt: '2026-06-20T00:00:00.000Z',
+    });
+    useTasteProfileStore.getState().commitRecompute(recomputed);
 
-    useTasteProfileStore.getState().applyBehaviorSignal({ trait: 'adventurous', delta: -5 });
-    expect(useTasteProfileStore.getState().dna?.traits.values.adventurous).toBe(0);
+    const s = useTasteProfileStore.getState();
+    expect(s.dna?.archetype.primary).toBe('the_seducer');
+    expect(s.pending?.updatedAt).toBe(recomputed.updatedAt);
+    // a background recompute must NOT disturb an in-progress retake
+    expect(s.draft?.archetype.primary).toBe('the_executive');
   });
 
-  it('applyBehaviorSignal leaves a null (underivable) axis untouched', () => {
-    useTasteProfileStore.getState().setDna(makeDna());
-    useTasteProfileStore.getState().applyBehaviorSignal({ trait: 'collector', delta: 0.1 });
-    expect(useTasteProfileStore.getState().dna?.traits.values.collector).toBeNull();
+  it('acknowledgeArchetypeShift clears the pending nudge and enqueues a write', () => {
+    const dna = makeDna({
+      archetype: {
+        primary: 'the_rebel',
+        modifier: null,
+        pendingShift: { from: 'the_crowd_pleaser', to: 'the_rebel' },
+      },
+    });
+    useTasteProfileStore.getState().setDna(dna);
+    useTasteProfileStore.getState().acknowledgeArchetypeShift();
+    const s = useTasteProfileStore.getState();
+    expect(s.dna?.archetype.pendingShift).toBeNull();
+    expect(s.dna?.archetype.primary).toBe('the_rebel'); // untouched otherwise
+    expect(s.pending?.updatedAt).toBe(dna.updatedAt);
   });
 
-  it('applyBehaviorSignal is a no-op when no DNA exists', () => {
-    useTasteProfileStore.getState().applyBehaviorSignal({ trait: 'luxury', delta: 0.1 });
-    expect(useTasteProfileStore.getState().dna).toBeNull();
+  it('acknowledgeArchetypeShift is a no-op when there is no pending shift', () => {
+    const dna = makeDna();
+    useTasteProfileStore.getState().hydrateDna(dna); // no enqueue
+    useTasteProfileStore.getState().acknowledgeArchetypeShift();
+    const s = useTasteProfileStore.getState();
+    expect(s.dna).toEqual(dna);
+    expect(s.pending).toBeNull();
   });
 
   it('clearDna wipes dna, draft, and the pending write queue', () => {

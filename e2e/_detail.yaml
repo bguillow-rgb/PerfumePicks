@@ -1,0 +1,11 @@
+appId: com.bobguillow.perfumepicks
+---
+- tapOn:
+    text: "Game of Spades Ful.*"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: ux-shots/12_fragrance_detail_top
+- scroll
+- takeScreenshot: ux-shots/13_fragrance_detail_mid
+- scroll
+- takeScreenshot: ux-shots/14_fragrance_detail_bottom

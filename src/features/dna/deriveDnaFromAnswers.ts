@@ -85,6 +85,7 @@ export function deriveDnaFromAnswers(
 
   const result = deriveFragranceDNA({
     picks,
+    referencePool: pool,
     answeredCount: 3,
     source: 'question_fallback',
     now: opts?.now,

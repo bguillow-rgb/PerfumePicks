@@ -1,0 +1,25 @@
+# M1 QA gate — Living DNA engine ships dark.
+#
+# The engine refactor (signals.ts + deriveLivingDNA + reconciled swipe weights)
+# is headless: LIVING_DNA_ENABLED=false, so runtime behavior is unchanged. This
+# smoke proves the app still cold-boots past guest-auth onto a populated Today
+# (DNA-seeded recs render) after the weight reconciliation — i.e. nothing broke.
+#
+# Assumes the onboarded guest session from 00_dna_picker is present.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- runFlow: helpers/dismiss_dev_menu.yaml
+- extendedWaitUntil:
+    visible:
+      id: "tab-today"
+    timeout: 90000
+- takeScreenshot: ux-shots/m1_today_top
+# Today renders for the onboarded guest with populated state: the DNA-seeded
+# recommendation rail proves recs are non-empty after the weight reconciliation.
+- assertVisible:
+    text: "YOUR FRAGRANCE DNA"
+- scroll
+- takeScreenshot: ux-shots/m1_today_mid
+- scroll
+- takeScreenshot: ux-shots/m1_today_bottom

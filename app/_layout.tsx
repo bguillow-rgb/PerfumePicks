@@ -41,6 +41,8 @@ import { initRevenueCat, identifyUser, getCustomerInfo, isProActive } from '@/sr
 import { useProStore } from '@/src/stores/useProStore';
 import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
 import { useAppSync } from '@/src/lib/sync/useAppSync';
+import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
+import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useBadgeCheck } from '@/src/lib/useBadgeCheck';
 import {
   initAnalytics,
@@ -178,6 +180,40 @@ export default function RootLayout() {
     return () => sub.remove();
   }, []);
 
+  // Living DNA — refresh on foreground + a one-time launch migration (PRD §7.3).
+  // Foreground: signals may have landed on another device (synced down on the
+  // auth path); a debounced recompute folds them in. Migration: a single launch
+  // recompute backfills `seededAt` onto pre-M2 seeds (deriveLivingDNA stamps any
+  // seed missing it), so recency decay has a basis. Both no-op before onboarding.
+  const didMigrateRef = useRef(false);
+  useEffect(() => {
+    const runMigrationOnce = () => {
+      if (didMigrateRef.current) return;
+      if (!useTasteProfileStore.getState().dna) return; // no DNA yet — nothing to migrate
+      didMigrateRef.current = true;
+      scheduleLivingDnaRecompute('migration');
+    };
+
+    // Run once the durable DNA has rehydrated (or immediately if already warm).
+    if (useTasteProfileStore.getState().hasHydrated) runMigrationOnce();
+    const unsub = useTasteProfileStore.subscribe((s) => {
+      if (s.hasHydrated) runMigrationOnce();
+    });
+
+    let lastState: AppStateStatus = AppState.currentState;
+    const sub = AppState.addEventListener('change', (next) => {
+      if (lastState.match(/inactive|background/) && next === 'active') {
+        scheduleLivingDnaRecompute('foreground');
+      }
+      lastState = next;
+    });
+
+    return () => {
+      unsub();
+      sub.remove();
+    };
+  }, []);
+
   useEffect(() => {
     // Demo mode (no Supabase) — skip the whole auth subscription path.
     if (!isSupabaseConfigured) {
@@ -263,10 +299,16 @@ export default function RootLayout() {
       <StatusBar style="dark" />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" />
+        {/* Fragrance detail lives in the root stack (not nested in tabs) so each
+            push builds real back-history — Discover→Coco→dupe→back returns to
+            Coco, not Home — and every detail gets a fresh mount (no param-swap
+            stale-render flash). Tab bar is hidden here, matching brand/user. */}
+        <Stack.Screen name="fragrance/[id]" />
         <Stack.Screen name="dna" options={{ gestureEnabled: false }} />
         <Stack.Screen name="auth/login" options={{ presentation: 'modal', gestureEnabled: false }} />
         <Stack.Screen name="quiz/index" />
         <Stack.Screen name="quiz/results" />
+        <Stack.Screen name="preferences/index" />
         <Stack.Screen name="paywall" />
         <Stack.Screen name="brand/[name]" />
         <Stack.Screen name="rec/results" />

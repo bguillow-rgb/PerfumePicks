@@ -193,17 +193,17 @@ function FragranceDetailScreen() {
   const liveDna = useTasteProfileStore((s) => s.dna);
   const buyerCta = useMemo(() => {
     let cta;
-    if (intent === 'dupe' || intent === 'original' || intent === 'sample') {
+    if (intent === 'dupe' || intent === 'original') {
       cta = ctaForKind(intent);
     } else {
       cta = liveDna ? routeDnaCta(liveDna.traits.values) : null;
     }
     // Never promise a dupe we don't have. The "Find the dupe" CTA points down to
     // the Budget Dupes section, which only renders when dupeCount > 0 — so if
-    // there's no verified dupe, fall back to the safe sample CTA. dupeCount
-    // starts at 0 and resolves async, so a dupe-having bottle briefly shows the
-    // sample fallback then upgrades to the dupe CTA: it under-promises, never lies.
-    if (cta?.kind === 'dupe' && dupeCount === 0) return ctaForKind('sample');
+    // there's no verified dupe, fall back to the Original. dupeCount starts at 0
+    // and resolves async, so a dupe-having bottle briefly shows the Original
+    // fallback then upgrades to the dupe CTA: it under-promises, never lies.
+    if (cta?.kind === 'dupe' && dupeCount === 0) return ctaForKind('original');
     return cta;
   }, [intent, liveDna, dupeCount]);
 
@@ -535,48 +535,29 @@ function FragranceDetailScreen() {
           </View>
         </View>
 
-        {/* M6: trait-routed buyer strip. Same bottle, same reasons for everyone
-            — only this strip changes by buyer trait (dupe / original / sample).
-            For the value-hunter it points down to the Budget Dupes; for the
-            luxury/explorer buyer it's a direct buy/sample tap (affiliate). */}
-        {buyerCta && (
+        {/* M6: value-hunters get a jump down to the Budget Dupes section (only
+            renders when a verified dupe exists). Everyone else just uses the buy
+            button under the image — no redundant second "buy the original" card,
+            which pointed at the same retailer link as that pill. */}
+        {buyerCta?.kind === 'dupe' && (
           <Pressable
             style={styles.buyerStrip}
             testID="dna-routed-cta"
             accessibilityLabel={buyerCta.label}
-            disabled={buyerCta.kind !== 'dupe' && retailerLinks.length === 0}
             onPress={() => {
               track(EVENTS.DNA_CTA_TAPPED, { kind: buyerCta.kind, fragrance_id: id, surface: 'fragrance_detail' });
-              if (buyerCta.kind === 'dupe') {
-                // The down-arrow promises movement — jump to the Budget Dupes
-                // section below. It only renders when dupeCount > 0, which is
-                // exactly when this CTA shows the dupe kind, so the target exists.
-                scrollToDupes();
-              } else if (retailerLinks.length > 0) {
-                handleAffiliateClick({
-                  fragrance_id: id,
-                  retailer: retailerLinks[0].retailer,
-                  url: retailerLinks[0].url,
-                  price_cents: retailerLinks[0].price_cents,
-                  source_screen: 'dna_routed_cta',
-                });
-              }
+              // The down-arrow promises movement — jump to the Budget Dupes
+              // section below. It only renders when dupeCount > 0, which is
+              // exactly when this CTA shows, so the target exists.
+              scrollToDupes();
             }}
           >
-            <Ionicons
-              name={buyerCta.kind === 'dupe' ? 'pricetags-outline' : buyerCta.kind === 'sample' ? 'flask-outline' : 'diamond-outline'}
-              size={18}
-              color={COLORS.accent}
-            />
+            <Ionicons name="pricetags-outline" size={18} color={COLORS.accent} />
             <View style={{ flex: 1 }}>
               <Text style={styles.buyerStripLabel} testID={`dna-routed-cta-${buyerCta.kind}`}>{buyerCta.label}</Text>
               <Text style={styles.buyerStripSub}>{buyerCta.sub}</Text>
             </View>
-            <Ionicons
-              name={buyerCta.kind === 'dupe' ? 'arrow-down' : 'arrow-forward'}
-              size={16}
-              color={COLORS.muted}
-            />
+            <Ionicons name="arrow-down" size={16} color={COLORS.muted} />
           </Pressable>
         )}
 

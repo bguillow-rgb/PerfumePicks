@@ -20,13 +20,25 @@ import { FRAGRANCE_DNA_VERSION, TRAIT_SCHEMA_VERSION } from './types';
 import { aggregateFromFragrances } from './aggregate';
 import { deriveOutcomes } from './outcomes';
 import { deriveTraits } from './traits';
-import { deriveArchetype } from './archetype';
+import { deriveArchetype, rankArchetypes, type ArchetypeScore } from './archetype';
 import { deriveWardrobe } from './wardrobe';
 import { matchJourney } from './journey';
 import { computeConfidence } from './confidence';
+import {
+  buildDnaSignals,
+  signalsToPools,
+  type BuildSignalsInput,
+} from './signals';
 
 export interface DeriveDnaInput {
   picks: DnaPick[];
+  /**
+   * The candidate set the picks were chosen FROM (the onboarding picker pool).
+   * When supplied, the differentiating traits are scored relative to this pool
+   * so WHICH bottles the user picked actually moves their archetype (see
+   * deriveTraits). Optional — absent on paths with no offered set.
+   */
+  referencePool?: DnaCatalogFragrance[];
   /** Fragrances explicitly marked "hard no". */
   avoided?: DnaCatalogFragrance[];
   /** Count of explicit fallback questions answered (feeds confidence). */
@@ -42,21 +54,29 @@ export interface DeriveDnaResult {
   dna: FragranceDNA;
   /** Analytics events the caller should emit (e.g. on compute failure). */
   events: DnaComputeEvent[];
+  /**
+   * Full archetype ranking (strongest-first) for this derivation. Present on the
+   * living path so the recompute orchestrator can drive the §6.6 lean/swap
+   * mechanic (`applyLivingArchetype`); absent on the legacy/fallback paths.
+   */
+  archetypeScores?: ArchetypeScore[];
 }
 
 const isoNow = () => new Date().toISOString();
 
-function seedsFromPicks(picks: DnaPick[]): DnaSeed[] {
+function seedsFromPicks(picks: DnaPick[], now: () => string = isoNow): DnaSeed[] {
   return picks.map((p) => ({
     id: p.fragrance.id,
     relation: p.relation,
     favorite: p.favorite,
+    seededAt: p.seededAt ?? now(),
   }));
 }
 
 export function deriveFragranceDNA(input: DeriveDnaInput): DeriveDnaResult {
   const {
     picks,
+    referencePool,
     avoided = [],
     answeredCount = 0,
     source = 'picker',
@@ -66,7 +86,7 @@ export function deriveFragranceDNA(input: DeriveDnaInput): DeriveDnaResult {
   try {
     const agg = aggregateFromFragrances(picks, avoided);
     const outcomes = deriveOutcomes(picks);
-    const traits = deriveTraits(picks);
+    const traits = deriveTraits(picks, referencePool);
     const archetype = deriveArchetype(traits, outcomes, picks);
 
     const ownedFrags = picks.filter((p) => p.relation === 'own').map((p) => p.fragrance);
@@ -94,7 +114,7 @@ export function deriveFragranceDNA(input: DeriveDnaInput): DeriveDnaResult {
       outcomes,
       traits,
       archetype,
-      seeds: seedsFromPicks(picks),
+      seeds: seedsFromPicks(picks, now),
       avoided: avoided.map((f) => f.id),
       journey: null,
       wardrobe,
@@ -108,6 +128,85 @@ export function deriveFragranceDNA(input: DeriveDnaInput): DeriveDnaResult {
     return { dna, events: [] };
   } catch {
     return { dna: fallbackDNA(picks, avoided, source, now), events: ['dna_compute_failed'] };
+  }
+}
+
+/**
+ * deriveLivingDNA() — the unified-pool entry point (PRD §7.2).
+ *
+ * Onboarding picks + swipes + wears + wardrobe collapse into ONE recency-weighted
+ * pool, then run through the SAME sub-derivations as deriveFragranceDNA. A
+ * seeds-only call (no behavioral signals, picks deliberate + fresh) reduces
+ * exactly to deriveFragranceDNA — the no-regression guarantee (T-U4) holds by
+ * construction, because each pooled pick's resolved `weight` equals
+ * pickWeight(relation, favorite) and the OWNED set is the relation==='own' picks.
+ */
+export interface DeriveLivingDnaInput extends BuildSignalsInput {
+  /** Explicit "hard no" fragrances (in addition to dislike swipes). */
+  avoided?: DnaCatalogFragrance[];
+  answeredCount?: number;
+  source?: DnaSource;
+}
+
+export function deriveLivingDNA(input: DeriveLivingDnaInput): DeriveDnaResult {
+  const {
+    picks,
+    avoided: explicitAvoided = [],
+    answeredCount = 0,
+    source = 'hybrid',
+    now = isoNow,
+  } = input;
+
+  try {
+    const signals = buildDnaSignals(input);
+    const { pool, avoided: aversive, ownedFrags, signalCount } = signalsToPools(
+      signals,
+      Date.parse(now()),
+    );
+    const avoided = [...explicitAvoided, ...aversive];
+
+    const agg = aggregateFromFragrances(pool, avoided);
+    const outcomes = deriveOutcomes(pool);
+    const traits = deriveTraits(pool);
+    const archetypeScores = rankArchetypes(traits, outcomes, pool);
+    const archetype = deriveArchetype(traits, outcomes, pool);
+    const wardrobe = deriveWardrobe(ownedFrags);
+
+    const confidence = computeConfidence({
+      seedCount: signalCount,
+      answeredCount,
+      weights: agg.weights,
+    });
+
+    const dna: FragranceDNA = {
+      version: FRAGRANCE_DNA_VERSION,
+      category: 'fragrance',
+      source,
+      accords: agg.accords,
+      families: agg.families,
+      likedNotes: agg.likedNotes,
+      dislikedNotes: agg.dislikedNotes,
+      performance: agg.performance,
+      projectionCap: null,
+      gender: agg.gender,
+      season: agg.season,
+      price: agg.price,
+      outcomes,
+      traits,
+      archetype,
+      seeds: seedsFromPicks(picks, now),
+      avoided: avoided.map((f) => f.id),
+      journey: null,
+      wardrobe,
+      confidence,
+      updatedAt: now(),
+    };
+
+    dna.journey = matchJourney(dna);
+
+    return { dna, events: [], archetypeScores };
+  } catch {
+    return { dna: fallbackDNA(picks, explicitAvoided, source, now), events: ['dna_compute_failed'] };
   }
 }
 
@@ -154,7 +253,7 @@ export function fallbackDNA(
       },
     },
     archetype: { primary: 'the_explorer', modifier: null },
-    seeds: seedsFromPicks(picks),
+    seeds: seedsFromPicks(picks, now),
     avoided: avoided.map((f) => f.id),
     journey: null,
     wardrobe: null,

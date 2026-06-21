@@ -10,7 +10,7 @@ import {
 } from '@/src/features/quiz/popularity';
 import {
   buildPickerGrid,
-  reshufflePickerGrid,
+  buildPickerList,
   PICKER_GRID_SIZE,
   type PickerCandidate,
 } from '@/src/features/quiz/pickerGrid';
@@ -161,28 +161,34 @@ describe('buildPickerGrid', () => {
   });
 });
 
-// ── reshuffle ────────────────────────────────────────────────────────────────
-describe('reshufflePickerGrid', () => {
-  it('excludes everything already shown', () => {
-    const pool = bigPool(60);
-    const first = buildPickerGrid(pool);
-    const second = reshufflePickerGrid(pool, first, 1);
-    const firstIds = new Set(first.map((c) => c.id));
-    expect(second.every((c) => !firstIds.has(c.id))).toBe(true);
+// ── full lazy-scroll list ────────────────────────────────────────────────────
+describe('buildPickerList', () => {
+  it('returns the whole recognizable pool, not just one grid', () => {
+    const list = buildPickerList(bigPool(60));
+    expect(list.length).toBe(60);
+    expect(list.length).toBeGreaterThan(PICKER_GRID_SIZE);
   });
 
-  it('stays above the reshuffle fame floor (tier >= 3)', () => {
-    const pool = [...bigPool(40), cand({ id: 'lo', popularity_tier: 2 })];
-    const first = buildPickerGrid(pool);
-    const second = reshufflePickerGrid(pool, first, 1);
-    expect(second.every((c) => resolvePopularityTier(c) >= 3)).toBe(true);
-    expect(second.find((c) => c.id === 'lo')).toBeUndefined();
+  it('includes tier-3 bottles (floor is 3, not grid-1\'s 4)', () => {
+    const list = buildPickerList([...bigPool(20), cand({ id: 't3', popularity_tier: 3 })]);
+    expect(list.find((c) => c.id === 't3')).toBeDefined();
   });
 
-  it('returns empty when the recognizable pool is exhausted (→ caller routes to fallback)', () => {
-    const pool = bigPool(12);
-    const first = buildPickerGrid(pool);
-    expect(reshufflePickerGrid(pool, first, 1)).toHaveLength(0);
+  it('excludes obscure (tier <= 2) and ineligible tiles', () => {
+    const list = buildPickerList([
+      ...bigPool(20),
+      cand({ id: 'lo', popularity_tier: 2 }),
+      cand({ id: 'noimg', image_url: '', popularity_tier: 5 }),
+    ]);
+    expect(list.find((c) => c.id === 'lo' || c.id === 'noimg')).toBeUndefined();
+  });
+
+  it('leads with the most famous bottle', () => {
+    const list = buildPickerList([
+      ...bigPool(20),
+      cand({ id: 'fame', popularity_tier: 5, compliment_score: 1 }),
+    ]);
+    expect(resolvePopularityTier(list[0])).toBe(5);
   });
 });
 
@@ -197,11 +203,10 @@ describe('MOCK_CATALOG picker integration', () => {
     expect(grid.every((c) => !!c.image_url && c.top_accords.length > 0)).toBe(true);
   });
 
-  it('can reshuffle at least once with fresh recognizable tiles', () => {
-    const grid = buildPickerGrid(pool);
-    const re = reshufflePickerGrid(pool, grid, 1);
-    expect(re.length).toBeGreaterThan(0);
-    const shown = new Set(grid.map((c) => c.id));
-    expect(re.every((c) => !shown.has(c.id) && resolvePopularityTier(c) >= 3)).toBe(true);
+  it('builds a full lazy-scroll list larger than one grid, leading famous', () => {
+    const list = buildPickerList(pool);
+    expect(list.length).toBeGreaterThan(PICKER_GRID_SIZE);
+    expect(list.every((c) => !!c.image_url && c.top_accords.length > 0)).toBe(true);
+    expect(resolvePopularityTier(list[0])).toBeGreaterThanOrEqual(4);
   });
 });
