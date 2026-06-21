@@ -30,21 +30,28 @@ interface Signals {
   luxeFrac: number;
 }
 
-// ↓ helper: treat null traits as neutral 0.5 for scoring.
-const v = (n: number | null): number => (n == null ? 0.5 : n);
-// "low" reading of a signal.
-const lo = (n: number): number => 1 - n;
+// ↓ helper: CENTER a [0,1] signal on its neutral midpoint, so only a user's
+// DEVIATION from neutral feeds the score. Null traits center to 0 (no signal).
+// Without centering, signals that sit high for almost everyone (versatility /
+// compliment / office-safe all average ~0.65, plus the recognizable-bottle
+// picker biasing the popular/compliment traits upward) stack into a handful of
+// scorers and collapse every user onto the same archetype (the "everyone is a
+// crowd-pleaser" bug).
+const v = (n: number | null): number => (n == null ? 0 : n - 0.5);
+// "low" reading of an already-centered signal — just the negation.
+const lo = (n: number): number => -n;
 
 /**
  * Ordered so ties resolve deterministically (earlier wins). Each scorer is a
  * weighted sum of the archetype's signature from the A3.1 table.
  *
- * NOTE: the spread between users now comes from the TRAITS being scored relative
- * to the offered pool (see deriveTraits) — that is what fixed "everyone lands
- * crowd-pleaser". We deliberately do NOT normalize these sums to means: doing so
- * lets the_signature_wearer (whose `1 − breadth` term maxes for any tight/cold
- * collection) swamp every small wardrobe, just trading one degenerate winner for
- * another.
+ * All inputs are CENTERED on 0 (see `v` and `buildSignals`): a perfectly neutral
+ * user scores 0 everywhere and resolves to the first scorer by stable order;
+ * real spread comes entirely from how each user deviates from neutral. The
+ * trait-vs-pool relative scoring (see deriveTraits) sharpens those deviations.
+ * We deliberately do NOT normalize the sums to means: doing so lets the
+ * the_signature_wearer term swamp every small wardrobe, just trading one
+ * degenerate winner for another.
  */
 const SCORERS: { key: ArchetypeKey; score: (s: Signals) => number }[] = [
   {
@@ -111,16 +118,29 @@ const SCORERS: { key: ArchetypeKey; score: (s: Signals) => number }[] = [
 
 const FLORAL = ['floral', 'white floral', 'rose', 'jasmine'];
 
+// center a raw [0,1] signal (fraction or outcome) on its neutral midpoint.
+const cen = (n: number): number => n - 0.5;
+
 function buildSignals(traits: DnaTraits, outcomes: DnaOutcomes, picks: DnaPick[]): Signals {
   const t = {} as Record<TraitKey, number>;
   for (const k of TRAIT_KEYS) t[k] = v(traits.values[k]);
   const lc = (s: string) => s.toLowerCase();
-  const floralFrac = weightedFraction(picks, (f) =>
+  const floralFrac = cen(weightedFraction(picks, (f) =>
     FLORAL.includes(lc(f.fragrance_family)) || f.top_accords.some((a) => FLORAL.includes(lc(a))),
-  );
-  const freshFrac = weightedFraction(picks, isWarmFrag);
-  const luxeFrac = weightedFraction(picks, isLuxeFrag);
-  return { t, o: outcomes, floralFrac, freshFrac, luxeFrac };
+  ));
+  const freshFrac = cen(weightedFraction(picks, isWarmFrag));
+  const luxeFrac = cen(weightedFraction(picks, isLuxeFrag));
+  // outcomes are raw [0,1] reads of catalog columns → center them too, so an
+  // always-high column (e.g. versatility ~0.65) contributes ~0, not a free boost.
+  const o = {
+    compliments: cen(outcomes.compliments),
+    officeSafe: cen(outcomes.officeSafe),
+    smellsLuxe: cen(outcomes.smellsLuxe),
+    versatile: cen(outcomes.versatile),
+    dateNight: cen(outcomes.dateNight),
+    signature: cen(outcomes.signature),
+  };
+  return { t, o, floralFrac, freshFrac, luxeFrac };
 }
 
 export interface ArchetypeScore {
