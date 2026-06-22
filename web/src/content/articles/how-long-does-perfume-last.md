@@ -14,10 +14,10 @@ quickAnswer: "Perfume longevity on skin ranges from two hours for light colognes
 publishedAt: "2026-05-15"
 author: "Perfume Picks"
 relatedSlugs:
+  - "perfume-concentration-guide"
   - "how-to-decant-perfume"
   - "fragrance-notes-explained"
   - "how-to-store-perfume-collection"
-  - "how-to-test-perfume-before-buying"
 faqs:
   - q: "Does perfume expire?"
     a: "Fragrance does not expire in the sense that it becomes unsafe to wear, but it does degrade over time. Oxidation changes the smell, typically making top notes disappear faster, adding a slightly sour or flat character to the opening, and shifting the overall balance. An opened bottle used regularly will last two to five years before noticeable degradation. A well-stored unopened bottle can last a decade or more."
