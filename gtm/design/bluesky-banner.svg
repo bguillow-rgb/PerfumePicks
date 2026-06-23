@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="1000" viewBox="0 0 3000 1000">
+  <!-- Perfume Picks — Bluesky banner 3000x1000 (3:1). Avatar sits lower-left; content centered. -->
+  <rect width="3000" height="1000" fill="#FAF6F0"/>
+  <rect x="60" y="60" width="2880" height="880" fill="none" stroke="#B8924B" stroke-width="3"/>
+  <rect x="78" y="78" width="2844" height="844" fill="none" stroke="#E6DCCB" stroke-width="2"/>
+
+  <g transform="translate(1500,300)" stroke="#B8924B" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-22" y="-92" width="44" height="26" rx="5" fill="#B8924B"/>
+    <rect x="-12" y="-68" width="24" height="16"/>
+    <rect x="-48" y="-54" width="96" height="126" rx="20"/>
+    <line x1="-48" y1="-2" x2="48" y2="-2"/>
+    <circle cx="0" cy="34" r="5" fill="#B8924B" stroke="none"/>
+  </g>
+
+  <text x="1500" y="600" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="170" fill="#2A1F18" letter-spacing="2">Perfume Picks</text>
+
+  <g fill="#B8924B">
+    <rect x="600" y="690" width="16" height="16" transform="rotate(45 608 698)"/>
+    <rect x="2384" y="690" width="16" height="16" transform="rotate(45 2392 698)"/>
+  </g>
+  <text x="1500" y="712" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="48" fill="#7A6A5C" letter-spacing="11">THE FRAGRANCE COLLECTOR'S WARDROBE</text>
+
+  <text x="1500" y="820" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#B8924B" letter-spacing="5" font-style="italic">Wear what you love.</text>
+</svg>

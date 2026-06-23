@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" viewBox="0 0 1500 500">
+  <!-- Perfume Picks — X / Twitter header 1500x500. Avatar sits bottom-left; key content kept centered. -->
+  <rect width="1500" height="500" fill="#FAF6F0"/>
+  <!-- double gold frame -->
+  <rect x="34" y="34" width="1432" height="432" fill="none" stroke="#B8924B" stroke-width="2"/>
+  <rect x="44" y="44" width="1412" height="412" fill="none" stroke="#E6DCCB" stroke-width="1"/>
+
+  <!-- bottle emblem -->
+  <g transform="translate(750,150)" stroke="#B8924B" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-13" y="-54" width="26" height="15" rx="3" fill="#B8924B"/>
+    <rect x="-7" y="-40" width="14" height="9"/>
+    <rect x="-28" y="-32" width="56" height="74" rx="12"/>
+    <line x1="-28" y1="-2" x2="28" y2="-2"/>
+    <circle cx="0" cy="20" r="3" fill="#B8924B" stroke="none"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="750" y="305" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="92" fill="#2A1F18" letter-spacing="1">Perfume Picks</text>
+
+  <!-- tagline with diamond dividers -->
+  <g fill="#B8924B">
+    <rect x="320" y="350" width="9" height="9" transform="rotate(45 324.5 354.5)"/>
+    <rect x="1171" y="350" width="9" height="9" transform="rotate(45 1175.5 354.5)"/>
+  </g>
+  <text x="750" y="362" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="25" fill="#7A6A5C" letter-spacing="5">THE FRAGRANCE COLLECTOR'S WARDROBE</text>
+
+  <!-- footer line -->
+  <text x="750" y="420" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#B8924B" letter-spacing="3" font-style="italic">Wear what you love.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <!-- Perfume Picks — square social promo (IG/FB/X) 1080x1080. DNA hook. -->
+  <rect width="1080" height="1080" fill="#FAF6F0"/>
+  <rect x="60" y="60" width="960" height="960" fill="none" stroke="#B8924B" stroke-width="3"/>
+  <rect x="74" y="74" width="932" height="932" fill="none" stroke="#E6DCCB" stroke-width="1.5"/>
+
+  <!-- top kicker -->
+  <text x="540" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#7A6A5C" letter-spacing="8">PERFUME PICKS</text>
+  <line x1="430" y1="232" x2="650" y2="232" stroke="#B8924B" stroke-width="1.5"/>
+
+  <!-- emblem -->
+  <g transform="translate(540,400)" stroke="#B8924B" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-22" y="-96" width="44" height="26" rx="5" fill="#B8924B"/>
+    <rect x="-12" y="-72" width="24" height="16"/>
+    <rect x="-50" y="-58" width="100" height="132" rx="21"/>
+    <line x1="-50" y1="-2" x2="50" y2="-2"/>
+    <circle cx="0" cy="36" r="5" fill="#B8924B" stroke="none"/>
+  </g>
+
+  <!-- headline -->
+  <text x="540" y="630" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="78" fill="#2A1F18">What's your</text>
+  <text x="540" y="720" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="78" fill="#2A1F18">Fragrance DNA?</text>
+
+  <!-- subline -->
+  <text x="540" y="800" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#7A6A5C" font-style="italic">One of 11 archetypes. Your taste, named.</text>
+
+  <!-- archetype chips -->
+  <g font-family="Georgia, serif" font-size="26" fill="#B8924B" text-anchor="middle">
+    <rect x="250" y="860" width="240" height="58" rx="29" fill="none" stroke="#E6DCCB" stroke-width="2"/>
+    <text x="370" y="898">The Connoisseur</text>
+    <rect x="590" y="860" width="200" height="58" rx="29" fill="none" stroke="#E6DCCB" stroke-width="2"/>
+    <text x="690" y="898">The Seducer</text>
+    <rect x="340" y="934" width="180" height="58" rx="29" fill="none" stroke="#E6DCCB" stroke-width="2"/>
+    <text x="430" y="972">The Purist</text>
+    <rect x="540" y="934" width="220" height="58" rx="29" fill="none" stroke="#E6DCCB" stroke-width="2"/>
+    <text x="650" y="972">The Showstopper</text>
+  </g>
+</svg>

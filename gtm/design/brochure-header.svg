@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="440" viewBox="0 0 1600 440">
+  <!-- Perfume Picks — brochure / one-pager / web hero header banner 1600x440. -->
+  <rect width="1600" height="440" fill="#FAF6F0"/>
+  <rect x="40" y="40" width="1520" height="360" fill="#FFFFFF" stroke="#E6DCCB" stroke-width="2"/>
+  <rect x="40" y="40" width="1520" height="8" fill="#B8924B"/>
+
+  <!-- left emblem -->
+  <g transform="translate(220,230)" stroke="#B8924B" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-18" y="-78" width="36" height="22" rx="4" fill="#B8924B"/>
+    <rect x="-10" y="-57" width="20" height="13"/>
+    <rect x="-40" y="-44" width="80" height="106" rx="17"/>
+    <line x1="-40" y1="0" x2="40" y2="0"/>
+    <circle cx="0" cy="30" r="4.5" fill="#B8924B" stroke="none"/>
+  </g>
+  <line x1="360" y1="120" x2="360" y2="320" stroke="#E6DCCB" stroke-width="2"/>
+
+  <!-- right text block, left aligned -->
+  <text x="420" y="210" font-family="Georgia, 'Times New Roman', serif" font-size="84" fill="#2A1F18" letter-spacing="1">Perfume Picks</text>
+  <text x="424" y="262" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#7A6A5C" letter-spacing="5">THE FRAGRANCE COLLECTOR'S WARDROBE</text>
+  <text x="424" y="320" font-family="Georgia, serif" font-style="italic" font-size="28" fill="#B8924B">Wear what you love — never from a store.</text>
+</svg>

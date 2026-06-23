@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <!-- Perfume Picks — email header banner (display ~600x180 @2x). -->
+  <rect width="1200" height="360" fill="#FAF6F0"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#B8924B"/>
+  <rect x="0" y="354" width="1200" height="6" fill="#B8924B"/>
+
+  <g transform="translate(600,120)" stroke="#B8924B" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-14" y="-58" width="28" height="16" rx="3" fill="#B8924B"/>
+    <rect x="-8" y="-43" width="16" height="10"/>
+    <rect x="-30" y="-34" width="60" height="80" rx="13"/>
+    <line x1="-30" y1="0" x2="30" y2="0"/>
+    <circle cx="0" cy="24" r="3.5" fill="#B8924B" stroke="none"/>
+  </g>
+
+  <text x="600" y="248" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#2A1F18" letter-spacing="1">Perfume Picks</text>
+  <text x="600" y="296" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#7A6A5C" letter-spacing="6">THE FRAGRANCE COLLECTOR'S WARDROBE</text>
+</svg>
