@@ -75,7 +75,7 @@ const faqs = [
     <div class="hero-copy">
       <p class="eyebrow">Fragrance wardrobe &middot; iOS</p>
       <h1>The collector&rsquo;s <em>wardrobe.</em></h1>
-      <p class="hero-tagline">Catalog every bottle, log each wear with the weather and occasion, and get morning picks drawn from the fragrances you already own, never from a store.</p>
+      <p class="hero-tagline">Catalog every bottle, log each wear with the weather and occasion, and get morning picks drawn from the fragrances you already own, never from a store. Wear what you love.</p>
 
       <p class="badge">Coming soon to the App Store</p>
 
@@ -86,31 +86,86 @@ const faqs = [
       </p>
     </div>
 
-    <aside class="pyramid" aria-label="Example fragrance match">
-      <p class="pyramid-head">Your match today</p>
-      <p class="pyramid-name">Rose Noir</p>
-      <p class="pyramid-sub">Floral Chypre &middot; Eau de Parfum</p>
-
-      <dl class="notes-pyramid">
-        <div class="tier tier--top">
-          <dt>Top</dt>
-          <dd>Bergamot &middot; Pink Pepper</dd>
+    <aside class="hero-media" aria-label="Perfume Picks app, Today screen">
+      <div class="device-wrap">
+        <div class="device">
+          <img
+            src="/assets/screenshots/today.webp"
+            alt="Perfume Picks Today screen showing a morning wear pick drawn from your wardrobe with weather context"
+            width="286"
+            height="570"
+            loading="eager"
+          />
         </div>
-        <div class="tier tier--heart">
-          <dt>Heart</dt>
-          <dd>Damask Rose &middot; Jasmine</dd>
-        </div>
-        <div class="tier tier--base">
-          <dt>Base</dt>
-          <dd>Amber &middot; Patchouli &middot; Musk</dd>
-        </div>
-      </dl>
-
-      <p class="match-row"><span>Taste match</span><strong>96</strong></p>
+        <span class="float-chip float-chip--tl"><span class="star">&#9733;</span> The Connoisseur</span>
+        <span class="float-chip float-chip--br">Taste match <strong>96</strong></span>
+      </div>
     </aside>
   </section>
 
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">I</div>
+      <h3>Organized</h3>
+      <p>Every bottle in one place, by house, family, and status.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">II</div>
+      <h3>Remembered</h3>
+      <p>A wear log that captures the weather and the occasion.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">III</div>
+      <h3>Worn</h3>
+      <p>A daily pick from your shelf, not from a store.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">IV</div>
+      <h3>Understood</h3>
+      <p>A Fragrance DNA built from what you actually love.</p>
+    </div>
+  </div>
+
   <QuickAnswer text={quickAnswer} />
+
+  <!-- Fragrance DNA, the signature feature, given a dark editorial moment -->
+  <section class="band band--ink">
+    <div class="band-inner">
+      <div class="dna-grid">
+        <div class="dna-copy">
+          <p class="eyebrow">Fragrance DNA</p>
+          <h2>Your taste, <em>named.</em></h2>
+          <p>Tap the scents you love and Perfume Picks reads your palate into one of eleven archetypes. It is your taste, made legible, and it keeps sharpening every time you wear, swipe, and add a bottle.</p>
+          <ul class="dna-chips" aria-label="The eleven Fragrance DNA archetypes">
+            <li class="is-lit">The Connoisseur</li>
+            <li>The Seducer</li>
+            <li>The Purist</li>
+            <li>The Showstopper</li>
+            <li>The Smart Shopper</li>
+            <li>The Romantic</li>
+            <li>The Explorer</li>
+            <li>The Classicist</li>
+            <li>The Rebel</li>
+            <li>The Executive</li>
+            <li>The Signature Wearer</li>
+          </ul>
+        </div>
+        <div class="dna-media">
+          <div class="device-wrap">
+            <div class="device">
+              <img
+                src="/assets/screenshots/train.webp"
+                alt="Train My Nose swipe interface that teaches Perfume Picks your taste"
+                width="286"
+                height="579"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="features">
     <h2 class="section-title">Built for collectors</h2>
@@ -142,6 +197,33 @@ const faqs = [
     </div>
 
     <p class="features-link"><a href="/features">See every feature &rarr;</a></p>
+  </section>
+
+  <!-- Dupes, the value hook -->
+  <section class="band band--ivory2">
+    <div class="band-inner">
+      <div class="split-grid split-grid--reverse">
+        <div class="split-media">
+          <div class="device-wrap">
+            <div class="device">
+              <img
+                src="/assets/screenshots/fragrance-detail.webp"
+                alt="A fragrance detail page in Perfume Picks showing the note pyramid, wear history, and cheaper dupes"
+                width="286"
+                height="583"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="split-copy">
+          <p class="eyebrow">Budget dupes</p>
+          <h2>Cheaper bottles that smell the same</h2>
+          <p>Love a <span class="price-strike">$300</span> bottle? Perfume Picks surfaces dupes that smell nearly identical, ranked by match and showing what you save, <span class="price-now">often 30&ndash;70% less</span>.<span class="save-pill">one find pays for a year</span></p>
+          <p>It is the most useful thing in the app, and the simplest reason collectors go Pro.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <h2>How does Perfume Picks make money?</h2>

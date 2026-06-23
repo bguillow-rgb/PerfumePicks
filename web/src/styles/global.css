@@ -616,3 +616,210 @@ hr.footer-rule { border: 0; border-top: 1px solid var(--line2); margin: 76px 0 2
   .quick-answer { padding: 20px 22px; }
   .cta-section { padding: 32px 26px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   REDESIGN LAYER — full-bleed bands, device frames, the Fragrance DNA drama
+   section, the dupes value band, and floating accent chips. Adds rhythm and
+   real app imagery to the homepage while leaving the editorial type system
+   above untouched. (Steals the Percolate playbook: commit to the product
+   metaphor, alternate section bands, float device-framed screenshots, end on
+   discipline — one neutral, one ink, one rationed accent.)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+html { overflow-x: hidden; }
+
+/* ─── Full-bleed section bands (break out of the 1000px container) ─────────── */
+.band {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 76px 0;
+  margin-top: 84px;
+}
+.band-inner { max-width: 1000px; margin: 0 auto; padding: 0 28px; }
+.band--ivory2 {
+  background:
+    radial-gradient(700px 360px at 88% 0%, rgba(196,164,99,0.10), transparent 60%),
+    var(--ivory2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.band--ink {
+  background:
+    radial-gradient(900px 460px at 84% -10%, rgba(196,164,99,0.20), transparent 60%),
+    radial-gradient(700px 420px at 0% 110%, rgba(188,123,116,0.12), transparent 55%),
+    var(--ink);
+}
+
+/* ─── CSS device frame (floating phone for real screenshots) ───────────────── */
+.device-wrap { position: relative; width: max-content; margin: 0 auto; }
+.device-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -8% -14%;
+  background: radial-gradient(closest-side, rgba(196,164,99,0.22), transparent 72%);
+  z-index: 0;
+}
+.device {
+  position: relative;
+  z-index: 1;
+  width: 286px;
+  padding: 11px;
+  background: linear-gradient(160deg, #2C2018, #14100C);
+  border-radius: 46px;
+  box-shadow:
+    0 34px 64px rgba(42,31,24,0.30),
+    0 4px 14px rgba(42,31,24,0.18),
+    inset 0 0 0 1.5px rgba(255,255,255,0.06);
+}
+.device::before {
+  content: '';
+  position: absolute;
+  top: 22px; left: 50%;
+  transform: translateX(-50%);
+  width: 86px; height: 23px;
+  background: #0C0907;
+  border-radius: 13px;
+  z-index: 3;
+}
+.device img,
+.device .device-screen {
+  display: block;
+  width: 100%;
+  border-radius: 35px;
+  border: none;
+  box-shadow: none;
+  background: var(--card);
+}
+.device--sm .device { width: 250px; }
+/* device frames reused inside /features rows: let the image fill the frame */
+.feature-row-shot .device-wrap { margin: 0 auto; }
+.feature-row-shot .device img { max-width: none; }
+
+/* ─── Floating accent chips (delight on the hero device) ───────────────────── */
+.float-chip {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  background: var(--card);
+  border: 1px solid var(--line2);
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  box-shadow: 0 14px 30px rgba(42,31,24,0.16);
+  white-space: nowrap;
+}
+.float-chip strong { font-family: var(--display); font-size: 16px; color: var(--blush); letter-spacing: 0; }
+.float-chip .star { color: var(--gold); }
+.float-chip--tl { top: 12%; left: -34px; }
+.float-chip--br { bottom: 13%; right: -30px; }
+
+/* ─── Value pillars strip (under the hero) ────────────────────────────────── */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin: 48px 0 0;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+.pillar-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.pillar h3 { font-family: var(--display); font-size: 17px; font-weight: 500; margin: 0 0 6px; }
+.pillar p { margin: 0; font-size: 13.5px; line-height: 1.55; }
+
+/* ─── Fragrance DNA drama section (lives inside .band--ink) ────────────────── */
+.dna-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+.band--ink .eyebrow { color: var(--gold-bright); }
+.band--ink .eyebrow::before { background: var(--gold-bright); }
+.band--ink h2 { color: var(--ivory); font-size: 38px; margin-top: 0; }
+.band--ink h2 em { font-style: italic; color: var(--gold-bright); font-weight: 400; }
+.band--ink p { color: #D9CCBC; }
+.band--ink strong { color: var(--ivory); }
+.dna-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 0;
+  margin: 24px 0 0;
+}
+.dna-chips li {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ivory);
+  padding: 8px 15px;
+  border: 1px solid rgba(196,164,99,0.42);
+  border-radius: 999px;
+  background: rgba(250,246,240,0.04);
+}
+.dna-chips li.is-lit {
+  color: var(--ink);
+  background: var(--gold-bright);
+  border-color: var(--gold-bright);
+  font-weight: 500;
+}
+
+/* ─── Dupes value band (lives inside .band--ivory2) ───────────────────────── */
+.split-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+}
+.split-grid--reverse .split-media { order: 0; }
+.split-grid--reverse .split-copy  { order: 1; }
+.split-grid h2 { margin-top: 0; }
+.price-strike { color: var(--subtle); text-decoration: line-through; }
+.price-now { color: var(--blush); font-family: var(--display); font-weight: 600; }
+.save-pill {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 10px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #2F5D3A;
+  background: #E4EFE2;
+  border-radius: 999px;
+}
+
+/* ─── Responsive: redesign layer ──────────────────────────────────────────── */
+@media (max-width: 820px) {
+  .dna-grid, .split-grid, .split-grid--reverse { grid-template-columns: 1fr; gap: 36px; }
+  .split-grid--reverse .split-media { order: 0; }
+  .split-grid--reverse .split-copy  { order: 1; }
+  .pillars { grid-template-columns: repeat(2, 1fr); gap: 26px 22px; }
+  .band { padding: 60px 0; margin-top: 64px; }
+  .band--ink h2 { font-size: 32px; }
+}
+@media (max-width: 480px) {
+  .pillars { grid-template-columns: 1fr; }
+  .float-chip--tl { left: -8px; top: 8%; }
+  .float-chip--br { right: -6px; bottom: 10%; }
+  .device { width: 250px; }
+  .band-inner { padding: 0 18px; }
+}
