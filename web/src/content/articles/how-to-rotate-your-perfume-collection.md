@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-build-a-fragrance-wardrobe"
   - "how-to-test-perfume-before-buying"
   - "best-office-perfumes"
-  - "how-to-store-perfume-collection"
+  - "how-to-apply-perfume"
 faqs:
   - q: "How many perfumes should I have in active rotation at once?"
     a: "Most collectors keep between 5 and 10 bottles on their active tray at any given time. Fewer than 5 can cause scent fatigue; more than 10 tends to mean some bottles go weeks without a wear. A monthly or seasonal swap keeps the selection fresh and manageable."
