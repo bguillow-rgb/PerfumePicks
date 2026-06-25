@@ -27,15 +27,15 @@ const supabase = createClient(SUPABASE_URL, SERVICE_KEY);
 // Each entry: [fragrance_name_search, celebrity_name, category, source]
 const ASSOCIATIONS: [string, string, string, string][] = [
   // Iconic / historical
-  ['Chanel No. 5', 'Marilyn Monroe', 'actor', 'interview'],
-  ['Chanel No. 5', 'Nicole Kidman', 'actor', 'brand_ambassador'],
-  ['Chanel No. 5', 'Brad Pitt', 'actor', 'brand_ambassador'],
+  ['Chanel No 5 Eau de Parfum', 'Marilyn Monroe', 'actor', 'interview'],
+  ['Chanel No 5 Eau de Parfum', 'Nicole Kidman', 'actor', 'brand_ambassador'],
+  ['Chanel No 5 Eau de Parfum', 'Brad Pitt', 'actor', 'brand_ambassador'],
   ['Shalimar', 'Princess Diana', 'royal', 'biography'],
 
   // Modern celebrity favorites
   ['Baccarat Rouge 540', 'Rihanna', 'musician', 'interview'],
   ['Baccarat Rouge 540', 'Kim Kardashian', 'influencer', 'social_media'],
-  ['Love Don\'t Be Shy', 'Rihanna', 'musician', 'interview'],
+  ['love don t be shy', 'Rihanna', 'musician', 'interview'],
   ['Black Orchid', 'Tom Ford', 'designer', 'brand_founder'],
   ['Bleu de Chanel', 'Timothée Chalamet', 'actor', 'brand_ambassador'],
   ['Sauvage', 'Johnny Depp', 'actor', 'brand_ambassador'],
@@ -57,18 +57,35 @@ const ASSOCIATIONS: [string, string, string, string][] = [
   ['Penhaligon\'s Blenheim Bouquet', 'Prince Philip', 'royal', 'biography'],
 
   // Classic men's
-  ['Terre d\'Hermès', 'George Clooney', 'actor', 'interview'],
+  ['Terre DHermes Cologne for Men', 'George Clooney', 'actor', 'interview'],
   ['Acqua di Gio', 'Chris Hemsworth', 'actor', 'interview'],
 
   // Women's classics
   ['Coco Mademoiselle', 'Keira Knightley', 'actor', 'brand_ambassador'],
   ['La Vie Est Belle', 'Julia Roberts', 'actor', 'brand_ambassador'],
   ['Black Opium', 'Zoe Kravitz', 'actor', 'brand_ambassador'],
-  ['Flower Bomb', 'Ariana Grande', 'musician', 'interview'],
+  ['Flowerbomb Perfume for Women', 'Ariana Grande', 'musician', 'interview'],
 
   // Designer/creative
   ['Portrait of a Lady', 'Anna Wintour', 'fashion', 'interview'],
   ['Carnal Flower', 'Diane Kruger', 'actor', 'interview'],
+
+  // 2026 research batch — verified brand ambassadors + on-record interviews
+  ['Bleu de Chanel', 'Jacob Elordi', 'actor', 'brand_ambassador'],
+  ['Dior Homme', 'Robert Pattinson', 'actor', 'brand_ambassador'],
+  ['Dior Homme', 'Jude Law', 'actor', 'brand_ambassador'],
+  ['Hypnotic Poison', 'Monica Bellucci', 'actor', 'brand_ambassador'],
+  ['Midnight Poison', 'Eva Green', 'actor', 'brand_ambassador'],
+  ['Idole', 'Zendaya', 'actor', 'brand_ambassador'],
+  ['Dior Addict', 'Anya Taylor-Joy', 'actor', 'brand_ambassador'],
+  ['Dior Addict', 'Jisoo', 'musician', 'brand_ambassador'],
+  ['Eros', 'Channing Tatum', 'actor', 'brand_ambassador'],
+  ['Coach For Men', 'Michael B. Jordan', 'actor', 'brand_ambassador'],
+  ['Boss Bottled', 'Gerard Butler', 'actor', 'brand_ambassador'],
+  ['Phantom', 'Moses Sumney', 'musician', 'brand_ambassador'],
+  ['Baccarat Rouge 540', 'Olivia Rodrigo', 'musician', 'interview'],
+  ['Fleur Narcotique', 'Hailey Bieber', 'model', 'interview'],
+  ['Icon', 'Henry Cavill', 'actor', 'interview'],
 
   // Athletes
   ['Light Blue', 'David Gandy', 'model', 'brand_ambassador'],
@@ -83,7 +100,7 @@ const ASSOCIATIONS: [string, string, string, string][] = [
   ['BR540 Extrait', 'Ariana Grande', 'musician', 'interview'],
   ['Cloud', 'Ariana Grande', 'musician', 'brand_founder'],
   ['Gucci Bloom', 'Florence Welch', 'musician', 'brand_ambassador'],
-  ['Gucci Guilty', 'Jared Leto', 'actor', 'brand_ambassador'],
+  ['Guilty Pour Homme Cologne for Men', 'Jared Leto', 'actor', 'brand_ambassador'],
 ];
 
 async function main() {
