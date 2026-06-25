@@ -13,10 +13,10 @@ quickAnswer: "A fragrance wardrobe is a curated collection organized by occasion
 publishedAt: "2026-05-15"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-many-perfumes-should-you-own"
   - "how-to-rotate-your-perfume-collection"
   - "how-to-layer-perfumes"
   - "how-to-apply-perfume"
-  - "how-to-decant-perfume"
 faqs:
   - q: "How many fragrances should be in a wardrobe?"
     a: "Most experienced collectors find five to fifteen bottles covers every occasion and season without bottles going unworn. A focused wardrobe of eight well-chosen bottles will serve you better than fifty bottles where most sit untouched. Start smaller than you think you need."
