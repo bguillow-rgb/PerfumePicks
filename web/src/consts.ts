@@ -16,7 +16,7 @@ export const SITE = {
   supportEmail: 'support@perfumepicks.app',
   // Set when the App Store listing is live. Until then, /download routes to a
   // \u201Ccoming soon\u201D state.
-  appStoreUrl: '', // e.g. 'https://apps.apple.com/app/perfume-picks/id0000000000'
+  appStoreUrl: 'https://apps.apple.com/app/perfume-picks/id6774184221',
   bundleId: 'com.bobguillow.perfumepicks',
   appleTeamId: 'ZNS5TNLB2D',
   // Founder / publisher, used for Person and Organization schema. The
