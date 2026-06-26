@@ -13,6 +13,7 @@ quickAnswer: "Every perfume is built on three layers called the fragrance pyrami
 publishedAt: "2026-06-19"
 author: "Perfume Picks"
 relatedSlugs:
+  - "perfume-fragrance-families"
   - "best-office-perfumes"
   - "how-long-does-perfume-last"
   - "perfume-concentration-guide"
