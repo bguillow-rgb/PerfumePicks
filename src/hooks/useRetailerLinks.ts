@@ -26,6 +26,11 @@ export function useRetailerLinks(fragranceId: string | undefined) {
       .from('fragrance_retailer_links')
       .select('retailer, url, price_cents')
       .eq('fragrance_id', fragranceId)
+      // Hide links the server-side validator confirmed dead (HTTP 404/410).
+      // 'unknown' and 'ok' both stay visible — we never hide on an inconclusive
+      // check (Cloudflare bot-gate, rate-limit, timeout). See
+      // scripts/validate-retailer-links.ts.
+      .neq('link_status', 'dead')
       .order('price_cents', { ascending: true, nullsFirst: false })
       .then(({ data }) => {
         if (!cancelled) {
