@@ -42,7 +42,7 @@ dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 const CJ_SFTP_HOST     = 'datatransfer.cj.com';
 const CJ_SFTP_PORT     = 22;
 const CJ_SFTP_USER     = '7966973';      // publisher account CID — SFTP login only
-const CJ_WEBSITE_ID    = '101759456';    // Perfume Picks website ID — must be the ID baked into click- URLs for attribution
+const CJ_WEBSITE_ID    = process.env.CJ_WEBSITE_ID || '101759456';    // Perfume Picks website ID — must be the ID baked into click- URLs for attribution. NOT the account CID. Override via env.
 const CJ_SFTP_PASSWORD = process.env.CJ_SFTP_PASSWORD || '';
 const CJ_REMOTE_PATH   = '/outgoing/productcatalog/317600/FragranceShop_com_-CJ_Product_Feed-shopping.txt.zip';
 const RETAILER_ID      = 'fragranceshop';

@@ -8,13 +8,6 @@ import { track } from '@/src/lib/observability';
 import { EVENTS } from '@/src/lib/observability/events';
 import { reportDeadLink } from '@/src/lib/feedback';
 
-/** CJ (Commission Junction) click-redirect domains we ship affiliate links through. */
-const CJ_DOMAINS = ['anrdoezrs.net', 'dpbolvw.net', 'kqzyfj.com', 'tkqlhce.com', 'lduhtrp.net', 'jdoqocy.com'];
-
-function isCjLink(url: string): boolean {
-  return CJ_DOMAINS.some((d) => url.includes(d));
-}
-
 export interface AffiliateClickParams {
   fragrance_id: string;
   retailer: string;
@@ -45,40 +38,6 @@ function reportFailure(params: AffiliateClickParams, reason: string): void {
   });
 }
 
-/**
- * Health-probe a CJ affiliate link WITHOUT following it into the retailer.
- *
- * A live CJ link answers with a redirect (3xx, surfaced as 'opaqueredirect' /
- * status 0 when we don't follow it). Anything else — 404/410 (the product was
- * pulled from the feed), 5xx, a network error, or a timeout (the "takes forever
- * to load" symptom) — means the link is dead, so we flag it to the founder.
- *
- * We deliberately do NOT follow the redirect: the destination (e.g.
- * fragranceshop.com) sits behind Cloudflare bot-detection that 403s any
- * non-browser request, so following would false-positive on every healthy link.
- * The CJ hop itself is not bot-gated, making it a reliable signal.
- */
-function probeCjLink(params: AffiliateClickParams): void {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 8000);
-  fetch(params.url, { method: 'GET', redirect: 'manual', signal: controller.signal })
-    .then((res) => {
-      // React Native's fetch follows redirects even with redirect:'manual',
-      // so a 200 means the CJ hop succeeded and the retailer page loaded.
-      // Only flag genuine errors: 4xx (except 429 rate-limit) and 5xx.
-      const alive =
-        res.type === 'opaqueredirect' || res.status === 0 ||
-        res.status === 200 || (res.status >= 300 && res.status < 400) ||
-        res.status === 429;
-      if (!alive) reportFailure(params, `http_${res.status}`);
-    })
-    .catch((err: unknown) => {
-      const name = (err as { name?: string } | null)?.name;
-      reportFailure(params, name === 'AbortError' ? 'timeout' : 'network');
-    })
-    .finally(() => clearTimeout(timer));
-}
-
 export function handleAffiliateClick(params: AffiliateClickParams): void {
   track(EVENTS.AFFILIATE_OUTBOUND_CLICKED, {
     fragrance_id: params.fragrance_id,
@@ -90,13 +49,17 @@ export function handleAffiliateClick(params: AffiliateClickParams): void {
   // Open the URL exactly as stored. For CJ retailers that's the tracking
   // wrapper (anrdoezrs.net/click-…?url=…) — it MUST stay intact: it carries the
   // cjevent that earns commission AND is the referral path the retailer's
-  // Cloudflare expects. (A prior version stripped it to the bare product URL,
-  // which both zeroed the commission and tripped a 403 on direct deep-links.)
+  // Cloudflare expects.
+  //
+  // We intentionally do NOT health-probe the link from the client. A fetch of
+  // the CJ click URL (a) double-hits the retailer on every tap and (b) can
+  // register as a phantom CJ click, corrupting the attribution data we depend
+  // on. A bot fetch also can't read past the retailer's Cloudflare bot-gate, so
+  // it measures Cloudflare's mood, not link health. Dead-link detection belongs
+  // in the ETL (server-side, real user-agent, marks dead rows before they ship).
+  // The only failure we can honestly observe here is the browser not opening.
   WebBrowser.openBrowserAsync(params.url).catch((err) => {
     console.warn('[affiliate] failed to open URL:', err);
     reportFailure(params, 'open_failed');
   });
-
-  // In parallel, confirm the link still resolves and alert the founder if not.
-  if (isCjLink(params.url)) probeCjLink(params);
 }

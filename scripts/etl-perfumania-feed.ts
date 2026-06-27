@@ -27,7 +27,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
   auth: { persistSession: false },
 });
 
-const CJ_WEBSITE_ID = '101759456';   // Perfume Picks website ID — NOT the account CID (7966973); click- URLs need the website ID for mobile attribution
+const CJ_WEBSITE_ID = process.env.CJ_WEBSITE_ID || '101759456';   // Perfume Picks website ID — NOT the account CID (7966973); click- URLs need the website ID for mobile attribution. Override via env.
 const CJ_ADVERTISER_ID = '17277211';
 const BASE_URL = 'https://perfumania.com';
 
