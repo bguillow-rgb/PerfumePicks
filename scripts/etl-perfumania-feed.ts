@@ -4,7 +4,7 @@
  * Fetches all products from perfumania.com/products.json (public Shopify endpoint),
  * matches them to Supabase fragrances by slug, and upserts affiliate buy links.
  *
- * CJ tracking: https://www.jdoqocy.com/click-7966973-17277211?url={encodedProductUrl}
+ * CJ tracking: https://www.jdoqocy.com/click-101759456-17277211?url={encodedProductUrl}
  *
  * Usage:
  *   npx tsx scripts/etl-perfumania-feed.ts
@@ -27,14 +27,14 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
   auth: { persistSession: false },
 });
 
-const CJ_PUBLISHER_ID = '7966973';
+const CJ_WEBSITE_ID = '101759456';   // Perfume Picks website ID — NOT the account CID (7966973); click- URLs need the website ID for mobile attribution
 const CJ_ADVERTISER_ID = '17277211';
 const BASE_URL = 'https://perfumania.com';
 
 /** Build CJ tracking URL for a Perfumania product handle */
 function cjUrl(handle: string): string {
   const dest = encodeURIComponent(`${BASE_URL}/products/${handle}`);
-  return `https://www.jdoqocy.com/click-${CJ_PUBLISHER_ID}-${CJ_ADVERTISER_ID}?url=${dest}`;
+  return `https://www.jdoqocy.com/click-${CJ_WEBSITE_ID}-${CJ_ADVERTISER_ID}?url=${dest}`;
 }
 
 /** Normalize string for slug comparison */

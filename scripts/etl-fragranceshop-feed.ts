@@ -41,7 +41,8 @@ dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
 const CJ_SFTP_HOST     = 'datatransfer.cj.com';
 const CJ_SFTP_PORT     = 22;
-const CJ_SFTP_USER     = '7966973';
+const CJ_SFTP_USER     = '7966973';      // publisher account CID — SFTP login only
+const CJ_WEBSITE_ID    = '101759456';    // Perfume Picks website ID — must be the ID baked into click- URLs for attribution
 const CJ_SFTP_PASSWORD = process.env.CJ_SFTP_PASSWORD || '';
 const CJ_REMOTE_PATH   = '/outgoing/productcatalog/317600/FragranceShop_com_-CJ_Product_Feed-shopping.txt.zip';
 const RETAILER_ID      = 'fragranceshop';
@@ -203,12 +204,14 @@ function parsePriceCents(priceStr: string, salePriceStr: string): number | null 
  */
 const CJ_DOMAINS = ['dpbolvw.net', 'kqzyfj.com', 'tkqlhce.com', 'anrdoezrs.net', 'lduhtrp.net', 'jdoqocy.com'];
 
-/** Replace whatever publisher ID is baked into the feed URL with ours. */
+/** Replace whatever website ID is baked into the feed URL with our Perfume
+ * Picks website ID (101759456). The click- segment MUST be the website ID, not
+ * the account CID (7966973), or CJ can't attribute mobile-app clicks. */
 function rewriteCjUrl(url: string): string {
   if (!CJ_DOMAINS.some((d) => url.includes(d))) return url;
   const match = url.match(/[?&]url=([^&]+)/);
   if (!match) return url;
-  return `https://www.anrdoezrs.net/click-${CJ_SFTP_USER}-${RETAILER_ADV_ID}?url=${match[1]}`;
+  return `https://www.anrdoezrs.net/click-${CJ_WEBSITE_ID}-${RETAILER_ADV_ID}?url=${match[1]}`;
 }
 
 function parseName(title: string, brand: string): string {

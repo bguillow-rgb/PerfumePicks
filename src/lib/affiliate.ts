@@ -63,9 +63,14 @@ function probeCjLink(params: AffiliateClickParams): void {
   const timer = setTimeout(() => controller.abort(), 8000);
   fetch(params.url, { method: 'GET', redirect: 'manual', signal: controller.signal })
     .then((res) => {
-      const redirected =
-        res.type === 'opaqueredirect' || res.status === 0 || (res.status >= 300 && res.status < 400);
-      if (!redirected) reportFailure(params, `http_${res.status}`);
+      // React Native's fetch follows redirects even with redirect:'manual',
+      // so a 200 means the CJ hop succeeded and the retailer page loaded.
+      // Only flag genuine errors: 4xx (except 429 rate-limit) and 5xx.
+      const alive =
+        res.type === 'opaqueredirect' || res.status === 0 ||
+        res.status === 200 || (res.status >= 300 && res.status < 400) ||
+        res.status === 429;
+      if (!alive) reportFailure(params, `http_${res.status}`);
     })
     .catch((err: unknown) => {
       const name = (err as { name?: string } | null)?.name;

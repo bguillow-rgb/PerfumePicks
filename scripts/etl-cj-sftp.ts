@@ -48,7 +48,8 @@ dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
 const CJ_SFTP_HOST     = 'datatransfer.cj.com';
 const CJ_SFTP_PORT     = 22;
-const CJ_SFTP_USER     = '7966973';
+const CJ_SFTP_USER     = '7966973';      // publisher account CID — SFTP login only
+const CJ_WEBSITE_ID    = '101759456';    // Perfume Picks website ID — must be the ID baked into click- URLs for attribution
 const CJ_SFTP_PASSWORD = process.env.CJ_SFTP_PASSWORD || '';
 const SUPABASE_URL     = process.env.SUPABASE_URL || process.env.EXPO_PUBLIC_SUPABASE_URL || '';
 const SUPABASE_KEY     = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
@@ -192,15 +193,16 @@ const CJ_DOMAINS = [
 ];
 
 /**
- * Rewrite the publisher ID baked into the feed URL to ours (7966973) and
- * point at our advertiser ID. This ensures commissions are attributed correctly
- * regardless of which publisher ID CJ baked in.
+ * Rewrite the website ID baked into the feed URL to our Perfume Picks website
+ * ID (101759456) and point at our advertiser ID. The click- segment MUST be the
+ * website ID, not the publisher account CID (7966973) — a mobile app sends no
+ * referring domain, so CJ relies on this ID alone to attribute the click.
  */
 function rewriteCjUrl(url: string, advertiserId: string): string {
   if (!CJ_DOMAINS.some((d) => url.includes(d))) return url;
   const match = url.match(/[?&]url=([^&]+)/);
   if (!match) return url;
-  return `https://www.anrdoezrs.net/click-${CJ_SFTP_USER}-${advertiserId}?url=${match[1]}`;
+  return `https://www.anrdoezrs.net/click-${CJ_WEBSITE_ID}-${advertiserId}?url=${match[1]}`;
 }
 
 const SIZE_PATTERN = /(\d+(?:\.\d+)?)\s*(ml|oz)/i;
