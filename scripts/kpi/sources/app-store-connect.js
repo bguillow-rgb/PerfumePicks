@@ -15,6 +15,7 @@ const crypto = require('crypto');
 const zlib = require('zlib');
 
 const PP_APP_ID = '6774184221';
+const PP_APP_SKU = 'perfumepicks';
 
 function loadEnv() {
   // ASC creds are shared across the developer account — prefer PP env.local,
@@ -56,7 +57,12 @@ function loadEnv() {
       if (p && fs.existsSync(p)) return fs.readFileSync(p, 'utf8');
       return '';
     })(),
+    // The vendor SALES report is account-wide (shared with Pour Picks). We MUST
+    // filter to Perfume Picks: appId matches download rows (Apple Identifier),
+    // appSku matches IAP rows (Parent Identifier). Without this the dashboard
+    // reports the whole developer account's installs + proceeds.
     appId: PP_APP_ID,
+    appSku: PP_APP_SKU,
   };
 }
 
@@ -94,7 +100,13 @@ function mintJwt(env) {
 }
 
 // ── TSV parser ────────────────────────────────────────────────────────
-function parseSalesTsv(tsv) {
+// The vendor SALES report is account-wide. Pass appId + appSku to scope totals
+// to a single app:
+//   - download rows → "Apple Identifier" column == numeric appId
+//   - IAP rows      → "Parent Identifier" column == app SKU
+//     (IAP rows carry the IAP's own Apple Identifier, not the parent app's)
+// If both are omitted the parser sums every row (legacy account-wide behavior).
+function parseSalesTsv(tsv, appId, appSku) {
   const lines = tsv.split('\n').filter(Boolean);
   if (lines.length < 2) {
     return { installs: 0, updates: 0, iapUnits: 0, proceeds: 0, currency: 'USD' };
@@ -105,10 +117,22 @@ function parseSalesTsv(tsv) {
   const idxUnits = col('Units');
   const idxProceeds = col('Developer Proceeds');
   const idxCurrency = col('Currency of Proceeds');
+  const idxAppleId = col('Apple Identifier');
+  const idxParent = col('Parent Identifier');
+  const wantAppId = appId ? String(appId) : '';
   let installs = 0, updates = 0, iapUnits = 0, proceeds = 0;
   let currency = 'USD';
   for (let i = 1; i < lines.length; i++) {
     const cols = lines[i].split('\t');
+    // Scope to this app only.
+    if (wantAppId || appSku) {
+      const rowAppleId = (cols[idxAppleId] || '').trim();
+      const rowParent = (cols[idxParent] || '').trim();
+      const isThisApp =
+        (wantAppId && rowAppleId === wantAppId) ||
+        (appSku && rowParent === appSku);
+      if (!isThisApp) continue;
+    }
     const type = (cols[idxType] || '').trim();
     const units = parseInt(cols[idxUnits] || '0', 10) || 0;
     const prc = parseFloat(cols[idxProceeds] || '0') || 0;
@@ -122,9 +146,12 @@ function parseSalesTsv(tsv) {
 }
 
 // ── Cache ──────────────────────────────────────────────────────────────
+// v2: per-app filtered totals. v1 cached account-wide sums (Pour Picks + every
+// other app on the shared vendor account) — incompatible, so a new filename
+// forces a clean re-fetch with the appId/appSku filter applied.
 const CACHE_PATH = path.join(
   process.env.HOME || '/tmp',
-  '.cache', 'perfume-picks', 'asc-daily.json'
+  '.cache', 'perfume-picks', 'asc-daily-v2.json'
 );
 
 const ACQSOURCES_CACHE_PATH = path.join(
@@ -161,8 +188,12 @@ async function fetchDailyReport(env, jwt, date) {
   }
   const buf = Buffer.from(await res.arrayBuffer());
   const tsv = zlib.gunzipSync(buf).toString('utf8');
-  return parseSalesTsv(tsv);
+  return parseSalesTsv(tsv, env.appId, env.appSku);
 }
+
+// How far back a cached "absent" day stays eligible for re-fetch. Apple can
+// publish a daily report a few days late; past this window reports are stable.
+const ABSENT_RECHECK_DAYS = 45;
 
 // ── Lifetime totals ────────────────────────────────────────────────────
 async function fetchLifetime(env, jwt) {
@@ -180,18 +211,28 @@ async function fetchLifetime(env, jwt) {
     const dateStr = d.toISOString().slice(0, 10);
 
     let row = cache[dateStr];
-    if (!row) {
+    // A cached "absent" within the recheck window may have been a transient
+    // 404 — Apple backfills late reports. Re-fetch recent absent days; trust
+    // absent only once the report is old enough to be immutable.
+    const ageDays = (Date.now() - new Date(dateStr).getTime()) / 86400000;
+    const recent = ageDays <= ABSENT_RECHECK_DAYS;
+    const staleAbsent = row && row.absent && recent;
+    // The consecutive-404 guard exists to detect walking PAST the start of the
+    // app's history (pre-launch days never have reports). A run of 404s at the
+    // RECENT end just means "Apple hasn't published yet" — it must NOT terminate
+    // the walk, or a multi-day publishing lag zeroes out lifetime totals.
+    if (!row || staleAbsent) {
       const r = await fetchDailyReport(env, jwt, dateStr);
       if (r === null) {
-        consecutive404++;
         cache[dateStr] = { absent: true };
+        if (!recent) consecutive404++;
         continue;
       }
       row = r;
       cache[dateStr] = row;
       consecutive404 = 0;
     } else if (row.absent) {
-      consecutive404++;
+      if (!recent) consecutive404++;
       continue;
     } else {
       consecutive404 = 0;
