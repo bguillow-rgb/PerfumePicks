@@ -468,6 +468,9 @@ function SearchResults({ results, query, fragranceHref }: { results: Fragrance[]
     <FlatList
       data={visible}
       keyExtractor={(f) => f.id}
+      keyboardDismissMode="on-drag"
+      keyboardShouldPersistTaps="handled"
+      automaticallyAdjustKeyboardInsets
       renderItem={({ item }) => (
         <View style={{ paddingHorizontal: SPACING.lg, marginBottom: SPACING.md }}>
           <FragranceCard fragrance={item} variant="compact" fullWidth onPress={() => router.push(fragranceHref(item.id) as any)} />
