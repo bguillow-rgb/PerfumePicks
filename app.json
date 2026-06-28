@@ -27,7 +27,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#bd9343"
+        "backgroundColor": "#171E2F"
       },
       "edgeToEdgeEnabled": true,
       "package": "com.bobguillow.perfumepicks"
