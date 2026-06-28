@@ -13,10 +13,10 @@ quickAnswer: "There are four core perfume fragrance families: Floral, Amber/Orie
 publishedAt: "2026-06-26"
 author: "Perfume Picks"
 relatedSlugs:
+  - "does-perfume-expire"
   - "fragrance-notes-explained"
   - "how-to-layer-perfumes"
   - "how-long-does-perfume-last"
-  - "how-many-perfumes-should-you-own"
 faqs:
   - q: "What are the four main perfume fragrance families?"
     a: "The four core families are Floral (flowers: rose, jasmine, peony), Amber/Oriental (warm resins, spices, vanilla), Woody (cedarwood, sandalwood, vetiver, oud), and Fresh (citrus, aquatic, green, aromatic). Most fragrances sit in one family or blend two adjacent families on the scent wheel."
