@@ -209,7 +209,7 @@ async function submitForReview(versionId) {
   let subId;
   const open = await api(
     'GET',
-    `/v1/reviewSubmissions?filter[app]=${APP_ID}&filter[state]=READY_FOR_REVIEW,WAITING_FOR_REVIEW,IN_PROGRESS,UNRESOLVED_ISSUES&limit=1`,
+    `/v1/reviewSubmissions?filter[app]=${APP_ID}&filter[state]=READY_FOR_REVIEW,WAITING_FOR_REVIEW,IN_REVIEW,UNRESOLVED_ISSUES&limit=1`,
   ).catch(() => null);
   if (open?.data?.[0]) {
     subId = open.data[0].id;
