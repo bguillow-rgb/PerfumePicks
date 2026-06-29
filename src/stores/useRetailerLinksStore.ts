@@ -1,32 +1,49 @@
 import { create } from 'zustand';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import type { BuyableLink } from '@/src/features/dna/score';
 
 /**
- * Tracks which fragrance slugs have buy links + their cheapest price.
- * Loaded once per session. CompactCard reads from this to show a buy pill.
+ * Tracks which fragrance slugs have buy links + their prices.
+ * Loaded once per session.
+ *
+ * Two indexes, both built in a single pagination pass:
+ *   - priceBySlug  — CHEAPEST price_cents per slug. Powers the CompactCard buy
+ *     pill (lowest price wins for a "from $X" affordance). Unchanged behaviour:
+ *     every row with a non-null price_cents counts, regardless of stock/status.
+ *   - buyableBySlug — the monetizable affiliate link per slug, gated to rows that
+ *     are actually purchasable (link_status='ok' AND in_stock AND price_cents
+ *     not null). The representative row is the HIGHEST-priced such row, paired
+ *     with its url, so the DNA top-match sort and the displayed price/label use
+ *     ONE consistent number that matches the link we open. Feeds
+ *     rankBuyableMatches (affiliate-first, most-expensive-first).
  */
 interface RetailerLinksState {
   /** slug → cheapest price_cents */
   priceBySlug: Map<string, number>;
+  /** slug → highest-priced in-stock affiliate link (price + url) */
+  buyableBySlug: Map<string, BuyableLink>;
   loaded: boolean;
   load: () => Promise<void>;
   getPrice: (slug: string) => number | null;
+  getBuyable: (slug: string) => BuyableLink | null;
 }
 
 export const useRetailerLinksStore = create<RetailerLinksState>((set, get) => ({
   priceBySlug: new Map(),
+  buyableBySlug: new Map(),
   loaded: false,
 
   load: async () => {
     if (get().loaded || !isSupabaseConfigured) return;
     // Paginate through all rows (7,000+).
     const PAGE = 2000;
-    const map = new Map<string, number>();
+    const priceMap = new Map<string, number>();
+    const buyableMap = new Map<string, BuyableLink>();
     let offset = 0;
     while (true) {
       const { data: page, error } = await supabase
         .from('fragrance_retailer_links')
-        .select('price_cents, fragrances!inner(slug)')
+        .select('price_cents, url, retailer, in_stock, link_status, fragrances!inner(slug)')
         .not('price_cents', 'is', null)
         .range(offset, offset + PAGE - 1);
       if (error) {
@@ -41,15 +58,38 @@ export const useRetailerLinksStore = create<RetailerLinksState>((set, get) => ({
         const slug = r.fragrances?.slug;
         const price = r.price_cents as number;
         if (!slug) continue;
-        const existing = map.get(slug);
-        if (existing === undefined || price < existing) map.set(slug, price);
+
+        // Cheapest-price index (unchanged): every non-null-price row.
+        const existing = priceMap.get(slug);
+        if (existing === undefined || price < existing) priceMap.set(slug, price);
+
+        // Buyable index: only genuinely purchasable rows, keyed to the
+        // highest-priced one (monetization-first), paired with its url.
+        const buyable = r.link_status === 'ok' && r.in_stock === true && !!r.url;
+        if (buyable) {
+          const cur = buyableMap.get(slug);
+          if (cur === undefined || price > cur.priceCents) {
+            buyableMap.set(slug, {
+              priceCents: price,
+              url: r.url as string,
+              retailer: (r.retailer as string) ?? '',
+            });
+          }
+        }
       }
       if (page.length < PAGE) break;
       offset += PAGE;
     }
-    console.log('[retailer-links] loaded', map.size, 'entries');
-    set({ priceBySlug: map, loaded: true });
+    console.log(
+      '[retailer-links] loaded',
+      priceMap.size,
+      'priced /',
+      buyableMap.size,
+      'buyable',
+    );
+    set({ priceBySlug: priceMap, buyableBySlug: buyableMap, loaded: true });
   },
 
   getPrice: (slug) => get().priceBySlug.get(slug) ?? null,
+  getBuyable: (slug) => get().buyableBySlug.get(slug) ?? null,
 }));

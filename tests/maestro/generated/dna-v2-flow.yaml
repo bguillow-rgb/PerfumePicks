@@ -1,0 +1,57 @@
+appId: com.bobguillow.perfumepicks
+---
+# M1 ACCEPTANCE — the rewired DNA bottle-picker flow (DNA flow v2):
+#   grid (pick the ones you love) -> "Read my Fragrance DNA" -> reading -> reveal.
+# The refine ("ALMOST THERE", own/want/like) screen is GONE: the grid CTA goes
+# straight to compute, picks are taste-only ('like', no wardrobe seed). This flow
+# REPLACES dna-v2-baseline.yaml (which asserted the now-removed refine screen and
+# is expected to fail post-M1 — kept only as the documented before-state).
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- takeScreenshot: dna-v2-00-home
+# Enter the DNA bottle picker (hero DNA CTA on Home; deep link fallback).
+- scrollUntilVisible:
+    element:
+      text: ".*Fragrance DNA.*"
+    direction: DOWN
+    timeout: 20000
+    visibilityPercentage: 30
+    optional: true
+- tapOn:
+    text: ".*Fragrance DNA.*"
+    optional: true
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 30000
+- takeScreenshot: dna-v2-01-grid
+# Pick three tiles by relative position.
+- tapOn:
+    point: "20%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "50%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "80%,32%"
+- waitForAnimationToEnd
+- takeScreenshot: dna-v2-02-picked
+# The grid CTA must now read "Read my Fragrance DNA" (was "Continue with N").
+- assertVisible:
+    text: "Read my Fragrance DNA"
+- tapOn:
+    id: "dna-picker-continue"
+- waitForAnimationToEnd
+# The refine screen must NOT appear — straight to the reading beat then reveal.
+- assertNotVisible: "ALMOST THERE"
+- extendedWaitUntil:
+    visible:
+      text: ".*FRAGRANCE DNA.*"
+    timeout: 30000
+- takeScreenshot: dna-v2-03-reveal

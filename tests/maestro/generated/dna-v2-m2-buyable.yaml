@@ -1,0 +1,87 @@
+appId: com.bobguillow.perfumepicks
+---
+# M2 BUYABLE-PATH validation — proves the affiliate-first hero in its BUYABLE
+# state (real price + "Buy from {retailer}" CTA) and the populated "more matches"
+# page, which only render when the retailer-links store has live buyable rows.
+#
+# Requires Supabase configured (.env.local present + Metro restarted) so the real
+# QA catalog (3,796 buyable rows) loads instead of mock mode. With Supabase on,
+# the guest session has already completed onboarding and boots to Home — so we
+# re-enter the picker via Home's "Retake" button (startRetake → /dna) rather than
+# fighting a clearState reinstall (which re-triggers Expo dev menus and is flaky).
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    text: "Continue"
+    optional: true
+- waitForAnimationToEnd
+# Already-authed guest lands on Home. Re-enter the picker via Retake.
+- extendedWaitUntil:
+    visible:
+      id: "today-dna-retake"
+    timeout: 30000
+- takeScreenshot: m2b-01-home
+- tapOn:
+    id: "today-dna-retake"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 30000
+- takeScreenshot: m2b-02-grid
+# Pick three tiles.
+- tapOn:
+    point: "20%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "50%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "80%,32%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: ".*Read my Fragrance DNA.*"
+    timeout: 12000
+- tapOn:
+    id: "dna-picker-continue"
+- waitForAnimationToEnd
+# Reading beat -> reveal.
+- extendedWaitUntil:
+    visible:
+      text: ".*FRAGRANCE DNA.*"
+    timeout: 30000
+- takeScreenshot: m2b-03-reveal
+- assertVisible:
+    id: "dna-reveal-emblem"
+- scrollUntilVisible:
+    element:
+      id: "dna-top-match"
+    direction: DOWN
+    timeout: 15000
+    visibilityPercentage: 40
+- takeScreenshot: m2b-04-top-match
+# BUYABLE state assertion: with live retailer links the buy CTA MUST render.
+- assertVisible:
+    id: "dna-top-match-buy"
+- takeScreenshot: m2b-05-buy-cta
+# "Show me more matches" -> populated matches page. Center the link so it clears
+# the fixed reveal footer ("See my top match"), which otherwise floats over it and
+# steals the tap (an absolute footer occluding in-flow content at mid-scroll).
+- scrollUntilVisible:
+    element:
+      id: "dna-see-more-matches"
+    direction: DOWN
+    centerElement: true
+    timeout: 8000
+- tapOn:
+    id: "dna-see-more-matches"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "dna-matches-screen"
+- takeScreenshot: m2b-06-matches
+- back
+- waitForAnimationToEnd

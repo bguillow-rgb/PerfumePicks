@@ -1,0 +1,31 @@
+appId: com.bobguillow.perfumepicks
+---
+# Drives to the picker, selects 3 bottles, and STOPS on the "Read my Fragrance DNA"
+# button so the founder can tap it themselves and watch the live Skia pour at their
+# own pace (and retake repeatedly). Does NOT tap continue — that's the hand-off point.
+- launchApp
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "today-dna-retake"
+    timeout: 30000
+- tapOn:
+    id: "today-dna-retake"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 30000
+- tapOn:
+    point: "20%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "50%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "80%,32%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: ".*Read my Fragrance DNA.*"
+    timeout: 12000

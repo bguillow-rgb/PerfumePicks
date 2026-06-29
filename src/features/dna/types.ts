@@ -242,6 +242,13 @@ export interface DnaCatalogFragrance {
   popularity_tier?: number;
   release_year?: number;
   dupe_of?: string | null;
+  /** Display fields — present on real catalog/picker rows, absent on minimal
+   *  mock rows. Carried so DNA flow v2 monetization surfaces (top-match card,
+   *  more-matches) can render the bottle without a second catalog lookup. The
+   *  scorer never reads these; they ride along for presentation only. */
+  brand?: string;
+  name?: string;
+  image_url?: string;
 }
 
 /** One picker selection, resolved to its catalog fragrance + onboarding tags. */

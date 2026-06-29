@@ -1,0 +1,62 @@
+appId: com.bobguillow.perfumepicks
+---
+# M3 DECANTING reveal — drives the flow to the reveal and HOLDS there so a screen
+# recording captures the full Skia pour. Asserts the reveal didn't crash (Skia's
+# first use) and still lands its content: emblem + archetype name + the (flagged)
+# top-match hero. Re-enter via Home Retake (Supabase configured → guest on Home).
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    text: "Continue"
+    optional: true
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "today-dna-retake"
+    timeout: 30000
+- tapOn:
+    id: "today-dna-retake"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 30000
+- tapOn:
+    point: "20%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "50%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "80%,32%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: ".*Read my Fragrance DNA.*"
+    timeout: 12000
+- tapOn:
+    id: "dna-picker-continue"
+# The reveal mounts here — the pour plays for ~1.9s. Grab frames across it.
+- extendedWaitUntil:
+    visible:
+      id: "dna-reveal-emblem"
+    timeout: 30000
+- takeScreenshot: m3-01-pour-early
+- takeScreenshot: m3-02-pour-mid
+- waitForAnimationToEnd
+- takeScreenshot: m3-03-pour-settled
+# Content landed (no crash, name + emblem present).
+- assertVisible:
+    id: "dna-reveal-emblem"
+- assertVisible:
+    id: "dna-reveal-archetype"
+- scrollUntilVisible:
+    element:
+      id: "dna-top-match"
+    direction: DOWN
+    timeout: 15000
+    visibilityPercentage: 40
+- takeScreenshot: m3-04-top-match
