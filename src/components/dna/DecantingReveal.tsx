@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
@@ -62,15 +62,19 @@ interface DecantingRevealProps {
 
 const CLAMP = Extrapolation.CLAMP;
 
-// Circular clip for the liquid + glint. Geometry is constant (module-scope
-// constants), so build the native SkPath ONCE rather than re-allocating it on
-// every React render.
-const CLIP = Skia.Path.Make();
-CLIP.addCircle(CX, CY, R);
-
 export function DecantingReveal({ tint, icon, testID }: DecantingRevealProps) {
   const reduced = useReducedMotion();
   const progress = useSharedValue(reduced ? 1 : 0);
+
+  // Circular clip for the liquid + glint. Geometry is constant, so build the
+  // native SkPath ONCE per mount (not per render). Created here in render — NOT
+  // at module scope — so it runs after Skia's native module is initialized;
+  // a module-load-time Skia.Path.Make() can fire before Skia is ready.
+  const clip = useMemo(() => {
+    const p = Skia.Path.Make();
+    p.addCircle(CX, CY, R);
+    return p;
+  }, []);
 
   useEffect(() => {
     if (!reduced) {
@@ -138,7 +142,7 @@ export function DecantingReveal({ tint, icon, testID }: DecantingRevealProps) {
         <Circle cx={CX} cy={CY} r={R} color={`${tint}12`} />
 
         {/* Poured liquid + specular glint, clipped to the vessel. */}
-        <Group clip={CLIP}>
+        <Group clip={clip}>
           <Path path={liquid} color={tint} />
           <Circle cx={glintX} cy={CY + 6} r={10} color="#FFFFFF" opacity={glintOpacity}>
             <BlurMask blur={8} style="normal" />
