@@ -205,8 +205,10 @@ function render({ supa, posthog, rc, sentry, asc, healthAlerts = [], sources, no
     lines.push('## 🪜 FUNNEL (since launch)');
     lines.push('');
     lines.push('```');
+    // Activation path is now the Fragrance DNA flow (the quiz is retired).
+    // Profiles → DNA picker committed → collection → wear → paywall → pro.
     const sl = supa?.signups?.sinceLaunch ?? 0;
-    const qc = posthog.quiz?.completed?.users ?? 0;
+    const dp = supa?.dnaPickerEvents?.committedUsers ?? 0;
     const wa = posthog.wardrobe?.added?.users ?? 0;
     const wl = supa?.wearLogs?.sinceLaunch ?? 0;
     const pv = posthog.monetization?.viewed?.users ?? 0;
@@ -220,7 +222,7 @@ function render({ supa, posthog, rc, sentry, asc, healthAlerts = [], sources, no
     };
 
     lines.push(`Profiles (since launch): ${sl.toString().padStart(4)}  ${bar(sl, sl)} 100%`);
-    lines.push(`Quiz completed      : ${qc.toString().padStart(4)}  ${bar(qc, sl)} ${sl ? ((qc/sl)*100).toFixed(0) : 0}%`);
+    lines.push(`DNA picker committed: ${dp.toString().padStart(4)}  ${bar(dp, sl)} ${sl ? ((dp/sl)*100).toFixed(0) : 0}%`);
     lines.push(`Collection add      : ${wa.toString().padStart(4)}  ${bar(wa, sl)} ${sl ? ((wa/sl)*100).toFixed(0) : 0}%`);
     lines.push(`Wear logged (SOTD)  : ${wl.toString().padStart(4)}  ${bar(wl, sl)} ${sl ? ((wl/sl)*100).toFixed(0) : 0}%`);
     lines.push(`Paywall viewed      : ${pv.toString().padStart(4)}  ${bar(pv, sl)} ${sl ? ((pv/sl)*100).toFixed(0) : 0}%`);
@@ -228,9 +230,7 @@ function render({ supa, posthog, rc, sentry, asc, healthAlerts = [], sources, no
     lines.push('```');
     lines.push('');
 
-    if (posthog.quiz) {
-      lines.push(`- **Quiz:** ${posthog.quiz.started.users} started → ${posthog.quiz.completed.users} completed (**${fmtPct(posthog.quiz.completionPct)}**)`);
-    }
+    lines.push(`- **DNA activation:** ${dp} of ${sl} new profiles committed a DNA picker session (**${sl ? ((dp/sl)*100).toFixed(0) : 0}%**). See the DNA funnel below for reveal → rec → CTA detail.`);
     if (posthog.wardrobe) {
       const wFunnel = posthog.wardrobe;
       lines.push(`- **Collection:** ${wFunnel.added.users} users added fragrances · ${wFunnel.removed.events} removed`);

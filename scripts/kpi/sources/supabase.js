@@ -183,12 +183,16 @@ async function fetchProMirror(env) {
 async function fetchDnaPickerEvents(env, windows) {
   const t = TABLES.dnaPickerEvents;
   const sl = dateFilter(t.timestampCol, windows.sinceLaunch);
-  // Count unique sessions (proxy: rows where kind='commit')
-  const [commits, allEvents] = await Promise.all([
+  // Count commit events, all events, and DISTINCT committing users.
+  // commits counts events (a user can retake → multiple commits), so the
+  // funnel must use distinct users to stay within the profile cohort.
+  const [commits, allEvents, commitRows] = await Promise.all([
     count(env, t.name, [...sl, `${t.kindCol}=eq.commit`]),
     count(env, t.name, sl),
+    getRows(env, t.name, [...sl, `${t.kindCol}=eq.commit`], 5000),
   ]);
-  return { commits, allEvents };
+  const committedUsers = new Set(commitRows.map((r) => r.user_id).filter(Boolean)).size;
+  return { commits, allEvents, committedUsers };
 }
 
 // Catalog size
