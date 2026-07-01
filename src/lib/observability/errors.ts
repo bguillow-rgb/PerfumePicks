@@ -28,6 +28,16 @@ export function captureException(err: unknown, context?: Record<string, unknown>
   Sentry.captureException(err, context ? { extra: context } : undefined);
 }
 
+/**
+ * Non-paging trail marker. Use for expected, self-healing conditions (e.g. a
+ * transient network write failure the offline queue will retry) so the volume
+ * is visible as context on the NEXT real issue without filing an error itself.
+ */
+export function addBreadcrumb(message: string, data?: Record<string, unknown>): void {
+  if (!isEnabled) return;
+  Sentry.addBreadcrumb({ category: 'sync', level: 'info', message, data });
+}
+
 export function setErrorUser(user: { id: string; email?: string | null } | null): void {
   if (!isEnabled) return;
   Sentry.setUser(user ? { id: user.id, email: user.email ?? undefined } : null);

@@ -11,11 +11,28 @@
  */
 
 import { supabase } from '@/lib/supabase';
-import { captureException } from '@/src/lib/observability/errors';
+import { captureException, addBreadcrumb } from '@/src/lib/observability/errors';
+import { isTransientNetworkFailure } from './transientError';
 
 export interface SyncResult {
   ok: boolean;
   error?: string;
+}
+
+/**
+ * Report a failed mutation. Transient connectivity blips (no server code, fetch
+ * failed) are dropped to a breadcrumb — the caller keeps the row queued for the
+ * next flush, so nothing is lost and there is nothing to page on. Real errors
+ * (constraint / schema-cache / RLS / auth / any coded PostgREST failure) are
+ * captured at error level. `errLike` is the raw Supabase error or thrown value
+ * (carries `.code`); `label` is the prefixed message for the Sentry issue.
+ */
+function reportSyncFailure(errLike: unknown, label: string): void {
+  if (isTransientNetworkFailure(errLike)) {
+    addBreadcrumb(label, { transient: true });
+    return;
+  }
+  captureException(new Error(label));
 }
 
 export async function syncWrite(
@@ -28,13 +45,13 @@ export async function syncWrite(
       .from(table)
       .upsert(row, onConflict ? { onConflict } : undefined);
     if (error) {
-      captureException(new Error(`syncWrite(${table}): ${error.message}`));
+      reportSyncFailure(error, `syncWrite(${table}): ${error.message}`);
       return { ok: false, error: error.message };
     }
     return { ok: true };
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
-    captureException(new Error(`syncWrite(${table}) exception: ${msg}`));
+    reportSyncFailure(e, `syncWrite(${table}) exception: ${msg}`);
     return { ok: false, error: msg };
   }
 }
@@ -46,13 +63,13 @@ export async function syncDelete(
   try {
     const { error } = await supabase.from(table).delete().eq('id', id);
     if (error) {
-      captureException(new Error(`syncDelete(${table}): ${error.message}`));
+      reportSyncFailure(error, `syncDelete(${table}): ${error.message}`);
       return { ok: false, error: error.message };
     }
     return { ok: true };
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
-    captureException(new Error(`syncDelete(${table}) exception: ${msg}`));
+    reportSyncFailure(e, `syncDelete(${table}) exception: ${msg}`);
     return { ok: false, error: msg };
   }
 }
