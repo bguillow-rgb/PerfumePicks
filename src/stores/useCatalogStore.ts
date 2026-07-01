@@ -60,6 +60,15 @@ interface CatalogState {
   search: (query: string, limit?: number, genders?: string[]) => Promise<Fragrance[]>;
 
   /**
+   * Multi-note AND search. Returns fragrances whose notes/accords contain
+   * EVERY term in `terms` (case-insensitive substring). Powers the Discover
+   * box when the user lists multiple notes, e.g. ['coconut','musk'].
+   * Uses the fragrances_matching_notes RPC in production; filters
+   * MOCK_CATALOG in demo mode.
+   */
+  searchByNotes: (terms: string[], limit?: number, genders?: string[]) => Promise<Fragrance[]>;
+
+  /**
    * Fetch multiple fragrances by ID (slug) array. Results are cached.
    */
   fetchMany: (ids: string[]) => Promise<Fragrance[]>;
@@ -398,6 +407,34 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     const results = (data ?? []).map(rowToFragrance).filter((f) => !isBundle(f));
     get()._addToCache(results);
     return results;
+  },
+
+  searchByNotes: async (terms, limit = 200, genders) => {
+    const cleaned = terms.map((t) => t.trim().toLowerCase()).filter(Boolean);
+    if (cleaned.length === 0) return [];
+
+    if (!isSupabaseConfigured) {
+      // Demo: AND-match each term against any note/accord on the bottle.
+      const hay = (f: Fragrance) =>
+        [...f.top_notes, ...f.heart_notes, ...f.base_notes, ...f.top_accords].map((s) => s.toLowerCase());
+      let results = MOCK_CATALOG.filter((f) => {
+        const fields = hay(f);
+        return cleaned.every((term) => fields.some((v) => v.includes(term)));
+      });
+      if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
+      return results.filter((f) => !isBundle(f)).slice(0, limit);
+    }
+
+    const { data, error } = await supabase.rpc('fragrances_matching_notes', {
+      note_terms: cleaned,
+      match_genders: genders ?? null,
+      result_limit: limit,
+    });
+    if (error) { console.warn('[catalog] searchByNotes error:', error.message); return []; }
+    const slugs = (data ?? []).map((r: any) => r.slug as string);
+    if (slugs.length === 0) return [];
+    const rows = await get().fetchMany(slugs);
+    return rows.filter((f) => !isBundle(f));
   },
 
   fetchMany: async (ids) => {

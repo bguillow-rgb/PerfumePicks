@@ -85,6 +85,19 @@ const CURATED_EDITS_META = [
 const RAIL_SIZE = 10;
 
 /**
+ * Split a query into note terms when the user lists more than one note —
+ * "coconut and musk", "coconut, musk", "coconut + musk", "coconut & musk".
+ * A plain single word or an un-separated phrase (e.g. "burberry goddess")
+ * yields a single term and falls through to normal name/brand search.
+ */
+function parseNoteTerms(q: string): string[] {
+  return q
+    .split(/\s*(?:,|\+|&|\band\b)\s*/i)
+    .map((t) => t.trim())
+    .filter(Boolean);
+}
+
+/**
  * Discover tab — search + browse the catalog.
  *
  * Sections:
@@ -107,6 +120,7 @@ export default function DiscoverScreen() {
   const fetchEnriched = useCatalogStore((s) => s.fetchEnriched);
   const fetchMany = useCatalogStore((s) => s.fetchMany);
   const searchStore = useCatalogStore((s) => s.search);
+  const searchByNotes = useCatalogStore((s) => s.searchByNotes);
 
   // Celebrity Picks — fragrances worn by famous people, with celeb names.
   const [celebrityPicks, setCelebrityPicks] = useState<{ fragrance: Fragrance; celebrities: string }[]>([]);
@@ -169,34 +183,74 @@ export default function DiscoverScreen() {
   useEffect(() => {
     const q = query.trim();
     if (!q) { setSearchResults([]); setSearching(false); return; }
+
+    // Multi-note branch: when the user lists 2+ notes ("coconut and musk"),
+    // return only bottles that carry EVERY note (AND match across the
+    // note/accord arrays). Skips name/brand/mood ranking entirely.
+    const noteTerms = parseNoteTerms(q);
+    if (noteTerms.length >= 2) {
+      setSearching(true);
+      let cancelled = false;
+      const t = setTimeout(() => {
+        searchByNotes(noteTerms, 200, ['feminine', 'unisex']).then((rows) => {
+          if (!cancelled) { setSearchResults(rows); setSearching(false); }
+        });
+      }, 250);
+      return () => { cancelled = true; clearTimeout(t); };
+    }
+
     // Mood branch: rank the already-loaded enriched pool by accord/score match
     // instead of a literal keyword lookup. Falls through to literal search if
     // the pool isn't ready yet.
+    //
+    // But a mood word can ALSO be a real brand/name ("Vacation" is both a summery
+    // vibe and a brand). So still run the literal lookup and pin any exact
+    // name/brand hits ABOVE the mood rail — otherwise the actual bottle the user
+    // typed is unreachable behind the vibe results.
     if (mood && pool.length > 0) {
-      setSearchResults(rankByMood(pool, mood, 200));
-      setSearching(false);
-      return;
+      setSearching(true);
+      let cancelled = false;
+      const t = setTimeout(() => {
+        searchStore(q, 50, ['feminine', 'unisex']).then((nameRows) => {
+          if (cancelled) return;
+          const moodRanked = rankByMood(pool, mood, 200);
+          const seen = new Set(nameRows.map((r) => r.id));
+          const merged = [...nameRows, ...moodRanked.filter((r) => !seen.has(r.id))];
+          setSearchResults(merged);
+          setSearching(false);
+        });
+      }, 250);
+      return () => { cancelled = true; clearTimeout(t); };
     }
     setSearching(true);
     let cancelled = false;
     const t = setTimeout(() => {
-      searchStore(q, 200, ['feminine', 'unisex']).then((rows) => {
+      // Also surface bottles that LIST the query as a note/accord — not just
+      // bottles named after it. The full phrase is matched as a substring
+      // against the note arrays, so single words ("coconut") AND multi-word
+      // note phrases ("coconut milk") both work. Harmless for name/brand
+      // queries ("burberry goddess") since no note contains that string.
+      Promise.all([
+        searchStore(q, 200, ['feminine', 'unisex']),
+        searchByNotes([q], 200, ['feminine', 'unisex']),
+      ]).then(([nameRows, noteRows]) => {
         if (cancelled) return;
+        // Union name/brand matches with catalog note matches (dedupe by id).
+        const seen = new Set(nameRows.map((r) => r.id));
+        const merged = [...nameRows];
+        for (const r of noteRows) if (!seen.has(r.id)) { seen.add(r.id); merged.push(r); }
         // Augment with private-note matches: any of our owned fragrances
         // whose notes text contains the query also surface.
         const notesMatchIds = notesSearch(q.toLowerCase()).map((n) => n.fragrance_id);
-        if (notesMatchIds.length === 0) { setSearchResults(rows); setSearching(false); return; }
-        // Fetch any note-matches that aren't already in the results.
-        const have = new Set(rows.map((r) => r.id));
-        const missing = notesMatchIds.filter((id) => !have.has(id));
-        if (missing.length === 0) { setSearchResults(rows); setSearching(false); return; }
+        const missing = notesMatchIds.filter((id) => !seen.has(id));
+        if (missing.length === 0) { setSearchResults(merged); setSearching(false); return; }
         fetchMany(missing).then((extra) => {
-          if (!cancelled) { setSearchResults([...rows, ...extra]); setSearching(false); }
+          if (!cancelled) { setSearchResults([...merged, ...extra]); setSearching(false); }
         });
       });
     }, 250);
     return () => { cancelled = true; clearTimeout(t); };
-  }, [query, mood, pool, notesSearch, searchStore, fetchMany]);
+  }, [query, mood, pool, notesSearch, searchStore, searchByNotes, fetchMany]);
 
   // Apply faceted filters to the pool.
   const filteredPool = useMemo(() => {
@@ -278,7 +332,7 @@ export default function DiscoverScreen() {
             <TextInput
               value={query}
               onChangeText={setQuery}
-              placeholder="Search notes, brands, or a vibe…"
+              placeholder="Notes, brands, a vibe — try “coconut + musk”"
               placeholderTextColor={COLORS.subtle}
               style={styles.searchInput}
               autoCapitalize="none"

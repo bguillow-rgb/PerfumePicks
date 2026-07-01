@@ -1,0 +1,35 @@
+appId: com.bobguillow.perfumepicks
+---
+# Regression: typing the full word "vacation" must surface the Vacation BRAND
+# (exact match) at the top, not get fully replaced by the "summery" mood layer.
+- launchApp
+# Dev-client "Open in Perfume Picks?" dialog + Metro server row
+- tapOn:
+    text: "Open"
+    optional: true
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+# Auth gate → guest
+- extendedWaitUntil:
+    visible: "Continue as Guest"
+    timeout: 90000
+    optional: true
+- tapOn:
+    text: "Continue as Guest"
+    optional: true
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 90000
+- tapOn:
+    text: "Discover, tab.*"
+- assertVisible: "BY HOUSE"
+# Search the brand name
+- tapOn: "Search fragrances, notes, brands..."
+- inputText: "vacation"
+- takeScreenshot: vacation__typed-full
+# Give the debounced union query time to resolve
+- extendedWaitUntil:
+    visible: "Vacation"
+    timeout: 15000
+- takeScreenshot: vacation__results
