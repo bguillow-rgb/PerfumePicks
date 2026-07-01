@@ -24,6 +24,11 @@ yarn-error.*
 
 # Large directories not needed for build
 build/
+dist/
+# Claude worktrees: full second app checkouts (node_modules, Skia libs, Pods) — never part of the app build
+.claude/
+# Marketing site: separate Astro project with its own node_modules
+web/
 scripts/data/adventura-images/
 scripts/data/crux-images/
 scripts/data/dropbox-images/
