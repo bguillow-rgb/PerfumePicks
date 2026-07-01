@@ -5,7 +5,6 @@ import { useCallback, useMemo, useState, useEffect } from 'react';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
-import { DupePicker } from '@/src/components/fragrance/DupePicker';
 import { useCatalogStore } from '@/src/stores/useCatalogStore';
 import { useIcons, useWardrobePicks, useNewArrivals, useTasteProfile } from '@/src/features/recommend/useRecommendations';
 import { type DerivedTasteProfile } from '@/src/features/recommend/tasteProfile';
@@ -202,10 +201,6 @@ export default function HomeScreen() {
           )}
         </Section>
         )}
-
-        {/* ── Budget Dupes — object-anchored from wishlist; surfaced high
-               as the headline "smell rich for less" hook ── */}
-        <HomeDupeModule />
 
         {/* ── Taste Profile Teaser ── */}
         {tasteProfile.signal_count > 0 && (
@@ -554,104 +549,6 @@ const subCard = StyleSheet.create({
 
 // ─── Community Card ───────────────────────────────────────────────────────────
 
-// ─── Don't Pay a Fortune (dupe finder module) ───────────────────────────────
-
-/**
- * Home dupe module (PRD §7.1, surface 3 — founder's idea). Seeds the dupe
- * finder from the user's own wardrobe: their first wishlist ('want') item, else
- * their first owned ('have') item — but only when that scent actually has
- * cheaper alternatives. Renders nothing otherwise. We deliberately do NOT fall
- * back to a featured/default original: anchoring the module to a scent the user
- * never picked reads as stale leftover copy (e.g. it kept showing Baccarat Rouge
- * 540 after the user emptied their wardrobe). The surface only exists when it
- * can lead with one of the user's OWN object-anchored bottles.
- */
-function HomeDupeModule() {
-  const wardrobeItems = useWardrobeStore((s) => s.items);
-  const fetchById = useCatalogStore((s) => s.fetchById);
-  const fetchDupeCount = useCatalogStore((s) => s.fetchDupeCount);
-  const [seed, setSeed] = useState<Fragrance | undefined>(undefined);
-  // True only when the seed came from the user's own wishlist ('want'), so the
-  // copy can say "you wishlisted X". A 'have' seed gets the neutral "smell like
-  // X for less" framing instead.
-  const [seedFromWant, setSeedFromWant] = useState(false);
-  // What the picker is *currently* showing — diverges from `seed` once the user
-  // clears or changes the picker. Drives the header copy so clearing the picker
-  // reverts the module to its default prompt.
-  const [current, setCurrent] = useState<Fragrance | undefined>(undefined);
-  // True only while we're resolving the seed + checking it has dupes. Keeps the
-  // picker hidden so we don't flash an empty search box before the seeded chip,
-  // or seed a perfume we then can't show alternatives for.
-  const [resolving, setResolving] = useState(false);
-
-  // Preferred seed sources, in priority order: first wishlist ('want') item,
-  // then first owned ('have') item. Each is only used if it actually has dupes.
-  const wantId = useMemo(
-    () => wardrobeItems.find((i) => i.status === 'want')?.fragrance_id,
-    [wardrobeItems],
-  );
-  const haveId = useMemo(
-    () => wardrobeItems.find((i) => i.status === 'have')?.fragrance_id,
-    [wardrobeItems],
-  );
-
-  useEffect(() => {
-    let cancelled = false;
-    setResolving(true);
-    (async () => {
-      // Resolve a candidate id to a Fragrance *only if* it has cheaper dupes —
-      // otherwise the header would promise "smell like it for less" with nothing
-      // to show. Returns undefined when the candidate has no dupes.
-      const tryCandidate = async (id?: string): Promise<Fragrance | undefined> => {
-        if (!id) return undefined;
-        const f = await fetchById(id);
-        if (!f) return undefined;
-        const count = await fetchDupeCount(f.id);
-        return count > 0 ? f : undefined;
-      };
-
-      // 'want' → 'have', from the user's own wardrobe only. No featured/default
-      // fallback — see the component doc comment.
-      let f = await tryCandidate(wantId);
-      const fromWant = !!f;
-      if (!f) f = await tryCandidate(haveId);
-
-      if (cancelled) return;
-      setSeed(f);
-      setCurrent(f);
-      setSeedFromWant(fromWant);
-      setResolving(false);
-    })();
-    return () => { cancelled = true; };
-  }, [wantId, haveId, fetchById, fetchDupeCount]);
-
-  // No wardrobe scent with cheaper alternatives → render nothing. We never show
-  // a "no dupes" card or a naked search prompt; the module only exists when it
-  // can lead with one of the user's own object-anchored bottles.
-  if (resolving || !seed) return null;
-
-  const onSeed = current && current.id === seed.id;
-  return (
-    <Section eyebrow="BUDGET DUPES" cursive="smell rich for less">
-      <View style={[styles.dupeModule, { marginRight: SPACING.lg }]}>
-        <Text style={styles.dupeModuleSub}>
-          {onSeed && seedFromWant
-            ? `You wishlisted ${seed.name}. Here's how to smell like it for less.`
-            : `Here's how to smell like ${(current ?? seed).name} for less.`}
-        </Text>
-        {/* key remounts the picker once the async seed resolves, since
-            DupePicker reads initialOriginal only in its useState initializer. */}
-        <DupePicker
-          key={seed.id}
-          initialOriginal={seed}
-          onOriginalChange={setCurrent}
-          placeholder="Less expensive options for…"
-        />
-      </View>
-    </Section>
-  );
-}
-
 // ─── Taste Profile Teaser ──────────────────────────────────────────────────
 
 function TasteTeaser({ profile, isPro, swipeCount, onPress, onTrain }: {
@@ -999,17 +896,6 @@ const styles = StyleSheet.create({
     gap: SPACING.sm,
     marginTop: SPACING.sm,
   },
-
-  // ── Don't Pay a Fortune dupe module ──
-  dupeModule: {
-    backgroundColor: COLORS.card,
-    borderRadius: RADIUS.lg,
-    borderWidth: 1,
-    borderColor: COLORS.accent,
-    padding: SPACING.lg,
-    gap: SPACING.md,
-  },
-  dupeModuleSub: { ...TYPE.bodySmall, color: COLORS.muted, lineHeight: 19 },
 
   // ── Footer ──
   footer: {
