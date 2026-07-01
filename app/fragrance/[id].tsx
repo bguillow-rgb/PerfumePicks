@@ -280,6 +280,7 @@ function FragranceDetailScreen() {
       .from('fragrance_retailer_links')
       .select('retailer, url, price_cents, fragrances!inner(slug)')
       .eq('fragrances.slug', id)
+      .neq('link_status', 'dead')
       .then(({ data, error }) => {
         if (error) { console.warn('[retailer-links]', error.message); return; }
         if (data?.length) {

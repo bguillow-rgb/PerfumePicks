@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.lg, paddingVertical: SPACING.md,
   },
   title: { ...TYPE.heading },
-  clear: { ...TYPE.body, color: COLORS.accent, width: 40, textAlign: 'right' },
+  clear: { ...TYPE.body, color: COLORS.accent, textAlign: 'right' },
 
   cols: { paddingHorizontal: SPACING.lg, paddingBottom: SPACING.xl, gap: SPACING.md },
   col: {
