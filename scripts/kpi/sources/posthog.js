@@ -5,7 +5,7 @@
 
 'use strict';
 
-const { EVENTS, APP_NAMESPACE } = require('../schema');
+const { EVENTS, APP_NAMESPACE, LAUNCH_DATE } = require('../schema');
 
 function loadEnv() {
   return {
@@ -206,6 +206,45 @@ async function fetchDiscovery(env) {
   };
 }
 
+// ── Affiliate / buy-link clicks (since launch) ────────────────────────
+// "How many times has a user tapped a product to buy it." Buy taps fire
+// affiliate_outbound_clicked to PostHog only (not written to Supabase), so
+// PostHog is the source of truth. Scoped to LAUNCH_DATE to match the rest of
+// the dashboard's since-launch framing.
+async function fetchAffiliate(env) {
+  const [totals, byRetailer, fails, today, yesterday] = await Promise.all([
+    hogql(env, `
+      SELECT count() AS taps, count(DISTINCT person_id) AS people
+      FROM events
+      WHERE event = '${EVENTS.AFFILIATE_OUTBOUND_CLICKED}' AND ${NS}
+        AND toDate(timestamp) >= toDate('${LAUNCH_DATE}')
+    `),
+    hogql(env, `
+      SELECT properties.retailer AS retailer, count() AS taps
+      FROM events
+      WHERE event = '${EVENTS.AFFILIATE_OUTBOUND_CLICKED}' AND ${NS}
+        AND toDate(timestamp) >= toDate('${LAUNCH_DATE}')
+      GROUP BY retailer ORDER BY taps DESC
+    `),
+    hogql(env, `
+      SELECT count() AS fails
+      FROM events
+      WHERE event = '${EVENTS.AFFILIATE_LINK_FAILED}' AND ${NS}
+        AND toDate(timestamp) >= toDate('${LAUNCH_DATE}')
+    `),
+    hogql(env, `SELECT count() FROM events WHERE event = '${EVENTS.AFFILIATE_OUTBOUND_CLICKED}' AND ${NS} AND toDate(timestamp) = ${TODAY}`),
+    hogql(env, `SELECT count() FROM events WHERE event = '${EVENTS.AFFILIATE_OUTBOUND_CLICKED}' AND ${NS} AND toDate(timestamp) = ${YESTERDAY}`),
+  ]);
+  return {
+    sinceLaunch: totals[0]?.[0] ?? 0,
+    people: totals[0]?.[1] ?? 0,
+    failedSinceLaunch: fails[0]?.[0] ?? 0,
+    today: today[0]?.[0] ?? 0,
+    yesterday: yesterday[0]?.[0] ?? 0,
+    byRetailer: byRetailer.map(([retailer, taps]) => ({ retailer: retailer || '(none)', taps })),
+  };
+}
+
 // ── Health alerts ─────────────────────────────────────────────────────
 async function fetchHealthAlerts(env, supaSignups) {
   const alerts = [];
@@ -272,7 +311,7 @@ async function fetchAll(env) {
     };
   }
   try {
-    const [activity, topEvents, quiz, wardrobe, dna, monetization, discovery] = await Promise.all([
+    const [activity, topEvents, quiz, wardrobe, dna, monetization, discovery, affiliate] = await Promise.all([
       fetchActivity(env),
       fetchTopEvents(env, { limit: 10 }),
       fetchQuizFunnel(env),
@@ -280,10 +319,11 @@ async function fetchAll(env) {
       fetchDnaFunnel(env),
       fetchMonetizationFunnel(env),
       fetchDiscovery(env),
+      fetchAffiliate(env),
     ]);
     return {
       configured: true,
-      activity, topEvents, quiz, wardrobe, dna, monetization, discovery,
+      activity, topEvents, quiz, wardrobe, dna, monetization, discovery, affiliate,
     };
   } catch (e) {
     return { configured: true, error: e.message };
@@ -301,6 +341,7 @@ module.exports = {
   fetchDnaFunnel,
   fetchMonetizationFunnel,
   fetchDiscovery,
+  fetchAffiliate,
   fetchHealthAlerts,
   fetchAll,
 };

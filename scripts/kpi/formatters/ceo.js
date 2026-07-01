@@ -20,6 +20,7 @@
 'use strict';
 
 const { APP_STORE_STATUS, ASC_APP_ID, LAUNCH_DATE } = require('../schema');
+const adSpendRender = require('./dr-ad-spend-render');
 
 function n(x, fallback = '—') {
   return x == null ? fallback : x;
@@ -51,7 +52,7 @@ function deltaPct(today, yest) {
   return `${sign}${Math.round(d * 100)}%`;
 }
 
-function render({ supa, posthog, rc, sentry, asc, healthAlerts = [], sources, now = new Date() }) {
+function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], sources, now = new Date() }) {
   const lines = [];
   const { PRE_LAUNCH } = require('../schema');
 
@@ -149,6 +150,10 @@ function render({ supa, posthog, rc, sentry, asc, healthAlerts = [], sources, no
   if (supa?.wearLogs) {
     lines.push(`| Wear logs (journal) | ${supa.wearLogs.today} | ${supa.wearLogs.yesterday} | ${deltaPct(supa.wearLogs.today, supa.wearLogs.yesterday)} | ${supa.wearLogs.sinceLaunch} |`);
   }
+  if (posthog?.affiliate) {
+    const a = posthog.affiliate;
+    lines.push(`| Buy-link taps | ${a.today} | ${a.yesterday} | ${deltaPct(a.today, a.yesterday)} | **${a.sinceLaunch}** |`);
+  }
   if (supa?.proMirror) {
     lines.push(`| Pro subscribers | — | — | — | **${supa.proMirror.total}** |`);
   }
@@ -181,7 +186,13 @@ function render({ supa, posthog, rc, sentry, asc, healthAlerts = [], sources, no
   if (asc?.lifetimeInstalls != null) {
     lines.push(`| App Store | ${asc.lifetimeInstalls} total installs | ASC source of truth; 24-48h lag |`);
   }
-  lines.push(`| Apple Search Ads | Not yet running | Ready to launch — app is live |`);
+  if (adSpend?.ok) {
+    const t = adSpend.totals || {};
+    const cpaStr = t.cpa != null ? `$${t.cpa.toFixed(2)} CPA` : '— CPA';
+    lines.push(`| Apple Search Ads | $${(t.spend || 0).toFixed(2)} spend · ${t.installs || 0} installs | ${cpaStr} (${adSpend.dateRange || 'window'}) — see DR AD SPEND below |`);
+  } else {
+    lines.push(`| Apple Search Ads | manual check | searchads.apple.com — ${adSpend?.reason || 'live pull unavailable'} |`);
+  }
   lines.push('');
 
   const aq = asc?.acquisitionSources;
@@ -199,6 +210,9 @@ function render({ supa, posthog, rc, sentry, asc, healthAlerts = [], sources, no
     lines.push(`> _ASC acquisition sources: ${aq.note || 'report pending Apple preparation.'}_`);
     lines.push('');
   }
+
+  // ── 5b. DR AD SPEND read on Apple Search Ads ──────────────────────
+  for (const l of adSpendRender.markdownLines(adSpend)) lines.push(l);
 
   // ── 6. FUNNEL WATERFALL ───────────────────────────────────────────
   if (posthog?.configured && !posthog?.error) {
@@ -358,6 +372,21 @@ function render({ supa, posthog, rc, sentry, asc, healthAlerts = [], sources, no
     posthog.topEvents.slice(0, 10).forEach((e) => {
       lines.push(`| ${e.name} | ${e.count} |`);
     });
+    lines.push('');
+  }
+
+  // ── 11.5 BUY-LINK CLICKS (purchase intent) ────────────────────────
+  if (posthog?.affiliate) {
+    const a = posthog.affiliate;
+    lines.push('## 🛒 BUY-LINK CLICKS (since launch)');
+    lines.push('');
+    lines.push(`- **Buy taps:** today ${a.today} · yest ${a.yesterday} · **since launch ${a.sinceLaunch}** (${a.people} distinct people)`);
+    if (a.byRetailer.length > 0) {
+      lines.push(`- **By retailer:** ${a.byRetailer.map((r) => `${r.retailer} ${r.taps}`).join(' · ')}`);
+    }
+    lines.push(`- **Failed opens:** ${a.failedSinceLaunch}${a.failedSinceLaunch > 0 ? ' ⚠' : ''}`);
+    lines.push('');
+    lines.push('> _Outbound retailer taps = purchase intent. PostHog is source of truth (not written to Supabase). Commission lands only if the retailer confirms the sale via CJ._');
     lines.push('');
   }
 
