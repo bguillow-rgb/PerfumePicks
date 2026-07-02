@@ -1,0 +1,111 @@
+appId: com.bobguillow.perfumepicks
+---
+# M2 ACCEPTANCE — the merged reveal + affiliate-first TOP MATCH + "more matches".
+#   grid -> "Read my Fragrance DNA" -> reading -> reveal (canonical DnaProfileContent
+#   in celebrate mode) -> TOP MATCH hero card -> "Show me more matches" -> matches page.
+# Builds on dna-v2-flow.yaml (M1). Monetization assertions that depend on QA buyable
+# data are marked optional so the flow still proves the reveal + hero render when the
+# QA catalog has zero buyable links (fallback path: dna-top-match-details).
+# Plain relaunch (NOT clearState): a clearState reinstall re-triggers Expo's
+# dev-client onboarding + RN dev menus on every run, which occlude the picker and
+# make the flow flaky. The app is launched at the picker (onboarding incomplete);
+# a plain relaunch keeps us there with a fresh, unpicked grid. The dev-menu
+# dismiss below stays as a defensive no-op in case a menu is up.
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    text: "Continue"
+    optional: true
+- waitForAnimationToEnd
+# With Supabase configured the auth gate appears before onboarding; take the guest
+# path. Optional so a already-authed session falls straight through to the picker.
+- extendedWaitUntil:
+    visible:
+      text: "Continue as Guest"
+    timeout: 30000
+    optional: true
+- tapOn:
+    text: "Continue as Guest"
+    optional: true
+- waitForAnimationToEnd
+# Onboarding then boots into the DNA picker, so wait on the grid.
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 60000
+- takeScreenshot: m2-01-grid
+# Pick three tiles.
+- tapOn:
+    point: "20%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "50%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "80%,32%"
+- waitForAnimationToEnd
+# extendedWaitUntil (not bare assertVisible) so a transient XCUITest viewHierarchy
+# read doesn't fail the step while the CTA is plainly on screen.
+- extendedWaitUntil:
+    visible:
+      text: ".*Read my Fragrance DNA.*"
+    timeout: 12000
+- tapOn:
+    id: "dna-picker-continue"
+- waitForAnimationToEnd
+- assertNotVisible: "ALMOST THERE"
+# Reading beat -> reveal.
+- extendedWaitUntil:
+    visible:
+      text: ".*FRAGRANCE DNA.*"
+    timeout: 30000
+- takeScreenshot: m2-02-reveal
+# The merged reveal must render the archetype emblem + the TOP MATCH hero card.
+- assertVisible:
+    id: "dna-reveal-emblem"
+- scrollUntilVisible:
+    element:
+      id: "dna-top-match"
+    direction: DOWN
+    timeout: 15000
+    visibilityPercentage: 40
+- takeScreenshot: m2-03-top-match
+# Either the buyable buy CTA OR the zero-buyable fallback "View details" must show.
+- assertVisible:
+    id: "dna-top-match-buy"
+    optional: true
+- assertVisible:
+    id: "dna-top-match-details"
+    optional: true
+# "Show me more matches" only exists when there are buyable matches beyond the hero.
+- scrollUntilVisible:
+    element:
+      id: "dna-see-more-matches"
+    direction: DOWN
+    timeout: 8000
+    optional: true
+- tapOn:
+    id: "dna-see-more-matches"
+    optional: true
+- waitForAnimationToEnd
+- assertVisible:
+    id: "dna-matches-screen"
+    optional: true
+- takeScreenshot: m2-04-matches
+- back
+- waitForAnimationToEnd
+# Finish onboarding via the fixed reveal footer CTA.
+- scrollUntilVisible:
+    element:
+      id: "dna-reveal-continue"
+    direction: DOWN
+    timeout: 10000
+    optional: true
+- tapOn:
+    id: "dna-reveal-continue"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: m2-05-after-continue

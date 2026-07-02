@@ -1,0 +1,99 @@
+import { View, Text, StyleSheet, Pressable, ScrollView } from 'react-native';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
+import * as Haptics from 'expo-haptics';
+import { COLORS, RADIUS, SPACING, TYPE } from '@/src/constants/theme';
+import type { FragranceDNA } from '@/src/features/dna/types';
+import type { BuyableRankResult } from '@/src/features/dna/score';
+import { DnaProfileContent } from '@/src/components/dna/DnaProfileContent';
+
+/**
+ * DnaRevealScreen — the post-picker celebration reveal (DNA flow v2).
+ *
+ * A full-screen takeover rendered INLINE inside the /dna route (the onboarding
+ * guard pins us there until complete). It hosts the SAME <DnaProfileContent>
+ * the canonical taste-profile page renders, in `celebrate` mode, plus the fixed
+ * "continue" footer. There is no separate reveal layout to drift — this is just
+ * the canonical DNA content with a celebratory entrance + a forward CTA.
+ *
+ * M3 will replace the entrance inside DnaProfileContent with the Skia
+ * "Decanting" reveal; this shell (scroll + footer) stays.
+ */
+interface DnaRevealScreenProps {
+  dna: FragranceDNA;
+  /** Picker-session buyable ranking (top match + more matches). */
+  hero: BuyableRankResult | null;
+  /** Finish onboarding and open the top match's detail page. */
+  onContinue: () => void;
+  /** Open the top match's detail (card tap / fallback "View details"). */
+  onViewDetails: (fragranceId: string) => void;
+  /** Open the "more matches" page. */
+  onSeeMoreMatches: () => void;
+}
+
+export function DnaRevealScreen({
+  dna,
+  hero,
+  onContinue,
+  onViewDetails,
+  onSeeMoreMatches,
+}: DnaRevealScreenProps) {
+  const insets = useSafeAreaInsets();
+
+  return (
+    <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
+      <ScrollView
+        contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 96 }]}
+        showsVerticalScrollIndicator={false}
+      >
+        <DnaProfileContent
+          dna={dna}
+          hero={hero}
+          celebrate
+          onViewDetails={onViewDetails}
+          onSeeMoreMatches={onSeeMoreMatches}
+        />
+      </ScrollView>
+
+      <View style={[styles.footer, { paddingBottom: insets.bottom + SPACING.sm }]}>
+        <Pressable
+          style={styles.cta}
+          onPress={() => {
+            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+            onContinue();
+          }}
+          testID="dna-reveal-continue"
+        >
+          <Text style={styles.ctaText}>See my top match</Text>
+          <Ionicons name="arrow-forward" size={15} color={COLORS.white} />
+        </Pressable>
+      </View>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  safe: { flex: 1, backgroundColor: COLORS.bg },
+  body: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.xl },
+  footer: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    paddingHorizontal: SPACING.lg,
+    paddingTop: SPACING.sm,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: COLORS.border,
+    backgroundColor: COLORS.bg,
+  },
+  cta: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    backgroundColor: COLORS.accent,
+    paddingVertical: 15,
+    borderRadius: RADIUS.full,
+  },
+  ctaText: { ...TYPE.label, color: COLORS.white, fontSize: 14, letterSpacing: 1 },
+});

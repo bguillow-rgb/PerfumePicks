@@ -19,6 +19,9 @@ export default function DnaLayout() {
       }}
     >
       <Stack.Screen name="index" />
+      {/* "More matches" — reachable from the reveal; swipe-back is fine here
+          (it sits ON TOP of the picker/reveal, not as the front door). */}
+      <Stack.Screen name="matches" options={{ gestureEnabled: true }} />
     </Stack>
   );
 }

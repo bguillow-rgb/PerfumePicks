@@ -33,6 +33,9 @@ export const EVENTS = {
   // Living DNA recompute (M2 — unified pool + living archetype).
   DNA_RECOMPUTED:         'dna_recomputed',
   DNA_ARCHETYPE_CHANGED:  'dna_archetype_changed',
+  // DNA flow v2: fired when the buyable-match ranking finds zero buyable
+  // candidates and falls back to a top-fit (non-commercial) hero card.
+  DNA_TOP_MATCH_NO_BUYABLE: 'dna_top_match_no_buyable',
 
   // ─── Discover ────────────────────────────────────────────────────────
   DISCOVER_SEARCH_QUERY:  'discover_search_query',

@@ -1,0 +1,57 @@
+appId: com.bobguillow.perfumepicks
+---
+# M2 KILL-SWITCH validation — with dna_monetization_enabled='0' in app_settings,
+# the reveal must STILL render (archetype emblem) but the affiliate surfaces (the
+# TOP MATCH card + "more matches" link) must be GONE. Proves the OTA flag pulls
+# only the commercial card, leaving the DNA reveal intact. Re-enter via Home's
+# Retake (Supabase configured → already-onboarded guest boots to Home).
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    text: "Continue"
+    optional: true
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "today-dna-retake"
+    timeout: 30000
+- tapOn:
+    id: "today-dna-retake"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 30000
+- tapOn:
+    point: "20%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "50%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "80%,32%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: ".*Read my Fragrance DNA.*"
+    timeout: 12000
+- tapOn:
+    id: "dna-picker-continue"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: ".*FRAGRANCE DNA.*"
+    timeout: 30000
+- takeScreenshot: m2flag-01-reveal
+# Reveal intact...
+- assertVisible:
+    id: "dna-reveal-emblem"
+# ...but the affiliate surfaces are killed.
+- assertNotVisible:
+    id: "dna-top-match"
+- assertNotVisible:
+    id: "dna-see-more-matches"
+- takeScreenshot: m2flag-02-no-hero

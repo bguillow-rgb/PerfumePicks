@@ -5,6 +5,7 @@ import { STORAGE_KEYS } from '@/src/lib/storageKeys';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { syncWrite } from '@/src/lib/sync/syncWrite';
 import type { FragranceDNA } from '@/src/features/dna/types';
+import type { BuyableRankResult } from '@/src/features/dna/score';
 
 /**
  * useTasteProfileStore — the live, durable home of the user's Fragrance DNA.
@@ -44,6 +45,14 @@ interface TasteProfileState {
   pending: PendingWrite | null;
   /** True once AsyncStorage rehydrated — gate DNA-conditional UI to avoid flash. */
   hasHydrated: boolean;
+  /**
+   * The buyable-match ranking computed in the picker session for the celebration
+   * reveal (DNA flow v2 M2). RUNTIME-ONLY — deliberately NOT persisted: the
+   * affiliate links + stock/price go stale, and it's only meaningful for the
+   * one reveal that produced it. The canonical celebrate page + "more matches"
+   * page read it; it's recomputed every fresh derivation. Null outside a reveal.
+   */
+  celebrateHero: BuyableRankResult | null;
 
   /** Commit a freshly derived DNA (first-run path). Atomic + enqueues a write. */
   setDna: (dna: FragranceDNA) => void;
@@ -67,6 +76,9 @@ interface TasteProfileState {
    * doesn't resurface on relaunch or another device.
    */
   acknowledgeArchetypeShift: () => void;
+  /** Stash the picker-session buyable ranking for the canonical celebrate page
+   *  + "more matches" page to read. Pass null to clear after the reveal. */
+  setCelebrateHero: (result: BuyableRankResult | null) => void;
   /** Hydrate from the server WITHOUT enqueuing a write (used on sign-in). */
   hydrateDna: (dna: FragranceDNA) => void;
   /** Wipe DNA (sign-out / account switch flush). */
@@ -133,6 +145,7 @@ export const useTasteProfileStore = create<TasteProfileState>()(
       draft: null,
       pending: null,
       hasHydrated: false,
+      celebrateHero: null,
 
       setDna: (dna) => {
         set({ dna, draft: null });
@@ -166,11 +179,13 @@ export const useTasteProfileStore = create<TasteProfileState>()(
         enqueue(dna);
       },
 
+      setCelebrateHero: (result) => set({ celebrateHero: result }),
+
       hydrateDna: (dna) => set({ dna }),
 
       clearDna: () => {
         if (flushTimer) { clearTimeout(flushTimer); flushTimer = null; }
-        set({ dna: null, draft: null, pending: null });
+        set({ dna: null, draft: null, pending: null, celebrateHero: null });
       },
 
       setHasHydrated: (v) => set({ hasHydrated: v }),

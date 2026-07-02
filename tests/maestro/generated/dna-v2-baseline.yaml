@@ -1,0 +1,61 @@
+appId: com.bobguillow.perfumepicks
+---
+# M0 REGRESSION ANCHOR — captures the CURRENT (pre-v2) DNA bottle-picker flow:
+#   grid (pick the ones you love) -> "Continue with N" -> refine ("ALMOST THERE",
+#   own/want/like + favorite) -> "Read my Fragrance DNA" -> reading beat -> reveal.
+# Authored 2026-06-28 against the dev client on the iOS sim before the v2 rewire.
+# After M1 this flow WILL break (refine screen is removed, grid CTA goes straight
+# to compute) — that breakage is expected and the v2 smoke replaces it. Keep this
+# file as the documented before-state so the diff is auditable.
+- launchApp
+- tapOn:
+    text: "http://localhost:8081"
+    optional: true
+- extendedWaitUntil:
+    visible: "SCENT OF THE DAY"
+    timeout: 60000
+- takeScreenshot: dna-base-00-home
+# Enter the DNA bottle picker. Home surfaces it as the hero DNA CTA; fall back to
+# the deep link if the label drifts.
+- scrollUntilVisible:
+    element:
+      text: ".*Fragrance DNA.*"
+    direction: DOWN
+    timeout: 20000
+    visibilityPercentage: 30
+    optional: true
+- tapOn:
+    text: ".*Fragrance DNA.*"
+    optional: true
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 30000
+- takeScreenshot: dna-base-01-grid
+# Pick three tiles by relative position (labels vary with catalog order).
+- tapOn:
+    point: "20%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "50%,32%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "80%,32%"
+- waitForAnimationToEnd
+- takeScreenshot: dna-base-02-picked
+- tapOn:
+    id: "dna-picker-continue"
+- waitForAnimationToEnd
+# Refine screen — the step v2 removes. Assert it renders today.
+- assertVisible: "ALMOST THERE"
+- takeScreenshot: dna-base-03-refine
+- tapOn:
+    id: "dna-refine-continue"
+- waitForAnimationToEnd
+# Reading beat then the reveal.
+- extendedWaitUntil:
+    visible:
+      text: ".*FRAGRANCE DNA.*"
+    timeout: 30000
+- takeScreenshot: dna-base-04-reveal
