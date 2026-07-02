@@ -84,11 +84,19 @@ export const useWearLogStore = create<WearLogState>()(
           logs: s.logs.map((l) => l.id === id ? { ...l, ...patch } : l),
         }));
         if (isSupabaseConfigured && _currentUserId) {
-          syncWrite('wear_logs', { id, ...patch, user_id: _currentUserId }, 'id').then((r) => {
-            if (!r.ok) set((s) => ({
-              logs: s.logs.map((l) => l.id === id ? { ...l, _unsynced: true } : l),
-            }));
-          });
+          // Upsert the FULL merged row, never a partial patch — Postgres checks
+          // NOT NULL constraints on the proposed insert tuple before ON CONFLICT
+          // resolution, so a patch missing fragrance_id/worn_on throws 23502
+          // even when the row already exists (same bug as useWardrobeStore).
+          const merged = get().logs.find((l) => l.id === id);
+          if (merged) {
+            const { _unsynced: _, ...row } = merged;
+            syncWrite('wear_logs', { ...row, user_id: _currentUserId }, 'id').then((r) => {
+              set((s) => ({
+                logs: s.logs.map((l) => l.id === id ? { ...l, _unsynced: !r.ok } : l),
+              }));
+            });
+          }
         }
         scheduleLivingDnaRecompute('wear');
       },

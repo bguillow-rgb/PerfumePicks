@@ -148,11 +148,20 @@ export const useWardrobeStore = create<WardrobeState>()(
           items: s.items.map((i) => i.id === id ? { ...i, ...patch, updated_at } : i),
         }));
         if (isSupabaseConfigured && _currentUserId) {
-          syncWrite('wardrobe_items', { id, ...patch, updated_at, user_id: _currentUserId }, 'id').then((r) => {
-            if (!r.ok) set((s) => ({
-              items: s.items.map((i) => i.id === id ? { ...i, _unsynced: true } : i),
-            }));
-          });
+          // Upsert the FULL merged row, never a partial patch: syncWrite is an
+          // INSERT ... ON CONFLICT upsert, and Postgres validates NOT NULL
+          // constraints on the proposed insert tuple BEFORE conflict resolution
+          // — a patch without fragrance_id throws 23502 even when the row
+          // already exists, so partial-patch edits never reached the server.
+          const merged = get().items.find((i) => i.id === id);
+          if (merged) {
+            const { _unsynced: _, ...row } = merged;
+            syncWrite('wardrobe_items', { ...row, user_id: _currentUserId }, 'id').then((r) => {
+              set((s) => ({
+                items: s.items.map((i) => i.id === id ? { ...i, _unsynced: !r.ok } : i),
+              }));
+            });
+          }
         }
         scheduleLivingDnaRecompute('wardrobe');
       },

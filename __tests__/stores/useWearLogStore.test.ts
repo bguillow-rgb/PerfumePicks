@@ -54,6 +54,68 @@ describe('useWearLogStore', () => {
     });
   });
 
+  // Regression: update() used to upsert a partial patch row ({ id, ...patch }).
+  // Postgres validates NOT NULL constraints on the proposed insert tuple BEFORE
+  // ON CONFLICT resolution, so a patch missing fragrance_id/worn_on threw 23502
+  // on every edit (same bug as useWardrobeStore, Sentry 71d7a10f).
+  describe('update() → server sync sends the FULL merged row', () => {
+    const supabaseMock = require('@/lib/supabase');
+    const { syncWrite } = require('@/src/lib/sync/syncWrite');
+    const { setWearLogUserId } = require('@/src/stores/useWearLogStore');
+
+    beforeEach(() => {
+      supabaseMock.isSupabaseConfigured = true;
+      setWearLogUserId('user-1');
+      syncWrite.mockClear();
+    });
+
+    afterEach(() => {
+      supabaseMock.isSupabaseConfigured = false;
+      setWearLogUserId(null);
+    });
+
+    it('includes every NOT NULL column, not just the patch', () => {
+      const id = useWearLogStore.getState().add(makeLogInput('frag-1', '2026-05-22'));
+      syncWrite.mockClear();
+
+      useWearLogStore.getState().update(id, { rating: 5, note: 'compliments all day' });
+
+      expect(syncWrite).toHaveBeenCalledTimes(1);
+      const [table, row, onConflict] = syncWrite.mock.calls[0];
+      expect(table).toBe('wear_logs');
+      expect(onConflict).toBe('id');
+      // The patch itself
+      expect(row.rating).toBe(5);
+      expect(row.note).toBe('compliments all day');
+      // NOT NULL columns that the old partial upsert dropped → 23502
+      expect(row.fragrance_id).toBe('frag-1');
+      expect(row.worn_on).toBe('2026-05-22');
+      expect(row.created_at).toBeTruthy();
+      expect(row.user_id).toBe('user-1');
+      // Local-only flag must never reach the DB
+      expect(row._unsynced).toBeUndefined();
+    });
+
+    it('clears _unsynced on successful sync and sets it on failure', async () => {
+      const id = useWearLogStore.getState().add(makeLogInput('frag-1', '2026-05-22'));
+
+      syncWrite.mockResolvedValueOnce({ ok: false, error: 'boom' });
+      useWearLogStore.getState().update(id, { rating: 2 });
+      await new Promise((r) => setTimeout(r, 0));
+      expect(useWearLogStore.getState().logs[0]._unsynced).toBe(true);
+
+      syncWrite.mockResolvedValueOnce({ ok: true });
+      useWearLogStore.getState().update(id, { rating: 4 });
+      await new Promise((r) => setTimeout(r, 0));
+      expect(useWearLogStore.getState().logs[0]._unsynced).toBe(false);
+    });
+
+    it('does not call syncWrite for an unknown id', () => {
+      useWearLogStore.getState().update('nonexistent-id', { rating: 1 });
+      expect(syncWrite).not.toHaveBeenCalled();
+    });
+  });
+
   describe('remove()', () => {
     it('removes by ID', () => {
       const id = useWearLogStore.getState().add(makeLogInput('frag-1', '2026-05-22'));

@@ -110,6 +110,68 @@ describe('useWardrobeStore', () => {
     });
   });
 
+  // Regression: update() used to upsert a partial patch row ({ id, ...patch }).
+  // Postgres validates NOT NULL constraints on the proposed insert tuple BEFORE
+  // ON CONFLICT resolution, so the missing fragrance_id threw 23502 on every
+  // edit and wardrobe edits never reached the server (Sentry 71d7a10f).
+  describe('update() → server sync sends the FULL merged row', () => {
+    const supabaseMock = require('@/lib/supabase');
+    const { syncWrite } = require('@/src/lib/sync/syncWrite');
+    const { setWardrobeUserId } = require('@/src/stores/useWardrobeStore');
+
+    beforeEach(() => {
+      supabaseMock.isSupabaseConfigured = true;
+      setWardrobeUserId('user-1');
+      syncWrite.mockClear();
+    });
+
+    afterEach(() => {
+      supabaseMock.isSupabaseConfigured = false;
+      setWardrobeUserId(null);
+    });
+
+    it('includes every NOT NULL column, not just the patch', () => {
+      const id = useWardrobeStore.getState().add(makeItem('frag-1')) as string;
+      syncWrite.mockClear();
+
+      useWardrobeStore.getState().update(id, { remaining_ml: 25, notes: 'half gone' });
+
+      expect(syncWrite).toHaveBeenCalledTimes(1);
+      const [table, row, onConflict] = syncWrite.mock.calls[0];
+      expect(table).toBe('wardrobe_items');
+      expect(onConflict).toBe('id');
+      // The patch itself
+      expect(row.remaining_ml).toBe(25);
+      expect(row.notes).toBe('half gone');
+      // NOT NULL columns that the old partial upsert dropped → 23502
+      expect(row.fragrance_id).toBe('frag-1');
+      expect(row.status).toBe('have');
+      expect(row.created_at).toBeTruthy();
+      expect(row.user_id).toBe('user-1');
+      // Local-only flag must never reach the DB
+      expect(row._unsynced).toBeUndefined();
+    });
+
+    it('clears _unsynced on successful sync and sets it on failure', async () => {
+      const id = useWardrobeStore.getState().add(makeItem('frag-1')) as string;
+
+      syncWrite.mockResolvedValueOnce({ ok: false, error: 'boom' });
+      useWardrobeStore.getState().update(id, { remaining_ml: 10 });
+      await new Promise((r) => setTimeout(r, 0));
+      expect(useWardrobeStore.getState().items[0]._unsynced).toBe(true);
+
+      syncWrite.mockResolvedValueOnce({ ok: true });
+      useWardrobeStore.getState().update(id, { remaining_ml: 5 });
+      await new Promise((r) => setTimeout(r, 0));
+      expect(useWardrobeStore.getState().items[0]._unsynced).toBe(false);
+    });
+
+    it('does not call syncWrite for an unknown id', () => {
+      useWardrobeStore.getState().update('nonexistent-id', { remaining_ml: 1 });
+      expect(syncWrite).not.toHaveBeenCalled();
+    });
+  });
+
   describe('byStatus() / inRotation()', () => {
     it('inRotation() returns only items with status=have', () => {
       useWardrobeStore.getState().add(makeItem('frag-1', { status: 'have' }));
