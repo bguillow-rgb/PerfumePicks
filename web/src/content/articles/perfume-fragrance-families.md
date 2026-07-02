@@ -16,7 +16,7 @@ relatedSlugs:
   - "does-perfume-expire"
   - "fragrance-notes-explained"
   - "how-to-layer-perfumes"
-  - "how-long-does-perfume-last"
+  - "perfume-sillage-projection-longevity"
 faqs:
   - q: "What are the four main perfume fragrance families?"
     a: "The four core families are Floral (flowers: rose, jasmine, peony), Amber/Oriental (warm resins, spices, vanilla), Woody (cedarwood, sandalwood, vetiver, oud), and Fresh (citrus, aquatic, green, aromatic). Most fragrances sit in one family or blend two adjacent families on the scent wheel."
