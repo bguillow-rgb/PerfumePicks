@@ -192,7 +192,13 @@ async function hydrateProfile(userId: string) {
 
   const store = useProfileStore.getState();
   if (name) store.setDisplayName(name);
-  store.setPhotoUri(avatar);
+  // Guard like setDisplayName above: only overwrite the locally-persisted photo
+  // when the remote actually has one. Calling setPhotoUri(null) unconditionally
+  // wiped a photo the user had just set on this device whenever profiles.avatar_url
+  // was null (e.g. the earlier persist write didn't land) — the "I added a profile
+  // photo and it vanished on next launch" bug. A null remote means "no opinion",
+  // not "clear it".
+  if (avatar) store.setPhotoUri(avatar);
 }
 
 // ─────────────────────────────────────────────────────────────────────
