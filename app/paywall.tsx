@@ -122,16 +122,22 @@ export default function PaywallScreen() {
     const freshPkg = selectedPlan === 'yearly' ? yearlyPackage : monthlyPackage;
     if (freshPkg) {
       track(EVENTS.PRO_PURCHASE_STARTED, { plan: selectedPlan });
-      const success = await buy(freshPkg);
-      if (success) {
+      const result = await buy(freshPkg);
+      if (result.outcome === 'purchased') {
         track(EVENTS.PRO_PURCHASE_COMPLETED, { plan: selectedPlan });
         if (returnTo) router.replace(returnTo as any);
         else router.back();
+      } else if (result.outcome === 'cancelled') {
+        // User backed out of the StoreKit sheet — a choice, not a failure.
+        track(EVENTS.PRO_PURCHASE_CANCELLED, { plan: selectedPlan });
       } else {
-        // buy() collapses user-cancel and real StoreKit errors into false.
-        // TODO: port the structured BuyResult split from pour-picks PR #5 to
-        // distinguish cancelled vs failed(code) here too.
-        track(EVENTS.PRO_PURCHASE_FAILED, { plan: selectedPlan, reason: 'cancelled_or_failed' });
+        // Genuine problem: 'error' (StoreKit/RC error, code preserved) or
+        // 'not_entitled' (returned without an active entitlement).
+        track(EVENTS.PRO_PURCHASE_FAILED, {
+          plan: selectedPlan,
+          reason: result.outcome,
+          ...(result.outcome === 'error' ? { code: result.code, message: result.message } : {}),
+        });
       }
     } else {
       track(EVENTS.PRO_PURCHASE_FAILED, { plan: selectedPlan, reason: 'no_package' });

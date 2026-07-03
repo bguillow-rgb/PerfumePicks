@@ -12,6 +12,17 @@ import {
 } from '@/src/lib/revenuecat';
 import { useProStore } from '@/src/stores/useProStore';
 
+/**
+ * Structured purchase outcome so callers can distinguish a user cancel from a
+ * real StoreKit failure — previously all non-success paths collapsed to `false`,
+ * which made pro_purchase_failed un-actionable. Ported from pour-picks PR #5.
+ */
+export type BuyResult =
+  | { outcome: 'purchased' }
+  | { outcome: 'cancelled' }
+  | { outcome: 'not_entitled' }
+  | { outcome: 'error'; code?: string; message?: string };
+
 export function useRevenueCat() {
   const [offering, setOffering] = useState<PurchasesOffering | null>(null);
   const [loading, setLoading] = useState(true);
@@ -59,22 +70,24 @@ export function useRevenueCat() {
     (p) => p.packageType === 'ANNUAL' || p.product.identifier.includes('yearly')
   ) ?? null;
 
-  const buy = useCallback(async (pkg: PurchasesPackage) => {
+  const buy = useCallback(async (pkg: PurchasesPackage): Promise<BuyResult> => {
     setPurchasing(true);
     try {
       const { isPro } = await purchasePackage(pkg);
       if (isPro) {
         activate();
-        return true;
+        return { outcome: 'purchased' };
       }
-      return false;
+      // Purchase returned without throwing but no active entitlement —
+      // e.g. a pending/deferred (Ask to Buy) transaction.
+      return { outcome: 'not_entitled' };
     } catch (e: any) {
       if (e.userCancelled) {
-        // User cancelled — not an error
-        return false;
+        // User cancelled — a choice, not an error.
+        return { outcome: 'cancelled' };
       }
       Alert.alert('Purchase Error', e?.message ?? 'Something went wrong');
-      return false;
+      return { outcome: 'error', code: e?.readableErrorCode ?? e?.code, message: e?.message };
     } finally {
       setPurchasing(false);
     }

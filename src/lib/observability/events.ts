@@ -80,7 +80,8 @@ export const EVENTS = {
   PAYWALL_VIEWED:         'paywall_viewed',
   PRO_PURCHASE_STARTED:   'pro_purchase_started',
   PRO_PURCHASE_COMPLETED: 'pro_purchase_completed',
-  PRO_PURCHASE_FAILED:    'pro_purchase_failed',
+  PRO_PURCHASE_CANCELLED: 'pro_purchase_cancelled', // user backed out of the StoreKit sheet (not a failure)
+  PRO_PURCHASE_FAILED:    'pro_purchase_failed',     // reason: 'not_entitled'|'error'|'no_package', + code/message when known
   PRO_RESTORE_STARTED:    'pro_restore_started',
   PRO_RESTORE_COMPLETED:  'pro_restore_completed',
 
