@@ -10,6 +10,7 @@ import { Button } from '@/src/components/ui/Button';
 import { COLORS, SPACING, RADIUS } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
 import { useRevenueCat } from '@/src/hooks/useRevenueCat';
+import { track, EVENTS } from '@/src/lib/observability';
 
 type Plan = 'monthly' | 'yearly';
 
@@ -80,6 +81,14 @@ export default function PaywallScreen() {
     })();
   }, []);
 
+  // Fire PAYWALL_VIEWED once per mount. Previously the entire monetization
+  // funnel was uninstrumented (0 call sites), so paywall_viewed read 0 since
+  // launch even though the screen is reachable from 6+ entry points.
+  useEffect(() => {
+    track(EVENTS.PAYWALL_VIEWED, { initial_plan: selectedPlan, return_to: returnTo ?? null });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Locked launch pricing for Perfume Picks: $2.99/mo, $24.99/yr (7-day
   // free trial). These fallbacks must match the App Store Connect product
   // prices so the paywall and Apple purchase sheet never show different
@@ -112,12 +121,20 @@ export default function PaywallScreen() {
     }
     const freshPkg = selectedPlan === 'yearly' ? yearlyPackage : monthlyPackage;
     if (freshPkg) {
+      track(EVENTS.PRO_PURCHASE_STARTED, { plan: selectedPlan });
       const success = await buy(freshPkg);
       if (success) {
+        track(EVENTS.PRO_PURCHASE_COMPLETED, { plan: selectedPlan });
         if (returnTo) router.replace(returnTo as any);
         else router.back();
+      } else {
+        // buy() collapses user-cancel and real StoreKit errors into false.
+        // TODO: port the structured BuyResult split from pour-picks PR #5 to
+        // distinguish cancelled vs failed(code) here too.
+        track(EVENTS.PRO_PURCHASE_FAILED, { plan: selectedPlan, reason: 'cancelled_or_failed' });
       }
     } else {
+      track(EVENTS.PRO_PURCHASE_FAILED, { plan: selectedPlan, reason: 'no_package' });
       Alert.alert('Unavailable', 'Subscriptions are not available right now. Check your connection and try again.');
     }
   }
@@ -128,7 +145,9 @@ export default function PaywallScreen() {
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
     if (yearlyPackage || monthlyPackage) {
+      track(EVENTS.PRO_RESTORE_STARTED, {});
       const success = await restore();
+      track(EVENTS.PRO_RESTORE_COMPLETED, { result: success ? 'success' : 'no_purchase_found' });
       if (success) {
         if (returnTo) router.replace(returnTo as any);
         else router.back();
