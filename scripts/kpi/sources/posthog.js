@@ -47,7 +47,16 @@ const YESTERDAY = `toDate(now()) - interval 1 day`;
 
 // App namespace filter — ensures queries are scoped to Perfume Picks only
 // in case the PostHog project is ever shared with other Picks apps.
-const NS = `properties.$app_namespace = '${APP_NAMESPACE}'`;
+// Also excludes Bob's own usage from every metric: his identified person
+// (by email) and his device's anonymous person (events like affiliate taps
+// fire before $identify, so an email filter alone would miss them).
+const OWNER_EMAIL = 'bobguillow@icloud.com';
+const OWNER_ANON_PERSON_IDS = ['cae5b81a-558f-5ac0-a574-5febf21f6914'];
+const OWNER_SUPABASE_ID = 'f4810587-d519-49d3-8121-d9fdd8239159';
+const NS = `properties.$app_namespace = '${APP_NAMESPACE}'
+  AND coalesce(person.properties.email, '') != '${OWNER_EMAIL}'
+  AND distinct_id != '${OWNER_SUPABASE_ID}'
+  AND toString(person_id) NOT IN (${OWNER_ANON_PERSON_IDS.map((id) => `'${id}'`).join(', ')})`;
 
 // ── Activity (DAU/WAU/MAU) ────────────────────────────────────────────
 async function fetchActivity(env) {
