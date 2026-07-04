@@ -5,9 +5,9 @@
 // the CJ publisher account is shared across the Picks family (Percolate, ITIN,
 // etc. post into the same account).
 //
-// Clicks are NOT in CJ's commission API — those come from PostHog
-// (affiliate_outbound_clicked). CJ is the source of truth for the money side:
-// sales that attributed and commission earned.
+// Clicks are NOT in CJ's commission API — those come from the durable Supabase
+// affiliate_clicks ledger (see supabase.js fetchAffiliateClicks). CJ is the
+// source of truth for the money side: sales that attributed and commission earned.
 //
 // Uses the CJ Commission Detail GraphQL API (developers.cj.com):
 //   POST https://commissions.api.cj.com/query
@@ -15,7 +15,7 @@
 //
 // Env (all optional; module stays dark until the token is set):
 //   CJ_PERSONAL_ACCESS_TOKEN  — generate at developers.cj.com → Authentication
-//   CJ_PUBLISHER_CID          — CJ publisher/company id (default 7640030)
+//   CJ_PUBLISHER_CID          — CJ publisher/company id (default 7966973)
 //   CJ_WEBSITE_ID             — this app's CJ website id (default 101759456)
 
 'use strict';
@@ -27,7 +27,7 @@ const WINDOW_DAYS = 30;
 function loadEnv() {
   return {
     token: process.env.CJ_PERSONAL_ACCESS_TOKEN || '',
-    cid: process.env.CJ_PUBLISHER_CID || '7640030',
+    cid: process.env.CJ_PUBLISHER_CID || '7966973',
     websiteId: process.env.CJ_WEBSITE_ID || '101759456',
   };
 }
@@ -129,7 +129,7 @@ async function fetchAll(env, now = new Date()) {
     payloadComplete: block?.payloadComplete !== false,
     note:
       mine.length === 0
-        ? 'No attributed sales yet in the last 30d — clicks tracking (see PostHog buy-link taps), waiting on first purchase.'
+        ? 'No attributed sales yet in the last 30d — clicks tracking (see affiliate_clicks ledger), waiting on first purchase.'
         : undefined,
   };
 }
