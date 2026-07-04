@@ -218,10 +218,11 @@ export default function RootLayout() {
   useEffect(() => {
     // Demo mode (no Supabase) — skip the whole auth subscription path.
     if (!isSupabaseConfigured) {
-      setAuthLoading(false);
-      // Resolve the shared auth store to a signed-out state so getCurrentUser()
-      // returns null cleanly (rather than staying stuck in loading).
+      // Same ordering as onSession below: resolve the shared auth store to a
+      // signed-out state BEFORE flipping authLoading, so the store is warm the
+      // moment screens are allowed to render.
       useAuthStore.getState().setSession(null);
+      setAuthLoading(false);
       return;
     }
     const activate = useProStore.getState().activate;
@@ -243,6 +244,10 @@ export default function RootLayout() {
       setSession(sess);
       // Publish to the shared auth store so every screen reads the current user
       // from memory instead of making its own supabase.auth.getUser() call.
+      // ORDER MATTERS: set the store BEFORE flipping authLoading false. Screens
+      // are gated on authLoading (useProtectedRoute), and they read
+      // getCurrentUser() synchronously once rendered — so the store must be warm
+      // by the time authLoading allows a render, or a cold read returns null.
       useAuthStore.getState().setSession(sess);
       setAuthLoading(false);
       if (sess?.user?.id) {
