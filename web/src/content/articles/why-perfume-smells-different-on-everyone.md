@@ -13,10 +13,10 @@ quickAnswer: "Perfume smells different on every person because fragrance molecul
 publishedAt: "2026-06-23"
 author: "Perfume Picks"
 relatedSlugs:
+  - "perfume-for-skin-type"
   - "how-long-does-perfume-last"
   - "how-to-layer-perfumes"
   - "how-to-test-perfume-before-buying"
-  - "how-weather-affects-perfume"
 faqs:
   - q: "Why does a perfume smell amazing on my friend but not on me?"
     a: "Their skin chemistry, oil level, pH, body temperature, and microbiome, creates a different chemical environment for the same fragrance molecules. A scent that blooms on oily, warm skin may read flat or sharp on dry, cooler skin. The fix is testing on your own wrist before buying, not borrowing impressions from someone else's skin."
