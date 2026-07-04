@@ -17,6 +17,7 @@ import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 import { DiscoverFilterSheet, type DiscoverFilters, EMPTY_FILTERS, filtersActive } from '@/src/components/sheets/DiscoverFilterSheet';
 import { EmptyState } from '@/src/components/ui/EmptyState';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { getCurrentUser } from '@/src/stores/useAuthStore';
 
 /** Cap celebrity names to 2 + "& N more" to prevent subtitle overflow. */
 function capNames(names: string[]): string {
@@ -275,7 +276,7 @@ export default function DiscoverScreen() {
   useEffect(() => {
     if (!isSupabaseConfigured) return;
     (async () => {
-      const { data: { user } } = await supabase.auth.getUser();
+      const user = getCurrentUser();
       if (!user) return;
       const { data } = await supabase.rpc('get_collab_recs', { target_user: user.id, rec_limit: 10 });
       if (!data?.length) return;

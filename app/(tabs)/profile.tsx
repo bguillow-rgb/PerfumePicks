@@ -18,7 +18,7 @@ import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
 import { pickAndSetProfilePhoto, clearProfilePhoto, resolveAvatarUri } from '@/src/lib/profilePhoto';
 import { restorePurchases, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
-import type { User } from '@supabase/supabase-js';
+import { useAuthStore, getCurrentUser } from '@/src/stores/useAuthStore';
 import { useNotificationStore } from '@/src/stores/useNotificationStore';
 import { FeedbackSheet } from '@/src/components/feedback/FeedbackSheet';
 import {
@@ -49,14 +49,10 @@ export default function ProfileScreen() {
   const hasDna = useTasteProfileStore((s) => !!s.dna);
 
   const [feedbackOpen, setFeedbackOpen] = useState(false);
-  const [authUser, setAuthUser] = useState<User | null>(null);
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => setAuthUser(data.user));
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      setAuthUser(session?.user ?? null);
-    });
-    return () => sub.subscription.unsubscribe();
-  }, []);
+  // Read the current user from the shared auth store — no per-screen getUser()
+  // round-trip, no duplicate onAuthStateChange subscription. Reactive: signs
+  // in/out flip this automatically via the single _layout subscription.
+  const authUser = useAuthStore((s) => s.user);
 
   const isGuest = !authUser || authUser.is_anonymous;
   const userEmail = authUser?.email ?? null;
@@ -373,7 +369,7 @@ function BadgesSection() {
   useEffect(() => {
     if (!isSupabaseConfigured) return;
     (async () => {
-      const { data: { user } } = await supabase.auth.getUser();
+      const user = getCurrentUser();
       if (!user) return;
       const { data } = await supabase.from('user_badges').select('badge_key, awarded_at').eq('user_id', user.id);
       if (data) setBadges(data);

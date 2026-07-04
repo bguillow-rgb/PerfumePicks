@@ -3,13 +3,14 @@ import * as ImageManipulator from 'expo-image-manipulator';
 import * as FileSystem from 'expo-file-system/legacy';
 import { useProfileStore } from '@/src/stores/useProfileStore';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { resolveCurrentUser } from '@/src/stores/useAuthStore';
 
 /** Persist the avatar reference to the user's profiles row so it re-hydrates
  *  after sign-out/sign-in on this device. (Local-filename refs only resolve on
  *  the device that picked the photo; remote http URLs would resolve anywhere.) */
 async function persistAvatarRef(ref: string | null): Promise<void> {
   if (!isSupabaseConfigured) return;
-  const { data: { user } } = await supabase.auth.getUser();
+  const user = await resolveCurrentUser();
   if (!user) return;
   const { error } = await supabase
     .from('profiles')

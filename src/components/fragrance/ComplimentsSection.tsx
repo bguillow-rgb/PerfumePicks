@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { COLORS, SPACING, TYPE, RADIUS } from '@/src/constants/theme';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { getCurrentUser } from '@/src/stores/useAuthStore';
 
 interface Compliment {
   id: string;
@@ -31,7 +32,7 @@ export function ComplimentsSection({ fragranceId, onHasData }: Props) {
 
   const load = useCallback(async () => {
     if (!isSupabaseConfigured) return;
-    const { data: { user } } = await supabase.auth.getUser();
+    const user = getCurrentUser();
     if (!user) return;
     const { data } = await supabase
       .from('compliments_log')
@@ -50,7 +51,7 @@ export function ComplimentsSection({ fragranceId, onHasData }: Props) {
 
   const handleAdd = async () => {
     setSaving(true);
-    const { data: { user } } = await supabase.auth.getUser();
+    const user = getCurrentUser();
     if (!user) { setSaving(false); return; }
 
     const { error } = await supabase.from('compliments_log').insert({

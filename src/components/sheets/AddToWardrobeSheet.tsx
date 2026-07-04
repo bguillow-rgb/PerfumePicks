@@ -16,7 +16,7 @@ import {
   type WardrobeStatus, type UnitType, type WardrobeItem,
 } from '@/src/stores/useWardrobeStore';
 import { useProfileStore } from '@/src/stores/useProfileStore';
-import { supabase } from '@/lib/supabase';
+import { getCurrentUser } from '@/src/stores/useAuthStore';
 import { Alert } from '@/src/components/ui/StyledAlert';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 
@@ -137,8 +137,7 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
     if (!hasSeenSyncUpsell && wardrobeCount === 0) {
       markSyncUpsellSeen();
       try {
-        const { data } = await supabase.auth.getUser();
-        if (data.user?.is_anonymous) {
+        if (getCurrentUser()?.is_anonymous) {
           Alert.alert(
             'Back Up Your Wardrobe',
             'Your collection is only on this device right now. Sign in to save it to the cloud.',

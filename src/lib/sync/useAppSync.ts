@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { resolveCurrentUser } from '@/src/stores/useAuthStore';
 import { useWardrobeStore, setWardrobeUserId } from '@/src/stores/useWardrobeStore';
 import { useWearLogStore, setWearLogUserId } from '@/src/stores/useWearLogStore';
 import { useSwipeStore, setSwipeUserId } from '@/src/stores/useSwipeStore';
@@ -163,7 +164,7 @@ export async function touchLoginStreak(): Promise<number | null> {
   if (!isSupabaseConfigured) return null;
   // Skip when there's no session (demo mode / pre-login) — auth.uid() would be
   // null and the RPC would raise. Anonymous guests DO have a session and count.
-  const { data: { user } } = await supabase.auth.getUser();
+  const user = await resolveCurrentUser();
   if (!user) return null;
   const localDate = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD, local tz
   const { data, error } = await supabase.rpc('touch_login_streak', { p_local_date: localDate });
@@ -184,7 +185,7 @@ async function hydrateProfile(userId: string) {
     .eq('id', userId)
     .maybeSingle();
 
-  const { data: { user } } = await supabase.auth.getUser();
+  const user = await resolveCurrentUser();
   const meta = (user?.user_metadata ?? {}) as Record<string, any>;
 
   const name   = data?.display_name || meta.full_name || meta.name || '';
@@ -407,7 +408,7 @@ export async function syncTasteProfile(userId: string | null): Promise<DerivedTa
 export async function recomputeTasteProfile(): Promise<DerivedTasteProfile> {
   let userId: string | null = null;
   if (isSupabaseConfigured) {
-    const { data: { user } } = await supabase.auth.getUser();
+    const user = await resolveCurrentUser();
     userId = user?.id ?? null;
   }
   return syncTasteProfile(userId);

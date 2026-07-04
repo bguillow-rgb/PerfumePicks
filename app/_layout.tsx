@@ -39,6 +39,7 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { Session } from '@supabase/supabase-js';
 import { initRevenueCat, identifyUser, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { useProStore } from '@/src/stores/useProStore';
+import { useAuthStore } from '@/src/stores/useAuthStore';
 import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
 import { useAppSync } from '@/src/lib/sync/useAppSync';
 import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
@@ -218,6 +219,9 @@ export default function RootLayout() {
     // Demo mode (no Supabase) — skip the whole auth subscription path.
     if (!isSupabaseConfigured) {
       setAuthLoading(false);
+      // Resolve the shared auth store to a signed-out state so getCurrentUser()
+      // returns null cleanly (rather than staying stuck in loading).
+      useAuthStore.getState().setSession(null);
       return;
     }
     const activate = useProStore.getState().activate;
@@ -237,6 +241,9 @@ export default function RootLayout() {
 
     const onSession = (sess: Session | null) => {
       setSession(sess);
+      // Publish to the shared auth store so every screen reads the current user
+      // from memory instead of making its own supabase.auth.getUser() call.
+      useAuthStore.getState().setSession(sess);
       setAuthLoading(false);
       if (sess?.user?.id) {
         syncRevenueCat(sess.user.id);

@@ -9,7 +9,8 @@ import * as Application from 'expo-application';
 import Constants from 'expo-constants';
 import { Platform } from 'react-native';
 
-import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { isSupabaseConfigured } from '@/lib/supabase';
+import { resolveCurrentUser } from '@/src/stores/useAuthStore';
 import { useProStore } from '@/src/stores/useProStore';
 import { feedbackHub } from './feedbackHub';
 
@@ -46,8 +47,8 @@ async function gatherContext(): Promise<Record<string, unknown>> {
   }
   try {
     if (isSupabaseConfigured) {
-      const { data } = await supabase.auth.getUser();
-      ctx.user_id = data.user?.id ?? null;
+      const user = await resolveCurrentUser();
+      ctx.user_id = user?.id ?? null;
     }
   } catch {
     /* ignore */

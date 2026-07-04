@@ -4,6 +4,7 @@
  */
 
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { resolveCurrentUser } from '@/src/stores/useAuthStore';
 import { Alert } from '@/src/components/ui/StyledAlert';
 
 const STREAK_THRESHOLDS = [
@@ -21,7 +22,7 @@ export async function checkAndAwardBadges(): Promise<string | null> {
   if (!isSupabaseConfigured) return null;
 
   try {
-    const { data: { user } } = await supabase.auth.getUser();
+    const user = await resolveCurrentUser();
     if (!user) return null;
 
     // Get current streak + existing badges
