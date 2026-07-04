@@ -254,7 +254,11 @@ function parseRow(row: FeedRow): ParsedProduct | null {
     price_cents:   parsePriceCents(row.PRICE, row.SALE_PRICE),
     image_url:     row.IMAGE_LINK?.trim() || '',
     retailer_url:  rewriteCjUrl(row.LINK.trim()),  // rewrite to our publisher ID
-    in_stock:      (row.AVAILABILITY || '').toLowerCase() === 'in stock',
+    // The CJ/Google Merchant feed uses the underscore token "in_stock" (also
+    // "out_of_stock" / "preorder"), NOT "in stock" with a space. The old
+    // space-comparison matched 0 rows and flagged every FragranceShop link
+    // out-of-stock. Match the real token, tolerant of separator/case.
+    in_stock:      /^in[ _]?stock$/i.test((row.AVAILABILITY || '').trim()),
     description:   row.DESCRIPTION?.trim() || '',
     external_id:   row.ID?.trim() || '',
   };
