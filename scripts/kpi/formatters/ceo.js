@@ -52,7 +52,7 @@ function deltaPct(today, yest) {
   return `${sign}${Math.round(d * 100)}%`;
 }
 
-function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], sources, now = new Date() }) {
+function render({ supa, posthog, rc, sentry, asc, adSpend, cj, healthAlerts = [], sources, now = new Date() }) {
   const lines = [];
   const { PRE_LAUNCH } = require('../schema');
 
@@ -150,7 +150,14 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   if (supa?.wearLogs) {
     lines.push(`| Wear logs (journal) | ${supa.wearLogs.today} | ${supa.wearLogs.yesterday} | ${deltaPct(supa.wearLogs.today, supa.wearLogs.yesterday)} | ${supa.wearLogs.sinceLaunch} |`);
   }
-  if (posthog?.affiliate) {
+  // Buy-link taps: prefer the durable Supabase ledger (source of truth since
+  // 2026-07-04); fall back to PostHog only if the ledger has no data yet.
+  if (supa?.affiliateClicks && !supa.affiliateClicks.error && supa.affiliateClicks.sinceLaunch > 0) {
+    const a = supa.affiliateClicks;
+    const split = (a.byRetailer || []).map((r) => `${r.retailer} ${r.clicks}`).join(' · ');
+    lines.push(`| Buy-link taps (ledger) | ${a.today} | — | — | **${a.sinceLaunch}** |`);
+    if (split) lines.push(`| ↳ by retailer | ${split} | | | ${a.people} ppl |`);
+  } else if (posthog?.affiliate) {
     const a = posthog.affiliate;
     lines.push(`| Buy-link taps | ${a.today} | ${a.yesterday} | ${deltaPct(a.today, a.yesterday)} | **${a.sinceLaunch}** |`);
   }
@@ -299,6 +306,24 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   if (asc?.lifetimeProceeds != null) {
     lines.push(`| Lifetime Apple proceeds | **${fmtUSD(asc.lifetimeProceeds)}** | production-only ground truth |`);
   }
+  // Affiliate revenue (CJ) — this app only, isolated by CJ website id. Clicks
+  // come from PostHog (buy-link taps above); CJ is the money side.
+  if (cj?.configured && !cj.error) {
+    lines.push(`| Affiliate sales (${cj.windowDays}d) | **${n(cj.actions)}** | CJ · this app (site ${cj.websiteId}) |`);
+    lines.push(`| Affiliate commission (${cj.windowDays}d) | **${fmtUSD(cj.commissionUsd)}** | CJ pending+locked |`);
+    const advs = Object.entries(cj.byAdvertiser || {});
+    if (advs.length) {
+      const split = advs
+        .sort((a, b) => b[1].commissionUsd - a[1].commissionUsd)
+        .map(([name, a]) => `${name} ${fmtUSD(a.commissionUsd)}`)
+        .join(' · ');
+      lines.push(`| ↳ by retailer | ${split} | |`);
+    } else if (cj.note) {
+      lines.push(`| Affiliate | $0 so far | ${cj.note} |`);
+    }
+  } else if (cj && !cj.configured) {
+    lines.push(`| CJ affiliate | not configured | Add CJ_PERSONAL_ACCESS_TOKEN to .env.local to track affiliate revenue |`);
+  }
   lines.push('');
 
   // ── 9. APP STORE STATUS & REVIEWS ────────────────────────────────
@@ -376,17 +401,33 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   }
 
   // ── 11.5 BUY-LINK CLICKS (purchase intent) ────────────────────────
-  if (posthog?.affiliate) {
+  // Source of truth is the durable Supabase ledger (affiliate_clicks) since
+  // 2026-07-04. PostHog is a secondary signal and was wiped 2026-07-03, so it's
+  // only a fallback until the ledger accrues data on installs taking the OTA.
+  const ledger = supa?.affiliateClicks && !supa.affiliateClicks.error && supa.affiliateClicks.sinceLaunch > 0
+    ? supa.affiliateClicks
+    : null;
+  if (ledger) {
+    lines.push('## 🛒 BUY-LINK CLICKS (since launch)');
+    lines.push('');
+    lines.push(`- **Buy taps:** today ${ledger.today} · last 7d ${ledger.last7d} · **since launch ${ledger.sinceLaunch}** (${ledger.people} distinct people)`);
+    if (ledger.byRetailer.length > 0) {
+      lines.push(`- **By retailer:** ${ledger.byRetailer.map((r) => `${r.retailer} ${r.clicks}`).join(' · ')}`);
+    }
+    lines.push('');
+    lines.push('> _Source of truth: Supabase `affiliate_clicks` ledger (app-owned, wipe-proof). Commission lands only if the retailer confirms the sale via CJ._');
+    lines.push('');
+  } else if (posthog?.affiliate) {
     const a = posthog.affiliate;
     lines.push('## 🛒 BUY-LINK CLICKS (since launch)');
     lines.push('');
-    lines.push(`- **Buy taps:** today ${a.today} · yest ${a.yesterday} · **since launch ${a.sinceLaunch}** (${a.people} distinct people)`);
+    lines.push(`- **Buy taps (PostHog fallback):** today ${a.today} · yest ${a.yesterday} · **since launch ${a.sinceLaunch}** (${a.people} distinct people)`);
     if (a.byRetailer.length > 0) {
       lines.push(`- **By retailer:** ${a.byRetailer.map((r) => `${r.retailer} ${r.taps}`).join(' · ')}`);
     }
     lines.push(`- **Failed opens:** ${a.failedSinceLaunch}${a.failedSinceLaunch > 0 ? ' ⚠' : ''}`);
     lines.push('');
-    lines.push('> _Outbound retailer taps = purchase intent. PostHog is source of truth (not written to Supabase). Commission lands only if the retailer confirms the sale via CJ._');
+    lines.push('> _Supabase ledger has no rows yet (waiting on installs to take the 2026-07-04 OTA). Falling back to PostHog, which was wiped 2026-07-03 — treat as incomplete._');
     lines.push('');
   }
 
