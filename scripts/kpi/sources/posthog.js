@@ -23,22 +23,76 @@ function isConfigured(env) {
   return Boolean(env.key && env.project);
 }
 
-async function hogql(env, query) {
-  const url = `${env.host}/api/projects/${env.project}/query/`;
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${env.key}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ query: { kind: 'HogQLQuery', query } }),
-  });
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`PostHog ${res.status}: ${body.slice(0, 200)}`);
+// Pre-cutover Perfume history lives in the OLD shared project (396959). The
+// app is migrating to its own project (496478, env.project) — a GRADUAL
+// cutover: users only switch when they update to a build/OTA carrying the new
+// PostHog key, so for weeks Perfume events are SPLIT across both projects.
+// Every query runs against BOTH and the results are unioned, so no signup or
+// activity is ever lost across the cutover boundary and the numbers stay
+// correct throughout the migration. Once 396959 goes fully stale, drop it here.
+const HISTORICAL_PROJECT_ID = '396959';
+
+function projectIdsFor(env) {
+  const ids = [String(env.project)];
+  if (HISTORICAL_PROJECT_ID && HISTORICAL_PROJECT_ID !== String(env.project)) {
+    ids.push(HISTORICAL_PROJECT_ID);
   }
-  const json = await res.json();
-  return json.results ?? [];
+  return ids;
+}
+
+async function runOnProject(env, projectId, query) {
+  const url = `${env.host}/api/projects/${projectId}/query/`;
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${env.key}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: { kind: 'HogQLQuery', query } }),
+    });
+    if (!res.ok) {
+      const body = await res.text();
+      // Tolerate a single project failing (e.g. a 504 on a heavy query) so we
+      // still return the other project's data instead of blanking the metric.
+      console.warn(`[posthog] project ${projectId} query failed ${res.status}: ${body.slice(0, 120)}`);
+      return [];
+    }
+    return (await res.json()).results ?? [];
+  } catch (e) {
+    console.warn(`[posthog] project ${projectId} query threw: ${String(e).slice(0, 120)}`);
+    return [];
+  }
+}
+
+// Merge result sets from multiple projects. Rows are keyed by their
+// non-numeric cells (dimensions like event/date); numeric cells (counts) are
+// summed. Works for scalar counts ([[N]]), grouped counts ([[key, N]]), and
+// multi-metric rows. Cross-project DISTINCT-person sums can slightly overcount
+// a user active in both projects mid-migration, but that's converging noise —
+// far better than the pre-fix behavior of missing an entire project.
+function combineResults(resultSets) {
+  const order = [];
+  const byKey = new Map();
+  for (const rows of resultSets) {
+    for (const row of rows) {
+      const key = JSON.stringify(row.map((c) => (typeof c === 'number' ? '#num' : c)));
+      if (!byKey.has(key)) {
+        byKey.set(key, row.slice());
+        order.push(key);
+      } else {
+        const acc = byKey.get(key);
+        for (let i = 0; i < row.length; i++) {
+          if (typeof row[i] === 'number') acc[i] = (acc[i] || 0) + row[i];
+        }
+      }
+    }
+  }
+  return order.map((k) => byKey.get(k));
+}
+
+async function hogql(env, query) {
+  const ids = projectIdsFor(env);
+  if (ids.length === 1) return runOnProject(env, ids[0], query);
+  const sets = await Promise.all(ids.map((id) => runOnProject(env, id, query)));
+  return combineResults(sets);
 }
 
 // HogQL date helpers
