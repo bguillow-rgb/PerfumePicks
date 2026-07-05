@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-build-a-fragrance-wardrobe"
   - "how-to-rotate-your-perfume-collection"
   - "how-to-store-perfume-collection"
-  - "how-to-decant-perfume"
+  - "niche-vs-designer-perfume"
 faqs:
   - q: "Is there a 'right' number of perfumes to own?"
     a: "No universal number exists. Fragrance industry data suggests average collectors now own 6-10 bottles, up from roughly 2.5 before 2020. The real benchmark is whether you're regularly wearing and enjoying what you own, not hitting a specific count."
