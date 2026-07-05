@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { View, Text, StyleSheet, Pressable, Share } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
@@ -21,6 +21,7 @@ import { DecantingReveal } from '@/src/components/dna/DecantingReveal';
 import { SkiaBoundary } from '@/src/components/dna/SkiaBoundary';
 import { useDnaMonetizationEnabled } from '@/src/features/dna/killSwitch';
 import { track, EVENTS } from '@/src/lib/observability';
+import { inviteFriends } from '@/src/lib/invite';
 
 /** Below this confidence we soften the identity line (too few/weak signals). */
 const LOW_CONFIDENCE = 0.35;
@@ -110,13 +111,9 @@ export function DnaProfileContent({
   const onShare = async () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     track(EVENTS.DNA_REVEAL_SHARED, { archetype: dna.archetype.primary });
-    try {
-      await Share.share({
-        message: `My Fragrance DNA is "${copy.name}". ${identity} (via Perfume Picks)`,
-      });
-    } catch {
-      // user dismissed the share sheet — nothing to do.
-    }
+    // Invite loop: share the archetype as the hook + a link friends can follow
+    // to discover their own DNA (fires INVITE_SHARED + attribution referrer).
+    await inviteFriends(dna.archetype.primary, 'dna_reveal');
   };
 
   const hasMoreMatches = !!hero && !hero.fallbackUsed && hero.matches.length > 0;

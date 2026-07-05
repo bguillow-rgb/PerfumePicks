@@ -45,6 +45,7 @@ import { useAppSync } from '@/src/lib/sync/useAppSync';
 import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useBadgeCheck } from '@/src/lib/useBadgeCheck';
+import { useReferralCapture } from '@/src/lib/referral';
 import {
   initAnalytics,
   initErrorReporting,
@@ -302,6 +303,7 @@ export default function RootLayout() {
   useProtectedRoute(session, authLoading || showSplash);
   useAppSync(session?.user?.id ?? null, !!session?.user?.is_anonymous);
   useBadgeCheck();
+  useReferralCapture();
 
   if (!fontsLoaded) return null;
 

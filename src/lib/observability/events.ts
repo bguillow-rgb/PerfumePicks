@@ -99,6 +99,14 @@ export const EVENTS = {
   FEEDBACK_OPENED:    'feedback_opened',
   FEEDBACK_SUBMITTED: 'feedback_submitted',
   FEEDBACK_FAILED:    'feedback_failed',
+
+  // ─── Invite / referral loop (Feature A — DNA-as-hook viral share) ─────
+  // Fired when the user opens the native share sheet with their DNA invite.
+  INVITE_SHARED:      'invite_shared',      // props: { archetype, source }
+  // A new install opened via an invite link (r=<inviterId> captured).
+  INVITE_LINK_OPENED: 'invite_link_opened', // props: { archetype, has_referrer }
+  // The captured referrer was written to the referrals table after sign-in.
+  INVITE_ATTRIBUTED:  'invite_attributed',  // props: { archetype }
 } as const;
 
 export type EventName = typeof EVENTS[keyof typeof EVENTS];

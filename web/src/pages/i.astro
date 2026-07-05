@@ -1,0 +1,91 @@
+---
+// /i — Feature A invite landing page.
+//
+// Shared as https://perfumepicks.app/i?a=<archetype>&r=<inviterId>. The page
+// reads the archetype (client-side, since this is a static GitHub-Pages build)
+// to render the "your friend is The Seducer" hook, and routes to the App Store.
+//
+// Once iOS universal links are live (associatedDomains: applinks:perfumepicks.app
+// + the AASA file in public/.well-known/), an installed device opens the app
+// straight into this path with r/a intact — no JS needed; iOS intercepts before
+// this page ever loads. So this page only has to serve the not-installed case.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../consts';
+---
+
+<BaseLayout
+  title="Find your Fragrance DNA"
+  description="A friend shared their Fragrance DNA. Discover yours free on Perfume Picks."
+>
+  <section class="invite">
+    <p class="eyebrow">A friend invited you to</p>
+    <h1 class="brand">Perfume&nbsp;Picks</h1>
+    <p class="hook" id="hook">Discover your Fragrance&nbsp;DNA.</p>
+    <a class="cta" id="cta" href={SITE.appStoreUrl} rel="nofollow">Find your Fragrance DNA&nbsp;→</a>
+    <p class="fine">Free on the App&nbsp;Store · answer a few scents, get your archetype.</p>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var NAMES = {
+        the_executive: 'The Executive', the_seducer: 'The Seducer',
+        the_connoisseur: 'The Connoisseur', the_signature_wearer: 'The Signature Wearer',
+        the_purist: 'The Purist', the_showstopper: 'The Showstopper',
+        the_smart_shopper: 'The Smart Shopper', the_romantic: 'The Romantic',
+        the_explorer: 'The Explorer', the_classicist: 'The Classicist',
+        the_rebel: 'The Rebel', the_crowd_pleaser: 'The Crowd-Pleaser'
+      };
+      try {
+        var a = new URLSearchParams(window.location.search).get('a');
+        var name = a && NAMES[a];
+        if (name) {
+          document.getElementById('hook').innerHTML =
+            "Your friend's Fragrance DNA is <strong>" + name + "</strong>.<br>Find out yours.";
+        }
+      } catch (e) { /* keep the default hook */ }
+    })();
+  </script>
+
+  <style>
+    .invite {
+      max-width: 34rem;
+      margin: 0 auto;
+      padding: clamp(2rem, 8vw, 5rem) 1.25rem;
+      text-align: center;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.8rem;
+      color: var(--muted, #7A6A5C);
+      margin: 0 0 0.5rem;
+    }
+    .brand {
+      font-size: clamp(2.25rem, 9vw, 3.25rem);
+      margin: 0 0 1rem;
+      color: var(--accent, #B8924B);
+    }
+    .hook {
+      font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+      line-height: 1.4;
+      color: var(--text, #2A1F18);
+      margin: 0 0 2rem;
+    }
+    .cta {
+      display: inline-block;
+      background: var(--accent, #B8924B);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      font-size: 1.05rem;
+    }
+    .cta:hover { filter: brightness(1.05); }
+    .fine {
+      margin: 1rem 0 0;
+      font-size: 0.85rem;
+      color: var(--muted, #7A6A5C);
+    }
+  </style>
+</BaseLayout>
