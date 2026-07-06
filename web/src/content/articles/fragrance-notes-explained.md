@@ -16,7 +16,7 @@ relatedSlugs:
   - "does-perfume-expire"
   - "perfume-fragrance-families"
   - "best-office-perfumes"
-  - "how-long-does-perfume-last"
+  - "best-perfume-for-each-season"
 faqs:
   - q: "What is the difference between top notes, heart notes, and base notes?"
     a: "Top notes are the lightest, most volatile molecules -- the first thing you smell when you spray. Heart notes emerge after 20-30 minutes and define the perfume's character. Base notes are the heaviest, slowest-evaporating ingredients; they anchor the scent and are what you smell hours later on skin or fabric."

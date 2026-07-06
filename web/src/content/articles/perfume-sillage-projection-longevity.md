@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "perfume-fragrance-families"
   - "best-office-perfumes"
+  - "best-perfume-for-each-season"
   - "fragrance-notes-explained"
-  - "how-long-does-perfume-last"
 faqs:
   - q: "What is sillage in perfume?"
     a: "Sillage (pronounced \"see-YAZH\") is the scent trail a fragrance leaves behind as you move through a space, what people smell in a hallway or elevator after you've already gone. It comes from the French word for the wake left by a boat."
