@@ -30,6 +30,11 @@ export const EVENTS = {
   // Failure / degraded-path observability (M11 ship gate).
   DNA_FIRST_REC_EMPTY_POOL:    'first_rec_empty_pool',
   DNA_PERSIST_FAILED_QUEUED:    'persist_failed_queued',
+  // Fired ONCE when a queued row is given up on after MAX_SYNC_ATTEMPTS (dead-
+  // letter). Replaces the old behaviour where every retry re-fired
+  // persist_failed_queued (a 5,375-event storm during the 2026-06 schema-cache
+  // incident).
+  DNA_PERSIST_ABANDONED:        'persist_abandoned',
   // Living DNA recompute (M2 — unified pool + living archetype).
   DNA_RECOMPUTED:         'dna_recomputed',
   DNA_ARCHETYPE_CHANGED:  'dna_archetype_changed',
