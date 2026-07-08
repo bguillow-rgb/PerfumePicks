@@ -50,7 +50,15 @@ function loadEnv() {
   return {
     keyId: get('ASC_KEY_ID'),
     issuerId: get('ASC_ISSUER_ID'),
+    // Active vendor (Timberline Ventures LLC = 94462549). Perfume launched
+    // 2026-06-25, after the 94212511 → 94462549 entity migration, so all its
+    // sales are under the active vendor. historicalVendors is here for parity
+    // with Pour (harmless 404s for Perfume under the old vendor).
     vendorNumber: get('ASC_VENDOR_NUMBER'),
+    historicalVendors: (get('ASC_HISTORICAL_VENDOR_NUMBERS') || '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean),
     privateKey: (function () {
       if (process.env.ASC_PRIVATE_KEY) return process.env.ASC_PRIVATE_KEY;
       const p = get('ASC_PRIVATE_KEY_PATH');
@@ -151,7 +159,8 @@ function parseSalesTsv(tsv, appId, appSku) {
 // forces a clean re-fetch with the appId/appSku filter applied.
 const CACHE_PATH = path.join(
   process.env.HOME || '/tmp',
-  '.cache', 'perfume-picks', 'asc-daily-v2.json'
+  // v3: multi-vendor walk after the 94212511 → 94462549 entity migration.
+  '.cache', 'perfume-picks', 'asc-daily-v3.json'
 );
 
 const ACQSOURCES_CACHE_PATH = path.join(
@@ -174,21 +183,27 @@ function saveCache(cache) {
 }
 
 // ── Fetch a single daily report ───────────────────────────────────────
+// Walks the active vendor first, then any historical (pre-migration) vendors.
+// Each date's sales live under exactly one vendor, so the first hit wins.
 async function fetchDailyReport(env, jwt, date) {
-  const url = `https://api.appstoreconnect.apple.com/v1/salesReports?filter[frequency]=DAILY&filter[reportType]=SALES&filter[reportSubType]=SUMMARY&filter[reportDate]=${date}&filter[vendorNumber]=${env.vendorNumber}`;
-  const res = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${jwt}`,
-      Accept: 'application/a-gzip',
-    },
-  });
-  if (res.status === 404) return null;
-  if (!res.ok) {
-    throw new Error(`ASC ${res.status}: ${(await res.text()).slice(0, 200)}`);
+  const vendors = [env.vendorNumber, ...(env.historicalVendors || [])].filter(Boolean);
+  for (const vendor of vendors) {
+    const url = `https://api.appstoreconnect.apple.com/v1/salesReports?filter[frequency]=DAILY&filter[reportType]=SALES&filter[reportSubType]=SUMMARY&filter[reportDate]=${date}&filter[vendorNumber]=${vendor}`;
+    const res = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${jwt}`,
+        Accept: 'application/a-gzip',
+      },
+    });
+    if (res.status === 404) continue;
+    if (!res.ok) {
+      throw new Error(`ASC ${res.status}: ${(await res.text()).slice(0, 200)}`);
+    }
+    const buf = Buffer.from(await res.arrayBuffer());
+    const tsv = zlib.gunzipSync(buf).toString('utf8');
+    return parseSalesTsv(tsv, env.appId, env.appSku);
   }
-  const buf = Buffer.from(await res.arrayBuffer());
-  const tsv = zlib.gunzipSync(buf).toString('utf8');
-  return parseSalesTsv(tsv, env.appId, env.appSku);
+  return null;
 }
 
 // How far back a cached "absent" day stays eligible for re-fetch. Apple can
