@@ -52,7 +52,7 @@ function deltaPct(today, yest) {
   return `${sign}${Math.round(d * 100)}%`;
 }
 
-function render({ supa, posthog, rc, sentry, asc, adSpend, cj, healthAlerts = [], sources, now = new Date() }) {
+function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, healthAlerts = [], sources, now = new Date() }) {
   const lines = [];
   const { PRE_LAUNCH } = require('../schema');
 
@@ -119,9 +119,16 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, cj, healthAlerts = []
   const signupsYest = supa?.signups?.yesterday ?? 0;
   const signupsSinceLaunch = supa?.signups?.sinceLaunch ?? 0;
   const crashes24h = sentry?.uniqueIssues24h ?? null;
+  // Honest active users (signed-in humans + guest visits). Falls back to
+  // person_id DAU only if the cross-source metric errored.
+  const au = activeUsers && !activeUsers.error ? activeUsers : null;
+  const auToday = au ? au.today.total : dauToday;
+  const auYest = au ? au.yesterday.total : dauYest;
+  const auTodayNote = au ? ` (${au.today.signedIn} signed-in + ${au.today.guestVisits} guest)` : '';
+  const auYestNote = au ? ` (${au.yesterday.signedIn} signed-in + ${au.yesterday.guestVisits} guest)` : '';
 
-  lines.push(`> **Yesterday:** ${dauYest} DAU · ${signupsYest} new profiles · ${crashes24h === 0 ? '0 crashes ✓' : crashes24h != null ? crashes24h + ' crashes ⚠' : 'Sentry not configured'}`);
-  lines.push(`> **Today (in progress):** ${dauToday} DAU · ${signupsToday} new profiles`);
+  lines.push(`> **Yesterday:** ${auYest} active users${auYestNote} · ${signupsYest} new profiles · ${crashes24h === 0 ? '0 crashes ✓' : crashes24h != null ? crashes24h + ' crashes ⚠' : 'Sentry not configured'}`);
+  lines.push(`> **Today (in progress):** ${auToday} active users${auTodayNote} · ${signupsToday} new profiles`);
   lines.push('>');
   lines.push(`> **Since launch (${LAUNCH_DATE}):** ${signupsSinceLaunch} new profiles`);
   lines.push('>');
@@ -141,7 +148,8 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, cj, healthAlerts = []
   lines.push('');
   lines.push('| Metric | Today | Yesterday | Δ% | Since Launch |');
   lines.push('|---|---|---|---|---|');
-  lines.push(`| DAU (PostHog) | **${dauToday}** | ${dauYest} | ${deltaPct(dauToday, dauYest)} | — |`);
+  lines.push(`| Active users (real) | **${auToday}**${auTodayNote} | ${auYest}${auYestNote} | ${deltaPct(auToday, auYest)} | — |`);
+  lines.push(`| DAU (person_id, inflated) | ${dauToday} | ${dauYest} | ${deltaPct(dauToday, dauYest)} | ~2-3x hot |`);
   lines.push(`| New profiles | **${signupsToday}** | ${signupsYest} | ${deltaPct(signupsToday, signupsYest)} | **${signupsSinceLaunch}** |`);
   if (supa?.wardrobe) {
     lines.push(`| Collection adds (have) | ${supa.wardrobe.today.have} | — | — | ${supa.wardrobe.sinceLaunch.have} |`);
@@ -471,9 +479,27 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, cj, healthAlerts = []
     lines.push('');
   }
 
-  // ── 15. DAU by day ────────────────────────────────────────────────
-  if (posthog?.activity?.dauByDay?.length > 0) {
-    lines.push('## 📅 DAU BY DAY (last 30d)');
+  // ── 15. ACTIVE USERS BY DAY (real: signed-in + guest visits) ───────
+  if (au?.daily?.length > 0) {
+    lines.push('## 📅 ACTIVE USERS BY DAY');
+    lines.push('');
+    if (au.denominatorNote) {
+      lines.push(`> _${au.denominatorNote}_`);
+      lines.push('');
+    }
+    lines.push('| Date | Active users | Signed-in | Guest visits |');
+    lines.push('|---|---|---|---|');
+    for (const d of au.daily) {
+      lines.push(`| ${d.date} | **${d.total}** | ${d.signedIn} | ${d.guestVisits} |`);
+    }
+    lines.push('');
+  } else if (activeUsers?.error) {
+    lines.push('## 📅 ACTIVE USERS BY DAY');
+    lines.push('');
+    lines.push(`> Active-users query error: ${activeUsers.error}`);
+    lines.push('');
+  } else if (posthog?.activity?.dauByDay?.length > 0) {
+    lines.push('## 📅 DAU BY DAY (person_id, inflated — active-users unavailable)');
     lines.push('');
     lines.push('| Date | DAU |');
     lines.push('|---|---|');

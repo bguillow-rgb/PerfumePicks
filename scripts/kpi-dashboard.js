@@ -37,6 +37,7 @@ const path = require('path');
 const { standardWindows } = require('./kpi/windows');
 const supabaseSource = require('./kpi/sources/supabase');
 const posthogSource = require('./kpi/sources/posthog');
+const activeUsersSource = require('./kpi/sources/active-users');
 const rcSource = require('./kpi/sources/revenuecat');
 const sentrySource = require('./kpi/sources/sentry');
 const ascSource = require('./kpi/sources/app-store-connect');
@@ -95,6 +96,11 @@ async function main() {
     withRetry(() => cjSource.fetchAll(envs.cj), { configured: true }),
   ]);
 
+  // ── Active users — honest DAU (signed-in humans + guest visits) ────
+  const activeUsers = posthogSource.isConfigured(envs.posthog)
+    ? await activeUsersSource.fetchActiveUsers(envs.posthog, { days: 30 }).catch((e) => ({ error: e.message }))
+    : { error: 'PostHog not configured' };
+
   // ── DR AD SPEND read on the Apple Search Ads account ───────────────
   const adSpend = drAdSpend.build(asa);
 
@@ -115,7 +121,7 @@ async function main() {
   if (adSpend?.ok) sources.push(`Apple Search Ads (${adSpend.mode})`);
   if (cj?.configured && !cj.error) sources.push('CJ Affiliate');
 
-  const data = { supa, posthog, rc, sentry, asc, asa, cj, adSpend, healthAlerts, sources, now };
+  const data = { supa, posthog, activeUsers, rc, sentry, asc, asa, cj, adSpend, healthAlerts, sources, now };
 
   let output;
   if (format === 'json') {
