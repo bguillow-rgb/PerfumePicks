@@ -13,6 +13,16 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const zlib = require('zlib');
+const { LAUNCH_DATE } = require('../schema');
+
+// Hard floor for the lifetime walk. No App Store install predates the store
+// listing going live (which can precede the in-app signup LAUNCH_DATE), so we
+// subtract a generous slack window. REPLACES the old "14 consecutive 404s = end
+// of history" heuristic as the primary stop — that heuristic silently truncates
+// a low-volume app the moment it has a real 14-day no-sale gap.
+const HISTORY_FLOOR_DATE = new Date(
+  Date.parse(`${LAUNCH_DATE}T00:00:00Z`) - 45 * 86400000
+).toISOString().slice(0, 10);
 
 const PP_APP_ID = '6774184221';
 const PP_APP_SKU = 'perfumepicks';
@@ -220,10 +230,15 @@ async function fetchLifetime(env, jwt) {
   let mostRecentReportDate = null;
   let latestReport = null;
 
-  for (let i = 1; i < 365 && consecutive404 < 14; i++) {
+  // Primary stop is the launch floor (deterministic — can't truncate real
+  // history). consecutive404 is only a secondary runaway guard, raised to 60.
+  let guardTripped = false;
+  for (let i = 1; i < 400; i++) {
     const d = new Date(today);
     d.setUTCDate(d.getUTCDate() - i);
     const dateStr = d.toISOString().slice(0, 10);
+    if (dateStr < HISTORY_FLOOR_DATE) break; // reached pre-launch — done
+    if (consecutive404 >= 60) { guardTripped = true; break; }
 
     let row = cache[dateStr];
     // A cached "absent" within the recheck window may have been a transient
@@ -268,6 +283,9 @@ async function fetchLifetime(env, jwt) {
     lifetimeInstalls: totalInstalls,
     lifetimeProceeds: totalProceeds,
     mostRecentReportDate,
+    // True only if the walk stopped on the 60-day runaway guard instead of the
+    // launch floor — means lifetime totals may be truncated.
+    walkTruncated: guardTripped,
   };
 }
 
