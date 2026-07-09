@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AppState } from 'react-native';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { isDnaV3ArchetypesEnabled, setDnaV3ArchetypesEnabled } from './v3Flag';
 
 /**
  * Remote kill-switch for the DNA picker (Mark Z, M2).
@@ -94,6 +95,61 @@ async function fetchMonetizationEnabled(): Promise<boolean> {
   } catch {
     return true;
   }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DNA V3 archetype flag (`dna_v3_archetypes`). OPPOSITE default from the two
+// kill-switches above: this is a NEW-FEATURE flag for the centroid election
+// engine (M1, ships dark), so it fails CLOSED — off unless the row is
+// explicitly truthy. The engine reads the sync cache in v3Flag.ts; this hook
+// resolves the remote value and keeps that cache fresh (foreground re-fetch,
+// same pattern as the switches above). Rollout: allowlist → staged, M5.
+// ─────────────────────────────────────────────────────────────────────────────
+
+async function fetchDnaV3ArchetypesEnabled(): Promise<boolean> {
+  if (!isSupabaseConfigured) return isDnaV3ArchetypesEnabled(); // demo / sim → keep current (default off)
+  try {
+    const { data, error } = await supabase
+      .from('app_settings')
+      .select('value')
+      .eq('key', 'dna_v3_archetypes')
+      .maybeSingle();
+    if (error || !data) return false; // fail closed
+    const v = (data as { value: unknown }).value;
+    // Only an explicit truthy row enables.
+    return v === true || v === 'true' || v === '1' || v === 1;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Resolves + returns whether the V3 centroid archetype election is enabled.
+ * Defaults to `false` synchronously (legacy SCORERS path), then resolves the
+ * remote value and mirrors it into the engine's sync cache (v3Flag.ts).
+ */
+export function useDnaV3ArchetypesEnabled(): boolean {
+  const [enabled, setEnabled] = useState<boolean>(isDnaV3ArchetypesEnabled());
+
+  useEffect(() => {
+    let alive = true;
+    const resolve = () =>
+      fetchDnaV3ArchetypesEnabled().then((v) => {
+        setDnaV3ArchetypesEnabled(v);
+        if (alive) setEnabled(v);
+      });
+    resolve();
+    const sub = AppState.addEventListener('change', (s) => {
+      if (s !== 'active') return;
+      resolve();
+    });
+    return () => {
+      alive = false;
+      sub.remove();
+    };
+  }, []);
+
+  return enabled;
 }
 
 /**

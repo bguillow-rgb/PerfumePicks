@@ -19,7 +19,7 @@ import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
 import { useDnaPickerStore } from '@/src/stores/useDnaPickerStore';
-import { useDnaPickerEnabled } from '@/src/features/dna/killSwitch';
+import { useDnaPickerEnabled, useDnaV3ArchetypesEnabled } from '@/src/features/dna/killSwitch';
 import { FirstRunFlow } from '@/src/components/onboarding/FirstRunFlow';
 import {
   buildPickerList,
@@ -55,6 +55,10 @@ export default function DnaPickerScreen() {
   const { width } = useWindowDimensions();
 
   const pickerEnabled = useDnaPickerEnabled();
+  // Resolve the V3 archetype flag while the user is in the picker so the sync
+  // cache (v3Flag.ts) is settled by compute time. The hook's value isn't read
+  // here — deriveFragranceDNA reads the cache directly.
+  useDnaV3ArchetypesEnabled();
   const hasExistingDna = useTasteProfileStore((s) => !!s.dna);
   const completeOnboarding = useOnboardingStore((s) => s.complete);
   const retakeMode = useOnboardingStore((s) => s.retakeMode);
@@ -69,6 +73,7 @@ export default function DnaPickerScreen() {
   const resetPicker = useDnaPickerStore((s) => s.reset);
 
   const hardNoIds = useDnaPickerStore((s) => s.hardNoIds);
+  const searchPickCache = useDnaPickerStore((s) => s.searchPickCache);
 
   const [step, setStep] = useState<Step>('loading');
   const [pool, setPool] = useState<PickerCandidate[]>([]);
@@ -190,9 +195,13 @@ export default function DnaPickerScreen() {
     const startedAt = Date.now();
 
     // Resolve picker ids → catalog fragrances (every Fragrance satisfies the
-    // DnaCatalogFragrance structural subset the engine reads).
+    // DnaCatalogFragrance structural subset the engine reads). The offered pool
+    // is merged with the search-pick cache (bottles picked via catalog search,
+    // M4) — without the merge, any pick not in the offered pool was silently
+    // dropped here and never reached the DNA (the compute-lookup trap).
     const byId = new Map<string, PickerCandidate>();
     for (const f of pool) byId.set(f.id, f);
+    for (const f of Object.values(searchPickCache)) byId.set(f.id, f);
 
     // Every picker selection is a pure TASTE signal: relation 'like'. The user is
     // telling us what they're drawn to, not cataloguing bottles they own. 'like'
@@ -253,7 +262,7 @@ export default function DnaPickerScreen() {
       const wait = Math.max(0, READING_MIN_MS - (Date.now() - startedAt));
       setTimeout(() => setStep('reveal'), wait);
     });
-  }, [pool, selectedIds, favoriteId, hardNoIds, commitDerived, computeBuyableHero]);
+  }, [pool, searchPickCache, selectedIds, favoriteId, hardNoIds, commitDerived, computeBuyableHero]);
 
   // S1b — the non-recognizer / kill-switch path. The 3 seed answers (already in
   // useQuizStore from FirstRunFlow) choose representative seeds and run through

@@ -10,8 +10,16 @@
  * outcome + wardrobe tightness) — are user-behavior axes with no catalog
  * distribution; they are documented in the generated file as user-relative.
  *
+ * ⚠️ CANONICAL FORMULAS LIVE IN src/features/dna/axisScore.ts (M1). The engine
+ * scores bottles with that TS module; this script re-states the same formulas
+ * in plain JS only because the generator runs under node without a TS loader.
+ * If a formula changes, change axisScore.ts FIRST, mirror it here, and
+ * regenerate axisNorms.ts in the same commit — the two must never drift.
+ * (axisScore.ts also bakes the luxury tier-median imputation table this script
+ * computes dynamically; refresh both together.)
+ *
  * Raw-score definitions (kept in sync with the axis table in
- * FEATURE_ARCHETYPES_V2.md):
+ * FEATURE_ARCHETYPES_V2.md and src/features/dna/axisScore.ts):
  *   warmth           sum(warm accords: amber/spicy/warm-spicy/vanilla)
  *                    − sum(fresh accords: fresh/citrus/aquatic)
  *   sweetness        sum(sweet/vanilla/gourmand accords) + 2 if family=gourmand

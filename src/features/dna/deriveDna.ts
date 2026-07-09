@@ -20,7 +20,15 @@ import { FRAGRANCE_DNA_VERSION, TRAIT_SCHEMA_VERSION } from './types';
 import { aggregateFromFragrances } from './aggregate';
 import { deriveOutcomes } from './outcomes';
 import { deriveTraits } from './traits';
-import { deriveArchetype, rankArchetypes, type ArchetypeScore } from './archetype';
+import {
+  deriveArchetype,
+  dominantSecondaryTrait,
+  rankArchetypes,
+  type ArchetypeScore,
+} from './archetype';
+import { deriveAxes } from './axes';
+import { electArchetype } from './centroids';
+import { isDnaV3ArchetypesEnabled } from './v3Flag';
 import { deriveWardrobe } from './wardrobe';
 import { matchJourney } from './journey';
 import { computeConfidence } from './confidence';
@@ -46,6 +54,13 @@ export interface DeriveDnaInput {
   source?: DnaSource;
   /** Injectable clock for deterministic tests. */
   now?: () => string;
+  /**
+   * DNA V3 centroid election (`dna_v3_archetypes` flag). Defaults to the
+   * remote-resolved flag cache (v3Flag.ts — false until explicitly enabled);
+   * injectable for deterministic tests. Flag OFF → the legacy SCORERS election
+   * runs byte-identical (no-regression contract).
+   */
+  v3Archetypes?: boolean;
 }
 
 export type DnaComputeEvent = 'dna_compute_failed';
@@ -64,6 +79,29 @@ export interface DeriveDnaResult {
 
 const isoNow = () => new Date().toISOString();
 
+/**
+ * V3 centroid election over the 14-axis user vector (axes.ts + centroids.ts).
+ * Returns the archetype (with margin-driven "X with a Y lean" surfaced through
+ * the existing challenger/leaning fields) plus the ranked scores for the
+ * living lean/swap plumbing.
+ */
+function electV3(
+  picks: DnaPick[],
+  modifier: string | null,
+): { archetype: FragranceDNA['archetype']; ranked: ArchetypeScore[] } {
+  const election = electArchetype(deriveAxes(picks));
+  const archetype: FragranceDNA['archetype'] = {
+    primary: election.primary,
+    modifier,
+  };
+  if (election.lean) {
+    // Not decisive: honest "primary with a runnerUp lean" on the reveal.
+    archetype.challenger = election.runnerUp;
+    archetype.leaning = true;
+  }
+  return { archetype, ranked: election.ranked };
+}
+
 function seedsFromPicks(picks: DnaPick[], now: () => string = isoNow): DnaSeed[] {
   return picks.map((p) => ({
     id: p.fragrance.id,
@@ -81,13 +119,15 @@ export function deriveFragranceDNA(input: DeriveDnaInput): DeriveDnaResult {
     answeredCount = 0,
     source = 'picker',
     now = isoNow,
+    v3Archetypes = isDnaV3ArchetypesEnabled(),
   } = input;
 
   try {
     const agg = aggregateFromFragrances(picks, avoided);
     const outcomes = deriveOutcomes(picks);
     const traits = deriveTraits(picks, referencePool);
-    const archetype = deriveArchetype(traits, outcomes, picks);
+    const v3 = v3Archetypes ? electV3(picks, dominantSecondaryTrait(traits)) : null;
+    const archetype = v3 ? v3.archetype : deriveArchetype(traits, outcomes, picks);
 
     const ownedFrags = picks.filter((p) => p.relation === 'own').map((p) => p.fragrance);
     const wardrobe = deriveWardrobe(ownedFrags);
@@ -125,7 +165,9 @@ export function deriveFragranceDNA(input: DeriveDnaInput): DeriveDnaResult {
     // Journey reads the assembled DNA (accords/families/traits).
     dna.journey = matchJourney(dna);
 
-    return { dna, events: [] };
+    // Legacy path returns the exact legacy shape (no extra keys) — the
+    // no-regression contract. V3 additionally exposes its ranking.
+    return v3 ? { dna, events: [], archetypeScores: v3.ranked } : { dna, events: [] };
   } catch {
     return { dna: fallbackDNA(picks, avoided, source, now), events: ['dna_compute_failed'] };
   }
@@ -146,6 +188,8 @@ export interface DeriveLivingDnaInput extends BuildSignalsInput {
   avoided?: DnaCatalogFragrance[];
   answeredCount?: number;
   source?: DnaSource;
+  /** See DeriveDnaInput.v3Archetypes — defaults to the resolved flag cache. */
+  v3Archetypes?: boolean;
 }
 
 export function deriveLivingDNA(input: DeriveLivingDnaInput): DeriveDnaResult {
@@ -155,6 +199,7 @@ export function deriveLivingDNA(input: DeriveLivingDnaInput): DeriveDnaResult {
     answeredCount = 0,
     source = 'hybrid',
     now = isoNow,
+    v3Archetypes = isDnaV3ArchetypesEnabled(),
   } = input;
 
   try {
@@ -168,8 +213,11 @@ export function deriveLivingDNA(input: DeriveLivingDnaInput): DeriveDnaResult {
     const agg = aggregateFromFragrances(pool, avoided);
     const outcomes = deriveOutcomes(pool);
     const traits = deriveTraits(pool);
-    const archetypeScores = rankArchetypes(traits, outcomes, pool);
-    const archetype = deriveArchetype(traits, outcomes, pool);
+    // V3: centroid election supplies both the fresh archetype AND the ranked
+    // list the living lean/swap orchestrator (applyLivingArchetype) consumes.
+    const v3 = v3Archetypes ? electV3(pool, dominantSecondaryTrait(traits)) : null;
+    const archetypeScores = v3 ? v3.ranked : rankArchetypes(traits, outcomes, pool);
+    const archetype = v3 ? v3.archetype : deriveArchetype(traits, outcomes, pool);
     const wardrobe = deriveWardrobe(ownedFrags);
 
     const confidence = computeConfidence({

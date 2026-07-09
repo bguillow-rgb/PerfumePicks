@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import type { PickerCandidate } from '@/src/features/quiz/pickerGrid';
 
 /**
  * In-memory capture of what the user does in the DNA picker (M2). Holds the
@@ -23,11 +24,20 @@ interface DnaPickerState {
   favoriteId: string | null;
   /** Per-pick own/want relation. Defaults to 'own' when unset. */
   relations: Record<string, PickRelation>;
+  /**
+   * Catalog rows for picks made OUTSIDE the offered pool (picker search, M4).
+   * Compute merges this into its id→fragrance lookup so a non-pool pick
+   * survives to the DNA instead of being silently dropped (the old
+   * pool-only-byId trap). Empty until the search picker populates it.
+   */
+  searchPickCache: Record<string, PickerCandidate>;
 
   toggleSelect: (id: string) => void;
   addHardNo: (id: string) => void;
   setFavorite: (id: string | null) => void;
   setRelation: (id: string, rel: PickRelation) => void;
+  /** Cache the catalog row behind a search-sourced pick (M4). */
+  cacheSearchPick: (f: PickerCandidate) => void;
   reset: () => void;
 }
 
@@ -36,6 +46,7 @@ export const useDnaPickerStore = create<DnaPickerState>()((set) => ({
   hardNoIds: [],
   favoriteId: null,
   relations: {},
+  searchPickCache: {},
 
   toggleSelect: (id) =>
     set((s) => {
@@ -65,5 +76,9 @@ export const useDnaPickerStore = create<DnaPickerState>()((set) => ({
 
   setRelation: (id, rel) => set((s) => ({ relations: { ...s.relations, [id]: rel } })),
 
-  reset: () => set({ selectedIds: [], hardNoIds: [], favoriteId: null, relations: {} }),
+  cacheSearchPick: (f) =>
+    set((s) => ({ searchPickCache: { ...s.searchPickCache, [f.id]: f } })),
+
+  reset: () =>
+    set({ selectedIds: [], hardNoIds: [], favoriteId: null, relations: {}, searchPickCache: {} }),
 }));

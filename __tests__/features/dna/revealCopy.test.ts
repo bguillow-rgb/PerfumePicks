@@ -1,8 +1,10 @@
 import { ARCHETYPE_COPY } from '@/src/features/dna/revealCopy';
 import type { ArchetypeKey } from '@/src/features/dna/types';
 
-// The full launch roster — every user lands in exactly one, so all twelve must
-// ship complete copy + visual direction (the M11 content gate).
+// The full key roster — every persisted or electable key must ship complete
+// copy + visual direction so no reveal can ever render undefined. 12 legacy
+// keys + the 10 DNA V3 roster additions (V3 copy is placeholder until M3's
+// authored pass, but must exist and be structurally complete NOW).
 const ALL_ARCHETYPES: ArchetypeKey[] = [
   'the_executive',
   'the_seducer',
@@ -16,9 +18,20 @@ const ALL_ARCHETYPES: ArchetypeKey[] = [
   'the_explorer',
   'the_classicist',
   'the_rebel',
+  // DNA V3 (M1)
+  'the_gourmand',
+  'the_minimalist',
+  'the_naturalist',
+  'the_trendsetter',
+  'the_old_soul',
+  'the_maximalist',
+  'the_night_owl',
+  'the_spice_trader',
+  'the_daybreaker',
+  'the_soft_focus',
 ];
 
-describe('ARCHETYPE_COPY — all 12 archetypes ship complete content', () => {
+describe('ARCHETYPE_COPY — all 22 archetype keys ship complete content', () => {
   it('covers every archetype with no extras', () => {
     expect(Object.keys(ARCHETYPE_COPY).sort()).toEqual([...ALL_ARCHETYPES].sort());
   });

@@ -86,6 +86,59 @@ export const ARCHETYPE_COPY: Record<ArchetypeKey, ArchetypeCopy> = {
     identity: 'You like scents that divide the room. Smoky and daring, unapologetically you.',
     visual: { icon: 'thunderstorm', tint: '#4A4458' },
   },
+  // ── DNA V3 roster additions (M1). Minimal placeholder entries so the
+  // ArchetypeKey record stays exhaustive — TODO M3: authored identity lines
+  // (humanize pass), final icon/tint art direction, web /i NAMES map.
+  the_gourmand: {
+    name: 'The Gourmand',
+    identity: 'You like scents that smell good enough to eat.', // TODO M3
+    visual: { icon: 'ice-cream', tint: '#A65E44' },
+  },
+  the_minimalist: {
+    name: 'The Minimalist',
+    identity: 'You keep it light, fresh, and close to the skin.', // TODO M3
+    visual: { icon: 'ellipse-outline', tint: '#7C8B99' },
+  },
+  the_naturalist: {
+    name: 'The Naturalist',
+    identity: 'Green, earthy, alive — your nose heads outdoors.', // TODO M3
+    visual: { icon: 'leaf', tint: '#4E7A3F' },
+  },
+  the_trendsetter: {
+    name: 'The Trendsetter',
+    identity: 'You wear what everyone will be wearing next year.', // TODO M3
+    visual: { icon: 'trending-up', tint: '#C24B7A' },
+  },
+  the_old_soul: {
+    name: 'The Old Soul',
+    identity: 'Your taste runs decades deep, and it shows.', // TODO M3
+    visual: { icon: 'hourglass', tint: '#8A6D4B' },
+  },
+  the_maximalist: {
+    name: 'The Maximalist',
+    identity: 'Big scents, big wardrobe — more is the whole point.', // TODO M3
+    visual: { icon: 'megaphone', tint: '#B3452E' },
+  },
+  the_night_owl: {
+    name: 'The Night Owl',
+    identity: 'Dark, smoky, after-hours — your scents come alive at night.', // TODO M3
+    visual: { icon: 'moon', tint: '#33395C' },
+  },
+  the_spice_trader: {
+    name: 'The Spice Trader',
+    identity: 'Pepper, cardamom, heat — you like a scent with bite.', // TODO M3
+    visual: { icon: 'bonfire', tint: '#A6501E' },
+  },
+  the_daybreaker: {
+    name: 'The Daybreaker',
+    identity: 'Citrus-bright and morning-fresh, every single day.', // TODO M3
+    visual: { icon: 'sunny', tint: '#D19A2F' },
+  },
+  the_soft_focus: {
+    name: 'The Soft Focus',
+    identity: 'Powdery, musky, barely there — a scent like soft light.', // TODO M3
+    visual: { icon: 'cloud', tint: '#9B7FA8' },
+  },
 };
 
 /** Shown in place of the identity line when confidence is low (few/weak signals). */

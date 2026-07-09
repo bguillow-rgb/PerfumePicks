@@ -25,7 +25,7 @@ gates that make the everyone-is-one-archetype bug structurally impossible.
 - **Milestone autonomy:** when a milestone's exit gates pass, proceed to the
   next without pausing (Bob's standing build-autonomy rule). Stop ONLY at M6
   (device gate — requires Bob) or when a gate cannot be made to pass.
-- **Every milestone ends with:** tests green (`npx vitest run`), tsc clean
+- **Every milestone ends with:** tests green (`npx jest`), tsc clean
   (`npx tsc --noEmit`), a one-paragraph progress note appended to the
   "## Log" section at the bottom of this file, and a commit on `feat/dna-v3`.
 - Outbound-facing copy (reveal identity lines, picker strings) gets a humanize
@@ -67,7 +67,7 @@ before/after coverage in the Log.
    searchPickCache into its byId map instead of silently dropping non-pool
    picks (app/dna/index.tsx:194,206).
 
-**Exit gates:** vitest green incl. no-regression suite (flag off = legacy
+**Exit gates:** jest green incl. no-regression suite (flag off = legacy
 output on all existing fixtures); replay of ALL real prod pick streams
 (fixture pulled read-only from user_taste_profiles) elects ≥8 distinct
 archetypes with max share ≤20%.
@@ -111,7 +111,7 @@ rules, no tray, no reshuffle. Plus:
 3. Analytics: search_opened / search_result_picked / search_no_results /
    search_enrich_requested events (PostHog, same naming style as dna_* events).
 
-**Exit gates:** vitest + tsc green; Maestro flow for the picker updated
+**Exit gates:** jest + tsc green; Maestro flow for the picker updated
 (search open → pick → dock → mixed 1+4 → compute) passing on simulator;
 mobile-UX audit rules verified in the flow (keyboard never hides CTA,
 back collapses search first).
@@ -142,5 +142,7 @@ renders → no Skia/undefined-font crashes. Then: 1.0.5 build + submit (after
 ## Log
 
 _(appended by each milestone run — newest at top)_
+
+**2026-07-09 — M1 complete (centroid election engine, flag-gated).** The 20-archetype centroid engine is live behind the new `dna_v3_archetypes` flag (fail-CLOSED, opposite of the kill-switches: off unless the app_settings row is explicitly truthy; sync cache in `src/features/dna/v3Flag.ts`, remote resolver `useDnaV3ArchetypesEnabled` in killSwitch.ts, mounted on the picker screen). New modules: `axisScore.ts` (canonical raw-score formulas — extracted from build-axis-norms.mjs, which now documents TS as canonical; NULL fields skip an axis, luxury imputes tier medians), `axes.ts` (14-axis user vector: catalog axes as resolvePickWeight-weighted percentile means honoring explicit pick.weight; breadth = family entropy, loyalty = tightness + ⭐ anchor, both evidence-damped to 0.5 at 1 pick so single-pick users don't all collapse onto Signature Wearer), `centroids.ts` (20 centroids with per-axis weight masks, weighted-RMS argmin, margin = d(runnerUp) − d(best), lean below V3_LEAN_MARGIN=0.04 surfaced via the existing challenger/leaning fields → "X with a Y lean" renders through LivingArchetypeReadout unchanged). Wired into both deriveFragranceDNA and deriveLivingDNA (v3 ranked list feeds applyLivingArchetype); 10 new ArchetypeKeys added to types.ts + placeholder ARCHETYPE_COPY entries (TODO M3 authored pass). Compute-lookup trap fixed: `useDnaPickerStore.searchPickCache` (+`cacheSearchPick`, empty until M4) merges into startCompute's byId so non-pool picks survive to the DNA. Replay fixture: `scripts/refresh-replay-fixture.mjs` (read-only; users anonymized u01…; catalog is keyed by SLUG — the seeds' id) → `__tests__/features/dna/fixtures/replay-picks.json`, 31 real prod streams / 30 bottles. **Gates:** `npx jest` green (35 suites / 482 tests; the pre-existing worker force-exit warning reproduces on the pre-M1 tree — not introduced here), incl. no-regression (flag off byte-identical to legacy over all 31 real streams + referencePool path + living path) and the replay gate. `npx tsc --noEmit`: identical 29-error baseline set, 0 new. **Replay distribution (flag on, 31 streams — legacy elected the_seducer on 28/31):** the_romantic 5 (16.1%) · the_spice_trader 3 · the_connoisseur 3 · the_maximalist 2 · the_seducer 2 · the_executive 2 · the_gourmand 2 · the_showstopper 2 · the_night_owl 2 · the_explorer 2 · the_signature_wearer 2 · the_old_soul 1 · the_classicist 1 · the_soft_focus 1 · the_purist 1 → **15 distinct (gate ≥8), max share 16.1% (gate ≤20%)**; 21/31 within the lean margin (honest straddles on mainstream 1–3-pick profiles). Tuning notes for M2: adventurousness is ~constant 0 across the all-popular pool (percentile of tier-4/5 bottles vs full catalog) — no centroid may depend on it to fire (unit-enforced w ≤ 0.3); zero-signal accord axes sit at tied-block midpoints (darkness ≈0.43, spice ≈0.33, greenness ≈0.30, florality ≈0.23), so "high" targets must clear those floors. Five labels unelected on replay (smart_shopper, minimalist, naturalist, trendsetter, daybreaker) — all proven reachable by the centroids unit test (each wins on its own target point); M2's 10k-simulation gate covers their real coverage.
 
 **2026-07-09 — M0 complete (catalog backfill & axis norms).** Backfilled the 112-bottle dna_eligible pool via `scripts/enrich-dna-pool.mjs` (LLM-assisted, claude-opus-4-8, dry-run reviewed then live; only NULL fields written, low-confidence rows skipped): 110 bottles updated, 284 fields. Coverage before → after: release_year 43/112 (38.4%) → **111/112 (99.1%)**, community_projection 39/112 (34.8%) → **111/112 (99.1%)**, community_sillage 39/112 → **111/112 (99.1%)**, community_longevity 39/112 → **111/112 (99.1%)** — gate ≥95% met on all four (verified with live count queries). Skipped (low confidence, left NULL): the feminine "Dylan Blue" row (`versace-dylan-blue-perfume-for-women`, missing release_year) and Hermès Rose Amazone (missing all three community_* — thin community data). top_accords gaps (7 bottles) filled by deriving from each row's own accord_intensity keys (no LLM); fragrance_family had zero gaps. `scripts/build-axis-norms.mjs` pulls the full is_active catalog (10,481 rows, paginated) and generates `src/features/dna/axisNorms.ts`: percentile tables (101 quantiles, min-max normalized, mean-rank tie handling in `axisPercentile()`) for the 12 catalog-derived axes; breadth + loyalty documented as user-relative (no catalog norm). Unit test at `__tests__/features/dna/axisNorms.test.ts` (repo's jest `roots` is pinned to `<rootDir>/__tests__`, so the test lives there rather than `src/**/__tests__`). Tests: this repo runs **jest**, not vitest (the "npx vitest run" wording in the gates is a cross-project slip) — `npx jest` green, 30 suites / 422 tests; also fixed `jest.config.js` `testPathIgnorePatterns` to anchor `/.claude/worktrees/` to `<rootDir>` so the suite can run from inside a worktree at all. tsc: 0 errors in M0 files; 29 pre-existing baseline errors in untouched ETL/web files (identical set exists on main — not introduced here, candidates for a separate cleanup).

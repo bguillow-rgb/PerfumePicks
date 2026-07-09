@@ -114,7 +114,21 @@ export type ArchetypeKey =
   | 'the_romantic'
   | 'the_explorer'
   | 'the_classicist'
-  | 'the_rebel';
+  | 'the_rebel'
+  // ── DNA V3 additions (FEATURE_ARCHETYPES_V2.md roster — centroid election).
+  // the_crowd_pleaser and the_rebel above stay as PERSISTED-ONLY legacy keys:
+  // crowd_pleaser is retired from election entirely; rebel is elected only by
+  // the legacy SCORERS path (flag off). The V3 roster = 10 kept + these 10 new.
+  | 'the_gourmand'
+  | 'the_minimalist'
+  | 'the_naturalist'
+  | 'the_trendsetter'
+  | 'the_old_soul'
+  | 'the_maximalist'
+  | 'the_night_owl'
+  | 'the_spice_trader'
+  | 'the_daybreaker'
+  | 'the_soft_focus';
 
 /** A committed archetype change, surfaced once as the "You've shifted" nudge. */
 export interface ArchetypeShift {
