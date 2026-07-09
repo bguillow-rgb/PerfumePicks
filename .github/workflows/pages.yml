@@ -23,7 +23,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy1.outputs.page_url || steps.deploy2.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,6 +40,22 @@ jobs:
         with:
           path: ./docs
 
-      - name: Deploy to GitHub Pages
-        id: deployment
+      # GitHub's Pages API intermittently returns a generic
+      # "Deployment failed, try again later" that clears on a retry — it is a
+      # platform-side blip, not a build error (the artifact is already uploaded
+      # by this point). Attempt the deploy, and if it fails transiently, wait
+      # and retry once. Only if BOTH attempts fail does the run go red, so real
+      # breakage still surfaces while transient noise self-heals.
+      - name: Deploy to GitHub Pages (attempt 1)
+        id: deploy1
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Wait before retry
+        if: steps.deploy1.outcome == 'failure'
+        run: sleep 20
+
+      - name: Deploy to GitHub Pages (retry)
+        id: deploy2
+        if: steps.deploy1.outcome == 'failure'
         uses: actions/deploy-pages@v4
