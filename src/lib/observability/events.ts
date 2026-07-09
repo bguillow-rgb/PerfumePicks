@@ -42,6 +42,14 @@ export const EVENTS = {
   // candidates and falls back to a top-fit (non-commercial) hero card.
   DNA_TOP_MATCH_NO_BUYABLE: 'dna_top_match_no_buyable',
 
+  // ─── DNA picker search ("bring your own bottle", V3 M4) ─────────────
+  // INVITE-style funnel — opened → picked (or no_results / enrich_requested).
+  // Pick-stream capture keeps source 'picker'; these carry the search sub-funnel.
+  SEARCH_OPENED:           'search_opened',           // props: { pick_count }
+  SEARCH_RESULT_PICKED:    'search_result_picked',    // props: { fragrance_id, in_grid, outcome }
+  SEARCH_NO_RESULTS:       'search_no_results',       // props: { query_length }
+  SEARCH_ENRICH_REQUESTED: 'search_enrich_requested', // props: { fragrance_id }
+
   // ─── Discover ────────────────────────────────────────────────────────
   DISCOVER_SEARCH_QUERY:  'discover_search_query',
   DISCOVER_BRAND_OPENED:  'discover_brand_opened',
