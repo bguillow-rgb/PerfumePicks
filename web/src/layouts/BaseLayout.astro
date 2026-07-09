@@ -46,7 +46,9 @@ const currentPath = path;
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta property="og:image" content={`${SITE.url}/icon-512.png`} />
+    {/* ?v=2 busts preview-crawler caches left over from the old placeholder-bottle icon */}
+    <meta property="og:image" content={`${SITE.url}/icon-512.png?v=2`} />
+    <meta name="twitter:image" content={`${SITE.url}/icon-512.png?v=2`} />
 
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/icon.png" />
