@@ -113,19 +113,18 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, heal
   lines.push('## ╔═ EXECUTIVE SUMMARY ════════════════════════════════════════╗');
   lines.push('');
 
-  const dauToday = posthog?.activity?.dauToday ?? 0;
-  const dauYest = posthog?.activity?.dauYesterday ?? 0;
   const signupsToday = supa?.signups?.today ?? 0;
   const signupsYest = supa?.signups?.yesterday ?? 0;
   const signupsSinceLaunch = supa?.signups?.sinceLaunch ?? 0;
   const crashes24h = sentry?.uniqueIssues24h ?? null;
-  // Honest active users (signed-in humans + guest visits). Falls back to
-  // person_id DAU only if the cross-source metric errored.
+  // Honest active users (signed-in humans + guest visits). NO person_id
+  // fallback — if this errors we say "unavailable" rather than print a number
+  // known to be ~2-3x inflated.
   const au = activeUsers && !activeUsers.error ? activeUsers : null;
-  const auToday = au ? au.today.total : dauToday;
-  const auYest = au ? au.yesterday.total : dauYest;
-  const auTodayNote = au ? ` (${au.today.signedIn} signed-in + ${au.today.guestVisits} guest)` : '';
-  const auYestNote = au ? ` (${au.yesterday.signedIn} signed-in + ${au.yesterday.guestVisits} guest)` : '';
+  const auToday = au ? au.today.total : '—';
+  const auYest = au ? au.yesterday.total : '—';
+  const auTodayNote = au ? ` (${au.today.signedIn} signed-in + ${au.today.guestVisits} guest)` : ' (unavailable)';
+  const auYestNote = au ? ` (${au.yesterday.signedIn} signed-in + ${au.yesterday.guestVisits} guest)` : ' (unavailable)';
 
   lines.push(`> **Yesterday:** ${auYest} active users${auYestNote} · ${signupsYest} new profiles · ${crashes24h === 0 ? '0 crashes ✓' : crashes24h != null ? crashes24h + ' crashes ⚠' : 'Sentry not configured'}`);
   lines.push(`> **Today (in progress):** ${auToday} active users${auTodayNote} · ${signupsToday} new profiles`);
@@ -148,8 +147,7 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, heal
   lines.push('');
   lines.push('| Metric | Today | Yesterday | Δ% | Since Launch |');
   lines.push('|---|---|---|---|---|');
-  lines.push(`| Active users (real) | **${auToday}**${auTodayNote} | ${auYest}${auYestNote} | ${deltaPct(auToday, auYest)} | — |`);
-  lines.push(`| DAU (person_id, inflated) | ${dauToday} | ${dauYest} | ${deltaPct(dauToday, dauYest)} | ~2-3x hot |`);
+  lines.push(`| Active users | **${auToday}**${auTodayNote} | ${auYest}${auYestNote} | ${au ? deltaPct(auToday, auYest) : '—'} | — |`);
   lines.push(`| New profiles | **${signupsToday}** | ${signupsYest} | ${deltaPct(signupsToday, signupsYest)} | **${signupsSinceLaunch}** |`);
   if (supa?.wardrobe) {
     lines.push(`| Collection adds (have) | ${supa.wardrobe.today.have} | — | — | ${supa.wardrobe.sinceLaunch.have} |`);
@@ -183,9 +181,12 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, heal
   if (asc?.lifetimeInstalls != null) {
     lines.push(`- **Lifetime installs (ASC, source of truth):** ${asc.lifetimeInstalls}`);
   }
-  if (posthog?.activity) {
-    lines.push(`- **WAU (7d):** ${posthog.activity.wau} _(PostHog person_id, ~2-3x inflated)_`);
-    lines.push(`- **MAU (28d):** ${posthog.activity.mau}`);
+  if (au?.windows) {
+    const w = au.windows;
+    lines.push(`- **WAU (7d):** ${w.wauSignedIn} signed-in + ${w.guestVisits7d} guest visits`);
+    lines.push(`- **MAU (28d):** ${w.mauSignedIn} signed-in + ${w.guestVisits28d} guest visits`);
+  } else if (activeUsers?.error) {
+    lines.push(`- **WAU/MAU:** unavailable (${activeUsers.error.slice(0, 60)})`);
   }
   if (supa?.signups) {
     const s = supa.signups;
@@ -493,19 +494,11 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, heal
       lines.push(`| ${d.date} | **${d.total}** | ${d.signedIn} | ${d.guestVisits} |`);
     }
     lines.push('');
-  } else if (activeUsers?.error) {
+  } else {
+    // NO person_id fallback table — an inflated number is worse than no number.
     lines.push('## 📅 ACTIVE USERS BY DAY');
     lines.push('');
-    lines.push(`> Active-users query error: ${activeUsers.error}`);
-    lines.push('');
-  } else if (posthog?.activity?.dauByDay?.length > 0) {
-    lines.push('## 📅 DAU BY DAY (person_id, inflated — active-users unavailable)');
-    lines.push('');
-    lines.push('| Date | DAU |');
-    lines.push('|---|---|');
-    for (const d of posthog.activity.dauByDay) {
-      lines.push(`| ${d.date} | ${d.dau} |`);
-    }
+    lines.push(`> Unavailable${activeUsers?.error ? `: ${activeUsers.error.slice(0, 100)}` : ''}`);
     lines.push('');
   }
 
@@ -544,7 +537,7 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, heal
   lines.push(`| Supabase profiles, wardrobe, wear_logs, swipes | ✅ Truth | Direct DB rows; since launch (${LAUNCH_DATE}) |`);
   lines.push('| Supabase profiles.is_pro | ✅ Truth | Written by RC webhook |');
   lines.push('| Sentry unique issues 24h | ✅ Truth | Direct from Sentry API |');
-  lines.push('| PostHog DAU/WAU/MAU (person_id) | ⚠ Inflated | person_id still > real humans; ~2-3x inflation |');
+  lines.push('| Active users / WAU / MAU | ✅ Deduplicated | Signed-in = exact distinct Supabase users; guests = visits (30-min sessions). person_id metrics removed from this report (~2-3x inflated) |');
   lines.push('| RevenueCat (subs, MRR) | ⚠ Incl sandbox | Cannot filter sandbox via API |');
   lines.push('| App Store reviews | ⚠ USA only | Most-recent 20 only |');
   lines.push('| Fragrance DNA funnel | ✅ Truth | PostHog events; all-time |');

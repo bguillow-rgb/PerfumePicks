@@ -87,6 +87,51 @@ function computeActiveUsers(rows, realIds) {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+// Honest window aggregates — replaces person_id WAU/MAU entirely.
+//   signedIn: DISTINCT non-anonymous users active in the window (exact).
+//   guestVisits: sum of per-day guest visits in the window. Explicitly VISITS,
+//   not unique people — without a stable device id a 7d unique-guest count
+//   would be a guess, and we don't print guesses.
+function computeWindows(rows, realIds, todayStr) {
+  const cutoff = (n) =>
+    new Date(Date.parse(todayStr + 'T00:00:00Z') - (n - 1) * 86400000).toISOString().slice(0, 10);
+  const c7 = cutoff(7);
+  const c28 = cutoff(28);
+  const signed7 = new Set(), signed28 = new Set();
+  const guestByDay7 = new Map(), guestByDay28 = new Map();
+  for (const [d, id, t] of rows) {
+    const day = String(d);
+    if (day < c28 || day > todayStr) continue;
+    if (realIds.has(id)) {
+      signed28.add(id);
+      if (day >= c7) signed7.add(id);
+    } else {
+      if (!guestByDay28.has(day)) guestByDay28.set(day, []);
+      guestByDay28.get(day).push(Number(t));
+      if (day >= c7) {
+        if (!guestByDay7.has(day)) guestByDay7.set(day, []);
+        guestByDay7.get(day).push(Number(t));
+      }
+    }
+  }
+  const visits = (byDay) => {
+    let total = 0;
+    for (const ts of byDay.values()) {
+      ts.sort((a, b) => a - b);
+      let v = ts.length ? 1 : 0;
+      for (let i = 1; i < ts.length; i++) if (ts[i] - ts[i - 1] > GUEST_GAP_SECONDS) v++;
+      total += v;
+    }
+    return total;
+  };
+  return {
+    wauSignedIn: signed7.size,
+    mauSignedIn: signed28.size,
+    guestVisits7d: visits(guestByDay7),
+    guestVisits28d: visits(guestByDay28),
+  };
+}
+
 async function fetchActiveUsers(env, { days = 30 } = {}) {
   const supaUrl = process.env.EXPO_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
   const supaKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -127,8 +172,9 @@ async function fetchActiveUsers(env, { days = 30 } = {}) {
   const dateStr = (offset) => new Date(Date.now() - offset * 86400000).toISOString().slice(0, 10);
   const today = byDate.get(dateStr(0)) || { signedIn: 0, guestVisits: 0, total: 0 };
   const yesterday = byDate.get(dateStr(1)) || { signedIn: 0, guestVisits: 0, total: 0 };
+  const windows = computeWindows(rows, realIds, dateStr(0));
 
-  return { daily, today, yesterday, denominatorNote: NOTE };
+  return { daily, today, yesterday, windows, denominatorNote: NOTE };
 }
 
-module.exports = { fetchActiveUsers, computeActiveUsers, NS };
+module.exports = { fetchActiveUsers, computeActiveUsers, computeWindows, NS };
