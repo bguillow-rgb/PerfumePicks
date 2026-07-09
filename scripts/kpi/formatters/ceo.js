@@ -518,7 +518,10 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, heal
   if (!sentry?.configured) {
     gaps.push('Sentry not configured — add SENTRY_AUTH_TOKEN + SENTRY_ORG + SENTRY_PROJECT_ID to .env.local');
   }
-  gaps.push('Apple Search Ads not started — create campaigns to drive post-launch installs.');
+  // ASA gap is data-driven, not hardcoded: only flag if no spend data exists.
+  if (!adSpend?.ok) {
+    gaps.push('Apple Search Ads data missing — refresh scripts/kpi/data/asa-snapshot.json from the console (or wire the ASA API creds for live pulls).');
+  }
 
   if (gaps.length > 0) {
     lines.push('## 🚨 GAPS');
