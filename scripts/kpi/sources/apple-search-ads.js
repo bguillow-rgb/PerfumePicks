@@ -140,7 +140,7 @@ async function getAccessToken(env) {
     grant_type: 'client_credentials',
     client_id: env.clientId,
     client_secret: clientSecret,
-    scope: 'searchads',
+    scope: 'searchadsorg',
   });
   const res = await fetch(TOKEN_URL, {
     method: 'POST',
