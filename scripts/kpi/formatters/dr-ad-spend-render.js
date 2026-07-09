@@ -38,6 +38,21 @@ function markdownLines(adSpend) {
       `**CPA** ${cpa} · _${adSpend.dateRange || 'window'}_ · _${staleNote(adSpend)}_`
   );
   lines.push('');
+  // Snapshot self-expiry: a stale snapshot confidently rendering old numbers is
+  // how this section printed false alarms for weeks. Past 7 days, scream
+  // instead of report.
+  const SNAPSHOT_MAX_AGE_DAYS = 7;
+  if (adSpend.mode === 'snapshot' && adSpend.capturedAt) {
+    const ageDays = Math.floor((Date.now() - Date.parse(adSpend.capturedAt)) / 86400000);
+    if (ageDays > SNAPSHOT_MAX_AGE_DAYS) {
+      lines.push(
+        `> 🚨 **SNAPSHOT IS ${ageDays} DAYS OLD — numbers and recommendations below are OUTDATED.** ` +
+          `Re-pull from app-ads.apple.com into scripts/kpi/data/asa-snapshot.json, or wire the ASA live API creds. ` +
+          `Do not act on this section until refreshed.`
+      );
+      lines.push('');
+    }
+  }
   lines.push(`> ${adSpend.verdict}`);
   lines.push('');
 
