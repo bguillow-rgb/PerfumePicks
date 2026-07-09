@@ -53,6 +53,25 @@ function markdownLines(adSpend) {
       lines.push('');
     }
   }
+  // Change markers — when the account structure was changed, so every future
+  // read compares performance against the right baseline window.
+  try {
+    const path = require('path');
+    const fs = require('fs');
+    const clPath = path.join(__dirname, '..', 'data', 'asa-changelog.json');
+    if (fs.existsSync(clPath)) {
+      const changes = JSON.parse(fs.readFileSync(clPath, 'utf8'));
+      const last = changes[changes.length - 1];
+      if (last) {
+        const ageDays = Math.floor((Date.now() - Date.parse(last.date)) / 86400000);
+        lines.push(`> ⚑ **Structure changed ${last.date}** (${ageDays}d ago): ${last.summary}`);
+        if (last.baseline) {
+          lines.push(`> Pre-change baseline (${last.baseline.window}): $${last.baseline.spend} · ${last.baseline.installs} installs · $${last.baseline.cpa} CPA. Compare current numbers against this.`);
+        }
+        lines.push('');
+      }
+    }
+  } catch {}
   lines.push(`> ${adSpend.verdict}`);
   lines.push('');
 

@@ -1,0 +1,13 @@
+[
+  {
+    "date": "2026-07-09",
+    "summary": "DR AD SPEND restructure: Discovery campaign PAUSED (12 weeks junk search terms, $24.98/0 installs); 'perfume picks app' added to Brand-Exact; cpaGoal $5 on all 3 Search Results ad groups.",
+    "baseline": {
+      "window": "2026-07-02 to 2026-07-09 (pre-change)",
+      "spend": 33.03,
+      "installs": 6,
+      "cpa": 5.51,
+      "notes": "Search Results alone: $23.36 / 6 installs / $3.89 CPA / 46.15% CR. Discovery: $9.67 / 0 installs (paused). Best keyword: parfumo ~$4.95 CPA, 4 installs. Post-change CPA should track Search Results-only (~$3.89) since the Discovery leak is gone."
+    }
+  }
+]
