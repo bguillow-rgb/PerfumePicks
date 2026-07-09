@@ -12,12 +12,20 @@
 </style>
 <link rel="stylesheet" href="/_astro/_slug_.BKmOxynO.css"></head> <body> <div class="container"> <header class="site-header"> <a href="/" class="site-wordmark">Perfume Picks</a> <nav class="site-nav" aria-label="Main navigation"> <a href="/">Home</a><a href="/features">Features</a><a href="/articles">Blog</a><a href="/about">About</a><a href="/support">Support</a> </nav> </header> <div class="rule-jewel" aria-hidden="true"></div>  <section class="invite" data-astro-cid-dqz7gowm> <p class="eyebrow" data-astro-cid-dqz7gowm>A friend invited you to</p> <h1 class="brand" data-astro-cid-dqz7gowm>Perfume&nbsp;Picks</h1> <p class="hook" id="hook" data-astro-cid-dqz7gowm>Discover your Fragrance&nbsp;DNA.</p> <a class="cta" id="cta" href="https://apps.apple.com/app/perfume-picks/id6774184221" rel="nofollow" data-astro-cid-dqz7gowm>Find your Fragrance DNA&nbsp;→</a> <p class="fine" data-astro-cid-dqz7gowm>Free on the App&nbsp;Store · answer a few scents, get your archetype.</p> </section> <script>
     (function () {
+      // Full DNA V3 roster (20) + legacy persisted-only keys (rebel,
+      // crowd_pleaser). Forward-compatible: deploys ahead of the 1.0.5 app —
+      // must stay a superset of ARCHETYPE_COPY in src/features/dna/revealCopy.ts.
       var NAMES = {
         the_executive: 'The Executive', the_seducer: 'The Seducer',
         the_connoisseur: 'The Connoisseur', the_signature_wearer: 'The Signature Wearer',
         the_purist: 'The Purist', the_showstopper: 'The Showstopper',
         the_smart_shopper: 'The Smart Shopper', the_romantic: 'The Romantic',
         the_explorer: 'The Explorer', the_classicist: 'The Classicist',
+        the_gourmand: 'The Gourmand', the_minimalist: 'The Minimalist',
+        the_naturalist: 'The Naturalist', the_trendsetter: 'The Trendsetter',
+        the_old_soul: 'The Old Soul', the_maximalist: 'The Maximalist',
+        the_night_owl: 'The Night Owl', the_spice_trader: 'The Spice Trader',
+        the_daybreaker: 'The Daybreaker', the_soft_focus: 'The Soft Focus',
         the_rebel: 'The Rebel', the_crowd_pleaser: 'The Crowd-Pleaser'
       };
       try {
