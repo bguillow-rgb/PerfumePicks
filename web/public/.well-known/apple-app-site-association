@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["ZNS5TNLB2D.com.bobguillow.perfumepicks"],
+        "components": [
+          { "/": "/i", "comment": "invite landing (exact)" },
+          { "/": "/i?*", "comment": "invite landing with query params" },
+          { "/": "/i/*", "comment": "invite landing subpaths" }
+        ]
+      }
+    ]
+  }
+}

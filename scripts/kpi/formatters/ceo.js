@@ -52,7 +52,7 @@ function deltaPct(today, yest) {
   return `${sign}${Math.round(d * 100)}%`;
 }
 
-function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], sources, now = new Date() }) {
+function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, healthAlerts = [], sources, now = new Date() }) {
   const lines = [];
   const { PRE_LAUNCH } = require('../schema');
 
@@ -113,15 +113,21 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   lines.push('## ╔═ EXECUTIVE SUMMARY ════════════════════════════════════════╗');
   lines.push('');
 
-  const dauToday = posthog?.activity?.dauToday ?? 0;
-  const dauYest = posthog?.activity?.dauYesterday ?? 0;
   const signupsToday = supa?.signups?.today ?? 0;
   const signupsYest = supa?.signups?.yesterday ?? 0;
   const signupsSinceLaunch = supa?.signups?.sinceLaunch ?? 0;
   const crashes24h = sentry?.uniqueIssues24h ?? null;
+  // Honest active users (signed-in humans + guest visits). NO person_id
+  // fallback — if this errors we say "unavailable" rather than print a number
+  // known to be ~2-3x inflated.
+  const au = activeUsers && !activeUsers.error ? activeUsers : null;
+  const auToday = au ? au.today.total : '—';
+  const auYest = au ? au.yesterday.total : '—';
+  const auTodayNote = au ? ` (${au.today.signedIn} signed-in + ${au.today.guestVisits} guest)` : ' (unavailable)';
+  const auYestNote = au ? ` (${au.yesterday.signedIn} signed-in + ${au.yesterday.guestVisits} guest)` : ' (unavailable)';
 
-  lines.push(`> **Yesterday:** ${dauYest} DAU · ${signupsYest} new profiles · ${crashes24h === 0 ? '0 crashes ✓' : crashes24h != null ? crashes24h + ' crashes ⚠' : 'Sentry not configured'}`);
-  lines.push(`> **Today (in progress):** ${dauToday} DAU · ${signupsToday} new profiles`);
+  lines.push(`> **Yesterday:** ${auYest} active users${auYestNote} · ${signupsYest} new profiles · ${crashes24h === 0 ? '0 crashes ✓' : crashes24h != null ? crashes24h + ' crashes ⚠' : 'Sentry not configured'}`);
+  lines.push(`> **Today (in progress):** ${auToday} active users${auTodayNote} · ${signupsToday} new profiles`);
   lines.push('>');
   lines.push(`> **Since launch (${LAUNCH_DATE}):** ${signupsSinceLaunch} new profiles`);
   lines.push('>');
@@ -141,7 +147,7 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   lines.push('');
   lines.push('| Metric | Today | Yesterday | Δ% | Since Launch |');
   lines.push('|---|---|---|---|---|');
-  lines.push(`| DAU (PostHog) | **${dauToday}** | ${dauYest} | ${deltaPct(dauToday, dauYest)} | — |`);
+  lines.push(`| Active users | **${auToday}**${auTodayNote} | ${auYest}${auYestNote} | ${au ? deltaPct(auToday, auYest) : '—'} | — |`);
   lines.push(`| New profiles | **${signupsToday}** | ${signupsYest} | ${deltaPct(signupsToday, signupsYest)} | **${signupsSinceLaunch}** |`);
   if (supa?.wardrobe) {
     lines.push(`| Collection adds (have) | ${supa.wardrobe.today.have} | — | — | ${supa.wardrobe.sinceLaunch.have} |`);
@@ -150,7 +156,14 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   if (supa?.wearLogs) {
     lines.push(`| Wear logs (journal) | ${supa.wearLogs.today} | ${supa.wearLogs.yesterday} | ${deltaPct(supa.wearLogs.today, supa.wearLogs.yesterday)} | ${supa.wearLogs.sinceLaunch} |`);
   }
-  if (posthog?.affiliate) {
+  // Buy-link taps: prefer the durable Supabase ledger (source of truth since
+  // 2026-07-04); fall back to PostHog only if the ledger has no data yet.
+  if (supa?.affiliateClicks && !supa.affiliateClicks.error && supa.affiliateClicks.sinceLaunch > 0) {
+    const a = supa.affiliateClicks;
+    const split = (a.byRetailer || []).map((r) => `${r.retailer} ${r.clicks}`).join(' · ');
+    lines.push(`| Buy-link taps (ledger) | ${a.today} | — | — | **${a.sinceLaunch}** |`);
+    if (split) lines.push(`| ↳ by retailer | ${split} | | | ${a.people} ppl |`);
+  } else if (posthog?.affiliate) {
     const a = posthog.affiliate;
     lines.push(`| Buy-link taps | ${a.today} | ${a.yesterday} | ${deltaPct(a.today, a.yesterday)} | **${a.sinceLaunch}** |`);
   }
@@ -168,9 +181,12 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   if (asc?.lifetimeInstalls != null) {
     lines.push(`- **Lifetime installs (ASC, source of truth):** ${asc.lifetimeInstalls}`);
   }
-  if (posthog?.activity) {
-    lines.push(`- **WAU (7d):** ${posthog.activity.wau} _(PostHog person_id, ~2-3x inflated)_`);
-    lines.push(`- **MAU (28d):** ${posthog.activity.mau}`);
+  if (au?.windows) {
+    const w = au.windows;
+    lines.push(`- **WAU (7d):** ${w.wauSignedIn} signed-in + ${w.guestVisits7d} guest visits`);
+    lines.push(`- **MAU (28d):** ${w.mauSignedIn} signed-in + ${w.guestVisits28d} guest visits`);
+  } else if (activeUsers?.error) {
+    lines.push(`- **WAU/MAU:** unavailable (${activeUsers.error.slice(0, 60)})`);
   }
   if (supa?.signups) {
     const s = supa.signups;
@@ -299,6 +315,24 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   if (asc?.lifetimeProceeds != null) {
     lines.push(`| Lifetime Apple proceeds | **${fmtUSD(asc.lifetimeProceeds)}** | production-only ground truth |`);
   }
+  // Affiliate revenue (CJ) — this app only, isolated by CJ website id. Clicks
+  // come from PostHog (buy-link taps above); CJ is the money side.
+  if (cj?.configured && !cj.error) {
+    lines.push(`| Affiliate sales (${cj.windowDays}d) | **${n(cj.actions)}** | CJ · this app (site ${cj.websiteId}) |`);
+    lines.push(`| Affiliate commission (${cj.windowDays}d) | **${fmtUSD(cj.commissionUsd)}** | CJ pending+locked |`);
+    const advs = Object.entries(cj.byAdvertiser || {});
+    if (advs.length) {
+      const split = advs
+        .sort((a, b) => b[1].commissionUsd - a[1].commissionUsd)
+        .map(([name, a]) => `${name} ${fmtUSD(a.commissionUsd)}`)
+        .join(' · ');
+      lines.push(`| ↳ by retailer | ${split} | |`);
+    } else if (cj.note) {
+      lines.push(`| Affiliate | $0 so far | ${cj.note} |`);
+    }
+  } else if (cj && !cj.configured) {
+    lines.push(`| CJ affiliate | not configured | Add CJ_PERSONAL_ACCESS_TOKEN to .env.local to track affiliate revenue |`);
+  }
   lines.push('');
 
   // ── 9. APP STORE STATUS & REVIEWS ────────────────────────────────
@@ -376,17 +410,33 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   }
 
   // ── 11.5 BUY-LINK CLICKS (purchase intent) ────────────────────────
-  if (posthog?.affiliate) {
+  // Source of truth is the durable Supabase ledger (affiliate_clicks) since
+  // 2026-07-04. PostHog is a secondary signal and was wiped 2026-07-03, so it's
+  // only a fallback until the ledger accrues data on installs taking the OTA.
+  const ledger = supa?.affiliateClicks && !supa.affiliateClicks.error && supa.affiliateClicks.sinceLaunch > 0
+    ? supa.affiliateClicks
+    : null;
+  if (ledger) {
+    lines.push('## 🛒 BUY-LINK CLICKS (since launch)');
+    lines.push('');
+    lines.push(`- **Buy taps:** today ${ledger.today} · last 7d ${ledger.last7d} · **since launch ${ledger.sinceLaunch}** (${ledger.people} distinct people)`);
+    if (ledger.byRetailer.length > 0) {
+      lines.push(`- **By retailer:** ${ledger.byRetailer.map((r) => `${r.retailer} ${r.clicks}`).join(' · ')}`);
+    }
+    lines.push('');
+    lines.push('> _Source of truth: Supabase `affiliate_clicks` ledger (app-owned, wipe-proof). Commission lands only if the retailer confirms the sale via CJ._');
+    lines.push('');
+  } else if (posthog?.affiliate) {
     const a = posthog.affiliate;
     lines.push('## 🛒 BUY-LINK CLICKS (since launch)');
     lines.push('');
-    lines.push(`- **Buy taps:** today ${a.today} · yest ${a.yesterday} · **since launch ${a.sinceLaunch}** (${a.people} distinct people)`);
+    lines.push(`- **Buy taps (PostHog fallback):** today ${a.today} · yest ${a.yesterday} · **since launch ${a.sinceLaunch}** (${a.people} distinct people)`);
     if (a.byRetailer.length > 0) {
       lines.push(`- **By retailer:** ${a.byRetailer.map((r) => `${r.retailer} ${r.taps}`).join(' · ')}`);
     }
     lines.push(`- **Failed opens:** ${a.failedSinceLaunch}${a.failedSinceLaunch > 0 ? ' ⚠' : ''}`);
     lines.push('');
-    lines.push('> _Outbound retailer taps = purchase intent. PostHog is source of truth (not written to Supabase). Commission lands only if the retailer confirms the sale via CJ._');
+    lines.push('> _Supabase ledger has no rows yet (waiting on installs to take the 2026-07-04 OTA). Falling back to PostHog, which was wiped 2026-07-03 — treat as incomplete._');
     lines.push('');
   }
 
@@ -430,15 +480,25 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
     lines.push('');
   }
 
-  // ── 15. DAU by day ────────────────────────────────────────────────
-  if (posthog?.activity?.dauByDay?.length > 0) {
-    lines.push('## 📅 DAU BY DAY (last 30d)');
+  // ── 15. ACTIVE USERS BY DAY (real: signed-in + guest visits) ───────
+  if (au?.daily?.length > 0) {
+    lines.push('## 📅 ACTIVE USERS BY DAY');
     lines.push('');
-    lines.push('| Date | DAU |');
-    lines.push('|---|---|');
-    for (const d of posthog.activity.dauByDay) {
-      lines.push(`| ${d.date} | ${d.dau} |`);
+    if (au.denominatorNote) {
+      lines.push(`> _${au.denominatorNote}_`);
+      lines.push('');
     }
+    lines.push('| Date | Active users | Signed-in | Guest visits |');
+    lines.push('|---|---|---|---|');
+    for (const d of au.daily) {
+      lines.push(`| ${d.date} | **${d.total}** | ${d.signedIn} | ${d.guestVisits} |`);
+    }
+    lines.push('');
+  } else {
+    // NO person_id fallback table — an inflated number is worse than no number.
+    lines.push('## 📅 ACTIVE USERS BY DAY');
+    lines.push('');
+    lines.push(`> Unavailable${activeUsers?.error ? `: ${activeUsers.error.slice(0, 100)}` : ''}`);
     lines.push('');
   }
 
@@ -458,7 +518,10 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   if (!sentry?.configured) {
     gaps.push('Sentry not configured — add SENTRY_AUTH_TOKEN + SENTRY_ORG + SENTRY_PROJECT_ID to .env.local');
   }
-  gaps.push('Apple Search Ads not started — create campaigns to drive post-launch installs.');
+  // ASA gap is data-driven, not hardcoded: only flag if no spend data exists.
+  if (!adSpend?.ok) {
+    gaps.push('Apple Search Ads data missing — refresh scripts/kpi/data/asa-snapshot.json from the console (or wire the ASA API creds for live pulls).');
+  }
 
   if (gaps.length > 0) {
     lines.push('## 🚨 GAPS');
@@ -477,7 +540,7 @@ function render({ supa, posthog, rc, sentry, asc, adSpend, healthAlerts = [], so
   lines.push(`| Supabase profiles, wardrobe, wear_logs, swipes | ✅ Truth | Direct DB rows; since launch (${LAUNCH_DATE}) |`);
   lines.push('| Supabase profiles.is_pro | ✅ Truth | Written by RC webhook |');
   lines.push('| Sentry unique issues 24h | ✅ Truth | Direct from Sentry API |');
-  lines.push('| PostHog DAU/WAU/MAU (person_id) | ⚠ Inflated | person_id still > real humans; ~2-3x inflation |');
+  lines.push('| Active users / WAU / MAU | ✅ Deduplicated | Signed-in = exact distinct Supabase users; guests = visits (30-min sessions). person_id metrics removed from this report (~2-3x inflated) |');
   lines.push('| RevenueCat (subs, MRR) | ⚠ Incl sandbox | Cannot filter sandbox via API |');
   lines.push('| App Store reviews | ⚠ USA only | Most-recent 20 only |');
   lines.push('| Fragrance DNA funnel | ✅ Truth | PostHog events; all-time |');

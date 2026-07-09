@@ -1,0 +1,88 @@
+{
+  "_comment": "Manual Apple Search Ads snapshot. Last 7 days window (Jul 2-9 2026). Shared ASA account (org 21769840) with Pour Picks — this file is scoped to the two PERFUME campaigns.",
+  "capturedAt": "2026-07-09",
+  "source": "manual-browser-snapshot",
+  "currency": "USD",
+  "dateRange": "Last 7 days (2026-07-02 to 2026-07-09)",
+  "analysisStartDate": "2026-07-02",
+  "account": {
+    "spend": 33.03,
+    "installs": 6,
+    "cpa": 5.51,
+    "impressions": 1661,
+    "taps": 32,
+    "bidStrategy": "Manage Bids (manual CPT)",
+    "targetCpa": null,
+    "note": "Perfume campaigns only (Search Results $23.36/6 installs + Discovery $9.67/0 installs). Blended CPA $5.51; Search Results alone converts at 46% CR."
+  },
+  "campaigns": [
+    {
+      "id": "2144160866",
+      "name": "Perfume Picks - US - Search Results",
+      "status": "ENABLED",
+      "countries": [
+        "US"
+      ],
+      "adPlacement": "Search Results",
+      "dailyBudget": 5,
+      "spend": 23.36,
+      "installs": 6,
+      "cpa": 3.89,
+      "adGroups": [
+        {
+          "name": "(single group — per-group detail not captured this pass)",
+          "status": "ENABLED",
+          "matchType": "EXACT",
+          "defaultMaxCptBid": null,
+          "spend": 23.36,
+          "installs": 6,
+          "cpa": 3.89,
+          "impressions": 668,
+          "taps": 13,
+          "note": "1.95% TTR, 46.15% CR, $1.80 avg CPT. Converting well — the CR says the store listing works; the $1.80 CPT is the cost driver."
+        }
+      ]
+    },
+    {
+      "id": "2144168412",
+      "name": "Perfume Picks - US - Discovery",
+      "status": "ENABLED",
+      "countries": [
+        "US"
+      ],
+      "adPlacement": "Search Results",
+      "dailyBudget": 3,
+      "spend": 9.67,
+      "installs": 0,
+      "cpa": null,
+      "adGroups": [
+        {
+          "name": "(discovery group — per-group detail not captured this pass)",
+          "status": "ENABLED",
+          "matchType": "SEARCH_MATCH",
+          "defaultMaxCptBid": null,
+          "spend": 9.67,
+          "installs": 0,
+          "cpa": null,
+          "impressions": 993,
+          "taps": 19,
+          "note": "993 impressions, 19 taps, ZERO installs this window — pure spend leak so far. Mine its search terms for winners, then cap or pause (same playbook as Pour 6/20)."
+        }
+      ]
+    }
+  ],
+  "keywords": [],
+  "keywordsNote": "Keyword-level data not captured this pass — pull from the console keywords tab on next refresh.",
+  "brandTerm": {
+    "present": null,
+    "enabled": null,
+    "terms": [],
+    "note": "Brand-term defense not verified this pass."
+  },
+  "brandTermDefended": null,
+  "searchTerms": [],
+  "hiddenLowVolumeSpend": {
+    "discoveryGroup": "Perfume Picks - US - Discovery",
+    "note": "$9.67/7d with 0 installs — search-terms tab needs mining before more budget."
+  }
+}

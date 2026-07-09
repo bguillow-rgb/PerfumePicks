@@ -30,6 +30,11 @@ export const EVENTS = {
   // Failure / degraded-path observability (M11 ship gate).
   DNA_FIRST_REC_EMPTY_POOL:    'first_rec_empty_pool',
   DNA_PERSIST_FAILED_QUEUED:    'persist_failed_queued',
+  // Fired ONCE when a queued row is given up on after MAX_SYNC_ATTEMPTS (dead-
+  // letter). Replaces the old behaviour where every retry re-fired
+  // persist_failed_queued (a 5,375-event storm during the 2026-06 schema-cache
+  // incident).
+  DNA_PERSIST_ABANDONED:        'persist_abandoned',
   // Living DNA recompute (M2 — unified pool + living archetype).
   DNA_RECOMPUTED:         'dna_recomputed',
   DNA_ARCHETYPE_CHANGED:  'dna_archetype_changed',
@@ -99,6 +104,14 @@ export const EVENTS = {
   FEEDBACK_OPENED:    'feedback_opened',
   FEEDBACK_SUBMITTED: 'feedback_submitted',
   FEEDBACK_FAILED:    'feedback_failed',
+
+  // ─── Invite / referral loop (Feature A — DNA-as-hook viral share) ─────
+  // Fired when the user opens the native share sheet with their DNA invite.
+  INVITE_SHARED:      'invite_shared',      // props: { archetype, source }
+  // A new install opened via an invite link (r=<inviterId> captured).
+  INVITE_LINK_OPENED: 'invite_link_opened', // props: { archetype, has_referrer }
+  // The captured referrer was written to the referrals table after sign-in.
+  INVITE_ATTRIBUTED:  'invite_attributed',  // props: { archetype }
 } as const;
 
 export type EventName = typeof EVENTS[keyof typeof EVENTS];

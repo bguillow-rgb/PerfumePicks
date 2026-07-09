@@ -39,11 +39,13 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { Session } from '@supabase/supabase-js';
 import { initRevenueCat, identifyUser, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { useProStore } from '@/src/stores/useProStore';
+import { useAuthStore } from '@/src/stores/useAuthStore';
 import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
 import { useAppSync } from '@/src/lib/sync/useAppSync';
 import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useBadgeCheck } from '@/src/lib/useBadgeCheck';
+import { useReferralCapture } from '@/src/lib/referral';
 import {
   initAnalytics,
   initErrorReporting,
@@ -217,6 +219,10 @@ export default function RootLayout() {
   useEffect(() => {
     // Demo mode (no Supabase) — skip the whole auth subscription path.
     if (!isSupabaseConfigured) {
+      // Same ordering as onSession below: resolve the shared auth store to a
+      // signed-out state BEFORE flipping authLoading, so the store is warm the
+      // moment screens are allowed to render.
+      useAuthStore.getState().setSession(null);
       setAuthLoading(false);
       return;
     }
@@ -237,6 +243,13 @@ export default function RootLayout() {
 
     const onSession = (sess: Session | null) => {
       setSession(sess);
+      // Publish to the shared auth store so every screen reads the current user
+      // from memory instead of making its own supabase.auth.getUser() call.
+      // ORDER MATTERS: set the store BEFORE flipping authLoading false. Screens
+      // are gated on authLoading (useProtectedRoute), and they read
+      // getCurrentUser() synchronously once rendered — so the store must be warm
+      // by the time authLoading allows a render, or a cold read returns null.
+      useAuthStore.getState().setSession(sess);
       setAuthLoading(false);
       if (sess?.user?.id) {
         syncRevenueCat(sess.user.id);
@@ -290,6 +303,7 @@ export default function RootLayout() {
   useProtectedRoute(session, authLoading || showSplash);
   useAppSync(session?.user?.id ?? null, !!session?.user?.is_anonymous);
   useBadgeCheck();
+  useReferralCapture();
 
   if (!fontsLoaded) return null;
 

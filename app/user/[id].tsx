@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { EmptyState } from '@/src/components/ui/EmptyState';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { getCurrentUser } from '@/src/stores/useAuthStore';
 
 /**
  * Public user profile — shows wear log history, follower/following counts,
@@ -34,10 +35,9 @@ export default function UserProfileScreen() {
   useEffect(() => {
     if (!isSupabaseConfigured || !id) { setLoading(false); return; }
     (async () => {
-      const [profileRes, wearsRes, userRes, followersRes, followingRes] = await Promise.all([
+      const [profileRes, wearsRes, followersRes, followingRes] = await Promise.all([
         supabase.from('profiles').select('display_name, bio, current_streak, total_sotd_count').eq('id', id).maybeSingle(),
         supabase.from('wear_logs').select('id', { count: 'exact', head: true }).eq('user_id', id),
-        supabase.auth.getUser(),
         supabase.from('follows').select('follower_id', { count: 'exact', head: true }).eq('followee_id', id),
         supabase.from('follows').select('followee_id', { count: 'exact', head: true }).eq('follower_id', id),
       ]);
@@ -45,7 +45,7 @@ export default function UserProfileScreen() {
       setWearCount(wearsRes.count ?? 0);
       setFollowerCount(followersRes.count ?? 0);
       setFollowingCount(followingRes.count ?? 0);
-      const me = userRes.data.user?.id ?? null;
+      const me = getCurrentUser()?.id ?? null;
       setMyUserId(me);
       // Check if already following
       if (me && me !== id) {

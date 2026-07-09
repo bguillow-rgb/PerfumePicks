@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { getCurrentUser } from '@/src/stores/useAuthStore';
 import { EmptyState } from '@/src/components/ui/EmptyState';
 
 interface LayeringEntry {
@@ -66,7 +67,7 @@ export function LayeringSection({ fragranceId, onHasData }: Props) {
     // Ensure a < b for the check constraint
     const [a, b] = fragranceId < partnerId ? [fragranceId, partnerId] : [partnerId, fragranceId];
 
-    const { data: { user } } = await supabase.auth.getUser();
+    const user = getCurrentUser();
     if (!user) { setSaving(false); return; }
 
     const { error } = await supabase.from('layering_entries').insert({

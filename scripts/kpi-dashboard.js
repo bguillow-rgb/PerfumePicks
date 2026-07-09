@@ -37,9 +37,13 @@ const path = require('path');
 const { standardWindows } = require('./kpi/windows');
 const supabaseSource = require('./kpi/sources/supabase');
 const posthogSource = require('./kpi/sources/posthog');
+const activeUsersSource = require('./kpi/sources/active-users');
 const rcSource = require('./kpi/sources/revenuecat');
 const sentrySource = require('./kpi/sources/sentry');
 const ascSource = require('./kpi/sources/app-store-connect');
+const asaSource = require('./kpi/sources/apple-search-ads');
+const cjSource = require('./kpi/sources/cj');
+const drAdSpend = require('./kpi/dr-ad-spend');
 const ceoFmt = require('./kpi/formatters/ceo');
 
 function pickFormat(argv) {
@@ -60,6 +64,8 @@ async function main() {
     rc: rcSource.loadEnv(),
     sentry: sentrySource.loadEnv(),
     asc: ascSource.loadEnv(),
+    asa: asaSource.loadEnv(),
+    cj: cjSource.loadEnv(),
   };
 
   if (!envs.supabase.url || !envs.supabase.key) {
@@ -80,13 +86,23 @@ async function main() {
   }
 
   // ── Pull every source in parallel ────────────────────────────────
-  const [supa, posthog, rc, sentry, asc] = await Promise.all([
+  const [supa, posthog, rc, sentry, asc, asa, cj] = await Promise.all([
     withRetry(() => supabaseSource.fetchAll(envs.supabase, windows), {}),
     withRetry(() => posthogSource.fetchAll(envs.posthog), { configured: true }),
     withRetry(() => rcSource.fetchOverview(envs.rc), { configured: true }),
     withRetry(() => sentrySource.fetchAll(envs.sentry), { configured: true }),
     withRetry(() => ascSource.fetchAll(envs.asc), { configured: true }),
+    withRetry(() => asaSource.fetchAll(envs.asa), { mode: 'snapshot' }),
+    withRetry(() => cjSource.fetchAll(envs.cj), { configured: true }),
   ]);
+
+  // ── Active users — honest DAU (signed-in humans + guest visits) ────
+  const activeUsers = posthogSource.isConfigured(envs.posthog)
+    ? await activeUsersSource.fetchActiveUsers(envs.posthog, { days: 30 }).catch((e) => ({ error: e.message }))
+    : { error: 'PostHog not configured' };
+
+  // ── DR AD SPEND read on the Apple Search Ads account ───────────────
+  const adSpend = drAdSpend.build(asa);
 
   // ── Health alerts (after supa resolves so signup counts are available) ──
   const healthAlerts = posthogSource.isConfigured(envs.posthog)
@@ -102,8 +118,10 @@ async function main() {
   if (rc?.configured && !rc.error) sources.push('RevenueCat');
   if (sentry?.configured && !sentry.error) sources.push('Sentry');
   if (asc?.configured && !asc.error) sources.push('App Store Connect');
+  if (adSpend?.ok) sources.push(`Apple Search Ads (${adSpend.mode})`);
+  if (cj?.configured && !cj.error) sources.push('CJ Affiliate');
 
-  const data = { supa, posthog, rc, sentry, asc, healthAlerts, sources, now };
+  const data = { supa, posthog, activeUsers, rc, sentry, asc, asa, cj, adSpend, healthAlerts, sources, now };
 
   let output;
   if (format === 'json') {

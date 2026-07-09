@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { getCurrentUser } from '@/src/stores/useAuthStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { QUICK_TAGS, sortReviewsByQuickTake } from '@/src/features/reviews/quickTake';
 
@@ -49,7 +50,7 @@ export function ReviewSection({ fragranceId, onHasData }: Props) {
 
   const loadReviews = useCallback(async () => {
     if (!isSupabaseConfigured) return;
-    const { data: { user } } = await supabase.auth.getUser();
+    const user = getCurrentUser();
     setUserId(user?.id ?? null);
 
     const { data } = await supabase

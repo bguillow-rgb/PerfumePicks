@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useState, useEffect } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
-import { supabase } from '@/lib/supabase';
+import { getCurrentUser } from '@/src/stores/useAuthStore';
 import { Button } from '@/src/components/ui/Button';
 import { COLORS, SPACING, RADIUS } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
@@ -75,10 +75,7 @@ export default function PaywallScreen() {
   } = useRevenueCat();
 
   useEffect(() => {
-    (async () => {
-      const { data } = await supabase.auth.getUser();
-      setIsGuest(data.user?.is_anonymous ?? true);
-    })();
+    setIsGuest(getCurrentUser()?.is_anonymous ?? true);
   }, []);
 
   // Fire PAYWALL_VIEWED once per mount. Previously the entire monetization

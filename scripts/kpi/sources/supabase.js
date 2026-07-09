@@ -228,12 +228,49 @@ async function fetchRecentSignups(env, { limit = 10, sinceIso = null } = {}) {
   });
 }
 
+// Affiliate buy-link clicks — the durable, app-owned ledger (table
+// affiliate_clicks). This REPLACES PostHog as the source of truth for click
+// counts: PostHog got wiped 2026-07-03. Low volume, so fetch rows and roll up
+// in JS. Owner (Bob) excluded here to match every other metric.
+const OWNER_USER_ID = 'f4810587-d519-49d3-8121-d9fdd8239159';
+
+async function fetchAffiliateClicks(env, windows) {
+  const rows = await getRows(
+    env,
+    'affiliate_clicks',
+    [`created_at=gte.${encodeURIComponent(windows.sinceLaunch.startIso)}`],
+    2000,
+  );
+  const mine = rows.filter((r) => r.user_id !== OWNER_USER_ID);
+  const todayStart = windows.today.startIso;
+  const last7Start = windows.last7d.startIso;
+  const byRetailer = {};
+  const people = new Set();
+  let today = 0;
+  let last7d = 0;
+  for (const r of mine) {
+    byRetailer[r.retailer] = (byRetailer[r.retailer] || 0) + 1;
+    if (r.user_id) people.add(r.user_id);
+    if (r.created_at >= todayStart) today += 1;
+    if (r.created_at >= last7Start) last7d += 1;
+  }
+  return {
+    sinceLaunch: mine.length,
+    people: people.size,
+    today,
+    last7d,
+    byRetailer: Object.entries(byRetailer)
+      .map(([retailer, clicks]) => ({ retailer, clicks }))
+      .sort((a, b) => b.clicks - a.clicks),
+  };
+}
+
 // Convenience: pull every metric in one shot
 async function fetchAll(env, windows) {
   const [
     signups, wardrobe, wearLogs, swipes, reviews,
     submissions, contentReports, proMirror, dnaPickerEvents,
-    catalogSize, recentSignups,
+    catalogSize, recentSignups, affiliateClicks,
   ] = await Promise.all([
     fetchSignups(env, windows),
     fetchWardrobe(env, windows),
@@ -246,11 +283,12 @@ async function fetchAll(env, windows) {
     fetchDnaPickerEvents(env, windows),
     fetchCatalogSize(env),
     fetchRecentSignups(env, { limit: 10, sinceIso: windows.sinceLaunch.startIso }),
+    fetchAffiliateClicks(env, windows).catch((e) => ({ error: e.message })),
   ]);
   return {
     signups, wardrobe, wearLogs, swipes, reviews,
     submissions, contentReports, proMirror, dnaPickerEvents,
-    catalogSize, recentSignups,
+    catalogSize, recentSignups, affiliateClicks,
   };
 }
 
