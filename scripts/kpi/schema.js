@@ -96,6 +96,27 @@ const TABLES = {
     kindCol: 'kind',
     note: 'Durable DNA pick-stream event log. Append-only.',
   },
+  userTasteProfiles: {
+    name: 'user_taste_profiles',
+    writes: true,
+    confirmedWrites: true,
+    timestampCol: 'last_updated',
+    note: 'Server mirror of the committed FragranceDNA (dna jsonb). dna->archetype carries {primary, modifier, challenger, leaning} — the V3 panel reads only that path.',
+  },
+  enrichRequests: {
+    name: 'enrich_requests',
+    writes: true,
+    confirmedWrites: true,
+    timestampCol: 'created_at',
+    note: 'DNA V3 picker-search enrich-on-demand queue. fragrance_id is the app-level SLUG (join fragrances.slug, never the uuid). Reads are service-role only (RLS).',
+  },
+  appSettings: {
+    name: 'app_settings',
+    writes: false, // service-role writes only (flag flips, cost guards)
+    confirmedWrites: true,
+    keyCol: 'key',
+    note: 'Key-value config (text values). Carries the dna_v3_archetypes rollout flag read by the V3 panel.',
+  },
 };
 
 // ── PostHog event names used by the dashboard ──────────────────────────
@@ -120,6 +141,12 @@ const EVENTS = {
   DNA_CTA_TAPPED:         'dna_cta_tapped',
   DNA_COMPUTE_FAILED:     'dna_compute_failed',
   DNA_RECOMPUTED:         'dna_recomputed',
+
+  // DNA V3 picker search ("bring your own bottle", ships in 1.0.5)
+  SEARCH_OPENED:           'search_opened',           // props: { pick_count }
+  SEARCH_RESULT_PICKED:    'search_result_picked',    // props: { fragrance_id, in_grid, outcome: docked|promoted }
+  SEARCH_NO_RESULTS:       'search_no_results',       // props: { query_length }
+  SEARCH_ENRICH_REQUESTED: 'search_enrich_requested', // props: { fragrance_id }
 
   // Discovery
   DISCOVER_SEARCH_QUERY:  'discover_search_query',

@@ -43,6 +43,7 @@ const sentrySource = require('./kpi/sources/sentry');
 const ascSource = require('./kpi/sources/app-store-connect');
 const asaSource = require('./kpi/sources/apple-search-ads');
 const cjSource = require('./kpi/sources/cj');
+const dnaV3Source = require('./kpi/sources/dna-v3');
 const drAdSpend = require('./kpi/dr-ad-spend');
 const ceoFmt = require('./kpi/formatters/ceo');
 
@@ -104,6 +105,13 @@ async function main() {
   // ── DR AD SPEND read on the Apple Search Ads account ───────────────
   const adSpend = drAdSpend.build(asa);
 
+  // ── DNA V3 panel (archetype distribution, search adoption, enrich queue) ──
+  // Runs after the main pull (needs both Supabase + PostHog envs); every leg
+  // inside fails soft, so this never takes the dashboard down.
+  const dnaV3 = await dnaV3Source
+    .fetchAll({ supabase: envs.supabase, posthog: envs.posthog }, windows)
+    .catch((e) => ({ error: e.message }));
+
   // ── Health alerts (after supa resolves so signup counts are available) ──
   const healthAlerts = posthogSource.isConfigured(envs.posthog)
     ? await posthogSource.fetchHealthAlerts(envs.posthog, supa?.signups).catch((e) => [
@@ -121,7 +129,7 @@ async function main() {
   if (adSpend?.ok) sources.push(`Apple Search Ads (${adSpend.mode})`);
   if (cj?.configured && !cj.error) sources.push('CJ Affiliate');
 
-  const data = { supa, posthog, activeUsers, rc, sentry, asc, asa, cj, adSpend, healthAlerts, sources, now };
+  const data = { supa, posthog, activeUsers, rc, sentry, asc, asa, cj, adSpend, dnaV3, healthAlerts, sources, now };
 
   let output;
   if (format === 'json') {

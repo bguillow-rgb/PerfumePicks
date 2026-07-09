@@ -1,0 +1,136 @@
+# DNA V3 M4 — picker search ("bring your own bottle").
+#
+# Proves the full search leg of FEATURE_PICKER_SEARCH.md on the real picker:
+# open the entry affordance → in-place field → type a real catalog bottle that
+# is NOT in the recognizable grid (Delina, popularity_tier 2 < the tier-3 grid
+# floor, enriched in prod so it passes the completeness gate) → tap the result
+# → gold-ring dock as a pinned head tile → mix with 4 grid picks (5 = max) →
+# compute proceeds to the reveal.
+#
+# Self-contained: clearState like 00_dna_picker (guest auth + dev-client server
+# picker + Expo dev menu handling), so it can run standalone. Requires metro on
+# localhost:8081 serving the worktree.
+appId: com.bobguillow.perfumepicks
+---
+- launchApp:
+    clearState: true
+
+# Dev-client only: clearState wipes the saved metro URL, dropping us on the
+# Expo dev-client server picker. Reconnect to metro so the JS bundle loads.
+- runFlow:
+    when:
+      visible:
+        text: "http://localhost:8081"
+    commands:
+      - tapOn:
+          text: "http://localhost:8081"
+
+# The clearState reload pops the Expo developer menu — a native overlay maestro
+# cannot read. Blind-wait for it to settle, then dismiss via its ✕ by point
+# (91%,50%). Harmless on standalone builds. (Same dance as 00_dna_picker /
+# helpers/dismiss_dev_menu.yaml.)
+- extendedWaitUntil:
+    visible:
+      text: "__sleep_for_bundle__"
+    timeout: 25000
+    optional: true
+- tapOn:
+    point: "91%,50%"
+- waitForAnimationToEnd
+
+# Real mode: continue as guest (clearState wiped onboarding).
+- extendedWaitUntil:
+    visible:
+      text: "Continue as Guest"
+    timeout: 60000
+    optional: true
+- runFlow:
+    when:
+      visible:
+        text: "Continue as Guest"
+    commands:
+      - tapOn:
+          text: "Continue as Guest"
+
+# The picker grid front door.
+- extendedWaitUntil:
+    visible:
+      id: "dna-picker-grid"
+    timeout: 90000
+- assertVisible:
+    text: "Pick the ones you love"
+
+# Warmup tap (first interaction after XCUITest spawn can drop).
+- tapOn:
+    text: "Pick the ones you love"
+- waitForAnimationToEnd
+
+# ── Search leg ────────────────────────────────────────────────────────────────
+# Entry affordance: one muted line beneath the count sub-copy.
+- assertVisible:
+    id: "dna-search-affordance"
+- tapOn:
+    id: "dna-search-affordance"
+
+# In-place expand: field + empty-state hint, grid still on screen behind.
+- extendedWaitUntil:
+    visible:
+      id: "dna-search-input"
+    timeout: 10000
+- assertVisible:
+    text: "Type a brand or bottle — like Baccarat Rouge 540"
+# The footer CTA stays visible above the keyboard (mobile-UX audit rule).
+- assertVisible:
+    id: "dna-picker-continue"
+
+- tapOn:
+    id: "dna-search-input"
+- inputText: "delina"
+
+# Debounced result shelf: Delina (tier 2 — guaranteed absent from the tier≥3
+# grid, enriched in prod → complete, tappable).
+- extendedWaitUntil:
+    visible:
+      id: "dna-search-result"
+    timeout: 15000
+- assertVisible:
+    text: "Delina"
+
+# The docking: tap the result → Light haptic → pinned head tile with the gold
+# brought-in ring; field collapses back to the affordance, keyboard dismissed.
+- tapOn:
+    id: "dna-search-result"
+    index: 0
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "dna-tile-pinned"
+    timeout: 10000
+- assertVisible:
+    id: "dna-tile-gold-ring"
+- assertVisible:
+    id: "dna-search-affordance"
+
+# ── Mixed selection: 1 search + 4 grid = 5 (the max) ──────────────────────────
+- tapOn:
+    id: "dna-tile"
+    index: 0
+- tapOn:
+    id: "dna-tile"
+    index: 1
+- tapOn:
+    id: "dna-tile"
+    index: 2
+- tapOn:
+    id: "dna-tile"
+    index: 3
+- assertVisible:
+    text: "Five picked — that's the max. Continue when ready."
+
+# ── Compute proceeds (search pick survives the byId merge) ────────────────────
+- tapOn:
+    id: "dna-picker-continue"
+- extendedWaitUntil:
+    visible:
+      id: "dna-reveal-archetype"
+    timeout: 30000

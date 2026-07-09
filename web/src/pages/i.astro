@@ -27,12 +27,20 @@ import { SITE } from '../consts';
 
   <script is:inline>
     (function () {
+      // Full DNA V3 roster (20) + legacy persisted-only keys (rebel,
+      // crowd_pleaser). Forward-compatible: deploys ahead of the 1.0.5 app —
+      // must stay a superset of ARCHETYPE_COPY in src/features/dna/revealCopy.ts.
       var NAMES = {
         the_executive: 'The Executive', the_seducer: 'The Seducer',
         the_connoisseur: 'The Connoisseur', the_signature_wearer: 'The Signature Wearer',
         the_purist: 'The Purist', the_showstopper: 'The Showstopper',
         the_smart_shopper: 'The Smart Shopper', the_romantic: 'The Romantic',
         the_explorer: 'The Explorer', the_classicist: 'The Classicist',
+        the_gourmand: 'The Gourmand', the_minimalist: 'The Minimalist',
+        the_naturalist: 'The Naturalist', the_trendsetter: 'The Trendsetter',
+        the_old_soul: 'The Old Soul', the_maximalist: 'The Maximalist',
+        the_night_owl: 'The Night Owl', the_spice_trader: 'The Spice Trader',
+        the_daybreaker: 'The Daybreaker', the_soft_focus: 'The Soft Focus',
         the_rebel: 'The Rebel', the_crowd_pleaser: 'The Crowd-Pleaser'
       };
       try {

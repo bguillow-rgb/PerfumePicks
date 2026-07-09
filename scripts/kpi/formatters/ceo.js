@@ -21,6 +21,7 @@
 
 const { APP_STORE_STATUS, ASC_APP_ID, LAUNCH_DATE } = require('../schema');
 const adSpendRender = require('./dr-ad-spend-render');
+const dnaV3Render = require('./dna-v3-render');
 
 function n(x, fallback = '—') {
   return x == null ? fallback : x;
@@ -52,7 +53,7 @@ function deltaPct(today, yest) {
   return `${sign}${Math.round(d * 100)}%`;
 }
 
-function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, healthAlerts = [], sources, now = new Date() }) {
+function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV3, healthAlerts = [], sources, now = new Date() }) {
   const lines = [];
   const { PRE_LAUNCH } = require('../schema');
 
@@ -295,6 +296,9 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, heal
     }
     lines.push('');
   }
+
+  // ── 7b. DNA V3 — archetype distribution + picker search (M5) ──────
+  for (const l of dnaV3Render.markdownLines(dnaV3)) lines.push(l);
 
   // ── 8. MONETIZATION ───────────────────────────────────────────────
   lines.push('## 💰 MONETIZATION');

@@ -178,8 +178,10 @@ export function deriveArchetype(
   return { primary: ranked[0].key, modifier: dominantSecondaryTrait(traits) };
 }
 
-/** snake_case key of the second-strongest trait → the `modifier` (V1.1 A1 example). */
-function dominantSecondaryTrait(traits: DnaTraits): string | null {
+/** snake_case key of the second-strongest trait → the `modifier` (V1.1 A1 example).
+ *  Exported for the V3 centroid path (deriveDna), which keeps the same modifier
+ *  system over its own election. */
+export function dominantSecondaryTrait(traits: DnaTraits): string | null {
   const ranked = TRAIT_KEYS.map((k) => ({ k, val: traits.values[k] ?? 0 }))
     .sort((a, b) => b.val - a.val);
   if (ranked.length < 2 || ranked[1].val <= 0) return null;

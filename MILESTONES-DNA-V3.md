@@ -1,0 +1,246 @@
+# DNA V3 — 20 Archetypes + Picker Search: Milestone Plan
+
+_Written 2026-07-09. The consolidated program from three inputs: the archetype audit
+(77% of 35 prod users elect the_seducer; 5 labels never elected), FEATURE_ARCHETYPES_V2.md
+(centroid engine, 20-label roster, data prerequisites), and FEATURE_PICKER_SEARCH.md
+(Chief UX "bring your own bottle" spec). Read those two spec files before starting any
+milestone — they are the source of truth for design decisions; this file is the
+execution order and the gates._
+
+## Program goal
+
+Ship DNA V3 in Perfume Picks 1.0.5: twenty decisive archetypes elected by a
+centroid engine over catalog-normalized taste axes, fed by a picker that lets
+enthusiasts search the full catalog for bottles they actually own — with CI
+gates that make the everyone-is-one-archetype bug structurally impossible.
+
+## Operating rules (non-negotiable)
+
+- **Live prod app.** All engine changes flag-gated behind the existing DNA
+  killSwitch pattern (src/features/dna/killSwitch.ts). No prod DB writes except
+  the catalog backfill columns (additive UPDATEs) and the enrich-queue table.
+- **Work in a dedicated worktree** on branch `feat/dna-v3` (the repo's main
+  checkout is shared with other active sessions — do NOT work on main's
+  checkout). Pattern: `git worktree add .claude/worktrees/dna-v3 -b feat/dna-v3`.
+- **Milestone autonomy:** when a milestone's exit gates pass, proceed to the
+  next without pausing (Bob's standing build-autonomy rule). Stop ONLY at M6
+  (device gate — requires Bob) or when a gate cannot be made to pass.
+- **Every milestone ends with:** tests green (`npx jest`), tsc clean
+  (`npx tsc --noEmit`), a one-paragraph progress note appended to the
+  "## Log" section at the bottom of this file, and a commit on `feat/dna-v3`.
+- Outbound-facing copy (reveal identity lines, picker strings) gets a humanize
+  pass before it's committed (Bob's standing rule).
+
+---
+
+## M0 — Catalog backfill & data audit (server-side only, zero app risk)
+
+The pool is 112 bottles; the axes are dead without these columns.
+
+1. Backfill `release_year` (69/112 missing), `community_projection`,
+   `community_sillage`, `community_longevity` (73/112 missing) for all
+   dna_eligible bottles. Reuse the enrichment pattern in
+   scripts/enrich-notes-llm.mjs (LLM-assisted with source-grounding; write a
+   `scripts/enrich-dna-pool.mjs`). Values must be sourced/estimable, not
+   hallucinated — flag any bottle where confidence is low instead of guessing.
+2. Audit `top_accords` + `fragrance_family` completeness on all 112; fix gaps.
+3. Compute + bake the catalog-wide axis distributions (percentile tables for
+   the 14 axes in FEATURE_ARCHETYPES_V2.md) → `src/features/dna/axisNorms.ts`
+   (generated file with a regeneration script `scripts/build-axis-norms.mjs`).
+
+**Exit gates:** pool coverage ≥95% on year/projection/sillage/longevity;
+axisNorms.ts generated + unit test asserting sane ranges; report of per-column
+before/after coverage in the Log.
+
+## M1 — Centroid election engine (flag-gated)
+
+1. `src/features/dna/axes.ts`: user feature vector — 14 axes, each the user's
+   picks scored against axisNorms (catalog-wide percentiles). Weighted by
+   resolvePickWeight (favorites 2.5×, search picks 1.5× when M4 lands).
+2. `src/features/dna/centroids.ts`: 20 centroids per the V2 roster (10 kept +
+   10 new). Election = weighted-distance argmin; margin = gap(best, runnerUp).
+3. Wire into deriveDna behind a `dna_v3_archetypes` flag (killSwitch pattern):
+   flag off → legacy SCORERS path byte-identical (no-regression tests).
+4. Margin threshold → living-archetype lean mechanic ("X with a Y lean") using
+   the existing livingArchetype.ts runner-up plumbing.
+5. Fix the compute-lookup trap NOW (needed by M4): startCompute must merge a
+   searchPickCache into its byId map instead of silently dropping non-pool
+   picks (app/dna/index.tsx:194,206).
+
+**Exit gates:** jest green incl. no-regression suite (flag off = legacy
+output on all existing fixtures); replay of ALL real prod pick streams
+(fixture pulled read-only from user_taste_profiles) elects ≥8 distinct
+archetypes with max share ≤20%.
+
+## M2 — Balance CI gates (the never-again suite)
+
+1. `src/features/dna/__tests__/election-balance.test.ts`:
+   - Replay gate (real pick streams, refreshed fixture): ≥8 distinct, max ≤20%.
+   - Simulation gate: 10k synthetic pick-sets sampled from the real pool
+     (uniform + persona-biased samplers, seeded/deterministic): every one of
+     the 20 elected on 2–10% of sets, none >12%, median margin ≥ lean threshold.
+2. Tune centroids until gates pass. Tuning is data work, not test-weakening —
+   the thresholds in this file are the contract; changing them requires Bob.
+
+**Exit gates:** both gates green in CI; distribution table (label → sim share →
+replay share) appended to the Log.
+
+## M3 — Copy, icons, and the share surface for 20
+
+1. revealCopy.ts: name + identity line + icon + tint for all 20 (12 exist,
+   8+ new visuals needed from the Ionicons set + brand tints). Identity lines
+   get the humanize pass — no AI-marketing words (unlock/discover/elevate…).
+2. Web: /i NAMES map updated for all 20 keys (web/src/pages/i.astro) —
+   forward-compatible, can deploy ahead of the app.
+3. Modifier fold-in on the reveal + share hook: "The {Modifier} {Archetype}"
+   display form (~120 combos) per the audit recommendation.
+
+**Exit gates:** every ArchetypeKey has complete copy (exhaustiveness type
+test); web builds; share-hook unit test renders modifier form; humanize pass
+recorded in Log.
+
+## M4 — Picker search ("bring your own bottle")
+
+Build FEATURE_PICKER_SEARCH.md exactly — entry affordance line, in-place
+expand, result shelf, the gold-ring docking, all seven edge states, keyboard
+rules, no tray, no reshuffle. Plus:
+
+1. Search backend: name+brand ilike over is_active catalog, completeness gate
+   (family + accords present), enrich-on-demand queue table + insert.
+2. searchPickedIds store state + SEARCH_DELIBERATE_WEIGHT = 1.5 composition.
+3. Analytics: search_opened / search_result_picked / search_no_results /
+   search_enrich_requested events (PostHog, same naming style as dna_* events).
+
+**Exit gates:** jest + tsc green; Maestro flow for the picker updated
+(search open → pick → dock → mixed 1+4 → compute) passing on simulator;
+mobile-UX audit rules verified in the flow (keyboard never hides CTA,
+back collapses search first).
+
+## M5 — KPI + rollout instrumentation
+
+1. KPI dashboard: archetype distribution panel (elected label counts, margin
+   histogram, search-pick share of picks) so the balance gates are observable
+   in prod, not just CI. (Coordinate with the invite-funnel dashboard work —
+   another session touched scripts/kpi/; rebase carefully.)
+2. Flag rollout plan in the Log: allowlist (Bob) → 100%, mirroring the Pour
+   DNA rollout pattern; re-derive note (existing users re-elect on next
+   recompute — expected, lean/swap covers identity changes).
+
+**Exit gates:** dashboard renders the new panel against prod (read-only);
+rollout checklist written.
+
+## M6 — DEVICE GATE (Bob required — loop STOPS here)
+
+Console-launch-verify on Bob's device (standing rule: tsc+vitest green ≠
+runs): flag on for Bob's account → retake DNA → search a bottle → gold-ring
+dock → mixed picks → reveal shows a V3 archetype with modifier → share hook
+renders → no Skia/undefined-font crashes. Then: 1.0.5 build + submit (after
+1.0.4 is approved+released), flag ramp per M5 plan.
+
+---
+
+## Log
+
+_(appended by each milestone run — newest at top)_
+
+**2026-07-09 — M5 complete (KPI + rollout instrumentation).** The DNA V3 panel is live in the KPI dashboard and renders against prod read-only, and the rollout checklist below is the M6 runbook.
+
+**Dashboard.** New source `scripts/kpi/sources/dna-v3.js` + formatter `scripts/kpi/formatters/dna-v3-render.js` (the dr-ad-spend-render pattern: ceo.js stays thin, one insertion). Reads: `user_taste_profiles` with an aliased jsonb select (`archetype:dna->archetype` — never the full DNA blob), the `app_settings.dna_v3_archetypes` flag row, `dna_picker_events` kind∈(pick,favorite) for total picks, `enrich_requests` (service-role, per RLS) joined to `fragrances` **by slug**, and PostHog `search_*` events via the exported `hogql` + `NS` from sources/posthog.js (dual-project union + owner exclusion reused, not duplicated — `NS` newly exported). Owner excluded from the distribution like every other Supabase metric. **Margin note:** the election margin is NOT persisted (raw centroid distances never leave the engine); what IS persisted per profile is `archetype.{primary, modifier, challenger, leaning}` — so the panel reports distribution + modifier counts + lean counts (leaning=true → challenger breakdown) and says so explicitly; the margin histogram remains the M2 simulation gate's job. Every leg fails soft and every V3-only metric renders "awaiting rollout" rows pre-flag (verified: zero search events + absent flag row today → no errors). Merge-friendliness vs the invite-funnel session (uncommitted on main's checkout, touching kpi-dashboard.js / ceo.js / schema.js / posthog.js / supabase.js): all M5 logic is in two NEW files; shared files got only additive insertions (schema.js: 3 TABLES entries + 4 SEARCH_* EVENTS; posthog.js: `NS` export line; kpi-dashboard.js: require + a standalone fetch block + `dnaV3` in data; ceo.js: require + param + one render loop line) placed away from their hunks where possible — worst case is trivial adjacent-line conflicts. **Rendered panel against prod (2026-07-09):**
+
+```
+## 🧬 DNA V3 — ARCHETYPES & PICKER SEARCH
+
+- **Engine:** LEGACY scorers (app_settings.dna_v3_archetypes row absent — flag fails closed). Every profile below is **legacy-elected**; V3 elections appear as users recompute after the flag flips.
+- **Profiles with DNA:** 36 (owner excluded) · **distinct archetypes:** 6/20 · **max share:** the_seducer 77.8% (legacy baseline — the concentration V3 exists to fix; V3 gate ceiling is 20.0%)
+
+| Archetype | Elected by | Users | Share |
+|---|---|---|---|
+| the_seducer | legacy (pre-V3) | 28 | 77.8% |
+| the_romantic | legacy (pre-V3) | 3 | 8.3% |
+| the_executive | legacy (pre-V3) | 2 | 5.6% |
+| the_classicist | legacy (pre-V3) | 1 | 2.8% |
+| the_purist | legacy (pre-V3) | 1 | 2.8% |
+| the_signature_wearer | legacy (pre-V3) | 1 | 2.8% |
+
+- **Modifiers:** expressive 22 · collector 4 · luxury 4 · compliment_seeking 2
+- **Leans (persisted challenger, leaning=true):** 3 — toward the_classicist 1 · the_romantic 1 · the_seducer 1
+
+**Picker search — "bring your own bottle" (ships in 1.0.5):**
+| Search opened / picks / no-results / enrich | awaiting rollout |
+- **Search-pick share of picks:** awaiting rollout (0 of 229 picker picks since launch are search picks — expected while 1.0.5 isn't live)
+- **Enrich queue:** awaiting rollout (0 requests — table live, fills once 1.0.5 search ships)
+```
+
+Once V3 elections dominate, the max-share line flips to a live gate check: ✅ within the 20% replay ceiling, or 🚨 breach → stop ramping. **Tests (+10):** `__tests__/scripts/dnaV3Kpi.test.ts` pins the pure rollups (roster classification incl. legacy-only rebel/crowd_pleaser, owner exclusion, modifier/lean counts, docked+promoted share math, awaiting-rollout + empty-payload degradation, no `undefined`/`NaN` in output). **Gates:** `npx jest` green (41 suites / 586 tests), `npx tsc --noEmit` identical 29-error baseline (0 new), `node scripts/kpi-dashboard.js --markdown` renders the panel above against prod.
+
+**ROLLOUT CHECKLIST (M6 runbook — Bob required from here).**
+
+*0. Reality check on the flag shape.* `dna_v3_archetypes` as built (v3Flag.ts + killSwitch.ts) is a **binary global** app_settings row — value TEXT, enabled only by `'true'`/`'1'` (fail-closed), re-read on every app foreground. There is no per-user allowlist or staged-percentage support in the resolver (that was Pour's `dna_layer_enabled` shape, not this one). The allowlist stage is achieved by **distribution, not by user id**: 1.0.4-and-earlier binaries contain zero V3 code and never read this flag, so flipping it ON while 1.0.5 exists only on Bob's dev-client is exactly "allowlist = Bob". If a true post-release ramp is ever wanted, the resolver needs a shape change (e.g. JSON `{enabled, allowlist[]}`) — a deliberate code change, not a config write.
+
+*1. Dev-client rebuild (FIRST — unblocks everything else).* The installed sim dev-client predates @shopify/react-native-skia (M4's redbox: `RNSkiaModule could not be found`). Repo is CNG (no ios/ checked in).
+- **Simulator (fastest — local, no EAS queue):** `npx expo run:ios` from the MAIN checkout on the 1.0.5 code (prebuilds + compiles the dev client locally, installs on the booted sim). Then `npx expo start --dev-client` and re-run `maestro test e2e/dna_09_picker_search.yaml` — the M4 Maestro gate.
+- **Bob's device:** `eas build --profile development-device --platform ios` (internal distribution, developmentClient, simulator:false) → install from the EAS link → `npx expo start --dev-client` (same Wi-Fi). No new entitlements in V3, so no provisioning gymnastics.
+- (Sim alternative via EAS if local Xcode misbehaves: `eas build --profile development --platform ios` → `eas build:run -p ios --latest`.)
+
+*2. Flag ON (allowlist-by-distribution stage — only Bob's dev build runs V3).* Service-role write (app_settings is public-read, service-role-write):
+```sql
+insert into app_settings (key, value) values ('dna_v3_archetypes', 'true')
+  on conflict (key) do update set value = excluded.value;
+```
+REST equivalent (Supabase SQL editor works too):
+```
+curl -X POST "$EXPO_PUBLIC_SUPABASE_URL/rest/v1/app_settings" \
+  -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+  -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" \
+  -d '{"key":"dna_v3_archetypes","value":"true"}'
+```
+**Kill switch (any stage, OTA, takes effect on next app foreground):** `update app_settings set value = 'false' where key = 'dna_v3_archetypes';` — legacy SCORERS election resumes byte-identical (the M1 no-regression contract).
+
+*3. On-device verify (the M6 device gate, console-launch-verify).* Flag on + dev client from step 1: retake DNA → search a bottle (e.g. "delina") → gold-ring dock → mixed 1+4 picks → compute → reveal shows a V3 archetype with modifier folded in ("The {Modifier} {Archetype}") → share hook renders → no Skia/undefined-font crashes, console clean.
+
+*4. Re-derive expectations (write this into the release notes for yourself, not users).* Existing users re-elect on their next recompute (retake, or any living-DNA recompute) — **most of the 28 seducers will land elsewhere; that's the point.** The persisted lean/challenger + `pendingShift` "You've shifted" nudge is the designed reveal path for identity changes; modifier was already populated pre-V3 so the folded display form works on both engines. No backfill, no forced recompute — let it roll through organically.
+
+*5. Web deploy — /i NAMES map (M3 built it, NOT yet deployed).* From the **MAIN checkout only** (never the worktree): `cd ~/PerfumePicks/web && npm run build && bash scripts/deploy-to-docs.sh && git push`. The map is a forward-compatible superset (all 22 keys incl. legacy), so it can go live ahead of app approval — do it at M6 alongside the submit, per plan.
+
+*6. 1.0.5 release train.* (a) Merge feat/dna-v3 → main (resolve the trivial kpi insertions against the invite-funnel work). (b) Bump `app.json` version 1.0.4 → 1.0.5. (c) `eas build --platform ios --profile production` — V3 adds NO new entitlements, so the standard non-interactive build path applies (the ASC-capability + expect-driven interactive recipe is only for builds that add entitlements). (d) **Submit only AFTER 1.0.4 is approved + released:** `eas submit --platform ios --profile production` (ascAppId 6774184221). (e) Flag stays ON through release: 1.0.5 going live IS the 100% stage.
+
+*7. Week-one watch list (daily `node scripts/kpi-dashboard.js`).*
+- **Balance-gate prod mirror:** max label share on the V3 panel — the line self-flags 🚨 above the 20% replay ceiling once V3 elections dominate (small-N caveat while re-derives trickle in); distinct-archetype count should climb from 6 toward the roster.
+- **Search adoption:** search_opened users, docked vs promoted picks, search-pick share; a high no-results rate = catalog search gaps to fix.
+- **Enrich queue:** volume + top-requested bottles → feed `scripts/enrich-dna-pool.mjs` runs; requests are real user demand.
+- **Sentry:** new issues on the picker/reveal (Skia especially) + `dna_compute_failed` / `persist_failed_queued` events.
+- If the panel's max share breaches with real N, or Sentry lights up: kill switch (step 2), diagnose, re-ramp.
+
+**2026-07-09 — M4 complete (picker search — "bring your own bottle"); Maestro device run pending (M6).** FEATURE_PICKER_SEARCH.md built as spec'd on the picker screen. **Entry affordance:** one muted line beneath the count sub-copy ("Own a bottle you don't see? Search for it." — link half in accent + escapeText underline, 16px search-outline glyph), tap → in-place slim TextInput ("Search by brand or bottle"), grid stays mounted; no modal, no segmented control, no tray, no reshuffle, no similar-injection (do-NOT-build list respected; result tiles are 92px light cards, visually lighter than grid tiles). **Search backend:** reuses useCatalogStore.search (name+brand ilike over is_active, brand-token splitting, bundle filter), debounced 250ms, limit 12, stale-response guard. **Completeness gate:** `isSearchResultComplete` (family present AND top_accords non-empty; note rowToFragrance defaults NULL family to 'floral', so accords are the live half) — gated results render dimmed with "Details coming soon"; tap enqueues enrich-on-demand + toast "Noted — we'll prioritize {name}." **Docking:** tap a complete result → Light haptic → `pickFromSearch` in useDnaPickerStore (new `searchPickedIds` + `pinned` state) → pinned head tile with the inset 2px gold "brought-in" ring (distinct from the flush tileSel border), ~280ms translate+scale flight overlay from the touch point into slot 0; field collapses, keyboard dismisses, query clears. Pinned tiles are PREPENDED to `visible` and can't be dropped by lazy reveal. **All seven edge states:** empty-search hint ("Type a brand or bottle — like Baccarat Rouge 540") · no-results one-liner (query stays editable) · gated tile + enrich toast · dupe-of-grid-tile (no second tile: store promotes the existing tile to deliberate weight, screen scrolls to it, toast "Already on your wall — selected it for you.") · deselect-stays-pinned-greyed (favorite/relation cleared; gold status session-sticky so re-select restores ring+weight) · max-picks (Warning haptic, toast "Five is the max — remove one to add this.", nothing changes) · keyboard (KeyboardAvoidingView keeps the footer CTA visible+tappable; shelf is one horizontal row under the field; Done collapses, picks kept). Back collapses search first: retake ✕ closes search before it cancels, Android hardware back intercepted while open. Exact spec copy used verbatim (already humanized). **Weighting:** SEARCH_DELIBERATE_WEIGHT = 1.5 composed as `1.5 × (favorite ? 2.5 : 1)` via new `pickerSearch.ts` (`searchPickWeight`, `buildDnaPicks`) — startCompute now builds picks through `buildDnaPicks`, byId still merges searchPickCache (M1), pick-stream source stays 'picker'. **Enrich queue:** additive migration `202607091400_enrich_requests.sql` (id uuid PK, fragrance_id text = app-level slug per the slug convention, requested_by uuid null FK auth.users cascade, created_at, unique(fragrance_id, requested_by); RLS: authenticated insert-own only, reads service-role) — **applied to prod via the Management API and verified: service-role REST probe 200, anon read returns empty (RLS)**; client `enrichRequests.ts` upserts with ignoreDuplicates, fail-soft. **Analytics:** search_opened / search_result_picked (props incl. in_grid + outcome) / search_no_results / search_enrich_requested added to EVENTS and wired. **Tests (+30):** `pickerSearch.test.ts` (weight composition incl. 3.75 favorite case, gate, buildDnaPicks across sources, byId-drop contract), `useDnaPickerStore.search.test.ts` (dock/promote/max/noop, cap guard incl. promote-at-cap, dedupe pinning, deselect-stays-pinned, reset wipes wholesale), `PickerSearch.test.tsx` (component against demo MOCK_CATALOG: affordance copy, hint, no-results copy + event, complete result → onPick, gated → onEnrichRequest, shelf replacement, collapse clears query). **Gates:** `npx jest` green (40 suites / 576 tests — M1 no-regression + M2 balance + M3 exhaustiveness untouched); `npx tsc --noEmit` identical 29-error baseline, 0 new; enrich table live in prod. **Maestro:** new `e2e/dna_09_picker_search.yaml` (self-contained clearState flow: guest auth → affordance → type "delina" [tier-2, enriched in prod → guaranteed dock path, never in the tier≥3 grid] → dock assert gold ring + pinned tile → 4 grid picks → "Five picked" → compute → reveal). Flow parse + execution verified on the iPhone 17 Pro sim (first 10 steps COMPLETED through guest auth), but the run is **pending device (M6)**: the installed simulator dev-client predates the app's @shopify/react-native-skia dependency, so the JS bundle redboxes at boot (`RNSkiaModule could not be found`, thrown from the pre-existing DecantingReveal.tsx import) — needs a rebuilt dev client, which is exactly M6's console-launch-verify gate. No spec deviations besides two implementation notes: (1) `searchPickedIds` is a string[] (matching the store's existing array style) rather than the spec's Set — behaviorally identical; (2) the dock flight originates from the touch point rather than a measured tile rect (measure-free, degrades to appear-in-place when no touch coords). Notes for M5: search-pick share of picks is derivable from search_result_picked (outcome='docked'|'promoted') vs total picks in dna_picker_events; the enrich queue needs a dashboard read (service-role) — surface top-requested fragrance_ids.
+
+**2026-07-09 — M3 complete (copy, icons, and the share surface for 20).** All 20 V3 identity lines are authored (the 8 TODO-M3 placeholders replaced; the existing 12 reviewed against the tightened centroid meanings — only the_romantic changed: "soft, pretty florals" dropped since the tightened centroid is florality-forward at ANY volume and the quiet-floral corner now belongs to the_soft_focus). **The humanize pass was applied to every line** (Bob's standing gate): second person, concrete and sensory, varied sentence shapes, zero AI-marketing vocabulary — and the gate is now CI-enforced (revealCopy.test.ts fails on unlock/discover/elevate/journey/seamless/effortless/curated/powerful/personalized/premium/"designed for you" in any identity line). Full copy table (key → name → identity):
+| key | name | identity line |
+|---|---|---|
+| the_executive | The Executive | You wear scent like a well-cut suit. Polished and deliberate, never trying too hard. |
+| the_seducer | The Seducer | Your taste runs warm and magnetic. These are the fragrances made to be noticed up close. |
+| the_connoisseur | The Connoisseur | You chase the unusual and the refined. Depth over hype, every time. |
+| the_signature_wearer | The Signature Wearer | You know what you love and you own it. One scent, unmistakably yours. |
+| the_purist | The Purist | You like it clean and quiet. Skin-close scents that whisper instead of shout. |
+| the_showstopper | The Showstopper | You wear scent loud and proud. Bold and rich, impossible to ignore. |
+| the_smart_shopper | The Smart Shopper | You love a great scent and a great deal. Quality without the markup. |
+| the_romantic | The Romantic | You go straight for the florals. Lush, blooming, heart on your sleeve. |
+| the_explorer | The Explorer | You're always sampling something new. Variety is the whole point. |
+| the_classicist | The Classicist | You trust the icons. Timeless and proven, beautifully made. |
+| the_gourmand | The Gourmand | Vanilla, caramel, a trace of something baked. Scents you could almost taste. |
+| the_minimalist | The Minimalist | You keep it spare on purpose. A few light, fresh scents that never crowd a room. |
+| the_naturalist | The Naturalist | Cut grass, crushed leaves, wet earth. Your favorite scents smell like being outside. |
+| the_trendsetter | The Trendsetter | You're on the new releases before the reviews land. If it came out this year, you've already smelled it. |
+| the_old_soul | The Old Soul | You reach past the new stuff for the ones that came first. Great scents don't expire. |
+| the_maximalist | The Maximalist | One shelf was never going to be enough. You collect big scents and wear them big. |
+| the_night_owl | The Night Owl | Smoke, leather, and the late hours. Your scents don't wake up until the sun goes down. |
+| the_spice_trader | The Spice Trader | Pepper up top, cardamom underneath, heat all the way through. You like a scent that bites back. |
+| the_daybreaker | The Daybreaker | Cold citrus, clean air, and an early start. Your kind of scent feels like a window thrown open. |
+| the_soft_focus | The Soft Focus | Powder and musk, worn so close it could pass for your own skin. Quiet, but it stays with people. |
+
+Icons/tints: the M1 placeholder visuals held up against the tightened meanings — all 20 kept (each verified against the real Ionicons glyph map, now a CI check), all 22 tints distinct (legacy crowd_pleaser + rebel entries untouched). **Modifier fold-in:** new `MODIFIER_COPY` (luxury→Gilded · adventurous→Daring · collector→Archival · valueHunter→Canny · complimentSeeking→Magnetic · expressive→Vivid) + `modifierWord()` (snake_case persisted key → word, null/unknown → null) + `dnaDisplayName()` ("The Magnetic Classicist"; plain name when modifier is null) in revealCopy.ts. Wired into the celebrate reveal headline (DnaProfileContent renders the folded form; non-celebrate card/readouts unchanged) and the share hook (invite.ts: new pure `inviteHook()` + `inviteFriends(archetype, source, modifier)`; both callers pass `dna.archetype.modifier` — profile.tsx selector added). **Web:** /i NAMES map now carries all 20 V3 keys + the_rebel + the_crowd_pleaser legacy entries (forward-compatible superset; built page verified to contain all 22 — build only, NOT deployed; deploy is M6). **Exhaustiveness gates:** revealCopy.test.ts (name/identity/icon-glyph/hex-tint/distinct-hue per key, MODIFIER_COPY covers TRAIT_KEYS exactly, fold + null-guard unit tests) — any future ArchetypeKey or TraitKey addition without copy fails tsc (Record types) AND jest; new `__tests__/lib/invite.test.ts` renders the share hook with/without modifier/archetype. **Gates:** `npx jest` green (37 suites / 546 tests, M1 no-regression + M2 balance untouched); `npx tsc --noEmit` identical 29-error baseline, 0 new; `cd web && npm run build` clean (35 pages). Notes for M4: `useDnaPickerStore.searchPickCache` + `cacheSearchPick` are live and merged into startCompute (M1) — the picker search only needs to populate the cache; no M3 surface work depends on the flag, so the folded reveal/share also renders for legacy elections (modifier was already populated pre-V3 — intended).
+
+**2026-07-09 — M2 complete (balance CI gates, centroids tuned to pass both).** New suite `__tests__/features/dna/electionBalance.test.ts` carries BOTH contract gates. **Replay gate** (fixture refreshed via `scripts/refresh-replay-fixture.mjs` — byte-identical to M1's pull, still 31 streams/30 bottles): ≥8 distinct + max ≤20% → **14 distinct, max 19.4% (the_seducer 6/31), 21/31 leans**. **Simulation gate:** 10,000 synthetic pick-sets from a new prod-baked fixture (`scripts/refresh-sim-pool-fixture.mjs`, read-only → `fixtures/sim-pool.json`: the real 112-bottle dna_eligible pool + a seeded 400-bottle full-catalog sample that ONLY the labeled search-enthusiast persona draws from, since pool adventurousness is ~constant 0). Samplers: seeded mulberry32 (no Math.random), uniform 1–5-pick sets (20%) + 18 persona-biased samplers spanning the axis space (the eleven from the plan + search-enthusiast + axis-completion personas: luxe-polished, loud-presence, more-is-more, skin-scent, green-nature, one-family-loyalist); Gaussian affinity sampling (σ=0.13) with structural constraints (one-family / distinct-families) where the loyalty/breadth axes need them. Gate: every label 2–10%, none >12%, median margin ≥ V3_LEAN_MARGIN → **min 2.67% (the_purist), max 9.20% (the_explorer), median margin 0.0404, 50.3% decisive. V3_LEAN_MARGIN unchanged at 0.04.** Suite runs in ~1s (per-bottle percentiles + per-persona affinities precomputed once; sim uses deriveAxes+electArchetype directly, replay uses full deriveFragranceDNA). Distribution (label → sim share → replay share): executive 3.62%→3.2% · seducer 6.57%→19.4% · connoisseur 5.38%→9.7% · signature_wearer 3.30%→3.2% · purist 2.67%→0 · showstopper 4.02%→6.5% · smart_shopper 5.43%→0 · romantic 7.77%→6.5% · explorer 9.20%→6.5% · classicist 5.45%→3.2% · gourmand 5.93%→12.9% · minimalist 3.44%→0 · naturalist 6.38%→3.2% · trendsetter 4.43%→3.2% · old_soul 4.64%→0 · maximalist 5.56%→9.7% · night_owl 4.72%→6.5% · spice_trader 3.66%→6.5% · daybreaker 2.98%→0 · soft_focus 4.85%→0 (zero-replay labels are the quiet/value/vintage corners the 31 mainstream-loud real streams genuinely don't contain; the sim gate is their coverage guarantee). **Tuning (all placement work, thresholds untouched):** purist was a universal sink at 15% (presence t=0.35 ≈ pool median — a mid-pool centroid absorbs every unremarkable set) → now demands near-silence + all accord floors (presence 0.15, +florality/greenness repellers); romantic dropped presence from its mask entirely (real pool florals sit at presence .06–.32, the old t=0.6 handed soft florals to purist) and targets the true feminine genderLean value 0.89; minimalist moved below the pool median (presence 0.22, warmth 0.28) — it died at 0.67% above it; daybreaker pinned to COLD fresh (warmth 0.05) with floor targets; showstopper's presence t MUST stay extreme (0.97) — pulling it to the reachable p90 made it the sink for real mainstream-loud prod streams (replay hit 26–32% during tuning; comment in centroids.ts records this); seducer darkness eased to 0.55 (pool darkness is floor-bound for 75% of bottles) + sweetness w↑ 0.8 as the dry/sweet splitter against spice_trader, which lost warmth from its mask entirely (warm-spicy accords feed BOTH raw scores — weighting warmth there just re-fights the seducer) and gained a sweetness repeller; explorer = the UNANCHORED variety-seeker (loyalty w 1.2 — family entropy is near-max for any 4–5-pick set, so breadth alone hands it every multi-family wardrobe) vs maximalist = the loud ⭐-anchored broad wardrobe (presence 0.68/breadth 0.95/loyalty 0.25); trendsetter era t to the pool-reachable 0.78; old_soul dropped luxury ("any price" is the spec); classicist era w↑ 1.4, connoisseur darkness w↑ 0.8 + breadth w↑ 1.0 vs executive, whose floor-targeted darkness/spice axes proved to be load-bearing repellers (removing them thinned margins everywhere — reverted, comment records it). **Gates re-verified after tuning:** full `npx jest` green (36 suites / 485 tests incl. the M1 no-regression suite), `npx tsc --noEmit` = identical 29-error pre-existing baseline, 0 new. Notes for M3: replay seducer share (19.4%) sits 0.6pt under the 20% ceiling — the next fixture refresh may need a placement nudge; ARCHETYPE_COPY still has 8 placeholder entries (M3's authored+humanized pass); sim personas encode the M4 search-pick assumption that full-catalog picks carry adventurousness ≈ 0.51 vs pool ≈ 0 — M4 should keep search picks flowing through the same axis pipeline unchanged.
+
+**2026-07-09 — M1 complete (centroid election engine, flag-gated).** The 20-archetype centroid engine is live behind the new `dna_v3_archetypes` flag (fail-CLOSED, opposite of the kill-switches: off unless the app_settings row is explicitly truthy; sync cache in `src/features/dna/v3Flag.ts`, remote resolver `useDnaV3ArchetypesEnabled` in killSwitch.ts, mounted on the picker screen). New modules: `axisScore.ts` (canonical raw-score formulas — extracted from build-axis-norms.mjs, which now documents TS as canonical; NULL fields skip an axis, luxury imputes tier medians), `axes.ts` (14-axis user vector: catalog axes as resolvePickWeight-weighted percentile means honoring explicit pick.weight; breadth = family entropy, loyalty = tightness + ⭐ anchor, both evidence-damped to 0.5 at 1 pick so single-pick users don't all collapse onto Signature Wearer), `centroids.ts` (20 centroids with per-axis weight masks, weighted-RMS argmin, margin = d(runnerUp) − d(best), lean below V3_LEAN_MARGIN=0.04 surfaced via the existing challenger/leaning fields → "X with a Y lean" renders through LivingArchetypeReadout unchanged). Wired into both deriveFragranceDNA and deriveLivingDNA (v3 ranked list feeds applyLivingArchetype); 10 new ArchetypeKeys added to types.ts + placeholder ARCHETYPE_COPY entries (TODO M3 authored pass). Compute-lookup trap fixed: `useDnaPickerStore.searchPickCache` (+`cacheSearchPick`, empty until M4) merges into startCompute's byId so non-pool picks survive to the DNA. Replay fixture: `scripts/refresh-replay-fixture.mjs` (read-only; users anonymized u01…; catalog is keyed by SLUG — the seeds' id) → `__tests__/features/dna/fixtures/replay-picks.json`, 31 real prod streams / 30 bottles. **Gates:** `npx jest` green (35 suites / 482 tests; the pre-existing worker force-exit warning reproduces on the pre-M1 tree — not introduced here), incl. no-regression (flag off byte-identical to legacy over all 31 real streams + referencePool path + living path) and the replay gate. `npx tsc --noEmit`: identical 29-error baseline set, 0 new. **Replay distribution (flag on, 31 streams — legacy elected the_seducer on 28/31):** the_romantic 5 (16.1%) · the_spice_trader 3 · the_connoisseur 3 · the_maximalist 2 · the_seducer 2 · the_executive 2 · the_gourmand 2 · the_showstopper 2 · the_night_owl 2 · the_explorer 2 · the_signature_wearer 2 · the_old_soul 1 · the_classicist 1 · the_soft_focus 1 · the_purist 1 → **15 distinct (gate ≥8), max share 16.1% (gate ≤20%)**; 21/31 within the lean margin (honest straddles on mainstream 1–3-pick profiles). Tuning notes for M2: adventurousness is ~constant 0 across the all-popular pool (percentile of tier-4/5 bottles vs full catalog) — no centroid may depend on it to fire (unit-enforced w ≤ 0.3); zero-signal accord axes sit at tied-block midpoints (darkness ≈0.43, spice ≈0.33, greenness ≈0.30, florality ≈0.23), so "high" targets must clear those floors. Five labels unelected on replay (smart_shopper, minimalist, naturalist, trendsetter, daybreaker) — all proven reachable by the centroids unit test (each wins on its own target point); M2's 10k-simulation gate covers their real coverage.
+
+**2026-07-09 — M0 complete (catalog backfill & axis norms).** Backfilled the 112-bottle dna_eligible pool via `scripts/enrich-dna-pool.mjs` (LLM-assisted, claude-opus-4-8, dry-run reviewed then live; only NULL fields written, low-confidence rows skipped): 110 bottles updated, 284 fields. Coverage before → after: release_year 43/112 (38.4%) → **111/112 (99.1%)**, community_projection 39/112 (34.8%) → **111/112 (99.1%)**, community_sillage 39/112 → **111/112 (99.1%)**, community_longevity 39/112 → **111/112 (99.1%)** — gate ≥95% met on all four (verified with live count queries). Skipped (low confidence, left NULL): the feminine "Dylan Blue" row (`versace-dylan-blue-perfume-for-women`, missing release_year) and Hermès Rose Amazone (missing all three community_* — thin community data). top_accords gaps (7 bottles) filled by deriving from each row's own accord_intensity keys (no LLM); fragrance_family had zero gaps. `scripts/build-axis-norms.mjs` pulls the full is_active catalog (10,481 rows, paginated) and generates `src/features/dna/axisNorms.ts`: percentile tables (101 quantiles, min-max normalized, mean-rank tie handling in `axisPercentile()`) for the 12 catalog-derived axes; breadth + loyalty documented as user-relative (no catalog norm). Unit test at `__tests__/features/dna/axisNorms.test.ts` (repo's jest `roots` is pinned to `<rootDir>/__tests__`, so the test lives there rather than `src/**/__tests__`). Tests: this repo runs **jest**, not vitest (the "npx vitest run" wording in the gates is a cross-project slip) — `npx jest` green, 30 suites / 422 tests; also fixed `jest.config.js` `testPathIgnorePatterns` to anchor `/.claude/worktrees/` to `<rootDir>` so the suite can run from inside a worktree at all. tsc: 0 errors in M0 files; 29 pre-existing baseline errors in untouched ETL/web files (identical set exists on main — not introduced here, candidates for a separate cleanup).

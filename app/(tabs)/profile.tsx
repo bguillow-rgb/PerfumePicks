@@ -49,6 +49,7 @@ export default function ProfileScreen() {
   const displayName = useProfileStore((s) => s.displayName);
   const hasDna = useTasteProfileStore((s) => !!s.dna);
   const dnaArchetype = useTasteProfileStore((s) => s.dna?.archetype.primary ?? null);
+  const dnaModifier = useTasteProfileStore((s) => s.dna?.archetype.modifier ?? null);
 
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   // Read the current user from the shared auth store — no per-screen getUser()
@@ -274,7 +275,7 @@ export default function ProfileScreen() {
           <Row label="Scent Preferences" onPress={() => router.push('/preferences')} />
           <Row label="View taste insights" onPress={() => router.push('/taste-profile')} pro disabled={!isPro} />
           <Row label="Perfume Wrapped" onPress={() => router.push('/wrapped')} pro disabled={!isPro} />
-          {hasDna && <Row label="Invite friends to find their DNA" onPress={() => inviteFriends(dnaArchetype, 'profile')} />}
+          {hasDna && <Row label="Invite friends to find their DNA" onPress={() => inviteFriends(dnaArchetype, 'profile', dnaModifier)} />}
         </Section>
 
         <BadgesSection />

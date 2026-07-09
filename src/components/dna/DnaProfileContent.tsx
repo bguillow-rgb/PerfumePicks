@@ -10,6 +10,7 @@ import {
   ARCHETYPE_COPY,
   LOW_CONFIDENCE_IDENTITY,
   TRAIT_CHIP_LABEL,
+  dnaDisplayName,
   journeyLine,
   topTraits,
 } from '@/src/features/dna/revealCopy';
@@ -87,6 +88,9 @@ export function DnaProfileContent({
   // have copy for — a missing key here would throw on copy.visual.tint, and this
   // renders on the /dna route the onboarding guard pins new users to.
   const copy = ARCHETYPE_COPY[dna.archetype.primary] ?? ARCHETYPE_COPY.the_executive;
+  // Modifier fold-in (M3): the celebrate headline renders "The Magnetic
+  // Classicist" — plain archetype name when the modifier is null/unknown.
+  const displayName = dnaDisplayName(dna.archetype.primary, dna.archetype.modifier);
   const lowConfidence = dna.confidence < LOW_CONFIDENCE;
   const identity = lowConfidence ? LOW_CONFIDENCE_IDENTITY : copy.identity;
   const jLine = journeyLine(dna.journey);
@@ -111,9 +115,10 @@ export function DnaProfileContent({
   const onShare = async () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     track(EVENTS.DNA_REVEAL_SHARED, { archetype: dna.archetype.primary });
-    // Invite loop: share the archetype as the hook + a link friends can follow
-    // to discover their own DNA (fires INVITE_SHARED + attribution referrer).
-    await inviteFriends(dna.archetype.primary, 'dna_reveal');
+    // Invite loop: share the archetype (modifier-folded, "The Magnetic
+    // Classicist") as the hook + a link friends can follow to find their own
+    // DNA (fires INVITE_SHARED + attribution referrer).
+    await inviteFriends(dna.archetype.primary, 'dna_reveal', dna.archetype.modifier);
   };
 
   const hasMoreMatches = !!hero && !hero.fallbackUsed && hero.matches.length > 0;
@@ -154,7 +159,7 @@ export function DnaProfileContent({
             style={styles.celebrateArchetype}
             testID="dna-reveal-archetype"
           >
-            {copy.name}
+            {displayName}
           </EnterText>
           <EnterText entering={fade(REVEAL_TEXT_DELAY + 320)} style={styles.celebrateIdentity}>{identity}</EnterText>
         </View>

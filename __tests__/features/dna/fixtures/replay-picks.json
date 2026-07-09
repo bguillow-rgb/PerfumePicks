@@ -1,0 +1,2241 @@
+{
+  "generatedAt": "2026-07-09",
+  "note": "Real prod pick streams (user_taste_profiles.dna->seeds), anonymized. Regenerate: node scripts/refresh-replay-fixture.mjs",
+  "streamCount": 31,
+  "streams": [
+    {
+      "user": "u01",
+      "picks": [
+        {
+          "id": "jean-paul-gaultier-le-male",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-07T13:27:30.601Z"
+        },
+        {
+          "id": "versace-eros-perfume-for-women",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-07T13:27:30.601Z"
+        },
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "own",
+          "favorite": true,
+          "seededAt": "2026-07-07T13:27:30.601Z"
+        },
+        {
+          "id": "christian-dior-sauvage",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-07T13:27:30.601Z"
+        }
+      ]
+    },
+    {
+      "user": "u02",
+      "picks": [
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-03T18:59:26.616Z"
+        },
+        {
+          "id": "tom-ford-black-orchid",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-03T18:59:26.616Z"
+        },
+        {
+          "id": "tom-ford-tobacco-vanille",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-03T18:59:26.616Z"
+        }
+      ]
+    },
+    {
+      "user": "u03",
+      "picks": [
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-03T03:45:19.582Z"
+        }
+      ]
+    },
+    {
+      "user": "u04",
+      "picks": [
+        {
+          "id": "versace-eros-perfume-for-women",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-06T16:18:10.020Z"
+        }
+      ]
+    },
+    {
+      "user": "u05",
+      "picks": [
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-07-01T18:50:53.577Z"
+        },
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-01T18:50:53.577Z"
+        },
+        {
+          "id": "versace-eros-perfume-for-women",
+          "relation": "want",
+          "favorite": true,
+          "seededAt": "2026-07-01T18:50:53.577Z"
+        }
+      ]
+    },
+    {
+      "user": "u06",
+      "picks": [
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-09T14:35:08.822Z"
+        },
+        {
+          "id": "giorgio-armani-acqua-di-gio",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-09T14:35:08.822Z"
+        },
+        {
+          "id": "burberry-her-elixir",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-09T14:35:08.822Z"
+        }
+      ]
+    },
+    {
+      "user": "u07",
+      "picks": [
+        {
+          "id": "le-labo-santal-33",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T16:41:41.878Z"
+        },
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T16:41:41.878Z"
+        },
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T16:41:41.878Z"
+        },
+        {
+          "id": "versace-eros-perfume-for-women",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T16:41:41.878Z"
+        },
+        {
+          "id": "giorgio-armani-acqua-di-gio-profumo",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T16:41:41.878Z"
+        }
+      ]
+    },
+    {
+      "user": "u08",
+      "picks": [
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-07-09T15:01:34.050Z"
+        },
+        {
+          "id": "versace-eros-perfume-for-women",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-09T15:01:34.050Z"
+        }
+      ]
+    },
+    {
+      "user": "u09",
+      "picks": [
+        {
+          "id": "jean-paul-gaultier-le-male",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-09T14:00:36.828Z"
+        },
+        {
+          "id": "paco-rabanne-1-million-elixir-intense",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-09T14:00:36.828Z"
+        },
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-09T14:00:36.828Z"
+        },
+        {
+          "id": "versace-eros-perfume-for-women",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-09T14:00:36.828Z"
+        },
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-09T14:00:36.828Z"
+        }
+      ]
+    },
+    {
+      "user": "u10",
+      "picks": [
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T16:51:57.377Z"
+        },
+        {
+          "id": "christian-dior-sauvage",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T16:51:57.377Z"
+        },
+        {
+          "id": "creed-aventus",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T16:51:57.377Z"
+        }
+      ]
+    },
+    {
+      "user": "u11",
+      "picks": [
+        {
+          "id": "creed-aventus",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-08T15:53:34.271Z"
+        }
+      ]
+    },
+    {
+      "user": "u12",
+      "picks": [
+        {
+          "id": "jean-paul-gaultier-le-male",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-01T23:46:37.828Z"
+        },
+        {
+          "id": "christian-dior-sauvage",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-01T23:46:37.828Z"
+        },
+        {
+          "id": "creed-aventus",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-01T23:46:37.828Z"
+        },
+        {
+          "id": "giorgio-armani-acqua-di-gio",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-01T23:46:37.828Z"
+        },
+        {
+          "id": "yves-saint-laurent-libre-intense",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-01T23:46:37.828Z"
+        }
+      ]
+    },
+    {
+      "user": "u13",
+      "picks": [
+        {
+          "id": "christian-dior-sauvage",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-06T17:14:02.564Z"
+        },
+        {
+          "id": "creed-aventus",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-06T17:14:02.564Z"
+        },
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-06T17:14:02.564Z"
+        },
+        {
+          "id": "jean-paul-gaultier-le-male",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-06T17:14:02.564Z"
+        },
+        {
+          "id": "le-labo-santal-33",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-06T17:14:02.564Z"
+        }
+      ]
+    },
+    {
+      "user": "u14",
+      "picks": [
+        {
+          "id": "jean-paul-gaultier-le-male",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-08T07:12:32.411Z"
+        }
+      ]
+    },
+    {
+      "user": "u15",
+      "picks": [
+        {
+          "id": "creed-aventus",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T11:28:48.046Z"
+        },
+        {
+          "id": "chanel-bleu-de-chanel",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T11:28:48.046Z"
+        },
+        {
+          "id": "chanel-allure-homme-sport",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T11:28:48.046Z"
+        },
+        {
+          "id": "maison-francis-kurkdjian-oud-satin-mood",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T11:28:48.046Z"
+        },
+        {
+          "id": "versace-dylan-blue",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T11:28:48.046Z"
+        }
+      ]
+    },
+    {
+      "user": "u16",
+      "picks": [
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-06-30T02:05:32.818Z"
+        },
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-06-30T02:05:32.818Z"
+        },
+        {
+          "id": "gucci-bloom",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-06-30T02:05:32.818Z"
+        },
+        {
+          "id": "burberry-her-elixir",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-06-30T02:05:32.818Z"
+        },
+        {
+          "id": "carolina-herrera-good-girl",
+          "relation": "own",
+          "favorite": true,
+          "seededAt": "2026-06-30T02:05:32.818Z"
+        }
+      ]
+    },
+    {
+      "user": "u17",
+      "picks": [
+        {
+          "id": "maison-francis-kurkdijan-baccarat-rouge-540-perfume-for-unisex",
+          "relation": "want",
+          "favorite": true,
+          "seededAt": "2026-06-29T09:14:26.945Z"
+        },
+        {
+          "id": "jean-paul-gaultier-le-male",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-06-29T09:14:26.945Z"
+        },
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-06-29T09:14:26.945Z"
+        },
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-06-29T09:14:26.945Z"
+        }
+      ]
+    },
+    {
+      "user": "u18",
+      "picks": [
+        {
+          "id": "chanel-coco-mademoiselle",
+          "relation": "want",
+          "favorite": true,
+          "seededAt": "2026-07-02T10:48:03.616Z"
+        },
+        {
+          "id": "creed-aventus",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-07-02T10:48:03.616Z"
+        },
+        {
+          "id": "chanel-bleu-de-chanel",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-07-02T10:48:03.616Z"
+        },
+        {
+          "id": "le-labo-santal-33",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-07-02T10:48:03.616Z"
+        }
+      ]
+    },
+    {
+      "user": "u19",
+      "picks": [
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-08T21:33:12.938Z"
+        },
+        {
+          "id": "christian-dior-sauvage",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-08T21:33:12.938Z"
+        },
+        {
+          "id": "creed-aventus",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-08T21:33:12.938Z"
+        }
+      ]
+    },
+    {
+      "user": "u20",
+      "picks": [
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-01T13:22:38.650Z"
+        },
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-01T13:22:38.650Z"
+        },
+        {
+          "id": "christian-dior-sauvage",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-01T13:22:38.650Z"
+        }
+      ]
+    },
+    {
+      "user": "u21",
+      "picks": [
+        {
+          "id": "jean-paul-gaultier-le-male",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-06-30T05:22:35.728Z"
+        },
+        {
+          "id": "christian-dior-sauvage",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-06-30T05:22:35.728Z"
+        },
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "want",
+          "favorite": true,
+          "seededAt": "2026-06-30T05:22:35.728Z"
+        }
+      ]
+    },
+    {
+      "user": "u22",
+      "picks": [
+        {
+          "id": "paco-rabanne-1-million-elixir-intense",
+          "relation": "want",
+          "favorite": true,
+          "seededAt": "2026-06-29T11:18:39.881Z"
+        },
+        {
+          "id": "ariana-grande-cloud",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-06-29T11:18:39.881Z"
+        },
+        {
+          "id": "xerjoff-erba-pura",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-06-29T11:18:39.881Z"
+        },
+        {
+          "id": "mugler-angel-alien-goddess-perfume-for-women",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-06-29T11:18:39.881Z"
+        }
+      ]
+    },
+    {
+      "user": "u23",
+      "picks": [
+        {
+          "id": "le-labo-santal-33",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T07:43:46.979Z"
+        }
+      ]
+    },
+    {
+      "user": "u24",
+      "picks": [
+        {
+          "id": "burberry-her-elixir",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T13:59:18.863Z"
+        },
+        {
+          "id": "yves-saint-laurent-black-opium",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T13:59:18.863Z"
+        },
+        {
+          "id": "yves-saint-laurent-libre",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-04T13:59:18.863Z"
+        }
+      ]
+    },
+    {
+      "user": "u25",
+      "picks": [
+        {
+          "id": "jean-paul-gaultier-le-male",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-02T23:59:48.559Z"
+        },
+        {
+          "id": "le-labo-santal-33",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-02T23:59:48.559Z"
+        },
+        {
+          "id": "christian-dior-sauvage",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-02T23:59:48.559Z"
+        },
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-02T23:59:48.559Z"
+        },
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-02T23:59:48.559Z"
+        }
+      ]
+    },
+    {
+      "user": "u26",
+      "picks": [
+        {
+          "id": "hermes-terre-d-hermes",
+          "relation": "own",
+          "favorite": false,
+          "seededAt": "2026-07-02T17:33:08.699Z"
+        }
+      ]
+    },
+    {
+      "user": "u27",
+      "picks": [
+        {
+          "id": "xerjoff-erba-pura",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-09T04:09:04.080Z"
+        }
+      ]
+    },
+    {
+      "user": "u28",
+      "picks": [
+        {
+          "id": "versace-eros-perfume-for-women",
+          "relation": "want",
+          "favorite": true,
+          "seededAt": "2026-06-28T12:12:22.274Z"
+        },
+        {
+          "id": "yves-saint-laurent-libre",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-06-28T12:12:22.274Z"
+        },
+        {
+          "id": "versace-dylan-blue-perfume-for-women",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-06-28T12:12:22.274Z"
+        },
+        {
+          "id": "gucci-bloom",
+          "relation": "want",
+          "favorite": false,
+          "seededAt": "2026-06-28T12:12:22.274Z"
+        }
+      ]
+    },
+    {
+      "user": "u29",
+      "picks": [
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-03T05:56:23.616Z"
+        },
+        {
+          "id": "chanel-coco-mademoiselle-intense",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-03T05:56:23.616Z"
+        },
+        {
+          "id": "xerjoff-erba-pura",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-03T05:56:23.616Z"
+        },
+        {
+          "id": "burberry-her-elixir",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-03T05:56:23.616Z"
+        },
+        {
+          "id": "chanel-coco-mademoiselle",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-03T05:56:23.616Z"
+        }
+      ]
+    },
+    {
+      "user": "u30",
+      "picks": [
+        {
+          "id": "creed-aventus",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-05T18:54:47.336Z"
+        },
+        {
+          "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-05T18:54:47.336Z"
+        },
+        {
+          "id": "christian-dior-sauvage",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-05T18:54:47.336Z"
+        },
+        {
+          "id": "giorgio-armani-acqua-di-gio",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-05T18:54:47.336Z"
+        },
+        {
+          "id": "valentino-born-in-roma-coral-fantasy",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-05T18:54:47.336Z"
+        }
+      ]
+    },
+    {
+      "user": "u31",
+      "picks": [
+        {
+          "id": "le-labo-santal-33",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-07T13:40:22.646Z"
+        },
+        {
+          "id": "versace-eros-perfume-for-women",
+          "relation": "like",
+          "favorite": false,
+          "seededAt": "2026-07-07T13:40:22.646Z"
+        }
+      ]
+    }
+  ],
+  "catalog": {
+    "ariana-grande-cloud": {
+      "id": "ariana-grande-cloud",
+      "name": "Cloud",
+      "fragrance_family": "gourmand",
+      "gender": "feminine",
+      "top_notes": [
+        "pear",
+        "bergamot",
+        "yuzu"
+      ],
+      "heart_notes": [
+        "lavender",
+        "peony",
+        "whipped cream",
+        "vanilla"
+      ],
+      "base_notes": [
+        "musk",
+        "sandalwood",
+        "amber"
+      ],
+      "top_accords": [
+        "fresh",
+        "fruity",
+        "citrus"
+      ],
+      "accord_intensity": {
+        "fresh": 3,
+        "musky": 3.5,
+        "sweet": 4,
+        "citrus": 2.5,
+        "fruity": 3,
+        "gourmand": 4
+      },
+      "community_longevity": 3,
+      "community_sillage": 2,
+      "community_projection": 2,
+      "compliment_score": 0.85,
+      "versatility_score": 0.9,
+      "office_safe_score": 0.95,
+      "price_tier": 2,
+      "retail_msrp_usd_cents": 4895,
+      "popularity_tier": 4,
+      "release_year": 2018,
+      "dupe_of": null
+    },
+    "burberry-her-elixir": {
+      "id": "burberry-her-elixir",
+      "name": "Her Elixir",
+      "fragrance_family": "oriental",
+      "gender": "feminine",
+      "top_notes": [
+        "pink pepper",
+        "cardamom",
+        "ginger"
+      ],
+      "heart_notes": [
+        "osmanthus",
+        "tuberose",
+        "amber",
+        "musk"
+      ],
+      "base_notes": [
+        "sandalwood",
+        "vanilla",
+        "amber",
+        "musk"
+      ],
+      "top_accords": [
+        "spicy",
+        "sweet",
+        "amber"
+      ],
+      "accord_intensity": {
+        "amber": 4,
+        "musky": 3.5,
+        "spicy": 4,
+        "sweet": 3.5,
+        "floral": 3
+      },
+      "community_longevity": 4.5,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.85,
+      "versatility_score": 0.75,
+      "office_safe_score": 0.65,
+      "price_tier": 3,
+      "retail_msrp_usd_cents": 11495,
+      "popularity_tier": 4,
+      "release_year": 2020,
+      "dupe_of": null
+    },
+    "carolina-herrera-good-girl": {
+      "id": "carolina-herrera-good-girl",
+      "name": "Good Girl",
+      "fragrance_family": "oriental",
+      "gender": "unisex",
+      "top_notes": [
+        "Bergamot",
+        "Lemon",
+        "Almond",
+        "Coffee"
+      ],
+      "heart_notes": [
+        "Tuberose",
+        "Jasmine Sambac",
+        "Orange Blossom",
+        "Bulgarian Rose",
+        "Orris"
+      ],
+      "base_notes": [
+        "Tonka Bean",
+        "Cacao",
+        "Vanilla",
+        "Praline",
+        "Sandalwood",
+        "Musk",
+        "Amber",
+        "Cashmere Wood",
+        "Patchouli",
+        "Cinnamon",
+        "Cedar"
+      ],
+      "top_accords": [
+        "sweet",
+        "almond",
+        "floral",
+        "jasmine",
+        "tuberose",
+        "vanilla"
+      ],
+      "accord_intensity": {
+        "sweet": 5,
+        "almond": 5,
+        "floral": 4,
+        "jasmine": 4,
+        "vanilla": 4,
+        "tuberose": 3
+      },
+      "community_longevity": 4,
+      "community_sillage": 3.5,
+      "community_projection": 3.5,
+      "compliment_score": 0.88,
+      "versatility_score": 0.65,
+      "office_safe_score": 0.48,
+      "price_tier": 2,
+      "retail_msrp_usd_cents": 7995,
+      "popularity_tier": 5,
+      "release_year": 2016,
+      "dupe_of": null
+    },
+    "chanel-allure-homme-sport": {
+      "id": "chanel-allure-homme-sport",
+      "name": "Allure Homme Sport",
+      "fragrance_family": "fresh",
+      "gender": "masculine",
+      "top_notes": [
+        "Orange",
+        "Sea Notes",
+        "Aldehydes",
+        "Blood Mandarin"
+      ],
+      "heart_notes": [
+        "Pepper",
+        "Neroli",
+        "Cedar"
+      ],
+      "base_notes": [
+        "Vanilla",
+        "Tonka Bean",
+        "White Musk",
+        "Amber",
+        "Vetiver",
+        "Elemi resin"
+      ],
+      "top_accords": [
+        "citrus",
+        "aromatic",
+        "aquatic",
+        "vanilla",
+        "sweet",
+        "fresh"
+      ],
+      "accord_intensity": {
+        "fresh": 4,
+        "sweet": 3,
+        "citrus": 5,
+        "aquatic": 3,
+        "vanilla": 3,
+        "aromatic": 3
+      },
+      "community_longevity": 3.5,
+      "community_sillage": 3,
+      "community_projection": 3.5,
+      "compliment_score": 0.76,
+      "versatility_score": 0.9,
+      "office_safe_score": 0.92,
+      "price_tier": null,
+      "retail_msrp_usd_cents": null,
+      "popularity_tier": 4,
+      "release_year": 2004,
+      "dupe_of": null
+    },
+    "chanel-bleu-de-chanel": {
+      "id": "chanel-bleu-de-chanel",
+      "name": "Bleu de Chanel",
+      "fragrance_family": "woody",
+      "gender": "masculine",
+      "top_notes": [
+        "Grapefruit",
+        "Lemon",
+        "Mint",
+        "Pink Pepper"
+      ],
+      "heart_notes": [
+        "Ginger",
+        "Nutmeg",
+        "Jasmine",
+        "Iso E Super"
+      ],
+      "base_notes": [
+        "Incense",
+        "Cedar",
+        "Vetiver",
+        "Sandalwood",
+        "Patchouli",
+        "Labdanum",
+        "White Musk"
+      ],
+      "top_accords": [
+        "citrus",
+        "woody",
+        "fresh-spicy",
+        "aromatic",
+        "amber",
+        "smoky"
+      ],
+      "accord_intensity": {
+        "amber": 3,
+        "smoky": 2,
+        "woody": 5,
+        "citrus": 4,
+        "aromatic": 3,
+        "fresh-spicy": 4
+      },
+      "community_longevity": 4,
+      "community_sillage": 3.5,
+      "community_projection": 3.5,
+      "compliment_score": 0.85,
+      "versatility_score": 0.88,
+      "office_safe_score": 0.82,
+      "price_tier": null,
+      "retail_msrp_usd_cents": null,
+      "popularity_tier": 5,
+      "release_year": 2010,
+      "dupe_of": null
+    },
+    "chanel-coco-mademoiselle": {
+      "id": "chanel-coco-mademoiselle",
+      "name": "Coco Mademoiselle",
+      "fragrance_family": "chypre",
+      "gender": "feminine",
+      "top_notes": [
+        "Orange",
+        "Mandarin Orange",
+        "Bergamot",
+        "Orange Blossom"
+      ],
+      "heart_notes": [
+        "Turkish Rose",
+        "Jasmine",
+        "Mimosa",
+        "Ylang-Ylang"
+      ],
+      "base_notes": [
+        "Patchouli",
+        "White Musk",
+        "Vanilla",
+        "Vetiver",
+        "Tonka Bean",
+        "Opoponax"
+      ],
+      "top_accords": [
+        "citrus",
+        "woody",
+        "patchouli",
+        "sweet",
+        "floral",
+        "rose"
+      ],
+      "accord_intensity": {
+        "rose": 3,
+        "sweet": 3,
+        "woody": 4,
+        "citrus": 4,
+        "floral": 4,
+        "patchouli": 5
+      },
+      "community_longevity": 4,
+      "community_sillage": 3.5,
+      "community_projection": 3.5,
+      "compliment_score": 0.92,
+      "versatility_score": 0.95,
+      "office_safe_score": 0.88,
+      "price_tier": null,
+      "retail_msrp_usd_cents": null,
+      "popularity_tier": 5,
+      "release_year": 2001,
+      "dupe_of": null
+    },
+    "chanel-coco-mademoiselle-intense": {
+      "id": "chanel-coco-mademoiselle-intense",
+      "name": "Coco Mademoiselle Intense",
+      "fragrance_family": "oriental",
+      "gender": "feminine",
+      "top_notes": [
+        "Sicilian Orange",
+        "Calabrian bergamot",
+        "Lemon"
+      ],
+      "heart_notes": [
+        "Rose",
+        "Fruity Notes",
+        "Jasmine"
+      ],
+      "base_notes": [
+        "Patchouli",
+        "Madagascar Vanilla",
+        "Tonka Bean",
+        "White Musk",
+        "Labdanum"
+      ],
+      "top_accords": [
+        "citrus",
+        "vanilla",
+        "patchouli",
+        "sweet",
+        "woody",
+        "warm-spicy"
+      ],
+      "accord_intensity": {
+        "sweet": 4,
+        "woody": 3,
+        "citrus": 4,
+        "vanilla": 5,
+        "patchouli": 4,
+        "warm-spicy": 3
+      },
+      "community_longevity": 4.5,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.94,
+      "versatility_score": 0.75,
+      "office_safe_score": 0.65,
+      "price_tier": null,
+      "retail_msrp_usd_cents": null,
+      "popularity_tier": 5,
+      "release_year": 2018,
+      "dupe_of": null
+    },
+    "christian-dior-sauvage": {
+      "id": "christian-dior-sauvage",
+      "name": "Sauvage",
+      "fragrance_family": "aromatic",
+      "gender": "masculine",
+      "top_notes": [
+        "Calabrian Bergamot",
+        "Pepper"
+      ],
+      "heart_notes": [
+        "Sichuan Pepper",
+        "Lavender",
+        "Pink Pepper",
+        "Vetiver",
+        "Patchouli",
+        "Geranium",
+        "Elemi"
+      ],
+      "base_notes": [
+        "Ambroxan",
+        "Cedar",
+        "Labdanum"
+      ],
+      "top_accords": [
+        "fresh",
+        "citrus",
+        "aromatic",
+        "spicy",
+        "woody",
+        "amber"
+      ],
+      "accord_intensity": {
+        "amber": 3,
+        "fresh": 5,
+        "spicy": 4,
+        "woody": 3,
+        "citrus": 4,
+        "aromatic": 5
+      },
+      "community_longevity": 3.5,
+      "community_sillage": 3.5,
+      "community_projection": 3.5,
+      "compliment_score": 0.92,
+      "versatility_score": 0.88,
+      "office_safe_score": 0.75,
+      "price_tier": 2,
+      "retail_msrp_usd_cents": 7195,
+      "popularity_tier": 5,
+      "release_year": 2015,
+      "dupe_of": null
+    },
+    "creed-aventus": {
+      "id": "creed-aventus",
+      "name": "Aventus",
+      "fragrance_family": "chypre",
+      "gender": "masculine",
+      "top_notes": [
+        "Bergamot",
+        "Black Currant",
+        "Apple",
+        "Lemon",
+        "Pink Pepper"
+      ],
+      "heart_notes": [
+        "Pineapple",
+        "Patchouli",
+        "Moroccan Jasmine"
+      ],
+      "base_notes": [
+        "Birch",
+        "Musk",
+        "oak moss",
+        "Cedarwood",
+        "Ambroxan"
+      ],
+      "top_accords": [
+        "fruity",
+        "sweet",
+        "woody",
+        "leather",
+        "citrus",
+        "smoky"
+      ],
+      "accord_intensity": {
+        "smoky": 3,
+        "sweet": 4,
+        "woody": 4,
+        "citrus": 4,
+        "fruity": 5,
+        "leather": 3
+      },
+      "community_longevity": 3,
+      "community_sillage": 3,
+      "community_projection": 3,
+      "compliment_score": 0.92,
+      "versatility_score": 0.82,
+      "office_safe_score": 0.72,
+      "price_tier": 4,
+      "retail_msrp_usd_cents": 28895,
+      "popularity_tier": 5,
+      "release_year": 2010,
+      "dupe_of": null
+    },
+    "giorgio-armani-acqua-di-gio": {
+      "id": "giorgio-armani-acqua-di-gio",
+      "name": "Acqua di Gio",
+      "fragrance_family": "aquatic",
+      "gender": "masculine",
+      "top_notes": [
+        "Lime",
+        "Lemon",
+        "Bergamot",
+        "Jasmine",
+        "Orange",
+        "Mandarin Orange",
+        "Neroli",
+        "Peony",
+        "Musk Vodka",
+        "Pineapple",
+        "Peach",
+        "Banana Leaf",
+        "Violet"
+      ],
+      "heart_notes": [
+        "Sea Notes",
+        "Jasmine",
+        "Calone",
+        "Rosemary",
+        "Peach",
+        "Freesia",
+        "Hiacynth",
+        "Cyclamen",
+        "Violet",
+        "Coriander",
+        "Rose",
+        "Nutmeg",
+        "Mignonette",
+        "Lily-of-the-Valley",
+        "Lily",
+        "Ylang-Ylang"
+      ],
+      "base_notes": [
+        "White Musk",
+        "Cedar",
+        "Oakmoss",
+        "Patchouli",
+        "Amber",
+        "Musk",
+        "Sandalwood",
+        "Styrax"
+      ],
+      "top_accords": [
+        "citrus",
+        "aromatic",
+        "aquatic",
+        "fresh-spicy",
+        "floral",
+        "woody"
+      ],
+      "accord_intensity": {
+        "woody": 2,
+        "citrus": 4,
+        "floral": 3,
+        "aquatic": 5,
+        "aromatic": 4,
+        "fresh-spicy": 3
+      },
+      "community_longevity": 3.5,
+      "community_sillage": 3.5,
+      "community_projection": 3.5,
+      "compliment_score": 0.82,
+      "versatility_score": 0.88,
+      "office_safe_score": 0.92,
+      "price_tier": 3,
+      "retail_msrp_usd_cents": 11095,
+      "popularity_tier": 5,
+      "release_year": 1996,
+      "dupe_of": null
+    },
+    "giorgio-armani-acqua-di-gio-profumo": {
+      "id": "giorgio-armani-acqua-di-gio-profumo",
+      "name": "Acqua di Giò Profumo",
+      "fragrance_family": "aromatic",
+      "gender": "masculine",
+      "top_notes": [
+        "Sea Notes",
+        "Bergamot"
+      ],
+      "heart_notes": [
+        "Rosemary",
+        "Sage",
+        "Geranium"
+      ],
+      "base_notes": [
+        "Incense",
+        "Patchouli"
+      ],
+      "top_accords": [
+        "aromatic",
+        "aquatic",
+        "fresh-spicy",
+        "amber",
+        "woody",
+        "smoky"
+      ],
+      "accord_intensity": {
+        "amber": 3,
+        "smoky": 2,
+        "woody": 3,
+        "aquatic": 4,
+        "aromatic": 5,
+        "fresh-spicy": 3
+      },
+      "community_longevity": 4,
+      "community_sillage": 3,
+      "community_projection": 3.5,
+      "compliment_score": 0.82,
+      "versatility_score": 0.77,
+      "office_safe_score": 0.8,
+      "price_tier": 3,
+      "retail_msrp_usd_cents": 11495,
+      "popularity_tier": 4,
+      "release_year": 2015,
+      "dupe_of": null
+    },
+    "gucci-bloom": {
+      "id": "gucci-bloom",
+      "name": "Bloom",
+      "fragrance_family": "floral",
+      "gender": "feminine",
+      "top_notes": [
+        "bergamot",
+        "dewy pear",
+        "peach"
+      ],
+      "heart_notes": [
+        "tuberose",
+        "jasmine",
+        "freesia",
+        "orange blossom"
+      ],
+      "base_notes": [
+        "vetiver",
+        "patchouli",
+        "musk"
+      ],
+      "top_accords": [
+        "floral",
+        "fruity",
+        "fresh"
+      ],
+      "accord_intensity": {
+        "fresh": 2,
+        "floral": 4.5,
+        "fruity": 2.5,
+        "powdery": 2
+      },
+      "community_longevity": 3,
+      "community_sillage": 3,
+      "community_projection": 3,
+      "compliment_score": 0.82,
+      "versatility_score": 0.8,
+      "office_safe_score": 0.85,
+      "price_tier": 3,
+      "retail_msrp_usd_cents": 10095,
+      "popularity_tier": 4,
+      "release_year": 2017,
+      "dupe_of": null
+    },
+    "hermes-terre-d-hermes": {
+      "id": "hermes-terre-d-hermes",
+      "name": "Terre D'Hermes",
+      "fragrance_family": "woody",
+      "gender": "unisex",
+      "top_notes": [
+        "Orange",
+        "Grapefruit"
+      ],
+      "heart_notes": [
+        "Pepper",
+        "Pelargonium",
+        "Flint"
+      ],
+      "base_notes": [
+        "Vetiver",
+        "Cedar",
+        "Patchouli",
+        "Benzoin"
+      ],
+      "top_accords": [
+        "citrus",
+        "woody",
+        "earthy",
+        "vetiver",
+        "mineral",
+        "aromatic"
+      ],
+      "accord_intensity": {
+        "woody": 5,
+        "citrus": 5,
+        "earthy": 4,
+        "mineral": 4,
+        "vetiver": 5,
+        "aromatic": 3
+      },
+      "community_longevity": 3.5,
+      "community_sillage": 3,
+      "community_projection": 3,
+      "compliment_score": 0.75,
+      "versatility_score": 0.85,
+      "office_safe_score": 0.8,
+      "price_tier": 2,
+      "retail_msrp_usd_cents": 5095,
+      "popularity_tier": 3,
+      "release_year": 2006,
+      "dupe_of": null
+    },
+    "jean-paul-gaultier-le-male": {
+      "id": "jean-paul-gaultier-le-male",
+      "name": "Le Male",
+      "fragrance_family": "oriental",
+      "gender": "masculine",
+      "top_notes": [
+        "lavender",
+        "bergamot",
+        "lemon"
+      ],
+      "heart_notes": [
+        "iris",
+        "almond",
+        "vanilla",
+        "cinnamon"
+      ],
+      "base_notes": [
+        "amber",
+        "musk",
+        "sandalwood",
+        "tonka bean"
+      ],
+      "top_accords": [
+        "fresh",
+        "citrus",
+        "aromatic"
+      ],
+      "accord_intensity": {
+        "amber": 3.5,
+        "fresh": 3.5,
+        "musky": 4,
+        "sweet": 4,
+        "citrus": 3,
+        "vanilla": 4,
+        "aromatic": 2.5
+      },
+      "community_longevity": 4,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.88,
+      "versatility_score": 0.9,
+      "office_safe_score": 0.85,
+      "price_tier": 2,
+      "retail_msrp_usd_cents": 6295,
+      "popularity_tier": 5,
+      "release_year": 1995,
+      "dupe_of": null
+    },
+    "le-labo-santal-33": {
+      "id": "le-labo-santal-33",
+      "name": "Santal 33",
+      "fragrance_family": "woody",
+      "gender": "unisex",
+      "top_notes": [
+        "Cardamom",
+        "Iris",
+        "Violet"
+      ],
+      "heart_notes": [
+        "Australian Sandalwood",
+        "Papyrus",
+        "Cedarwood"
+      ],
+      "base_notes": [
+        "Leather",
+        "Amber",
+        "Musk"
+      ],
+      "top_accords": [
+        "woody",
+        "sandalwood",
+        "leather",
+        "warm-spicy",
+        "powdery",
+        "musky"
+      ],
+      "accord_intensity": {
+        "musky": 3,
+        "woody": 5,
+        "leather": 4,
+        "powdery": 3,
+        "sandalwood": 5,
+        "warm-spicy": 3
+      },
+      "community_longevity": 4,
+      "community_sillage": 4,
+      "community_projection": 3.5,
+      "compliment_score": 0.88,
+      "versatility_score": 0.82,
+      "office_safe_score": 0.65,
+      "price_tier": 4,
+      "retail_msrp_usd_cents": 19695,
+      "popularity_tier": 5,
+      "release_year": 2011,
+      "dupe_of": null
+    },
+    "maison-francis-kurkdijan-baccarat-rouge-540-perfume-for-unisex": {
+      "id": "maison-francis-kurkdijan-baccarat-rouge-540-perfume-for-unisex",
+      "name": "Baccarat Rouge 540",
+      "fragrance_family": "oriental",
+      "gender": "unisex",
+      "top_notes": [
+        "bergamot",
+        "pink pepper",
+        "saffron"
+      ],
+      "heart_notes": [
+        "ambroxan",
+        "amber",
+        "cedar"
+      ],
+      "base_notes": [
+        "musk",
+        "sandalwood",
+        "amber",
+        "oud"
+      ],
+      "top_accords": [
+        "citrus",
+        "spicy",
+        "amber",
+        "sweet"
+      ],
+      "accord_intensity": {
+        "amber": 5,
+        "spicy": 3,
+        "sweet": 4,
+        "citrus": 2
+      },
+      "community_longevity": 5,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.92,
+      "versatility_score": 0.88,
+      "office_safe_score": 0.65,
+      "price_tier": 5,
+      "retail_msrp_usd_cents": 55295,
+      "popularity_tier": 5,
+      "release_year": 2017,
+      "dupe_of": null
+    },
+    "maison-francis-kurkdjian-baccarat-rouge-540": {
+      "id": "maison-francis-kurkdjian-baccarat-rouge-540",
+      "name": "Baccarat Rouge 540",
+      "fragrance_family": "oriental",
+      "gender": "unisex",
+      "top_notes": [
+        "Saffron",
+        "Jasmine"
+      ],
+      "heart_notes": [
+        "Amberwood",
+        "Ambergris",
+        "Hedione"
+      ],
+      "base_notes": [
+        "Fir Resin",
+        "Cedar",
+        "Sugar",
+        "Ambroxan",
+        "Oakmoss"
+      ],
+      "top_accords": [
+        "amber",
+        "woody",
+        "warm-spicy",
+        "aromatic",
+        "fresh-spicy",
+        "jasmine"
+      ],
+      "accord_intensity": {
+        "amber": 5,
+        "woody": 5,
+        "jasmine": 2,
+        "aromatic": 3,
+        "warm-spicy": 4,
+        "fresh-spicy": 3
+      },
+      "community_longevity": 5,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.95,
+      "versatility_score": 0.8,
+      "office_safe_score": 0.65,
+      "price_tier": 4,
+      "retail_msrp_usd_cents": 21995,
+      "popularity_tier": 5,
+      "release_year": 2015,
+      "dupe_of": null
+    },
+    "maison-francis-kurkdjian-oud-satin-mood": {
+      "id": "maison-francis-kurkdjian-oud-satin-mood",
+      "name": "Oud Satin Mood",
+      "fragrance_family": "oriental",
+      "gender": "unisex",
+      "top_notes": [
+        "Bulgarian Rose",
+        "Violet",
+        "Strawberry"
+      ],
+      "heart_notes": [
+        "Turkish Rose"
+      ],
+      "base_notes": [
+        "Agarwood (Oud)",
+        "Vanilla",
+        "Amber",
+        "Benzoin",
+        "Caramel",
+        "Cedar"
+      ],
+      "top_accords": [
+        "rose",
+        "oud",
+        "vanilla",
+        "amber",
+        "powdery",
+        "floral"
+      ],
+      "accord_intensity": {
+        "oud": 4,
+        "rose": 5,
+        "amber": 4,
+        "floral": 4,
+        "powdery": 3,
+        "vanilla": 4
+      },
+      "community_longevity": 4.5,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.88,
+      "versatility_score": 0.64,
+      "office_safe_score": 0.52,
+      "price_tier": null,
+      "retail_msrp_usd_cents": null,
+      "popularity_tier": 3,
+      "release_year": 2015,
+      "dupe_of": null
+    },
+    "mugler-angel-alien-goddess-perfume-for-women": {
+      "id": "mugler-angel-alien-goddess-perfume-for-women",
+      "name": "Angel Alien Goddess",
+      "fragrance_family": "gourmand",
+      "gender": "feminine",
+      "top_notes": [
+        "pink pepper",
+        "apple",
+        "bergamot"
+      ],
+      "heart_notes": [
+        "caramel",
+        "red berries",
+        "osmanthus",
+        "peony"
+      ],
+      "base_notes": [
+        "tonka bean",
+        "sandalwood",
+        "musk"
+      ],
+      "top_accords": [
+        "fruity",
+        "spicy",
+        "sweet"
+      ],
+      "accord_intensity": {
+        "musky": 3,
+        "spicy": 2.5,
+        "sweet": 4.5,
+        "fruity": 3.5,
+        "gourmand": 4
+      },
+      "community_longevity": 4,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.85,
+      "versatility_score": 0.7,
+      "office_safe_score": 0.6,
+      "price_tier": 2,
+      "retail_msrp_usd_cents": 6995,
+      "popularity_tier": 4,
+      "release_year": 2021,
+      "dupe_of": null
+    },
+    "paco-rabanne-1-million-elixir-intense": {
+      "id": "paco-rabanne-1-million-elixir-intense",
+      "name": "1 Million Elixir Intense",
+      "fragrance_family": "gourmand",
+      "gender": "masculine",
+      "top_notes": [
+        "bergamot",
+        "cinnamon",
+        "pink pepper"
+      ],
+      "heart_notes": [
+        "honey",
+        "amber",
+        "tonka bean",
+        "vanilla"
+      ],
+      "base_notes": [
+        "vanilla",
+        "musk",
+        "cedar"
+      ],
+      "top_accords": [
+        "sweet",
+        "spicy",
+        "amber",
+        "gourmand"
+      ],
+      "accord_intensity": {
+        "amber": 4.5,
+        "spicy": 4,
+        "sweet": 5,
+        "woody": 2,
+        "vanilla": 5,
+        "gourmand": 5
+      },
+      "community_longevity": 4,
+      "community_sillage": 5,
+      "community_projection": 5,
+      "compliment_score": 0.85,
+      "versatility_score": 0.72,
+      "office_safe_score": 0.55,
+      "price_tier": 3,
+      "retail_msrp_usd_cents": 10995,
+      "popularity_tier": 5,
+      "release_year": 2023,
+      "dupe_of": null
+    },
+    "tom-ford-black-orchid": {
+      "id": "tom-ford-black-orchid",
+      "name": "Black Orchid",
+      "fragrance_family": "oriental",
+      "gender": "feminine",
+      "top_notes": [
+        "Truffle",
+        "Gardenia",
+        "Black Currant",
+        "Ylang-Ylang",
+        "Jasmine",
+        "Bergamot",
+        "Mandarin Orange",
+        "Amalfi Lemon"
+      ],
+      "heart_notes": [
+        "Orchid",
+        "Spices",
+        "Gardenia",
+        "Fruity Notes",
+        "Ylang-Ylang",
+        "Jasmine",
+        "Lotus"
+      ],
+      "base_notes": [
+        "Mexican chocolate",
+        "Patchouli",
+        "Vanille",
+        "Incense",
+        "Amber",
+        "Sandalwood",
+        "Vetiver",
+        "White Musk"
+      ],
+      "top_accords": [
+        "warm-spicy",
+        "earthy",
+        "woody",
+        "sweet",
+        "amber",
+        "patchouli"
+      ],
+      "accord_intensity": {
+        "amber": 4,
+        "sweet": 4,
+        "woody": 4,
+        "earthy": 5,
+        "patchouli": 5,
+        "warm-spicy": 4
+      },
+      "community_longevity": 4.5,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.88,
+      "versatility_score": 0.45,
+      "office_safe_score": 0.25,
+      "price_tier": 3,
+      "retail_msrp_usd_cents": 13795,
+      "popularity_tier": 5,
+      "release_year": 2006,
+      "dupe_of": null
+    },
+    "tom-ford-tobacco-vanille": {
+      "id": "tom-ford-tobacco-vanille",
+      "name": "Tobacco Vanille",
+      "fragrance_family": "oriental",
+      "gender": "unisex",
+      "top_notes": [
+        "Tobacco Leaf",
+        "Spicy Notes"
+      ],
+      "heart_notes": [
+        "Vanilla",
+        "Cacao",
+        "Tonka Bean",
+        "Tobacco Blossom"
+      ],
+      "base_notes": [
+        "Dried Fruits",
+        "Woody Notes"
+      ],
+      "top_accords": [
+        "vanilla",
+        "sweet",
+        "tobacco",
+        "warm-spicy",
+        "fruity",
+        "woody"
+      ],
+      "accord_intensity": {
+        "sweet": 5,
+        "woody": 3,
+        "fruity": 3,
+        "tobacco": 5,
+        "vanilla": 5,
+        "warm-spicy": 4
+      },
+      "community_longevity": 4.5,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.95,
+      "versatility_score": 0.62,
+      "office_safe_score": 0.35,
+      "price_tier": null,
+      "retail_msrp_usd_cents": null,
+      "popularity_tier": 4,
+      "release_year": 2007,
+      "dupe_of": null
+    },
+    "valentino-born-in-roma-coral-fantasy": {
+      "id": "valentino-born-in-roma-coral-fantasy",
+      "name": "Born In Roma Coral Fantasy",
+      "fragrance_family": "gourmand",
+      "gender": "feminine",
+      "top_notes": [
+        "bergamot",
+        "pink pepper",
+        "ginger"
+      ],
+      "heart_notes": [
+        "peony",
+        "hibiscus",
+        "coconut milk",
+        "caramel"
+      ],
+      "base_notes": [
+        "sandalwood",
+        "amber",
+        "musk"
+      ],
+      "top_accords": [
+        "citrus",
+        "spicy",
+        "fruity",
+        "sweet"
+      ],
+      "accord_intensity": {
+        "spicy": 2.5,
+        "sweet": 4,
+        "woody": 2,
+        "citrus": 3,
+        "floral": 3.5,
+        "fruity": 3,
+        "gourmand": 4
+      },
+      "community_longevity": 3,
+      "community_sillage": 3,
+      "community_projection": 3,
+      "compliment_score": 0.72,
+      "versatility_score": 0.7,
+      "office_safe_score": 0.65,
+      "price_tier": 3,
+      "retail_msrp_usd_cents": 9195,
+      "popularity_tier": 4,
+      "release_year": 2021,
+      "dupe_of": null
+    },
+    "versace-dylan-blue": {
+      "id": "versace-dylan-blue",
+      "name": "Dylan Blue",
+      "fragrance_family": "aromatic",
+      "gender": "masculine",
+      "top_notes": [
+        "Bergamot",
+        "Calabrian Bergamot",
+        "Grapefruit",
+        "Fig Leaf"
+      ],
+      "heart_notes": [
+        "Violet Leaf",
+        "Papyrus",
+        "Patchouli",
+        "Black Pepper",
+        "Ambroxan"
+      ],
+      "base_notes": [
+        "Musk",
+        "Incense",
+        "Tonka Bean",
+        "Saffron"
+      ],
+      "top_accords": [
+        "citrus",
+        "aquatic",
+        "fresh",
+        "aromatic",
+        "woody",
+        "musky"
+      ],
+      "accord_intensity": {
+        "fresh": 4,
+        "musky": 3,
+        "woody": 3,
+        "citrus": 5,
+        "aquatic": 4,
+        "aromatic": 4
+      },
+      "community_longevity": 3.5,
+      "community_sillage": 3.5,
+      "community_projection": 3.5,
+      "compliment_score": 0.78,
+      "versatility_score": 0.88,
+      "office_safe_score": 0.85,
+      "price_tier": 1,
+      "retail_msrp_usd_cents": 895,
+      "popularity_tier": 4,
+      "release_year": 2016,
+      "dupe_of": null
+    },
+    "versace-dylan-blue-perfume-for-women": {
+      "id": "versace-dylan-blue-perfume-for-women",
+      "name": "Dylan Blue",
+      "fragrance_family": "floral",
+      "gender": "feminine",
+      "top_notes": [
+        "grapefruit",
+        "bergamot",
+        "lemon"
+      ],
+      "heart_notes": [
+        "violet",
+        "freesia",
+        "rose",
+        "almond"
+      ],
+      "base_notes": [
+        "sandalwood",
+        "amber",
+        "musk"
+      ],
+      "top_accords": [
+        "citrus",
+        "fresh",
+        "floral"
+      ],
+      "accord_intensity": {
+        "amber": 3,
+        "fresh": 3,
+        "sweet": 2,
+        "citrus": 3,
+        "floral": 4
+      },
+      "community_longevity": 4,
+      "community_sillage": 3,
+      "community_projection": 3,
+      "compliment_score": 0.8,
+      "versatility_score": 0.85,
+      "office_safe_score": 0.9,
+      "price_tier": 2,
+      "retail_msrp_usd_cents": 3395,
+      "popularity_tier": 4,
+      "release_year": null,
+      "dupe_of": null
+    },
+    "versace-eros-perfume-for-women": {
+      "id": "versace-eros-perfume-for-women",
+      "name": "Eros",
+      "fragrance_family": "floral",
+      "gender": "feminine",
+      "top_notes": [
+        "mint",
+        "lemon",
+        "apple"
+      ],
+      "heart_notes": [
+        "rose",
+        "iris",
+        "geranium",
+        "jasmine"
+      ],
+      "base_notes": [
+        "musk",
+        "amber",
+        "sandalwood"
+      ],
+      "top_accords": [
+        "fresh",
+        "fruity",
+        "citrus"
+      ],
+      "accord_intensity": {
+        "fresh": 3.5,
+        "musky": 3,
+        "sweet": 3.5,
+        "floral": 4.5,
+        "fruity": 3
+      },
+      "community_longevity": 4,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.82,
+      "versatility_score": 0.8,
+      "office_safe_score": 0.75,
+      "price_tier": 2,
+      "retail_msrp_usd_cents": 4495,
+      "popularity_tier": 5,
+      "release_year": 2020,
+      "dupe_of": null
+    },
+    "xerjoff-erba-pura": {
+      "id": "xerjoff-erba-pura",
+      "name": "Erba Pura",
+      "fragrance_family": "gourmand",
+      "gender": "unisex",
+      "top_notes": [],
+      "heart_notes": [],
+      "base_notes": [],
+      "top_accords": [
+        "fruity",
+        "sweet",
+        "citrus",
+        "vanilla",
+        "musky",
+        "fresh"
+      ],
+      "accord_intensity": {
+        "fresh": 3,
+        "musky": 3,
+        "sweet": 5,
+        "citrus": 4,
+        "fruity": 5,
+        "vanilla": 4
+      },
+      "community_longevity": 4.5,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.92,
+      "versatility_score": 0.72,
+      "office_safe_score": 0.55,
+      "price_tier": null,
+      "retail_msrp_usd_cents": 16500,
+      "popularity_tier": 4,
+      "release_year": 2013,
+      "dupe_of": null
+    },
+    "yves-saint-laurent-black-opium": {
+      "id": "yves-saint-laurent-black-opium",
+      "name": "Black Opium",
+      "fragrance_family": "oriental",
+      "gender": "feminine",
+      "top_notes": [
+        "Pear",
+        "Black Currant",
+        "Citruses",
+        "Green Mandarin"
+      ],
+      "heart_notes": [
+        "Coffee",
+        "Tea",
+        "Jasmine",
+        "Orange Blossom"
+      ],
+      "base_notes": [
+        "White Wood",
+        "White Musk"
+      ],
+      "top_accords": [
+        "vanilla",
+        "sweet",
+        "orange-blossom",
+        "warm-spicy",
+        "patchouli"
+      ],
+      "accord_intensity": {
+        "fresh": 3,
+        "sweet": 4,
+        "citrus": 3,
+        "fruity": 4,
+        "orange-blossom": 3
+      },
+      "community_longevity": 4,
+      "community_sillage": 3.5,
+      "community_projection": 3.5,
+      "compliment_score": 0.85,
+      "versatility_score": 0.82,
+      "office_safe_score": 0.68,
+      "price_tier": 3,
+      "retail_msrp_usd_cents": 8295,
+      "popularity_tier": 5,
+      "release_year": 2014,
+      "dupe_of": null
+    },
+    "yves-saint-laurent-libre": {
+      "id": "yves-saint-laurent-libre",
+      "name": "Libre",
+      "fragrance_family": "floral",
+      "gender": "feminine",
+      "top_notes": [
+        "bergamot",
+        "lavender",
+        "ginger"
+      ],
+      "heart_notes": [
+        "orange blossom",
+        "jasmine",
+        "vanilla orchid"
+      ],
+      "base_notes": [
+        "cedarwood",
+        "musk",
+        "amber"
+      ],
+      "top_accords": [
+        "floral",
+        "citrus",
+        "fresh"
+      ],
+      "accord_intensity": {
+        "fresh": 3.5,
+        "musky": 3,
+        "sweet": 3.5,
+        "citrus": 3,
+        "floral": 4.5
+      },
+      "community_longevity": 4,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.82,
+      "versatility_score": 0.85,
+      "office_safe_score": 0.88,
+      "price_tier": 3,
+      "retail_msrp_usd_cents": 9195,
+      "popularity_tier": 4,
+      "release_year": 2019,
+      "dupe_of": null
+    },
+    "yves-saint-laurent-libre-intense": {
+      "id": "yves-saint-laurent-libre-intense",
+      "name": "Libre Intense",
+      "fragrance_family": "oriental",
+      "gender": "feminine",
+      "top_notes": [
+        "bergamot",
+        "ginger",
+        "lavender"
+      ],
+      "heart_notes": [
+        "orange blossom",
+        "jasmine",
+        "almond"
+      ],
+      "base_notes": [
+        "vanilla",
+        "musk",
+        "amber"
+      ],
+      "top_accords": [
+        "citrus",
+        "spicy",
+        "fresh"
+      ],
+      "accord_intensity": {
+        "fresh": 3,
+        "spicy": 4.5,
+        "sweet": 3.5,
+        "floral": 4
+      },
+      "community_longevity": 4,
+      "community_sillage": 4,
+      "community_projection": 4,
+      "compliment_score": 0.85,
+      "versatility_score": 0.75,
+      "office_safe_score": 0.7,
+      "price_tier": 3,
+      "retail_msrp_usd_cents": 9595,
+      "popularity_tier": 4,
+      "release_year": 2020,
+      "dupe_of": null
+    }
+  }
+}

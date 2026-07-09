@@ -65,3 +65,18 @@ export type {
 } from './signals';
 export { deriveDnaFromAnswers } from './deriveDnaFromAnswers';
 export type { SeedAnswers } from './deriveDnaFromAnswers';
+// ── DNA V3 (M1): catalog-normalized axes + centroid election ──
+export { CATALOG_AXES, USER_RELATIVE_AXES, axisPercentile, AXIS_NORMS } from './axisNorms';
+export type { CatalogAxis, UserRelativeAxis, DnaAxis, AxisNorm } from './axisNorms';
+export { rawAxisScore, axisPercentileOf, accordWeights } from './axisScore';
+export { deriveAxes, familyEntropyBreadth, loyaltyRaw } from './axes';
+export type { UserAxisVector } from './axes';
+export {
+  CENTROIDS,
+  V3_ARCHETYPE_KEYS,
+  V3_LEAN_MARGIN,
+  centroidDistance,
+  electArchetype,
+} from './centroids';
+export type { V3ArchetypeKey, CentroidProfile, V3Election } from './centroids';
+export { isDnaV3ArchetypesEnabled, setDnaV3ArchetypesEnabled } from './v3Flag';

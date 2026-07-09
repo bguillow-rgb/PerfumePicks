@@ -14,7 +14,7 @@
 import { Share } from 'react-native';
 import { track, EVENTS } from '@/src/lib/observability';
 import { getCurrentUser } from '@/src/stores/useAuthStore';
-import { ARCHETYPE_COPY } from '@/src/features/dna/revealCopy';
+import { ARCHETYPE_COPY, dnaDisplayName } from '@/src/features/dna/revealCopy';
 import type { ArchetypeKey } from '@/src/features/dna/types';
 
 const INVITE_ORIGIN = 'https://perfumepicks.app';
@@ -29,19 +29,38 @@ export function buildInviteUrl(archetype?: ArchetypeKey | null): string {
 }
 
 /**
+ * The share-sheet hook line. Renders the modifier-folded display form
+ * ("The Magnetic Classicist") when a modifier is present; plain archetype name
+ * when it's null; a generic hook when there's no archetype at all. Exported
+ * pure so the M3 exit gate can unit-test the rendered copy.
+ */
+export function inviteHook(
+  archetype?: ArchetypeKey | null,
+  modifier?: string | null,
+): string {
+  // Keep the legacy guard: an archetype key without copy (never expected, but
+  // persisted data outlives rosters) gets the generic hook, not a fallback name.
+  const name =
+    archetype && ARCHETYPE_COPY[archetype] ? dnaDisplayName(archetype, modifier) : null;
+  return name
+    ? `My Fragrance DNA is "${name}" — find out yours 👇`
+    : `I found my Fragrance DNA on Perfume Picks — find out yours 👇`;
+}
+
+/**
  * Open the native share sheet with a DNA-hook invite. Safe to call with no
  * archetype (falls back to a generic hook). `source` labels where the tap came
- * from (dna_reveal / profile) for funnel analysis.
+ * from (dna_reveal / profile) for funnel analysis. `modifier` is the persisted
+ * snake_case secondary-trait key (DnaArchetype.modifier); when present the
+ * hook reads "The Magnetic Classicist".
  */
 export async function inviteFriends(
   archetype?: ArchetypeKey | null,
   source: 'dna_reveal' | 'profile' | 'unknown' = 'unknown',
+  modifier?: string | null,
 ): Promise<void> {
   const url = buildInviteUrl(archetype);
-  const name = archetype ? ARCHETYPE_COPY[archetype]?.name : null;
-  const hook = name
-    ? `My Fragrance DNA is "${name}" — find out yours 👇`
-    : `I found my Fragrance DNA on Perfume Picks — find out yours 👇`;
+  const hook = inviteHook(archetype, modifier);
 
   track(EVENTS.INVITE_SHARED, { archetype: archetype ?? null, source });
   try {

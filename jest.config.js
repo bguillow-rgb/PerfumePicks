@@ -6,7 +6,9 @@ module.exports = {
     '/node_modules/',
     '/web/',
     '/docs/',
-    '/.claude/worktrees/',
+    // Anchored to rootDir so `npx jest` still works when run FROM a worktree
+    // (an unanchored '/.claude/worktrees/' matches every path inside one).
+    '<rootDir>/.claude/worktrees/',
   ],
   moduleNameMapper: {
     // Specific @/ mocks MUST precede the generic '^@/(.*)$' alias — Jest uses

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useCallback } from 'react';
+import { useEffect, useMemo, useState, useCallback, useRef } from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,12 @@ import {
   ScrollView,
   ActivityIndicator,
   useWindowDimensions,
+  KeyboardAvoidingView,
+  Keyboard,
+  BackHandler,
+  Platform,
+  Animated,
+  Easing,
   type NativeScrollEvent,
   type NativeSyntheticEvent,
 } from 'react-native';
@@ -19,7 +25,7 @@ import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
 import { useDnaPickerStore } from '@/src/stores/useDnaPickerStore';
-import { useDnaPickerEnabled } from '@/src/features/dna/killSwitch';
+import { useDnaPickerEnabled, useDnaV3ArchetypesEnabled } from '@/src/features/dna/killSwitch';
 import { FirstRunFlow } from '@/src/components/onboarding/FirstRunFlow';
 import {
   buildPickerList,
@@ -43,6 +49,9 @@ import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useRetailerLinksStore } from '@/src/stores/useRetailerLinksStore';
 import { useDnaPickStreamStore } from '@/src/stores/useDnaPickStreamStore';
 import { track, EVENTS } from '@/src/lib/observability';
+import { PickerSearch, type ResultOrigin } from '@/src/components/dna/PickerSearch';
+import { buildDnaPicks } from '@/src/features/dna/pickerSearch';
+import { requestEnrichment } from '@/src/features/dna/enrichRequests';
 
 type Step = 'loading' | 'grid' | 'reading' | 'reveal' | 'fallback';
 
@@ -55,6 +64,10 @@ export default function DnaPickerScreen() {
   const { width } = useWindowDimensions();
 
   const pickerEnabled = useDnaPickerEnabled();
+  // Resolve the V3 archetype flag while the user is in the picker so the sync
+  // cache (v3Flag.ts) is settled by compute time. The hook's value isn't read
+  // here — deriveFragranceDNA reads the cache directly.
+  useDnaV3ArchetypesEnabled();
   const hasExistingDna = useTasteProfileStore((s) => !!s.dna);
   const completeOnboarding = useOnboardingStore((s) => s.complete);
   const retakeMode = useOnboardingStore((s) => s.retakeMode);
@@ -69,6 +82,10 @@ export default function DnaPickerScreen() {
   const resetPicker = useDnaPickerStore((s) => s.reset);
 
   const hardNoIds = useDnaPickerStore((s) => s.hardNoIds);
+  const searchPickCache = useDnaPickerStore((s) => s.searchPickCache);
+  const searchPickedIds = useDnaPickerStore((s) => s.searchPickedIds);
+  const pinned = useDnaPickerStore((s) => s.pinned);
+  const pickFromSearch = useDnaPickerStore((s) => s.pickFromSearch);
 
   const [step, setStep] = useState<Step>('loading');
   const [pool, setPool] = useState<PickerCandidate[]>([]);
@@ -79,10 +96,31 @@ export default function DnaPickerScreen() {
   const [recs, setRecs] = useState<RankedDnaRec[]>([]);
   const [hero, setHero] = useState<BuyableRankResult | null>(null);
 
-  // Fresh start every time the front door opens.
+  // ── Picker search ("bring your own bottle", M4) view state ─────────────────
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+  const toastOpacity = useRef(new Animated.Value(0)).current;
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // The docking flight: a searched tile lifts off the shelf and settles into
+  // slot 0 of the grid (~280ms translate+scale) with the gold brought-in ring.
+  const [dockFlight, setDockFlight] = useState<PickerCandidate | null>(null);
+  const dockAnim = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
+  const dockScale = useRef(new Animated.Value(0.6)).current;
+  const gridWrapRef = useRef<View>(null);
+  const scrollRef = useRef<ScrollView>(null);
+
+  // Fresh start every time the front door opens — the store reset also clears
+  // searchPickCache, searchPickedIds, and pinned; the search field itself is
+  // component state and starts collapsed/empty.
   useEffect(() => {
     resetPicker();
+    setSearchOpen(false);
   }, [resetPicker]);
+
+  // Don't leave a toast timer running after unmount.
+  useEffect(() => () => {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+  }, []);
 
   // Load the candidate pool and build the full ordered list once.
   useEffect(() => {
@@ -190,9 +228,13 @@ export default function DnaPickerScreen() {
     const startedAt = Date.now();
 
     // Resolve picker ids → catalog fragrances (every Fragrance satisfies the
-    // DnaCatalogFragrance structural subset the engine reads).
+    // DnaCatalogFragrance structural subset the engine reads). The offered pool
+    // is merged with the search-pick cache (bottles picked via catalog search,
+    // M4) — without the merge, any pick not in the offered pool was silently
+    // dropped here and never reached the DNA (the compute-lookup trap).
     const byId = new Map<string, PickerCandidate>();
     for (const f of pool) byId.set(f.id, f);
+    for (const f of Object.values(searchPickCache)) byId.set(f.id, f);
 
     // Every picker selection is a pure TASTE signal: relation 'like'. The user is
     // telling us what they're drawn to, not cataloguing bottles they own. 'like'
@@ -201,14 +243,10 @@ export default function DnaPickerScreen() {
     // step whose 'own' default silently wrote phantom owned bottles into the
     // wardrobe (corrupting deriveWardrobe). The wardrobe is populated through
     // explicit add paths (scan, manual add, detail "Add to Wardrobe"), not here.
-    const picks: DnaPick[] = selectedIds
-      .map((id) => byId.get(id))
-      .filter((f): f is PickerCandidate => !!f)
-      .map((f) => ({
-        fragrance: f as unknown as DnaCatalogFragrance,
-        relation: 'like',
-        favorite: favoriteId === f.id,
-      }));
+    // Search-sourced picks additionally carry the deliberate weight
+    // (SEARCH_DELIBERATE_WEIGHT × favorite) as an explicit pick.weight —
+    // resolvePickWeight uses it verbatim (see buildDnaPicks).
+    const picks: DnaPick[] = buildDnaPicks({ selectedIds, favoriteId, searchPickedIds, byId });
 
     const avoided = hardNoIds
       .map((id) => byId.get(id))
@@ -253,7 +291,7 @@ export default function DnaPickerScreen() {
       const wait = Math.max(0, READING_MIN_MS - (Date.now() - startedAt));
       setTimeout(() => setStep('reveal'), wait);
     });
-  }, [pool, selectedIds, favoriteId, hardNoIds, commitDerived, computeBuyableHero]);
+  }, [pool, searchPickCache, selectedIds, favoriteId, searchPickedIds, hardNoIds, commitDerived, computeBuyableHero]);
 
   // S1b — the non-recognizer / kill-switch path. The 3 seed answers (already in
   // useQuizStore from FirstRunFlow) choose representative seeds and run through
@@ -356,8 +394,149 @@ export default function DnaPickerScreen() {
   const COLS = 3;
   const gap = SPACING.sm;
   const tileW = (width - SPACING.lg * 2 - gap * (COLS - 1)) / COLS;
+  // Approximate rendered tile height (image aspect 0.82 + labels + padding) —
+  // used only to scroll a dupe's existing tile into view.
+  const tileH = tileW / 0.82 + 51;
 
-  const visible = useMemo(() => list.slice(0, visibleCount), [list, visibleCount]);
+  // Pinned (search-docked) tiles are PREPENDED to the visible slice and are
+  // never dropped by the lazy reveal — they aren't part of `list`, so
+  // visibleCount can't cut them. Defensive de-dupe in case a pinned bottle
+  // ever appears in the offered list (dupes are promoted, not pinned).
+  const visible = useMemo(() => {
+    const slice = list.slice(0, visibleCount);
+    if (pinned.length === 0) return slice;
+    const pinnedIds = new Set(pinned.map((p) => p.id));
+    return [...pinned, ...slice.filter((f) => !pinnedIds.has(f.id))];
+  }, [list, visibleCount, pinned]);
+
+  // ── Picker search ("bring your own bottle", M4) ─────────────────────────────
+
+  const showToast = useCallback(
+    (msg: string) => {
+      setToast(msg);
+      toastOpacity.stopAnimation();
+      if (toastTimer.current) clearTimeout(toastTimer.current);
+      Animated.timing(toastOpacity, { toValue: 1, duration: 180, useNativeDriver: true }).start();
+      toastTimer.current = setTimeout(() => {
+        Animated.timing(toastOpacity, { toValue: 0, duration: 350, useNativeDriver: true }).start(
+          () => setToast(null),
+        );
+      }, 2200);
+    },
+    [toastOpacity],
+  );
+
+  const openSearch = useCallback(() => {
+    setSearchOpen(true);
+    track(EVENTS.SEARCH_OPENED, { pick_count: selectedIds.length });
+  }, [selectedIds.length]);
+
+  // Collapse clears the query/shelf (inside PickerSearch), keeps every pick.
+  const closeSearch = useCallback(() => {
+    Keyboard.dismiss();
+    setSearchOpen(false);
+  }, []);
+
+  // Back collapses search FIRST — never exits onboarding. Android hardware
+  // back; on iOS the flow has no back affordance except the retake ✕, which
+  // gets the same collapse-first treatment below.
+  useEffect(() => {
+    if (!searchOpen) return;
+    const sub = BackHandler.addEventListener('hardwareBackPress', () => {
+      closeSearch();
+      return true;
+    });
+    return () => sub.remove();
+  }, [searchOpen, closeSearch]);
+
+  /** Scroll the grid so the tile for `id` is on screen (dupe-promotion case). */
+  const scrollToTile = useCallback(
+    (id: string) => {
+      const pinnedIds = new Set(pinned.map((p) => p.id));
+      const listIdx = list.findIndex((c) => c.id === id && !pinnedIds.has(c.id));
+      // Make sure the tile is actually mounted before scrolling to it.
+      if (listIdx >= 0 && listIdx + pinned.length >= visibleCount) {
+        setVisibleCount(Math.min(listIdx + pinned.length + PICKER_GRID_SIZE, list.length));
+      }
+      const displayIdx = listIdx >= 0 ? pinned.length + listIdx : 0;
+      const row = Math.floor(displayIdx / COLS);
+      const y = Math.max(0, SPACING.sm + row * (tileH + gap) - tileH / 2);
+      requestAnimationFrame(() => scrollRef.current?.scrollTo({ y, animated: true }));
+    },
+    [list, pinned, visibleCount, tileH, gap],
+  );
+
+  /** The docking: fly the picked tile from the shelf into slot 0 of the grid. */
+  const runDockFlight = useCallback(
+    (f: PickerCandidate, origin: ResultOrigin | null) => {
+      scrollRef.current?.scrollTo({ y: 0, animated: true });
+      if (!origin) return; // no measurable origin → tile simply appears pinned
+      gridWrapRef.current?.measureInWindow((gx, gy) => {
+        const target = { x: gx + SPACING.lg, y: gy + SPACING.sm };
+        dockAnim.setValue({ x: origin.x - tileW / 2, y: origin.y - tileW / 2 });
+        dockScale.setValue(0.6);
+        setDockFlight(f);
+        Animated.parallel([
+          Animated.timing(dockAnim, {
+            toValue: target,
+            duration: 280,
+            easing: Easing.out(Easing.cubic),
+            useNativeDriver: true,
+          }),
+          Animated.timing(dockScale, {
+            toValue: 1,
+            duration: 280,
+            easing: Easing.out(Easing.cubic),
+            useNativeDriver: true,
+          }),
+        ]).start(() => setDockFlight(null));
+      });
+    },
+    [dockAnim, dockScale, tileW],
+  );
+
+  const handleSearchPick = useCallback(
+    (f: PickerCandidate, origin: ResultOrigin | null) => {
+      const inGrid = list.some((c) => c.id === f.id);
+      const outcome = pickFromSearch(f, inGrid);
+      track(EVENTS.SEARCH_RESULT_PICKED, { fragrance_id: f.id, in_grid: inGrid, outcome });
+      switch (outcome) {
+        case 'max':
+          // Cap guard: warning buzz, no dock; query stays editable.
+          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+          showToast('Five is the max — remove one to add this.');
+          return;
+        case 'promoted':
+          // Dupe of a grid tile: no second tile — select the existing one
+          // (gold ring = promoted to deliberate weight) and bring it on screen.
+          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+          closeSearch();
+          scrollToTile(f.id);
+          showToast('Already on your wall — selected it for you.');
+          return;
+        case 'docked':
+          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+          closeSearch();
+          runDockFlight(f, origin);
+          return;
+        case 'noop':
+          // Already selected + already gold — just show them the tile.
+          closeSearch();
+          scrollToTile(f.id);
+          return;
+      }
+    },
+    [list, pickFromSearch, showToast, closeSearch, scrollToTile, runDockFlight],
+  );
+
+  const handleEnrichRequest = useCallback(
+    (f: PickerCandidate) => {
+      track(EVENTS.SEARCH_ENRICH_REQUESTED, { fragrance_id: f.id });
+      void requestEnrichment(f.id);
+      showToast(`Noted — we'll prioritize ${f.name}.`);
+    },
+    [showToast],
+  );
 
   if (step === 'fallback') {
     return (
@@ -405,13 +584,21 @@ export default function DnaPickerScreen() {
   // ── S1 grid (the required front door) ────────────────────────────────────────
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
+      {/* KeyboardAvoidingView keeps the footer CTA visible + tappable above the
+          keyboard while the search field is focused (mobile-UX audit rule). */}
+      <KeyboardAvoidingView
+        style={styles.flex}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
       <View style={styles.gridHeader}>
         {retakeMode && (
           <Pressable
-            onPress={cancelRetake}
+            // Back collapses search first — the ✕ only cancels the retake once
+            // the search field is already closed.
+            onPress={searchOpen ? closeSearch : cancelRetake}
             hitSlop={12}
             style={styles.cancelRetake}
-            accessibilityLabel="Cancel retake"
+            accessibilityLabel={searchOpen ? 'Close search' : 'Cancel retake'}
             testID="dna-retake-cancel"
           >
             <Ionicons name="close" size={24} color={COLORS.muted} />
@@ -428,33 +615,54 @@ export default function DnaPickerScreen() {
                 ? `Five picked — that's the max. Continue when ready.`
                 : `${selectedCount} picked. Add a few more, or continue.`}
         </Text>
+        <PickerSearch
+          open={searchOpen}
+          onOpen={openSearch}
+          onClose={closeSearch}
+          onPick={handleSearchPick}
+          onEnrichRequest={handleEnrichRequest}
+        />
       </View>
 
+      <View style={styles.flex} ref={gridWrapRef} collapsable={false}>
       <ScrollView
         key="dna-grid-scroll"
+        ref={scrollRef}
         contentContainerStyle={[styles.grid, { paddingBottom: SPACING.xl }]}
         showsVerticalScrollIndicator={false}
         onScroll={handleScroll}
         scrollEventThrottle={64}
+        keyboardShouldPersistTaps="handled"
         testID="dna-picker-grid"
       >
-        {visible.map((f) => {
+        {visible.map((f, idx) => {
           const isSel = selectedIds.includes(f.id);
           const isFav = favoriteId === f.id;
+          const isPinned = idx < pinned.length;
+          // Gold "brought-in" ring: search-sourced picks only, while selected.
+          // Inset + distinct from the flush accent tileSel border on grid picks.
+          const isGold = isSel && searchPickedIds.includes(f.id);
           return (
             <Pressable
               key={f.id}
-              testID="dna-tile"
+              testID={isPinned ? 'dna-tile-pinned' : 'dna-tile'}
               onPress={() => handleTap(f.id)}
-              onLongPress={() => handleLongPress(f.id)}
+              onLongPress={isPinned ? undefined : () => handleLongPress(f.id)}
               delayLongPress={350}
-              style={[styles.tile, { width: tileW }, isSel && styles.tileSel]}
+              style={[
+                styles.tile,
+                { width: tileW },
+                isSel && !isGold && styles.tileSel,
+                // Deselected brought-in bottle: stays pinned, reads dormant.
+                isPinned && !isSel && styles.tileGhost,
+              ]}
               accessibilityLabel={`${f.brand} ${f.name}`}
             >
               <Image source={{ uri: f.image_url }} style={styles.tileImg} contentFit="cover" />
               <Text style={styles.tileBrand} numberOfLines={1}>{f.brand}</Text>
               <Text style={styles.tileName} numberOfLines={1}>{f.name}</Text>
 
+              {isGold && <View pointerEvents="none" style={styles.tileGoldRing} testID="dna-tile-gold-ring" />}
               {isSel && (
                 <View style={styles.checkBadge}>
                   <Ionicons name="checkmark" size={13} color={COLORS.white} />
@@ -479,6 +687,7 @@ export default function DnaPickerScreen() {
           );
         })}
       </ScrollView>
+      </View>
 
       <View style={styles.escapes}>
         <Pressable onPress={() => setStep('fallback')} hitSlop={8} style={styles.escapeBtn} testID="dna-new-to-fragrance">
@@ -502,12 +711,40 @@ export default function DnaPickerScreen() {
           {selectedCount > 0 && <Ionicons name="arrow-forward" size={15} color={COLORS.white} />}
         </Pressable>
       </View>
+      </KeyboardAvoidingView>
+
+      {/* The docking flight: the picked tile lifting off the shelf into slot 0. */}
+      {dockFlight && (
+        <Animated.View
+          pointerEvents="none"
+          style={[
+            styles.dockFlight,
+            { width: tileW },
+            { transform: [...dockAnim.getTranslateTransform(), { scale: dockScale }] },
+          ]}
+        >
+          <Image source={{ uri: dockFlight.image_url }} style={styles.tileImg} contentFit="cover" />
+          <View pointerEvents="none" style={styles.tileGoldRing} />
+        </Animated.View>
+      )}
+
+      {/* Quiet toast — max-picks warning, dupe promotion, enrich "Noted". */}
+      {toast && (
+        <Animated.View
+          pointerEvents="none"
+          style={[styles.toast, { opacity: toastOpacity, bottom: insets.bottom + 96 }]}
+          testID="dna-search-toast"
+        >
+          <Text style={styles.toastText}>{toast}</Text>
+        </Animated.View>
+      )}
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.bg },
+  flex: { flex: 1 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
 
   gridHeader: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.md, paddingBottom: SPACING.sm },
@@ -544,6 +781,20 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   tileSel: { borderColor: COLORS.accent, borderWidth: 2 },
+  // Gold "brought-in" ring (search-sourced picks): thin INSET ring, visibly
+  // distinct from the flush tileSel border — the mark of the bottle you brought.
+  tileGoldRing: {
+    position: 'absolute',
+    top: 2,
+    left: 2,
+    right: 2,
+    bottom: 2,
+    borderWidth: 2,
+    borderColor: COLORS.accent,
+    borderRadius: RADIUS.md - 2,
+  },
+  // Deselected search-docked tile: stays pinned for the session, greyed.
+  tileGhost: { opacity: 0.45 },
   tileImg: {
     width: '100%',
     aspectRatio: 0.82,
@@ -603,4 +854,29 @@ const styles = StyleSheet.create({
   },
   ctaDisabled: { backgroundColor: COLORS.muted, opacity: 0.5 },
   ctaText: { ...TYPE.label, color: COLORS.white, fontSize: 14, letterSpacing: 1 },
+
+  // The docking flight overlay (window coordinates — translate via dockAnim).
+  dockFlight: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    padding: 6,
+    overflow: 'hidden',
+  },
+
+  toast: {
+    position: 'absolute',
+    left: SPACING.lg,
+    right: SPACING.lg,
+    backgroundColor: COLORS.overlay,
+    borderRadius: RADIUS.md,
+    paddingVertical: 10,
+    paddingHorizontal: 14,
+    alignItems: 'center',
+  },
+  toastText: { ...TYPE.bodySmall, color: COLORS.white, textAlign: 'center' },
 });

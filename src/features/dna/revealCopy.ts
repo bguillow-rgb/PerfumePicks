@@ -22,7 +22,13 @@ export interface ArchetypeCopy {
   visual: { icon: string; tint: string };
 }
 
-/** All twelve — every user lands in exactly one (engine guarantees argmax). */
+/**
+ * All twenty V3 archetypes + two persisted-only legacy keys (crowd_pleaser,
+ * rebel) — every user lands in exactly one (engine guarantees argmax/argmin).
+ * Identity lines are authored against what each centroid actually MEASURES
+ * (centroids.ts) and carry Bob's humanize gate: concrete, sensory, second
+ * person, no AI-marketing vocabulary.
+ */
 export const ARCHETYPE_COPY: Record<ArchetypeKey, ArchetypeCopy> = {
   the_executive: {
     name: 'The Executive',
@@ -66,9 +72,11 @@ export const ARCHETYPE_COPY: Record<ArchetypeKey, ArchetypeCopy> = {
     identity: 'You love a great scent and a great deal. Quality without the markup.',
     visual: { icon: 'pricetag', tint: '#3E7C59' },
   },
+  // M3 note: "soft" dropped from the line — the tightened centroid is
+  // florality-forward at ANY volume (the quiet-floral corner is soft_focus).
   the_romantic: {
     name: 'The Romantic',
-    identity: "You're drawn to soft, pretty florals. Tender and dreamy, heart on your sleeve.",
+    identity: 'You go straight for the florals. Lush, blooming, heart on your sleeve.',
     visual: { icon: 'flower', tint: '#B95C86' },
   },
   the_explorer: {
@@ -86,6 +94,57 @@ export const ARCHETYPE_COPY: Record<ArchetypeKey, ArchetypeCopy> = {
     identity: 'You like scents that divide the room. Smoky and daring, unapologetically you.',
     visual: { icon: 'thunderstorm', tint: '#4A4458' },
   },
+  // ── DNA V3 roster additions — authored M3 (humanize pass applied).
+  the_gourmand: {
+    name: 'The Gourmand',
+    identity: 'Vanilla, caramel, a trace of something baked. Scents you could almost taste.',
+    visual: { icon: 'ice-cream', tint: '#A65E44' },
+  },
+  the_minimalist: {
+    name: 'The Minimalist',
+    identity: 'You keep it spare on purpose. A few light, fresh scents that never crowd a room.',
+    visual: { icon: 'ellipse-outline', tint: '#7C8B99' },
+  },
+  the_naturalist: {
+    name: 'The Naturalist',
+    identity: 'Cut grass, crushed leaves, wet earth. Your favorite scents smell like being outside.',
+    visual: { icon: 'leaf', tint: '#4E7A3F' },
+  },
+  the_trendsetter: {
+    name: 'The Trendsetter',
+    identity: "You're on the new releases before the reviews land. If it came out this year, you've already smelled it.",
+    visual: { icon: 'trending-up', tint: '#C24B7A' },
+  },
+  the_old_soul: {
+    name: 'The Old Soul',
+    identity: "You reach past the new stuff for the ones that came first. Great scents don't expire.",
+    visual: { icon: 'hourglass', tint: '#8A6D4B' },
+  },
+  the_maximalist: {
+    name: 'The Maximalist',
+    identity: 'One shelf was never going to be enough. You collect big scents and wear them big.',
+    visual: { icon: 'megaphone', tint: '#B3452E' },
+  },
+  the_night_owl: {
+    name: 'The Night Owl',
+    identity: "Smoke, leather, and the late hours. Your scents don't wake up until the sun goes down.",
+    visual: { icon: 'moon', tint: '#33395C' },
+  },
+  the_spice_trader: {
+    name: 'The Spice Trader',
+    identity: 'Pepper up top, cardamom underneath, heat all the way through. You like a scent that bites back.',
+    visual: { icon: 'bonfire', tint: '#A6501E' },
+  },
+  the_daybreaker: {
+    name: 'The Daybreaker',
+    identity: 'Cold citrus, clean air, and an early start. Your kind of scent feels like a window thrown open.',
+    visual: { icon: 'sunny', tint: '#D19A2F' },
+  },
+  the_soft_focus: {
+    name: 'The Soft Focus',
+    identity: 'Powder and musk, worn so close it could pass for your own skin. Quiet, but it stays with people.',
+    visual: { icon: 'cloud', tint: '#9B7FA8' },
+  },
 };
 
 /** Shown in place of the identity line when confidence is low (few/weak signals). */
@@ -101,6 +160,47 @@ export const TRAIT_CHIP_LABEL: Record<TraitKey, string> = {
   complimentSeeking: 'Compliment-driven',
   expressive: 'Expressive',
 };
+
+/**
+ * One-word reveal modifiers for the "The {Modifier} {Archetype}" display form
+ * (M3 — the fold-in that multiplies 20 archetypes into ~120 felt identities).
+ * Each word is the trait as a person would wear it, not as the engine names it.
+ */
+export const MODIFIER_COPY: Record<TraitKey, string> = {
+  luxury: 'Gilded',
+  adventurous: 'Daring',
+  collector: 'Archival',
+  valueHunter: 'Canny',
+  complimentSeeking: 'Magnetic',
+  expressive: 'Vivid',
+};
+
+/**
+ * DnaArchetype.modifier is persisted as the snake_case trait key
+ * (e.g. "compliment_seeking" — archetype.ts dominantSecondaryTrait). Resolve it
+ * to its display word; null/unknown keys resolve to null so the reveal falls
+ * back to the plain archetype name instead of rendering garbage.
+ */
+export function modifierWord(modifier: string | null | undefined): string | null {
+  if (!modifier) return null;
+  const camel = modifier.replace(/_([a-z])/g, (_, c: string) => c.toUpperCase()) as TraitKey;
+  return MODIFIER_COPY[camel] ?? null;
+}
+
+/**
+ * The folded display name: "The Magnetic Classicist". No modifier (or an
+ * unknown one) → the plain archetype name. Unknown primary falls back to the
+ * same anchor DnaProfileContent uses, so the two can never disagree.
+ */
+export function dnaDisplayName(
+  primary: ArchetypeKey,
+  modifier?: string | null,
+): string {
+  const name = (ARCHETYPE_COPY[primary] ?? ARCHETYPE_COPY.the_executive).name;
+  const word = modifierWord(modifier);
+  if (!word) return name;
+  return name.startsWith('The ') ? `The ${word} ${name.slice(4)}` : `${word} ${name}`;
+}
 
 /**
  * One forward-looking journey line, cold-start softened ("tend to" — never a
