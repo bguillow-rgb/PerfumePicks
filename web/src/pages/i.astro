@@ -43,6 +43,19 @@ import { SITE } from '../consts';
             "Your friend's Fragrance DNA is <strong>" + name + "</strong>.<br>Find out yours.";
         }
       } catch (e) { /* keep the default hook */ }
+
+      // Invite-funnel beacon: page_view fires automatically via Analytics.astro;
+      // this adds the store-CTA hop so share → landing → store tap is measurable.
+      try {
+        var cta = document.getElementById('cta');
+        if (cta && typeof window.gtag === 'function') {
+          cta.addEventListener('click', function () {
+            window.gtag('event', 'invite_store_cta_tap', {
+              archetype: new URLSearchParams(window.location.search).get('a') || '(none)'
+            });
+          });
+        }
+      } catch (e) { /* beacon is best-effort */ }
     })();
   </script>
 
