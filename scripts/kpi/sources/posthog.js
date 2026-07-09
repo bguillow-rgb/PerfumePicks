@@ -397,6 +397,7 @@ module.exports = {
   loadEnv,
   isConfigured,
   hogql,
+  NS, // namespace + owner-exclusion WHERE fragment — reuse in sibling sources so exclusions never drift
   fetchActivity,
   fetchTopEvents,
   fetchQuizFunnel,
