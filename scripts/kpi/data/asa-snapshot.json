@@ -17,12 +17,14 @@
   },
   "campaigns": [
     {
-      "id": null,
+      "id": "2144160866",
       "name": "Perfume Picks - US - Search Results",
       "status": "ENABLED",
-      "countries": ["US"],
+      "countries": [
+        "US"
+      ],
       "adPlacement": "Search Results",
-      "dailyBudget": 5.00,
+      "dailyBudget": 5,
       "spend": 23.36,
       "installs": 6,
       "cpa": 3.89,
@@ -42,12 +44,14 @@
       ]
     },
     {
-      "id": null,
+      "id": "2144168412",
       "name": "Perfume Picks - US - Discovery",
       "status": "ENABLED",
-      "countries": ["US"],
+      "countries": [
+        "US"
+      ],
       "adPlacement": "Search Results",
-      "dailyBudget": 3.00,
+      "dailyBudget": 3,
       "spend": 9.67,
       "installs": 0,
       "cpa": null,
@@ -69,8 +73,16 @@
   ],
   "keywords": [],
   "keywordsNote": "Keyword-level data not captured this pass — pull from the console keywords tab on next refresh.",
-  "brandTerm": { "present": null, "enabled": null, "terms": [], "note": "Brand-term defense not verified this pass." },
+  "brandTerm": {
+    "present": null,
+    "enabled": null,
+    "terms": [],
+    "note": "Brand-term defense not verified this pass."
+  },
   "brandTermDefended": null,
   "searchTerms": [],
-  "hiddenLowVolumeSpend": { "discoveryGroup": "Perfume Picks - US - Discovery", "note": "$9.67/7d with 0 installs — search-terms tab needs mining before more budget." }
+  "hiddenLowVolumeSpend": {
+    "discoveryGroup": "Perfume Picks - US - Discovery",
+    "note": "$9.67/7d with 0 installs — search-terms tab needs mining before more budget."
+  }
 }
