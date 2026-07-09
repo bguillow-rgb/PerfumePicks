@@ -297,9 +297,21 @@ async function fetchLive(env) {
       adGroups = [];
     }
 
-    // Search terms (for junk detection).
+    // Search terms (for junk detection). NOTE: this report REJECTS the shared
+    // baseSelector — `timeZone` and `returnRecordsWithNoMetrics: true` each
+    // 400 on the searchterms dimension (verified live 2026-07-09; the old call
+    // silently failed in this try/catch forever). Minimal body only.
     try {
-      const stReport = await apiPost(token, orgId, `/reports/campaigns/${id}/searchterms`, baseSelector);
+      const stReport = await apiPost(token, orgId, `/reports/campaigns/${id}/searchterms`, {
+        startTime: win.startTime,
+        endTime: win.endTime,
+        returnRowTotals: true,
+        returnRecordsWithNoMetrics: false,
+        selector: {
+          orderBy: [{ field: 'impressions', sortOrder: 'DESCENDING' }],
+          pagination: { offset: 0, limit: 1000 },
+        },
+      });
       const stRows = stReport.data?.reportingDataResponse?.row || [];
       for (const r of stRows) {
         const m = r.metadata || {};
@@ -318,11 +330,14 @@ async function fetchLive(env) {
     } catch {}
 
     // Brand defense — any ENABLED targeting keyword containing the brand
-    // term. The campaign-level find endpoint returns every keyword across
-    // the campaign's ad groups in one call.
+    // term. The campaign-level find endpoint takes the Selector object as the
+    // body DIRECTLY — wrapping it in {selector:{...}} 400s with
+    // UNRECOGNIZED_PROPERTY (verified live 2026-07-09; the old wrapped call
+    // silently failed here forever, producing a false "brand undefended"
+    // DEFEND-BRAND finding).
     try {
       const kwFind = await apiPost(token, orgId, `/campaigns/${id}/adgroups/targetingkeywords/find`, {
-        selector: { pagination: { offset: 0, limit: 1000 } },
+        pagination: { offset: 0, limit: 1000 },
       });
       for (const kw of kwFind.data || []) {
         if ((kw.text || '').toLowerCase().includes(BRAND_TERM)) {
