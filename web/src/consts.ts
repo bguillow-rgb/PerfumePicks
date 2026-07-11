@@ -15,7 +15,6 @@ export const SITE = {
   locale: 'en-US',
   supportEmail: 'support@perfumepicks.app',
   // Live App Store listing (canonical /us/ format).
-  // \u201Ccoming soon\u201D state.
   appStoreUrl: 'https://apps.apple.com/us/app/perfume-picks/id6774184221',
   bundleId: 'com.bobguillow.perfumepicks',
   appleTeamId: 'ZNS5TNLB2D',
