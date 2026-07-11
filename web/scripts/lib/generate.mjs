@@ -63,7 +63,9 @@ STEP 2 — ${
 
 STEP 3 — Write the full ${pillar ? 'PILLAR ' : ''}article following the mandatory structure in the system prompt.
 
-OUTPUT — Return ONLY a single fenced code block tagged json, nothing before or after it, with exactly these fields:
+OUTPUT — Return exactly two parts, in this order, nothing else:
+
+PART 1 — a single fenced code block tagged json with ONLY these metadata fields (the article body does NOT go in the JSON):
 \`\`\`json
 {
   "slug": "kebab-case-url-slug",
@@ -73,10 +75,14 @@ OUTPUT — Return ONLY a single fenced code block tagged json, nothing before or
   "targetQuery": "the exact target query",
   "relatedQueries": ["3-5 secondary queries this also targets"],
   "quickAnswer": "40-60 word direct answer",
-  "faqs": [{"q": "question?", "a": "concise answer"}],
-  "bodyMarkdown": "the full article body in markdown, starting with the first paragraph (NO frontmatter, NO H1 title — the layout renders the title)"
+  "faqs": [{"q": "question?", "a": "concise answer"}]
 }
 \`\`\`
+
+PART 2 — on its own line, the exact separator:
+---BODY---
+then the full article body as plain markdown (NOT inside JSON, NOT fenced), starting with the first paragraph (NO frontmatter, NO H1 title — the layout renders the title).
+
 The slug MUST NOT be any of: ${[...existingSlugs].join(', ') || '(none)'}.`;
 }
 
@@ -130,6 +136,22 @@ export function parseJsonBlock(text) {
   }
 }
 
+
+// Parse the two-part article response: a small metadata JSON block, then the
+// body as RAW markdown after a ---BODY--- separator line. Prose never rides
+// inside a JSON string, so a stray double quote in the article can no longer
+// kill the parse (the failure mode behind the intermittent nightly reds).
+// Falls back to the legacy single-JSON shape (bodyMarkdown field) so older
+// prompts/responses still parse during rollout.
+export function parseArticleResponse(text) {
+  const sep = text.search(/^[ \t]*---BODY---[ \t]*$/m);
+  if (sep === -1) return parseJsonBlock(text); // legacy shape
+  const head = text.slice(0, sep);
+  const body = text.slice(text.indexOf('\n', sep) + 1).trim();
+  const meta = parseJsonBlock(head);
+  return { ...meta, bodyMarkdown: body };
+}
+
 export function validateArticle(a) {
   const errs = [];
   for (const f of ['slug', 'title', 'description', 'targetQuery', 'quickAnswer', 'bodyMarkdown']) {
@@ -167,7 +189,7 @@ async function callOnce({ apiKey, model, site, tier, existingList, existingSlugs
     .filter((b) => b.type === 'text')
     .map((b) => b.text)
     .join('\n');
-  const article = parseJsonBlock(text);
+  const article = parseArticleResponse(text);
   const errs = validateArticle(article);
   if (errs.length) throw new Error(`article failed validation: ${errs.join('; ')}`);
   article.tier = tier;

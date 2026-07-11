@@ -7,7 +7,7 @@
 // Fail-safe by design: any error (API, parse, guard) logs a warning and returns
 // the ORIGINAL article unchanged, so the daily run never breaks because of this
 // pass. It only ever improves the prose or leaves it as-is.
-import { parseJsonBlock } from './generate.mjs';
+import { parseArticleResponse } from './generate.mjs';
 
 const HUMANIZE_SYSTEM = `You are a ruthless copy editor. Your only job is to strip AI tells out of an already-written article and put a human voice back in. Assume the draft was written by AI. Rewrite it until it isn't.
 
@@ -41,7 +41,12 @@ HARD CONSTRAINTS (never break; schema and SEO depend on them):
 - Keep roughly the same length. Do not summarize, merge, or drop sections.
 - Straight quotes only.`;
 
-const USER_INSTRUCTION = `Humanize the prose in the following article fields. Return ONLY a single fenced json code block (tagged json) with exactly these keys and nothing else: quickAnswer (string), bodyMarkdown (string), faqs (array of {q, a} objects). Do not add, remove, reorder, merge, or drop any sections. Do not change heading text other than converting Title Case headings to sentence case. Keep all tables, links, and anchor text. Here is the article JSON:`;
+const USER_INSTRUCTION = `Humanize the prose in the following article. Return exactly two parts, in this order, nothing else:
+PART 1 - a single fenced json code block (tagged json) with exactly these keys: quickAnswer (string), faqs (array of {q, a} objects). The body does NOT go in the JSON.
+PART 2 - on its own line, the exact separator:
+---BODY---
+then the full humanized article body as plain markdown (NOT inside JSON, NOT fenced).
+Do not add, remove, reorder, merge, or drop any sections. Do not change heading text other than converting Title Case headings to sentence case. Keep all tables, links, and anchor text. Here is the article (same two-part format):`;
 
 // Belt-and-suspenders: even though the prompt forbids them, scrub any em/en dash
 // (raw or HTML/unicode) that slips through, since a single dash is the loudest AI
@@ -57,7 +62,6 @@ export async function humanizeArticle({ apiKey, model = 'claude-sonnet-4-6', art
   try {
     const payload = {
       quickAnswer: article.quickAnswer,
-      bodyMarkdown: article.bodyMarkdown,
       faqs: article.faqs,
     };
     const res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -74,7 +78,7 @@ export async function humanizeArticle({ apiKey, model = 'claude-sonnet-4-6', art
         messages: [
           {
             role: 'user',
-            content: `${USER_INSTRUCTION}\n\n\`\`\`json\n${JSON.stringify(payload)}\n\`\`\``,
+            content: `${USER_INSTRUCTION}\n\n\`\`\`json\n${JSON.stringify(payload)}\n\`\`\`\n---BODY---\n${article.bodyMarkdown}`,
           },
         ],
       }),
@@ -85,7 +89,7 @@ export async function humanizeArticle({ apiKey, model = 'claude-sonnet-4-6', art
       .filter((b) => b.type === 'text')
       .map((b) => b.text)
       .join('\n');
-    const cleaned = parseJsonBlock(text);
+    const cleaned = parseArticleResponse(text);
 
     // Guard against a collapsed/truncated rewrite: if the body shrank by more
     // than ~35% the pass probably dropped sections, so keep the original.
