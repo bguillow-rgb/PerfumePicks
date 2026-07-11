@@ -127,8 +127,23 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
   const auTodayNote = au ? ` (${au.today.signedIn} signed-in + ${au.today.guestVisits} guest)` : ' (unavailable)';
   const auYestNote = au ? ` (${au.yesterday.signedIn} signed-in + ${au.yesterday.guestVisits} guest)` : ' (unavailable)';
 
+  // Data-freshness heartbeat — makes any 0 self-diagnosing. Signed-in DAU is
+  // now Supabase-instant (a live session shows immediately); guest visits still
+  // ride PostHog, which lags 3-5 min. Surfacing PostHog's last-event age tells
+  // you whether a low count is "quiet" or "pipeline stalled" (the 2026-07-11
+  // "is the 0 real?" incident this section fixes).
+  const phAge = au?.freshness?.posthogAgeMin;
+  const phNote =
+    phAge == null ? 'no events in window'
+    : phAge <= 10 ? `last event ${phAge}m ago ✓`
+    : phAge <= 120 ? `last event ${phAge}m ago`
+    : `last event ${(phAge / 60).toFixed(1)}h ago ⚠ stalled?`;
+  const nowET = new Date().toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
+  lines.push(`> **Data freshness:** Supabase live · PostHog ${phNote}${au?.freshness?.supaActiveError ? ' · ⚠ Supabase signed-in fallback (PostHog-only)' : ''}`);
+  lines.push('>');
   lines.push(`> **Yesterday:** ${auYest} active users${auYestNote} · ${signupsYest} new profiles · ${crashes24h === 0 ? '0 crashes ✓' : crashes24h != null ? crashes24h + ' crashes ⚠' : 'Sentry not configured'}`);
-  lines.push(`> **Today (in progress):** ${auToday} active users${auTodayNote} · ${signupsToday} new profiles`);
+  lines.push(`> **Today (partial, as of ${nowET} ET):** ${auToday} active users${auTodayNote} · ${signupsToday} new profiles`);
+  lines.push('> _Signed-in counts a session the instant it hits Supabase; guest visits trail PostHog by a few minutes. An empty day is only real once PostHog is fresh (above)._');
   lines.push('>');
   lines.push(`> **Since launch (${LAUNCH_DATE}):** ${signupsSinceLaunch} new profiles`);
   lines.push('>');
@@ -148,7 +163,9 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
   lines.push('');
   lines.push('| Metric | Today | Yesterday | Δ% | Since Launch |');
   lines.push('|---|---|---|---|---|');
-  lines.push(`| Active users | **${auToday}**${auTodayNote} | ${auYest}${auYestNote} | ${au ? deltaPct(auToday, auYest) : '—'} | — |`);
+  // No Δ% on active users: today is a partial day vs a full yesterday, so a
+  // "-100%" mid-day is noise, not signal. Show "in progress" instead.
+  lines.push(`| Active users | **${auToday}**${auTodayNote} | ${auYest}${auYestNote} | _in progress_ | — |`);
   lines.push(`| New profiles | **${signupsToday}** | ${signupsYest} | ${deltaPct(signupsToday, signupsYest)} | **${signupsSinceLaunch}** |`);
   if (supa?.wardrobe) {
     lines.push(`| Collection adds (have) | ${supa.wardrobe.today.have} | — | — | ${supa.wardrobe.sinceLaunch.have} |`);

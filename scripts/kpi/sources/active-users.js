@@ -43,6 +43,16 @@ const NS = `properties.$app_namespace = '${APP_NAMESPACE}'
   AND toString(person_id) NOT IN (${OWNER_ANON_PERSON_IDS.map((id) => `'${id}'`).join(', ')})`;
 
 const GUEST_GAP_SECONDS = 1800; // 30-min inactivity → new guest visit
+
+// Instant signed-in activity signal, straight from Supabase — lag-free, unlike
+// PostHog (which ingests 3-5 min late and made a live session read as 0 DAU,
+// 2026-07-11). Perfume bumps last_login_date (DATE) on app open. We UNION this
+// with PostHog activity: Supabase makes a fresh session show immediately, and
+// PostHog backfills anything Supabase's column misses. Union is strictly safer
+// than either alone — it can only remove false zeros, never add false actives
+// (last_login_date never bumps from a server webhook, unlike updated_at).
+const SIGNED_IN_ACTIVITY_COL = 'last_login_date';
+const SIGNED_IN_COL_IS_DATE = true;
 const NOTE =
   'Active users = distinct signed-in humans (non-anonymous Supabase ids) + guest visits (anonymous activity collapsed by 30-min gaps). Guests counted per-visit; person_id DAU over-counts these ~2-3x.';
 
@@ -63,10 +73,41 @@ async function fetchRealUserIds(supaUrl, supaKey) {
   return real;
 }
 
-// Pure aggregation — deterministic given (rows, realIds).
-//   rows: Array<[dateStr, distinct_id, unixSeconds]>
-function computeActiveUsers(rows, realIds) {
+// Per-day signed-in activity from Supabase (instant). Returns
+// Map<'YYYY-MM-DD', Set<userId>>. Only real (non-anon) users have profiles,
+// so every id here is a signed-in human. Never throws the report down: on
+// failure the caller falls back to PostHog-only (with a logged reason).
+async function fetchSupaActiveByDay(supaUrl, supaKey, days) {
+  const start = new Date(Date.now() - (days - 1) * 86400000).toISOString().slice(0, 10);
+  const col = SIGNED_IN_ACTIVITY_COL;
+  const filter = SIGNED_IN_COL_IS_DATE ? `${col}=gte.${start}` : `${col}=gte.${start}T00:00:00Z`;
+  const res = await fetch(`${supaUrl}/rest/v1/profiles?select=id,${col}&${filter}&limit=100000`, {
+    headers: { apikey: supaKey, Authorization: `Bearer ${supaKey}` },
+  });
+  if (!res.ok) throw new Error(`supa signed-in activity ${res.status}: ${(await res.text()).slice(0, 120)}`);
   const byDay = new Map();
+  for (const row of await res.json()) {
+    const v = row[col];
+    if (!v) continue;
+    const day = String(v).slice(0, 10);
+    if (!byDay.has(day)) byDay.set(day, new Set());
+    byDay.get(day).add(row.id);
+  }
+  return byDay;
+}
+
+// Pure aggregation — deterministic given (rows, realIds, supaActiveByDay).
+//   rows: Array<[dateStr, distinct_id, unixSeconds]> (PostHog)
+//   supaActiveByDay: Map<dateStr, Set<userId>> (Supabase, instant) — union'd
+//   into the signed-in set so a live session counts before PostHog ingests it.
+function computeActiveUsers(rows, realIds, supaActiveByDay = new Map()) {
+  const byDay = new Map();
+  // Seed each day's signed-in set with Supabase-instant activity first.
+  for (const [day, ids] of supaActiveByDay) {
+    const e = byDay.get(day) || { real: new Set(), guestTs: [] };
+    for (const id of ids) e.real.add(id);
+    byDay.set(day, e);
+  }
   for (const [d, id, t] of rows) {
     const day = String(d);
     const e = byDay.get(day) || { real: new Set(), guestTs: [] };
@@ -92,13 +133,21 @@ function computeActiveUsers(rows, realIds) {
 //   guestVisits: sum of per-day guest visits in the window. Explicitly VISITS,
 //   not unique people — without a stable device id a 7d unique-guest count
 //   would be a guess, and we don't print guesses.
-function computeWindows(rows, realIds, todayStr) {
+function computeWindows(rows, realIds, todayStr, supaActiveByDay = new Map()) {
   const cutoff = (n) =>
     new Date(Date.parse(todayStr + 'T00:00:00Z') - (n - 1) * 86400000).toISOString().slice(0, 10);
   const c7 = cutoff(7);
   const c28 = cutoff(28);
   const signed7 = new Set(), signed28 = new Set();
   const guestByDay7 = new Map(), guestByDay28 = new Map();
+  // Seed signed-in windows with Supabase-instant activity (union, lag-free).
+  for (const [day, ids] of supaActiveByDay) {
+    if (day < c28 || day > todayStr) continue;
+    for (const id of ids) {
+      signed28.add(id);
+      if (day >= c7) signed7.add(id);
+    }
+  }
   for (const [d, id, t] of rows) {
     const day = String(d);
     if (day < c28 || day > todayStr) continue;
@@ -167,14 +216,39 @@ async function fetchActiveUsers(env, { days = 30 } = {}) {
     return { error: e.message };
   }
 
-  const daily = computeActiveUsers(rows, realIds);
+  // Instant signed-in activity (non-fatal: fall back to PostHog-only on error).
+  let supaActiveByDay = new Map();
+  let supaActiveError = null;
+  try {
+    supaActiveByDay = await fetchSupaActiveByDay(supaUrl, supaKey, days);
+  } catch (e) {
+    supaActiveError = e.message;
+  }
+
+  const daily = computeActiveUsers(rows, realIds, supaActiveByDay);
   const byDate = new Map(daily.map((r) => [r.date, r]));
   const dateStr = (offset) => new Date(Date.now() - offset * 86400000).toISOString().slice(0, 10);
   const today = byDate.get(dateStr(0)) || { signedIn: 0, guestVisits: 0, total: 0 };
   const yesterday = byDate.get(dateStr(1)) || { signedIn: 0, guestVisits: 0, total: 0 };
-  const windows = computeWindows(rows, realIds, dateStr(0));
+  const windows = computeWindows(rows, realIds, dateStr(0), supaActiveByDay);
 
-  return { daily, today, yesterday, windows, denominatorNote: NOTE };
+  // Freshness heartbeat — PostHog is the laggy source, so surface its
+  // last-event age. A '0 today' next to "PostHog last event 4m ago" reads as
+  // real; next to "6h ago" it reads as a stalled pipeline. Makes any zero
+  // self-diagnosing instead of a 10-minute investigation.
+  let posthogLatestUnix = 0;
+  for (const r of rows) {
+    const n = Number(r[2]);
+    if (n > posthogLatestUnix) posthogLatestUnix = n;
+  }
+  const freshness = {
+    posthogLatestUnix: posthogLatestUnix || null,
+    posthogAgeMin: posthogLatestUnix ? Math.round((Date.now() / 1000 - posthogLatestUnix) / 60) : null,
+    signedInSource: `Supabase ${SIGNED_IN_ACTIVITY_COL} (instant) ∪ PostHog`,
+    supaActiveError,
+  };
+
+  return { daily, today, yesterday, windows, denominatorNote: NOTE, freshness };
 }
 
 module.exports = { fetchActiveUsers, computeActiveUsers, computeWindows, NS };
