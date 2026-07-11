@@ -110,6 +110,18 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
     lines.push('');
   }
 
+  // If the Supabase source failed, every DB-backed number below is MISSING,
+  // not zero. Never let an outage render as a quiet all-zero report (the
+  // 2026-07-09/11 incidents). count()/getRows() throw on !res.ok, fetchAll
+  // returns {error}, and this banner makes it loud.
+  if (supa?.error) {
+    lines.push('## 🚨 SUPABASE SOURCE FAILED — DB METRICS BELOW ARE MISSING, NOT ZERO');
+    lines.push('');
+    lines.push(`> ${String(supa.error).slice(0, 200)}`);
+    lines.push('> Signups, funnel, collection, catalog and Pro numbers here are unreliable. Re-run the dashboard.');
+    lines.push('');
+  }
+
   // ── 2. EXECUTIVE SUMMARY ──────────────────────────────────────────
   lines.push('## ╔═ EXECUTIVE SUMMARY ════════════════════════════════════════╗');
   lines.push('');

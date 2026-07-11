@@ -25,11 +25,34 @@ function loadEnv() {
   };
 }
 
+// Retry wrapper — Supabase intermittently 401s individual requests when the
+// dashboard fires its burst of concurrent count() calls (auth-cache contention
+// under load, seen 2026-07-09..11). Retry transient failures with backoff so a
+// blip self-heals instead of surfacing a false outage. Real config errors (bad
+// key) fail every attempt and surface after tries exhaust.
+async function fetchWithRetry(url, opts, { tries = 4 } = {}) {
+  let lastErr;
+  for (let i = 0; i < tries; i++) {
+    try {
+      const res = await fetch(url, opts);
+      if (res.ok || (res.status !== 401 && res.status !== 403 && res.status !== 429 && res.status < 500)) {
+        return res;
+      }
+      lastErr = new Error(`${res.status}`);
+    } catch (e) {
+      lastErr = e;
+    }
+    if (i < tries - 1) await new Promise((r) => setTimeout(r, 250 * (i + 1) * (i + 1)));
+  }
+  if (lastErr && /^\d+$/.test(lastErr.message)) return fetch(url, opts);
+  throw lastErr;
+}
+
 // HEAD with Prefer: count=exact — cheapest way to count rows.
 async function count(env, table, filterParts = []) {
   const filter = filterParts.filter(Boolean).join('&');
   const url = `${env.url}/rest/v1/${table}?select=id${filter ? `&${filter}` : ''}&limit=0`;
-  const res = await fetch(url, {
+  const res = await fetchWithRetry(url, {
     method: 'HEAD',
     headers: {
       apikey: env.key,
@@ -38,6 +61,12 @@ async function count(env, table, filterParts = []) {
       Range: '0-0',
     },
   });
+  // A failed request MUST NOT read as "0 rows" — that lie ships a dashboard
+  // full of confident zeros during an outage. Throw so the orchestrator marks
+  // supa.error and the SUPABASE-FAILED banner fires instead of fake zeros.
+  if (!res.ok) {
+    throw new Error(`count(${table}) ${res.status}`);
+  }
   const cr = res.headers.get('content-range') || '';
   const total = parseInt(cr.split('/')[1] || '0', 10);
   return Number.isNaN(total) ? 0 : total;
@@ -46,13 +75,15 @@ async function count(env, table, filterParts = []) {
 async function getRows(env, table, filterParts = [], limit = 10) {
   const filter = filterParts.filter(Boolean).join('&');
   const url = `${env.url}/rest/v1/${table}?select=*${filter ? `&${filter}` : ''}&limit=${limit}`;
-  const res = await fetch(url, {
+  const res = await fetchWithRetry(url, {
     headers: {
       apikey: env.key,
       Authorization: `Bearer ${env.key}`,
     },
   });
-  if (!res.ok) return [];
+  if (!res.ok) {
+    throw new Error(`getRows(${table}) ${res.status}`);
+  }
   return await res.json();
 }
 
@@ -267,29 +298,37 @@ async function fetchAffiliateClicks(env, windows) {
 
 // Convenience: pull every metric in one shot
 async function fetchAll(env, windows) {
-  const [
-    signups, wardrobe, wearLogs, swipes, reviews,
-    submissions, contentReports, proMirror, dnaPickerEvents,
-    catalogSize, recentSignups, affiliateClicks,
-  ] = await Promise.all([
-    fetchSignups(env, windows),
-    fetchWardrobe(env, windows),
-    fetchWearLogs(env, windows),
-    fetchSwipes(env, windows),
-    fetchReviews(env, windows),
-    fetchSubmissions(env),
-    fetchContentReports(env),
-    fetchProMirror(env),
-    fetchDnaPickerEvents(env, windows),
-    fetchCatalogSize(env),
-    fetchRecentSignups(env, { limit: 10, sinceIso: windows.sinceLaunch.startIso }),
-    fetchAffiliateClicks(env, windows).catch((e) => ({ error: e.message })),
-  ]);
-  return {
-    signups, wardrobe, wearLogs, swipes, reviews,
-    submissions, contentReports, proMirror, dnaPickerEvents,
-    catalogSize, recentSignups, affiliateClicks,
-  };
+  // A genuine Supabase outage (count/getRows throw after per-request retries)
+  // must surface as supa.error → the SUPABASE-FAILED banner, NOT as a silent
+  // all-zeros dashboard. Catch here so the orchestrator gets {error} instead
+  // of the withRetry fallback {} that would print confident zeros.
+  try {
+    const [
+      signups, wardrobe, wearLogs, swipes, reviews,
+      submissions, contentReports, proMirror, dnaPickerEvents,
+      catalogSize, recentSignups, affiliateClicks,
+    ] = await Promise.all([
+      fetchSignups(env, windows),
+      fetchWardrobe(env, windows),
+      fetchWearLogs(env, windows),
+      fetchSwipes(env, windows),
+      fetchReviews(env, windows),
+      fetchSubmissions(env),
+      fetchContentReports(env),
+      fetchProMirror(env),
+      fetchDnaPickerEvents(env, windows),
+      fetchCatalogSize(env),
+      fetchRecentSignups(env, { limit: 10, sinceIso: windows.sinceLaunch.startIso }),
+      fetchAffiliateClicks(env, windows).catch((e) => ({ error: e.message })),
+    ]);
+    return {
+      signups, wardrobe, wearLogs, swipes, reviews,
+      submissions, contentReports, proMirror, dnaPickerEvents,
+      catalogSize, recentSignups, affiliateClicks,
+    };
+  } catch (e) {
+    return { error: e.message };
+  }
 }
 
 module.exports = {
