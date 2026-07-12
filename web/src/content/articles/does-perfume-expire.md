@@ -14,9 +14,9 @@ publishedAt: "2026-06-28"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-long-does-perfume-last"
+  - "perfume-reformulation-guide"
   - "fragrance-notes-explained"
   - "how-to-apply-perfume"
-  - "how-to-decant-perfume"
 faqs:
   - q: "How long does an opened perfume last?"
     a: "Most opened fragrances last 3-5 years when stored properly in a cool, dark place. Citrus and aquatic scents tend to degrade faster, sometimes within 1-2 years, while amber, woody, and oriental fragrances can hold up well past the five-year mark."
