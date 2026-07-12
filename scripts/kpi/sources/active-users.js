@@ -225,6 +225,20 @@ async function fetchActiveUsers(env, { days = 30 } = {}) {
     supaActiveError = e.message;
   }
 
+  // CRITICAL: keep only REAL (non-anon) users and drop the founder. Anonymous
+  // guests also get a last_login_date, and without this filter they inflate
+  // "signed-in" (they belong in guest visits, counted via PostHog). realIds is
+  // the non-anon set from auth admin; it includes the founder, so exclude that
+  // id explicitly — mirrors the PostHog NS exclusion. (Bug caught 2026-07-12:
+  // Perfume MAU read 106 signed-in vs 35 installs; 90 of those were anon.)
+  const OWNER_IDS = new Set([OWNER_SUPABASE_ID]);
+  for (const [day, ids] of supaActiveByDay) {
+    const kept = new Set();
+    for (const id of ids) if (realIds.has(id) && !OWNER_IDS.has(id)) kept.add(id);
+    if (kept.size) supaActiveByDay.set(day, kept);
+    else supaActiveByDay.delete(day);
+  }
+
   const daily = computeActiveUsers(rows, realIds, supaActiveByDay);
   const byDate = new Map(daily.map((r) => [r.date, r]));
   const dateStr = (offset) => new Date(Date.now() - offset * 86400000).toISOString().slice(0, 10);
