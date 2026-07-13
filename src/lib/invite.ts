@@ -43,8 +43,8 @@ export function inviteHook(
   const name =
     archetype && ARCHETYPE_COPY[archetype] ? dnaDisplayName(archetype, modifier) : null;
   return name
-    ? `My Fragrance DNA is "${name}" — find out yours 👇`
-    : `I found my Fragrance DNA on Perfume Picks — find out yours 👇`;
+    ? `My Fragrance DNA came back "${name}". Find out yours 👇`
+    : `Just found my Fragrance DNA on Perfume Picks. Find out yours 👇`;
 }
 
 /**

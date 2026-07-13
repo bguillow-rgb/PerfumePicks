@@ -72,7 +72,7 @@ describe('smart SOTD — rotation narration', () => {
   it('leads with never-worn when the bottle has no wear history', () => {
     const f = frag();
     const r = sotdReason(f, ctx, null, null, 'base');
-    expect(r.toLowerCase()).toContain('never worn');
+    expect(r.toLowerCase()).toContain("haven't worn");
   });
 
   it('leads with overdue when it has been many weeks', () => {

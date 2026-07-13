@@ -75,28 +75,28 @@ export function sotdReason(
   const accords = f.top_accords ?? [];
 
   // 1. Rotation / rediscovery — the most emotionally resonant "today" signal.
-  if (gone == null) return "You've never worn this one — today's the day to try it.";
-  if (gone >= 45) return `It's been over ${Math.floor(gone / 7)} weeks — time to bring this back into rotation.`;
+  if (gone == null) return "You haven't worn this one yet. Good day to break it in.";
+  if (gone >= 45) return `Haven't reached for this in ${Math.floor(gone / 7)} weeks. Bring it back.`;
 
   // 2. Weather.
   if ((ctx.weather === 'hot-humid' || ctx.weather === 'hot-dry') &&
       accords.some((a) => ['fresh', 'citrus', 'green', 'aquatic'].includes(a))) {
-    return 'Warm out — this one stays fresh and easy in the heat.';
+    return 'Warm out, and this holds up in the heat.';
   }
   if ((ctx.weather === 'cold' || ctx.weather === 'cool') &&
       accords.some((a) => ['amber', 'warm-spicy', 'vanilla', 'woody', 'sweet', 'oud'].includes(a))) {
-    return 'Cool and grey — a warm, enveloping day for this.';
+    return 'Cool and grey. A warm one to sink into.';
   }
 
   // 3. Occasion.
-  if (ctx.occasion === 'office' && f.office_safe_score >= 0.75) return 'Reads right for a workday — present, not loud.';
+  if (ctx.occasion === 'office' && f.office_safe_score >= 0.75) return 'Office kind of day. Present without shouting.';
   if ((ctx.occasion === 'date' || ctx.occasion === 'evening') && f.compliment_score >= 0.85) {
-    return 'A compliment-getter for tonight.';
+    return 'Save this for tonight, it gets noticed.';
   }
 
   // 4. DNA wheelhouse — spoken in the archetype's register when confident.
   const name = dna && dna.confidence >= 0.4 ? ARCHETYPE_COPY[dna.archetype.primary]?.name : null;
-  if (name) return `Right in your ${name} wheelhouse.`;
+  if (name) return `This one's peak ${name}.`;
 
   // 5. Fall back to the base taste reason.
   return baseReason;
