@@ -497,10 +497,15 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
 
     // Smart engine (DNA-first, day-stable). Any failure falls through to the
     // legacy ranking below, so the Today tab can never break on this path.
+    // Only trust recency ("last worn / not in rotation") reasons when the user
+    // genuinely logs wears. A handful of logs = a real habit; zero-to-few means
+    // absence of a log tells us nothing, so recency language would be a guess.
+    const hasWearSignal = logs.length >= 5;
+
     let fellBack = false;
     if (smartEnabled) {
       try {
-        return { list: selectSmartSotd(candidates, profile, ctx, lastWornMap, daySeed, dna, limit), fellBack: false };
+        return { list: selectSmartSotd(candidates, profile, ctx, lastWornMap, daySeed, dna, limit, hasWearSignal), fellBack: false };
       } catch (e) {
         if (__DEV__) console.warn('[sotd] smart engine failed, using legacy:', e);
         fellBack = true; // smart was ON but threw — a genuine fallback worth logging
@@ -528,7 +533,7 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
         lastWorn: lastWornMap.get(r.fragrance.id) ?? null,
       }));
     return { list, fellBack };
-  }, [ownedItems, fetchedFragrances, profile, ctx, lastWornMap, limit, smartEnabled, daySeed, dna]);
+  }, [ownedItems, fetchedFragrances, profile, ctx, lastWornMap, limit, smartEnabled, daySeed, dna, logs]);
 
   // Front-door observability (Mark Z P2): log a silent smart→legacy fallback once
   // per mount so the SOTD fallback rate is visible in prod. Fires only on a real

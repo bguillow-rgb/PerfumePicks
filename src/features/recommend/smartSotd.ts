@@ -70,15 +70,13 @@ export function sotdReason(
   dna: FragranceDNA | null,
   lastWornIso: string | null,
   baseReason: string,
+  hasWearSignal: boolean,
 ): string {
-  const gone = daysSince(lastWornIso);
   const accords = f.top_accords ?? [];
+  const name = dna && dna.confidence >= 0.4 ? ARCHETYPE_COPY[dna.archetype.primary]?.name : null;
 
-  // 1. Rotation / rediscovery — the most emotionally resonant "today" signal.
-  if (gone == null) return "You haven't worn this one yet. Good day to break it in.";
-  if (gone >= 45) return `Haven't reached for this in ${Math.floor(gone / 7)} weeks. Bring it back.`;
-
-  // 2. Weather.
+  // 1. "Why today" — weather + occasion. Always true, never depends on whether
+  //    the user logs wears.
   if ((ctx.weather === 'hot-humid' || ctx.weather === 'hot-dry') &&
       accords.some((a) => ['fresh', 'citrus', 'green', 'aquatic'].includes(a))) {
     return 'Warm out, and this holds up in the heat.';
@@ -87,19 +85,28 @@ export function sotdReason(
       accords.some((a) => ['amber', 'warm-spicy', 'vanilla', 'woody', 'sweet', 'oud'].includes(a))) {
     return 'Cool and grey. A warm one to sink into.';
   }
-
-  // 3. Occasion.
   if (ctx.occasion === 'office' && f.office_safe_score >= 0.75) return 'Office kind of day. Present without shouting.';
   if ((ctx.occasion === 'date' || ctx.occasion === 'evening') && f.compliment_score >= 0.85) {
     return 'Save this for tonight, it gets noticed.';
   }
 
-  // 4. DNA wheelhouse — spoken in the archetype's register when confident.
-  const name = dna && dna.confidence >= 0.4 ? ARCHETYPE_COPY[dna.archetype.primary]?.name : null;
+  // 2. "Why this bottle" — the specific taste/DNA match. Also always true; comes
+  //    from the accords/notes/family they actually favor, not from wear logs.
+  const GENERIC = 'a thoughtful pick for today';
+  if (baseReason && baseReason.toLowerCase() !== GENERIC) return baseReason;
   if (name) return `This one's peak ${name}.`;
 
-  // 5. Fall back to the base taste reason.
-  return baseReason;
+  // 3. Rotation — LAST, and ONLY when the user genuinely logs wears. Without
+  //    that, "you've never worn this" / "last worn X ago" is a guess (they may
+  //    wear it constantly and just not log it), which reads as wrong and fake.
+  if (hasWearSignal) {
+    const gone = daysSince(lastWornIso);
+    if (gone != null && gone >= 45) return `You logged this ${Math.floor(gone / 7)} weeks ago. Time to bring it back.`;
+    if (gone == null) return 'Not in your recent rotation. Good day for it.';
+  }
+
+  // 4. Honest catch-all.
+  return name ? `A good day for your ${name} side.` : 'A solid pick for today.';
 }
 
 /**
@@ -116,6 +123,9 @@ export function selectSmartSotd(
   daySeed: string,
   dna: FragranceDNA | null,
   limit: number,
+  // Whether the user actually logs wears. Gates the recency ("last worn / not
+  // in rotation") reasons so we never assert wear behavior we can't trust.
+  hasWearSignal: boolean,
 ): SotdPick[] {
   if (candidates.length === 0) return [];
 
@@ -132,7 +142,7 @@ export function selectSmartSotd(
 
   return scored.slice(0, limit).map(({ f, lastWorn, base }) => ({
     fragrance: f,
-    reason: sotdReason(f, ctx, dna, lastWorn, base.reason),
+    reason: sotdReason(f, ctx, dna, lastWorn, base.reason, hasWearSignal),
     lastWorn,
   }));
 }
