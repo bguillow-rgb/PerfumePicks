@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-many-perfumes-should-you-own"
   - "how-to-store-perfume-collection"
+  - "perfume-samples-vs-full-bottles"
   - "how-to-apply-perfume"
-  - "how-to-build-a-fragrance-wardrobe"
 faqs:
   - q: "Is it legal to sell used perfume?"
     a: "Generally yes. Reselling a legally purchased product, even in its original or repackaged form, is lawful in most jurisdictions under the first-sale doctrine. However, selling counterfeit scents or misrepresenting a bottle's contents is illegal. Always confirm the platform's specific policies before listing."
