@@ -113,6 +113,12 @@ export const EVENTS = {
   FEEDBACK_SUBMITTED: 'feedback_submitted',
   FEEDBACK_FAILED:    'feedback_failed',
 
+  // ─── Scent of the Day ────────────────────────────────────────────────
+  // Fired when the smart SOTD engine threw and the Today tab fell back to the
+  // legacy ranking. Watch this in prod — a nonzero rate means the front door is
+  // silently degrading and the smart engine needs a look (or the kill switch).
+  SOTD_ENGINE_FALLBACK: 'sotd_engine_fallback',
+
   // ─── Invite / referral loop (Feature A — DNA-as-hook viral share) ─────
   // Fired when the user opens the native share sheet with their DNA invite.
   INVITE_SHARED:      'invite_shared',      // props: { archetype, source }

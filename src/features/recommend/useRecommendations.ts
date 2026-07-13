@@ -27,7 +27,7 @@
  * ─────────────────────────────────────────────────────────────────────────
  */
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
 import { useSwipeStore } from '@/src/stores/useSwipeStore';
@@ -48,6 +48,7 @@ import { selectSmartSotd, sotdDaySeed } from './smartSotd';
 import { useSmartSotdEnabled, useSotdWeatherEnabled } from './sotdFlag';
 import { useDailyWeather } from '@/src/lib/weather';
 import { getCurrentUser } from '@/src/stores/useAuthStore';
+import { track, EVENTS } from '@/src/lib/observability';
 
 // Cap candidates for scoring. Supabase max_rows must be set to ≥ this value
 // in Project Settings → API. Raise to 10 000 in the dashboard to unlock full catalog.
@@ -482,22 +483,27 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
     return base;
   }, [prefSeason, prefOccasion, weather]);
 
-  const picks = useMemo(() => {
+  // Pure: returns the picks plus whether the smart engine THREW and we fell back
+  // to legacy (distinct from the kill switch being off, which isn't a failure).
+  // Tracking happens in the effect below, never during render.
+  const picksResult = useMemo<{ list: WardrobePick[]; fellBack: boolean }>(() => {
     // Build a lookup from freshly-fetched fragrances, fall back to sync cache.
     const fetchedMap = new Map<string, Fragrance>(fetchedFragrances.map((f) => [f.id, f]));
     const candidates = ownedItems
       .map((item) => fetchedMap.get(item.fragrance_id) ?? getFragranceFromStore(item.fragrance_id))
       .filter(Boolean) as Fragrance[];
 
-    if (candidates.length === 0) return [];
+    if (candidates.length === 0) return { list: [], fellBack: false };
 
     // Smart engine (DNA-first, day-stable). Any failure falls through to the
     // legacy ranking below, so the Today tab can never break on this path.
+    let fellBack = false;
     if (smartEnabled) {
       try {
-        return selectSmartSotd(candidates, profile, ctx, lastWornMap, daySeed, dna, limit);
+        return { list: selectSmartSotd(candidates, profile, ctx, lastWornMap, daySeed, dna, limit), fellBack: false };
       } catch (e) {
         if (__DEV__) console.warn('[sotd] smart engine failed, using legacy:', e);
+        fellBack = true; // smart was ON but threw — a genuine fallback worth logging
       }
     }
 
@@ -505,7 +511,7 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
     const scored = rank(candidates, profile, ctx, candidates.length);
     const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toLocaleDateString('en-CA');
 
-    return [...scored]
+    const list = [...scored]
       .sort((a, b) => {
         const scoreDiff = b.score - a.score;
         if (Math.abs(scoreDiff) > 0.05) return scoreDiff;
@@ -521,7 +527,19 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
         reason: r.reason,
         lastWorn: lastWornMap.get(r.fragrance.id) ?? null,
       }));
+    return { list, fellBack };
   }, [ownedItems, fetchedFragrances, profile, ctx, lastWornMap, limit, smartEnabled, daySeed, dna]);
 
-  return { picks, loading: ownedItems.length > 0 && !fetchDone };
+  // Front-door observability (Mark Z P2): log a silent smart→legacy fallback once
+  // per mount so the SOTD fallback rate is visible in prod. Fires only on a real
+  // throw, not on the kill switch or the empty-wardrobe path.
+  const fallbackLogged = useRef(false);
+  useEffect(() => {
+    if (picksResult.fellBack && !fallbackLogged.current) {
+      fallbackLogged.current = true;
+      track(EVENTS.SOTD_ENGINE_FALLBACK);
+    }
+  }, [picksResult.fellBack]);
+
+  return { picks: picksResult.list, loading: ownedItems.length > 0 && !fetchDone };
 }
