@@ -44,6 +44,10 @@ import { rank, type RecContext, type ScoredRec } from './score';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { blendProfiles } from '@/src/features/dna/blend';
 import { RECOMMENDATION_SIGNAL_WEIGHTS } from '@/src/features/dna/signals';
+import { selectSmartSotd, sotdDaySeed } from './smartSotd';
+import { useSmartSotdEnabled, useSotdWeatherEnabled } from './sotdFlag';
+import { useDailyWeather } from '@/src/lib/weather';
+import { getCurrentUser } from '@/src/stores/useAuthStore';
 
 // Cap candidates for scoring. Supabase max_rows must be set to ≥ this value
 // in Project Settings → API. Raise to 10 000 in the dashboard to unlock full catalog.
@@ -421,6 +425,15 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
   const prefOccasion = useScentPreferencesStore((s) => s.occasion);
   const prefSeason = useScentPreferencesStore((s) => s.season);
   const fetchMany = useCatalogStore((s) => s.fetchMany);
+  const dna = useTasteProfileStore((s) => s.dna);
+
+  // Smart SOTD engine: DNA-first, day-stable. Remote-flag gated (default on),
+  // with a hard try/catch fallback to the legacy ranking below.
+  const smartEnabled = useSmartSotdEnabled();
+  const weatherEnabled = useSotdWeatherEnabled();
+  const weather = useDailyWeather(weatherEnabled);
+  // Locked per (user, local day): stable within the day, rotates across days.
+  const daySeed = useMemo(() => sotdDaySeed(getCurrentUser()?.id), []);
 
   const ownedItems = useMemo(
     () => items.filter((i) => i.status === 'have'),
@@ -456,15 +469,18 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
     const wears = logs.map((l) => ({ fragrance_id: l.fragrance_id, rating: l.rating ?? null }));
     const itemsForProfile = items.map((i) => ({ fragrance_id: i.fragrance_id, status: i.status }));
     const swipes = Object.values(swipesMap).map((x) => ({ fragrance_id: x.fragrance_id, action: x.action }));
-    return deriveTasteProfile(buildSignals(wears, itemsForProfile, swipes));
-  }, [logs, items, swipesMap]);
+    // DNA-first: blend the living Fragrance DNA into the passive taste profile so
+    // the SOTD expresses the user's archetype, not a generic average.
+    return blendProfiles(dna, deriveTasteProfile(buildSignals(wears, itemsForProfile, swipes)));
+  }, [logs, items, swipesMap, dna]);
 
   const ctx = useMemo<RecContext>(() => {
     const base = defaultContext();
     if (prefSeason) base.season = prefSeason;
     if (prefOccasion) base.occasion = prefOccasion;
+    if (weather) base.weather = weather;
     return base;
-  }, [prefSeason, prefOccasion]);
+  }, [prefSeason, prefOccasion, weather]);
 
   const picks = useMemo(() => {
     // Build a lookup from freshly-fetched fragrances, fall back to sync cache.
@@ -475,6 +491,17 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
 
     if (candidates.length === 0) return [];
 
+    // Smart engine (DNA-first, day-stable). Any failure falls through to the
+    // legacy ranking below, so the Today tab can never break on this path.
+    if (smartEnabled) {
+      try {
+        return selectSmartSotd(candidates, profile, ctx, lastWornMap, daySeed, dna, limit);
+      } catch (e) {
+        if (__DEV__) console.warn('[sotd] smart engine failed, using legacy:', e);
+      }
+    }
+
+    // ── Legacy fallback (unchanged) ──────────────────────────────────────
     const scored = rank(candidates, profile, ctx, candidates.length);
     const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toLocaleDateString('en-CA');
 
@@ -494,7 +521,7 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
         reason: r.reason,
         lastWorn: lastWornMap.get(r.fragrance.id) ?? null,
       }));
-  }, [ownedItems, fetchedFragrances, profile, ctx, lastWornMap, limit]);
+  }, [ownedItems, fetchedFragrances, profile, ctx, lastWornMap, limit, smartEnabled, daySeed, dna]);
 
   return { picks, loading: ownedItems.length > 0 && !fetchDone };
 }
