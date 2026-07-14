@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-build-a-fragrance-wardrobe"
   - "how-many-perfumes-should-you-own"
+  - "how-to-track-your-perfume-collection"
   - "how-to-rotate-your-perfume-collection"
-  - "how-to-store-perfume-collection"
 faqs:
   - q: "What is the best way to categorize a perfume collection?"
     a: "The most practical approach is to categorize by how you select a scent, not just how things look. That usually means grouping by season (warm vs. cool weather), occasion (daily, work, evening, special events), or fragrance family (floral, woody, oriental, fresh). Many collectors combine two axes, for example, \"cool-weather evenings\" or \"warm-weather daily wear.\""
