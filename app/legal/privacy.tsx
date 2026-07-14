@@ -22,7 +22,7 @@ export default function PrivacyScreen() {
       >
         <Text style={styles.wordmark}>Perfume Picks</Text>
         <Text style={styles.title}>Privacy Policy</Text>
-        <Text style={styles.effective}>Effective Date: April 25, 2026</Text>
+        <Text style={styles.effective}>Effective Date: July 14, 2026</Text>
 
         <Text style={styles.body}>
           Perfume Picks ("we", "our", or "the app") is a fragrance discovery, tracking, and recommendation app. This policy explains how we collect, use, and protect your information.
@@ -38,11 +38,15 @@ export default function PrivacyScreen() {
         <Text style={styles.body}>
           <Text style={styles.bold}>Device data.</Text> A device identifier and basic diagnostics are collected to deliver core features and prevent abuse.
         </Text>
+        <Text style={styles.body}>
+          <Text style={styles.bold}>Approximate location.</Text> To tailor your daily Scent of the Day to local weather, the app may derive an approximate, city-level location from your IP address. We do not use GPS or collect precise location, and this coarse location is not stored on our servers or linked to your account.
+        </Text>
 
         <Text style={styles.h2}>2. How We Use Your Information</Text>
         <Text style={styles.bullet}>•  To provide fragrance recommendations and personalized picks</Text>
         <Text style={styles.bullet}>•  To sync your wardrobe and wear history across devices</Text>
         <Text style={styles.bullet}>•  To improve our taste-profile model using anonymized swipe and wear data</Text>
+        <Text style={styles.bullet}>•  To tailor your daily Scent of the Day to local weather</Text>
         <Text style={styles.bullet}>•  To process subscription payments through the App Store</Text>
 
         <Text style={styles.h2}>3. Third-Party Services</Text>
@@ -54,6 +58,8 @@ export default function PrivacyScreen() {
         <Text style={styles.bullet}>•  <Text style={styles.bold}>Apple / Google</Text>: sign-in and payment processing</Text>
         <Text style={styles.bullet}>•  <Text style={styles.bold}>PostHog</Text>: anonymous usage analytics</Text>
         <Text style={styles.bullet}>•  <Text style={styles.bold}>Sentry</Text>: anonymous crash reporting</Text>
+        <Text style={styles.bullet}>•  <Text style={styles.bold}>ipapi.co</Text>: approximate city-level location from your IP address, to personalize the daily Scent of the Day by weather</Text>
+        <Text style={styles.bullet}>•  <Text style={styles.bold}>Open-Meteo</Text>: local weather conditions for that approximate location</Text>
 
         <Text style={styles.h2}>4. Data Retention</Text>
         <Text style={styles.body}>
