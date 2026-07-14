@@ -15,7 +15,7 @@ import { SITE } from '../consts';
 
   <p class="brand">{SITE.name}</p>
   <h1>Privacy Policy</h1>
-  <p class="effective">Effective Date: May 13, 2026</p>
+  <p class="effective">Effective Date: July 14, 2026</p>
 
   <p>
     Perfume Picks ("we", "our", or "the app") is a fragrance wardrobe and
@@ -39,6 +39,13 @@ import { SITE } from '../consts';
     <strong>Device data.</strong> A device identifier and basic diagnostics
     (OS version, device model, app version) are collected to deliver core
     features and prevent abuse. We do not collect precise location.
+  </p>
+  <p>
+    <strong>Approximate location.</strong> To tailor your daily Scent of the
+    Day to local weather, the app may derive an approximate, city-level
+    location from your IP address. We do not use GPS or collect precise
+    location, and this coarse location is not stored on our servers or linked
+    to your account.
   </p>
   <p>
     <strong>Purchase information.</strong> Subscription transactions are
@@ -75,6 +82,8 @@ import { SITE } from '../consts';
     <li><strong>Apple / Google</strong>, sign-in and payment processing.</li>
     <li><strong>PostHog</strong>, anonymous usage analytics.</li>
     <li><strong>Sentry</strong>, anonymous crash reporting.</li>
+    <li><strong>ipapi.co</strong>, approximate city-level location from your IP address, to personalize the daily Scent of the Day by weather.</li>
+    <li><strong>Open-Meteo</strong>, local weather conditions for that approximate location.</li>
   </ul>
 
   <h2>5. Affiliate Link Tracking</h2>
