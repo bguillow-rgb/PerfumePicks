@@ -5,6 +5,7 @@ import { useWardrobeStore, setWardrobeUserId } from '@/src/stores/useWardrobeSto
 import { useWearLogStore, setWearLogUserId } from '@/src/stores/useWearLogStore';
 import { useSwipeStore, setSwipeUserId } from '@/src/stores/useSwipeStore';
 import { useProfileStore } from '@/src/stores/useProfileStore';
+import { useProStore } from '@/src/stores/useProStore';
 import { setTasteProfileUserId, hydrateTasteProfile, useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { setPickStreamUserId, useDnaPickStreamStore } from '@/src/stores/useDnaPickStreamStore';
 import { deriveTasteProfile, EMPTY_TASTE_PROFILE, type TasteSignal, type DerivedTasteProfile } from '@/src/features/recommend/tasteProfile';
@@ -115,6 +116,10 @@ export function useAppSync(userId: string | null, isAnonymous: boolean = false) 
       try {
         await Promise.all([
           ensureProfile(userId),
+          // Reconcile the server Pro flag (RC webhook OR a redeemed promo code)
+          // into useProStore. Independent of the RevenueCat entitlement check in
+          // _layout, so a promo grant with no RC sub still unlocks the UI.
+          hydrateProStatus(),
           // Count today toward the login streak on every launch / sign-in,
           // regardless of which tab the user lands on. Idempotent per day.
           touchLoginStreak(),
@@ -149,6 +154,21 @@ async function ensureProfile(userId: string) {
     .from('profiles')
     .upsert({ id: userId }, { onConflict: 'id', ignoreDuplicates: true });
   if (error) console.warn('[useAppSync] profile upsert failed:', error.message);
+}
+
+/**
+ * Pull the authoritative server Pro flag (profiles.is_pro, honoring
+ * pro_expires_at) and mirror it into useProStore.serverPro. This is what makes a
+ * redeemed promo code — or an RC subscription flipped server-side by the webhook —
+ * actually unlock the UI. my_pro_status() returns (false, null) when there's no
+ * profile row yet, so a fresh guest simply stays free.
+ */
+async function hydrateProStatus() {
+  const { data, error } = await supabase.rpc('my_pro_status');
+  if (error) { console.warn('[useAppSync] my_pro_status failed:', error.message); return; }
+  // RPC returns a table → data is an array of at most one row.
+  const row = Array.isArray(data) ? data[0] : data;
+  useProStore.getState().syncFromServer(!!row?.is_pro);
 }
 
 /**

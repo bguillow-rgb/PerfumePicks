@@ -117,6 +117,29 @@ Deno.serve(async (req) => {
       });
   }
 
+  // Guard against clobbering a promo grant. A redeemed promo sets is_pro=true
+  // with a future pro_expires_at and NO active RC subscription. A late/duplicate
+  // EXPIRATION or BILLING_ISSUE for that user's old (already-ended) RC sub would
+  // otherwise flip is_pro=false and cut their promo short. So when we're about to
+  // downgrade, only do so if the existing entitlement window has actually lapsed.
+  if (!isPro) {
+    const { data: current } = await admin
+      .from("profiles")
+      .select("pro_expires_at")
+      .eq("id", appUserId)
+      .maybeSingle();
+    const existingExpiry = current?.pro_expires_at
+      ? new Date(current.pro_expires_at).getTime()
+      : null;
+    if (existingExpiry != null && existingExpiry > Date.now()) {
+      // A promo (or otherwise longer) entitlement is still live — preserve it.
+      return new Response(
+        JSON.stringify({ ok: true, preserved_grant: true }),
+        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+  }
+
   const { error } = await admin
     .from("profiles")
     .upsert(

@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Pressable, ScrollView, ActivityIndicator } from
 import { Alert } from '@/src/components/ui/StyledAlert';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { getCurrentUser } from '@/src/stores/useAuthStore';
@@ -10,6 +10,7 @@ import { Button } from '@/src/components/ui/Button';
 import { COLORS, SPACING, RADIUS } from '@/src/constants/theme';
 import { useProStore } from '@/src/stores/useProStore';
 import { useRevenueCat } from '@/src/hooks/useRevenueCat';
+import { PromoCodeSheet } from '@/src/components/pro/PromoCodeSheet';
 import { track, EVENTS } from '@/src/lib/observability';
 
 type Plan = 'monthly' | 'yearly';
@@ -61,6 +62,10 @@ export default function PaywallScreen() {
   // auth check resolves — prevents a race where a guest taps Purchase
   // before we know they're anonymous.
   const [isGuest, setIsGuest] = useState(true);
+  const [promoOpen, setPromoOpen] = useState(false);
+  // Track whether the promo sheet actually granted Pro, so closing it after a
+  // success dismisses the paywall (mirrors the post-purchase route-back).
+  const promoRedeemedRef = useRef(false);
   const activate = useProStore((s) => s.activate);
   const isPro = useProStore((s) => s.isPro);
   const {
@@ -308,6 +313,12 @@ export default function PaywallScreen() {
         <Text style={styles.restoreText}>Restore Purchase</Text>
       </Pressable>
 
+      {!isPro && (
+        <Pressable onPress={() => setPromoOpen(true)} style={styles.promoBtn}>
+          <Text style={styles.promoText}>Have a promo code?</Text>
+        </Pressable>
+      )}
+
       <Text style={styles.legal}>
         Payment will be charged to your Apple ID account at confirmation of purchase.
         Subscription automatically renews unless canceled at least 24 hours before the end of the current period.
@@ -323,6 +334,20 @@ export default function PaywallScreen() {
           <Text style={styles.legalLink}>Terms of Use</Text>
         </Pressable>
       </View>
+
+      <PromoCodeSheet
+        visible={promoOpen}
+        entry="paywall"
+        onRedeemed={() => { promoRedeemedRef.current = true; }}
+        onClose={() => {
+          setPromoOpen(false);
+          if (promoRedeemedRef.current) {
+            promoRedeemedRef.current = false;
+            if (returnTo) router.replace(returnTo as any);
+            else router.back();
+          }
+        }}
+      />
     </ScrollView>
   );
 }
@@ -511,6 +536,17 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: COLORS.muted,
+  },
+  promoBtn: {
+    alignItems: 'center',
+    paddingVertical: 10,
+  },
+  promoText: {
+    fontFamily: 'CormorantGaramond_400Regular',
+    fontSize: 14,
+    fontWeight: '600',
+    color: COLORS.accent,
+    textDecorationLine: 'underline',
   },
   legal: {
     fontFamily: 'CormorantGaramond_400Regular',

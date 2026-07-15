@@ -97,6 +97,9 @@ export const EVENTS = {
   PRO_PURCHASE_FAILED:    'pro_purchase_failed',     // reason: 'not_entitled'|'error'|'no_package', + code/message when known
   PRO_RESTORE_STARTED:    'pro_restore_started',
   PRO_RESTORE_COMPLETED:  'pro_restore_completed',
+  PROMO_REDEEM_STARTED:   'promo_redeem_started',   // entry: 'paywall' | 'profile'
+  PROMO_REDEEM_COMPLETED: 'promo_redeem_completed',  // + duration_months
+  PROMO_REDEEM_FAILED:    'promo_redeem_failed',      // + reason (invalid_code|expired|already_redeemed|already_pro|...)
 
   // ─── Sync / errors ───────────────────────────────────────────────────
   SYNC_WRITE_FAILED: 'sync_write_failed',
