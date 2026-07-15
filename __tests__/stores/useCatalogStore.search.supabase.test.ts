@@ -28,6 +28,7 @@ function makeQueryRecorder(table: string, rows: any[], calls: Record<string, Fil
     limit: () => builder,
     or: (v: string) => { record('or', '', v); return builder; },
     ilike: (column: string, value: string) => { record('ilike', column, value); return builder; },
+    overlaps: (column: string, value: unknown) => { record('overlaps', column, value); return builder; },
     // PostgREST builders are thenables, not promises — awaiting one runs it.
     then: (resolve: (r: any) => void) => resolve({ data: rows, error: null }),
   };
@@ -84,5 +85,53 @@ describe('useCatalogStore — search against Supabase (production path)', () => 
     // only "terre" should narrow the name within that brand.
     await useCatalogStore.getState().search('hermes terre');
     expect(ilikes('fragrances').map((c) => c.value)).toContain('%terre%');
+  });
+
+  it('consumes short words that belong to the brand name ("jo malone")', async () => {
+    // Regression: the brand matcher used to ignore tokens under 3 chars, so "jo"
+    // survived into the leftover filter and the store searched Jo Malone for a
+    // bottle literally called "jo" — 0 results for a plain brand search.
+    supabaseMock.supabase.from = (table: string) =>
+      makeQueryRecorder(table, table === 'brands'
+        ? [{ id: 'b1', name_normalized: 'jo malone', aliases: ['jm'] }] : [], calls);
+    await useCatalogStore.getState().search('jo malone');
+    // Whole query is the brand → nothing left to narrow by → no name filter.
+    expect(ilikes('fragrances').map((c) => c.value)).not.toContain('%jo%');
+  });
+
+  it('keeps a short word that is NOT part of the brand ("bleu de chanel")', async () => {
+    // The guard-rail on the fix above: Chanel's name has no "de", so "de" must
+    // stay in the bottle filter or "Bleu de Chanel" stops resolving.
+    supabaseMock.supabase.from = (table: string) =>
+      makeQueryRecorder(table, table === 'brands'
+        ? [{ id: 'b2', name_normalized: 'chanel', aliases: [] }] : [], calls);
+    await useCatalogStore.getState().search('bleu de chanel');
+    expect(ilikes('fragrances').map((c) => c.value)).toContain('%bleu de%');
+  });
+
+  it('resolves a brand by alias and consumes it ("pdm galloway")', async () => {
+    supabaseMock.supabase.from = (table: string) =>
+      makeQueryRecorder(table, table === 'brands'
+        ? [{ id: 'b3', name_normalized: 'parfums de marly', aliases: ['pdm'] }] : [], calls);
+    await useCatalogStore.getState().search('pdm galloway');
+    // The alias lookup must see every token, including short ones.
+    const ov = (calls['brands'] ?? []).find((c) => c.op === 'overlaps');
+    expect(ov?.column).toBe('aliases');
+    expect(ov?.value).toEqual(['pdm', 'galloway']);
+    // "pdm" IS the brand, so only "galloway" narrows the bottle.
+    expect(ilikes('fragrances').map((c) => c.value)).toContain('%galloway%');
+  });
+
+  it('passes 1-2 char tokens to the alias lookup ("lv meteore")', async () => {
+    // brandTokens drops <3 chars to keep "le" from matching half the brand table,
+    // but aliases match exactly, so "lv" must still reach the alias query — it is
+    // precisely the kind of token users type.
+    supabaseMock.supabase.from = (table: string) =>
+      makeQueryRecorder(table, table === 'brands'
+        ? [{ id: 'b4', name_normalized: 'louis vuitton', aliases: ['lv'] }] : [], calls);
+    await useCatalogStore.getState().search('lv meteore');
+    const ov = (calls['brands'] ?? []).find((c) => c.op === 'overlaps');
+    expect(ov?.value).toEqual(['lv', 'meteore']);
+    expect(ilikes('fragrances').map((c) => c.value)).toContain('%meteore%');
   });
 });

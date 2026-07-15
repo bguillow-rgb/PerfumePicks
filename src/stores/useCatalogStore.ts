@@ -329,14 +329,33 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         .map((t) => t.replace(/[^a-z0-9]/gi, ''))
         .filter((t) => t.length >= 3);
 
-      let matchedBrands: { id: string; name_normalized: string }[] = [];
-      if (brandTokens.length > 0) {
-        const orFilter = brandTokens.map((t) => `name_normalized.ilike.*${t}*`).join(',');
-        const { data: brandRows } = await supabase
-          .from('brands')
-          .select('id, name_normalized')
-          .or(orFilter);
-        matchedBrands = (brandRows ?? []) as { id: string; name_normalized: string }[];
+      // Every token, including the 1-2 char ones brandTokens drops. Aliases are
+      // matched exactly, so short tokens are safe here — and necessary: the
+      // initialisms users actually type ("lv", "tf") are exactly the ones the
+      // >=3 guard would throw away before the lookup ever saw them.
+      const aliasTokens = tokens.map((t) => t.replace(/[^a-z0-9]/gi, '')).filter(Boolean);
+
+      type BrandRow = { id: string; name_normalized: string; aliases: string[] | null };
+      let matchedBrands: BrandRow[] = [];
+      {
+        // Two lookups rather than one .or(): PostgREST parses .or() structurally,
+        // and an array-containment term ("aliases.cs.{a,b}") carries commas that
+        // would break that parse. .overlaps() keeps it a first-class filter.
+        const byName = brandTokens.length > 0
+          ? supabase.from('brands').select('id, name_normalized, aliases')
+              .or(brandTokens.map((t) => `name_normalized.ilike.*${t}*`).join(','))
+          : Promise.resolve({ data: [] as any[] });
+        const byAlias = aliasTokens.length > 0
+          ? supabase.from('brands').select('id, name_normalized, aliases')
+              .overlaps('aliases', aliasTokens)
+          : Promise.resolve({ data: [] as any[] });
+
+        const [nameRes, aliasRes] = await Promise.all([byName, byAlias]);
+        const dedupe = new Map<string, BrandRow>();
+        for (const r of [...(nameRes.data ?? []), ...(aliasRes.data ?? [])]) {
+          dedupe.set((r as BrandRow).id, r as BrandRow);
+        }
+        matchedBrands = [...dedupe.values()];
       }
       const brandIds = [...new Set(matchedBrands.map((b) => b.id))];
 
@@ -357,7 +376,12 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       const consumed = new Set<string>();
       for (const b of matchedBrands) {
         const bn = b.name_normalized ?? '';
-        for (const t of tokens) if (bn.includes(t)) consumed.add(t);
+        // Exact for aliases, substring for the name: "pdm" IS the brand, so it
+        // must be consumed too or it survives into nameRemainder and we search
+        // Parfums de Marly for a bottle called "pdm" — the same class of bug the
+        // short-word fix above addresses.
+        const al = new Set(b.aliases ?? []);
+        for (const t of tokens) if (al.has(t) || bn.includes(t)) consumed.add(t);
       }
       const nameRemainder = tokens.filter((t) => !consumed.has(t)).join(' ').trim();
 
