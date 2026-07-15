@@ -341,10 +341,23 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       const brandIds = [...new Set(matchedBrands.map((b) => b.id))];
 
       // Tokens "explained" by a matched brand name → not part of the bottle name.
+      //
+      // NO length guard here, unlike brandTokens above. The >=3 rule belongs on
+      // the brand LOOKUP (so "le" doesn't match half the brand table), but applying
+      // it to consumption meant short words inside a brand's own name were never
+      // recognised as part of it: "parfums de marly layton" kept "de", leaving
+      // nameRemainder "de layton" and searching for a bottle literally called
+      // "de layton" — zero results for the most natural query there is. Same for
+      // "le labo santal 33", "jo malone wood sage", "acqua di parma colonia";
+      // 80 of 757 brands carry a <3-char word.
+      //
+      // Safe because a token is only consumed when it actually occurs in a brand
+      // name that already matched: "bleu de chanel" keeps its "de" (Chanel's name
+      // doesn't contain "de"), so the remainder stays "bleu de".
       const consumed = new Set<string>();
       for (const b of matchedBrands) {
         const bn = b.name_normalized ?? '';
-        for (const t of tokens) if (t.length >= 3 && bn.includes(t)) consumed.add(t);
+        for (const t of tokens) if (bn.includes(t)) consumed.add(t);
       }
       const nameRemainder = tokens.filter((t) => !consumed.has(t)).join(' ').trim();
 
