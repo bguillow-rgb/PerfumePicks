@@ -269,8 +269,13 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
     // Profiles → DNA picker committed → collection → wear → paywall → pro.
     const sl = supa?.signups?.sinceLaunch ?? 0;
     const dp = supa?.dnaPickerEvents?.committedUsers ?? 0;
-    const wa = posthog.wardrobe?.added?.users ?? 0;
-    const wl = supa?.wearLogs?.sinceLaunch ?? 0;
+    // Collection step reads the wardrobe_items TABLE, not PostHog. The app has
+    // never fired a wardrobe-added event, so posthog.wardrobe.added.users was a
+    // permanent 0 while 27 real people had added 64 fragrances — the funnel
+    // reported the app's second-strongest step as dead (audit 2026-07-14).
+    const wa = supa?.wardrobe?.haveUsers ?? 0;
+    // PEOPLE who logged a wear, not wear_log ROWS.
+    const wl = supa?.wearLogs?.loggedUsers ?? 0;
     const pv = posthog.monetization?.viewed?.users ?? 0;
     const pp = posthog.monetization?.completed?.users ?? 0;
 
@@ -291,9 +296,14 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
     lines.push('');
 
     lines.push(`- **DNA activation:** ${dp} of ${sl} new profiles committed a DNA picker session (**${sl ? ((dp/sl)*100).toFixed(0) : 0}%**). See the DNA funnel below for reveal → rec → CTA detail.`);
-    if (posthog.wardrobe) {
-      const wFunnel = posthog.wardrobe;
-      lines.push(`- **Collection:** ${wFunnel.added.users} users added fragrances · ${wFunnel.removed.events} removed`);
+    if (supa?.wardrobe) {
+      // Reads the wardrobe_items table, not PostHog: the app fires no
+      // wardrobe-added event, so the old PostHog-backed line always said
+      // "0 users added fragrances" while the table held 64 adds by 27 people.
+      const w = supa.wardrobe;
+      lines.push(
+        `- **Collection:** ${w.haveUsers} users have a collection · ${w.addedUsers} added any item · ${w.sinceLaunch.total} items since launch`
+      );
     }
     if (posthog.monetization) {
       const m = posthog.monetization;

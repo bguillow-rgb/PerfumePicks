@@ -123,6 +123,28 @@ async function fetchSignups(env, windows) {
 }
 
 // Wardrobe items — "collection" (have) and "wishlist" (want)
+// Founder account (Perfume's Supabase project — different uuid than Pour's).
+const OWNER_USER_ID = 'f4810587-d519-49d3-8121-d9fdd8239159';
+
+// PostgREST filter dropping founder rows from user-scoped tables.
+//
+// Audit 2026-07-14: the founder was inflating Supabase-sourced rows while the
+// PostHog side already stripped him — swipe signals 66 (25 founder — 38%),
+// wardrobe + wear logs lightly contaminated. Keeps user_id IS NULL rows (guest
+// activity is real; a bare `not.in` evaluates NULL to NULL and drops them).
+const NOT_FOUNDER = `or=(user_id.is.null,user_id.not.in.(${OWNER_USER_ID}))`;
+
+// Distinct PEOPLE in a user-scoped table, founder excluded. The funnel needs
+// people; row counts made a one-user feature look like traction.
+async function distinctUsers(env, table, filterParts = []) {
+  const rows = await getRows(env, table, [...filterParts, NOT_FOUNDER, 'select=user_id'], 10000);
+  const users = new Set();
+  for (const r of rows || []) {
+    if (r.user_id && r.user_id !== OWNER_USER_ID) users.add(r.user_id);
+  }
+  return users.size;
+}
+
 async function fetchWardrobe(env, windows) {
   const t = TABLES.wardrobeItems;
   const sl = dateFilter(t.timestampCol, windows.sinceLaunch);
@@ -131,47 +153,63 @@ async function fetchWardrobe(env, windows) {
     haveToday, wantToday, testedToday,
     haveSinceLaunch, wantSinceLaunch, testedSinceLaunch,
   ] = await Promise.all([
-    count(env, t.name, dateFilter(t.timestampCol, windows.today)),
-    count(env, t.name, dateFilter(t.timestampCol, windows.yesterday)),
-    count(env, t.name, sl),
-    count(env, t.name, [...dateFilter(t.timestampCol, windows.today), `${t.statusCol}=eq.have`]),
-    count(env, t.name, [...dateFilter(t.timestampCol, windows.today), `${t.statusCol}=eq.want`]),
-    count(env, t.name, [...dateFilter(t.timestampCol, windows.today), `${t.statusCol}=eq.tested`]),
-    count(env, t.name, [...sl, `${t.statusCol}=eq.have`]),
-    count(env, t.name, [...sl, `${t.statusCol}=eq.want`]),
-    count(env, t.name, [...sl, `${t.statusCol}=eq.tested`]),
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.today), NOT_FOUNDER]),
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.yesterday), NOT_FOUNDER]),
+    count(env, t.name, [...sl, NOT_FOUNDER]),
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.today), `${t.statusCol}=eq.have`, NOT_FOUNDER]),
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.today), `${t.statusCol}=eq.want`, NOT_FOUNDER]),
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.today), `${t.statusCol}=eq.tested`, NOT_FOUNDER]),
+    count(env, t.name, [...sl, `${t.statusCol}=eq.have`, NOT_FOUNDER]),
+    count(env, t.name, [...sl, `${t.statusCol}=eq.want`, NOT_FOUNDER]),
+    count(env, t.name, [...sl, `${t.statusCol}=eq.tested`, NOT_FOUNDER]),
+  ]);
+  // PEOPLE who added to their collection, for the funnel. The funnel used to
+  // read posthog.wardrobe.added.users — an event the app has NEVER fired — so
+  // it printed "Collection add: 0 (0%)" while 27 real people had added 64
+  // fragrances. Read the real table instead (audit 2026-07-14).
+  const [addedUsers, haveUsers] = await Promise.all([
+    distinctUsers(env, t.name, sl),
+    distinctUsers(env, t.name, [...sl, `${t.statusCol}=eq.have`]),
   ]);
   return {
     today: { total: today, have: haveToday, want: wantToday, tested: testedToday },
     yesterday: { total: yesterday },
     sinceLaunch: { total: sinceLaunchTotal, have: haveSinceLaunch, want: wantSinceLaunch, tested: testedSinceLaunch },
+    addedUsers, // distinct people with ANY wardrobe item since launch
+    haveUsers,  // distinct people with a status=have item (the collection step)
   };
 }
 
 // Wear logs — the journal / SOTD feature
 async function fetchWearLogs(env, windows) {
   const t = TABLES.wearLogs;
-  const [today, yesterday, last7d, sinceLaunch] = await Promise.all([
-    count(env, t.name, dateFilter(t.timestampCol, windows.today)),
-    count(env, t.name, dateFilter(t.timestampCol, windows.yesterday)),
-    count(env, t.name, dateFilter(t.timestampCol, windows.last7d)),
-    count(env, t.name, dateFilter(t.timestampCol, windows.sinceLaunch)),
+  const [today, yesterday, last7d, sinceLaunch, loggedUsers] = await Promise.all([
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.today), NOT_FOUNDER]),
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.yesterday), NOT_FOUNDER]),
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.last7d), NOT_FOUNDER]),
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.sinceLaunch), NOT_FOUNDER]),
+    // PEOPLE, not rows — the funnel's "Wear logged" step printed 11 rows as if
+    // it were 11 people when only 8 had logged a wear.
+    distinctUsers(env, t.name, dateFilter(t.timestampCol, windows.sinceLaunch)),
   ]);
-  return { today, yesterday, last7d, sinceLaunch };
+  return { today, yesterday, last7d, sinceLaunch, loggedUsers };
 }
 
 // Swipe feedback — Train My Nose
 async function fetchSwipes(env, windows) {
   const t = TABLES.swipeFeedback;
   const sl = dateFilter(t.timestampCol, windows.sinceLaunch);
-  const [today, yesterday, sinceLaunch, likeSinceLaunch, dislikeSinceLaunch] = await Promise.all([
-    count(env, t.name, dateFilter(t.timestampCol, windows.today)),
-    count(env, t.name, dateFilter(t.timestampCol, windows.yesterday)),
-    count(env, t.name, sl),
-    count(env, t.name, [...sl, `${t.actionCol}=eq.like`]),
-    count(env, t.name, [...sl, `${t.actionCol}=eq.dislike`]),
+  // Founder-excluded: 25 of 66 swipe signals since launch were the founder's
+  // own testing (38%) before this filter (audit 2026-07-14).
+  const [today, yesterday, sinceLaunch, likeSinceLaunch, dislikeSinceLaunch, swipedUsers] = await Promise.all([
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.today), NOT_FOUNDER]),
+    count(env, t.name, [...dateFilter(t.timestampCol, windows.yesterday), NOT_FOUNDER]),
+    count(env, t.name, [...sl, NOT_FOUNDER]),
+    count(env, t.name, [...sl, `${t.actionCol}=eq.like`, NOT_FOUNDER]),
+    count(env, t.name, [...sl, `${t.actionCol}=eq.dislike`, NOT_FOUNDER]),
+    distinctUsers(env, t.name, sl),
   ]);
-  return { today, yesterday, sinceLaunch, likeSinceLaunch, dislikeSinceLaunch };
+  return { today, yesterday, sinceLaunch, likeSinceLaunch, dislikeSinceLaunch, swipedUsers };
 }
 
 // Community reviews
@@ -262,9 +300,9 @@ async function fetchRecentSignups(env, { limit = 10, sinceIso = null } = {}) {
 // Affiliate buy-link clicks — the durable, app-owned ledger (table
 // affiliate_clicks). This REPLACES PostHog as the source of truth for click
 // counts: PostHog got wiped 2026-07-03. Low volume, so fetch rows and roll up
-// in JS. Owner (Bob) excluded here to match every other metric.
-const OWNER_USER_ID = 'f4810587-d519-49d3-8121-d9fdd8239159';
-
+// in JS. Owner (Bob) excluded here — see OWNER_USER_ID / NOT_FOUNDER above,
+// which now apply that same exclusion to wardrobe, wear logs and swipes too
+// (until the 2026-07-14 audit, this was the ONLY metric that stripped him).
 async function fetchAffiliateClicks(env, windows) {
   const rows = await getRows(
     env,
