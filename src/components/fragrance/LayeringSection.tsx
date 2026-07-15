@@ -5,6 +5,7 @@ import * as Haptics from 'expo-haptics';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { getCurrentUser } from '@/src/stores/useAuthStore';
+import { normalizeSearchText } from '@/src/lib/normalizeText';
 import { EmptyState } from '@/src/components/ui/EmptyState';
 
 interface LayeringEntry {
@@ -50,11 +51,12 @@ export function LayeringSection({ fragranceId, onHasData }: Props) {
   const handleAdd = async () => {
     if (!partnerName.trim()) return;
     setSaving(true);
-    // Search for the partner fragrance
+    // Search for the partner fragrance. Normalized both sides so typing
+    // "meteore" finds "Météore" — ilike is case- but not accent-insensitive.
     const { data: matches } = await supabase
       .from('fragrances')
       .select('id')
-      .ilike('name', `%${partnerName.trim()}%`)
+      .ilike('name_normalized', `%${normalizeSearchText(partnerName)}%`)
       .limit(1);
 
     if (!matches?.length) {

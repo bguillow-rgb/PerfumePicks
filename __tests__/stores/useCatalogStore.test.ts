@@ -71,6 +71,38 @@ describe('useCatalogStore — search (M3a mood/note search)', () => {
   });
 });
 
+describe('useCatalogStore — accent-insensitive search', () => {
+  // Accents used to make bottles unreachable: the brand is stored "Hermès" and
+  // "Lancôme", so a user typing the natural spelling got zero results.
+  it.each([
+    ['hermes', 'Hermès'],
+    ['lancome', 'Lancôme'],
+    ['regime des fleurs', 'Régime des Fleurs'],
+    ['initio parfums prives', 'INITIO Parfums Privés'],
+  ])('finds the %s brand when the query drops the accent', async (query, brand) => {
+    const results = await useCatalogStore.getState().search(query, 50);
+    expect(results.length).toBeGreaterThan(0);
+    expect(results.some((f) => f.brand === brand)).toBe(true);
+  });
+
+  it('still finds the brand when the query keeps the accent', async () => {
+    const results = await useCatalogStore.getState().search('Hermès', 50);
+    expect(results.some((f) => f.brand === 'Hermès')).toBe(true);
+  });
+
+  it('matches an accented fragrance name typed without accents', async () => {
+    const results = await useCatalogStore.getState().search('tubereuse astrale', 50);
+    expect(results.some((f) => f.name === 'Tubéreuse Astrale')).toBe(true);
+  });
+
+  it('ranks the accented exact match above its longer siblings', async () => {
+    // nameRelevance compares against the normalized name; if it did not, every
+    // accented bottle would score "brand-only" and sort behind the also-rans.
+    const results = await useCatalogStore.getState().search('sacre coeur', 20);
+    expect(results[0]?.name).toBe('SACRÉ COEUR');
+  });
+});
+
 describe('useCatalogStore — custom fragrance fallback (M4a)', () => {
   it('getById resolves an on-device custom fragrance', () => {
     const custom = useCustomFragranceStore.getState().add({ name: 'My Bottle' });

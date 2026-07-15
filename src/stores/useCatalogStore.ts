@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { normalizeSearchText } from '@/src/lib/normalizeText';
 import { MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
 import { useCustomFragranceStore, isCustomFragranceId } from '@/src/stores/useCustomFragranceStore';
 
@@ -156,9 +157,13 @@ function escapeRegex(s: string): string {
  *   2 substring          1 brand-only (name doesn't contain the query at all)
  * Pure-alphabetical ordering buried flagships (Dior Sauvage 6th, Creed Aventus 3rd);
  * this lifts the exact/closest name to the top.
+ *
+ * `q` arrives normalized, so the name must be normalized too — otherwise every
+ * accented bottle scores 1 ("meteore" is not a substring of "Météore") and sinks
+ * below the unaccented also-rans.
  */
 function nameRelevance(name: string, q: string): number {
-  const n = name.toLowerCase();
+  const n = normalizeSearchText(name);
   if (n === q) return 5;
   if (n.startsWith(q)) return 4;
   if (new RegExp(`\\b${escapeRegex(q)}\\b`).test(n)) return 3;
@@ -288,14 +293,19 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
   },
 
   search: async (query, limit = 20, genders) => {
-    const q = query.trim().toLowerCase();
+    // Normalized, not just lowercased: `ilike` is case-insensitive but not
+    // accent-insensitive, so "hermes" has to be matched against a normalized
+    // mirror of the name ("Hermès" → "hermes") on both sides. Typing the accent
+    // still works — "Hermès" normalizes to the same "hermes".
+    const q = normalizeSearchText(query);
 
     if (!isSupabaseConfigured) {
+      const norm = normalizeSearchText;
       let results = !q ? MOCK_CATALOG : MOCK_CATALOG.filter((f) =>
-        f.name.toLowerCase().includes(q) ||
-        f.brand.toLowerCase().includes(q) ||
-        f.top_notes.some((n) => n.toLowerCase().includes(q)) ||
-        f.top_accords.some((a) => a.toLowerCase().includes(q)),
+        norm(f.name).includes(q) ||
+        norm(f.brand).includes(q) ||
+        f.top_notes.some((n) => norm(n).includes(q)) ||
+        f.top_accords.some((a) => norm(a).includes(q)),
       );
       if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
       return results.filter((f) => !isBundle(f)).slice(0, limit);
@@ -311,28 +321,29 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       // match the remaining tokens against the fragrance name *within* those
       // brands.
       const tokens = q.split(/\s+/).filter(Boolean);
-      // Sanitize before interpolating into a PostgREST .or() string (that string
-      // is parsed structurally — raw commas/parens/dots would break it). Require
+      // Normalization already reduced tokens to [a-z0-9]; this stays as a guard
+      // because they get interpolated into a PostgREST .or() string, which is
+      // parsed structurally (raw commas/parens/dots would break it). Require
       // >=3 chars so stop-words like "le"/"no" don't match half the brand table.
       const brandTokens = tokens
         .map((t) => t.replace(/[^a-z0-9]/gi, ''))
         .filter((t) => t.length >= 3);
 
-      let matchedBrands: { id: string; name: string }[] = [];
+      let matchedBrands: { id: string; name_normalized: string }[] = [];
       if (brandTokens.length > 0) {
-        const orFilter = brandTokens.map((t) => `name.ilike.*${t}*`).join(',');
+        const orFilter = brandTokens.map((t) => `name_normalized.ilike.*${t}*`).join(',');
         const { data: brandRows } = await supabase
           .from('brands')
-          .select('id, name')
+          .select('id, name_normalized')
           .or(orFilter);
-        matchedBrands = (brandRows ?? []) as { id: string; name: string }[];
+        matchedBrands = (brandRows ?? []) as { id: string; name_normalized: string }[];
       }
       const brandIds = [...new Set(matchedBrands.map((b) => b.id))];
 
       // Tokens "explained" by a matched brand name → not part of the bottle name.
       const consumed = new Set<string>();
       for (const b of matchedBrands) {
-        const bn = b.name.toLowerCase();
+        const bn = b.name_normalized ?? '';
         for (const t of tokens) if (t.length >= 3 && bn.includes(t)) consumed.add(t);
       }
       const nameRemainder = tokens.filter((t) => !consumed.has(t)).join(' ').trim();
@@ -351,7 +362,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         // Hide AromaPassions inspired-by dupes from keyword search — they surface
         // only via Budget Dupes, never alongside the original they clone. NULL-safe.
         .or('source.is.null,source.neq.aromapassions')
-        .ilike('name', `%${q}%`)
+        .ilike('name_normalized', `%${q}%`)
         .order('name', { ascending: true })
         .limit(fetchLimit);
       if (genders?.length) nameQb = nameQb.in('gender', genders);
@@ -370,7 +381,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
               .order('purchasable', { ascending: false })
               .order('name', { ascending: true })
               .limit(fetchLimit);
-            if (nameRemainder) bqb = bqb.ilike('name', `%${nameRemainder}%`);
+            if (nameRemainder) bqb = bqb.ilike('name_normalized', `%${nameRemainder}%`);
             if (genders?.length) bqb = bqb.in('gender', genders);
             return bqb;
           })()
