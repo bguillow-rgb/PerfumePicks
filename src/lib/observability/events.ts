@@ -47,7 +47,12 @@ export const EVENTS = {
   // Pick-stream capture keeps source 'picker'; these carry the search sub-funnel.
   SEARCH_OPENED:           'search_opened',           // props: { pick_count }
   SEARCH_RESULT_PICKED:    'search_result_picked',    // props: { fragrance_id, in_grid, outcome }
-  SEARCH_NO_RESULTS:       'search_no_results',       // props: { query_length }
+  // props: { query, query_length, surface: 'discover'|'dna_picker' }
+  // `query` (truncated to 60 chars) is the whole point — it names the bottle or
+  // brand the catalog is missing, or the query the search engine fluffs. Logging
+  // only query_length meant a zero-result bug ("jo malone" -> 0 bottles) was
+  // invisible in analytics and had to be reported by a human.
+  SEARCH_NO_RESULTS:       'search_no_results',
   SEARCH_ENRICH_REQUESTED: 'search_enrich_requested', // props: { fragrance_id }
 
   // ─── Discover ────────────────────────────────────────────────────────

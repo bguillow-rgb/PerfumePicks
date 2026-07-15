@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { ScrollView, View, Text, StyleSheet, TextInput, Pressable, FlatList, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -17,6 +17,7 @@ import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 import { DiscoverFilterSheet, type DiscoverFilters, EMPTY_FILTERS, filtersActive } from '@/src/components/sheets/DiscoverFilterSheet';
 import { EmptyState } from '@/src/components/ui/EmptyState';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { track, EVENTS } from '@/src/lib/observability';
 import { getCurrentUser } from '@/src/stores/useAuthStore';
 
 /** Cap celebrity names to 2 + "& N more" to prevent subtitle overflow. */
@@ -84,6 +85,8 @@ const CURATED_EDITS_META = [
 ] as const;
 
 const RAIL_SIZE = 10;
+/** Grace period after a search settles empty before reporting it as a miss. */
+const MISS_LOG_DELAY_MS = 1200;
 
 /**
  * Split a query into note terms when the user lists more than one note —
@@ -252,6 +255,36 @@ export default function DiscoverScreen() {
     }, 250);
     return () => { cancelled = true; clearTimeout(t); };
   }, [query, mood, pool, notesSearch, searchStore, searchByNotes, fetchMany]);
+
+  // Log searches that come back empty.
+  //
+  // This screen had NO telemetry at all, which is why "Jo malone" returning zero
+  // bottles survived until a creator mentioned it by hand — the app knew the
+  // search failed and never said so. SEARCH_NO_RESULTS previously carried only
+  // query_length, so even where it did fire we couldn't tell WHAT failed, which
+  // is the only part that identifies the bug.
+  //
+  // Fires once per settled query: waits for the search to finish, then a further
+  // beat, so prefixes ("j", "jo", "jo m") on the way to a real query don't each
+  // report a miss. The ref suppresses repeats when the same dead query is
+  // re-rendered.
+  const loggedMissRef = useRef<string | null>(null);
+  useEffect(() => {
+    const q = query.trim();
+    if (!q || q.length < 2 || searching || searchResults.length > 0) return;
+    if (loggedMissRef.current === q.toLowerCase()) return;
+    const t = setTimeout(() => {
+      loggedMissRef.current = q.toLowerCase();
+      track(EVENTS.SEARCH_NO_RESULTS, {
+        // Truncated: this is free text, and we want the failing bottle/brand,
+        // not an essay.
+        query: q.slice(0, 60),
+        query_length: q.length,
+        surface: 'discover',
+      });
+    }, MISS_LOG_DELAY_MS);
+    return () => clearTimeout(t);
+  }, [query, searching, searchResults.length]);
 
   // Apply faceted filters to the pool.
   const filteredPool = useMemo(() => {

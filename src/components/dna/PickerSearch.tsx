@@ -85,7 +85,11 @@ export function PickerSearch({ open, onOpen, onClose, onPick, onEnrichRequest }:
       setSearching(false);
       setSettled(true);
       if (found.length === 0) {
-        track(EVENTS.SEARCH_NO_RESULTS, { query_length: q.length });
+        track(EVENTS.SEARCH_NO_RESULTS, {
+          query: q.slice(0, 60),
+          query_length: q.length,
+          surface: 'dna_picker',
+        });
       }
     }, SEARCH_DEBOUNCE_MS);
     return () => clearTimeout(timer);
