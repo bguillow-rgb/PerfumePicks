@@ -17,6 +17,20 @@ interface Props {
    *  lines up with full-bleed elements like the mood banner. */
   fullWidth?: boolean;
   onPress?: () => void;
+  /**
+   * Hide the price pill on compact cards. Used ONLY by the free "Smells Like"
+   * rail on a fragrance page (2026-07-16): that rail sits directly beside the
+   * Pro "Similar for less" rail, and a free list of accord-similar bottles with
+   * prices on every card let anyone eyeball the cheap alternatives at a glance,
+   * which is the thing Pro sells.
+   *
+   * Deliberately opt-IN. Discover, Home, brand pages, quiz and rec results all
+   * keep their prices: those are shopping surfaces where the price is the point.
+   * This is not a secret either way (the price is on the bottle's own page one
+   * tap away) — it stops the rail being scannable, so Pro is what does the
+   * filtering, the savings math, and says why the scents match.
+   */
+  hidePrice?: boolean;
 }
 
 /**
@@ -33,12 +47,12 @@ interface Props {
  * Rationale: founder feedback — big photos "look bush league"; compact
  * cards show more product by default and feel Sephora/Nordstrom-curated.
  */
-export function FragranceCard({ fragrance, variant = 'medium', subtitle, fullWidth, onPress }: Props) {
+export function FragranceCard({ fragrance, variant = 'medium', subtitle, fullWidth, onPress, hidePrice }: Props) {
   const router = useRouter();
   const handlePress = onPress ?? (() => router.push(`/fragrance/${fragrance.id}`));
 
   if (variant === 'hero') return <HeroCard fragrance={fragrance} onPress={handlePress} />;
-  if (variant === 'compact') return <CompactCard fragrance={fragrance} subtitle={subtitle} fullWidth={fullWidth} onPress={handlePress} />;
+  if (variant === 'compact') return <CompactCard fragrance={fragrance} subtitle={subtitle} fullWidth={fullWidth} onPress={handlePress} hidePrice={hidePrice} />;
   if (variant === 'small') return <SmallCard fragrance={fragrance} onPress={handlePress} />;
   return <MediumCard fragrance={fragrance} onPress={handlePress} />;
 }
@@ -104,7 +118,7 @@ function cardDisplayName(raw: string): string {
   return name;
 }
 
-function CompactCard({ fragrance, subtitle, fullWidth, onPress }: { fragrance: Fragrance; subtitle?: string; fullWidth?: boolean; onPress: () => void }) {
+function CompactCard({ fragrance, subtitle, fullWidth, onPress, hidePrice }: { fragrance: Fragrance; subtitle?: string; fullWidth?: boolean; onPress: () => void; hidePrice?: boolean }) {
   const accord = fragrance.top_accords[0];
   const inWardrobe = useWardrobeStore((s) => s.getByFragrance(fragrance.id));
   const addToWardrobe = useWardrobeStore((s) => s.add);
@@ -155,7 +169,7 @@ function CompactCard({ fragrance, subtitle, fullWidth, onPress }: { fragrance: F
               <Text style={compactStyles.accordText}>{accord}</Text>
             </View>
           ) : null}
-          {buyPrice !== null && (
+          {buyPrice !== null && !hidePrice && (
             <View style={compactStyles.buyPill}>
               <Ionicons name="bag-outline" size={9} color={COLORS.white} />
               <Text style={compactStyles.buyPillText}>${Math.round(buyPrice / 100)}</Text>

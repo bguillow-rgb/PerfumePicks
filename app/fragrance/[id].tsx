@@ -662,10 +662,19 @@ function FragranceDetailScreen() {
         </View>
 
 
+        {/* Free: pure discovery, no prices. Pro: prices, plus the "Similar for
+            less" rail below that filters to cheaper, does the savings math, and
+            says which accords match. Price is the Pro layer here (2026-07-16) —
+            with a price on every card, a free user could just scan this rail for
+            the cheap lookalikes, which is exactly what Pro sells. Their own
+            pages still show price, so this isn't secrecy, it's the difference
+            between scanning a list and being handed the answer. */}
         {similar.length > 0 && (
           <Section title="Smells Like" cursive="discover similar">
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hScroll}>
-              {similar.map((f) => <FragranceCard key={f.id} fragrance={f} variant="compact" />)}
+              {similar.map((f) => (
+                <FragranceCard key={f.id} fragrance={f} variant="compact" hidePrice={!isPro} />
+              ))}
             </ScrollView>
           </Section>
         )}
