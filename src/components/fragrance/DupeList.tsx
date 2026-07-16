@@ -42,10 +42,18 @@ export function DupeList({ dupes, loading, max, emptyState, lockedCount = 0, onU
       </View>
     );
   }
-  if (dupes.length === 0) {
+  // No dupes revealed AND none withheld => this bottle genuinely has no dupe.
+  // With the free gate at 0 (migration 202607161200) a non-Pro user always lands
+  // here with dupes.length === 0 while lockedCount > 0, so bailing on the empty
+  // list alone would swallow the locked teaser and they'd never learn a dupe
+  // exists. Only show the empty state when there is truly nothing to tease.
+  if (dupes.length === 0 && lockedCount === 0) {
     return <>{emptyState ?? null}</>;
   }
   const rows = max ? dupes.slice(0, max) : dupes;
+  // Free users see none of the list, so "N MORE dupes" would be wrong: there is
+  // no "more" without a first.
+  const noneRevealed = rows.length === 0;
   return (
     <View style={styles.list}>
       {rows.map((d, i) => (
@@ -55,16 +63,26 @@ export function DupeList({ dupes, loading, max, emptyState, lockedCount = 0, onU
         <Pressable
           style={styles.lockedRow}
           onPress={onUnlock}
-          accessibilityLabel={`Unlock ${lockedCount} more ${lockedCount === 1 ? 'dupe' : 'dupes'} with Pro`}
+          accessibilityLabel={
+            noneRevealed
+              ? `${lockedCount} ${lockedCount === 1 ? 'dupe' : 'dupes'} found for this bottle. Get Pro to see ${lockedCount === 1 ? 'it' : 'them'}.`
+              : `${lockedCount} more ${lockedCount === 1 ? 'dupe' : 'dupes'} with Pro`
+          }
         >
           <View style={styles.lockedIcon}>
             <Ionicons name="lock-closed" size={16} color={COLORS.accent} />
           </View>
           <View style={styles.lockedContent}>
             <Text style={styles.lockedTitle}>
-              {lockedCount} more {lockedCount === 1 ? 'dupe' : 'dupes'} ranked & ready
+              {noneRevealed
+                ? `${lockedCount} ${lockedCount === 1 ? 'dupe' : 'dupes'} found for this bottle`
+                : `${lockedCount} more ${lockedCount === 1 ? 'dupe' : 'dupes'} ranked & ready`}
             </Text>
-            <Text style={styles.lockedSub}>See every match % and how much you save</Text>
+            <Text style={styles.lockedSub}>
+              {noneRevealed
+                ? `Pro shows you which ${lockedCount === 1 ? 'bottle it is' : 'bottles they are'} and what you'd save`
+                : 'See every match % and how much you save'}
+            </Text>
           </View>
           <Text style={styles.lockedCta}>Unlock →</Text>
         </Pressable>
