@@ -8,6 +8,8 @@ import * as Haptics from 'expo-haptics';
 import { getCurrentUser } from '@/src/stores/useAuthStore';
 import { Button } from '@/src/components/ui/Button';
 import { COLORS, SPACING, RADIUS } from '@/src/constants/theme';
+import { FREE_WARDROBE_CAP } from '@/src/lib/limits';
+import { FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStore';
 import { useProStore } from '@/src/stores/useProStore';
 import { useRevenueCat } from '@/src/hooks/useRevenueCat';
 import { track, EVENTS } from '@/src/lib/observability';
@@ -33,7 +35,7 @@ const FEATURES = [
   {
     icon: 'sparkles-outline' as const,
     title: 'Unlimited Train My Nose',
-    desc: 'Every swipe feeds your DNA and sharpens your matches. Free is capped at 10 swipes a day — Pro removes the ceiling.',
+    desc: `Every swipe feeds your DNA and sharpens your matches. Free stops at ${FREE_DAILY_SWIPE_LIMIT} swipes a day. Pro keeps going.`,
   },
   {
     icon: 'analytics-outline' as const,
@@ -43,7 +45,7 @@ const FEATURES = [
   {
     icon: 'rose-outline' as const,
     title: 'Unlimited Wardrobe',
-    desc: 'Track every bottle, decant, and sample you own, want, or have tried, with no cap.',
+    desc: `Free holds ${FREE_WARDROBE_CAP} fragrances. Pro tracks every bottle, decant, and sample you own, want, or have tried, with no cap.`,
   },
   {
     icon: 'sunny-outline' as const,

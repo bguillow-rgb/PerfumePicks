@@ -3,6 +3,10 @@ import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, FONTS } from '@/src/constants/theme';
+// Sourced from the constants so the Terms can never drift from what the app
+// actually enforces (they described 10 swipes / a 20-item cap until 2026-07-16).
+import { FREE_WARDROBE_CAP } from '@/src/lib/limits';
+import { FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStore';
 
 export default function TermsScreen() {
   const router = useRouter();
@@ -49,7 +53,7 @@ export default function TermsScreen() {
 
         <Text style={styles.h2}>4. Free vs Pro</Text>
         <Text style={styles.body}>
-          Free includes the basic 3-question quiz, 10 swipes/day in Train My Nose, limited daily picks, and a 20-item wardrobe cap. Pro adds unlimited swipes, the full 9-question quiz, dupes, decant intelligence, taste insights, layering suggestions, and advanced filters.
+          Free includes the basic 3-question quiz, {FREE_DAILY_SWIPE_LIMIT} swipes/day in Train My Nose, limited daily picks, and a {FREE_WARDROBE_CAP}-fragrance wardrobe cap. Pro adds unlimited swipes, an unlimited wardrobe, the full 9-question quiz, dupes, decant intelligence, taste insights, layering suggestions, and advanced filters.
         </Text>
 
         <Text style={styles.h2}>5. Recommendations</Text>

@@ -22,8 +22,15 @@ export interface SwipeRecord {
   created_at: string;
 }
 
-/** Free tier daily swipe cap. */
-export const FREE_DAILY_SWIPE_LIMIT = 10;
+/**
+ * Free tier daily swipe cap. Pro is unlimited.
+ *
+ * 10 -> 5 on 2026-07-16. At 10, the cap almost never bound: across all real
+ * usage only 4 user-days ever reached it, and the busiest user-day was exactly
+ * 10 (they hit the wall and stopped rather than upgrade). 5 puts the ceiling
+ * inside normal behavior so Train My Nose becomes a real reason to pay.
+ */
+export const FREE_DAILY_SWIPE_LIMIT = 5;
 
 let _currentUserId: string | null = null;
 export function setSwipeUserId(uid: string | null) { _currentUserId = uid; }

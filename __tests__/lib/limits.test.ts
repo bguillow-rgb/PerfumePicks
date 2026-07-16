@@ -1,11 +1,30 @@
-import { FREE_WARDROBE_CAP, FREE_DAILY_SWIPE_CAP } from '@/src/lib/limits';
+import { FREE_WARDROBE_CAP } from '@/src/lib/limits';
+import { FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStore';
 
-describe('limits', () => {
-  it('FREE_WARDROBE_CAP equals 20', () => {
-    expect(FREE_WARDROBE_CAP).toBe(20);
+// These caps are the paywall. The 2026-07-16 audit found both set so far above
+// real behavior that they never bound: the wardrobe cap was 20 while the
+// largest real collection in the entire user base was 5 items, and the swipe
+// cap was 10 while only 4 user-days ever reached it. 5 paywall views, 0 sales.
+// So these tests assert the caps stay inside observed behavior, not that the
+// numbers equal themselves.
+describe('free-tier limits', () => {
+  it('wardrobe cap is 5 — the 6th add must hit the paywall', () => {
+    expect(FREE_WARDROBE_CAP).toBe(5);
   });
 
-  it('FREE_DAILY_SWIPE_CAP equals 10', () => {
-    expect(FREE_DAILY_SWIPE_CAP).toBe(10);
+  it('daily swipe cap is 5', () => {
+    expect(FREE_DAILY_SWIPE_LIMIT).toBe(5);
+  });
+
+  // Guard rails: if someone raises these again, they should have to justify it
+  // against real usage rather than quietly restore a decorative cap.
+  it('wardrobe cap stays within observed collection sizes (max seen: 5)', () => {
+    expect(FREE_WARDROBE_CAP).toBeGreaterThan(0);
+    expect(FREE_WARDROBE_CAP).toBeLessThanOrEqual(10);
+  });
+
+  it('swipe cap stays low enough that an engaged session reaches it', () => {
+    expect(FREE_DAILY_SWIPE_LIMIT).toBeGreaterThan(0);
+    expect(FREE_DAILY_SWIPE_LIMIT).toBeLessThanOrEqual(10);
   });
 });
