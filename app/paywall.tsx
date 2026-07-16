@@ -21,36 +21,39 @@ type Plan = 'monthly' | 'yearly';
 // Lead with the two features that have real dollar/habit ROI (dupes + training),
 // then the supporting features. Never list "unlimited X" as the primary pitch —
 // that frames Pro as limit-removal rather than genuine added value.
+// Order matters. Dupes lead: it is the only bullet with a dollar figure attached,
+// and the only one a collector can do math on. DNA is LAST and reframed as depth
+// rather than access — the DNA itself is free and 87% of users have already
+// finished theirs, so leading with it told a reader the list was padded before
+// they reached anything they didn't already have (2026-07-16).
+//
+// The old bullet 1 ("A Living Fragrance DNA", free) and bullet 4 ("Your Full
+// Scent Profile", Pro) described the same feature twice. Merged into one.
 const FEATURES = [
-  {
-    icon: 'finger-print-outline' as const,
-    title: 'A Living Fragrance DNA',
-    desc: 'Your taste, mapped from the bottles you pick, wear, and swipe — a profile that keeps sharpening every time you use the app, and powers every recommendation.',
-  },
   {
     icon: 'pricetags-outline' as const,
     title: 'Find Cheaper Dupes Instantly',
-    desc: 'Every fragrance detail page surfaces alternatives that smell nearly identical, often 30-70% less. One find pays for a year of Pro.',
+    desc: "We match on accords, not marketing copy. Open any bottle and you'll see how close the nearest dupe is and what you'd save, usually 30 to 70 percent. Pro tells you which bottle it is.",
   },
   {
     icon: 'sparkles-outline' as const,
     title: 'Unlimited Train My Nose',
-    desc: `Every swipe feeds your DNA and sharpens your matches. Free stops at ${FREE_DAILY_SWIPE_LIMIT} swipes a day. Pro keeps going.`,
-  },
-  {
-    icon: 'analytics-outline' as const,
-    title: 'Your Full Scent Profile',
-    desc: 'See every accord, note, and house your DNA gravitates toward — plus the notes you’ve ruled out in Scent Preferences. Your taste in one view.',
+    desc: `Every swipe teaches your DNA something. Free gets ${FREE_DAILY_SWIPE_LIMIT} a day. Pro doesn't stop.`,
   },
   {
     icon: 'rose-outline' as const,
     title: 'Unlimited Wardrobe',
-    desc: `Free holds ${FREE_WARDROBE_CAP} fragrances. Pro tracks every bottle, decant, and sample you own, want, or have tried, with no cap.`,
+    desc: `Free holds ${FREE_WARDROBE_CAP} fragrances. Pro holds everything: bottles, decants, samples, the ones you want, the ones you tried once and passed on.`,
   },
   {
     icon: 'sunny-outline' as const,
     title: 'Layering Suggestions',
     desc: 'Fragrance pairs that complement each other, pulled from your wardrobe and what works for your taste.',
+  },
+  {
+    icon: 'finger-print-outline' as const,
+    title: 'Your Fragrance DNA, In Full',
+    desc: "The DNA itself is free and keeps sharpening every time you wear or swipe. Pro shows the parts underneath: every accord broken out, the houses you keep returning to, and the notes you've ruled out.",
   },
 ];
 

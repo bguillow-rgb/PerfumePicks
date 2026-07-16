@@ -129,8 +129,8 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
   const [whyVisible, setWhyVisible] = useState(true);
   const [whyCopy] = useState(() =>
     Object.keys(useSwipeStore.getState().swipes).length > 0
-      ? 'Your taste is sharpening — each swipe tunes your daily pick, Discover & quiz.'
-      : 'Swipe to teach us what you love — it sharpens your daily pick, Discover & quiz.',
+      ? 'Your taste is sharpening. Each swipe tunes your daily pick, Discover & quiz.'
+      : 'Swipe to teach us what you love. It sharpens your daily pick, Discover & quiz.',
   );
   const [lastAction, setLastAction] = useState<'pass' | 'like' | 'love' | null>(null);
   const [liveDir, setLiveDir] = useState<'none' | 'left' | 'right' | 'down'>('none');
@@ -484,12 +484,15 @@ function DailyLimitReached({ onUpgrade, onBack }: { onUpgrade: () => void; onBac
         <Ionicons name="lock-closed" size={28} color={COLORS.accent} />
       </View>
       <Text style={styles.eyebrow}>DAILY LIMIT REACHED</Text>
-      <Text style={styles.summaryHeadline}>You've used your 10 free swipes today.</Text>
+      <Text style={styles.summaryHeadline}>
+        That's {FREE_DAILY_SWIPE_LIMIT} for today.
+      </Text>
       <Text style={styles.summaryBody}>
-        Upgrade to <Text style={styles.italic}>Pro</Text> for unlimited daily swipes and sharper taste profile results.
+        <Text style={styles.italic}>Pro</Text> swipes as long as you want, and your profile gets
+        sharper the more it sees.
       </Text>
       <Pressable style={[styles.cta, { backgroundColor: COLORS.text }]} onPress={onUpgrade}>
-        <Text style={styles.ctaText}>Unlock Pro</Text>
+        <Text style={styles.ctaText}>Get Pro</Text>
       </Pressable>
       <Pressable onPress={onBack} style={{ paddingVertical: SPACING.md }}>
         <Text style={{ ...TYPE.label, color: COLORS.muted, letterSpacing: 1 }}>Back</Text>

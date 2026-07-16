@@ -366,7 +366,7 @@ export default function DiscoverScreen() {
             <TextInput
               value={query}
               onChangeText={setQuery}
-              placeholder="Notes, brands, a vibe — try “coconut + musk”"
+              placeholder='Notes, brands, a vibe. Try "coconut + musk"'
               placeholderTextColor={COLORS.subtle}
               style={styles.searchInput}
               autoCapitalize="none"
