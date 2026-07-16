@@ -53,7 +53,7 @@ export default function TermsScreen() {
 
         <Text style={styles.h2}>4. Free vs Pro</Text>
         <Text style={styles.body}>
-          Free includes the basic 3-question quiz, {FREE_DAILY_SWIPE_LIMIT} swipes/day in Train My Nose, limited daily picks, and a {FREE_WARDROBE_CAP}-fragrance wardrobe cap. Pro adds unlimited swipes, an unlimited wardrobe, the full 9-question quiz, dupes, decant intelligence, taste insights, layering suggestions, and advanced filters.
+          Free includes the 3-question quiz, {FREE_DAILY_SWIPE_LIMIT} swipes per day in Train My Nose, limited daily picks, and a {FREE_WARDROBE_CAP}-fragrance wardrobe cap. Pro removes the swipe and wardrobe limits and adds the full 9-question quiz, dupes, decant intelligence, taste insights, layering suggestions, and advanced filters.
         </Text>
 
         <Text style={styles.h2}>5. Recommendations</Text>

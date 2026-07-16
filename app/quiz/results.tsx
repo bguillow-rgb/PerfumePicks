@@ -121,7 +121,8 @@ export default function QuizResults() {
               <Text style={styles.proBannerTitle}>Sharpen these with Pro</Text>
             </View>
             <Text style={styles.proBannerBody}>
-              Unlock 5 deeper questions + Taste Insights to refine your picks.
+              The full quiz runs 9 questions instead of 3, and Taste Insights shows you what's
+              driving the picks.
             </Text>
             <View style={styles.proBannerRow}>
               <Ionicons name="lock-closed-outline" size={13} color={COLORS.muted} />
@@ -132,7 +133,7 @@ export default function QuizResults() {
               <Text style={styles.proBannerRowText}>Off-notes · what you want to avoid</Text>
             </View>
             <Pressable style={styles.proBannerBtn} onPress={() => router.push('/paywall?returnTo=/quiz')}>
-              <Text style={styles.proBannerBtnText}>Unlock Pro</Text>
+              <Text style={styles.proBannerBtnText}>Get Pro</Text>
             </Pressable>
           </View>
         )}
