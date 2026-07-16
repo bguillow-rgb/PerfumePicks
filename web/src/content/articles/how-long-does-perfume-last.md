@@ -16,8 +16,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "perfume-for-skin-type"
   - "does-perfume-expire"
+  - "how-to-make-perfume-last-longer"
   - "how-to-apply-perfume"
-  - "perfume-concentration-guide"
 faqs:
   - q: "Does perfume expire?"
     a: "Fragrance does not expire in the sense that it becomes unsafe to wear, but it does degrade over time. Oxidation changes the smell, typically making top notes disappear faster, adding a slightly sour or flat character to the opening, and shifting the overall balance. An opened bottle used regularly will last two to five years before noticeable degradation. A well-stored unopened bottle can last a decade or more."
