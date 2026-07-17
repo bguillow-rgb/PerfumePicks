@@ -28,19 +28,19 @@ beforeEach(() => {
 describe('inviteHook', () => {
   it('renders the modifier-folded display form', () => {
     expect(inviteHook('the_classicist', 'compliment_seeking')).toBe(
-      'My Fragrance DNA is "The Magnetic Classicist" — find out yours 👇',
+      'My Fragrance DNA came back "The Magnetic Classicist". Find out yours 👇',
     );
   });
 
   it('renders the plain archetype name when the modifier is null', () => {
     expect(inviteHook('the_seducer', null)).toBe(
-      'My Fragrance DNA is "The Seducer" — find out yours 👇',
+      'My Fragrance DNA came back "The Seducer". Find out yours 👇',
     );
   });
 
   it('falls back to the generic hook with no archetype', () => {
     expect(inviteHook(null)).toBe(
-      'I found my Fragrance DNA on Perfume Picks — find out yours 👇',
+      'Just found my Fragrance DNA on Perfume Picks. Find out yours 👇',
     );
   });
 });
@@ -58,7 +58,7 @@ describe('inviteFriends', () => {
     await inviteFriends('the_night_owl', 'dna_reveal', 'luxury');
     expect(mockShare).toHaveBeenCalledWith({
       message:
-        'My Fragrance DNA is "The Gilded Night Owl" — find out yours 👇\n' +
+        'My Fragrance DNA came back "The Gilded Night Owl". Find out yours 👇\n' +
         'https://perfumepicks.app/i?a=the_night_owl&r=user-42',
     });
     expect(mockTrack).toHaveBeenCalledWith('invite_shared', {

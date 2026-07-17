@@ -56,7 +56,10 @@ export function inviteHook(
  */
 export async function inviteFriends(
   archetype?: ArchetypeKey | null,
-  source: 'dna_reveal' | 'profile' | 'unknown' = 'unknown',
+  // 'dna_reveal'    — the one-time post-quiz celebration screen
+  // 'taste_profile' — the durable DNA card the user comes back to
+  // 'profile'       — the "Invite friends" row in profile settings
+  source: 'dna_reveal' | 'taste_profile' | 'profile' | 'unknown' = 'unknown',
   modifier?: string | null,
 ): Promise<void> {
   const url = buildInviteUrl(archetype);

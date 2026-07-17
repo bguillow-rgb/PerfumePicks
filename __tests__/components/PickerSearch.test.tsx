@@ -81,7 +81,14 @@ describe('expanded field — edge states', () => {
     );
     // The field is still there and editable — no dead-end state.
     expect(screen.getByTestId('dna-search-input')).toBeTruthy();
-    expect(mockTrack).toHaveBeenCalledWith('search_no_results', { query_length: 10 });
+    // `query` is the payload that matters: query_length alone ("10 characters
+    // returned nothing") can't identify a bug, which is why two zero-result
+    // search bugs went unnoticed until a user reported them by hand.
+    expect(mockTrack).toHaveBeenCalledWith('search_no_results', {
+      query: 'zzxqvblorp',
+      query_length: 10,
+      surface: 'dna_picker',
+    });
   });
 
   it('complete result: renders on the shelf and taps through to onPick', async () => {

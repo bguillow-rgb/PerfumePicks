@@ -114,11 +114,16 @@ export function DnaProfileContent({
 
   const onShare = async () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    track(EVENTS.DNA_REVEAL_SHARED, { archetype: dna.archetype.primary });
+    // Tag the surface: this fires from the one-time reveal AND from the durable
+    // DNA card in the taste profile. They are very different intents (peak-moment
+    // vs "let me show someone"), and we need to tell them apart to know whether
+    // the profile entry point is what actually drives invites.
+    const source = celebrate ? 'dna_reveal' : 'taste_profile';
+    track(EVENTS.DNA_REVEAL_SHARED, { archetype: dna.archetype.primary, source });
     // Invite loop: share the archetype (modifier-folded, "The Magnetic
     // Classicist") as the hook + a link friends can follow to find their own
     // DNA (fires INVITE_SHARED + attribution referrer).
-    await inviteFriends(dna.archetype.primary, 'dna_reveal', dna.archetype.modifier);
+    await inviteFriends(dna.archetype.primary, source, dna.archetype.modifier);
   };
 
   const hasMoreMatches = !!hero && !hero.fallbackUsed && hero.matches.length > 0;
@@ -182,12 +187,25 @@ export function DnaProfileContent({
               ))}
             </View>
           )}
-          {onRetake && (
-            <Pressable testID="dna-retake" style={styles.retakeBtn} onPress={onRetake}>
-              <Ionicons name="refresh" size={16} color={COLORS.text} />
-              <Text style={styles.retakeText}>Retake</Text>
+          {/* Share lives HERE, not only on the reveal. The reveal is a one-time
+              screen shown seconds after the quiz — the moment the user is still
+              absorbing their result and has no reason to show anyone yet. This
+              card is the DNA they come back to, and it's what they'd actually
+              want to send a friend. Gating share on `celebrate` meant the invite
+              loop had exactly one ephemeral entry point and returned 0 referrals;
+              the only durable path was a text row buried in profile settings. */}
+          <View style={styles.dnaActions}>
+            <Pressable testID="dna-share" style={styles.shareBtn} onPress={onShare}>
+              <Ionicons name="share-outline" size={16} color={COLORS.white} />
+              <Text style={styles.shareBtnText}>Share your DNA</Text>
             </Pressable>
-          )}
+            {onRetake && (
+              <Pressable testID="dna-retake" style={styles.retakeBtn} onPress={onRetake}>
+                <Ionicons name="refresh" size={16} color={COLORS.text} />
+                <Text style={styles.retakeText}>Retake</Text>
+              </Pressable>
+            )}
+          </View>
         </View>
       )}
 
@@ -379,9 +397,19 @@ const styles = StyleSheet.create({
   dnaTraitRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: SPACING.md },
   dnaTraitChip: { paddingHorizontal: 12, paddingVertical: 6, borderRadius: RADIUS.full, backgroundColor: COLORS.card2 },
   dnaTraitText: { fontSize: 12, fontWeight: '600', color: COLORS.text },
-  retakeBtn: {
+  // Share is the primary action (it's the growth loop); Retake is secondary and
+  // only sized to its content so Share carries the visual weight.
+  dnaActions: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm, marginTop: SPACING.lg },
+  shareBtn: {
+    flex: 1,
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,
     paddingVertical: SPACING.sm, borderRadius: RADIUS.full,
+    backgroundColor: COLORS.accent,
+  },
+  shareBtnText: { ...TYPE.label, color: COLORS.white },
+  retakeBtn: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,
+    paddingVertical: SPACING.sm, paddingHorizontal: SPACING.md, borderRadius: RADIUS.full,
     borderWidth: 1, borderColor: COLORS.border, backgroundColor: COLORS.card2,
   },
   retakeText: { ...TYPE.label, color: COLORS.text },
