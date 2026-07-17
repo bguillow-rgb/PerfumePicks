@@ -14,6 +14,7 @@
  * 7. Set EXPO_PUBLIC_REVENUECAT_APPLE_KEY in eas.json
  */
 import { Platform } from 'react-native';
+import { captureException } from '@/src/lib/observability/errors';
 import Purchases, {
   LOG_LEVEL,
   type CustomerInfo,
@@ -22,8 +23,31 @@ import Purchases, {
 } from 'react-native-purchases';
 
 // ── API Keys ────────────────────────────────────────────────────────────────
+//
+// EXPO_PUBLIC_* is INLINED INTO THE JS BUNDLE AT EXPORT TIME, so the value here
+// is whichever env the bundler saw — NOT whatever eas.json says. That gap shipped
+// a dead paywall: eas.json carries the real key (so native BUILDS were always
+// fine), but `eas update` bundles from .env.local, which still held the
+// `your-revenuecat-apple-key` placeholder from setup. Every OTA therefore
+// configured RevenueCat with a bogus key, configure() threw, and no one could
+// buy Pro — silently, because the error was swallowed as "probably Expo Go".
+//
+// If you add a key here, add it in BOTH eas.json AND .env.local, or builds and
+// updates will disagree again. isRealKey() below is the tripwire.
 const REVENUECAT_APPLE_KEY = process.env.EXPO_PUBLIC_REVENUECAT_APPLE_KEY ?? '';
 const REVENUECAT_GOOGLE_KEY = process.env.EXPO_PUBLIC_REVENUECAT_GOOGLE_KEY ?? '';
+
+/**
+ * A key that is present but obviously not a real one — the placeholder from the
+ * setup docs, or anything not in RevenueCat's documented key format (Apple keys
+ * start `appl_`, Google `goog_`). Distinguishes "misconfigured" from "absent",
+ * which the old code could not: both looked like an empty string to `!apiKey`.
+ */
+function isRealKey(key: string, platform: 'ios' | 'android'): boolean {
+  if (!key) return false;
+  if (key.startsWith('your-')) return false; // setup placeholder
+  return key.startsWith(platform === 'ios' ? 'appl_' : 'goog_');
+}
 
 const ENTITLEMENT_ID = 'pro';
 
@@ -40,17 +64,31 @@ let initialized = false;
 export async function initRevenueCat(): Promise<void> {
   if (initialized) return;
 
-  try {
-    const apiKey = Platform.OS === 'ios' ? REVENUECAT_APPLE_KEY : REVENUECAT_GOOGLE_KEY;
+  const platform = Platform.OS === 'ios' ? 'ios' : 'android';
+  const apiKey = platform === 'ios' ? REVENUECAT_APPLE_KEY : REVENUECAT_GOOGLE_KEY;
 
-    // Skip init if keys haven't been configured yet
-    if (!apiKey) {
-      if (__DEV__) {
-        console.log('[RevenueCat] Skipped — API keys not configured yet');
-      }
-      return;
+  // A bad key in a shipped build is NOT the same as running in Expo Go, and
+  // treating them the same is what hid a dead paywall in production. Report it.
+  if (!isRealKey(apiKey, platform)) {
+    if (__DEV__) {
+      console.warn(
+        `[RevenueCat] NOT CONFIGURED — key is ${apiKey ? `invalid ("${apiKey.slice(0, 12)}…")` : 'missing'}. ` +
+          'Nobody can purchase Pro. Check EXPO_PUBLIC_REVENUECAT_APPLE_KEY in .env.local AND eas.json.',
+      );
+    } else {
+      // Production: this is a revenue outage. Make it visible in Sentry rather
+      // than dying quietly — the whole point of the incident that added this.
+      captureException(new Error('RevenueCat API key missing or invalid in a production bundle'), {
+        area: 'revenuecat',
+        reason: apiKey ? 'invalid_key' : 'missing_key',
+        key_prefix: apiKey.slice(0, 12), // never the whole key
+        platform,
+      });
     }
+    return;
+  }
 
+  try {
     if (__DEV__) {
       Purchases.setLogLevel(LOG_LEVEL.DEBUG);
     }
@@ -58,7 +96,8 @@ export async function initRevenueCat(): Promise<void> {
     await Purchases.configure({ apiKey });
     initialized = true;
   } catch (e) {
-    // Native module not available (Expo Go / simulator) — skip silently
+    // Reaching here with a well-formed key means the native module is missing
+    // (Expo Go / simulator) — genuinely expected, and genuinely not actionable.
     if (__DEV__) {
       console.log('[RevenueCat] Skipped — native module not available');
     }
