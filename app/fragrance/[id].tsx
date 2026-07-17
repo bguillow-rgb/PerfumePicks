@@ -157,6 +157,24 @@ function FragranceDetailScreen() {
     return () => { cancelled = true; };
   }, [id, fetchDupes, fetchDupeCount]);
 
+  // Reach: how often does anyone actually land on a bottle that HAS a dupe?
+  // Fires once per bottle, only after the count resolves. This is the
+  // denominator for the whole dupe funnel — before 2026-07-16 the section only
+  // rendered on 10 of 13,100 fragrances and nobody was measuring it, so "dupes
+  // don't convert" was unfalsifiable.
+  useEffect(() => {
+    if (!id || dupeCount <= 0) return;
+    track(EVENTS.DUPE_SECTION_VIEWED, {
+      fragrance_slug: id,
+      dupe_count: dupeCount,
+      revealed: dupes.length,
+      is_pro: isPro,
+    });
+    // Intentionally NOT keyed on dupes.length: the list arrives a beat after the
+    // count, and re-firing on that would double-count every impression.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, dupeCount]);
+
   // Community Dupes — the crowd-consensus fallback, shown ONLY when there is no
   // verified (Budget) dupe. Opinion-only, fully visible, explicitly unverified.
   const [communityDupes, setCommunityDupes] = useState<DupeResult[]>([]);
@@ -454,7 +472,11 @@ function FragranceDetailScreen() {
               retailer: retailerLinks[0].retailer,
               url: retailerLinks[0].url,
               price_cents: retailerLinks[0].price_cents,
-              source_screen: 'fragrance_detail_rail',
+              // A buy that started from a dupe row is attributed to the dupe
+              // rail, not to generic browsing. Without this, a dupe sale looks
+              // identical to any other sale and the feature can never prove it
+              // earns money (DupeRow pushes ?from=dupe).
+              source_screen: from === 'dupe' ? 'dupe_rail' : 'fragrance_detail_rail',
             })}
           >
             <Ionicons name="bag-outline" size={16} color={retailerLinks.length > 0 ? COLORS.white : COLORS.muted} />
@@ -592,6 +614,7 @@ function FragranceDetailScreen() {
                 loading={dupes.length === 0 && dupeCount > 0}
                 lockedCount={isPro ? 0 : Math.max(0, dupeCount - dupes.length)}
                 onUnlock={() => router.push('/paywall')}
+                surface="fragrance_detail"
               />
             </Section>
           </View>
@@ -609,7 +632,7 @@ function FragranceDetailScreen() {
                 Unverified — these are community comparisons, not confirmed matches. Tastes vary; sample before you buy.
               </Text>
             </View>
-            <DupeList dupes={communityDupes} />
+            <DupeList dupes={communityDupes} surface="community_fallback" />
           </Section>
         )}
 

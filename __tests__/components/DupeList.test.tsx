@@ -40,7 +40,11 @@ function dupe(overrides: Partial<DupeResult> = {}): DupeResult {
     release_year: 2021,
     match_pct: 92,
     price_delta_cents: 12000,
-    dupe_source: 'algo',
+    // 'algo' can no longer reach the UI: get_dupes only returns DECLARED clones
+    // (seed/editorial/clone_house/community) because accord-overlap matches
+    // assert confident false clone claims. clone_house is the realistic default
+    // now — it is 308 of the 333 renderable rows.
+    dupe_source: 'clone_house',
     is_loose: false,
     locked: false,
     ...overrides,
@@ -136,9 +140,20 @@ describe('DupeList', () => {
     expect(screen.getByText('1 more dupe ranked & ready')).toBeTruthy();
   });
 
-  it('navigates to the fragrance detail when a row is pressed', () => {
+  it('navigates to the fragrance detail when a row is pressed, tagged from=dupe', () => {
     render(<DupeList dupes={[dupe({ id: 'asad-edp', name: 'Asad' })]} />);
     fireEvent.press(screen.getByText('Asad'));
-    expect(mockPush).toHaveBeenCalledWith('/fragrance/asad-edp');
+    // from=dupe is load-bearing: it's how the destination page attributes a buy
+    // back to the dupe rail (source_screen='dupe_rail'). Without it a dupe sale
+    // is indistinguishable from any other sale and dupes can never prove ROI.
+    expect(mockPush).toHaveBeenCalledWith('/fragrance/asad-edp?from=dupe');
+  });
+
+  it('does not render a savings number when price_delta_cents is null', () => {
+    // 122 of 333 renderable dupes have no comparable price on one side. The old
+    // code coalesced that to 0 and rendered the FULL original price as savings
+    // ("save $220" on a bottle that isn't free). NULL must render nothing.
+    render(<DupeList dupes={[dupe({ name: 'Nada', price_delta_cents: null })]} />);
+    expect(screen.queryByText(/save \$/i)).toBeNull();
   });
 });

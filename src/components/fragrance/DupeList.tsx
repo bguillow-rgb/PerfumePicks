@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { View, Text, StyleSheet, Pressable, Image, ActivityIndicator } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
+import { track, EVENTS } from '@/src/lib/observability';
 import type { DupeResult } from '@/src/stores/useCatalogStore';
 
 interface Props {
@@ -19,6 +21,13 @@ interface Props {
   lockedCount?: number;
   /** Tapped the locked footer — caller routes to the paywall. */
   onUnlock?: () => void;
+  /**
+   * Which surface this list is rendered on ('fragrance_detail' | 'discover' |
+   * 'home' | 'community'). Required for the analytics to mean anything: this
+   * component is reused across three places, so without it every dupe event
+   * collapses into one unattributable bucket.
+   */
+  surface?: string;
 }
 
 /**
@@ -34,7 +43,15 @@ interface Props {
  *
  * Reused by: fragrance detail, Discover dupe hero, Home "Don't Pay a Fortune".
  */
-export function DupeList({ dupes, loading, max, emptyState, lockedCount = 0, onUnlock }: Props) {
+export function DupeList({ dupes, loading, max, emptyState, lockedCount = 0, onUnlock, surface = 'unknown' }: Props) {
+  // Fire-once-per-bottle teaser impression. MUST sit above the early returns
+  // below (rules of hooks). Keyed on surface+count so it re-fires when the user
+  // navigates to a different bottle, not on every re-render.
+  useEffect(() => {
+    if (loading || lockedCount <= 0) return;
+    track(EVENTS.DUPE_TEASER_SHOWN, { surface, locked_count: lockedCount });
+  }, [surface, lockedCount, loading]);
+
   if (loading) {
     return (
       <View style={styles.center}>
@@ -57,12 +74,17 @@ export function DupeList({ dupes, loading, max, emptyState, lockedCount = 0, onU
   return (
     <View style={styles.list}>
       {rows.map((d, i) => (
-        <DupeRow key={d.id} dupe={d} rank={i + 1} />
+        <DupeRow key={d.id} dupe={d} rank={i + 1} surface={surface} />
       ))}
       {lockedCount > 0 && (
         <Pressable
           style={styles.lockedRow}
-          onPress={onUnlock}
+          onPress={() => {
+            // The demand signal. teaser_shown -> teaser_tapped is the only
+            // honest read on whether dupes are worth paying for.
+            track(EVENTS.DUPE_TEASER_TAPPED, { surface, locked_count: lockedCount });
+            onUnlock?.();
+          }}
           accessibilityLabel={
             noneRevealed
               ? `${lockedCount} ${lockedCount === 1 ? 'dupe' : 'dupes'} found for this bottle. Get Pro to see ${lockedCount === 1 ? 'it' : 'them'}.`
@@ -91,14 +113,31 @@ export function DupeList({ dupes, loading, max, emptyState, lockedCount = 0, onU
   );
 }
 
-function DupeRow({ dupe, rank }: { dupe: DupeResult; rank: number }) {
+function DupeRow({ dupe, rank, surface = 'unknown' }: { dupe: DupeResult; rank: number; surface?: string }) {
   const router = useRouter();
-  const savings = Math.round(dupe.price_delta_cents / 100);
+  // price_delta_cents is NULL when either side has no real price (migration
+  // 202607161200 stopped coalescing a missing price to 0, which had been
+  // rendering the full original price as "savings"). Guard the NULL.
+  const savings = dupe.price_delta_cents != null ? Math.round(dupe.price_delta_cents / 100) : 0;
   const showSavings = savings > 0;
 
   return (
     <Pressable
-      onPress={() => router.push(`/fragrance/${dupe.id}`)}
+      onPress={() => {
+        track(EVENTS.DUPE_ROW_TAPPED, {
+          surface,
+          dupe_slug: dupe.id,
+          match_pct: dupe.match_pct,
+          source: dupe.dupe_source ?? null,
+          is_loose: dupe.is_loose ?? null,
+          savings_cents: dupe.price_delta_cents ?? null,
+          rank,
+        });
+        // from=dupe lets the destination page attribute a buy back to this rail
+        // (affiliate_outbound_clicked source_screen='dupe_rail'). Without it a
+        // dupe purchase is indistinguishable from any other buy.
+        router.push(`/fragrance/${dupe.id}?from=dupe`);
+      }}
       style={styles.row}
       accessibilityLabel={`${dupe.brand} ${dupe.name}, ${dupe.is_loose ? 'loose match' : `${dupe.match_pct} percent match`}${showSavings ? `, save ${savings} dollars` : ''}`}
     >
