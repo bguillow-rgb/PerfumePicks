@@ -23,8 +23,23 @@ export type Fragrance = MockFragrance;  // same shape, keeps all consumers worki
 /** A dupe result: a full Fragrance plus the relationship metadata from get_dupes(). */
 export type DupeResult = Fragrance & {
   match_pct: number;
-  price_delta_cents: number;     // original MSRP - dupe MSRP (positive = savings)
-  dupe_source: 'algo' | 'seed' | 'editorial';
+  /**
+   * Cheapest in-stock price of the original MINUS the dupe (positive = savings).
+   * NULL when either side has no real price — do NOT render a number then.
+   * Migration 202607161200 stopped coalescing a missing price to 0: 305 of 308
+   * clone-house dupes have retail_msrp NULL (their price lives in
+   * fragrance_retailer_links), so the old coalesce returned the FULL original
+   * price as "savings" — "Baccarat Rouge 540 (Inspired): save $220", implying
+   * the dupe was free, on 189 of 308 pairs.
+   */
+  price_delta_cents: number | null;
+  /**
+   * Who asserts this is a clone. get_dupes only ever returns DECLARED sources;
+   * 'algo' is excluded server-side (accord overlap makes confident false clone
+   * claims). clone_house = the house formulated it as a clone of one original
+   * and says so; community = crowd consensus, weaker.
+   */
+  dupe_source: 'seed' | 'editorial' | 'clone_house' | 'community';
   is_loose: boolean;             // match_pct < 70 → label "Loose match", hide the %
   locked: boolean;              // reserved for a future blurred-row treatment; today locked rows are withheld server-side
 };

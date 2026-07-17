@@ -144,6 +144,7 @@ export function DupePicker({ initialOriginal, placeholder = 'Less expensive opti
           loading={loadingDupes}
           lockedCount={isPro ? 0 : Math.max(0, dupeCount - dupes.length)}
           onUnlock={() => router.push('/paywall')}
+          surface="dupe_picker"
           emptyState={
             <View style={styles.empty}>
               <Text style={styles.emptyText}>No close dupes yet for {selected.name}.</Text>

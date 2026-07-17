@@ -103,6 +103,27 @@ export const EVENTS = {
   PRO_RESTORE_STARTED:    'pro_restore_started',
   PRO_RESTORE_COMPLETED:  'pro_restore_completed',
 
+  // ─── Budget Dupes ────────────────────────────────────────────────────
+  // Dupes are the paywall's lead feature and, until 2026-07-16, had ZERO
+  // instrumentation: we could not tell whether anyone ever reached them. (They
+  // also only rendered on 10 of 13,100 fragrances, so mostly nobody did.) These
+  // four answer the funnel end to end: does anyone SEE it, do they WANT it, and
+  // does it actually sell a bottle.
+  //
+  // { dupe_count, revealed, is_pro } — the Budget Dupes section rendered.
+  DUPE_SECTION_VIEWED: 'dupe_section_viewed',
+  // { locked_count } — non-Pro saw the "N dupes found for this bottle" teaser.
+  // dupe_section_viewed minus this = how often Pro users see the real list.
+  DUPE_TEASER_SHOWN:   'dupe_teaser_shown',
+  // { locked_count } — tapped the teaser, routed to the paywall. THIS is the
+  // demand signal: teaser_shown -> teaser_tapped is the dupe conversion intent.
+  DUPE_TEASER_TAPPED:  'dupe_teaser_tapped',
+  // { dupe_slug, match_pct, source, savings_cents, rank } — a Pro user opened a
+  // dupe. The buy that may follow fires affiliate_outbound_clicked with
+  // source_screen='dupe_rail' (see the `from=dupe` param), which is how a dollar
+  // gets attributed back to this feature.
+  DUPE_ROW_TAPPED:     'dupe_row_tapped',
+
   // ─── Sync / errors ───────────────────────────────────────────────────
   SYNC_WRITE_FAILED: 'sync_write_failed',
   SYNC_RETRY_TAPPED: 'sync_retry_tapped',
