@@ -470,7 +470,7 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
       )}
       {sessionSavedVisible && (
         <View style={styles.savedToast} pointerEvents="none">
-          <Text style={styles.savedToastText}>Session saved. Your taste profile just got sharper. Come back anytime to keep training.</Text>
+          <Text style={styles.savedToastText}>Session saved. Your taste profile just got sharper.</Text>
         </View>
       )}
     </SafeAreaView>

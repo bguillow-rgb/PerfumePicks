@@ -113,7 +113,7 @@ export function ComplimentsSection({ fragranceId, onHasData }: Props) {
       )}
 
       {entries.length === 0 && !showForm && (
-        <Text style={styles.emptyText}>No compliments logged yet. Someone will notice!</Text>
+        <Text style={styles.emptyText}>No compliments logged yet. Add one when someone notices.</Text>
       )}
 
       {entries.map((e) => (

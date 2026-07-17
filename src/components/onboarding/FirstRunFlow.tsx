@@ -89,7 +89,7 @@ const TOUR_SLIDES: Slide[] = [
   {
     icon: 'pricetag-outline',
     title: "Don't pay a fortune",
-    body: 'Love something pricey? We rank the dupes that smell the same for less, so you can smell rich without the splurge.',
+    body: 'Like an expensive bottle? We rank the cheaper dupes that smell the same, best value first.',
   },
 ];
 
