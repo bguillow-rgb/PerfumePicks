@@ -62,16 +62,36 @@ const ARCHETYPE_NAME: Record<string, string> = {
 interface TokenRow {
   user_id: string;
   token: string;
+  tz: string | null;
   tz_offset_minutes: number;
   last_pushed_on: string | null;
 }
 
-/** user-local Date parts from a UTC instant + the device's offset (minutes). */
-function localParts(nowUtcMs: number, tzOffsetMin: number): { hour: number; ymd: string } {
+/**
+ * user-local hour + YYYY-MM-DD. Prefers the IANA zone (correct across DST via
+ * Intl, which Deno supports); falls back to the fixed minute-offset for rows not
+ * yet re-registered with a tz.
+ */
+function localParts(nowUtcMs: number, tz: string | null, tzOffsetMin: number): { hour: number; ymd: string } {
+  if (tz) {
+    try {
+      const now = new Date(nowUtcMs);
+      const hour = Number(
+        new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "numeric", hour12: false }).format(now),
+      ) % 24;
+      const ymd = new Intl.DateTimeFormat("en-CA", {
+        timeZone: tz,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).format(now);
+      return { hour, ymd };
+    } catch {
+      /* bad tz string — fall through to offset */
+    }
+  }
   const local = new Date(nowUtcMs + tzOffsetMin * 60_000);
-  const hour = local.getUTCHours(); // we shifted the instant, so read in UTC
-  const ymd = local.toISOString().slice(0, 10);
-  return { hour, ymd };
+  return { hour: local.getUTCHours(), ymd: local.toISOString().slice(0, 10) };
 }
 
 /** Push copy from the archetype. Generic-but-personal; the pick is shown on open. */
@@ -94,10 +114,12 @@ Deno.serve(async (req) => {
     /* no body — cron invocation */
   }
 
-  // Pull tokens. Service role bypasses RLS.
+  // Pull LIVE tokens only (skip ones marked dead by a prior DeviceNotRegistered).
+  // Service role bypasses RLS.
   let query = supabase
     .from("push_tokens")
-    .select("user_id, token, tz_offset_minutes, last_pushed_on");
+    .select("user_id, token, tz, tz_offset_minutes, last_pushed_on")
+    .is("invalid_at", null);
   if (testUserId) query = query.eq("user_id", testUserId);
   const { data, error } = await query;
   if (error) {
@@ -122,7 +144,7 @@ Deno.serve(async (req) => {
   const due: { row: TokenRow; archetype: string | null; localYmd: string }[] = [];
   for (const row of tokens) {
     const archetype = archetypeByUser.get(row.user_id) ?? null;
-    const { hour, ymd } = localParts(nowUtcMs, row.tz_offset_minutes ?? 0);
+    const { hour, ymd } = localParts(nowUtcMs, row.tz, row.tz_offset_minutes ?? 0);
 
     if (!testUserId) {
       if (hour !== TARGET_HOUR) continue; // not their morning yet
@@ -149,6 +171,20 @@ Deno.serve(async (req) => {
     body: JSON.stringify(messages),
   });
   const result = await res.json().catch(() => null);
+
+  // Dead-token cleanup: Expo returns one ticket per message, in order. A ticket
+  // with error 'DeviceNotRegistered' means the app was uninstalled — stamp
+  // invalid_at so we never push to that token again (the query filters it out).
+  const tickets: any[] = Array.isArray(result?.data) ? result.data : [];
+  const deadUserIds = due
+    .filter((_, i) => tickets[i]?.status === "error" && tickets[i]?.details?.error === "DeviceNotRegistered")
+    .map(({ row }) => row.user_id);
+  if (deadUserIds.length > 0) {
+    await supabase
+      .from("push_tokens")
+      .update({ invalid_at: new Date(nowUtcMs).toISOString() })
+      .in("user_id", deadUserIds);
+  }
 
   // Mark everyone we just sent to as pushed for their local day (skip in test so
   // a test send doesn't suppress the real morning push).

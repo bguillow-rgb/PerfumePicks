@@ -80,8 +80,16 @@ export async function registerPushToken(): Promise<void> {
     const user = await resolveCurrentUser();
     if (!user) return; // RLS needs auth.uid() = user_id; no session → skip
 
-    // Positive minutes = behind UTC (getTimezoneOffset returns +300 for ET); the
-    // edge function subtracts this to get local time, so store it as-is.
+    // IANA zone ('America/New_York') is the source of truth — it resolves the
+    // right offset for the actual send date, so 8am local stays 8am across DST.
+    // tz_offset_minutes is kept as a fallback for the edge function. Positive
+    // minutes = behind UTC (getTimezoneOffset returns +300 for ET), stored as-is.
+    let tz: string | undefined;
+    try {
+      tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    } catch {
+      /* Intl tz unavailable — fall back to the offset alone */
+    }
     const tz_offset_minutes = -new Date().getTimezoneOffset();
 
     await supabase.from('push_tokens').upsert(
@@ -89,7 +97,10 @@ export async function registerPushToken(): Promise<void> {
         user_id: user.id,
         token,
         platform: Platform.OS,
+        tz: tz ?? null,
         tz_offset_minutes,
+        // Re-registering a previously dead token (app reinstalled) revives it.
+        invalid_at: null,
         updated_at: new Date().toISOString(),
       },
       { onConflict: 'user_id' },
