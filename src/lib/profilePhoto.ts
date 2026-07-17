@@ -1,9 +1,50 @@
 import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as FileSystem from 'expo-file-system/legacy';
+import { decode as decodeBase64 } from 'base64-arraybuffer';
 import { useProfileStore } from '@/src/stores/useProfileStore';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { resolveCurrentUser } from '@/src/stores/useAuthStore';
+
+const AVATAR_BUCKET = 'avatars';
+
+/**
+ * Upload the resized avatar bytes to Storage so the photo actually persists
+ * server-side: it survives a reinstall, syncs across devices, and is visible to
+ * others. Returns the public URL (cache-busted) on success, or null on failure
+ * so the caller can fall back to the device-local ref.
+ *
+ * Path is {userId}/avatar.jpg — the RLS policy in 202607171800_avatars_bucket.sql
+ * locks writes to your own folder via (storage.foldername(name))[1] = auth.uid().
+ */
+async function uploadAvatar(localUri: string, userId: string): Promise<string | null> {
+  try {
+    // RN can't hand Storage a File/Blob from a file:// URI directly; read the
+    // bytes as base64 and decode to an ArrayBuffer, which the SDK accepts.
+    const base64 = await FileSystem.readAsStringAsync(localUri, {
+      encoding: FileSystem.EncodingType.Base64,
+    });
+    const bytes = decodeBase64(base64);
+    const path = `${userId}/avatar.jpg`;
+
+    const { error } = await supabase.storage.from(AVATAR_BUCKET).upload(path, bytes, {
+      contentType: 'image/jpeg',
+      upsert: true, // overwrite the previous avatar in place
+    });
+    if (error) {
+      console.warn('[profilePhoto] avatar upload failed:', error.message);
+      return null;
+    }
+
+    const { data } = supabase.storage.from(AVATAR_BUCKET).getPublicUrl(path);
+    // The path is stable across re-uploads, so the URL is too — append a version
+    // param so a new photo isn't masked by the cached old one (in <Image> or a CDN).
+    return `${data.publicUrl}?v=${Date.now()}`;
+  } catch (e) {
+    console.warn('[profilePhoto] avatar upload threw:', e);
+    return null;
+  }
+}
 
 /** Persist the avatar reference to the user's profiles row so it re-hydrates
  *  after sign-out/sign-in on this device. (Local-filename refs only resolve on
@@ -80,15 +121,39 @@ export async function pickAndSetProfilePhoto(): Promise<string | null> {
     // Fall through — at least the image shows for this session
   }
 
+  // Show the local copy immediately so the avatar updates without waiting on the
+  // network round-trip.
   useProfileStore.getState().setPhotoUri(storedRef);
-  await persistAvatarRef(storedRef);
-  return resolveAvatarUri(storedRef);
+
+  // Then upload the bytes and make the REMOTE url the source of truth, so the
+  // photo persists past a reinstall and resolves on other devices. If the upload
+  // fails (offline, etc.) we keep the local-only ref — the photo still shows this
+  // session, matching the old device-local behavior as a floor rather than a
+  // regression.
+  const user = await resolveCurrentUser();
+  const remoteUrl =
+    user && isSupabaseConfigured ? await uploadAvatar(resized.uri, user.id) : null;
+
+  const finalRef = remoteUrl ?? storedRef;
+  useProfileStore.getState().setPhotoUri(finalRef);
+  await persistAvatarRef(finalRef);
+  return resolveAvatarUri(finalRef);
 }
 
 export async function clearProfilePhoto(): Promise<void> {
   try {
     await FileSystem.deleteAsync(AVATAR_PATH, { idempotent: true });
   } catch {}
+  const user = await resolveCurrentUser();
+  if (user && isSupabaseConfigured) {
+    // Best-effort: drop the uploaded object too, so clearing the photo doesn't
+    // leave a stale avatar in the bucket that a re-hydrate could resurrect.
+    try {
+      await supabase.storage.from(AVATAR_BUCKET).remove([`${user.id}/avatar.jpg`]);
+    } catch (e) {
+      console.warn('[profilePhoto] avatar remove failed:', e);
+    }
+  }
   useProfileStore.getState().setPhotoUri(null);
   await persistAvatarRef(null);
 }
