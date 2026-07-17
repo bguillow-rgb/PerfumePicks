@@ -100,6 +100,42 @@ export async function registerPushToken(): Promise<void> {
 }
 
 /**
+ * Ensure this device is registered for push — the audience-builder.
+ *
+ * Requests PROVISIONAL authorization (iOS): if the user hasn't made an explicit
+ * choice yet, the system grants it SILENTLY (no prompt) and we can send quiet,
+ * non-interrupting notifications straight to Notification Center. If they already
+ * granted full permission, this is a no-op that keeps it. If they explicitly
+ * denied, it stays denied.
+ *
+ * Why this matters: almost nobody opts in through a prompt (the data showed 1
+ * token). But most users are still OS-"undetermined" — the soft pre-prompt gated
+ * the real iOS dialog, so "Not now" never actually denied at the system level.
+ * Provisional turns that silent-undetermined majority into a reachable audience
+ * without asking. Call on every launch (idempotent).
+ */
+export async function ensurePushRegistered(): Promise<void> {
+  try {
+    if (Platform.OS === 'web' || !isSupabaseConfigured) return;
+    const perms = await Notifications.requestPermissionsAsync({
+      ios: {
+        allowProvisional: true, // silent quiet-notification grant when undetermined
+        allowAlert: true,
+        allowBadge: false,
+        allowSound: false,
+      },
+    });
+    const authorized =
+      perms.status === 'granted' ||
+      perms.ios?.status === Notifications.IosAuthorizationStatus.PROVISIONAL;
+    if (!authorized) return;
+    await registerPushToken();
+  } catch {
+    // Best-effort — a device that can't register just isn't reachable yet.
+  }
+}
+
+/**
  * Check current permission without prompting.
  * Syncs the store and returns the status string.
  */

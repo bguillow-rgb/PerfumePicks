@@ -17,7 +17,7 @@ import { FeedbackBubble } from '@/src/components/feedback/FeedbackBubble';
 import {
   requestNotificationPermission,
   registerPushToken,
-  checkNotificationPermission,
+  ensurePushRegistered,
   scheduleSotdNotification,
   scheduleAddBottlesNotification,
 } from '@/src/lib/notifications';
@@ -268,19 +268,16 @@ export default function TabLayout() {
     }
   }, [userId, dna, onboardingPromptShown]);
 
-  // Backfill push tokens for users who ALREADY granted notifications before this
-  // feature existed. registerPushToken otherwise only runs on the onboarding
-  // accept (won't re-show once dismissed) or the profile toggle (rarely flipped),
-  // so the large base of existing grantees would never register a token and stay
-  // unreachable. On every launch, if permission is already granted, ensure the
-  // token is stored (idempotent upsert). This is what makes the push reach more
-  // than the handful who newly opt in.
+  // Build the reachable audience on every launch. Requests PROVISIONAL push
+  // authorization, which iOS grants SILENTLY for the undetermined majority (no
+  // prompt), then registers the token — so a user gets quiet daily SOTD
+  // notifications without ever tapping "Allow". This is the fix for "only 1 person
+  // opted in": nearly everyone is still OS-undetermined (the soft pre-prompt gated
+  // the real dialog), so this converts them into reachable tokens. No-op for users
+  // who already granted or explicitly denied. Idempotent.
   useEffect(() => {
     if (!userId) return;
-    (async () => {
-      const status = await checkNotificationPermission();
-      if (status === 'granted') await registerPushToken();
-    })();
+    void ensurePushRegistered();
   }, [userId]);
 
   const handleNotifAccept = async () => {
