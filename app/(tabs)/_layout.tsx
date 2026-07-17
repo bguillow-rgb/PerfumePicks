@@ -17,6 +17,7 @@ import { FeedbackBubble } from '@/src/components/feedback/FeedbackBubble';
 import {
   requestNotificationPermission,
   registerPushToken,
+  checkNotificationPermission,
   scheduleSotdNotification,
   scheduleAddBottlesNotification,
 } from '@/src/lib/notifications';
@@ -266,6 +267,21 @@ export default function TabLayout() {
       return () => clearTimeout(timer);
     }
   }, [userId, dna, onboardingPromptShown]);
+
+  // Backfill push tokens for users who ALREADY granted notifications before this
+  // feature existed. registerPushToken otherwise only runs on the onboarding
+  // accept (won't re-show once dismissed) or the profile toggle (rarely flipped),
+  // so the large base of existing grantees would never register a token and stay
+  // unreachable. On every launch, if permission is already granted, ensure the
+  // token is stored (idempotent upsert). This is what makes the push reach more
+  // than the handful who newly opt in.
+  useEffect(() => {
+    if (!userId) return;
+    (async () => {
+      const status = await checkNotificationPermission();
+      if (status === 'granted') await registerPushToken();
+    })();
+  }, [userId]);
 
   const handleNotifAccept = async () => {
     setShowNotifPrompt(false);
