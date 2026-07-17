@@ -205,7 +205,7 @@ export default function PaywallScreen() {
           make and let the bullets do the rest. */}
       <View style={styles.pitchCard}>
         <Text style={styles.pitchHeadline}>
-          The only app that learns your taste into a Fragrance DNA — then finds you cheaper bottles that smell just as good.
+          The only app that learns your taste into a Fragrance DNA, then finds you cheaper bottles that smell just as good.
         </Text>
       </View>
 

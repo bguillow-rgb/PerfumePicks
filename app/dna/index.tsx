@@ -504,7 +504,7 @@ export default function DnaPickerScreen() {
         case 'max':
           // Cap guard: warning buzz, no dock; query stays editable.
           Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
-          showToast('Five is the max — remove one to add this.');
+          showToast('Five is the max. Remove one to add this.');
           return;
         case 'promoted':
           // Dupe of a grid tile: no second tile — select the existing one
@@ -512,7 +512,7 @@ export default function DnaPickerScreen() {
           Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
           closeSearch();
           scrollToTile(f.id);
-          showToast('Already on your wall — selected it for you.');
+          showToast('Already on your wall. Selected it for you.');
           return;
         case 'docked':
           Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -533,7 +533,7 @@ export default function DnaPickerScreen() {
     (f: PickerCandidate) => {
       track(EVENTS.SEARCH_ENRICH_REQUESTED, { fragrance_id: f.id });
       void requestEnrichment(f.id);
-      showToast(`Noted — we'll prioritize ${f.name}.`);
+      showToast(`Noted. We'll prioritize ${f.name}.`);
     },
     [showToast],
   );
@@ -612,7 +612,7 @@ export default function DnaPickerScreen() {
             : selectedCount === 1
               ? 'Nice. One or two more makes this sharper.'
               : selectedCount >= MAX_PICKS
-                ? `Five picked — that's the max. Continue when ready.`
+                ? `Five picked, that's the max. Continue when ready.`
                 : `${selectedCount} picked. Add a few more, or continue.`}
         </Text>
         <PickerSearch

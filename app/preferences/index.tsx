@@ -101,7 +101,7 @@ export default function ScentPreferences() {
         <Text style={styles.cursive}>your rules</Text>
         <Text style={styles.title}>Set your boundaries</Text>
         <Text style={styles.sub}>
-          These sit on top of your Fragrance DNA — hard limits we'll respect every
+          These sit on top of your Fragrance DNA. Hard limits we'll respect every
           time we pick something for you.
         </Text>
 
@@ -123,7 +123,7 @@ export default function ScentPreferences() {
         {/* ── Avoid ──────────────────────────────────────────────────────── */}
         <Text style={styles.sectionLabel}>AVOID</Text>
         <Text style={styles.sectionHint}>
-          Notes you never want. We'll steer clear — pick as many as you like.
+          Notes you never want. We'll steer clear. Pick as many as you like.
         </Text>
         <View style={styles.chipWrap}>
           {AVOID_GROUPS.map((g) => (
