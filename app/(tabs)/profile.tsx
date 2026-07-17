@@ -19,6 +19,7 @@ import { pickAndSetProfilePhoto, clearProfilePhoto, resolveAvatarUri } from '@/s
 import { restorePurchases, getCustomerInfo, isProActive } from '@/src/lib/revenuecat';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useAuthStore, getCurrentUser } from '@/src/stores/useAuthStore';
+import { isFounder } from '@/src/lib/admin';
 import { inviteFriends } from '@/src/lib/invite';
 import { useNotificationStore } from '@/src/stores/useNotificationStore';
 import { FeedbackSheet } from '@/src/components/feedback/FeedbackSheet';
@@ -291,6 +292,9 @@ export default function ProfileScreen() {
         <NotificationsSection />
 
         <Section title="About">
+          {isFounder(authUser?.id) && (
+            <Row label="Send a message" onPress={() => router.push('/admin/announcements')} />
+          )}
           <Row label="Send feedback" onPress={() => setFeedbackOpen(true)} />
           <Row label="Privacy Policy" onPress={() => router.push('/legal/privacy')} />
           <Row label="Terms of Use" onPress={() => router.push('/legal/terms')} />

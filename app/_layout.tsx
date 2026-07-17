@@ -332,6 +332,7 @@ export default function RootLayout() {
         <Stack.Screen name="feed" />
         <Stack.Screen name="scan" options={{ presentation: 'modal', headerShown: false }} />
         <Stack.Screen name="user/[id]" />
+        <Stack.Screen name="admin/announcements" options={{ headerShown: false }} />
         <Stack.Screen name="legal/privacy" options={{ presentation: 'modal' }} />
         <Stack.Screen name="legal/terms" options={{ presentation: 'modal' }} />
       </Stack>

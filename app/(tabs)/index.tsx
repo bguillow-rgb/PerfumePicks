@@ -18,6 +18,7 @@ import { useProStore } from '@/src/stores/useProStore';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
+import { AnnouncementModal } from '@/src/components/announcements/AnnouncementModal';
 import { rankWithRelaxation, type RankedDnaRec } from '@/src/features/dna/score';
 import type { DnaCatalogFragrance } from '@/src/features/dna/types';
 import { UnifiedDnaCard } from '@/src/components/dna/UnifiedDnaCard';
@@ -101,6 +102,9 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']} testID="today-screen">
+      {/* Founder → user broadcast. Renders nothing unless an eligible, unseen
+          announcement is live for this user. */}
+      <AnnouncementModal />
       <ScrollView
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}

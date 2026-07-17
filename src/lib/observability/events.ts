@@ -124,6 +124,12 @@ export const EVENTS = {
   // gets attributed back to this feature.
   DUPE_ROW_TAPPED:     'dupe_row_tapped',
 
+  // ─── Announcements (founder → user in-app messaging) ──────────────────
+  ANNOUNCEMENT_SHOWN:      'announcement_shown',      // { id, audience }
+  ANNOUNCEMENT_DISMISSED:  'announcement_dismissed',  // { id } — dismiss / backdrop
+  ANNOUNCEMENT_CTA_TAPPED: 'announcement_cta_tapped', // { id, route }
+  ANNOUNCEMENT_PUBLISHED:  'announcement_published',  // { id, audience, has_cta } — founder composer
+
   // ─── Sync / errors ───────────────────────────────────────────────────
   SYNC_WRITE_FAILED: 'sync_write_failed',
   SYNC_RETRY_TAPPED: 'sync_retry_tapped',
