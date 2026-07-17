@@ -13,6 +13,12 @@
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
 import { useNotificationStore } from '@/src/stores/useNotificationStore';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { resolveCurrentUser } from '@/src/stores/useAuthStore';
+
+// EAS project id — getExpoPushTokenAsync needs it to mint a token bound to this
+// project. Mirrors app.json expo.extra.eas.projectId.
+const EAS_PROJECT_ID = '45707459-d6b8-4aa8-8ddf-5a5894dde578';
 
 // ── Foreground behaviour: show banner + sound while app is open ────────────
 Notifications.setNotificationHandler({
@@ -53,6 +59,44 @@ export async function requestNotificationPermission(): Promise<boolean> {
   const granted = status === 'granted';
   setPermissionStatus(granted ? 'granted' : 'denied');
   return granted;
+}
+
+/**
+ * Register this device for SERVER push: mint the Expo push token and upsert it
+ * (with the device's UTC offset) to push_tokens, so the daily-sotd-push edge
+ * function can reach this user even when the app is closed. Without this, the
+ * only nudge was a local on-device notification that couldn't re-engage a lapsed
+ * user. Best-effort and fully swallowed — never blocks the caller.
+ *
+ * Call AFTER permission is granted (getExpoPushTokenAsync needs the grant).
+ */
+export async function registerPushToken(): Promise<void> {
+  try {
+    if (Platform.OS === 'web' || !isSupabaseConfigured) return;
+    const { data } = await Notifications.getExpoPushTokenAsync({ projectId: EAS_PROJECT_ID });
+    const token = data;
+    if (!token) return;
+
+    const user = await resolveCurrentUser();
+    if (!user) return; // RLS needs auth.uid() = user_id; no session → skip
+
+    // Positive minutes = behind UTC (getTimezoneOffset returns +300 for ET); the
+    // edge function subtracts this to get local time, so store it as-is.
+    const tz_offset_minutes = -new Date().getTimezoneOffset();
+
+    await supabase.from('push_tokens').upsert(
+      {
+        user_id: user.id,
+        token,
+        platform: Platform.OS,
+        tz_offset_minutes,
+        updated_at: new Date().toISOString(),
+      },
+      { onConflict: 'user_id' },
+    );
+  } catch {
+    // Best-effort — a device with no token / offline just isn't reachable yet.
+  }
 }
 
 /**

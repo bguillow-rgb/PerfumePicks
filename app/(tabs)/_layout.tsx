@@ -11,10 +11,12 @@ import { useProStore } from '@/src/stores/useProStore';
 import { useRetailerLinksStore } from '@/src/stores/useRetailerLinksStore';
 import { useNotificationStore } from '@/src/stores/useNotificationStore';
 import { useSessionStore } from '@/src/stores/useSessionStore';
+import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useCompareStore } from '@/src/stores/useCompareStore';
 import { FeedbackBubble } from '@/src/components/feedback/FeedbackBubble';
 import {
   requestNotificationPermission,
+  registerPushToken,
   scheduleSotdNotification,
   scheduleAddBottlesNotification,
 } from '@/src/lib/notifications';
@@ -247,25 +249,31 @@ export default function TabLayout() {
 
   // ── Notification onboarding prompt ──────────────────────────────────────
   const userId = useSessionStore((s) => s.userId);
+  const dna = useTasteProfileStore((s) => s.dna);
   const onboardingPromptShown = useNotificationStore((s) => s.onboardingPromptShown);
   const setOnboardingPromptShown = useNotificationStore((s) => s.setOnboardingPromptShown);
   const [showNotifPrompt, setShowNotifPrompt] = useState(false);
 
   useEffect(() => {
-    // Show once, after the user has a session (signed in or guest) and hasn't
-    // seen the prompt yet. Small delay so the home tab finishes animating in.
-    if (userId && !onboardingPromptShown) {
-      const timer = setTimeout(() => setShowNotifPrompt(true), 1200);
+    // Ask AFTER the value moment, not on cold launch. The prompt used to fire
+    // 1.2s after the home tab loaded for anyone with a session — before the user
+    // had felt anything the notification delivers, which torched the accept rate.
+    // Now it waits until they have a Fragrance DNA (so they've been through the
+    // reveal and are looking at their first Scent of the Day), then asks in terms
+    // of that: "want tomorrow's pick?" The delay lets the SOTD settle on screen.
+    if (userId && dna && !onboardingPromptShown) {
+      const timer = setTimeout(() => setShowNotifPrompt(true), 2500);
       return () => clearTimeout(timer);
     }
-  }, [userId, onboardingPromptShown]);
+  }, [userId, dna, onboardingPromptShown]);
 
   const handleNotifAccept = async () => {
     setShowNotifPrompt(false);
     setOnboardingPromptShown();
     const granted = await requestNotificationPermission();
     if (granted) {
-      await scheduleSotdNotification();
+      await registerPushToken(); // server push (reaches lapsed users)
+      await scheduleSotdNotification(); // local 8am (belt-and-suspenders on-device)
       await scheduleAddBottlesNotification();
     }
   };
@@ -388,9 +396,9 @@ export default function TabLayout() {
         <View style={notifPrompt.overlay}>
           <View style={notifPrompt.card}>
             <Text style={notifPrompt.emoji}>🌸</Text>
-            <Text style={notifPrompt.title}>Stay in your scent moment</Text>
+            <Text style={notifPrompt.title}>Your scent, every morning</Text>
             <Text style={notifPrompt.body}>
-              Get your daily fragrance pick every morning, and a nudge to build your wardrobe.
+              We'll send tomorrow's Scent of the Day at 8am, picked from your wardrobe for the day ahead.
             </Text>
             <Pressable style={notifPrompt.acceptBtn} onPress={handleNotifAccept}>
               <Text style={notifPrompt.acceptText}>Turn on notifications</Text>

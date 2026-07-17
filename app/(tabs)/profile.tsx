@@ -25,6 +25,7 @@ import { useNotificationStore } from '@/src/stores/useNotificationStore';
 import { FeedbackSheet } from '@/src/components/feedback/FeedbackSheet';
 import {
   requestNotificationPermission,
+  registerPushToken,
   scheduleSotdNotification,
   cancelSotdNotification,
   scheduleAddBottlesNotification,
@@ -420,6 +421,7 @@ function NotificationsSection() {
           return;
         }
       }
+      await registerPushToken(); // server push (reaches lapsed users)
       await scheduleSotdNotification();
     } else {
       await cancelSotdNotification();
