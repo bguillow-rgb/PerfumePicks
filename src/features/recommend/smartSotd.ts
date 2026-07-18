@@ -60,6 +60,45 @@ function daysSince(iso: string | null): number | null {
   return Number.isFinite(d) ? d : null;
 }
 
+/** Whole days between two local YYYY-MM-DD strings (b - a). */
+function daysBetweenYmd(a: string, b: string): number {
+  const ms = Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`);
+  return Number.isFinite(ms) ? Math.round(ms / 86_400_000) : 0;
+}
+
+/**
+ * Demote bottles we ALREADY SHOWED on recent days, so the SOTD rotates.
+ *
+ * This is what actually produces variety. Wear-recency can't: nobody logs wears,
+ * so every bottle reads "never worn", every bottle gets the same bonus, and the
+ * ranking collapses to a static fit score that the ±0.02 jitter can't reorder —
+ * the top-fitting bottle then wins every day forever (observed: same pick for a
+ * week across a 37-bottle wardrobe). The app always knows what it displayed, so
+ * that's the signal we rotate on.
+ *
+ * Sized to beat real fit-score gaps (jitter at 0.04 never could). Decays to zero
+ * after a week, so a genuine favorite returns rather than being exiled.
+ *
+ * IMPORTANT: entries dated today (or later) are ignored. Today's pick is recorded
+ * the moment it renders, and penalizing it would knock it off its own slot on the
+ * next re-render — the SOTD must stay locked for the whole day.
+ */
+export function shownPenalty(
+  fragranceId: string,
+  shown: { fragranceId: string; date: string }[],
+  todayYmd: string,
+): number {
+  let penalty = 0;
+  for (const entry of shown) {
+    if (entry.fragranceId !== fragranceId) continue;
+    if (entry.date >= todayYmd) continue; // today/future — never penalize (day-stability)
+    const days = daysBetweenYmd(entry.date, todayYmd);
+    const p = days <= 1 ? -0.40 : days <= 2 ? -0.30 : days <= 4 ? -0.20 : days <= 7 ? -0.10 : 0;
+    if (p < penalty) penalty = p; // most recent showing dominates
+  }
+  return penalty;
+}
+
 /**
  * DNA-voiced "why this, today" line. Leads with the strongest fresh signal.
  * Falls back to the base scoreFragrance reason so we never show nothing.
@@ -126,15 +165,26 @@ export function selectSmartSotd(
   // Whether the user actually logs wears. Gates the recency ("last worn / not
   // in rotation") reasons so we never assert wear behavior we can't trust.
   hasWearSignal: boolean,
+  // What this device already SHOWED as SOTD, by local day. This is what actually
+  // makes the pick rotate (see shownPenalty). Defaults to empty = old behavior.
+  shown: { fragranceId: string; date: string }[] = [],
 ): SotdPick[] {
   if (candidates.length === 0) return [];
 
   const JITTER = 0.04; // small: only reorders genuine near-ties, deterministically
+  // daySeed is `${userId}|${YYYY-MM-DD}` — that local date is the rotation clock.
+  const todayYmd = daySeed.split('|')[1] ?? '';
 
   const scored = candidates.map((f) => {
     const lastWorn = lastWornMap.get(f.id) ?? null;
     const base = scoreDailyCandidate(f, profile, ctx, lastWorn);
-    const score = Math.max(0, Math.min(1, base.score + seededJitter(f.id, daySeed, JITTER)));
+    const score = Math.max(
+      0,
+      Math.min(
+        1,
+        base.score + shownPenalty(f.id, shown, todayYmd) + seededJitter(f.id, daySeed, JITTER),
+      ),
+    );
     return { base, f, lastWorn, score };
   });
 

@@ -45,6 +45,7 @@ import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { blendProfiles } from '@/src/features/dna/blend';
 import { RECOMMENDATION_SIGNAL_WEIGHTS } from '@/src/features/dna/signals';
 import { selectSmartSotd, sotdDaySeed } from './smartSotd';
+import { useSotdHistoryStore } from '@/src/stores/useSotdHistoryStore';
 import { useSmartSotdEnabled, useSotdWeatherEnabled } from './sotdFlag';
 import { useDailyWeather } from '@/src/lib/weather';
 import { getCurrentUser } from '@/src/stores/useAuthStore';
@@ -435,6 +436,10 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
   const weather = useDailyWeather(weatherEnabled);
   // Locked per (user, local day): stable within the day, rotates across days.
   const daySeed = useMemo(() => sotdDaySeed(getCurrentUser()?.id), []);
+  // What we already showed on previous days — the signal the rotation actually
+  // runs on, since wear logs are too sparse to differentiate anything.
+  const shownHistory = useSotdHistoryStore((s) => s.shown);
+  const recordShown = useSotdHistoryStore((s) => s.record);
 
   const ownedItems = useMemo(
     () => items.filter((i) => i.status === 'have'),
@@ -505,7 +510,12 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
     let fellBack = false;
     if (smartEnabled) {
       try {
-        return { list: selectSmartSotd(candidates, profile, ctx, lastWornMap, daySeed, dna, limit, hasWearSignal), fellBack: false };
+        return {
+          list: selectSmartSotd(
+            candidates, profile, ctx, lastWornMap, daySeed, dna, limit, hasWearSignal, shownHistory,
+          ),
+          fellBack: false,
+        };
       } catch (e) {
         if (__DEV__) console.warn('[sotd] smart engine failed, using legacy:', e);
         fellBack = true; // smart was ON but threw — a genuine fallback worth logging
@@ -533,7 +543,10 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
         lastWorn: lastWornMap.get(r.fragrance.id) ?? null,
       }));
     return { list, fellBack };
-  }, [ownedItems, fetchedFragrances, profile, ctx, lastWornMap, limit, smartEnabled, daySeed, dna, logs]);
+    // shownHistory is a dep so a fresh day's history is picked up. Recording
+    // today's pick re-runs this, but shownPenalty ignores today's own entry, so
+    // the result is identical — the pick stays locked for the day, no loop.
+  }, [ownedItems, fetchedFragrances, profile, ctx, lastWornMap, limit, smartEnabled, daySeed, dna, logs, shownHistory]);
 
   // Front-door observability (Mark Z P2): log a silent smart→legacy fallback once
   // per mount so the SOTD fallback rate is visible in prod. Fires only on a real
@@ -545,6 +558,16 @@ export function useWardrobePicks(limit = 3): { picks: WardrobePick[]; loading: b
       track(EVENTS.SOTD_ENGINE_FALLBACK);
     }
   }, [picksResult.fellBack]);
+
+  // Remember what we showed today so tomorrow can pick something else. This is
+  // the whole rotation mechanism — it needs no action from the user, unlike the
+  // wear log it used to (fruitlessly) depend on. The store is idempotent per day.
+  const hero = picksResult.list[0]?.fragrance.id;
+  useEffect(() => {
+    if (!hero) return;
+    const todayYmd = daySeed.split('|')[1];
+    if (todayYmd) recordShown(hero, todayYmd);
+  }, [hero, daySeed, recordShown]);
 
   return { picks: picksResult.list, loading: ownedItems.length > 0 && !fetchDone };
 }
