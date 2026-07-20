@@ -15,6 +15,20 @@ import { Platform } from 'react-native';
 import { useNotificationStore } from '@/src/stores/useNotificationStore';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { resolveCurrentUser } from '@/src/stores/useAuthStore';
+import { track, EVENTS } from '@/src/lib/observability';
+
+/**
+ * Which KIND of authorization we hold, for the funnel:
+ *   'provisional' — silent quiet grant (Notification Center only, no banner).
+ *   'authorized'  — full/prominent (granted outright, or the user tapped iOS's
+ *                   "Keep" to upgrade). provisional -> authorized IS the Keep rate.
+ */
+function authorizationLabel(
+  perms: Notifications.NotificationPermissionsStatus,
+): 'provisional' | 'authorized' | 'none' {
+  if (perms.ios?.status === Notifications.IosAuthorizationStatus.PROVISIONAL) return 'provisional';
+  return perms.status === 'granted' ? 'authorized' : 'none';
+}
 
 // EAS project id — getExpoPushTokenAsync needs it to mint a token bound to this
 // project. Mirrors app.json expo.extra.eas.projectId.
@@ -70,15 +84,32 @@ export async function requestNotificationPermission(): Promise<boolean> {
  *
  * Call AFTER permission is granted (getExpoPushTokenAsync needs the grant).
  */
-export async function registerPushToken(): Promise<void> {
-  try {
-    if (Platform.OS === 'web' || !isSupabaseConfigured) return;
-    const { data } = await Notifications.getExpoPushTokenAsync({ projectId: EAS_PROJECT_ID });
-    const token = data;
-    if (!token) return;
+export async function registerPushToken(status?: 'provisional' | 'authorized'): Promise<void> {
+  if (Platform.OS === 'web' || !isSupabaseConfigured) return;
 
-    const user = await resolveCurrentUser();
-    if (!user) return; // RLS needs auth.uid() = user_id; no session → skip
+  // Mint the Expo token. This is the single most likely silent-failure point
+  // (no APNs entitlement, no network, simulator), so it gets its own stage.
+  let token: string | undefined;
+  try {
+    const { data } = await Notifications.getExpoPushTokenAsync({ projectId: EAS_PROJECT_ID });
+    token = data;
+  } catch (e) {
+    track(EVENTS.PUSH_REGISTER_FAILED, { stage: 'token_fetch', message: String((e as Error)?.message ?? e).slice(0, 200) });
+    return;
+  }
+  if (!token) {
+    track(EVENTS.PUSH_REGISTER_FAILED, { stage: 'token_fetch', message: 'empty token' });
+    return;
+  }
+
+  const user = await resolveCurrentUser();
+  if (!user) {
+    // RLS needs auth.uid() = user_id; no session → can't write. Now visible.
+    track(EVENTS.PUSH_REGISTER_FAILED, { stage: 'no_user' });
+    return;
+  }
+
+  try {
 
     // IANA zone ('America/New_York') is the source of truth — it resolves the
     // right offset for the actual send date, so 8am local stays 8am across DST.
@@ -92,7 +123,7 @@ export async function registerPushToken(): Promise<void> {
     }
     const tz_offset_minutes = -new Date().getTimezoneOffset();
 
-    await supabase.from('push_tokens').upsert(
+    const { error } = await supabase.from('push_tokens').upsert(
       {
         user_id: user.id,
         token,
@@ -105,8 +136,13 @@ export async function registerPushToken(): Promise<void> {
       },
       { onConflict: 'user_id' },
     );
-  } catch {
-    // Best-effort — a device with no token / offline just isn't reachable yet.
+    if (error) {
+      track(EVENTS.PUSH_REGISTER_FAILED, { stage: 'upsert', message: String(error.message).slice(0, 200) });
+      return;
+    }
+    track(EVENTS.PUSH_TOKEN_REGISTERED, { status: status ?? null });
+  } catch (e) {
+    track(EVENTS.PUSH_REGISTER_FAILED, { stage: 'unknown', message: String((e as Error)?.message ?? e).slice(0, 200) });
   }
 }
 
@@ -126,8 +162,9 @@ export async function registerPushToken(): Promise<void> {
  * without asking. Call on every launch (idempotent).
  */
 export async function ensurePushRegistered(): Promise<void> {
+  if (Platform.OS === 'web' || !isSupabaseConfigured) return;
+  track(EVENTS.PUSH_REGISTER_ATTEMPTED);
   try {
-    if (Platform.OS === 'web' || !isSupabaseConfigured) return;
     const perms = await Notifications.requestPermissionsAsync({
       ios: {
         allowProvisional: true, // silent quiet-notification grant when undetermined
@@ -136,13 +173,15 @@ export async function ensurePushRegistered(): Promise<void> {
         allowSound: false,
       },
     });
-    const authorized =
-      perms.status === 'granted' ||
-      perms.ios?.status === Notifications.IosAuthorizationStatus.PROVISIONAL;
-    if (!authorized) return;
-    await registerPushToken();
-  } catch {
-    // Best-effort — a device that can't register just isn't reachable yet.
+    const label = authorizationLabel(perms);
+    if (label === 'none') {
+      track(EVENTS.PUSH_PERMISSION_DENIED);
+      return;
+    }
+    track(EVENTS.PUSH_PERMISSION_GRANTED, { status: label });
+    await registerPushToken(label);
+  } catch (e) {
+    track(EVENTS.PUSH_REGISTER_FAILED, { stage: 'unknown', message: String((e as Error)?.message ?? e).slice(0, 200) });
   }
 }
 

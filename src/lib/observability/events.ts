@@ -151,6 +151,21 @@ export const EVENTS = {
   // silently degrading and the smart engine needs a look (or the kill switch).
   SOTD_ENGINE_FALLBACK: 'sotd_engine_fallback',
 
+  // ─── Push registration funnel ────────────────────────────────────────
+  // The audience-builder was a black box: registerPushToken swallowed EVERY
+  // failure in a bare catch{}, so "1 token, no idea why" was undiagnosable.
+  // These make each step observable. Read them as a funnel:
+  //   attempted -> (authorized | denied | error) -> registered
+  PUSH_REGISTER_ATTEMPTED:  'push_register_attempted',  // ensurePushRegistered ran
+  // { status: 'provisional' | 'authorized' } — the silent quiet grant vs full.
+  // provisional -> authorized over time IS the iOS "Keep" upgrade rate.
+  PUSH_PERMISSION_GRANTED:  'push_permission_granted',
+  PUSH_PERMISSION_DENIED:   'push_permission_denied',   // explicitly denied / undetermined-no-grant
+  PUSH_TOKEN_REGISTERED:    'push_token_registered',    // { status } — upsert to push_tokens ok
+  // { stage: 'token_fetch' | 'no_user' | 'upsert' | 'unknown', message } —
+  // WHERE it broke, instead of the old silent swallow.
+  PUSH_REGISTER_FAILED:     'push_register_failed',
+
   // ─── Invite / referral loop (Feature A — DNA-as-hook viral share) ─────
   // Fired when the user opens the native share sheet with their DNA invite.
   INVITE_SHARED:      'invite_shared',      // props: { archetype, source }
