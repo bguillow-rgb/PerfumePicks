@@ -5,7 +5,7 @@ import * as Haptics from 'expo-haptics';
 import { COLORS, FONTS, RADIUS, SPACING, TYPE } from '@/src/constants/theme';
 import type { BuyableMatch } from '@/src/features/dna/score';
 import { handleAffiliateClick } from '@/src/lib/affiliate';
-import { buyCtaLabel } from '@/src/lib/buyLabel';
+import { buyCtaLabel, formatPrice } from '@/src/lib/buyLabel';
 
 /**
  * TopMatchCard — the affiliate-first "TOP MATCH" hero for the DNA reveal +
@@ -37,11 +37,9 @@ interface TopMatchCardProps {
 export function TopMatchCard({ match, sourceScreen, onViewDetails, label = 'YOUR TOP MATCH' }: TopMatchCardProps) {
   const frag = match.fragrance;
   const buyable = match.buyable;
-  // Show real precision on the buy anchor: whole dollars when even, cents otherwise
-  // ($29.99 stays $29.99, not $30) so the label matches what the retailer charges.
-  const priceLabel = buyable
-    ? `$${(buyable.priceCents / 100).toFixed(buyable.priceCents % 100 === 0 ? 0 : 2)}`
-    : null;
+  // ONE shared formatter for every buy surface (buyLabel.formatPrice): whole
+  // dollars when even, cents otherwise, never rounded.
+  const priceLabel = buyable ? formatPrice(buyable.priceCents) : null;
   const reason = match.reasons[0];
 
   const onBuy = () => {

@@ -16,7 +16,7 @@ import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet
 import { DupeList } from '@/src/components/fragrance/DupeList';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { handleAffiliateClick } from '@/src/lib/affiliate';
-import { buyCtaLabel, buyCtaHint, formatPrice, retailerDisplayName } from '@/src/lib/buyLabel';
+import { buyCtaLabel, buyCtaHint, formatPrice, rankBuyLinks, retailerDisplayName } from '@/src/lib/buyLabel';
 import * as WebBrowser from 'expo-web-browser';
 import { CelebritySection } from '@/src/components/fragrance/CelebritySection';
 import { ComplimentsSection } from '@/src/components/fragrance/ComplimentsSection';
@@ -243,6 +243,16 @@ function FragranceDetailScreen() {
     () => fragrance ? wardrobeItems.find((i) => i.fragrance_id === fragrance.id) : undefined,
     [wardrobeItems, fragrance],
   );
+  // Post-handoff prompt guards (Mark Z #4): the browser sheet can stay open for
+  // minutes, so the .then() below outlives renders. Read wardrobe membership
+  // through a ref (no stale closure) and never set state after unmount.
+  const inWardrobeRef = useRef(inWardrobe);
+  inWardrobeRef.current = inWardrobe;
+  const mountedRef = useRef(true);
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => { mountedRef.current = false; };
+  }, []);
   const wearLogs = useMemo(
     () => fragrance
       ? allLogs.filter((l) => l.fragrance_id === fragrance.id).sort((a, b) => b.worn_on.localeCompare(a.worn_on))
@@ -303,7 +313,12 @@ function FragranceDetailScreen() {
       .then(({ data, error }) => {
         if (error) { console.warn('[retailer-links]', error.message); return; }
         if (data?.length) {
-          setRetailerLinks(data.map(({ retailer, url, price_cents, checkout_url }) => ({ retailer, url, price_cents, checkout_url: checkout_url ?? null })));
+          // rankBuyLinks: deterministic primary CTA — checkout-capable rows
+          // first, then price. Without it, [0] was Postgres row order (a
+          // coin-flip merchant on the hero Buy button — Mark Z #3).
+          setRetailerLinks(rankBuyLinks(
+            data.map(({ retailer, url, price_cents, checkout_url }) => ({ retailer, url, price_cents, checkout_url: checkout_url ?? null }))
+          ));
           WebBrowser.warmUpAsync().catch(() => {});
         }
       });
@@ -487,12 +502,14 @@ function FragranceDetailScreen() {
               // identical to any other sale and the feature can never prove it
               // earns money (DupeRow pushes ?from=dupe).
               source_screen: from === 'dupe' ? 'dupe_rail' : 'fragrance_detail_rail',
-            }).then(() => {
+            }).then((opened) => {
               // Post-handoff moment (Chief UX F6, the pattern Percolate proved):
               // the sheet just closed, the user is back, and this is the
-              // highest-intent moment to capture state. If the fragrance isn't
-              // in their collection yet, offer it via the existing sheet.
-              if (!inWardrobe) {
+              // highest-intent moment to capture state. Guards (Mark Z #4):
+              // only after a REAL open+dismiss (never on a failed open), only
+              // while mounted, and wardrobe membership read through the ref so
+              // the minutes-old closure can't be stale.
+              if (opened && mountedRef.current && !inWardrobeRef.current) {
                 setWardrobeInitStatus('have');
                 setWardrobeSheetOpen(true);
               }

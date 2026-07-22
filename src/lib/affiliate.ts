@@ -44,7 +44,10 @@ export function affiliateNetworkForUrl(url: string): 'cj' | 'awin' | 'direct' {
 // so it can NEVER block or delay opening the retailer. PostHog gets the same
 // event (below) as a secondary signal, but it proved non-durable (project wiped
 // 2026-07-03), so this row is what reporting counts.
-async function logAffiliateClick(params: AffiliateClickParams): Promise<void> {
+async function logAffiliateClick(
+  params: AffiliateClickParams,
+  landing: 'checkout' | 'product',
+): Promise<void> {
   try {
     if (!isSupabaseConfigured) return;
     let userId: string | null = null;
@@ -63,6 +66,9 @@ async function logAffiliateClick(params: AffiliateClickParams): Promise<void> {
       product_id: params.fragrance_id,
       source_screen: params.source_screen,
       price_cents: params.price_cents,
+      // PRD §7: the checkout-vs-product dimension on the DURABLE ledger, so the
+      // conversion comparison survives a PostHog wipe (it happened once).
+      landing,
     });
   } catch {
     /* never throw from a click handler */
@@ -92,12 +98,14 @@ function reportFailure(params: AffiliateClickParams, reason: string): void {
 }
 
 /**
- * Returns a promise that resolves when the in-app browser sheet is DISMISSED
- * (the user is back in the app). Callers may ignore it (legacy behavior) or
- * chain on it for a post-handoff moment (e.g. the fragrance-detail "add to
- * your collection?" prompt — Chief UX F6, the pattern Percolate proved).
+ * Resolves `true` when the in-app browser sheet was genuinely opened and then
+ * DISMISSED (the user went to the retailer and came back), `false` when the
+ * browser never opened (dead link / OS refusal). Callers may ignore it (legacy
+ * behavior) or chain on it for a post-handoff moment (e.g. the fragrance-detail
+ * "add to your collection?" prompt — Chief UX F6). The boolean matters: a
+ * failed open must NOT trigger post-shopping prompts (Mark Z #4).
  */
-export function handleAffiliateClick(params: AffiliateClickParams): Promise<void> {
+export function handleAffiliateClick(params: AffiliateClickParams): Promise<boolean> {
   // Checkout 2.0 fallback decision — the ONE place it happens. Streamlined
   // checkout only when the row has a permalink AND the launch-gate flag is on;
   // everything else behaves byte-identically to the pre-2.0 handoff.
@@ -107,7 +115,7 @@ export function handleAffiliateClick(params: AffiliateClickParams): Promise<void
 
   // Durable ledger write (source of truth) + PostHog event (secondary signal).
   // Both are fire-and-forget; neither gates the browser open below.
-  void logAffiliateClick(params);
+  void logAffiliateClick(params, landing);
   track(EVENTS.AFFILIATE_OUTBOUND_CLICKED, {
     fragrance_id: params.fragrance_id,
     retailer: params.retailer,
@@ -141,9 +149,11 @@ export function handleAffiliateClick(params: AffiliateClickParams): Promise<void
         landing,
         dwell_ms: Date.now() - openedAt,
       });
+      return true;
     })
     .catch((err) => {
       console.warn('[affiliate] failed to open URL:', err);
       reportFailure({ ...params, url: effectiveUrl }, 'open_failed');
+      return false;
     });
 }

@@ -45,8 +45,21 @@ effectiveUrl = useCheckout ? checkout_url : url
 1. Paste migration (inert). 2. Run `npx tsx scripts/etl-perfumania-shopify.ts`
 (populates `checkout_url`). 3. OTA client (dark). 4. **Gate (PRD §8):** confirm a
 CJ commission posts for a cart-permalink purchase (test order **P574076**,
-2026-07-22). 5. Flip `app_settings.checkout_2_enabled='true'`. Rollback = set it
-back to `'false'`; takes effect on next app foreground.
+2026-07-22). 5. Flip the flag. Rollback = set it back; takes effect on next app
+foreground.
+
+**Flip runbook (exact SQL — `app_settings.value` is TEXT, use the string):**
+```sql
+UPDATE app_settings SET value = 'true'  WHERE key = 'checkout_2_enabled';  -- enable
+UPDATE app_settings SET value = 'false' WHERE key = 'checkout_2_enabled';  -- rollback
+```
+The client accepts `'true'`/`'1'`; anything else reads as off (fail closed).
+
+**Standing rule (clobber guard):** only `etl-perfumania-shopify.ts` may pass
+`{ manageCheckout: true }` to `upsertProducts`. If perfumania is ever moved to
+the CJ SFTP feed (`etl-cj-sftp.ts`), that ETL must NOT manage the checkout
+columns unless it also builds permalinks — otherwise its rows leave them
+untouched by design.
 
 ## Test matrix
 

@@ -215,10 +215,47 @@ export function parseGender(
  *
  * Returns counts of { created, updated, linked }.
  */
+/** Retailer-link row shape. checkout_* keys are ABSENT (not null) unless the
+ *  calling ETL manages them — an absent key means PostgREST leaves the column
+ *  untouched on conflict-update, so a non-Shopify ETL (e.g. the CJ SFTP feed)
+ *  can never clobber another ETL's permalinks (Mark Z review, P0 #1). */
+export interface LinkRow {
+  fragrance_id: string;
+  retailer:     string;
+  url:          string;
+  price_cents:  number | null;
+  checkout_url?: string | null;
+  checkout_variant_id?: number | null;
+}
+
+/** Pure row builder — exported so tests can pin the clobber-guard contract. */
+export function buildLinkRow(
+  fragId: string,
+  p: AffiliateProduct,
+  manageCheckout: boolean,
+): LinkRow {
+  const row: LinkRow = {
+    fragrance_id: fragId,
+    retailer:     p.retailer_id,
+    url:          p.affiliate_url,
+    price_cents:  p.price_cents,
+  };
+  if (manageCheckout) {
+    // Explicit null (not undefined) so the OWNING ETL clears a stale permalink
+    // it can no longer build; other ETLs never touch the columns at all.
+    row.checkout_url        = p.checkout_url ?? null;
+    row.checkout_variant_id = p.checkout_variant_id ?? null;
+  }
+  return row;
+}
+
 export async function upsertProducts(
   supabase: SupabaseClient,
   products: AffiliateProduct[],
   retailerLabel: string,
+  /** manageCheckout: ONLY the ETL that owns checkout permalinks (the perfumania
+   *  Shopify ETL) passes true. Default false = checkout columns untouched. */
+  opts: { manageCheckout?: boolean } = {},
 ): Promise<UpsertResult> {
   const result: UpsertResult = { created: 0, updated: 0, linked: 0 };
   if (!products.length) return result;
@@ -339,14 +376,7 @@ export async function upsertProducts(
 
     // Deduplicate by fragrance_id — keep cheapest price when multiple products
     // in the same batch resolve to the same fragrance slug.
-    const linkMap = new Map<string, {
-      fragrance_id: string;
-      retailer:     string;
-      url:          string;
-      price_cents:  number | null;
-      checkout_url: string | null;
-      checkout_variant_id: number | null;
-    }>();
+    const linkMap = new Map<string, LinkRow>();
 
     for (const p of batch) {
       const slug   = fragranceSlug(p.brand, p.name);
@@ -360,16 +390,7 @@ export async function upsertProducts(
           (existing.price_cents === null || p.price_cents < existing.price_cents));
 
       if (cheaper) {
-        linkMap.set(fragId, {
-          fragrance_id: fragId,
-          retailer:     p.retailer_id,
-          url:          p.affiliate_url,
-          price_cents:  p.price_cents,
-          // Checkout 2.0: explicit null (not undefined) so a re-run that can no
-          // longer build a permalink CLEARS the stale one instead of keeping it.
-          checkout_url: p.checkout_url ?? null,
-          checkout_variant_id: p.checkout_variant_id ?? null,
-        });
+        linkMap.set(fragId, buildLinkRow(fragId, p, opts.manageCheckout === true));
       }
     }
 

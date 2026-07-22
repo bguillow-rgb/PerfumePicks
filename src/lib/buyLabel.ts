@@ -51,6 +51,25 @@ export function buyCtaLabel(opts: {
 }
 
 /**
+ * Deterministic buy-row ranking (Mark Z review #3). The detail screen's query
+ * had no ORDER BY, so `retailerLinks[0]` — the PRIMARY Buy button — was
+ * whatever row Postgres returned first: a coin-flip merchant, and Checkout 2.0
+ * randomly not firing when a permalink row existed. Rank: checkout-capable
+ * rows first, then higher price (monetization-first, matching the store's
+ * buyable index). Pure + exported so the contract is testable.
+ */
+export function rankBuyLinks<T extends { checkout_url?: string | null; price_cents: number | null }>(
+  links: T[],
+): T[] {
+  return [...links].sort((a, b) => {
+    const aCheckout = a.checkout_url ? 1 : 0;
+    const bCheckout = b.checkout_url ? 1 : 0;
+    if (aCheckout !== bCheckout) return bCheckout - aCheckout;
+    return (b.price_cents ?? -1) - (a.price_cents ?? -1);
+  });
+}
+
+/**
  * Accessibility hint matching the destination (screen-reader users get the
  * same honesty as the label — Chief UX F11).
  */

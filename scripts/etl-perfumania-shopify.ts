@@ -31,6 +31,12 @@ import {
   parseGender,
   upsertProducts,
 } from './lib/affiliate-etl-base';
+import {
+  cjUrl,
+  cjCartUrl,
+  DEFAULT_CJ_WEBSITE_ID,
+  PERFUMANIA_BASE_URL,
+} from './lib/perfumania-urls';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
@@ -47,29 +53,9 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSessi
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const CJ_WEBSITE_ID    = process.env.CJ_WEBSITE_ID || '101759456';   // Perfume Picks website ID — NOT the account CID (7966973); click- URLs need the website ID for mobile attribution. Override via env.
-const CJ_ADVERTISER_ID = '17277211';   // Perfumania's CJ advertiser ID
-const BASE_URL         = 'https://perfumania.com';
-const RETAILER_ID      = 'perfumania';
-
-/** Build CJ affiliate URL for a Perfumania product handle */
-function cjUrl(handle: string): string {
-  const dest = encodeURIComponent(`${BASE_URL}/products/${handle}`);
-  return `https://www.jdoqocy.com/click-${CJ_WEBSITE_ID}-${CJ_ADVERTISER_ID}?url=${dest}`;
-}
-
-/**
- * Checkout 2.0 (plans/PRD-checkout-2.0.md): CJ affiliate URL whose destination
- * is the Shopify CART PERMALINK for one variant — lands the buyer on
- * perfumania's checkout with the item already in the bag (verified live
- * 2026-07-22: fresh session → checkout page; Shop Pay session → one-tap
- * "Pay now"). Same click wrapper as cjUrl, so attribution routing is identical;
- * only the destination differs.
- */
-function cjCartUrl(variantId: number): string {
-  const dest = encodeURIComponent(`${BASE_URL}/cart/${variantId}:1`);
-  return `https://www.jdoqocy.com/click-${CJ_WEBSITE_ID}-${CJ_ADVERTISER_ID}?url=${dest}`;
-}
+const CJ_WEBSITE_ID = process.env.CJ_WEBSITE_ID || DEFAULT_CJ_WEBSITE_ID;
+const BASE_URL      = PERFUMANIA_BASE_URL;
+const RETAILER_ID   = 'perfumania';
 
 // ─── Shopify types ────────────────────────────────────────────────────────────
 
@@ -238,13 +224,22 @@ async function main(): Promise<void> {
       continue;
     }
 
-    // Pick cheapest variant with a valid price
+    // Pick cheapest variant with a valid price. For Checkout 2.0 the pick must
+    // ALSO be available — a cart permalink pointing at a sold-out variant lands
+    // the buyer on an empty/blocked checkout with no way to detect it (Mark Z
+    // review #2). `available !== false` keeps feeds that omit the field.
     const validVariants = p.variants
       .filter((v) => parseFloat(v.price) > 0)
       .sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     if (!validVariants.length) { skipCount++; continue; }
 
-    const best        = validVariants[0];
+    // Cheapest AVAILABLE variant drives BOTH the shown price and the permalink,
+    // so the checkout total always matches the Buy button. Only when NO variant
+    // is available do we fall back to the cheapest for price display — and then
+    // build no permalink at all (product-page handoff).
+    const availableVariants = validVariants.filter((v) => v.available !== false);
+    const best        = availableVariants[0] ?? validVariants[0];
+    const canCheckout = availableVariants.length > 0;
     const price_cents = Math.round(parseFloat(best.price) * 100);
     const image_url   = p.images[0]?.src ?? '';
 
@@ -254,15 +249,12 @@ async function main(): Promise<void> {
       concentration: parseConcentration(p.title),
       gender:        parseGender(p.title),
       image_url,
-      affiliate_url: cjUrl(p.handle),
+      affiliate_url: cjUrl(p.handle, CJ_WEBSITE_ID),
       price_cents,
       retailer_id:   RETAILER_ID,
       source_id:     String(p.id),
-      // Checkout 2.0: the cart permalink is built from the SAME variant the
-      // price came from, so the checkout total always matches the price shown
-      // on the Buy button.
-      checkout_url:        cjCartUrl(best.id),
-      checkout_variant_id: best.id,
+      checkout_url:        canCheckout ? cjCartUrl(best.id, CJ_WEBSITE_ID) : null,
+      checkout_variant_id: canCheckout ? best.id : null,
     });
   }
 
@@ -273,8 +265,10 @@ async function main(): Promise<void> {
     ` | other skipped: ${skipCount}`,
   );
 
-  // Upsert — creates new fragrances AND adds retailer links
-  const result = await upsertProducts(supabase, products, RETAILER_ID);
+  // Upsert — creates new fragrances AND adds retailer links. This ETL is the
+  // ONE owner of the checkout columns (clobber guard: every other caller of
+  // upsertProducts leaves them untouched).
+  const result = await upsertProducts(supabase, products, RETAILER_ID, { manageCheckout: true });
 
   console.log(
     `\nDone.` +

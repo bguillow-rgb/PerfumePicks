@@ -20,6 +20,12 @@ ALTER TABLE fragrance_retailer_links
   ADD COLUMN IF NOT EXISTS checkout_url        TEXT,
   ADD COLUMN IF NOT EXISTS checkout_variant_id BIGINT;
 
+-- The conversion comparison (PRD §7: checkout vs product) must survive on the
+-- DURABLE ledger, not only in PostHog (which was wiped once, 2026-07-03).
+-- 'checkout' = cart-permalink landing, 'product' = product-page landing.
+ALTER TABLE affiliate_clicks
+  ADD COLUMN IF NOT EXISTS landing TEXT;
+
 -- Launch-gate flag. Ships OFF: the client ignores checkout_url until this is
 -- true, so we can populate data + OTA the code dark and flip live (no release)
 -- only after CJ attribution is confirmed through the streamlined flow
