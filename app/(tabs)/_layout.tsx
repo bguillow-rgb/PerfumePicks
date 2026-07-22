@@ -10,7 +10,7 @@ import { useSwipeStore, FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStor
 import { useProStore } from '@/src/stores/useProStore';
 import { useRetailerLinksStore } from '@/src/stores/useRetailerLinksStore';
 import { useNotificationStore } from '@/src/stores/useNotificationStore';
-import { useSessionStore } from '@/src/stores/useSessionStore';
+import { useAuthStore } from '@/src/stores/useAuthStore';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useCompareStore } from '@/src/stores/useCompareStore';
 import { FeedbackBubble } from '@/src/components/feedback/FeedbackBubble';
@@ -250,7 +250,14 @@ export default function TabLayout() {
   const dailySwipeDate = useSwipeStore((s) => s.dailySwipeDate);
 
   // ── Notification onboarding prompt ──────────────────────────────────────
-  const userId = useSessionStore((s) => s.userId);
+  // Read the CURRENT user from the shared auth store (useAuthStore), which
+  // app/_layout.tsx populates on every auth change. This used to read
+  // useSessionStore.userId — a legacy store that NOTHING populates, so it was
+  // permanently null. That silently broke everything gated on it: the push
+  // registration effect below never ran (hence ~1 token ever, no push_* events)
+  // and the notification upgrade prompt never showed. Root cause of the dead
+  // re-engagement engine.
+  const userId = useAuthStore((s) => s.user?.id ?? null);
   const dna = useTasteProfileStore((s) => s.dna);
   const onboardingPromptShown = useNotificationStore((s) => s.onboardingPromptShown);
   const setOnboardingPromptShown = useNotificationStore((s) => s.setOnboardingPromptShown);

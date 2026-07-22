@@ -7,7 +7,7 @@ import * as Haptics from 'expo-haptics';
 import Animated, { FadeInRight, FadeOutLeft } from 'react-native-reanimated';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
-import { useSessionStore } from '@/src/stores/useSessionStore';
+import { useAuthStore } from '@/src/stores/useAuthStore';
 import { useProStore } from '@/src/stores/useProStore';
 
 /**
@@ -113,7 +113,9 @@ export default function ProQuizScreen() {
   const hasHydrated = useProStore((s) => s.hasHydrated);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const userId = useSessionStore.getState().userId;
+  // Shared auth store, not the dead useSessionStore (was permanently null, so the
+  // pro-quiz answer save below never ran for anyone).
+  const userId = useAuthStore((s) => s.user?.id ?? null);
 
   // Gate: wait for store hydration, then redirect non-Pro users to paywall.
   // When they purchase, router.back() returns here and isPro is now true.
