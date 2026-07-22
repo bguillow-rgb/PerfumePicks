@@ -43,13 +43,7 @@ const PHONE = '+17165109313';
 const STATE_FILE = path.join(os.homedir(), 'Library/Logs/perfume-affiliate-health.state.json');
 const FORCE_HEARTBEAT = process.argv.includes('--heartbeat');
 
-// network topology
-const OUR_CJ_SITE = '101759456';                 // NOT the account id — see reference memory
-const CJ_ADVERTISERS = { '17277211': 'perfumania', '16941446': 'fragranceshop' };
-const AWIN_PUBLISHER_ID = process.env.AWIN_PUBLISHER_ID || '2931103';
-const OUR_AWIN_ADVERTISER = '34989';             // aromapassions. The publisher account
-                                                 // also carries unrelated programs (90529,
-                                                 // 66532, …) — scope to ours, like CJ's site.
+// network topology (link health only)
 const NETWORK_OF = { perfumania: 'CJ', fragranceshop: 'CJ', aromapassions: 'Awin' };
 
 // health thresholds
@@ -57,12 +51,10 @@ const DEAD_RATIO_CEILING = 0.40;   // absolute: >40% dead links on a network is 
 const DEAD_RATIO_JUMP = 0.10;      // relative: +10pt vs last run means something just broke
 const HEARTBEAT_EVERY_MS = 7 * 864e5;
 
-const CJ_TOKEN = process.env.CJ_PERSONAL_ACCESS_TOKEN;
-const AWIN_TOKEN = process.env.AWIN_API_TOKEN;
 const SB_URL = (process.env.EXPO_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL || '').replace(/\/$/, '');
 const SB_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-if (!CJ_TOKEN || !SB_URL || !SB_KEY) {
-  console.error('missing CJ_PERSONAL_ACCESS_TOKEN / SUPABASE env');
+if (!SB_URL || !SB_KEY) {
+  console.error('missing SUPABASE env');
   process.exit(1);
 }
 
@@ -102,51 +94,7 @@ async function linkHealth() {
   return byNet;
 }
 
-// ── 2a. CJ commissions (our site only) ────────────────────────────────────────
-async function cjCommissions() {
-  const since = new Date(Date.now() - 30 * 864e5).toISOString();
-  const before = new Date(Date.now() + 864e5).toISOString();
-  const q = `{ publisherCommissions(forPublishers:["7966973"], sincePostingDate:"${since}", beforePostingDate:"${before}") {
-    records { orderId postingDate advertiserName saleAmountUsd pubCommissionAmountUsd actionStatus websiteId } } }`;
-  const r = await fetch('https://commissions.api.cj.com/query', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${CJ_TOKEN}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query: q }),
-  });
-  const j = await r.json();
-  const all = j.data?.publisherCommissions?.records ?? [];
-  return all.filter((c) => String(c.websiteId) === OUR_CJ_SITE); // exclude Percolate's site
-}
-
-// ── 2b. Awin commissions (optional — needs a Publisher API token) ─────────────
-async function awinCommissions() {
-  if (!AWIN_TOKEN) return { configured: false, records: [] };
-  const startDate = new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 19);
-  const endDate = new Date().toISOString().slice(0, 19);
-  const u = `https://api.awin.com/publishers/${AWIN_PUBLISHER_ID}/transactions/?startDate=${startDate}&endDate=${endDate}&timezone=UTC&dateType=transaction`;
-  try {
-    const r = await fetch(u, { headers: { Authorization: `Bearer ${AWIN_TOKEN}` } });
-    if (!r.ok) return { configured: true, error: `HTTP ${r.status}`, records: [] };
-    const j = await r.json();
-    const raw = Array.isArray(j) ? j : [];
-    // Scope to OUR advertiser (aromapassions); the account carries other programs.
-    // Awin amounts are {amount, currency} objects — normalize to a flat shape.
-    const records = raw
-      .filter((t) => String(t.advertiserId) === OUR_AWIN_ADVERTISER)
-      .map((t) => ({
-        id: t.id,
-        sale: t.saleAmount?.amount ?? 0,
-        commission: t.commissionAmount?.amount ?? 0,
-        status: t.commissionStatus || 'unknown',
-        date: (t.transactionDate || '').slice(0, 10),
-      }));
-    return { configured: true, records };
-  } catch (e) {
-    return { configured: true, error: e.message, records: [] };
-  }
-}
-
-// ── 3. Conversion readout (clicks per network, 30d) ───────────────────────────
+// ── Conversion readout (clicks per network, 30d) ──────────────────────────────
 async function clicks30d() {
   const since = new Date(Date.now() - 30 * 864e5).toISOString();
   const rows = await sb(`affiliate_clicks?select=network,retailer&created_at=gte.${since}`);
@@ -156,9 +104,10 @@ async function clicks30d() {
 }
 
 // ── run ───────────────────────────────────────────────────────────────────────
+// Scope: LINK HEALTH for the Perfume catalog only. Commissions across ALL
+// properties (perfume/percolate/itin) are owned by monitor-commissions-timberline.mjs —
+// kept separate so a perfume sale isn't double-texted by two monitors.
 const health = await linkHealth();
-const cj = await cjCommissions();
-const awin = await awinCommissions();
 const clk = await clicks30d();
 const now = Date.now();
 
@@ -166,8 +115,6 @@ console.log(`[affiliate-health] ${new Date().toISOString()}`);
 for (const [net, h] of Object.entries(health)) {
   console.log(`  ${net}: ${h.total} links, ${h.dead} dead (${(h.ratio * 100).toFixed(1)}%)`);
 }
-console.log(`  CJ commissions (our site, 30d): ${cj.length}`);
-console.log(`  Awin: ${awin.configured ? (awin.error ? 'ERROR ' + awin.error : awin.records.length + ' txns') : 'not configured (no AWIN_API_TOKEN)'}`);
 console.log(`  clicks 30d: ${clk.total} ${JSON.stringify(clk.byNet)}`);
 
 // ── ALERT: link-health degradation ────────────────────────────────────────────
@@ -191,38 +138,16 @@ for (const [net, h] of Object.entries(health)) {
   state.deadRatio[net] = h.ratio;
 }
 
-// ── ALERT: a new commission posted anywhere (good news) ───────────────────────
-const cjKey = (c) => `cj_${c.orderId}`;
-const awinKey = (t) => `awin_${t.id}`;
-state.seenCommissions ??= [];
-const seen = new Set(state.seenCommissions);
-const freshCj = cj.filter((c) => !seen.has(cjKey(c)));
-const freshAwin = (awin.records || []).filter((t) => !seen.has(awinKey(t)));
-if (freshCj.length || freshAwin.length) {
-  const lines = [
-    ...freshCj.map((c) => `CJ/${c.advertiserName}: order ${c.orderId}, sale $${c.saleAmountUsd}, commission $${c.pubCommissionAmountUsd} (${c.actionStatus})`),
-    ...freshAwin.map((t) => `Awin/aromapassions: sale $${t.sale}, commission $${t.commission} (${t.status})`),
-  ];
-  imessage(`✅ Affiliate commission posted — it's working:\n${lines.join('\n')}`);
-  [...freshCj.map(cjKey), ...freshAwin.map(awinKey)].forEach((k) => seen.add(k));
-  state.seenCommissions = [...seen];
-}
-
-// ── HEARTBEAT: weekly positive confirmation ───────────────────────────────────
+// ── HEARTBEAT: weekly positive confirmation (LINK HEALTH only) ────────────────
 const dueForHeartbeat = FORCE_HEARTBEAT || !state.lastHeartbeat || now - state.lastHeartbeat >= HEARTBEAT_EVERY_MS;
 if (dueForHeartbeat) {
   const healthLine = Object.entries(health)
     .filter(([n]) => n !== 'other')
     .map(([n, h]) => `${n} ${((1 - h.ratio) * 100).toFixed(0)}% live`)
     .join(' · ');
-  const commTotal = cj.length + (awin.records?.length || 0);
-  const awinLine = awin.configured
-    ? (awin.error ? `Awin API error (${awin.error})` : `Awin ${awin.records.length} txns`)
-    : 'Awin not yet wired (add AWIN_API_TOKEN)';
   imessage(
-    `📊 Affiliate weekly heartbeat — links: ${healthLine}. ` +
-    `Clicks 30d: ${clk.total}. Commissions 30d: CJ ${cj.length} · ${awinLine}. ` +
-    (commTotal === 0 ? 'Tracking verified healthy; no sales converted yet.' : 'Money is landing.'),
+    `📊 Perfume link-health heartbeat — ${healthLine} (dead links auto-hidden). ` +
+    `Buy-link clicks 30d: ${clk.total}. Commissions tracked separately (Timberline monitor).`,
   );
   state.lastHeartbeat = now;
 }
