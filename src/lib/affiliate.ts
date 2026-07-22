@@ -91,7 +91,13 @@ function reportFailure(params: AffiliateClickParams, reason: string): void {
   });
 }
 
-export function handleAffiliateClick(params: AffiliateClickParams): void {
+/**
+ * Returns a promise that resolves when the in-app browser sheet is DISMISSED
+ * (the user is back in the app). Callers may ignore it (legacy behavior) or
+ * chain on it for a post-handoff moment (e.g. the fragrance-detail "add to
+ * your collection?" prompt — Chief UX F6, the pattern Percolate proved).
+ */
+export function handleAffiliateClick(params: AffiliateClickParams): Promise<void> {
   // Checkout 2.0 fallback decision — the ONE place it happens. Streamlined
   // checkout only when the row has a permalink AND the launch-gate flag is on;
   // everything else behaves byte-identically to the pre-2.0 handoff.
@@ -123,8 +129,21 @@ export function handleAffiliateClick(params: AffiliateClickParams): void {
   // it measures Cloudflare's mood, not link health. Dead-link detection belongs
   // in the ETL (server-side, real user-agent, marks dead rows before they ship).
   // The only failure we can honestly observe here is the browser not opening.
-  WebBrowser.openBrowserAsync(effectiveUrl).catch((err) => {
-    console.warn('[affiliate] failed to open URL:', err);
-    reportFailure({ ...params, url: effectiveUrl }, 'open_failed');
-  });
+  const openedAt = Date.now();
+  return WebBrowser.openBrowserAsync(effectiveUrl)
+    .then(() => {
+      // The sheet was dismissed — the user is back. Dwell time is the only
+      // in-app signal between the tap and CJ's delayed postback: ~3s is a
+      // bounce, ~90s probably bought (PRD §7).
+      track(EVENTS.AFFILIATE_RETURN, {
+        fragrance_id: params.fragrance_id,
+        retailer: params.retailer,
+        landing,
+        dwell_ms: Date.now() - openedAt,
+      });
+    })
+    .catch((err) => {
+      console.warn('[affiliate] failed to open URL:', err);
+      reportFailure({ ...params, url: effectiveUrl }, 'open_failed');
+    });
 }

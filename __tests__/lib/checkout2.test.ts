@@ -41,6 +41,7 @@ jest.mock('@/src/lib/feedback', () => ({ reportDeadLink: jest.fn() }));
 
 import { handleAffiliateClick } from '@/src/lib/affiliate';
 import { _setCheckout2EnabledForTest, isCheckout2Enabled } from '@/src/lib/checkout2Flag';
+import { buyCtaLabel, formatPrice, retailerDisplayName } from '@/src/lib/buyLabel';
 
 const PRODUCT_URL =
   'https://www.jdoqocy.com/click-101759456-17277211?url=https%3A%2F%2Fperfumania.com%2Fproducts%2Fcuba-red';
@@ -104,6 +105,35 @@ describe('handleAffiliateClick — Checkout 2.0 decision', () => {
     handleAffiliateClick({ ...baseParams, checkout_url: CHECKOUT_URL });
     expect(openedUrls).toEqual([PRODUCT_URL]);
     expect(lastOutbound()?.props?.landing).toBe('product');
+  });
+});
+
+describe('buy labels (Chief UX F1-F4/F8)', () => {
+  it('never rounds a price on a buy control ($4.99 stays $4.99)', () => {
+    expect(formatPrice(499)).toBe('$4.99');
+    expect(formatPrice(2999)).toBe('$29.99');
+    expect(formatPrice(5000)).toBe('$50');
+  });
+
+  it('title-cases retailer slugs for display', () => {
+    expect(retailerDisplayName('perfumania')).toBe('Perfumania');
+    expect(retailerDisplayName('fragranceshop')).toBe('Fragrance Shop');
+    expect(retailerDisplayName('somethingnew')).toBe('Somethingnew');
+  });
+
+  it('says "Check out" only when the tap will actually land on a checkout', () => {
+    _setCheckout2EnabledForTest(true);
+    expect(buyCtaLabel({ retailer: 'perfumania', priceCents: 499, checkoutUrl: CHECKOUT_URL }))
+      .toBe('Check out · $4.99');
+    // No permalink (fragranceshop) → store wording even with the flag on.
+    expect(buyCtaLabel({ retailer: 'fragranceshop', priceCents: 5400, checkoutUrl: null }))
+      .toBe('Buy from Fragrance Shop · $54');
+  });
+
+  it('keeps pre-2.0 wording when the flag is off (label mirrors the tap decision)', () => {
+    _setCheckout2EnabledForTest(false);
+    expect(buyCtaLabel({ retailer: 'perfumania', priceCents: 499, checkoutUrl: CHECKOUT_URL }))
+      .toBe('Buy from Perfumania · $4.99');
   });
 });
 

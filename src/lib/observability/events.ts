@@ -136,6 +136,11 @@ export const EVENTS = {
 
   // ─── Affiliate "Buy from" (M2 Phase C) ───────────────────────────────
   AFFILIATE_OUTBOUND_CLICKED: 'affiliate_outbound_clicked',
+  // Fired when the in-app browser sheet is dismissed after a buy tap.
+  // { dwell_ms, landing } — the only in-app signal between the tap and CJ's
+  // delayed postback: a 3s dwell is a bounce, a 90s dwell probably bought
+  // (Checkout 2.0, PRD §7 / Chief UX F12).
+  AFFILIATE_RETURN: 'affiliate_return',
   // Fired when an outbound buy link looks dead (browser failed to open, or a CJ
   // affiliate link no longer redirects — i.e. pulled from the feed).
   AFFILIATE_LINK_FAILED:      'affiliate_link_failed',

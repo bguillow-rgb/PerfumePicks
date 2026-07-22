@@ -5,6 +5,7 @@ import * as Haptics from 'expo-haptics';
 import { COLORS, FONTS, RADIUS, SPACING, TYPE } from '@/src/constants/theme';
 import type { BuyableMatch } from '@/src/features/dna/score';
 import { handleAffiliateClick } from '@/src/lib/affiliate';
+import { buyCtaLabel } from '@/src/lib/buyLabel';
 
 /**
  * TopMatchCard — the affiliate-first "TOP MATCH" hero for the DNA reveal +
@@ -84,7 +85,13 @@ export function TopMatchCard({ match, sourceScreen, onViewDetails, label = 'YOUR
       {buyable ? (
         <Pressable style={styles.buyCta} onPress={onBuy} testID="dna-top-match-buy">
           <Ionicons name="bag-handle-outline" size={16} color={COLORS.white} />
-          <Text style={styles.buyText}>Buy from {buyable.retailer || 'retailer'}</Text>
+          {/* Destination-honest label (Chief UX F4/F5/F8): "Check out" when the
+              tap lands on a live checkout, "Buy from {Retailer}" (title-cased)
+              when it lands on the store. Price stays in the card's own price
+              element above. */}
+          <Text style={styles.buyText}>
+            {buyCtaLabel({ retailer: buyable.retailer, priceCents: null, checkoutUrl: buyable.checkoutUrl })}
+          </Text>
         </Pressable>
       ) : (
         <Pressable

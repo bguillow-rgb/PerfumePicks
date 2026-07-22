@@ -16,6 +16,7 @@ import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet
 import { DupeList } from '@/src/components/fragrance/DupeList';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { handleAffiliateClick } from '@/src/lib/affiliate';
+import { buyCtaLabel, buyCtaHint, formatPrice, retailerDisplayName } from '@/src/lib/buyLabel';
 import * as WebBrowser from 'expo-web-browser';
 import { CelebritySection } from '@/src/components/fragrance/CelebritySection';
 import { ComplimentsSection } from '@/src/components/fragrance/ComplimentsSection';
@@ -467,6 +468,13 @@ function FragranceDetailScreen() {
               pressed && { opacity: 0.75 },
             ]}
             disabled={retailerLinks.length === 0}
+            accessibilityRole="button"
+            accessibilityLabel={retailerLinks.length > 0
+              ? buyCtaLabel({ retailer: retailerLinks[0].retailer, priceCents: retailerLinks[0].price_cents, checkoutUrl: retailerLinks[0].checkout_url })
+              : 'No retailer link yet'}
+            accessibilityHint={retailerLinks.length > 0
+              ? buyCtaHint({ retailer: retailerLinks[0].retailer, checkoutUrl: retailerLinks[0].checkout_url })
+              : undefined}
             onPress={() => retailerLinks.length > 0 && handleAffiliateClick({
               fragrance_id: id,
               retailer: retailerLinks[0].retailer,
@@ -479,12 +487,21 @@ function FragranceDetailScreen() {
               // identical to any other sale and the feature can never prove it
               // earns money (DupeRow pushes ?from=dupe).
               source_screen: from === 'dupe' ? 'dupe_rail' : 'fragrance_detail_rail',
+            }).then(() => {
+              // Post-handoff moment (Chief UX F6, the pattern Percolate proved):
+              // the sheet just closed, the user is back, and this is the
+              // highest-intent moment to capture state. If the fragrance isn't
+              // in their collection yet, offer it via the existing sheet.
+              if (!inWardrobe) {
+                setWardrobeInitStatus('have');
+                setWardrobeSheetOpen(true);
+              }
             })}
           >
             <Ionicons name="bag-outline" size={16} color={retailerLinks.length > 0 ? COLORS.white : COLORS.muted} />
             <Text style={[styles.actionBtnText, retailerLinks.length === 0 && styles.actionBtnTextMuted]}>
               {retailerLinks.length > 0
-                ? `Buy from ${retailerLinks[0].retailer}${retailerLinks[0].price_cents ? ` · $${(retailerLinks[0].price_cents / 100).toFixed(0)}` : ''}`
+                ? buyCtaLabel({ retailer: retailerLinks[0].retailer, priceCents: retailerLinks[0].price_cents, checkoutUrl: retailerLinks[0].checkout_url })
                 : 'No retailer link yet'}
             </Text>
           </Pressable>
@@ -741,13 +758,15 @@ function FragranceDetailScreen() {
                         fragrance_id: id,
                         retailer: link.retailer,
                         url: link.url,
+                        // Checkout 2.0: same decision as the main Buy button.
+                        checkout_url: link.checkout_url,
                         price_cents: link.price_cents,
                         source_screen: 'fragrance_detail',
                       })}
                     >
-                      <Text style={styles.retailerName}>{link.retailer}</Text>
+                      <Text style={styles.retailerName}>{retailerDisplayName(link.retailer)}</Text>
                       {link.price_cents != null && (
-                        <Text style={styles.retailerPrice}>${(link.price_cents / 100).toFixed(0)}</Text>
+                        <Text style={styles.retailerPrice}>{formatPrice(link.price_cents)}</Text>
                       )}
                       <Ionicons name="open-outline" size={12} color={COLORS.muted} />
                     </Pressable>
