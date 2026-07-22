@@ -16,7 +16,7 @@ relatedSlugs:
   - "what-is-a-gourmand-perfume"
   - "how-to-travel-with-perfume"
   - "perfume-fragrance-families"
-  - "how-to-decant-perfume"
+  - "what-is-perfume-dry-down"
 faqs:
   - q: "How do you pronounce 'chypre'?"
     a: "Chypre is French for Cyprus and is pronounced roughly 'sheep-r', rhyme the English word 'sheep' and add a soft 'r' at the end. It does not rhyme with 'cipher.'"
