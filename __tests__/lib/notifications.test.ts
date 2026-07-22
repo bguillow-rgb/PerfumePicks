@@ -9,7 +9,10 @@
  */
 
 const mockTrack = jest.fn();
-const mockUpsert = jest.fn(async () => ({ error: null as null | { message: string } }));
+const mockUpsert = jest.fn(
+  (..._args: unknown[]): Promise<{ error: null | { message: string } }> =>
+    Promise.resolve({ error: null }),
+);
 const mockUser: { current: { id: string } | null } = { current: { id: 'user-1' } };
 const perms: { value: unknown } = { value: {} };
 const tokenState: { data: string | null; throws: boolean } = { data: 'ExponentPushToken[x]', throws: false };

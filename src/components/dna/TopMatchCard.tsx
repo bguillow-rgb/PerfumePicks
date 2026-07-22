@@ -50,6 +50,8 @@ export function TopMatchCard({ match, sourceScreen, onViewDetails, label = 'YOUR
       fragrance_id: frag.id,
       retailer: buyable.retailer,
       url: buyable.url,
+      // Checkout 2.0: flag + null handling live in handleAffiliateClick.
+      checkout_url: buyable.checkoutUrl ?? null,
       price_cents: buyable.priceCents,
       source_screen: sourceScreen,
     });

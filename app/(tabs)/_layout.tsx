@@ -21,6 +21,7 @@ import {
   scheduleSotdNotification,
   scheduleAddBottlesNotification,
 } from '@/src/lib/notifications';
+import { resolveCheckout2Flag } from '@/src/lib/checkout2Flag';
 
 type IoniconsName = React.ComponentProps<typeof Ionicons>['name'];
 
@@ -279,6 +280,14 @@ export default function TabLayout() {
     if (!userId) return;
     void ensurePushRegistered();
   }, [userId]);
+
+  // Checkout 2.0 launch gate (plans/PRD-checkout-2.0.md): resolve the
+  // checkout_2_enabled app_settings row once at start (+ re-check on
+  // foreground, inside the resolver) so the Buy handler's synchronous read is
+  // warm before anyone reaches a buy button. Fails closed → product page.
+  useEffect(() => {
+    resolveCheckout2Flag();
+  }, []);
 
   const handleNotifAccept = async () => {
     setShowNotifPrompt(false);

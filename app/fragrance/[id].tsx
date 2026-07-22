@@ -290,19 +290,19 @@ function FragranceDetailScreen() {
   const onHasCelebrities = useCallback(() => setHasCelebrities(true), []);
   const onHasCompliments = useCallback(() => setHasCompliments(true), []);
 
-  const [retailerLinks, setRetailerLinks] = useState<{ retailer: string; url: string; price_cents: number | null }[]>([]);
+  const [retailerLinks, setRetailerLinks] = useState<{ retailer: string; url: string; price_cents: number | null; checkout_url: string | null }[]>([]);
   useEffect(() => {
     if (!isSupabaseConfigured || !id) return;
     setRetailerLinks([]);
     supabase
       .from('fragrance_retailer_links')
-      .select('retailer, url, price_cents, fragrances!inner(slug)')
+      .select('retailer, url, price_cents, checkout_url, fragrances!inner(slug)')
       .eq('fragrances.slug', id)
       .neq('link_status', 'dead')
       .then(({ data, error }) => {
         if (error) { console.warn('[retailer-links]', error.message); return; }
         if (data?.length) {
-          setRetailerLinks(data.map(({ retailer, url, price_cents }) => ({ retailer, url, price_cents })));
+          setRetailerLinks(data.map(({ retailer, url, price_cents, checkout_url }) => ({ retailer, url, price_cents, checkout_url: checkout_url ?? null })));
           WebBrowser.warmUpAsync().catch(() => {});
         }
       });
@@ -471,6 +471,8 @@ function FragranceDetailScreen() {
               fragrance_id: id,
               retailer: retailerLinks[0].retailer,
               url: retailerLinks[0].url,
+              // Checkout 2.0: flag + null handling live in handleAffiliateClick.
+              checkout_url: retailerLinks[0].checkout_url,
               price_cents: retailerLinks[0].price_cents,
               // A buy that started from a dupe row is attributed to the dupe
               // rail, not to generic browsing. Without this, a dupe sale looks

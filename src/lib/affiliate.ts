@@ -9,6 +9,7 @@ import { track } from '@/src/lib/observability';
 import { EVENTS } from '@/src/lib/observability/events';
 import { reportDeadLink } from '@/src/lib/feedback';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { isCheckout2Enabled } from '@/src/lib/checkout2Flag';
 import { resolveCurrentUser } from '@/src/stores/useAuthStore';
 
 const APP_TAG = 'perfumepicks';
@@ -19,6 +20,12 @@ export interface AffiliateClickParams {
   url: string;
   price_cents: number | null;
   source_screen: string;
+  /** Checkout 2.0 (plans/PRD-checkout-2.0.md): CJ-wrapped Shopify cart
+   *  permalink. When present AND the checkout_2_enabled flag is on, it is
+   *  opened INSTEAD of `url`, landing the buyer on checkout with the item in
+   *  the bag. Null/undefined (fragranceshop, unbuildable rows, flag off) =>
+   *  `url` opens exactly as before. */
+  checkout_url?: string | null;
 }
 
 // Which affiliate network a URL routes through, derived from its tracking
@@ -85,6 +92,13 @@ function reportFailure(params: AffiliateClickParams, reason: string): void {
 }
 
 export function handleAffiliateClick(params: AffiliateClickParams): void {
+  // Checkout 2.0 fallback decision — the ONE place it happens. Streamlined
+  // checkout only when the row has a permalink AND the launch-gate flag is on;
+  // everything else behaves byte-identically to the pre-2.0 handoff.
+  const useCheckout = isCheckout2Enabled() && !!params.checkout_url;
+  const effectiveUrl = useCheckout ? (params.checkout_url as string) : params.url;
+  const landing: 'checkout' | 'product' = useCheckout ? 'checkout' : 'product';
+
   // Durable ledger write (source of truth) + PostHog event (secondary signal).
   // Both are fire-and-forget; neither gates the browser open below.
   void logAffiliateClick(params);
@@ -93,6 +107,8 @@ export function handleAffiliateClick(params: AffiliateClickParams): void {
     retailer: params.retailer,
     price_cents: params.price_cents,
     source_screen: params.source_screen,
+    // PRD §7: the conversion comparison dimension (checkout vs product).
+    landing,
   });
 
   // Open the URL exactly as stored. For CJ retailers that's the tracking
@@ -107,8 +123,8 @@ export function handleAffiliateClick(params: AffiliateClickParams): void {
   // it measures Cloudflare's mood, not link health. Dead-link detection belongs
   // in the ETL (server-side, real user-agent, marks dead rows before they ship).
   // The only failure we can honestly observe here is the browser not opening.
-  WebBrowser.openBrowserAsync(params.url).catch((err) => {
+  WebBrowser.openBrowserAsync(effectiveUrl).catch((err) => {
     console.warn('[affiliate] failed to open URL:', err);
-    reportFailure(params, 'open_failed');
+    reportFailure({ ...params, url: effectiveUrl }, 'open_failed');
   });
 }

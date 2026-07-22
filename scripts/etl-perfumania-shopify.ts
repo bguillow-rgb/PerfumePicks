@@ -58,6 +58,19 @@ function cjUrl(handle: string): string {
   return `https://www.jdoqocy.com/click-${CJ_WEBSITE_ID}-${CJ_ADVERTISER_ID}?url=${dest}`;
 }
 
+/**
+ * Checkout 2.0 (plans/PRD-checkout-2.0.md): CJ affiliate URL whose destination
+ * is the Shopify CART PERMALINK for one variant — lands the buyer on
+ * perfumania's checkout with the item already in the bag (verified live
+ * 2026-07-22: fresh session → checkout page; Shop Pay session → one-tap
+ * "Pay now"). Same click wrapper as cjUrl, so attribution routing is identical;
+ * only the destination differs.
+ */
+function cjCartUrl(variantId: number): string {
+  const dest = encodeURIComponent(`${BASE_URL}/cart/${variantId}:1`);
+  return `https://www.jdoqocy.com/click-${CJ_WEBSITE_ID}-${CJ_ADVERTISER_ID}?url=${dest}`;
+}
+
 // ─── Shopify types ────────────────────────────────────────────────────────────
 
 interface ShopifyVariant {
@@ -245,6 +258,11 @@ async function main(): Promise<void> {
       price_cents,
       retailer_id:   RETAILER_ID,
       source_id:     String(p.id),
+      // Checkout 2.0: the cart permalink is built from the SAME variant the
+      // price came from, so the checkout total always matches the price shown
+      // on the Buy button.
+      checkout_url:        cjCartUrl(best.id),
+      checkout_variant_id: best.id,
     });
   }
 

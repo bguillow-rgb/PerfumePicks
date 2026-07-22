@@ -43,7 +43,7 @@ export const useRetailerLinksStore = create<RetailerLinksState>((set, get) => ({
     while (true) {
       const { data: page, error } = await supabase
         .from('fragrance_retailer_links')
-        .select('price_cents, url, retailer, in_stock, link_status, fragrances!inner(slug)')
+        .select('price_cents, url, checkout_url, retailer, in_stock, link_status, fragrances!inner(slug)')
         .not('price_cents', 'is', null)
         .range(offset, offset + PAGE - 1);
       if (error) {
@@ -72,6 +72,9 @@ export const useRetailerLinksStore = create<RetailerLinksState>((set, get) => ({
             buyableMap.set(slug, {
               priceCents: price,
               url: r.url as string,
+              // Checkout 2.0: same row's cart permalink (null for retailers
+              // that can't build one — handleAffiliateClick falls back).
+              checkoutUrl: (r.checkout_url as string | null) ?? null,
               retailer: (r.retailer as string) ?? '',
             });
           }

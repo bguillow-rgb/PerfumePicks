@@ -23,6 +23,13 @@ export interface AffiliateProduct {
   price_cents:   number | null;
   retailer_id:   string;   // e.g. 'fragranceshop' | 'perfumania'
   source_id:     string;   // retailer's product ID or SKU
+  /** Checkout 2.0 (plans/PRD-checkout-2.0.md): CJ-wrapped Shopify cart
+   *  permalink that lands the buyer on checkout with the item in the bag.
+   *  Only Shopify retailers can build one; omit/null => the client falls
+   *  back to affiliate_url (today's product-page handoff). */
+  checkout_url?: string | null;
+  /** The Shopify variant id checkout_url was built from (debug/rebuild). */
+  checkout_variant_id?: number | null;
 }
 
 export interface UpsertResult {
@@ -337,6 +344,8 @@ export async function upsertProducts(
       retailer:     string;
       url:          string;
       price_cents:  number | null;
+      checkout_url: string | null;
+      checkout_variant_id: number | null;
     }>();
 
     for (const p of batch) {
@@ -356,6 +365,10 @@ export async function upsertProducts(
           retailer:     p.retailer_id,
           url:          p.affiliate_url,
           price_cents:  p.price_cents,
+          // Checkout 2.0: explicit null (not undefined) so a re-run that can no
+          // longer build a permalink CLEARS the stale one instead of keeping it.
+          checkout_url: p.checkout_url ?? null,
+          checkout_variant_id: p.checkout_variant_id ?? null,
         });
       }
     }

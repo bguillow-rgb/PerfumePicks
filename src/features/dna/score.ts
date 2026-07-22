@@ -186,6 +186,10 @@ export interface BuyableLink {
   priceCents: number;
   /** Affiliate / product url the buy CTA opens. */
   url: string;
+  /** Checkout 2.0 (plans/PRD-checkout-2.0.md): CJ-wrapped cart permalink for
+   *  the SAME row; null when the retailer can't build one. The flag + fallback
+   *  decision lives in handleAffiliateClick, not here. */
+  checkoutUrl?: string | null;
   /** Retailer name of the representative row — carried so the buy CTA can
    *  attribute the outbound click (AFFILIATE_OUTBOUND_CLICKED) and the dead-link
    *  report to the right merchant. The displayed price/url/retailer are all from
