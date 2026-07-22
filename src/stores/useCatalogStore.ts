@@ -177,6 +177,43 @@ function escapeRegex(s: string): string {
  * accented bottle scores 1 ("meteore" is not a substring of "Météore") and sinks
  * below the unaccented also-rans.
  */
+/**
+ * Trigram-similar catalog search, used only when the exact search finds nothing.
+ * Calls the fuzzy_fragrance_search RPC (202607180900) for similar name ids, then
+ * re-fetches full rows through the normal select so they carry the brand + shape.
+ * Returns [] on any error — a failed fallback just means the same empty result.
+ */
+async function fuzzySearchFallback(
+  q: string,
+  limit: number,
+  genders?: string[],
+): Promise<Fragrance[]> {
+  try {
+    const { data: ids, error } = await supabase.rpc('fuzzy_fragrance_search', {
+      q,
+      lim: Math.max(limit * 2, 20),
+    });
+    if (error || !ids || ids.length === 0) return [];
+
+    // Preserve the RPC's similarity order when we re-fetch by id.
+    const order = new Map<string, number>((ids as { id: string }[]).map((r, i) => [r.id, i]));
+    let qb = supabase
+      .from('fragrances')
+      .select(FRAGRANCE_SELECT)
+      .in('id', [...order.keys()]);
+    if (genders?.length) qb = qb.in('gender', genders);
+    const { data } = await qb;
+
+    return (data ?? [])
+      .map(rowToFragrance)
+      .filter((f) => !isBundle(f))
+      .sort((a, b) => (order.get(a.id) ?? 999) - (order.get(b.id) ?? 999))
+      .slice(0, limit);
+  } catch {
+    return [];
+  }
+}
+
 function nameRelevance(name: string, q: string): number {
   const n = normalizeSearchText(name);
   if (n === q) return 5;
@@ -451,6 +488,22 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       }
       merged.sort((a, b) => compareSearchRelevance(a, b, q));
       const results = merged.filter((f) => !isBundle(f)).slice(0, limit);
+
+      // Fuzzy fallback: exact ilike has no typo tolerance, so a single dropped or
+      // transposed letter ("opim"->Opium) or a punctuation-spacing gap ("love dont
+      // be shy"->"love don t be shy") returns nothing even though we HAVE the
+      // bottle. When the exact path finds nothing, ask Postgres for trigram-similar
+      // names and re-fetch those rows through the normal select (so they carry the
+      // brand + full shape). Only on the empty path, so good exact results are
+      // never diluted by fuzzy noise.
+      if (results.length === 0) {
+        const fuzzy = await fuzzySearchFallback(q, limit, genders);
+        if (fuzzy.length > 0) {
+          get()._addToCache(fuzzy);
+          return fuzzy;
+        }
+      }
+
       get()._addToCache(results);
       return results;
     }
