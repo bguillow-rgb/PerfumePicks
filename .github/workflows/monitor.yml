@@ -6,7 +6,7 @@ name: Site health monitor
 
 on:
   schedule:
-    - cron: '20 11 * * *' # daily ~11:20 UTC
+    - cron: '37 * * * *' # hourly at :37 (live app — catch outages within the hour)
   workflow_dispatch: {}
 
 jobs:
