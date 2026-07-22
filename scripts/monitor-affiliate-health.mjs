@@ -47,6 +47,9 @@ const FORCE_HEARTBEAT = process.argv.includes('--heartbeat');
 const OUR_CJ_SITE = '101759456';                 // NOT the account id — see reference memory
 const CJ_ADVERTISERS = { '17277211': 'perfumania', '16941446': 'fragranceshop' };
 const AWIN_PUBLISHER_ID = process.env.AWIN_PUBLISHER_ID || '2931103';
+const OUR_AWIN_ADVERTISER = '34989';             // aromapassions. The publisher account
+                                                 // also carries unrelated programs (90529,
+                                                 // 66532, …) — scope to ours, like CJ's site.
 const NETWORK_OF = { perfumania: 'CJ', fragranceshop: 'CJ', aromapassions: 'Awin' };
 
 // health thresholds
@@ -125,7 +128,19 @@ async function awinCommissions() {
     const r = await fetch(u, { headers: { Authorization: `Bearer ${AWIN_TOKEN}` } });
     if (!r.ok) return { configured: true, error: `HTTP ${r.status}`, records: [] };
     const j = await r.json();
-    return { configured: true, records: Array.isArray(j) ? j : [] };
+    const raw = Array.isArray(j) ? j : [];
+    // Scope to OUR advertiser (aromapassions); the account carries other programs.
+    // Awin amounts are {amount, currency} objects — normalize to a flat shape.
+    const records = raw
+      .filter((t) => String(t.advertiserId) === OUR_AWIN_ADVERTISER)
+      .map((t) => ({
+        id: t.id,
+        sale: t.saleAmount?.amount ?? 0,
+        commission: t.commissionAmount?.amount ?? 0,
+        status: t.commissionStatus || 'unknown',
+        date: (t.transactionDate || '').slice(0, 10),
+      }));
+    return { configured: true, records };
   } catch (e) {
     return { configured: true, error: e.message, records: [] };
   }
@@ -178,7 +193,7 @@ for (const [net, h] of Object.entries(health)) {
 
 // ── ALERT: a new commission posted anywhere (good news) ───────────────────────
 const cjKey = (c) => `cj_${c.orderId}`;
-const awinKey = (t) => `awin_${t.id || t.transactionId}`;
+const awinKey = (t) => `awin_${t.id}`;
 state.seenCommissions ??= [];
 const seen = new Set(state.seenCommissions);
 const freshCj = cj.filter((c) => !seen.has(cjKey(c)));
@@ -186,7 +201,7 @@ const freshAwin = (awin.records || []).filter((t) => !seen.has(awinKey(t)));
 if (freshCj.length || freshAwin.length) {
   const lines = [
     ...freshCj.map((c) => `CJ/${c.advertiserName}: order ${c.orderId}, sale $${c.saleAmountUsd}, commission $${c.pubCommissionAmountUsd} (${c.actionStatus})`),
-    ...freshAwin.map((t) => `Awin/${t.advertiserId}: sale $${t.saleAmount ?? t.amount}, commission $${t.commissionAmount}`),
+    ...freshAwin.map((t) => `Awin/aromapassions: sale $${t.sale}, commission $${t.commission} (${t.status})`),
   ];
   imessage(`✅ Affiliate commission posted — it's working:\n${lines.join('\n')}`);
   [...freshCj.map(cjKey), ...freshAwin.map(awinKey)].forEach((k) => seen.add(k));
