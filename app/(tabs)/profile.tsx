@@ -23,6 +23,7 @@ import { isFounder } from '@/src/lib/admin';
 import { inviteFriends } from '@/src/lib/invite';
 import { useNotificationStore } from '@/src/stores/useNotificationStore';
 import { FeedbackSheet } from '@/src/components/feedback/FeedbackSheet';
+import { PromoCodeSheet } from '@/src/components/pro/PromoCodeSheet';
 import {
   requestNotificationPermission,
   registerPushToken,
@@ -54,6 +55,7 @@ export default function ProfileScreen() {
   const dnaModifier = useTasteProfileStore((s) => s.dna?.archetype.modifier ?? null);
 
   const [feedbackOpen, setFeedbackOpen] = useState(false);
+  const [promoOpen, setPromoOpen] = useState(false);
   // Read the current user from the shared auth store — no per-screen getUser()
   // round-trip, no duplicate onAuthStateChange subscription. Reactive: signs
   // in/out flip this automatically via the single _layout subscription.
@@ -286,6 +288,7 @@ export default function ProfileScreen() {
           {isGuest && <Row label="Sign in" onPress={() => router.push('/auth/login')} />}
           <Row label="Subscription" onPress={() => router.push('/paywall')} />
           <Row label="Restore Purchases" onPress={handleRestorePurchases} />
+          <Row label="Redeem a promo code" onPress={() => setPromoOpen(true)} />
           {!isGuest && <Row label="Sign Out" onPress={handleSignOut} danger />}
           {!isGuest && <Row label="Delete Account" onPress={handleDeleteAccount} danger />}
         </Section>
@@ -313,6 +316,7 @@ export default function ProfileScreen() {
         <VersionFooter />
       </ScrollView>
       <FeedbackSheet visible={feedbackOpen} onClose={() => setFeedbackOpen(false)} />
+      <PromoCodeSheet visible={promoOpen} entry="profile" onClose={() => setPromoOpen(false)} />
     </SafeAreaView>
   );
 }

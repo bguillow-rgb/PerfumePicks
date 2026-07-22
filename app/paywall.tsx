@@ -12,6 +12,7 @@ import { FREE_WARDROBE_CAP } from '@/src/lib/limits';
 import { FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStore';
 import { useProStore } from '@/src/stores/useProStore';
 import { useRevenueCat } from '@/src/hooks/useRevenueCat';
+import { PromoCodeSheet } from '@/src/components/pro/PromoCodeSheet';
 import { track, EVENTS } from '@/src/lib/observability';
 
 type Plan = 'monthly' | 'yearly';
@@ -62,6 +63,7 @@ export default function PaywallScreen() {
   const { returnTo } = useLocalSearchParams<{ returnTo?: string }>();
   const insets = useSafeAreaInsets();
   const [selectedPlan, setSelectedPlan] = useState<Plan>('yearly');
+  const [promoOpen, setPromoOpen] = useState(false);
   // Default true so the purchase button is safely gated until the async
   // auth check resolves — prevents a race where a guest taps Purchase
   // before we know they're anonymous.
@@ -312,6 +314,17 @@ export default function PaywallScreen() {
       <Pressable onPress={handleRestore} style={styles.restoreBtn}>
         <Text style={styles.restoreText}>Restore Purchase</Text>
       </Pressable>
+
+      <Pressable onPress={() => setPromoOpen(true)} style={styles.restoreBtn} testID="paywall-promo">
+        <Text style={styles.restoreText}>Have a promo code?</Text>
+      </Pressable>
+
+      <PromoCodeSheet
+        visible={promoOpen}
+        entry="paywall"
+        onClose={() => setPromoOpen(false)}
+        onRedeemed={() => { setPromoOpen(false); router.back(); }}
+      />
 
       <Text style={styles.legal}>
         Payment will be charged to your Apple ID account at confirmation of purchase.
