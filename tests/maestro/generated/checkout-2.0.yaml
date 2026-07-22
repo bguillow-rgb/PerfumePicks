@@ -1,76 +1,180 @@
 appId: com.bobguillow.perfumepicks
 ---
-# CHECKOUT 2.0 E2E (plans/PRD-checkout-2.0.md §10) — proves the buy handoff end
-# to end from the app side: reach a perfumania-buyable fragrance, tap Buy, and
-# confirm the in-app browser sheet opens and the app survives the round-trip.
+# CHECKOUT 2.0 E2E (plans/PRD-checkout-2.0.md §10, test T8) — proves the buy
+# handoff end to end on the TopMatchCard surface (one of the two Checkout 2.0
+# call sites): guest sign-in → DNA picker → reveal → tap the buy CTA → in-app
+# browser sheet opens → Done → app intact.
 #
-# HONEST SCOPE: Maestro cannot read inside SFSafariViewController (system view),
-# so WHICH url opened (checkout vs product) is asserted by the unit tests on
-# handleAffiliateClick (__tests__/lib/checkout2.test.ts) + the `landing` property
-# on affiliate_outbound_clicked. This flow proves the user-visible journey:
-# detail → Buy tap → browser sheet → back → app intact. Run it twice around the
-# flag flip (checkout_2_enabled off, then on): the journey must look identical.
+# HONEST SCOPE: Maestro cannot read inside SFSafariViewController, so WHICH url
+# opened (checkout vs product) is pinned by the unit tests
+# (__tests__/lib/checkout2.test.ts) and the `landing` property on
+# affiliate_outbound_clicked. Run with the flag off AND on: identical journey.
 #
-# Requires Supabase configured (.env.local + Metro restarted) so real retailer
-# links load; guest session boots to Home (same preconditions as
-# dna-v2-m2-buyable.yaml).
-- launchApp
+# Preamble + picker steps reuse the proven patterns from
+# e2e-p0-critical-paths.yaml and dna-v2-m2-buyable.yaml.
+# clearState: every run starts from a genuinely fresh install — without it the
+# app resumes wherever the previous run died (reveal, a detail page, …) and
+# every downstream assertion inherits that roulette.
+- launchApp:
+    clearState: true
+# Drain any queued "Open in Perfume Picks?" system alerts (one replays per app
+# foreground; label taps don't reach springboard alerts, coordinates do).
+# 32%,54% = the alert's Cancel; with no alert up it lands in empty space on
+# the dev-client home. Three rounds covers a small queue.
 - tapOn:
-    text: "http://localhost:8081"
+    point: "32%, 54%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "32%, 54%"
+- waitForAnimationToEnd
+# Simulator "Apple Account Verification" nag — decline it (Not Now). Never
+# enter credentials in a test. Text tap first, coordinate as backup.
+- tapOn:
+    text: "Not Now"
     optional: true
 - waitForAnimationToEnd
 - tapOn:
-    text: "Continue"
-    optional: true
+    point: "32%, 57%"
 - waitForAnimationToEnd
-# Home is up.
+# Metro runs on 8082 — inside the dev client's auto-discovery range, so the
+# server appears as a native in-app row. CONDITIONAL: after the first connect
+# the dev client auto-opens the last project and never shows this screen.
+- runFlow:
+    when:
+      visible: "http://localhost:8082"
+    commands:
+      - tapOn:
+          text: "http://localhost:8082"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Continue"
+    commands:
+      - tapOn: "Continue"
+      - waitForAnimationToEnd
+- tapOn:
+    point: "90%, 48%"
+- waitForAnimationToEnd
+# Fresh install path only: guest sign-in. A resumed session skips straight to
+# the picker (or Home), so this is conditional.
+- runFlow:
+    when:
+      visible: "Continue as Guest"
+    commands:
+      - tapOn: "Continue as Guest"
+      - waitForAnimationToEnd
+# A fresh guest lands in DNA onboarding; a returning session may boot to Home —
+# in that case re-enter the picker via Retake (same as dna-v2-m2-buyable).
+- runFlow:
+    when:
+      visible:
+        id: "today-dna-retake"
+    commands:
+      - tapOn:
+          id: "today-dna-retake"
+      - waitForAnimationToEnd
+# Converge from ANY post-load state: picker (fresh path), or the reveal
+# directly (a restored session that was killed mid-reveal). One regex OR wait,
+# then a conditional picker phase.
 - extendedWaitUntil:
     visible:
-      id: "today-dna-retake"
-    timeout: 30000
-- takeScreenshot: c2-01-home
-# Discover → search for a known perfumania-buyable fragrance.
+      text: ".*(FRAGRANCE DNA|Pick the ones you love).*"
+    timeout: 120000
+- runFlow:
+    when:
+      visible:
+        id: "dna-picker-grid"
+    commands:
+      - takeScreenshot: c2-01-picker
+      # Pick three tiles.
+      - tapOn:
+          point: "20%,32%"
+      - waitForAnimationToEnd
+      - tapOn:
+          point: "50%,32%"
+      - waitForAnimationToEnd
+      - tapOn:
+          point: "80%,32%"
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            text: ".*Read my Fragrance DNA.*"
+          timeout: 12000
+      - tapOn:
+          id: "dna-picker-continue"
+      - waitForAnimationToEnd
+# Reveal (both paths land here).
+- extendedWaitUntil:
+    visible:
+      text: ".*FRAGRANCE DNA.*"
+    timeout: 60000
+- takeScreenshot: c2-02-reveal
+# Complete onboarding the way a user does: "See my top match" (this tap IS the
+# onboarding-complete event), landing on the top match's detail page. The top
+# match is fit-ranked, not buyable-guaranteed, so from there navigate to a
+# KNOWN-buyable fragrance (Cuba Red, perfumania row verified live) via
+# Discover search.
 - tapOn:
-    text: "Discover"
+    text: "See my top match.*"
 - waitForAnimationToEnd
-- takeScreenshot: c2-02-discover
+# Back out of the match detail to the tabs.
 - tapOn:
-    id: "discover-search-input"
-    optional: true
+    point: "10%, 8%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Discover, tab.*"
+    timeout: 30000
 - tapOn:
-    text: "Search.*"
-    optional: true
-- inputText: "cuba red"
+    text: "Discover, tab.*"
+- extendedWaitUntil:
+    visible: "Notes, brands.*"
+    timeout: 15000
+- tapOn: "Notes, brands.*"
+- inputText: "fire on ice"
 - waitForAnimationToEnd
 - takeScreenshot: c2-03-search
-# Open the first matching result.
+# Tap the FIRST result card by position (text taps collide with the query in
+# the input, and trigram search fuzzy-matches "red" into F-RED Hayman). Every
+# Cuba-brand fragrance carries a live perfumania link, so the top "cuba" hit
+# works. Target: Lattafa "Fire on Ice Unisex" ($22.95, verified linked).
 - tapOn:
-    text: ".*Red.*"
+    point: "50%, 30%"
 - waitForAnimationToEnd
-# Detail page: the buy CTA must show retailer + price (retailer links loaded).
+# Detail page: Buy CTA with retailer + price. Matches BOTH label states:
+# "Buy from Perfumania · $X" (flag off / fallback) and "Check out · $X"
+# (flag on + permalink).
 - extendedWaitUntil:
     visible:
-      text: "Buy from perfumania.*"
-    timeout: 20000
+      text: "(Buy from|Check out).*"
+    timeout: 30000
 - takeScreenshot: c2-04-detail-buy-cta
 # THE HANDOFF: tap Buy → expo-web-browser opens the (checkout|product) URL in
 # an in-app Safari sheet.
 - tapOn:
-    text: "Buy from perfumania.*"
+    text: "(Buy from|Check out).*"
 - waitForAnimationToEnd
-# The Safari sheet is a system view; its "Done" chrome is the one element we
-# can reliably see. Screenshot proves the sheet is up (perfumania content).
+# The Safari sheet is a system view; its "Done" chrome is the reliable marker.
 - extendedWaitUntil:
-    visible:
-      text: "Done"
-    timeout: 20000
+    visible: "Done"
+    timeout: 30000
 - takeScreenshot: c2-05-browser-sheet
-# Round trip: close the sheet, land back on the intact detail page.
+# Round trip: close the sheet. The POST-HANDOFF MOMENT (Chief UX F6) fires:
+# the Add-to-Wardrobe sheet opens over the detail page, offering to track the
+# fragrance the user just shopped for. Assert it, dismiss, then confirm the
+# detail page (Buy CTA) is intact underneath.
 - tapOn:
     text: "Done"
 - waitForAnimationToEnd
 - extendedWaitUntil:
     visible:
-      text: "Buy from perfumania.*"
-    timeout: 15000
-- takeScreenshot: c2-06-back-on-detail
+      text: ".*ADD TO WARDROBE.*"
+    timeout: 20000
+- takeScreenshot: c2-06-post-handoff-prompt
+- tapOn:
+    text: "Cancel"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "(Buy from|Check out).*"
+    timeout: 20000
+- takeScreenshot: c2-07-back-on-detail

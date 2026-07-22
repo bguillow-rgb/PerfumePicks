@@ -40,12 +40,27 @@ export const useRetailerLinksStore = create<RetailerLinksState>((set, get) => ({
     const priceMap = new Map<string, number>();
     const buyableMap = new Map<string, BuyableLink>();
     let offset = 0;
+    // Checkout 2.0's checkout_url column may not exist yet (OTA can land before
+    // the migration is pasted; the unknown-column error must NOT nuke prices/
+    // buy links app-wide). Detect once and fall back to the pre-2.0 select.
+    let includeCheckout = true;
     while (true) {
-      const { data: page, error } = await supabase
-        .from('fragrance_retailer_links')
-        .select('price_cents, url, checkout_url, retailer, in_stock, link_status, fragrances!inner(slug)')
-        .not('price_cents', 'is', null)
-        .range(offset, offset + PAGE - 1);
+      type PageResult = { data: any[] | null; error: { message: string } | null };
+      const fetchPage = (withCheckoutCol: boolean): PromiseLike<PageResult> =>
+        supabase
+          .from('fragrance_retailer_links')
+          .select(
+            withCheckoutCol
+              ? 'price_cents, url, checkout_url, retailer, in_stock, link_status, fragrances!inner(slug)'
+              : 'price_cents, url, retailer, in_stock, link_status, fragrances!inner(slug)',
+          )
+          .not('price_cents', 'is', null)
+          .range(offset, offset + PAGE - 1) as unknown as PromiseLike<PageResult>;
+      let { data: page, error } = await fetchPage(includeCheckout);
+      if (error && includeCheckout && /checkout_url/.test(error.message)) {
+        includeCheckout = false;
+        ({ data: page, error } = await fetchPage(false));
+      }
       if (error) {
         // Bail WITHOUT marking loaded — a network blip mid-pagination must not
         // leave a partial price map cached for the session. Allow a retry on the

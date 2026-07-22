@@ -305,23 +305,39 @@ function FragranceDetailScreen() {
   useEffect(() => {
     if (!isSupabaseConfigured || !id) return;
     setRetailerLinks([]);
-    supabase
-      .from('fragrance_retailer_links')
-      .select('retailer, url, price_cents, checkout_url, fragrances!inner(slug)')
-      .eq('fragrances.slug', id)
-      .neq('link_status', 'dead')
-      .then(({ data, error }) => {
-        if (error) { console.warn('[retailer-links]', error.message); return; }
-        if (data?.length) {
-          // rankBuyLinks: deterministic primary CTA — checkout-capable rows
-          // first, then price. Without it, [0] was Postgres row order (a
-          // coin-flip merchant on the hero Buy button — Mark Z #3).
-          setRetailerLinks(rankBuyLinks(
-            data.map(({ retailer, url, price_cents, checkout_url }) => ({ retailer, url, price_cents, checkout_url: checkout_url ?? null }))
-          ));
-          WebBrowser.warmUpAsync().catch(() => {});
-        }
-      });
+    // Checkout 2.0 columns may not exist yet (OTA can land before the founder
+    // pastes the migration — the E2E caught exactly this: the unknown-column
+    // error killed EVERY Buy button). Try with checkout_url; on a column error
+    // fall back to the pre-2.0 select so buy links never depend on migration
+    // ordering.
+    (async () => {
+      type LinkRow = { retailer: string; url: string; price_cents: number | null; checkout_url?: string | null };
+      type LinkResult = { data: LinkRow[] | null; error: { message: string } | null };
+      const fetchLinks = (columns: string): PromiseLike<LinkResult> =>
+        supabase
+          .from('fragrance_retailer_links')
+          .select(columns)
+          .eq('fragrances.slug', id)
+          .neq('link_status', 'dead') as unknown as PromiseLike<LinkResult>;
+      let rows: LinkRow[] | null = null;
+      const withCheckout = await fetchLinks('retailer, url, price_cents, checkout_url, fragrances!inner(slug)');
+      if (!withCheckout.error) {
+        rows = withCheckout.data;
+      } else {
+        const legacy = await fetchLinks('retailer, url, price_cents, fragrances!inner(slug)');
+        if (legacy.error) { console.warn('[retailer-links]', legacy.error.message); return; }
+        rows = legacy.data;
+      }
+      if (rows?.length) {
+        // rankBuyLinks: deterministic primary CTA — checkout-capable rows
+        // first, then price. Without it, [0] was Postgres row order (a
+        // coin-flip merchant on the hero Buy button — Mark Z #3).
+        setRetailerLinks(rankBuyLinks(
+          rows.map(({ retailer, url, price_cents, checkout_url }) => ({ retailer, url, price_cents, checkout_url: checkout_url ?? null }))
+        ));
+        WebBrowser.warmUpAsync().catch(() => {});
+      }
+    })();
   }, [id]);
 
   const translateX = useSharedValue(0);

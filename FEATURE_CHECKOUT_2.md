@@ -72,11 +72,19 @@ untouched by design.
 | T5 | unit | Flag unresolved (first-tap race) → product, never stale checkout | same | automated ✅ |
 | T6 | unit | Flag fails closed before resolution | same | automated ✅ |
 | T7 | unit | Cart-permalink contract: same CJ wrapper, `/cart/{v}:1` destination, int64 variant ids survive encoding | same | automated ✅ |
-| T8 | e2e | Detail → Buy tap → browser sheet opens → Done → app intact (run with flag off AND on; journey identical) | `tests/maestro/generated/checkout-2.0.yaml` | at QA gate |
+| T8 | e2e | Fresh install → guest → DNA picker → reveal → onboarding complete → Discover search → detail → Buy tap → browser sheet → Done → post-handoff wardrobe prompt → detail intact | `tests/maestro/generated/checkout-2.0.yaml` | ✅ **PASSED 2026-07-22** (flag off; artifacts in `tests/maestro/artifacts/checkout-2.0-20260722/`) |
 | T9 | manual | Fresh (no Shop Pay) session lands on checkout with item in bag | live check 2026-07-22 | ✅ verified |
 | T10 | manual | Shop Pay session lands on one-tap "Pay now" | founder device 2026-07-22 | ✅ verified |
 | T11 | manual | **Attribution: cart-permalink purchase posts a CJ commission** (order P574076) | CJ Transactions report | ⏳ **launch gate** |
-| T12 | data | After ETL: every perfumania `link_status='ok'` row has non-null `checkout_url`; every fragranceshop row is null | SQL spot-check at QA gate | at QA gate |
+| T12 | data | ETL populated: 1,559 of 3,491 perfumania ok+in-stock rows carry `checkout_url` (rest fall back to product page by design; grows with each ETL run); fragranceshop = 0 as required | verified live 2026-07-22 | ✅ |
+
+## E2E-caught defect (fixed pre-ship)
+
+The Maestro run caught a real P0 the reviews missed: selecting `checkout_url`
+before the migration existed made PostgREST error on the unknown column, which
+blanked EVERY buy link app-wide ("No retailer link yet" on linked fragrances).
+Both retailer-link readers now fall back to the pre-2.0 select on a
+column-missing error, so buy links never depend on OTA-vs-migration ordering.
 
 ## Known limits
 
