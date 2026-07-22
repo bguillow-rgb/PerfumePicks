@@ -11,14 +11,16 @@
  * so a new program (e.g. ITIN's CJ links, once live) can never be silently
  * misattributed or missed. Add the ID to PROPERTIES and the alert clears.
  *
- * Discovered 2026-07-22 from each property's production links + Awin publisherUrl:
- *   Perfume Picks : CJ site 101759456 (perfumania 17277211, fragranceshop 16941446)
- *                   Awin advertiser 34989 (aromapassions)
- *   Percolate     : CJ site 101804271 (Peet's 15735914, Fresh Roasted 15734720, …)
- *                   Awin 81871, 122368, 35221, 90529, 59193, 124374
- *   ITIN          : Awin advertiser 66532 (Credit Karma, campaign 475588); CJ links
- *                   are env-driven per money-page — none live yet, will surface via
- *                   the UNMAPPED alert the first time one earns.
+ * Map from production links, Awin publisherUrl, and CJ Account → Promotional
+ * Properties (7 active PIDs, verified 2026-07-22):
+ *   Perfume Picks : CJ 101759456 (perfumania 17277211, fragranceshop 16941446); Awin 34989 (aromapassions)
+ *   Percolate     : CJ 101804271 (Peet's 15735914, Fresh Roasted 15734720, …); Awin 81871/122368/35221/90529/59193/124374
+ *   ITIN          : CJ 101772772 (Lending), 101772770 (Credit Card), 101772773 (Credit Score); Awin 66532 (Credit Karma)
+ *   Pour Picks    : CJ 101804278; Awin n/a
+ *   Under Dial    : CJ 101804275; Awin n/a
+ * ITIN's CJ sites are provisioned but its live CTAs currently route to Awin +
+ * lead forms, so no CJ commissions yet. Any commission from an unmapped
+ * site/advertiser still fires the UNMAPPED alert with the exact ID to add.
  *
  * Env (~/PerfumePicks/.env.local — both tokens are org-wide, not perfume-only):
  *   CJ_PERSONAL_ACCESS_TOKEN   (required)
@@ -43,6 +45,7 @@ const CJ_PUBLISHER = '7966973';
 const AWIN_PUBLISHER = '2931103';
 
 // property → the CJ website-IDs and Awin advertiser-IDs it owns.
+// CJ PIDs verified 2026-07-22 from CJ Account → Promotional Properties (all Active).
 const PROPERTIES = [
   {
     key: 'perfume', label: 'Perfume Picks',
@@ -58,9 +61,24 @@ const PROPERTIES = [
   },
   {
     key: 'itin', label: 'ITIN',
-    cjSites: [], // env-driven per money-page; none confirmed live yet
+    // 3 CJ properties (Lending / Credit Card / Credit Score), all Active. CJ links
+    // are provisioned but the deployed CTAs currently route to Awin + lead forms,
+    // so no CJ commissions yet — the map is ready the instant one earns.
+    cjSites: ['101772772', '101772770', '101772773'],
     awinAdvertisers: ['66532'],
     urlHints: ['itinlending', 'itincreditcard', 'itincreditscore', 'itin'],
+  },
+  {
+    key: 'pour', label: 'Pour Picks',
+    cjSites: ['101804278'],
+    awinAdvertisers: [],
+    urlHints: ['pourpicks'],
+  },
+  {
+    key: 'underdial', label: 'Under Dial',
+    cjSites: ['101804275'],
+    awinAdvertisers: [],
+    urlHints: ['underdial'],
   },
 ];
 
