@@ -12,15 +12,15 @@ Paste-ready metadata for App Store Connect, plus the ASO strategy behind it. The
 
 ## Subtitle (30 char limit)
 
-**Your collection & dupe finder**  (28 chars)
+**Fragrance DNA & cheaper dupes**  (28 chars)
 
-> Alt options to test: `Wear what you love & log it` (27) · `Fragrance DNA & cheaper dupes` (29).
+> Updated 2026-07-18: leads with the two hooks users actually convert on (DNA + dupes). Alt to test: `Your collection & dupe finder` (28).
 
 ## Promotional text (170 char limit, not indexed — change anytime)
 
-> Find your Fragrance DNA, get a daily pick from bottles you already own, and discover cheaper dupes that smell nearly identical. The wardrobe built for collectors.
+> Get your Fragrance DNA, a daily scent to wear from bottles you already own, and cheaper dupes that smell nearly the same. Built for collectors.
 
-(157 chars)
+(~140 chars, humanized 2026-07-18)
 
 ## Keyword field (100 char limit, comma-separated, NO spaces, no repeats of name/subtitle words)
 
@@ -35,47 +35,56 @@ fragrance,cologne,perfume,scent,collection,inventory,tracker,diary,journal,notes
 
 ## Description (4,000 char limit — first ~3 lines matter most for conversion)
 
+<!-- Updated 2026-07-18: humanized (zero em dashes), affiliate-accurate ("where to
+buy" now that 8,356 buy links are live), archetype count claim removed (there are
+22, not 11), and current features surfaced (Scent of the Day rotation, Share DNA,
+8am reminder). -->
+
 ```
-Perfume Picks is the wardrobe built for fragrance collectors. Catalog every bottle, log each wear, and get a daily pick from the scents you already own — never from a store.
+Perfume Picks reads your taste into a Fragrance DNA. Then it hands you a scent to wear each day from the bottles you already own, and finds cheaper bottles that smell nearly the same.
 
-Most fragrance apps want to sell you the next bottle. Perfume Picks works from the ones already on your shelf.
+YOUR FRAGRANCE DNA
+Tap the scents you love and we read your palate into an archetype: The Seducer, The Connoisseur, The Purist, and more. It's your taste with a name on it, and it keeps sharpening every time you wear, swipe, or add a bottle.
 
-DISCOVER YOUR FRAGRANCE DNA
-Tap the scents you love and we read your palate into one of 11 archetypes — The Connoisseur, The Seducer, The Purist, The Showstopper, and more. It's your taste, named. And it's Living: your DNA keeps sharpening every time you wear, swipe, and add a bottle.
-
-A WARDROBE THAT REMEMBERS
-Every bottle in one place — have, want, worn, tested, sold — with remaining mL, price, and the date you last wore it. The back of the shelf finally gets its turn.
-
-A WEAR LOG THAT DOES THE WORK
-Tap to log a wear. It captures the weather and the date, asks the occasion, and quietly builds your history: your compliments, your patterns, your cost-per-wear. Backdate up to two years. Log layering combos.
-
-A PICK FOR TONIGHT, NOT JUST SHOPPING
-Open the app to a Scent of the Day drawn from your own bottles — aware of the weather, the occasion, and the scents you've been neglecting.
+SCENT OF THE DAY
+Open the app to a scent chosen from your own wardrobe, matched to your DNA and the day, with a line on why it fits. Turn on the morning reminder and it arrives at 8am.
 
 CHEAPER BOTTLES THAT SMELL THE SAME
-Love a $300 bottle? We surface dupes that smell nearly identical, ranked by match and showing the savings — often 30–70% less. One good find pays for a year of Pro.
+Love a $300 bottle? We find dupes matched on accords, ranked by how close they smell and how much you'd save. Usually 30 to 70 percent less.
 
-SCAN A BOTTLE TO ADD IT
+YOUR WHOLE COLLECTION
+Track every bottle you own, want, or have tried, with remaining mL, price, and when you last wore it. Log a wear in one tap and it captures the day and occasion. Backdate up to two years, and log layering combos too.
+
+SCAN A BOTTLE
 Point your camera at a bottle and we'll identify it and add it to your wardrobe.
 
+SHARE YOUR DNA
+Send friends your archetype and they can go find out theirs.
+
 YOUR YEAR IN SCENT
-Perfume Wrapped turns your wear history into a shareable recap — top houses, top families, your most-loved bottles.
+Perfume Wrapped turns your wear history into a recap you can share: top houses, top families, the bottles you reached for most.
 
 WHO WEARS THIS
 See verified celebrity associations on the fragrances you're exploring.
 
+WHERE TO BUY
+When you're ready to buy, we point you to real retailers and may earn a commission. Perfume Picks is not a store and never sells you fragrance directly.
+
 FREE TO START
-Find your Fragrance DNA, build your wardrobe, log wears, and get daily picks — free.
+Find your Fragrance DNA, build your wardrobe, log your wears, and get a daily pick. All free.
 
 PERFUME PICKS PRO
-Go Pro for your Living Fragrance DNA, an unlimited wardrobe, every dupe, unlimited Train My Nose swipes, layering suggestions, Perfume Wrapped, and advanced cost-per-wear analytics.
+Unlimited Train My Nose swipes and scans, an unlimited wardrobe, every dupe, layering suggestions, Perfume Wrapped, and your full taste profile.
 - $2.99/month, or $24.99/year with a 7-day free trial.
+Subscriptions auto-renew until cancelled. Manage anytime in your App Store settings.
 
-INDEPENDENT AND PRIVATE
-No ads. We don't sell or share your data. Your wardrobe stays yours. Perfume Picks is not a retailer — we never sell fragrance. When you choose to buy, you buy from real retailers, and we may earn a commission.
+PRIVATE BY DEFAULT
+No ads. We don't sell or share your data. Your wardrobe stays yours.
 
 Built by a collector, for collectors.
 
+Terms: https://perfumepicks.app/terms
+Privacy: https://perfumepicks.app/privacy
 Questions? support@perfumepicks.app
 ```
 
