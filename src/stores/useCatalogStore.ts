@@ -189,9 +189,16 @@ async function fuzzySearchFallback(
   genders?: string[],
 ): Promise<Fragrance[]> {
   try {
+    // min_sim 0.35 tuned against real failed queries: the correct rescues score
+    // 0.38+ (opim->Opium 0.38, "love dont be shy"->Kilian 0.75), while wrong
+    // brand-typo guesses (lataffa->"Lateefa") top out at 0.33. 0.35 keeps every
+    // real rescue and cuts the misleading near-floor matches — important in the
+    // DNA picker, where a wrong-but-plausible hit could get tapped and pollute the
+    // user's DNA seed.
     const { data: ids, error } = await supabase.rpc('fuzzy_fragrance_search', {
       q,
       lim: Math.max(limit * 2, 20),
+      min_sim: 0.35,
     });
     if (error || !ids || ids.length === 0) return [];
 
