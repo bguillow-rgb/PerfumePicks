@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-long-does-perfume-last"
   - "fragrance-notes-explained"
+  - "how-to-track-your-perfume-collection"
   - "niche-vs-designer-perfume"
-  - "perfume-fragrance-families"
 faqs:
   - q: "Does a higher concentration always mean a better perfume?"
     a: "No. Concentration is a tool, not a quality marker. Some formulas genuinely shine at EDT strength, lighter and airy top notes perform better with faster alcohol evaporation. A Parfum of a mediocre fragrance is still a mediocre fragrance. Match concentration to occasion and formula intent, not prestige."

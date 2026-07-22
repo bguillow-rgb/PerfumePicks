@@ -14,9 +14,9 @@ publishedAt: "2026-07-06"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-weather-affects-perfume"
+  - "how-to-choose-perfume-for-your-mood"
   - "how-to-rotate-your-perfume-collection"
-  - "does-perfume-expire"
-  - "fragrance-notes-explained"
+  - "what-is-a-gourmand-perfume"
 faqs:
   - q: "Should I wear a different perfume every season?"
     a: "Not strictly, but it pays off. Temperature and humidity change how fragrance projects and performs on skin. A heavy oud that dazzles in December can feel suffocating in July. You don't need four completely separate wardrobes; even swapping one or two bottles seasonally makes a noticeable difference."

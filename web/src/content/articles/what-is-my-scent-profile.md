@@ -14,9 +14,9 @@ publishedAt: "2026-07-08"
 author: "Perfume Picks"
 relatedSlugs:
   - "fragrance-notes-explained"
+  - "what-is-a-gourmand-perfume"
   - "best-perfume-for-each-season"
   - "how-to-blind-buy-perfume"
-  - "how-to-find-your-signature-scent"
 faqs:
   - q: "What is a scent profile?"
     a: "A scent profile is the personal pattern of fragrance families, dominant notes, and emotional moods that you reliably gravitate toward. It emerges from looking at what you actually own and wear, not from a quiz or a retailer's algorithm."

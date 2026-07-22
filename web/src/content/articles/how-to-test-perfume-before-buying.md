@@ -14,9 +14,9 @@ publishedAt: "2026-06-21"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-blind-buy-perfume"
+  - "perfume-samples-vs-full-bottles"
   - "how-to-rotate-your-perfume-collection"
   - "nose-blind-to-perfume"
-  - "how-long-does-perfume-last"
 faqs:
   - q: "How long should I wait after spraying perfume on skin before deciding?"
     a: "Wait at least 4-6 hours for a reliable read. Top notes fade within 15-30 minutes; the heart and base -- the parts you'll live with all day -- take hours to fully emerge. Ideally, wear a sample for two or three separate days before committing."
