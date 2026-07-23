@@ -1,6 +1,6 @@
 ---
 title: "What Is a Chypre Perfume? A Collector's Complete Guide"
-description: "Chypre perfumes are built on bergamot, oakmoss, and labdanum — earthy, sophisticated, and unlike anything else. Here's what every collector needs to know."
+description: "Chypre perfumes are built on bergamot, oakmoss, and labdanum: earthy, sophisticated, and unlike anything else. Here's what every collector needs to know."
 tier: "detail"
 targetQuery: "what is a chypre perfume"
 relatedQueries:
@@ -55,7 +55,7 @@ The cumulative effect is earthy, slightly resinous, and quietly rich. A chypre a
 
 ---
 
-## How is a chypre different from a fougère or an oriental?
+## How a chypre differs from a fougère or an oriental
 
 Newer collectors keep encountering these three terms side by side on fragrance sites, which is where the confusion starts.
 
@@ -71,7 +71,7 @@ Fougère (French for "fern") is built around an imagined scent of ferns, built o
 
 ---
 
-## Why do vintage chypres smell different from modern ones? Is it the reformulations?
+## Why vintage chypres smell different from modern ones
 
 Why their grandmother's bottle of *Femme* or *Miss Dior* smells so much richer than anything currently on shelves.
 
@@ -83,7 +83,7 @@ If you're serious about the classic structure, this is exactly the kind of gap w
 
 ---
 
-## What are the main sub-types of chypre I'll encounter while collecting?
+## The main sub-types of chypre you'll encounter while collecting
 
 Not all chypres are the same. As you build your collection and start reading fragrance databases and review sites, you'll run into several consistent sub-families:
 
@@ -109,7 +109,7 @@ Fragrance experts note that collectors might start with something fresh, citrusy
 
 ---
 
-## How do I find and evaluate a chypre before committing to a full bottle?
+## Finding and evaluating a chypre before committing to a full bottle
 
 The challenge with chypres is that they're almost never love-at-first-sniff the way a sweet gourmand or clean fresh is. They need skin time.
 

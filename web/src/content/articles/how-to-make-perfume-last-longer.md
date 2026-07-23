@@ -1,6 +1,6 @@
 ---
 title: "How to Make Perfume Last Longer (Collector's Guide)"
-description: "Moisturized skin, smart spray placement, and matching concentration to occasion can extend wear by 30–100%. Here's everything collectors need to know."
+description: "Moisturized skin, smart spray placement, and matching concentration to occasion can extend wear by 30-100%. Here's everything collectors need to know."
 tier: "detail"
 targetQuery: "how to make perfume last longer"
 relatedQueries:
@@ -57,7 +57,7 @@ One thing worth flagging for collectors: if you're using a scented body lotion, 
 
 ---
 
-## Where exactly should I spray for the best longevity?
+## The best places to spray for longevity
 
 Pulse points, where body heat is closest to the surface, help release fragrance gradually over time. The classics, inner wrists, sides of the neck, behind the ears, and the inside of the elbows, all work for this reason.
 
@@ -73,7 +73,7 @@ No, and this is one of the most stubborn myths in fragrance culture. Rubbing cre
 
 ---
 
-## How do concentration tiers affect how long my collection actually lasts on skin?
+## How concentration tiers affect how long my collection lasts on skin
 
 | Concentration | Oil % (approx.) | Typical Wear Time | Best Use Case |
 |---|---|---|---|
@@ -88,7 +88,7 @@ Most buyers experiencing longevity disappointment are wearing EDT-tier compositi
 
 ---
 
-## Why do I stop smelling my own perfume after an hour?
+## Why you stop smelling your own perfume after an hour
 
 This isn't the fragrance disappearing. It's your brain filtering it out. After 30-60 minutes of continuous exposure to the same aromatic profile, most wearers lose sensitivity to their own scent even though everyone around them can still smell it clearly.
 
@@ -96,7 +96,7 @@ The fix is simple: step outside for five minutes, then come back. You'll catch y
 
 ---
 
-## Is there a smarter way to apply if I'm switching between multiple bottles?
+## A smarter way to apply when switching between multiple bottles
 
 Collectors who rotate a fragrance wardrobe regularly, which is exactly what the [Perfume Picks](https://perfumepicks.app) app is built to encourage, will sometimes switch scents mid-week or even mid-day. A few principles help here.
 
@@ -112,7 +112,7 @@ Decant a few mls into a travel atomizer. Carrying a full bottle isn't always pra
 
 It affects how long the *formula* stays viable, which directly impacts in-wear performance. Oxidation, triggered by heat, UV exposure, and repeated air contact, slowly breaks down aromatic compounds. A poorly stored bottle will perform worse than the same formula stored correctly, even if both look identical on the shelf.
 
-Heat above 75°F can destroy 60% of top notes within a single year. The rule is consistent: stable temperature, darkness, low humidity. A dedicated drawer or closed cabinet beats any bathroom shelf or sunny windowsill. See our full [perfume storage guide](/how-to-store-perfume-collection) for specifics on protecting different bottle types.
+Heat above 75°F can destroy much of a fragrance's top notes within a single year. The rule is consistent: stable temperature, darkness, low humidity. A dedicated drawer or closed cabinet beats any bathroom shelf or sunny windowsill. See our full [perfume storage guide](/how-to-store-perfume-collection) for specifics on protecting different bottle types.
 
 ---
 

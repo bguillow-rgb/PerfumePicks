@@ -19,13 +19,13 @@ relatedSlugs:
   - "perfume-samples-vs-full-bottles"
 faqs:
   - q: "Is there a 'right' number of perfumes to own?"
-    a: "No universal number exists. Fragrance industry data suggests average collectors now own 6-10 bottles, up from roughly 2.5 before 2020. The real benchmark is whether you're regularly wearing and enjoying what you own, not hitting a specific count."
+    a: "No universal number exists. Most collectors now own several bottles rather than a single signature scent. The real benchmark is whether you're regularly wearing and enjoying what you own, not hitting a specific count."
   - q: "How do I know I own too many perfumes?"
     a: "Three reliable signals: you regularly rediscover bottles you forgot you had; you notice color changes or off top notes (signs of oxidation in neglected bottles); or you consistently reach for the same 3-4 scents while the rest sit untouched for months."
   - q: "What's the minimum number of perfumes for a well-rounded wardrobe?"
     a: "Four covers the essential bases: one light daytime scent, one richer evening scent, one warm-weather option, and one cool-weather option. From there you can add mood-driven or occasion-specific bottles as your habits and interests grow."
   - q: "Does owning more perfumes mean spending more per year on fragrance?"
-    a: "Not necessarily. Owning more bottles you actually use can reduce waste and cost-per-wear compared to letting a single expensive bottle oxidize unused. The expensive mistake is buying bottles you never wear, according to consumer research, the average person holds onto 4.3 unused bottles worth roughly 340 euros in regretted purchases."
+    a: "Not necessarily. Owning more bottles you actually use can reduce waste and cost-per-wear compared to letting a single expensive bottle oxidize unused. The expensive mistake is buying bottles you never wear; those are what quietly pile up as regretted spending."
   - q: "How does tracking wears help me figure out my ideal collection size?"
     a: "Logging every wear shows you exactly which bottles are pulling weight and which are gathering dust. After 90 days of tracking, most collectors can clearly see the 20% of their collection doing 80% of the wearing, and make smarter decisions about what to keep, finish, or rehome."
 published: true
@@ -35,13 +35,13 @@ There is no rule written anywhere that says you must own a specific number of pe
 
 ## So what does the average person actually own?
 
-Before 2020, people typically owned around 2.5 bottles. By 2026, that number has climbed to 6-10 bottles, reflecting a broad cultural move away from the single signature scent toward a more flexible, wardrobe-like approach to fragrance. That shift is real and measurable, but it doesn't tell you what *your* right number is.
+Not long ago, people typically owned just a couple of bottles. That number has climbed over the years, reflecting a broad cultural move away from the single signature scent toward a more flexible, wardrobe-like approach to fragrance. That shift is real, but it doesn't tell you what *your* right number is.
 
 According to NPD Group research, the average fragrance collector owns between 10 and 25 bottles, while dedicated enthusiasts often exceed 100. The gap between those two groups is mostly a function of how intentional the collector is, not how much money they spend.
 
 A good benchmark for most enthusiasts is anywhere from 5 to 15 bottles, enough for variety without diluting actual use. Collectors or reviewers may naturally go higher, but even then, intentional curation remains the key.
 
-## What's the minimum that actually covers my life?
+## The minimum that actually covers your life
 
 If you want a functioning fragrance wardrobe without overthinking it, four scents will carry you through almost any situation:
 
@@ -64,15 +64,15 @@ You forget what you have, regularly rediscovering bottles you forgot existed is 
 
 The deeper psychological pattern worth knowing: excitement can evolve into what psychologists call "variety-seeking behavior", buying new scents simply for the novelty, not because they fit into a personal style or daily routine. Over time, this can lead to fragrance fatigue or buyer's remorse, especially when unused bottles begin to pile up.
 
-The economic cost of that pattern is concrete. European consumers are collectively holding onto 780 million euros worth of unworn fragrances, with the average individual owning 4.3 unused bottles, representing roughly 340 euros in regretted purchases over three years.
+The economic cost of that pattern is concrete. Unworn bottles add up to real money sitting idle, fragrances bought once and then never worn again.
 
 ## Doesn't my collection size depend on my budget more than anything?
 
 Budget matters, but perhaps not in the way you expect. A larger collection of bottles you never wear is more expensive in real terms than a smaller, tightly curated one you actually use. A single well-crafted perfume can often outperform multiple lower-quality ones. If your budget is limited, build your collection slowly, prioritize one versatile fragrance at a time rather than buying several cheaper options that might not meet your needs.
 
-The smarter budget move before adding any full bottle is sampling first. 67% of buyers regret at least one fragrance purchase, and sampling reduces that purchase regret by 86% while boosting repurchase rates by 3.2 times. A few milliliters before a full bottle is one of the highest-ROI habits in fragrance collecting. (Our guide to [how to test perfume before buying](/how-to-test-perfume-before-buying) covers the full process.)
+The smarter budget move before adding any full bottle is sampling first. Most buyers regret at least one fragrance purchase, and sampling before you commit sharply cuts those odds. A few milliliters before a full bottle is one of the highest-ROI habits in fragrance collecting. (Our guide to [how to test perfume before buying](/how-to-test-perfume-before-buying) covers the full process.)
 
-## How should I think about collection size by collector type?
+## How to think about collection size by collector type
 
 Here's a practical framework for matching collection size to how you actually engage with fragrance:
 
@@ -86,7 +86,7 @@ Here's a practical framework for matching collection size to how you actually en
 
 Most readers of this guide live in the enthusiast-to-serious-collector band. That 5-50 range is where intentional rotation and a simple tracking system do the most work, and where tools like [Perfume Picks](/how-to-rotate-your-perfume-collection) can surface forgotten bottles by reminding you what you actually own.
 
-## What does a well-balanced collection look like in practice?
+## What a well-balanced collection looks like in practice
 
 Not just how many, but *which types* of bottles those should be.
 

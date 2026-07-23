@@ -61,7 +61,7 @@ Projection on oily skin can be significant, especially in warm weather. If you w
 
 ---
 
-## What should I do differently if I have dry skin?
+## What to do differently if you have dry skin
 
 Well-hydrated skin holds fragrance molecules better, as they adhere to the skin's natural lipids. Dry skin is the enemy of perfume longevity. To optimize scent retention, apply an unscented moisturizing cream to your pulse points before spraying, a technique that greatly helps your perfume last longer and smell richer.
 
@@ -73,7 +73,7 @@ One more thing worth remembering for dry-skin collectors: don't judge longevity 
 
 ---
 
-## How does combination skin behave with fragrance?
+## How combination skin behaves with fragrance
 
 Combination skin creates a mixed effect: fragrance lasts longer on oilier areas, while it fades more quickly on drier zones. For most combination-skin wearers, the practical fix is straightforward, apply fragrance to your oilier zones (inner wrists, sternum, base of throat) and moisturize the drier ones before spraying.
 
@@ -110,7 +110,7 @@ All of this adds up to why logging your wears matters. If you use Perfume Picks 
 
 ---
 
-## What concentration should I choose based on my skin type?
+## Choosing a concentration based on your skin type
 
 Concentration is the single fastest lever to pull if your current perfumes aren't performing. Parfum or Extrait de Parfum contains 20-40% fragrance oils and can last an impressive 12-24 hours, the marathon runner of the fragrance world. Eau de Parfum offers 15-20% oils, giving you a solid 6-8 hours of staying power, perfect for most daily wear. Eau de Toilette sits in the middle ground with 5-15% oils, lasting around 3-5 hours.
 
@@ -118,7 +118,7 @@ For dry-skin collectors: moving from EDT to EDP, or from EDP to Parfum, often ad
 
 For oily-skin collectors: an EDT is not a compromise. It often performs at EDP levels because your sebum does the work of concentration. Starting lighter is a smart move, especially with sillage-heavy profiles like heavy woods, spices, or orientals where the amplification effect is strongest.
 
-Smaller fragrance formats now account for over 25% of premium perfume sales in North America and Europe, partly because decants and travel sizes let collectors test how a concentration actually performs on their own skin before committing to a full bottle. If you've been disappointed by longevity, testing the EDP version of a fragrance you own in EDT is a low-stakes experiment worth making.
+Smaller fragrance formats now account for a growing share of premium perfume sales in North America and Europe, partly because decants and travel sizes let collectors test how a concentration actually performs on their own skin before committing to a full bottle. If you've been disappointed by longevity, testing the EDP version of a fragrance you own in EDT is a low-stakes experiment worth making.
 
 ---
 

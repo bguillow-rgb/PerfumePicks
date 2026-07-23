@@ -1,6 +1,6 @@
 ---
 title: "How to Organize Your Perfume Collection (Collector's Guide)"
-description: "Organize your perfume collection by mood, season, or frequency — and actually wear every bottle. A practical collector's guide to systems that work."
+description: "Organize your perfume collection by mood, season, or frequency, and actually wear every bottle. A practical collector's guide to systems that work."
 tier: "detail"
 targetQuery: "how to organize perfume collection"
 relatedQueries:
@@ -35,7 +35,7 @@ published: true
 
 Most fragrance collectors hit a wall somewhere around bottle eight or ten. The shelf looks great in a photo. But standing in front of it on a Tuesday morning, you grab the same two bottles on autopilot and everything else quietly ages. A well-organized collection isn't about aesthetics. It's about a system that makes every bottle actually wearable.
 
-## Why does organizing a perfume collection feel so hard?
+## Why organizing a perfume collection feels so hard
 
 It feels harder than organizing books or vinyl because scent has no obvious visual grammar. You can't sort by color and end up with something useful for choosing what to wear. You can sort alphabetically and end up with your lightest summer citrus next to a heavy winter oud, which makes neither easier to find in context.
 
@@ -60,7 +60,7 @@ Common categorization schemes, from most practical to most aesthetic:
 
 For most collectors with 6-20 bottles, a two-axis system works best: season as the primary sort, occasion as the secondary. So a section might be "warm weather / daily wear" and another "cool weather / evening." This mirrors how the brain actually retrieves scent memories and preferences.
 
-## How do I split what's on display from what's in storage?
+## Splitting what's on display from what's in storage
 
 Collectors often feel guilty putting bottles "away", it feels like hiding a purchase. Reframe it. Your display is your active rotation. Your storage is your reserve wardrobe. Both are valid; they serve different functions.
 
@@ -69,7 +69,7 @@ A practical split for most home setups:
 - On display (accessible): your current seasonal rotation, typically 5-10 bottles you're actively working through. These sit on a tray, vanity shelf, or acrylic riser where you can see and reach them daily.
 - In storage (protected): everything else, organized by your chosen system in a drawer, box, or cabinet. Out of direct light and away from temperature swings.
 
-The display shouldn't change weekly, but it should change seasonally at minimum. Rotating bottles forward keeps them in your mental awareness, and awareness is everything, because industry data shows the average collector owns around 4-5 bottles they never wear. Visibility directly fights that problem.
+The display shouldn't change weekly, but it should change seasonally at minimum. Rotating bottles forward keeps them in your mental awareness, and awareness is everything, because the average collector owns several bottles they never wear. Visibility directly fights that problem.
 
 For the storage side, closed cabinets and dresser drawers outperform open shelving for preservation. Perfume is sensitive to light and temperature fluctuations, so areas near radiators, bathroom steam, or sunny windowsills accelerate oxidation. A bedroom shelf away from direct light is a real improvement over a bathroom counter for anything you're not finishing within weeks.
 
@@ -99,11 +99,11 @@ Minis (the small 5-10 ml coffret versions) can live with your full bottles if th
 
 If you're building out your collection through sampling and blind buys, our guide on [how to blind buy perfume](/how-to-blind-buy-perfume) covers the evaluation workflow in detail.
 
-## What are the most common organizational mistakes collectors make?
+## The most common organizational mistakes collectors make
 
 A few patterns come up repeatedly.
 
-Treating the collection as a museum. Bottles arranged beautifully but never touched. The fix is a mandatory rotation: if a bottle hasn't been worn in 12 months, it either moves to the front of the queue or gets reassigned (gifted, sold, or decanted). According to fragrance consumer research, European collectors alone hold an estimated €780 million worth of unworn fragrance, a figure that shows how common this trap is.
+Treating the collection as a museum. Bottles arranged beautifully but never touched. The fix is a mandatory rotation: if a bottle hasn't been worn in 12 months, it either moves to the front of the queue or gets reassigned (gifted, sold, or decanted). Collectors sit on an enormous amount of unworn fragrance, which shows how common this trap is.
 
 Organizing once and never updating. Collections grow. The system that worked at 8 bottles breaks at 20. Build in a seasonal audit, four times a year, when you rotate for the weather, to prune, update your inventory, and reassess the logic of your groupings.
 
@@ -113,7 +113,7 @@ Organizing by aesthetics only. Sorting by bottle color or label design looks com
 
 ## I have fewer than 10 bottles, is this even worth doing?
 
-Yes, and it's actually the best time to start. Building organizational habits when your collection is small means you never hit the chaotic wall that larger collections create. At 6-10 bottles (which is now the average collector's range, up from roughly 2-3 bottles owned per person before 2020, according to fragrance industry data), a simple two-tier display, dailies in front, everything else behind, plus a one-page notes app list is plenty.
+Yes, and it's actually the best time to start. Building organizational habits when your collection is small means you never hit the chaotic wall that larger collections create. At 6-10 bottles (a common range for collectors today), a simple two-tier display, dailies in front, everything else behind, plus a one-page notes app list is plenty.
 
 The system should scale with you. Start with broad categories and add nuance as the collection grows. What matters at any size is the core habit: knowing what you own, knowing roughly when each bottle suits you, and actually rotating through everything rather than defaulting to the same two bottles every morning.
 

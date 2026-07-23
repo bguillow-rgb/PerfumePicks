@@ -1,6 +1,6 @@
 ---
 title: "How to Decant Perfume: A Collector's Complete Guide"
-description: "Decanting perfume moves fragrance into smaller atomizers for travel, sharing, or daily rotation. Here's exactly how collectors do it right — tools, methods, and storage."
+description: "Decanting perfume moves fragrance into smaller atomizers for travel, sharing, or daily rotation. Here's exactly how collectors do it right: tools, methods, and storage."
 tier: "detail"
 targetQuery: "how to decant perfume"
 relatedQueries:
@@ -33,7 +33,7 @@ published: true
 
 Somewhere in your collection there's a bottle you love but never actually carry, too big for a bag, too precious to risk dropping at the airport, or simply forgotten behind the others on the shelf. Decanting solves all three problems. It's one of the most practical skills a fragrance collector can pick up, and yet most guides treat it like a chemistry experiment when it's actually closer to pouring a glass of wine.
 
-## What exactly is a perfume decant, and why does it matter for collectors?
+## What a perfume decant is, and why it matters for collectors
 
 Newcomers to the hobby frequently stumble on the word "decant" and assume it's something only hardcore niche enthusiasts do. It isn't.
 
@@ -80,7 +80,7 @@ People worry they'll ruin an expensive bottle. The method below minimizes that r
 
 Work in a well-ventilated space, aromatic molecules concentrate quickly indoors. Keep a small tray or towel under everything to catch drips. Fragrance on fabric is essentially permanent.
 
-## How should I store decants to keep them from going off?
+## Storing decants to keep them from going off
 
 The storage rules for decants are nearly identical to those for full bottles (covered in detail in our [how to store your perfume collection](/how-to-store-perfume-collection) guide), but the smaller volume makes decants slightly *more* vulnerable in one respect: a 5 ml vial has proportionally more air-to-liquid ratio than a 100 ml bottle, which speeds up oxidation once you've used it down below the halfway mark.
 
@@ -90,7 +90,7 @@ According to fragrance storage guidance cited across multiple collector communit
 
 If you track your collection in Perfume Picks, logging decants as separate entries (with a note on volume and decant date) is a simple way to see at a glance which small bottles are aging toward their use-by window, before you open one and discover it's turned.
 
-## How do I label decants so I can actually tell them apart?
+## Labeling decants so you can actually tell them apart
 
 Is there a system that doesn't look chaotic?
 
@@ -113,7 +113,7 @@ Not everything in your collection needs to be decanted, and it's worth being del
 - The fragrance is a collector bottle or limited edition where bottle integrity affects value
 - You wear it frequently enough that the full bottle empties within 12-18 months, regular use is the best anti-oxidation strategy of all
 
-According to fragrance-community surveys on collector habits, the average enthusiast owns between 12 and 20 bottles at any given time, with only 3-5 in active daily or weekly rotation. Decanting is the practical mechanism that brings the bench-warmers into play.
+The average enthusiast owns far more bottles than they keep in active rotation, with only a handful in daily or weekly use. Decanting is the practical mechanism that brings the bench-warmers into play.
 
 ## Can decanting damage the original bottle or void anything?
 

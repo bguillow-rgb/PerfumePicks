@@ -1,6 +1,6 @@
 ---
 title: "How to Choose Perfume as a Gift (And Actually Nail It)"
-description: "Perfume is the most-loved — and most feared — gift. Learn exactly how to choose a fragrance for someone else using their style, existing bottles, and scent family clues."
+description: "Perfume is the most-loved, and most feared, gift. Learn exactly how to choose a fragrance for someone else using their style, existing bottles, and scent family clues."
 tier: "detail"
 targetQuery: "how to choose perfume as a gift"
 relatedQueries:
@@ -35,7 +35,7 @@ published: true
 
 Perfume is the gift that people either treasure for years or quietly relocate to the back of a cabinet. The difference almost always comes down to one thing: how much attention the giver paid before buying. You don't need to be a fragrance expert to get it right. You just need a small amount of deliberate detective work.
 
-## Why is perfume such a tricky thing to buy for someone else?
+## Why perfume is such a tricky thing to buy for someone else
 
 Fragrance is uniquely personal because it interacts with skin chemistry, memory, and identity all at once. What smells transcendent on one person can read completely flat, or even unpleasant, on another. That's the core challenge, and it's also why so many people default to a gift card instead.
 
@@ -77,7 +77,7 @@ Discovery sets have become a genuinely appreciated format. NielsenIQ data shows 
 
 There's also a smart intermediate option sometimes called a "parenthesis perfume": a fresh, easy-wearing fragrance that isn't trying to replace someone's existing signature scent, but sits alongside it for weekends, travel, or warmer months. Light, crowd-pleasing, universally wearable. These are ideal when you want a real bottle rather than a set, but you're not 100% certain of their preferences.
 
-## Does concentration matter when choosing a gift perfume?
+## Why concentration matters when choosing a gift perfume
 
 Yes, and it matters more than many gift-buyers realise. Eau de Parfum (EDP) is generally the safest and most appreciated concentration for a gift: it lasts meaningfully on skin, feels genuinely luxurious, and is available from almost every house at most price points. If you're buying a specific bottle they've mentioned or you know they love, EDP is almost always the right call.
 
@@ -87,7 +87,7 @@ Extrait de Parfum (or simply Parfum) is the splurge tier: the most concentrated,
 
 Avoid body sprays or mists as a standalone gift unless you're buying for a teen or someone who has specifically said they prefer lighter formats. They can read as afterthoughts despite sometimes costing more than people expect.
 
-## How do I use the fragrance wheel to pick something they'll actually like?
+## Using the fragrance wheel to pick something they'll actually like
 
 The fragrance wheel (developed by perfume taxonomist Michael Edwards in 1992) organises all fragrances into four main families: Floral, Fresh, Woody, and Amber (sometimes still labelled Oriental). Families that sit adjacent on the wheel share characteristics and tend to appeal to the same people. Families that sit opposite tend to be quite different in character.
 
@@ -110,7 +110,7 @@ If you want to keep it a surprise, look at what's conspicuously absent from thei
 
 The Perfume Picks app lets collectors catalogue every bottle they own, track wears, and see their own taste profile. If the person you're shopping for uses it, a quick glance at their public profile (if they've shared it) gives you an instant picture of what they have, what they love, and what gaps might make for the perfect gift.
 
-## Any last rules of thumb before I buy?
+## A few last rules of thumb before you buy
 
 A few that rarely fail.
 

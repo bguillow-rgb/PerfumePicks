@@ -56,13 +56,13 @@ Heat accelerates evaporation, which means top notes arrive faster and more inten
 
 This is also exactly why sampling before buying full bottles matters so much for collectors. Wearing a sample over a full day in your regular routine gives you the most honest read on how a fragrance will actually perform for *you*.
 
-## Does my diet actually change how my perfume smells?
+## Whether your diet changes how your perfume smells
 
 Yes, though the effect is subtler than some fragrance folklore suggests. Foods rich in sulfur compounds, garlic, onion, cruciferous vegetables, can release aromatic byproducts through sweat glands that interact with fragrance molecules at the skin surface. Heavy spice consumption can similarly shift the olfactory baseline your perfume is layered on top of. Strong caffeine intake, which promotes sweating, can also affect how quickly a fragrance develops and dissipates.
 
 Hydration matters too: well-hydrated skin holds fragrance molecules at the surface more consistently, while dehydrated skin can make a scent feel flat or evaporate unevenly. None of this means you need to change your diet for your perfume, but it does explain why a fragrance you love might perform slightly differently on different days.
 
-## How do hormones affect the way perfume smells on me?
+## How hormones affect the way perfume smells on you
 
 Hormonal shifts are among the most dramatic but least-discussed factors in personal fragrance performance. The menstrual cycle is one of the clearest examples: monthly changes in estrogen and progesterone levels can alter skin pH, sebum production, and natural body odor, meaning the same bottle can smell noticeably different, sometimes sweeter, sometimes sharper, sometimes shorter-lived, depending on where you are in your cycle.
 
@@ -81,7 +81,7 @@ Pregnancy, menopause, and even high-stress periods (which elevate cortisol and a
 
 This is worth keeping in mind when you are [building a fragrance wardrobe](https://perfumepicks.app/articles/how-to-build-a-fragrance-wardrobe): if citrus openings consistently disappear within minutes on you, that is likely skin chemistry at work, not a flaw in the fragrance. Leaning toward richer, denser constructions for longevity while enjoying citrus accords in layering combinations is a practical adaptation.
 
-## What can I actually do to work with my skin chemistry rather than against it?
+## Working with your skin chemistry rather than against it
 
 Several practical adjustments make a real difference.
 
@@ -99,6 +99,6 @@ If you use a fragrance app like [Perfume Picks](https://perfumepicks.app) to log
 
 Not dramatically, and you probably would not want to try. Your skin's pH and microbiome are biological constants shaped by genetics, health, and lifestyle, not meaningfully adjustable through topical interventions without disrupting skin health. What you *can* do is understand your chemistry well enough to shop for fragrances that work with it rather than fight it.
 
-If you consistently find that you are a "fragrance destroyer", scents vanish on you quickly regardless of concentration, oily skin moisturization, higher-concentration formats (Extrait de Parfum over Eau de Toilette), and fragrance families built on heavier base molecules are your best allies. If fragrances project aggressively on you, lighter concentrations and smaller application volumes will bring things into balance. According to fragrance industry data, the average collector now owns between 6 and 10 bottles, which means most enthusiasts have enough range in their wardrobe to choose a different fragrance on days when their chemistry is working against a particular bottle.
+If you consistently find that you are a "fragrance destroyer", scents vanish on you quickly regardless of concentration, oily skin moisturization, higher-concentration formats (Extrait de Parfum over Eau de Toilette), and fragrance families built on heavier base molecules are your best allies. If fragrances project aggressively on you, lighter concentrations and smaller application volumes will bring things into balance. Most collectors keep enough range in their wardrobe to choose a different fragrance on days when their chemistry is working against a particular bottle.
 
 The goal is not to fight your biology. It is to understand it well enough that you choose fragrances the way a tailor chooses fabric: with full knowledge of how the material will move on this specific body.

@@ -37,11 +37,11 @@ Most fragrance collections are accidents. A bottle as a gift, a blind buy from a
 
 A wardrobe is different. A wardrobe is intentional, built around the occasions you dress for, the seasons you live through, the families your skin chemistry favors. This guide covers how to build one from scratch, and how to sharpen the one you already have.
 
-## What makes a fragrance wardrobe different from just owning perfume?
+## What a fragrance wardrobe is, and how it differs from just owning perfume
 
 The distinction is utility. A wardrobe is a working tool, every bottle in it should answer a specific question: *what do I wear tonight?* A collection answers a different question: *what do I own?*
 
-The practical difference shows up in wear rates. Collectors who track their wear logs consistently find that 20% of their bottles account for 80% of their wears. The other 80%, the blind buys, the gifted bottles, the things you loved on first spray but never reached for again, sit unused, degrading slowly on a shelf.
+The practical difference shows up in wear rates. As a rough rule of thumb, about 20% of your bottles account for 80% of your wears. The other 80%, the blind buys, the gifted bottles, the things you loved on first spray but never reached for again, sit unused, degrading slowly on a shelf.
 
 Building a wardrobe means closing that gap. The goal is a set of bottles where almost every one gets worn regularly, each one serving a purpose the others do not.
 
@@ -62,7 +62,7 @@ A useful starting framework:
 
 Six to eight bottles covering these slots gives you a functional wardrobe. You are not trying to own every great fragrance, you are trying to never be without the right fragrance.
 
-## How should you organize a fragrance wardrobe?
+## Organizing a fragrance wardrobe
 
 Organization serves two goals: finding the right bottle quickly and understanding your collection at a glance. The two most useful organizing dimensions are **occasion** and **season**, not house or alphabetical order.
 
@@ -82,7 +82,7 @@ You do not need to represent every family, you need to represent *your* life. Bu
 
 **A genuine daily driver.** This is not your most interesting bottle, it is the one you reach for on a regular Tuesday when you are not thinking too hard. Without one, you will wear your statement bottles daily and burn through them faster than you should.
 
-## How do you track what you actually wear?
+## Tracking what you actually wear
 
 Wear logging is the highest-leverage habit in fragrance collecting. Without it, your sense of your own taste is based on first impressions and conscious preferences, both of which differ systematically from your actual behavior.
 
@@ -114,7 +114,7 @@ The three enemies of fragrance are heat, light, and humidity. Each degrades the 
 
 For large collections, a dedicated fragrance fridge (a small wine or cosmetic cooler set to 55-60°F) extends bottle life significantly and keeps the collection organized by making bottles visible at a glance.
 
-## What tools do fragrance collectors use to manage their wardrobe?
+## Tools fragrance collectors use to manage their wardrobe
 
 Spreadsheets work and many longtime collectors swear by them. A spreadsheet can track every field you care about and generate any analysis you want to write a formula for. The tradeoff is friction, the more fields and the more analytical you want to get, the more time it takes.
 
@@ -124,7 +124,7 @@ Apps built specifically for fragrance collection offer two things spreadsheets c
 
 The right tool is whichever one you will actually use consistently. A perfect spreadsheet you fill in once a month is worse than a simple app you log every wear in.
 
-## How do you build a wardrobe if you are just starting out?
+## Building a wardrobe when you are just starting out
 
 Start with decants, not bottles. The fragrance community has a robust decant ecosystem (Scent Split, Surrender to Chance, DecantX, and individual sellers on various forums) that lets you sample 5-10mL of almost any fragrance for $10-25.
 

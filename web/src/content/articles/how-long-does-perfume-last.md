@@ -49,7 +49,7 @@ Average on-skin longevity by concentration:
 
 These are averages, real-world performance varies widely based on the specific formula, your skin type, and where you apply. A well-formulated EDT from a house that builds for longevity can outperform a thin EDP from a house that does not prioritize longevity. Concentration sets a ceiling, not a floor.
 
-## What is the difference between parfum, EDP, EDT, and cologne longevity?
+## The difference between parfum, EDP, EDT, and cologne longevity
 
 The concentration of fragrance oil in the formula is the primary driver of longevity, but formula construction matters just as much. The difference between concentration tiers is not just "more of the same", houses often reformulate when moving between concentrations, changing the overall character as well as the intensity.
 
@@ -61,7 +61,7 @@ The concentration of fragrance oil in the formula is the primary driver of longe
 
 **Parfum/Extrait** is the most concentrated form and the most skin-close in wear. High parfum concentrations often project less aggressively but last significantly longer, the oils diffuse more slowly, creating a more intimate sillage that stays close to the skin for hours.
 
-## What factors make some fragrances last longer than others?
+## The factors that make some fragrances last longer than others
 
 Concentration aside, these are the formula-level factors that drive longevity:
 
@@ -85,7 +85,7 @@ Significantly. The relationship between skin and fragrance is one of the most in
 
 **pH balance** affects which notes smell prominent on your skin. Some people find that certain families, particularly florals, or heavy musks, smell different on them than on others. This is skin chemistry interacting with specific aromatic compounds, and it affects perceived longevity as well as character.
 
-## Where on the body does perfume last the longest?
+## Where on the body perfume lasts the longest
 
 Pulse points are the standard recommendation because the warmth from blood vessels close to the skin surface helps diffuse the fragrance. But not all pulse points perform equally:
 
@@ -111,7 +111,7 @@ A practical rule: an opened bottle used once or twice a week will typically last
 
 **Signs of degradation:** The top notes go first, the opening becomes flat, sharp, or medicinal where it was once bright and fresh. The overall composition may shift toward the base, smelling heavier or more one-dimensional than it originally did. Some fragrances develop a slight sour or vinegary quality as the aromatic compounds oxidize.
 
-## How can you make perfume last longer?
+## How to make perfume last longer
 
 The most effective tactics, in order of impact:
 

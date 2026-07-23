@@ -35,7 +35,7 @@ published: true
 
 There's a gap between owning good fragrances and actually wearing them well. Most people learn application by osmosis, watching someone at a vanity, mimicking a movie scene, and carry the same half-formed habits for years. For collectors with multiple bottles, getting this right matters even more: different concentrations, different fragrance families, and different occasions all call for slightly different approaches. This guide covers the mechanics in full.
 
-## Why does where I spray perfume matter so much?
+## Why where you spray perfume matters so much
 
 Collectors who've spent real money on their bottles are often surprised that technique, not the bottle itself, is the biggest lever for performance.
 
@@ -43,7 +43,7 @@ The answer comes down to body heat. Perfume reacts with body heat, the warmer th
 
 When perfume meets a warm spot on the skin, the molecules evaporate at a steady, controlled pace, the scent rises softly into the air, develops through its layers of notes, and lingers longer than it would on a cooler patch of skin. Spraying on the wrong spot doesn't just waste fragrance; it flattens the experience. Spraying onto cooler areas, or onto clothing, traps the fragrance and stops it from developing, you end up with a flat, one-note smell instead of the layered top, heart, and base notes the perfumer designed.
 
-## What are the best pulse points to spray, and are some better than others?
+## The best pulse points to spray, and whether some beat others
 
 Pulse points are areas of the body where blood vessels are closest to the skin, emitting heat that helps diffuse and amplify fragrance. Applying perfume to these warm spots enhances its development and radiance. The classics:
 
@@ -82,7 +82,7 @@ Skin hydration is the single biggest variable you can actually control. Fragranc
 
 For a deeper longevity boost, the ideal base is not bare skin but hydrated or moisturized skin, applying a neutral cream or a light layer of petroleum jelly at pulse points provides extra grip, slowing down evaporation without altering the original scent, since unscented bases don't interfere with perfume ingredients. One important caveat: the "vaseline perfume myth" is half-true, a tiny dab can slow evaporation, but too much can mute the top notes. Less is more.
 
-According to one fragrance application guide, the right combination of techniques can typically extend fragrance longevity by 30-100% over default application, all without buying a single new bottle.
+The right combination of techniques can meaningfully extend how long a fragrance lasts over default application, all without buying a single new bottle.
 
 ## Should I spray on skin or on my clothes?
 
@@ -102,7 +102,7 @@ Hair holds fragrance longer than skin, but pure alcohol-based perfume can dry ha
 
 For collectors managing multiple bottles in a rotation, this technique is particularly useful for lighter, citrus-forward EDTs that benefit from the hair's extended hold.
 
-## How should I adjust my technique for different fragrance concentrations?
+## How to adjust your technique for different fragrance concentrations
 
 Concentration changes everything: the oil-to-alcohol ratio affects how quickly the scent opens, how far it projects, and how long it lasts. A one-size-fits-all spray approach wastes both product and potential.
 
@@ -115,7 +115,7 @@ Concentration changes everything: the oil-to-alcohol ratio affects how quickly t
 
 With eau de parfum at 15-20% concentration, one spray delivers 15-20 micrograms of fragrant oils, your skin can process 3-4 sprays comfortably without being overwhelming. With extrait, a single spray behind each ear is genuinely enough for all-day wear. If you're cataloging your collection and want to track which concentration each bottle is, our [perfume concentration guide](/perfume-concentration-guide) covers the full breakdown of EDT vs. EDP vs. Parfum.
 
-## What are the most common perfume application mistakes to avoid?
+## The most common perfume application mistakes to avoid
 
 Rubbing your wrists together after spraying is the single most common error, it crushes the top notes and shortens longevity. But there's a list of habits worth auditing:
 

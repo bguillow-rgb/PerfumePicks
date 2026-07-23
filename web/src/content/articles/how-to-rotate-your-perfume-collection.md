@@ -39,9 +39,9 @@ If you own more than a dozen bottles, you already know the problem: you spray th
 
 Why mess with what works? The honest answer is that wearing the same scent every day does two things you probably don't want. First, it causes olfactory fatigue: your nose adapts to a familiar molecule and stops perceiving it properly. Community discussions on Fragrantica note that some enthusiasts go nose-blind to a signature scent in as few as 3, 4 consecutive days of wear, meaning you're essentially spritzing into the void.
 
-Second, and more painfully for collectors, your other bottles quietly degrade while you ignore them. Opened Eau de Parfums stay at their best for roughly 3, 5 years, while natural perfumes can turn in as little as 2, 4 years. Improper storage alone can reduce a perfume's effective shelf life by 60% within a single year. A bottle you bought two years ago and worn twice is already working against the clock. Rotation is how you actually use what you own before it fades.
+Second, and more painfully for collectors, your other bottles quietly degrade while you ignore them. Opened Eau de Parfums stay at their best for roughly 3, 5 years, while natural perfumes can turn in as little as 2, 4 years. Improper storage alone can shorten a perfume's effective shelf life dramatically within a single year. A bottle you bought two years ago and worn twice is already working against the clock. Rotation is how you actually use what you own before it fades.
 
-## What's the difference between an "active tray" and a "reserve"?
+## The difference between an "active tray" and a "reserve"
 
 The most practical rotation framework splits your collection into two zones.
 
@@ -65,7 +65,7 @@ The easiest trigger is the season, but that's just the starting point. Here's a 
 
 A useful seasonal note guide: spring calls for florals with green and citrus accents; summer suits light, airy citrus and aquatic profiles; fall opens up warm spices and sandalwood; winter rewards rich amber, oud, and tonka-heavy compositions. Use concentration to reinforce the season. Lighter concentrations like Eau de Toilette suit warmer months, while richer Eau de Parfum performs better in the cold.
 
-## How often should I actually switch what I'm wearing day to day?
+## How often you should switch scents day to day
 
 Is daily switching overkill?
 
@@ -87,7 +87,7 @@ Collectors use a few approaches:
 
 It happens more than you'd think: you keep a bottle out of sight long enough that you forget you own it, then one day you rediscover it and regret not wearing it when it was at its best. A wear log eliminates that regret entirely.
 
-## What's the right way to store the bottles that aren't on my tray?
+## Storing the bottles that aren't on your tray
 
 Does off-rotation storage actually matter if the bottles are only waiting a few months?
 

@@ -1,6 +1,6 @@
 ---
 title: "How to Travel With Perfume: A Collector's Complete Guide"
-description: "Yes, you can fly with perfume — here's how collectors pack, protect, and curate a travel-ready scent rotation without losing bottles to TSA or breakage."
+description: "Yes, you can fly with perfume. Here's how collectors pack, protect, and curate a travel-ready scent rotation without losing bottles to TSA or breakage."
 tier: "detail"
 targetQuery: "how to travel with perfume"
 relatedQueries:
@@ -27,7 +27,7 @@ faqs:
   - q: "Should I travel with my full bottles or use a travel atomizer?"
     a: "For bottles already under 100 ml, traveling with the original is fine. For full-sized bottles you can't or don't want to check, decant 5-10 ml into a refillable atomizer. This protects your valuable bottles from luggage damage and keeps you TSA-compliant."
   - q: "How do I choose which perfumes to bring on a trip?"
-    a: "Match your travel rotation to the trip's climate, length, and occasion mix. For a 7-day trip, 2-3 scents is usually enough: one daytime/casual, one evening or special occasion, and optionally one climate-appropriate scent (lighter for humidity, richer for cold destinations). Review your wear logs before packing -- Perfume Picks makes it easy to see which bottles you've actually been reaching for."
+    a: "Match your travel rotation to the trip's climate, length, and occasion mix. For a 7-day trip, 2-3 scents is usually enough: one daytime/casual, one evening or special occasion, and optionally one climate-appropriate scent (lighter for humidity, richer for cold destinations). Review your wear logs before packing. Perfume Picks makes it easy to see which bottles you've actually been reaching for."
 published: true
 ---
 
@@ -43,7 +43,7 @@ Checked bags are more generous, though not unlimited. The FAA caps the total agg
 
 One thing many collectors miss: there's no official limit on the number of containers in your carry-on, but roughly nine 3.4-ounce bottles fit in a single quart-sized bag. That's your real-world ceiling for carry-on fragrance.
 
-## How do I keep my bottles from leaking or breaking in transit?
+## Keeping your bottles from leaking or breaking in transit
 
 This trips up even experienced travelers. Cabin pressure changes are the main culprit behind leaks, not rough handling. Pressure shifts in the cabin can force liquid out of spray nozzles, so the fix is simple: secure the cap tightly, reinforce it with tape if needed, and place the bottle inside a sealed zip-lock bag. Storing it upright helps too.
 
@@ -60,7 +60,7 @@ The two main options are traveling with original bottles (if they're already und
 | Bottle is already ≤ 100 ml | Bring the original | No transfer risk; no scent degradation |
 | Full 50-100 ml bottle you love | Original in carry-on (if ≤ 100 ml) or checked bag | Protects the bottle; TSA-safe at full size |
 | Full bottle over 100 ml | Decant 5-10 ml into a refillable atomizer | TSA-compliant; original stays safe at home |
-| Vintage or irreplaceable bottle | Decant only -- never check the original | One bad baggage handler and it's gone |
+| Vintage or irreplaceable bottle | Decant only, never check the original | One bad baggage handler and it's gone |
 | Niche scent with no travel size | Decant into an atomizer | Most niche houses don't offer minis |
 | Testing a scent on a longer trip | Bring a decant or sample | 7 days is a good real-wear test |
 
@@ -68,7 +68,7 @@ Most travel atomizers hold between 5 ml (0.17 fl oz) and 20 ml (0.67 fl oz), and
 
 If you're considering buying travel-specific minis rather than decanting, the market is moving in your direction. According to Spate's Global Beauty Insights report, interest in mini perfumes has never been higher, with data showing a 123 percent increase in popularity in 2025 and growth projected to rise another 78.4 percent in 2026.
 
-## How do I decide which perfumes to actually take?
+## Deciding which perfumes to actually take
 
 This is where collectors get stuck. You have 30 bottles at home and you want to pack eight of them. Don't. The discipline of a travel rotation is one of the most satisfying things about thinking of your collection as a *wardrobe*.
 
@@ -78,7 +78,7 @@ Climate is a real factor that most packing guides ignore. A scent that performs 
 
 Before packing, check your wear logs. If you track what you've actually been reaching for lately (which Perfume Picks makes quick to review), you'll see patterns immediately. Bottles you haven't worn in six weeks probably aren't the right ones to pack. The ones you've sprayed four times in the last month are your real travelers.
 
-## What about international flights -- are the rules different?
+## International flights follow slightly different rules
 
 Yes, and the differences can catch you off guard. International flights follow similar guidelines to TSA rules, but security checks can be stricter depending on the country. The 100 ml / quart-bag rule is standard across most major aviation authorities (EU, UK, Australia), but enforcement varies.
 
@@ -92,7 +92,7 @@ The collector's mindset shift that makes travel easier: stop thinking of travel 
 
 People are building collections to suit different moods, routines, and occasions rather than sticking to one signature scent, and a trip is simply a concentrated version of that same logic. A seven-day trip has a morning context, an afternoon context, and an evening context, just like your home wardrobe does. Two or three well-chosen bottles, each covering different energy levels, will serve you better than five that overlap.
 
-Research shows that 62% of travelers prioritize compact, reusable beauty items, with mini perfumes ranking among top essentials. But for collectors, the goal isn't just compactness. It's making sure your travel scents reflect how you actually want to feel on that specific trip, not just which bottles happened to be small enough. Use the trip as a deliberate wear test. Bring a bottle or decant you've been curious about and let seven days of real-life wearing tell you whether it deserves a permanent place in your rotation. Log each wear when you get back. The data is more honest than a quick sniff at home.
+Many travelers prioritize compact, reusable beauty items, with mini perfumes ranking among top essentials. But for collectors, the goal isn't just compactness. It's making sure your travel scents reflect how you actually want to feel on that specific trip, not just which bottles happened to be small enough. Use the trip as a deliberate wear test. Bring a bottle or decant you've been curious about and let seven days of real-life wearing tell you whether it deserves a permanent place in your rotation. Log each wear when you get back. The data is more honest than a quick sniff at home.
 
 A practical note on duty-free shopping, since many collectors are tempted: refillable bottles from brands like Burberry, Dior, and Hermès reduce long-term costs meaningfully, with refills typically running 30-40% less than buying a new bottle. If you're buying abroad and plan to travel with it, a refillable format is both economical and practical.
 
@@ -113,4 +113,4 @@ Store bottles upright, leave a small air gap in any atomizer you fill (don't fil
 For bottles already under 100 ml, traveling with the original is fine. For full-sized bottles you can't or don't want to check, decant 5-10 ml into a refillable atomizer. This protects your valuable bottles from luggage damage and keeps you TSA-compliant.
 
 **How do I choose which perfumes to bring on a trip?**
-Match your travel rotation to the trip's climate, length, and occasion mix. For a 7-day trip, 2-3 scents is usually enough: one daytime/casual, one evening or special occasion, and optionally one climate-appropriate scent (lighter for humidity, richer for cold destinations). Review your wear logs before packing -- Perfume Picks makes it easy to see which bottles you've actually been reaching for.
+Match your travel rotation to the trip's climate, length, and occasion mix. For a 7-day trip, 2-3 scents is usually enough: one daytime/casual, one evening or special occasion, and optionally one climate-appropriate scent (lighter for humidity, richer for cold destinations). Review your wear logs before packing. Perfume Picks makes it easy to see which bottles you've actually been reaching for.

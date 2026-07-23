@@ -1,6 +1,6 @@
 ---
 title: "Perfume Concentration Guide: EDT, EDP & Parfum Explained"
-description: "EDT, EDP, Parfum, Extrait — decoded for collectors. Learn oil percentages, longevity, sillage, and exactly which concentration to reach for and when."
+description: "EDT, EDP, Parfum, Extrait: decoded for collectors. Learn oil percentages, longevity, sillage, and exactly which concentration to reach for and when."
 tier: "detail"
 targetQuery: "perfume concentration guide EDT EDP parfum"
 relatedQueries:
@@ -37,7 +37,7 @@ This guide breaks down every mainstream concentration tier, what the numbers act
 
 ---
 
-## What does "concentration" actually mean in a perfume bottle?
+## What "concentration" actually means in a perfume bottle
 
 Every fragrance is a solution of aromatic compounds dissolved in a solvent, almost always ethanol, sometimes with a small amount of water. The concentration of a fragrance refers to the ratio of perfume essence, a mixture of aromatic compounds, essential oils, and fixatives, to the solvent. Change that ratio and you change the character of the entire experience: how fast it opens, how long it lasts, how close to the skin it stays, and which notes dominate at each stage of the dry-down.
 
@@ -47,7 +47,7 @@ These categories aren't regulated by universal standards. What one brand labels 
 
 ---
 
-## What's the difference between each concentration tier?
+## The difference between each concentration tier
 
 Here is how the mainstream tiers stack up, from lightest to most concentrated:
 
@@ -76,7 +76,7 @@ Before assuming an EDT and EDP are interchangeable, smell both on skin separatel
 
 ---
 
-## Why does Parfum sometimes smell quieter than EDP in the opening?
+## Why Parfum sometimes smells quieter than EDP in the opening
 
 Despite being the strongest concentration, Parfum often projects more intimately than EDP. The higher oil ratio creates a smooth, skin-hugging scent that evolves slowly over hours. Many collectors find this surprising the first time they wear a Parfum. They apply it, step back, and wonder if it's working. It is. Lean in close to skin and the depth is there. The trade-off is intentional: less alcohol means less of the aerosol effect that sends your EDP billowing across a room.
 
@@ -120,7 +120,7 @@ If sampling is available, decants, discovery sets, travel sprays, always sample 
 
 ---
 
-## Does EDT mean the fragrance is lower quality?
+## Why EDT doesn't mean the fragrance is lower quality
 
 Absolutely not. EDT is just a lighter concentration. Many high-end brands offer their best scents in EDT form because certain notes work better that way. Think of classic fougeres and fresh aquatics. The genre's greatest achievements (Acqua di Gio, Bleu de Chanel EDT, Hermes Un Jardin sur le Nil) were designed at EDT strength intentionally. The brightness of bergamot, the crispness of a marine accord, the lift of a galbanum note: these thrive in higher-alcohol formats.
 

@@ -1,6 +1,6 @@
 ---
 title: "How Weather Affects Perfume (And What to Wear When)"
-description: "Heat, cold, and humidity change how your perfume smells, projects, and lasts. Here's the science—and how to pick the right bottle for any weather."
+description: "Heat, cold, and humidity change how your perfume smells, projects, and lasts. Here's the science, and how to pick the right bottle for any weather."
 tier: "detail"
 targetQuery: "how does weather affect perfume"
 relatedQueries:
@@ -43,7 +43,7 @@ The practical implication for collectors is real: a fragrance that seems perfect
 
 **What to do:** In hot weather, apply one or two fewer sprays than usual. Move application to pulse points that stay slightly cooler (inside the elbow, behind the knee) rather than the neck and wrists, which heat up fastest. Keeping a travel atomizer from your existing bottle in a cool bag lets you reapply later rather than front-loading sprays at the start of the day.
 
-## Does cold weather make perfume last longer?
+## Cold weather makes perfume last longer
 
 Yes. Cold air slows evaporation, meaning fragrance molecules stay anchored to your skin considerably longer. Some collectors report their winter fragrances lasting up to 10-12 hours, even with moderate concentrations. The trade-off is projection: colder air reduces how far the scent travels from your body, keeping it in what's called a skin-scent envelope rather than diffusing outward.
 
@@ -59,7 +59,7 @@ Above 70% humidity (typical of tropical climates, UK summers, or a post-gym envi
 
 Below 30% humidity (very common in centrally-heated offices and apartments in winter) fragrance evaporates from dry skin faster than cold temperatures alone would suggest. Many collectors notice their winter fragrances feel inexplicably weak indoors; this is almost always the culprit. The fix is simple: hydrate your skin before applying.
 
-## Which fragrance families actually work best by season?
+## The fragrance families that work best by season
 
 | Season / Condition | Perform well | Use with caution |
 |---|---|---|
@@ -77,7 +77,7 @@ Absolutely, and this surprises people who are newer to collecting. The molecular
 
 This means a fragrance you dismissed as "too sharp" in a warm department store might feel beautifully rounded worn outside in autumn. And a deep amber that feels perfect in December can seem cloying by April. It's worth mentally flagging any bottle that disappointed you in one season and trying it again in the opposite one before deciding it's not for you. Seasonal re-testing is one of the most commonly reported ways collectors rediscover bottles they'd nearly given up on.
 
-## How do I actually use this knowledge with the bottles I already own?
+## Using this knowledge with the bottles you already own
 
 The practical application is simpler than the science suggests. You don't need a regimented seasonal swap system, just a loose mental framework.
 
@@ -93,6 +93,6 @@ The Perfume Picks app surfaces weather-aware suggestions from the bottles you al
 
 This is where collectors often get caught off-guard. A fragrance that's a reliable daily driver at home can behave like a stranger in a different climate. Travelling from a temperate city to a humid coastal destination, or from a damp climate to a dry high-altitude one, changes everything discussed above, suddenly and simultaneously.
 
-The practical tip: pack a small decant of something you know works in the destination climate rather than relying on your signature scent to perform. If you're heading somewhere hot and humid, a smaller 5-10 ml decant of a fresh or citrus fragrance from your existing collection is almost always a safer choice than your go-to EDP. The global fragrance market reached $64.4 billion in 2023, according to industry data, and a meaningful portion of that is driven by travel retail, precisely because people notice their usual fragrances don't quite work in unfamiliar climates and reach for something new. You can sidestep that impulse purchase by thinking ahead about what's already in your wardrobe.
+The practical tip: pack a small decant of something you know works in the destination climate rather than relying on your signature scent to perform. If you're heading somewhere hot and humid, a smaller 5-10 ml decant of a fresh or citrus fragrance from your existing collection is almost always a safer choice than your go-to EDP. A meaningful portion of the global fragrance market is driven by travel retail, precisely because people notice their usual fragrances don't quite work in unfamiliar climates and reach for something new. You can sidestep that impulse purchase by thinking ahead about what's already in your wardrobe.
 
 For more on building a collection that covers different scenarios from the start, the [how to build a fragrance wardrobe](/how-to-build-a-fragrance-wardrobe) guide is a useful companion read. And if you're finding that bottles you've already tested seem to perform unexpectedly, the [why perfume smells different on everyone](/why-perfume-smells-different-on-everyone) article explains the skin chemistry side of the equation.

@@ -35,9 +35,9 @@ published: true
 
 Fragrance layering (wearing two or more perfumes simultaneously to create a scent no single bottle can produce) is one of the most underused skills in a collector's toolkit. You already have the ingredients. The only missing piece is knowing how to combine them.
 
-## Why is everyone suddenly talking about layering?
+## Why everyone is suddenly talking about layering
 
-According to fragrance industry data, 65% of U.S. consumers are now moving beyond single scents, opting to layer fragrances across body, hair, and personal care products for a more personalized experience. That number has moved fast: the practice of fragrance layering rose 22% in a single year, as consumers combined multiple scents for personalized expression.
+A growing share of U.S. consumers are now moving beyond single scents, opting to layer fragrances across body, hair, and personal care products for a more personalized experience. The practice has caught on fast, with more people combining multiple scents for personalized expression each year.
 
 But collectors are a different audience from casual trend-followers. If you've already built a wardrobe of bottles, even a modest five or six, layering isn't about buying more. It's about getting combinations that already sit on your shelf. Perfume layering is the practice of wearing two or more fragrances simultaneously to produce a custom signature that no single bottle creates alone. Think of it as making your collection work harder.
 
@@ -51,7 +51,7 @@ The distinction matters in practice. When you spray two perfumes onto your skin 
 
 Historically, this isn't a new idea. In Middle Eastern attar tradition, layering has been a foundational perfumery practice for over a thousand years. A fragrance tradition deeply rooted in the Middle East, perfume layering has caught on broadly in the West over the past few years, largely thanks to social media.
 
-## How do I know which two bottles from my collection will actually work together?
+## Knowing which two bottles from my collection will actually work together
 
 This is the core practical question, and it has a clear framework.
 
@@ -108,11 +108,11 @@ Yes, with one important nuance. Layering doesn't inherently extend a fragrance's
 
 Layering the same fragrance in different formats (body oil, dusting powder, perfume spray) gives staying power because after the spray's vapors wear off, the fragrant oils persist, interacting with your skin's sweat glands for a sustained release throughout the day. This format-layering approach (same scent, different product types) is complementary to note-layering (different scents, same product type) and the two can be combined.
 
-Perfume oils and eau de parfum collectively account for over 55% of the layering fragrance market, owing to their concentrated formulations and superior longevity. Perfume oils in particular are gaining traction for their ability to blend with other scents. If you have any roll-on oils in your collection, they make excellent anchor layers.
+Perfume oils and eau de parfum make up a large share of the layering fragrance market, owing to their concentrated formulations and superior longevity. Perfume oils in particular are gaining traction for their ability to blend with other scents. If you have any roll-on oils in your collection, they make excellent anchor layers.
 
-## What's a good first combination to try from a typical collector wardrobe?
+## A good first combination to try from a typical collector wardrobe
 
-The easiest win for any collector is a woody or sandalwood EDP paired with a fresh citrus or aquatic EDT. Wearing two scents simultaneously to create a personal signature (citrus over amber, vanilla over leather, musk under floral) is now reported by more than 22% of European fragrance buyers.
+The easiest win for any collector is a woody or sandalwood EDP paired with a fresh citrus or aquatic EDT. Wearing two scents simultaneously to create a personal signature (citrus over amber, vanilla over leather, musk under floral) has become common among European fragrance buyers.
 
 For a typical wardrobe covering the major families:
 
@@ -124,9 +124,9 @@ For first-time layering, start with two bottles you already wear individually, a
 
 If you're logging your wears in Perfume Picks, try tagging layered combinations in your wear log so you can see which pairings you returned to. Patterns emerge faster than you'd expect. Most collectors discover a reliable three or four go-to combinations within a few weeks of deliberate experimentation.
 
-## Is fragrance layering just a trend, or is it here to stay?
+## Fragrance layering: a passing trend or here to stay
 
-The numbers make a strong case for permanence. The global layering fragrance market was valued at $2.1 billion in 2024 and is forecasted to reach $4.8 billion by 2033, growing at a 9.2% CAGR. That's not trend-cycle velocity. It's structural category expansion.
+The trajectory makes a strong case for permanence. The layering fragrance market has grown steadily and is projected to keep expanding well into the next decade. That's not trend-cycle velocity. It's structural category expansion.
 
 According to a 2,000-person Unilever survey, 29% of Gen Z respondents layer multiple scents. And the behavior isn't confined to younger buyers: the layering trend is structurally adjacent to the wardrobe trend. It's what naturally happens when a buyer who already curates a wardrobe starts mixing within their rotation.
 

@@ -41,9 +41,9 @@ Perfume is alcohol-based and comes in a sealed bottle, so how much can environme
 
 More than most people expect. The three enemies of fragrance are **light**, **heat**, and **oxygen**, and they don't work independently; they compound each other. UV and visible light catalyze photodegradation in aromatic compounds, particularly citrus top notes and certain florals. Heat accelerates evaporation even through a closed cap and speeds up the same oxidative reactions. Every time you open a bottle, you introduce a fresh charge of oxygen that slowly reacts with the fragrance molecules inside.
 
-Improper storage can reduce a perfume's shelf life by 60% within just one year, a jarring number when you've paid €180 for a 50 ml niche bottle you intend to enjoy over the next decade. Perfume will stay pristine until it's opened, introducing a bottle of fragrance to oxygen causes the scent inside to dilute and become oxidized, and with more oxygen and less scent in the bottle, the smell will gradually diffuse. The clock truly starts ticking the moment you first spray.
+Improper storage can dramatically shorten a perfume's shelf life within just one year, a real loss when you've paid €180 for a 50 ml niche bottle you intend to enjoy over the next decade. Perfume will stay pristine until it's opened, introducing a bottle of fragrance to oxygen causes the scent inside to dilute and become oxidized, and with more oxygen and less scent in the bottle, the smell will gradually diffuse. The clock truly starts ticking the moment you first spray.
 
-## What's the ideal storage environment for a perfume collection?
+## The ideal storage environment for a perfume collection
 
 The target conditions are simple to state and easier to achieve than most collectors assume:
 
@@ -72,7 +72,7 @@ The collector-smart compromise is to separate your collection into two tiers:
 
 If your display cabinet has glass doors, put it on a wall that receives zero direct sun. Curtains or UV-filtering window film in the room can meaningfully reduce ambient light degradation across an entire collection.
 
-## Should I keep bottles in their original boxes?
+## Keeping bottles in their original boxes
 
 Is keeping the box really worth the clutter?
 
@@ -88,7 +88,7 @@ Decanting allows for better portion control and helps prevent over-application w
 
 For the transfer itself, a tool that slides onto a spray nozzle and feeds directly into a smaller atomizer is the cleanest method. It's a much more controlled process that serious collectors use because it minimizes waste and keeps air from getting into the fragrance. Label every decant immediately, don't play the guessing game; a label maker or fine-tipped permanent marker is your friend, and you should clearly write the fragrance name and brand on each bottle so you can grab exactly what you want.
 
-## What about temperature, do I really need a fragrance fridge?
+## Temperature, and whether you really need a fragrance fridge
 
 For most collectors: no. A dedicated cosmetic refrigerator is a genuine tool for serious archivists storing rare vintages or backing up limited editions they won't open for years. For everyday collectors with working wardrobes of 10, 50 bottles, it's overkill.
 

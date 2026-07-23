@@ -1,6 +1,6 @@
 ---
 title: "Does Perfume Expire? Shelf Life Guide for Collectors"
-description: "Yes, perfume does expire — most opened bottles last 3–5 years. Learn the signs, which fragrance families age fastest, and how to audit your collection."
+description: "Yes, perfume does expire. Most opened bottles last 3–5 years. Learn the signs, which fragrance families age fastest, and how to audit your collection."
 tier: "detail"
 targetQuery: "does perfume expire"
 relatedQueries:
@@ -43,13 +43,13 @@ Yes, perfume expires. The primary driver is a chemical process called oxidation:
 
 Fragrances can go bad over time, most perfumes last 3 to 5 years once opened, though this timeline isn't fixed and varies depending on formulation, how you wear it, and where you store it. The alcohol in the formula does help slow oxidation, but it also gradually evaporates, which actually speeds up degradation once significant alcohol loss has occurred.
 
-## How long does perfume last if it's never been opened?
+## How long perfume lasts if it's never been opened
 
 Unopened bottles, when kept in their original packaging and shielded from air, can last for 10 to 30 years, some vintage collectors even find bottles from decades ago that remain pristine because they were never exposed to oxygen. The seal is everything. Every press of the atomizer lets a small amount of air into the bottle, and that incremental oxygen exposure accumulates over years of daily use.
 
 For collectors managing a large wardrobe, this is worth keeping in mind: bottles you open rarely but incompletely are often in a worse state than bottles you've been working through steadily. A half-empty bottle with years of slow air exchange can degrade faster than one you've used enthusiastically.
 
-## Which fragrance families age the fastest, and which hold up best?
+## The fragrance families that age fastest (and hold up best)
 
 Knowing which bottles to prioritize wearing first is genuinely useful collection management.
 
@@ -78,7 +78,7 @@ Familiarity makes a scent smell quieter to your nose (that's nose blindness, a s
 
 A quick test: spray onto a blotter strip rather than skin. Your nose adapts to scents on your body quickly, but a strip holds the fragrance at a slight distance, making off-notes easier to detect.
 
-## How do I read a PAO code or batch code on my bottles?
+## How to read a PAO code or batch code on your bottles
 
 Most fragrance packaging includes at least one of two dating cues, though they require a little decoding.
 
@@ -102,7 +102,7 @@ Mildly aged fragrance is usually fine for healthy skin. The scent may be flatter
 
 If the juice has darkened dramatically, smells sour, or has separated or gone cloudy, skip skin application entirely. For bottles that are no longer wearable, consider repurposing the perfume as a room spray or for freshening up linens to make the most of your nostalgic favorites. A spritz on bedding, a drawer sachet, or into a humidifier gives a degraded bottle a graceful second act without putting the altered chemistry on your skin.
 
-## How should I store bottles to maximize their lifespan?
+## How to store bottles to maximize their lifespan
 
 Storage is where collectors have the most control, and the rules are straightforward once you understand the enemies: heat, light, air, and humidity.
 

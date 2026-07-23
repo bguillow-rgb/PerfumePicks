@@ -37,13 +37,13 @@ Sampling is the most underrated habit in fragrance collecting, and skipping it i
 
 The counter sniff is a starting point, not a verdict. Perfume is deeply personal. What smells incredible on a paper strip or in a quick spray can evolve very differently on your skin over hours, in different seasons, or different moods. The store environment also works against you: bright lighting, ambient fragrance from dozens of open testers, and a sales associate hovering all create pressure to decide before the fragrance has even hit its heart notes.
 
-There's a more practical argument too. Data shows 68% of online perfume shoppers want to try testers first, a habit that slashes return rates by 25%. The collectors who avoid regret are overwhelmingly the ones who take the scent home before committing.
+There's a more practical argument too. Most online perfume shoppers want to try testers first, and that habit meaningfully cuts return rates. The collectors who avoid regret are overwhelmingly the ones who take the scent home before committing.
 
 A brief counter-test on a strip will tell you whether a fragrance is worth pursuing. A sample worn on your wrist for a full day tells you whether it's worth owning.
 
 ---
 
-## "What's the actual difference between a sample, a decant, and a discovery set?"
+## The actual difference between a sample, a decant, and a discovery set
 
 These three terms get used interchangeably, but they describe meaningfully different things:
 
@@ -54,13 +54,13 @@ These three terms get used interchangeably, but they describe meaningfully diffe
 | Discovery set | 5-10 vials, varies | Exploring a whole brand or house in one purchase | May include scents you'd never choose |
 | Full bottle | 30-200ml | Daily wear, restocking a known favourite | Highest financial risk if untested |
 
-A full bottle is typically a sealed retail unit of 30ml to 200ml, while a fragrance sample is a smaller decant or vial, usually 0.5ml to 10ml, designed for testing before committing to purchase. The difference, as one retailer puts it, "is not just volume -- it is risk, cost, and confidence."
+A full bottle is typically a sealed retail unit of 30ml to 200ml, while a fragrance sample is a smaller decant or vial, usually 0.5ml to 10ml, designed for testing before committing to purchase. The difference, as one retailer puts it, "is not just volume: it is risk, cost, and confidence."
 
 One variable collectors often overlook: two vials can be the same size and deliver completely different value, because concentration drives both how a scent performs and how long it lasts on skin. Extrait de parfum typically contains 30%-45% fragrance oil versus 15%-20% for eau de parfum and 5%-15% for eau de toilette, meaning higher oil load translates to longer projection and longevity throughout the day.
 
 ---
 
-## "Are fragrance discovery sets actually worth the price?"
+## Whether fragrance discovery sets are actually worth the price
 
 The honest answer: it depends almost entirely on vial size and whether the brand offers a credit back. Discovery sets cost a fraction of a full bottle, typically $30-$60 for niche brands, and many credit the set price back toward your first full-size purchase. The value depends on total milliliters and concentration, not the number of vials.
 
@@ -82,7 +82,7 @@ A practical collector's rule: aim for a sample size of 5ml or more. If you quick
 
 ---
 
-## "When is it actually fine to skip sampling and buy the full bottle directly?"
+## When it's actually fine to skip sampling and buy the full bottle directly
 
 Not every purchase needs a sample phase. There are clear, defensible situations where going straight to the full bottle is the rational move.
 
@@ -106,7 +106,7 @@ The exception is a collector who genuinely prefers variety over volume, rotating
 
 ---
 
-## "What about samples for scents I can't test in person, niche or online-only brands?"
+## Samples for scents you can't test in person: niche and online-only brands
 
 This is where sampling becomes non-negotiable rather than just recommended. A decant costing £15-£20 provides enough volume to assess performance, longevity, and seasonal fit before committing. For brands without physical retail presence, and there are many excellent niche houses that don't have one, a decant from a reputable source is your only real alternative to a blind buy.
 

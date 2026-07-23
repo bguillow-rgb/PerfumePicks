@@ -1,6 +1,6 @@
 ---
 title: "What Is My Scent Profile? How to Find Your Fragrance DNA"
-description: "Your scent profile is the pattern of notes, families, and moods you gravitate toward. Learn how to decode it from your own collection — no quiz required."
+description: "Your scent profile is the pattern of notes, families, and moods you gravitate toward. Learn how to decode it from your own collection, no quiz required."
 tier: "detail"
 targetQuery: "what is my scent profile"
 relatedQueries:
@@ -41,13 +41,13 @@ Your collection is a better personality test than any quiz. Every bottle you've 
 
 A scent profile is the personal fingerprint of fragrance families, dominant notes, and emotional moods that you reliably return to, whether or not you've ever consciously named them. Think of it as the underlying logic behind why you own the bottles you own.
 
-It matters because most collectors buy reactively: a glowing review here, a stunning bottle there, a sample that wowed for five minutes in-store. Without a clear picture of your own taste, you accumulate duplicates and misfires. Industry data puts a number on the cost: on average, people now own 4.3 unused fragrance bottles, representing roughly €340 in purchases they regret. That figure exists largely because buyers don't understand their own preferences before spending.
+It matters because most collectors buy reactively: a glowing review here, a stunning bottle there, a sample that wowed for five minutes in-store. Without a clear picture of your own taste, you accumulate duplicates and misfires. The cost is real: buyers routinely accumulate unused fragrance bottles, money spent on purchases they end up regretting. That happens largely because buyers don't understand their own preferences before spending.
 
 Your scent profile fixes this. Once you know, for instance, that you consistently love warm, resinous base notes and feel suffocated by aggressive green florals, every future purchase decision becomes faster and more accurate.
 
 ---
 
-## How is a scent profile different from just having a favorite perfume?
+## How a scent profile differs from just having a favorite perfume
 
 People conflate a beloved signature bottle with a fully formed taste identity. They're related but not the same thing.
 
@@ -73,7 +73,7 @@ The most reliable method doesn't involve an online quiz. It involves your own bo
 
 ---
 
-## What do the different fragrance families actually signal about taste?
+## What the different fragrance families signal about taste
 
 Plenty of collectors are comfortable picking bottles but have never learned the vocabulary to describe their own pattern.
 
@@ -92,13 +92,13 @@ None of these signal a fixed personality type. They reflect a *sensory* preferen
 
 ---
 
-## What's the role of recurring notes vs. fragrance families in my profile?
+## The role of recurring notes vs. fragrance families in your profile
 
 Whether they should think in terms of families or individual notes. The answer: families tell you the *shape* of what you love; recurring notes tell you the *soul* of it.
 
 You might have a broadly woody profile but specifically need cedar rather than oud. They're in the same family but perform very differently on skin and create entirely different emotional registers. Knowing you love cedar-forward woodies but find oud heavy and medicinal is far more actionable than simply knowing you like "woody" fragrances.
 
-A practical approach: when you discover a new perfume you love, write down the two or three notes that made you say yes and the one or two that would have made you walk away. Over time, this builds a precise positive-and-negative ingredient map that no quiz can replicate. Fragrance searches have grown 26.5% year over year according to beauty insights data, which means more options, more noise, and a bigger payoff for collectors who have this kind of clarity.
+A practical approach: when you discover a new perfume you love, write down the two or three notes that made you say yes and the one or two that would have made you walk away. Over time, this builds a precise positive-and-negative ingredient map that no quiz can replicate. Fragrance searches keep growing year over year, which means more options, more noise, and a bigger payoff for collectors who have this kind of clarity.
 
 ---
 
@@ -125,7 +125,7 @@ Where this matters practically: when you're shopping, knowing which sub-profile 
 
 ---
 
-## What should I actually *do* with my scent profile once I know it?
+## What to actually *do* with your scent profile once you know it
 
 This, because decoding your taste is only valuable if it changes your behaviour.
 

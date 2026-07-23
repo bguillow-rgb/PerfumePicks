@@ -32,7 +32,7 @@ published: true
 ---
 
 If you own more than a handful of bottles, you already know the feeling: you spray something, love it, and then promptly forget about it for six months.
-European consumers alone are holding onto an estimated €780 million worth of unworn fragrances, with the average person sitting on 4.3 unused bottles, roughly €340 in overlooked purchases.
+A lot of value sits unused in the average collection, bottles that got bought, loved briefly, then quietly forgotten on the shelf.
 Tracking your collection is the direct fix. It turns a passive shelf display into an active wardrobe you actually use.
 
 ---
@@ -44,11 +44,11 @@ Perfume as a hobby is largely unstructured. Unlike wine or food, there's no univ
 That gap is the opportunity. A simple tracking habit gives you data that no amount of browsing Fragrantica ever will: *your* wear patterns, *your* neglected bottles, *your* repeating preferences.
 
 The payoff is concrete. Once you know a particular woody oriental gets picked up two or three times a week while a beloved citrus sits untouched for months, you can make smarter decisions: rotating deliberately, [building a more intentional fragrance wardrobe](https://perfumepicks.app/how-to-build-a-fragrance-wardrobe), and eventually buying fewer bottles you'll regret.
-The shift toward fragrance wardrobes of 6-10 bottles is already happening, but 67% of buyers still regret at least one fragrance purchase. Wear tracking is one of the clearest ways to reduce that number over time.
+The shift toward fragrance wardrobes of 6-10 bottles is already happening, but plenty of buyers still regret at least one fragrance purchase. Wear tracking is one of the clearest ways to reduce that number over time.
 
 ---
 
-## What exactly should I log for each bottle in my collection?
+## What to log for each bottle in your collection
 
 Collectors get paralyzed trying to design the perfect system before they've tracked a single bottle. Keep it simple to start.
 
@@ -102,7 +102,7 @@ For collectors who want wear data to do something useful, like surfacing which b
 
 ---
 
-## How do I use wear data to figure out which bottles I should actually keep?
+## Using wear data to figure out which bottles to keep
 
 This is where tracking pays off most visibly. Pull up your wear log after 60-90 days and run a simple tally: how many times did each bottle get worn? The result is almost always lopsided.
 
@@ -126,7 +126,7 @@ Build two performance fields into your log: a longevity score (hours until it's 
 
 ---
 
-## What's the fastest way to get an existing collection logged without starting from scratch?
+## The fastest way to get an existing collection logged without starting from scratch
 
 The backlog feels overwhelming when you're looking at 20 or 30 bottles.
 

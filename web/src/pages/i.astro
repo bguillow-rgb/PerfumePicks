@@ -19,9 +19,9 @@ import { SITE } from '../consts';
 >
   <section class="invite">
     <p class="eyebrow">A friend invited you to</p>
-    <h1 class="brand">Perfume&nbsp;Picks</h1>
-    <p class="hook" id="hook">Discover your Fragrance&nbsp;DNA.</p>
-    <a class="cta" id="cta" href={SITE.appStoreUrl} rel="nofollow">Find your Fragrance DNA&nbsp;→</a>
+    <h1 class="invite-title">Perfume&nbsp;Picks</h1>
+    <p class="hook" id="hook">Find your Fragrance&nbsp;DNA.</p>
+    <a class="btn" id="cta" href={SITE.appStoreUrl} rel="nofollow">Find your Fragrance DNA&nbsp;→</a>
     <p class="fine">Free on the App&nbsp;Store · answer a few scents, get your archetype.</p>
   </section>
 
@@ -78,35 +78,28 @@ import { SITE } from '../consts';
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-size: 0.8rem;
-      color: var(--muted, #7A6A5C);
+      color: var(--taupe);
       margin: 0 0 0.5rem;
     }
-    .brand {
+    .invite-title {
+      font-family: var(--display);
       font-size: clamp(2.25rem, 9vw, 3.25rem);
+      font-weight: 500;
       margin: 0 0 1rem;
-      color: var(--accent, #B8924B);
+      color: var(--ink);
     }
     .hook {
-      font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+      font-family: var(--display);
+      font-style: italic;
+      font-size: clamp(1.2rem, 4.5vw, 1.6rem);
       line-height: 1.4;
-      color: var(--text, #2A1F18);
+      color: var(--gold);
       margin: 0 0 2rem;
     }
-    .cta {
-      display: inline-block;
-      background: var(--accent, #B8924B);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 0.9rem 1.6rem;
-      border-radius: 999px;
-      font-size: 1.05rem;
-    }
-    .cta:hover { filter: brightness(1.05); }
     .fine {
-      margin: 1rem 0 0;
+      margin: 1.2rem 0 0;
       font-size: 0.85rem;
-      color: var(--muted, #7A6A5C);
+      color: var(--taupe);
     }
   </style>
 </BaseLayout>

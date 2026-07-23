@@ -35,7 +35,7 @@ published: true
 
 Every serious collector eventually faces the same crossroads: a shelf crowded with bottles that no longer get reached for. Maybe it was a blind buy that missed the mark, a fragrance your tastes have outgrown, or a duplicate you picked up by accident. Whatever the reason, there's a real, active market for pre-loved perfume, and knowing how to work it means recouping meaningful money while your bottle finds someone who'll actually wear it.
 
-European consumers alone are holding onto an estimated €780 million worth of unworn fragrances, with the average individual owning 4.3 unused bottles that represent roughly €340 in regretted purchases. If you're sitting on bottles you never reach for, you're in very good company, and the secondhand fragrance market is ready for them.
+Plenty of people are sitting on unworn fragrances, bottles that got bought and then never reached for. If you're sitting on bottles you never reach for, you're in very good company, and the secondhand fragrance market is ready for them.
 
 ## Why does anyone buy used perfume in the first place?
 
@@ -45,7 +45,7 @@ Buyers include serious collectors hunting rare, discontinued, or vintage bottles
 
 High-end designer, niche, and discontinued scents sit at the top of the demand pyramid. Brands like Chanel, Dior, Creed, Tom Ford, and Frederic Malle consistently fetch good prices, and the harder a fragrance is to find, the more likely it is to sell. Common mass-market bottles face stiff competition from discount fragrance retailers, which makes pricing them to move an uphill battle.
 
-## Where should I actually list my bottles?
+## Where to list your bottles
 
 Collectors who are new to selling don't know whether to reach for a general marketplace or a fragrance-specific community. Both have a place, but they serve different bottles and different sellers.
 
@@ -77,7 +77,7 @@ Rarity and discontinuation status. Discontinued bottles command genuine premiums
 
 Condition of bottle and packaging. Original box, cellophane, and accessories all add value. Research similar listings to understand the current market value of your bottle. Pricing too high will deter buyers, while pricing too low may suggest authenticity issues. Use eBay's "sold listings" filter (not active listings) for the most accurate comps: check eBay's sold-listings filter to see how much similar bottles have actually sold for, then cross-reference Mercari and Poshmark, weighing remaining volume, condition, and rarity together.
 
-## What do I need to include in my listing to build trust?
+## What to include in your listing to build trust
 
 Sellers who've posted a photo of a bottle and gotten zero interest run into this constantly. A listing that converts has these elements covered.
 
@@ -97,7 +97,7 @@ For domestic ground shipping, pack carefully: perfume bottles are fragile and re
 
 For very small decants, the rules are slightly more lenient, but still check current carrier guidelines before quoting international shipping to a buyer. International shipping of flammable items like fragrances can be tricky due to postal regulations. Research carefully before committing.
 
-## Is trading or swapping a better option than selling?
+## Trading or swapping as an alternative to selling
 
 For collectors who aren't interested in cash and just want to diversify their wardrobe without spending more, swapping is an underused option. The same platforms that host sales (r/FragranceSwap, Basenotes, and fragrance Facebook groups) all support Want to Trade (WTT) posts where you list what you have and what you're looking for in return.
 
@@ -117,6 +117,6 @@ For reference on decanting technique and equipment before going this route, see 
 
 ## A final note on building a collection worth selling from
 
-The average collector now owns 6-10 bottles to suit different moods, routines, and occasions, but 67% of buyers report regretting at least one fragrance purchase. That regret is the inventory that flows through the secondhand market every day. Knowing how to move those bottles efficiently is as much a part of being a seasoned collector as knowing how to buy well in the first place.
+The average collector now owns 6-10 bottles to suit different moods, routines, and occasions, but a large share of buyers report regretting at least one fragrance purchase. That regret is the inventory that flows through the secondhand market every day. Knowing how to move those bottles efficiently is as much a part of being a seasoned collector as knowing how to buy well in the first place.
 
 The best collections aren't the biggest ones. They're the most *worn* ones. If you're cataloguing your bottles and tracking actual wear rather than relying on memory, you'll know within weeks which bottles deserve a permanent spot and which are only taking up shelf space. That clarity makes selling, swapping, or even gifting the right call much easier to act on.

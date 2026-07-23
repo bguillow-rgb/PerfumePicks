@@ -37,7 +37,7 @@ Mood-scent matching has become one of the more dynamic conversations in fragranc
 
 ---
 
-## Why does perfume have such a strong effect on how I feel?
+## Why perfume has such a strong effect on how I feel
 
 The short answer is neuroscience.
 
@@ -71,7 +71,7 @@ Studies indicate that calming scents like lavender can lower heart rate and bloo
 
 ---
 
-## How do I use this with bottles I already own, rather than buying new ones?
+## Using this with bottles I already own, rather than buying new ones
 
 Collectors often feel mood-based fragrance requires a specialty purchase. It rarely does.
 
@@ -97,7 +97,7 @@ One practical habit worth trying: designate your two or three most energizing bo
 
 ## What should I wear when I'm anxious, overwhelmed, or need to reset?
 
-Scent connects directly to the brain's limbic system, the seat of memory and emotion. That's why up to 75% of our daily emotions can be influenced by smell, often more than sight or sound.
+Scent connects directly to the brain's limbic system, the seat of memory and emotion. That's why a large share of our daily emotions can be influenced by smell, often more than sight or sound.
 
 For high-stress moments, the research consistently points toward the same fragrance profiles. Lavender and earthy notes have been shown to reduce cortisol levels and promote calm. Beyond lavender, look for sandalwood, vetiver, soft iris, and milky musks, notes that feel like exhaling.
 
@@ -115,7 +115,7 @@ If your collection includes an oud-forward or leather-accented bottle you've bee
 
 ---
 
-## How do I build a mood-based system without it feeling overcomplicated?
+## Building a mood-based system without it feeling overcomplicated
 
 The goal isn't a rigid rulebook. It's a loose mental map you can reach for on autopilot. The easiest way to organize fragrance is by use rather than by brand: start with four lanes (work, casual daytime, evening, and special occasions), then layer in the emotional dimension. Which bottle in each lane makes you feel most like the version of yourself that context requires?
 

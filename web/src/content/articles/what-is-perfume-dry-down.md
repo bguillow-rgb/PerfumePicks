@@ -39,7 +39,7 @@ Dry down is the final and longest-lasting phase of a fragrance's development on 
 
 Think of a fragrance as playing out in three acts. Top notes are light, bright, and fleeting, often citrus, herbs, or light fruits, designed to catch attention but typically gone within 15-30 minutes. As they dissipate, the heart notes emerge: florals, spices, and green notes that form the fragrance's core personality and can last 2-4 hours. Then the dry down arrives. The base takes over and doesn't leave. Musk, amber, oud, vanilla, these materials evaporate far more slowly than anything that came before them, which is exactly why they outlast everything else.
 
-## "Why does this matter more than the opening?"
+## Why the dry down matters more than the opening
 
 If you only judge a fragrance in its first few minutes, you're evaluating the least stable part of the wear. For a collector committing £100-£350 to a full bottle, the dry down deserves the most scrutiny, not the opening.
 
@@ -51,9 +51,9 @@ The opening might sell a perfume at the counter. The dry down determines whether
 
 There's no universal rule, but a practical framework most experienced collectors use is the **10 / 30 / 90** test: smell the fragrance at 10 minutes (top notes still present but fading), 30 minutes (transition into the heart), and 90 minutes (base notes fully exposed). Spray on a sample strip and one wrist, then smell at each interval and keep notes on your impressions, the character shift, the wear time.
 
-Ninety minutes is the minimum for a buying decision. If you're evaluating a bottle in the £200+ range, wearing it for a full day before committing is the smarter move. According to consumer data, 67% of buyers regret at least one fragrance purchase, and most of those regrets trace back to decisions made on the opening spray.
+Ninety minutes is the minimum for a buying decision. If you're evaluating a bottle in the £200+ range, wearing it for a full day before committing is the smarter move. Plenty of buyers regret at least one fragrance purchase, and most of those regrets trace back to decisions made on the opening spray.
 
-## "Does my skin actually change how the dry down smells?"
+## How your skin changes the way the dry down smells
 
 Significantly, yes, though not in a mysterious or unpredictable way. Skin type, temperature, oil level, hydration, and even how much you spray all influence how materials develop. None of this is random once you understand your own skin.
 
@@ -88,11 +88,11 @@ This is the most common complaint in fragrance collecting, and dry down is nearl
 
 At home, in your normal temperature and humidity, after actually wearing the scent for four or more hours, you're finally experiencing the real fragrance. Some fragrances open with exuberance and then settle into something surprisingly quiet. Others begin subtly and grow more interesting as the base develops.
 
-The fix is to build dry-down evaluation into every purchase decision before committing to a full bottle. Get a decant or sample and wear it through a full day. Our [guide to perfume samples vs full bottles](/perfume-samples-vs-full-bottles) covers exactly when that extra step is worth taking. According to fragrance industry data, sampling reduces purchase regret by 86% and boosts repurchase rates by 3.2 times.
+The fix is to build dry-down evaluation into every purchase decision before committing to a full bottle. Get a decant or sample and wear it through a full day. Our [guide to perfume samples vs full bottles](/perfume-samples-vs-full-bottles) covers exactly when that extra step is worth taking. Sampling first meaningfully reduces purchase regret and improves the odds you'll actually reach for the bottle again.
 
 If you use [Perfume Picks](https://perfumepicks.app), logging wear notes at different time intervals in your wear log is a natural way to build a dry-down record for every bottle in your collection, useful when you're deciding whether to reach for a bottle again or recommending it to someone else.
 
-## "Can I actually influence how my dry down smells?"
+## Influencing how your dry down smells
 
 Within limits, yes. You can't rewrite a fragrance, but you can influence how clearly and comfortably it settles. Moisturized skin gives base notes a smoother landing. Beyond that, there are a few specific levers.
 

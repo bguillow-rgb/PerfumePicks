@@ -43,7 +43,7 @@ A gourmand perfume smells like food, but not literally. You are not going to wal
 
 A common misconception is that gourmand scents are overly sweet or juvenile. Modern versions have moved well past that, layering edible notes with spices, woods, musk, and amber to produce compositions that are genuinely complex. That evolution is exactly why serious collectors have started treating gourmand as a pillar of a well-rounded wardrobe rather than a guilty detour.
 
-## Why is everyone suddenly obsessed with gourmands in 2026?
+## Why everyone is suddenly obsessed with gourmands in 2026
 
 Since their 1990s origins, gourmand fragrances have grown from a niche experiment into the fastest-growing segment in global perfumery. In 2026, industry data shows fine fragrance is the top beauty category for year-over-year growth in the US, and gourmands are leading that charge.
 
@@ -51,7 +51,7 @@ Two forces are driving this. The first is cultural: sweet, edible scents connect
 
 The second force is a category evolution. Gourmand perfumes aren't new, but they are changing. Back in 2020, the archetype was heavy, ultra-sweet, and firmly a cold-season proposition. Today there are detailed sub-categories: fresh fruity, patisserie, creamy lactonic, powdery floral. The range is genuinely wide now.
 
-Pistachio, in particular, has emerged as a note with real nuance: nutty, slightly savory, more interesting than vanilla alone. One retailer reported pistachio perfume searches up over 850% year on year, which tells you where collector curiosity is pointed right now.
+Pistachio, in particular, has emerged as a note with real nuance: nutty, slightly savory, more interesting than vanilla alone. Retailers have reported pistachio perfume searches climbing sharply year on year, which tells you where collector curiosity is pointed right now.
 
 ## What are the main gourmand sub-families, and how do they differ?
 
@@ -68,7 +68,7 @@ Understanding that "gourmand" is a broad umbrella, not a single smell, is what s
 
 Perfumers add further complexity through floral touches like peony or jasmine, spices like cardamom and saffron, and fruity notes like cherry or caramelized apple. When you're cataloguing your bottles, tagging by sub-family rather than just "gourmand" will radically improve how quickly you pick the right one.
 
-## When is a gourmand the right choice, and when isn't it?
+## When a gourmand is the right choice, and when it isn't
 
 Lighter gourmands with fresh fruit or floral accents suit daytime and warmer months. Richer caramel or coffee constructions are better suited to cooler weather and evening. That seasonal logic isn't a hard rule so much as a starting point: skin chemistry, application volume, and ambient temperature all shift the equation.
 
@@ -76,7 +76,7 @@ Two contexts where even devoted gourmand fans should pause. First, office enviro
 
 For everything else: date nights, weekends, evenings, travel. Gourmands tend to punch well above their weight in terms of compliments and memorability. According to one fragrance brand relationship manager, gourmand perfumes are "easy-going, immediately lovable, positive in energy, and mood-elevating." That last quality is under-rated. Wear something you genuinely enjoy smelling on yourself and your mood will follow.
 
-## How do gourmand perfumes fit into a broader fragrance wardrobe?
+## How gourmand perfumes fit into a broader fragrance wardrobe
 
 How many gourmands is too many, and what role should they actually play?
 
@@ -100,7 +100,7 @@ Longevity without projection overkill. Gourmands as a category tend toward good 
 
 Brands like Kayali, Lattafa, Paris Corner, and Afnan have brought genuinely good gourmand fragrances to market at prices between $25 and $55, delivering quality and longevity that rivals bottles costing five times as much. Price is not a reliable proxy for quality here. Sample widely before committing to a full bottle: the [perfume samples vs full bottles](https://perfumepicks.app/articles/perfume-samples-vs-full-bottles) calculus applies especially to gourmands, where skin chemistry has an outsized effect on how a sweet accord develops.
 
-## Does wearing a gourmand affect how other people perceive you?
+## Whether wearing a gourmand affects how other people perceive you
 
 There's legitimate science behind the social dimension of this family. Scent is closely linked to both emotion and recall, and sweet notes tend to remind people of comfort, warmth, and positive memories. Gourmand perfumes feel inviting in a way that sharper, more austere categories don't, and they register before the brain has consciously identified that a perfume is even being worn.
 

@@ -43,9 +43,9 @@ Fragrance families are the classification system perfumers and retailers use to 
 
 For a first-time buyer, this is mostly useful for navigating a perfume counter. For a collector, it goes further. If you are a collector, enthusiast, or future perfumer, learning fragrance families allows you to differentiate between different perfume styles and understand why certain materials or accords are used. In practical terms: once you can map your own collection against the four families, you can instantly see if you're over-indexed in one area and completely missing another. That gap is one of the most common reasons collectors end up reaching for the same two or three bottles out of twenty.
 
-According to fragrance industry data, the average collector owned around 2.5 bottles before 2020; by 2026, that number has jumped to 6-10 bottles, reflecting a move toward a more flexible, wardrobe-like approach to fragrance. More bottles means more complexity, and more potential for redundancy if you don't have a framework.
+The average collector used to own just a couple of bottles; in recent years that has grown into larger, wardrobe-like collections, reflecting a move toward a more flexible approach to fragrance. More bottles means more complexity, and more potential for redundancy if you don't have a framework.
 
-## What are the four core fragrance families and what do they smell like?
+## The four core fragrance families and what they smell like
 
 Scent families are broken into four main categories: Floral, Oriental (Amber), Woody, and Fresh, each with their own subfamilies. Here is what each one means in practice:
 
@@ -64,7 +64,7 @@ Scent families are broken into four main categories: Floral, Oriental (Amber), W
 | **Woody** | Grounded, sophisticated, versatile | Evening, cooler weather | Cedarwood, sandalwood, vetiver, patchouli |
 | **Fresh** | Bright, clean, energising | Daytime, spring/summer | Bergamot, lemon, sea salt, lavender |
 
-## What is the fragrance wheel and how does it actually work?
+## The fragrance wheel and how it actually works
 
 The fragrance wheel was developed by perfumer Michael Edwards in 1983. Much like a color wheel, it groups categories together in a way that allows for overlap and gradual variances. The four main families sit around the outside, with subfamilies, Soft Floral, Floral Oriental, Soft Oriental, Woody Oriental, Mossy Woods, Dry Woods, Aromatic, Citrus, Water, and Green, filling the spaces between them.
 
@@ -72,7 +72,7 @@ The logic of the wheel is spatial: proximity equals similarity. Scents are group
 
 For collectors, this spatial logic has two very practical uses. First, it tells you which families layer and blend naturally. Fragrance subfamilies that are side by side on the fragrance wheel will almost always blend well. If you love layering, the wheel is a reliable guide for which bottles to combine (more on that in our guide to [how to layer perfumes](/how-to-layer-perfumes)). Second, it tells you which families contrast boldly. Families positioned closer together share similar characteristics, making them easy to blend, while opposing families create bold contrasts. An Amber lover trying a fresh aquatic for the first time is crossing the wheel, worth knowing before you spend €150 on a blind buy.
 
-More than 70% of customers select scents based on familiarity, meaning that understanding your fragrance family can meaningfully improve buying decisions and overall satisfaction with a purchase.
+Most customers select scents based on familiarity, meaning that understanding your fragrance family can meaningfully improve buying decisions and overall satisfaction with a purchase.
 
 ## I know the four families, what are the subfamilies I actually need to know about?
 
@@ -84,13 +84,13 @@ Once you move beyond the four core families, six subfamilies matter most for col
 
 **Chypre** deserves its own mention. The original Chypre was created in 1917 by François Coty, and the accord requires bergamot, labdanum, patchouli, and oakmoss. On contemporary wheels it sits in the Mossy Woods zone, but serious collectors treat it as a distinct category. Chypre remains niche-skewed but is reviving in artisan houses with mossy, animalic, and woody-floral structures.
 
-**Gourmand** is the fastest-growing modern subfamily. Gourmand is at 7% market share and is the fastest-growing family among Gen Z, vanilla-led and edible-coded, gourmand vanilla notes are the highest-velocity category in 2025-2026 search trends. Built around edible notes (vanilla, caramel, tonka, chocolate), it technically lives within the Amber family but has developed its own identity. If you own any of these, they skew heavily evening and cold-weather.
+**Gourmand** is the fastest-growing modern subfamily. It's the fastest-growing family among Gen Z, vanilla-led and edible-coded, and gourmand vanilla notes are among the highest-velocity categories in 2025-2026 search trends. Built around edible notes (vanilla, caramel, tonka, chocolate), it technically lives within the Amber family but has developed its own identity. If you own any of these, they skew heavily evening and cold-weather.
 
-**Fougère (Aromatic)** sits within the Fresh family's aromatic quadrant. Fougère and Aromatic-fresh holds 9% market share as a stable, mature segment. The classic accord pairs lavender, oakmoss, and coumarin; modern interpretations are cleaner and crisper. This is the backbone of a huge proportion of classic masculine fragrances, though it appears increasingly in unisex and feminine contexts.
+**Fougère (Aromatic)** sits within the Fresh family's aromatic quadrant. Fougère and Aromatic-fresh is a stable, mature segment. The classic accord pairs lavender, oakmoss, and coumarin; modern interpretations are cleaner and crisper. This is the backbone of a huge proportion of classic masculine fragrances, though it appears increasingly in unisex and feminine contexts.
 
 **Woody Oriental** is exactly where it sounds, bridging sandalwood and resinous amber into some of the most wearable, crowd-pleasing compositions in contemporary niche perfumery. If you want one scent that transitions from day to evening, this subfamily punches above its weight.
 
-## How do I use my knowledge of fragrance families to actually audit my own collection?
+## How to use fragrance families to audit your own collection
 
 This is where the framework earns its keep. Pull out every bottle you own, or open your collection log in Perfume Picks, and assign each one a primary family. Most modern fragrances blend two adjacent families, so default to the dominant one. Then tally up.
 
@@ -110,7 +110,7 @@ Skin chemistry adds another layer. Your skin's natural oils and pH can change th
 
 This is also why collectors who understand family structure make better use of samples. They can test strategically across a family, "I want to find a chypre I actually like, so let me try three from different subsets of Mossy Woods", rather than sampling randomly and hoping something lands.
 
-## How do the seasons map to fragrance families?
+## How the seasons map to fragrance families
 
 Seasons play a role in family selection, citrus and aquatic notes feel effortless in summer, while woody fragrance family perfumes bring cozy sophistication to colder months. The conventional framework is:
 

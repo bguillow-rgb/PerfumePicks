@@ -45,7 +45,7 @@ Understanding the distinction between sillage and projection is the difference b
 
 ---
 
-## How is projection different from sillage?
+## How projection differs from sillage
 
 Collectors use both words interchangeably, and reviewers make it worse by mixing them up. Here's the clean distinction.
 
@@ -71,11 +71,11 @@ Longevity and sillage are not the same scale. Longevity measures how long a frag
 
 ---
 
-## What actually controls sillage and projection?
+## What actually controls sillage and projection
 
 Collectors buy a highly-rated "beast" fragrance expecting it to fill a room, then wonder why it goes quiet after two hours on their skin. Several factors are at play at once.
 
-Concentration is the most predictable lever. Parfums (extrait) and Eau de Parfums generally produce better sillage than Eau de Toilettes because of their higher fragrance oil content. More aromatic material means more molecules dispersing into the air as you move. This is one reason many serious collectors gravitate toward EDP formulations, they simply perform better in real-world conditions. According to performance data, Eau de Cologne (2-5%) typically lasts 2-3 hours; Eau de Toilette (5-15%) lasts 4-6 hours; Eau de Parfum (15-20%) lasts 6-10 hours; and Parfum (20-30%) can reach 10-16 or more hours.
+Concentration is the most predictable lever. Parfums (extrait) and Eau de Parfums generally produce better sillage than Eau de Toilettes because of their higher fragrance oil content. More aromatic material means more molecules dispersing into the air as you move. This is one reason many serious collectors gravitate toward EDP formulations, they simply perform better in real-world conditions. As a rough guide, Eau de Cologne (2-5%) typically lasts 2-3 hours; Eau de Toilette (5-15%) lasts 4-6 hours; Eau de Parfum (15-20%) lasts 6-10 hours; and Parfum (20-30%) can reach 10-16 or more hours.
 
 Molecular weight is equally important. Molecular composition matters enormously. Heavier, denser aromatic molecules like musks, ambers, and woods tend to cling to fabric and linger in the air longer, which directly contributes to sillage. Lighter top notes, citrus, aquatics, project initially but dissipate faster. This is why a fresh citrus EDT can open with enormous projection and then disappear within an hour, while a heavy oriental EDP builds its cloud slowly and trails you for hours.
 
@@ -103,7 +103,7 @@ Perfume Picks tracks every wear in your collection log, so if you're experimenti
 
 ## When is high sillage actually a problem?
 
-Fragrance searches on Google and TikTok have grown by 26.5 percent year over year, which means more new collectors entering the hobby, and more people learning the hard way that maximum sillage isn't always the goal.
+Interest in fragrance keeps climbing, which means more new collectors entering the hobby, and more people learning the hard way that maximum sillage isn't always the goal.
 
 A fragrance with enormous sillage that's perfect for a Saturday evening out is completely inappropriate for a 9 a.m. client meeting in a small conference room. The coworker with a fragrance sensitivity sitting two feet from you does not want to experience your full projection arc for eight hours.
 
@@ -115,7 +115,7 @@ Part of building a real fragrance wardrobe is understanding which fragrances bel
 
 ---
 
-## How do I quickly assess a bottle's performance profile before wearing it out?
+## Assessing a bottle's performance profile before wearing it out
 
 Collectors rotating through bottles they haven't worn in months hit this most often.
 

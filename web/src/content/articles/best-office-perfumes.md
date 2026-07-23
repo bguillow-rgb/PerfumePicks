@@ -43,7 +43,7 @@ Three factors determine whether a fragrance works in a professional setting: **p
 
 **Longevity** affects how a fragrance wears through a workday. A fragrance with extreme longevity (8+ hours of full projection) can become oppressive by 3pm even if the morning application was perfectly calibrated. Moderate longevity, 4-6 hours before significant drydown, is actually an asset in an office context.
 
-## Which fragrance families work best in professional settings?
+## The fragrance families that work best in professional settings
 
 | Family | Office suitability | Notes |
 |---|---|---|
@@ -67,7 +67,7 @@ A useful calibration exercise: apply your chosen office fragrance at your normal
 
 Projection is also amplified by warm spaces, low ventilation, and synthetic fabrics. An open-plan office in July with the air conditioning off amplifies fragrance projection significantly more than a private office in January. Adjust seasonally.
 
-## How do you apply fragrance so it doesn't overpower an office?
+## Applying fragrance so it doesn't overpower an office
 
 **Apply less than you think you need.** The most common office fragrance mistake is not the fragrance itself, it's the application. One spray to a single pulse point (wrist or neck, not both) is the appropriate starting point for office wear. You can always add more; you cannot take it away.
 
@@ -91,7 +91,7 @@ Based on wear log data and community discussions, the profiles that consistently
 
 **What to avoid specifically:** The combinations most associated with office complaints are heavily sweetened musks, anything with a dominant synthetic amber (it amplifies in enclosed spaces), loud white florals, and oud-forward blends with strong projection. None of these are bad fragrances, they are wrong-context fragrances.
 
-## How do you track which fragrances actually work for you at work?
+## Tracking which fragrances actually work for you at work
 
 Office wear patterns are one of the more useful things a wear log can surface. After a few months of logging, you can filter by occasion to see which fragrances you actually reach for when you are heading to work, versus which ones you mentally assign as "work fragrances" but never actually wear.
 

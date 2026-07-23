@@ -47,7 +47,7 @@ There's also a social dimension. Wearing a beast-mode evening fragrance to a mor
 
 ---
 
-## "What should I actually look for in a morning fragrance?"
+## What to look for in a morning fragrance
 
 Start with light, energizing scents. Citrus, green, and soft floral notes are the obvious targets: bergamot, grapefruit, lemon, green tea, neroli, cool aquatics. These notes evaporate readily and keep a modest sillage radius, which is exactly what you want when you're commuting or sitting in back-to-back meetings.
 
@@ -57,7 +57,7 @@ A useful filter when scanning your own shelf: look for bottles where the top not
 
 ---
 
-## "When does 'daytime' become 'afternoon,' and does the difference actually matter?"
+## When "daytime" becomes "afternoon," and whether the difference matters
 
 The afternoon slot is the most forgiving time of day for fragrance, and it's where a lot of collectors' versatile bottles, soft florals, light chypres, sheer woods, genuinely earn their place.
 
@@ -79,7 +79,7 @@ In terms of concentration, Eau de Parfum, Extrait de Parfum, and intense edition
 
 ---
 
-## "How do I build a day-to-night rotation from bottles I already own?"
+## How to build a day-to-night rotation from bottles you already own
 
 This is where collection management pays real dividends. The goal isn't to buy four new fragrances. It's to look at what's already on your shelf and assign each bottle a time slot that plays to its strengths.
 

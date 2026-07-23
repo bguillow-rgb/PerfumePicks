@@ -1,6 +1,6 @@
 ---
 title: "How to Blind Buy Perfume (And Actually Like What Arrives)"
-description: "67% of buyers regret at least one fragrance purchase. Learn how to blind buy perfume safely using note analysis, review patterns, and your existing collection as a guide."
+description: "Most buyers regret at least one fragrance purchase. Learn how to blind buy perfume safely using note analysis, review patterns, and your existing collection as a guide."
 tier: "detail"
 targetQuery: "how to blind buy perfume"
 relatedQueries:
@@ -33,7 +33,7 @@ published: true
 
 There is a particular kind of optimism that strikes when you're hovering over the checkout button for a perfume you've never smelled. The bottle looks right. The notes sound right. Seventeen people on the internet say it changed their life. You click confirm.
 
-Sometimes it's transcendent. Sometimes it arrives, you spray it, and you realize the note list lied to you in ways you weren't equipped to anticipate. According to 2026 fragrance industry data, 67% of buyers regret at least one fragrance purchase, with the average person sitting on 4.3 unused bottles worth roughly €340 in regretted spending over three years. Blind buying is the main culprit, and it doesn't have to be.
+Sometimes it's transcendent. Sometimes it arrives, you spray it, and you realize the note list lied to you in ways you weren't equipped to anticipate. Most buyers regret at least one fragrance purchase, and unused bottles pile up fast. Blind buying is the main culprit, and it doesn't have to be.
 
 This guide is for collectors who already own bottles and want to grow their wardrobes smarter, not just bigger.
 
@@ -47,7 +47,7 @@ Beyond logistics, there's the thrill factor. For collectors, it's a game: scouri
 
 ---
 
-## How do I figure out what I'll actually like before buying?
+## Figuring out what you'll actually like before buying
 
 The best starting point is the collection you already own. When blind buying, take stock of the perfumes you already own. Ask: are you typically drawn to fruit-forward fragrances? Is your vanity full of vanilla scents? What hasn't worked for you? This audit reveals your real taste profile, not the one you think you have, but the one your spending history confirms.
 
@@ -67,7 +67,7 @@ For blind buying, the drydown matters most. The base notes are what stay on your
 
 ---
 
-## How should I actually read reviews before a blind buy?
+## How to actually read reviews before a blind buy
 
 Reviews are useful, but only if you read them analytically. Instead of looking for 'love' or 'hate,' look for repeated patterns. If many reviewers mention short longevity, loud projection, a synthetic opening, or a major change after thirty minutes, those comments are more valuable than broad praise.
 
@@ -108,7 +108,7 @@ There's also the question of concentration. A perfume you haven't tried in Extra
 
 ---
 
-## How do I use my existing collection as a blind-buy compass?
+## Using your existing collection as a blind-buy compass
 
 This is the underused move that experienced collectors rely on most. Blind buying doesn't have to mean uninformed buying. Every piece of research you do before clicking purchase is a risk-reduction measure, and when you also factor in your preferred fragrance families and seasonal wear patterns, the blind buy becomes a much more calculated decision.
 
@@ -120,6 +120,6 @@ Maintaining a simple inventory system that tracks purchase dates, opening dates,
 
 ## The broader picture: why this matters more now than ever
 
-Before 2020, people typically owned around 2.5 fragrance bottles on average. By 2026, that number has jumped to 6-10 bottles, reflecting a move toward a wardrobe-like approach to fragrance. More bottles mean more buying decisions and more opportunities for expensive misses. According to a joint survey by Scento and RIFM, 12.8 million bottles of designer and niche fragrances currently sit unused in European homes alone.
+Not long ago, people typically owned just a couple of fragrance bottles. That's grown into a wardrobe-like approach, with many owning several at once. More bottles mean more buying decisions and more opportunities for expensive misses. As a result, a lot of designer and niche bottles sit unused in homes, bought once and never worn.
 
 The antidote isn't to stop exploring. It's to explore with better tools: a clear picture of your own taste, a disciplined approach to reading reviews, a realistic price ceiling for untested bottles, and the willingness to use decants as a bridge before committing to a full pour. The collectors who build wardrobes they actually love and wear aren't the ones who never take risks, they're the ones who take informed ones.

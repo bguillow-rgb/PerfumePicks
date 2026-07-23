@@ -37,7 +37,7 @@ Reformulations, changes to a fragrance's composition that produce noticeable dif
 
 ---
 
-## Why does my perfume suddenly smell different from how I remember it?
+## Why your perfume suddenly smells different from how you remember it
 
 And the frustrating honest answer is that your fragrance almost certainly changed, not your memory.
 
@@ -75,7 +75,7 @@ The practical takeaway: compare with your own nose on your own skin before accep
 
 ---
 
-## Which fragrances and houses are most at risk of significant reformulation?
+## Which fragrances and houses are most at risk of reformulation
 
 | House | Reformulation reputation | Notable affected scents |
 |---|---|---|
@@ -88,7 +88,7 @@ The practical takeaway: compare with your own nose on your own skin before accep
 
 Guerlain and Elizabeth Arden are generally considered more reliable. Dior less so. Niche brands face a different calculation entirely: some perfumers will simply discontinue a scent rather than reformulate it. That's its own kind of collector heartbreak, but at least it preserves the original's integrity in existing stock.
 
-The niche fragrance market is projected at $4.85 billion in 2026, growing at a 9.1% CAGR, a scale that increasingly pressures even artisan houses to manage ingredient costs. Reformulation risk is no longer limited to mass-market brands.
+The niche fragrance market keeps expanding, a scale that increasingly pressures even artisan houses to manage ingredient costs. Reformulation risk is no longer limited to mass-market brands.
 
 ---
 
@@ -100,11 +100,11 @@ The batch code check should be a reflex before any significant purchase. For sec
 
 Sampling across batches is the gold standard. Spending $200 or more on a full bottle without a single test wear is a gamble most enthusiasts have lost at least once. If a specific older batch is prized, find a decant from that production year before committing.
 
-European consumers are already sitting on an estimated 780 million euros worth of unworn fragrances, with individuals owning an average of 4.3 unused bottles, representing roughly 340 euros in regretted purchases over three years. A batch-code check costs nothing and takes thirty seconds. It's the single easiest way to cut into that regret.
+European consumers are already sitting on a mountain of unworn fragrance, with plenty of people owning several bottles' worth of regretted purchases. A batch-code check costs nothing and takes thirty seconds. It's the single easiest way to cut into that regret.
 
 ---
 
-## What's the best way to document reformulations across my own collection?
+## The best way to document reformulations across your collection
 
 Perfume as a hobby is unstructured by nature. There's no universally accepted system for sourcing, tracking, or reviewing fragrance the way there is for wine or food. You're largely on your own to build something that works, for a category that only gets bigger every year.
 

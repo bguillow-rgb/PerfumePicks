@@ -49,7 +49,7 @@ So if you react right on application, stinging, tightness, immediate redness, th
 
 ---
 
-## Which specific ingredients should I watch out for?
+## Which specific ingredients to watch out for
 
 The list of potential fragrance allergens is long, but a handful of compounds account for most reported reactions in regular wearers.
 
@@ -84,7 +84,7 @@ For collectors, the most actionable approach is to look specifically for IFRA-co
 
 ---
 
-## Should I switch to oil-based or alcohol-free perfume?
+## Whether to switch to oil-based or alcohol-free perfume
 
 Alcohol-free perfumes have been quietly winning over fragrance lovers, and they are no longer a niche choice. They're increasingly the preferred format for people with sensitive skin, a halal lifestyle, or anyone who wants a scent that feels more personal.
 
@@ -100,7 +100,7 @@ The important caveat: switching to oil-based doesn't sanitize the formula. A per
 
 ---
 
-## How do I test a new perfume safely when I have reactive skin?
+## How to test a new perfume safely when you have reactive skin
 
 Standard fragrance testing, spraying on the wrist at a counter and walking away, doesn't tell you much if you're prone to delayed reactions.
 
@@ -116,7 +116,7 @@ A safer protocol for sensitive-skin collectors:
 
 ## Can I still collect niche and designer fragrances, or do I have to stick to basic options?
 
-Treating all fragrance sensitivity as a single category is lazy advice. A major review found that among people with fragrance contact allergy, 16.1% experienced contact dermatitis, while 59.6% reported dry skin and 47.9% reported generally sensitive skin. Irritation doesn't always arrive as an obvious rash. It can look like persistent dryness, discomfort, or skin that suddenly feels less resilient.
+Treating all fragrance sensitivity as a single category is lazy advice. Among people with fragrance contact allergy, many experience not only contact dermatitis but also dry skin and generally sensitive skin. Irritation doesn't always arrive as an obvious rash. It can look like persistent dryness, discomfort, or skin that suddenly feels less resilient.
 
 Your sensitivity almost certainly has a profile: specific compound classes that bother you and many that don't. Only a small number of fragrances are common sensitizers that cause allergy in most sensitive individuals. Identifying your specific triggers, rather than avoiding all perfume, is what lets you keep collecting intelligently.
 
@@ -126,7 +126,7 @@ The niche world is moving toward greater transparency faster than mass-market br
 
 ---
 
-## Fragrance formats at a glance: which works best for sensitive skin?
+## Fragrance formats at a glance: which works best for sensitive skin
 
 | Format | Alcohol | Typical Concentration | Projection | Sensitive Skin Fit |
 |---|---|---|---|---|
