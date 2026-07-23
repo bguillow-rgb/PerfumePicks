@@ -35,8 +35,6 @@ Every collector hits the same crossroads eventually: you've built a solid founda
 
 ## What actually makes a perfume "niche", and does the label still mean anything?
 
-*A question we hear often:*
-
 The word "niche" originally described independent perfume houses that existed *solely* to make fragrance, not handbags, sneakers, or lipstick. Early pioneers like L'Artisan Parfumeur and Serge Lutens emerged in the late 20th century as a direct reaction against mass-market production, prioritizing rare materials and artistic freedom over broad appeal.
 
 The category has blurred significantly since then. Many of the original niche pioneers have been acquired by luxury conglomerates, and there are now thousands of so-called niche brands on the market, not all of which meet the original expectations of unique artistry or superior quality. Byredo, Le Labo, and Maison Francis Kurkdjian, all marketed as niche, are owned by major corporations. Meanwhile, some fashion houses (Tom Ford, Hermes) produce work that's genuinely artistically adventurous.
@@ -78,8 +76,6 @@ The honest summary: niche *can* mean rarer ingredients and more complex composit
 
 ## Is niche perfume actually worth the price premium?
 
-*This one comes up a lot:*
-
 Interestingly, in a $150 luxury perfume bottle, the actual fragrance oils might only account for about $1.50 of the retail price, a humbling reminder that across both categories, you're paying for brand, packaging, distribution, and marketing as much as liquid. The difference is *where* the remaining budget goes: designer houses pour it into celebrity endorsements and glossy campaigns; niche houses are more likely to invest it in the formula itself.
 
 The niche fragrance market is growing at nearly 12% annually, far outpacing the 2-5% growth seen in mass-market perfumes, which tells you that more collectors are deciding the premium is justified. But justified for whom, doing what?
@@ -91,8 +87,6 @@ Many fragrance lovers curate a collection that leans on reliable designer scents
 ---
 
 ## Which category should anchor my collection?
-
-*Readers frequently ask:*
 
 There's no universal answer, but here's a framework that works for most collectors.
 

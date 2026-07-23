@@ -37,7 +37,7 @@ The bottle has been sitting in your collection for four years. You reach for it,
 
 ## So does perfume actually expire, or is that a myth?
 
-*A question we hear often:* collectors assume that because perfume contains alcohol, a preservative, it should last indefinitely. The reality is more nuanced.
+Collectors assume that because perfume contains alcohol, a preservative, it should last indefinitely. The reality is more nuanced.
 
 Yes, perfume expires. The primary driver is a chemical process called oxidation: when fragrance molecules react with oxygen, heat, or light, they break down into new compounds that smell different, often flat, sour, or metallic. Oxidation is the same reaction that causes a sliced apple to turn brown or metal to rust; when the liquid in the bottle reacts with oxygen, fragrance molecules are altered and broken down into compounds with different, often unpleasant, scents.
 
@@ -51,7 +51,7 @@ For collectors managing a large wardrobe, this is worth keeping in mind: bottles
 
 ## Which fragrance families age the fastest, and which hold up best?
 
-*This one comes up a lot:* knowing which bottles to prioritize wearing first is genuinely useful collection management.
+Knowing which bottles to prioritize wearing first is genuinely useful collection management.
 
 The short answer is that your lighter, fresher scents have the shortest runway.
 
@@ -70,7 +70,7 @@ Oxidation often comes from the top notes of a perfume, like citrus and patchouli
 
 ## What does an expired perfume actually smell like?
 
-*Readers frequently ask:* how do I know if the smell has changed because it expired, or just because I've grown more familiar with it?
+How do I know if the smell has changed because it expired, or just because I've grown more familiar with it?
 
 The distinction is usually clear once you know what to look for. Perfume does expire and its scent degrades over time due to oxidation from air and light; when the scent becomes oxidized, it tends to smell sour, acidic, or metallic, because too much oxygen inside the bottle alters the fragrance molecules and affects the scent.
 
@@ -96,7 +96,7 @@ A third visual cue: less perfume in the bottle than expected means the alcohol h
 
 ## Is it safe to wear perfume that's past its prime?
 
-*This one comes up a lot* among collectors who've discovered a beloved bottle they're reluctant to discard.
+Among collectors who've discovered a beloved bottle they're reluctant to discard.
 
 Mildly aged fragrance is usually fine for healthy skin. The scent may be flatter or slightly off, but the risk is low. That said, expired perfume can respond differently on your skin type and body chemistry, and some people may experience skin irritation like redness and rashes when using out-of-date perfume.
 

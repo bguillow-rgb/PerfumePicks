@@ -35,8 +35,6 @@ Traveling with a fragrance collection is one of those problems that sounds trivi
 
 ## Can I actually bring perfume on a plane?
 
-*A question we hear often:*
-
 Yes, perfume is permitted on flights, but the rules differ depending on where you pack it.
 
 Carry-on bags fall under TSA's 3-1-1 liquid rule: each bottle must be 3.4 oz (100 ml) or smaller and placed in a clear quart-size bag with your other liquids. Anything larger gets confiscated or has to go in checked luggage.
@@ -55,8 +53,6 @@ For checked luggage, physical protection matters as much as leak prevention. Wra
 
 ## What's the smartest way for a collector to handle travel-size logistics?
 
-*This one comes up a lot:*
-
 The two main options are traveling with original bottles (if they're already under 100 ml) or decanting into a dedicated travel atomizer. Each has a clear use case.
 
 | Situation | Best approach | Why |
@@ -73,8 +69,6 @@ Most travel atomizers hold between 5 ml (0.17 fl oz) and 20 ml (0.67 fl oz), and
 If you're considering buying travel-specific minis rather than decanting, the market is moving in your direction. According to Spate's Global Beauty Insights report, interest in mini perfumes has never been higher, with data showing a 123 percent increase in popularity in 2025 and growth projected to rise another 78.4 percent in 2026.
 
 ## How do I decide which perfumes to actually take?
-
-*Readers frequently ask:*
 
 This is where collectors get stuck. You have 30 bottles at home and you want to pack eight of them. Don't. The discipline of a travel rotation is one of the most satisfying things about thinking of your collection as a *wardrobe*.
 

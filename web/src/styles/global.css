@@ -157,6 +157,18 @@ strong { color: var(--ink); font-weight: 500; }
   margin: 0 0 36px;
 }
 
+/* Brand kicker above interior-page H1s. Was styled nowhere (rendered as a plain
+   taupe paragraph); make it an intentional gold small-caps kicker. */
+.brand {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+
 /* ─── Eyebrow / kicker (couture small-caps with a gold tick) ───────────────── */
 .eyebrow {
   display: inline-flex;
@@ -584,6 +596,43 @@ hr.footer-rule { border: 0; border-top: 1px solid var(--line2); margin: 76px 0 2
   border-bottom: none;
 }
 .footer-nav a:hover { color: var(--gold); border-bottom: none; }
+
+/* ─── Article masthead + reading body ─────────────────────────────────────── */
+/* Articles get a fashion-magazine opener (department kicker → headline → italic
+   Playfair dek → ruled byline) and a reading measure, so they read as authored
+   editorial rather than another marketing page. */
+.article-head { margin: 4px 0 28px; }
+.article-kicker {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+.article-head h1 { margin: 0 0 16px; }
+.article-dek {
+  font-family: var(--display);
+  font-size: 21px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--taupe);
+  max-width: 32em;
+  margin: 0 0 22px;
+}
+.article-byline {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--subtle);
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.article-byline a { color: var(--gold); border-bottom-color: transparent; }
+.article-body { max-width: 42em; }
+.article-body > :first-child { margin-top: 0; }
 
 /* ─── Article body ────────────────────────────────────────────────────────── */
 .article-body h2 {

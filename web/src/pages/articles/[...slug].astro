@@ -25,6 +25,17 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 const data = entry.data;
 const path = `/articles/${entry.slug}`;
+
+// Resolve related slugs to real article titles (never render a raw slug), and
+// drop any that don't resolve to a live article so a related link can't 404.
+const includeRelatedDrafts = import.meta.env.DEV;
+const allArticles = await getCollection('articles', ({ data }) =>
+  includeRelatedDrafts ? true : data.published
+);
+const titleBySlug = new Map(allArticles.map((a) => [a.slug, a.data.title]));
+const related = (data.relatedSlugs ?? [])
+  .filter((slug) => titleBySlug.has(slug))
+  .map((slug) => ({ slug, title: titleBySlug.get(slug)! }));
 ---
 <ArticleLayout
   title={data.title}
@@ -39,12 +50,12 @@ const path = `/articles/${entry.slug}`;
 >
   <Content />
 
-  {data.relatedSlugs.length > 0 && (
+  {related.length > 0 && (
     <section>
-      <h2>Related</h2>
-      <ul>
-        {data.relatedSlugs.map((slug) => (
-          <li><a href={`/articles/${slug}`}>{slug.replace(/-/g, ' ')}</a></li>
+      <h2>Keep reading</h2>
+      <ul class="blog-list">
+        {related.map(({ slug, title }) => (
+          <li><a href={`/articles/${slug}`}>{title}</a></li>
         ))}
       </ul>
     </section>

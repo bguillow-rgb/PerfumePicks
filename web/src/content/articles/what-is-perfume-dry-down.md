@@ -35,8 +35,6 @@ The first spray is a lie, or at least an incomplete truth. What you smell in tho
 
 ## "What exactly *is* the dry down? I see the term everywhere but nobody defines it."
 
-*A question we hear often:*
-
 Dry down is the final and longest-lasting phase of a fragrance's development on your skin. Once the top notes evaporate and the heart notes mellow, what's left is the dry down. In practical terms, it's the scent you'll still be wearing three, five, or eight hours after you applied it. It tends to be warmer, deeper, and softer, merging with your skin chemistry into something that reads as personal rather than generic. That phase can last several hours, sometimes into the next day.
 
 Think of a fragrance as playing out in three acts. Top notes are light, bright, and fleeting, often citrus, herbs, or light fruits, designed to catch attention but typically gone within 15-30 minutes. As they dissipate, the heart notes emerge: florals, spices, and green notes that form the fragrance's core personality and can last 2-4 hours. Then the dry down arrives. The base takes over and doesn't leave. Musk, amber, oud, vanilla, these materials evaporate far more slowly than anything that came before them, which is exactly why they outlast everything else.
@@ -51,8 +49,6 @@ The opening might sell a perfume at the counter. The dry down determines whether
 
 ## "How long should I actually wait before judging a fragrance?"
 
-*This one comes up a lot:*
-
 There's no universal rule, but a practical framework most experienced collectors use is the **10 / 30 / 90** test: smell the fragrance at 10 minutes (top notes still present but fading), 30 minutes (transition into the heart), and 90 minutes (base notes fully exposed). Spray on a sample strip and one wrist, then smell at each interval and keep notes on your impressions, the character shift, the wear time.
 
 Ninety minutes is the minimum for a buying decision. If you're evaluating a bottle in the £200+ range, wearing it for a full day before committing is the smarter move. According to consumer data, 67% of buyers regret at least one fragrance purchase, and most of those regrets trace back to decisions made on the opening spray.
@@ -66,8 +62,6 @@ On oilier skin, fragrance often projects more and holds richer base notes longer
 Perfume on moisturized skin usually transitions more evenly than perfume on very dry skin. Applying an unscented lotion beforehand isn't just a longevity trick; it smooths the dry-down transition too.
 
 ## "What's the difference between a dry down that's 'wrong for me' versus one that's just bad?"
-
-*Readers frequently ask:*
 
 This is one of the most useful distinctions a collector can internalize. A poorly constructed fragrance is incoherent at every stage: the notes don't blend, the transitions feel abrupt, the base is thin or synthetic, like three different perfumes glued together.
 

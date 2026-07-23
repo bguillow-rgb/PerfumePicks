@@ -39,7 +39,7 @@ This isn't about settling for medicinal-smelling "safe" options or giving up on 
 
 ## What's actually causing my reaction, the perfume itself, or the alcohol?
 
-*A question we hear often:* You spray a new purchase and within minutes your skin feels tight or itchy. The instinct is to blame the fragrance. But the culprit isn't always obvious.
+You spray a new purchase and within minutes your skin feels tight or itchy. The instinct is to blame the fragrance. But the culprit isn't always obvious.
 
 Alcohol (ethanol) is the carrier in virtually all spray perfumes. It strips moisture from skin, and for people with dry or reactive skin, that stinging sensation after spraying is a sign something is off. But switching to an alcohol-free format doesn't automatically solve the problem, because the fragrance ingredients themselves are the more common cause of true allergic reactions.
 
@@ -51,7 +51,7 @@ So if you react right on application, stinging, tightness, immediate redness, th
 
 ## Which specific ingredients should I watch out for?
 
-*This one comes up a lot:* The list of potential fragrance allergens is long, but a handful of compounds account for most reported reactions in regular wearers.
+The list of potential fragrance allergens is long, but a handful of compounds account for most reported reactions in regular wearers.
 
 Clinical allergy literature points to ingredients commonly implicated in contact dermatitis, including linalool, limonene, citronellol, geraniol, hexyl cinnamal, and benzyl salicylate, and recommends paying attention to IFRA-compliant formulas and patch testing rather than relying on "natural" as a safety signal.
 
@@ -74,7 +74,7 @@ The EU requires disclosure of 26 recognized allergens on cosmetic labels when pr
 
 ## Does "hypoallergenic" or "clean" actually mean anything for perfume?
 
-*Readers frequently ask:* The marketing language around fragrance safety is genuinely confusing, and some of it is outright misleading.
+The marketing language around fragrance safety is genuinely confusing, and some of it is outright misleading.
 
 "Hypoallergenic" has no legal definition in the fragrance industry. Any brand can print it on a bottle without meeting any standard. Low-allergy or hypoallergenic products may still contain fragrances that aren't obvious because of a less aromatic smell, and fragrance-free products may even have a masking fragrance added to cover up the smell of the chemicals.
 
@@ -102,7 +102,7 @@ The important caveat: switching to oil-based doesn't sanitize the formula. A per
 
 ## How do I test a new perfume safely when I have reactive skin?
 
-*A question we hear often:* Standard fragrance testing, spraying on the wrist at a counter and walking away, doesn't tell you much if you're prone to delayed reactions.
+Standard fragrance testing, spraying on the wrist at a counter and walking away, doesn't tell you much if you're prone to delayed reactions.
 
 A safer protocol for sensitive-skin collectors:
 

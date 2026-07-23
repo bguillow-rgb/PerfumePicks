@@ -39,7 +39,7 @@ Fragrance intensity, projection, and personality all interact differently throug
 
 ## "Is it actually necessary to match my perfume to the time of day, or is that just marketing?"
 
-*A question we hear often:* and it's a fair one. The short answer is that there's real chemistry behind the convention, not just retailer persuasion.
+And it's a fair one. The short answer is that there's real chemistry behind the convention, not just retailer persuasion.
 
 Research has shown that olfactory sensitivity increases in the evening, which means the deep notes in night fragrances hit harder after dark than they would at noon. During the day, especially in warm or heated environments, fragrance molecules volatilize faster. A heavy base like oud or labdanum that smells luxurious at a cool dinner table can turn cloying by 11 a.m. in a warm open-plan office.
 
@@ -59,7 +59,7 @@ A useful filter when scanning your own shelf: look for bottles where the top not
 
 ## "When does 'daytime' become 'afternoon,' and does the difference actually matter?"
 
-*This one comes up a lot.* The afternoon slot is the most forgiving time of day for fragrance, and it's where a lot of collectors' versatile bottles, soft florals, light chypres, sheer woods, genuinely earn their place.
+The afternoon slot is the most forgiving time of day for fragrance, and it's where a lot of collectors' versatile bottles, soft florals, light chypres, sheer woods, genuinely earn their place.
 
 Where morning demands restraint, afternoon gives you a little more latitude. If you wore a crisp EDT to a morning meeting, the afternoon is a reasonable moment to refresh with something slightly warmer: a soft rose-woody, a clean musk with a touch of amber, or a lightly spiced tea accord. These mid-register fragrances tend to be the most-worn bottles in a well-balanced wardrobe because they cover so much ground. If you track your wears (Perfume Picks makes this easy with a one-tap wear log), you'll probably find your "afternoon bottle" gets pulled off the shelf far more than you'd expect.
 
@@ -69,7 +69,7 @@ Eau de Toilette and lighter Eau de Parfum versions work well here. White florals
 
 ## "What makes an evening fragrance different, is it just heavier?"
 
-*Readers frequently ask:* this, and the answer goes beyond simple density.
+This, and the answer goes beyond simple density.
 
 Lower evening temperatures slow the evaporation of heavy aromatic molecules. That means base-heavy fragrances that felt flat or muted at noon finally have room to bloom and project the way they were designed to. Vanilla, amber, tobacco, musk, woods, patchouli: all of these are better experienced in cooler air.
 
@@ -110,7 +110,7 @@ For collectors who do want to expand thoughtfully, our [fragrance wardrobe guide
 
 ## "Does day vs. night change which notes I should layer together?"
 
-*A question we hear often:* especially from collectors who already layer regularly.
+Especially from collectors who already layer regularly.
 
 Yes. Time of day should shape which bottles you reach for as a pairing. A sheer bergamot-neroli EDT worn through the workday carries cleanly, and a single spray of a warm amber EDP added at 6 p.m. shifts the character convincingly toward evening without starting from scratch.
 

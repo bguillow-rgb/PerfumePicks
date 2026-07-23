@@ -37,7 +37,7 @@ If you own more than a dozen bottles, you already know the problem: you spray th
 
 ## Why does rotation matter so much if I already have favorites?
 
-*A question we hear often:* Why mess with what works? The honest answer is that wearing the same scent every day does two things you probably don't want. First, it causes olfactory fatigue: your nose adapts to a familiar molecule and stops perceiving it properly. Community discussions on Fragrantica note that some enthusiasts go nose-blind to a signature scent in as few as 3, 4 consecutive days of wear, meaning you're essentially spritzing into the void.
+Why mess with what works? The honest answer is that wearing the same scent every day does two things you probably don't want. First, it causes olfactory fatigue: your nose adapts to a familiar molecule and stops perceiving it properly. Community discussions on Fragrantica note that some enthusiasts go nose-blind to a signature scent in as few as 3, 4 consecutive days of wear, meaning you're essentially spritzing into the void.
 
 Second, and more painfully for collectors, your other bottles quietly degrade while you ignore them. Opened Eau de Parfums stay at their best for roughly 3, 5 years, while natural perfumes can turn in as little as 2, 4 years. Improper storage alone can reduce a perfume's effective shelf life by 60% within a single year. A bottle you bought two years ago and worn twice is already working against the clock. Rotation is how you actually use what you own before it fades.
 
@@ -53,7 +53,7 @@ The key discipline: when you move a bottle from reserve to the tray, move one of
 
 ## How do I decide which bottles go on the active tray each month?
 
-*This one comes up a lot:* The easiest trigger is the season, but that's just the starting point. Here's a practical decision matrix:
+The easiest trigger is the season, but that's just the starting point. Here's a practical decision matrix:
 
 | Factor | What to ask | Example answer |
 |---|---|---|
@@ -67,7 +67,7 @@ A useful seasonal note guide: spring calls for florals with green and citrus acc
 
 ## How often should I actually switch what I'm wearing day to day?
 
-*Readers frequently ask:* Is daily switching overkill?
+Is daily switching overkill?
 
 Not for most collectors. One well-documented way to combat olfactory fatigue is to rotate fragrances rather than wearing the same scent repeatedly. Active community members on Fragrantica report wearing anywhere from 5 to 14 different fragrances per week, and one common real-world pattern is using 7 of 53 bottles per week, wearing nothing two days in a row.
 
@@ -89,7 +89,7 @@ It happens more than you'd think: you keep a bottle out of sight long enough tha
 
 ## What's the right way to store the bottles that aren't on my tray?
 
-*A question we hear often:* Does off-rotation storage actually matter if the bottles are only waiting a few months?
+Does off-rotation storage actually matter if the bottles are only waiting a few months?
 
 It matters more than most people realize. For every 18°F increase in temperature, perfume degrades approximately twice as fast. The target storage range is 55, 70°F to slow this process. UV rays break down fragrance molecules, causing scent and color changes, so keeping bottles in their original boxes or dark storage is the standard recommendation.
 

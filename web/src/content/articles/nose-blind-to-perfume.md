@@ -39,7 +39,7 @@ You spritz your favorite fragrance before leaving the house. Twenty minutes late
 
 ## Wait, is my perfume actually gone, or is something else happening?
 
-*A question we hear often:* a collector sprays a beautifully performant EDP and then, by the time they reach the office, they can't detect a trace of it. But their coworker immediately says, "You smell amazing today."
+A collector sprays a beautifully performant EDP and then, by the time they reach the office, they can't detect a trace of it. But their coworker immediately says, "You smell amazing today."
 
 That gap, between what you perceive and what everyone else does, is olfactory adaptation, colloquially called nose blindness. Within fifteen to twenty minutes of applying fragrance, the olfactory neurons responsible for detecting those specific molecules reduce their firing rate by more than half. Your brain, having filed the scent as background, stops reporting it. The perfume has not faded. Your perception of it has.
 
@@ -59,7 +59,7 @@ The confusion gets compounded by fragrance structure itself. The top notes, ofte
 
 ## So why do some people seem to go nose blind faster than others?
 
-*This one comes up a lot*, and the answer involves a concept that most fragrance content completely ignores: **cross-adaptation**.
+The answer involves a concept most fragrance content completely ignores: **cross-adaptation**.
 
 If your daily fragrance contains a significant cedar or woody-amber base, your receptors tuned to those molecular shapes carry a lower baseline sensitivity. A 2022 study in *Chemosensory Perception* confirmed that wearing personal fragrance significantly lowered olfactory performance in both threshold detection and odor discrimination tasks. When you try a new fragrance that shares those structural elements, you perceive it as weaker than someone encountering it fresh. Cross-adaptation explains a complaint you hear constantly: "This fragrance doesn't last on me." Often, the fragrance performs identically on your skin as on anyone else's. Your receptors are simply pre-fatigued.
 
@@ -86,7 +86,7 @@ The coffee-bean myth is deeply embedded in fragrance retail culture, but it dese
 
 ## Why does overspraying make the problem worse, not better?
 
-*Readers frequently ask:* if I can't smell my perfume, shouldn't I just spray more?
+If I can't smell my perfume, shouldn't I just spray more?
 
 Nose blindness doesn't mean you put on too little. Over-spraying just makes your olfactory sense adapt faster; it doesn't fix the problem. Spraying more perfume doesn't really help. In fact, denser fragrance molecules in the air push your olfactory system into a defensive state: it reduces sensitivity to prevent overstimulation. The result is that you go nose blind even faster than you would have with a conservative application, and meanwhile everyone within three feet of you is overwhelmed.
 
@@ -110,7 +110,7 @@ If you track your wears in Perfume Picks, you'll quickly spot when you've been d
 
 ## When nose blindness is actually a signal to refresh your collection
 
-*This one comes up a lot* among long-term collectors who've worn the same core rotation for years.
+Among long-term collectors who've worn the same core rotation for years.
 
 Sometimes, it's not just your nose that gets used to a scent, you do too. If your go-to perfume no longer feels exciting or meaningful, it's time to explore something new. There's a real difference between temporary olfactory adaptation (neurons adapting to a molecular signal) and the deeper psychological flatness that comes from having genuinely outgrown a fragrance.
 

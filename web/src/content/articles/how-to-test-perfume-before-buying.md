@@ -39,7 +39,7 @@ Every serious collector has at least one bottle sitting on the shelf that gets t
 
 ## Why does perfume smell so different on my skin than on the strip in the store?
 
-*A question we hear often:* this is probably the single most common point of confusion for newer collectors, and it has a real biochemical explanation.
+This is probably the single most common point of confusion for newer collectors, and it has a real biochemical explanation.
 
 Personal chemistry plays a huge role. Your skin type, pH, hydration level, and even body temperature can influence how a perfume smells and how long it lasts. More specifically, oily skin holds fragrances significantly longer because natural oils bind fragrance molecules and release them slowly, while dry skin lets fragrances evaporate faster. Even more surprising: recent research shows that the bacteria on your skin actually metabolize the volatile compounds in perfume and transform them into new molecules -- meaning the perfume you apply is not necessarily the perfume others smell on you.
 
@@ -63,7 +63,7 @@ Then do something most people skip: leave the store. Go for a walk, grab coffee,
 
 ## I keep reading about the "drydown" -- what is it and why does it matter so much?
 
-*This one comes up a lot:* the drydown is simply the later stages of a fragrance's life on your skin, where the heart and base notes fully emerge after the top notes have burned off. It's where you discover what you'll actually be wearing for most of the day.
+The drydown is simply the later stages of a fragrance's life on your skin, where the heart and base notes fully emerge after the top notes have burned off. It's where you discover what you'll actually be wearing for most of the day.
 
 The top notes are the least representative part of a fragrance. Judging a perfume by its top notes is like rating a movie based on the opening credits. The heart notes are the true character of the perfume -- this is where it shows what it's really about. The base notes are the foundation. Heavy molecules like vanilla, musk, sandalwood, oud, or amber sink into the skin and last 8 hours or more. This "drydown" determines whether you truly love a perfume -- or whether the initial magic fades.
 
@@ -75,7 +75,7 @@ A practical rule of thumb: smell your wrist at the 30-minute mark, the 2-hour ma
 
 ## What are the best ways to test perfume when I can't get to a store?
 
-*Readers frequently ask:* this problem is especially acute for niche and indie collectors, since niche and indie fragrances often aren't available at local retailers. That small-batch perfume from a house in Grasse isn't sitting on a shelf at your nearest department store, waiting to be sampled.
+This problem is especially acute for niche and indie collectors, since niche and indie fragrances often aren't available at local retailers. That small-batch perfume from a house in Grasse isn't sitting on a shelf at your nearest department store, waiting to be sampled.
 
 Here are your real options, ranked by how much information they give you before buying:
 
@@ -105,7 +105,7 @@ If you do blind buy and land something that doesn't click, don't let it collect 
 
 ## What mistakes do even experienced collectors make when testing?
 
-*A question we hear often:* even people who have been collecting for years fall into a handful of recurring traps.
+Even people who have been collecting for years fall into a handful of recurring traps.
 
 **Rubbing the wrist.** It's instinctive but counterproductive. The heat from friction accelerates evaporation of top notes and crushes the delicate molecular balance the perfumer designed.
 

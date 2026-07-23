@@ -45,8 +45,6 @@ A common misconception is that gourmand scents are overly sweet or juvenile. Mod
 
 ## Why is everyone suddenly obsessed with gourmands in 2026?
 
-*A question we hear often.*
-
 Since their 1990s origins, gourmand fragrances have grown from a niche experiment into the fastest-growing segment in global perfumery. In 2026, industry data shows fine fragrance is the top beauty category for year-over-year growth in the US, and gourmands are leading that charge.
 
 Two forces are driving this. The first is cultural: sweet, edible scents connect wearers to positive sensory memories, and there's been a broad shift toward fragrances that offer comfort and nostalgia rather than cool abstraction. Contemporary gourmands add enough complexity that the comfort reads as refined rather than cloying.
@@ -72,8 +70,6 @@ Perfumers add further complexity through floral touches like peony or jasmine, s
 
 ## When is a gourmand the right choice, and when isn't it?
 
-*This one comes up a lot.*
-
 Lighter gourmands with fresh fruit or floral accents suit daytime and warmer months. Richer caramel or coffee constructions are better suited to cooler weather and evening. That seasonal logic isn't a hard rule so much as a starting point: skin chemistry, application volume, and ambient temperature all shift the equation.
 
 Two contexts where even devoted gourmand fans should pause. First, office environments. The same qualities that make gourmands magnetic in social settings (sweetness, sillage, warmth) can become overwhelming in a sealed conference room. An EDT concentration of a lighter vanilla or a lactonic skin-scent is the practical workaround if you refuse to leave gourmand at home entirely. Second, extreme heat. Lighter gourmands can handle warm weather reasonably well, but heavier ones with strong patchouli, tobacco, or oud are better left for fall and winter. Heat amplifies every note, so a four-spray application of a dark, resinous gourmand in July can cross the line fast.
@@ -82,7 +78,7 @@ For everything else: date nights, weekends, evenings, travel. Gourmands tend to 
 
 ## How do gourmand perfumes fit into a broader fragrance wardrobe?
 
-*Readers frequently ask:* how many gourmands is too many, and what role should they actually play?
+How many gourmands is too many, and what role should they actually play?
 
 A useful mental model is treating your gourmand slot the way a stylist treats knitwear in a capsule wardrobe: it's the category with the most emotional warmth, and you want at least one lighter version and one richer version. Gourmand scents now bridge playful sweetness and grown-up elegance in a way that makes them genuinely versatile.
 

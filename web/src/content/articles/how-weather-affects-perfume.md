@@ -37,8 +37,6 @@ Your perfume is not a fixed thing. The same bottle you reach for on a grey Novem
 
 ## Why does my perfume smell so much stronger in summer?
 
-*A question we hear often:*
-
 Heat is essentially an accelerant for fragrance. When skin temperature rises, perfume molecules gain energy and evaporate from the skin surface faster. The result is a noticeably bigger initial burst of scent and a wider sillage, but that intensity comes at a cost. Because those molecules are leaving your skin so rapidly, wear time compresses. Hot-weather wear time for many eau de parfums falls to roughly 2-4 hours, compared to 6-8 hours in temperate conditions.
 
 The practical implication for collectors is real: a fragrance that seems perfectly calibrated for a conference room in October can tip into "too much" territory on a 32°C afternoon. The notes most affected are the lighter top notes (citrus, bergamot, aldehydes), which combust first and loudest. What's left can smell heavier or denser than the same fragrance on a cooler day. If a scent in your wardrobe has ever made people take a step back in summer when it normally earns compliments, that's almost certainly what's happening.
@@ -54,8 +52,6 @@ This is also why rich base-note-forward fragrances (oud, amber, vanilla, deep mu
 There's an indoor complication worth knowing about: heated buildings in winter typically push relative humidity below 30%, which dries out skin quickly. Dry skin holds fragrance molecules less effectively, which is why a fragrance you applied before leaving home can feel surprisingly faint by mid-morning despite the cold outside. Moisturising with an unscented lotion before application makes a meaningful difference to longevity, year-round but especially in winter. Applying a small amount to exposed fabric (a coat collar, a scarf) also helps project scent outward in cold air.
 
 ## So what does humidity actually do to a fragrance?
-
-*This one comes up a lot:*
 
 Humidity's effect on fragrance is more nuanced than simply "more is better." Perfumers and fragrance scientists generally point to a moderate humidity range of around 40-60% as ideal: skin retains its natural moisture barrier, and fragrance evaporates at roughly the rate the perfumer intended.
 
@@ -77,8 +73,6 @@ The "use with caution" column doesn't mean you can't wear those scents. It just 
 
 ## Does the same bottle smell different in summer versus winter?
 
-*Readers frequently ask:*
-
 Absolutely, and this surprises people who are newer to collecting. The molecular composition of the fragrance doesn't change, but temperature and humidity alter the *rate* at which each layer becomes perceptible. In summer heat, volatile top notes (the ones that hit first) evaporate within minutes, so you spend more time in the heart notes. In winter, the whole arc slows down. Top notes can linger for 30-45 minutes before the heart takes over, and base notes may not fully emerge until hour three or four.
 
 This means a fragrance you dismissed as "too sharp" in a warm department store might feel beautifully rounded worn outside in autumn. And a deep amber that feels perfect in December can seem cloying by April. It's worth mentally flagging any bottle that disappointed you in one season and trying it again in the opposite one before deciding it's not for you. Seasonal re-testing is one of the most commonly reported ways collectors rediscover bottles they'd nearly given up on.
@@ -96,8 +90,6 @@ The practical application is simpler than the science suggests. You don't need a
 The Perfume Picks app surfaces weather-aware suggestions from the bottles you already own, so on a humid July afternoon it will skip the heavy ambers in your wardrobe and surface the fresher, lighter bottles instead. That's the low-friction version of this framework for your everyday routine.
 
 ## What about travelling to a different climate?
-
-*A question we hear often:*
 
 This is where collectors often get caught off-guard. A fragrance that's a reliable daily driver at home can behave like a stranger in a different climate. Travelling from a temperate city to a humid coastal destination, or from a damp climate to a dry high-altitude one, changes everything discussed above, suddenly and simultaneously.
 

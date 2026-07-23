@@ -66,8 +66,6 @@ Scent families are broken into four main categories: Floral, Oriental (Amber), W
 
 ## What is the fragrance wheel and how does it actually work?
 
-*A question we hear often:*
-
 The fragrance wheel was developed by perfumer Michael Edwards in 1983. Much like a color wheel, it groups categories together in a way that allows for overlap and gradual variances. The four main families sit around the outside, with subfamilies, Soft Floral, Floral Oriental, Soft Oriental, Woody Oriental, Mossy Woods, Dry Woods, Aromatic, Citrus, Water, and Green, filling the spaces between them.
 
 The logic of the wheel is spatial: proximity equals similarity. Scents are grouped based on their similarities and differences to show their relationship to one another, scent groups that border each other share common olfactory characteristics, while those further away are less related.
@@ -77,8 +75,6 @@ For collectors, this spatial logic has two very practical uses. First, it tells 
 More than 70% of customers select scents based on familiarity, meaning that understanding your fragrance family can meaningfully improve buying decisions and overall satisfaction with a purchase.
 
 ## I know the four families, what are the subfamilies I actually need to know about?
-
-*This one comes up a lot:*
 
 Once you move beyond the four core families, six subfamilies matter most for collectors building a modern wardrobe:
 
@@ -107,8 +103,6 @@ A collector's working principle: **adjacent families for low-risk expansion, opp
 Perfume Picks builds your personal taste profile automatically as you log bottles and wear sessions, so over time you get a visual read of which families dominate your wardrobe and which are absent, without having to do the manual math yourself.
 
 ## Why does the same fragrance family sometimes smell totally different on two different bottles, or two different people?
-
-*Readers frequently ask:*
 
 Two perfumes can both be classified as Woody Oriental and smell worlds apart. The family label describes the dominant character, not the exact composition. Within Woody Oriental alone you might have a smoky incense-led oud, a creamy sandalwood, or a dry cedar-and-leather blend, all technically the same family, all utterly different in character and wearability.
 

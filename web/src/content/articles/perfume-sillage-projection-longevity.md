@@ -47,7 +47,7 @@ Understanding the distinction between sillage and projection is the difference b
 
 ## How is projection different from sillage?
 
-*A question we hear often:* collectors use both words interchangeably, and reviewers make it worse by mixing them up. Here's the clean distinction.
+Collectors use both words interchangeably, and reviewers make it worse by mixing them up. Here's the clean distinction.
 
 Projection refers to how far a fragrance extends from your body when you're stationary. It's the invisible scent bubble around you that others can detect when they're near, think of it as the radius of your fragrance's reach.
 
@@ -73,7 +73,7 @@ Longevity and sillage are not the same scale. Longevity measures how long a frag
 
 ## What actually controls sillage and projection?
 
-*This one comes up a lot:* collectors buy a highly-rated "beast" fragrance expecting it to fill a room, then wonder why it goes quiet after two hours on their skin. Several factors are at play at once.
+Collectors buy a highly-rated "beast" fragrance expecting it to fill a room, then wonder why it goes quiet after two hours on their skin. Several factors are at play at once.
 
 Concentration is the most predictable lever. Parfums (extrait) and Eau de Parfums generally produce better sillage than Eau de Toilettes because of their higher fragrance oil content. More aromatic material means more molecules dispersing into the air as you move. This is one reason many serious collectors gravitate toward EDP formulations, they simply perform better in real-world conditions. According to performance data, Eau de Cologne (2-5%) typically lasts 2-3 hours; Eau de Toilette (5-15%) lasts 4-6 hours; Eau de Parfum (15-20%) lasts 6-10 hours; and Parfum (20-30%) can reach 10-16 or more hours.
 
@@ -85,7 +85,7 @@ Then there's your skin, the variable most collectors underestimate. Skin chemist
 
 ## How can I actually increase sillage on a fragrance I already own?
 
-*Readers frequently ask:* is there anything I can do, or is sillage just baked into the formula?
+Is there anything I can do, or is sillage just baked into the formula?
 
 You can't rewrite the formula, but you can work with it more intelligently.
 
@@ -117,7 +117,7 @@ Part of building a real fragrance wardrobe is understanding which fragrances bel
 
 ## How do I quickly assess a bottle's performance profile before wearing it out?
 
-*This one comes up a lot*, especially for collectors rotating through bottles they haven't worn in months.
+Collectors rotating through bottles they haven't worn in months hit this most often.
 
 A quick at-home performance audit takes about 30 minutes. Spray once on a pulse point and once on a cotton t-shirt hem. Check projection at arm's length at the 10-minute mark (top notes peak), at 30 minutes (heart settling), and at 60 minutes (dry-down). Note whether projection has shrunk to skin-close or is still radiating outward. Walk across the room and ask someone to step into the space you just left, if they catch a trail, you have meaningful sillage. If they don't, it's a skin scent.
 

@@ -43,7 +43,7 @@ The core problem is a mismatch between *display logic* (what looks good) and *se
 
 ## What's the right way to actually categorize perfumes?
 
-*A question we hear often:* there's no single right answer, but there is a hierarchy that works for most collectors.
+There's no single right answer, but there is a hierarchy that works for most collectors.
 
 Start with how you choose, not what you own. The most durable organizational axis is the one that matches your real decision-making. Ask yourself: when you stand in front of your collection, what's the first filter that runs through your mind? For most people it's season or temperature (this is too heavy for today) or occasion (I need something quiet for the office). Build your primary grouping around that filter.
 
@@ -62,7 +62,7 @@ For most collectors with 6-20 bottles, a two-axis system works best: season as t
 
 ## How do I split what's on display from what's in storage?
 
-*This one comes up a lot:* collectors often feel guilty putting bottles "away", it feels like hiding a purchase. Reframe it. Your display is your active rotation. Your storage is your reserve wardrobe. Both are valid; they serve different functions.
+Collectors often feel guilty putting bottles "away", it feels like hiding a purchase. Reframe it. Your display is your active rotation. Your storage is your reserve wardrobe. Both are valid; they serve different functions.
 
 A practical split for most home setups:
 
@@ -75,7 +75,7 @@ For the storage side, closed cabinets and dresser drawers outperform open shelvi
 
 ## How do I actually take inventory without it becoming a chore?
 
-*Readers frequently ask:* the good news is that a useful inventory doesn't have to be elaborate. A working inventory for most collectors needs only five data points per bottle:
+The good news is that a useful inventory doesn't have to be elaborate. A working inventory for most collectors needs only five data points per bottle:
 
 1. Name and house, what it is
 2. Concentration, EDT, EDP, or Parfum (relevant to longevity expectations; see our [perfume concentration guide](/perfume-concentration-guide) for the full breakdown)

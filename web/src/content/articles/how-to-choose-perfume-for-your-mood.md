@@ -51,7 +51,7 @@ That's not a soft, feel-good claim. In the last few decades, many scientific stu
 
 ## So which fragrance families actually match which moods?
 
-*A question we hear often:* people know they want to feel a certain way, but they don't know which end of their shelf to reach toward.
+People know they want to feel a certain way, but they don't know which end of their shelf to reach toward.
 
 Aromachology research has identified specific fragrance families and their associated emotional effects. Citrus scents are consistently linked to elevated mood and increased alertness. Lavender and earthy notes have been shown to reduce cortisol levels and promote calm. Woody and resinous notes like sandalwood and cedar are associated with grounding and emotional stability.
 
@@ -73,7 +73,7 @@ Studies indicate that calming scents like lavender can lower heart rate and bloo
 
 ## How do I use this with bottles I already own, rather than buying new ones?
 
-*This one comes up a lot:* collectors often feel mood-based fragrance requires a specialty purchase. It rarely does.
+Collectors often feel mood-based fragrance requires a specialty purchase. It rarely does.
 
 Start by mentally (or physically) sorting your collection into the emotional categories above rather than by brand, family, or purchase date. Most wardrobes of ten or more bottles already contain at least one solid pick per mood. You've just never mapped them that way.
 
@@ -85,7 +85,7 @@ Many fragrance lovers fall into the 80/20 trap, wearing 20% of their collection 
 
 ## What should I reach for when I need to feel energized or focused?
 
-*Readers frequently ask:* "I work from home and I want to use fragrance to actually *start* my day."
+"I work from home and I want to use fragrance to actually *start* my day."
 
 This is one of the most practically useful applications of aromachology. Research indicates that peppermint aroma can have small to medium positive effects on aspects of memory, attention, and feelings of alertness. More broadly, citrus scents are consistently linked to elevated mood and increased alertness, which is why bergamot, lemon, and grapefruit-forward colognes and EDTs have been a morning staple across cultures for over a century.
 

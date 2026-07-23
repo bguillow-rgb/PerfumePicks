@@ -35,7 +35,7 @@ Somewhere in your collection there's a bottle you love but never actually carry,
 
 ## What exactly is a perfume decant, and why does it matter for collectors?
 
-*A question we hear often:* Newcomers to the hobby frequently stumble on the word "decant" and assume it's something only hardcore niche enthusiasts do. It isn't.
+Newcomers to the hobby frequently stumble on the word "decant" and assume it's something only hardcore niche enthusiasts do. It isn't.
 
 A decant is simply a smaller portion of a fragrance transferred from its original bottle into a separate, sealable container, most commonly a glass atomizer between 2 ml and 15 ml. The word borrows from wine culture, where decanting means moving liquid to expose or preserve it better. In perfumery, the goal is the opposite of exposure: you're creating a more practical, portable, or shareable form of a scent *without* degrading what's left in the source bottle.
 
@@ -60,7 +60,7 @@ One thing that's non-negotiable: every container you use should be clean and com
 
 ## How do I actually decant, step by step?
 
-*This one comes up a lot:* People worry they'll ruin an expensive bottle. The method below minimizes that risk.
+People worry they'll ruin an expensive bottle. The method below minimizes that risk.
 
 **The spray-to-spray method** (easiest, best for most modern spray bottles)
 
@@ -92,7 +92,7 @@ If you track your collection in Perfume Picks, logging decants as separate entri
 
 ## How do I label decants so I can actually tell them apart?
 
-*Readers frequently ask:* Is there a system that doesn't look chaotic?
+Is there a system that doesn't look chaotic?
 
 At minimum, every decant needs three pieces of information: the fragrance name, the house or brand, and the date it was decanted. A 5 ml vial has almost no flat surface, which is why waterproof label tape cut to a narrow strip works better than standard adhesive labels that peel in humidity. Write small, write clearly, and write immediately, attempting to reconstruct which vial is which after the fact is frustrating even if you have only five decants.
 
@@ -117,7 +117,7 @@ According to fragrance-community surveys on collector habits, the average enthus
 
 ## Can decanting damage the original bottle or void anything?
 
-*A question we hear often:* Collectors are rightfully protective of expensive originals.
+Collectors are rightfully protective of expensive originals.
 
 In almost every case, careful decanting causes no permanent damage to the source bottle, provided you don't force the spray collar off aggressively or contaminate the dip tube with foreign material. The one exception: vintage or non-spray splash bottles with decorative stoppers can have fragile ground-glass fittings that crack under lateral pressure. For those, use a syringe inserted gently rather than prying or levering.
 

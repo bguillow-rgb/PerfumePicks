@@ -37,7 +37,7 @@ There's a gap between owning good fragrances and actually wearing them well. Mos
 
 ## Why does where I spray perfume matter so much?
 
-*A question we hear often:* collectors who've spent real money on their bottles are often surprised that technique, not the bottle itself, is the biggest lever for performance.
+Collectors who've spent real money on their bottles are often surprised that technique, not the bottle itself, is the biggest lever for performance.
 
 The answer comes down to body heat. Perfume reacts with body heat, the warmer the spot, the more the fragrance lifts off your skin and into the air around you. The warmest areas are where blood vessels run close to the surface: your inner wrists, neck, and behind the ears. These are called pulse points, and they're where perfume performs best.
 
@@ -58,7 +58,7 @@ For collectors who own different concentration tiers, point selection matters to
 
 ## How many sprays should I actually use? I always feel like it fades too fast.
 
-*This one comes up a lot:* people assume the solution to short longevity is more product. The data suggests the opposite.
+People assume the solution to short longevity is more product. The data suggests the opposite.
 
 Two to four sprays total is usually plenty. Spread them across two or three pulse points rather than layering several sprays on one spot. With Eau de Parfum you can use fewer sprays; with Eau de Toilette you may want one or two more.
 
@@ -76,7 +76,7 @@ Award-winning perfumer Francis Kurkdjian has warned against the habit. The frict
 
 ## Does my skin condition actually affect how long perfume lasts?
 
-*Readers frequently ask:* why does the same bottle last six hours on one person and barely two on another?
+Why does the same bottle last six hours on one person and barely two on another?
 
 Skin hydration is the single biggest variable you can actually control. Fragrance clings better to moisturized skin. Spraying perfume right after a warm shower, when your pores are open and your skin is slightly damp, helps lock in the scent. Moisturize before applying your fragrance: an unscented lotion or a matching scented body cream creates a base that slows down the evaporation of the perfume, letting it linger longer.
 
@@ -96,7 +96,7 @@ Fabric holds the initial scent longer, but skin lets the fragrance develop throu
 
 ## How do I apply perfume to my hair without damaging it?
 
-*A question we hear often* from collectors who've noticed that hair seems to hold scent beautifully.
+From collectors who've noticed that hair seems to hold scent beautifully.
 
 Hair holds fragrance longer than skin, but pure alcohol-based perfume can dry hair out. Spray onto a hairbrush first, then run it through, or use a dedicated hair mist. The hairbrush trick distributes the scent as a fine, even coat rather than a concentrated wet patch, and the lower volume of product significantly reduces the drying effect of alcohol. Alternatively, a light spray at the nape of the neck, which then diffuses into the hair as you move, achieves a similar effect with minimal product contact.
 

@@ -39,7 +39,7 @@ Reformulations, changes to a fragrance's composition that produce noticeable dif
 
 ## Why does my perfume suddenly smell different from how I remember it?
 
-*A question we hear often:* and the frustrating honest answer is that your fragrance almost certainly changed, not your memory.
+And the frustrating honest answer is that your fragrance almost certainly changed, not your memory.
 
 A reformulation happens when the chemical formula of a perfume is altered while the same commercial name and packaging are kept. Brands almost never advertise this. Most won't even admit it, and plenty of sales associates will insist to your face that what they're selling today is identical to the original.
 
@@ -51,7 +51,7 @@ Cost-cutting is the other major driver. Rare naturals like iris, ambergris, oud,
 
 ## How do I actually detect a reformulation without owning an old bottle to compare?
 
-*This one comes up a lot:* especially from collectors who weren't around when the so-called golden-era batch was current. The good news is there are several overlapping methods.
+Especially from collectors who weren't around when the so-called golden-era batch was current. The good news is there are several overlapping methods.
 
 Start with the batch code on the bottle and box to determine the production date. Each perfume carries a batch code, an alphanumeric stamp on the bottom of the bottle or packaging that encodes when it was made. Comparing codes across bottles can be revealing. Houses like Dior, Chanel, and Guerlain use codes that can be decoded through online tools like [CheckCosmetic](https://www.checkcosmetic.net) and [Cosmetic Calculator](https://www.cosmeticcalculator.com).
 
@@ -65,7 +65,7 @@ Cross-reference community data. Basenotes, Fragrantica's review threads, and ded
 
 ## Is reformulation always bad for a fragrance?
 
-*Readers frequently ask:* whether the reformulation discourse is just nostalgia and gatekeeping, or something real. Honestly, it's both.
+Whether the reformulation discourse is just nostalgia and gatekeeping, or something real. Honestly, it's both.
 
 Once a house decides to reformulate, any minor change in ingredients or concentration can shift the scent altogether. Even when the aroma stays close, projection and longevity on skin can suffer. Those are real, measurable losses, not imagination.
 
@@ -94,7 +94,7 @@ The niche fragrance market is projected at $4.85 billion in 2026, growing at a 9
 
 ## How do collectors protect themselves before buying?
 
-*A question we hear often:* especially from people burned by a lauded vintage fragrance that turned out to be a recent, much more muted batch.
+Especially from people burned by a lauded vintage fragrance that turned out to be a recent, much more muted batch.
 
 The batch code check should be a reflex before any significant purchase. For secondhand or grey-market bottles, decode the code before paying. A 2019 bottle of something reformulated in 2018 is still a reformulated bottle, regardless of how it's listed. Tools like CheckFresh and Cosmetic Calculator handle major houses; for others, collector databases on Fragrantica and Basenotes often have batch-to-year mappings built up through years of community logging.
 

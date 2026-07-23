@@ -35,8 +35,6 @@ Sampling is the most underrated habit in fragrance collecting, and skipping it i
 
 ## "Why can't I just smell it in the store and decide on the spot?"
 
-*A question we hear often:*
-
 The counter sniff is a starting point, not a verdict. Perfume is deeply personal. What smells incredible on a paper strip or in a quick spray can evolve very differently on your skin over hours, in different seasons, or different moods. The store environment also works against you: bright lighting, ambient fragrance from dozens of open testers, and a sales associate hovering all create pressure to decide before the fragrance has even hit its heart notes.
 
 There's a more practical argument too. Data shows 68% of online perfume shoppers want to try testers first, a habit that slashes return rates by 25%. The collectors who avoid regret are overwhelmingly the ones who take the scent home before committing.
@@ -64,8 +62,6 @@ One variable collectors often overlook: two vials can be the same size and deliv
 
 ## "Are fragrance discovery sets actually worth the price?"
 
-*This one comes up a lot:*
-
 The honest answer: it depends almost entirely on vial size and whether the brand offers a credit back. Discovery sets cost a fraction of a full bottle, typically $30-$60 for niche brands, and many credit the set price back toward your first full-size purchase. The value depends on total milliliters and concentration, not the number of vials.
 
 Where discovery sets stop earning their price is when vials are 1ml or smaller. A 1ml vial is roughly two to four sprays, enough to know if you hate something, but not enough to know if you love it. Dauber vials make things worse: they under-apply, so the scent reads weaker than it actually is and you end up misjudging the longevity.
@@ -75,8 +71,6 @@ The sweet spot is a discovery set with 2ml or larger spray atomizers from a bran
 ---
 
 ## "How do I know when I've sampled enough to justify the full bottle?"
-
-*Readers frequently ask:*
 
 The collectors who build the most satisfying wardrobes share one habit: they don't upgrade to a full bottle the first time they enjoy a sample. Commit to a full bottle only when you've tested a fragrance multiple times, ideally three to five wears via samples or decants, in real-life situations, you actively crave wearing it, and it performs well on your skin in terms of longevity and projection.
 
@@ -113,8 +107,6 @@ The exception is a collector who genuinely prefers variety over volume, rotating
 ---
 
 ## "What about samples for scents I can't test in person, niche or online-only brands?"
-
-*A question we hear often:*
 
 This is where sampling becomes non-negotiable rather than just recommended. A decant costing £15-£20 provides enough volume to assess performance, longevity, and seasonal fit before committing. For brands without physical retail presence, and there are many excellent niche houses that don't have one, a decant from a reputable source is your only real alternative to a blind buy.
 

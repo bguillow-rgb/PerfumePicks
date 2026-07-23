@@ -39,8 +39,6 @@ If your fragrance disappears in a few hours, it's rarely the perfume's fault. Th
 
 ## Why does my expensive perfume fade so fast when cheaper ones seem to last?
 
-*A question we hear often:*
-
 Price alone doesn't guarantee staying power, formula composition does. Concentration matters a lot: stronger concentrations carry more fragrance oil, which gives the scent more to work with over time. But performance also depends on the specific formula, the fragrance notes, your skin type, and the weather. A heavily marketed designer EDT built mostly on citrus top notes will always be outlasted by a dense, resinous niche Parfum, regardless of what each cost.
 
 The other hidden factor is note composition. Warm, woody, musky, spicy, or sweet base notes tend to hang around. Fresh citrus, green, aquatic, and light floral notes can smell beautiful, but they burn off fast. That gorgeous summer citrus you love evaporates by noon while an oud-heavy winter scent clings for a full day. It isn't poor quality. It's chemistry.
@@ -60,8 +58,6 @@ One thing worth flagging for collectors: if you're using a scented body lotion, 
 ---
 
 ## Where exactly should I spray for the best longevity?
-
-*This one comes up a lot:*
 
 Pulse points, where body heat is closest to the surface, help release fragrance gradually over time. The classics, inner wrists, sides of the neck, behind the ears, and the inside of the elbows, all work for this reason.
 
@@ -93,8 +89,6 @@ Most buyers experiencing longevity disappointment are wearing EDT-tier compositi
 ---
 
 ## Why do I stop smelling my own perfume after an hour?
-
-*Readers frequently ask:*
 
 This isn't the fragrance disappearing. It's your brain filtering it out. After 30-60 minutes of continuous exposure to the same aromatic profile, most wearers lose sensitivity to their own scent even though everyone around them can still smell it clearly.
 

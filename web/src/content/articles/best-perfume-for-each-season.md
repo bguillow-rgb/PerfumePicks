@@ -37,8 +37,6 @@ Collectors often talk about building a wardrobe, but the metaphor runs deeper th
 
 ## Why does temperature actually change how my perfume smells and performs?
 
-*A question we hear often:*
-
 It comes down to chemistry and physics. In warmer weather, the skin tends to be more hydrated, causing scents to evaporate faster and potentially become overpowering; conversely, in colder weather, fragrances may not project as well, making them feel more subdued. The same number of sprays can go from "pleasant" in October to "overwhelming" in July, on the same wrist.
 
 Concentration format matters here too. Heat amplifies scent diffusion, favouring lighter concentrations like EDT and foregrounding top notes to prevent overwhelming sillage; cold air slows diffusion down, which means heavier base notes and higher concentrations like EDP are needed to ensure longevity. Practically: if you own both an EDT and an EDP of the same fragrance, summer calls for the EDT. Winter rewards the EDP.
@@ -59,8 +57,6 @@ If you own a heavy oriental you love too much to bench, try applying it to cloth
 
 ## What's the right approach for spring? It feels like the most "in between" season.
 
-*This one comes up a lot:*
-
 Spring sits at the crossroads: not fully warm yet, but no longer winter-cold. Spring is where florals, green notes, airy musks, light fruits, tea accords, and clean woody scents do especially well. It's also the season that rewards versatility most. Spring is one of the best seasons for unisex fragrances; a clean woody musk or a fresh spicy floral can move easily from day to night without feeling too cold or too cozy, and if your style changes often, spring scents usually give you the most flexibility.
 
 In practice, look in your collection for anything that leads with aldehydic or dewy florals (lily of the valley, peony, iris), green or herbal accords, or light rose compositions. These are your spring anchors. Save the deep amber and smoke bottles for a few months from now, they'll have their moment.
@@ -78,8 +74,6 @@ According to fragrance wear data, autumn is also the season when collectors tend
 ---
 
 ## What should I reach for in winter? I feel like my collection barely projects in the cold.
-
-*Readers frequently ask:*
 
 Winter is unambiguously the season for your boldest, richest bottles. Cold weather can handle richer perfumes with more spice, woods, amber, vanilla, musk, leather, and resin. Notes that might read as excessive in July, thick labdanum, incense, tobacco, animalic musks, become exactly right when the air is cold and dry.
 
@@ -111,8 +105,6 @@ Versatile perfumes that contain both fresh and warm notes, flowers with a woody 
 ---
 
 ## How do I figure out which of my existing bottles belong in which season?
-
-*A question we hear often:*
 
 Start with the dominant base notes. That's where the seasonal character lives. Top notes tell you how a fragrance opens; base notes tell you which weather it was built for. Heavy amber, oud, leather, tobacco, and thick resins are cold-weather signals. Pure citrus-dominant fragrances are warm-weather; they'll disappear in the cold within thirty minutes. Balanced musks and florals with clean wood bases can go almost anywhere.
 

@@ -47,7 +47,7 @@ What makes chypres feel sophisticated rather than just complex is the *tension* 
 
 ## What does a chypre actually smell like on skin?
 
-*A question we hear often:* collectors who've read the theory still aren't sure what to expect when they first spray one.
+Collectors who've read the theory still aren't sure what to expect when they first spray one.
 
 The honest answer is that chypres smell *dry* rather than sweet, and *complex* rather than linear. The bergamot opening gives a brief citrus brightness that dissolves within minutes into the heart. Classically that's rose and jasmine, though modern versions might substitute iris, geranium, or a green galbanum note. Often there's an aldehydic or green facet in there too. The base is where the family truly lives: oakmoss, labdanum from the cistus rockrose, and patchouli, sometimes joined by vetiver, treemoss, civet, or styrax.
 
@@ -57,7 +57,7 @@ The cumulative effect is earthy, slightly resinous, and quietly rich. A chypre a
 
 ## How is a chypre different from a fougère or an oriental?
 
-*This one comes up a lot*, especially among newer collectors who keep encountering the three terms side by side on fragrance sites.
+Newer collectors keep encountering these three terms side by side on fragrance sites, which is where the confusion starts.
 
 | Family | Anchor notes | Dominant character | Classic example |
 |---|---|---|---|
@@ -73,7 +73,7 @@ Fougère (French for "fern") is built around an imagined scent of ferns, built o
 
 ## Why do vintage chypres smell different from modern ones? Is it the reformulations?
 
-*Readers frequently ask:* why their grandmother's bottle of *Femme* or *Miss Dior* smells so much richer than anything currently on shelves.
+Why their grandmother's bottle of *Femme* or *Miss Dior* smells so much richer than anything currently on shelves.
 
 The answer is regulatory. Two natural constituents of oakmoss, atranol and chloroatranol, have been prohibited as cosmetic ingredients in the European Union since Commission Regulation (EU) 2017/1410 came into force. Every chypre on a European shelf is, by definition, a reformulation. Those compounds had been, for forty years, among the most reliable causes of fragrance contact allergy in dermatological practice.
 
@@ -111,7 +111,7 @@ Fragrance experts note that collectors might start with something fresh, citrusy
 
 ## How do I find and evaluate a chypre before committing to a full bottle?
 
-*Readers frequently ask:* the challenge with chypres is that they're almost never love-at-first-sniff the way a sweet gourmand or clean fresh is. They need skin time.
+The challenge with chypres is that they're almost never love-at-first-sniff the way a sweet gourmand or clean fresh is. They need skin time.
 
 Apply to your inner wrist and wait a full thirty to forty-five minutes before judging. The bergamot opening can smell almost medicinal or bitterly sharp on cold skin; it's the drydown, when the patchouli and labdanum warm up, where chypres reveal themselves. Sample-first is especially important here. Fragrance families are guidelines rather than strict categories, and a perfume can fit into multiple families at once, so a "floral chypre" on a database might read much more mossy or much more floral depending on your skin chemistry and the specific formula. Our [guide to testing perfume before buying](/how-to-test-perfume-before-buying) and [the samples-vs-full-bottles question](/perfume-samples-vs-full-bottles) both apply here with extra force.
 

@@ -37,7 +37,7 @@ Fragrance collectors face a tension that non-collectors never have to think abou
 
 ## Why does storage actually matter, isn't perfume pretty stable?
 
-*A question we hear often:* perfume is alcohol-based and comes in a sealed bottle, so how much can environment really affect it?
+Perfume is alcohol-based and comes in a sealed bottle, so how much can environment really affect it?
 
 More than most people expect. The three enemies of fragrance are **light**, **heat**, and **oxygen**, and they don't work independently; they compound each other. UV and visible light catalyze photodegradation in aromatic compounds, particularly citrus top notes and certain florals. Heat accelerates evaporation even through a closed cap and speeds up the same oxidative reactions. Every time you open a bottle, you introduce a fresh charge of oxygen that slowly reacts with the fragrance molecules inside.
 
@@ -61,7 +61,7 @@ For bottles you wear daily, a closed cabinet near your dressing area is practica
 
 ## Is it okay to display my collection on open shelves?
 
-*This one comes up a lot:* collectors invest in beautiful bottles and want to show them off. Does displaying them actually cause measurable harm?
+Collectors invest in beautiful bottles and want to show them off. Does displaying them actually cause measurable harm?
 
 Honestly, yes, if the shelf is near a window or in a sun-facing room. Perfume bottles can be as extravagant as mini chandeliers, when the sun hits them, light scatters beautifully across the room, but they shouldn't be kept as a centerpiece on a dresser; the introduction of light breaks down a scented liquid's makeup.
 
@@ -74,7 +74,7 @@ If your display cabinet has glass doors, put it on a wall that receives zero dir
 
 ## Should I keep bottles in their original boxes?
 
-*Readers frequently ask:* is keeping the box really worth the clutter?
+Is keeping the box really worth the clutter?
 
 For archive-tier bottles, yes. Perfume decanting, and by extension, keeping bottles in their outer cartons, protects your collection by minimising exposure to light, air, and heat. The cardboard carton is a light shield, a minor thermal buffer, and a small barrier against the humidity fluctuations an open shelf is exposed to. If you buy a perfume for a collection and want to enjoy it properly over time, leave it in its packaging, choose a cool, dark spot and keep it stored away.
 

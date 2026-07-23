@@ -47,7 +47,7 @@ High-end designer, niche, and discontinued scents sit at the top of the demand p
 
 ## Where should I actually list my bottles?
 
-*A question we hear often:* collectors who are new to selling don't know whether to reach for a general marketplace or a fragrance-specific community. Both have a place, but they serve different bottles and different sellers.
+Collectors who are new to selling don't know whether to reach for a general marketplace or a fragrance-specific community. Both have a place, but they serve different bottles and different sellers.
 
 | Platform | Best For | Fees | Key Caveat |
 |---|---|---|---|
@@ -65,7 +65,7 @@ For higher-value pieces, specialist platforms earn their place. Scentfine, for e
 
 ## How do I price a partial bottle without underselling or overpricing?
 
-*Readers frequently ask:* how to arrive at a fair number when the bottle isn't full and there's no obvious sticker price for "90% of a 100ml EDP."
+How to arrive at a fair number when the bottle isn't full and there's no obvious sticker price for "90% of a 100ml EDP."
 
 The community consensus is pretty clear: 20-25% off the current retail asking price is a fair starting point for bottles that aren't readily available from online discounters in larger sizes. For widely available scents sold by discounters, you'll need to drop further. Buyers will compare your price directly to what discounters charge, so you have to beat those prices to make a sale.
 
@@ -79,7 +79,7 @@ Condition of bottle and packaging. Original box, cellophane, and accessories all
 
 ## What do I need to include in my listing to build trust?
 
-*This one comes up a lot*, especially from sellers who've posted a photo of a bottle and gotten zero interest. A listing that converts has these elements covered.
+Sellers who've posted a photo of a bottle and gotten zero interest run into this constantly. A listing that converts has these elements covered.
 
 Photos: High-quality photographs showing the bottle from multiple angles are essential. Include the fill line (backlit if needed to show the level clearly), the batch code stamp on the base or box, and any wear or marks on the bottle or cap. If your bottle is opaque (black glass, for instance), try placing it in a fridge for several hours: condensation will show up where the liquid sits inside, letting you take photos that clearly demonstrate how much juice remains to a prospective buyer.
 
@@ -107,7 +107,7 @@ This is precisely what [Perfume Picks](https://perfumepicks.app) tracks for you,
 
 ## Should I sell full bottles or decant and sell smaller portions?
 
-*A question we hear often:* whether it's more profitable to split a bottle into 5ml or 10ml decants rather than selling the full thing.
+Whether it's more profitable to split a bottle into 5ml or 10ml decants rather than selling the full thing.
 
 Honest answer: it depends on the fragrance and your time budget. It takes a lot of time to sell decants, and profit margins are often small. For common, easily available fragrances, decanting rarely makes commercial sense for a casual seller. The cost of glass vials, labels, Parafilm or wax sealing, and packaging materials eats significantly into any potential gain.
 

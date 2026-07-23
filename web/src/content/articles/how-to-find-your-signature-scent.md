@@ -35,8 +35,6 @@ The idea of a "signature scent" can feel deceptively simple: find a perfume you 
 
 ## Why does finding a signature scent feel so hard, even with a full collection?
 
-*A question we hear often:*
-
 Owning many bottles actually makes this harder, not easier. Choice overload is real, and it's compounded by the fact that fragrance operates differently from other accessories. Unlike your other senses, scent has a direct pathway to your limbic system, the emotional center of the brain responsible for memory formation and emotional responses, and a single scent can pull feelings to the surface almost instantly. You're not just picking a smell. You're anchoring an emotional state to your daily identity.
 
 There's also a scale problem. Before 2020, people typically owned around 2.5 bottles. By 2026, that number has jumped to 6-10 bottles, reflecting a move away from the single "signature scent" idea toward a more flexible, wardrobe-like approach to fragrance. Having options is a strength, but only once you know what you're actually selecting from your collection, and why.
@@ -48,8 +46,6 @@ These two concepts feel synonymous but aren't. A favorite is a fragrance you lov
 Think of it like a musical theme. Your favorite song is something you enjoy in the moment. Your signature music is what plays in someone's head when they think of you. Research cited by fragrance analysts finds that 85% of individuals view their fragrance as a core part of their identity, and 65% say wearing their signature scent boosts their confidence. That confidence signal, wearing something that feels like a natural extension of yourself rather than a costume, is the clearest real-world marker that you've found the right one.
 
 ## How do I map my preferences before I even open a bottle?
-
-*This one comes up a lot:*
 
 Before testing anything, audit your existing reactions to scent categories. Pull up your current collection (Perfume Picks' collection catalog makes this fast) and ask yourself which bottles you've sprayed most without thinking about it. Pattern recognition in your own wear log is often more honest than your stated preferences.
 
@@ -79,8 +75,6 @@ If you're working from bottles you already own, Perfume Picks' wear-tracking fea
 If both finalists score evenly, choose the one you'd be happy wearing on your worst day. A signature isn't a performance. It's the fragrance equivalent of a well-worn favorite jacket.
 
 ## Does my signature scent have to stay the same forever?
-
-*Readers frequently ask:*
 
 Absolutely not, and this is where collectors sometimes put unnecessary pressure on themselves. A signature scent can be a time capsule, something that holds memories, and then you get to find a new one that fits the person you're becoming. You evolve, and your scent should too, if it feels right.
 

@@ -37,7 +37,7 @@ You tracked down a bottle of something incredible on a friend's wrist. You bough
 
 ## So why exactly does the same perfume smell different on different people?
 
-*A question we hear often:* The short answer is that your skin is not a neutral surface. It is an active chemical environment, warm, oily or dry, slightly acidic, and populated by billions of microorganisms, and fragrance molecules react to all of it. In fragrance science, your body chemistry functions as an additional "ingredient" that shapes the final accord no perfumer ever controlled for.
+The short answer is that your skin is not a neutral surface. It is an active chemical environment, warm, oily or dry, slightly acidic, and populated by billions of microorganisms, and fragrance molecules react to all of it. In fragrance science, your body chemistry functions as an additional "ingredient" that shapes the final accord no perfumer ever controlled for.
 
 The factors in play are layered:
 
@@ -50,7 +50,7 @@ Think of it as personalization at the molecular level: thousands of people may o
 
 ## Why does perfume smell so different on my skin vs. a paper blotter?
 
-*This one comes up a lot:* A blotter strip tells you what a fragrance smells like in isolation at room temperature. Your skin tells you what it smells like in a living chemical environment at 37°C. Those are genuinely different experiments.
+A blotter strip tells you what a fragrance smells like in isolation at room temperature. Your skin tells you what it smells like in a living chemical environment at 37°C. Those are genuinely different experiments.
 
 Heat accelerates evaporation, which means top notes arrive faster and more intensely on warm skin, sometimes so quickly that they blur or overwhelm before you catch them on cold paper. Heart notes and base notes also project more freely with body heat behind them. If you have been disappointed by a fragrance after loving it on a strip in-store, let it develop on your wrist for at least 30 minutes before judging. The dry-down phase, where the base notes fully emerge, is often where the real character of a scent lives.
 
@@ -64,7 +64,7 @@ Hydration matters too: well-hydrated skin holds fragrance molecules at the surfa
 
 ## How do hormones affect the way perfume smells on me?
 
-*Readers frequently ask:* Hormonal shifts are among the most dramatic but least-discussed factors in personal fragrance performance. The menstrual cycle is one of the clearest examples: monthly changes in estrogen and progesterone levels can alter skin pH, sebum production, and natural body odor, meaning the same bottle can smell noticeably different, sometimes sweeter, sometimes sharper, sometimes shorter-lived, depending on where you are in your cycle.
+Hormonal shifts are among the most dramatic but least-discussed factors in personal fragrance performance. The menstrual cycle is one of the clearest examples: monthly changes in estrogen and progesterone levels can alter skin pH, sebum production, and natural body odor, meaning the same bottle can smell noticeably different, sometimes sweeter, sometimes sharper, sometimes shorter-lived, depending on where you are in your cycle.
 
 Pregnancy, menopause, and even high-stress periods (which elevate cortisol and affect sweat composition) can all shift how fragrance lands on skin. Some collectors who kept detailed wear logs have noticed their preferences for certain families shifting during major hormonal phases, not because their taste changed, but because their chemistry did. If a beloved fragrance suddenly seems "off," hormonal context is worth considering before you conclude the bottle has turned.
 
@@ -83,7 +83,7 @@ This is worth keeping in mind when you are [building a fragrance wardrobe](https
 
 ## What can I actually do to work with my skin chemistry rather than against it?
 
-*A question we hear often:* Several practical adjustments make a real difference.
+Several practical adjustments make a real difference.
 
 **Moisturize before you spray.** Applying an unscented body lotion or petroleum-based balm to pulse points before applying fragrance gives the molecules something to cling to, significantly extending longevity on dry skin. Many seasoned collectors swear by this single habit above any other application trick.
 

@@ -58,15 +58,20 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
     <BreadcrumbSchema crumbs={crumbs} />
   </Fragment>
 
-  <p class="brand">{SITE.name}</p>
-  <h1>{title}</h1>
-  <p class="byline">
-    By <a href="/about">{author}</a> &middot; {updatedAt ? 'Updated' : 'Published'} {formattedDate}
-  </p>
+  <header class="article-head">
+    <p class="article-kicker">{section?.name ?? 'Journal'}</p>
+    <h1>{title}</h1>
+    <p class="article-dek">{description}</p>
+    <p class="article-byline">
+      By <a href="/about">{author}</a> &middot; {updatedAt ? 'Updated' : 'Published'} {formattedDate}
+    </p>
+  </header>
 
   <QuickAnswer text={quickAnswer} />
 
-  <slot />
+  <div class="article-body">
+    <slot />
+  </div>
 
   <FAQ faqs={faqs} />
 

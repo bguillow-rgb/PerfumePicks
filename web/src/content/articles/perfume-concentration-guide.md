@@ -49,8 +49,6 @@ These categories aren't regulated by universal standards. What one brand labels 
 
 ## What's the difference between each concentration tier?
 
-*A question we hear often:*
-
 Here is how the mainstream tiers stack up, from lightest to most concentrated:
 
 | Concentration | Oil % | Typical Wear Time | Character | Best For |
@@ -70,8 +68,6 @@ Parfum sits at 20-30% oil concentration and represents the classic "luxury perfu
 
 ## Does EDT really smell different from EDP of the same fragrance?
 
-*This one comes up a lot:*
-
 Frequently, yes, and collectors are often surprised by just how much. Fragrance concentration not only affects how long a scent lasts but also its overall character. EDPs, with their higher oil content, tend to highlight heart and base notes, creating a gradual, evolving scent experience. EDTs focus on top notes, delivering an immediate burst of freshness that fades more quickly.
 
 The Dior Sauvage family is the clearest real-world illustration of this. The EDT highlights bright bergamot and ambroxan for an energetic feel, while the EDP introduces vanilla and star anise for a warmer, more sensual twist. Same DNA, genuinely different fragrance experience. Owning both versions of a scent you love isn't necessarily a redundant duplicate. It can be a genuine gap-filler in your rotation: one for summer mornings, one for autumn evenings.
@@ -89,8 +85,6 @@ For office wear or close-contact situations, this can actually be an advantage. 
 ---
 
 ## What is Extrait de Parfum, and is it worth the premium?
-
-*Readers frequently ask:*
 
 Parfum (also called Extrait de Parfum or Pure Perfume) is the most concentrated form available, the purest expression of a perfumer's vision. Extrait takes that further: some brands push oil concentration to 40% or beyond at this tier. Parfum typically comes in smaller bottles (30-50ml) because you only need 1-2 dabs or light sprays. This is fragrance for intimate moments, not the gym, not a crowded office. For evenings, date nights, special occasions.
 
@@ -117,8 +111,6 @@ According to NPD Group research, the average fragrance collector owns between 10
 ---
 
 ## Which concentration should I buy first for a new fragrance?
-
-*A question we hear often:*
 
 Start with the EDT or EDP, whichever is the "canonical" version the house first released or the one reviewers most consistently reference. This is usually the composition the perfumer intended as their primary statement, and it gives you the clearest read on whether you actually like the fragrance before committing to a pricier Parfum.
 

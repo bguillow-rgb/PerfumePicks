@@ -41,8 +41,6 @@ Understanding how your skin's biology interacts with fragrance molecules is one 
 
 ## Why does my perfume fade so fast when it lasts all day on someone else?
 
-*A question we hear often:*
-
 Longevity is not a fixed property of a fragrance, it is an interaction between the formula and your skin's pH, oil level, and temperature. The same Eau de Parfum can last ten hours on one person and three on another, which is why online reviews and paper strips in store are unreliable predictors of real-world performance.
 
 The single biggest physical factor is sebum, the natural oil your skin produces. Oily skin works like a natural diffuser: sebum binds with fragrance molecules, releasing them slowly over time, which often results in a scent that is richer and lasts significantly longer. On the other end, dry skin struggles to hold onto fragrance, without sufficient moisture or natural oils, perfume evaporates quickly, often fading within just a few hours.
@@ -65,8 +63,6 @@ Projection on oily skin can be significant, especially in warm weather. If you w
 
 ## What should I do differently if I have dry skin?
 
-*This one comes up a lot:*
-
 Well-hydrated skin holds fragrance molecules better, as they adhere to the skin's natural lipids. Dry skin is the enemy of perfume longevity. To optimize scent retention, apply an unscented moisturizing cream to your pulse points before spraying, a technique that greatly helps your perfume last longer and smell richer.
 
 Beyond the moisturizer trick, fragrance family selection matters enormously. Dry skin needs bigger fragrances with a good solid base. Orientals and chypres work well, as do spices and heavier blooms like tuberose, the more delicate scents will disappear. In practical terms: if your collection skews toward light, airy citrus EDTs, you'll chronically be disappointed by longevity regardless of how carefully you apply. Shifting even one or two bottles toward richer EDP or Parfum concentrations in oriental or woody-amber families can transform your wearing experience.
@@ -88,8 +84,6 @@ The inconsistency you experience, good longevity one day, mediocre the next, oft
 ---
 
 ## Does anything else affect how a perfume smells on my skin beyond the oily/dry question?
-
-*Readers frequently ask:*
 
 Several other biological and lifestyle factors are worth knowing about.
 

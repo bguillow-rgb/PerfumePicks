@@ -43,8 +43,6 @@ A good benchmark for most enthusiasts is anywhere from 5 to 15 bottles, enough f
 
 ## What's the minimum that actually covers my life?
 
-*A question we hear often.*
-
 If you want a functioning fragrance wardrobe without overthinking it, four scents will carry you through almost any situation:
 
 - **A light daytime scent**, fresh, clean, low-projection; suitable for work or casual wear
@@ -57,8 +55,6 @@ A well-rounded collection typically includes 4 to 7 carefully chosen scents, a r
 Once those four slots feel natural and you're actually reaching for each one, adding a fifth bottle, perhaps something mood-driven or a niche piece that genuinely excites you, feels purposeful rather than impulsive.
 
 ## How do I know when I've crossed into 'too many'?
-
-*This one comes up a lot.*
 
 The honest answer is that "too many" is less about a number and more about behavior. There's no magic number when it comes to how many perfumes you should own, but there is a tipping point where quantity starts to overshadow quality. For some, five bottles may feel excessive; for others, a 40-piece niche collection might be just right. The real question is: are you truly using and enjoying what you own?
 
@@ -92,7 +88,7 @@ Most readers of this guide live in the enthusiast-to-serious-collector band. Tha
 
 ## What does a well-balanced collection look like in practice?
 
-*Readers frequently ask:* not just how many, but *which types* of bottles those should be.
+Not just how many, but *which types* of bottles those should be.
 
 Think of your collection the way you'd think of a clothing wardrobe: you need everyday pieces, a few statement items, and seasonal standbys. The same logic applies to fragrance. A genuinely balanced collection, regardless of size, covers these functional slots:
 

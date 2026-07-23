@@ -49,8 +49,6 @@ Beyond logistics, there's the thrill factor. For collectors, it's a game: scouri
 
 ## How do I figure out what I'll actually like before buying?
 
-*A question we hear often:*
-
 The best starting point is the collection you already own. When blind buying, take stock of the perfumes you already own. Ask: are you typically drawn to fruit-forward fragrances? Is your vanity full of vanilla scents? What hasn't worked for you? This audit reveals your real taste profile, not the one you think you have, but the one your spending history confirms.
 
 Look specifically at base notes across bottles you love. If sandalwood, clean musks, and woody amber appear repeatedly in your keepers, that pattern is data. If you've tried three different aquatic colognes and all three sit untouched, that's equally important data. A fragrance-wardrobe app like Perfume Picks makes this kind of audit fast: catalog what you own, what you actually wear, and the patterns across your collection become visible quickly.
@@ -60,8 +58,6 @@ Also consider what may be missing from your collection, maybe you already have p
 ---
 
 ## Why do blind buys go wrong even when I love the note list?
-
-*This one comes up a lot:*
 
 Because note lists describe ingredients, not experience. The most common mistake is confusing a note list with the full wearing experience. Seeing vanilla, iris, or bergamot in a description doesn't tell you whether the perfume will smell dry or creamy, airy or dense, clean or sweet once it settles.
 
@@ -82,8 +78,6 @@ Also seek out reviewers whose taste profile overlaps with yours. Look for review
 ---
 
 ## What price threshold should I set for a blind buy?
-
-*Readers frequently ask:*
 
 This is one of the most practical questions in the blind-buy conversation, and the answer is blunt: the more expensive the bottle, the more evidence you need before committing.
 

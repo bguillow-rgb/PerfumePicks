@@ -30,11 +30,14 @@ const articles = (
   {articles.length === 0 ? (
     <p>The first articles are being written now. Check back soon, or email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> if there is a topic you want covered.</p>
   ) : (
-    <ul>
+    <ul class="blog-list">
       {articles.map((a) => (
         <li>
           <a href={`/articles/${a.slug}`}>{a.data.title}</a>
           <p>{a.data.description}</p>
+          <p class="article-meta">
+            {(a.data.updatedAt ?? a.data.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </p>
         </li>
       ))}
     </ul>

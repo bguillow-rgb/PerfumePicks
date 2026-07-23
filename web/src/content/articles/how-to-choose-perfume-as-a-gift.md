@@ -37,8 +37,6 @@ Perfume is the gift that people either treasure for years or quietly relocate to
 
 ## Why is perfume such a tricky thing to buy for someone else?
 
-*A question we hear often:*
-
 Fragrance is uniquely personal because it interacts with skin chemistry, memory, and identity all at once. What smells transcendent on one person can read completely flat, or even unpleasant, on another. That's the core challenge, and it's also why so many people default to a gift card instead.
 
 But "tricky" doesn't mean "impossible." The global perfume market was valued at over $60 billion in 2025, according to Grand View Research, and fragrance remains one of the top-purchased gift categories worldwide. Circana data shows one in five people chose to gift fragrance for Mother's Day 2025 alone, with women's prestige fragrance sales during that window exceeding half a billion dollars in the US. People buy it as a gift constantly. The ones who do it well have simply learned to lead with observation rather than assumption.
@@ -58,8 +56,6 @@ Notice their skincare and bodycare as well. Scented lotions, shower gels, and ha
 Think about their personality and wardrobe, too. The way we talk about perfumes (bold, delicate, playful, elegant) often mirrors how we'd describe people. A maximalist dresser who loves a statement outfit is more likely to enjoy a bold, sillage-heavy fragrance. A minimalist who wears clean, neutral tones might reach for something quiet and skin-close.
 
 ## What's the safest scent family to gift when I'm not totally sure?
-
-*This one comes up a lot:*
 
 Fresh fragrances (citrus, aquatic, and light green) are the most universally liked across demographics, personalities, and seasons. They're rarely polarising and work well in almost any setting. Soft florals (think light rose, peony, or white muguet rather than heady tuberose or intense jasmine) are equally safe and feel unmistakably "gifted" in the best sense.
 
@@ -82,8 +78,6 @@ Discovery sets have become a genuinely appreciated format. NielsenIQ data shows 
 There's also a smart intermediate option sometimes called a "parenthesis perfume": a fresh, easy-wearing fragrance that isn't trying to replace someone's existing signature scent, but sits alongside it for weekends, travel, or warmer months. Light, crowd-pleasing, universally wearable. These are ideal when you want a real bottle rather than a set, but you're not 100% certain of their preferences.
 
 ## Does concentration matter when choosing a gift perfume?
-
-*Readers frequently ask:*
 
 Yes, and it matters more than many gift-buyers realise. Eau de Parfum (EDP) is generally the safest and most appreciated concentration for a gift: it lasts meaningfully on skin, feels genuinely luxurious, and is available from almost every house at most price points. If you're buying a specific bottle they've mentioned or you know they love, EDP is almost always the right call.
 
@@ -117,8 +111,6 @@ If you want to keep it a surprise, look at what's conspicuously absent from thei
 The Perfume Picks app lets collectors catalogue every bottle they own, track wears, and see their own taste profile. If the person you're shopping for uses it, a quick glance at their public profile (if they've shared it) gives you an instant picture of what they have, what they love, and what gaps might make for the perfect gift.
 
 ## Any last rules of thumb before I buy?
-
-*A question we hear often:*
 
 A few that rarely fail.
 

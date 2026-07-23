@@ -49,7 +49,7 @@ Notes are classified in a fragrance pyramid, separated into three basic categori
 
 ## What are top notes and why do they disappear so fast?
 
-*A question we hear often:* collectors spray something at a counter, love it immediately, buy it -- then find the opening has vanished within twenty minutes, leaving something they barely recognize.
+Collectors spray something at a counter, love it immediately, buy it -- then find the opening has vanished within twenty minutes, leaving something they barely recognize.
 
 That opening rush is your top notes. Top notes deliver the first impression in a perfume, often bright and volatile like lemon, bergamot, lavender, or green apple. They are designed to hook you, and they do their job well. The problem is they are built to be fleeting.
 
@@ -71,7 +71,7 @@ For a collector trying to articulate what draws them to a specific fragrance, th
 
 ## What are base notes and why do collectors care so much about them?
 
-*Readers frequently ask:* why do two perfumes that smell similar in the store feel completely different after a few hours of wear?
+Why do two perfumes that smell similar in the store feel completely different after a few hours of wear?
 
 Base notes. Base notes provide perfume longevity, featuring rich elements like sandalwood, oud, vanilla, amber, musk, vetiver, or patchouli that linger for hours or days. They are the heaviest, slowest-evaporating molecules in the formula, and they do two jobs: they anchor the lighter layers above them, and they are ultimately what you -- and everyone who hugs you -- will smell the most. Base notes are the foundation of a fragrance. These notes are the heaviest, deepest scents, and they take the longest to develop -- sometimes hours after application. They are usually warm, woody, or musky and are responsible for the fragrance's longevity.
 
@@ -81,7 +81,7 @@ For serious collectors, base notes are where bottle value often lives. A perfume
 
 ## Do the notes listed on the box actually match what I smell?
 
-*This one comes up a lot:* collectors read "bergamot, rose, sandalwood" and expect to smell each of those in sequence -- only to find the actual scent is nothing like any of them individually.
+Collectors read "bergamot, rose, sandalwood" and expect to smell each of those in sequence -- only to find the actual scent is nothing like any of them individually.
 
 That is the correct outcome. Notes don't actually exist as separate entities in the bottle. When a perfumer creates a fragrance, they're not layering ingredients like a cake -- they're blending them into a unified formula where molecules interact, modify each other, and create synergies. The listed notes are better understood as a *map of ingredients* than a literal sequence of smells. An accord is a combination of notes that creates a unified scent impression -- think of it like a chord in music, individual notes played together to create something new.
 
@@ -112,7 +112,7 @@ Knowing the pyramid transforms passive wearing into active curation -- which is 
 
 ## Does the fragrance concentration (EDP vs. EDT) affect how notes behave?
 
-*A question we hear often:* collectors sometimes notice that the Eau de Parfum version of a fragrance feels completely different from its Eau de Toilette -- not just stronger, but *different* in character.
+Collectors sometimes notice that the Eau de Parfum version of a fragrance feels completely different from its Eau de Toilette -- not just stronger, but *different* in character.
 
 Concentration absolutely affects note behavior. Higher concentrations contain more aromatic compounds relative to carrier alcohol. Two things follow from that: the top notes are often less explosive (less alcohol to carry the initial burst), while the heart and base tend to emerge sooner and stay more prominent throughout the wear. An EDP version of a floral may feel richer and creamier than the same house's EDT -- both because of the higher concentration and because perfumers often reformulate slightly between concentrations, leaning into the base materials more at EDP strength.
 

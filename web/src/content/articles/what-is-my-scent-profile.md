@@ -49,7 +49,7 @@ Your scent profile fixes this. Once you know, for instance, that you consistentl
 
 ## How is a scent profile different from just having a favorite perfume?
 
-*A question we hear often:* people conflate a beloved signature bottle with a fully formed taste identity. They're related but not the same thing.
+People conflate a beloved signature bottle with a fully formed taste identity. They're related but not the same thing.
 
 A favorite perfume is one data point. A scent profile is the pattern that *explains* why you love that perfume, and which dozens of other bottles would resonate with you for the same underlying reasons. Knowing your profile means you're not dependent on a single bottle or a single house. You can walk into any perfumery, identify the structural elements you need (say, a woody amber base with a soft floral heart and no sharp citrus top note), and narrow a wall of 300 options to a shortlist of five before you even lift a tester.
 
@@ -75,7 +75,7 @@ The most reliable method doesn't involve an online quiz. It involves your own bo
 
 ## What do the different fragrance families actually signal about taste?
 
-*This one comes up a lot*, particularly from collectors who are comfortable picking bottles but have never learned the vocabulary to describe their own pattern.
+Plenty of collectors are comfortable picking bottles but have never learned the vocabulary to describe their own pattern.
 
 | Family | Core character | What it often signals about taste |
 |---|---|---|
@@ -94,7 +94,7 @@ None of these signal a fixed personality type. They reflect a *sensory* preferen
 
 ## What's the role of recurring notes vs. fragrance families in my profile?
 
-*Readers frequently ask* whether they should think in terms of families or individual notes. The answer: families tell you the *shape* of what you love; recurring notes tell you the *soul* of it.
+Whether they should think in terms of families or individual notes. The answer: families tell you the *shape* of what you love; recurring notes tell you the *soul* of it.
 
 You might have a broadly woody profile but specifically need cedar rather than oud. They're in the same family but perform very differently on skin and create entirely different emotional registers. Knowing you love cedar-forward woodies but find oud heavy and medicinal is far more actionable than simply knowing you like "woody" fragrances.
 
@@ -127,7 +127,7 @@ Where this matters practically: when you're shopping, knowing which sub-profile 
 
 ## What should I actually *do* with my scent profile once I know it?
 
-*Readers frequently ask* this, because decoding your taste is only valuable if it changes your behaviour.
+This, because decoding your taste is only valuable if it changes your behaviour.
 
 **Use it as a buying filter first.** Before sampling anything, check it against your profile. If a new release has none of your signature notes and sits in a family you've never loved, the bar for pulling a sample is higher. This alone prevents most impulse purchases.
 

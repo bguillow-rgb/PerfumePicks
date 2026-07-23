@@ -50,7 +50,7 @@ The shift toward fragrance wardrobes of 6-10 bottles is already happening, but 6
 
 ## What exactly should I log for each bottle in my collection?
 
-*A question we hear often:* collectors get paralyzed trying to design the perfect system before they've tracked a single bottle. Keep it simple to start.
+Collectors get paralyzed trying to design the perfect system before they've tracked a single bottle. Keep it simple to start.
 
 For each bottle, capture:
 
@@ -69,7 +69,7 @@ One rule: choose only the fields you actually find valuable. This system is for 
 
 ## What should a single wear log entry look like?
 
-*This one comes up a lot:* people track their collection but forget to track *how they use it*, which is where the real intelligence lives.
+People track their collection but forget to track *how they use it*, which is where the real intelligence lives.
 
 For each wear, record:
 
@@ -87,7 +87,7 @@ That three-stage snapshot takes under two minutes and produces far richer data t
 
 ## Spreadsheet vs. app vs. paper journal, which method actually works?
 
-*Readers frequently ask:* there's no universally correct answer here, but the tradeoffs are real.
+There's no universally correct answer here, but the tradeoffs are real.
 
 | Method | Best for | Strengths | Weaknesses |
 |---|---|---|---|
@@ -118,7 +118,7 @@ Tracking wears in even a basic bullet journal, one mark per wear, lets you see w
 
 ## How do I track performance, not just *that* I wore it, but *how* it performed?
 
-*A question we hear often:* longevity and projection ratings are only useful when they're contextual.
+Longevity and projection ratings are only useful when they're contextual.
 
 One of the biggest factors influencing performance is the surface you apply to. Your skin chemistry, pH, temperature, oiliness, and hydration, interacts with fragrance molecules directly, causing them to develop, project, and fade differently. Dry skin, for instance, tends to absorb fragrance faster. That means a "poor longevity" note logged on a cold winter morning after a long flight tells a different story than the same fragrance logged on a humid summer afternoon on well-moisturized skin.
 
@@ -128,7 +128,7 @@ Build two performance fields into your log: a longevity score (hours until it's 
 
 ## What's the fastest way to get an existing collection logged without starting from scratch?
 
-*Readers frequently ask:* the backlog feels overwhelming when you're looking at 20 or 30 bottles.
+The backlog feels overwhelming when you're looking at 20 or 30 bottles.
 
 Batch the inventory in one sitting. 30-45 minutes is usually enough for even a large collection. Work through the physical bottles one by one and enter only the non-negotiable fields: name, house, concentration, size. That's it. Resist the urge to add ratings and notes for bottles you haven't worn recently; those get filled in organically as you wear and log going forward.
 

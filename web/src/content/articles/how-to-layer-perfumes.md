@@ -45,8 +45,6 @@ Done well, layering produces architectural complexity that designer-tier composi
 
 ## What's the actual difference between layering and just wearing two perfumes?
 
-*A question we hear often:*
-
 True layering applies fragrances separately to skin or clothing, allowing each composition to develop independently while interacting in the wearer's aromatic projection envelope. It's a different practice from blending fragrances mechanically in an atomiser, which tends to produce unstable results.
 
 The distinction matters in practice. When you spray two perfumes onto your skin in sequence, each undergoes its own interaction with your skin chemistry and body heat. The result isn't a 50/50 mix. It's a dynamic relationship between two evolving compositions. The opening, heart, and dry-down of a layered pair each feel distinct, and that's exactly the complexity collectors are after.
@@ -77,8 +75,6 @@ If you catalog your bottles in Perfume Picks, checking your collection's note br
 
 ## What order should I apply them in?
 
-*This one comes up a lot:*
-
 Apply the heaviest fragrance first, and layer lighter ones on top. The logic is architectural: your foundation scent needs time and skin contact to develop before anything goes over it. A heavy EDP (something amber, woody, or musky) gets the skin first. Give it sixty to ninety seconds. Then apply the lighter, more volatile composition on top.
 
 Allow the blend to develop for 10-30 minutes before deciding if it needs adjustment. The first ten minutes of a layered pair are often misleading. Top notes are loud and raw. The real character of the combination emerges after those volatile top notes settle and the heart notes of both fragrances begin interacting.
@@ -93,8 +89,6 @@ A practical sequence for a collector's morning routine:
 Common mistakes include using two overpowering eau de parfums at once and ignoring how the scent changes over time. Test new combinations on days when the stakes are low, not before an important meeting.
 
 ## How do I avoid the "muddy" smell everyone warns about?
-
-*Readers frequently ask:*
 
 Muddiness comes from structural competition: two fragrances fighting for the same olfactory space at the same intensity. The clearest causes and fixes:
 
