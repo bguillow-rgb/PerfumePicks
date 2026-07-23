@@ -79,14 +79,21 @@ export const CENTROIDS: Record<V3ArchetypeKey, CentroidProfile> = {
     spice: { t: 0.35, w: 0.5 },
     genderLean: { t: 0.3, w: 0.5 },
   },
-  // REQUIRES warmth+darkness (not just outcome columns). darkness sits just
-  // above the 0.43 floor: pool darkness is floor-bound for ~75% of bottles,
-  // so a higher target handed every warm-sweet-loud set to spice_trader (M2).
+  // Warm-sweet SENSUAL, anchored on warmth. presence is deliberately LIGHT
+  // (t 0.72, w 0.5): the old t=0.8/w=0.8 sat on the real-population presence
+  // mean (~0.79) and overlapped showstopper (centroid gap 0.16, the roster's
+  // tightest), so on the non-uniform PROD crowd — which piles into the warm/
+  // sweet/loud corner — seducer vacuumed ~2-3x its uniform-sim share (prod
+  // 27%+ vs sim 6.6%). Lightening presence cedes "loud" to showstopper/
+  // maximalist and lets warmth+darkness carry the identity. darkness nudged to
+  // 0.57 (w 0.7) to demand genuine amber/oriental depth vs the merely-sweet
+  // (gourmand) — still near the 0.43 floor so warm-sweet-loud sets don't all
+  // flip to spice_trader (M2). Re-verified against both M2 gates on ship.
   the_seducer: {
     warmth: { t: 0.9, w: 1.2 },
-    darkness: { t: 0.55, w: 0.6 },
-    presence: { t: 0.8, w: 0.8 },
-    sweetness: { t: 0.65, w: 0.8 },
+    darkness: { t: 0.57, w: 0.7 },
+    presence: { t: 0.72, w: 0.5 },
+    sweetness: { t: 0.65, w: 0.75 },
   },
   // luxury + anti-popularity + breadth
   the_connoisseur: {
