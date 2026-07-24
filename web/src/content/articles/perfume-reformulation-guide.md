@@ -13,10 +13,10 @@ quickAnswer: "To tell if a perfume has been reformulated, check the batch code o
 publishedAt: "2026-07-12"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-read-perfume-batch-codes"
   - "does-perfume-expire"
   - "fragrance-notes-explained"
   - "how-to-find-your-signature-scent"
-  - "perfume-concentration-guide"
 faqs:
   - q: "Do brands announce when they reformulate a perfume?"
     a: "Rarely. Most houses quietly update formulas without public disclosure, and sales staff are often uninformed or instructed to deny changes. Collector forums and batch-code databases are more reliable than brand communications."
