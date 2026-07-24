@@ -13,7 +13,7 @@ import { scanBottle } from '@/src/lib/claude';
 import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useWardrobeStore, WARDROBE_CAP_HIT } from '@/src/stores/useWardrobeStore';
 import { useCustomFragranceStore } from '@/src/stores/useCustomFragranceStore';
-import { useScanStore, FREE_DAILY_SCAN_LIMIT } from '@/src/stores/useScanStore';
+import { useScanStore, FREE_LIFETIME_SCAN_LIMIT } from '@/src/stores/useScanStore';
 import { useProStore } from '@/src/stores/useProStore';
 
 type ScanState = 'ready' | 'scanning' | 'result' | 'no_match';
@@ -49,14 +49,10 @@ export default function ScanScreen() {
   const isPro = useProStore((s) => s.isPro);
   const recordScan = useScanStore((s) => s.recordScan);
   const isAtLimit = useScanStore((s) => s.isAtLimit);
-  // Subscribe to the raw count/date so the "remaining" hint re-renders after a
-  // scan — selecting the getter function alone is a stable ref and never updates.
-  const dailyScanCount = useScanStore((s) => s.dailyScanCount);
-  const dailyScanDate = useScanStore((s) => s.dailyScanDate);
-  const remainingScans = Math.max(
-    0,
-    FREE_DAILY_SCAN_LIMIT - (dailyScanDate === new Date().toLocaleDateString('en-CA') ? dailyScanCount : 0),
-  );
+  // Subscribe to the raw count so the "remaining" hint re-renders after a scan —
+  // selecting the getter function alone is a stable ref and never updates.
+  const lifetimeScanCount = useScanStore((s) => s.lifetimeScanCount);
+  const remainingScans = Math.max(0, FREE_LIFETIME_SCAN_LIMIT - lifetimeScanCount);
 
   // Toast animation
   const toastOpacity = useRef(new RNAnimated.Value(0)).current;
@@ -74,8 +70,8 @@ export default function ScanScreen() {
     if (isAtLimit()) {
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
       Alert.alert(
-        'Daily Limit Reached',
-        `You've used all ${FREE_DAILY_SCAN_LIMIT} free scans today. Upgrade to Pro for unlimited scans.`,
+        "You've used your free scans",
+        `That's all ${FREE_LIFETIME_SCAN_LIMIT} free scans. Go Pro for unlimited bottle identification.`,
         [
           { text: 'Not Now', style: 'cancel' },
           { text: 'Upgrade', onPress: () => router.push('/paywall') },
@@ -304,7 +300,7 @@ export default function ScanScreen() {
           </Pressable>
           {!isPro && (
             <Text style={styles.scanLimitHint}>
-              {remainingScans} / {FREE_DAILY_SCAN_LIMIT} free scans remaining today
+              {remainingScans} of {FREE_LIFETIME_SCAN_LIMIT} free scans left
             </Text>
           )}
         </View>

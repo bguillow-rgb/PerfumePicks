@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import {
-  View, Text, StyleSheet, Modal, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform,
+  View, Text, StyleSheet, Modal, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, Alert,
 } from 'react-native';
+import { router } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import {
   useWearLogStore, type Occasion, type Weather, type WearLog,
 } from '@/src/stores/useWearLogStore';
+import { useProStore } from '@/src/stores/useProStore';
+import { FREE_LIFETIME_WEAR_LOG_CAP } from '@/src/lib/limits';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
@@ -46,6 +49,8 @@ const WEATHERS: { id: Weather; label: string; icon: keyof typeof Ionicons.glyphM
 export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: Props) {
   const add = useWearLogStore((s) => s.add);
   const update = useWearLogStore((s) => s.update);
+  const wearLogCount = useWearLogStore((s) => s.logs.length);
+  const isPro = useProStore((s) => s.isPro);
   const isEditing = !!editLog;
 
   const [occasion, setOccasion] = useState<Occasion | null>(null);
@@ -86,6 +91,21 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
 
   const handleSave = () => {
     if (!fragrance) return;
+    // Free-tier lifetime cap on NEW wear logs (edits are always allowed). Route
+    // the committed journaler to Pro instead of silently blocking.
+    if (!isEditing && !isPro && wearLogCount >= FREE_LIFETIME_WEAR_LOG_CAP) {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+      onClose();
+      Alert.alert(
+        'Your journal is full on free',
+        `Free accounts keep ${FREE_LIFETIME_WEAR_LOG_CAP} wear logs. Go Pro for an unlimited journal, full history, and Perfume Wrapped.`,
+        [
+          { text: 'Not Now', style: 'cancel' },
+          { text: 'Go Pro', onPress: () => router.push('/paywall?returnTo=/&from=journal_cap' as any) },
+        ],
+      );
+      return;
+    }
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     const patch = {
       worn_on: wornOn,

@@ -19,6 +19,19 @@
  */
 export const FREE_WARDROBE_CAP = 5;
 
+/**
+ * Max LIFETIME wear-log (Scent of the Day) entries for free users. Pro =
+ * unlimited + Perfume Wrapped + full history.
+ *
+ * SOTD logging is a RETENTION habit, so this is set generously (not a Pour-style
+ * hard tab lock): the median user logs ~0–1 wears, so 10 never touches the
+ * casual logger, but a committed journaler hits it and gets a concrete reason to
+ * go Pro. Gated at the create action in LogWearSheet (edits to existing entries
+ * are never blocked). Tunable — lower it only if retention (D7) holds after
+ * shipping the rest of the monetization pass.
+ */
+export const FREE_LIFETIME_WEAR_LOG_CAP = 10;
+
 // NOTE: the daily swipe cap is FREE_DAILY_SWIPE_LIMIT in src/stores/useSwipeStore.ts
 // — that is the value the Train screen and tab badge actually enforce. A second
 // FREE_DAILY_SWIPE_CAP constant used to live here, unimported by anything, and

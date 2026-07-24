@@ -25,6 +25,7 @@ import {
   getFragranceFromStore,
   type Fragrance,
   type DupeResult,
+  type DupeTeaser,
   type SimilarResult,
 } from '@/src/stores/useCatalogStore';
 import { useWardrobeStore } from '@/src/stores/useWardrobeStore';
@@ -111,6 +112,8 @@ function FragranceDetailScreen() {
   const inCompare = !!id && compareIds.includes(id);
   const fetchDupes = useCatalogStore((s) => s.fetchDupes);
   const fetchDupeCount = useCatalogStore((s) => s.fetchDupeCount);
+  const fetchDupeTeaser = useCatalogStore((s) => s.fetchDupeTeaser);
+  const isPro = useProStore((s) => s.isPro);
   const fetchCommunityDupes = useCatalogStore((s) => s.fetchCommunityDupes);
   const fetchSimilars = useCatalogStore((s) => s.fetchSimilars);
   const [fragrance, setFragrance] = useState<Fragrance | undefined>(() =>
@@ -141,6 +144,9 @@ function FragranceDetailScreen() {
   // count drives the locked footer ("N more dupes — unlock with Pro").
   const [dupes, setDupes] = useState<DupeResult[]>([]);
   const [dupeCount, setDupeCount] = useState(0);
+  // Non-identifying teaser (best match %, max $ savings) for the locked footer —
+  // the savings-anchored hook. Only fetched for non-Pro (Pro sees the real list).
+  const [dupeTeaser, setDupeTeaser] = useState<DupeTeaser | null>(null);
   // Scroll plumbing so the "Find the dupe" CTA actually jumps to the Budget
   // Dupes section (its down-arrow promises movement — a dead tap is worse than
   // no CTA). scrollRef drives the scroll; dupeSectionY caches the section's
@@ -151,12 +157,15 @@ function FragranceDetailScreen() {
     scrollRef.current?.scrollTo({ y: Math.max(0, dupeSectionY.current - 12), animated: true });
   }, []);
   useEffect(() => {
-    if (!id) { setDupes([]); setDupeCount(0); return; }
+    if (!id) { setDupes([]); setDupeCount(0); setDupeTeaser(null); return; }
     let cancelled = false;
     fetchDupes(id).then((rows) => { if (!cancelled) setDupes(rows); });
     fetchDupeCount(id).then((n) => { if (!cancelled) setDupeCount(n); });
+    // Teaser numbers only matter for non-Pro (Pro sees the real rows).
+    if (!isPro) fetchDupeTeaser(id).then((t) => { if (!cancelled) setDupeTeaser(t); });
+    else setDupeTeaser(null);
     return () => { cancelled = true; };
-  }, [id, fetchDupes, fetchDupeCount]);
+  }, [id, isPro, fetchDupes, fetchDupeCount, fetchDupeTeaser]);
 
   // Reach: how often does anyone actually land on a bottle that HAS a dupe?
   // Fires once per bottle, only after the count resolves. This is the
@@ -202,7 +211,6 @@ function FragranceDetailScreen() {
   const [wearSheetOpen, setWearSheetOpen] = useState(false);
   const [editingLog, setEditingLog] = useState<WearLog | null>(null);
   const [notesSheetOpen, setNotesSheetOpen] = useState(false);
-  const isPro = useProStore((s) => s.isPro);
 
   // Trait-routed buyer CTA (M6). An explicit `intent` route param (carried from
   // the first rec) wins; otherwise route off the live DNA's strongest buyer
@@ -665,7 +673,9 @@ function FragranceDetailScreen() {
                 dupes={dupes}
                 loading={dupes.length === 0 && dupeCount > 0}
                 lockedCount={isPro ? 0 : Math.max(0, dupeCount - dupes.length)}
-                onUnlock={() => router.push('/paywall')}
+                lockedBestMatchPct={dupeTeaser?.bestMatchPct ?? null}
+                lockedMaxSavingsCents={dupeTeaser?.maxSavingsCents ?? null}
+                onUnlock={() => router.push('/paywall?returnTo=/&from=dupe_moment' as any)}
                 surface="fragrance_detail"
               />
             </Section>

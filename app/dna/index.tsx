@@ -330,13 +330,15 @@ export default function DnaPickerScreen() {
   // pre-swap navigator (replacing the root stack + pushing in the same tick
   // races — the push hits the pre-swap navigator and is silently dropped).
   const handleRecOpen = useCallback(
-    (id: string) => {
+    (id: string, from?: string) => {
       useTasteProfileStore.getState().commitDraft();
       endRetake();
       completeOnboarding();
       router.replace('/(tabs)');
       requestAnimationFrame(() => {
-        router.push(`/fragrance/${id}`);
+        // `from=dna_reveal` tags the top-match open so the destination can fire
+        // the dupe moment at peak intent (Lever 1 handoff).
+        router.push(from ? `/fragrance/${id}?from=${from}` : `/fragrance/${id}`);
       });
     },
     [completeOnboarding, endRetake, router],
@@ -564,7 +566,7 @@ export default function DnaPickerScreen() {
         // (onboarding completes, lands in the app with detail on top). No
         // separate "first match" interstitial — it was redundant with the home
         // DNA card and its label read wrong on a retake.
-        onContinue={() => (heroId ? handleRecOpen(heroId) : finishOnboarding())}
+        onContinue={() => (heroId ? handleRecOpen(heroId, 'dna_reveal') : finishOnboarding())}
         onViewDetails={(id) => handleRecOpen(id)}
         onSeeMoreMatches={() => router.push('/dna/matches')}
       />
