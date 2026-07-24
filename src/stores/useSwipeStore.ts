@@ -29,8 +29,12 @@ export interface SwipeRecord {
  * usage only 4 user-days ever reached it, and the busiest user-day was exactly
  * 10 (they hit the wall and stopped rather than upgrade). 5 puts the ceiling
  * inside normal behavior so Train My Nose becomes a real reason to pay.
+ *
+ * 5 -> 3 on 2026-07-23 (monetization pass): a repeat engagement loop worth
+ * gentle upgrade pressure. Low activation risk — swiping is not the activation
+ * spine — so the tighter ceiling drives Pro exposure without blocking onboarding.
  */
-export const FREE_DAILY_SWIPE_LIMIT = 5;
+export const FREE_DAILY_SWIPE_LIMIT = 3;
 
 let _currentUserId: string | null = null;
 export function setSwipeUserId(uid: string | null) { _currentUserId = uid; }

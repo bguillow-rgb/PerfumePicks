@@ -47,6 +47,16 @@ export type DupeResult = Fragrance & {
 /** A "Smells Like" result: a full Fragrance plus its similarity score. */
 export type SimilarResult = Fragrance & { similarity: number };
 
+/**
+ * Non-identifying dupe teaser (get_dupe_teaser). The savings-anchored numbers
+ * for the locked freemium footer — never the bottle identity.
+ */
+export type DupeTeaser = {
+  dupeCount: number;
+  bestMatchPct: number | null;
+  maxSavingsCents: number | null;
+};
+
 interface CatalogState {
   /** In-memory cache: slug → Fragrance */
   cache: Record<string, Fragrance>;
@@ -122,6 +132,13 @@ interface CatalogState {
 
   /** Public count of dupes available for an original — powers the Pro upsell teaser. */
   fetchDupeCount: (slug: string) => Promise<number>;
+
+  /**
+   * Non-identifying teaser aggregate (count, best match %, max $ savings) for the
+   * locked freemium footer — the savings-anchored hook. Never reveals which
+   * bottles (the paid relationship). Returns null when there are no dupes.
+   */
+  fetchDupeTeaser: (slug: string) => Promise<DupeTeaser | null>;
 
   /**
    * COMMUNITY-tier dupes for an original (source='community') via get_community_dupes.
@@ -690,6 +707,19 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     const { data, error } = await supabase.rpc('get_dupe_count', { p_slug: slug });
     if (error) { console.warn('[catalog] fetchDupeCount error:', error.message); return 0; }
     return (data as number) ?? 0;
+  },
+
+  fetchDupeTeaser: async (slug) => {
+    if (!isSupabaseConfigured || !slug) return null;
+    const { data, error } = await supabase.rpc('get_dupe_teaser', { p_slug: slug });
+    if (error) { console.warn('[catalog] fetchDupeTeaser error:', error.message); return null; }
+    const row = Array.isArray(data) ? data[0] : data;
+    if (!row || !row.dupe_count) return null;
+    return {
+      dupeCount: row.dupe_count as number,
+      bestMatchPct: (row.best_match_pct as number | null) ?? null,
+      maxSavingsCents: (row.max_savings_cents as number | null) ?? null,
+    };
   },
 
   fetchFeaturedDupeOriginal: async () => {

@@ -19,6 +19,14 @@ interface Props {
    * rows are never sent to the client — this is just the count for the CTA.
    */
   lockedCount?: number;
+  /**
+   * Savings-anchored teaser numbers for the locked footer (from get_dupe_teaser).
+   * Best match % and max $ savings across the WITHHELD dupes — the tension that
+   * converts, without revealing which bottles (the paid relationship). Null when
+   * unknown (Pro, or teaser not loaded yet) → footer falls back to generic copy.
+   */
+  lockedBestMatchPct?: number | null;
+  lockedMaxSavingsCents?: number | null;
   /** Tapped the locked footer — caller routes to the paywall. */
   onUnlock?: () => void;
   /**
@@ -43,7 +51,26 @@ interface Props {
  *
  * Reused by: fragrance detail, Discover dupe hero, Home "Don't Pay a Fortune".
  */
-export function DupeList({ dupes, loading, max, emptyState, lockedCount = 0, onUnlock, surface = 'unknown' }: Props) {
+/** Locked-footer title: lead with match quality when we know it. */
+function lockedMatchLabel(count: number, bestMatchPct: number | null): string {
+  const noun = count === 1 ? 'dupe' : 'dupes';
+  // Only advertise a % for a genuine (non-loose) match, so we never overpromise.
+  if (bestMatchPct != null && bestMatchPct >= 70) {
+    return `${count} ${noun} · up to ${Math.round(bestMatchPct)}% match`;
+  }
+  return `${count} ${noun} found for this bottle`;
+}
+
+/** Locked-footer subtitle: lead with the dollar savings — the converting number. */
+function lockedSavingsLabel(count: number, maxSavingsCents: number | null): string {
+  if (maxSavingsCents != null && maxSavingsCents > 0) {
+    const dollars = Math.round(maxSavingsCents / 100);
+    return `Save up to $${dollars} — unlock to see which ${count === 1 ? 'bottle' : 'bottles'}`;
+  }
+  return `Pro shows which ${count === 1 ? 'bottle it is' : 'bottles they are'} and what you'd save`;
+}
+
+export function DupeList({ dupes, loading, max, emptyState, lockedCount = 0, lockedBestMatchPct = null, lockedMaxSavingsCents = null, onUnlock, surface = 'unknown' }: Props) {
   // Fire-once-per-bottle teaser impression. MUST sit above the early returns
   // below (rules of hooks). Keyed on surface+count so it re-fires when the user
   // navigates to a different bottle, not on every re-render.
@@ -97,12 +124,12 @@ export function DupeList({ dupes, loading, max, emptyState, lockedCount = 0, onU
           <View style={styles.lockedContent}>
             <Text style={styles.lockedTitle}>
               {noneRevealed
-                ? `${lockedCount} ${lockedCount === 1 ? 'dupe' : 'dupes'} found for this bottle`
+                ? lockedMatchLabel(lockedCount, lockedBestMatchPct)
                 : `${lockedCount} more ${lockedCount === 1 ? 'dupe' : 'dupes'} ranked & ready`}
             </Text>
             <Text style={styles.lockedSub}>
               {noneRevealed
-                ? `Pro shows you which ${lockedCount === 1 ? 'bottle it is' : 'bottles they are'} and what you'd save`
+                ? lockedSavingsLabel(lockedCount, lockedMaxSavingsCents)
                 : 'See every match % and how much you save'}
             </Text>
           </View>

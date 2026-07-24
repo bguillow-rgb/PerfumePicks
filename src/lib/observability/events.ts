@@ -102,6 +102,10 @@ export const EVENTS = {
   PRO_PURCHASE_FAILED:    'pro_purchase_failed',     // reason: 'not_entitled'|'error'|'no_package', + code/message when known
   PRO_RESTORE_STARTED:    'pro_restore_started',
   PRO_RESTORE_COMPLETED:  'pro_restore_completed',
+  // { archetype } — the soft Pro card on the DNA reveal was shown to a free
+  // user (the highest-intent moment; exposure lever). Paired with _tapped.
+  DNA_REVEAL_UPSELL_SHOWN: 'dna_reveal_upsell_shown',
+  DNA_REVEAL_UPSELL_TAPPED: 'dna_reveal_upsell_tapped',
 
   // ─── Budget Dupes ────────────────────────────────────────────────────
   // Dupes are the paywall's lead feature and, until 2026-07-16, had ZERO
