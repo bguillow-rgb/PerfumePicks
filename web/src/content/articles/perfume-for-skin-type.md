@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-make-perfume-last-longer"
   - "how-long-does-perfume-last"
+  - "how-to-smell-good-all-day"
   - "how-weather-affects-perfume"
-  - "how-to-apply-perfume"
 faqs:
   - q: "Does skin type really affect how long perfume lasts?"
     a: "Yes. Oily skin produces sebum that binds to fragrance molecules, slowing their evaporation and extending wear time considerably. Dry skin lacks this lipid barrier, so the same perfume can vanish hours earlier on one person than another. Concentration and fragrance family also play a role, but skin type is one of the most consistent variables."

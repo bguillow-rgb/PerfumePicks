@@ -14,9 +14,9 @@ publishedAt: "2026-06-24"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-make-perfume-last-longer"
+  - "how-to-smell-good-all-day"
   - "how-long-does-perfume-last"
   - "how-weather-affects-perfume"
-  - "perfume-for-skin-type"
 faqs:
   - q: "Should I rub my wrists together after applying perfume?"
     a: "No. Rubbing generates friction and heat that breaks down the fragrance's top notes and cuts longevity by roughly 2-3 hours. Spray and let the perfume dry naturally, that's all that's needed."
