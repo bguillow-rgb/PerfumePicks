@@ -96,8 +96,15 @@ async function hogql(env, query) {
 }
 
 // HogQL date helpers
-const TODAY = `toDate(now())`;
-const YESTERDAY = `toDate(now()) - interval 1 day`;
+// Bucket "today"/"yesterday" by ET — the report's display timezone — so the day
+// boundary matches the "as of … ET" label. UTC bucketing filed late-ET-evening
+// activity under the next day and made "today" read 0 despite real signins
+// (2026-07-29 cleanup). ET_DAY() applies the same conversion to any event's
+// timestamp so day comparisons line up.
+const REPORT_TZ = 'America/New_York';
+const ET_DAY = (col = 'timestamp') => `toDate(toTimeZone(${col}, '${REPORT_TZ}'))`;
+const TODAY = `toDate(toTimeZone(now(), '${REPORT_TZ}'))`;
+const YESTERDAY = `toDate(toTimeZone(now(), '${REPORT_TZ}')) - interval 1 day`;
 
 // App namespace filter — ensures queries are scoped to Perfume Picks only
 // in case the PostHog project is ever shared with other Picks apps.
@@ -115,12 +122,12 @@ const NS = `properties.$app_namespace = '${APP_NAMESPACE}'
 // ── Activity (DAU/WAU/MAU) ────────────────────────────────────────────
 async function fetchActivity(env) {
   const [dauToday, dauYest, wau, mau, dauByDay] = await Promise.all([
-    hogql(env, `SELECT count(DISTINCT person_id) FROM events WHERE toDate(timestamp) = ${TODAY} AND ${NS}`),
-    hogql(env, `SELECT count(DISTINCT person_id) FROM events WHERE toDate(timestamp) = ${YESTERDAY} AND ${NS}`),
+    hogql(env, `SELECT count(DISTINCT person_id) FROM events WHERE ${ET_DAY()} = ${TODAY} AND ${NS}`),
+    hogql(env, `SELECT count(DISTINCT person_id) FROM events WHERE ${ET_DAY()} = ${YESTERDAY} AND ${NS}`),
     hogql(env, `SELECT count(DISTINCT person_id) FROM events WHERE timestamp > now() - interval 7 day AND ${NS}`),
     hogql(env, `SELECT count(DISTINCT person_id) FROM events WHERE timestamp > now() - interval 28 day AND ${NS}`),
     hogql(env, `
-      SELECT toDate(timestamp) AS d, count(DISTINCT person_id) AS dau
+      SELECT ${ET_DAY()} AS d, count(DISTINCT person_id) AS dau
       FROM events WHERE timestamp >= now() - interval 30 day AND ${NS}
       GROUP BY d ORDER BY d DESC LIMIT 30
     `),
@@ -139,7 +146,7 @@ async function fetchTopEvents(env, { limit = 10 } = {}) {
   const r = await hogql(env, `
     SELECT event, count() AS c
     FROM events
-    WHERE toDate(timestamp) = ${TODAY} AND ${NS}
+    WHERE ${ET_DAY()} = ${TODAY} AND ${NS}
     GROUP BY event ORDER BY c DESC LIMIT ${limit}
   `);
   return r.map(([name, c]) => ({ name, count: c }));
@@ -295,8 +302,8 @@ async function fetchAffiliate(env) {
       WHERE event = '${EVENTS.AFFILIATE_LINK_FAILED}' AND ${NS}
         AND toDate(timestamp) >= toDate('${LAUNCH_DATE}')
     `),
-    hogql(env, `SELECT count() FROM events WHERE event = '${EVENTS.AFFILIATE_OUTBOUND_CLICKED}' AND ${NS} AND toDate(timestamp) = ${TODAY}`),
-    hogql(env, `SELECT count() FROM events WHERE event = '${EVENTS.AFFILIATE_OUTBOUND_CLICKED}' AND ${NS} AND toDate(timestamp) = ${YESTERDAY}`),
+    hogql(env, `SELECT count() FROM events WHERE event = '${EVENTS.AFFILIATE_OUTBOUND_CLICKED}' AND ${NS} AND ${ET_DAY()} = ${TODAY}`),
+    hogql(env, `SELECT count() FROM events WHERE event = '${EVENTS.AFFILIATE_OUTBOUND_CLICKED}' AND ${NS} AND ${ET_DAY()} = ${YESTERDAY}`),
   ]);
   return {
     sinceLaunch: totals[0]?.[0] ?? 0,
