@@ -53,6 +53,24 @@ From there, match those patterns against the major fragrance families. Fresh and
 
 Once you've identified two or three families that dominate your actual wear history, you've already narrowed a universe of thousands down to a workable shortlist, without spending a cent.
 
+<!--
+TODO (data-backed table, not yet buildable): "Signature scent by preference archetype"
+Intended: map each DNA-quiz taste archetype to its dominant fragrance families and a shortlist
+of real catalog bottles to test as signature candidates.
+
+Data source: the DNA quiz taste_profile / archetype output. As of 2026-07-29 there is no
+queryable archetype->family aggregation in the catalog DB: profiles has no archetype column,
+and the DNA taste profile is stored per user rather than aggregated by archetype. Build this
+table only from real quiz aggregation once it is queryable. Do NOT invent archetypes, family
+splits, or example bottles.
+
+Intended structure:
+| Preference archetype | Dominant families (from real quiz data) | Signature-scent character | Real catalog bottles to test |
+|---|---|---|---|
+| (archetype name) | (top 2 families) | (character) | (real example fragrances) |
+-->
+
+
 ## How should I actually test candidates on skin?
 
 Wear each candidate for at least four to six hours so you can experience the full range of top, middle, and base notes. Repeat this across your shortlist, being mindful of olfactory fatigue, that's when your scent receptors get overwhelmed and you stop smelling the fragrance. Space tests out over different days rather than layering multiple candidates on the same wrist; skin testing isn't a science fair experiment.

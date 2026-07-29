@@ -13,10 +13,10 @@ quickAnswer: "There are four core perfume fragrance families: Floral, Amber/Orie
 publishedAt: "2026-06-26"
 author: "Perfume Picks"
 relatedSlugs:
-  - "what-is-an-oriental-perfume"
   - "what-is-a-chypre-perfume"
   - "what-is-a-gourmand-perfume"
   - "does-perfume-expire"
+  - "fragrance-notes-explained"
 faqs:
   - q: "What are the four main perfume fragrance families?"
     a: "The four core families are Floral (flowers: rose, jasmine, peony), Amber/Oriental (warm resins, spices, vanilla), Woody (cedarwood, sandalwood, vetiver, oud), and Fresh (citrus, aquatic, green, aromatic). Most fragrances sit in one family or blend two adjacent families on the scent wheel."
@@ -89,6 +89,159 @@ Once you move beyond the four core families, six subfamilies matter most for col
 **Fougère (Aromatic)** sits within the Fresh family's aromatic quadrant. Fougère and Aromatic-fresh is a stable, mature segment. The classic accord pairs lavender, oakmoss, and coumarin; modern interpretations are cleaner and crisper. This is the backbone of a huge proportion of classic masculine fragrances, though it appears increasingly in unisex and feminine contexts.
 
 **Woody Oriental** is exactly where it sounds, bridging sandalwood and resinous amber into some of the most wearable, crowd-pleasing compositions in contemporary niche perfumery. If you want one scent that transitions from day to evening, this subfamily punches above its weight.
+
+## The fragrance family reference matrix: how our own catalog breaks down
+
+Theory is one thing. It helps to see how the families actually distribute across a large, real collection. The numbers below come from the Perfume Picks catalog, counting every fragrance that carries a family classification. That gives a working denominator of 9,272 bottles. A handful of records with no family assigned are left out of the percentages.
+
+The pattern is worth sitting with. Floral, Amber/Oriental, and Fresh are almost dead even at the top, each holding a bit more than a quarter of the catalog, while Woody comes in noticeably smaller. That mirrors the wider market: Woody often reads as a base or a supporting structure inside another family rather than the headline, which is exactly why it's the family most collectors under-own without realizing it.
+
+| Family | Where it sits on the wheel | Fragrances in catalog | Share of catalog |
+|---|---|---|---|
+| **Floral** | Core family | 2,630 | 28.4% |
+| ↳ Florals & Soft Florals | Floral core | 2,626 | 28.3% |
+| ↳ Fruity Floral | Floral blend | 4 | <0.1% |
+| **Amber / Oriental** | Core family | 2,668 | 28.8% |
+| ↳ Oriental / Amber | Amber core | 2,088 | 22.5% |
+| ↳ Gourmand | Amber subfamily | 580 | 6.3% |
+| **Woody** | Core family | 1,230 | 13.3% |
+| ↳ Woods | Woody core | 930 | 10.0% |
+| ↳ Chypre (Mossy Woods) | Woody subfamily | 154 | 1.7% |
+| ↳ Leather (Dry Woods) | Woody subfamily | 146 | 1.6% |
+| **Fresh** | Core family | 2,744 | 29.6% |
+| ↳ Fresh (aromatic-aquatic mix) | Fresh core | 1,113 | 12.0% |
+| ↳ Aromatic / Fougère | Fresh subfamily | 1,055 | 11.4% |
+| ↳ Aquatic (Water) | Fresh subfamily | 283 | 3.1% |
+| ↳ Citrus | Fresh subfamily | 144 | 1.6% |
+| ↳ Green | Fresh subfamily | 135 | 1.5% |
+
+Now the useful part: named bottles for each family, with the actual note pyramids so you can hear the family speaking. Every fragrance below is pulled straight from the catalog, notes and all.
+
+### Floral
+
+The biggest single family, and the one most people already own without trying. Notice how often a "floral" opens on citrus and lands on musk or sandalwood: the flowers live in the heart, and the classification follows the heart.
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Dior Miss Dior | Bergamot, lemon, pink pepper | Iris, rose, peony, carnation | Amber, musk, sandalwood |
+| YSL Libre | Bergamot, lavender, ginger | Orange blossom, jasmine, vanilla orchid | Cedarwood, musk, amber |
+| Giorgio Armani Sì | Bergamot, blackcurrant, pear | Freesia, peony, rose, iris | Amber, vanilla, sandalwood |
+| Chanel Gabrielle | Grapefruit, mandarin, black currant | Orange blossom, jasmine, ylang-ylang, tuberose | Musk, sandalwood, cashmeran, orris |
+| Chanel Chance Eau Tendre | Quince, grapefruit | Hyacinth, jasmine | Musk, iris, cedar, amber |
+
+### Amber / Oriental
+
+Warm, resinous, and built to project in cold air. The Gourmand subfamily below is the fastest-growing corner of this family, and you can see why it splits off: once vanilla, praline, and tonka move to the foreground, the scent reads as edible rather than simply warm.
+
+Oriental / Amber:
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Guerlain Shalimar | Bergamot, lemon, mandarin | Iris, jasmine, rose, patchouli | Vanilla, tonka bean, incense, opoponax |
+| YSL Black Opium | Pink pepper, orange blossom, pear | Coffee, jasmine, bitter almond, licorice | Vanilla, patchouli, cedarwood, cashmere wood |
+| Tom Ford Tobacco Vanille | Tobacco leaf, spicy notes | Vanilla, cacao, tonka bean, tobacco blossom | Dried fruits, woody notes |
+| Maison Francis Kurkdjian Baccarat Rouge 540 | Saffron, jasmine | Amberwood, ambergris, hedione | Fir resin, cedar, ambroxan, oakmoss |
+| Paco Rabanne 1 Million | Grapefruit, mint, bergamot | Amber, cinnamon, vanilla, tonka bean | Patchouli, musk, gold-leaf accord |
+
+Gourmand:
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Tom Ford Lost Cherry | Bitter almond, black cherry, cherry liqueur | Sour cherry, plum, Turkish rose, jasmine sambac | Vanilla, tonka bean, cinnamon, sandalwood |
+| Lancôme La Vie Est Belle | Black currant, pear | Iris, jasmine, orange blossom | Praline, vanilla, patchouli, tonka bean |
+| Guerlain La Petite Robe Noire | Cherry, bergamot, pink pepper | Cherry blossom, almond, rose, jasmine | Vanilla, tonka bean, musk, cedarwood |
+| Giorgio Armani Stronger With You | Chestnut, sugar | Sage, lavender | Vanilla, smoke |
+| Carolina Herrera Good Girl Bowtastic | Almond, bergamot, pink pepper | Jasmine, tuberose, coffee, tonka bean | Sandalwood, amber, musk |
+
+### Woody
+
+The smallest core family by count, and the most structural. Chypre (bergamot over an oakmoss-patchouli base) and Leather (the dry, animalic end) both live here on the modern wheel, which is why a Coco Mademoiselle sits alongside a Tom Ford Oud Wood.
+
+Woods:
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Tom Ford Oud Wood | Cardamom, pink pepper, rosemary | Sandalwood, agarwood (oud), patchouli, vetiver | Vanilla, tonka, amber |
+| Chanel Bleu de Chanel | Grapefruit, lemon, mint, pink pepper | Ginger, nutmeg, jasmine, Iso E Super | Cedar, vetiver, sandalwood, incense, labdanum |
+| Byredo Gypsy Water | Juniper, lemon, bergamot, pepper | Pine needles, incense, orris root | Vanilla, sandalwood, amber |
+| Burberry Mr. Burberry | Grapefruit, tarragon, cardamom, mint | Cedar, birch leaf, nutmeg | Vetiver, guaiac wood, sandalwood, benzoin |
+| Byredo Super Cedar | Rose | Virginian cedar | Haitian vetiver, musk |
+
+Chypre (Mossy Woods):
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Chanel Coco Mademoiselle | Orange, mandarin, bergamot, orange blossom | Turkish rose, jasmine, mimosa, ylang-ylang | Patchouli, white musk, vetiver, tonka bean, opoponax |
+| Creed Aventus | Bergamot, black currant, apple, pink pepper | Pineapple, patchouli, Moroccan jasmine | Birch, oakmoss, musk, cedarwood, ambroxan |
+| Chanel N°19 | Galbanum, hyacinth, bergamot, neroli | Iris, rose, narcissus, lily-of-the-valley, jasmine | Oakmoss, vetiver, leather, cedar, sandalwood |
+| Chanel Cristalle EDP | Mandarin | Melon, jasmine, peach, ylang-ylang | Oakmoss, vetiver |
+| Burberry Mr. Burberry Indigo | Bergamot, ginger, pink pepper | Iris, violet, geranium, cedarwood | Vetiver, oakmoss, ambroxan |
+
+Leather (Dry Woods):
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Tom Ford Tuscan Leather | Raspberry, saffron, thyme | Olibanum, jasmine | Leather, suede, woody notes, amber |
+| Byredo Black Saffron | Saffron, juniper berries, grapefruit | Leather, black violet | Raspberry, cashmeran, vetiver |
+| Hermès Galop d'Hermès | Quince, saffron | Turkish rose, osmanthus | Leather, white musk |
+| Guerlain Cuir de Russie | Lavender, rosemary, thyme | Iris, birch, benzoin, labdanum, styrax | Civet, musk, oakmoss, vetiver, amber |
+| Byredo Bibliothèque | Plum, peach | Violet, peony | Leather, patchouli, vanilla, musk |
+
+### Fresh
+
+The busiest core family once you fold in its subfamilies. Aromatic/Fougère alone (lavender, oakmoss, coumarin, the backbone of the classic barbershop scent) is nearly as large as the whole Woody family, which tells you how much of modern masculine and unisex perfumery lives here.
+
+Fresh (aromatic-aquatic mix):
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Creed Silver Mountain Water | Bergamot, mandarin | Green tea, black currant | Musk, sandalwood, petitgrain, galbanum |
+| Chanel Allure Homme Sport | Orange, sea notes, aldehydes, blood mandarin | Pepper, neroli, cedar | Vanilla, tonka bean, white musk, amber, vetiver |
+| Acqua di Parma Colonia | Bergamot, lemon, sweet orange | Neroli, lavender, rosemary | Sandalwood, vetiver, musk |
+| Calvin Klein CK All | Bergamot, lemon, grapefruit, cardamom | Jasmine, nutmeg, rose, amber | Musk, cedar, sandalwood |
+| Burberry Brit Rhythm | Grapefruit, lemon, pink pepper | Rose, violet, iris, peony | Cedarwood, vetiver, musk |
+
+Aromatic / Fougère:
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Dior Sauvage | Bergamot, pepper | Sichuan pepper, lavender, pink pepper, geranium, elemi | Ambroxan, cedar, labdanum |
+| Dior Fahrenheit | Bergamot, mandarin, lemon | French violet, patchouli | Haitian vetiver, nutmeg, cedar, caraway |
+| Paco Rabanne Invictus | Grapefruit, mandarin | Bay leaf, jasmine | Ambergris, guaiac wood, patchouli |
+| Creed Green Irish Tweed | Iris, verbena | Violet leaf | Ambergris, sandalwood |
+| Azzaro Pour Homme | Bergamot, lemon, lavender | Geranium, ambroxan, cedar | Vetiver, sandalwood, musk |
+
+Aquatic (Water):
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Giorgio Armani Acqua di Gio | Bergamot, lime, neroli | Sea notes, jasmine, calone, rosemary | White musk, cedar, patchouli, amber |
+| Davidoff Cool Water | Sea water, lavender, mint, rosemary | Sandalwood, neroli, geranium, jasmine | Musk, oakmoss, cedar, ambergris |
+| Creed Millésime Impérial | Sea salt, fruity notes | Sicilian lemon, bergamot, iris, mandarin | Sea notes, musk, woody notes |
+| Calvin Klein Eternity Aqua | Cucumber, citrus, lotus | Lavender, plum, Sichuan pepper, cedar | Musk, sandalwood, patchouli, guaiac wood |
+| Calvin Klein CK Everyone | Bergamot, grapefruit, lemon | White tea, water lily, green accord | Cedarwood, musk, sandalwood |
+
+Citrus:
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Tom Ford Neroli Portofino | Bergamot, mandarin, lemon, bitter orange | African orange flower, neroli, jasmine | Amber, ambrette, angelica |
+| Creed Original Cologne | Grapefruit, lemon, Sicilian bergamot | Pear, neroli, galbanum | Rice, white musk, ambergris |
+| Chanel Paris–Deauville | Basil, lime, bergamot, Sicilian orange, petitgrain | Green notes, hedione, jasmine, rose | Patchouli |
+| Byredo Palermo | Citruses, petitgrain, bergamot | Musk, rose | Ambrette (musk mallow) |
+| Creed Zeste Mandarine | Lemon leaf, Italian orange | Yellow mandarin, Italian lemon | Patchouli, petitgrain, orangewood |
+
+Green:
+
+| Fragrance | Top | Heart | Base |
+|---|---|---|---|
+| Hermès Un Jardin Sur Le Nil | Green mango | Lotus, incense, calamus | Sycamore wood |
+| Hermès Amazone | Cassis, black currant blossom | Galbanum, narcissus, red berries | Vetiver |
+| Guerlain Aqua Allegoria Figue-Iris | Violet, bergamot, grapefruit | Fig leaf, iris | Vanilla, vetiver |
+| Tom Ford Ombré de Hyacinth | Violet leaf, galbanum, magnolia, olibanum | Hyacinth, pink pepper, jasmine | Galbanum, musk, benzoin |
+| Creed Chèvrefeuille | Green leaves, honeysuckle | Honeysuckle, green grass | Ambergris |
+
+Read down any one of those tables and the family stops being an abstraction. You start to feel the shared grammar: the way every Chypre resolves into oakmoss, the way Gourmands all reach for tonka and vanilla, the way Aquatics lean on calone and sea notes to fake the smell of open water. That grammar is what lets you predict whether a blind buy will land, which is the whole point of learning the families in the first place.
 
 ## How to use fragrance families to audit your own collection
 

@@ -13,10 +13,10 @@ quickAnswer: "To layer perfumes, apply the heaviest, longest-lasting fragrance f
 publishedAt: "2026-06-18"
 author: "Perfume Picks"
 relatedSlugs:
-  - "how-to-smell-good-all-day"
   - "how-to-build-a-fragrance-wardrobe"
   - "how-to-make-perfume-last-longer"
   - "perfume-fragrance-families"
+  - "best-perfume-for-each-season"
 faqs:
   - q: "Should you layer perfumes on skin or on clothes?"
     a: "Skin is the better canvas for layering because body heat activates each composition differently and lets the scents genuinely merge. Applying one layer to skin and a lighter complementary layer to clothing (wrist cuff, collar) can extend longevity further without overcrowding a single application point."
@@ -123,6 +123,23 @@ For a typical wardrobe covering the major families:
 For first-time layering, start with two bottles you already wear individually, and pair compositions with shared base notes (two vanilla-anchored bottles, or two amber-anchored bottles) to ensure architectural cohesion.
 
 If you're logging your wears in Perfume Picks, try tagging layered combinations in your wear log so you can see which pairings you returned to. Patterns emerge faster than you'd expect. Most collectors discover a reliable three or four go-to combinations within a few weeks of deliberate experimentation.
+
+<!--
+TODO (data-backed table, not yet buildable): "Most popular layering combos in our community"
+Intended: rank the real bottle-pairs collectors co-log most often, with their shared base
+notes and how many times each pair has been recorded.
+
+Data source: the layering_entries table (user-logged layered pairs). As of 2026-07-29
+layering_entries has 0 rows, so there is no co-ownership / co-favorite data to aggregate yet.
+Build this table only from real logged pairs once the table has data. Do NOT invent combos,
+counts, or ratings.
+
+Intended structure:
+| Layering combo (Bottle A + Bottle B) | Shared base notes | Times logged | Avg rating |
+|---|---|---|---|
+| (real pair) | (real notes) | (count) | (rating) |
+-->
+
 
 ## Fragrance layering: a passing trend or here to stay
 
