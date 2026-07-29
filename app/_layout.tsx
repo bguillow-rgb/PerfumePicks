@@ -52,6 +52,8 @@ import {
   identify as identifyAnalytics,
   resetAnalytics,
   setErrorUser,
+  track,
+  EVENTS,
 } from '@/src/lib/observability';
 
 export { ErrorBoundary } from 'expo-router';
@@ -289,7 +291,24 @@ export default function RootLayout() {
 
   useEffect(() => {
     const sub = Notifications.addNotificationResponseReceivedListener((response) => {
-      const screen = response.notification.request.content.data?.screen as string | undefined;
+      const data = response.notification.request.content.data ?? {};
+
+      // Record the open against its send-ledger row (server) + analytics. Both
+      // best-effort: a tracking failure must never block the routing below.
+      const sendId = data.send_id as string | undefined;
+      if (sendId) {
+        supabase
+          .rpc('mark_notification_opened', { p_send_id: sendId })
+          .then(({ error }) => {
+            if (error) console.warn('[push] mark_notification_opened failed', error.message);
+          });
+        track(EVENTS.PUSH_NOTIFICATION_OPENED, {
+          campaign: (data.campaign as string | undefined) ?? 'daily_sotd',
+          send_id: sendId,
+        });
+      }
+
+      const screen = data.screen as string | undefined;
       if (screen === 'wardrobe') {
         routerRef.current.push('/(tabs)/wardrobe');
       } else {

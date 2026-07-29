@@ -141,7 +141,7 @@ Deno.serve(async (req) => {
     }
   }
 
-  const due: { row: TokenRow; archetype: string | null; localYmd: string }[] = [];
+  const due: { row: TokenRow; archetype: string | null; localYmd: string; sendId: string }[] = [];
   for (const row of tokens) {
     const archetype = archetypeByUser.get(row.user_id) ?? null;
     const { hour, ymd } = localParts(nowUtcMs, row.tz, row.tz_offset_minutes ?? 0);
@@ -150,7 +150,10 @@ Deno.serve(async (req) => {
       if (hour !== TARGET_HOUR) continue; // not their morning yet
       if (row.last_pushed_on === ymd) continue; // already pushed today (local)
     }
-    due.push({ row, archetype, localYmd: ymd });
+    // send_id ties this specific push to its ledger row so the app can report
+    // the open back against it (mark_notification_opened). Generated here so it
+    // can be embedded in the push payload before we send.
+    due.push({ row, archetype, localYmd: ymd, sendId: crypto.randomUUID() });
   }
 
   if (due.length === 0) {
@@ -160,9 +163,17 @@ Deno.serve(async (req) => {
   }
 
   // Expo accepts up to 100 messages per request.
-  const messages = due.map(({ row, archetype }) => {
+  const messages = due.map(({ row, archetype, sendId }) => {
     const { title, body } = messageFor(archetype);
-    return { to: row.token, title, body, sound: "default", channelId: "default" };
+    // data.send_id lets the app attribute the open; campaign mirrors the ledger.
+    return {
+      to: row.token,
+      title,
+      body,
+      sound: "default",
+      channelId: "default",
+      data: { send_id: sendId, campaign: "daily_sotd" },
+    };
   });
 
   const res = await fetch(EXPO_PUSH_URL, {
@@ -194,6 +205,26 @@ Deno.serve(async (req) => {
         supabase.from("push_tokens").update({ last_pushed_on: localYmd }).eq("user_id", row.user_id),
       ),
     );
+  }
+
+  // Analytics ledger (mirrors Pour's notification_sends): one row per send so we
+  // can report sent + opened per campaign. Best-effort and wrapped — a ledger
+  // failure must NEVER affect the actual push that already went out. Upsert with
+  // ignoreDuplicates so a same-day double-send can't error the whole batch.
+  try {
+    const deadSet = new Set(deadUserIds);
+    const ledgerRows = due.map(({ row, localYmd, sendId }) => ({
+      id: sendId,
+      campaign_key: "daily_sotd",
+      user_id: row.user_id,
+      send_day: localYmd,
+      status: deadSet.has(row.user_id) ? "invalid_token" : "sent",
+    }));
+    await supabase
+      .from("notification_sends")
+      .upsert(ledgerRows, { onConflict: "campaign_key,user_id,send_day", ignoreDuplicates: true });
+  } catch (e) {
+    console.error("[daily-sotd-push] notification_sends ledger write failed (non-fatal):", e);
   }
 
   return new Response(JSON.stringify({ sent: due.length, test: !!testUserId, expo: result }), {
