@@ -18,12 +18,17 @@ export async function requestEnrichment(fragranceId: string): Promise<boolean> {
   try {
     const user = await resolveCurrentUser();
     if (!user) return false;
-    const { error } = await supabase.from('enrich_requests').upsert(
-      { fragrance_id: fragranceId, requested_by: user.id },
-      // unique(fragrance_id, requested_by) dedupes re-taps; ignore the dup.
-      { onConflict: 'fragrance_id,requested_by', ignoreDuplicates: true },
-    );
-    if (error) {
+    // Plain INSERT, NOT upsert(ignoreDuplicates). enrich_requests grants
+    // authenticated users INSERT-only (reads are service-role); PostgREST's
+    // upsert path (ON CONFLICT DO NOTHING) must READ the conflict target, so RLS
+    // rejected it (42501) for the anonymous guests who make ~all enrich requests
+    // — every request dropped silently (verified 2026-07: 3 events → 0 rows;
+    // anon plain-insert = 201, anon upsert = 403). A re-tap trips the unique
+    // constraint (23505), which is the intended dedupe and counts as success.
+    const { error } = await supabase
+      .from('enrich_requests')
+      .insert({ fragrance_id: fragranceId, requested_by: user.id });
+    if (error && error.code !== '23505') {
       console.warn('[enrich] requestEnrichment failed:', error.message);
       return false;
     }

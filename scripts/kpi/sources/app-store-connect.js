@@ -320,7 +320,11 @@ async function fetchAcquisitionSources(env, jwt, appId) {
   const headers = { Authorization: `Bearer ${jwt}`, 'Content-Type': 'application/json' };
 
   try {
-    if (cache.requestId) {
+    // Only poll a cached request that is an ONGOING one. A cache from before this
+    // fix points at the dead pre-launch SNAPSHOT (no accessType field) — ignore
+    // it and fall through to create a fresh ONGOING request (self-heals; no need
+    // to hand-delete the cache file).
+    if (cache.requestId && cache.accessType === 'ONGOING') {
       const reportsRes = await fetch(
         `https://api.appstoreconnect.apple.com/v1/analyticsReportRequests/${cache.requestId}/reports`,
         { headers }
@@ -378,7 +382,12 @@ async function fetchAcquisitionSources(env, jwt, appId) {
       body: JSON.stringify({
         data: {
           type: 'analyticsReportRequests',
-          attributes: { accessType: 'ONE_TIME_SNAPSHOT' },
+          // ONGOING, not ONE_TIME_SNAPSHOT. The original snapshot was requested
+          // 2026-06-24 — the day BEFORE launch (06-25) — so it froze a pre-launch
+          // app with no downloads: its App Downloads reports have 0 instances and,
+          // being a snapshot, never update (35 days "pending"). ONGOING accrues a
+          // fresh daily instance going forward, which is what a dashboard needs.
+          attributes: { accessType: 'ONGOING' },
           relationships: { app: { data: { type: 'apps', id: appId } } },
         },
       }),
@@ -397,11 +406,12 @@ async function fetchAcquisitionSources(env, jwt, appId) {
           if (listRes.ok) {
             const listJson = await listRes.json();
             const existing = (listJson.data || []).find(
-              (r) => r.attributes?.accessType === 'ONE_TIME_SNAPSHOT'
+              (r) => r.attributes?.accessType === 'ONGOING'
             );
             if (existing?.id) {
               cache.requestId = existing.id;
               cache.requestedAt = nowMs;
+              cache.accessType = 'ONGOING';
               saveAcqCache(cache);
               if (cache.data) {
                 return { sources: cache.data, note: `pending refresh (recovered existing request)` };
@@ -423,6 +433,7 @@ async function fetchAcquisitionSources(env, jwt, appId) {
 
     cache.requestId = requestId;
     cache.requestedAt = nowMs;
+    cache.accessType = 'ONGOING';
     saveAcqCache(cache);
 
     if (cache.data) {
