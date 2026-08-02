@@ -174,6 +174,9 @@ export const EVENTS = {
   // { stage: 'token_fetch' | 'no_user' | 'upsert' | 'unknown', message } —
   // WHERE it broke, instead of the old silent swallow.
   PUSH_REGISTER_FAILED:     'push_register_failed',
+  // A delivered push was tapped. { campaign, send_id } — pairs with the
+  // notification_sends ledger (opened_at) for send/open rates per campaign.
+  PUSH_NOTIFICATION_OPENED: 'push_notification_opened',
 
   // ─── Invite / referral loop (Feature A — DNA-as-hook viral share) ─────
   // Fired when the user opens the native share sheet with their DNA invite.

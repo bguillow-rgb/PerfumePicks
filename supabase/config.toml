@@ -385,6 +385,12 @@ verify_jwt = false
 [functions.delete-account]
 verify_jwt = false
 
+# Invoked by pg_cron with the project's publishable key (which the gateway
+# accepts). Pinned explicitly to match the deployed state so a redeploy can't
+# silently drift it and break the cron caller.
+[functions.daily-sotd-push]
+verify_jwt = true
+
 [analytics]
 enabled = true
 port = 54327
