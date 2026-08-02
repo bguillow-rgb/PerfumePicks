@@ -16,7 +16,7 @@ relatedSlugs:
   - "best-perfume-for-each-season"
   - "how-to-choose-perfume-for-your-mood"
   - "how-to-decant-perfume"
-  - "how-to-read-perfume-ingredient-list"
+  - "how-to-match-perfume-to-outfit"
 faqs:
   - q: "What ingredients in perfume most commonly cause skin reactions?"
     a: "The most frequently implicated allergens include linalool, limonene, citronellol, geraniol, hexyl cinnamal, and benzyl salicylate. Oakmoss and tree moss extracts (used in chypre bases) are also well-known sensitizers. Look for IFRA-compliant formulas, which are required to limit or exclude the most problematic compounds."

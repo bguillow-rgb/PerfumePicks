@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "best-office-perfumes"
   - "how-to-choose-perfume-for-your-mood"
+  - "how-to-match-perfume-to-outfit"
   - "how-to-read-perfume-batch-codes"
-  - "perfume-for-different-times-of-day"
 faqs:
   - q: "Can you have more than one signature scent?"
     a: "Yes. Many collectors maintain two or three, a daytime signature, an evening signature, and sometimes a seasonal one. What matters is that each feels instinctive and personally recognizable, not that you're limited to a single bottle for life."
