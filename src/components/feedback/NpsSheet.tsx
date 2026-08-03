@@ -178,7 +178,7 @@ export function NpsSheet({ visible, onClose, onResolved }: Props) {
 
                     {failed && (
                       <Text style={styles.error} testID="nps-error">
-                        That didn&rsquo;t send. Check your connection and try again.
+                        {"That didn't send. Check your connection and try again."}
                       </Text>
                     )}
 
