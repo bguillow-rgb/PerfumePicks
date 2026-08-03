@@ -18,10 +18,20 @@ const APP_TAG = 'perfumepicks';
 
 export type FeedbackCategory = 'bug' | 'idea' | 'love' | 'other';
 
+/**
+ * What flavor of signal this is. 'feedback' = the open channel; 'nps' = a 0-10
+ * score (optionally with a comment). Both land in the same hub table.
+ */
+export type FeedbackKind = 'feedback' | 'nps';
+
 export interface FeedbackInput {
+  /** Optional for NPS (a score with no comment is valid). */
   message?: string;
   category?: FeedbackCategory;
   email?: string;
+  kind?: FeedbackKind;
+  /** NPS score 0-10. Omit for non-NPS signals. */
+  rating?: number;
 }
 
 type SubmitResult = { ok: true } | { ok: false; reason: string };
@@ -64,16 +74,20 @@ async function gatherContext(): Promise<Record<string, unknown>> {
 
 export async function submitFeedback(input: FeedbackInput): Promise<SubmitResult> {
   const message = input.message?.trim() || null;
-  if (!message) return { ok: false, reason: 'empty' };
+  const hasRating = typeof input.rating === 'number';
+  // Every row must carry SOMETHING — a comment, a score, or both. An NPS score
+  // with no comment is valid, so this can't be a bare message check.
+  if (!message && !hasRating) return { ok: false, reason: 'empty' };
 
   const email = input.email?.trim() || null;
   const context = await gatherContext();
 
   const { error } = await feedbackHub.from('feedback').insert({
     app: APP_TAG,
-    kind: 'feedback',
+    kind: input.kind ?? 'feedback',
     category: input.category ?? null,
     message,
+    rating: hasRating ? input.rating : null,
     email,
     ...context,
   });

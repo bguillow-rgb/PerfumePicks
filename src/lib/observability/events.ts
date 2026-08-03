@@ -54,6 +54,9 @@ export const EVENTS = {
   // invisible in analytics and had to be reported by a human.
   SEARCH_NO_RESULTS:       'search_no_results',
   SEARCH_ENRICH_REQUESTED: 'search_enrich_requested', // props: { fragrance_id }
+  // A zero-result search the user tapped "Request it" on — explicit "add this
+  // bottle" intent (stronger than a passive no_results miss). props: { query, surface }
+  SEARCH_REQUEST_SUBMITTED: 'search_request_submitted',
 
   // ─── Discover ────────────────────────────────────────────────────────
   DISCOVER_SEARCH_QUERY:  'discover_search_query',
@@ -153,6 +156,13 @@ export const EVENTS = {
   FEEDBACK_OPENED:    'feedback_opened',
   FEEDBACK_SUBMITTED: 'feedback_submitted',
   FEEDBACK_FAILED:    'feedback_failed',
+
+  // ─── NPS (prompted 0-10 pulse, separate from the App Store review prompt) ──
+  // Read shown -> (submitted | dismissed) as a funnel: a low submit rate means
+  // the prompt is landing at the wrong moment, not that people dislike the app.
+  NPS_SHOWN:     'nps_shown',
+  NPS_SUBMITTED: 'nps_submitted',
+  NPS_DISMISSED: 'nps_dismissed',
 
   // ─── Scent of the Day ────────────────────────────────────────────────
   // Fired when the smart SOTD engine threw and the Today tab fell back to the

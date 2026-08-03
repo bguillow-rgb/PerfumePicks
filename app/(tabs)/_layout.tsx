@@ -14,6 +14,7 @@ import { useAuthStore } from '@/src/stores/useAuthStore';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useCompareStore } from '@/src/stores/useCompareStore';
 import { FeedbackBubble } from '@/src/components/feedback/FeedbackBubble';
+import { NpsWatcher } from '@/src/components/feedback/NpsWatcher';
 import {
   requestNotificationPermission,
   registerPushToken,
@@ -414,6 +415,7 @@ export default function TabLayout() {
       <ScanFAB />
       <FeedbackBubble />
       <CompareFAB />
+      <NpsWatcher />
 
       {/* ── Notification permission prompt ─────────────────────────────── */}
       <Modal
