@@ -22,10 +22,14 @@ const NPS_COOLDOWN_DAYS = 90;
 
 /**
  * Increment the open counter and decide whether to show NPS this launch.
- * Call once per app open. `hasEngaged` should reflect genuine value received
- * (e.g. a wardrobe item or a logged wear) — same bar as the review prompt.
+ * Call once per app open. `hasEngaged` reflects genuine value received; pass a
+ * FUNCTION when resolving it costs a query — it is only invoked after the cheap
+ * open-count and cooldown gates have already passed. Same bar as the review
+ * prompt: e.g. a wardrobe item or a logged wear.
  */
-export async function shouldShowNps(hasEngaged: boolean): Promise<boolean> {
+export async function shouldShowNps(
+  hasEngaged: boolean | (() => boolean | Promise<boolean>)
+): Promise<boolean> {
   // E2E escape hatch. The real gate needs 5 launches + engagement + a 90-day
   // cooldown, which no automated test can sit through, so the sheet would
   // otherwise be unreachable in Maestro. __DEV__-guarded so the branch is
@@ -41,7 +45,7 @@ export async function shouldShowNps(hasEngaged: boolean): Promise<boolean> {
     return false;
   }
 
-  if (count < OPEN_THRESHOLD || !hasEngaged) return false;
+  if (count < OPEN_THRESHOLD) return false;
 
   try {
     const askedAt = await SecureStore.getItemAsync(KEY_ASKED_AT);
@@ -52,6 +56,12 @@ export async function shouldShowNps(hasEngaged: boolean): Promise<boolean> {
   } catch {
     return false;
   }
+
+  // Resolved LAST and lazily: this is the only potentially expensive check
+  // (a DB or provider read in some apps), and the prompt fires roughly once
+  // per 90 days, so it must not run on every cold launch.
+  const engaged = typeof hasEngaged === 'function' ? await hasEngaged() : hasEngaged;
+  if (!engaged) return false;
 
   return true;
 }

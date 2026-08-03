@@ -163,6 +163,9 @@ export const EVENTS = {
   NPS_SHOWN:     'nps_shown',
   NPS_SUBMITTED: 'nps_submitted',
   NPS_DISMISSED: 'nps_dismissed',
+  // Submit reached the network and failed. Without this a broken write path
+  // looks identical to nobody answering.
+  NPS_SUBMIT_FAILED: 'nps_submit_failed',
 
   // ─── Scent of the Day ────────────────────────────────────────────────
   // Fired when the smart SOTD engine threw and the Today tab fell back to the

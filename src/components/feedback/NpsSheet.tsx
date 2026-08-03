@@ -27,17 +27,25 @@ import { track, captureException, EVENTS } from '@/src/lib/observability';
 
 interface Props {
   visible: boolean;
+  /** Hide the sheet. Always fires; releases the modal gate. */
   onClose: () => void;
+  /**
+   * The user actually answered — a confirmed write, or an explicit "Not now".
+   * Only this starts the 90-day cooldown. A failed submit must NOT fire it, or
+   * a network blip costs the user a quarter and costs us the response.
+   */
+  onResolved: () => void;
 }
 
 const SCORES = Array.from({ length: 11 }, (_, i) => i); // 0..10
 
-export function NpsSheet({ visible, onClose }: Props) {
+export function NpsSheet({ visible, onClose, onResolved }: Props) {
   const insets = useSafeAreaInsets();
   const [score, setScore] = useState<number | null>(null);
   const [comment, setComment] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     if (visible) {
@@ -45,6 +53,7 @@ export function NpsSheet({ visible, onClose }: Props) {
       setComment('');
       setSubmitting(false);
       setSent(false);
+      setFailed(false);
       track(EVENTS.NPS_SHOWN, {});
     }
   }, [visible]);
@@ -64,20 +73,31 @@ export function NpsSheet({ visible, onClose }: Props) {
         track(EVENTS.NPS_SUBMITTED, { score, has_comment: text.length > 0 });
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
         setSent(true);
+        onResolved();
         setTimeout(onClose, 1200);
       } else {
+        // Stay open and let them retry. Closing here is what made a backend
+        // failure indistinguishable from a normal dismiss.
+        track(EVENTS.NPS_SUBMIT_FAILED, { score, reason: result.reason ?? 'unknown' });
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
         setSubmitting(false);
-        onClose();
+        setFailed(true);
       }
     } catch (e) {
       captureException(e, { area: 'nps_submit' });
+      track(EVENTS.NPS_SUBMIT_FAILED, { score, reason: 'exception' });
       setSubmitting(false);
-      onClose();
+      setFailed(true);
     }
   };
 
   const handleDismiss = () => {
-    if (!sent) track(EVENTS.NPS_DISMISSED, {});
+    if (!sent) {
+      track(EVENTS.NPS_DISMISSED, {});
+      // Explicit decline still counts as answered — start the cooldown so we
+      // don't re-ask next launch.
+      onResolved();
+    }
     onClose();
   };
 
@@ -156,6 +176,12 @@ export function NpsSheet({ visible, onClose }: Props) {
                       maxLength={1000}
                     />
 
+                    {failed && (
+                      <Text style={styles.error} testID="nps-error">
+                        That didn&rsquo;t send. Check your connection and try again.
+                      </Text>
+                    )}
+
                     <Pressable
                       testID="nps-submit"
                       onPress={handleSubmit}
@@ -169,7 +195,7 @@ export function NpsSheet({ visible, onClose }: Props) {
                       {submitting ? (
                         <ActivityIndicator color={COLORS.white} />
                       ) : (
-                        <Text style={styles.submitText}>Submit</Text>
+                        <Text style={styles.submitText}>{failed ? 'Try again' : 'Submit'}</Text>
                       )}
                     </Pressable>
                   </View>
@@ -270,6 +296,12 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.body,
     fontSize: 16,
     color: COLORS.text,
+  },
+  error: {
+    fontFamily: FONTS.body,
+    fontSize: 13,
+    color: COLORS.danger,
+    marginTop: SPACING.md,
   },
   multiline: {
     minHeight: 100,
