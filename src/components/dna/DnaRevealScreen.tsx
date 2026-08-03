@@ -31,6 +31,10 @@ interface DnaRevealScreenProps {
   onViewDetails: (fragranceId: string) => void;
   /** Open the "more matches" page. */
   onSeeMoreMatches: () => void;
+  /** Go back to the picker to adjust picks. Omit to hide the back affordance.
+   *  Never exits onboarding — it just returns to the grid, which keeps its own
+   *  retake-only cancel ✕. */
+  onBack?: () => void;
 }
 
 export function DnaRevealScreen({
@@ -39,12 +43,27 @@ export function DnaRevealScreen({
   onContinue,
   onViewDetails,
   onSeeMoreMatches,
+  onBack,
 }: DnaRevealScreenProps) {
   const insets = useSafeAreaInsets();
   const isPro = useProStore((s) => s.isPro);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
+      {onBack && (
+        <Pressable
+          onPress={() => {
+            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+            onBack();
+          }}
+          hitSlop={12}
+          style={[styles.back, { top: insets.top + SPACING.sm }]}
+          accessibilityLabel="Back to your picks"
+          testID="dna-reveal-back"
+        >
+          <Ionicons name="chevron-back" size={26} color={COLORS.muted} />
+        </Pressable>
+      )}
       <ScrollView
         contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 96 }]}
         showsVerticalScrollIndicator={false}
@@ -83,6 +102,9 @@ export function DnaRevealScreen({
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.bg },
+  // Back to the picker. Absolute top-left, above the scroll; mirrors the footer's
+  // inset handling so it clears the notch. Left of the centered emblem, no collide.
+  back: { position: 'absolute', left: SPACING.sm, zIndex: 10, padding: 6 },
   body: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.xl },
   footer: {
     position: 'absolute',

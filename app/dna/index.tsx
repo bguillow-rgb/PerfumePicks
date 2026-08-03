@@ -569,6 +569,10 @@ export default function DnaPickerScreen() {
         onContinue={() => (heroId ? handleRecOpen(heroId, 'dna_reveal') : finishOnboarding())}
         onViewDetails={(id) => handleRecOpen(id)}
         onSeeMoreMatches={() => router.push('/dna/matches')}
+        // Back returns to the picker to adjust picks. Selections persist (the
+        // store isn't reset here), and it can't escape onboarding — the grid's
+        // cancel ✕ stays retake-only.
+        onBack={() => setStep('grid')}
       />
     );
   }
