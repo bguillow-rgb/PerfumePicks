@@ -26,6 +26,12 @@ const NPS_COOLDOWN_DAYS = 90;
  * (e.g. a wardrobe item or a logged wear) — same bar as the review prompt.
  */
 export async function shouldShowNps(hasEngaged: boolean): Promise<boolean> {
+  // E2E escape hatch. The real gate needs 5 launches + engagement + a 90-day
+  // cooldown, which no automated test can sit through, so the sheet would
+  // otherwise be unreachable in Maestro. __DEV__-guarded so the branch is
+  // stripped from release builds and cannot fire for a real user.
+  if (__DEV__ && process.env.EXPO_PUBLIC_NPS_FORCE === '1') return true;
+
   let count = 0;
   try {
     const raw = await SecureStore.getItemAsync(KEY_OPENS);

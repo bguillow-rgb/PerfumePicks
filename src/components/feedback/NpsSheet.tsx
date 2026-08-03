@@ -95,13 +95,13 @@ export function NpsSheet({ visible, onClose }: Props) {
         <View style={[styles.screen, { paddingTop: insets.top + SPACING.md }]}>
           <View style={styles.header}>
             <Text style={styles.title}>{sent ? 'Thank you' : 'Quick question'}</Text>
-            <Pressable onPress={handleDismiss} hitSlop={12}>
+            <Pressable onPress={handleDismiss} hitSlop={12} testID="nps-dismiss">
               <Text style={styles.close}>{sent ? 'Done' : 'Not now'}</Text>
             </Pressable>
           </View>
 
           {sent ? (
-            <View style={styles.sentWrap}>
+            <View style={styles.sentWrap} testID="nps-thanks">
               <Ionicons name="checkmark-circle" size={56} color={COLORS.accent} />
               <Text style={styles.sentBody}>Appreciate it — this helps a lot.</Text>
             </View>
@@ -126,6 +126,7 @@ export function NpsSheet({ visible, onClose }: Props) {
                         return (
                           <Pressable
                             key={n}
+                            testID={`nps-score-${n}`}
                             onPress={() => setScore(n)}
                             style={[styles.scoreChip, active && styles.scoreChipActive]}
                           >
@@ -143,6 +144,7 @@ export function NpsSheet({ visible, onClose }: Props) {
 
                     <Text style={styles.label}>Why? (optional)</Text>
                     <TextInput
+                      testID="nps-comment"
                       style={[styles.input, styles.multiline]}
                       placeholder="Tell us more"
                       placeholderTextColor={COLORS.subtle}
@@ -155,6 +157,7 @@ export function NpsSheet({ visible, onClose }: Props) {
                     />
 
                     <Pressable
+                      testID="nps-submit"
                       onPress={handleSubmit}
                       disabled={score === null || submitting}
                       style={[
