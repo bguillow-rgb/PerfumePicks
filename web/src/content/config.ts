@@ -32,6 +32,9 @@ const articles = defineCollection({
     faqs: z
       .array(z.object({ q: z.string(), a: z.string() }))
       .default([]),
+    // Set true on articles that contain retailer affiliate links. Renders
+    // the FTC disclosure above the body and enables outbound click tracking.
+    affiliate: z.boolean().default(false),
     // Set false for stub / draft content. The articles index and dynamic
     // route both filter by this.
     published: z.boolean().default(true),
