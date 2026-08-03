@@ -47,11 +47,6 @@ const FEATURES = [
     desc: `Free holds ${FREE_WARDROBE_CAP} fragrances. Pro holds everything: bottles, decants, samples, the ones you want, the ones you tried once and passed on.`,
   },
   {
-    icon: 'sunny-outline' as const,
-    title: 'Layering Suggestions',
-    desc: 'Fragrance pairs that complement each other, pulled from your wardrobe and what works for your taste.',
-  },
-  {
     icon: 'finger-print-outline' as const,
     title: 'Your Fragrance DNA, In Full',
     desc: "The DNA itself is free and keeps sharpening every time you wear or swipe. Pro shows the parts underneath: every accord broken out, the houses you keep returning to, and the notes you've ruled out.",
