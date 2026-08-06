@@ -14,9 +14,9 @@ publishedAt: "2026-07-13"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-test-perfume-before-buying"
+  - "are-perfume-dupes-worth-it"
   - "how-many-perfumes-should-you-own"
   - "how-to-blind-buy-perfume"
-  - "niche-vs-designer-perfume"
 faqs:
   - q: "How many times should I sample a perfume before buying the full bottle?"
     a: "At least three to five wears in real-life conditions, different times of day, seasons, and activities. One wear tells you if you hate it; three or more tell you if you'll love it long-term."

@@ -14,9 +14,9 @@ publishedAt: "2026-07-18"
 author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-chypre-perfume"
+  - "are-perfume-dupes-worth-it"
   - "how-many-perfumes-should-you-own"
   - "how-to-decant-perfume"
-  - "perfume-fragrance-families"
 faqs:
   - q: "Can you bring perfume on a plane in a carry-on?"
     a: "Yes. TSA's 3-1-1 rule allows perfume bottles of 3.4 oz (100 ml) or less in carry-on bags, stored in a single clear quart-sized zip bag. Larger bottles must go in checked luggage."

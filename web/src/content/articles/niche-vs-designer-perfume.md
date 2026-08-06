@@ -13,10 +13,10 @@ quickAnswer: "Niche perfumes come from independent houses focused solely on scen
 publishedAt: "2026-07-05"
 author: "Perfume Picks"
 relatedSlugs:
+  - "are-perfume-dupes-worth-it"
   - "perfume-samples-vs-full-bottles"
   - "do-perfumes-increase-in-value"
   - "how-many-perfumes-should-you-own"
-  - "how-to-blind-buy-perfume"
 faqs:
   - q: "Are niche perfumes better quality than designer perfumes?"
     a: "Not automatically. Niche houses often use higher oil concentrations (15-30%) and rarer materials, but plenty charge premium prices for average juice. Some designer fragrances, Dior Sauvage, Chanel Bleu, rival niche offerings in longevity and complexity. Quality is bottle-by-bottle, not category-by-category."

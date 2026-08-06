@@ -13,10 +13,10 @@ quickAnswer: "Some perfumes do increase in value, particularly discontinued, pre
 publishedAt: "2026-08-03"
 author: "Perfume Picks"
 relatedSlugs:
+  - "are-perfume-dupes-worth-it"
   - "how-to-find-your-signature-scent"
   - "how-to-track-your-perfume-collection"
   - "niche-vs-designer-perfume"
-  - "perfume-sillage-projection-longevity"
 faqs:
   - q: "Do designer perfumes hold their value?"
     a: "Most designer perfumes depreciate once opened, but sealed bottles from heritage houses like Chanel, Dior, and Hermès tend to hold 70, 90% of retail value on the secondary market. Pre-reformulation and discontinued versions of iconic designer scents consistently outperform current production."
