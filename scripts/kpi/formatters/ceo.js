@@ -47,7 +47,9 @@ function ago(iso) {
 }
 
 function deltaPct(today, yest) {
-  if (yest == null || yest === 0) return today > 0 ? '+∞' : '—';
+  // From a zero base a percentage is undefined; "+∞" reads like a bug. Show the
+  // move plainly instead ("new" when today has activity, "—" when both are 0).
+  if (yest == null || yest === 0) return today > 0 ? 'new' : '—';
   const d = (today - yest) / yest;
   const sign = d >= 0 ? '+' : '';
   return `${sign}${Math.round(d * 100)}%`;
@@ -144,12 +146,16 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
   // ride PostHog, which lags 3-5 min. Surfacing PostHog's last-event age tells
   // you whether a low count is "quiet" or "pipeline stalled" (the 2026-07-11
   // "is the 0 real?" incident this section fixes).
+  // A low-traffic app is genuinely idle for hours (esp. overnight); calling that
+  // "stalled?" cried wolf daily. Only flag a *possible* pipeline problem past a
+  // window no normal quiet stretch would exceed (12h). Under that, it's "quiet".
   const phAge = au?.freshness?.posthogAgeMin;
   const phNote =
     phAge == null ? 'no events in window'
     : phAge <= 10 ? `last event ${phAge}m ago ✓`
     : phAge <= 120 ? `last event ${phAge}m ago`
-    : `last event ${(phAge / 60).toFixed(1)}h ago ⚠ stalled?`;
+    : phAge <= 720 ? `last event ${(phAge / 60).toFixed(1)}h ago (quiet window)`
+    : `last event ${(phAge / 60).toFixed(1)}h ago ⚠ check pipeline`;
   const nowET = new Date().toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
   lines.push(`> **Data freshness:** Supabase live · PostHog ${phNote}${au?.freshness?.supaActiveError ? ' · ⚠ Supabase signed-in fallback (PostHog-only)' : ''}`);
   lines.push('>');

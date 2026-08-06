@@ -369,7 +369,20 @@ async function fetchAcquisitionSources(env, jwt, appId) {
       if (cache.data) {
         return { sources: cache.data, note: `pending refresh (requested ${new Date(cache.requestedAt).toISOString().slice(0, 16)})` };
       }
-      return { pending: true, note: `report requested ${new Date(cache.requestedAt || nowMs).toISOString().slice(0, 16)}, not ready yet` };
+      {
+        // ASC analytics reports are normally ready within hours. A request that
+        // has been "pending" for days is stale/failed, not "not ready yet" — say
+        // so instead of implying it's about to land any minute.
+        const reqMs = cache.requestedAt || nowMs;
+        const ageH = (nowMs - reqMs) / 3.6e6;
+        const stamp = new Date(reqMs).toISOString().slice(0, 16);
+        return {
+          pending: true,
+          note: ageH > 24
+            ? `report requested ${stamp} (${Math.round(ageH / 24)}d ago) — stale; likely needs re-request`
+            : `report requested ${stamp}, not ready yet`,
+        };
+      }
     }
 
     const createRes = await fetch('https://api.appstoreconnect.apple.com/v1/analyticsReportRequests', {
