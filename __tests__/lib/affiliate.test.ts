@@ -10,7 +10,11 @@ jest.mock('expo-web-browser', () => ({
 const mockTrack = jest.fn((..._a: unknown[]) => undefined);
 jest.mock('@/src/lib/observability', () => ({ track: (...a: unknown[]) => mockTrack(...a) }));
 jest.mock('@/src/lib/observability/events', () => ({
-  EVENTS: { AFFILIATE_OUTBOUND_CLICKED: 'affiliate_outbound_clicked', AFFILIATE_LINK_FAILED: 'affiliate_link_failed' },
+  EVENTS: {
+    AFFILIATE_OUTBOUND_CLICKED: 'affiliate_outbound_clicked',
+    AFFILIATE_LINK_FAILED: 'affiliate_link_failed',
+    AFFILIATE_CLICK_UNLEDGERED: 'affiliate_click_unledgered',
+  },
 }));
 jest.mock('@/src/lib/feedback', () => ({ reportDeadLink: jest.fn(() => Promise.resolve()) }));
 
@@ -96,10 +100,38 @@ describe('handleAffiliateClick', () => {
     expect(mockInsert).not.toHaveBeenCalled();
   });
 
+  // A sessionless tap can't satisfy the RLS check (auth.uid() = user_id), so it
+  // never reaches the ledger. That's tolerable; losing it SILENTLY is not —
+  // it's why PostHog taps and ledger rows disagreed with no way to explain the
+  // gap. The skip has to be countable.
+  it('counts a sessionless tap instead of dropping it silently', async () => {
+    mockResolveUser.mockResolvedValueOnce(null);
+    handleAffiliateClick(params);
+    await new Promise((r) => setTimeout(r, 0));
+
+    const unledgered = mockTrack.mock.calls.filter(
+      (c) => c[0] === 'affiliate_click_unledgered',
+    );
+    expect(unledgered).toHaveLength(1);
+    expect(unledgered[0][1]).toMatchObject({ reason: 'no_session', retailer: params.retailer });
+  });
+
   it('never throws even if the ledger insert rejects', async () => {
     mockInsert.mockRejectedValueOnce(new Error('db down'));
     expect(() => handleAffiliateClick(params)).not.toThrow();
     await new Promise((r) => setTimeout(r, 0));
     expect(mockOpenBrowser).toHaveBeenCalledWith(params.url);
+  });
+
+  it('counts a failed insert too — same audit hole', async () => {
+    mockInsert.mockRejectedValueOnce(new Error('db down'));
+    handleAffiliateClick(params);
+    await new Promise((r) => setTimeout(r, 0));
+
+    const unledgered = mockTrack.mock.calls.filter(
+      (c) => c[0] === 'affiliate_click_unledgered',
+    );
+    expect(unledgered).toHaveLength(1);
+    expect(unledgered[0][1]).toMatchObject({ reason: 'insert_failed' });
   });
 });

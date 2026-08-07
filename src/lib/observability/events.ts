@@ -151,6 +151,13 @@ export const EVENTS = {
   // Fired when an outbound buy link looks dead (browser failed to open, or a CJ
   // affiliate link no longer redirects — i.e. pulled from the feed).
   AFFILIATE_LINK_FAILED:      'affiliate_link_failed',
+  // Fired when the tap opened the retailer but did NOT reach the durable
+  // affiliate_clicks ledger. { reason } — 'no_session' when the tapper has no
+  // auth row at all (RLS needs auth.uid() = user_id, and anonymous sign-in only
+  // happens if they visited the login screen), 'insert_failed' otherwise.
+  // Without this the ledger under-counts silently, which is exactly the hole
+  // that made the 2026-07-22 Perfumania order (P574076) unauditable.
+  AFFILIATE_CLICK_UNLEDGERED: 'affiliate_click_unledgered',
 
   // ─── Feedback (direct line to founder) ───────────────────────────────
   FEEDBACK_OPENED:    'feedback_opened',
