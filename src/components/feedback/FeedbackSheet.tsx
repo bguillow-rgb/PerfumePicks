@@ -38,7 +38,7 @@ const CATEGORIES: { key: FeedbackCategory; label: string; icon: keyof typeof Ion
   { key: 'other', label: 'Other', icon: 'chatbubble-ellipses-outline' },
 ];
 
-const MIN_LEN = 4;
+const MIN_LEN = 10; // long enough to block accidental mid-sentence submits ("I am", "I'm not")
 const MAX_LEN = 2000;
 
 export function FeedbackSheet({ visible, onClose }: Props) {
@@ -98,11 +98,24 @@ export function FeedbackSheet({ visible, onClose }: Props) {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <View style={[styles.screen, { paddingTop: insets.top + SPACING.md }]}>
+          {/* Send lives in the header, never pinned above the keyboard — a
+              bottom-anchored button sits directly on the iOS predictive-text
+              bar and collects accidental mid-sentence submits. */}
           <View style={styles.header}>
-            <Text style={styles.title}>Send Feedback</Text>
-            <Pressable onPress={onClose} hitSlop={12}>
+            <Pressable onPress={onClose} hitSlop={12} style={styles.headerSide}>
               <Text style={styles.close}>{sent ? 'Done' : 'Cancel'}</Text>
             </Pressable>
+            <Text style={styles.title}>Send Feedback</Text>
+            <View style={[styles.headerSide, styles.headerSideRight]}>
+              {!sent &&
+                (submitting ? (
+                  <ActivityIndicator size="small" color={COLORS.accent} />
+                ) : (
+                  <Pressable onPress={handleSubmit} disabled={!canSubmit} hitSlop={12}>
+                    <Text style={[styles.send, !canSubmit && styles.sendDisabled]}>Send</Text>
+                  </Pressable>
+                ))}
+            </View>
           </View>
 
           {sent ? (
@@ -182,24 +195,6 @@ export function FeedbackSheet({ visible, onClose }: Props) {
                 </TouchableWithoutFeedback>
               </ScrollView>
 
-              <Pressable
-                onPress={handleSubmit}
-                disabled={!canSubmit}
-                style={[
-                  styles.submit,
-                  !canSubmit && { opacity: 0.6 },
-                  { marginBottom: insets.bottom + SPACING.md },
-                ]}
-              >
-                {submitting ? (
-                  <ActivityIndicator color={COLORS.white} />
-                ) : (
-                  <>
-                    <Ionicons name="send" size={16} color={COLORS.white} />
-                    <Text style={styles.submitText}>Send feedback</Text>
-                  </>
-                )}
-              </Pressable>
             </>
           )}
         </View>
@@ -221,16 +216,33 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.xs,
   },
   title: {
+    flex: 1,
+    textAlign: 'center',
     fontFamily: FONTS.serif,
     fontSize: 24,
     fontWeight: '600',
     color: COLORS.text,
+  },
+  headerSide: {
+    width: 56,
+  },
+  headerSideRight: {
+    alignItems: 'flex-end',
   },
   close: {
     fontFamily: FONTS.body,
     fontWeight: '600',
     fontSize: 15,
     color: COLORS.accent,
+  },
+  send: {
+    fontFamily: FONTS.body,
+    fontWeight: '700',
+    fontSize: 15,
+    color: COLORS.accent,
+  },
+  sendDisabled: {
+    opacity: 0.4,
   },
   subtitle: {
     fontFamily: FONTS.body,
@@ -297,22 +309,6 @@ const styles = StyleSheet.create({
     color: COLORS.subtle,
     textAlign: 'right',
     marginTop: 4,
-  },
-  submit: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-    backgroundColor: COLORS.accent,
-    borderRadius: RADIUS.full,
-    paddingVertical: 14,
-  },
-  submitText: {
-    fontFamily: FONTS.body,
-    fontWeight: '600',
-    fontSize: 16,
-    color: COLORS.white,
-    letterSpacing: 0.3,
   },
   sentWrap: {
     flex: 1,
