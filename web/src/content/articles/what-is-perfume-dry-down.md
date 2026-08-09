@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-decant-perfume"
   - "how-to-smell-good-all-day"
   - "perfume-on-clothes-vs-skin"
-  - "what-is-a-chypre-perfume"
+  - "perfume-on-paper-vs-skin"
 faqs:
   - q: "How long does perfume dry down take?"
     a: "Most fragrances reach their dry down within 30, 60 minutes of application, though rich oriental and woody compositions can take up to 90 minutes to fully settle. Top notes typically last 10, 20 minutes; heart notes carry the scent through the first hour or two before the base takes over."
