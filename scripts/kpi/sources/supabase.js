@@ -244,7 +244,15 @@ async function fetchContentReports(env) {
 
 // Pro mirror — profiles.is_pro
 async function fetchProMirror(env) {
-  const total = await count(env, TABLES.profiles.name, ['is_pro=eq.true']);
+  // Founder-excluded like every other user metric. Audit 2026-08-10: the
+  // digest reported "Pro subscribers (DB): 2" next to $0 RC / $0 Apple — one
+  // row was the founder's own account, the other a day-one test grant. The
+  // profiles table is keyed by `id` (not user_id), so NOT_FOUNDER doesn't
+  // apply here.
+  const total = await count(env, TABLES.profiles.name, [
+    'is_pro=eq.true',
+    `id=not.in.(${OWNER_USER_ID})`,
+  ]);
   return { total };
 }
 

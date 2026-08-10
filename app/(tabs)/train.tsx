@@ -22,6 +22,8 @@ import { useSwipeStore, FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStor
 import { useProStore } from '@/src/stores/useProStore';
 import { recomputeTasteProfile } from '@/src/lib/sync/useAppSync';
 import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
+import { track } from '@/src/lib/observability/analytics';
+import { EVENTS } from '@/src/lib/observability/events';
 
 /**
  * Train My Nose — swipe right to love, down to like, left to pass.
@@ -107,7 +109,7 @@ export default function TrainScreen() {
       isPro={isPro}
       dailyLimitReached={dailyLimitReached}
       onExit={() => router.navigate('/')}
-      onUpgrade={() => router.push('/paywall')}
+      onUpgrade={() => router.push('/paywall?from=swipe_limit' as any)}
     />
   );
 }
@@ -478,6 +480,12 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
 }
 
 function DailyLimitReached({ onUpgrade, onBack }: { onUpgrade: () => void; onBack: () => void }) {
+  // Fire once per wall render — this is the moment the cap actually binds.
+  // Without it we only ever saw the paywall_viewed that MIGHT follow, so the
+  // gate's real hit rate was invisible (audit 2026-08-10).
+  useEffect(() => {
+    track(EVENTS.TRAIN_DAILY_LIMIT_HIT, { limit: FREE_DAILY_SWIPE_LIMIT });
+  }, []);
   return (
     <View style={styles.summaryWrap}>
       <View style={styles.iconCircle}>

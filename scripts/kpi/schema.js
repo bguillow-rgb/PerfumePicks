@@ -166,12 +166,17 @@ const EVENTS = {
   WEAR_LOGGED:             'wear_logged',
   WEAR_EDITED:             'wear_edited',
   WEAR_DELETED:            'wear_deleted',
+  WEAR_LOG_CAP_HIT:        'wear_log_cap_hit',
+
+  // Scan (bottle identification)
+  SCAN_LIMIT_HIT:          'scan_limit_hit',
 
   // Train My Nose (swipe)
   TRAIN_SESSION_STARTED:   'train_session_started',
   TRAIN_SWIPE_LOVE:        'train_swipe_love',
   TRAIN_SWIPE_LIKE:        'train_swipe_like',
   TRAIN_SWIPE_PASS:        'train_swipe_pass',
+  TRAIN_DAILY_LIMIT_HIT:   'train_daily_limit_hit',
   TRAIN_SESSION_FINISHED:  'train_session_finished',
 
   // Private notes / layering

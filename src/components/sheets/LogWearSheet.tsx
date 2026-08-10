@@ -11,6 +11,8 @@ import {
 } from '@/src/stores/useWearLogStore';
 import { useProStore } from '@/src/stores/useProStore';
 import { FREE_LIFETIME_WEAR_LOG_CAP } from '@/src/lib/limits';
+import { track } from '@/src/lib/observability/analytics';
+import { EVENTS } from '@/src/lib/observability/events';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
@@ -94,6 +96,7 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
     // Free-tier lifetime cap on NEW wear logs (edits are always allowed). Route
     // the committed journaler to Pro instead of silently blocking.
     if (!isEditing && !isPro && wearLogCount >= FREE_LIFETIME_WEAR_LOG_CAP) {
+      track(EVENTS.WEAR_LOG_CAP_HIT, { wear_log_count: wearLogCount });
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
       onClose();
       Alert.alert(

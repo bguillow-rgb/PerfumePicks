@@ -228,7 +228,11 @@ async function fetchMonetizationFunnel(env) {
         '${EVENTS.PAYWALL_VIEWED}',
         '${EVENTS.PRO_PURCHASE_STARTED}',
         '${EVENTS.PRO_PURCHASE_COMPLETED}',
-        '${EVENTS.PRO_PURCHASE_FAILED}'
+        '${EVENTS.PRO_PURCHASE_FAILED}',
+        '${EVENTS.WARDROBE_CAP_HIT}',
+        '${EVENTS.SCAN_LIMIT_HIT}',
+        '${EVENTS.WEAR_LOG_CAP_HIT}',
+        '${EVENTS.TRAIN_DAILY_LIMIT_HIT}'
       )
     GROUP BY event
   `);
@@ -237,8 +241,27 @@ async function fetchMonetizationFunnel(env) {
   const started   = byEvent[EVENTS.PRO_PURCHASE_STARTED]   || { events: 0, users: 0 };
   const completed = byEvent[EVENTS.PRO_PURCHASE_COMPLETED] || { events: 0, users: 0 };
   const failed    = byEvent[EVENTS.PRO_PURCHASE_FAILED]    || { events: 0, users: 0 };
+  // Free-tier gate hits — which caps actually bind, upstream of the paywall.
+  // Instrumented 2026-08-10; zeros before that date mean "not measured", not
+  // "never happened".
+  const capHits = {
+    wardrobe: byEvent[EVENTS.WARDROBE_CAP_HIT]     || { events: 0, users: 0 },
+    scan:     byEvent[EVENTS.SCAN_LIMIT_HIT]       || { events: 0, users: 0 },
+    wearLog:  byEvent[EVENTS.WEAR_LOG_CAP_HIT]     || { events: 0, users: 0 },
+    swipe:    byEvent[EVENTS.TRAIN_DAILY_LIMIT_HIT] || { events: 0, users: 0 },
+  };
+  // Where paywall views come from (`from` param on the route). Older events
+  // have no `from` property and land in "(untagged)".
+  const bySource = await hogql(env, `
+    SELECT coalesce(nullIf(toString(properties.from), ''), '(untagged)') AS src,
+           count() AS n, count(DISTINCT distinct_id) AS u
+    FROM events
+    WHERE ${NS} AND event = '${EVENTS.PAYWALL_VIEWED}'
+    GROUP BY src ORDER BY n DESC
+  `);
   return {
-    viewed, started, completed, failed,
+    viewed, started, completed, failed, capHits,
+    viewedBySource: bySource.map(([src, n, u]) => ({ source: src, events: n, users: u })),
     viewToStartPct: viewed.users > 0 ? started.users / viewed.users : 0,
     startToCompletePct: started.users > 0 ? completed.users / started.users : 0,
   };

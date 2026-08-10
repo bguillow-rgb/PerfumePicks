@@ -15,6 +15,8 @@ import { useWardrobeStore, WARDROBE_CAP_HIT } from '@/src/stores/useWardrobeStor
 import { useCustomFragranceStore } from '@/src/stores/useCustomFragranceStore';
 import { useScanStore, FREE_LIFETIME_SCAN_LIMIT } from '@/src/stores/useScanStore';
 import { useProStore } from '@/src/stores/useProStore';
+import { track } from '@/src/lib/observability/analytics';
+import { EVENTS } from '@/src/lib/observability/events';
 
 type ScanState = 'ready' | 'scanning' | 'result' | 'no_match';
 type Confidence = 'exact' | 'likely' | 'guess' | 'unsure';
@@ -68,13 +70,14 @@ export default function ScanScreen() {
   const checkScanLimit = (): boolean => {
     if (isPro) return true;
     if (isAtLimit()) {
+      track(EVENTS.SCAN_LIMIT_HIT, { lifetime_scan_count: lifetimeScanCount });
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
       Alert.alert(
         "You've used your free scans",
         `That's all ${FREE_LIFETIME_SCAN_LIMIT} free scans. Go Pro for unlimited bottle identification.`,
         [
           { text: 'Not Now', style: 'cancel' },
-          { text: 'Upgrade', onPress: () => router.push('/paywall') },
+          { text: 'Upgrade', onPress: () => router.push('/paywall?from=scan_limit' as any) },
         ],
       );
       return false;
@@ -240,7 +243,12 @@ export default function ScanScreen() {
         remaining_ml: 0,
       });
       if (wardrobeId === WARDROBE_CAP_HIT) {
-        router.push('/paywall');
+        track(EVENTS.WARDROBE_CAP_HIT, {
+          wardrobe_count: useWardrobeStore.getState().items.length,
+          status: 'have',
+          source: 'scan',
+        });
+        router.push('/paywall?from=wardrobe_cap' as any);
         return;
       }
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
