@@ -44,6 +44,7 @@ const ascSource = require('./kpi/sources/app-store-connect');
 const asaSource = require('./kpi/sources/apple-search-ads');
 const cjSource = require('./kpi/sources/cj');
 const dnaV3Source = require('./kpi/sources/dna-v3');
+const feedbackHubSource = require('./kpi/sources/feedback-hub');
 const drAdSpend = require('./kpi/dr-ad-spend');
 const ceoFmt = require('./kpi/formatters/ceo');
 
@@ -67,6 +68,7 @@ async function main() {
     asc: ascSource.loadEnv(),
     asa: asaSource.loadEnv(),
     cj: cjSource.loadEnv(),
+    feedbackHub: feedbackHubSource.loadEnv(),
   };
 
   if (!envs.supabase.url || !envs.supabase.key) {
@@ -87,7 +89,7 @@ async function main() {
   }
 
   // ── Pull every source in parallel ────────────────────────────────
-  const [supa, posthog, rc, sentry, asc, asa, cj] = await Promise.all([
+  const [supa, posthog, rc, sentry, asc, asa, cj, nps] = await Promise.all([
     withRetry(() => supabaseSource.fetchAll(envs.supabase, windows), {}),
     withRetry(() => posthogSource.fetchAll(envs.posthog), { configured: true }),
     withRetry(() => rcSource.fetchOverview(envs.rc), { configured: true }),
@@ -95,6 +97,7 @@ async function main() {
     withRetry(() => ascSource.fetchAll(envs.asc), { configured: true }),
     withRetry(() => asaSource.fetchAll(envs.asa), { mode: 'snapshot' }),
     withRetry(() => cjSource.fetchAll(envs.cj), { configured: true }),
+    withRetry(() => feedbackHubSource.fetchNps(envs.feedbackHub), { configured: true }),
   ]);
 
   // ── Active users — honest DAU (signed-in humans + guest visits) ────
@@ -128,8 +131,9 @@ async function main() {
   if (asc?.configured && !asc.error) sources.push('App Store Connect');
   if (adSpend?.ok) sources.push(`Apple Search Ads (${adSpend.mode})`);
   if (cj?.configured && !cj.error) sources.push('CJ Affiliate');
+  if (nps?.configured && !nps.error) sources.push('Feedback hub (NPS)');
 
-  const data = { supa, posthog, activeUsers, rc, sentry, asc, asa, cj, adSpend, dnaV3, healthAlerts, sources, now };
+  const data = { supa, posthog, activeUsers, rc, sentry, asc, asa, cj, adSpend, dnaV3, nps, healthAlerts, sources, now };
 
   let output;
   if (format === 'json') {

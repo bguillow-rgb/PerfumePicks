@@ -1,15 +1,13 @@
-import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { COLORS, RADIUS, SPACING, TYPE } from '@/src/constants/theme';
 import type { FragranceDNA } from '@/src/features/dna/types';
 import type { BuyableRankResult } from '@/src/features/dna/score';
 import { DnaProfileContent } from '@/src/components/dna/DnaProfileContent';
+import { ProDecantUpsell } from '@/src/components/dna/ProDecantUpsell';
 import { useProStore } from '@/src/stores/useProStore';
-import { track, EVENTS } from '@/src/lib/observability';
 
 /**
  * DnaRevealScreen — the post-picker celebration reveal (DNA flow v2).
@@ -33,6 +31,10 @@ interface DnaRevealScreenProps {
   onViewDetails: (fragranceId: string) => void;
   /** Open the "more matches" page. */
   onSeeMoreMatches: () => void;
+  /** Go back to the picker to adjust picks. Omit to hide the back affordance.
+   *  Never exits onboarding — it just returns to the grid, which keeps its own
+   *  retake-only cancel ✕. */
+  onBack?: () => void;
 }
 
 export function DnaRevealScreen({
@@ -41,15 +43,27 @@ export function DnaRevealScreen({
   onContinue,
   onViewDetails,
   onSeeMoreMatches,
+  onBack,
 }: DnaRevealScreenProps) {
   const insets = useSafeAreaInsets();
   const isPro = useProStore((s) => s.isPro);
-  const [upsellDismissed, setUpsellDismissed] = useState(false);
-  // Show the soft Pro card once, to free users, at this peak-intent moment.
-  const showUpsell = !isPro && !upsellDismissed;
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
+      {onBack && (
+        <Pressable
+          onPress={() => {
+            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+            onBack();
+          }}
+          hitSlop={12}
+          style={[styles.back, { top: insets.top + SPACING.sm }]}
+          accessibilityLabel="Back to your picks"
+          testID="dna-reveal-back"
+        >
+          <Ionicons name="chevron-back" size={26} color={COLORS.muted} />
+        </Pressable>
+      )}
       <ScrollView
         contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 96 }]}
         showsVerticalScrollIndicator={false}
@@ -62,10 +76,20 @@ export function DnaRevealScreen({
           onSeeMoreMatches={onSeeMoreMatches}
         />
 
-        {showUpsell && (
-          <DnaRevealUpsell
+        {/* Peak-intent Pro upsell — always shown to free users, never dismissible.
+            Reach is the whole problem (~3% of free users hit the paywall today),
+            so a one-tap opt-out here is indefensible. Non-blocking: the footer
+            below still finishes onboarding for free. Passing the top match lets
+            the card lead with THIS user's dupe savings instead of the generic
+            pitch (fragrance ids are slugs — get_dupe_teaser joins on slug). */}
+        {!isPro && (
+          <ProDecantUpsell
             archetype={dna.archetype?.primary ?? null}
-            onDismiss={() => setUpsellDismissed(true)}
+            topMatch={
+              hero?.hero
+                ? { slug: hero.hero.fragrance.id, name: hero.hero.fragrance.name ?? null }
+                : null
+            }
           />
         )}
       </ScrollView>
@@ -87,54 +111,11 @@ export function DnaRevealScreen({
   );
 }
 
-/**
- * Soft, dismissible Pro card shown to free users on the DNA reveal — the app's
- * highest-intent moment, previously 100% paywall-free. Non-blocking (Continue
- * still finishes onboarding for free); this exists purely to put the offer in
- * front of everyone who activates. Copy leans on the DNA payoff, not a generic
- * "go pro". Routes to the paywall with returnTo=/dna so a decline lands back.
- */
-function DnaRevealUpsell({
-  archetype,
-  onDismiss,
-}: {
-  archetype: string | null;
-  onDismiss: () => void;
-}) {
-  useEffect(() => {
-    track(EVENTS.DNA_REVEAL_UPSELL_SHOWN, { archetype });
-  }, [archetype]);
-
-  return (
-    <View style={styles.upsell}>
-      <Pressable style={styles.upsellClose} onPress={onDismiss} hitSlop={10} accessibilityLabel="Dismiss">
-        <Ionicons name="close" size={16} color={COLORS.muted} />
-      </Pressable>
-      <View style={styles.upsellIcon}>
-        <Ionicons name="sparkles" size={16} color={COLORS.accent} />
-      </View>
-      <Text style={styles.upsellTitle}>Unlock your full Fragrance DNA</Text>
-      <Text style={styles.upsellBody}>
-        Every accord broken out, the houses you keep returning to, the notes you've ruled out — plus
-        budget dupes for all your matches.
-      </Text>
-      <Pressable
-        style={styles.upsellCta}
-        onPress={() => {
-          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-          track(EVENTS.DNA_REVEAL_UPSELL_TAPPED, { archetype });
-          router.push('/paywall?returnTo=/dna&from=dna_reveal' as any);
-        }}
-      >
-        <Text style={styles.upsellCtaText}>Go Pro</Text>
-        <Ionicons name="arrow-forward" size={13} color={COLORS.accent} />
-      </Pressable>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.bg },
+  // Back to the picker. Absolute top-left, above the scroll; mirrors the footer's
+  // inset handling so it clears the notch. Left of the centered emblem, no collide.
+  back: { position: 'absolute', left: SPACING.sm, zIndex: 10, padding: 6 },
   body: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.xl },
   footer: {
     position: 'absolute',
@@ -157,37 +138,4 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.full,
   },
   ctaText: { ...TYPE.label, color: COLORS.white, fontSize: 14, letterSpacing: 1 },
-
-  upsell: {
-    marginTop: SPACING.lg,
-    padding: SPACING.md,
-    borderRadius: RADIUS.lg,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    backgroundColor: COLORS.card,
-  },
-  upsellClose: {
-    position: 'absolute',
-    top: SPACING.sm,
-    right: SPACING.sm,
-    zIndex: 1,
-  },
-  upsellIcon: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: COLORS.blushSoft,
-    marginBottom: SPACING.sm,
-  },
-  upsellTitle: { ...TYPE.label, color: COLORS.text, fontSize: 14 },
-  upsellBody: { ...TYPE.bodySmall, color: COLORS.muted, marginTop: 4, lineHeight: 18 },
-  upsellCta: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 5,
-    marginTop: SPACING.sm,
-  },
-  upsellCtaText: { ...TYPE.label, color: COLORS.accent, fontSize: 13, letterSpacing: 0.5 },
 });

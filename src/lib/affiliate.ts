@@ -56,7 +56,25 @@ async function logAffiliateClick(
     } catch {
       /* ignore — anonymous/demo taps still open the link, just aren't ledgered */
     }
-    if (!userId) return; // RLS requires auth.uid() = user_id; no session → skip
+    // RLS requires auth.uid() = user_id, so a tapper with NO auth row at all
+    // can't be ledgered. Anonymous users CAN (they have real auth rows — 15 of
+    // the first 22 ledger rows are anonymous); the gap is people who never hit
+    // the login screen, since that's the only place signInAnonymously() runs.
+    //
+    // Deliberately NOT fixed by minting a session here: creating an auth user
+    // as a side effect of a buy tap would inflate every signup and conversion
+    // number we report. Instead the skip is now COUNTED, so PostHog taps minus
+    // ledger rows is an explained number rather than a silent shortfall.
+    if (!userId) {
+      track(EVENTS.AFFILIATE_CLICK_UNLEDGERED, {
+        fragrance_id: params.fragrance_id,
+        retailer: params.retailer,
+        source_screen: params.source_screen,
+        landing,
+        reason: 'no_session',
+      });
+      return;
+    }
     await supabase.from('affiliate_clicks').insert({
       click_id: Crypto.randomUUID(),
       app: APP_TAG,
@@ -71,7 +89,19 @@ async function logAffiliateClick(
       landing,
     });
   } catch {
-    /* never throw from a click handler */
+    // Never throw from a click handler — but never lose the row silently
+    // either. A failed insert is the same audit hole as a skipped one.
+    try {
+      track(EVENTS.AFFILIATE_CLICK_UNLEDGERED, {
+        fragrance_id: params.fragrance_id,
+        retailer: params.retailer,
+        source_screen: params.source_screen,
+        landing,
+        reason: 'insert_failed',
+      });
+    } catch {
+      /* analytics is best-effort too */
+    }
   }
 }
 

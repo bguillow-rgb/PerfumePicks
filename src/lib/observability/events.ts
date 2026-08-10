@@ -54,6 +54,9 @@ export const EVENTS = {
   // invisible in analytics and had to be reported by a human.
   SEARCH_NO_RESULTS:       'search_no_results',
   SEARCH_ENRICH_REQUESTED: 'search_enrich_requested', // props: { fragrance_id }
+  // A zero-result search the user tapped "Request it" on — explicit "add this
+  // bottle" intent (stronger than a passive no_results miss). props: { query, surface }
+  SEARCH_REQUEST_SUBMITTED: 'search_request_submitted',
 
   // ─── Discover ────────────────────────────────────────────────────────
   DISCOVER_SEARCH_QUERY:  'discover_search_query',
@@ -156,11 +159,28 @@ export const EVENTS = {
   // Fired when an outbound buy link looks dead (browser failed to open, or a CJ
   // affiliate link no longer redirects — i.e. pulled from the feed).
   AFFILIATE_LINK_FAILED:      'affiliate_link_failed',
+  // Fired when the tap opened the retailer but did NOT reach the durable
+  // affiliate_clicks ledger. { reason } — 'no_session' when the tapper has no
+  // auth row at all (RLS needs auth.uid() = user_id, and anonymous sign-in only
+  // happens if they visited the login screen), 'insert_failed' otherwise.
+  // Without this the ledger under-counts silently, which is exactly the hole
+  // that made the 2026-07-22 Perfumania order (P574076) unauditable.
+  AFFILIATE_CLICK_UNLEDGERED: 'affiliate_click_unledgered',
 
   // ─── Feedback (direct line to founder) ───────────────────────────────
   FEEDBACK_OPENED:    'feedback_opened',
   FEEDBACK_SUBMITTED: 'feedback_submitted',
   FEEDBACK_FAILED:    'feedback_failed',
+
+  // ─── NPS (prompted 0-10 pulse, separate from the App Store review prompt) ──
+  // Read shown -> (submitted | dismissed) as a funnel: a low submit rate means
+  // the prompt is landing at the wrong moment, not that people dislike the app.
+  NPS_SHOWN:     'nps_shown',
+  NPS_SUBMITTED: 'nps_submitted',
+  NPS_DISMISSED: 'nps_dismissed',
+  // Submit reached the network and failed. Without this a broken write path
+  // looks identical to nobody answering.
+  NPS_SUBMIT_FAILED: 'nps_submit_failed',
 
   // ─── Scent of the Day ────────────────────────────────────────────────
   // Fired when the smart SOTD engine threw and the Today tab fell back to the
