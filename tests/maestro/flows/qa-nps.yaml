@@ -1,0 +1,63 @@
+# NPS sheet — end-to-end.
+#
+# The real gate is 5 launches + a coffee on the shelf + a 90-day cooldown, which
+# a test cannot sit through, so run the dev server with EXPO_PUBLIC_NPS_FORCE=1
+# to make shouldShowNps() return true (that branch is __DEV__-only and is
+# stripped from release builds):
+#
+#   EXPO_PUBLIC_NPS_FORCE=1 npx expo start --port 8081
+#   maestro test tests/maestro/flows/qa-nps.yaml
+#
+# The assertion that matters is `nps-thanks`. It only renders when the hub
+# INSERT actually succeeded — on any failure the sheet closes silently with no
+# thank-you state, which is exactly the RLS failure mode found on 2026-08-03.
+# Asserting on "the sheet went away" would pass while dropping every score, so
+# do not weaken this to a `notVisible` check.
+appId: host.exp.Exponent
+---
+- launchApp:
+    clearState: false
+- openLink: exp://localhost:8081
+# Expo Go can cold-start onto a "Dismiss"-able error/update banner — QA note in
+# tests/maestro. Optional so a clean boot doesn't fail the flow.
+- tapOn:
+    text: "Dismiss"
+    optional: true
+- extendedWaitUntil:
+    visible: "Quick question"
+    timeout: 90000
+
+- assertVisible: "How likely are you to recommend Perfume Picks to a friend?"
+- takeScreenshot: nps__01-sheet
+
+# Submit is inert until a score is chosen — guards against an empty rating row.
+- tapOn:
+    id: "nps-submit"
+- assertVisible: "Quick question"
+- takeScreenshot: nps__02-submit-inert-without-score
+
+- tapOn:
+    id: "nps-score-9"
+- takeScreenshot: nps__03-score-selected
+
+- tapOn:
+    id: "nps-comment"
+- inputText: "Maestro QA run - please ignore"
+- hideKeyboard
+
+- tapOn:
+    id: "nps-submit"
+
+# Real success gate: proves the row reached the hub.
+- extendedWaitUntil:
+    visible:
+      id: "nps-thanks"
+    timeout: 15000
+- assertVisible: "Thank you"
+- takeScreenshot: nps__04-thanks
+
+# Auto-closes ~1.2s after the thank-you.
+- extendedWaitUntil:
+    notVisible: "Thank you"
+    timeout: 10000
+- takeScreenshot: nps__05-closed

@@ -53,7 +53,7 @@ function deltaPct(today, yest) {
   return `${sign}${Math.round(d * 100)}%`;
 }
 
-function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV3, healthAlerts = [], sources, now = new Date() }) {
+function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV3, nps, healthAlerts = [], sources, now = new Date() }) {
   const lines = [];
   const { PRE_LAUNCH } = require('../schema');
 
@@ -588,6 +588,39 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
     lines.push('## 🚨 GAPS');
     lines.push('');
     for (const g of gaps) lines.push(`- ${g}`);
+    lines.push('');
+  }
+
+  // ── 16b. NPS ─────────────────────────────────────────────────────
+  // Prompted in-app 0-10 pulse, read back from the shared Picks feedback hub.
+  // Distinct from App Store reviews: those are public and self-selected, this
+  // is prompted and private.
+  if (nps?.configured && !nps.error && nps.lifetime) {
+    const lt = nps.lifetime;
+    const l30 = nps.last30d;
+    lines.push('## 📣 NPS (in-app)');
+    lines.push('');
+    lines.push('> _Prompted after 5+ opens with real engagement (a wardrobe item or a logged wear), then a 90-day cooldown per user — so n grows slowly by design. Promoters 9-10 · passives 7-8 · detractors 0-6._');
+    lines.push('');
+    if (lt.n === 0) {
+      lines.push('- No NPS responses yet.');
+    } else {
+      // Under ~10 responses a single score swings NPS by double digits, so say
+      // so rather than letting the number read as a trend.
+      const caveat = lt.n < 10 ? ' ⚠ _directional only at this n_' : '';
+      lines.push(`- **Lifetime NPS:** **${lt.score}** (n=${lt.n})${caveat}`);
+      lines.push(`  - ${lt.promoters} promoter${lt.promoters === 1 ? '' : 's'} · ${lt.passives} passive${lt.passives === 1 ? '' : 's'} · ${lt.detractors} detractor${lt.detractors === 1 ? '' : 's'} · avg ${lt.avg.toFixed(1)}/10`);
+      lines.push(l30.n > 0 ? `- **Last 30 days:** ${l30.score} (n=${l30.n})` : '- **Last 30 days:** no responses');
+      if (nps.recentComments?.length > 0) {
+        lines.push('');
+        lines.push('**Recent verbatims:**');
+        for (const c of nps.recentComments) {
+          const body = c.message.length > 200 ? c.message.slice(0, 200) + '…' : c.message;
+          lines.push(`- **${c.rating}/10** · ${c.date}`);
+          lines.push(`  > ${body.replace(/\n+/g, ' ')}`);
+        }
+      }
+    }
     lines.push('');
   }
 

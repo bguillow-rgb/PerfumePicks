@@ -8,8 +8,15 @@ import type { BuyableLink } from '@/src/features/dna/score';
  *
  * Two indexes, both built in a single pagination pass:
  *   - priceBySlug  — CHEAPEST price_cents per slug. Powers the CompactCard buy
- *     pill (lowest price wins for a "from $X" affordance). Unchanged behaviour:
- *     every row with a non-null price_cents counts, regardless of stock/status.
+ *     pill (lowest price wins for a "from $X" affordance). Rows the validator
+ *     confirmed dead are excluded at the query, matching useRetailerLinks.ts and
+ *     app/fragrance/[id].tsx. They used to count "regardless of stock/status",
+ *     which meant a delisted product could still price a card: on 2026-08-07,
+ *     144 fragrances showed a "from $X" pill whose only source was a dead link,
+ *     so the price led to a detail screen with nothing to buy. Excluding dead
+ *     rows moved no other price (no slug's cheapest live row was undercut by a
+ *     dead one) — those 144 simply show no pill now, which is the honest state.
+ *     'unknown' still counts: never hide on an inconclusive check.
  *   - buyableBySlug — the monetizable affiliate link per slug, gated to rows that
  *     are actually purchasable (link_status='ok' AND in_stock AND price_cents
  *     not null). The representative row is the HIGHEST-priced such row, paired
@@ -55,6 +62,10 @@ export const useRetailerLinksStore = create<RetailerLinksState>((set, get) => ({
               : 'price_cents, url, retailer, in_stock, link_status, fragrances!inner(slug)',
           )
           .not('price_cents', 'is', null)
+          // Hide rows the server-side validator confirmed dead (HTTP 404/410).
+          // Same rule the two per-fragrance queries already use, so a card's
+          // price pill can't outlive the listing it came from.
+          .neq('link_status', 'dead')
           .range(offset, offset + PAGE - 1) as unknown as PromiseLike<PageResult>;
       let { data: page, error } = await fetchPage(includeCheckout);
       if (error && includeCheckout && /checkout_url/.test(error.message)) {
@@ -74,9 +85,14 @@ export const useRetailerLinksStore = create<RetailerLinksState>((set, get) => ({
         const price = r.price_cents as number;
         if (!slug) continue;
 
-        // Cheapest-price index (unchanged): every non-null-price row.
-        const existing = priceMap.get(slug);
-        if (existing === undefined || price < existing) priceMap.set(slug, price);
+        // Cheapest-price index. The query already excludes confirmed-dead
+        // listings; this repeats the check client-side so a regression there
+        // (or a stale cached page) can't resurrect a pill with nothing behind
+        // it. 'unknown' still prices — never hide on an inconclusive check.
+        if (r.link_status !== 'dead') {
+          const existing = priceMap.get(slug);
+          if (existing === undefined || price < existing) priceMap.set(slug, price);
+        }
 
         // Buyable index: only genuinely purchasable rows, keyed to the
         // highest-priced one (monetization-first), paired with its url.

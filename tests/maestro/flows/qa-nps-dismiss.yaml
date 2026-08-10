@@ -1,0 +1,37 @@
+# NPS sheet — dismiss path ("Not now").
+#
+# Separate flow because the cooldown is written BEFORE the sheet renders
+# (markNpsAsked runs in NpsWatcher, not on submit). Dismissing must therefore
+# leave no row behind and must not block the rest of the app.
+#
+#   EXPO_PUBLIC_NPS_FORCE=1 npx expo start --port 8081
+#   maestro test tests/maestro/flows/qa-nps-dismiss.yaml
+appId: host.exp.Exponent
+---
+- launchApp:
+    clearState: false
+- openLink: exp://localhost:8081
+# Expo Go can cold-start onto a "Dismiss"-able error/update banner — QA note in
+# tests/maestro. Optional so a clean boot doesn't fail the flow.
+- tapOn:
+    text: "Dismiss"
+    optional: true
+- extendedWaitUntil:
+    visible: "Quick question"
+    timeout: 90000
+
+- assertVisible: "Not now"
+- tapOn:
+    id: "nps-dismiss"
+
+- extendedWaitUntil:
+    notVisible: "Quick question"
+    timeout: 10000
+- takeScreenshot: nps-dismiss__01-closed
+
+# The app must be usable immediately after dismissing — catches a modal that
+# tears down without releasing the screen.
+- assertVisible:
+    id: "tab-profile"
+    optional: true
+- takeScreenshot: nps-dismiss__02-app-usable

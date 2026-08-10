@@ -14,6 +14,8 @@ import { useAuthStore } from '@/src/stores/useAuthStore';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useCompareStore } from '@/src/stores/useCompareStore';
 import { FeedbackBubble } from '@/src/components/feedback/FeedbackBubble';
+import { NpsWatcher } from '@/src/components/feedback/NpsWatcher';
+import { claimFeedbackModal, releaseFeedbackModal } from '@/src/lib/feedbackModalGate';
 import {
   requestNotificationPermission,
   registerPushToken,
@@ -271,7 +273,13 @@ export default function TabLayout() {
     // reveal and are looking at their first Scent of the Day), then asks in terms
     // of that: "want tomorrow's pick?" The delay lets the SOTD settle on screen.
     if (userId && dna && !onboardingPromptShown) {
-      const timer = setTimeout(() => setShowNotifPrompt(true), 2500);
+      // Claim the shared prompt lock at fire time, not schedule time — NPS may
+      // have taken the screen during the 2.5s wait. If it holds the lock we
+      // skip this launch WITHOUT marking the prompt shown, so it gets its turn
+      // on the next one rather than being silently burned.
+      const timer = setTimeout(() => {
+        if (claimFeedbackModal()) setShowNotifPrompt(true);
+      }, 2500);
       return () => clearTimeout(timer);
     }
   }, [userId, dna, onboardingPromptShown]);
@@ -298,6 +306,7 @@ export default function TabLayout() {
 
   const handleNotifAccept = async () => {
     setShowNotifPrompt(false);
+    releaseFeedbackModal();
     setOnboardingPromptShown();
     const granted = await requestNotificationPermission();
     if (granted) {
@@ -309,6 +318,7 @@ export default function TabLayout() {
 
   const handleNotifDecline = () => {
     setShowNotifPrompt(false);
+    releaseFeedbackModal();
     setOnboardingPromptShown();
   };
 
@@ -414,6 +424,7 @@ export default function TabLayout() {
       <ScanFAB />
       <FeedbackBubble />
       <CompareFAB />
+      <NpsWatcher />
 
       {/* ── Notification permission prompt ─────────────────────────────── */}
       <Modal
