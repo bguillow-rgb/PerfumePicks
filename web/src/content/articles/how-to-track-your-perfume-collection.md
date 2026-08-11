@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-organize-perfume-collection"
   - "how-to-rotate-your-perfume-collection"
   - "do-perfumes-increase-in-value"
-  - "best-perfume-for-each-season"
+  - "perfume-no-buy-challenge"
 faqs:
   - q: "What information should I log for each perfume bottle?"
     a: "At minimum: fragrance name, house, concentration (EDT/EDP/Parfum), bottle size, date acquired, and a personal rating. Useful extras include price paid, fragrance family, notes listed, and whether it's a full bottle, decant, or sample."
