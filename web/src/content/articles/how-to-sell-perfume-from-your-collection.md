@@ -13,10 +13,10 @@ quickAnswer: "You can sell used or unwanted perfume bottles on platforms like r/
 publishedAt: "2026-07-10"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-use-up-your-perfume-collection"
   - "how-many-perfumes-should-you-own"
   - "how-to-store-perfume-collection"
   - "perfume-capsule-wardrobe"
-  - "perfume-samples-vs-full-bottles"
 faqs:
   - q: "Is it legal to sell used perfume?"
     a: "Generally yes. Reselling a legally purchased product, even in its original or repackaged form, is lawful in most jurisdictions under the first-sale doctrine. However, selling counterfeit scents or misrepresenting a bottle's contents is illegal. Always confirm the platform's specific policies before listing."
