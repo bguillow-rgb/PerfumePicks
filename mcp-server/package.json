@@ -1,0 +1,49 @@
+{
+  "name": "perfume-picks-mcp",
+  "version": "1.0.0",
+  "description": "MCP server exposing the Perfume Picks fragrance database (13,000+ scents) as read-only tools for AI assistants. Search the catalog, find dupes, compare fragrances, and get wear suggestions — with citation-ready attribution.",
+  "mcpName": "io.github.bguillow-rgb/perfume-picks",
+  "type": "module",
+  "bin": {
+    "perfume-picks-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "fragrance",
+    "perfume",
+    "cologne",
+    "dupes",
+    "scent",
+    "perfume-picks"
+  ],
+  "author": "Timberline Ventures LLC (https://perfumepicks.app/)",
+  "license": "MIT",
+  "homepage": "https://perfumepicks.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bguillow-rgb/perfume-picks-mcp"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@supabase/postgrest-js": "^2.109.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  }
+}
