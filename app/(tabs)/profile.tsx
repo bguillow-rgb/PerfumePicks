@@ -496,8 +496,12 @@ function Row({
   const router = useRouter();
   // Disabled Pro rows still navigate to the paywall — tapping locked content
   // is the highest-intent conversion moment.
+  // Each locked row reports itself: Row is generic, so a shared source value
+  // would merge "taste insights" and "Wrapped" into one indistinguishable
+  // bucket and defeat the point of ranking surfaces.
+  const lockedSource = `profile_${label.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')}`;
   const handlePress = disabled && pro
-    ? () => router.push('/paywall?from=profile_locked_row')
+    ? () => router.push(`/paywall?from=${encodeURIComponent(lockedSource)}` as any)
     : disabled ? undefined : onPress;
   return (
     <Pressable

@@ -100,13 +100,25 @@ export default function WardrobeScreen() {
     return out;
   }, [storeItems, cacheVersion]);
 
+  // If Pro lapses (or hydration reveals a free user who tapped the pill during
+  // the optimistic window), move off the locked filter so the pill row and the
+  // list agree with each other.
+  useEffect(() => {
+    if (!treatAsPro && activeFilter === 'low') setActiveFilter('have');
+  }, [treatAsPro, activeFilter]);
+
   const visible = useMemo(() => {
     let filtered = items;
     if (activeFilter === 'worn') filtered = filtered.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0);
     else if (activeFilter === 'low') {
-      filtered = filtered.filter(
-        (i) => i.status === 'have' && i.size_ml > 0 && i.remaining_ml / i.size_ml < LOW_THRESHOLD,
-      );
+      // Guard on Pro as well as the pill's locked style: `treatAsPro` is
+      // optimistically true until the store rehydrates, so a free user can tap
+      // the pill during that window and would otherwise keep the filtered view.
+      if (treatAsPro) {
+        filtered = filtered.filter(
+          (i) => i.status === 'have' && i.size_ml > 0 && i.remaining_ml / i.size_ml < LOW_THRESHOLD,
+        );
+      }
     } else if (activeFilter !== 'all') filtered = filtered.filter((i) => i.status === activeFilter);
 
     const q = searchQuery.trim().toLowerCase();
@@ -130,7 +142,7 @@ export default function WardrobeScreen() {
         default:           return 0;
       }
     });
-  }, [items, activeFilter, wearCountMap, searchQuery, notesSearch, activeSort]);
+  }, [items, activeFilter, treatAsPro, wearCountMap, searchQuery, notesSearch, activeSort]);
 
   const haveCount = items.filter((i) => i.status === 'have').length;
   const lowCount = items.filter(
@@ -164,9 +176,14 @@ export default function WardrobeScreen() {
 
   // Free users see how much room is left before the cap, from the first save
   // rather than at the moment the 6th silently fails.
+  // Count storeItems, NOT `items`: the store's cap check gates on the raw row
+  // count, while `items` silently drops rows whose fragrance has not resolved
+  // from the catalog cache. Using `items` reported "3 of 5" to a user whose
+  // next save was already going to fail, and "0 of 5" during every cold load.
+  const savedCount = storeItems.length;
   const capLine = treatAsPro
     ? null
-    : `${Math.min(items.length, FREE_WARDROBE_CAP)} of ${FREE_WARDROBE_CAP} saved`;
+    : `${Math.min(savedCount, FREE_WARDROBE_CAP)} of ${FREE_WARDROBE_CAP} saved`;
 
   const baseSubtitle = activeFilter === 'all'
     ? `${items.length} fragrance${items.length !== 1 ? 's' : ''}`
@@ -244,7 +261,7 @@ export default function WardrobeScreen() {
         >
           <Ionicons name="sparkles-outline" size={16} color={COLORS.accent} />
           <Text style={styles.upgradeBannerText} numberOfLines={2}>
-            Free wardrobes stop at {FREE_WARDROBE_CAP} bottles. Pro has no cap, plus dupe prices and Wrapped.
+            Free wardrobes hold {FREE_WARDROBE_CAP} fragrances. Pro has no cap, plus dupe prices and Wrapped.
           </Text>
           <Ionicons name="chevron-forward" size={16} color={COLORS.muted} />
         </Pressable>
