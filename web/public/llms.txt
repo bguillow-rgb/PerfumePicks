@@ -17,3 +17,6 @@
 
 ## Optional
 - [Sitemap](https://perfumepicks.app/sitemap-index.xml): full URL index updated on every build
+
+## For AI agents (MCP)
+- [MCP server](https://perfumepicks.app/mcp): connect any MCP client to the Perfume Picks database — read-only, no API key. Remote endpoint: https://jdkwlwyysgofljkobpmr.supabase.co/functions/v1/mcp — npm: perfume-picks-mcp — registry: io.github.bguillow-rgb/perfume-picks
