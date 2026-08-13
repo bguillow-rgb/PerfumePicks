@@ -74,7 +74,7 @@ export default function ScanScreen() {
         `That's all ${FREE_LIFETIME_SCAN_LIMIT} free scans. Go Pro for unlimited bottle identification.`,
         [
           { text: 'Not Now', style: 'cancel' },
-          { text: 'Upgrade', onPress: () => router.push('/paywall') },
+          { text: 'Upgrade', onPress: () => router.push('/paywall?from=scan_cap') },
         ],
       );
       return false;
@@ -240,7 +240,7 @@ export default function ScanScreen() {
         remaining_ml: 0,
       });
       if (wardrobeId === WARDROBE_CAP_HIT) {
-        router.push('/paywall');
+        router.push('/paywall?from=wardrobe_cap_scan');
         return;
       }
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);

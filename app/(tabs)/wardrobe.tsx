@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { FlatList, View, Text, StyleSheet, Pressable, Image, Alert, Modal, TextInput } from 'react-native';
+import { FlatList, View, Text, StyleSheet, Pressable, Image, Alert, Modal, TextInput, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,17 +10,27 @@ import { useWearLogStore } from '@/src/stores/useWearLogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
 import { AddToWardrobeSheet } from '@/src/components/sheets/AddToWardrobeSheet';
 import { WardrobeStrategy } from '@/src/components/dna/WardrobeStrategy';
+import { FREE_WARDROBE_CAP } from '@/src/lib/limits';
+import { useProStore } from '@/src/stores/useProStore';
 
 type Status = WardrobeStatus;
-type ActiveFilter = 'all' | 'want' | 'have' | 'worn';
+type ActiveFilter = 'all' | 'want' | 'have' | 'worn' | 'low';
 type WardrobeSort = 'price_desc' | 'price_asc' | 'worn' | 'az' | 'newest';
 
-const PILLS: { id: ActiveFilter; label: string }[] = [
+// `pro: true` pills are visible to everyone but locked for free users, the
+// same pattern as Pour's cellar filters. Wardrobe previously had no Pro
+// surface at all, so a free user only met the paywall when their 6th save
+// silently failed. A visible padlock advertises the ceiling instead.
+const PILLS: { id: ActiveFilter; label: string; pro?: boolean }[] = [
   { id: 'all',  label: 'All' },
   { id: 'want', label: 'Want' },
   { id: 'have', label: 'Have' },
   { id: 'worn', label: 'Tried' },
+  { id: 'low',  label: 'Running low', pro: true },
 ];
+
+/** A bottle is "running low" under a fifth remaining. Matches the header count. */
+const LOW_THRESHOLD = 0.2;
 
 const SORT_OPTIONS: { id: WardrobeSort; label: string }[] = [
   { id: 'price_desc', label: 'Most Expensive' },
@@ -56,6 +66,12 @@ export default function WardrobeScreen() {
     return out;
   }, [wearLogs]);
 
+  const isPro = useProStore((s) => s.isPro);
+  const hasHydratedPro = useProStore((s) => s.hasHydrated);
+  // Match Pour: treat as Pro until the store rehydrates so a paying user never
+  // sees a padlock flash on cold start.
+  const treatAsPro = !hasHydratedPro || isPro;
+
   const [editingItem, setEditingItem] = useState<WardrobeItem | null>(null);
   const [editingFragrance, setEditingFragrance] = useState<Fragrance | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -87,7 +103,11 @@ export default function WardrobeScreen() {
   const visible = useMemo(() => {
     let filtered = items;
     if (activeFilter === 'worn') filtered = filtered.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0);
-    else if (activeFilter !== 'all') filtered = filtered.filter((i) => i.status === activeFilter);
+    else if (activeFilter === 'low') {
+      filtered = filtered.filter(
+        (i) => i.status === 'have' && i.size_ml > 0 && i.remaining_ml / i.size_ml < LOW_THRESHOLD,
+      );
+    } else if (activeFilter !== 'all') filtered = filtered.filter((i) => i.status === activeFilter);
 
     const q = searchQuery.trim().toLowerCase();
     if (q) {
@@ -113,7 +133,9 @@ export default function WardrobeScreen() {
   }, [items, activeFilter, wearCountMap, searchQuery, notesSearch, activeSort]);
 
   const haveCount = items.filter((i) => i.status === 'have').length;
-  const lowCount = items.filter((i) => i.status === 'have' && (i.remaining_ml / i.size_ml) < 0.2).length;
+  const lowCount = items.filter(
+    (i) => i.status === 'have' && i.size_ml > 0 && i.remaining_ml / i.size_ml < LOW_THRESHOLD,
+  ).length;
 
   // Owned bottles drive the wardrobe-strategy diagnostic (six roles + biggest gap).
   const ownedFrags = useMemo(
@@ -140,13 +162,23 @@ export default function WardrobeScreen() {
     ]);
   };
 
-  const subtitle = activeFilter === 'all'
+  // Free users see how much room is left before the cap, from the first save
+  // rather than at the moment the 6th silently fails.
+  const capLine = treatAsPro
+    ? null
+    : `${Math.min(items.length, FREE_WARDROBE_CAP)} of ${FREE_WARDROBE_CAP} saved`;
+
+  const baseSubtitle = activeFilter === 'all'
     ? `${items.length} fragrance${items.length !== 1 ? 's' : ''}`
     : activeFilter === 'have'
       ? `${haveCount} on hand${lowCount > 0 ? ` · ${lowCount} running low` : ''}`
       : activeFilter === 'want'
         ? `${visible.length} wishlisted`
-        : `${items.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0).length} worn`;
+        : activeFilter === 'low'
+          ? `${visible.length} running low`
+          : `${items.filter((i) => (wearCountMap[i.fragrance.id] ?? 0) > 0).length} worn`;
+
+  const subtitle = capLine ? `${baseSubtitle} · ${capLine}` : baseSubtitle;
 
   return (
     <View style={[styles.screen, { paddingTop: insets.top }]}>
@@ -167,21 +199,56 @@ export default function WardrobeScreen() {
         </Pressable>
       </View>
 
-      {/* Filter pills row */}
-      <View style={styles.filterRow}>
+      {/* Filter pills row. Horizontally scrollable: the Pro pill pushes the row
+          past a phone's width, and a plain flex row would squash every label. */}
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.filterScroll}
+        contentContainerStyle={styles.filterRow}
+      >
         {PILLS.map((p) => {
-          const active = activeFilter === p.id;
+          const locked = !!p.pro && !treatAsPro;
+          const active = activeFilter === p.id && !locked;
           return (
             <Pressable
               key={p.id}
-              onPress={() => setActiveFilter(p.id)}
-              style={[styles.filterPill, active && styles.filterPillActive]}
+              onPress={() => {
+                if (locked) router.push('/paywall?from=wardrobe_filter_locked' as any);
+                else setActiveFilter(p.id);
+              }}
+              accessibilityLabel={locked ? `${p.label} (Pro)` : p.label}
+              style={[styles.filterPill, active && styles.filterPillActive, locked && styles.filterPillLocked]}
             >
-              <Text style={[styles.filterPillText, active && styles.filterPillTextActive]}>{p.label}</Text>
+              <Text
+                numberOfLines={1}
+                maxFontSizeMultiplier={1.3}
+                style={[
+                  styles.filterPillText,
+                  active && styles.filterPillTextActive,
+                  locked && styles.filterPillTextLocked,
+                ]}
+              >
+                {locked ? `${p.label} \u{1F512}` : p.label}
+              </Text>
             </Pressable>
           );
         })}
-      </View>
+      </ScrollView>
+
+      {!treatAsPro ? (
+        <Pressable
+          onPress={() => router.push('/paywall?from=wardrobe_banner' as any)}
+          style={styles.upgradeBanner}
+          accessibilityLabel="Go Pro for an unlimited wardrobe"
+        >
+          <Ionicons name="sparkles-outline" size={16} color={COLORS.accent} />
+          <Text style={styles.upgradeBannerText} numberOfLines={2}>
+            Free wardrobes stop at {FREE_WARDROBE_CAP} bottles. Pro has no cap, plus dupe prices and Wrapped.
+          </Text>
+          <Ionicons name="chevron-forward" size={16} color={COLORS.muted} />
+        </Pressable>
+      ) : null}
 
       {/* Search bar */}
       <View style={styles.searchWrap}>
@@ -371,6 +438,7 @@ const styles = StyleSheet.create({
     marginLeft: SPACING.md,
   },
 
+  filterScroll: { flexGrow: 0 },
   filterRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -399,6 +467,23 @@ const styles = StyleSheet.create({
   },
   filterPillText: { fontSize: 13, fontWeight: '600', color: COLORS.text },
   filterPillTextActive: { color: COLORS.white },
+  filterPillLocked: { borderColor: COLORS.border, opacity: 0.55 },
+  filterPillTextLocked: { color: COLORS.muted },
+
+  upgradeBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    backgroundColor: COLORS.card,
+    borderRadius: RADIUS.md,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+    paddingVertical: 10,
+    paddingHorizontal: SPACING.sm,
+    marginHorizontal: SPACING.lg,
+    marginTop: SPACING.sm,
+  },
+  upgradeBannerText: { flex: 1, fontSize: 12.5, lineHeight: 17, color: COLORS.text },
 
   sortBtn: {
     flexDirection: 'row',

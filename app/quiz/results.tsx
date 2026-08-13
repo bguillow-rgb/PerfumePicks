@@ -132,7 +132,7 @@ export default function QuizResults() {
               <Ionicons name="lock-closed-outline" size={13} color={COLORS.muted} />
               <Text style={styles.proBannerRowText}>Off-notes · what you want to avoid</Text>
             </View>
-            <Pressable style={styles.proBannerBtn} onPress={() => router.push('/paywall?returnTo=/quiz')}>
+            <Pressable style={styles.proBannerBtn} onPress={() => router.push('/paywall?returnTo=/quiz&from=quiz_results')}>
               <Text style={styles.proBannerBtnText}>Get Pro</Text>
             </Pressable>
           </View>

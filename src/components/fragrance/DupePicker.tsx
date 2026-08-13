@@ -143,7 +143,7 @@ export function DupePicker({ initialOriginal, placeholder = 'Less expensive opti
           dupes={dupes}
           loading={loadingDupes}
           lockedCount={isPro ? 0 : Math.max(0, dupeCount - dupes.length)}
-          onUnlock={() => router.push('/paywall')}
+          onUnlock={() => router.push('/paywall?from=dupe_picker')}
           surface="dupe_picker"
           emptyState={
             <View style={styles.empty}>

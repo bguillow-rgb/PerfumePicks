@@ -124,7 +124,7 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
         // dismiss the paywall — their pending input isn't lost.
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
         onClose();
-        router.push('/paywall' as any);
+        router.push('/paywall?from=wardrobe_cap' as any);
         return;
       }
       id = result;

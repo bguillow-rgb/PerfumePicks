@@ -88,7 +88,7 @@ export default function WrappedScreen() {
           title="Pro Feature"
           subtitle="Upgrade to Pro to see your year in fragrance."
           actionLabel="Upgrade"
-          onAction={() => router.push('/paywall')}
+          onAction={() => router.push('/paywall?from=wrapped')}
         />
       ) : stats.totalWears < 5 ? (
         <EmptyState

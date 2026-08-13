@@ -107,7 +107,7 @@ export default function TrainScreen() {
       isPro={isPro}
       dailyLimitReached={dailyLimitReached}
       onExit={() => router.navigate('/')}
-      onUpgrade={() => router.push('/paywall')}
+      onUpgrade={() => router.push('/paywall?from=train_daily_cap')}
     />
   );
 }

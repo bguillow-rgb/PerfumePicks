@@ -254,7 +254,7 @@ export default function ProfileScreen() {
               <Text style={styles.proBadgeText}>PERFUME PICKS PRO</Text>
             </View>
           ) : (
-            <Pressable style={styles.upgradeBtn} onPress={() => router.push('/paywall')}>
+            <Pressable style={styles.upgradeBtn} onPress={() => router.push('/paywall?from=profile_cta')}>
               <Text style={styles.upgradeText}>Upgrade to Pro</Text>
             </Pressable>
           )}
@@ -286,7 +286,7 @@ export default function ProfileScreen() {
 
         <Section title="Account">
           {isGuest && <Row label="Sign in" onPress={() => router.push('/auth/login')} />}
-          <Row label="Subscription" onPress={() => router.push('/paywall')} />
+          <Row label="Subscription" onPress={() => router.push('/paywall?from=profile_subscription')} />
           <Row label="Restore Purchases" onPress={handleRestorePurchases} />
           <Row label="Redeem a promo code" onPress={() => setPromoOpen(true)} />
           {!isGuest && <Row label="Sign Out" onPress={handleSignOut} danger />}
@@ -497,7 +497,7 @@ function Row({
   // Disabled Pro rows still navigate to the paywall — tapping locked content
   // is the highest-intent conversion moment.
   const handlePress = disabled && pro
-    ? () => router.push('/paywall')
+    ? () => router.push('/paywall?from=profile_locked_row')
     : disabled ? undefined : onPress;
   return (
     <Pressable

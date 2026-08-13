@@ -121,7 +121,7 @@ export default function ProQuizScreen() {
   // When they purchase, router.back() returns here and isPro is now true.
   useEffect(() => {
     if (hasHydrated && !isPro) {
-      router.push('/paywall');
+      router.push('/paywall?from=quiz_pro');
     }
   }, [hasHydrated, isPro]);
 

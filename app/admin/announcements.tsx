@@ -64,7 +64,7 @@ const CTA_OPTIONS: { key: string; label: string; route: string | null; cta: stri
   { key: 'discover', label: 'Discover', route: '/(tabs)/discover', cta: 'Explore scents' },
   { key: 'wardrobe', label: 'Wardrobe', route: '/(tabs)/wardrobe', cta: 'Open your wardrobe' },
   { key: 'dna', label: 'Your DNA', route: '/taste-profile', cta: 'See your DNA' },
-  { key: 'pro', label: 'Go Pro', route: '/paywall', cta: 'See Pro' },
+  { key: 'pro', label: 'Go Pro', route: '/paywall?from=announcement', cta: 'See Pro' },
 ];
 
 export default function AnnouncementsComposer() {
