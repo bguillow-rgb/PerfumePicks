@@ -14,9 +14,9 @@ publishedAt: "2026-08-01"
 author: "Perfume Picks"
 relatedSlugs:
   - "perfume-fragrance-families"
+  - "are-perfume-discovery-sets-worth-it"
   - "how-to-audit-your-perfume-collection"
   - "what-is-an-oriental-perfume"
-  - "are-perfume-dupes-worth-it"
 faqs:
   - q: "Who invented the fragrance wheel?"
     a: "Michael Edwards, a fragrance expert and author of Fragrances of the World, introduced the modern fragrance wheel in 1992. It was designed to help perfumers and sales consultants recommend scents more systematically, and it remains the industry standard today."

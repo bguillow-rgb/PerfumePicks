@@ -18,7 +18,7 @@ relatedSlugs:
   - "how-to-test-perfume-before-buying"
   - "perfume-samples-vs-full-bottles"
   - "what-to-do-with-perfume-you-dont-like"
-  - "are-perfume-dupes-worth-it"
+  - "are-perfume-discovery-sets-worth-it"
 faqs:
   - q: "What does blind buying a perfume mean?"
     a: "Blind buying means purchasing a fragrance without smelling it first, no tester, no sample, no counter visit. You're committing to a full bottle based on note lists, reviews, and descriptions alone. It's common with niche houses that have limited retail distribution and with online-only releases."
