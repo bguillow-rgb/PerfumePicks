@@ -13,10 +13,10 @@ quickAnswer: "Store perfume in a cool (60, 70°F), dark, humidity-stable environ
 publishedAt: "2026-06-17"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-display-perfume-collection"
   - "how-many-perfumes-should-you-own"
   - "how-to-organize-perfume-collection"
   - "how-to-sell-perfume-from-your-collection"
-  - "how-to-smell-good-all-day"
 faqs:
   - q: "Can I store perfume in the fridge?"
     a: "A regular kitchen fridge is not ideal, repeated temperature swings from taking bottles in and out stress the fragrance molecules and can dull the scent. If you want cold storage, a dedicated cosmetic or wine refrigerator set to around 55, 60°F (13, 16°C) with stable temperature is the right tool. Casual collectors rarely need this; careful room-temperature storage works fine for most bottles used within 3, 5 years."
