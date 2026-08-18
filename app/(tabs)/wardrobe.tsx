@@ -203,7 +203,7 @@ export default function WardrobeScreen() {
       {/* Fixed header — title + add button */}
       <View style={styles.headerWrap}>
         <View style={styles.headerLeft}>
-          <Text style={styles.title}>
+          <Text style={styles.title} numberOfLines={1} maxFontSizeMultiplier={1.2}>
             <Text style={styles.titleItalic}>my</Text>Wardrobe
           </Text>
           <Text style={styles.subtitle} numberOfLines={1}>{subtitle}</Text>
@@ -447,7 +447,7 @@ const styles = StyleSheet.create({
   headerLeft: { flex: 1 },
   title: { ...TYPE.displayLarge },
   titleItalic: { fontStyle: 'italic', color: COLORS.accent, fontFamily: 'CormorantGaramond_400Regular_Italic' },
-  subtitle: { ...TYPE.caption, color: COLORS.muted, marginTop: 2, height: 16 },
+  subtitle: { ...TYPE.caption, color: COLORS.muted, marginTop: 2, minHeight: 16 },
   addBtn: {
     width: 44, height: 44, borderRadius: 22,
     backgroundColor: COLORS.accent,
@@ -455,7 +455,12 @@ const styles = StyleSheet.create({
     marginLeft: SPACING.md,
   },
 
-  filterScroll: { flexGrow: 0 },
+  // flexShrink:0 is the fix for the empty-pill bug (2026-08-18). flexGrow:0 kept
+  // the row from expanding, but flex children SHRINK by default: at large
+  // Dynamic Type the column overflows the screen and this ScrollView was
+  // squashed vertically, clipping the pill labels out of view entirely. The
+  // pills kept their widths, which is why they rendered as blank capsules.
+  filterScroll: { flexGrow: 0, flexShrink: 0 },
   filterRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -471,6 +476,11 @@ const styles = StyleSheet.create({
     paddingBottom: SPACING.sm,
   },
   filterPill: {
+    // flexShrink:0 is load-bearing. Flex children shrink by default, so at large
+    // Dynamic Type the scaled labels compressed to zero width and the pills
+    // rendered as empty capsules (reported 2026-08-18). The ScrollView scrolls;
+    // the pills must keep their intrinsic width.
+    flexShrink: 0,
     paddingHorizontal: 14,
     paddingVertical: 7,
     borderRadius: RADIUS.full,
