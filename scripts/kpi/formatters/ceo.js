@@ -308,6 +308,24 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
     if (posthog.monetization) {
       const m = posthog.monetization;
       lines.push(`- **Paywall:** ${m.viewed.users} viewed → ${m.completed.users} paid (**${fmtPct(m.startToCompletePct)}** start → pay)`);
+      // Which free-tier gates actually bind (instrumented 2026-08-10 — earlier
+      // hits were never recorded, so all-time undercounts pre-that-date).
+      if (m.capHits) {
+        const c = m.capHits;
+        const parts = [
+          `wardrobe ${c.wardrobe.users}`,
+          `scan ${c.scan.users}`,
+          `swipe ${c.swipe.users}`,
+          `journal ${c.wearLog.users}`,
+        ];
+        lines.push(`- **Cap hits (people, since 2026-08-10):** ${parts.join(' · ')}`);
+      }
+      if (Array.isArray(m.viewedBySource) && m.viewedBySource.length) {
+        const src = m.viewedBySource
+          .map((s) => `${s.source} ${s.users}`)
+          .join(' · ');
+        lines.push(`- **Paywall views by source:** ${src}`);
+      }
     }
     lines.push('');
   }
@@ -353,7 +371,7 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
     lines.push(`| RevenueCat | not configured | Add REVENUECAT_PROJECT_ID + REVENUECAT_SECRET_KEY to .env.local |`);
   }
   if (supa?.proMirror) {
-    lines.push(`| Pro subscribers (DB) | **${supa.proMirror.total}** | profiles.is_pro=true (RC webhook) |`);
+    lines.push(`| Pro subscribers (DB) | **${supa.proMirror.total}** | profiles.is_pro=true (RC webhook), founder-excluded |`);
   }
   if (asc?.lifetimeProceeds != null) {
     lines.push(`| Lifetime Apple proceeds | **${fmtUSD(asc.lifetimeProceeds)}** | production-only ground truth |`);

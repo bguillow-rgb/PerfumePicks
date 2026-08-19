@@ -18,6 +18,8 @@ import {
 import { useProfileStore } from '@/src/stores/useProfileStore';
 import { getCurrentUser } from '@/src/stores/useAuthStore';
 import { Alert } from '@/src/components/ui/StyledAlert';
+import { track } from '@/src/lib/observability/analytics';
+import { EVENTS } from '@/src/lib/observability/events';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
@@ -122,6 +124,7 @@ export function AddToWardrobeSheet({ visible, fragrance, onClose, onSaved, initi
         // Free-tier cap: bail out before closing the sheet, route to paywall.
         // The sheet stays mounted so the user lands back on it if they
         // dismiss the paywall — their pending input isn't lost.
+        track(EVENTS.WARDROBE_CAP_HIT, { wardrobe_count: wardrobeCount, status });
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
         onClose();
         router.push('/paywall?from=wardrobe_cap' as any);

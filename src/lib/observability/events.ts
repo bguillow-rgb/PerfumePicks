@@ -87,10 +87,18 @@ export const EVENTS = {
 
   // ─── Wear logging ────────────────────────────────────────────────────
   WEAR_LOGGED:          'wear_logged',
+  // { wear_log_count } — free user tried to create a wear log past the
+  // lifetime cap (FREE_LIFETIME_WEAR_LOG_CAP). Edits never hit this.
+  WEAR_LOG_CAP_HIT:     'wear_log_cap_hit',
   WEAR_EDITED:          'wear_edited',
   WEAR_DELETED:         'wear_deleted',
   WEAR_NUDGE_DISMISSED: 'wear_nudge_dismissed',
   WEAR_NUDGE_ACCEPTED:  'wear_nudge_accepted',
+
+  // ─── Scan (bottle identification) ────────────────────────────────────
+  // { lifetime_scan_count } — free user tried to scan past the lifetime cap
+  // (FREE_LIFETIME_SCAN_LIMIT). The alert offers Upgrade / Not Now.
+  SCAN_LIMIT_HIT:         'scan_limit_hit',
 
   // ─── Train (swipe) ───────────────────────────────────────────────────
   TRAIN_SESSION_STARTED:  'train_session_started',

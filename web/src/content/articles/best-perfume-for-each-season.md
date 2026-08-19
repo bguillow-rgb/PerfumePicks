@@ -13,10 +13,10 @@ quickAnswer: "Light citrus and aquatic fragrances suit summer; fresh florals and
 publishedAt: "2026-07-06"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-match-perfume-to-outfit"
   - "how-weather-affects-perfume"
+  - "what-is-a-skin-scent-perfume"
   - "how-to-choose-perfume-for-your-mood"
-  - "how-to-rotate-your-perfume-collection"
-  - "perfume-for-different-times-of-day"
 faqs:
   - q: "Should I wear a different perfume every season?"
     a: "Not strictly, but it pays off. Temperature and humidity change how fragrance projects and performs on skin. A heavy oud that dazzles in December can feel suffocating in July. You don't need four completely separate wardrobes; even swapping one or two bottles seasonally makes a noticeable difference."

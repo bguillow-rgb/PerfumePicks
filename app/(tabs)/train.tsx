@@ -23,6 +23,8 @@ import { useProStore } from '@/src/stores/useProStore';
 import { recomputeTasteProfile } from '@/src/lib/sync/useAppSync';
 import { dnaTrackEvent } from '@/src/lib/dna';
 import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
+import { track } from '@/src/lib/observability/analytics';
+import { EVENTS } from '@/src/lib/observability/events';
 
 /**
  * Train My Nose — swipe right to love, down to like, left to pass.
@@ -108,7 +110,7 @@ export default function TrainScreen() {
       isPro={isPro}
       dailyLimitReached={dailyLimitReached}
       onExit={() => router.navigate('/')}
-      onUpgrade={() => router.push('/paywall?from=train_daily_cap')}
+      onUpgrade={() => router.push('/paywall?from=swipe_limit' as any)}
     />
   );
 }
@@ -249,12 +251,9 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
       // train the engine to avoid those notes.
       const storeAction = dir === 'right' ? 'love' : dir === 'down' ? 'like' : 'skip';
       recordToStore(fragrance.id, storeAction);
-      // DNA layer dual-emission (M1): love/like accept the card. A left swipe
-      // stays a neutral 'skip' per the comment above — deliberately NOT
-      // emitted as a dismissal/dislike, so skipping undecided scents can't
-      // poison the cross-app profile either. ranked_position = the card's
-      // position in this session's (shuffled) deck — the deck has no true
-      // ranking, so this is deck order, not a model rank.
+      // DNA layer (additive): positive swipes only — a left-swipe 'skip' is
+      // deliberately neutral (see comment above) and must not emit a dismissal.
+      // ranked_position = shuffled-deck order, not a model rank.
       if (storeAction === 'love' || storeAction === 'like') {
         dnaTrackEvent('recommendation_accepted', {
           entity_id: fragrance.id,
@@ -269,8 +268,6 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
         accordToastTimer.current = setTimeout(() => setAccordToast(null), 1800);
       }
     }
-  // `index` is a dep so the DNA-layer ranked_position reads the card's live
-  // deck position (the callback re-memoizes per swipe; cheap).
   }, [recordToStore, index]);
 
   const handleClose = useCallback(() => {
@@ -493,6 +490,12 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
 }
 
 function DailyLimitReached({ onUpgrade, onBack }: { onUpgrade: () => void; onBack: () => void }) {
+  // Fire once per wall render — this is the moment the cap actually binds.
+  // Without it we only ever saw the paywall_viewed that MIGHT follow, so the
+  // gate's real hit rate was invisible (audit 2026-08-10).
+  useEffect(() => {
+    track(EVENTS.TRAIN_DAILY_LIMIT_HIT, { limit: FREE_DAILY_SWIPE_LIMIT });
+  }, []);
   return (
     <View style={styles.summaryWrap}>
       <View style={styles.iconCircle}>

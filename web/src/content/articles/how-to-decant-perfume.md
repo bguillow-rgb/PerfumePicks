@@ -14,9 +14,9 @@ publishedAt: "2026-06-20"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-smell-good-all-day"
+  - "what-is-hair-perfume"
   - "what-is-perfume-dry-down"
   - "does-perfume-expire"
-  - "how-long-does-perfume-last"
 faqs:
   - q: "What is a perfume decant?"
     a: "A perfume decant is a smaller portion of a fragrance transferred from its original bottle into a separate container, usually a 2-10 ml atomizer or vial. Decants let collectors sample, travel with, or share specific scents without committing to or carrying a full bottle."

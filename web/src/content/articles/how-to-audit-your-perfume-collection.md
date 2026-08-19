@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-many-perfumes-should-you-own"
   - "how-to-build-a-fragrance-wardrobe"
   - "how-to-organize-perfume-collection"
-  - "how-to-rotate-your-perfume-collection"
+  - "how-to-rate-your-perfume-collection"
 faqs:
   - q: "How often should I audit my perfume collection?"
     a: "Once or twice a year is the sweet spot for most collectors, once in spring before warm-weather scents become relevant, and once in autumn before the richer, heavier rotation begins. If you buy frequently, a lighter mid-year check-in also helps prevent accidental duplicates from piling up."

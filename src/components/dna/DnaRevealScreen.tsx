@@ -79,8 +79,19 @@ export function DnaRevealScreen({
         {/* Peak-intent Pro upsell — always shown to free users, never dismissible.
             Reach is the whole problem (~3% of free users hit the paywall today),
             so a one-tap opt-out here is indefensible. Non-blocking: the footer
-            below still finishes onboarding for free. */}
-        {!isPro && <ProDecantUpsell archetype={dna.archetype?.primary ?? null} />}
+            below still finishes onboarding for free. Passing the top match lets
+            the card lead with THIS user's dupe savings instead of the generic
+            pitch (fragrance ids are slugs — get_dupe_teaser joins on slug). */}
+        {!isPro && (
+          <ProDecantUpsell
+            archetype={dna.archetype?.primary ?? null}
+            topMatch={
+              hero?.hero
+                ? { slug: hero.hero.fragrance.id, name: hero.hero.fragrance.name ?? null }
+                : null
+            }
+          />
+        )}
       </ScrollView>
 
       <View style={[styles.footer, { paddingBottom: insets.bottom + SPACING.sm }]}>

@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "what-is-an-oriental-perfume"
   - "what-is-a-chypre-perfume"
+  - "how-to-train-your-nose-for-perfume"
   - "perfume-fragrance-families"
-  - "best-perfume-for-each-season"
 faqs:
   - q: "What does a gourmand perfume smell like?"
     a: "Gourmand perfumes smell warm, sweet, and food-adjacent, think vanilla custard, salted caramel, roasted coffee, or pistachio cream. Modern versions layer those edible notes with woods, resins, or musks so the result feels sophisticated rather than literally dessert-like."

@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-read-perfume-batch-codes"
   - "does-perfume-expire"
-  - "fragrance-notes-explained"
-  - "how-to-find-your-signature-scent"
+  - "what-is-the-fragrance-wheel"
+  - "are-perfume-dupes-worth-it"
 faqs:
   - q: "Do brands announce when they reformulate a perfume?"
     a: "Rarely. Most houses quietly update formulas without public disclosure, and sales staff are often uninformed or instructed to deny changes. Collector forums and batch-code databases are more reliable than brand communications."

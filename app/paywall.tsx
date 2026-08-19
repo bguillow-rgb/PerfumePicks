@@ -56,11 +56,6 @@ const FEATURES = [
 export default function PaywallScreen() {
   const router = useRouter();
   const { returnTo, from } = useLocalSearchParams<{ returnTo?: string; from?: string }>();
-  // Which surface sent the user here. `returnTo` says where to go back to,
-  // which is not the same question — a locked dupe list and a wardrobe cap
-  // both return to '/'. Defaults to 'unknown' so an untagged call site shows
-  // up as a bucket instead of vanishing.
-  const source = typeof from === 'string' && from ? from : 'unknown';
   const insets = useSafeAreaInsets();
   const [selectedPlan, setSelectedPlan] = useState<Plan>('yearly');
   const [promoOpen, setPromoOpen] = useState(false);
@@ -89,7 +84,10 @@ export default function PaywallScreen() {
   // funnel was uninstrumented (0 call sites), so paywall_viewed read 0 since
   // launch even though the screen is reachable from 6+ entry points.
   useEffect(() => {
-    track(EVENTS.PAYWALL_VIEWED, { initial_plan: selectedPlan, from: source, return_to: returnTo ?? null });
+    // `from` says WHICH gate or surface sent the user here (journal_cap,
+    // scan_limit, wardrobe_cap, swipe_limit, dna_reveal, profile, …). Without
+    // it every view is anonymous and cap tuning is blind.
+    track(EVENTS.PAYWALL_VIEWED, { initial_plan: selectedPlan, return_to: returnTo ?? null, from: from ?? null });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -125,27 +123,26 @@ export default function PaywallScreen() {
     }
     const freshPkg = selectedPlan === 'yearly' ? yearlyPackage : monthlyPackage;
     if (freshPkg) {
-      track(EVENTS.PRO_PURCHASE_STARTED, { plan: selectedPlan, from: source });
+      track(EVENTS.PRO_PURCHASE_STARTED, { plan: selectedPlan, from: from ?? null });
       const result = await buy(freshPkg);
       if (result.outcome === 'purchased') {
-        track(EVENTS.PRO_PURCHASE_COMPLETED, { plan: selectedPlan, from: source });
+        track(EVENTS.PRO_PURCHASE_COMPLETED, { plan: selectedPlan, from: from ?? null });
         if (returnTo) router.replace(returnTo as any);
         else router.back();
       } else if (result.outcome === 'cancelled') {
         // User backed out of the StoreKit sheet — a choice, not a failure.
-        track(EVENTS.PRO_PURCHASE_CANCELLED, { plan: selectedPlan, from: source });
+        track(EVENTS.PRO_PURCHASE_CANCELLED, { plan: selectedPlan });
       } else {
         // Genuine problem: 'error' (StoreKit/RC error, code preserved) or
         // 'not_entitled' (returned without an active entitlement).
         track(EVENTS.PRO_PURCHASE_FAILED, {
           plan: selectedPlan,
-          from: source,
           reason: result.outcome,
           ...(result.outcome === 'error' ? { code: result.code, message: result.message } : {}),
         });
       }
     } else {
-      track(EVENTS.PRO_PURCHASE_FAILED, { plan: selectedPlan, from: source, reason: 'no_package' });
+      track(EVENTS.PRO_PURCHASE_FAILED, { plan: selectedPlan, reason: 'no_package' });
       Alert.alert('Unavailable', 'Subscriptions are not available right now. Check your connection and try again.');
     }
   }
