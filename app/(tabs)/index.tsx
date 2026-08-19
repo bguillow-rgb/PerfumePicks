@@ -22,6 +22,8 @@ import { AnnouncementModal } from '@/src/components/announcements/AnnouncementMo
 import { rankWithRelaxation, type RankedDnaRec } from '@/src/features/dna/score';
 import type { DnaCatalogFragrance } from '@/src/features/dna/types';
 import { UnifiedDnaCard } from '@/src/components/dna/UnifiedDnaCard';
+import { BuildWardrobeCard } from '@/src/components/home/BuildWardrobeCard';
+import { shouldShowWardrobeNudge } from '@/src/features/home/wardrobeNudge';
 
 /**
  * Home / "Today" tab — daily ritual surface.
@@ -85,6 +87,14 @@ export default function HomeScreen() {
   // Live DNA drives the unified DNA hero card (archetype + picks + journey).
   const liveDna = useTasteProfileStore((s) => s.dna);
 
+  // "Add the bottles you own" prompt. Empty wardrobe only, and it renders above
+  // the DNA card so it is the first thing that cohort sees. Counts items of ANY
+  // status, so one wishlist save retires it. See wardrobeNudge.ts for the gap
+  // this closes (98 of 163 profiles since launch saw no wardrobe CTA at all).
+  const showWardrobeNudge = shouldShowWardrobeNudge({
+    wardrobeCount: wardrobeItems.length,
+  });
+
   const greeting = useGreeting();
   const { entries: sotdEntries, loading: sotdLoading, refresh: refreshSOTD } = useSOTDFeed();
 
@@ -139,6 +149,17 @@ export default function HomeScreen() {
           </View>
         </View>
 
+        {/* ── Build your wardrobe. First thing on Home for anyone with an empty
+               wardrobe, deliberately above the DNA card: the DNA is the nicer
+               surface, but it cannot pick a bottle the user does not own. Slim
+               on purpose so it reads as a prompt, not a section. ── */}
+        {showWardrobeNudge && (
+          <BuildWardrobeCard
+            onBrowse={() => router.push('/(tabs)/wardrobe')}
+            onScan={() => router.push('/scan')}
+          />
+        )}
+
         {/* ── Your Fragrance DNA — the unified hero card: archetype identity +
                matched bottles + forward journey footer, all in one authored
                surface. The payoff for finishing the picker. ── */}
@@ -148,23 +169,12 @@ export default function HomeScreen() {
                a DNA exists; the DNA picks card above becomes the primary surface. ── */}
         {isNewUser && !liveDna && <GetStartedHero router={router} />}
 
-        {/* ── Scent of the Day (hidden for true new users — GetStartedHero
-               already owns the wardrobe call-to-action above) ── */}
-        {!isNewUser && (
+        {/* ── Scent of the Day. Requires a non-empty wardrobe: the section is
+               literally "from your wardrobe", and the empty-shelf ask now lives
+               in BuildWardrobeCard above rather than being duplicated here. ── */}
+        {!isNewUser && ownedCount > 0 && (
         <Section eyebrow="SCENT OF THE DAY" cursive="from your wardrobe">
-          {ownedCount === 0 ? (
-            // Empty state — nothing in wardrobe, but the user has swiped/quizzed
-            <View style={[styles.sotdEmpty, { marginRight: SPACING.lg }]}>
-              <Ionicons name="flask-outline" size={32} color={COLORS.accent} style={{ marginBottom: SPACING.sm }} />
-              <Text style={styles.sotdEmptyTitle}>Your wardrobe is empty</Text>
-              <Text style={styles.sotdEmptyBody}>
-                Add the bottles you own and we'll tell you what to wear today, and why.
-              </Text>
-              <Pressable style={styles.sotdEmptyCta} onPress={() => router.push('/(tabs)/wardrobe')}>
-                <Text style={styles.sotdEmptyCtaText}>Add to Wardrobe →</Text>
-              </Pressable>
-            </View>
-          ) : wardrobePicksLoading ? (
+          {wardrobePicksLoading ? (
             null
           ) : wardrobePicks.length === 0 ? (
             // Has owned items but not enough signals to rank

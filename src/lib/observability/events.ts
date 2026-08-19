@@ -75,6 +75,15 @@ export const EVENTS = {
   WARDROBE_ITEM_REMOVED:   'wardrobe_item_removed',
   WARDROBE_CAP_HIT:        'wardrobe_cap_hit',
   WARDROBE_FILTER_CHANGED: 'wardrobe_filter_changed',
+  // Home "add your bottles" prompt, shown to empty wardrobes only, above the
+  // DNA card. Before it shipped, a user who finished the DNA picker but never
+  // added a bottle saw NO wardrobe CTA on Home at all (a live DNA suppressed
+  // GetStartedHero, and the SOTD section was itself gated behind !isNewUser).
+  // 98 of 163 profiles since launch were in exactly that state.
+  // No props: the prompt only ever renders at a wardrobe count of zero.
+  WARDROBE_NUDGE_SHOWN:    'wardrobe_nudge_shown',
+  // props: { action: 'browse' | 'scan' }
+  WARDROBE_NUDGE_TAPPED:   'wardrobe_nudge_tapped',
 
   // ─── Wear logging ────────────────────────────────────────────────────
   WEAR_LOGGED:          'wear_logged',
