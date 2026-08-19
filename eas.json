@@ -8,7 +8,9 @@
       "developmentClient": true,
       "distribution": "internal",
       "env": {
-        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true",
+        "EXPO_PUBLIC_DNA_LAYER_URL": "https://dukftqhiqilpwkgsgwrc.supabase.co/functions/v1",
+        "EXPO_PUBLIC_DNA_LAYER_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1a2Z0cWhpcWlscHdrZ3Nnd3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyMjQ0MjAsImV4cCI6MjA5NzgwMDQyMH0.rn459QsGRzo1evCFcEh5eYTUKTzOppfgc8M992rj8cI"
       },
       "ios": {
         "simulator": true
@@ -18,7 +20,9 @@
       "developmentClient": true,
       "distribution": "internal",
       "env": {
-        "SENTRY_DISABLE_AUTO_UPLOAD": "true"
+        "SENTRY_DISABLE_AUTO_UPLOAD": "true",
+        "EXPO_PUBLIC_DNA_LAYER_URL": "https://dukftqhiqilpwkgsgwrc.supabase.co/functions/v1",
+        "EXPO_PUBLIC_DNA_LAYER_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1a2Z0cWhpcWlscHdrZ3Nnd3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyMjQ0MjAsImV4cCI6MjA5NzgwMDQyMH0.rn459QsGRzo1evCFcEh5eYTUKTzOppfgc8M992rj8cI"
       },
       "ios": {
         "simulator": false
@@ -36,7 +40,9 @@
         "EXPO_PUBLIC_POSTHOG_API_KEY": "phc_AdofonahyxYGoP5xuJ6UayAsn9ucQA9WGCAWWK3tqCaJ",
         "EXPO_PUBLIC_POSTHOG_HOST": "https://us.i.posthog.com",
         "SENTRY_DISABLE_AUTO_UPLOAD": "true",
-        "EXPO_PUBLIC_SENTRY_DSN": "https://76500d664ba35b3802ed9272d4d0dc38@o4511230420582400.ingest.us.sentry.io/4511642569736192"
+        "EXPO_PUBLIC_SENTRY_DSN": "https://76500d664ba35b3802ed9272d4d0dc38@o4511230420582400.ingest.us.sentry.io/4511642569736192",
+        "EXPO_PUBLIC_DNA_LAYER_URL": "https://dukftqhiqilpwkgsgwrc.supabase.co/functions/v1",
+        "EXPO_PUBLIC_DNA_LAYER_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1a2Z0cWhpcWlscHdrZ3Nnd3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyMjQ0MjAsImV4cCI6MjA5NzgwMDQyMH0.rn459QsGRzo1evCFcEh5eYTUKTzOppfgc8M992rj8cI"
       }
     },
     "production": {
@@ -51,7 +57,9 @@
         "EXPO_PUBLIC_POSTHOG_API_KEY": "phc_AdofonahyxYGoP5xuJ6UayAsn9ucQA9WGCAWWK3tqCaJ",
         "EXPO_PUBLIC_POSTHOG_HOST": "https://us.i.posthog.com",
         "SENTRY_DISABLE_AUTO_UPLOAD": "true",
-        "EXPO_PUBLIC_SENTRY_DSN": "https://76500d664ba35b3802ed9272d4d0dc38@o4511230420582400.ingest.us.sentry.io/4511642569736192"
+        "EXPO_PUBLIC_SENTRY_DSN": "https://76500d664ba35b3802ed9272d4d0dc38@o4511230420582400.ingest.us.sentry.io/4511642569736192",
+        "EXPO_PUBLIC_DNA_LAYER_URL": "https://dukftqhiqilpwkgsgwrc.supabase.co/functions/v1",
+        "EXPO_PUBLIC_DNA_LAYER_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1a2Z0cWhpcWlscHdrZ3Nnd3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyMjQ0MjAsImV4cCI6MjA5NzgwMDQyMH0.rn459QsGRzo1evCFcEh5eYTUKTzOppfgc8M992rj8cI"
       }
     }
   },

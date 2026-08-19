@@ -49,6 +49,7 @@ import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useRetailerLinksStore } from '@/src/stores/useRetailerLinksStore';
 import { useDnaPickStreamStore } from '@/src/stores/useDnaPickStreamStore';
 import { track, EVENTS } from '@/src/lib/observability';
+import { dnaTrackEvent } from '@/src/lib/dna';
 import { PickerSearch, type ResultOrigin } from '@/src/components/dna/PickerSearch';
 import { buildDnaPicks } from '@/src/features/dna/pickerSearch';
 import { requestEnrichment } from '@/src/features/dna/enrichRequests';
@@ -88,6 +89,9 @@ export default function DnaPickerScreen() {
   const pickFromSearch = useDnaPickerStore((s) => s.pickFromSearch);
 
   const [step, setStep] = useState<Step>('loading');
+  // DNA layer (M1): screen-open timestamp for onboarding_completed.duration_ms
+  // — the picker is one screen, so mount-to-commit IS the flow duration.
+  const dnaFlowStartedAt = useRef(Date.now());
   const [pool, setPool] = useState<PickerCandidate[]>([]);
   // Full greedy-ordered recognizable list; we lazy-reveal `visibleCount` of it.
   const [list, setList] = useState<PickerCandidate[]>([]);
@@ -284,6 +288,16 @@ export default function DnaPickerScreen() {
     // Capture the privacy-clean pick-stream for later cohort training (M10).
     useDnaPickStreamStore.getState().recordRun({ seeds: computed.seeds, source: computed.source });
 
+    // DNA layer dual-emission (M1): the picker commit is the onboarding seed.
+    // total_steps = 1: the picker is a single-screen flow (no step counter
+    // exists). duration_ms = screen open → commit.
+    dnaTrackEvent('onboarding_completed', {
+      total_steps: 1,
+      duration_ms: Date.now() - dnaFlowStartedAt.current,
+      picks_count: picks.length,
+      source: 'picker',
+    });
+
     // Rank the affiliate-first top match, THEN reveal — gated on both the hero
     // compute and the min reading beat so the reveal never shows an empty card
     // that pops in a beat later.
@@ -317,6 +331,16 @@ export default function DnaPickerScreen() {
     commitDerived(computed);
     useDnaPickStreamStore.getState().recordRun({ seeds: computed.seeds, source: computed.source });
 
+    // DNA layer dual-emission (M1): the question-fallback commit. total_steps
+    // = 3: the fallback quiz is the 3 seed answers (see FirstRunFlow).
+    // picks_count = representative seeds the answers chose (no direct picks).
+    dnaTrackEvent('onboarding_completed', {
+      total_steps: 3,
+      duration_ms: Date.now() - dnaFlowStartedAt.current,
+      picks_count: computed.seeds.length,
+      source: 'question_fallback',
+    });
+
     // Question-fallback path has no excluded picks: the whole pool is rankable.
     void computeBuyableHero(computed, poolFrags).finally(() => {
       const wait = Math.max(0, READING_MIN_MS - (Date.now() - startedAt));
@@ -331,6 +355,10 @@ export default function DnaPickerScreen() {
   // races — the push hits the pre-swap navigator and is silently dropped).
   const handleRecOpen = useCallback(
     (id: string, from?: string) => {
+      // DNA layer dual-emission (M1): opening the reveal's match accepts the
+      // recommendation. ranked_position = 0 (the hero/top-match card — the
+      // per-row rank isn't threaded through this handler; see DnaRevealScreen).
+      dnaTrackEvent('recommendation_accepted', { entity_id: id, ranked_position: 0 });
       useTasteProfileStore.getState().commitDraft();
       endRetake();
       completeOnboarding();
@@ -362,14 +390,23 @@ export default function DnaPickerScreen() {
 
   const handleTap = useCallback(
     (id: string) => {
+      const wasSelected = selectedIds.includes(id);
       // Cap selections at MAX_PICKS — block (with a warning buzz) only when
       // adding a NEW pick past the ceiling; de-selecting always works.
-      if (!selectedIds.includes(id) && selectedIds.length >= MAX_PICKS) {
+      if (!wasSelected && selectedIds.length >= MAX_PICKS) {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
         return;
       }
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
       toggleSelect(id);
+      // DNA layer dual-emission (M1, additive — the grid tap has no PostHog
+      // event to pair with). entity_id = the fragrance slug; pick_index = the
+      // selection count AFTER this tap; `action` disambiguates deselects.
+      dnaTrackEvent('onboarding_pick_selected', {
+        entity_id: id,
+        pick_index: wasSelected ? selectedIds.length - 1 : selectedIds.length + 1,
+        action: wasSelected ? 'deselected' : 'selected',
+      });
     },
     [selectedIds, toggleSelect],
   );
@@ -502,6 +539,16 @@ export default function DnaPickerScreen() {
       const inGrid = list.some((c) => c.id === f.id);
       const outcome = pickFromSearch(f, inGrid);
       track(EVENTS.SEARCH_RESULT_PICKED, { fragrance_id: f.id, in_grid: inGrid, outcome });
+      // DNA layer dual-emission (M1): a docked/promoted search pick IS a
+      // selection ('max' blocked it, 'noop' changed nothing). Read the count
+      // post-mutation from the store — pickFromSearch already committed it.
+      if (outcome === 'docked' || outcome === 'promoted') {
+        dnaTrackEvent('onboarding_pick_selected', {
+          entity_id: f.id,
+          pick_index: useDnaPickerStore.getState().selectedIds.length,
+          action: 'selected',
+        });
+      }
       switch (outcome) {
         case 'max':
           // Cap guard: warning buzz, no dock; query stays editable.

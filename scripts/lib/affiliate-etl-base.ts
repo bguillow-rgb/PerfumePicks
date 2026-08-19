@@ -70,6 +70,40 @@ export function brandSlug(name: string): string {
   return normalizeStr(name).replace(/\s+/g, '-');
 }
 
+// ─── SKU-variant name canonicalization ───────────────────────────────────────
+// Brand-site scrapers title products by SKU/format ("Dragonfly Deluxe Bottle",
+// "… Travel Spray", "… Sample", "Aventus 100ml"), so one scent lands as several
+// rows. This strips the trailing SKU/format tag so variants collapse to one
+// canonical fragrance at merge time (see scripts/dedupe-sku-variants.ts, which
+// retro-cleans rows already in the catalog with the exact same logic).
+//
+// NEVER strips concentration (elixir/intense/parfum/EDP…) or flanker words (for
+// her, noir…) — those are genuinely distinct fragrances. Requires a leading word
+// boundary so it can't bite a word-suffix ("mini" inside "Gemini"), and reverts
+// any strip that leaves a dangling connective ("Bestsellers Set of").
+const _VARIANT_WORD =
+  '(?:samples?|testers?|decants?|travel\\s*sprays?|travel\\s*size|purse\\s*spray|' +
+  'deluxe\\s*bottle|gift\\s*set|discovery\\s*set|value\\s*set|mini(?:ature)?s?|' +
+  'refills?|\\d+(?:\\.\\d+)?\\s*(?:ml|mls|milliliters?|oz|ounces?|g|grams?))';
+const _CONC_OPT = '(?:\\s*(?:edp|edt|edc|parfum|cologne|eau\\s*de\\s*\\w+))?';
+const _VARIANT_TAIL = new RegExp(
+  `[\\s\\-–—(\\[]+${_VARIANT_WORD}${_CONC_OPT}(?:\\s*sprays?)?[\\s)\\]]*$`, 'i',
+);
+const _MINOR_TAIL = new Set(['of', 'de', 'du', 'des', 'the', 'a', 'an', 'and', 'le', 'la', 'les', 'y', 'et', '&']);
+
+/** Strip a trailing SKU/format tag so "X Sample" / "X 50ml" → "X". */
+export function stripVariantSuffix(name: string): string {
+  let out = name.trim();
+  for (let i = 0; i < 4; i++) {
+    const next = out.replace(_VARIANT_TAIL, '').replace(/[\s\-–—(\[&]+$/, '').trim();
+    if (next === out || next.length < 3) break;
+    const lastWord = next.split(/\s+/).pop()!.replace(/[^a-z0-9&]/gi, '').toLowerCase();
+    if (_MINOR_TAIL.has(lastWord)) break;
+    out = next;
+  }
+  return out;
+}
+
 // ─── Dupe / inspired-by filter ────────────────────────────────────────────────
 
 /**

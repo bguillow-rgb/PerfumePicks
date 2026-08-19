@@ -31,7 +31,28 @@ export const useOnboardingStore = create<OnboardingState>()(
       hydrated: false,
       retakeMode: false,
       complete: () => set({ hasSeenOnboarding: true }),
-      startRetake: () => set({ retakeMode: true }),
+      startRetake: () => {
+        // DNA layer dual-emission (M1): a retake IS the DNA refresh. This is
+        // the single choke point every retake entry (You tab, Home DNA card,
+        // taste-profile screen) routes through. Lazy-required so this store
+        // (imported at boot, incl. in jest) never statically pulls the DNA
+        // client or the taste store; dnaTrackEvent itself is a hard no-op
+        // while the dna_layer_enabled flag is off.
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
+          const { dnaTrackEvent } = require('@/src/lib/dna') as typeof import('@/src/lib/dna');
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
+          const { useTasteProfileStore } =
+            require('@/src/stores/useTasteProfileStore') as typeof import('@/src/stores/useTasteProfileStore');
+          dnaTrackEvent('dna_refresh_started', {
+            current_headline: useTasteProfileStore.getState().dna?.archetype.primary ?? null,
+          });
+        } catch (err) {
+          // Emission must never block the retake; the miss is still logged.
+          console.warn('[dna] dna_refresh_started emission failed:', err);
+        }
+        set({ retakeMode: true });
+      },
       endRetake: () => set({ retakeMode: false }),
     }),
     {

@@ -31,6 +31,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { CandidateFragrance, candidateKey } from './types';
+import { stripVariantSuffix } from './lib/affiliate-etl-base';
 
 const DATA_DIR = path.join(__dirname, 'data');
 const OUT_PATH = path.join(DATA_DIR, 'merged-candidates.json');
@@ -146,6 +147,17 @@ function main() {
     console.log(`  ${f}: ${rows.length} rows`);
     all.push(...rows);
   }
+
+  // Canonicalize SKU-variant titles ("Dragonfly Deluxe Bottle" → "Dragonfly")
+  // BEFORE grouping, so the retailer's size/format variants collapse into one
+  // candidate instead of seeding duplicate rows (the exact problem a user hit
+  // searching "zoologist dragonfly"). Concentration/flanker words are preserved.
+  let variantCollapsed = 0;
+  for (const r of all) {
+    const clean = stripVariantSuffix(r.name);
+    if (clean !== r.name) { r.name = clean; variantCollapsed++; }
+  }
+  if (variantCollapsed) console.log(`  canonicalized ${variantCollapsed} SKU-variant titles`);
 
   // Group by stable key, merge each group
   const byKey = new Map<string, CandidateFragrance[]>();

@@ -18,6 +18,7 @@ import {
   SEARCH_DEBOUNCE_MS,
   isSearchResultComplete,
 } from '@/src/features/dna/pickerSearch';
+import { requestCatalogAddition } from '@/src/features/dna/catalogRequests';
 import { track, EVENTS } from '@/src/lib/observability';
 
 /** Where a tapped result tile sits on screen — the docking flight's origin. */
@@ -49,6 +50,8 @@ export function PickerSearch({ open, onOpen, onClose, onPick, onEnrichRequest }:
   const [searching, setSearching] = useState(false);
   /** True once a debounced search for the CURRENT query has resolved. */
   const [settled, setSettled] = useState(false);
+  /** The query string the user has tapped "Request it" on (shows the receipt). */
+  const [requested, setRequested] = useState<string | null>(null);
   const requestSeq = useRef(0);
   const inputRef = useRef<TextInput>(null);
 
@@ -59,6 +62,7 @@ export function PickerSearch({ open, onOpen, onClose, onPick, onEnrichRequest }:
       setResults([]);
       setSearching(false);
       setSettled(false);
+      setRequested(null);
     }
   }, [open]);
 
@@ -67,6 +71,7 @@ export function PickerSearch({ open, onOpen, onClose, onPick, onEnrichRequest }:
   useEffect(() => {
     if (!open) return;
     const q = query.trim();
+    setRequested(null); // a new/changed query clears any prior "Requested" receipt
     if (!q) {
       setResults([]);
       setSearching(false);
@@ -157,9 +162,32 @@ export function PickerSearch({ open, onOpen, onClose, onPick, onEnrichRequest }:
       )}
 
       {showNoResults && (
-        <Text style={styles.hint} testID="dna-search-no-results">
-          No match for “{q}”. Check the spelling — or it may not be in our catalog yet.
-        </Text>
+        <View testID="dna-search-no-results">
+          <Text style={styles.hint}>
+            No match for “{q}”. Check the spelling — or it may not be in our catalog yet.
+          </Text>
+          {requested === q ? (
+            <View style={styles.requestedRow} testID="dna-search-requested">
+              <Ionicons name="checkmark-circle" size={15} color={COLORS.accent} />
+              <Text style={styles.requestedText}>Requested — we’ll look at adding it.</Text>
+            </View>
+          ) : (
+            <Pressable
+              onPress={() => {
+                setRequested(q);
+                track(EVENTS.SEARCH_REQUEST_SUBMITTED, { query: q.slice(0, 60), surface: 'dna_picker' });
+                void requestCatalogAddition(q, 'dna_picker');
+              }}
+              hitSlop={8}
+              style={styles.requestBtn}
+              testID="dna-search-request"
+              accessibilityLabel={`Request ${q} be added to the catalog`}
+            >
+              <Ionicons name="add-circle-outline" size={15} color={COLORS.accent} />
+              <Text style={styles.requestBtnText}>Request “{q}”</Text>
+            </Pressable>
+          )}
+        </View>
       )}
 
       {showShelf && (
@@ -243,6 +271,12 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   hint: { ...TYPE.caption, color: COLORS.muted, marginTop: 6, lineHeight: 16 },
+
+  // No-catalog-match → "Request it" affordance (Phase 3 demand loop).
+  requestBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 8 },
+  requestBtnText: { ...TYPE.bodySmall, color: COLORS.accent, fontWeight: '600' },
+  requestedRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 8 },
+  requestedText: { ...TYPE.caption, color: COLORS.muted },
 
   // Result shelf — short, horizontal, visually LIGHTER than grid tiles (the
   // gold ring on docked tiles is the point; results never compete with it).

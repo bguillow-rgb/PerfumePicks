@@ -10,6 +10,7 @@ import { EVENTS } from '@/src/lib/observability/events';
 import { reportDeadLink } from '@/src/lib/feedback';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { isCheckout2Enabled } from '@/src/lib/checkout2Flag';
+import { dnaTrackEvent } from '@/src/lib/dna';
 import { resolveCurrentUser } from '@/src/stores/useAuthStore';
 
 const APP_TAG = 'perfumepicks';
@@ -153,6 +154,13 @@ export function handleAffiliateClick(params: AffiliateClickParams): Promise<bool
     source_screen: params.source_screen,
     // PRD §7: the conversion comparison dimension (checkout vs product).
     landing,
+  });
+  // DNA layer dual-emission (M1, additive — the ledger write + track() above
+  // are unchanged). A buy tap is the strongest commercial-intent taste signal.
+  dnaTrackEvent('affiliate_link_clicked', {
+    entity_id: params.fragrance_id,
+    retailer: params.retailer,
+    source_screen: params.source_screen,
   });
 
   // Open the URL exactly as stored. For CJ retailers that's the tracking

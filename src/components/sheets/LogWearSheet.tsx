@@ -12,6 +12,7 @@ import {
 import { useProStore } from '@/src/stores/useProStore';
 import { FREE_LIFETIME_WEAR_LOG_CAP } from '@/src/lib/limits';
 import type { Fragrance } from '@/src/stores/useCatalogStore';
+import { dnaTrackEvent } from '@/src/lib/dna';
 
 interface Props {
   visible: boolean;
@@ -122,6 +123,21 @@ export function LogWearSheet({ visible, fragrance, editLog, onClose, onSaved }: 
       onSaved?.(editLog.id);
     } else {
       const id = add({ fragrance_id: fragrance.id, ...patch });
+      // DNA layer dual-emission (M1), NEW logs only (edits re-state, they
+      // don't re-signal). source 'wardrobe' is a constant: this sheet (opened
+      // from the fragrance detail page, incl. via the Today nudge deep link)
+      // is the ONLY wear-entry path today — no SOTD-surface logging exists.
+      dnaTrackEvent('wear_logged', { entity_id: fragrance.id, source: 'wardrobe' });
+      // A wear-log star rating is Perfume's live rating affordance (the
+      // standalone ReviewSheet is currently unmounted), so it carries
+      // bottle_rated. rating state is 0..5; 0 = unrated → no emission.
+      if (rating >= 1 && rating <= 5) {
+        dnaTrackEvent('bottle_rated', {
+          entity_id: fragrance.id,
+          stars: rating as 1 | 2 | 3 | 4 | 5,
+          source_screen: 'log_wear_sheet',
+        });
+      }
       onSaved?.(id);
     }
     onClose();

@@ -21,6 +21,7 @@ import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useSwipeStore, FREE_DAILY_SWIPE_LIMIT } from '@/src/stores/useSwipeStore';
 import { useProStore } from '@/src/stores/useProStore';
 import { recomputeTasteProfile } from '@/src/lib/sync/useAppSync';
+import { dnaTrackEvent } from '@/src/lib/dna';
 import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
 
 /**
@@ -248,6 +249,18 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
       // train the engine to avoid those notes.
       const storeAction = dir === 'right' ? 'love' : dir === 'down' ? 'like' : 'skip';
       recordToStore(fragrance.id, storeAction);
+      // DNA layer dual-emission (M1): love/like accept the card. A left swipe
+      // stays a neutral 'skip' per the comment above — deliberately NOT
+      // emitted as a dismissal/dislike, so skipping undecided scents can't
+      // poison the cross-app profile either. ranked_position = the card's
+      // position in this session's (shuffled) deck — the deck has no true
+      // ranking, so this is deck order, not a model rank.
+      if (storeAction === 'love' || storeAction === 'like') {
+        dnaTrackEvent('recommendation_accepted', {
+          entity_id: fragrance.id,
+          ranked_position: index,
+        });
+      }
       // Accord feedback toast — only for positive swipes, shows top accord
       if (dir !== 'left' && fragrance.top_accords?.[0]) {
         const accord = fragrance.top_accords[0];
@@ -256,7 +269,9 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
         accordToastTimer.current = setTimeout(() => setAccordToast(null), 1800);
       }
     }
-  }, [recordToStore]);
+  // `index` is a dep so the DNA-layer ranked_position reads the card's live
+  // deck position (the callback re-memoizes per swipe; cheap).
+  }, [recordToStore, index]);
 
   const handleClose = useCallback(() => {
     if (index > 0) {

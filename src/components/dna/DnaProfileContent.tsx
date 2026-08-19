@@ -22,6 +22,7 @@ import { DecantingReveal } from '@/src/components/dna/DecantingReveal';
 import { SkiaBoundary } from '@/src/components/dna/SkiaBoundary';
 import { useDnaMonetizationEnabled } from '@/src/features/dna/killSwitch';
 import { track, EVENTS } from '@/src/lib/observability';
+import { dnaTrackEvent } from '@/src/lib/dna';
 import { inviteFriends } from '@/src/lib/invite';
 
 /** Below this confidence we soften the identity line (too few/weak signals). */
@@ -109,6 +110,12 @@ export function DnaProfileContent({
       archetype: dna.archetype.primary,
       confidence: dna.confidence,
       low_confidence: lowConfidence,
+    });
+    // DNA layer dual-emission (M1, additive — track() above unchanged).
+    // headline = the archetype key; the display headline is derived from it.
+    dnaTrackEvent('dna_revealed', {
+      headline: dna.archetype.primary,
+      confidence: dna.confidence,
     });
   }, [celebrate, dna.archetype.primary, dna.confidence, lowConfidence]);
 

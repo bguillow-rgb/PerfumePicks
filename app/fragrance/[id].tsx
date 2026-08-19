@@ -16,6 +16,7 @@ import { FragranceNotesSheet } from '@/src/components/sheets/FragranceNotesSheet
 import { DupeList } from '@/src/components/fragrance/DupeList';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { handleAffiliateClick } from '@/src/lib/affiliate';
+import { dnaTrackEvent } from '@/src/lib/dna';
 import { buyCtaLabel, buyCtaHint, formatPrice, rankBuyLinks, retailerDisplayName } from '@/src/lib/buyLabel';
 import * as WebBrowser from 'expo-web-browser';
 import { CelebritySection } from '@/src/components/fragrance/CelebritySection';
@@ -261,6 +262,23 @@ function FragranceDetailScreen() {
     mountedRef.current = true;
     return () => { mountedRef.current = false; };
   }, []);
+
+  // DNA layer dual-emission (M1): a detail view is a weak taste signal. Fires
+  // once per bottle per screen mount, only after the catalog row resolves (the
+  // name/family fields ride along). entity_price = retail MSRP in cents.
+  // source_screen = the `from` route param when the opener tagged it.
+  const dnaViewSentFor = useRef<string | null>(null);
+  useEffect(() => {
+    if (!fragrance || dnaViewSentFor.current === fragrance.id) return;
+    dnaViewSentFor.current = fragrance.id;
+    dnaTrackEvent('product_detail_viewed', {
+      entity_id: fragrance.id,
+      entity_name: fragrance.name,
+      entity_category: fragrance.fragrance_family,
+      entity_price: fragrance.retail_msrp_usd_cents ?? null,
+      source_screen: typeof from === 'string' && from.length > 0 ? from : 'unknown',
+    });
+  }, [fragrance, from]);
   const wearLogs = useMemo(
     () => fragrance
       ? allLogs.filter((l) => l.fragrance_id === fragrance.id).sort((a, b) => b.worn_on.localeCompare(a.worn_on))

@@ -24,6 +24,7 @@ import {
   scheduleAddBottlesNotification,
 } from '@/src/lib/notifications';
 import { resolveCheckout2Flag } from '@/src/lib/checkout2Flag';
+import { resolveDnaLayerFlag } from '@/src/lib/dna';
 
 type IoniconsName = React.ComponentProps<typeof Ionicons>['name'];
 
@@ -302,6 +303,11 @@ export default function TabLayout() {
   // warm before anyone reaches a buy button. Fails closed → product page.
   useEffect(() => {
     resolveCheckout2Flag();
+    // Timberline DNA layer (M1): warm the dna_layer_enabled cache so
+    // dnaTrackEvent's synchronous gate is settled before the first event
+    // fires. Fails closed (layer OFF) until an explicit truthy row resolves;
+    // re-checks on foreground inside the resolver.
+    resolveDnaLayerFlag();
   }, []);
 
   const handleNotifAccept = async () => {

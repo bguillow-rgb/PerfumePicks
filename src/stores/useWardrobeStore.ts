@@ -9,6 +9,7 @@ import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
 import { FREE_WARDROBE_CAP } from '@/src/lib/limits';
 import { useProStore } from '@/src/stores/useProStore';
 import { cancelAddBottlesNotification } from '@/src/lib/notifications';
+import { dnaTrackEvent } from '@/src/lib/dna';
 
 /**
  * Sentinel returned by `add()` when the free-tier wardrobe cap is reached.
@@ -102,6 +103,17 @@ export const useWardrobeStore = create<WardrobeState>()(
           if (!isPro && get().items.length >= FREE_WARDROBE_CAP) return null;
         }
         if (existing) {
+          // DNA layer dual-emission (M1): a re-add that changes status is a
+          // status_change; a metadata-only re-add carries no taste signal and
+          // emits nothing. This store is the single choke point every add path
+          // hits (AddToWardrobeSheet, detail page, edit sheet).
+          if (input.status !== existing.status) {
+            dnaTrackEvent('item_collection_updated', {
+              entity_id: input.fragrance_id,
+              action: 'status_change',
+              status: input.status,
+            });
+          }
           const updated = { ...existing, ...input, updated_at: nowIso(), _unsynced: false };
           set((s) => ({
             items: s.items.map((i) => i.id === existing.id ? updated : i),
@@ -124,6 +136,12 @@ export const useWardrobeStore = create<WardrobeState>()(
         const canSync = isSupabaseConfigured && !!_currentUserId;
         const item: WardrobeItem = { ...input, id, created_at: nowIso(), updated_at: nowIso(), _unsynced: !canSync };
         set((s) => ({ items: [item, ...s.items] }));
+        // DNA layer dual-emission (M1): a genuinely new wardrobe item.
+        dnaTrackEvent('item_collection_updated', {
+          entity_id: input.fragrance_id,
+          action: 'add',
+          status: input.status,
+        });
         // Cancel the "add your bottles" nudge — user has added their first item.
         cancelAddBottlesNotification().catch(() => {});
 
@@ -143,6 +161,17 @@ export const useWardrobeStore = create<WardrobeState>()(
       },
 
       update: (id, patch) => {
+        // DNA layer dual-emission (M1): only a status transition is a taste
+        // signal — mL/price/notes edits emit nothing. Read the pre-patch row
+        // for the fragrance slug + old status before the set() below.
+        const prev = get().items.find((i) => i.id === id);
+        if (prev && patch.status && patch.status !== prev.status) {
+          dnaTrackEvent('item_collection_updated', {
+            entity_id: prev.fragrance_id,
+            action: 'status_change',
+            status: patch.status,
+          });
+        }
         const updated_at = nowIso();
         set((s) => ({
           items: s.items.map((i) => i.id === id ? { ...i, ...patch, updated_at } : i),
@@ -167,6 +196,16 @@ export const useWardrobeStore = create<WardrobeState>()(
       },
 
       remove: (id) => {
+        // DNA layer dual-emission (M1): capture the row before it's gone —
+        // the payload needs the fragrance slug + the status it left at.
+        const removed = get().items.find((i) => i.id === id);
+        if (removed) {
+          dnaTrackEvent('item_collection_updated', {
+            entity_id: removed.fragrance_id,
+            action: 'remove',
+            status: removed.status,
+          });
+        }
         set((s) => ({ items: s.items.filter((i) => i.id !== id) }));
         if (isSupabaseConfigured) {
           syncDelete('wardrobe_items', id);
