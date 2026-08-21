@@ -1,20 +1,38 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.bguillow-rgb/perfume-picks",
+  "title": "Perfume Picks",
   "description": "Search the Perfume Picks fragrance database: 13,000+ scents with notes, dupes, and wear data.",
+  "version": "1.0.0",
+  "websiteUrl": "https://perfumepicks.app/mcp",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/bguillow-rgb/perfume-picks-mcp/main/logo.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "400x400"
+      ]
+    }
+  ],
   "repository": {
     "url": "https://github.com/bguillow-rgb/perfume-picks-mcp",
     "source": "github"
   },
-  "version": "1.0.0",
   "packages": [
     {
       "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "perfume-picks-mcp",
       "version": "1.0.0",
       "transport": {
         "type": "stdio"
       }
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://jdkwlwyysgofljkobpmr.supabase.co/functions/v1/mcp"
     }
   ]
 }
