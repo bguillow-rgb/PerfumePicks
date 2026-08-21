@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, act } from '@testing-library/react-native';
+import { render, screen, fireEvent, act, within } from '@testing-library/react-native';
 import { PickerSearch } from '@/src/components/dna/PickerSearch';
 import { SEARCH_DEBOUNCE_MS, SEARCH_RESULT_LIMIT } from '@/src/features/dna/pickerSearch';
 
@@ -76,9 +76,14 @@ describe('expanded field — edge states', () => {
   it('no results: one quiet line, query stays editable, search_no_results fires', async () => {
     renderSearch(true);
     await typeAndSettle('zzxqvblorp');
-    expect(screen.getByTestId('dna-search-no-results').props.children.join('')).toContain(
-      'No match for “zzxqvblorp”. Check the spelling — or it may not be in our catalog yet.',
-    );
+    // Query the rendered text, not `props.children` — the no-results block also
+    // holds the “request this bottle” control, so joining raw children yields
+    // "[object Object]" and the assertion breaks whenever a sibling is added.
+    expect(
+      within(screen.getByTestId('dna-search-no-results')).getByText(
+        'No match for “zzxqvblorp”. Check the spelling — or it may not be in our catalog yet.',
+      ),
+    ).toBeTruthy();
     // The field is still there and editable — no dead-end state.
     expect(screen.getByTestId('dna-search-input')).toBeTruthy();
     // `query` is the payload that matters: query_length alone ("10 characters
