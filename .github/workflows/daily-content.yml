@@ -33,6 +33,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Fail fast and unambiguously when the API key is out of credit or invalid,
+      # instead of burning three generateArticle retries against a hard 400 that
+      # retrying cannot fix. Credit is billed per Anthropic ACCOUNT, so when it
+      # runs dry every content pipeline in the portfolio dies the same morning
+      # (2026-08-17: one billing event, 17 red runs across seven repos, every
+      # day's article lost). Transient errors here do NOT block the run.
+      - name: Preflight — Anthropic API funded + reachable
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/preflight-api.mjs
+
       - name: Generate today's article
         id: write
         env:
