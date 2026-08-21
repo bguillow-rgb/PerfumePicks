@@ -65,24 +65,57 @@ async function checkSitemapAndUrls() {
 
   let checked = 0;
   let i = 0;
+  let retried = 0;
+
+  // A single transient blip is not an outage. Static hosts shed the occasional
+  // request (503/429) under load, and because the live apps poll hourly that was
+  // turning ~2.5% of runs red for URLs that were never actually down — a
+  // different URL each time, all of them serving 200 on a direct check. Retry
+  // transients with linear backoff and only fail a URL if it stays bad. Hard
+  // errors (404/410/500-with-a-body-that-persists) still fail on the first pass
+  // through the retries, so real rot is still caught within the same run.
+  const TRANSIENT_ATTEMPTS = 3;
+  const RETRY_BASE_MS = 1500;
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const isTransient = (status) => status === 408 || status === 429 || status >= 500;
+
+  async function probe(url) {
+    let last = null;
+    for (let attempt = 1; attempt <= TRANSIENT_ATTEMPTS; attempt++) {
+      try {
+        const res = await fetch(url, { headers: { 'user-agent': UA }, redirect: 'manual' });
+        if (!isTransient(res.status)) {
+          return { status: res.status, location: res.headers.get('location'), attempts: attempt };
+        }
+        last = { status: res.status, location: res.headers.get('location') };
+      } catch (e) {
+        last = { error: e.message };
+      }
+      if (attempt < TRANSIENT_ATTEMPTS) {
+        retried++;
+        await sleep(RETRY_BASE_MS * attempt);
+      }
+    }
+    return { ...last, attempts: TRANSIENT_ATTEMPTS, exhausted: true };
+  }
+
   async function worker() {
     while (i < list.length) {
       const url = list[i++];
-      try {
-        const res = await fetch(url, { headers: { 'user-agent': UA }, redirect: 'manual' });
-        if (res.status >= 300 && res.status < 400) {
-          warn(`${url} -> redirect ${res.status} (${res.headers.get('location') || '?'})`);
-        } else if (res.status !== 200) {
-          fail(`${url} -> HTTP ${res.status}`);
-        }
-      } catch (e) {
-        fail(`${url} -> fetch error: ${e.message}`);
+      const r = await probe(url);
+      const suffix = r.exhausted ? ` (persisted across ${r.attempts} attempts)` : '';
+      if (r.error) {
+        fail(`${url} -> fetch error: ${r.error}${suffix}`);
+      } else if (r.status >= 300 && r.status < 400) {
+        warn(`${url} -> redirect ${r.status} (${r.location || '?'})`);
+      } else if (r.status !== 200) {
+        fail(`${url} -> HTTP ${r.status}${suffix}`);
       }
       checked++;
     }
   }
   await Promise.all(Array.from({ length: MAX_CONCURRENCY }, worker));
-  ok(`checked ${checked} URLs`);
+  ok(`checked ${checked} URLs${retried ? ` (${retried} transient retr${retried === 1 ? 'y' : 'ies'} absorbed)` : ''}`);
   return list;
 }
 
