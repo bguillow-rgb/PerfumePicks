@@ -13,10 +13,10 @@ quickAnswer: "Display your perfume collection on a mirrored tray, tiered acrylic
 publishedAt: "2026-08-17"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-photograph-perfume-collection"
   - "how-to-organize-perfume-collection"
   - "how-many-perfumes-should-you-own"
   - "how-to-store-perfume-collection"
-  - "how-to-audit-your-perfume-collection"
 faqs:
   - q: "Where is the best place to display a perfume collection at home?"
     a: "A bedroom vanity, dresser top, or dedicated shelf in a cool, shaded room is ideal. Avoid bathrooms (humidity degrades fragrance), windowsills (UV light breaks down aromatic molecules), and spots near radiators or vents. A north-facing wall or an interior shelf away from heat sources is the sweet spot for both aesthetics and preservation."

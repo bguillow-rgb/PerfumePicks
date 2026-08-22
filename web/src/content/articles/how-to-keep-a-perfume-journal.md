@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-organize-perfume-collection"
   - "best-perfume-for-each-season"
   - "how-to-display-perfume-collection"
-  - "how-to-rate-your-perfume-collection"
+  - "how-to-photograph-perfume-collection"
 faqs:
   - q: "What should I write in a perfume journal?"
     a: "Record the date, fragrance name and concentration, occasion, weather, how many sprays you used, your first impression, how it evolves through the heart, the dry-down character, longevity, and an overall rating. Adding a mood or memory association is optional but valuable for revisiting entries later."
