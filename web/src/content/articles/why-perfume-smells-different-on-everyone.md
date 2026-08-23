@@ -16,7 +16,7 @@ relatedSlugs:
   - "perfume-on-paper-vs-skin"
   - "perfume-on-clothes-vs-skin"
   - "how-to-smell-good-all-day"
-  - "perfume-for-skin-type"
+  - "how-to-tell-if-a-perfume-suits-you"
 faqs:
   - q: "Why does a perfume smell amazing on my friend but not on me?"
     a: "Their skin chemistry, oil level, pH, body temperature, and microbiome, creates a different chemical environment for the same fragrance molecules. A scent that blooms on oily, warm skin may read flat or sharp on dry, cooler skin. The fix is testing on your own wrist before buying, not borrowing impressions from someone else's skin."
