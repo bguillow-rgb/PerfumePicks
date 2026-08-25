@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-match-perfume-to-outfit"
   - "perfume-for-different-times-of-day"
   - "best-perfume-for-each-season"
-  - "how-to-find-your-signature-scent"
+  - "how-to-decide-what-perfume-to-buy-next"
 faqs:
   - q: "Can perfume actually change your mood?"
     a: "Yes, scent molecules bypass most sensory filters and connect directly to the limbic system, the brain region governing emotion and memory. Aromachology, the scientific study of scent and behavior coined by the Sense of Smell Institute in 1989, confirms that specific fragrance families reliably shift emotional states, citrus for alertness, lavender for calm, vanilla for warmth."

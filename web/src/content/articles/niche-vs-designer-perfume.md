@@ -14,9 +14,9 @@ publishedAt: "2026-07-05"
 author: "Perfume Picks"
 relatedSlugs:
   - "are-perfume-dupes-worth-it"
+  - "how-to-decide-what-perfume-to-buy-next"
   - "perfume-samples-vs-full-bottles"
   - "are-perfume-discovery-sets-worth-it"
-  - "do-perfumes-increase-in-value"
 faqs:
   - q: "Are niche perfumes better quality than designer perfumes?"
     a: "Not automatically. Niche houses often use higher oil concentrations (15-30%) and rarer materials, but plenty charge premium prices for average juice. Some designer fragrances, Dior Sauvage, Chanel Bleu, rival niche offerings in longevity and complexity. Quality is bottle-by-bottle, not category-by-category."

@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-many-perfumes-should-you-own"
   - "how-to-audit-your-perfume-collection"
   - "how-to-build-a-fragrance-wardrobe"
-  - "how-to-display-perfume-collection"
+  - "how-to-decide-what-perfume-to-buy-next"
 faqs:
   - q: "Is it a mistake to buy a full bottle of a perfume you've never smelled?"
     a: "Yes, blind-buying a full 100ml bottle is the single highest-regret purchase pattern in fragrance collecting. Always sample first, or at minimum buy a decant (5, 10ml) before committing to a full size."

@@ -13,10 +13,10 @@ quickAnswer: "A perfume no-buy challenge is a self-imposed pause on new fragranc
 publishedAt: "2026-08-11"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-decide-what-perfume-to-buy-next"
   - "perfume-etiquette-rules"
   - "how-many-perfumes-should-you-own"
   - "how-to-travel-with-perfume"
-  - "perfume-sensitive-skin-guide"
 faqs:
   - q: "What is a perfume no-buy challenge?"
     a: "It's a deliberate, time-limited commitment to stop purchasing new fragrances so you can focus on fully wearing and enjoying what you already own. Rules vary, some collectors allow decants or swaps; others ban all acquisitions entirely."
