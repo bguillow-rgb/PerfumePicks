@@ -33,6 +33,7 @@ import {
   sharedAccords,
   trendingFragrances,
 } from "./fragrances.js";
+import { clientTier, rateGuard, tooManyRequests } from "./ratelimit.js";
 
 const SERVER_VERSION = "1.0.0";
 const TELEMETRY_VERSION = `${SERVER_VERSION}-remote`;
@@ -399,6 +400,13 @@ app.use("*", cors({
 app.all("*", async (c) => {
   const ip = c.req.header("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
   const clientName = c.req.header("user-agent")?.slice(0, 80) ?? null;
+
+  // CORS preflight carries no payload and must not consume a caller's budget.
+  if (c.req.method !== "OPTIONS") {
+    const gate = await rateGuard(ip, clientTier(clientName));
+    if (!gate.allowed) return tooManyRequests(gate.retry_after, gate.reason);
+  }
+
   const server = buildServer(ip, clientName);
   const transport = new StreamableHTTPTransport();
   await server.connect(transport);
