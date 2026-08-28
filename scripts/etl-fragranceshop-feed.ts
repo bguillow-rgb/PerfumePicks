@@ -46,7 +46,12 @@ const CJ_WEBSITE_ID    = process.env.CJ_WEBSITE_ID || '101759456';    // Perfume
 const CJ_SFTP_PASSWORD = process.env.CJ_SFTP_PASSWORD || '';
 const CJ_REMOTE_PATH   = '/outgoing/productcatalog/317600/FragranceShop_com_-CJ_Product_Feed-shopping.txt.zip';
 const RETAILER_ID      = 'fragranceshop';
-const RETAILER_ADV_ID  = '16941446';  // FragranceShop's CJ advertiser ID (from feed URL pattern)
+// CJ LINK id (the AID in click-{PID}-{AID}) — NOT an advertiser id and NOT the
+// feed id. The old value (16941446) was read off the feed URL pattern; it is not
+// in FragranceShop's link catalog, so every click was unattributable and the
+// program never paid (found 2026-08-28). 16942202 = "Designer Fragrance -
+// Discount Prices", Text Link, allow-deep-linking=true, joined.
+const RETAILER_ADV_ID  = '16942202';
 
 const SUPABASE_URL      = process.env.SUPABASE_URL || process.env.EXPO_PUBLIC_SUPABASE_URL || '';
 const SUPABASE_KEY      = process.env.SUPABASE_SERVICE_ROLE_KEY || '';

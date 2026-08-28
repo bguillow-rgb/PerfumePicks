@@ -90,7 +90,7 @@ Every fragrance in the Perfume Picks catalog carries an office-safety score buil
     <p class="buy-name">Burberry Mr. Burberry, eau de parfum 1.6 oz</p>
     <p class="buy-meta">Office score 0.90 &middot; woody, fresh-spicy</p>
   </div>
-  <a data-buy="burberry-mr-burberry" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16941446?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Fmr-burberry-for-men-2%2F%3Fattribute_pa_size%3Deau-de-parfum-spray-1-6-oz%26wmc-currency%3DUSD&sid=ppweb_office" target="_blank" rel="sponsored noopener">$31 at FragranceShop</a>
+  <a data-buy="burberry-mr-burberry" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16942202?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Fmr-burberry-for-men-2%2F%3Fattribute_pa_size%3Deau-de-parfum-spray-1-6-oz%26wmc-currency%3DUSD&sid=ppweb_office" target="_blank" rel="sponsored noopener">$31 at FragranceShop</a>
 </div>
 
 If you want the step-up with more personality, Mancera's Cedrat Boise sets sharp citrus over cedar and moss. It is the one bottle here a coworker might actually ask you about, which is either a selling point or a warning depending on your office.
@@ -100,7 +100,7 @@ If you want the step-up with more personality, Mancera's Cedrat Boise sets sharp
     <p class="buy-name">Mancera Cedrat Boise, eau de parfum 4.0 oz</p>
     <p class="buy-meta">Office score 0.95 &middot; citrus over cedar</p>
   </div>
-  <a data-buy="mancera-cedrat-boise" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16941446?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Fmancera-cedrat-boise-for-women%2F%3Fattribute_pa_size%3Deau-de-parfum-spray-4-0-oz%26wmc-currency%3DUSD&sid=ppweb_office" target="_blank" rel="sponsored noopener">$77 at FragranceShop</a>
+  <a data-buy="mancera-cedrat-boise" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16942202?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Fmancera-cedrat-boise-for-women%2F%3Fattribute_pa_size%3Deau-de-parfum-spray-4-0-oz%26wmc-currency%3DUSD&sid=ppweb_office" target="_blank" rel="sponsored noopener">$77 at FragranceShop</a>
 </div>
 
 **Iris.** The most reliable office floral direction. Prada's Infusion d'Iris Cèdre is the pressed-shirt version: iris cooled down with cedar, powdery the way a clean collar is, no sugar anywhere in it.

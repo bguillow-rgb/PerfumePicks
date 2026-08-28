@@ -7,7 +7,7 @@
  * run, and it fires a POSITIVE heartbeat — so silence is never ambiguous.
  *
  * Networks (fragrance_retailer_links.retailer → network):
- *   CJ   : perfumania (advertiser 17277211), fragranceshop (16941446)  — site 101759456
+ *   CJ   : perfumania (link 17277211), fragranceshop (link 16942202)  — site 101759456
  *   Awin : aromapassions (advertiser 34989)                            — publisher 2931103
  *
  * Three signals, none of which hammers a wrapper URL (a wrapper hit bills a
