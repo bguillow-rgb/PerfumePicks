@@ -63,6 +63,25 @@ const baseParams = {
 const lastOutbound = () =>
   [...tracked].reverse().find((t) => t.event === 'affiliate_outbound_clicked');
 
+/**
+ * The opened URL now carries a per-click SubID (`sid`) so a CJ commission can be
+ * traced back to the exact tap (CJ returns it as `shopperId`). These assertions
+ * are about WHICH destination was chosen — checkout vs product — so strip the
+ * tracking token before comparing; `stamps a unique sid` below covers the token
+ * itself.
+ */
+const withoutSid = (u: string): string => {
+  try {
+    const url = new URL(u);
+    url.searchParams.delete('sid');
+    url.searchParams.delete('clickref');
+    return url.toString();
+  } catch {
+    return u;
+  }
+};
+const opened = (): string[] => openedUrls.map(withoutSid);
+
 beforeEach(() => {
   openedUrls.length = 0;
   tracked.length = 0;
@@ -79,35 +98,35 @@ describe('handleAffiliateClick — Checkout 2.0 decision', () => {
   it('opens the checkout permalink when the flag is on and the row has one', () => {
     _setCheckout2EnabledForTest(true);
     handleAffiliateClick({ ...baseParams, checkout_url: CHECKOUT_URL });
-    expect(openedUrls).toEqual([CHECKOUT_URL]);
+    expect(opened()).toEqual([CHECKOUT_URL]);
     expect(lastOutbound()?.props?.landing).toBe('checkout');
   });
 
   it('opens the product page when the flag is OFF, even with a checkout_url', () => {
     _setCheckout2EnabledForTest(false);
     handleAffiliateClick({ ...baseParams, checkout_url: CHECKOUT_URL });
-    expect(openedUrls).toEqual([PRODUCT_URL]);
+    expect(opened()).toEqual([PRODUCT_URL]);
     expect(lastOutbound()?.props?.landing).toBe('product');
   });
 
   it('opens the product page when the row has no checkout_url (fragranceshop path)', () => {
     _setCheckout2EnabledForTest(true);
     handleAffiliateClick({ ...baseParams, checkout_url: null });
-    expect(openedUrls).toEqual([PRODUCT_URL]);
+    expect(opened()).toEqual([PRODUCT_URL]);
     expect(lastOutbound()?.props?.landing).toBe('product');
   });
 
   it('opens the product page when checkout_url is omitted entirely (legacy caller)', () => {
     _setCheckout2EnabledForTest(true);
     handleAffiliateClick(baseParams);
-    expect(openedUrls).toEqual([PRODUCT_URL]);
+    expect(opened()).toEqual([PRODUCT_URL]);
     expect(lastOutbound()?.props?.landing).toBe('product');
   });
 
   it('opens the product page while the flag is still unresolved (first-tap race)', () => {
     // cached === null → fail closed → product page, never a stale checkout.
     handleAffiliateClick({ ...baseParams, checkout_url: CHECKOUT_URL });
-    expect(openedUrls).toEqual([PRODUCT_URL]);
+    expect(opened()).toEqual([PRODUCT_URL]);
     expect(lastOutbound()?.props?.landing).toBe('product');
   });
 });
@@ -210,5 +229,20 @@ describe('primary CTA row ranking (Mark Z #3)', () => {
       { retailer: 'b', price_cents: 100, checkout_url: null },
     ]);
     expect(ranked[0].retailer).toBe('b');
+  });
+
+  it('stamps a per-click SubID so a commission can be traced to its tap', () => {
+    // CJ returns the SubID on the commission record as `shopperId`. Before this,
+    // every link carried sid=101759456 (the website id) — identical on every
+    // click, so a zero-commission stretch was unfalsifiable. The token is the
+    // ledger's click_id with dashes stripped, and the deep-link payload that
+    // carries the real destination must survive untouched.
+    handleAffiliateClick({ ...baseParams, checkout_url: CHECKOUT_URL });
+    const url = new URL(openedUrls[0]);
+    expect(url.searchParams.get('sid')).toBe('testuuid');
+    // Whichever destination this context selects, the deep-link payload must
+    // survive the SubID rewrite intact — mangling it would send the shopper to
+    // a broken page, which is far worse than losing the tracking token.
+    expect(url.searchParams.get('url')).toMatch(/^https:\/\/perfumania\.com\//);
   });
 });

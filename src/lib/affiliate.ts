@@ -48,6 +48,7 @@ export function affiliateNetworkForUrl(url: string): 'cj' | 'awin' | 'direct' {
 async function logAffiliateClick(
   params: AffiliateClickParams,
   landing: 'checkout' | 'product',
+  clickId: string,
 ): Promise<void> {
   try {
     if (!isSupabaseConfigured) return;
@@ -77,7 +78,7 @@ async function logAffiliateClick(
       return;
     }
     await supabase.from('affiliate_clicks').insert({
-      click_id: Crypto.randomUUID(),
+      click_id: clickId,
       app: APP_TAG,
       user_id: userId,
       network: affiliateNetworkForUrl(params.url),
@@ -136,17 +137,50 @@ function reportFailure(params: AffiliateClickParams, reason: string): void {
  * "add to your collection?" prompt — Chief UX F6). The boolean matters: a
  * failed open must NOT trigger post-shopping prompts (Mark Z #4).
  */
+/**
+ * Stamp our per-click id into the affiliate network's SubID slot so a posted
+ * commission can be traced back to the exact tap that earned it.
+ *
+ * WHY THIS EXISTS: every CJ link shipped with `sid=101759456` — the website id,
+ * identical on every click and therefore useless. CJ returns the SubID on the
+ * commission record as `shopperId`, so a unique value per click is the only way
+ * to answer "did this tap reach CJ, and did it pay?" Without it a zero-
+ * commission stretch is unfalsifiable: indistinguishable from broken tracking,
+ * which is exactly the ambiguity that stalled the 2026-08 attribution triage.
+ *
+ * CJ uses `sid`, Awin uses `clickref`. Dashes are stripped (networks want a
+ * plain alphanumeric token); an existing value is REPLACED, not appended twice.
+ * The `url=` deep-link payload is never touched.
+ */
+export function withSubId(rawUrl: string, clickId: string): string {
+  const token = clickId.replace(/-/g, '');
+  const network = affiliateNetworkForUrl(rawUrl);
+  const key = network === 'awin' ? 'clickref' : 'sid';
+  try {
+    const u = new URL(rawUrl);
+    u.searchParams.set(key, token);
+    return u.toString();
+  } catch {
+    // Malformed URL — never block the handoff over a tracking nicety.
+    return rawUrl;
+  }
+}
+
 export function handleAffiliateClick(params: AffiliateClickParams): Promise<boolean> {
   // Checkout 2.0 fallback decision — the ONE place it happens. Streamlined
   // checkout only when the row has a permalink AND the launch-gate flag is on;
   // everything else behaves byte-identically to the pre-2.0 handoff.
   const useCheckout = isCheckout2Enabled() && !!params.checkout_url;
-  const effectiveUrl = useCheckout ? (params.checkout_url as string) : params.url;
+  const baseUrl = useCheckout ? (params.checkout_url as string) : params.url;
   const landing: 'checkout' | 'product' = useCheckout ? 'checkout' : 'product';
+  // ONE id, used for both the ledger row and the network SubID, so a commission
+  // that comes back carrying it identifies the exact click that produced it.
+  const clickId = Crypto.randomUUID();
+  const effectiveUrl = withSubId(baseUrl, clickId);
 
   // Durable ledger write (source of truth) + PostHog event (secondary signal).
   // Both are fire-and-forget; neither gates the browser open below.
-  void logAffiliateClick(params, landing);
+  void logAffiliateClick(params, landing, clickId);
   track(EVENTS.AFFILIATE_OUTBOUND_CLICKED, {
     fragrance_id: params.fragrance_id,
     retailer: params.retailer,
