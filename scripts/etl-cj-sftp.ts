@@ -77,7 +77,13 @@ const FEEDS: FeedConfig[] = [
   {
     retailer_id:   'fragranceshop',
     remote_dir:    '/outgoing/productcatalog/317600',
-    advertiser_id: '16941446',   // FragranceShop's actual CJ advertiser ID
+    // CJ LINK id (the AID in click-{PID}-{AID}), NOT the advertiser/company id.
+    // Was 16941446 — a product-feed id that exists nowhere in FragranceShop's
+    // link catalog, so CJ could not credit us and the program never paid a
+    // single commission (found 2026-08-28 via CJ link-search). 16942202 is
+    // "Designer Fragrance - Discount Prices": Text Link, deep-linking enabled,
+    // relationship joined — the shape the `?url=` deep link requires.
+    advertiser_id: '16942202',
   },
   // Perfumania CJ feed — subscription 318053 created 2026-06-07 (CJ Product
   // Export "Perfumania", Shopping/Google format, CJ SFTP). Still commented out

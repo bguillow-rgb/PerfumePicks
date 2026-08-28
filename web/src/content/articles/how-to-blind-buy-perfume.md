@@ -115,7 +115,7 @@ The cheapest way to blind buy is to not really blind buy. Miss Dior Blooming Bou
     <p class="buy-name">Dior Miss Dior Blooming Bouquet, 0.17 oz mini</p>
     <p class="buy-meta">Rose and peony, soft. The mini is the strategy.</p>
   </div>
-  <a data-buy="christian-dior-miss-dior-blooming-bouquet" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16941446?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Fmiss-dior-blooming-bouquet-for-women%2F%3Fattribute_pa_size%3Deau-de-toilette-0-17-oz%26wmc-currency%3DUSD&sid=ppweb_blindbuy" target="_blank" rel="sponsored noopener">$21 at FragranceShop</a>
+  <a data-buy="christian-dior-miss-dior-blooming-bouquet" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16942202?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Fmiss-dior-blooming-bouquet-for-women%2F%3Fattribute_pa_size%3Deau-de-toilette-0-17-oz%26wmc-currency%3DUSD&sid=ppweb_blindbuy" target="_blank" rel="sponsored noopener">$21 at FragranceShop</a>
 </div>
 
 Lanvin L'Homme has been the fragrance community's low-stakes recommendation for years. Fresh, lightly woody, nothing in it to fight your skin chemistry, and priced so a miss costs less than a movie night.
@@ -125,7 +125,7 @@ Lanvin L'Homme has been the fragrance community's low-stakes recommendation for 
     <p class="buy-name">Lanvin L'Homme, eau de toilette 3.4 oz</p>
     <p class="buy-meta">Citrus-fresh, versatility score 0.92 in our catalog</p>
   </div>
-  <a data-buy="lanvin-lhomme" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16941446?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Flanvin-lhomme-for-men%2F%3Fattribute_pa_size%3Deau-de-toilette-spray-3-4-oz%26wmc-currency%3DUSD&sid=ppweb_blindbuy" target="_blank" rel="sponsored noopener">$21 at FragranceShop</a>
+  <a data-buy="lanvin-lhomme" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16942202?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Flanvin-lhomme-for-men%2F%3Fattribute_pa_size%3Deau-de-toilette-spray-3-4-oz%26wmc-currency%3DUSD&sid=ppweb_blindbuy" target="_blank" rel="sponsored noopener">$21 at FragranceShop</a>
 </div>
 
 At the icon tier, Acqua di Gio and J'adore are about as close to sure things as this hobby offers. Both have decades of reviews saying the same things, which is precisely what you want before buying unsniffed.
@@ -135,7 +135,7 @@ At the icon tier, Acqua di Gio and J'adore are about as close to sure things as 
     <p class="buy-name">Giorgio Armani Acqua di Gio, eau de parfum 4.2 oz</p>
     <p class="buy-meta">Aquatic citrus. Compliment score 0.89, versatility 0.92.</p>
   </div>
-  <a data-buy="giorgio-armani-aqua-di-gio" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16941446?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Faqua-di-gio-for-men%2F%3Fattribute_pa_size%3Deau-de-parfum-refillable-spray-4-2-oz%26wmc-currency%3DUSD&sid=ppweb_blindbuy" target="_blank" rel="sponsored noopener">$104 at FragranceShop</a>
+  <a data-buy="giorgio-armani-aqua-di-gio" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16942202?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Faqua-di-gio-for-men%2F%3Fattribute_pa_size%3Deau-de-parfum-refillable-spray-4-2-oz%26wmc-currency%3DUSD&sid=ppweb_blindbuy" target="_blank" rel="sponsored noopener">$104 at FragranceShop</a>
 </div>
 
 <div class="buy-card">
@@ -143,7 +143,7 @@ At the icon tier, Acqua di Gio and J'adore are about as close to sure things as 
     <p class="buy-name">Dior J'adore, eau de toilette 3.4 oz (tester bottle)</p>
     <p class="buy-meta">Golden floral. Tester packaging is why the price is under retail.</p>
   </div>
-  <a data-buy="christian-dior-jadore-perfume-for-women" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16941446?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Fjadore-for-women-2%2F%3Fattribute_pa_size%3Deau-de-toilette-spray-tester-3-4-oz%26wmc-currency%3DUSD&sid=ppweb_blindbuy" target="_blank" rel="sponsored noopener">$91 at FragranceShop</a>
+  <a data-buy="christian-dior-jadore-perfume-for-women" data-retailer="fragranceshop" href="https://www.anrdoezrs.net/click-101759456-16942202?url=https%3A%2F%2Fwww.fragranceshop.com%2Fproduct%2Fjadore-for-women-2%2F%3Fattribute_pa_size%3Deau-de-toilette-spray-tester-3-4-oz%26wmc-currency%3DUSD&sid=ppweb_blindbuy" target="_blank" rel="sponsored noopener">$91 at FragranceShop</a>
 </div>
 
 If your taste runs sweeter, Jean Paul Gaultier's La Belle is the crowd-pleaser lane: pear and vanilla, warm without being syrupy, and one of the most consistently complimented feminines in our data.
