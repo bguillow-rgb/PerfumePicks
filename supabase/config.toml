@@ -411,3 +411,15 @@ s3_secret_key = "env(S3_SECRET_KEY)"
 # declarative_schema_path = "./database"
 # JSON string passed through to pg-delta SQL formatting.
 # format_options = "{\"keywordCase\":\"upper\",\"indent\":2,\"maxWidth\":80,\"commaStyle\":\"trailing\"}"
+
+# RevenueCat posts subscription events server-to-server with NO Supabase JWT —
+# it sends `Authorization: Bearer <REVENUECAT_WEBHOOK_SECRET>` instead — so the
+# gateway check must be off for the webhook to be reachable at all.
+#
+# SECURITY ORDERING (do not deploy with verify_jwt=false before this is true):
+# the function skips its own auth check when REVENUECAT_WEBHOOK_SECRET is unset
+# (`if (WEBHOOK_SECRET)` at index.ts:36), and it writes profiles.is_pro with the
+# service-role key. Deploying it open WITHOUT the secret set would be a publicly
+# callable endpoint that grants Pro. Set the secret first, then deploy.
+[functions.revenuecat-webhook]
+verify_jwt = false

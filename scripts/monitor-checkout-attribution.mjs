@@ -56,7 +56,7 @@ function imessage(text) {
 async function cjCommissions() {
   const since = new Date(Date.now() - 21 * 864e5).toISOString();
   const q = `{ publisherCommissions(forPublishers: ["7966973"], sincePostingDate:"${since}", beforePostingDate:"${new Date(Date.now() + 864e5).toISOString()}") {
-    count records { orderId postingDate advertiserName pubCommissionAmountUsd saleAmountUsd } } }`;
+    count records { orderId postingDate advertiserName pubCommissionAmountUsd saleAmountUsd shopperId } } }`;
   const r = await fetch('https://commissions.api.cj.com/query', {
     method: 'POST',
     headers: { Authorization: `Bearer ${CJ_TOKEN}`, 'Content-Type': 'application/json' },
@@ -66,9 +66,9 @@ async function cjCommissions() {
   return j.data?.publisherCommissions?.records ?? [];
 }
 
-async function checkoutClicks() {
+async function clicksByLanding(landing) {
   const r = await fetch(
-    `${SB_URL}/rest/v1/affiliate_clicks?select=click_id,created_at,retailer,price_cents&landing=eq.checkout&created_at=gte.${FLIP_DATE.toISOString()}`,
+    `${SB_URL}/rest/v1/affiliate_clicks?select=click_id,created_at,retailer,price_cents&landing=eq.${landing}&created_at=gte.${FLIP_DATE.toISOString()}`,
     { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } },
   );
   const rows = await r.json();
@@ -78,12 +78,13 @@ async function checkoutClicks() {
 const commissions = await cjCommissions();
 const perfumania = commissions.filter((c) => /perfumania/i.test(c.advertiserName || ''));
 const testOrder = commissions.find((c) => String(c.orderId).includes(TEST_ORDER));
-const clicks = await checkoutClicks();
+const clicks = await clicksByLanding('checkout');
+const controlClicks = await clicksByLanding('product'); // the rollback target
 const daysSinceFlip = (Date.now() - FLIP_DATE.getTime()) / 864e5;
 
 console.log(`[checkout2-monitor] ${new Date().toISOString()}`);
 console.log(`  perfumania commissions (21d): ${perfumania.length} | test order ${TEST_ORDER}: ${testOrder ? 'POSTED' : 'not yet'}`);
-console.log(`  checkout-landing clicks since flip: ${clicks.length} | days since flip: ${daysSinceFlip.toFixed(1)}`);
+console.log(`  checkout-landing clicks since flip: ${clicks.length} | control (product) clicks: ${controlClicks.length} | days since flip: ${daysSinceFlip.toFixed(1)}`);
 
 // ✅ SUCCESS — any perfumania commission proves the wrapper pays.
 if (perfumania.length > 0 && !state.successAlerted) {
@@ -104,8 +105,33 @@ if (!testOrder && daysSinceFlip >= 2 && !state.canaryAlerted && !state.successAl
   saveState();
 }
 
-// 🚨 LEAK — real checkout traffic, zero perfumania commissions, 5+ days.
-if (perfumania.length === 0 && clicks.length >= 5 && daysSinceFlip >= 5 && !state.leakAlerted) {
+// 🚨 LEAK — checkout-specific failure.
+//
+// GUARD (added 2026-08-28 after a false positive): a leak claim requires the
+// CONTROL path to be paying. On 8/28 this fired on 5 checkout clicks with zero
+// commissions and recommended rolling back to the product landing — but the
+// product landing had the SAME zero record, and the real bug was a FragranceShop
+// ad id that was never valid. Rolling back would have changed a variable with no
+// mechanism behind it. Zero-vs-zero is not evidence; it is a missing baseline.
+//
+// Sample-size note: at a 1-3% affiliate conversion rate, 5 clicks are expected to
+// yield ~0.1 sales, so zero is the MODAL outcome even with perfect tracking. The
+// bar is now 25 clicks AND a converting control.
+// The control is measured via SubID: every click now stamps its ledger
+// click_id into CJ's sid, returned on the commission as `shopperId`. So a
+// commission can be attributed to the landing that produced it. A leak is
+// "product-landing clicks ARE paying while checkout-landing clicks are not" —
+// which requires at least one control commission to exist at all.
+const paidClickIds = new Set(
+  commissions.map((c) => String(c.shopperId || '').trim()).filter(Boolean),
+);
+const controlPays = controlClicks.some((c) =>
+  paidClickIds.has(String(c.click_id).replace(/-/g, '')),
+);
+const checkoutPays = clicks.some((c) =>
+  paidClickIds.has(String(c.click_id).replace(/-/g, '')),
+);
+if (!checkoutPays && controlPays && clicks.length >= 25 && daysSinceFlip >= 5 && !state.leakAlerted) {
   imessage(
     `🚨 Checkout 2.0 likely attribution LEAK: ${clicks.length} checkout-landing buy taps since the flip, zero Perfumania commissions in CJ after ${Math.floor(daysSinceFlip)} days. Recommend: flip checkout_2_enabled back to 'false' and switch the ETL to the plain /cart landing (PRD §11).`,
   );
