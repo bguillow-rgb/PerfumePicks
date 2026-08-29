@@ -10,6 +10,7 @@ import * as Haptics from 'expo-haptics';
 import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming, Easing } from 'react-native-reanimated';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { scanBottle } from '@/src/lib/claude';
+import { resolveScanMatch } from '@/src/lib/scanMatch';
 import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useWardrobeStore, WARDROBE_CAP_HIT } from '@/src/stores/useWardrobeStore';
 import { useCustomFragranceStore } from '@/src/stores/useCustomFragranceStore';
@@ -183,13 +184,25 @@ export default function ScanScreen() {
   const handleConfirm = async () => {
     if (!result?.name) return;
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    const matches = await search(result.name, 5);
-    if (matches.length > 0) {
+    // Search WITH the brand (catalog ranking scores on name alone, so a common
+    // name would otherwise land on an arbitrary house) and then require the
+    // chosen row to actually be that brand — see pickScanMatch.
+    const brand = result.brand?.trim();
+    const best = await resolveScanMatch(search, result.name, brand);
+    if (best) {
       showToast();
-      setTimeout(() => router.replace(`/fragrance/${matches[0].id}` as any), 1800);
+      setTimeout(() => router.replace(`/fragrance/${best.id}` as any), 1800);
     } else {
-      Alert.alert('Not in Catalog', `"${result.name}" by ${result.brand ?? 'Unknown'} isn't in our catalog yet.`);
-      router.canGoBack() ? router.back() : router.replace('/(tabs)' as any);
+      // Either nothing matched, or nothing matched THIS brand. Opening a
+      // different house's bottle after a correct identification is a silent
+      // wrong answer; offering the manual path is honest and recoverable.
+      setQuickAddName(result.name);
+      if (brand) setQuickAddBrand(brand);
+      Alert.alert(
+        'Not in Catalog',
+        `"${result.name}"${brand ? ` by ${brand}` : ''} isn't in our catalog yet — you can still add it.`,
+      );
+      setState('no_match');
     }
   };
 
