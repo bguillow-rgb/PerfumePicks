@@ -13,10 +13,10 @@ quickAnswer: "To decide what perfume to buy next, audit your current collection 
 publishedAt: "2026-08-25"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-choose-between-two-perfumes"
   - "perfume-no-buy-challenge"
   - "are-perfume-dupes-worth-it"
   - "how-many-perfumes-should-you-own"
-  - "how-to-build-a-fragrance-wardrobe"
 faqs:
   - q: "How do I know if I actually need a new perfume or just want one?"
     a: "Ask whether your current collection leaves a real gap, a season, occasion, or mood you can't cover. If the answer is no, you want it rather than need it. Both are valid reasons to buy, but knowing which is which helps you spend more intentionally."

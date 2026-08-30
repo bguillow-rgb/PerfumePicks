@@ -14,9 +14,9 @@ publishedAt: "2026-08-24"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-match-perfume-to-outfit"
+  - "how-to-choose-between-two-perfumes"
   - "how-to-choose-perfume-as-a-gift"
   - "how-to-find-your-signature-scent"
-  - "what-is-the-fragrance-wheel"
 faqs:
   - q: "How is an everyday perfume different from a signature scent?"
     a: "A signature scent is about identity, it's what people associate with you. An everyday perfume is about function: it has to work across many settings, last a full day, and never overpower. The two can overlap, but not every signature is practical enough for daily wear."
