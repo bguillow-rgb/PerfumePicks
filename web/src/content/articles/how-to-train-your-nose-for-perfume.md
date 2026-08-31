@@ -13,10 +13,10 @@ quickAnswer: "To train your nose for perfume, smell consciously every day, pract
 publishedAt: "2026-08-16"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-evaluate-a-perfume"
   - "nose-blind-to-perfume"
   - "what-is-a-chypre-perfume"
   - "what-is-a-gourmand-perfume"
-  - "what-is-an-oriental-perfume"
 faqs:
   - q: "How long does it take to train your nose for perfume?"
     a: "Most collectors notice a real improvement within 4, 8 weeks of daily practice. Professional perfumers spend years refining their palate, but you don't need that level, consistent 10, 15 minute sessions a few times a week are enough to meaningfully improve note recognition and scent memory."

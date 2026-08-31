@@ -16,7 +16,7 @@ relatedSlugs:
   - "what-is-a-chypre-perfume"
   - "what-is-a-gourmand-perfume"
   - "what-is-an-oriental-perfume"
-  - "perfume-fragrance-families"
+  - "how-to-evaluate-a-perfume"
 faqs:
   - q: "What does oud smell like?"
     a: "Oud has a deep, resinous, woody scent with smoky, leathery, and sometimes slightly medicinal or animalic facets. It can also carry sweet, balsamic, or incense-like qualities depending on its origin and how it's processed. No two oud oils smell identical."

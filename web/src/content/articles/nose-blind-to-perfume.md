@@ -13,10 +13,10 @@ quickAnswer: "Nose blindness (olfactory adaptation) happens because your brain s
 publishedAt: "2026-06-27"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-evaluate-a-perfume"
   - "how-to-test-perfume-before-buying"
   - "how-to-train-your-nose-for-perfume"
   - "why-does-my-perfume-fade-so-quickly"
-  - "how-to-rotate-your-perfume-collection"
 faqs:
   - q: "How long does it take to go nose blind to perfume?"
     a: "Olfactory adaptation begins almost immediately after application. Research indicates that olfactory neurons reduce their firing rate by more than half within 15-20 minutes of first contact with a scent. Your brain files it as background and stops reporting it, even though the fragrance is still fully present on your skin."

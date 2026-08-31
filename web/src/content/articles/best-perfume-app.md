@@ -14,11 +14,10 @@ quickAnswer: "There is no single best perfume app, because these apps do four di
 publishedAt: "2026-08-31"
 author: "Perfume Picks"
 relatedSlugs:
-  - "how-to-audit-your-perfume-collection"
-  - "how-many-perfumes-should-you-own"
   - "how-to-build-a-fragrance-wardrobe"
-  - "are-perfume-dupes-worth-it"
-  - "how-to-find-similar-perfumes"
+  - "how-to-organize-perfume-collection"
+  - "how-many-perfumes-should-you-own"
+  - "how-to-audit-your-perfume-collection"
 faqs:
   - q: "What is the best perfume app overall?"
     a: "It depends on the job. For looking up a bottle before you buy it, Fragrantica is still the reference, though you will be using it in a browser because there is no official app. For catalog depth inside an actual app, Parfumo is the strongest, at 4.87 stars across 749 US ratings as of August 2026. For tracking the bottles you own and deciding what to wear, Aromoshelf and Perfume Picks both do that job, and they do it differently."
