@@ -3,38 +3,60 @@
 //
 // Durable rate guard, shared by all four MCP servers.
 //
-// Why this exists: the in-file limiter above it is per-isolate and in-memory, so
-// its counters fragment across concurrent isolates and reset when one is recycled.
-// It also allowed 60 calls/minute, and on 2026-08-26 a client identifying itself as
+// History worth keeping: the original in-file limiter was per-isolate, in-memory,
+// and allowed 60 calls/minute. On 2026-08-26 a client calling itself
 // "PariscoAnalytics/1.0 - product-enrichment" pulled 690 search_fragrances calls out
-// of Perfume Picks in 37 minutes — roughly 18.6/minute, comfortably under that limit
-// the entire time. Sustained extraction is an hourly-volume problem, not a
-// per-second burst problem, so the real controls here are the hour windows.
+// of Perfume Picks in 37 minutes — ~18.6/min, under that limit the whole time.
+// Sustained extraction is an hourly-volume problem, so the hour windows are the real
+// control and the counters live in Postgres (Edge invocations are stateless and
+// multi-region, so in-memory counters fragment and reset).
 //
-// All thresholds live in the SQL function mcp_rate_guard so a change is one SQL
-// deploy rather than four Edge Function deploys.
+// The first Postgres-backed version was then bypassed in the 2026-08-26 audit:
+// `user-agent: claude-ai` through mcp.<domain> went 40/40 unblocked, because tier
+// came from a spoofable header, assistant tier had no global cap, and every proxied
+// request keyed to a Deno egress IP that rotates per request. Both holes are closed
+// below: assistant tier now requires a proxy-verified request, and identity comes
+// from the proxy rather than from x-forwarded-for when the proxy vouches for it.
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+const PROXY_SECRET = Deno.env.get("MCP_PROXY_SECRET") ?? "";
 
-// Known multi-tenant assistant clients. These arrive from a small set of shared
-// egress IPs carrying many different end users, so they get the roomier tier.
-// This is User-Agent matching and therefore spoofable — the absolute per-IP
-// ceiling inside mcp_rate_guard is the backstop for a caller that lies here.
 const ASSISTANT_UA =
   /claude|anthropic|openai|chatgpt|mcp-remote|cursor|windsurf|copilot|perplexity|gemini/i;
 
-export function clientTier(userAgent) {
-  return ASSISTANT_UA.test(userAgent ?? "") ? "assistant" : "default";
+/**
+ * Who is calling, and may they be believed?
+ *
+ * `x-mcp-client-ip` is trusted only when `x-mcp-proxy-auth` matches the shared
+ * secret, which only our Deno proxy holds and which the proxy strips from inbound
+ * requests before setting. A caller hitting *.supabase.co directly can set both
+ * headers all day and will simply fail the comparison, falling back to
+ * x-forwarded-for (which Supabase's edge normalises).
+ */
+export function identify(req) {
+  const hdr = (n) => req.header(n) ?? "";
+  const viaProxy = PROXY_SECRET !== "" && hdr("x-mcp-proxy-auth") === PROXY_SECRET;
+  const ip = viaProxy
+    ? (hdr("x-mcp-client-ip").trim() || "unknown")
+    : (hdr("x-forwarded-for").split(",")[0]?.trim() || "unknown");
+  const ua = hdr("user-agent").slice(0, 80);
+  // Assistant tier needs BOTH a recognised assistant UA and a proxy-verified
+  // request. A User-Agent string on its own is not an authorization credential.
+  const tier = viaProxy && ASSISTANT_UA.test(ua) ? "assistant" : "default";
+  return { ip, ua: ua || null, tier, viaProxy };
 }
 
-// Fails OPEN. If the counter is unreachable we serve the request rather than take a
-// public read-only catalog offline over a database blip; the per-isolate limiter is
-// still in front of it. Every failure is logged so a guard outage is visible rather
-// than silently disabling enforcement.
+// Fails OPEN. A public read-only catalog should not go down because the counter is
+// unreachable, and the per-isolate limiter still sits in front. Every failure logs
+// MCP_RATE_GUARD_DOWN so an outage is greppable rather than silent — a control that
+// disables itself without saying so is not a control.
 export async function rateGuard(ip, tier) {
   const allow = (reason) => ({ allowed: true, reason, retry_after: 0 });
-  if (!SUPABASE_URL || !SERVICE_KEY) return allow("guard-unconfigured");
+  if (!SUPABASE_URL || !SERVICE_KEY) {
+    console.error("MCP_RATE_GUARD_DOWN reason=unconfigured");
+    return allow("guard-unconfigured");
+  }
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/mcp_rate_guard`, {
       method: "POST",
@@ -46,14 +68,18 @@ export async function rateGuard(ip, tier) {
       body: JSON.stringify({ p_ip: ip, p_tier: tier }),
     });
     if (!res.ok) {
-      console.error(`rate guard unavailable: HTTP ${res.status}`);
+      console.error(`MCP_RATE_GUARD_DOWN reason=http_${res.status}`);
       return allow("guard-unavailable");
     }
     const rows = await res.json();
     const row = Array.isArray(rows) ? rows[0] : rows;
-    return row ?? allow("guard-empty");
+    if (!row) {
+      console.error("MCP_RATE_GUARD_DOWN reason=empty_result");
+      return allow("guard-empty");
+    }
+    return row;
   } catch (e) {
-    console.error(`rate guard error: ${e?.message ?? e}`);
+    console.error(`MCP_RATE_GUARD_DOWN reason=exception detail=${e?.message ?? e}`);
     return allow("guard-error");
   }
 }

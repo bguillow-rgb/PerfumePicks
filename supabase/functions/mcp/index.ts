@@ -33,7 +33,7 @@ import {
   sharedAccords,
   trendingFragrances,
 } from "./fragrances.js";
-import { clientTier, rateGuard, tooManyRequests } from "./ratelimit.js";
+import { identify, rateGuard, tooManyRequests } from "./ratelimit.js";
 
 const SERVER_VERSION = "1.0.0";
 const TELEMETRY_VERSION = `${SERVER_VERSION}-remote`;
@@ -173,10 +173,10 @@ function buildServer(ip, clientName) {
       annotations: ANNOTATIONS,
       description: "Full-text search across 13,000+ fragrances in the Perfume Picks database. Filter by brand, fragrance family, gender, and MSRP (USD). Returns note pyramids, accords, and community wear scores with source attribution.",
       inputSchema: {
-          query: z.string().optional().describe("Free-text search: fragrance or brand name"),
-          brand: z.string().optional().describe("Brand name filter, e.g. 'Dior'"),
-          fragrance_family: z.string().optional().describe("Family filter, e.g. 'woody', 'amber', 'fresh'"),
-          gender: z.enum(["masculine", "feminine", "unisex"]).optional(),
+          query: z.string().max(120).optional().describe("Free-text search: fragrance or brand name"),
+          brand: z.string().max(200).optional().describe("Brand name filter, e.g. 'Dior'"),
+          fragrance_family: z.string().max(120).optional().describe("Family filter, e.g. 'woody', 'amber', 'fresh'"),
+          gender: z.enum(["masculine", "feminine", "unisex"]).optional().describe("Marketed gender category of the fragrance; omit to include all"),
           price_min: z.number().min(0).optional().describe("Minimum MSRP in USD"),
           price_max: z.number().min(0).optional().describe("Maximum MSRP in USD"),
           limit: z.number().int().min(1).max(25).optional().describe("Max results (default 10)"),
@@ -190,7 +190,7 @@ function buildServer(ip, clientName) {
       annotations: ANNOTATIONS,
       description: "Detailed record for one fragrance: full note pyramid (top/heart/base), accords, concentration, community longevity/sillage/compliment scores, and MSRP. Accepts a Perfume Picks slug or a name like 'Bleu de Chanel'.",
       inputSchema: {
-          slug_or_name: z.string().describe("Fragrance slug or name"),
+          slug_or_name: z.string().max(200).describe("Fragrance slug or name"),
       },
   }, guarded("get_fragrance", async ({ slug_or_name }) => {
       const f = await mustResolve(slug_or_name);
@@ -201,7 +201,7 @@ function buildServer(ip, clientName) {
       annotations: ANNOTATIONS,
       description: "Curated dupes for a fragrance — cheaper scents documented to smell like the original, with match percentage and price comparison. The answer to 'what smells like X without the price tag'.",
       inputSchema: {
-          fragrance: z.string().describe("Fragrance slug or name to find dupes for"),
+          fragrance: z.string().max(200).describe("Fragrance slug or name to find dupes for"),
       },
   }, guarded("find_dupes", async ({ fragrance }) => {
       const ref = await mustResolve(fragrance);
@@ -228,7 +228,7 @@ function buildServer(ip, clientName) {
       annotations: ANNOTATIONS,
       description: "Fragrances most similar to a given one, from Perfume Picks' precomputed similarity ranking over notes and accords.",
       inputSchema: {
-          fragrance: z.string().describe("Fragrance slug or name"),
+          fragrance: z.string().max(200).describe("Fragrance slug or name"),
           limit: z.number().int().min(1).max(15).optional().describe("Max results (default 5)"),
       },
   }, guarded("find_similar", async ({ fragrance, limit }) => {
@@ -249,12 +249,12 @@ function buildServer(ip, clientName) {
       description: "Personalized fragrance picks from note/accord preferences (e.g. 'vanilla', 'oud', 'citrus'), a budget in USD, an occasion ('office', 'date night', 'gift', 'signature scent'), and gender presentation.",
       inputSchema: {
           preferences: z
-              .array(z.string())
+              .array(z.string().max(60)).max(20)
               .min(1)
               .describe("Notes or accords the wearer enjoys, e.g. ['vanilla','amber','rose']"),
           budget: z.number().min(0).optional().describe("Max MSRP in USD"),
-          occasion: z.string().optional().describe("What the fragrance is for"),
-          gender: z.enum(["masculine", "feminine", "unisex"]).optional(),
+          occasion: z.string().max(120).optional().describe("What the fragrance is for"),
+          gender: z.enum(["masculine", "feminine", "unisex"]).optional().describe("Marketed gender category of the fragrance; omit to include all"),
           limit: z.number().int().min(1).max(10).optional().describe("Max results (default 5)"),
       },
   }, guarded("get_recommendations", async ({ preferences, budget, occasion, gender, limit }) => {
@@ -294,8 +294,8 @@ function buildServer(ip, clientName) {
       annotations: ANNOTATIONS,
       description: "Side-by-side comparison: note pyramids, shared and distinct accords, longevity/sillage/compliment scores, concentration, and price difference.",
       inputSchema: {
-          fragrance_a: z.string().describe("First fragrance — slug or name"),
-          fragrance_b: z.string().describe("Second fragrance — slug or name"),
+          fragrance_a: z.string().max(200).describe("First fragrance — slug or name"),
+          fragrance_b: z.string().max(200).describe("Second fragrance — slug or name"),
       },
   }, guarded("compare_fragrances", async ({ fragrance_a, fragrance_b }) => {
       const [a, b] = await Promise.all([mustResolve(fragrance_a), mustResolve(fragrance_b)]);
@@ -336,10 +336,10 @@ function buildServer(ip, clientName) {
       annotations: ANNOTATIONS,
       description: "A fragrance suggestion for right now, based on mood, occasion (e.g. 'date', 'office tomorrow', 'night out', 'cozy evening in'), and season — scored with Perfume Picks' community compliment, office-safety, and versatility data.",
       inputSchema: {
-          mood: z.string().optional().describe("How you're feeling"),
-          occasion: z.string().optional().describe("The setting"),
-          season: z.enum(["winter", "spring", "summer", "fall"]).optional(),
-          gender: z.enum(["masculine", "feminine", "unisex"]).optional(),
+          mood: z.string().max(120).optional().describe("How you're feeling"),
+          occasion: z.string().max(120).optional().describe("The setting"),
+          season: z.enum(["winter", "spring", "summer", "fall"]).optional().describe("Season to weight the pick toward — heavier, warmer scents in winter; fresher in summer"),
+          gender: z.enum(["masculine", "feminine", "unisex"]).optional().describe("Marketed gender category of the fragrance; omit to include all"),
       },
   }, guarded("what_to_wear_tonight", async ({ mood, occasion, season, gender }) => {
       const text = `${mood ?? ""} ${occasion ?? ""}`.toLowerCase();
@@ -398,12 +398,13 @@ app.use("*", cors({
 }));
 
 app.all("*", async (c) => {
-  const ip = c.req.header("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  const clientName = c.req.header("user-agent")?.slice(0, 80) ?? null;
+  // Identity comes from the proxy when it vouches for the request; otherwise from
+  // x-forwarded-for. Never from the User-Agent alone — see ratelimit.js.
+  const { ip, ua: clientName, tier } = identify(c.req);
 
   // CORS preflight carries no payload and must not consume a caller's budget.
   if (c.req.method !== "OPTIONS") {
-    const gate = await rateGuard(ip, clientTier(clientName));
+    const gate = await rateGuard(ip, tier);
     if (!gate.allowed) return tooManyRequests(gate.retry_after, gate.reason);
   }
 
