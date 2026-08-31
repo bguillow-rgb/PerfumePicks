@@ -23,9 +23,15 @@ const schema = {
   url,
   datePublished: publishedAt.toISOString(),
   dateModified: (updatedAt ?? publishedAt).toISOString(),
+  // Author is an Organization, never a Person. Every article on this site is
+  // published under a non-personal desk byline ("Perfume Picks"), so emitting
+  // schema.org/Person named "Perfume Picks" was both factually wrong (it is not
+  // a person) and in breach of the standing no-human-byline rule. Fixed
+  // 2026-08-31; applies to every article, not just new ones.
   author: {
-    '@type': 'Person',
+    '@type': 'Organization',
     name: author,
+    url: SITE.url,
   },
   publisher: {
     '@type': 'Organization',
