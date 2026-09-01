@@ -4,11 +4,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { Pressable } from 'react-native';
-import { COLORS, SPACING, TYPE, RADIUS } from '@/src/constants/theme';
+import { COLORS, SPACING, TYPE } from '@/src/constants/theme';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
-
-const FOR_HER_GENDERS = ['feminine', 'unisex'];
 
 export default function BrandScreen() {
   const { brand } = useLocalSearchParams<{ brand: string }>();
@@ -16,14 +14,15 @@ export default function BrandScreen() {
   const brandName = decodeURIComponent(brand ?? '');
 
   const [fragrances, setFragrances] = useState<Fragrance[]>([]);
-  const [showMasculine, setShowMasculine] = useState(false);
 
-  const genders = showMasculine ? undefined : FOR_HER_GENDERS;
-
+  // No per-screen gender control: the `genders` argument is omitted so the
+  // fetch inherits the user's audience preference (Settings -> Show me). This
+  // screen used to ship a "For Her" toggle defaulting to feminine+unisex,
+  // which silently told every man his house had half the bottles it does.
   useEffect(() => {
     if (!brandName) return;
-    useCatalogStore.getState().fetchByBrand(brandName, genders).then(setFragrances);
-  }, [brandName, showMasculine]);
+    useCatalogStore.getState().fetchByBrand(brandName).then(setFragrances);
+  }, [brandName]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -35,14 +34,6 @@ export default function BrandScreen() {
           <Text style={styles.title} numberOfLines={1}>{brandName}</Text>
           <Text style={styles.subtitle}>{fragrances.length} fragrances</Text>
         </View>
-        <Pressable
-          style={[styles.toggle, showMasculine && styles.toggleActive]}
-          onPress={() => setShowMasculine((v) => !v)}
-        >
-          <Text style={[styles.toggleText, showMasculine && styles.toggleTextActive]}>
-            {showMasculine ? 'All' : 'For Her'}
-          </Text>
-        </Pressable>
       </View>
 
       {fragrances.length === 0 ? (
@@ -81,17 +72,6 @@ const styles = StyleSheet.create({
   titleWrap: { flex: 1 },
   title: { ...TYPE.heading, fontSize: 18 },
   subtitle: { ...TYPE.caption, color: COLORS.muted, marginTop: 2 },
-  toggle: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: RADIUS.full,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    backgroundColor: COLORS.card,
-  },
-  toggleActive: { backgroundColor: COLORS.text, borderColor: COLORS.text },
-  toggleText: { ...TYPE.caption, color: COLORS.muted, fontWeight: '600' },
-  toggleTextActive: { color: COLORS.bg },
   list: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.md, paddingBottom: SPACING.xxl },
   item: { marginBottom: SPACING.md },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: SPACING.xl },

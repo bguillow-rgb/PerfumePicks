@@ -19,6 +19,21 @@ export const EVENTS = {
   QUIZ_COMPLETED:         'quiz_completed',
   QUIZ_RESULT_VIEWED:     'quiz_result_viewed',
 
+  // ─── Audience preference ("what should we show you?") ────────────────
+  // Asked once, before the DNA picker, and changeable in Settings forever
+  // after. Read shown -> selected as a funnel: a gap means people are getting
+  // past the screen without answering, which would leave them on 'all' by
+  // accident rather than by choice.
+  AUDIENCE_PROMPT_SHOWN:  'audience_prompt_shown',   // no props — first-run only
+  // props: { pref: 'mens'|'womens'|'all' } — the answer itself. This is the
+  // number that settles whether the old feminine-by-default assumption was
+  // costing us men, so the pref value is the whole point of the event.
+  AUDIENCE_SELECTED:      'audience_selected',
+  // props: { pref, from } — changed later in Settings. Kept separate from
+  // _selected so a mid-life correction never inflates the onboarding answer
+  // distribution; `from` is what they were on before.
+  AUDIENCE_CHANGED:       'audience_changed',
+
   // ─── Fragrance DNA (reveal + first rec) ──────────────────────────────
   DNA_COMPUTE_FAILED:     'dna_compute_failed',
   DNA_REVEAL_VIEWED:      'dna_reveal_viewed',

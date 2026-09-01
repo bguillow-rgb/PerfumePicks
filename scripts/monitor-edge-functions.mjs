@@ -47,24 +47,26 @@ let deployed = new Map();
 try {
   const out = execFileSync('npx', ['supabase', 'functions', 'list', '--project-ref', PROJECT_REF], { encoding: 'utf8' });
   const json = JSON.parse(out.slice(out.indexOf('{')));
-  for (const f of json.functions ?? []) deployed.set(f.slug, f.status);
+  for (const f of json.functions ?? []) deployed.set(f.slug, { status: f.status, updatedAt: f.updated_at });
 } catch (e) {
   console.error('[edge-monitor] could not list functions:', e.message);
   process.exit(2);
 }
 
 // 3. secrets that exist
-let secrets = new Set();
+let secrets = new Map();
 try {
   const out = execFileSync('npx', ['supabase', 'secrets', 'list', '--project-ref', PROJECT_REF], { encoding: 'utf8' });
-  for (const s of JSON.parse(out.slice(out.indexOf('{'))).secrets ?? []) secrets.add(s.name);
+  for (const s of JSON.parse(out.slice(out.indexOf('{'))).secrets ?? []) {
+    secrets.set(s.name, Date.parse(s.updated_at ?? 0) || 0);
+  }
 } catch { /* non-fatal — the deploy check is the primary signal */ }
 
 const problems = [];
 for (const fn of [...invoked].sort()) {
-  const status = deployed.get(fn);
-  if (!status) { problems.push(`MISSING: app invokes '${fn}' but it is NOT deployed (calls will 404)`); continue; }
-  if (status !== 'ACTIVE') { problems.push(`INACTIVE: '${fn}' is deployed but status=${status}`); continue; }
+  const info = deployed.get(fn);
+  if (!info) { problems.push(`MISSING: app invokes '${fn}' but it is NOT deployed (calls will 404)`); continue; }
+  if (info.status !== 'ACTIVE') { problems.push(`INACTIVE: '${fn}' is deployed but status=${info.status}`); continue; }
   // deployed — does its source read a secret that is not set?
   const src = path.join(ROOT, 'supabase/functions', fn, 'index.ts');
   if (!existsSync(src)) continue;
@@ -73,7 +75,23 @@ for (const fn of [...invoked].sort()) {
     const key = m[1];
     // Supabase injects these automatically; everything else must be set by us.
     if (['SUPABASE_URL', 'SUPABASE_ANON_KEY', 'SUPABASE_SERVICE_ROLE_KEY', 'SUPABASE_DB_URL'].includes(key)) continue;
-    if (!secrets.has(key)) problems.push(`SECRET: '${fn}' reads ${key} but that secret is not set (function will run inert)`);
+    if (!secrets.has(key)) {
+      problems.push(`SECRET: '${fn}' reads ${key} but that secret is not set (function will run inert)`);
+      continue;
+    }
+    // STALE BOOT: Deno.env.get() at module scope is evaluated ONCE when the
+    // isolate boots. A secret set AFTER the last deploy is NOT visible to the
+    // running function — it keeps serving its no-key fallback with a 200, so
+    // nothing errors and nothing alerts. Exactly what happened on 2026-08-29:
+    // claude-proxy deployed 11:00:22Z, ANTHROPIC_API_KEY set 11:08:26Z, and
+    // every scan silently returned "AI not configured yet" until a redeploy.
+    if (secrets.get(key) > info.updatedAt) {
+      problems.push(
+        `STALE: '${fn}' was deployed BEFORE ${key} was set ` +
+        `(deploy ${new Date(info.updatedAt).toISOString()} < secret ${new Date(secrets.get(key)).toISOString()}) ` +
+        `— redeploy so the isolate boots with it`,
+      );
+    }
   }
 }
 

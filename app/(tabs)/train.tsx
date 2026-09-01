@@ -50,11 +50,17 @@ interface SessionStats {
   passed: number;
 }
 
-// App is feminine-focused — masculine excluded from all surfaces.
-type GenderFilter = 'all' | 'feminine' | 'unisex';
-const GENDER_CYCLE: GenderFilter[] = ['all', 'feminine', 'unisex'];
+// Per-screen narrowing facet, NOT an audience default. 'all' means "whatever
+// the user's audience preference already says" (Settings -> Show me) — it used
+// to mean feminine+unisex, which quietly overrode that preference on this
+// screen because an explicit genders array beats the stored pref in the store.
+type GenderFilter = 'all' | 'masculine' | 'feminine' | 'unisex';
+// Symmetric on purpose. This cycle used to be ['all','feminine','unisex'] with a
+// "For Her" pill and NO masculine option, so a user whose audience preference is
+// Men's got a correct deck but a facet that could only narrow toward women's.
+const GENDER_CYCLE: GenderFilter[] = ['all', 'masculine', 'feminine', 'unisex'];
 const GENDER_LABEL: Record<GenderFilter, string> = {
-  all: 'All', feminine: 'For Her', unisex: 'Unisex',
+  all: 'All', masculine: 'For Him', feminine: 'For Her', unisex: 'Unisex',
 };
 
 /**
@@ -165,6 +171,9 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
   const usedToday = dailySwipeDate === today ? dailySwipeCount : 0;
 
   const fetchEnriched = useCatalogStore((s) => s.fetchEnriched);
+  // Bumped by clearCache() when the audience preference changes; Train is an
+  // always-mounted tab, so the deck would otherwise keep the old audience.
+  const catalogVersion = useCatalogStore((s) => s.version);
 
   // ── Paginated deck ────────────────────────────────────────────────────────
   const [deck, setDeck] = useState<Fragrance[]>([]);
@@ -176,7 +185,8 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
   const nextPageRef = useRef(0);
   const [restartKey, setRestartKey] = useState(0);
 
-  const loadPage = useCallback(async (pageNum: number, genders: string[]) => {
+  // genders undefined = inherit the audience preference; an array narrows it.
+  const loadPage = useCallback(async (pageNum: number, genders?: string[]) => {
     if (prefetchingRef.current) return;
     prefetchingRef.current = true;
     if (pageNum > 0) setLoadingMore(true);
@@ -213,17 +223,17 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
     nextPageRef.current = 0;
     prefetchingRef.current = false;
     setIndex(0);
-    const genders = genderFilter === 'all' ? ['feminine', 'unisex'] : [genderFilter];
+    const genders = genderFilter === 'all' ? undefined : [genderFilter];
     loadPage(0, genders);
   // restartKey intentionally triggers a fresh load when session restarts
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [genderFilter, restartKey]);
+  }, [genderFilter, restartKey, catalogVersion]);
 
   // Prefetch next page when approaching the end of current deck
   useEffect(() => {
     if (!deckReady || !hasMore || prefetchingRef.current) return;
     if (index >= deck.length - PREFETCH_AT) {
-      const genders = genderFilter === 'all' ? ['feminine', 'unisex'] : [genderFilter];
+      const genders = genderFilter === 'all' ? undefined : [genderFilter];
       loadPage(nextPageRef.current, genders);
     }
   }, [index, deck.length, deckReady, hasMore, genderFilter, loadPage]);
@@ -331,7 +341,7 @@ function SwipeSession({ isPro, dailyLimitReached, onExit, onUpgrade }: {
           <Text style={[styles.body, { marginBottom: 0 }]}>Check your connection and try again.</Text>
           <Pressable style={styles.cta} onPress={() => {
             setDeckError(false);
-            loadPage(0, genderFilter === 'all' ? ['feminine', 'unisex'] : [genderFilter]);
+            loadPage(0, genderFilter === 'all' ? undefined : [genderFilter]);
           }}>
             <Text style={styles.ctaText}>Try Again</Text>
           </Pressable>

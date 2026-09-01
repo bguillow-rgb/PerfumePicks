@@ -11,7 +11,7 @@ import {
 import { Image } from 'expo-image';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
-import { useCatalogStore } from '@/src/stores/useCatalogStore';
+import { useCatalogStore, NO_GENDER_FILTER } from '@/src/stores/useCatalogStore';
 import type { PickerCandidate } from '@/src/features/quiz/pickerGrid';
 import {
   SEARCH_RESULT_LIMIT,
@@ -82,9 +82,14 @@ export function PickerSearch({ open, onOpen, onClose, onPick, onEnrichRequest }:
     setSettled(false);
     const seq = ++requestSeq.current;
     const timer = setTimeout(async () => {
+      // NO_GENDER_FILTER: the grid above is browsing (filtered by the audience
+      // preference), but this is the user naming a bottle they ALREADY OWN to
+      // seed their DNA. Someone whose preference is Men's may still own a
+      // feminine bottle, and telling them it does not exist is the same failure
+      // as the scan lookup — a false "not in our catalog" for a bottle in hand.
       const found = (await useCatalogStore
         .getState()
-        .search(q, SEARCH_RESULT_LIMIT)) as unknown as PickerCandidate[];
+        .search(q, SEARCH_RESULT_LIMIT, NO_GENDER_FILTER)) as unknown as PickerCandidate[];
       if (seq !== requestSeq.current) return; // stale — a newer query replaced us
       setResults(found);
       setSearching(false);

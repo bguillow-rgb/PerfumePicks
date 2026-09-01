@@ -12,7 +12,7 @@ import {
   type WeatherPref,
   type SkinPerf,
 } from '@/src/stores/useFragranceNotesStore';
-import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
+import { useCatalogStore, NO_GENDER_FILTER, type Fragrance } from '@/src/stores/useCatalogStore';
 
 interface Props {
   visible: boolean;
@@ -127,7 +127,11 @@ export function FragranceNotesSheet({ visible, fragrance, onClose }: Props) {
     if (q.length <= 1) { setLayerResults([]); return; }
     let cancelled = false;
     const t = setTimeout(() => {
-      search(q, 8).then((rows) => {
+      // NO_GENDER_FILTER: this picks the OTHER half of a layering pair the
+      // user actually wore. It's a log of their own behaviour, not a
+      // recommendation, and people layer across the aisle constantly — a
+      // filtered search would make half their own combinations unloggable.
+      search(q, 8, NO_GENDER_FILTER).then((rows) => {
         if (cancelled) return;
         // Exclude the fragrance the user is layering FROM, then cap at 6.
         setLayerResults(rows.filter((f) => f.id !== fragrance?.id).slice(0, 6));

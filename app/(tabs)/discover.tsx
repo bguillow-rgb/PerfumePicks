@@ -125,6 +125,7 @@ export default function DiscoverScreen() {
   const fetchMany = useCatalogStore((s) => s.fetchMany);
   const searchStore = useCatalogStore((s) => s.search);
   const searchByNotes = useCatalogStore((s) => s.searchByNotes);
+  const catalogVersion = useCatalogStore((s) => s.version);
 
   // Celebrity Picks — fragrances worn by famous people, with celeb names.
   const [celebrityPicks, setCelebrityPicks] = useState<{ fragrance: Fragrance; celebrities: string }[]>([]);
@@ -163,11 +164,16 @@ export default function DiscoverScreen() {
     let cancelled = false;
     // Use fetchEnriched so all pool frags have real accord/score data —
     // curated edits and accord filters need populated top_accords to work.
-    fetchEnriched(8000, 0, ['feminine', 'unisex']).then((rows) => {
+    // No genders argument: the pool inherits the user's audience preference.
+    // It used to be pinned to ['feminine','unisex'], which made Discover — the
+    // browse surface — masculine-blind regardless of what the user asked for.
+    fetchEnriched(8000, 0).then((rows) => {
       if (!cancelled) { setPool(rows); setPoolLoading(false); }
     });
     return () => { cancelled = true; };
-  }, [fetchEnriched]);
+    // catalogVersion: Discover is an always-mounted tab, so without this the
+    // pool would keep serving the old audience's rows after a Settings change.
+  }, [fetchEnriched, catalogVersion]);
 
   // When navigated here from the wardrobe "+" button, pass context through so
   // the fragrance detail page can navigate back to wardrobe after adding.
@@ -196,7 +202,7 @@ export default function DiscoverScreen() {
       setSearching(true);
       let cancelled = false;
       const t = setTimeout(() => {
-        searchByNotes(noteTerms, 200, ['feminine', 'unisex']).then((rows) => {
+        searchByNotes(noteTerms, 200).then((rows) => {
           if (!cancelled) { setSearchResults(rows); setSearching(false); }
         });
       }, 250);
@@ -215,7 +221,7 @@ export default function DiscoverScreen() {
       setSearching(true);
       let cancelled = false;
       const t = setTimeout(() => {
-        searchStore(q, 50, ['feminine', 'unisex']).then((nameRows) => {
+        searchStore(q, 50).then((nameRows) => {
           if (cancelled) return;
           const moodRanked = rankByMood(pool, mood, 200);
           const seen = new Set(nameRows.map((r) => r.id));
@@ -235,8 +241,8 @@ export default function DiscoverScreen() {
       // note phrases ("coconut milk") both work. Harmless for name/brand
       // queries ("burberry goddess") since no note contains that string.
       Promise.all([
-        searchStore(q, 200, ['feminine', 'unisex']),
-        searchByNotes([q], 200, ['feminine', 'unisex']),
+        searchStore(q, 200),
+        searchByNotes([q], 200),
       ]).then(([nameRows, noteRows]) => {
         if (cancelled) return;
         // Union name/brand matches with catalog note matches (dedupe by id).

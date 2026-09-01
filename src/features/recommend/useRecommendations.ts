@@ -238,16 +238,20 @@ export function useRecommendations(ctx?: RecContext) {
 
   // Pull the top-popularity slice of the live catalog into local state.
   // useCatalogStore.fetchAllActive handles demo-mode fallback to MOCK_CATALOG.
-  // Filter by gender preference from quiz: 'fem' → feminine+unisex, 'masc' → masculine+unisex, else all.
+  // The genders argument is omitted so the pool inherits the user's audience
+  // preference (Settings -> Show me). It was hardcoded to ['feminine','unisex'],
+  // which meant every recommendation in the app was drawn from the women's
+  // shelf no matter who was asking.
   const fetchEnriched = useCatalogStore((s) => s.fetchEnriched);
+  const catalogVersion = useCatalogStore((s) => s.version);
   const [catalogPool, setCatalogPool] = useState<Fragrance[]>([]);
   useEffect(() => {
     let cancelled = false;
-    fetchEnriched(8000, 0, ['feminine', 'unisex']).then((rows) => {
+    fetchEnriched(8000, 0).then((rows) => {
       if (!cancelled) setCatalogPool(rows);
     });
     return () => { cancelled = true; };
-  }, [fetchEnriched]);
+  }, [fetchEnriched, catalogVersion]);
 
   const candidates = useMemo(
     () => catalogPool.filter((f) => !owned.has(f.id)),
@@ -361,10 +365,11 @@ export function useTasteProfile(): DerivedTasteProfile {
  */
 export function useIcons(limit = 6): Fragrance[] {
   const fetchEnriched = useCatalogStore((s) => s.fetchEnriched);
+  const catalogVersion = useCatalogStore((s) => s.version);
   const [rows, setRows] = useState<Fragrance[]>([]);
   useEffect(() => {
     let cancelled = false;
-    fetchEnriched(limit * 6, 0, ['feminine', 'unisex']).then((r) => {
+    fetchEnriched(limit * 6, 0).then((r) => {
       if (cancelled) return;
       const sorted = [...r].sort((a, b) =>
         (b.compliment_score + b.versatility_score + b.office_safe_score) -
@@ -373,7 +378,7 @@ export function useIcons(limit = 6): Fragrance[] {
       setRows(sorted.slice(0, limit));
     });
     return () => { cancelled = true; };
-  }, [fetchEnriched, limit]);
+  }, [fetchEnriched, limit, catalogVersion]);
   return rows;
 }
 
@@ -385,10 +390,11 @@ export function useIcons(limit = 6): Fragrance[] {
  */
 export function useNewArrivals(limit = 8): Fragrance[] {
   const fetchEnriched = useCatalogStore((s) => s.fetchEnriched);
+  const catalogVersion = useCatalogStore((s) => s.version);
   const [rows, setRows] = useState<Fragrance[]>([]);
   useEffect(() => {
     let cancelled = false;
-    fetchEnriched(limit * 6, 0, ['feminine', 'unisex']).then((r) => {
+    fetchEnriched(limit * 6, 0).then((r) => {
       if (cancelled) return;
       const sorted = [...r].sort((a, b) => b.release_year - a.release_year);
       // Deduplicate by name+brand — different SKUs of the same fragrance look identical
@@ -402,7 +408,7 @@ export function useNewArrivals(limit = 8): Fragrance[] {
       setRows(deduped.slice(0, limit));
     });
     return () => { cancelled = true; };
-  }, [fetchEnriched, limit]);
+  }, [fetchEnriched, limit, catalogVersion]);
   return rows;
 }
 

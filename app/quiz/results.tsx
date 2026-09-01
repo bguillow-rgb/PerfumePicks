@@ -32,7 +32,8 @@ export default function QuizResults() {
 
   useEffect(() => {
     let cancelled = false;
-    fetchEnriched(1000, 0, ['feminine', 'unisex']).then((rows) => {
+    // Inherits the audience preference (was pinned to feminine+unisex).
+    fetchEnriched(1000, 0).then((rows) => {
       if (!cancelled) { setCatalog(rows); setCatalogLoading(false); }
     });
     return () => { cancelled = true; };

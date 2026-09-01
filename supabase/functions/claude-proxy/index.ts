@@ -204,7 +204,22 @@ function buildPrompt(body: RequestBody): { systemPrompt: string; userMessage: st
       };
     case "bottle_scan":
       return {
-        systemPrompt: `You are a fragrance identification expert. Given a photo of a perfume bottle, identify the fragrance name and brand. Return JSON: {"brand": "...", "name": "...", "confidence": 0.0-1.0}. If you can't identify it with >0.5 confidence, return {"brand": null, "name": null, "confidence": 0.0}.`,
+        // The name/brand are used to SEARCH the catalog, so they must be the
+        // canonical short forms a collector would type — not the marketing copy
+        // printed on the bottle. A real 2026-08-29 scan returned name='"VACATION"
+        // Scent of the "World Famous" Vacation(R) Sunscreen Company', brand=
+        // 'Vacation Inc.'; the catalog holds it as Vacation / Vacation, so the
+        // lookup found nothing and the user was told it was not in the catalog.
+        systemPrompt: `You are a fragrance identification expert. Given a photo of a perfume bottle, identify the fragrance and its house.
+
+Return JSON only: {"brand": "...", "name": "...", "confidence": 0.0-1.0}
+
+CRITICAL — these values are used to look the fragrance up in a catalog, so return CANONICAL SEARCH TERMS, not label text:
+- "name" = the fragrance name alone, as a collector would search it. Examples: "Sauvage", "Baccarat Rouge 540", "Layton", "Vacation". NEVER include marketing copy, slogans, taglines, registered-trademark symbols, the words "Eau de Parfum"/"EDP"/"EDT", size, or the brand name repeated inside it.
+- "brand" = the house name alone. Examples: "Dior", "Parfums de Marly", "Vacation". Strip corporate suffixes like "Inc.", "Ltd.", "Company", "Parfums" when they are not part of how the house is known.
+- Keep both SHORT. If the label is verbose, distill it to the searchable name.
+
+If you cannot identify it with >0.5 confidence, return {"brand": null, "name": null, "confidence": 0.0}.`,
         userMessage: body.image_base64
           ? [
               { type: "text", text: "Identify this perfume bottle:" },

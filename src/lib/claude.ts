@@ -64,16 +64,63 @@ export async function getMorningPick(params: MorningPickParams): Promise<{ text:
  * Bottle scan identification.
  * Uses Sonnet (vision). Returns parsed JSON or null.
  */
+/**
+ * Parse a JSON object out of model text.
+ *
+ * WHY THIS IS NOT JSON.parse: a bare JSON.parse on model output is brittle, and
+ * on 2026-08-29 it was silently breaking every bottle scan. The proxy was
+ * returning a valid 107-char answer (confirmed server-side: Anthropic 200, usage
+ * recorded, response sent) and the app still showed "Add it manually", because
+ * the model wrapped its JSON in a ```json fence — so JSON.parse threw, the catch
+ * returned confidence 0, and scan.tsx renders anything under 0.5 as no-match.
+ * Backend success and an unreadable photo looked identical to the user.
+ *
+ * Strips a markdown fence, then falls back to the outermost {...} span so
+ * leading prose ("Here's the bottle:") can't break it either.
+ */
+export function parseModelJson<T>(raw: string): T | null {
+  if (!raw) return null;
+  let t = raw.trim();
+  // ```json ... ```  or  ``` ... ```
+  const fence = t.match(/^```(?:json)?\s*([\s\S]*?)\s*```$/i);
+  if (fence) t = fence[1].trim();
+  try {
+    return JSON.parse(t) as T;
+  } catch {
+    // Last resort: the outermost object literal anywhere in the text.
+    const a = t.indexOf('{');
+    const b = t.lastIndexOf('}');
+    if (a !== -1 && b > a) {
+      try { return JSON.parse(t.slice(a, b + 1)) as T; } catch { /* fall through */ }
+    }
+    return null;
+  }
+}
+
 export async function scanBottle(params: BottleScanParams): Promise<{ brand: string | null; name: string | null; confidence: number }> {
   const resp = await callProxy({ type: 'bottle_scan', ...params });
-  if (resp.text) {
-    try {
-      return JSON.parse(resp.text);
-    } catch {
-      return { brand: null, name: null, confidence: 0 };
+  const parsed = resp.text
+    ? parseModelJson<{ brand?: string | null; name?: string | null; confidence?: number | string }>(resp.text)
+    : null;
+  if (!parsed) {
+    // Distinguish "the model said nothing usable" from "we could not read its
+    // reply" — the second is our bug and must be visible, not silently a
+    // no-match. captureException gives it a Sentry trail either way.
+    if (resp.text) {
+      captureException(new Error('scanBottle: unparseable model output'), {
+        context: 'claude_proxy',
+        text_head: String(resp.text).slice(0, 200),
+      });
     }
+    return { brand: null, name: null, confidence: 0 };
   }
-  return { brand: null, name: null, confidence: 0 };
+  // Confidence occasionally arrives as a string ("0.9"); coerce before compare.
+  const confidence = Number(parsed.confidence ?? 0);
+  return {
+    brand: parsed.brand ?? null,
+    name: parsed.name ?? null,
+    confidence: Number.isFinite(confidence) ? confidence : 0,
+  };
 }
 
 // ── Internal ──
