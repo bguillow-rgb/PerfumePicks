@@ -83,7 +83,7 @@ interface CatalogState {
    * Returns up to `limit` results.
    * Optional `genders` filters to ['feminine','unisex'] etc. Defaults to all.
    */
-  search: (query: string, limit?: number, genders?: string[]) => Promise<Fragrance[]>;
+  search: (query: string, limit?: number, genders?: GenderArg) => Promise<Fragrance[]>;
 
   /**
    * Multi-note AND search. Returns fragrances whose notes/accords contain
@@ -92,7 +92,7 @@ interface CatalogState {
    * Uses the fragrances_matching_notes RPC in production; filters
    * MOCK_CATALOG in demo mode.
    */
-  searchByNotes: (terms: string[], limit?: number, genders?: string[]) => Promise<Fragrance[]>;
+  searchByNotes: (terms: string[], limit?: number, genders?: GenderArg) => Promise<Fragrance[]>;
 
   /**
    * Fetch multiple fragrances by ID (slug) array. Results are cached.
@@ -108,19 +108,19 @@ interface CatalogState {
    * Fetch all fragrances for a given brand name.
    * Optional genders filter.
    */
-  fetchByBrand: (brand: string, genders?: string[]) => Promise<Fragrance[]>;
+  fetchByBrand: (brand: string, genders?: GenderArg) => Promise<Fragrance[]>;
 
   /**
    * Fetch up to `limit` active fragrances, ordered by name.
    * Convenience for Discover, Train stack builder, quiz results, layering picker.
    */
-  fetchAllActive: (limit?: number, genders?: string[]) => Promise<Fragrance[]>;
+  fetchAllActive: (limit?: number, genders?: GenderArg) => Promise<Fragrance[]>;
 
   /**
    * Fetch a page of enriched fragrances (top_accords non-empty) for the Train deck.
    * Supports pagination via offset. Results are cached.
    */
-  fetchEnriched: (limit?: number, offset?: number, genders?: string[]) => Promise<Fragrance[]>;
+  fetchEnriched: (limit?: number, offset?: number, genders?: GenderArg) => Promise<Fragrance[]>;
 
   /**
    * Pro-gated ranked dupes for an original (by slug). Resolves UUID->slug
@@ -166,9 +166,71 @@ interface CatalogState {
    * (the picker logic resolves popularity from the seed list). Production selects
    * rows at/above the reshuffle fame floor; falls back to enriched on any error.
    */
-  fetchPickerCandidates: (minTier?: number) => Promise<Fragrance[]>;
+  fetchPickerCandidates: (minTier?: number, genders?: GenderArg) => Promise<Fragrance[]>;
+
+  /**
+   * Bumped by clearCache(). Screens whose list-loading effect would otherwise
+   * never re-run (an always-mounted tab with stable deps) put this in their
+   * dependency array to refetch when the audience preference changes.
+   */
+  version: number;
+  /**
+   * Drop every cached row and bump `version`. Called when the audience
+   * preference changes: the cache is keyed by slug with no record of which
+   * filter fetched it, so after a switch it holds rows the user no longer
+   * wants (or is missing the ones they now do) and would serve them from
+   * getById/fetchMany forever. Cheap to throw away — it refills lazily.
+   */
+  clearCache: () => void;
 
   _addToCache: (items: Fragrance[]) => void;
+}
+
+// ── Audience (gender) filtering ──────────────────────────────────────────────
+/**
+ * Pass this where a `genders` argument is accepted to bypass the user's audience
+ * preference entirely. Required wherever hiding a bottle would be a BUG rather
+ * than a filter: a bottle already in the wardrobe, a scanned bottle, a shared
+ * DNA link, a dupe of something owned. Someone holding a bottle must always be
+ * able to see it, whatever they picked in onboarding.
+ */
+export const NO_GENDER_FILTER = '__all_genders__' as const;
+export type GenderArg = string[] | undefined | typeof NO_GENDER_FILTER;
+
+/**
+ * Resolve what a query should filter on.
+ *   explicit array  → use it (Discover's own facet filter, brand screens)
+ *   NO_GENDER_FILTER→ no filter at all
+ *   undefined       → the user's saved audience preference (the default, so a
+ *                     new surface is filtered correctly without having to
+ *                     remember to opt in — the failure mode we care about is a
+ *                     screen that silently ignores the setting)
+ */
+function resolveGenders(arg: GenderArg): string[] | undefined {
+  if (arg === NO_GENDER_FILTER) return undefined;
+  if (Array.isArray(arg) && arg.length) return arg;
+  try {
+    // Lazy require: this store is imported at boot and by jest; a static import
+    // of the prefs store would drag the rec-engine types graph in with it.
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { useScentPreferencesStore } =
+      require('@/src/stores/useScentPreferencesStore') as typeof import('@/src/stores/useScentPreferencesStore');
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { gendersFor } = require('@/src/lib/genderFilter') as typeof import('@/src/lib/genderFilter');
+    return gendersFor(useScentPreferencesStore.getState().genderPref);
+  } catch {
+    return undefined; // never let a preference lookup break a catalog read
+  }
+}
+
+/**
+ * Apply a gender filter that KEEPS null-gender rows. A plain .in('gender', …)
+ * silently drops the 83 active bottles with gender IS NULL; unknown gender is
+ * treated as unisex rather than made invisible.
+ */
+function applyGenderFilter<T>(qb: T, genders: string[] | undefined): T {
+  if (!genders?.length) return qb;
+  return (qb as any).or(`gender.in.(${genders.join(',')}),gender.is.null`) as T;
 }
 
 /** Strip bundles, gift-sets, and tester units — not real purchasable products. */
@@ -225,7 +287,7 @@ async function fuzzySearchFallback(
       .from('fragrances')
       .select(FRAGRANCE_SELECT)
       .in('id', [...order.keys()]);
-    if (genders?.length) qb = qb.in('gender', genders);
+    qb = applyGenderFilter(qb, genders);
     const { data } = await qb;
 
     return (data ?? [])
@@ -303,6 +365,16 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
   // Production mode starts empty — populated lazily as searches/fetches run.
   items: isSupabaseConfigured ? [] : MOCK_CATALOG,
   fetching: new Set(),
+  version: 0,
+
+  clearCache: () =>
+    set((s) => ({
+      cache: {},
+      // Demo mode's baseline is MOCK_CATALOG, not empty — same rule as _addToCache.
+      items: isSupabaseConfigured ? [] : MOCK_CATALOG,
+      fetching: new Set(),
+      version: s.version + 1,
+    })),
 
   _addToCache: (newItems) => {
     const patch: Record<string, Fragrance> = {};
@@ -368,7 +440,8 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     }
   },
 
-  search: async (query, limit = 20, genders) => {
+  search: async (query, limit = 20, gendersArg) => {
+    const genders = resolveGenders(gendersArg);
     // Normalized, not just lowercased: `ilike` is case-insensitive but not
     // accent-insensitive, so "hermes" has to be matched against a normalized
     // mirror of the name ("Hermès" → "hermes") on both sides. Typing the accent
@@ -383,7 +456,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         f.top_notes.some((n) => norm(n).includes(q)) ||
         f.top_accords.some((a) => norm(a).includes(q)),
       );
-      if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
+      if (genders?.length) results = results.filter((f) => genders.includes(f.gender ?? 'unisex'));
       return results.filter((f) => !isBundle(f)).slice(0, limit);
     }
 
@@ -478,7 +551,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         .ilike('name_normalized', `%${q}%`)
         .order('name', { ascending: true })
         .limit(fetchLimit);
-      if (genders?.length) nameQb = nameQb.in('gender', genders);
+      nameQb = applyGenderFilter(nameQb, genders);
 
       // 2) Within matched brands, narrow by the leftover name tokens — or return
       //    the whole brand when the query was brand-only (nameRemainder empty).
@@ -495,7 +568,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
               .order('name', { ascending: true })
               .limit(fetchLimit);
             if (nameRemainder) bqb = bqb.ilike('name_normalized', `%${nameRemainder}%`);
-            if (genders?.length) bqb = bqb.in('gender', genders);
+            bqb = applyGenderFilter(bqb, genders);
             return bqb;
           })()
         : Promise.resolve({ data: [] as any[], error: null });
@@ -540,7 +613,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       .or('source.is.null,source.neq.aromapassions')
       .order('name', { ascending: true })
       .limit(limit);
-    if (genders?.length) qb = qb.in('gender', genders);
+    qb = applyGenderFilter(qb, genders);
 
     const { data, error } = await qb;
     if (error) { console.warn('[catalog] search error:', error.message); return []; }
@@ -549,7 +622,8 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     return results;
   },
 
-  searchByNotes: async (terms, limit = 200, genders) => {
+  searchByNotes: async (terms, limit = 200, gendersArg) => {
+    const genders = resolveGenders(gendersArg);
     const cleaned = terms.map((t) => t.trim().toLowerCase()).filter(Boolean);
     if (cleaned.length === 0) return [];
 
@@ -561,7 +635,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
         const fields = hay(f);
         return cleaned.every((term) => fields.some((v) => v.includes(term)));
       });
-      if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
+      if (genders?.length) results = results.filter((f) => genders.includes(f.gender ?? 'unisex'));
       return results.filter((f) => !isBundle(f)).slice(0, limit);
     }
 
@@ -626,10 +700,11 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     return get().search('', limit, genders);
   },
 
-  fetchEnriched: async (limit = 500, offset = 0, genders?) => {
+  fetchEnriched: async (limit = 500, offset = 0, gendersArg?) => {
+    const genders = resolveGenders(gendersArg);
     if (!isSupabaseConfigured) {
       let results = MOCK_CATALOG.filter((f) => f.top_accords.length > 0);
-      if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
+      if (genders?.length) results = results.filter((f) => genders.includes(f.gender ?? 'unisex'));
       return results.filter((f) => !isBundle(f)).slice(offset, offset + limit);
     }
 
@@ -645,7 +720,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       .order('id', { ascending: true })
       .range(offset, offset + limit - 1);
 
-    if (genders?.length) qb = qb.in('gender', genders);
+    qb = applyGenderFilter(qb, genders);
 
     const { data, error } = await qb;
     if (error) { console.warn('[catalog] fetchEnriched error:', error.message); return []; }
@@ -654,10 +729,11 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     return results;
   },
 
-  fetchByBrand: async (brand, genders) => {
+  fetchByBrand: async (brand, gendersArg) => {
+    const genders = resolveGenders(gendersArg);
     if (!isSupabaseConfigured) {
       let results = MOCK_CATALOG.filter((f) => f.brand === brand);
-      if (genders?.length) results = results.filter((f) => genders.includes(f.gender));
+      if (genders?.length) results = results.filter((f) => genders.includes(f.gender ?? 'unisex'));
       return results;
     }
 
@@ -677,7 +753,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       .order('name', { ascending: true })
       .limit(200);
 
-    if (genders?.length) qb = qb.in('gender', genders);
+    qb = applyGenderFilter(qb, genders);
 
     const { data, error } = await qb;
     if (error) { console.warn('[catalog] fetchByBrand error:', error.message); return []; }
@@ -764,7 +840,8 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     return results;
   },
 
-  fetchPickerCandidates: async (minTier = 3) => {
+  fetchPickerCandidates: async (minTier = 3, gendersArg?) => {
+    const genders = resolveGenders(gendersArg);
     if (!isSupabaseConfigured) {
       // Picker logic (popularity resolver) handles tier; here we only ensure a
       // displayable image + real accords so a tile can render and aggregate.
@@ -783,17 +860,22 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     // order becomes a no-op and we fall back to the broad seed-list match). If the
     // column doesn't exist the select errors and we fall back to plain enriched.
     void minTier;
-    const { data, error } = await supabase
+    let pqb = supabase
       .from('fragrances')
       .select(FRAGRANCE_SELECT + ', popularity_tier')
       .eq('is_active', true)
       .neq('top_accords', '{}')
-      .not('image_url', 'is', null)
+      .not('image_url', 'is', null);
+    // The picker is the first thing a new user sees, so it must honour the
+    // audience they just chose. Pools stay healthy either way: 1,052 eligible
+    // tiles for Men's, 1,212 for Women's, 1,588 unfiltered (2026-08-29).
+    pqb = applyGenderFilter(pqb, genders);
+    const { data, error } = await pqb
       .order('popularity_tier', { ascending: false, nullsFirst: false })
       .limit(600);
     if (error) {
       console.warn('[catalog] fetchPickerCandidates error, falling back to enriched:', error.message);
-      return get().fetchEnriched(600);
+      return get().fetchEnriched(600, 0, genders);
     }
     const results = ((data ?? []) as any[])
       .map((row) => ({ ...rowToFragrance(row), popularity_tier: row.popularity_tier }) as Fragrance)

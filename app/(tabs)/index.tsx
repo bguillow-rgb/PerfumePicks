@@ -342,6 +342,8 @@ function GetStartedHero({ router }: { router: ReturnType<typeof useRouter> }) {
 function DnaPicksModule({ router }: { router: ReturnType<typeof useRouter> }) {
   const dna = useTasteProfileStore((s) => s.dna);
   const fetchPickerCandidates = useCatalogStore((s) => s.fetchPickerCandidates);
+  // Refetch when the audience preference changes (Home is always mounted).
+  const catalogVersion = useCatalogStore((s) => s.version);
   const startRetake = useOnboardingStore((s) => s.startRetake);
   const [recs, setRecs] = useState<RankedDnaRec[]>([]);
 
@@ -355,7 +357,7 @@ function DnaPicksModule({ router }: { router: ReturnType<typeof useRouter> }) {
       setRecs(ranked.slice(0, 10));
     })();
     return () => { alive = false; };
-  }, [dna, fetchPickerCandidates]);
+  }, [dna, fetchPickerCandidates, catalogVersion]);
 
   if (!dna) return null;
 

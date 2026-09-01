@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { View, Text, StyleSheet, Pressable, Image, Alert, Animated as RNAnimated, TextInput, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -11,7 +11,7 @@ import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming, Eas
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
 import { scanBottle } from '@/src/lib/claude';
 import { resolveScanMatch } from '@/src/lib/scanMatch';
-import { useCatalogStore, type Fragrance } from '@/src/stores/useCatalogStore';
+import { useCatalogStore, NO_GENDER_FILTER, type Fragrance } from '@/src/stores/useCatalogStore';
 import { useWardrobeStore, WARDROBE_CAP_HIT } from '@/src/stores/useWardrobeStore';
 import { useCustomFragranceStore } from '@/src/stores/useCustomFragranceStore';
 import { useScanStore, FREE_LIFETIME_SCAN_LIMIT } from '@/src/stores/useScanStore';
@@ -48,7 +48,20 @@ export default function ScanScreen() {
   const [quickAddName, setQuickAddName] = useState('');
   const [quickAddBrand, setQuickAddBrand] = useState('');
   const [isAdding, setIsAdding] = useState(false);
-  const search = useCatalogStore((s) => s.search);
+  const storeSearch = useCatalogStore((s) => s.search);
+  /**
+   * Scan lookups bypass the audience filter (NO_GENDER_FILTER). The user is
+   * holding this exact bottle — whose shelf it belongs on is irrelevant, and a
+   * filtered lookup would tell someone photographing a real bottle that it
+   * "isn't in our catalog" and push them into the manual-add path, creating a
+   * duplicate custom entry for a fragrance we already have. Same reason the
+   * quick-add search below is unfiltered: both resolve a SPECIFIC named bottle
+   * rather than browsing for one.
+   */
+  const search = useCallback(
+    (q: string, limit?: number) => storeSearch(q, limit, NO_GENDER_FILTER),
+    [storeSearch],
+  );
   const isPro = useProStore((s) => s.isPro);
   const recordScan = useScanStore((s) => s.recordScan);
   const isAtLimit = useScanStore((s) => s.isAtLimit);

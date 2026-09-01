@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { View, Text, StyleSheet, Pressable, Image, TextInput, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, RADIUS, FONTS } from '@/src/constants/theme';
-import { useCatalogStore, type Fragrance, type DupeResult } from '@/src/stores/useCatalogStore';
+import { useCatalogStore, NO_GENDER_FILTER, type Fragrance, type DupeResult } from '@/src/stores/useCatalogStore';
 import { useProStore } from '@/src/stores/useProStore';
 import { useRouter } from 'expo-router';
 import { DupeList } from './DupeList';
@@ -48,7 +48,12 @@ export function DupePicker({ initialOriginal, placeholder = 'Less expensive opti
     if (q.length < 2) { setResults([]); setSearching(false); return; }
     setSearching(true);
     debounce.current = setTimeout(async () => {
-      const rows = await search(q, 8);
+      // NO_GENDER_FILTER: the user is typing the name of one bottle they
+      // already know — usually the expensive one they own or covet — to ask
+      // "what smells like this?". Applying the audience filter here would
+      // answer "we've never heard of it" for a bottle we stock, and the dupes
+      // it leads to are chosen by scent similarity, not by shelf.
+      const rows = await search(q, 8, NO_GENDER_FILTER);
       setResults(rows);
       setSearching(false);
     }, 250);

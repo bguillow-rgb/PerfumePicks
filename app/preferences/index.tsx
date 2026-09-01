@@ -5,6 +5,9 @@ import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
 import { AVOID_GROUPS } from '@/src/constants/accords';
+import { GENDER_PREF_OPTIONS, type GenderPref } from '@/src/lib/genderFilter';
+import { useCatalogStore } from '@/src/stores/useCatalogStore';
+import { track, EVENTS } from '@/src/lib/observability';
 import {
   useScentPreferencesStore,
   type PrefOccasion,
@@ -81,6 +84,21 @@ export default function ScentPreferences() {
   const setBudget = useScentPreferencesStore((s) => s.setBudget);
   const setOccasion = useScentPreferencesStore((s) => s.setOccasion);
   const setSeason = useScentPreferencesStore((s) => s.setSeason);
+  const genderPref = useScentPreferencesStore((s) => s.genderPref);
+  const setGenderPref = useScentPreferencesStore((s) => s.setGenderPref);
+
+  /**
+   * Audience is the one setting on this screen that FILTERS rather than ranks,
+   * so it can't just sit in the store and wait to be read on the next score
+   * pass — everything already fetched under the old filter is now wrong. Drop
+   * the catalog cache so the next read goes back to Supabase.
+   */
+  const chooseAudience = (pref: GenderPref) => {
+    if (pref === genderPref) return; // no-op tap: don't churn the cache
+    track(EVENTS.AUDIENCE_CHANGED, { pref, from: genderPref });
+    setGenderPref(pref);
+    useCatalogStore.getState().clearCache();
+  };
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'bottom']} testID="preferences-screen">
@@ -104,6 +122,26 @@ export default function ScentPreferences() {
           These sit on top of your Fragrance DNA. Hard limits we'll respect every
           time we pick something for you.
         </Text>
+
+        {/* ── Audience ───────────────────────────────────────────────────── */}
+        {/* First, because it's the only setting here that HIDES bottles — the
+            rest just re-rank them. Someone who can't find a fragrance they
+            know exists should hit this control before anything else. */}
+        <Text style={styles.sectionLabel}>SHOW ME</Text>
+        <Text style={styles.sectionHint}>
+          Which side of the shelf we pick from. Unisex bottles appear either way.
+        </Text>
+        <View style={styles.chipWrap}>
+          {GENDER_PREF_OPTIONS.map((o) => (
+            <Chip
+              key={o.value}
+              label={o.label}
+              active={genderPref === o.value}
+              onPress={() => chooseAudience(o.value)}
+              testID={`pref-audience-${o.value}`}
+            />
+          ))}
+        </View>
 
         {/* ── Budget ─────────────────────────────────────────────────────── */}
         <Text style={styles.sectionLabel}>BUDGET</Text>
