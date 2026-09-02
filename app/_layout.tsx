@@ -41,6 +41,7 @@ import { initRevenueCat, identifyUser, getCustomerInfo, isProActive } from '@/sr
 import { useProStore } from '@/src/stores/useProStore';
 import { useAuthStore } from '@/src/stores/useAuthStore';
 import { useOnboardingStore } from '@/src/stores/useOnboardingStore';
+import { recordPushOpen, sourceFromData } from '@/src/features/push/pushOpens';
 import { useScentPreferencesStore } from '@/src/stores/useScentPreferencesStore';
 import { useAppSync } from '@/src/lib/sync/useAppSync';
 import { scheduleLivingDnaRecompute } from '@/src/lib/sync/recomputeScheduler';
@@ -53,6 +54,8 @@ import {
   identify as identifyAnalytics,
   resetAnalytics,
   setErrorUser,
+  track,
+  EVENTS,
 } from '@/src/lib/observability';
 
 export { ErrorBoundary } from 'expo-router';
@@ -334,7 +337,16 @@ export default function RootLayout() {
 
   useEffect(() => {
     const sub = Notifications.addNotificationResponseReceivedListener((response) => {
-      const screen = response.notification.request.content.data?.screen as string | undefined;
+      const data = response.notification.request.content.data as Record<string, unknown> | undefined;
+      const screen = data?.screen as string | undefined;
+      // Record the open BEFORE navigating. A push-open is the one behaviour the
+      // daily SOTD push exists to cause, and it otherwise writes nothing — the
+      // user reads their scent and closes the app — so retention analysis could
+      // not see it at all. Durable row + analytics event; both fire-and-forget
+      // so neither can delay or block the navigation below.
+      const source = sourceFromData(data);
+      void recordPushOpen(source);
+      track(EVENTS.PUSH_OPENED, { source });
       if (screen === 'wardrobe') {
         routerRef.current.push('/(tabs)/wardrobe');
       } else {

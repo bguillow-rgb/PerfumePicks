@@ -252,8 +252,34 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
       lines.push(`| ${s.source} | **${s.installs}** |`);
     }
     lines.push('');
+
+    // Referrer detail. `Source Type` alone lumps every referring app into
+    // "App referrer", which hid a paid Reddit campaign completely.
+    const refs = (aq.referrers || []).filter((r) => r.sourceInfo);
+    if (refs.length > 0) {
+      lines.push('**Referrer detail (first-time downloads only)**');
+      lines.push('');
+      lines.push('| Referrer | Campaign | Installs |');
+      lines.push('|---|---|---|');
+      for (const r of refs.slice(0, 10)) {
+        lines.push(`| ${r.sourceInfo} | ${r.campaign || '—'} | **${r.installs}** |`);
+      }
+      lines.push('');
+    }
   } else if (aq?.pending) {
     lines.push(`> _ASC acquisition sources: ${aq.note || 'report pending Apple preparation.'}_`);
+    lines.push('');
+  }
+
+  // Reddit paid test. Rendered ALWAYS, including at zero: a channel that is
+  // silently missing reads as "no data", but a channel showing 0 reads as
+  // "not working", which is the thing we actually need to see. Counts
+  // first-time downloads only, never auto-updates.
+  const rd = asc?.acquisitionSources?.reddit;
+  if (rd) {
+    const camps = (rd.byCampaign || []).filter((c) => c.campaign !== '(none)');
+    const campStr = camps.length ? ` (${camps.map((c) => `${c.campaign}: ${c.installs}`).join(', ')})` : '';
+    lines.push(`**Reddit Ads:** ${rd.installs} first-time download${rd.installs === 1 ? '' : 's'} attributed to Reddit${campStr}`);
     lines.push('');
   }
 

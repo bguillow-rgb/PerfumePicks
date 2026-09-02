@@ -62,6 +62,12 @@ async function main() {
   for (const t of ['dna_picker_events', 'wardrobe_items', 'wear_logs', 'swipe_feedback', 'affiliate_clicks'])
     for (const r of await page(`${t}?select=user_id,created_at`)) touch(r.user_id, day(r.created_at));
   for (const r of await page('user_taste_profiles?select=user_id,last_updated')) touch(r.user_id, day(r.last_updated));
+  // push_opens (202609021200) closes the blind spot this report was built with:
+  // a user who taps the push, reads their scent and closes the app writes
+  // nothing else, so their return was previously invisible and every figure
+  // below was a floor. opened_on is already the user's LOCAL day.
+  const opens = await page('push_opens?select=user_id,opened_on,source');
+  for (const r of opens) touch(r.user_id, r.opened_on);
   for (const p of profiles) if (p.last_login_date) touch(p.id, day(p.last_login_date));
 
   // push tokens (first registration per user)
@@ -80,6 +86,26 @@ async function main() {
   console.log(`  tokens marked dead         : ${withTok.filter((u) => u.tok.invalid).length}`);
   const pushedRecently = withTok.filter((u) => u.tok.lastPushed && dnum(today) - dnum(u.tok.lastPushed) <= 1).length;
   console.log(`  pushed in the last 24h     : ${pushedRecently}`);
+
+  // ── Push opens — the behaviour the push exists to cause ───────────────────
+  const sotdOpens = opens.filter((o) => o.source === 'daily_sotd');
+  const openers = new Set(sotdOpens.map((o) => o.user_id).filter((u) => U.has(u)));
+  console.log('\nPUSH OPENS (daily_sotd) — direct evidence, not inferred');
+  if (!opens.length) {
+    console.log('  no rows yet. The recorder ships in the OTA; expect the first');
+    console.log('  rows the morning after users update. Until then every number');
+    console.log('  below still under-counts push-driven returns.');
+  } else {
+    console.log(`  distinct users who opened a daily push: ${openers.size}`);
+    console.log(`  total open-days recorded              : ${sotdOpens.length}`);
+    const withTokN = withTok.length || 1;
+    console.log(`  open rate (openers / users with token): ${(openers.size / withTokN * 100).toFixed(0)}%`);
+    const bySrc = {};
+    opens.forEach((o) => { bySrc[o.source] = (bySrc[o.source] ?? 0) + 1; });
+    console.log('  by source:', JSON.stringify(bySrc));
+    const last7 = sotdOpens.filter((o) => dnum(today) - dnum(o.opened_on) <= 7).length;
+    console.log(`  open-days in the last 7 days          : ${last7}`);
+  }
 
   // ── PRIMARY: within-user before/after ──────────────────────────────────────
   // Each user is their own control, so the "push users were keener anyway"

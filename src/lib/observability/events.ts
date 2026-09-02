@@ -73,6 +73,14 @@ export const EVENTS = {
   // bottle" intent (stronger than a passive no_results miss). props: { query, surface }
   SEARCH_REQUEST_SUBMITTED: 'search_request_submitted',
 
+  // ─── Push ────────────────────────────────────────────────────────────
+  // The user TAPPED a notification. props: { source } — 'daily_sotd' is the
+  // server push whose effect we are trying to read; the local_* sources are
+  // in-app reminders and must not be mistaken for it. Also written durably to
+  // push_opens, because a push-open otherwise writes nothing and was invisible
+  // to retention analysis.
+  PUSH_OPENED:            'push_opened',
+
   // ─── Discover ────────────────────────────────────────────────────────
   DISCOVER_SEARCH_QUERY:  'discover_search_query',
   DISCOVER_BRAND_OPENED:  'discover_brand_opened',

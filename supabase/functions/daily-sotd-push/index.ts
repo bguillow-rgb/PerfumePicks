@@ -162,7 +162,17 @@ Deno.serve(async (req) => {
   // Expo accepts up to 100 messages per request.
   const messages = due.map(({ row, archetype }) => {
     const { title, body } = messageFor(archetype);
-    return { to: row.token, title, body, sound: "default", channelId: "default" };
+    // data.source lets the app attribute an OPEN back to this push rather than
+    // to a locally-scheduled reminder — without it every open is "unknown" and
+    // the daily push cannot be measured separately from the local nudges.
+    return {
+      to: row.token,
+      title,
+      body,
+      sound: "default",
+      channelId: "default",
+      data: { screen: "today", source: "daily_sotd" },
+    };
   });
 
   const res = await fetch(EXPO_PUSH_URL, {

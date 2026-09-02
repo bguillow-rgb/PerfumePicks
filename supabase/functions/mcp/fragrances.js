@@ -6,12 +6,21 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 // Lowercase, strip diacritics, and drop anything outside a safe charset —
 // PostgREST filter values and ilike wildcards never see raw input.
 export function normalizeQuery(q) {
-    return q
+    // Hard cap on both characters and term count. Length bounds on the tool schema
+    // are the first line of defence; this is the second, because every term becomes
+    // two conditions in a PostgREST .or() and an unbounded query built a 2,400-
+    // condition filter that burned 7.7s of database time (Mark Z audit 2026-08-26).
+    return String(q ?? "")
+        .slice(0, 200)
         .toLowerCase()
         .normalize("NFD")
         .replace(/[̀-ͯ]/g, "")
         .replace(/[^a-z0-9\s'&-]/g, " ")
-        .trim();
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean)
+        .slice(0, 12)
+        .join(" ");
 }
 // Never echo PostgREST error details to callers; log them server-side.
 function dbFail(error) {
@@ -100,6 +109,31 @@ function rankByRelevance(rows, normQuery) {
         .sort((x, y) => y.score - x.score)
         .map((x) => x.f);
 }
+/** Brand + name + slug, lowercased — what a query term is matched against. */
+const hayOf = (f) => `${(f.brand?.name ?? "").toLowerCase()} ${f.name_normalized ?? f.name.toLowerCase()} ${f.slug}`;
+/**
+ * Is this row plausibly ABOUT the query, when no row matched every term?
+ *
+ * Both the resolver and search build candidates with a PostgREST `.or()`, which
+ * matches ANY term. Falling straight back to the top-ranked candidate therefore
+ * answers nonsense with confidence: `get_fragrance("zzqqxx not a real fragrance
+ * 12345")` returned Dior Homme, and `search_fragrances` on the same string
+ * returned Chanel No. 5 and Creed Aventus — matching only on incidental short
+ * tokens. ChatGPT itself flagged the search case during a 2026-08-21 demo
+ * ("should ideally return 0 results instead of falling back to generic
+ * fragrances"). A wrong-but-confident answer is worse than no answer, and much
+ * worse inside an AI response where nobody sees the query that produced it.
+ *
+ * Bar: carry at least half the meaningful (3+ char) terms, so "a"/"the" can't
+ * carry a match. Real queries with one extra word still resolve — "Baccarat
+ * Rouge 540 extrait" matches on baccarat+rouge, 2 of 3 — while input sharing
+ * nothing with the catalog drops out entirely.
+ */
+function looselyRelevant(f, meaningfulTerms) {
+    const hay = hayOf(f);
+    const hits = meaningfulTerms.filter((t) => hay.includes(t)).length;
+    return hits * 2 >= meaningfulTerms.length;
+}
 /** Resolve by slug (the app's canonical key), UUID, or fuzzy name. */
 export async function resolveFragrance(ref) {
     const trimmed = ref.trim();
@@ -134,11 +168,17 @@ export async function resolveFragrance(ref) {
         dbFail(error);
     const ranked = rankByRelevance((data ?? []), norm);
     // Require every query term to appear in brand+name; .or() above matched ANY.
-    const strict = ranked.filter((f) => {
-        const hay = `${(f.brand?.name ?? "").toLowerCase()} ${f.name_normalized ?? f.name.toLowerCase()} ${f.slug}`;
-        return terms.every((t) => hay.includes(t));
-    });
-    return strict[0] ?? ranked[0] ?? null;
+    const strict = ranked.filter((f) => terms.every((t) => hayOf(f).includes(t)));
+    if (strict[0])
+        return strict[0];
+    // Loose fallback, but it must still be ABOUT the query — see looselyRelevant.
+    const meaningful = terms.filter((t) => t.length >= 3);
+    if (meaningful.length) {
+        const best = ranked.find((f) => looselyRelevant(f, meaningful));
+        if (best)
+            return best;
+    }
+    return null;
 }
 export async function mustResolve(ref) {
     const f = await resolveFragrance(ref);
@@ -174,11 +214,18 @@ export async function searchFragrances(f, opts = {}) {
     }
     if (terms.length) {
         const ranked = rankByRelevance(rows, norm);
-        const strict = ranked.filter((r) => {
-            const hay = `${(r.brand?.name ?? "").toLowerCase()} ${r.name_normalized ?? r.name.toLowerCase()} ${r.slug}`;
-            return terms.every((t) => hay.includes(t));
-        });
-        rows = strict.length ? strict : ranked;
+        const strict = ranked.filter((r) => terms.every((t) => hayOf(r).includes(t)));
+        if (strict.length) {
+            rows = strict;
+        }
+        else {
+            // No row carries every term. Keep only rows that are still plausibly about
+            // the query (see looselyRelevant) rather than falling back to the whole
+            // `.or()` result set — that fallback answered a nonsense query with the
+            // catalog's most popular fragrances.
+            const meaningful = terms.filter((t) => t.length >= 3);
+            rows = meaningful.length ? ranked.filter((r) => looselyRelevant(r, meaningful)) : ranked;
+        }
     }
     return rows.slice(0, opts.maxRows ?? limit);
 }

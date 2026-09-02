@@ -47,7 +47,11 @@ function build(asa) {
   const accountCpa = account.cpa ?? (totalInstalls > 0 ? totalSpend / totalInstalls : null);
 
   // ── 1. No Target CPA guardrail ──────────────────────────────────────
-  if (account.targetCpa == null) {
+  // Suppress the finding only when we can SEE ad-group caps in place. Missing
+  // cpaGoal data (older snapshots don't carry the key) is unknown, not capped —
+  // it must fall through to the warning, same as pre-cpaGoal behavior.
+  const anyAdGroupCapped = adGroups.some((g) => g.cpaGoal != null);
+  if (account.targetCpa == null && !anyAdGroupCapped) {
     findings.push({
       severity: 'high',
       action: 'SET-GUARDRAIL',
