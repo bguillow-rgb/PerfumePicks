@@ -13,7 +13,6 @@ import { useNotificationStore } from '@/src/stores/useNotificationStore';
 import { useAuthStore } from '@/src/stores/useAuthStore';
 import { useTasteProfileStore } from '@/src/stores/useTasteProfileStore';
 import { useCompareStore } from '@/src/stores/useCompareStore';
-import { FeedbackBubble } from '@/src/components/feedback/FeedbackBubble';
 import { NpsWatcher } from '@/src/components/feedback/NpsWatcher';
 import { claimFeedbackModal, releaseFeedbackModal } from '@/src/lib/feedbackModalGate';
 import {
@@ -433,7 +432,6 @@ export default function TabLayout() {
         />
       </Tabs>
       <ScanFAB />
-      <FeedbackBubble />
       <CompareFAB />
       <NpsWatcher />
 
