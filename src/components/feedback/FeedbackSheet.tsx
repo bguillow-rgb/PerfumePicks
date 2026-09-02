@@ -5,7 +5,7 @@
 
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Keyboard,
@@ -46,6 +46,47 @@ export function FeedbackSheet({ visible, onClose }: Props) {
   const [email, setEmail] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
+
+  // Keyboard handling. A pageSheet Modal + KeyboardAvoidingView measures its
+  // frame wrong, automaticallyAdjustKeyboardInsets only *permits* scrolling,
+  // and scrollToEnd() overshoots (it parks the email field at the keyboard and
+  // shoves the message box off the top). So: pad the scroll content by the
+  // measured keyboard height; on focus/growth scroll so the "Your message"
+  // label sits at the top of the visible area (the chips scroll away, the
+  // input stays put); and cap the input's height to the room left above the
+  // keys so the caret can never be hidden — the input scrolls internally
+  // instead. At large Dynamic Type with the keyboard up there is very little
+  // room, and that cap is what keeps the form usable.
+  const scrollRef = useRef<ScrollView>(null);
+  const scrollH = useRef(0); // ScrollView frame height
+  const inputRect = useRef({ y: 0, h: 0 }); // message input, in content coords
+  const [kbHeight, setKbHeight] = useState(0);
+  const [inputCap, setInputCap] = useState(200);
+  const LABEL_ALLOWANCE = 36; // "Your message" label + its margins
+  const revealInput = () => {
+    const y = Math.max(0, inputRect.current.y - LABEL_ALLOWANCE);
+    scrollRef.current?.scrollTo({ y, animated: true });
+  };
+  // Defer a frame so onLayout has reported the latest sizes first.
+  const revealInputSoon = () => requestAnimationFrame(revealInput);
+  useEffect(() => {
+    const show = Keyboard.addListener('keyboardDidShow', (e) => {
+      const h = e.endCoordinates.height;
+      setKbHeight(h);
+      // Room left above the keys, minus the label and the char counter.
+      const visible = scrollH.current - h;
+      setInputCap(visible > 0 ? Math.max(96, visible - LABEL_ALLOWANCE - 32) : 200);
+      revealInputSoon();
+    });
+    const hide = Keyboard.addListener('keyboardDidHide', () => {
+      setKbHeight(0);
+      setInputCap(200);
+    });
+    return () => {
+      show.remove();
+      hide.remove();
+    };
+  }, []);
 
   // Reset on each open so the sheet never shows stale text.
   useEffect(() => {
@@ -97,7 +138,9 @@ export function FeedbackSheet({ visible, onClose }: Props) {
               bar and collects accidental mid-sentence submits. */}
           <View style={styles.header}>
             <Pressable onPress={onClose} hitSlop={12} style={styles.headerSide}>
-              <Text style={styles.close}>{sent ? 'Done' : 'Cancel'}</Text>
+              <Text style={styles.close} numberOfLines={1}>
+                {sent ? 'Done' : 'Cancel'}
+              </Text>
             </Pressable>
             <Text style={styles.title}>Send Feedback</Text>
             <View style={[styles.headerSide, styles.headerSideRight]}>
@@ -106,7 +149,9 @@ export function FeedbackSheet({ visible, onClose }: Props) {
                   <ActivityIndicator size="small" color={COLORS.accent} />
                 ) : (
                   <Pressable onPress={handleSubmit} disabled={!canSubmit} hitSlop={12}>
-                    <Text style={[styles.send, !canSubmit && styles.sendDisabled]}>Send</Text>
+                    <Text style={[styles.send, !canSubmit && styles.sendDisabled]} numberOfLines={1}>
+                      Send
+                    </Text>
                   </Pressable>
                 ))}
             </View>
@@ -130,10 +175,13 @@ export function FeedbackSheet({ visible, onClose }: Props) {
               <ScrollView
                 style={{ flex: 1 }}
                 keyboardShouldPersistTaps="handled"
+                ref={scrollRef}
+                onLayout={(e) => {
+                  scrollH.current = e.nativeEvent.layout.height;
+                }}
                 keyboardDismissMode="interactive"
                 showsVerticalScrollIndicator={false}
-                automaticallyAdjustKeyboardInsets
-                contentContainerStyle={{ paddingBottom: SPACING.xl }}
+                contentContainerStyle={{ paddingBottom: kbHeight + SPACING.xl }}
               >
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
                   <View>
@@ -161,7 +209,11 @@ export function FeedbackSheet({ visible, onClose }: Props) {
 
                     <Text style={styles.label}>Your message</Text>
                     <TextInput
-                      style={[styles.input, styles.multiline]}
+                      style={[
+                        styles.input,
+                        styles.multiline,
+                        { maxHeight: inputCap, minHeight: Math.min(140, inputCap) },
+                      ]}
                       placeholder="The more detail, the better."
                       placeholderTextColor={COLORS.subtle}
                       value={message}
@@ -171,6 +223,14 @@ export function FeedbackSheet({ visible, onClose }: Props) {
                       textAlignVertical="top"
                       maxLength={MAX_LEN}
                       autoFocus
+                      onLayout={(e) => {
+                        inputRect.current = {
+                          y: e.nativeEvent.layout.y,
+                          h: e.nativeEvent.layout.height,
+                        };
+                      }}
+                      onFocus={revealInputSoon}
+                      onContentSizeChange={revealInputSoon}
                     />
                     <Text style={styles.charCount}>{message.length} / {MAX_LEN}</Text>
 
@@ -218,7 +278,9 @@ const styles = StyleSheet.create({
     color: COLORS.text,
   },
   headerSide: {
-    width: 56,
+    // minWidth, not width: at large Dynamic Type "Cancel" overflowed a fixed
+    // 56pt box and wrapped to "Canc / el". Let the side grow to fit.
+    minWidth: 56,
   },
   headerSideRight: {
     alignItems: 'flex-end',
@@ -296,6 +358,10 @@ const styles = StyleSheet.create({
   },
   multiline: {
     minHeight: 140,
+    // Cap the box so a long message scrolls inside the input (the caret stays
+    // in view natively) instead of growing without bound and pushing the
+    // fields below it off-screen.
+    maxHeight: 200,
   },
   charCount: {
     fontFamily: FONTS.body,
