@@ -59,6 +59,24 @@ describe('affiliateNetworkForUrl', () => {
 });
 
 describe('handleAffiliateClick', () => {
+  /**
+   * The opened URL is no longer byte-identical to params.url: withSubId stamps a
+   * per-click SubID (`sid`) so a posted commission can be traced to the tap that
+   * earned it, and re-serialising through URL() percent-encodes the `url=` deep
+   * link. Both are intended. What actually has to hold is that the handoff still
+   * points at the same CJ endpoint and carries the same destination — assert
+   * that, rather than a literal string that breaks on every tracking change.
+   */
+  const expectOpenedRetailerLink = (expectedRaw: string) => {
+    expect(mockOpenBrowser).toHaveBeenCalledTimes(1);
+    const opened = new URL(mockOpenBrowser.mock.calls[0][0] as string);
+    const expected = new URL(expectedRaw);
+    expect(opened.origin + opened.pathname).toBe(expected.origin + expected.pathname);
+    // Decoded compare: proves the deep link survived intact whatever the encoding.
+    expect(opened.searchParams.get('url')).toBe(expected.searchParams.get('url'));
+    expect(opened.searchParams.get('sid')).toBeTruthy();
+  };
+
   const params = {
     fragrance_id: 'elie-saab-le-parfum',
     retailer: 'fragranceshop',
@@ -69,7 +87,7 @@ describe('handleAffiliateClick', () => {
 
   it('always opens the retailer URL (money path is never gated on logging)', () => {
     handleAffiliateClick(params);
-    expect(mockOpenBrowser).toHaveBeenCalledWith(params.url);
+    expectOpenedRetailerLink(params.url);
   });
 
   it('fires the PostHog secondary signal', () => {
@@ -96,7 +114,7 @@ describe('handleAffiliateClick', () => {
     mockResolveUser.mockResolvedValueOnce(null);
     handleAffiliateClick(params);
     await new Promise((r) => setTimeout(r, 0));
-    expect(mockOpenBrowser).toHaveBeenCalledWith(params.url);
+    expectOpenedRetailerLink(params.url);
     expect(mockInsert).not.toHaveBeenCalled();
   });
 
@@ -120,7 +138,27 @@ describe('handleAffiliateClick', () => {
     mockInsert.mockRejectedValueOnce(new Error('db down'));
     expect(() => handleAffiliateClick(params)).not.toThrow();
     await new Promise((r) => setTimeout(r, 0));
-    expect(mockOpenBrowser).toHaveBeenCalledWith(params.url);
+    expectOpenedRetailerLink(params.url);
+  });
+
+  // Commission attribution depends entirely on this: CJ returns the SubID on the
+  // commission record, so two taps sharing one sid are indistinguishable and a
+  // zero-commission stretch becomes unfalsifiable. That ambiguity is what stalled
+  // the 2026-08 triage, so the uniqueness is worth a test of its own.
+  it('stamps a unique SubID on every click, and the ledger row matches it', async () => {
+    handleAffiliateClick(params);
+    await new Promise((r) => setTimeout(r, 0));
+    const first = new URL(mockOpenBrowser.mock.calls[0][0] as string).searchParams.get('sid');
+    const ledgerClickId = (mockInsert.mock.calls[0][0] as Record<string, unknown>).click_id as string;
+    expect(first).toBeTruthy();
+    // Same id on both sides, dashes stripped for the network's SubID slot.
+    expect(first).toBe(ledgerClickId.replace(/-/g, ''));
+
+    handleAffiliateClick(params);
+    await new Promise((r) => setTimeout(r, 0));
+    const second = new URL(mockOpenBrowser.mock.calls[1][0] as string).searchParams.get('sid');
+    expect(second).toBeTruthy();
+    expect(second).not.toBe(first);
   });
 
   it('counts a failed insert too — same audit hole', async () => {
