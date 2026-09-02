@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { useCallback, useMemo, useState, useEffect } from 'react';
 import { COLORS, SPACING, TYPE, FONTS, RADIUS } from '@/src/constants/theme';
+import { FeedbackNudge } from '@/src/components/feedback/FeedbackNudge';
 import { Ionicons } from '@expo/vector-icons';
 import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 import { useCatalogStore } from '@/src/stores/useCatalogStore';
@@ -265,6 +266,9 @@ export default function HomeScreen() {
           </ScrollView>
         </Section>
 
+        <View style={{ paddingHorizontal: SPACING.lg, marginTop: SPACING.lg }}>
+          <FeedbackNudge />
+        </View>
         <View style={styles.footer}>
           <View style={styles.footerRule} />
           <Text style={styles.footerText}>
