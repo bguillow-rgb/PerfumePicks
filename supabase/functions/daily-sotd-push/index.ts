@@ -61,6 +61,7 @@ const ARCHETYPE_NAME: Record<string, string> = {
 
 interface TokenRow {
   user_id: string;
+  updated_at?: string | null;
   /** Settings toggle. Optional: undefined until the migration adds the column. */
   sotd_enabled?: boolean | null;
   token: string;
@@ -150,7 +151,7 @@ Deno.serve(async (req) => {
     }
   }
 
-  const due: { row: TokenRow; archetype: string | null; localYmd: string }[] = [];
+  let due: { row: TokenRow; archetype: string | null; localYmd: string }[] = [];
   for (const row of tokens) {
     const archetype = archetypeByUser.get(row.user_id) ?? null;
     const { hour, ymd } = localParts(nowUtcMs, row.tz, row.tz_offset_minutes ?? 0);
@@ -170,6 +171,26 @@ Deno.serve(async (req) => {
     return new Response(JSON.stringify({ sent: 0, reason: "none due" }), {
       headers: { "content-type": "application/json" },
     });
+  }
+
+  // ── ONE DEVICE, ONE PUSH ──────────────────────────────────────────────────
+  // push_tokens is keyed on user_id, so signing a second account into the same
+  // phone stores the SAME Expo device token on a second row. The send loop is
+  // per-row, so that phone received one identical notification per account — a
+  // device with three accounts got three copies every morning. Collapse to the
+  // most recently registered row per token: the device belongs to whoever
+  // signed in last. (A trigger keeps the table itself clean; this is the guard
+  // that holds even if a stale row slips through.)
+  {
+    const best = new Map<string, typeof due[number]>();
+    for (const d of due) {
+      const prev = best.get(d.row.token);
+      if (!prev || (d.row.updated_at ?? "") > (prev.row.updated_at ?? "")) best.set(d.row.token, d);
+    }
+    if (best.size !== due.length) {
+      console.log(`[sotd-push] collapsed ${due.length} rows to ${best.size} devices`);
+    }
+    due = [...best.values()];
   }
 
   // ── CLAIM BEFORE SENDING (fixes duplicate pushes, 2026-09-02) ─────────────
