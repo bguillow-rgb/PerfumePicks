@@ -1,0 +1,21 @@
+appId: host.exp.Exponent
+---
+# Edge-swipe back to pop the pushed fragrance detail and land on a tab screen,
+# then open Profile — the reported double-fetch screen, now on the shared store.
+- swipe:
+    start: "2%, 45%"
+    end: "95%, 45%"
+- takeScreenshot: profile__after-swipe-back
+- tapOn:
+    id: "tab-profile"
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 20000
+- takeScreenshot: shared-auth__profile
+- scrollUntilVisible:
+    element:
+      text: "About"
+    direction: DOWN
+    timeout: 10000
+    optional: true
+- takeScreenshot: shared-auth__profile-scrolled

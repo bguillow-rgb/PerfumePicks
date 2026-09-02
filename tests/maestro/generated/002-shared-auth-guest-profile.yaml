@@ -1,0 +1,20 @@
+appId: host.exp.Exponent
+---
+# Assumes Perfume Picks is already loaded in Expo Go on the login screen.
+# Exercises: guest (anonymous) sign-in -> shared auth store updates -> tabs
+# render -> Profile screen (the reported double-fetch screen) loads.
+- assertVisible: "Continue as Guest"
+- takeScreenshot: shared-auth__login
+- tapOn: "Continue as Guest"
+- extendedWaitUntil:
+    visible: "Today"
+    timeout: 45000
+- takeScreenshot: shared-auth__home-guest
+
+# Profile tab — ProfileScreen + BadgesSection now read the shared auth store.
+- tapOn:
+    id: "tab-profile"
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 20000
+- takeScreenshot: shared-auth__profile

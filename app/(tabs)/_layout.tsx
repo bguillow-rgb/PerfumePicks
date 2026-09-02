@@ -20,7 +20,8 @@ import {
   requestNotificationPermission,
   registerPushToken,
   ensurePushRegistered,
-  scheduleSotdNotification,
+  setServerSotdEnabled,
+  retireLocalSotdNotification,
   scheduleAddBottlesNotification,
 } from '@/src/lib/notifications';
 import { resolveCheckout2Flag } from '@/src/lib/checkout2Flag';
@@ -308,6 +309,10 @@ export default function TabLayout() {
     // fires. Fails closed (layer OFF) until an explicit truthy row resolves;
     // re-checks on foreground inside the resolver.
     resolveDnaLayerFlag();
+    // One-way cleanup for users already carrying the retired local 8am trigger.
+    // They may never open Settings or see the permission prompt again, so boot
+    // is the only place we can reliably stop their duplicate morning notification.
+    void retireLocalSotdNotification();
   }, []);
 
   const handleNotifAccept = async () => {
@@ -317,7 +322,7 @@ export default function TabLayout() {
     const granted = await requestNotificationPermission();
     if (granted) {
       await registerPushToken(); // server push (reaches lapsed users)
-      await scheduleSotdNotification(); // local 8am (belt-and-suspenders on-device)
+      await setServerSotdEnabled(true); // the server push owns the 8am slot
       await scheduleAddBottlesNotification();
     }
   };

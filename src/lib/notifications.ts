@@ -2,7 +2,8 @@
  * Push / local notification service for Perfume Picks.
  *
  * Two notification types:
- *   SOTD  — daily 8am "Your scent for today" (repeating)
+ *   SOTD  — daily 8am, sent BY THE SERVER (daily-sotd-push). The local twin
+ *           was retired 2026-09-02; see scheduleSotdNotification.
  *   BOTTLES — one-shot 48h after first sign-in if wardrobe is empty
  *
  * All scheduling goes through this module so the store IDs stay consistent.
@@ -207,38 +208,55 @@ export async function checkNotificationPermission(): Promise<'granted' | 'denied
  * Stores the new identifier in the notification store.
  */
 export async function scheduleSotdNotification(): Promise<void> {
-  const store = useNotificationStore.getState();
+  // RETIRED 2026-09-02 — this used to schedule a LOCAL daily 8am notification
+  // "belt-and-suspenders" alongside the server push. Both fire at 08:00 local,
+  // so every user with notifications on received TWO every morning; users
+  // reported the pile-up. The server push wins on both counts — its copy is
+  // personalised to the user's archetype, and it carries data.source so opens
+  // are attributable — so the local twin is pure noise.
+  //
+  // This now CANCELS the legacy local schedule instead of creating one. It has
+  // to actively cancel: an existing user already handed iOS a repeating daily
+  // trigger, and simply not re-scheduling would leave that firing forever.
+  await retireLocalSotdNotification();
+  await setServerSotdEnabled(true);
+}
 
-  // Cancel old one if it exists
-  if (store.sotdScheduledId) {
-    await Notifications.cancelScheduledNotificationAsync(store.sotdScheduledId).catch(() => {});
-  }
+/**
+ * Cancel any local daily-SOTD trigger this device registered under the old
+ * scheme. Safe and cheap to call on every launch — a no-op once cleared.
+ */
+export async function retireLocalSotdNotification(): Promise<void> {
+  const { sotdScheduledId, setSotdScheduledId } = useNotificationStore.getState();
+  if (!sotdScheduledId) return;
+  await Notifications.cancelScheduledNotificationAsync(sotdScheduledId).catch(() => {});
+  setSotdScheduledId(null);
+}
 
-  const id = await Notifications.scheduleNotificationAsync({
-    content: {
-      title: 'Your scent for today ✨',
-      body: 'Open Perfume Picks to see what to wear.',
-      data: { screen: 'today' },
-    },
-    trigger: {
-      type: Notifications.SchedulableTriggerInputTypes.DAILY,
-      hour: 8,
-      minute: 0,
-    },
-  });
-
-  store.setSotdScheduledId(id);
+/**
+ * Point the Settings toggle at the SERVER push, now that it owns the 8am slot.
+ * Without this the toggle would still flip a local notification that no longer
+ * exists — i.e. a user turning the daily off would keep receiving it.
+ */
+export async function setServerSotdEnabled(enabled: boolean): Promise<void> {
+  if (!isSupabaseConfigured) return;
+  const user = await resolveCurrentUser();
+  if (!user?.id) return;
+  const { error } = await supabase
+    .from('push_tokens')
+    .update({ sotd_enabled: enabled })
+    .eq('user_id', user.id);
+  if (error) console.warn('[notifications] sotd_enabled write failed:', error.message);
 }
 
 /**
  * Cancel the daily SOTD notification and clear the store ID.
  */
 export async function cancelSotdNotification(): Promise<void> {
-  const { sotdScheduledId, setSotdScheduledId } = useNotificationStore.getState();
-  if (sotdScheduledId) {
-    await Notifications.cancelScheduledNotificationAsync(sotdScheduledId).catch(() => {});
-    setSotdScheduledId(null);
-  }
+  // Off means off on BOTH surfaces: clear any legacy local trigger AND tell the
+  // server to stop including this user in the morning send.
+  await retireLocalSotdNotification();
+  await setServerSotdEnabled(false);
 }
 
 // ── Add Bottles — one-shot 48h ─────────────────────────────────────────────

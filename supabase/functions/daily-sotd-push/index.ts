@@ -61,6 +61,8 @@ const ARCHETYPE_NAME: Record<string, string> = {
 
 interface TokenRow {
   user_id: string;
+  /** Settings toggle. Optional: undefined until the migration adds the column. */
+  sotd_enabled?: boolean | null;
   token: string;
   tz: string | null;
   tz_offset_minutes: number;
@@ -95,6 +97,13 @@ function localParts(nowUtcMs: number, tz: string | null, tzOffsetMin: number): {
 }
 
 /** Push copy from the archetype. Generic-but-personal; the pick is shown on open. */
+/** Return claims so a failed send doesn't burn the user's push for the day. */
+async function unclaim(supabase: any, items: { row: { user_id: string; last_pushed_on: string | null } }[]) {
+  await Promise.all(items.map(({ row }) =>
+    supabase.from("push_tokens").update({ last_pushed_on: row.last_pushed_on }).eq("user_id", row.user_id),
+  )).catch((e: unknown) => console.error("[sotd-push] unclaim failed:", e));
+}
+
 function messageFor(archetypeKey: string | null): { title: string; body: string } {
   const name = archetypeKey ? ARCHETYPE_NAME[archetypeKey] : null;
   return name
@@ -118,7 +127,7 @@ Deno.serve(async (req) => {
   // Service role bypasses RLS.
   let query = supabase
     .from("push_tokens")
-    .select("user_id, token, tz, tz_offset_minutes, last_pushed_on")
+    .select("*") // "*" not an explicit list: sotd_enabled may not exist yet
     .is("invalid_at", null);
   if (testUserId) query = query.eq("user_id", testUserId);
   const { data, error } = await query;
@@ -147,6 +156,10 @@ Deno.serve(async (req) => {
     const { hour, ymd } = localParts(nowUtcMs, row.tz, row.tz_offset_minutes ?? 0);
 
     if (!testUserId) {
+      // Settings toggle, now server-side (the local 8am twin was retired). Read
+      // defensively: before the migration lands the field is undefined, which
+      // must mean "on" rather than silently muting everyone.
+      if (row.sotd_enabled === false) continue;
       if (hour !== TARGET_HOUR) continue; // not their morning yet
       if (row.last_pushed_on === ymd) continue; // already pushed today (local)
     }
@@ -159,8 +172,51 @@ Deno.serve(async (req) => {
     });
   }
 
+  // ── CLAIM BEFORE SENDING (fixes duplicate pushes, 2026-09-02) ─────────────
+  // The guard above READ last_pushed_on and the stamp below WROTE it only after
+  // the Expo round-trip finished — a window of hundreds of ms. Any overlapping
+  // invocation in that window read the same stale value and sent again, so a
+  // user received the identical notification 3x at 08:00.
+  //
+  // Claiming first closes it: this UPDATE takes a row lock and only returns rows
+  // it actually changed, so of N concurrent runs exactly one wins each user.
+  // Idempotent no matter how many cron jobs are scheduled or how they overlap.
+  //
+  // Trade-off, deliberately chosen: a send that fails AFTER claiming would cost
+  // that user today's push. Missing one is far better than spamming three, and
+  // the total-failure path below un-claims so a transient Expo outage doesn't
+  // silently skip everyone.
+  let sendable = due;
+  if (!testUserId) {
+    const byYmd = new Map<string, string[]>();
+    for (const d of due) {
+      if (!byYmd.has(d.localYmd)) byYmd.set(d.localYmd, []);
+      byYmd.get(d.localYmd)!.push(d.row.user_id);
+    }
+    const claimed = new Set<string>();
+    for (const [ymd, userIds] of byYmd) {
+      const { data, error } = await supabase
+        .from("push_tokens")
+        .update({ last_pushed_on: ymd })
+        .in("user_id", userIds)
+        .or(`last_pushed_on.is.null,last_pushed_on.neq.${ymd}`)
+        .select("user_id");
+      if (error) {
+        console.error("[sotd-push] claim failed:", error.message);
+        continue; // claim nothing rather than risk duplicates
+      }
+      for (const r of data ?? []) claimed.add(r.user_id);
+    }
+    sendable = due.filter((d) => claimed.has(d.row.user_id));
+    if (sendable.length === 0) {
+      return new Response(JSON.stringify({ sent: 0, reason: "already claimed by a concurrent run" }), {
+        headers: { "content-type": "application/json" },
+      });
+    }
+  }
+
   // Expo accepts up to 100 messages per request.
-  const messages = due.map(({ row, archetype }) => {
+  const messages = sendable.map(({ row, archetype }) => {
     const { title, body } = messageFor(archetype);
     // data.source lets the app attribute an OPEN back to this push rather than
     // to a locally-scheduled reminder — without it every open is "unknown" and
@@ -175,18 +231,27 @@ Deno.serve(async (req) => {
     };
   });
 
-  const res = await fetch(EXPO_PUSH_URL, {
-    method: "POST",
-    headers: { "content-type": "application/json", accept: "application/json" },
-    body: JSON.stringify(messages),
-  });
+  let res: Response;
+  try {
+    res = await fetch(EXPO_PUSH_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json", accept: "application/json" },
+      body: JSON.stringify(messages),
+    });
+  } catch (err) {
+    // Total failure: give the claims back so tomorrow's (or a retry's) run can
+    // still reach these users, instead of silently burning their push.
+    if (!testUserId) await unclaim(supabase, sendable);
+    throw err;
+  }
+  if (!res.ok && !testUserId) await unclaim(supabase, sendable);
   const result = await res.json().catch(() => null);
 
   // Dead-token cleanup: Expo returns one ticket per message, in order. A ticket
   // with error 'DeviceNotRegistered' means the app was uninstalled — stamp
   // invalid_at so we never push to that token again (the query filters it out).
   const tickets: any[] = Array.isArray(result?.data) ? result.data : [];
-  const deadUserIds = due
+  const deadUserIds = sendable
     .filter((_, i) => tickets[i]?.status === "error" && tickets[i]?.details?.error === "DeviceNotRegistered")
     .map(({ row }) => row.user_id);
   if (deadUserIds.length > 0) {
@@ -196,17 +261,11 @@ Deno.serve(async (req) => {
       .in("user_id", deadUserIds);
   }
 
-  // Mark everyone we just sent to as pushed for their local day (skip in test so
-  // a test send doesn't suppress the real morning push).
-  if (!testUserId) {
-    await Promise.all(
-      due.map(({ row, localYmd }) =>
-        supabase.from("push_tokens").update({ last_pushed_on: localYmd }).eq("user_id", row.user_id),
-      ),
-    );
-  }
+  // NOTE: no post-send stamp here any more — the claim above already wrote
+  // last_pushed_on. Stamping again after the round-trip is exactly what created
+  // the duplicate-push race.
 
-  return new Response(JSON.stringify({ sent: due.length, test: !!testUserId, expo: result }), {
+  return new Response(JSON.stringify({ sent: sendable.length, test: !!testUserId, expo: result }), {
     headers: { "content-type": "application/json" },
   });
 });

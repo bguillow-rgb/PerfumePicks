@@ -80,7 +80,7 @@ server.registerTool(
       query: z.string().optional().describe("Free-text search: fragrance or brand name"),
       brand: z.string().optional().describe("Brand name filter, e.g. 'Dior'"),
       fragrance_family: z.string().optional().describe("Family filter, e.g. 'woody', 'amber', 'fresh'"),
-      gender: z.enum(["masculine", "feminine", "unisex"]).optional(),
+      gender: z.enum(["masculine", "feminine", "unisex"]).optional().describe("Marketed gender category of the fragrance; omit to include all"),
       price_min: z.number().min(0).optional().describe("Minimum MSRP in USD"),
       price_max: z.number().min(0).optional().describe("Maximum MSRP in USD"),
       limit: z.number().int().min(1).max(25).optional().describe("Max results (default 10)"),
@@ -187,7 +187,7 @@ server.registerTool(
         .describe("Notes or accords the wearer enjoys, e.g. ['vanilla','amber','rose']"),
       budget: z.number().min(0).optional().describe("Max MSRP in USD"),
       occasion: z.string().optional().describe("What the fragrance is for"),
-      gender: z.enum(["masculine", "feminine", "unisex"]).optional(),
+      gender: z.enum(["masculine", "feminine", "unisex"]).optional().describe("Marketed gender category of the fragrance; omit to include all"),
       limit: z.number().int().min(1).max(10).optional().describe("Max results (default 5)"),
     },
   },
@@ -288,8 +288,8 @@ server.registerTool(
     inputSchema: {
       mood: z.string().optional().describe("How you're feeling"),
       occasion: z.string().optional().describe("The setting"),
-      season: z.enum(["winter", "spring", "summer", "fall"]).optional(),
-      gender: z.enum(["masculine", "feminine", "unisex"]).optional(),
+      season: z.enum(["winter", "spring", "summer", "fall"]).optional().describe("Season to weight the pick toward — heavier, warmer scents in winter; fresher in summer"),
+      gender: z.enum(["masculine", "feminine", "unisex"]).optional().describe("Marketed gender category of the fragrance; omit to include all"),
     },
   },
   guarded("what_to_wear_tonight", async ({ mood, occasion, season, gender }) => {

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7F0E6"/>
+      <stop offset="1" stop-color="#EADDC9"/>
+    </linearGradient>
+    <linearGradient id="drop3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3A2418"/>
+      <stop offset="1" stop-color="#1B0C04"/>
+    </linearGradient>
+    <clipPath id="dropclip3">
+      <path d="M512 232 C512 232 712 470 712 612 A200 200 0 1 1 312 612 C312 470 512 232 512 232 Z"/>
+    </clipPath>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg3)"/>
+  <!-- teardrop -->
+  <path d="M512 232 C512 232 712 470 712 612 A200 200 0 1 1 312 612 C312 470 512 232 512 232 Z" fill="url(#drop3)"/>
+  <!-- fingerprint / scent-DNA ridges clipped inside drop -->
+  <g clip-path="url(#dropclip3)" fill="none" stroke="#D4B179" stroke-width="9" opacity="0.92">
+    <ellipse cx="512" cy="616" rx="40" ry="36"/>
+    <ellipse cx="512" cy="612" rx="78" ry="78"/>
+    <ellipse cx="512" cy="606" rx="116" ry="120"/>
+    <ellipse cx="512" cy="598" rx="154" ry="160"/>
+    <ellipse cx="512" cy="588" rx="192" ry="198"/>
+  </g>
+  <!-- gold rim of drop -->
+  <path d="M512 232 C512 232 712 470 712 612 A200 200 0 1 1 312 612 C312 470 512 232 512 232 Z" fill="none" stroke="#C4A35A" stroke-width="7"/>
+  <!-- highlight -->
+  <ellipse cx="430" cy="560" rx="26" ry="44" fill="#E8C878" opacity="0.45" transform="rotate(-20 430 560)"/>
+</svg>

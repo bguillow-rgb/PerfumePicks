@@ -1,0 +1,33 @@
+appId: com.bobguillow.perfumepicks
+---
+- launchApp
+- tapOn:
+    point: "93%,51%"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      text: "YOUR FRAGRANCE DNA"
+    timeout: 90000
+- tapOn:
+    text: "Discover, tab.*"
+- tapOn:
+    text: "Search notes.*"
+- inputText: "Santal 33"
+- extendedWaitUntil:
+    visible:
+      text: "woody"
+    timeout: 20000
+- tapOn:
+    point: "40%,30%"
+- extendedWaitUntil:
+    visible:
+      text: "Santal 33"
+    timeout: 15000
+- scrollUntilVisible:
+    element:
+      text: "Who Wears This"
+    direction: DOWN
+    timeout: 25000
+- takeScreenshot: celeb-santal33
+- assertVisible:
+    text: "Justin Bieber"
