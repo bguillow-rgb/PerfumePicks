@@ -9,9 +9,7 @@ import { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Keyboard,
-  KeyboardAvoidingView,
   Modal,
-  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -93,10 +91,6 @@ export function FeedbackSheet({ visible, onClose }: Props) {
       presentationStyle="pageSheet"
       onRequestClose={onClose}
     >
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      >
         <View style={[styles.screen, { paddingTop: insets.top + SPACING.md }]}>
           {/* Send lives in the header, never pinned above the keyboard — a
               bottom-anchored button sits directly on the iOS predictive-text
@@ -138,7 +132,8 @@ export function FeedbackSheet({ visible, onClose }: Props) {
                 keyboardShouldPersistTaps="handled"
                 keyboardDismissMode="interactive"
                 showsVerticalScrollIndicator={false}
-                contentContainerStyle={{ paddingBottom: SPACING.md }}
+                automaticallyAdjustKeyboardInsets
+                contentContainerStyle={{ paddingBottom: SPACING.xl }}
               >
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
                   <View>
@@ -198,7 +193,6 @@ export function FeedbackSheet({ visible, onClose }: Props) {
             </>
           )}
         </View>
-      </KeyboardAvoidingView>
     </Modal>
   );
 }
