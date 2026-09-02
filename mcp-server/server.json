@@ -1,9 +1,9 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.bguillow-rgb/perfume-picks",
+  "name": "io.github.bguillow-rgb/perfume-picks-fragrance-cologne",
   "title": "Perfume Picks",
   "description": "Search the Perfume Picks fragrance database: 13,000+ scents with notes, dupes, and wear data.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "websiteUrl": "https://perfumepicks.app/mcp",
   "icons": [
     {
@@ -23,7 +23,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "perfume-picks-mcp",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "transport": {
         "type": "stdio"
       }
@@ -32,7 +32,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://jdkwlwyysgofljkobpmr.supabase.co/functions/v1/mcp"
+      "url": "https://mcp.perfumepicks.app"
     }
   ]
 }

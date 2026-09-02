@@ -1,0 +1,26 @@
+appId: host.exp.Exponent
+---
+# Loads Perfume Picks from the running Metro (localhost:8081) so the shared-auth
+# change is live, then exercises the reported double-fetch screen (Profile).
+- launchApp:
+    clearState: false
+- openLink: exp://localhost:8081
+- extendedWaitUntil:
+    visible: "Today"
+    timeout: 90000
+- takeScreenshot: shared-auth__home
+
+# Profile tab — ProfileScreen + BadgesSection now read the shared auth store
+# instead of each calling supabase.auth.getUser().
+- tapOn:
+    id: "tab-profile"
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 20000
+- takeScreenshot: shared-auth__profile
+- scrollUntilVisible:
+    element:
+      text: "About"
+    direction: DOWN
+    timeout: 10000
+- takeScreenshot: shared-auth__profile-scrolled

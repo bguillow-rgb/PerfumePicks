@@ -1,0 +1,15 @@
+appId: host.exp.Exponent
+---
+# Continues from the "Pick the ones you love" onboarding picker. Selects three
+# cards by grid position, advances, and screenshots each step.
+- assertVisible: "Pick the ones you love"
+- tapOn:
+    point: "20%,27%"
+- tapOn:
+    point: "80%,27%"
+- tapOn:
+    point: "20%,44%"
+- takeScreenshot: onboarding__picked
+- tapOn:
+    point: "50%,92%"
+- takeScreenshot: onboarding__after-continue

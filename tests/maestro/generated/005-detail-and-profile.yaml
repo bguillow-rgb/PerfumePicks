@@ -1,0 +1,17 @@
+appId: host.exp.Exponent
+---
+# From the DNA reveal: open the top match (fragrance detail exercises the
+# migrated Compliments/Layering/Review sections), then reach the tabs + Profile.
+- tapOn:
+    point: "50%,92%"
+- extendedWaitUntil:
+    visible: ".*(Notes|Longevity|Reviews|Add to|Wardrobe|Compliment|Layer).*"
+    timeout: 40000
+- takeScreenshot: fragrance-detail__top
+- scrollUntilVisible:
+    element:
+      text: ".*(Reviews|Compliments|Layer).*"
+    direction: DOWN
+    timeout: 12000
+    optional: true
+- takeScreenshot: fragrance-detail__scrolled

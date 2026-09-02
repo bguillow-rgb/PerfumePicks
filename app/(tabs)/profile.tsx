@@ -426,7 +426,7 @@ function NotificationsSection() {
         }
       }
       await registerPushToken(); // server push (reaches lapsed users)
-      await scheduleSotdNotification();
+      await scheduleSotdNotification(); // cancels legacy local + enables server send
     } else {
       await cancelSotdNotification();
     }

@@ -1,0 +1,8 @@
+appId: host.exp.Exponent
+---
+- tapOn:
+    point: "50%,88%"
+- extendedWaitUntil:
+    visible: ".*(Archetype|Fragrance DNA|Continue|Get Started|Explore|Start exploring|Enter).*"
+    timeout: 40000
+- takeScreenshot: dna__reveal

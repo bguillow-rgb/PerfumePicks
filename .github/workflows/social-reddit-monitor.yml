@@ -1,0 +1,58 @@
+name: Daily Reddit monitor
+
+# Scans fragrance subreddits for questions/discussions and generates
+# draft responses for human review. Does NOT auto-post.
+# Drafts are saved as workflow artifacts for human review.
+on:
+  schedule:
+    - cron: '0 14 * * *'  # 14:00 UTC daily (10am ET)
+  workflow_dispatch:
+    inputs:
+      subreddits:
+        description: 'Comma-separated subreddits (default: fragrance,Frugal_Fragrance,DesiFragranceAddicts)'
+        required: false
+
+concurrency:
+  group: social-reddit-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Reddit monitor
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.subreddits }}" ]; then
+            ARGS="--subreddits ${{ github.event.inputs.subreddits }}"
+          fi
+          npx ts-node scripts/social/reddit-monitor.ts $ARGS
+
+      - name: Upload draft responses
+        uses: actions/upload-artifact@v4
+        with:
+          name: reddit-drafts-${{ github.run_id }}
+          path: scripts/social/data/reddit-drafts-*.json
+          retention-days: 7
+
+      - name: Print summary
+        run: |
+          echo "Reddit drafts saved as workflow artifact."
+          echo "Download from: Actions → This run → Artifacts"
+          echo "Review, approve the good ones, post manually."

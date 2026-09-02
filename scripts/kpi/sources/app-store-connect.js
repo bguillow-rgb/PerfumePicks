@@ -306,6 +306,18 @@ function saveAcqCache(obj) {
   } catch {}
 }
 
+// Cache written before 2026-08-21 stored only the source array. Normalize both
+// shapes so an old cache degrades to "no referrer detail" instead of throwing.
+function shapeAcq(cache, extra) {
+  const referrers = Array.isArray(cache.referrers) ? cache.referrers : [];
+  return {
+    sources: cache.data || [],
+    referrers,
+    reddit: summarizeReddit(referrers),
+    ...extra,
+  };
+}
+
 async function fetchAcquisitionSources(env, jwt, appId) {
   if (!appId) return { error: 'ASC_APP_ID missing' };
 
@@ -314,7 +326,7 @@ async function fetchAcquisitionSources(env, jwt, appId) {
   const FRESH_MS = 25 * 60 * 60 * 1000;
 
   if (cache.data && cache.fetchedAt && (nowMs - cache.fetchedAt) < FRESH_MS) {
-    return { sources: cache.data, note: `cached ${new Date(cache.fetchedAt).toISOString().slice(0, 10)}` };
+    return shapeAcq(cache, { note: `cached ${new Date(cache.fetchedAt).toISOString().slice(0, 10)}` });
   }
 
   const headers = { Authorization: `Bearer ${jwt}`, 'Content-Type': 'application/json' };
@@ -358,11 +370,13 @@ async function fetchAcquisitionSources(env, jwt, appId) {
                     const buf = Buffer.from(await dlRes.arrayBuffer());
                     const raw = zlib.gunzipSync(buf).toString('utf8');
                     const parsed = parseAcquisitionTsv(raw);
+                    const referrers = parseReferrerDetail(raw);
                     cache.data = parsed;
+                    cache.referrers = referrers;
                     cache.fetchedAt = nowMs;
                     delete cache.requestId;
                     saveAcqCache(cache);
-                    return { sources: parsed };
+                    return { sources: parsed, referrers, reddit: summarizeReddit(referrers) };
                   }
                 }
               }
@@ -371,7 +385,7 @@ async function fetchAcquisitionSources(env, jwt, appId) {
         }
       }
       if (cache.data) {
-        return { sources: cache.data, note: `pending refresh (requested ${new Date(cache.requestedAt).toISOString().slice(0, 16)})` };
+        return shapeAcq(cache, { note: `pending refresh (requested ${new Date(cache.requestedAt).toISOString().slice(0, 16)})` });
       }
       return { pending: true, note: `report requested ${new Date(cache.requestedAt || nowMs).toISOString().slice(0, 16)}, not ready yet` };
     }
@@ -400,7 +414,13 @@ async function fetchAcquisitionSources(env, jwt, appId) {
       if (createRes.status === 409) {
         try {
           const listRes = await fetch(
-            `https://api.appstoreconnect.apple.com/v1/analyticsReportRequests?filter[app]=${appId}&limit=5`,
+            // MUST go through the app relationship. The collection endpoint
+            // (/v1/analyticsReportRequests?filter[app]=) returns 403
+            // FORBIDDEN_ERROR "does not allow GET_COLLECTION". That 403 was
+            // swallowed by the catch below, so recovery silently failed on every
+            // run, the requestId was never cached, and acquisition data never
+            // loaded. Found 2026-08-21.
+            `https://api.appstoreconnect.apple.com/v1/apps/${appId}/analyticsReportRequests?limit=20`,
             { headers }
           );
           if (listRes.ok) {
@@ -414,13 +434,13 @@ async function fetchAcquisitionSources(env, jwt, appId) {
               cache.accessType = 'ONGOING';
               saveAcqCache(cache);
               if (cache.data) {
-                return { sources: cache.data, note: `pending refresh (recovered existing request)` };
+                return shapeAcq(cache, { note: `pending refresh (recovered existing request)` });
               }
               return { pending: true, note: `existing report request in progress` };
             }
           }
         } catch {}
-        if (cache.data) return { sources: cache.data, note: 'pending refresh' };
+        if (cache.data) return shapeAcq(cache, { note: 'pending refresh' });
         return { pending: true, note: 'existing request in progress, will retry' };
       }
       const body = await createRes.text();
@@ -437,7 +457,7 @@ async function fetchAcquisitionSources(env, jwt, appId) {
     saveAcqCache(cache);
 
     if (cache.data) {
-      return { sources: cache.data, note: 'refresh requested, returning stale data' };
+      return shapeAcq(cache, { note: 'refresh requested, returning stale data' });
     }
     return { pending: true, note: 'report requested, will be ready within a few hours' };
 
@@ -470,6 +490,62 @@ function parseAcquisitionTsv(tsv) {
   return Object.values(bySource)
     .sort((a, b) => b.installs - a.installs)
     .map((s) => ({ ...s, impressions: null, pageViews: null, conversionRate: null }));
+}
+
+// Break FIRST-TIME DOWNLOADS out by `Source Info` (the referring app bundle id
+// or web domain) and `Campaign` (the `ct=` token on an App Store link).
+//
+// Why this exists: rolling up on `Source Type` alone collapses every referrer
+// into one "App referrer" bucket, so a paid channel like Reddit is invisible.
+//
+// The `Download Type` filter is the whole ballgame. On 2026-08-21 a Reddit
+// campaign was briefly reported as driving 6 installs; the rows were actually
+// `Auto-update` (existing copies of the app updating in the background), not new
+// users. Counting anything other than `First-time download` overstates paid
+// performance. Do not relax this filter.
+function parseReferrerDetail(tsv) {
+  const lines = tsv.split('\n').filter(Boolean);
+  if (lines.length < 2) return [];
+  const header = lines[0].split('\t').map((h) => h.trim());
+  const col = (name) => header.findIndex((h) => h.toLowerCase() === name.toLowerCase());
+
+  const idxSource = col('Source Type');
+  const idxInfo = col('Source Info');
+  const idxCampaign = col('Campaign');
+  const idxDownloadType = col('Download Type');
+  const idxCounts = col('Counts');
+  if (idxInfo === -1) return [];
+
+  const byKey = {};
+  for (let i = 1; i < lines.length; i++) {
+    const cols = lines[i].split('\t');
+    if ((cols[idxDownloadType] || '').trim() !== 'First-time download') continue;
+    const info = (cols[idxInfo] || '').trim();
+    if (!info) continue;
+    const campaign = idxCampaign === -1 ? '' : (cols[idxCampaign] || '').trim();
+    const key = `${info}||${campaign}`;
+    if (!byKey[key]) {
+      byKey[key] = {
+        sourceType: (cols[idxSource] || '').trim(),
+        sourceInfo: info,
+        campaign,
+        installs: 0,
+      };
+    }
+    byKey[key].installs += parseInt(cols[idxCounts] || '0', 10) || 0;
+  }
+
+  return Object.values(byKey).sort((a, b) => b.installs - a.installs);
+}
+
+// Roll every Reddit-referred FIRST-TIME download into one number, split by
+// campaign token so paid can be told apart from organic Reddit.
+function summarizeReddit(referrers) {
+  const rows = (referrers || []).filter((r) => /reddit/i.test(r.sourceInfo));
+  return {
+    installs: rows.reduce((n, r) => n + r.installs, 0),
+    byCampaign: rows.map((r) => ({ campaign: r.campaign || '(none)', installs: r.installs })),
+  };
 }
 
 // ── Customer reviews ──────────────────────────────────────────────────

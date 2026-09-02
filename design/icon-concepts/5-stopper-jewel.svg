@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2A1710"/>
+      <stop offset="1" stop-color="#140804"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg5)"/>
+  <!-- faceted stopper / gem, top-down, 8 facets around a center -->
+  <g transform="translate(512 512)">
+    <!-- outer octagon ring -->
+    <polygon points="0,-300 212,-212 300,0 212,212 0,300 -212,212 -300,0 -212,-212" fill="#8E6E36"/>
+    <!-- facets -->
+    <polygon points="0,-300 212,-212 0,0" fill="#E8C878"/>
+    <polygon points="212,-212 300,0 0,0" fill="#CDA75C"/>
+    <polygon points="300,0 212,212 0,0" fill="#B8924B"/>
+    <polygon points="212,212 0,300 0,0" fill="#9C7B3E"/>
+    <polygon points="0,300 -212,212 0,0" fill="#CDA75C"/>
+    <polygon points="-212,212 -300,0 0,0" fill="#B8924B"/>
+    <polygon points="-300,0 -212,-212 0,0" fill="#E0BC6E"/>
+    <polygon points="-212,-212 0,-300 0,0" fill="#D4B179"/>
+    <!-- center table -->
+    <polygon points="0,-104 104,0 0,104 -104,0" fill="#F2DDA0"/>
+    <polygon points="0,-104 104,0 0,0" fill="#E8C878"/>
+    <polygon points="0,104 -104,0 0,0" fill="#C9A24E"/>
+    <!-- outline -->
+    <polygon points="0,-300 212,-212 300,0 212,212 0,300 -212,212 -300,0 -212,-212" fill="none" stroke="#5C2A0A" stroke-width="6"/>
+  </g>
+</svg>

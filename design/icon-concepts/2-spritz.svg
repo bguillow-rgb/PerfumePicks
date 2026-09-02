@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#241008"/>
+      <stop offset="1" stop-color="#120703"/>
+    </linearGradient>
+    <linearGradient id="glass2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8C878"/>
+      <stop offset="1" stop-color="#A77F36"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg2)"/>
+  <!-- bottle lower-left -->
+  <rect x="250" y="560" width="250" height="260" rx="36" fill="url(#glass2)"/>
+  <rect x="318" y="500" width="114" height="70" rx="6" fill="url(#glass2)"/>
+  <!-- spray nozzle -->
+  <rect x="330" y="452" width="90" height="56" rx="10" fill="#D4B179"/>
+  <rect x="416" y="470" width="36" height="20" rx="6" fill="#D4B179"/>
+  <!-- spritz: fan of dots radiating up-right -->
+  <g fill="#E8C878">
+    <circle cx="500" cy="452" r="9"/>
+    <circle cx="556" cy="420" r="13"/>
+    <circle cx="540" cy="486" r="8"/>
+    <circle cx="612" cy="388" r="17"/>
+    <circle cx="600" cy="452" r="11"/>
+    <circle cx="588" cy="512" r="7"/>
+    <circle cx="672" cy="352" r="20"/>
+    <circle cx="664" cy="424" r="13"/>
+    <circle cx="652" cy="492" r="9"/>
+    <circle cx="640" cy="556" r="6"/>
+    <circle cx="736" cy="320" r="15"/>
+    <circle cx="724" cy="392" r="11"/>
+    <circle cx="712" cy="460" r="8"/>
+    <circle cx="792" cy="300" r="10"/>
+    <circle cx="780" cy="364" r="7"/>
+  </g>
+  <g fill="#C4788A">
+    <circle cx="628" cy="430" r="7"/>
+    <circle cx="690" cy="392" r="8"/>
+    <circle cx="700" cy="332" r="6"/>
+  </g>
+</svg>

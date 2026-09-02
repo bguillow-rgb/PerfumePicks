@@ -1,0 +1,82 @@
+name: Daily Bluesky post
+
+# Picks a fragrance, generates social copy, posts to Bluesky.
+# Manual run available via "Run workflow" button for testing.
+on:
+  schedule:
+    - cron: '0 13 * * *'  # 13:00 UTC daily (9am ET / 6am PT)
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Specific fragrance slug (optional — random if blank)'
+        required: false
+      dry_run:
+        description: 'Dry run (generate but do not post)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: social-bluesky
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate FOTD content
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.slug }}" ]; then
+            ARGS="--slug ${{ github.event.inputs.slug }}"
+          fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          npx ts-node scripts/social/fotd-generator.ts $ARGS
+
+      - name: Post to Bluesky
+        env:
+          BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
+          BSKY_APP_PASSWORD: ${{ secrets.BSKY_APP_PASSWORD }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            npx ts-node scripts/social/post-bluesky.ts --dry-run
+          else
+            npx ts-node scripts/social/post-bluesky.ts
+          fi
+
+      - name: Post to Threads (if credentials set)
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            npx ts-node scripts/social/threads-drafter.ts --dry-run
+          else
+            npx ts-node scripts/social/threads-drafter.ts
+          fi
+
+      - name: Save drafts artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fotd-output-${{ github.run_id }}
+          path: scripts/social/data/
+          retention-days: 30

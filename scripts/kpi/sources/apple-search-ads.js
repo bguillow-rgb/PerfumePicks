@@ -277,6 +277,7 @@ async function fetchLive(env) {
         agInfoById[String(ag.id)] = {
           status: ag.status || ag.servingStatus || 'UNKNOWN',
           searchMatch: Boolean(ag.automatedKeywordsOptIn),
+          cpaGoal: ag.cpaGoal && ag.cpaGoal.amount != null ? Number(ag.cpaGoal.amount) : null,
         };
       }
       adGroups = agRows.map((r) => {
@@ -291,6 +292,7 @@ async function fetchLive(env) {
           spend: s,
           installs: i,
           cpa: cpa(s, i),
+          cpaGoal: info.cpaGoal ?? null,
         };
       });
     } catch {
@@ -364,7 +366,16 @@ async function fetchLive(env) {
   const totalInstalls = campaigns.reduce((s, c) => s + c.installs, 0);
 
   // Keep only meaningful / junk search terms to bound size: spend > 0.
-  const searchTerms = searchTermsAll
+  const stAgg = new Map();
+  for (const t of searchTermsAll) {
+    const key = (t.text || '').toLowerCase();
+    if (!key) continue;
+    const cur = stAgg.get(key) || { text: t.text, spend: 0, installs: 0 };
+    cur.spend += t.spend || 0;
+    cur.installs += t.installs || 0;
+    stAgg.set(key, cur);
+  }
+  const searchTerms = [...stAgg.values()]
     .filter((t) => t.spend > 0)
     .sort((a, b) => b.spend - a.spend)
     .slice(0, 25);
