@@ -65,3 +65,8 @@ scripts/data/merge-report.json
 
 # ASA OAuth private key
 secrets/
+
+# Env backups — .env.local is ignored but the .bak variants were not,
+# which is how live keys reached a commit on 2026-09-02.
+.env.local*
+!.env.local.example
