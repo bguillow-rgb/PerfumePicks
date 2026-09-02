@@ -16,7 +16,7 @@ relatedSlugs:
   - "perfume-samples-vs-full-bottles"
   - "are-perfume-dupes-worth-it"
   - "perfume-fragrance-families"
-  - "what-is-the-fragrance-wheel"
+  - "what-is-a-perfume-flanker"
 faqs:
   - q: "How long does a perfume discovery set sample last?"
     a: "Most discovery set vials are 1.5, 2ml, giving roughly 10, 15 sprays each. At one to two test wears per vial, that's enough to evaluate dry-down, longevity, and how the scent settles on your skin across different days and conditions."
