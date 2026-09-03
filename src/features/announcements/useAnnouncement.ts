@@ -18,6 +18,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { track, EVENTS } from '@/src/lib/observability';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useProStore } from '@/src/stores/useProStore';
+import { recordAnnouncementShown } from '@/src/features/announcements/impressions';
 
 const SEEN_KEY = 'pp_seen_announcements_v1';
 
@@ -93,6 +94,9 @@ export function useAnnouncement(): {
         if (pick && !cancelled) {
           setAnnouncement(pick);
           track(EVENTS.ANNOUNCEMENT_SHOWN, { id: pick.id, audience: pick.audience });
+          // Durable counterpart to the event above — see impressions.ts for why
+          // the analytics event alone could not answer "did this reach anyone".
+          void recordAnnouncementShown(pick.id);
         }
       } catch {
         // Non-blocking — a failed fetch just means no announcement this launch.
