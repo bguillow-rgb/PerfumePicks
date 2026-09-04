@@ -1,9 +1,16 @@
 /**
  * Free-tier limits for Perfume Picks.
  *
- * These are UX-only guards — they prevent free users from exceeding caps in the
- * client and route them to the paywall. They are NOT security enforcement.
- * Real enforcement lives in Postgres RLS via `is_pro_user(uid)`.
+ * These are the FIRST line, not the only one: they stop free users in the client
+ * and route them to the paywall before a doomed write.
+ *
+ * Corrected 2026-09-04. This block used to claim "Real enforcement lives in
+ * Postgres RLS via is_pro_user(uid)". It did not — the only policies on
+ * wardrobe_items were the four ownership checks, so the wardrobe cap was
+ * advisory, enforced in useWardrobeStore.add() and nowhere else. Anything that
+ * was not that store walked around it, which is why the largest wardrobe in
+ * production is 37 items against a cap of 5. Real enforcement is now the
+ * trg_wardrobe_enforce_free_cap trigger (202609041200_wardrobe_cap_server_side).
  */
 
 /**
