@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "are-perfume-discovery-sets-worth-it"
   - "are-perfume-dupes-worth-it"
+  - "how-to-tell-if-a-perfume-is-fake"
   - "do-perfumes-increase-in-value"
-  - "how-to-blind-buy-perfume"
 faqs:
   - q: "What is the difference between a flanker and a reformulation?"
     a: "A flanker is an intentional new release marketed alongside the original, with its own name and positioning. A reformulation is a change made to an existing fragrance's formula, often without announcement, so the bottle name stays the same but the juice inside changes. They're easy to confuse, but flankers are additions to a lineup; reformulations replace what was already there."
