@@ -14,9 +14,9 @@ publishedAt: "2026-07-20"
 author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-gourmand-perfume"
+  - "what-is-an-aldehydic-perfume"
   - "what-is-an-oriental-perfume"
   - "what-is-oud-perfume"
-  - "how-to-describe-a-perfume"
 faqs:
   - q: "How do you pronounce 'chypre'?"
     a: "Chypre is French for Cyprus and is pronounced roughly 'sheep-r', rhyme the English word 'sheep' and add a soft 'r' at the end. It does not rhyme with 'cipher.'"
