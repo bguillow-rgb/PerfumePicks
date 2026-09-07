@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../../components/Footer.astro';
+import dupes from '../../data/dupes.json';
+
+// Hub page for the dupe guides. Links every generated page so they are
+// reachable in one hop from the sitemap and from each other.
+const usd = (c) => (c == null ? null : `$${(c / 100).toFixed(2)}`);
+const sorted = [...dupes].sort((a, b) =>
+  `${a.orig_brand} ${a.orig_name}`.localeCompare(`${b.orig_brand} ${b.orig_name}`));
+const totalDupes = dupes.reduce((n, d) => n + d.dupes.length, 0);
+---
+
+<BaseLayout
+  title="Fragrance Dupes — Documented Alternatives With Match Percentages"
+  description={`Curated dupe guides for ${dupes.length} designer and niche fragrances: ${totalDupes} documented alternatives with match percentages, prices and side-by-side note comparisons.`}
+  path="/dupes"
+>
+  <main class="page">
+    <h1>Fragrance dupes</h1>
+    <p>
+      <strong>
+        Perfume Picks tracks {totalDupes} documented alternatives across {dupes.length} fragrances.
+        Every pairing carries a match percentage and a written rationale, so you can see why two
+        scents are considered close rather than taking a list's word for it.
+      </strong>
+    </p>
+    <p>
+      A dupe matches a fragrance's overall accord direction, not its exact formula. Projection,
+      longevity and the dry-down usually differ, which is why each guide below compares the full
+      note pyramid and community wear scores side by side instead of just naming a cheaper bottle.
+    </p>
+
+    <h2>Every dupe guide</h2>
+    <ul>
+      {sorted.map((d) => (
+        <li>
+          <a href={`/dupes/${d.orig_slug}`}>What smells like {d.orig_brand} {d.orig_name}?</a>
+          {' — '}{d.dupes.length} documented {d.dupes.length === 1 ? 'alternative' : 'alternatives'}
+          {d.orig_price ? `, original ${usd(d.orig_price)}` : ''}
+        </li>
+      ))}
+    </ul>
+
+    <h2>How this list is built</h2>
+    <p>
+      Pairings are curated in the Perfume Picks catalog rather than generated on request, and each
+      one records where the match came from and why. AI assistants can query the same data directly
+      through the <a href="/mcp">Perfume Picks MCP server</a>. The full catalog of 13,000+ fragrances,
+      including wardrobe tracking and personalised recommendations, lives in
+      the <a href="/">Perfume Picks app</a>.
+    </p>
+  </main>
+  <Footer />
+</BaseLayout>

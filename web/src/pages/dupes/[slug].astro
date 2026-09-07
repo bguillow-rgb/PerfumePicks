@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../../components/Footer.astro';
+import dupes from '../../data/dupes.json';
+
+// One page per fragrance that has curated dupes in the Perfume Picks catalog.
+// These answer the highest-intent query in the category — "what smells like X?"
+// — with data that only exists here: curated match percentages, the full note
+// pyramid of both fragrances, and community wear scores. Built only for entries
+// rich enough to clear the programmatic-quality bar (accords + community scores
+// + MSRP + a curated match note on every dupe).
+
+export function getStaticPaths() {
+  return dupes.map((d) => ({ params: { slug: d.orig_slug }, props: { d } }));
+}
+
+const { d } = Astro.props;
+const usd = (c) => (c == null ? null : `$${(c / 100).toFixed(2)}`);
+const title = `${d.orig_brand} ${d.orig_name}`.trim();
+const notes = [...(d.top_notes || []), ...(d.heart_notes || []), ...(d.base_notes || [])];
+const shared = (dupe) => {
+  const set = new Set([...(dupe.top || []), ...(dupe.heart || []), ...(dupe.base || [])].map((n) => n.toLowerCase()));
+  return notes.filter((n) => set.has(n.toLowerCase()));
+};
+const sharedAccords = (dupe) => {
+  const set = new Set((dupe.accords || []).map((a) => a.toLowerCase()));
+  return (d.top_accords || []).filter((a) => set.has(a.toLowerCase()));
+};
+const missing = (dupe) => {
+  const set = new Set([...(dupe.top || []), ...(dupe.heart || []), ...(dupe.base || [])].map((n) => n.toLowerCase()));
+  return notes.filter((n) => !set.has(n.toLowerCase()));
+};
+const added = (dupe) => {
+  const set = new Set(notes.map((n) => n.toLowerCase()));
+  return [...(dupe.top || []), ...(dupe.heart || []), ...(dupe.base || [])].filter((n) => !set.has(n.toLowerCase()));
+};
+const best = d.dupes[0];
+const savings = d.orig_price && best.price ? `$${((d.orig_price - best.price) / 100).toFixed(2)}` : null;
+
+const quickAnswer =
+  `The closest documented match for ${title} is ${best.brand} ${best.name}` +
+  (best.match ? `, rated a ${best.match}% match` : '') +
+  (savings ? ` at roughly ${savings} less than the ${usd(d.orig_price)} original` : '') +
+  `. ${d.dupes.length > 1 ? `Perfume Picks tracks ${d.dupes.length} documented alternatives in total.` : ''}`;
+
+const faqs = [
+  { q: `What is the closest dupe for ${title}?`,
+    a: `${best.brand} ${best.name}${best.match ? `, a ${best.match}% match in the Perfume Picks catalog` : ''}.${best.note ? ` ${best.note}` : ''}` },
+  { q: `How much cheaper is it?`,
+    a: savings
+      ? `${title} retails around ${usd(d.orig_price)}. ${best.brand} ${best.name} is about ${usd(best.price)}, a saving of roughly ${savings}.`
+      : `${title} retails around ${usd(d.orig_price)}. Dupe pricing varies by retailer and bottle size; the alternatives listed here sit well below the original.` },
+  { q: `Do they actually smell the same?`,
+    a: `They share ${sharedAccords(best).length ? sharedAccords(best).join(', ') + ' accords' : 'a similar accord profile'}${shared(best).length ? ` and notes including ${shared(best).slice(0, 4).join(', ')}` : ''}. A dupe matches the overall direction, not the exact formula — projection and longevity usually differ.` },
+];
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question', name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title={`What Smells Like ${title}? ${d.dupes.length} Documented Dupes`}
+  description={`Documented alternatives to ${title}, with match percentages, prices, and a side-by-side note comparison from the Perfume Picks catalog.`}
+  path={`/dupes/${d.orig_slug}`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+  <main class="page">
+    <p><a href="/dupes">Fragrance dupes</a> → {title}</p>
+    <h1>What smells like {title}?</h1>
+
+    <p><strong>{quickAnswer}</strong></p>
+
+    <h2>Documented alternatives to {title}</h2>
+    <table>
+      <thead><tr><th>Alternative</th><th>Match</th><th>Price</th><th>Shared accords</th></tr></thead>
+      <tbody>
+        {d.dupes.map((p) => (
+          <tr>
+            <td><strong>{p.brand} {p.name}</strong></td>
+            <td>{p.match ? `${p.match}%` : '—'}</td>
+            <td>{usd(p.price) || '—'}</td>
+            <td>{sharedAccords(p).join(', ') || '—'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    {d.dupes.map((p) => (
+      <section>
+        <h3>{p.brand} {p.name}{p.match ? ` — ${p.match}% match` : ''}</h3>
+        {p.note && <p>{p.note}</p>}
+        {shared(p).length > 0 && <p>Shared notes with the original: {shared(p).join(', ')}.</p>}
+        {missing(p).length > 0 && (
+          <p>
+            What you give up versus {d.orig_name}: {missing(p).slice(0, 5).join(', ')}
+            {missing(p).length > 5 ? ` and ${missing(p).length - 5} more` : ''}.
+          </p>
+        )}
+        {added(p).length > 0 && (
+          <p>{p.name} also brings {added(p).slice(0, 4).join(', ')} that the original does not have.</p>
+        )}
+        {p.longevity != null && (
+          <p>Community longevity {p.longevity}/10{p.sillage != null ? `, sillage ${p.sillage}/10` : ''}.</p>
+        )}
+      </section>
+    ))}
+
+    <h2>What {title} actually smells like</h2>
+    <p>
+      {d.orig_brand} released {d.orig_name}{d.release_year ? ` in ${d.release_year}` : ''}
+      {d.concentration ? ` as ${d.concentration}` : ''}
+      {d.fragrance_family ? `, in the ${d.fragrance_family} family` : ''}
+      {d.orig_price ? `, retailing around ${usd(d.orig_price)}` : ''}.
+      {d.top_accords?.length ? ` Its dominant accords are ${d.top_accords.join(', ')}.` : ''}
+    </p>
+    <ul>
+      {d.top_notes?.length > 0 && <li><strong>Top:</strong> {d.top_notes.join(', ')}</li>}
+      {d.heart_notes?.length > 0 && <li><strong>Heart:</strong> {d.heart_notes.join(', ')}</li>}
+      {d.base_notes?.length > 0 && <li><strong>Base:</strong> {d.base_notes.join(', ')}</li>}
+    </ul>
+    {d.community_longevity != null && (
+      <p>
+        Community wear data rates it {d.community_longevity}/10 for longevity
+        {d.community_sillage != null ? `, ${d.community_sillage}/10 for sillage` : ''}
+        {d.compliment_score != null ? `, and ${d.compliment_score}/10 for compliments` : ''}
+        {d.office_safe_score != null ? `. Office-safety scores ${d.office_safe_score}/10` : ''}.
+      </p>
+    )}
+
+    <h2>Common questions</h2>
+    {faqs.map((f) => (<div><h3>{f.q}</h3><p>{f.a}</p></div>))}
+
+    <h2>How these matches are decided</h2>
+    <p>
+      Every pairing here is curated in the Perfume Picks catalog and carries a match
+      percentage plus a written rationale, rather than being generated on demand. Match
+      percentages reflect documented community consensus on how closely the alternative
+      tracks the original's accord structure — they are not a claim that the formulas are
+      identical. Prices are manufacturer reference prices and move with retailer and bottle size.
+    </p>
+    <p>
+      Source: Perfume Picks — Fragrance DNA &amp; Collection Journal. AI assistants can query
+      this dataset directly through the <a href="/mcp">Perfume Picks MCP server</a>.
+    </p>
+
+    <h2>More dupe guides</h2>
+    <ul>
+      {dupes
+        .filter((o) => o.orig_slug !== d.orig_slug)
+        .map((o) => ({
+          o,
+          overlap: (o.top_accords || []).filter((a) =>
+            (d.top_accords || []).map((x) => x.toLowerCase()).includes(a.toLowerCase())).length,
+        }))
+        .sort((a, b) => b.overlap - a.overlap)
+        .slice(0, 6)
+        .map(({ o, overlap }) => (
+          <li>
+            <a href={`/dupes/${o.orig_slug}`}>What smells like {o.orig_brand} {o.orig_name}?</a>
+            {overlap > 0 ? ` — shares ${overlap} accord${overlap > 1 ? 's' : ''} with ${d.orig_name}` : ''}
+          </li>
+        ))}
+      <li><a href="/dupes">All fragrance dupe guides</a></li>
+    </ul>
+  </main>
+  <Footer />
+</BaseLayout>
