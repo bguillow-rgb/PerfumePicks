@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "perfume-no-buy-challenge"
   - "how-many-perfumes-should-you-own"
+  - "how-much-to-spend-on-perfume"
   - "perfume-on-paper-vs-skin"
-  - "are-perfume-dupes-worth-it"
 faqs:
   - q: "How many sprays of perfume is considered polite?"
     a: "One to three sprays is the standard benchmark for most social settings. Heavier concentrations like extrait de parfum often need just one. In shared or enclosed spaces, err toward one spray on a single pulse point and let the dry-down do the work."
