@@ -13,10 +13,10 @@ quickAnswer: "For most fragrance collectors, discovery sets are absolutely worth
 publishedAt: "2026-08-14"
 author: "Perfume Picks"
 relatedSlugs:
+  - "are-perfume-advent-calendars-worth-it"
   - "perfume-samples-vs-full-bottles"
   - "are-perfume-dupes-worth-it"
   - "perfume-fragrance-families"
-  - "what-is-a-perfume-flanker"
 faqs:
   - q: "How long does a perfume discovery set sample last?"
     a: "Most discovery set vials are 1.5, 2ml, giving roughly 10, 15 sprays each. At one to two test wears per vial, that's enough to evaluate dry-down, longevity, and how the scent settles on your skin across different days and conditions."

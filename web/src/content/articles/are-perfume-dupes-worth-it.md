@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "niche-vs-designer-perfume"
   - "how-much-to-spend-on-perfume"
+  - "are-perfume-advent-calendars-worth-it"
   - "are-perfume-discovery-sets-worth-it"
-  - "how-to-choose-between-two-perfumes"
 faqs:
   - q: "Do perfume dupes smell exactly like the original?"
     a: "Rarely exactly, but often close. Dupe makers use techniques like gas chromatography-mass spectrometry to reverse-engineer scent molecules, so the opening can be remarkably accurate. The dry-down diverges more noticeably because rare or costly raw materials are usually swapped for synthetic alternatives, making the base thinner or more linear than the original."
