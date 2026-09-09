@@ -13,10 +13,10 @@ quickAnswer: "Match perfume to your outfit by reading the mood of what you're we
 publishedAt: "2026-08-02"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-choose-perfume-for-special-occasion"
   - "how-to-choose-perfume-for-your-mood"
   - "how-to-pick-an-everyday-perfume"
   - "best-perfume-for-each-season"
-  - "how-to-choose-between-two-perfumes"
 faqs:
   - q: "Should I wear the same perfume every day regardless of what I'm wearing?"
     a: "You can, but you'll get more out of your collection by letting outfit mood guide your pick. A heavy amber worn with gym clothes creates dissonance; a clean aquatic worn with an evening suit feels underdressed. Matching scent to outfit makes both feel more intentional."

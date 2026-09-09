@@ -13,10 +13,10 @@ quickAnswer: "Daytime calls for light, fresh fragrances, citrus, green, soft flo
 publishedAt: "2026-07-19"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-choose-perfume-for-special-occasion"
   - "how-to-choose-perfume-for-your-mood"
   - "how-to-match-perfume-to-outfit"
   - "perfume-on-clothes-vs-skin"
-  - "best-perfume-for-each-season"
 faqs:
   - q: "Can I wear a heavy evening fragrance during the day?"
     a: "You can, but use restraint, one spray instead of three. Dense bases like oud and amber amplify in warmth and can feel overwhelming in offices or enclosed spaces before evening temperatures cool down."
