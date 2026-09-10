@@ -13,10 +13,10 @@ quickAnswer: "To evaluate a perfume properly, smell it in three stages: top note
 publishedAt: "2026-08-31"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-many-perfumes-can-you-smell-at-once"
   - "how-to-train-your-nose-for-perfume"
   - "what-is-perfume-dry-down"
   - "nose-blind-to-perfume"
-  - "what-is-a-chypre-perfume"
 faqs:
   - q: "How many perfumes can you evaluate in one session without losing accuracy?"
     a: "Most experienced evaluators cap a session at 3-4 fragrances. Beyond that, olfactory fatigue sets in and your ability to distinguish subtle nuances drops sharply. If you need to evaluate more, take a 20-30 minute break outdoors between rounds."
