@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-audit-your-perfume-collection"
   - "how-many-perfumes-should-you-own"
+  - "how-often-to-wear-each-perfume"
   - "how-to-build-a-fragrance-wardrobe"
-  - "how-to-decide-what-perfume-to-buy-next"
 faqs:
   - q: "What's the best scale to use when rating perfumes?"
     a: "A 1, 10 scale gives you enough granularity to separate similar fragrances, while a 1, 5 star system is simpler and faster. The most important thing is consistency, pick one scale and stick with it so scores stay comparable over time."
