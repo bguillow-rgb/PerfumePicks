@@ -14,9 +14,9 @@ publishedAt: "2026-07-27"
 author: "Perfume Picks"
 relatedSlugs:
   - "perfume-fragrance-families"
+  - "what-is-a-fougere-perfume"
   - "what-is-a-gourmand-perfume"
   - "what-is-a-chypre-perfume"
-  - "what-is-an-aldehydic-perfume"
 faqs:
   - q: "What is the difference between oriental and amber fragrance?"
     a: "They're the same family with two names. 'Oriental' is the traditional term; 'amber' is the modern replacement adopted after the fragrance industry moved away from geographically loaded language. Both describe warm, resinous, spice-and-vanilla-anchored perfumes."

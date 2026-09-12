@@ -14,9 +14,9 @@ publishedAt: "2026-09-05"
 author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-chypre-perfume"
+  - "what-is-a-fougere-perfume"
   - "what-is-an-oriental-perfume"
   - "what-is-a-gourmand-perfume"
-  - "what-is-a-soliflore-perfume"
 faqs:
   - q: "What do aldehydes smell like in perfume?"
     a: "Aldehydes smell waxy, soapy, and luminously clean, often compared to fresh laundry, citrus peel, or metallic sparkle. The exact character depends on the specific aldehyde used and its concentration in the formula."
