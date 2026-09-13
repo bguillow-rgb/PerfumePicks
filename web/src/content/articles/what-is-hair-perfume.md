@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-smell-good-all-day"
   - "perfume-on-clothes-vs-skin"
   - "how-to-apply-perfume"
-  - "how-to-decant-perfume"
+  - "how-to-wear-perfume-in-hot-weather"
 faqs:
   - q: "Is hair perfume the same as a body mist?"
     a: "No. Body mists are formulated for skin and typically contain alcohol levels that can dry and damage hair over time. Hair perfumes use hair-safe alcohol substitutes or lower concentrations, often blended with conditioning or shine-enhancing ingredients."

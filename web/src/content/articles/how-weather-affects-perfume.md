@@ -13,10 +13,10 @@ quickAnswer: "Weather directly changes how perfume smells and performs. Heat spe
 publishedAt: "2026-07-01"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-wear-perfume-in-hot-weather"
   - "perfume-for-skin-type"
   - "best-perfume-for-each-season"
   - "how-to-apply-perfume"
-  - "how-to-make-perfume-last-longer"
 faqs:
   - q: "Does heat make perfume stronger or weaker?"
     a: "Both, in sequence. Heat accelerates evaporation, so a fragrance projects more powerfully at first, but it also burns through the top and middle notes faster, leaving you with a shorter overall wear time than you'd get in cool weather. Rich, sweet, or heavy fragrances can cross from \"bold\" to \"overwhelming\" on a hot day."

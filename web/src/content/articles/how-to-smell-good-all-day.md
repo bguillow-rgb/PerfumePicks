@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-make-perfume-last-longer"
   - "perfume-on-clothes-vs-skin"
+  - "how-to-wear-perfume-in-hot-weather"
   - "how-long-does-perfume-last"
-  - "how-to-apply-perfume"
 faqs:
   - q: "Does moisturizing really make perfume last longer?"
     a: "Yes. Fragrance molecules evaporate fastest from dry skin because there's no lipid layer to slow them down. Applying an unscented or matching body lotion before you spray creates a hydrated surface that grips scent molecules and can nearly double wear time compared to bare, dry skin."
