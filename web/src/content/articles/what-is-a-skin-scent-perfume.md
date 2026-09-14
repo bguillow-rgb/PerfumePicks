@@ -14,9 +14,9 @@ publishedAt: "2026-08-05"
 author: "Perfume Picks"
 relatedSlugs:
   - "perfume-sensitive-skin-guide"
+  - "how-to-wear-perfume-in-cold-weather"
   - "best-perfume-for-each-season"
   - "how-to-smell-good-all-day"
-  - "how-to-wear-perfume-in-hot-weather"
 faqs:
   - q: "What does 'skin scent' mean in perfumery?"
     a: "A skin scent is a fragrance designed to sit close to the body with low sillage, projecting about 1, 2 feet, rather than filling a room. It merges with your skin chemistry so it smells personal, intimate, and uniquely yours rather than like an obvious applied perfume."

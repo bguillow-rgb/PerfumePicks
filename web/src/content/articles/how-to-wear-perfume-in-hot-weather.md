@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-weather-affects-perfume"
   - "how-to-smell-good-all-day"
+  - "how-to-wear-perfume-in-cold-weather"
   - "how-to-apply-perfume"
-  - "how-to-make-perfume-last-longer"
 faqs:
   - q: "Why does my perfume smell so strong, or disappear so fast, in summer?"
     a: "Heat accelerates the evaporation of fragrance molecules. Top notes flash off almost instantly in high temperatures, which can make a perfume smell briefly overpowering before fading. Heavy base notes left behind can then smell cloying. Choosing lighter-bodied fragrances and applying fewer sprays fixes both problems."
