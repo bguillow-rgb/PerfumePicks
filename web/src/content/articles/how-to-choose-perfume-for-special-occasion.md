@@ -13,10 +13,10 @@ quickAnswer: "To choose a perfume for a special occasion, match scent weight to 
 publishedAt: "2026-09-09"
 author: "Perfume Picks"
 relatedSlugs:
+  - "best-perfume-for-a-date-night"
   - "how-to-match-perfume-to-outfit"
   - "how-to-pick-an-everyday-perfume"
   - "perfume-for-different-times-of-day"
-  - "best-perfume-for-each-season"
 faqs:
   - q: "What type of perfume is best for a date night?"
     a: "Warm, skin-close scents work best, amber, soft musks, woody florals, and light orientals. Aim for intimate projection: detectable up close, not across the room. Apply 2, 3 sprays to pulse points 20, 30 minutes before leaving so the heart notes are fully open when you arrive."

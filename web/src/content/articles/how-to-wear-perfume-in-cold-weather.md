@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-wear-perfume-in-hot-weather"
   - "how-weather-affects-perfume"
+  - "best-perfume-for-a-date-night"
   - "best-perfume-for-each-season"
-  - "how-to-apply-perfume"
 faqs:
   - q: "Does cold weather make perfume last longer or shorter?"
     a: "Shorter, counterintuitively. Cold air is denser and suppresses the evaporation of fragrance molecules, so your scent projects less and can feel like it disappears faster, even if traces linger on fabric. Rich, base-heavy fragrances compensate best."

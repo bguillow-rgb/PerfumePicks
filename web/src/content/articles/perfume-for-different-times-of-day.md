@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-often-to-wear-each-perfume"
   - "how-to-choose-perfume-for-special-occasion"
+  - "best-perfume-for-a-date-night"
   - "how-to-choose-perfume-for-your-mood"
-  - "how-to-match-perfume-to-outfit"
 faqs:
   - q: "Can I wear a heavy evening fragrance during the day?"
     a: "You can, but use restraint, one spray instead of three. Dense bases like oud and amber amplify in warmth and can feel overwhelming in offices or enclosed spaces before evening temperatures cool down."

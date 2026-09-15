@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "does-perfume-expire"
   - "perfume-reformulation-guide"
+  - "best-perfume-for-a-date-night"
   - "how-to-find-your-signature-scent"
-  - "how-to-photograph-perfume-collection"
 faqs:
   - q: "Where exactly do I find the batch code on a perfume bottle?"
     a: "Check the base of the glass bottle, codes are usually laser-etched, stamped, or printed there. Also check the bottom or side flap of the outer box. For authenticity, the code on the bottle and the box must match."

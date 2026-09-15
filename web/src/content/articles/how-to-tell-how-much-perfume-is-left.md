@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-read-perfume-batch-codes"
   - "how-to-tell-if-a-perfume-is-fake"
+  - "best-perfume-for-a-date-night"
   - "does-perfume-expire"
-  - "how-many-sprays-in-a-perfume-bottle"
 faqs:
   - q: "How do I check the fill level of a black or opaque perfume bottle?"
     a: "Use one of three methods: shine a strong flashlight against the side in a dark room and look for the liquid shadow line; weigh the bottle on a kitchen scale and subtract the empty-bottle weight (most manufacturers publish tare weights); or shake it gently and listen, a dull slosh means it's still relatively full, a higher-pitched swish means it's getting low."

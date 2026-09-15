@@ -14,9 +14,9 @@ publishedAt: "2026-07-06"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-wear-perfume-in-cold-weather"
+  - "best-perfume-for-a-date-night"
   - "how-often-to-wear-each-perfume"
   - "how-to-match-perfume-to-outfit"
-  - "how-to-wear-perfume-in-hot-weather"
 faqs:
   - q: "Should I wear a different perfume every season?"
     a: "Not strictly, but it pays off. Temperature and humidity change how fragrance projects and performs on skin. A heavy oud that dazzles in December can feel suffocating in July. You don't need four completely separate wardrobes; even swapping one or two bottles seasonally makes a noticeable difference."

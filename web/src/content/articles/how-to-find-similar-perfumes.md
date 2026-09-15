@@ -16,7 +16,7 @@ relatedSlugs:
   - "what-is-my-scent-profile"
   - "what-to-do-when-your-favorite-perfume-is-discontinued"
   - "are-perfume-dupes-worth-it"
-  - "best-perfume-for-each-season"
+  - "best-perfume-for-a-date-night"
 faqs:
   - q: "What's the fastest way to find a perfume similar to one I already own?"
     a: "Identify the 2, 3 notes you love most in the original, then search a fragrance database by those notes. Focus on heart and base notes, they define the lasting character, rather than top notes, which fade within 15, 30 minutes."
