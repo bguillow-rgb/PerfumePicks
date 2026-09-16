@@ -1,9 +1,13 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.bguillow-rgb/perfume-picks-fragrance-cologne",
-  "title": "Perfume Picks",
+  "name": "io.github.bguillow-rgb/perfume-picks",
   "description": "Search the Perfume Picks fragrance database: 13,000+ scents with notes, dupes, and wear data.",
-  "version": "1.1.0",
+  "title": "Perfume Picks",
+  "repository": {
+    "url": "https://github.com/bguillow-rgb/perfume-picks-mcp",
+    "source": "github"
+  },
+  "version": "1.0.2",
   "websiteUrl": "https://perfumepicks.app/mcp",
   "icons": [
     {
@@ -14,10 +18,6 @@
       ]
     }
   ],
-  "repository": {
-    "url": "https://github.com/bguillow-rgb/perfume-picks-mcp",
-    "source": "github"
-  },
   "packages": [
     {
       "registryType": "npm",
@@ -32,7 +32,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.perfumepicks.app"
+      "url": "https://mcp.perfumepicks.app/?src=registry"
     }
   ]
 }
