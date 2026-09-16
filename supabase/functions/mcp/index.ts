@@ -33,7 +33,15 @@ import {
   sharedAccords,
   trendingFragrances,
 } from "./fragrances.js";
-import { identify, rateGuard, tooManyRequests } from "./ratelimit.js";
+import {
+  identify,
+  rateGuard,
+  recordAdd,
+  recordBudget,
+  recordIds,
+  RECORD_LIMIT_MESSAGE,
+  tooManyRequests,
+} from "./ratelimit.js";
 import { countResults, logRow, requestContext } from "./calllog.js";
 
 // The one mcp.<domain> hostname our proxy fronts this function with.
@@ -132,10 +140,12 @@ function buildServer(ip, ctx) {
   // Fresh server per request, so this holds the count for the one tool call
   // this request carries.
   let resultCount = null;
+  let servedIds = [];
   const server = new McpServer({ name: "perfume-picks", version: SERVER_VERSION });
 
   const respond = async (payload) => {
     resultCount = countResults(payload);
+    servedIds = recordIds(payload);
     return {
       content: [{ type: "text", text: JSON.stringify({ ...payload, attribution: await attribution() }, null, 2) }],
     };
@@ -156,8 +166,15 @@ function buildServer(ip, ctx) {
     try {
       checkRateLimit(ip);
       resultCount = null;
+      servedIds = [];
+      const budget = await recordBudget(ip);
+      if (!budget.allowed) throw new Error(RECORD_LIMIT_MESSAGE);
       const result = await fn(args);
       track({ tool_name: toolName, args, success: true, result_count: resultCount, duration_ms: Date.now() - started });
+      const add = recordAdd(ip, servedIds);
+      try {
+        EdgeRuntime.waitUntil(add);
+      } catch { /* floated promise is best-effort */ }
       return result;
     } catch (e) {
       const message = e instanceof Error ? e.message : String(e);
@@ -177,7 +194,7 @@ function buildServer(ip, ctx) {
           gender: z.enum(["masculine", "feminine", "unisex"]).optional().describe("Marketed gender category of the fragrance; omit to include all"),
           price_min: z.number().min(0).optional().describe("Minimum MSRP in USD"),
           price_max: z.number().min(0).optional().describe("Maximum MSRP in USD"),
-          limit: z.number().int().min(1).max(25).optional().describe("Max results (default 10)"),
+          limit: z.number().int().min(1).max(10).optional().describe("Max results (default 10, max 10)"),
       },
   }, guarded("search_fragrances", async (args) => {
       const rows = await searchFragrances(args);
@@ -227,7 +244,7 @@ function buildServer(ip, ctx) {
       description: "Fragrances most similar to a given one, from Perfume Picks' precomputed similarity ranking over notes and accords.",
       inputSchema: {
           fragrance: z.string().max(200).describe("Fragrance slug or name"),
-          limit: z.number().int().min(1).max(15).optional().describe("Max results (default 5)"),
+          limit: z.number().int().min(1).max(10).optional().describe("Max results (default 5)"),
       },
   }, guarded("find_similar", async ({ fragrance, limit }) => {
       const ref = await mustResolve(fragrance);
@@ -319,7 +336,7 @@ function buildServer(ip, ctx) {
       annotations: ANNOTATIONS,
       description: "Fragrances Perfume Picks users are adding to their wardrobes most over the last 30 days (falls back to catalog popularity when live activity data is unavailable). The method used is labeled in the response.",
       inputSchema: {
-          limit: z.number().int().min(1).max(20).optional().describe("Max results (default 10)"),
+          limit: z.number().int().min(1).max(10).optional().describe("Max results (default 10, max 10)"),
       },
   }, guarded("trending_fragrances", async ({ limit }) => {
       const { method, fragrances } = await trendingFragrances(limit ?? 10);
