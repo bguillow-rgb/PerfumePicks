@@ -3,7 +3,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import { checkRateLimit } from "./db.js";
-import { logCall, setClientInfo, SERVER_VERSION } from "./telemetry.js";
+import { countResults, logCall, setClientInfo, SERVER_VERSION } from "./telemetry.js";
 import {
   allNotes,
   attribution,
@@ -52,7 +52,13 @@ function guarded<A>(
     try {
       checkRateLimit();
       const result = await fn(args);
-      logCall({ tool_name: toolName, args, success: true, duration_ms: Date.now() - started });
+      logCall({
+        tool_name: toolName,
+        args,
+        success: true,
+        result_count: result.isError ? null : countResults(result.content[0]?.text),
+        duration_ms: Date.now() - started,
+      });
       return result;
     } catch (e) {
       const message = e instanceof Error ? e.message : String(e);

@@ -34,6 +34,10 @@ import {
   trendingFragrances,
 } from "./fragrances.js";
 import { identify, rateGuard, tooManyRequests } from "./ratelimit.js";
+import { countResults, logRow, requestContext } from "./calllog.js";
+
+// The one mcp.<domain> hostname our proxy fronts this function with.
+const PROXY_HOST = "mcp.perfumepicks.app";
 
 const SERVER_VERSION = "1.0.0";
 const TELEMETRY_VERSION = `${SERVER_VERSION}-remote`;
@@ -113,42 +117,35 @@ async function ga4Event(entry, ip, clientName) {
   }
 }
 
-function logCall(entry, clientName) {
-  let args = null;
-  try {
-    const s = JSON.stringify(entry.args);
-    args = s && s.length > 2000 ? { truncated: true, chars: s.length } : entry.args;
-  } catch { /* unserializable args stay null */ }
+function logCall(entry, ctx) {
   supabase
     .from("mcp_call_logs")
-    .insert({
-      tool_name: entry.tool_name,
-      args,
-      client_name: clientName?.slice(0, 200) ?? null,
-      client_version: null,
-      server_version: TELEMETRY_VERSION,
-      success: entry.success,
-      error: entry.error?.slice(0, 500) ?? null,
-      duration_ms: Math.round(entry.duration_ms),
-    })
+    .insert(logRow(entry, ctx, TELEMETRY_VERSION))
     .then(({ error }) => {
       if (error) console.error(`call-log write failed: ${error.message}`);
     });
 }
 
 // --- MCP server (stateless: fresh instance per request) ----------------------
-function buildServer(ip, clientName) {
+function buildServer(ip, ctx) {
+  const clientName = ctx.clientName;
+  // Fresh server per request, so this holds the count for the one tool call
+  // this request carries.
+  let resultCount = null;
   const server = new McpServer({ name: "perfume-picks", version: SERVER_VERSION });
 
-  const respond = async (payload) => ({
-    content: [{ type: "text", text: JSON.stringify({ ...payload, attribution: await attribution() }, null, 2) }],
-  });
+  const respond = async (payload) => {
+    resultCount = countResults(payload);
+    return {
+      content: [{ type: "text", text: JSON.stringify({ ...payload, attribution: await attribution() }, null, 2) }],
+    };
+  };
   const errorResult = (message) => ({
     content: [{ type: "text", text: JSON.stringify({ error: message }) }],
     isError: true,
   });
   const track = (entry) => {
-    logCall(entry, clientName);
+    logCall(entry, ctx);
     const p = ga4Event(entry, ip, clientName);
     try {
       EdgeRuntime.waitUntil(p);
@@ -158,8 +155,9 @@ function buildServer(ip, clientName) {
     const started = Date.now();
     try {
       checkRateLimit(ip);
+      resultCount = null;
       const result = await fn(args);
-      track({ tool_name: toolName, args, success: true, duration_ms: Date.now() - started });
+      track({ tool_name: toolName, args, success: true, result_count: resultCount, duration_ms: Date.now() - started });
       return result;
     } catch (e) {
       const message = e instanceof Error ? e.message : String(e);
@@ -400,7 +398,8 @@ app.use("*", cors({
 app.all("*", async (c) => {
   // Identity comes from the proxy when it vouches for the request; otherwise from
   // x-forwarded-for. Never from the User-Agent alone — see ratelimit.js.
-  const { ip, ua: clientName, tier } = identify(c.req);
+  const who = identify(c.req);
+  const { ip, tier } = who;
 
   // CORS preflight carries no payload and must not consume a caller's budget.
   if (c.req.method !== "OPTIONS") {
@@ -408,7 +407,7 @@ app.all("*", async (c) => {
     if (!gate.allowed) return tooManyRequests(gate.retry_after, gate.reason);
   }
 
-  const server = buildServer(ip, clientName);
+  const server = buildServer(ip, requestContext(c, who, PROXY_HOST));
   const transport = new StreamableHTTPTransport();
   await server.connect(transport);
   return transport.handleRequest(c);
