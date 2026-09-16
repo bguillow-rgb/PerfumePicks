@@ -17,8 +17,8 @@ affiliate: true
 relatedSlugs:
   - "how-to-find-your-signature-scent"
   - "what-is-a-skin-scent-perfume"
+  - "what-is-functional-fragrance"
   - "fragrance-notes-explained"
-  - "how-to-blind-buy-perfume"
 faqs:
   - q: "What fragrance families are best for the office?"
     a: "Soft woods, light musks, clean aquatics, and green chypres are the most universally appropriate. These families project close to skin, read as professional rather than personal, and are unlikely to trigger headaches or sensitivities in colleagues. Heavy orientals, gourmands, and strongly animalic fragrances are the families most likely to cause problems in shared spaces."
