@@ -1,8 +1,8 @@
 {
   "name": "perfume-picks-mcp",
   "version": "1.0.2",
-  "description": "MCP server exposing the Perfume Picks fragrance database (13,000+ scents) as read-only tools for AI assistants. Search the catalog, find dupes, compare fragrances, and get wear suggestions \u2014 with citation-ready attribution.",
-  "mcpName": "io.github.bguillow-rgb/perfume-picks-fragrance-cologne",
+  "description": "MCP server exposing the Perfume Picks fragrance database (13,000+ scents) as read-only tools for AI assistants. Search the catalog, find dupes, compare fragrances, and get wear suggestions — with citation-ready attribution.",
+  "mcpName": "io.github.bguillow-rgb/perfume-picks",
   "type": "module",
   "bin": {
     "perfume-picks-mcp": "dist/index.js"
@@ -43,6 +43,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/node": "^20.19.43",
     "tsx": "^4.19.0",
     "typescript": "^5.5.0"
   }
