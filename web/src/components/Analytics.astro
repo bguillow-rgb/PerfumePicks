@@ -26,6 +26,10 @@ const enableAnalytics = isProd && Boolean(ga4Id);
     <script is:inline define:vars={{ ga4Id }}>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      // define:vars wraps this block in a function, so gtag is NOT global
+      // unless we expose it. Page scripts (affiliate click listener, invite
+      // CTA) check window.gtag and silently no-op without this line.
+      window.gtag = gtag;
       gtag('js', new Date());
       gtag('config', ga4Id, {
         anonymize_ip: true,
