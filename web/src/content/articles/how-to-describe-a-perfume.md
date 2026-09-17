@@ -13,10 +13,10 @@ quickAnswer: "To describe a perfume, work through its structure (top, heart, bas
 publishedAt: "2026-08-28"
 author: "Perfume Picks"
 relatedSlugs:
+  - "are-perfume-subscription-boxes-worth-it"
   - "perfume-fragrance-families"
   - "what-is-a-chypre-perfume"
   - "what-is-a-gourmand-perfume"
-  - "what-is-an-oriental-perfume"
 faqs:
   - q: "What are the best words to describe a fresh perfume?"
     a: "For fresh fragrances, reach for: aquatic, ozonic, green, citrusy, crisp, dewy, clean, soapy, or herbal. Pair a texture word (light, airy) with a reference point (\"like cold water on river stones\") for a description that actually communicates something."

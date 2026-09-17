@@ -16,7 +16,7 @@ relatedSlugs:
   - "are-perfume-discovery-sets-worth-it"
   - "do-perfumes-increase-in-value"
   - "are-perfume-dupes-worth-it"
-  - "how-much-to-spend-on-perfume"
+  - "are-perfume-subscription-boxes-worth-it"
 faqs:
   - q: "How do I know if a perfume advent calendar is good value?"
     a: "Add up the retail price of each included sample or mini at its per-ml cost versus the calendar's price. A good calendar delivers at least 2-3x its retail price in fragrance value, with sizes large enough (2ml+) to actually evaluate a scent across multiple wears."
