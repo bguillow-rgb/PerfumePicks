@@ -16,7 +16,7 @@ relatedSlugs:
   - "what-is-a-skin-scent-perfume"
   - "perfume-sensitive-skin-guide"
   - "what-is-a-gourmand-perfume"
-  - "what-is-oud-perfume"
+  - "what-is-eau-fraiche"
 faqs:
   - q: "Does 'unisex' mean a perfume will smell the same on everyone?"
     a: "No. Unisex only means the scent wasn't designed with a gendered wearer in mind. Skin chemistry, body heat, and pH still cause the same perfume to smell noticeably different from person to person, sometimes dramatically so."
