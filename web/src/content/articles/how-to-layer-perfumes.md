@@ -13,10 +13,10 @@ quickAnswer: "To layer perfumes, apply the heaviest, longest-lasting fragrance f
 publishedAt: "2026-06-18"
 author: "Perfume Picks"
 relatedSlugs:
+  - "can-you-wear-two-perfumes-at-once"
   - "how-to-smell-good-all-day"
   - "best-perfume-for-a-date-night"
   - "how-often-to-wear-each-perfume"
-  - "how-to-build-a-fragrance-wardrobe"
 faqs:
   - q: "Should you layer perfumes on skin or on clothes?"
     a: "Skin is the better canvas for layering because body heat activates each composition differently and lets the scents genuinely merge. Applying one layer to skin and a lighter complementary layer to clothing (wrist cuff, collar) can extend longevity further without overcrowding a single application point."

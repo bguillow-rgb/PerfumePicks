@@ -14,9 +14,9 @@ publishedAt: "2026-09-11"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-rotate-your-perfume-collection"
+  - "can-you-wear-two-perfumes-at-once"
   - "how-many-perfumes-should-you-own"
   - "how-to-build-a-fragrance-wardrobe"
-  - "how-to-use-up-your-perfume-collection"
 faqs:
   - q: "Is it okay to wear the same perfume every day?"
     a: "Yes, there are no health or etiquette rules against it. The main trade-offs for collectors are olfactory adaptation (you stop smelling it on yourself) and the rest of your collection going unworn. If one scent genuinely suits every day of your life, wear it. If you own 10+ bottles, a daily rotation usually serves you better."

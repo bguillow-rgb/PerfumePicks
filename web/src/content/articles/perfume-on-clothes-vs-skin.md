@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-smell-good-all-day"
   - "how-to-make-perfume-last-longer"
   - "what-is-hair-perfume"
-  - "how-to-apply-perfume"
+  - "can-you-wear-two-perfumes-at-once"
 faqs:
   - q: "Does perfume last longer on clothes or skin?"
     a: "Clothes generally hold fragrance longer than skin. Natural fibers like wool and cotton absorb scent molecules and release them slowly, while skin, especially dry skin, can cause fragrance to evaporate faster. A medium-weight perfume on a wool coat can carry a noticeable scent for 24, 72 hours."
