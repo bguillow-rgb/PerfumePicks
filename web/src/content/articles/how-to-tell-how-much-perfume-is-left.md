@@ -13,10 +13,10 @@ quickAnswer: "Hold the bottle up to a strong light source to see the liquid line
 publishedAt: "2026-09-03"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-clean-perfume-bottles"
   - "how-to-read-perfume-batch-codes"
   - "how-to-tell-if-a-perfume-is-fake"
   - "are-perfume-subscription-boxes-worth-it"
-  - "best-perfume-for-a-date-night"
 faqs:
   - q: "How do I check the fill level of a black or opaque perfume bottle?"
     a: "Use one of three methods: shine a strong flashlight against the side in a dark room and look for the liquid shadow line; weigh the bottle on a kitchen scale and subtract the empty-bottle weight (most manufacturers publish tare weights); or shake it gently and listen, a dull slosh means it's still relatively full, a higher-pitched swish means it's getting low."

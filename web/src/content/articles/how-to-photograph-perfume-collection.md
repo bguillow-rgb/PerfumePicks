@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-display-perfume-collection"
   - "how-many-perfumes-should-you-own"
   - "how-to-build-a-fragrance-wardrobe"
-  - "how-to-organize-perfume-collection"
+  - "how-to-clean-perfume-bottles"
 faqs:
   - q: "What is the best light for photographing perfume bottles?"
     a: "Soft, indirect natural light, such as from a north-facing window, is ideal for most collectors. It minimizes harsh reflections on glass and keeps colors accurate. If natural light is unavailable, position two inexpensive LED panels at 45-degree angles on either side of the bottle to create even, diffused illumination."
