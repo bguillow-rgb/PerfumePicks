@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-find-similar-perfumes"
   - "are-perfume-dupes-worth-it"
+  - "best-time-to-buy-perfume"
   - "do-perfumes-increase-in-value"
-  - "how-to-apply-perfume"
 faqs:
   - q: "Why do perfume brands discontinue fragrances?"
     a: "The most common reasons are shifting market trends, ingredient restrictions from regulatory bodies like IFRA, poor sales relative to production costs, and brand portfolio restructuring. Sometimes a scent is simply renamed or repackaged rather than truly discontinued."
