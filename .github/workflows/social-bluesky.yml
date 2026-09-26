@@ -3,8 +3,19 @@ name: Daily Bluesky post
 # Picks a fragrance, generates social copy, posts to Bluesky.
 # Manual run available via "Run workflow" button for testing.
 on:
-  schedule:
-    - cron: '0 13 * * *'  # 13:00 UTC daily (9am ET / 6am PT)
+  # SCHEDULE DISABLED 2026-09-26. This workflow has never succeeded: every
+  # run since it was first scheduled on 2026-09-03 has failed. The first
+  # wall was `npx ts-node` (fixed in the preceding commit); behind it sits
+  # the real one -- the only secret configured on this repo is
+  # ANTHROPIC_API_KEY. This job also needs:
+  #   BSKY_IDENTIFIER, BSKY_APP_PASSWORD, SUPABASE_URL,
+  # SUPABASE_SERVICE_ROLE_KEY (and optionally THREADS_ACCESS_TOKEN,
+  # THREADS_USER_ID)
+  # It was emitting a failure email every day for work it could not do.
+  # workflow_dispatch is intentionally left enabled: add the secrets, run
+  # it manually to confirm, then uncomment the schedule below.
+  # schedule:
+  #   - cron: '0 13 * * *'  # 13:00 UTC daily (9am ET / 6am PT)
   workflow_dispatch:
     inputs:
       slug:

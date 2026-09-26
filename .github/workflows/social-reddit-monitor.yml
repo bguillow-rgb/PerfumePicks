@@ -4,8 +4,18 @@ name: Daily Reddit monitor
 # draft responses for human review. Does NOT auto-post.
 # Drafts are saved as workflow artifacts for human review.
 on:
-  schedule:
-    - cron: '0 14 * * *'  # 14:00 UTC daily (10am ET)
+  # SCHEDULE DISABLED 2026-09-26. This workflow has never succeeded: every
+  # run since it was first scheduled on 2026-09-03 has failed. The first
+  # wall was `npx ts-node` (fixed in the preceding commit); behind it sits
+  # the real one -- the only secret configured on this repo is
+  # ANTHROPIC_API_KEY. This job also needs:
+  #   REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET,
+  # REDDIT_USERNAME, REDDIT_PASSWORD
+  # It was emitting a failure email every day for work it could not do.
+  # workflow_dispatch is intentionally left enabled: add the secrets, run
+  # it manually to confirm, then uncomment the schedule below.
+  # schedule:
+  #   - cron: '0 14 * * *'  # 14:00 UTC daily (10am ET)
   workflow_dispatch:
     inputs:
       subreddits:
