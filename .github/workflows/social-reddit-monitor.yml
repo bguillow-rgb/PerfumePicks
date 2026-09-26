@@ -20,6 +20,11 @@ jobs:
   monitor:
     runs-on: ubuntu-latest
 
+    # These scripts are TypeScript. ts-node is NOT a dependency of this
+    # repo (tsx is), so `npx ts-node` fetched an unpinned copy that could
+    # not load a .ts file at all -- every run since 2026-09-15 died with
+    # `TypeError: Unknown file extension ".ts"`. tsx is already pinned in
+    # devDependencies and is installed by the `npm ci` step below.
     steps:
       - uses: actions/checkout@v4
 
@@ -42,7 +47,7 @@ jobs:
           if [ -n "${{ github.event.inputs.subreddits }}" ]; then
             ARGS="--subreddits ${{ github.event.inputs.subreddits }}"
           fi
-          npx ts-node scripts/social/reddit-monitor.ts $ARGS
+          npx tsx scripts/social/reddit-monitor.ts $ARGS
 
       - name: Upload draft responses
         uses: actions/upload-artifact@v4

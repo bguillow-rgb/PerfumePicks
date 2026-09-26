@@ -26,6 +26,11 @@ jobs:
       run:
         working-directory: .
 
+    # These scripts are TypeScript. ts-node is NOT a dependency of this
+    # repo (tsx is), so `npx ts-node` fetched an unpinned copy that could
+    # not load a .ts file at all -- every run since 2026-09-15 died with
+    # `TypeError: Unknown file extension ".ts"`. tsx is already pinned in
+    # devDependencies and is installed by the `npm ci` step below.
     steps:
       - uses: actions/checkout@v4
 
@@ -49,7 +54,7 @@ jobs:
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             ARGS="$ARGS --dry-run"
           fi
-          npx ts-node scripts/social/fotd-generator.ts $ARGS
+          npx tsx scripts/social/fotd-generator.ts $ARGS
 
       - name: Post to Bluesky
         env:
@@ -57,9 +62,9 @@ jobs:
           BSKY_APP_PASSWORD: ${{ secrets.BSKY_APP_PASSWORD }}
         run: |
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            npx ts-node scripts/social/post-bluesky.ts --dry-run
+            npx tsx scripts/social/post-bluesky.ts --dry-run
           else
-            npx ts-node scripts/social/post-bluesky.ts
+            npx tsx scripts/social/post-bluesky.ts
           fi
 
       - name: Post to Threads (if credentials set)
@@ -68,9 +73,9 @@ jobs:
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
         run: |
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            npx ts-node scripts/social/threads-drafter.ts --dry-run
+            npx tsx scripts/social/threads-drafter.ts --dry-run
           else
-            npx ts-node scripts/social/threads-drafter.ts
+            npx tsx scripts/social/threads-drafter.ts
           fi
 
       - name: Save drafts artifact
