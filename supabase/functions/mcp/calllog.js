@@ -60,6 +60,7 @@ export function logRow(entry, ctx, serverVersion) {
     tool_name: entry.tool_name,
     args,
     client_name: clip(ctx.clientName, 200),
+    click_ref: clip(ctx.clickRef, 20),
     // The remote transport is stateless: clientInfo arrives only on the
     // `initialize` request, never on the separate tools/call request, so it
     // cannot be known here. The npm (stdio) package does record it.

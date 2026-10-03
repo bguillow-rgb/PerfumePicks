@@ -43,6 +43,7 @@ import {
   tooManyRequests,
 } from "./ratelimit.js";
 import { countResults, logRow, requestContext } from "./calllog.js";
+import { newRef, aiSource, tagLinks } from "./tracking.js";
 
 // The one mcp.<domain> hostname our proxy fronts this function with.
 const PROXY_HOST = "mcp.perfumepicks.app";
@@ -141,13 +142,22 @@ function buildServer(ip, ctx) {
   // this request carries.
   let resultCount = null;
   let servedIds = [];
+  // One tool call per request: the ref tags this response's links and its log row.
+  const clickRef = newRef();
+  ctx.clickRef = clickRef;
+  const source = aiSource(clientName);
+  let currentTool = null;
   const server = new McpServer({ name: "perfume-picks", version: SERVER_VERSION });
 
+  const trackedAttribution = async () => {
+    const a = await attribution();
+    return { ...a, links: tagLinks(a.links, { source, tool: currentTool, ref: clickRef }) };
+  };
   const respond = async (payload) => {
     resultCount = countResults(payload);
     servedIds = recordIds(payload);
     return {
-      content: [{ type: "text", text: JSON.stringify({ ...payload, attribution: await attribution() }, null, 2) }],
+      content: [{ type: "text", text: JSON.stringify({ ...payload, attribution: await trackedAttribution() }, null, 2) }],
     };
   };
   const errorResult = (message) => ({
@@ -163,6 +173,7 @@ function buildServer(ip, ctx) {
   };
   const guarded = (toolName, fn) => async (args) => {
     const started = Date.now();
+    currentTool = toolName;
     try {
       checkRateLimit(ip);
       resultCount = null;
