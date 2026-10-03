@@ -42,7 +42,9 @@ function markdownLines(dnaV3) {
   } else {
     const max = a.maxShare;
     const gateNote = flag.enabled
-      ? (max.share <= REPLAY_MAX_SHARE ? '✅ within the 20% replay-gate ceiling' : `🚨 BREACHES the ${pct(REPLAY_MAX_SHARE)} replay-gate ceiling — investigate before ramping`)
+      ? (max.share <= REPLAY_MAX_SHARE
+          ? '✅ within the 20% replay-gate ceiling'
+          : `⚠ above the ${pct(REPLAY_MAX_SHARE)} gate — this is the STORED distribution (still dominated by the pre-rebalance cohort). Seducer centroid rebalance shipped 2026-07-23; users re-elect down on their next recompute.`)
       : `(legacy baseline — the concentration V3 exists to fix; V3 gate ceiling is ${pct(REPLAY_MAX_SHARE)})`;
     lines.push(`- **Profiles with DNA:** ${a.total} (owner excluded) · **distinct archetypes:** ${a.distinct}/20 · **max share:** ${max.key} ${pct(max.share)} ${gateNote}`);
     lines.push('');
@@ -69,9 +71,9 @@ function markdownLines(dnaV3) {
   }
   lines.push('');
 
-  // ── Picker search adoption (V3 M4 — ships with 1.0.5) ──────────────
+  // ── Picker search adoption (V3 M4 — shipped in 1.0.5) ──────────────
   const s = dnaV3.search || {};
-  lines.push('**Picker search — "bring your own bottle" (ships in 1.0.5):**');
+  lines.push('**Picker search — "bring your own bottle":**');
   lines.push('');
   if (s.error) {
     lines.push(`- ⚠ Search adoption read failed: ${s.error}`);
@@ -104,7 +106,13 @@ function markdownLines(dnaV3) {
   if (q.error) {
     lines.push(`- **Enrich queue:** ⚠ read failed: ${q.error}`);
   } else if (!q.total) {
-    lines.push('- **Enrich queue:** awaiting rollout (0 requests — table live, fills once 1.0.5 search ships)');
+    // Search shipped in 1.0.5, so "awaiting rollout" is stale. If enrich EVENTS
+    // are firing in PostHog while the enrich_requests table stays empty, that's
+    // a real DB-write gap worth surfacing, not hiding.
+    const phEnrich = dnaV3.search?.enrichRequested?.events ?? 0;
+    lines.push(phEnrich > 0
+      ? `- **Enrich queue:** 0 rows in \`enrich_requests\` — but ${phEnrich} enrich event(s) fired in PostHog. DB-write path may not be wired; investigate.`
+      : '- **Enrich queue:** empty (0 requests).');
   } else {
     lines.push(`- **Enrich queue:** ${q.total} requests from ${q.requesters} users · top: ${q.top.map((t) => `${t.label} (${t.requests})`).join(' · ')}`);
   }

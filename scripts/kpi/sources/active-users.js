@@ -32,6 +32,13 @@ async function queryProject(env, projectId, query) {
   return (await res.json()).results ?? [];
 }
 
+// Report display timezone. Day buckets + today/yesterday selection use ET so
+// they match the "as of … ET" label in the exec summary; UTC bucketing filed
+// late-ET-evening activity under the next day and made "today" read 0
+// (2026-07-29 cleanup). en-CA renders an ET wall-clock date as YYYY-MM-DD.
+const REPORT_TZ = 'America/New_York';
+const etDateStr = (ms) => new Date(ms).toLocaleDateString('en-CA', { timeZone: REPORT_TZ });
+
 const APP_NAMESPACE = 'com.bobguillow.perfumepicks';
 const HISTORICAL_PROJECT_ID = '396959'; // pre-cutover Perfume events still land here
 const OWNER_EMAIL = 'bobguillow@icloud.com';
@@ -197,9 +204,9 @@ async function fetchActiveUsers(env, { days = 30 } = {}) {
 
   // Explicit LIMIT — HogQL silently caps at 100 rows without one.
   const q = `
-    SELECT toDate(timestamp) AS d, distinct_id, toUnixTimestamp(timestamp) AS t
+    SELECT toDate(toTimeZone(timestamp, '${REPORT_TZ}')) AS d, distinct_id, toUnixTimestamp(timestamp) AS t
     FROM events
-    WHERE toDate(timestamp) >= toDate(now()) - ${days - 1}
+    WHERE toDate(toTimeZone(timestamp, '${REPORT_TZ}')) >= toDate(toTimeZone(now(), '${REPORT_TZ}')) - ${days - 1}
       AND ${NS}
     ORDER BY t
     LIMIT 1000000`;
@@ -241,7 +248,7 @@ async function fetchActiveUsers(env, { days = 30 } = {}) {
 
   const daily = computeActiveUsers(rows, realIds, supaActiveByDay);
   const byDate = new Map(daily.map((r) => [r.date, r]));
-  const dateStr = (offset) => new Date(Date.now() - offset * 86400000).toISOString().slice(0, 10);
+  const dateStr = (offset) => etDateStr(Date.now() - offset * 86400000);
   const today = byDate.get(dateStr(0)) || { signedIn: 0, guestVisits: 0, total: 0 };
   const yesterday = byDate.get(dateStr(1)) || { signedIn: 0, guestVisits: 0, total: 0 };
   const windows = computeWindows(rows, realIds, dateStr(0), supaActiveByDay);
