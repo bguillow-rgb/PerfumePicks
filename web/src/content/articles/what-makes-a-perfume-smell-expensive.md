@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-much-to-spend-on-perfume"
   - "how-to-smell-good-all-day"
   - "are-perfume-dupes-worth-it"
-  - "how-to-evaluate-a-perfume"
+  - "how-to-buy-vintage-perfume"
 faqs:
   - q: "Does a higher price always mean a perfume smells more expensive?"
     a: "No. Price reflects ingredient costs, packaging, and brand overhead, not smell alone. Some affordable fragrances smell remarkably polished, while some costly ones feel flat. The quality of composition matters far more than the retail price."

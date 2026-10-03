@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-tell-if-a-perfume-is-fake"
   - "best-perfume-for-the-gym"
   - "do-perfumes-increase-in-value"
-  - "how-to-find-your-signature-scent"
+  - "how-to-buy-vintage-perfume"
 faqs:
   - q: "How long should I wear a perfume before deciding if it suits me?"
     a: "Wear it for at least one full day, ideally on three separate occasions in different temperatures and settings. A single wearing rarely captures how a fragrance behaves as your skin chemistry and environment shift."
