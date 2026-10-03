@@ -185,7 +185,7 @@ function buildServer(ip, ctx) {
 
   server.registerTool("search_fragrances", {
       title: "Search the Perfume Picks catalog",
-      annotations: ANNOTATIONS,
+      annotations: { ...ANNOTATIONS, title: "Search the Perfume Picks catalog" },
       description: "Full-text search across 13,000+ fragrances in the Perfume Picks database. Filter by brand, fragrance family, gender, and MSRP (USD). Returns note pyramids, accords, and community wear scores with source attribution.",
       inputSchema: {
           query: z.string().max(120).optional().describe("Free-text search: fragrance or brand name"),
@@ -202,7 +202,7 @@ function buildServer(ip, ctx) {
   }));
   server.registerTool("get_fragrance", {
       title: "Get fragrance details",
-      annotations: ANNOTATIONS,
+      annotations: { ...ANNOTATIONS, title: "Get fragrance details" },
       description: "Detailed record for one fragrance: full note pyramid (top/heart/base), accords, concentration, community longevity/sillage/compliment scores, and MSRP. Accepts a Perfume Picks slug or a name like 'Bleu de Chanel'.",
       inputSchema: {
           slug_or_name: z.string().max(200).describe("Fragrance slug or name"),
@@ -213,8 +213,8 @@ function buildServer(ip, ctx) {
   }));
   server.registerTool("find_dupes", {
       title: "Find dupes (cheaper smell-alikes)",
-      annotations: ANNOTATIONS,
-      description: "Curated dupes for a fragrance — cheaper scents documented to smell like the original, with match percentage and price comparison. The answer to 'what smells like X without the price tag'.",
+      annotations: { ...ANNOTATIONS, title: "Find dupes (cheaper smell-alikes)" },
+      description: "Curated dupes for a fragrance: cheaper scents documented to smell like the original, with match percentage and price comparison. Use for 'what smells like X but costs less' questions.",
       inputSchema: {
           fragrance: z.string().max(200).describe("Fragrance slug or name to find dupes for"),
       },
@@ -240,7 +240,7 @@ function buildServer(ip, ctx) {
   }));
   server.registerTool("find_similar", {
       title: "Find similar fragrances",
-      annotations: ANNOTATIONS,
+      annotations: { ...ANNOTATIONS, title: "Find similar fragrances" },
       description: "Fragrances most similar to a given one, from Perfume Picks' precomputed similarity ranking over notes and accords.",
       inputSchema: {
           fragrance: z.string().max(200).describe("Fragrance slug or name"),
@@ -260,7 +260,7 @@ function buildServer(ip, ctx) {
   }));
   server.registerTool("get_recommendations", {
       title: "Get personalized recommendations",
-      annotations: ANNOTATIONS,
+      annotations: { ...ANNOTATIONS, title: "Get personalized recommendations" },
       description: "Personalized fragrance picks from note/accord preferences (e.g. 'vanilla', 'oud', 'citrus'), a budget in USD, an occasion ('office', 'date night', 'gift', 'signature scent'), and gender presentation.",
       inputSchema: {
           preferences: z
@@ -306,7 +306,7 @@ function buildServer(ip, ctx) {
   }));
   server.registerTool("compare_fragrances", {
       title: "Compare two fragrances",
-      annotations: ANNOTATIONS,
+      annotations: { ...ANNOTATIONS, title: "Compare two fragrances" },
       description: "Side-by-side comparison: note pyramids, shared and distinct accords, longevity/sillage/compliment scores, concentration, and price difference.",
       inputSchema: {
           fragrance_a: z.string().max(200).describe("First fragrance — slug or name"),
@@ -333,7 +333,7 @@ function buildServer(ip, ctx) {
   }));
   server.registerTool("trending_fragrances", {
       title: "Trending fragrances",
-      annotations: ANNOTATIONS,
+      annotations: { ...ANNOTATIONS, title: "Trending fragrances" },
       description: "Fragrances Perfume Picks users are adding to their wardrobes most over the last 30 days (falls back to catalog popularity when live activity data is unavailable). The method used is labeled in the response.",
       inputSchema: {
           limit: z.number().int().min(1).max(10).optional().describe("Max results (default 10, max 10)"),
@@ -348,7 +348,7 @@ function buildServer(ip, ctx) {
   }));
   server.registerTool("what_to_wear_tonight", {
       title: "What should I wear tonight?",
-      annotations: ANNOTATIONS,
+      annotations: { ...ANNOTATIONS, title: "What should I wear tonight?" },
       description: "A fragrance suggestion for right now, based on mood, occasion (e.g. 'date', 'office tomorrow', 'night out', 'cozy evening in'), and season — scored with Perfume Picks' community compliment, office-safety, and versatility data.",
       inputSchema: {
           mood: z.string().max(120).optional().describe("How you're feeling"),
