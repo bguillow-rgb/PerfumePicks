@@ -16,6 +16,7 @@ import { SITE } from '../consts';
   <p class="brand">{SITE.name}</p>
   <h1>Privacy Policy</h1>
   <p class="effective">Effective Date: July 14, 2026</p>
+  <p class="effective">Updated October 3, 2026: added Section 11 on AI assistant connections.</p>
 
   <p>
     Perfume Picks ("we", "our", or "the app") is a fragrance wardrobe and
@@ -135,14 +136,28 @@ import { SITE } from '../consts';
       We will permanently remove your account within 7 days.</li>
   </ul>
 
-  <h2>11. Changes to This Policy</h2>
+  <h2>11. AI Assistant Connections (MCP Server)</h2>
+  <p>
+    We run a read-only server at <code>https://mcp.perfumepicks.app</code> that AI assistants such as Claude and ChatGPT can call to look up the Perfume Picks fragrance catalog. It works without an account and can't see any person's wardrobe, ratings, or other app data.
+  </p>
+  <p>
+    When an assistant calls the server, we log the tool it used and the search terms or settings it sent, the client name and version it reports, the time, whether the call worked, how many results came back, and the referring site if one is sent. We don't receive your conversation with the assistant, your name, or your account details. IP addresses are not stored in these logs, and the logs are deleted after 90 days. The assistant you use handles your conversation under its own privacy policy.
+  </p>
+  <p>
+    To stop scraping and abuse, we count requests per IP address. Those counters are deleted within 3 days. We also send Google Analytics a record of each call with the tool name, the assistant's reported name, and whether the call succeeded.
+  </p>
+  <p>
+    We use this information to run and protect the server and to see what people ask about so we can improve our content. We don't sell it.
+  </p>
+
+  <h2>12. Changes to This Policy</h2>
   <p>
     We may update this policy from time to time. Material changes will be
     communicated through the app. Continued use after changes constitutes
     acceptance.
   </p>
 
-  <h2>12. Contact</h2>
+  <h2>13. Contact</h2>
   <p>
     For questions about this privacy policy or your data, contact us at:
     <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
