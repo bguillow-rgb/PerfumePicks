@@ -31,4 +31,33 @@ Perfume Picks is an independent journal app. We do not sell fragrance.
   &ldquo;Buy from&rdquo; links to retailers may earn us a small commission
   at no cost to you.
 </p> <p class="footer">
-Questions? <a href="mailto:support@perfumepicks.app" style="color:inherit;border-bottom:none;">support@perfumepicks.app</a> </p> <p class="footer">&copy; 2026 Perfume Picks, a Timberline Ventures LLC product. All rights reserved.</p> <p class="footer"> <a href="https://findly.tools/perfume-picks?utm_source=perfume-picks" target="_blank" rel="noopener"> <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="150" height="52" loading="lazy"> </a> </p>  </div> </body></html>
+Questions? <a href="mailto:support@perfumepicks.app" style="color:inherit;border-bottom:none;">support@perfumepicks.app</a> </p> <p class="footer">&copy; 2026 Perfume Picks, a Timberline Ventures LLC product. All rights reserved.</p> <p class="footer"> <a href="https://findly.tools/perfume-picks?utm_source=perfume-picks" target="_blank" rel="noopener"> <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="150" height="52" loading="lazy"> </a> </p>  </div> <!-- AI plugin attribution (2026-10-03): a visitor who arrives from one of our
+         MCP servers' links (utm_medium=ai_plugin) keeps that source for the session,
+         and App Store links on the site carry Apple campaign tags so App Store
+         Connect credits the install to the assistant (pt = Timberline provider token). --> <script>
+      (function () {
+        try {
+          var key = "tv_ai_src";
+          var q = new URLSearchParams(location.search);
+          if (q.get("utm_medium") === "ai_plugin") {
+            sessionStorage.setItem(key, (q.get("utm_source") || "other").replace(/[^a-z0-9_-]/gi, "").slice(0, 20));
+          }
+          var src = sessionStorage.getItem(key);
+          if (!src) return;
+          var tag = function () {
+            document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
+              try {
+                var u = new URL(a.href);
+                if (u.searchParams.get("ct")) return;
+                u.searchParams.set("pt", "128774733");
+                u.searchParams.set("ct", ("ai-" + src + "-site").slice(0, 40));
+                u.searchParams.set("mt", "8");
+                a.href = u.toString();
+              } catch (e) {}
+            });
+          };
+          if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", tag);
+          else tag();
+        } catch (e) {}
+      })();
+    </script> </body> </html>
