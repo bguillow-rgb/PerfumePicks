@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-choose-perfume-for-special-occasion"
   - "how-to-wear-perfume-in-cold-weather"
+  - "what-perfume-to-wear-to-a-job-interview"
   - "best-perfume-for-each-season"
-  - "best-perfume-for-the-gym"
 faqs:
   - q: "How much perfume should I wear on a date?"
     a: "Two to three sprays is usually ideal, enough to be noticed up close but not across the table. Apply to pulse points like the wrists, neck, and inner elbows. In warm weather or a small indoor space, lean toward two sprays; in cold weather or a large venue, three is fine."

@@ -13,10 +13,10 @@ quickAnswer: "To buy vintage perfume safely: prioritize pre-1980s bottles from r
 publishedAt: "2026-10-03"
 author: "Perfume Picks"
 relatedSlugs:
+  - "what-perfume-to-wear-to-a-job-interview"
   - "best-perfume-for-a-date-night"
   - "how-to-apply-perfume"
   - "how-to-blind-buy-perfume"
-  - "how-to-evaluate-a-perfume"
 faqs:
   - q: "Is vintage perfume safe to wear?"
     a: "Most vintage perfumes are safe to wear, though aged formulas may have degraded top notes or higher allergen concentrations from ingredients no longer used in modern perfumery. Skin-testing a decant first is always the right call before applying liberally."
