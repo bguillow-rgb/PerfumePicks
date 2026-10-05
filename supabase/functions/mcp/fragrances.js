@@ -169,6 +169,16 @@ export async function resolveFragrance(ref) {
     const ranked = rankByRelevance((data ?? []), norm);
     // Require every query term to appear in brand+name; .or() above matched ANY.
     const strict = ranked.filter((f) => terms.every((t) => hayOf(f).includes(t)));
+    // An exact name match beats the coverage ranking, which favors short names:
+    // "Bleu de Chanel" used to resolve to a truncated catalog row named "Bleu de"
+    // (slug chanel-bleu-de) instead of chanel-bleu-de-chanel. 2026-10-05.
+    const exact = strict.find((f) => {
+        const n = (f.name_normalized ?? f.name.toLowerCase()).trim();
+        const b = (f.brand?.name ?? "").toLowerCase().trim();
+        return n === norm || `${b} ${n}` === norm;
+    });
+    if (exact)
+        return exact;
     if (strict[0])
         return strict[0];
     // Loose fallback, but it must still be ABOUT the query — see looselyRelevant.
