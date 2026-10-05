@@ -26,6 +26,9 @@ export function aiSource(ua) {
   if (s.includes("timberline-audit")) return "test";
   if (/claude|anthropic/.test(s)) return "claude";
   if (/openai|chatgpt/.test(s)) return "chatgpt";
+  // The ChatGPT desktop app runs plugin MCP calls from the user's machine with a
+  // "Deno/<version>" User-Agent (observed 2026-10-05). Probable, not verified.
+  if (s.startsWith("deno/")) return "chatgpt-app";
   if (s.includes("cursor")) return "cursor";
   return "other";
 }
