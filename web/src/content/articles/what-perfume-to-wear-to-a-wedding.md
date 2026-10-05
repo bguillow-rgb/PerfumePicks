@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-choose-perfume-for-special-occasion"
   - "perfume-etiquette-rules"
+  - "what-perfume-concentration-to-wear-when"
   - "how-often-to-wear-each-perfume"
-  - "how-to-choose-between-two-perfumes"
 faqs:
   - q: "Should you wear perfume to a wedding at all?"
     a: "Yes, but with restraint. A lightly applied scent is perfectly appropriate. The key is keeping projection modest so you don't overpower the space or trigger sensitivities in other guests. Two sprays on pulse points is a safe maximum for most fragrances."

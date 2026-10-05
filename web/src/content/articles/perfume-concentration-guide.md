@@ -13,10 +13,10 @@ quickAnswer: "Perfume concentration describes how much fragrance oil is dissolve
 publishedAt: "2026-06-22"
 author: "Perfume Picks"
 relatedSlugs:
+  - "what-perfume-concentration-to-wear-when"
   - "what-is-eau-fraiche"
   - "how-long-does-perfume-last"
   - "how-to-read-perfume-ingredient-list"
-  - "best-perfume-for-the-gym"
 faqs:
   - q: "Does a higher concentration always mean a better perfume?"
     a: "No. Concentration is a tool, not a quality marker. Some formulas genuinely shine at EDT strength, lighter and airy top notes perform better with faster alcohol evaporation. A Parfum of a mediocre fragrance is still a mediocre fragrance. Match concentration to occasion and formula intent, not prestige."
