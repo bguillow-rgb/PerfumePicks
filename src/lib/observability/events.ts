@@ -82,7 +82,7 @@ export const EVENTS = {
   PUSH_OPENED:            'push_opened',
 
   // ─── Discover ────────────────────────────────────────────────────────
-  DISCOVER_SEARCH_QUERY:  'discover_search_query',
+  DISCOVER_SEARCH_QUERY:  'discover_search_query',   // { query_length, result_count, repair } - every settled Discover query; the denominator for search_no_results
   DISCOVER_BRAND_OPENED:  'discover_brand_opened',
   DISCOVER_ACCORD_TAPPED: 'discover_accord_tapped',
   DISCOVER_EDIT_VIEWED:   'discover_edit_viewed',

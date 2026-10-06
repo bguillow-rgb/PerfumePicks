@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { normalizeSearchText } from '@/src/lib/normalizeText';
+import { brandLookupTokens, pickBrandFallback } from '@/src/features/search/queryRepair';
 import { MOCK_CATALOG, type MockFragrance } from '@/src/mock/fragrances';
 import { useCustomFragranceStore, isCustomFragranceId } from '@/src/stores/useCustomFragranceStore';
 
@@ -57,9 +58,18 @@ export type DupeTeaser = {
   maxSavingsCents: number | null;
 };
 
+export type SearchRepairKind = 'exact' | 'brand_lineup' | 'fuzzy_name' | 'brand_typo' | 'none';
+
 interface CatalogState {
   /** In-memory cache: slug → Fragrance */
   cache: Record<string, Fragrance>;
+  /**
+   * How the most recent typed search was answered, keyed by its normalized
+   * query. Read by the screens' search telemetry so production shows how often
+   * each repair actually rescues a search - without it these fallbacks would be
+   * as unmeasurable as the failures they fix.
+   */
+  lastSearchRepair: { q: string; kind: SearchRepairKind } | null;
   /**
    * Flat array view of the cache.
    * Demo mode: MOCK_CATALOG. Production: populated lazily as searches run.
@@ -300,6 +310,54 @@ async function fuzzySearchFallback(
   }
 }
 
+/**
+ * One house's lineup, in the same order and shape the brand search path uses.
+ * Shown when a query clearly names a brand but no bottle matches the rest of it.
+ */
+async function brandLineup(
+  brandId: string,
+  limit: number,
+  genders?: string[],
+): Promise<Fragrance[]> {
+  try {
+    let qb = supabase
+      .from('fragrances')
+      .select(FRAGRANCE_SELECT)
+      .eq('is_active', true)
+      .or('source.is.null,source.neq.aromapassions')
+      .eq('brand_id', brandId)
+      .order('purchasable', { ascending: false })
+      .order('name', { ascending: true })
+      .limit(limit);
+    qb = applyGenderFilter(qb, genders);
+    const { data } = await qb;
+    return (data ?? []).map(rowToFragrance).filter((f) => !isBundle(f));
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * The brand a misspelled query most plausibly names, or null.
+ *
+ * Scores the query against BRAND NAMES ONLY (fuzzy_brand_search). Scoring it
+ * against brand+bottle text with word_similarity was tested and rejected: it
+ * rescued "lataffa" at 0.50 but ranked "zara" -> "Oud Zarian" and "puma" ->
+ * "Pumpkin Pie" at 0.60, so no threshold separated rescues from nonsense.
+ * Against brand names, the real typos scored 0.44-0.45 and every catalog-gap
+ * query <= 0.30; 0.42 sits in that gap. Returns null on any error: an old DB
+ * without the function just means no repair, not a broken search.
+ */
+async function fuzzyBrandMatch(q: string): Promise<string | null> {
+  try {
+    const { data, error } = await supabase.rpc('fuzzy_brand_search', { q, min_sim: 0.42 });
+    if (error || !data || data.length === 0) return null;
+    return (data as { id: string }[])[0].id;
+  } catch {
+    return null;
+  }
+}
+
 function nameRelevance(name: string, q: string): number {
   const n = normalizeSearchText(name);
   if (n === q) return 5;
@@ -361,6 +419,7 @@ const FRAGRANCE_SELECT = 'id, slug, name, concentration, fragrance_family, gende
 
 export const useCatalogStore = create<CatalogState>()((set, get) => ({
   cache: {},
+  lastSearchRepair: null,
   // Demo mode seeds from MOCK_CATALOG immediately.
   // Production mode starts empty — populated lazily as searches/fetches run.
   items: isSupabaseConfigured ? [] : MOCK_CATALOG,
@@ -474,9 +533,9 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       // because they get interpolated into a PostgREST .or() string, which is
       // parsed structurally (raw commas/parens/dots would break it). Require
       // >=3 chars so stop-words like "le"/"no" don't match half the brand table.
-      const brandTokens = tokens
-        .map((t) => t.replace(/[^a-z0-9]/gi, ''))
-        .filter((t) => t.length >= 3);
+      // Stop-words ("and", "los", "perfume") are dropped here too: they pass the
+      // length guard and substring-match dozens of house names.
+      const brandTokens = brandLookupTokens(tokens);
 
       // Every token, including the 1-2 char ones brandTokens drops. Aliases are
       // matched exactly, so short tokens are safe here — and necessary: the
@@ -594,13 +653,46 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       // brand + full shape). Only on the empty path, so good exact results are
       // never diluted by fuzzy noise.
       if (results.length === 0) {
+        // Repair chain, most precise first; each step runs only if the previous
+        // one found nothing, so a good exact result is never diluted.
+        //
+        // 1. A brand matched but the leftover words matched no bottle
+        //    ("jean pual", "kayali wedd") -> that house's lineup.
+        const fallbackBrand = pickBrandFallback(matchedBrands, tokens);
+        if (fallbackBrand) {
+          const lineup = await brandLineup(fallbackBrand, limit, genders);
+          if (lineup.length > 0) {
+            get()._addToCache(lineup);
+            set({ lastSearchRepair: { q, kind: 'brand_lineup' } });
+            return lineup;
+          }
+        }
+
+        // 2. Trigram-similar bottle names ("opim" -> Opium).
         const fuzzy = await fuzzySearchFallback(q, limit, genders);
         if (fuzzy.length > 0) {
           get()._addToCache(fuzzy);
+          set({ lastSearchRepair: { q, kind: 'fuzzy_name' } });
           return fuzzy;
+        }
+
+        // 3. A misspelled brand that matched nothing at all ("lataffa",
+        //    "luis vutton"). Last, and only when no brand matched: it is the
+        //    loosest step, so it must never pre-empt a real match.
+        if (matchedBrands.length === 0) {
+          const typoBrand = await fuzzyBrandMatch(q);
+          if (typoBrand) {
+            const lineup = await brandLineup(typoBrand, limit, genders);
+            if (lineup.length > 0) {
+              get()._addToCache(lineup);
+              set({ lastSearchRepair: { q, kind: 'brand_typo' } });
+              return lineup;
+            }
+          }
         }
       }
 
+      set({ lastSearchRepair: results.length > 0 ? { q, kind: 'exact' } : { q, kind: 'none' } });
       get()._addToCache(results);
       return results;
     }
