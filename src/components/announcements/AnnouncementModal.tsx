@@ -15,6 +15,7 @@ import React from 'react';
 import { AnnouncementSheet } from '@/src/components/announcements/AnnouncementSheet';
 import { useAnnouncement } from '@/src/features/announcements/useAnnouncement';
 import { track, EVENTS } from '@/src/lib/observability';
+import { recordAnnouncementOutcome } from '@/src/features/announcements/impressions';
 
 export function AnnouncementModal() {
   const router = useRouter();
@@ -24,6 +25,7 @@ export function AnnouncementModal() {
 
   const handleDismiss = () => {
     track(EVENTS.ANNOUNCEMENT_DISMISSED, { id: announcement.id });
+    void recordAnnouncementOutcome(announcement.id, 'dismissed');
     dismiss();
   };
 
@@ -32,6 +34,7 @@ export function AnnouncementModal() {
 
   const handleCta = () => {
     track(EVENTS.ANNOUNCEMENT_CTA_TAPPED, { id: announcement.id, route: route ?? null });
+    void recordAnnouncementOutcome(announcement.id, 'cta_tapped');
     dismiss();
     // Defer navigation until after the modal unmounts so the transition doesn't
     // fight the dismiss animation.

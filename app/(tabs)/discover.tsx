@@ -11,9 +11,11 @@ import { FragranceCard } from '@/src/components/fragrance/FragranceCard';
 // names match the actual Supabase brands.name values.
 import {
   useCatalogStore,
+  NO_GENDER_FILTER,
   type Fragrance,
 } from '@/src/stores/useCatalogStore';
 import { useFragranceNotesStore } from '@/src/stores/useFragranceNotesStore';
+import { normalizeSearchText } from '@/src/lib/normalizeText';
 import { DiscoverFilterSheet, type DiscoverFilters, EMPTY_FILTERS, filtersActive } from '@/src/components/sheets/DiscoverFilterSheet';
 import { EmptyState } from '@/src/components/ui/EmptyState';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
@@ -221,7 +223,8 @@ export default function DiscoverScreen() {
       setSearching(true);
       let cancelled = false;
       const t = setTimeout(() => {
-        searchStore(q, 50).then((nameRows) => {
+        // NO_GENDER_FILTER: see the typed-search note below.
+        searchStore(q, 50, NO_GENDER_FILTER).then((nameRows) => {
           if (cancelled) return;
           const moodRanked = rankByMood(pool, mood, 200);
           const seen = new Set(nameRows.map((r) => r.id));
@@ -241,7 +244,14 @@ export default function DiscoverScreen() {
       // note phrases ("coconut milk") both work. Harmless for name/brand
       // queries ("burberry goddess") since no note contains that string.
       Promise.all([
-        searchStore(q, 200),
+        // Typed name/brand search ignores the audience preference; note search
+        // keeps it. Naming a bottle is a LOOKUP: a Women's user who types "H24"
+        // wants H24, and filtering it out returned an empty screen with no
+        // reason given - two users hit exactly that ("nebras", "sugardaddy")
+        // within minutes of choosing Women's. Typing a note ("vanilla") is
+        // BROWSING, where the preference is the point. The DNA picker made the
+        // same call for the same reason (PickerSearch.tsx).
+        searchStore(q, 200, NO_GENDER_FILTER),
         searchByNotes([q], 200),
       ]).then(([nameRows, noteRows]) => {
         if (cancelled) return;
@@ -287,6 +297,27 @@ export default function DiscoverScreen() {
         query: q.slice(0, 60),
         query_length: q.length,
         surface: 'discover',
+      });
+    }, MISS_LOG_DELAY_MS);
+    return () => clearTimeout(t);
+  }, [query, searching, searchResults.length]);
+
+  // Log every settled query, hit or miss. DISCOVER_SEARCH_QUERY was defined but
+  // never fired, so misses had no denominator and a failure RATE could not be
+  // computed - only a count. `repair` says which step answered (exact match or
+  // one of the typo repairs), which is how a rescue shows up in production.
+  const loggedQueryRef = useRef<string | null>(null);
+  useEffect(() => {
+    const q = query.trim();
+    if (!q || q.length < 2 || searching) return;
+    if (loggedQueryRef.current === q.toLowerCase()) return;
+    const t = setTimeout(() => {
+      loggedQueryRef.current = q.toLowerCase();
+      const repair = useCatalogStore.getState().lastSearchRepair;
+      track(EVENTS.DISCOVER_SEARCH_QUERY, {
+        query_length: q.length,
+        result_count: searchResults.length,
+        repair: repair && repair.q === normalizeSearchText(q) ? repair.kind : null,
       });
     }, MISS_LOG_DELAY_MS);
     return () => clearTimeout(t);
