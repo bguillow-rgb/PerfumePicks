@@ -16,7 +16,7 @@ relatedSlugs:
   - "why-perfume-smells-different-on-everyone"
   - "perfume-on-clothes-vs-skin"
   - "can-you-wear-two-perfumes-at-once"
-  - "how-to-smell-good-all-day"
+  - "do-perfume-preferences-change-with-age"
 faqs:
   - q: "Is it okay to buy a perfume based only on a paper blotter test?"
     a: "It's risky. A blotter shows you the fragrance's structure and opening, but it can't simulate your skin's heat, pH, or natural oils, all of which change how a scent develops and lasts. Always follow up with a skin test before committing to a full bottle."

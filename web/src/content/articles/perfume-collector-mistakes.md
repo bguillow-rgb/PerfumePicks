@@ -13,10 +13,10 @@ quickAnswer: "The most common perfume collector mistakes are impulse blind-buyin
 publishedAt: "2026-08-19"
 author: "Perfume Picks"
 relatedSlugs:
+  - "do-perfume-preferences-change-with-age"
   - "how-many-perfumes-should-you-own"
   - "how-often-to-wear-each-perfume"
   - "how-to-audit-your-perfume-collection"
-  - "how-to-build-a-fragrance-wardrobe"
 faqs:
   - q: "Is it a mistake to buy a full bottle of a perfume you've never smelled?"
     a: "Yes, blind-buying a full 100ml bottle is the single highest-regret purchase pattern in fragrance collecting. Always sample first, or at minimum buy a decant (5, 10ml) before committing to a full size."

@@ -14,9 +14,9 @@ publishedAt: "2026-07-08"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-find-similar-perfumes"
+  - "do-perfume-preferences-change-with-age"
   - "fragrance-notes-explained"
   - "what-is-a-fougere-perfume"
-  - "what-is-a-gourmand-perfume"
 faqs:
   - q: "What is a scent profile?"
     a: "A scent profile is the personal pattern of fragrance families, dominant notes, and emotional moods that you reliably gravitate toward. It emerges from looking at what you actually own and wear, not from a quiz or a retailer's algorithm."
