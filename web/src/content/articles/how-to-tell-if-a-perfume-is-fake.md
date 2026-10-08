@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-tell-if-a-perfume-suits-you"
   - "what-is-a-perfume-flanker"
+  - "am-i-buying-too-much-perfume"
   - "are-perfume-dupes-worth-it"
-  - "how-to-buy-vintage-perfume"
 faqs:
   - q: "Can a batch code alone prove a perfume is real?"
     a: "No. A batch code identifies the production lot and can be decoded to a manufacturing date, but counterfeiters copy real codes onto fakes. A matching, valid code is a weak positive signal, a missing or mismatched code is a strong warning sign. Always combine batch code checks with packaging and scent tests."
