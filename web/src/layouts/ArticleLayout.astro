@@ -84,6 +84,11 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
     <slot />
   </div>
 
+  <aside class="article-app-cta">
+    <p class="article-app-lead">Perfume Picks learns what you like and tells you what to wear tonight. Free on iPhone.</p>
+    <a class="badge" href={SITE.appStoreUrl}>Download free on the App Store &rarr;</a>
+  </aside>
+
   <FAQ faqs={faqs} />
 
   <Footer />
@@ -108,6 +113,16 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
 </BaseLayout>
 
 <style is:global>
+  .article-app-cta {
+    margin: 38px 0 6px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .article-app-lead {
+    margin: 0 0 18px;
+    max-width: 42em;
+  }
+  .article-app-cta .badge { margin-bottom: 0; }
   .aff-disclosure {
     font-size: 13.5px;
     line-height: 1.55;
