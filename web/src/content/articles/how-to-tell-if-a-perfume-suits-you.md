@@ -13,10 +13,10 @@ quickAnswer: "A perfume suits you when it smells noticeably better on your skin 
 publishedAt: "2026-08-23"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-body-chemistry-affects-perfume"
   - "how-to-tell-if-a-perfume-is-fake"
   - "am-i-buying-too-much-perfume"
   - "best-perfume-for-the-gym"
-  - "do-perfume-preferences-change-with-age"
 faqs:
   - q: "How long should I wear a perfume before deciding if it suits me?"
     a: "Wear it for at least one full day, ideally on three separate occasions in different temperatures and settings. A single wearing rarely captures how a fragrance behaves as your skin chemistry and environment shift."

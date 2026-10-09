@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-smell-good-all-day"
   - "what-makes-a-perfume-smell-expensive"
+  - "how-body-chemistry-affects-perfume"
   - "how-long-does-perfume-last"
-  - "how-many-perfumes-can-you-smell-at-once"
 faqs:
   - q: "Does getting no compliments mean my perfume is bad?"
     a: "Not at all. Many beloved, high-quality fragrances are soft skin-scents with low projection. Compliments depend as much on application, context, and social setting as on the fragrance itself. A lack of compliments is data about projection and context-fit, not a quality verdict."

@@ -13,10 +13,10 @@ quickAnswer: "Yes, perfume preferences reliably shift with age. Your skin produc
 publishedAt: "2026-10-07"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-body-chemistry-affects-perfume"
   - "why-perfume-smells-different-on-everyone"
   - "can-you-wear-two-perfumes-at-once"
   - "how-to-describe-a-perfume"
-  - "perfume-on-clothes-vs-skin"
 faqs:
   - q: "Why do perfumes I loved when I was younger smell different on me now?"
     a: "Two things change simultaneously: your skin produces less natural oil as you age, which affects how fragrance molecules bind and project, and your olfactory system accumulates new scent memories that shift what smells 'right' to you. The perfume itself hasn't changed, your skin and nose have."
