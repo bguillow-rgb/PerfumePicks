@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-many-perfumes-should-you-own"
   - "how-to-organize-perfume-collection"
+  - "why-do-i-only-wear-a-few-perfumes-from-my-collection"
   - "how-to-audit-your-perfume-collection"
-  - "how-to-build-a-fragrance-wardrobe"
 faqs:
   - q: "How do I decide which perfumes to keep?"
     a: "Keep bottles you reach for voluntarily, not just ones you like in theory. If you have to remind yourself a bottle exists, it's a strong sign it doesn't belong in your active rotation."

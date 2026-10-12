@@ -13,10 +13,10 @@ quickAnswer: "Most people stop getting compliments on their perfume because of f
 publishedAt: "2026-09-28"
 author: "Perfume Picks"
 relatedSlugs:
+  - "why-do-i-only-wear-a-few-perfumes-from-my-collection"
   - "how-to-smell-good-all-day"
   - "what-makes-a-perfume-smell-expensive"
   - "how-body-chemistry-affects-perfume"
-  - "how-long-does-perfume-last"
 faqs:
   - q: "Does getting no compliments mean my perfume is bad?"
     a: "Not at all. Many beloved, high-quality fragrances are soft skin-scents with low projection. Compliments depend as much on application, context, and social setting as on the fragrance itself. A lack of compliments is data about projection and context-fit, not a quality verdict."

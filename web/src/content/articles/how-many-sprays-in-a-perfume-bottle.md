@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-use-up-your-perfume-collection"
   - "does-perfume-expire"
   - "how-to-smell-good-all-day"
-  - "how-long-does-perfume-last"
+  - "why-do-i-only-wear-a-few-perfumes-from-my-collection"
 faqs:
   - q: "How many sprays are in a 100ml perfume bottle?"
     a: "A 100ml bottle typically delivers 800, 1,000 sprays, depending on the atomizer. At 3, 4 sprays per day, that translates to roughly 7, 14 months of use."

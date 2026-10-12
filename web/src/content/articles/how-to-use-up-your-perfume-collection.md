@@ -13,10 +13,10 @@ quickAnswer: "To use up your perfume collection, assign each bottle a specific w
 publishedAt: "2026-08-12"
 author: "Perfume Picks"
 relatedSlugs:
+  - "why-do-i-only-wear-a-few-perfumes-from-my-collection"
   - "how-many-perfumes-should-you-own"
   - "how-many-sprays-in-a-perfume-bottle"
   - "how-often-to-wear-each-perfume"
-  - "how-to-rotate-your-perfume-collection"
 faqs:
   - q: "Is it okay to wear a perfume every single day until it's finished?"
     a: "Absolutely. Wearing one fragrance daily until the bottle is done is one of the fastest ways to actually finish a bottle, and you often develop a deeper appreciation for a scent you might have dismissed. The risk is olfactory fatigue, so swap your application point or give yourself one day off per week."
