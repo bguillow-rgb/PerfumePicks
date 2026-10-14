@@ -37,8 +37,9 @@ import {
   identify,
   rateGuard,
   recordAdd,
-  recordBudget,
+  toolGuard,
   recordIds,
+  limitMessage,
   RECORD_LIMIT_MESSAGE,
   tooManyRequests,
 } from "./ratelimit.js";
@@ -178,8 +179,8 @@ function buildServer(ip, ctx) {
       checkRateLimit(ip);
       resultCount = null;
       servedIds = [];
-      const budget = await recordBudget(ip);
-      if (!budget.allowed) throw new Error(RECORD_LIMIT_MESSAGE);
+      const budget = await toolGuard(ip, ctx.clientName);
+      if (!budget.allowed) throw new Error(limitMessage(budget.reason));
       const result = await fn(args);
       track({ tool_name: toolName, args, success: true, result_count: resultCount, duration_ms: Date.now() - started });
       const add = recordAdd(ip, servedIds);
@@ -431,7 +432,7 @@ app.all("*", async (c) => {
 
   // CORS preflight carries no payload and must not consume a caller's budget.
   if (c.req.method !== "OPTIONS") {
-    const gate = await rateGuard(ip, tier);
+    const gate = await rateGuard(ip, tier, who.ua);
     if (!gate.allowed) return tooManyRequests(gate.retry_after, gate.reason);
   }
 
