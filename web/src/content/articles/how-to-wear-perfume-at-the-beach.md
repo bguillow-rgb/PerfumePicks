@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-wear-perfume-in-hot-weather"
   - "how-weather-affects-perfume"
   - "how-to-wear-perfume-in-cold-weather"
-  - "best-perfume-for-each-season"
+  - "how-to-wear-perfume-in-the-rain"
 faqs:
   - q: "Is it safe to wear perfume at the beach?"
     a: "Generally yes, with one caveat: certain fragrance ingredients, especially bergamot, lemon, and other furocoumarins, are photosensitizing and can cause skin discoloration or irritation when applied to exposed skin in direct sunlight. Applying to hair, clothing, or covered skin eliminates this risk entirely."
