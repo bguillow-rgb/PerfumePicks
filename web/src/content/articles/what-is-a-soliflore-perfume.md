@@ -16,7 +16,7 @@ relatedSlugs:
   - "what-is-a-chypre-perfume"
   - "what-is-a-fougere-perfume"
   - "what-is-a-gourmand-perfume"
-  - "what-is-an-aldehydic-perfume"
+  - "what-is-a-perfume-accord"
 faqs:
   - q: "What does 'soliflore' mean?"
     a: "Soliflore is a French term combining 'soli' (single) and 'flore' (flower). It describes a perfume whose central intention is to showcase one specific bloom rather than a blended accord of many flowers."

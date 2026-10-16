@@ -16,7 +16,7 @@ relatedSlugs:
   - "can-you-wear-two-perfumes-at-once"
   - "how-often-to-wear-each-perfume"
   - "should-you-wear-perfume-to-bed"
-  - "am-i-buying-too-much-perfume"
+  - "what-is-a-perfume-accord"
 faqs:
   - q: "Can a perfume genuinely reveal your personality, or is it just marketing?"
     a: "There's real psychology behind it. Research into scent preferences consistently links fragrance families to personality traits, for example, people who prefer complex, smoky scents tend to score higher on openness to experience. That said, personality is multidimensional and a single bottle is never the whole story."
