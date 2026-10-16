@@ -59,19 +59,39 @@
       "slug": "ysl-yves-saint-laurent-ysl-la-nuit-de-lhomme-le",
       "old": "YSL La Nuit De LHomme Le",
       "new": "La Nuit de L'Homme Le Parfum"
-    }
-  ],
-  "left_alone": [
+    },
     {
-      "slug": "lancome-tresor-leau-de",
-      "name": "Tresor LEau de",
-      "why": "could not confirm the full product name"
+      "slug": "carven-le",
+      "old": "Le",
+      "new": "Le Parfum",
+      "evidence": "own retailer link -> fragranceshop.com/product/carven-le-parfum-for-women"
+    },
+    {
+      "slug": "jacomo-le",
+      "old": "Le",
+      "new": "Le Parfum",
+      "evidence": "own retailer links -> jacomo-le-parfum-for-women and perfumania le-parfum-by-jacomo-for-women-edp-spray"
+    },
+    {
+      "slug": "sonia-rykiel-le",
+      "old": "Le",
+      "new": "Le Parfum",
+      "evidence": "own retailer link -> fragranceshop.com/product/le-parfum-for-women"
     },
     {
       "slug": "glenn-perri-unpredictable-lady-le",
-      "name": "Unpredictable Lady Le",
-      "why": "could not confirm the full product name"
+      "old": "Unpredictable Lady Le",
+      "new": "Unpredictable Lady Le Parfum",
+      "evidence": "own retailer link -> unpredictable-lady-le-parfum-perfume-for-women"
     },
+    {
+      "slug": "lancome-tresor-leau-de",
+      "old": "Tresor LEau de",
+      "new": "Tr\u00e9sor L'Eau de Parfum",
+      "evidence": "own retailer link -> tresor-leau-de-parfum-for-women"
+    }
+  ],
+  "left_alone": [
     {
       "slug": "givenchy-le-de",
       "name": "Le De",
@@ -84,6 +104,16 @@
     {
       "slug": "hiram-green-shangri-la",
       "why": "not truncated - real name"
+    },
+    {
+      "slug": "lomani-l",
+      "name": "L",
+      "why": "NOT truncated. Its retailer link is lomani-l-cologne-for-men, and the brand names many products with a single word (Best, Code, Gold, Cologne). 'L' is the product."
+    },
+    {
+      "slug": "christiane-celle-calypso-the-perfume-for-women",
+      "name": "The",
+      "why": "Retailer link says only the-for-women, so the retailer calls it 'The' too. The brand's other products are de-accented French words (Calypso Chevrefeuille), which makes 'Th\u00e9' (tea) likely - but no source confirms a Th\u00e9 release, so it is NOT renamed. An English stopword as a product name is still a defect worth resolving from a better source."
     }
   ],
   "deactivated_conflations": [
@@ -101,6 +131,16 @@
     {
       "finding": "Elie Saab 'Le Parfum' exists twice: active slug elie-saab-le-parfum-elie-saab-perfume-for-women and inactive slug elie-saab-le-parfum. The INACTIVE one holds the only working perfumania link ($79.77, last_http_status 200); the active one has only a fragranceshop link. A live purchase path is stranded on an invisible row.",
       "not_done_because": "moving an affiliate link is a commerce change on a live app - needs sign-off"
+    }
+  ],
+  "link_moves": [
+    {
+      "link_id": "4e7627c4-cf9b-4603-bc10-ff2a311fe510",
+      "retailer": "perfumania",
+      "price_cents": 7977,
+      "from_slug": "elie-saab-le-parfum (inactive duplicate)",
+      "to_slug": "elie-saab-le-parfum-elie-saab-perfume-for-women (live row)",
+      "why": "the only working perfumania link for this product sat on an invisible deactivated duplicate; the live row had no perfumania link, so no unique (fragrance_id,retailer) collision"
     }
   ]
 }
