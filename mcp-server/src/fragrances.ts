@@ -40,12 +40,53 @@ const UUID_RE =
 // Lowercase, strip diacritics, and drop anything outside a safe charset —
 // PostgREST filter values and ilike wildcards never see raw input.
 export function normalizeQuery(q: string): string {
-  return q
+  // Hard cap on both characters and term count. Length bounds on the tool schema
+  // are the first line of defence; this is the second, because every term becomes
+  // two conditions in a PostgREST .or() and an unbounded query built a 2,400-
+  // condition filter that burned 7.7s of database time (Mark Z audit 2026-08-26).
+  // Ported into src 2026-10-16: it had only ever been patched into the Edge copy.
+  return String(q ?? "")
+    .slice(0, 200)
     .toLowerCase()
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9\s'&-]/g, " ")
-    .trim();
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 12)
+    .join(" ");
+}
+
+/**
+ * Brand ids whose name matches `name`, accent-insensitively.
+ *
+ * The brand filter used to run in JS over rows the database had already
+ * returned, so a brand-only search (no query terms) filtered the catalog's most
+ * popular rows and almost always came back empty: `{brand:"Elie Saab"}` returned
+ * 0 while `{query:"Elie Saab"}` returned 10, and `{brand:"Chanel"}` returned 1.
+ * A real Claude session hit this five times on 2026-10-14. Accents failed too,
+ * because normalizeQuery strips them from the input while the stored name keeps
+ * them ("Hermès"). Brands is a small table, so it is cached per isolate and
+ * matched in memory, then applied as a real `brand_id` filter.
+ */
+const stripAccents = (v: string): string => v.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+let brandIndex: { id: string; key: string }[] | null = null;
+
+export async function brandIdsMatching(name: string): Promise<string[]> {
+  const want = stripAccents(normalizeQuery(name));
+  if (!want) return [];
+  if (!brandIndex) {
+    const { data, error } = await supabase.from("brands").select("id,name").limit(5000);
+    if (error) dbFail(error);
+    brandIndex = (data ?? []).map((b: any) => ({
+      id: b.id,
+      key: stripAccents(String(b.name ?? "").toLowerCase()),
+    }));
+  }
+  const exact = brandIndex.filter((b) => b.key === want);
+  const pool = exact.length ? exact : brandIndex.filter((b) => b.key.includes(want));
+  return pool.slice(0, 25).map((b) => b.id);
 }
 
 // Never echo PostgREST error details to callers; log them server-side.
@@ -248,6 +289,12 @@ export async function searchFragrances(
 ): Promise<Fragrance[]> {
   const limit = Math.min(f.limit ?? 10, 25);
   let q = activeOnly(supabase.from("fragrances").select(FRAG_COLUMNS));
+  if (f.brand) {
+    const ids = await brandIdsMatching(f.brand);
+    // An unknown brand returns nothing rather than the catalog's most popular rows.
+    if (!ids.length) return [];
+    q = q.in("brand_id", ids);
+  }
   const norm = f.query ? normalizeQuery(f.query) : "";
   const terms = norm.split(/\s+/).filter(Boolean);
   if (terms.length) {
@@ -262,10 +309,6 @@ export async function searchFragrances(
     .limit(opts.maxRows ?? (terms.length ? 80 : limit));
   if (error) dbFail(error);
   let rows = (data ?? []) as unknown as Fragrance[];
-  if (f.brand) {
-    const b = normalizeQuery(f.brand);
-    rows = rows.filter((r) => (r.brand?.name ?? "").toLowerCase().includes(b));
-  }
   if (terms.length) {
     const ranked = rankByRelevance(rows, norm);
     const strict = ranked.filter((r) => terms.every((t) => hayOf(r).includes(t)));
