@@ -50,7 +50,12 @@ export function normalizeQuery(q: string): string {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9\s'&-]/g, " ")
+    // The stored name_normalized turns apostrophes into spaces ("Eau D'Orange
+    // Verte" -> "eau d orange verte"), so the query has to agree or nothing with
+    // an apostrophe is ever findable: "J'adore" and "L'Interdit" both returned 0
+    // against a catalog holding 7 and 4 rows (2026-10-16).
+    .replace(/['\u2019]/g, " ")
+    .replace(/[^a-z0-9\s&-]/g, " ")
     .trim()
     .split(/\s+/)
     .filter(Boolean)
@@ -193,6 +198,20 @@ const hayOf = (f: Fragrance) =>
   `${(f.brand?.name ?? "").toLowerCase()} ${f.name_normalized ?? f.name.toLowerCase()} ${f.slug}`;
 
 /**
+ * Does `hay` contain `term` as a WORD, not as a substring?
+ *
+ * Plain `includes` let short terms match inside unrelated words: "Pure XS For
+ * Her" came back as Tom Ford Tuscan Leather, because "for" is inside "ford" and
+ * "her" inside "leather" (2026-10-16). Hyphens and slug separators count as
+ * boundaries.
+ */
+function hasTerm(hay: string, term: string): boolean {
+  if (!term) return false;
+  const esc = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(^|[^a-z0-9])${esc}([^a-z0-9]|$)`).test(hay);
+}
+
+/**
  * Is this row plausibly ABOUT the query, when no row matched every term?
  *
  * Both the resolver and search build candidates with a PostgREST `.or()`, which
@@ -212,8 +231,11 @@ const hayOf = (f: Fragrance) =>
  */
 function looselyRelevant(f: Fragrance, meaningfulTerms: string[]): boolean {
   const hay = hayOf(f);
-  const hits = meaningfulTerms.filter((t) => hay.includes(t)).length;
-  return hits * 2 >= meaningfulTerms.length;
+  const hits = meaningfulTerms.filter((t) => hasTerm(hay, t)).length;
+  // At least one substantial term must land, so a pile of short incidental
+  // matches cannot carry a row that is about something else.
+  const anchored = meaningfulTerms.some((t) => t.length >= 4 && hasTerm(hay, t));
+  return anchored && hits * 2 >= meaningfulTerms.length;
 }
 
 /** Resolve by slug (the app's canonical key), UUID, or fuzzy name. */
@@ -246,7 +268,7 @@ export async function resolveFragrance(ref: string): Promise<Fragrance | null> {
   if (error) dbFail(error);
   const ranked = rankByRelevance((data ?? []) as unknown as Fragrance[], norm);
   // Require every query term to appear in brand+name; .or() above matched ANY.
-  const strict = ranked.filter((f) => terms.every((t) => hayOf(f).includes(t)));
+  const strict = ranked.filter((f) => terms.every((t) => hasTerm(hayOf(f), t)));
   // An exact name match beats the coverage ranking, which favors short names:
   // "Bleu de Chanel" used to resolve to a truncated catalog row named "Bleu de"
   // (slug chanel-bleu-de) instead of chanel-bleu-de-chanel. 2026-10-05.
@@ -289,16 +311,22 @@ export async function searchFragrances(
 ): Promise<Fragrance[]> {
   const limit = Math.min(f.limit ?? 10, 25);
   let q = activeOnly(supabase.from("fragrances").select(FRAG_COLUMNS));
+  let brandIds: string[] | null = null;
   if (f.brand) {
-    const ids = await brandIdsMatching(f.brand);
+    brandIds = await brandIdsMatching(f.brand);
     // An unknown brand returns nothing rather than the catalog's most popular rows.
-    if (!ids.length) return [];
-    q = q.in("brand_id", ids);
+    if (!brandIds.length) return [];
+    q = q.in("brand_id", brandIds);
   }
   const norm = f.query ? normalizeQuery(f.query) : "";
   const terms = norm.split(/\s+/).filter(Boolean);
-  if (terms.length) {
-    q = q.or(terms.map((t) => `name_normalized.ilike.%${t}%,slug.ilike.%${t}%`).join(","));
+  // One .or() per term: PostgREST ANDs separate or() groups, so every term has
+  // to appear somewhere. A single .or() over all terms matched ANY term and then
+  // kept the 80 most popular rows, so a query containing a common word never
+  // surfaced its own answer — "Jardin en Mediterranee" lost to everything
+  // containing "en" (2026-10-16).
+  for (const t of terms) {
+    q = q.or(`name_normalized.ilike.%${t}%,slug.ilike.%${t}%`);
   }
   if (f.fragrance_family) q = q.ilike("fragrance_family", `%${normalizeQuery(f.fragrance_family)}%`);
   if (f.gender) q = q.eq("gender", f.gender);
@@ -309,9 +337,22 @@ export async function searchFragrances(
     .limit(opts.maxRows ?? (terms.length ? 80 : limit));
   if (error) dbFail(error);
   let rows = (data ?? []) as unknown as Fragrance[];
+  // Nothing carried every term: fall back to the older ANY-term pool, still
+  // gated by looselyRelevant, so a near-miss query keeps working.
+  if (terms.length && rows.length === 0) {
+    let any = activeOnly(supabase.from("fragrances").select(FRAG_COLUMNS));
+    if (brandIds) any = any.in("brand_id", brandIds);
+    any = any.or(terms.map((t) => `name_normalized.ilike.%${t}%,slug.ilike.%${t}%`).join(","));
+    if (f.fragrance_family) any = any.ilike("fragrance_family", `%${normalizeQuery(f.fragrance_family)}%`);
+    if (f.gender) any = any.eq("gender", f.gender);
+    const { data: anyData } = await any
+      .order("popularity_tier", { ascending: false, nullsFirst: false })
+      .limit(opts.maxRows ?? 80);
+    rows = (anyData ?? []) as unknown as Fragrance[];
+  }
   if (terms.length) {
     const ranked = rankByRelevance(rows, norm);
-    const strict = ranked.filter((r) => terms.every((t) => hayOf(r).includes(t)));
+    const strict = ranked.filter((r) => terms.every((t) => hasTerm(hayOf(r), t)));
     if (strict.length) {
       rows = strict;
     } else {
