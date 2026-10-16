@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-16",
+  "note": "Truncated display names repaired. Slugs unchanged throughout, so no user-data reference moved except the two Bleu de rows handled separately.",
+  "merges": [
+    { "slug": "chanel-le-1940-rouge-de", "was_active": true, "merged_into_slug": "chanel-le-1940-rouge-de-chanel" },
+    { "slug": "chanel-une-fleur-de", "was_active": true, "merged_into_slug": "chanel-une-fleur-de-chanel" },
+    { "slug": "chanel-bleu-de", "was_active": true, "merged_into_slug": "chanel-bleu-de-chanel",
+      "also": "wardrobe_items + wear_logs repointed from chanel-bleu-de to chanel-bleu-de-chanel; dna_picker_events deliberately left" }
+  ],
+  "renames": [
+    { "slug": "carolina-herrera-bad-boy-le", "old": "Bad Boy Le", "new": "Bad Boy Le Parfum" },
+    { "slug": "jean-paul-gaultier-scandal-le", "old": "Scandal Le", "new": "Scandal Le Parfum" },
+    { "slug": "jean-paul-gaultier-la-belle-le", "old": "La Belle Le", "new": "La Belle Le Parfum" },
+    { "slug": "jean-paul-gaultier-le-male-le", "old": "Le Male Le", "new": "Le Male Le Parfum" },
+    { "slug": "gucci-guilty-elixir-de", "old": "Guilty Elixir de", "new": "Guilty Elixir de Parfum" },
+    { "slug": "marilyn-miglin-pheromone-esprit-de", "old": "Pheromone Esprit de", "new": "Pheromone Esprit de Parfum" },
+    { "slug": "givenchy-dance-with", "old": "Dance with", "new": "Dance with Givenchy" },
+    { "slug": "ysl-yves-saint-laurent-ysl-la-nuit-de-lhomme-le", "old": "YSL La Nuit De LHomme Le", "new": "La Nuit de L'Homme Le Parfum" }
+  ],
+  "left_alone": [
+    { "slug": "lancome-tresor-leau-de", "name": "Tresor LEau de", "why": "could not confirm the full product name" },
+    { "slug": "glenn-perri-unpredictable-lady-le", "name": "Unpredictable Lady Le", "why": "could not confirm the full product name" },
+    { "slug": "givenchy-le-de", "name": "Le De", "why": "reads correctly; source_url says Le De Givenchy but display already prepends the brand" },
+    { "slug": "floraiku-i-see-the-clouds-go-by", "why": "not truncated - real name" },
+    { "slug": "hiram-green-shangri-la", "why": "not truncated - real name" }
+  ]
+}

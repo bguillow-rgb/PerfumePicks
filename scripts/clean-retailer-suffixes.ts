@@ -44,8 +44,44 @@ const DATA_DIR = path.join(__dirname, 'data');
 // "- Body Spray 8.0 oz", "- eau-de", ...). The concentration/perfume word is
 // optional so bare "... for Women" also matches.
 const SUFFIX_RE = /\s+(?:perfume|cologne|fragrance|eau de parfum|eau de toilette|edp|edt)?\s*for\s+(?:women|men|unisex|her|him|boys|girls|teens|kids|ladies|gentlemen)\s*(?:[-–—]\s*.*)?$/i;
+
+/**
+ * Refuse a strip that leaves nothing meaningful behind.
+ *
+ * SUFFIX_RE happily eats the whole name when the name WAS the boilerplate:
+ * "The Perfume for Women" stripped to "The" on 2026-06-11 and sat in the
+ * catalog as a row called "The" until 2026-10-16. A name that is empty, a lone
+ * article, or a single short token is not a fragrance — keep the original and
+ * let a human look at it.
+ */
+const DANGLING_TAIL = new Set([
+  "de", "du", "des", "la", "le", "les", "of", "the", "pour", "for",
+  "and", "et", "d", "l", "a", "an", "by", "in", "with", "no",
+]);
+
+/** Words that describe the bottle rather than name it. */
+const BOILERPLATE = new Set([
+  "perfume", "cologne", "fragrance", "eau", "parfum", "toilette", "spray",
+  "oil", "mist", "edp", "edt", "set", "gift", "tester", "for",
+]);
+
+function strippedNameIsUsable(stripped: string): boolean {
+  const t = stripped.trim();
+  if (!t) return false;
+  const words = t.toLowerCase().split(/\s+/);
+  // A single word that is an article, or any name ending on one, is a fragment.
+  if (words.length === 1 && (DANGLING_TAIL.has(words[0]) || t.length < 3)) return false;
+  if (DANGLING_TAIL.has(words[words.length - 1])) return false;
+  // Nothing left but packaging words: the name WAS the boilerplate
+  // ("Perfume for Women" -> "Perfume").
+  if (words.every((w) => BOILERPLATE.has(w) || DANGLING_TAIL.has(w))) return false;
+  return true;
+}
 function strip(name: string): string {
-  return name.replace(SUFFIX_RE, '').replace(/\s+/g, ' ').trim();
+  const stripped = name.replace(SUFFIX_RE, '').replace(/\s+/g, ' ').trim();
+  // Leaving the name alone is always safe; a degenerate strip is not. Returning
+  // the original means the row simply does not match a rename or merge below.
+  return strippedNameIsUsable(stripped) ? stripped : name;
 }
 
 type Row = {
