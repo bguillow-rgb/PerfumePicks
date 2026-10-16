@@ -49,7 +49,7 @@ import { newRef, aiSource, tagLinks } from "./tracking.js";
 // The one mcp.<domain> hostname our proxy fronts this function with.
 const PROXY_HOST = "mcp.perfumepicks.app";
 
-const SERVER_VERSION = "1.0.0";
+const SERVER_VERSION = "1.0.5";
 const TELEMETRY_VERSION = `${SERVER_VERSION}-remote`;
 
 const ANNOTATIONS = {
