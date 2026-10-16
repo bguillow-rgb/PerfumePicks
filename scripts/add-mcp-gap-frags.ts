@@ -99,6 +99,20 @@ const ENTRIES: Entry[] = [
     source_url: 'https://us.louisvuitton.com/eng-us/products/california-dream-nvprod7340003v/LP0483',
   },
 
+  {
+    // Not in the original batch: found on 2026-10-16 re-testing the backlog
+    // against the fixed search. Louis Vuitton publishes "key notes" here with
+    // no stated order, unlike California Dream, so the pyramid stays empty.
+    // Release year omitted: 2018 appears on one secondary site and nowhere the
+    // house states it.
+    brand: 'Louis Vuitton', name: 'Ombre Nomade', release_year: null,
+    concentration: 'edp', fragrance_family: 'woody', gender: 'unisex',
+    top_notes: [], heart_notes: [], base_notes: [],
+    top_accords: ['oud', 'woody', 'smoky', 'incense', 'amber', 'fruity'],
+    price_tier: 5, notes_source: 'brand', origin: 'louisvuitton.com',
+    source_url: 'https://us.louisvuitton.com/eng-us/products/ombre-nomade-nvprod990245v/LP0096',
+  },
+
   // --- Flat note lists: Luckyscent states the notes but not their positions,
   //     so the pyramid stays empty rather than invented. ---
   {

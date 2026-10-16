@@ -163,6 +163,60 @@ function hasTerm(hay, term) {
     return new RegExp(`(^|[^a-z0-9])${esc}([^a-z0-9]|$)`).test(hay);
 }
 /**
+ * Words a shopper and a bottle use interchangeably.
+ *
+ * Houses label flankers "Women" or "Homme" while people type "For Her" and
+ * "for men", and `ilike` cannot bridge that: `search_fragrances("Pure XS For
+ * Her")` returned 0 while `Paco Rabanne — pure xs women` sat in the catalog the
+ * whole time (2026-10-16). Matching is whole-word (see hasTerm), so "men"
+ * inside "women" is not a false hit.
+ *
+ * Kept deliberately small. Pairs like noir/black name genuinely different
+ * products (Tom Ford Noir is not Black Orchid), so only the gendered forms —
+ * where the two words denote the same bottle — belong here.
+ */
+const SYNONYM_GROUPS = [
+    ["her", "hers", "women", "womens", "woman", "femme", "female"],
+    ["him", "his", "men", "mens", "man", "homme", "male"],
+];
+const SYNONYMS = new Map();
+for (const group of SYNONYM_GROUPS) {
+    for (const word of group)
+        SYNONYMS.set(word, group);
+}
+/** A term plus every word that would satisfy it just as well. */
+function variantsOf(term) {
+    return SYNONYMS.get(term) ?? [term];
+}
+/** Does the row carry this term, under any of its synonyms? */
+function matchesTerm(hay, term) {
+    return variantsOf(term).some((v) => hasTerm(hay, v));
+}
+/** The PostgREST `.or()` conditions that satisfy one term, synonyms included. */
+function orConditionsFor(term) {
+    return variantsOf(term)
+        .map((v) => `name_normalized.ilike.%${v}%,slug.ilike.%${v}%`)
+        .join(",");
+}
+/**
+ * Filler that belongs to how a name is spoken, not to how it is stored.
+ *
+ * Terms are ANDed, so one word the catalog never wrote down vetoes the whole
+ * query: "Pure XS For Her" cannot reach "pure xs women" while "for" is
+ * required. These still feed rankByRelevance — they just cannot veto a row.
+ */
+const CONNECTIVES = new Set([
+    "for", "the", "a", "an", "and", "of", "by", "pour", "de", "du", "da", "di", "la", "le", "les",
+]);
+/**
+ * The terms a row must actually carry. A query made only of filler keeps its
+ * words rather than matching everything.
+ */
+function requiredTerms(terms) {
+    const kept = terms.filter((t) => !CONNECTIVES.has(t));
+    return kept.length ? kept : terms;
+}
+/**
  * Is this row plausibly ABOUT the query, when no row matched every term?
  *
  * Both the resolver and search build candidates with a PostgREST `.or()`, which
@@ -182,10 +236,10 @@ function hasTerm(hay, term) {
  */
 function looselyRelevant(f, meaningfulTerms) {
     const hay = hayOf(f);
-    const hits = meaningfulTerms.filter((t) => hasTerm(hay, t)).length;
+    const hits = meaningfulTerms.filter((t) => matchesTerm(hay, t)).length;
     // At least one substantial term must land, so a pile of short incidental
     // matches cannot carry a row that is about something else.
-    const anchored = meaningfulTerms.some((t) => t.length >= 4 && hasTerm(hay, t));
+    const anchored = meaningfulTerms.some((t) => t.length >= 4 && matchesTerm(hay, t));
     return anchored && hits * 2 >= meaningfulTerms.length;
 }
 /** Resolve by slug (the app's canonical key), UUID, or fuzzy name. */
@@ -210,19 +264,37 @@ export async function resolveFragrance(ref) {
     const terms = norm.split(/\s+/).filter(Boolean);
     if (!terms.length)
         return null;
+    const needed = requiredTerms(terms);
     // name_normalized doesn't include the brand, so search name terms there and
     // let rankByRelevance's brand+name haystack sort brand-qualified queries.
+    // One .or() per term, so PostgREST ANDs them and every term has to land.
+    // A single ANY-term .or() capped at the 80 most popular rows could not see
+    // its own answer: get_fragrance("Pure XS For Her") returned Dior Pure Poison
+    // while `Paco Rabanne — pure xs women` never entered the candidate pool,
+    // because "pure" alone matches far more than 80 popular rows (2026-10-16).
     let q = activeOnly(supabase.from("fragrances").select(FRAG_COLUMNS));
-    const orParts = terms.map((t) => `name_normalized.ilike.%${t}%,slug.ilike.%${t}%`).join(",");
-    q = q.or(orParts);
+    for (const t of needed)
+        q = q.or(orConditionsFor(t));
     const { data, error } = await q
         .order("popularity_tier", { ascending: false, nullsFirst: false })
         .limit(80);
     if (error)
         dbFail(error);
-    const ranked = rankByRelevance((data ?? []), norm);
+    let pool = (data ?? []);
+    // Nothing carried every term — widen to the older ANY-term pool, which
+    // looselyRelevant then has to justify.
+    if (!pool.length) {
+        const { data: anyData, error: anyErr } = await activeOnly(supabase.from("fragrances").select(FRAG_COLUMNS))
+            .or(needed.map(orConditionsFor).join(","))
+            .order("popularity_tier", { ascending: false, nullsFirst: false })
+            .limit(80);
+        if (anyErr)
+            dbFail(anyErr);
+        pool = (anyData ?? []);
+    }
+    const ranked = rankByRelevance(pool, norm);
     // Require every query term to appear in brand+name; .or() above matched ANY.
-    const strict = ranked.filter((f) => terms.every((t) => hasTerm(hayOf(f), t)));
+    const strict = ranked.filter((f) => needed.every((t) => matchesTerm(hayOf(f), t)));
     // An exact name match beats the coverage ranking, which favors short names:
     // "Bleu de Chanel" used to resolve to a truncated catalog row named "Bleu de"
     // (slug chanel-bleu-de) instead of chanel-bleu-de-chanel. 2026-10-05.
@@ -236,7 +308,7 @@ export async function resolveFragrance(ref) {
     if (strict[0])
         return strict[0];
     // Loose fallback, but it must still be ABOUT the query — see looselyRelevant.
-    const meaningful = terms.filter((t) => t.length >= 3);
+    const meaningful = needed.filter((t) => t.length >= 3);
     if (meaningful.length) {
         const best = ranked.find((f) => looselyRelevant(f, meaningful));
         if (best)
@@ -268,8 +340,9 @@ export async function searchFragrances(f, opts = {}) {
     // kept the 80 most popular rows, so a query containing a common word never
     // surfaced its own answer — "Jardin en Mediterranee" lost to everything
     // containing "en" (2026-10-16).
-    for (const t of terms) {
-        q = q.or(`name_normalized.ilike.%${t}%,slug.ilike.%${t}%`);
+    const needed = requiredTerms(terms);
+    for (const t of needed) {
+        q = q.or(orConditionsFor(t));
     }
     if (f.fragrance_family)
         q = q.ilike("fragrance_family", `%${normalizeQuery(f.fragrance_family)}%`);
@@ -291,7 +364,7 @@ export async function searchFragrances(f, opts = {}) {
         let any = activeOnly(supabase.from("fragrances").select(FRAG_COLUMNS));
         if (brandIds)
             any = any.in("brand_id", brandIds);
-        any = any.or(terms.map((t) => `name_normalized.ilike.%${t}%,slug.ilike.%${t}%`).join(","));
+        any = any.or(needed.map(orConditionsFor).join(","));
         if (f.fragrance_family)
             any = any.ilike("fragrance_family", `%${normalizeQuery(f.fragrance_family)}%`);
         if (f.gender)
@@ -303,7 +376,7 @@ export async function searchFragrances(f, opts = {}) {
     }
     if (terms.length) {
         const ranked = rankByRelevance(rows, norm);
-        const strict = ranked.filter((r) => terms.every((t) => hasTerm(hayOf(r), t)));
+        const strict = ranked.filter((r) => needed.every((t) => matchesTerm(hayOf(r), t)));
         if (strict.length) {
             rows = strict;
         }
@@ -312,7 +385,7 @@ export async function searchFragrances(f, opts = {}) {
             // the query (see looselyRelevant) rather than falling back to the whole
             // `.or()` result set — that fallback answered a nonsense query with the
             // catalog's most popular fragrances.
-            const meaningful = terms.filter((t) => t.length >= 3);
+            const meaningful = needed.filter((t) => t.length >= 3);
             rows = meaningful.length ? ranked.filter((r) => looselyRelevant(r, meaningful)) : ranked;
         }
     }
