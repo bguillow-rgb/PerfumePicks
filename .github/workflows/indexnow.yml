@@ -5,11 +5,17 @@ name: IndexNow ping
 # Bing feeds ChatGPT/Copilot, so this matters for answer-engine visibility.
 # Builds first to populate dist/sitemap-0.xml, then pings. The key file at
 # public/<KEY>.txt must already be live (it ships with /docs).
+# The workflow_run trigger exists because daily-content.yml pushes with the
+# default GITHUB_TOKEN, and GitHub will not fire `on: push` workflows for those
+# pushes. Without it this job only ran on human commits. Do not remove.
 on:
   push:
     branches: [main]
     paths:
       - 'docs/**'
+  workflow_run:
+    workflows: ["Daily SEO content"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -21,6 +27,11 @@ concurrency:
 
 jobs:
   ping:
+    # workflow_run fires on completion regardless of outcome; only ping when the
+    # content run succeeded. Push and manual runs are unconditional.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     defaults:
       run:
