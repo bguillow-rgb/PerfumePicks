@@ -1,6 +1,6 @@
 {
   "name": "perfume-picks-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MCP server exposing the Perfume Picks fragrance database (13,000+ scents) as read-only tools for AI assistants. Search the catalog, find dupes, compare fragrances, and get wear suggestions — with citation-ready attribution.",
   "mcpName": "io.github.bguillow-rgb/perfume-picks",
   "type": "module",
