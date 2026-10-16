@@ -298,6 +298,30 @@ function looselyRelevant(f: Fragrance, meaningfulTerms: string[]): boolean {
   return anchored && hits * 2 >= meaningfulTerms.length;
 }
 
+/**
+ * Is this row the thing that was literally typed, brand prefix optional?
+ *
+ * rankByRelevance scores on coverage, which rewards a short haystack and the
+ * presence of an MSRP. That combination puts flankers above the pillar: once
+ * the truncated "Bleu de" row was merged away, `search_fragrances("Bleu de
+ * Chanel")` answered with "Bleu de Chanel Parfum" — a different, pricier
+ * bottle — because the Parfum row carries an MSRP and the plain one does not
+ * (2026-10-16). The resolver already preferred an exact hit for the same
+ * reason; search needs it too.
+ */
+function isExactNameMatch(f: Fragrance, norm: string): boolean {
+  const n = (f.name_normalized ?? f.name.toLowerCase()).trim();
+  const b = (f.brand?.name ?? "").toLowerCase().trim();
+  return n === norm || `${b} ${n}` === norm;
+}
+
+/** Exactly-named rows first, everything else in its existing ranked order. */
+function exactFirst(rows: Fragrance[], norm: string): Fragrance[] {
+  const exact = rows.filter((f) => isExactNameMatch(f, norm));
+  if (!exact.length) return rows;
+  return [...exact, ...rows.filter((f) => !isExactNameMatch(f, norm))];
+}
+
 /** Resolve by slug (the app's canonical key), UUID, or fuzzy name. */
 export async function resolveFragrance(ref: string): Promise<Fragrance | null> {
   const trimmed = ref.trim();
@@ -350,11 +374,7 @@ export async function resolveFragrance(ref: string): Promise<Fragrance | null> {
   // An exact name match beats the coverage ranking, which favors short names:
   // "Bleu de Chanel" used to resolve to a truncated catalog row named "Bleu de"
   // (slug chanel-bleu-de) instead of chanel-bleu-de-chanel. 2026-10-05.
-  const exact = strict.find((f) => {
-    const n = (f.name_normalized ?? f.name.toLowerCase()).trim();
-    const b = (f.brand?.name ?? "").toLowerCase().trim();
-    return n === norm || `${b} ${n}` === norm;
-  });
+  const exact = strict.find((f) => isExactNameMatch(f, norm));
   if (exact) return exact;
   if (strict[0]) return strict[0];
 
@@ -443,6 +463,7 @@ export async function searchFragrances(
       rows = meaningful.length ? ranked.filter((r) => looselyRelevant(r, meaningful)) : ranked;
     }
   }
+  if (terms.length) rows = exactFirst(rows, norm);
   return rows.slice(0, opts.maxRows ?? limit);
 }
 

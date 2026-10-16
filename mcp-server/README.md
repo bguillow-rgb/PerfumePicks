@@ -1,6 +1,6 @@
 # Perfume Picks MCP Server
 
-Query the [Perfume Picks](https://perfumepicks.app/) fragrance database from Claude, or any MCP-compatible AI client. Read-only access to 13,000+ fragrances with full note pyramids, accords, curated dupes, and community wear data.
+Query the [Perfume Picks](https://perfumepicks.app/) fragrance database from Claude, or any MCP-compatible AI client. Read-only access to 10,000+ fragrances with full note pyramids, accords, curated dupes, and community wear data.
 
 Perfume Picks is the Fragrance DNA and collection journal for iOS — [get it on the App Store](https://apps.apple.com/us/app/perfume-picks/id6774184221).
 

@@ -81,7 +81,7 @@ server.registerTool(
     title: "Search the Perfume Picks catalog",
     annotations: ANNOTATIONS,
     description:
-      "Full-text search across 13,000+ fragrances in the Perfume Picks database. Filter by brand, fragrance family, gender, and MSRP (USD). Returns note pyramids, accords, and community wear scores with source attribution.",
+      "Full-text search across 10,000+ fragrances in the Perfume Picks database. Filter by brand, fragrance family, gender, and MSRP (USD). Returns note pyramids, accords, and community wear scores with source attribution.",
     inputSchema: {
       query: z.string().optional().describe("Free-text search: fragrance or brand name"),
       brand: z.string().optional().describe("Brand name filter, e.g. 'Dior'"),
