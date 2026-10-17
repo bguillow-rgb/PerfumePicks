@@ -14,9 +14,9 @@ publishedAt: "2026-06-27"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-many-perfumes-can-you-smell-at-once"
+  - "how-to-reset-your-nose-between-perfumes"
   - "how-to-evaluate-a-perfume"
   - "how-to-test-perfume-before-buying"
-  - "how-to-train-your-nose-for-perfume"
 faqs:
   - q: "How long does it take to go nose blind to perfume?"
     a: "Olfactory adaptation begins almost immediately after application. Research indicates that olfactory neurons reduce their firing rate by more than half within 15-20 minutes of first contact with a scent. Your brain files it as background and stops reporting it, even though the fragrance is still fully present on your skin."
