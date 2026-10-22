@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-fougere-perfume"
   - "what-is-a-gourmand-perfume"
+  - "what-is-amber-in-perfume"
   - "what-is-an-aldehydic-perfume"
-  - "what-is-an-oriental-perfume"
 faqs:
   - q: "How do you pronounce 'chypre'?"
     a: "Chypre is French for Cyprus and is pronounced roughly 'sheep-r', rhyme the English word 'sheep' and add a soft 'r' at the end. It does not rhyme with 'cipher.'"
