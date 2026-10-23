@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-smell-good-all-day"
   - "how-to-apply-perfume"
   - "perfume-for-skin-type"
-  - "how-to-wear-perfume-in-hot-weather"
+  - "how-to-build-a-scent-layering-routine"
 faqs:
   - q: "Does moisturizer really help perfume last longer?"
     a: "Yes. Aromatic compounds dissolve in oil and cling to hydrated surfaces. Applying an unscented lotion 5-10 minutes before spraying can extend wear by 30-50% compared to dry skin application."
