@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-many-perfumes-can-you-smell-at-once"
   - "nose-blind-to-perfume"
   - "how-to-evaluate-a-perfume"
-  - "how-to-test-perfume-before-buying"
+  - "how-to-smell-perfume-properly"
 faqs:
   - q: "Do coffee beans actually reset your nose between perfumes?"
     a: "No. Coffee beans introduce strong new aromatic compounds rather than clearing your olfactory receptors. Research shows coffee beans perform no better than fresh air or simply taking a break. The ritual persists because the pause itself helps, not the beans."

@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "perfume-sensitive-skin-guide"
   - "how-to-smell-good-all-day"
+  - "how-to-smell-perfume-properly"
   - "how-to-wear-perfume-in-cold-weather"
-  - "perfume-etiquette-rules"
 faqs:
   - q: "What counts as 'fragrance-free' in a workplace policy?"
     a: "Most fragrance-free policies target noticeable airborne scent. Scented body lotion, lightly fragranced hair products, and fabric softener typically fall in a grey area. When in doubt, ask HR, policies vary widely by employer and region."

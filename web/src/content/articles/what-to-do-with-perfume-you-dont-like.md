@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-blind-buy-perfume"
   - "why-do-i-only-wear-a-few-perfumes-from-my-collection"
   - "are-perfume-discovery-sets-worth-it"
-  - "how-to-test-perfume-before-buying"
+  - "how-to-smell-perfume-properly"
 faqs:
   - q: "Can I return a perfume I don't like?"
     a: "Return policies vary widely. Department stores like Sephora and Ulta typically allow returns within 30, 60 days even on opened products. Niche boutiques and online-only retailers are stricter. Always check the return window before opening a bottle you're unsure about."

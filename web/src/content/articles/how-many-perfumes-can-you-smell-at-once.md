@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-reset-your-nose-between-perfumes"
   - "nose-blind-to-perfume"
   - "how-to-evaluate-a-perfume"
-  - "how-to-rotate-your-perfume-collection"
+  - "how-to-smell-perfume-properly"
 faqs:
   - q: "How many perfumes can you smell in one shopping session?"
     a: "Most shoppers can meaningfully evaluate 3, 4 fragrances before nose fatigue blurs their perception. With breaks and good technique, short sniffs, lighter scents first, fresh-air resets, experienced collectors can stretch a session to 6, 8 without losing accuracy."
