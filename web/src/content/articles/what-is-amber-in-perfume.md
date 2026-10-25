@@ -13,10 +13,10 @@ quickAnswer: "Amber in perfume is a constructed accord, a warm, sweet, resinous 
 publishedAt: "2026-10-22"
 author: "Perfume Picks"
 relatedSlugs:
+  - "what-is-a-pistachio-perfume"
   - "what-is-an-oriental-perfume"
   - "what-is-oud-perfume"
   - "what-is-a-chypre-perfume"
-  - "what-is-a-fougere-perfume"
 faqs:
   - q: "Is amber in perfume made from real amber (the fossil resin)?"
     a: "No. Fossilized amber (tree resin) has almost no detectable scent at room temperature. The amber note in perfume is a constructed accord, a blend of labdanum, benzoin, vanilla, musk, and sometimes synthetic molecules, that perfumers use to evoke a warm, golden, resinous feeling."
