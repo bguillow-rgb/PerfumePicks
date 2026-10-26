@@ -18,7 +18,7 @@ import { Hono } from "npm:hono@4";
 import { cors } from "npm:hono@4/cors";
 import { StreamableHTTPTransport } from "npm:@hono/mcp@0.1.4";
 import { McpServer } from "npm:@modelcontextprotocol/sdk@1.12.0/server/mcp.js";
-import { z } from "npm:zod@3.23.8";
+import { z } from "npm:zod@3.25.76";
 import { supabase } from "./db.js";
 import {
   allNotes,
@@ -425,6 +425,13 @@ app.use("*", cors({
 }));
 
 app.all("*", async (c) => {
+  // Stateless server: nothing is ever pushed to the client, so there is no SSE
+  // stream to offer. The MCP spec allows 405 here and clients fall back to
+  // POST-only; holding the GET open instead ties up a worker for ~30s per call.
+  if (c.req.method === "GET") {
+    return c.body(null, 405, { Allow: "POST, OPTIONS" });
+  }
+
   // Identity comes from the proxy when it vouches for the request; otherwise from
   // x-forwarded-for. Never from the User-Agent alone — see ratelimit.js.
   const who = identify(c.req);
