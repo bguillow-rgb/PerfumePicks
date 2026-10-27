@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-often-to-wear-each-perfume"
   - "how-to-smell-good-all-day"
+  - "how-to-pick-what-perfume-to-wear-today"
   - "perfume-on-clothes-vs-skin"
-  - "are-perfume-dupes-worth-it"
 faqs:
   - q: "How long should perfume last before you need to reapply?"
     a: "Most EDTs last 3, 5 hours on skin; EDPs typically run 5, 8 hours. If your fragrance fades noticeably before that, check application technique, skin hydration, and concentration rather than reaching for a top-up automatically."

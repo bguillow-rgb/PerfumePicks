@@ -13,10 +13,10 @@ quickAnswer: "To choose between two perfumes, wear each one on separate days in 
 publishedAt: "2026-08-30"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-pick-what-perfume-to-wear-today"
   - "how-to-decide-what-perfume-to-buy-next"
   - "niche-vs-designer-perfume"
   - "are-perfume-dupes-worth-it"
-  - "how-to-choose-perfume-as-a-gift"
 faqs:
   - q: "Is it okay to buy both perfumes if I love them equally?"
     a: "Yes, if they genuinely serve different occasions, moods, or seasons, owning both makes sense. The red flag is buying both because you can't decide, then wearing neither. Run a collection gap check first to confirm each bottle earns its shelf space."

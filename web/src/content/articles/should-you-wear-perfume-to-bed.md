@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-often-to-wear-each-perfume"
   - "can-you-wear-two-perfumes-at-once"
+  - "how-to-pick-what-perfume-to-wear-today"
   - "perfume-etiquette-rules"
-  - "what-perfume-to-wear-to-a-funeral"
 faqs:
   - q: "Is it safe to wear perfume to bed every night?"
     a: "For most people, yes. Use 1, 2 sprays on pulse points rather than directly on bedding, and choose a fragrance without known irritants if you have sensitive skin. If you notice any skin redness or disrupted sleep from a heavy scent, scale back or switch to a lighter concentration like an EDT or body mist."

@@ -14,9 +14,9 @@ publishedAt: "2026-08-25"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-choose-between-two-perfumes"
+  - "how-to-pick-what-perfume-to-wear-today"
   - "perfume-no-buy-challenge"
   - "what-is-my-perfume-collection-missing"
-  - "am-i-buying-too-much-perfume"
 faqs:
   - q: "How do I know if I actually need a new perfume or just want one?"
     a: "Ask whether your current collection leaves a real gap, a season, occasion, or mood you can't cover. If the answer is no, you want it rather than need it. Both are valid reasons to buy, but knowing which is which helps you spend more intentionally."

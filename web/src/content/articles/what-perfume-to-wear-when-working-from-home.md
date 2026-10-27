@@ -13,10 +13,10 @@ quickAnswer: "When working from home, wear whatever you genuinely want, but the 
 publishedAt: "2026-10-19"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-pick-what-perfume-to-wear-today"
   - "perfume-etiquette-rules"
   - "best-office-perfumes"
   - "how-often-to-wear-each-perfume"
-  - "how-to-rotate-your-perfume-collection"
 faqs:
   - q: "Should I even bother wearing perfume when working from home?"
     a: "Yes, research on scent and cognition consistently shows that familiar, pleasant aromas help create psychological context. A dedicated WFH scent acts as an environmental cue that tells your brain it's time to focus, much the way putting on work clothes does."
