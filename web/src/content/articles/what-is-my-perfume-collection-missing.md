@@ -14,9 +14,9 @@ publishedAt: "2026-09-01"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-decide-what-perfume-to-buy-next"
+  - "how-to-fill-gaps-in-your-perfume-wardrobe"
   - "how-to-audit-your-perfume-collection"
   - "how-many-perfumes-should-you-own"
-  - "how-to-build-a-fragrance-wardrobe"
 faqs:
   - q: "How do I know if my perfume collection has a gap?"
     a: "The clearest sign is a moment when you reach for your shelf and nothing feels right, wrong season, wrong occasion, or wrong mood. If you find yourself rewearing the same two or three bottles while others collect dust, that pattern reveals both overlap and a missing role."

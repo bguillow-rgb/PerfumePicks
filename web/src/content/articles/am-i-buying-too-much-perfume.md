@@ -16,7 +16,7 @@ relatedSlugs:
   - "perfume-no-buy-challenge"
   - "how-many-perfumes-should-you-own"
   - "how-to-decide-what-perfume-to-buy-next"
-  - "perfume-etiquette-rules"
+  - "how-to-fill-gaps-in-your-perfume-wardrobe"
 faqs:
   - q: "Is perfume buying addiction a real thing?"
     a: "Yes, in a behavioral sense. Buying fragrances triggers dopamine release in the brain's reward circuitry, the same system activated by other pleasurable purchases. It's not a clinical diagnosis, but compulsive fragrance buying is widely recognized in collector communities and can cause real financial and emotional stress."

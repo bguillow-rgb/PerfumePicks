@@ -13,10 +13,10 @@ quickAnswer: "A perfume collection audit is a structured review of every bottle 
 publishedAt: "2026-07-23"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-fill-gaps-in-your-perfume-wardrobe"
   - "what-is-my-perfume-collection-missing"
   - "how-many-perfumes-should-you-own"
   - "how-to-build-a-fragrance-wardrobe"
-  - "how-to-declutter-your-perfume-collection"
 faqs:
   - q: "How often should I audit my perfume collection?"
     a: "Once or twice a year is the sweet spot for most collectors, once in spring before warm-weather scents become relevant, and once in autumn before the richer, heavier rotation begins. If you buy frequently, a lighter mid-year check-in also helps prevent accidental duplicates from piling up."
