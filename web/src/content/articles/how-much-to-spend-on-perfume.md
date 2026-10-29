@@ -14,9 +14,9 @@ publishedAt: "2026-09-07"
 author: "Perfume Picks"
 relatedSlugs:
   - "niche-vs-designer-perfume"
+  - "perfume-cost-per-wear"
   - "are-perfume-dupes-worth-it"
   - "are-perfume-advent-calendars-worth-it"
-  - "perfume-etiquette-rules"
 faqs:
   - q: "Is expensive perfume actually better than cheap perfume?"
     a: "Not automatically. Price reflects ingredients, brand marketing, and packaging, not always scent quality. A $60 designer EDT can outperform a $300 niche bottle for your specific taste and skin chemistry. Always evaluate on smell, longevity, and how much you'll realistically wear it."

@@ -14,9 +14,9 @@ publishedAt: "2026-09-17"
 author: "Perfume Picks"
 relatedSlugs:
   - "are-perfume-discovery-sets-worth-it"
+  - "perfume-cost-per-wear"
   - "perfume-samples-vs-full-bottles"
   - "are-perfume-advent-calendars-worth-it"
-  - "are-perfume-dupes-worth-it"
 faqs:
   - q: "How much do perfume subscription boxes cost per month?"
     a: "Most services charge between $15 and $25 per month for a single 8ml vial, roughly a 30-day supply. Multi-scent plans cost more. That puts you at $180, $300 per year before any upgrades or add-ons."

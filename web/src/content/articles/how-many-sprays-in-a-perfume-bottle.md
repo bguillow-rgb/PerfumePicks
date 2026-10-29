@@ -13,10 +13,10 @@ quickAnswer: "A standard perfume atomizer dispenses roughly 0.10, 0.12ml per spr
 publishedAt: "2026-08-01"
 author: "Perfume Picks"
 relatedSlugs:
+  - "perfume-cost-per-wear"
   - "what-size-perfume-bottle-should-i-buy"
   - "how-to-use-up-your-perfume-collection"
   - "does-perfume-expire"
-  - "how-to-smell-good-all-day"
 faqs:
   - q: "How many sprays are in a 100ml perfume bottle?"
     a: "A 100ml bottle typically delivers 800, 1,000 sprays, depending on the atomizer. At 3, 4 sprays per day, that translates to roughly 7, 14 months of use."
