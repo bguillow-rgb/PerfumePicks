@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-choose-between-two-perfumes"
   - "how-often-to-wear-each-perfume"
   - "how-to-decide-what-perfume-to-buy-next"
-  - "how-to-declutter-your-perfume-collection"
+  - "perfume-collection-decision-fatigue"
 faqs:
   - q: "Why do I freeze up when choosing a perfume from my own collection?"
     a: "Decision paralysis scales with collection size. When you own many bottles with no system, every choice feels equally valid and equally risky. A simple daily checklist, weather, occasion, mood, duration, collapses dozens of options into two or three candidates, making the final pick easy."
