@@ -14,9 +14,9 @@ publishedAt: "2026-06-25"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-build-a-fragrance-wardrobe"
+  - "how-to-curate-your-perfume-collection"
   - "perfume-capsule-wardrobe"
   - "am-i-buying-too-much-perfume"
-  - "how-often-to-wear-each-perfume"
 faqs:
   - q: "Is there a 'right' number of perfumes to own?"
     a: "No universal number exists. Most collectors now own several bottles rather than a single signature scent. The real benchmark is whether you're regularly wearing and enjoying what you own, not hitting a specific count."

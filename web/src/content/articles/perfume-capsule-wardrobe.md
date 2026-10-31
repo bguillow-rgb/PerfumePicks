@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-many-perfumes-should-you-own"
   - "how-to-build-a-fragrance-wardrobe"
+  - "how-to-curate-your-perfume-collection"
   - "how-to-rotate-your-perfume-collection"
-  - "how-often-to-wear-each-perfume"
 faqs:
   - q: "How many bottles do you need for a perfume capsule wardrobe?"
     a: "Most collectors find 4-8 bottles covers everything: a daytime/work scent, a warm-weather fresh, a cold-weather rich, an evening or date-night fragrance, and one wildcard or occasion scent. You can absolutely start with fewer and fill gaps deliberately over time."

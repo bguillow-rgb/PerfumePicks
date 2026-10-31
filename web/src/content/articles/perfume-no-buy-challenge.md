@@ -14,9 +14,9 @@ publishedAt: "2026-08-11"
 author: "Perfume Picks"
 relatedSlugs:
   - "am-i-buying-too-much-perfume"
+  - "how-to-curate-your-perfume-collection"
   - "how-to-decide-what-perfume-to-buy-next"
   - "how-to-fill-gaps-in-your-perfume-wardrobe"
-  - "perfume-etiquette-rules"
 faqs:
   - q: "What is a perfume no-buy challenge?"
     a: "It's a deliberate, time-limited commitment to stop purchasing new fragrances so you can focus on fully wearing and enjoying what you already own. Rules vary, some collectors allow decants or swaps; others ban all acquisitions entirely."

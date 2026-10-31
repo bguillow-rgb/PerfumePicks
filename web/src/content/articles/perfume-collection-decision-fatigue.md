@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-pick-what-perfume-to-wear-today"
   - "why-do-i-only-wear-a-few-perfumes-from-my-collection"
   - "how-many-perfumes-should-you-own"
-  - "how-to-rotate-your-perfume-collection"
+  - "how-to-curate-your-perfume-collection"
 faqs:
   - q: "How many perfumes is too many to choose from comfortably?"
     a: "Research on choice overload suggests most people struggle to compare more than five options efficiently. For daily wear, a rotational tray of 5, 7 bottles is the sweet spot. Your full collection can be larger, the key is not presenting yourself with all of it every morning."

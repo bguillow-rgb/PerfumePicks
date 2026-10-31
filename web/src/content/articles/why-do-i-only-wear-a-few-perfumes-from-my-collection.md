@@ -14,9 +14,9 @@ publishedAt: "2026-10-12"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-use-up-your-perfume-collection"
+  - "how-to-curate-your-perfume-collection"
   - "perfume-collection-decision-fatigue"
   - "how-often-to-wear-each-perfume"
-  - "how-to-declutter-your-perfume-collection"
 faqs:
   - q: "Is it normal to only wear a few perfumes from a large collection?"
     a: "Yes, and it's extremely common. Industry data shows 67% of fragrance consumers own at least one completely unworn bottle. The 80/20 pattern (wearing 20% of your bottles 80% of the time) appears repeatedly across collector forums and surveys, regardless of collection size."
