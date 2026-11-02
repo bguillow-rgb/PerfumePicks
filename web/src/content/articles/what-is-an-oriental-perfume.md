@@ -13,10 +13,10 @@ quickAnswer: "An oriental perfume, increasingly labelled 'amber' on modern fragr
 publishedAt: "2026-07-27"
 author: "Perfume Picks"
 relatedSlugs:
+  - "what-is-a-woody-perfume"
   - "perfume-fragrance-families"
   - "what-is-a-fougere-perfume"
   - "what-is-a-gourmand-perfume"
-  - "what-is-a-pistachio-perfume"
 faqs:
   - q: "What is the difference between oriental and amber fragrance?"
     a: "They're the same family with two names. 'Oriental' is the traditional term; 'amber' is the modern replacement adopted after the fragrance industry moved away from geographically loaded language. Both describe warm, resinous, spice-and-vanilla-anchored perfumes."

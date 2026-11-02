@@ -14,9 +14,9 @@ publishedAt: "2026-07-17"
 author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-pistachio-perfume"
+  - "what-is-a-woody-perfume"
   - "what-is-an-oriental-perfume"
   - "what-is-a-chypre-perfume"
-  - "what-is-a-fougere-perfume"
 faqs:
   - q: "What does a gourmand perfume smell like?"
     a: "Gourmand perfumes smell warm, sweet, and food-adjacent, think vanilla custard, salted caramel, roasted coffee, or pistachio cream. Modern versions layer those edible notes with woods, resins, or musks so the result feels sophisticated rather than literally dessert-like."
