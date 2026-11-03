@@ -16,7 +16,7 @@ relatedSlugs:
   - "what-is-a-fougere-perfume"
   - "what-is-an-oriental-perfume"
   - "what-is-a-gourmand-perfume"
-  - "what-is-amber-in-perfume"
+  - "what-is-a-leather-perfume"
 faqs:
   - q: "What does a woody perfume smell like?"
     a: "Woody perfumes can smell dry and smoky, creamy and warm, earthy and damp, or crisp and resinous depending on which wood notes are used. Cedarwood is sharp and pencil-like; sandalwood is smooth and milky; vetiver is rooty and smoky; oud is deep and animalic. The family ranges from office-safe to ceremonial."
