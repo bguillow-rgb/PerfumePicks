@@ -14,9 +14,9 @@ publishedAt: "2026-06-26"
 author: "Perfume Picks"
 relatedSlugs:
   - "what-is-the-fragrance-wheel"
+  - "what-is-a-floral-perfume"
   - "what-is-an-oriental-perfume"
   - "what-is-a-fougere-perfume"
-  - "what-is-a-leather-perfume"
 faqs:
   - q: "What are the four main perfume fragrance families?"
     a: "The four core families are Floral (flowers: rose, jasmine, peony), Amber/Oriental (warm resins, spices, vanilla), Woody (cedarwood, sandalwood, vetiver, oud), and Fresh (citrus, aquatic, green, aromatic). Most fragrances sit in one family or blend two adjacent families on the scent wheel."

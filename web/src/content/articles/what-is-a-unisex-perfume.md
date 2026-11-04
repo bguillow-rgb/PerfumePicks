@@ -13,10 +13,10 @@ quickAnswer: "A unisex perfume is a fragrance formulated without a masculine or 
 publishedAt: "2026-09-18"
 author: "Perfume Picks"
 relatedSlugs:
+  - "what-is-a-floral-perfume"
   - "what-is-a-leather-perfume"
   - "what-is-a-skin-scent-perfume"
   - "how-to-buy-vintage-perfume"
-  - "perfume-sensitive-skin-guide"
 faqs:
   - q: "Does 'unisex' mean a perfume will smell the same on everyone?"
     a: "No. Unisex only means the scent wasn't designed with a gendered wearer in mind. Skin chemistry, body heat, and pH still cause the same perfume to smell noticeably different from person to person, sometimes dramatically so."

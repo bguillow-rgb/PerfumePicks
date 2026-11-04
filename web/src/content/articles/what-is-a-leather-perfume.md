@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-woody-perfume"
   - "perfume-fragrance-families"
+  - "what-is-a-floral-perfume"
   - "what-is-a-unisex-perfume"
-  - "what-is-an-oriental-perfume"
 faqs:
   - q: "Do leather perfumes contain real leather?"
     a: "No. Leather is always a constructed accord made from synthetic or natural materials, most commonly birch tar, isobutyl quinoline, and castoreum, that mimic the smell of cured hide. No actual animal skin goes into the bottle."
