@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-woody-perfume"
   - "what-is-a-chypre-perfume"
+  - "what-is-an-aquatic-perfume"
   - "what-is-a-floral-perfume"
-  - "what-is-an-oriental-perfume"
 faqs:
   - q: "What does fougère mean in perfumery?"
     a: "Fougère is French for 'fern,' but the scent doesn't actually smell like fern, ferns have no meaningful aroma. The name comes from Houbigant's 1882 fragrance Fougère Royale, which created an abstract, invented accord of lavender, coumarin, and oakmoss that defined an entirely new family."

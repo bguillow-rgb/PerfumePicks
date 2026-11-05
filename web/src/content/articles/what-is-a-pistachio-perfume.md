@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-gourmand-perfume"
   - "what-is-amber-in-perfume"
+  - "what-is-an-aquatic-perfume"
   - "what-is-an-oriental-perfume"
-  - "perfume-fragrance-families"
 faqs:
   - q: "What does pistachio smell like in a perfume?"
     a: "In a well-built perfume, pistachio opens with a faint green, slightly grassy quality, develops into a rounded nutty heart, and settles into a creamy, buttery dry-down. It's gourmand but distinctly nuttier and less purely sweet than vanilla."
