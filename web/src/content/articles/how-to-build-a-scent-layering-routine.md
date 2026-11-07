@@ -13,10 +13,10 @@ quickAnswer: "A scent layering routine stacks fragrant body-care products, body 
 publishedAt: "2026-10-23"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-use-body-lotion-with-perfume"
   - "how-to-smell-good-all-day"
   - "how-to-make-perfume-last-longer"
   - "how-to-apply-perfume"
-  - "how-to-layer-perfumes"
 faqs:
   - q: "What order should you apply products in a scent layering routine?"
     a: "Start with a scented or complementary body wash, then apply lotion or body oil to still-warm skin, wait 60, 90 seconds for it to absorb, spray a body mist if using one, and finish with your eau de parfum on pulse points. Lightest concentration first, richest last."
