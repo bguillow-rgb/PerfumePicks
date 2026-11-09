@@ -14,9 +14,9 @@ publishedAt: "2026-10-16"
 author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-fougere-perfume"
+  - "what-is-a-musk-perfume"
   - "what-is-a-soliflore-perfume"
   - "what-does-your-perfume-say-about-you"
-  - "what-is-a-chypre-perfume"
 faqs:
   - q: "What is the difference between a perfume note and an accord?"
     a: "A note is a single raw material, sandalwood oil, vanillin, rose absolute. An accord is a deliberate blend of two or more notes that creates a new, unified impression distinct from any individual ingredient. Notes are the letters; accords are the words."

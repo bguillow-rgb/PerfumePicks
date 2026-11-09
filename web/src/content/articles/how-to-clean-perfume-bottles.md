@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-photograph-perfume-collection"
   - "how-to-sell-perfume-from-your-collection"
+  - "what-is-a-musk-perfume"
   - "are-perfume-subscription-boxes-worth-it"
-  - "how-many-perfumes-should-you-own"
 faqs:
   - q: "Can I put a perfume bottle in the dishwasher?"
     a: "No. Dishwashers use high heat and harsh detergents that can crack glass, dissolve adhesive labels, and warp or melt delicate crystal and plastic components. Always clean perfume bottles by hand with lukewarm water."
