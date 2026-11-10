@@ -13,10 +13,10 @@ quickAnswer: "An aquatic perfume is a fragrance built to smell of water, sea spr
 publishedAt: "2026-11-05"
 author: "Perfume Picks"
 relatedSlugs:
+  - "what-is-a-green-perfume"
   - "what-is-a-woody-perfume"
   - "what-is-a-floral-perfume"
   - "what-is-a-fougere-perfume"
-  - "what-is-a-leather-perfume"
 faqs:
   - q: "What does an aquatic perfume actually smell like?"
     a: "Aquatic perfumes smell cool, clean, and airy, often with a faint melon-like edge from Calone, a touch of salt, and sometimes citrus on top. The experience varies by sub-style: salty marine reads as ocean air; ozonic reads as open sky after rain; watery floral is softer and fresher. None smell like literal seawater."

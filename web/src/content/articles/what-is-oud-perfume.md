@@ -14,9 +14,9 @@ publishedAt: "2026-08-27"
 author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-floral-perfume"
+  - "what-is-a-green-perfume"
   - "what-is-a-woody-perfume"
   - "what-is-amber-in-perfume"
-  - "what-is-an-aquatic-perfume"
 faqs:
   - q: "What does oud smell like?"
     a: "Oud has a deep, resinous, woody scent with smoky, leathery, and sometimes slightly medicinal or animalic facets. It can also carry sweet, balsamic, or incense-like qualities depending on its origin and how it's processed. No two oud oils smell identical."

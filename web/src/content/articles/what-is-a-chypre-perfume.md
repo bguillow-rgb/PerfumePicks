@@ -14,9 +14,9 @@ publishedAt: "2026-07-20"
 author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-fougere-perfume"
+  - "what-is-a-green-perfume"
   - "what-is-a-musk-perfume"
   - "what-is-an-aquatic-perfume"
-  - "what-is-a-floral-perfume"
 faqs:
   - q: "How do you pronounce 'chypre'?"
     a: "Chypre is French for Cyprus and is pronounced roughly 'sheep-r', rhyme the English word 'sheep' and add a soft 'r' at the end. It does not rhyme with 'cipher.'"

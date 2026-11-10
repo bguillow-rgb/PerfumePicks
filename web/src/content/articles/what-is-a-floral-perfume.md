@@ -13,10 +13,10 @@ quickAnswer: "A floral perfume is any fragrance built around flower-inspired not
 publishedAt: "2026-11-04"
 author: "Perfume Picks"
 relatedSlugs:
+  - "what-is-a-green-perfume"
   - "what-is-a-woody-perfume"
   - "what-is-an-aquatic-perfume"
   - "what-is-an-oriental-perfume"
-  - "what-is-oud-perfume"
 faqs:
   - q: "What is a floral perfume?"
     a: "A floral perfume is a fragrance whose dominant character comes from flower-derived notes, natural extracts, essential oils, or aroma molecules designed to recreate a floral impression. The family is the broadest in perfumery, ranging from light spring petals to rich, narcotic white flowers."

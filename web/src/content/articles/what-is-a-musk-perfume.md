@@ -14,9 +14,9 @@ publishedAt: "2026-11-09"
 author: "Perfume Picks"
 relatedSlugs:
   - "what-is-a-chypre-perfume"
+  - "what-is-a-green-perfume"
   - "what-is-amber-in-perfume"
   - "what-is-an-aquatic-perfume"
-  - "what-is-a-floral-perfume"
 faqs:
   - q: "Is musk in perfume still made from animals?"
     a: "No. Natural musk from the musk deer gland has been banned in commercial perfumery and replaced entirely by synthetic molecules. Modern musk is lab-created and cruelty-free, though the word 'musk' is still used on labels."
