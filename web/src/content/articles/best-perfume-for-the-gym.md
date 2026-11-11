@@ -16,7 +16,7 @@ relatedSlugs:
   - "best-perfume-for-a-date-night"
   - "what-perfume-to-wear-to-a-funeral"
   - "best-perfume-for-each-season"
-  - "can-you-wear-two-perfumes-at-once"
+  - "can-you-wear-perfume-while-pregnant"
 faqs:
   - q: "Is it rude to wear perfume at the gym?"
     a: "In most shared gym spaces, a very light application of a fresh, low-projection scent is generally acceptable. What bothers others is strong sillage, heavy orientals, thick musks, or over-application. Keep it to one or two sprays and choose skin-close fragrances."

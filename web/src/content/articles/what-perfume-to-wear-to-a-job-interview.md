@@ -16,7 +16,7 @@ relatedSlugs:
   - "best-perfume-for-a-date-night"
   - "how-to-buy-vintage-perfume"
   - "perfume-etiquette-rules"
-  - "how-much-to-spend-on-perfume"
+  - "can-you-wear-perfume-while-pregnant"
 faqs:
   - q: "Should you wear perfume to a job interview at all?"
     a: "It depends on the role and environment. For most office jobs, one restrained, skin-close spray is acceptable. For healthcare, scent-sensitive workplaces, or very conservative industries, skip fragrance entirely. When in doubt, go bare, you cannot lose points for not smelling of anything."

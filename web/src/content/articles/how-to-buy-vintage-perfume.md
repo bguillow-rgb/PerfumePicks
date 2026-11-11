@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "what-perfume-to-wear-to-a-job-interview"
   - "best-perfume-for-a-date-night"
+  - "can-you-wear-perfume-while-pregnant"
   - "how-to-apply-perfume"
-  - "how-to-blind-buy-perfume"
 faqs:
   - q: "Is vintage perfume safe to wear?"
     a: "Most vintage perfumes are safe to wear, though aged formulas may have degraded top notes or higher allergen concentrations from ingredients no longer used in modern perfumery. Skin-testing a decant first is always the right call before applying liberally."

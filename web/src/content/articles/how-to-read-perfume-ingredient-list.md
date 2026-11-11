@@ -14,9 +14,9 @@ publishedAt: "2026-07-26"
 author: "Perfume Picks"
 relatedSlugs:
   - "perfume-sillage-projection-longevity"
+  - "can-you-wear-perfume-while-pregnant"
   - "fragrance-notes-explained"
   - "how-to-decant-perfume"
-  - "how-to-describe-a-perfume"
 faqs:
   - q: "Why does my perfume just say 'parfum' or 'fragrance' instead of listing actual scent ingredients?"
     a: "Brands are legally permitted to hide the entire scent formula under the umbrella term 'parfum' or 'fragrance' to protect proprietary recipes. This single word can represent anywhere from five to several hundred individual chemicals without specifying any of them."
