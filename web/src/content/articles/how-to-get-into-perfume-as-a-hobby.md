@@ -16,7 +16,7 @@ relatedSlugs:
   - "how-to-buy-vintage-perfume"
   - "how-to-smell-good-all-day"
   - "how-to-start-a-perfume-collection"
-  - "are-perfume-advent-calendars-worth-it"
+  - "what-is-smellmaxxing"
 faqs:
   - q: "Is perfume collecting an expensive hobby?"
     a: "It can be, but it doesn't have to start that way. Samples and decants let you explore hundreds of scents for a few dollars each. Many serious collectors spend as little as $20-$50 a month in their first year by prioritising samples over full bottles."
