@@ -70,3 +70,6 @@ secrets/
 # which is how live keys reached a commit on 2026-09-02.
 .env.local*
 !.env.local.example
+
+# npm pack output — build artifact, never committed
+mcp-server/*.tgz
