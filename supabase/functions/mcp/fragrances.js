@@ -341,6 +341,153 @@ export async function mustResolve(ref) {
         throw new Error(`No fragrance found matching "${ref}". Try search_fragrances first.`);
     return f;
 }
+/**
+ * Words that describe the REQUEST rather than the scent.
+ *
+ * Real queries that returned nothing over 2026-10-14..11-12 included "plum rose
+ * oud niche perfume", "fig heart base niche perfume" and "luxury spa fresh woody
+ * citrus unisex". Requiring every word is hopeless — no fragrance has "niche" or
+ * "base" in its notes. These are dropped before the notes are searched; they
+ * still count for the name/slug pass above.
+ */
+const PROFILE_META = new Set([
+    "perfume", "perfumes", "fragrance", "fragrances", "scent", "scents", "smell", "smells",
+    "niche", "designer", "clone", "dupe", "dupes", "similar", "like", "vibe", "vibes",
+    "eau", "parfum", "edp", "edt", "cologne", "note", "notes", "accord", "accords",
+    "heart", "base", "top", "middle", "opening", "drydown",
+    "luxury", "expensive", "cheap", "best", "good", "nice", "style", "type", "something",
+]);
+/** Gender said in words, which belongs in the filter, not in the note match. */
+const GENDER_WORDS = {
+    masculine: "masculine", men: "masculine", mens: "masculine", male: "masculine",
+    feminine: "feminine", women: "feminine", womens: "feminine", female: "feminine",
+    unisex: "unisex",
+};
+/**
+ * The words in a query that actually name a smell.
+ *
+ * Hyphens are split because pp_normalize collapses them in search_blob, so the
+ * accord "warm-spicy" is stored as "warm spicy".
+ */
+function scentTerms(terms) {
+    const out = [];
+    for (const raw of terms) {
+        for (const t of raw.split("-")) {
+            if (t.length > 2 &&
+                !PROFILE_META.has(t) &&
+                !CONNECTIVES.has(t) &&
+                !(t in GENDER_WORDS) &&
+                !out.includes(t)) {
+                out.push(t);
+            }
+        }
+    }
+    return out;
+}
+function genderInTerms(terms) {
+    for (const t of terms)
+        if (t in GENDER_WORDS)
+            return GENDER_WORDS[t];
+    return undefined;
+}
+/**
+ * How strongly a row carries one scent word: 2 if it is an accord or the family,
+ * 1 if it is somewhere in the note pyramid, 0 otherwise.
+ *
+ * Accords are weighted because they say what a fragrance IS, while a note can be
+ * a trace in the base. Ranking a single common word by popularity alone answered
+ * "rose ... masculine" with Acqua di Gio and One Million, which merely contain
+ * rose somewhere (2026-11-13).
+ */
+function scentHit(fr, term) {
+    const esc = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const re = new RegExp(`(^|[^a-z0-9])${esc}([^a-z0-9]|$)`);
+    const accords = `${(fr.top_accords ?? []).join(" ")} ${fr.fragrance_family ?? ""}`.toLowerCase();
+    if (re.test(accords))
+        return 2;
+    const notes = [
+        ...(fr.top_notes ?? []), ...(fr.heart_notes ?? []), ...(fr.base_notes ?? []),
+    ].join(" ").toLowerCase();
+    return re.test(notes) ? 1 : 0;
+}
+/**
+ * Search by smell instead of by name, against the search_blob column (name +
+ * note pyramid + accords + family, normalised by pp_normalize).
+ *
+ * Tries every term together first; if nothing carries them all, widens to an
+ * any-term pool and keeps only rows carrying at least half of them. Scoring and
+ * the half-of-them bar run in JS because PostgREST cannot express "at least k of
+ * n", and because the notes and accords are already in FRAG_COLUMNS, so it costs
+ * no extra payload.
+ */
+async function profileSearch(scent, f, brandIds, gender, maxRows) {
+    if (!scent.length)
+        return [];
+    const applyFilters = (q) => {
+        if (brandIds)
+            q = q.in("brand_id", brandIds);
+        if (f.fragrance_family)
+            q = q.ilike("fragrance_family", `%${normalizeQuery(f.fragrance_family)}%`);
+        if (gender)
+            q = q.eq("gender", gender);
+        if (f.price_min != null)
+            q = q.gte("retail_msrp_usd_cents", f.price_min * 100);
+        if (f.price_max != null)
+            q = q.lte("retail_msrp_usd_cents", f.price_max * 100);
+        return q;
+    };
+    // Chained .ilike() calls are ANDed by PostgREST: every term must appear.
+    let all = applyFilters(activeOnly(supabase.from("fragrances").select(FRAG_COLUMNS)));
+    for (const t of scent)
+        all = all.ilike("search_blob", `%${t}%`);
+    const { data: allData, error: allErr } = await all
+        .order("popularity_tier", { ascending: false, nullsFirst: false })
+        // popularity_tier ties run thousands deep; without a stable second key the
+        // 200-row window differs run to run and the same query answers differently.
+        .order("slug", { ascending: true })
+        .limit(200);
+    if (allErr)
+        dbFail(allErr);
+    let pool = (allData ?? []);
+    // Widen when carrying every term found little or nothing. Someone describing a
+    // smell wants options: "white tea ginger bergamot sandalwood" matched exactly
+    // one row on all five words, which is a thin answer to a request for ten.
+    // Exact-on-all rows stay ahead of the near misses via the score below.
+    if (pool.length < 3) {
+        let some = applyFilters(activeOnly(supabase.from("fragrances").select(FRAG_COLUMNS)));
+        some = some.or(scent.map((t) => `search_blob.ilike.%${t}%`).join(","));
+        const { data: someData, error: someErr } = await some
+            .order("popularity_tier", { ascending: false, nullsFirst: false })
+            .order("slug", { ascending: true })
+            .limit(400);
+        if (someErr)
+            dbFail(someErr);
+        const seen = new Set(pool.map((r) => r.slug));
+        for (const r of (someData ?? [])) {
+            if (!seen.has(r.slug))
+                pool.push(r);
+        }
+    }
+    if (!pool.length)
+        return [];
+    // At least half the scent words, but never more than were asked for, so a
+    // one-word profile query ("fig") still answers.
+    const need = Math.min(scent.length, Math.max(1, Math.ceil(scent.length / 2)));
+    const scored = pool
+        .map((fr) => {
+        const per = scent.map((t) => scentHit(fr, t));
+        return { fr, hits: per.filter((n) => n > 0).length, score: per.reduce((a, b) => a + b, 0) };
+    })
+        .filter((x) => x.hits >= need)
+        // HOW MANY of the asked-for words are present decides first; the accord
+        // weighting is only a tiebreak between rows that carry the same number.
+        // Scoring on the weighted sum alone let a row matching three words as
+        // accords outrank one matching all five, which is not what was asked.
+        .sort((a, b) => b.hits - a.hits ||
+        b.score - a.score ||
+        (b.fr.popularity_tier ?? 0) - (a.fr.popularity_tier ?? 0));
+    return scored.slice(0, maxRows).map((x) => x.fr);
+}
 export async function searchFragrances(f, opts = {}) {
     const limit = Math.min(f.limit ?? 10, 25);
     let q = activeOnly(supabase.from("fragrances").select(FRAG_COLUMNS));
@@ -400,10 +547,17 @@ export async function searchFragrances(f, opts = {}) {
             rows = strict;
         }
         else {
-            // No row carries every term. Keep only rows that are still plausibly about
-            // the query (see looselyRelevant) rather than falling back to the whole
-            // `.or()` result set — that fallback answered a nonsense query with the
-            // catalog's most popular fragrances.
+            // Nothing matched by name. Before falling back, try reading the query as a
+            // DESCRIPTION of a smell rather than a product name — "white tea ginger
+            // bergamot sandalwood" names no fragrance but describes several.
+            const scent = scentTerms(terms);
+            const profile = await profileSearch(scent, f, brandIds, f.gender ?? genderInTerms(terms), opts.maxRows ?? limit);
+            if (profile.length)
+                return profile;
+            // Still nothing. Keep only rows that are at least plausibly about the query
+            // (see looselyRelevant) rather than falling back to the whole `.or()`
+            // result set — that fallback answered a nonsense query with the catalog's
+            // most popular fragrances.
             const meaningful = needed.filter((t) => t.length >= 3);
             rows = meaningful.length ? ranked.filter((r) => looselyRelevant(r, meaningful)) : ranked;
         }

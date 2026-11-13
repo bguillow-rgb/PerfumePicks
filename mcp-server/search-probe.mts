@@ -28,6 +28,15 @@ const SEARCHES: [string, string | null, string][] = [
   ["Terre d'Hermes", "Terre D'Hermes", "apostrophes"],
   ["Louis Vuitton Ombre Nomade", "Ombre Nomade", "added 2026-10-16"],
   ["Good Girl Gone Bad", "Good Girl Gone Bad", "multi-word, no connectives"],
+  // Profile searches: real queries that returned 0 before 2026-11-13. These must
+  // now answer, and must answer with something whose notes/accords actually fit.
+  ["white tea ginger bergamot sandalwood", "Presence", "PROFILE: row carrying all five words ranks first"],
+  ["plum rose oud niche perfume", "*", "PROFILE: meta words must not veto"],
+  ["vanilla ice cream creamy vanilla", "*", "PROFILE: gourmand description"],
+  ["blackberry rose oud masculine", "*", "PROFILE: gender word becomes a filter"],
+  ["fig heart base niche perfume", "Fico di Amalfi", "PROFILE: one scent word survives stripping"],
+  ["rose heart base masculine fragrance niche", "*", "PROFILE: accord weighting beats raw popularity"],
+  ["Aswaar", null, "a real brand we do not carry stays empty, not a guess"],
   ["zzqqxx not a real fragrance 12345", null, "nonsense must return nothing"],
   ["for the and of", null, "an all-connective query must not match everything"],
 ];
@@ -43,7 +52,10 @@ const RESOLVES: [string, string | null][] = [
 
 let failed = 0;
 const check = (label: string, got: string | null, want: string | null, why = "") => {
-  const ok = want === null ? got === null : got !== null && got.toLowerCase().includes(want.toLowerCase());
+  const ok =
+    want === null ? got === null
+    : want === "*" ? got !== null
+    : got !== null && got.toLowerCase().includes(want.toLowerCase());
   if (!ok) failed++;
   console.log(`${ok ? "ok  " : "FAIL"} ${label.padEnd(46)} -> ${got ?? "(none)"}${why ? `   [${why}]` : ""}`);
 };

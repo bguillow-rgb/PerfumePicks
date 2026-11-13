@@ -198,7 +198,7 @@ function buildServer(ip, ctx) {
   server.registerTool("search_fragrances", {
       title: "Search the Perfume Picks catalog",
       annotations: { ...ANNOTATIONS, title: "Search the Perfume Picks catalog" },
-      description: "Full-text search across 10,000+ fragrances in the Perfume Picks database. Filter by brand, fragrance family, gender, and MSRP (USD). Returns note pyramids, accords, and community wear scores with source attribution.",
+      description: "Search 10,000+ fragrances in the Perfume Picks database by product name OR by describing a smell. Note and accord descriptions work: 'white tea bergamot sandalwood', 'plum rose oud', 'creamy vanilla gourmand' all match on the note pyramid and accords, not just the name. Filter by brand, fragrance family, gender, and MSRP (USD). Returns note pyramids, accords, and community wear scores with source attribution.",
       inputSchema: {
           query: z.string().max(120).optional().describe("Free-text search: fragrance or brand name"),
           brand: z.string().max(200).optional().describe("Brand name filter, e.g. 'Dior'"),
