@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-to-declutter-your-perfume-collection"
   - "how-many-perfumes-should-you-own"
+  - "how-to-tell-if-two-perfumes-are-too-similar"
   - "perfume-no-buy-challenge"
-  - "why-do-i-only-wear-a-few-perfumes-from-my-collection"
 faqs:
   - q: "What is the difference between curating and collecting perfume?"
     a: "Collecting is accumulating bottles you love; curating is keeping only the ones that serve a distinct purpose in your current life. A curated collection is smaller, more intentional, and gets used, every bottle earns its place."
