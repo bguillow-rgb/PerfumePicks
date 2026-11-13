@@ -8,7 +8,7 @@ Perfume Picks is the Fragrance DNA and collection journal for iOS — [get it on
 
 | Tool | What it does |
 |---|---|
-| `search_fragrances` | Full-text catalog search with brand, family, gender, and MSRP filters |
+| `search_fragrances` | Search by product name **or by describing a smell** — "white tea bergamot sandalwood" matches on the note pyramid and accords. Brand, family, gender and MSRP filters |
 | `get_fragrance` | Full record for one scent (by slug or name): note pyramid, accords, community scores |
 | `find_dupes` | Curated cheaper smell-alikes with match percentage — "what smells like X without the price tag" |
 | `find_similar` | Most-similar fragrances from a precomputed similarity ranking |

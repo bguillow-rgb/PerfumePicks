@@ -7,7 +7,7 @@
     "url": "https://github.com/bguillow-rgb/perfume-picks-mcp",
     "source": "github"
   },
-  "version": "1.0.5",
+  "version": "1.0.6",
   "websiteUrl": "https://perfumepicks.app/mcp",
   "icons": [
     {
@@ -23,7 +23,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "perfume-picks-mcp",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "transport": {
         "type": "stdio"
       }
