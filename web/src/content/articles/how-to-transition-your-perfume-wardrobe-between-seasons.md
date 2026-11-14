@@ -16,7 +16,7 @@ relatedSlugs:
   - "best-perfume-for-each-season"
   - "how-to-rotate-your-perfume-collection"
   - "how-to-declutter-your-perfume-collection"
-  - "how-weather-affects-perfume"
+  - "how-to-split-perfume-collection-day-night"
 faqs:
   - q: "When exactly should I switch from summer to fall perfumes?"
     a: "Use temperature as your trigger rather than a calendar date. When daytime highs consistently fall below about 60°F (15°C), heavier base notes like amber, woods, and resins will project better and feel seasonally appropriate. In warmer climates, that shift may not happen until November or later."
