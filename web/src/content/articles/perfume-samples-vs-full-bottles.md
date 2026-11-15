@@ -16,7 +16,7 @@ relatedSlugs:
   - "are-perfume-discovery-sets-worth-it"
   - "are-perfume-subscription-boxes-worth-it"
   - "how-to-test-perfume-before-buying"
-  - "are-perfume-dupes-worth-it"
+  - "should-i-rebuy-a-perfume"
 faqs:
   - q: "How many times should I sample a perfume before buying the full bottle?"
     a: "At least three to five wears in real-life conditions, different times of day, seasons, and activities. One wear tells you if you hate it; three or more tell you if you'll love it long-term."

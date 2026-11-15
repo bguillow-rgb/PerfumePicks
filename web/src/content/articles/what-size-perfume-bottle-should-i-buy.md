@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "how-many-sprays-in-a-perfume-bottle"
   - "are-perfume-dupes-worth-it"
+  - "should-i-rebuy-a-perfume"
   - "are-perfume-subscription-boxes-worth-it"
-  - "how-many-perfumes-should-you-own"
 faqs:
   - q: "Is a 100ml perfume bottle worth it?"
     a: "Only if you wear the fragrance at least 3-4 times per week and have confirmed you love it on your skin. A 100ml bottle at 5 sprays per wear gives roughly 400 wears, that's years of rotation for most collectors. If the scent sits unused or gets reformulated, the larger bottle becomes a liability."

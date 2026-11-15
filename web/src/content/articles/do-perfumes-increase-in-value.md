@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "are-perfume-advent-calendars-worth-it"
   - "perfume-cost-per-wear"
+  - "should-i-rebuy-a-perfume"
   - "are-perfume-discovery-sets-worth-it"
-  - "are-perfume-dupes-worth-it"
 faqs:
   - q: "Do designer perfumes hold their value?"
     a: "Most designer perfumes depreciate once opened, but sealed bottles from heritage houses like Chanel, Dior, and Hermès tend to hold 70, 90% of retail value on the secondary market. Pre-reformulation and discontinued versions of iconic designer scents consistently outperform current production."
