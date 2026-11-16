@@ -13,10 +13,10 @@ quickAnswer: "The best times to buy perfume are Black Friday/Cyber Monday (deepe
 publishedAt: "2026-09-24"
 author: "Perfume Picks"
 relatedSlugs:
+  - "buying-perfume-for-yourself"
   - "how-to-decide-what-perfume-to-buy-next"
   - "perfume-no-buy-challenge"
   - "am-i-buying-too-much-perfume"
-  - "are-perfume-advent-calendars-worth-it"
 faqs:
   - q: "Is Black Friday actually the best time to buy perfume?"
     a: "Black Friday delivers the deepest sitewide fragrance discounts of the year and is genuinely worth timing purchases around. However, gray-market street prices can already sit 20%-50% below retail on any given day, so a 'Black Friday 25% off MSRP' banner is sometimes worse than a discounter's normal price. Know the street price before you shop."

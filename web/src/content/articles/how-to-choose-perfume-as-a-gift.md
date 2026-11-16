@@ -16,7 +16,7 @@ relatedSlugs:
   - "what-to-get-a-perfume-collector-as-a-gift"
   - "how-to-choose-between-two-perfumes"
   - "how-to-pick-an-everyday-perfume"
-  - "how-to-blind-buy-perfume"
+  - "buying-perfume-for-yourself"
 faqs:
   - q: "Is perfume a good gift?"
     a: "Yes. Fragrance is one of the most emotionally resonant gifts you can give. Circana data shows one in five shoppers chose perfume as a Mother's Day gift in 2025, and women's prestige fragrance sales during that period alone exceeded $500 million. The key is doing a little homework beforehand so the scent actually fits the person."

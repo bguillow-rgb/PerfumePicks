@@ -14,9 +14,9 @@ publishedAt: "2026-11-01"
 author: "Perfume Picks"
 relatedSlugs:
   - "how-to-choose-perfume-as-a-gift"
+  - "buying-perfume-for-yourself"
   - "how-to-decide-what-perfume-to-buy-next"
   - "how-to-declutter-your-perfume-collection"
-  - "how-to-display-perfume-collection"
 faqs:
   - q: "Is it okay to buy a perfume collector a full bottle?"
     a: "Only if you know the exact bottle they want, ideally from their own wish list. A full bottle is the best collector gift when it's precisely right, and the riskiest when it's a guess. When in doubt, choose a smaller size or sample set from the same house."
