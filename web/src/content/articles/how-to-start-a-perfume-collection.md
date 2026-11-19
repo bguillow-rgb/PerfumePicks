@@ -13,10 +13,10 @@ quickAnswer: "Start a perfume collection by exploring fragrance families first, 
 publishedAt: "2026-09-19"
 author: "Perfume Picks"
 relatedSlugs:
+  - "how-to-build-a-perfume-collection-on-a-budget"
   - "how-to-get-into-perfume-as-a-hobby"
   - "best-perfume-app"
   - "how-many-perfumes-should-you-own"
-  - "how-to-audit-your-perfume-collection"
 faqs:
   - q: "How many perfumes should I have when just starting out?"
     a: "Three to five bottles is an ideal starting point. That's enough to cover different moods and occasions without overwhelm or financial overcommitment. You can expand deliberately once you understand your preferences."
