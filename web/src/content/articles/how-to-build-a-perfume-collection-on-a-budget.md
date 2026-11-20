@@ -13,10 +13,10 @@ quickAnswer: "Build a budget perfume collection by starting with samples and dec
 publishedAt: "2026-11-19"
 author: "Perfume Picks"
 relatedSlugs:
+  - "minimalist-perfume-wardrobe"
   - "how-to-build-a-fragrance-wardrobe"
   - "how-to-curate-your-perfume-collection"
   - "how-to-fill-gaps-in-your-perfume-wardrobe"
-  - "how-to-rotate-your-perfume-collection"
 faqs:
   - q: "How much should I spend to start a perfume collection on a budget?"
     a: "Most collectors recommend starting with $50, $100 total: spend the first chunk on a sample or discovery set to map your preferences, then commit one full bottle at a time. A monthly cap of $25, $50 compounds into a diverse wardrobe without impulse drain."
