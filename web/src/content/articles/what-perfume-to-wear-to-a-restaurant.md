@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "perfume-etiquette-rules"
   - "best-perfume-for-a-date-night"
+  - "what-perfume-to-wear-on-a-plane"
   - "what-perfume-to-wear-to-a-funeral"
-  - "what-perfume-to-wear-to-a-job-interview"
 faqs:
   - q: "Should I wear perfume at all to a restaurant?"
     a: "Yes, but keep it restrained. A light, skin-close scent is completely appropriate. The key is projection: diners at your table should catch it only when close, not across the room. One to two sprays on pulse points is enough."

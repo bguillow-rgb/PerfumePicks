@@ -14,9 +14,9 @@ publishedAt: "2026-10-18"
 author: "Perfume Picks"
 relatedSlugs:
   - "perfume-etiquette-rules"
+  - "what-perfume-to-wear-on-a-plane"
   - "what-perfume-to-wear-to-a-restaurant"
   - "best-perfume-for-the-gym"
-  - "how-often-to-wear-each-perfume"
 faqs:
   - q: "Is it rude to wear perfume to a funeral?"
     a: "Not inherently, but it can become rude if your fragrance is overpowering or high-sillage. In a confined space full of grieving people, a bold sillage trail is distracting and can even trigger headaches or allergic reactions. One to two sprays of a low-projection scent is almost universally acceptable."
