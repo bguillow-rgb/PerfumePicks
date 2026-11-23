@@ -40,26 +40,38 @@ function projectIdsFor(env) {
   return ids;
 }
 
+// 5xx/429/network errors get two retries with backoff before we give up on a
+// project (PostHog 504'd the whole 2026-11-23 morning run).
+const RETRY_DELAYS_MS = [3000, 10000];
+
 async function runOnProject(env, projectId, query) {
   const url = `${env.host}/api/projects/${projectId}/query/`;
-  try {
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${env.key}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: { kind: 'HogQLQuery', query } }),
-    });
-    if (!res.ok) {
-      const body = await res.text();
-      // Tolerate a single project failing (e.g. a 504 on a heavy query) so we
-      // still return the other project's data instead of blanking the metric.
-      console.warn(`[posthog] project ${projectId} query failed ${res.status}: ${body.slice(0, 120)}`);
-      return [];
+  for (let attempt = 0; attempt <= RETRY_DELAYS_MS.length; attempt++) {
+    if (attempt > 0) await new Promise((r) => setTimeout(r, RETRY_DELAYS_MS[attempt - 1]));
+    const last = attempt === RETRY_DELAYS_MS.length;
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${env.key}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: { kind: 'HogQLQuery', query } }),
+      });
+      if (res.ok) return (await res.json()).results ?? [];
+      const retryable = res.status >= 500 || res.status === 429;
+      if (last || !retryable) {
+        const body = await res.text();
+        // Tolerate a single project failing so we still return the other
+        // project's data instead of blanking the metric.
+        console.warn(`[posthog] project ${projectId} query failed ${res.status}: ${body.slice(0, 120)}`);
+        return [];
+      }
+    } catch (e) {
+      if (last) {
+        console.warn(`[posthog] project ${projectId} query threw: ${String(e).slice(0, 120)}`);
+        return [];
+      }
     }
-    return (await res.json()).results ?? [];
-  } catch (e) {
-    console.warn(`[posthog] project ${projectId} query threw: ${String(e).slice(0, 120)}`);
-    return [];
   }
+  return [];
 }
 
 // Merge result sets from multiple projects. Rows are keyed by their

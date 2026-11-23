@@ -21,15 +21,32 @@
 // combineResults keys rows by non-numeric columns and SUMS numeric ones. That
 // would sum our raw unix timestamps together across projects and wreck guest
 // clustering. So we query each project and concat raw rows here.
+// Retries 5xx/429/network errors with backoff. PostHog's query endpoint throws
+// the occasional 504 on this heavy events scan (2026-11-23 7:40 AM run), and one
+// blip used to blank active users for the whole day.
+const RETRY_DELAYS_MS = [3000, 10000];
+
 async function queryProject(env, projectId, query) {
   const host = env.host || 'https://us.posthog.com';
-  const res = await fetch(`${host}/api/projects/${projectId}/query/`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${env.key}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query: { kind: 'HogQLQuery', query } }),
-  });
-  if (!res.ok) throw new Error(`PostHog ${projectId} ${res.status}: ${(await res.text()).slice(0, 160)}`);
-  return (await res.json()).results ?? [];
+  let lastErr;
+  for (let attempt = 0; attempt <= RETRY_DELAYS_MS.length; attempt++) {
+    if (attempt > 0) await new Promise((r) => setTimeout(r, RETRY_DELAYS_MS[attempt - 1]));
+    let res;
+    try {
+      res = await fetch(`${host}/api/projects/${projectId}/query/`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${env.key}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: { kind: 'HogQLQuery', query } }),
+      });
+    } catch (e) {
+      lastErr = new Error(`PostHog ${projectId} fetch failed: ${String(e).slice(0, 120)}`);
+      continue;
+    }
+    if (res.ok) return (await res.json()).results ?? [];
+    lastErr = new Error(`PostHog ${projectId} ${res.status}: ${(await res.text()).slice(0, 160)}`);
+    if (res.status < 500 && res.status !== 429) break; // auth/query errors won't fix themselves
+  }
+  throw lastErr;
 }
 
 const APP_NAMESPACE = 'com.bobguillow.perfumepicks';
@@ -208,13 +225,19 @@ async function fetchActiveUsers(env, { days = 30 } = {}) {
   const projects = [String(env.project)];
   if (HISTORICAL_PROJECT_ID !== String(env.project)) projects.push(HISTORICAL_PROJECT_ID);
 
-  let rows;
-  try {
-    rows = [];
-    for (const p of projects) rows.push(...(await queryProject(env, p, q)));
-  } catch (e) {
-    return { error: e.message };
+  // A PostHog failure no longer blanks the metric: signed-in still comes from
+  // Supabase, and posthogError tells the formatter guest visits are missing
+  // rather than zero.
+  const rows = [];
+  const posthogErrors = [];
+  for (const p of projects) {
+    try {
+      rows.push(...(await queryProject(env, p, q)));
+    } catch (e) {
+      posthogErrors.push(e.message);
+    }
   }
+  const posthogError = posthogErrors.length ? posthogErrors.join(' | ') : null;
 
   // Instant signed-in activity (non-fatal: fall back to PostHog-only on error).
   let supaActiveByDay = new Map();
@@ -260,7 +283,13 @@ async function fetchActiveUsers(env, { days = 30 } = {}) {
     posthogAgeMin: posthogLatestUnix ? Math.round((Date.now() / 1000 - posthogLatestUnix) / 60) : null,
     signedInSource: `Supabase ${SIGNED_IN_ACTIVITY_COL} (instant) ∪ PostHog`,
     supaActiveError,
+    posthogError,
   };
+
+  // Both sources down: nothing honest to print.
+  if (posthogError && supaActiveError) {
+    return { error: `PostHog and Supabase activity both failed: ${posthogError}` };
+  }
 
   return { daily, today, yesterday, windows, denominatorNote: NOTE, freshness };
 }

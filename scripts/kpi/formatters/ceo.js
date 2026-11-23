@@ -134,10 +134,14 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
   // fallback — if this errors we say "unavailable" rather than print a number
   // known to be ~2-3x inflated.
   const au = activeUsers && !activeUsers.error ? activeUsers : null;
-  const auToday = au ? au.today.total : '—';
-  const auYest = au ? au.yesterday.total : '—';
-  const auTodayNote = au ? ` (${au.today.signedIn} signed-in + ${au.today.guestVisits} guest)` : ' (unavailable)';
-  const auYestNote = au ? ` (${au.yesterday.signedIn} signed-in + ${au.yesterday.guestVisits} guest)` : ' (unavailable)';
+  // PostHog down but Supabase up: signed-in is real, guests are unknown (not 0).
+  const phDown = !!au?.freshness?.posthogError;
+  const auCount = (d) => (phDown ? `${d.signedIn}+` : d.total);
+  const auNote = (d) => (phDown ? ` (${d.signedIn} signed-in + guests unavailable)` : ` (${d.signedIn} signed-in + ${d.guestVisits} guest)`);
+  const auToday = au ? auCount(au.today) : '—';
+  const auYest = au ? auCount(au.yesterday) : '—';
+  const auTodayNote = au ? auNote(au.today) : ' (unavailable)';
+  const auYestNote = au ? auNote(au.yesterday) : ' (unavailable)';
 
   // Data-freshness heartbeat — makes any 0 self-diagnosing. Signed-in DAU is
   // now Supabase-instant (a live session shows immediately); guest visits still
@@ -145,8 +149,10 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
   // you whether a low count is "quiet" or "pipeline stalled" (the 2026-07-11
   // "is the 0 real?" incident this section fixes).
   const phAge = au?.freshness?.posthogAgeMin;
+  const phStatus = phDown ? (au.freshness.posthogError.match(/ (\d{3}):/) || [])[1] : null;
   const phNote =
-    phAge == null ? 'no events in window'
+    phDown ? `⚠ unavailable${phStatus ? ` (${phStatus} after retries)` : ' (after retries)'}, guest visits missing`
+    : phAge == null ? 'no events in window'
     : phAge <= 10 ? `last event ${phAge}m ago ✓`
     : phAge <= 120 ? `last event ${phAge}m ago`
     : `last event ${(phAge / 60).toFixed(1)}h ago ⚠ stalled?`;
@@ -213,8 +219,10 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
   }
   if (au?.windows) {
     const w = au.windows;
-    lines.push(`- **WAU (7d):** ${w.wauSignedIn} signed-in + ${w.guestVisits7d} guest visits`);
-    lines.push(`- **MAU (28d):** ${w.mauSignedIn} signed-in + ${w.guestVisits28d} guest visits`);
+    const g7 = phDown ? 'guest visits unavailable' : `${w.guestVisits7d} guest visits`;
+    const g28 = phDown ? 'guest visits unavailable' : `${w.guestVisits28d} guest visits`;
+    lines.push(`- **WAU (7d):** ${w.wauSignedIn} signed-in + ${g7}`);
+    lines.push(`- **MAU (28d):** ${w.mauSignedIn} signed-in + ${g28}`);
   } else if (activeUsers?.error) {
     lines.push(`- **WAU/MAU:** unavailable (${activeUsers.error.slice(0, 60)})`);
   }
@@ -577,8 +585,12 @@ function render({ supa, posthog, activeUsers, rc, sentry, asc, adSpend, cj, dnaV
     }
     lines.push('| Date | Active users | Signed-in | Guest visits |');
     lines.push('|---|---|---|---|');
+    if (phDown) {
+      lines.push('> ⚠ PostHog was unavailable this run: guest visits are missing, totals are signed-in only.');
+      lines.push('');
+    }
     for (const d of au.daily) {
-      lines.push(`| ${d.date} | **${d.total}** | ${d.signedIn} | ${d.guestVisits} |`);
+      lines.push(`| ${d.date} | **${auCount(d)}** | ${d.signedIn} | ${phDown ? '—' : d.guestVisits} |`);
     }
     lines.push('');
   } else {
