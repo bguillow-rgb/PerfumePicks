@@ -15,8 +15,8 @@ author: "Perfume Picks"
 relatedSlugs:
   - "what-is-eau-fraiche"
   - "how-to-smell-good-all-day"
+  - "how-to-swap-perfume-decants"
   - "what-is-a-perfume-atomizer"
-  - "what-is-hair-perfume"
 faqs:
   - q: "What is a perfume decant?"
     a: "A perfume decant is a smaller portion of a fragrance transferred from its original bottle into a separate container, usually a 2-10 ml atomizer or vial. Decants let collectors sample, travel with, or share specific scents without committing to or carrying a full bottle."
