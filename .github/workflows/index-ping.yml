@@ -1,0 +1,34 @@
+name: Google index ping
+
+# On-demand: ask Google to (re)crawl specific article slugs using the same
+# service account the daily publish job uses. Added 2026-11-25 because eight
+# articles, best-perfume-app among them, sat at "Discovered, currently not
+# indexed" for months with no internal links pointing at them.
+on:
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: Space-separated article slugs to submit
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Ping Google Indexing API
+        env:
+          GOOGLE_INDEXING_SA_KEY: ${{ secrets.GOOGLE_INDEXING_SA_KEY }}
+        run: |
+          args=""
+          for s in ${{ inputs.slugs }}; do args="$args --article $s"; done
+          node scripts/google-index.mjs $args
