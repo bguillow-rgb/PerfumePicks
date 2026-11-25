@@ -11,6 +11,9 @@ interface Props {
   path?: string;
   noindex?: boolean;
   suppressGlobalSchema?: boolean;
+  // Full-width pages (home, articles) lay themselves out with heroes and
+  // contained sections. Everything else gets the contained reading column.
+  full?: boolean;
 }
 
 const {
@@ -19,6 +22,7 @@ const {
   path = '',
   noindex = false,
   suppressGlobalSchema = false,
+  full = false,
 } = Astro.props;
 
 const canonical = `${SITE.url}${path}`;
@@ -26,6 +30,8 @@ const fullTitle =
   title === SITE.name ? `${SITE.name}, ${SITE.tagline}` : `${title}, ${SITE.name}`;
 
 const currentPath = path;
+// The wordmark is the way home; the bar carries the rest.
+const barLinks = NAV.filter((item) => item.href !== '/');
 ---
 <!doctype html>
 <html lang={SITE.locale}>
@@ -54,12 +60,11 @@ const currentPath = path;
     <link rel="apple-touch-icon" href="/icon.png" />
     <meta name="theme-color" content={SITE.theme.bg} />
 
-    <!-- Google Fonts: Playfair Display (high-contrast fashion serif, display +
-         wordmark) + Jost (geometric perfume-house sans, body + couture labels) -->
+    <!-- Playfair Display carries the wordmark only. Outfit is everything else. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=optional"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Outfit:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -71,21 +76,25 @@ const currentPath = path;
     <slot name="head" />
   </head>
   <body>
-    <div class="container">
-      <header class="site-header">
-        <a href="/" class="site-wordmark">{SITE.name}</a>
-        <nav class="site-nav" aria-label="Main navigation">
-          {NAV.map((item) => (
-            <a
-              href={item.href}
-              aria-current={currentPath === item.href ? 'page' : undefined}
-            >{item.label}</a>
+    <header class="site-header">
+      <nav class="bar" aria-label="Main navigation">
+        <a href="/" class="brand-mark">{SITE.name}</a>
+        <div class="bar-links">
+          {barLinks.map((item) => (
+            <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
           ))}
-        </nav>
-      </header>
-      <div class="rule-jewel" aria-hidden="true"></div>
-      <slot />
-    </div>
+        </div>
+        <a class="btn btn-sm" href={SITE.appStoreUrl}>Download on iOS</a>
+        <details class="bar-menu">
+          <summary aria-label="Open menu"><span></span><span></span><span></span></summary>
+          <div class="bar-drawer">
+            {barLinks.map((item) => <a href={item.href}>{item.label}</a>)}
+            <a class="btn" href={SITE.appStoreUrl}>Download free on the App Store</a>
+          </div>
+        </details>
+      </nav>
+    </header>
+    {full ? <main class="page-full"><slot /></main> : <main class="container"><slot /></main>}
     <!-- AI plugin attribution (2026-10-03): a visitor who arrives from one of our
          MCP servers' links (utm_medium=ai_plugin) keeps that source for the session,
          and App Store links on the site carry Apple campaign tags so App Store

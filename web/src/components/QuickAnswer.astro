@@ -1,14 +1,15 @@
 ---
 // Quick Answer block. The single most important AEO element on a content
-// page: 40-60 words that directly answer the page\u2019s target query.
+// page: 40-60 words that directly answer the page’s target query.
 // Marked id="quick-answer" so Speakable schema (in ArticleSchema.astro)
-// can point at it.
+// can point at it. Pass label="" to run it as a plain intro paragraph.
 interface Props {
   text: string;
+  label?: string;
 }
-const { text } = Astro.props;
+const { text, label = 'Quick Answer' } = Astro.props;
 ---
 <section class="quick-answer" id="quick-answer">
-  <span class="label">Quick Answer</span>
+  {label && <span class="label">{label}</span>}
   <p>{text}</p>
 </section>

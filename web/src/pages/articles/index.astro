@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Footer from '../../components/Footer.astro';
 import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
 import { SITE } from '../../consts';
+import { splitTitle } from '../../lib/title';
 
 // In dev mode, include drafts. In production, only published articles
 // surface in the index.
@@ -13,34 +14,58 @@ const articles = (
     includeDrafts ? true : data.published
   )
 ).sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+
+const months: { label: string; items: typeof articles }[] = [];
+for (const a of articles) {
+  const label = a.data.publishedAt.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const last = months[months.length - 1];
+  if (last && last.label === label) last.items.push(a); else months.push({ label, items: [a] });
+}
 ---
 <BaseLayout
   title="Blog"
   description="The Perfume Picks blog, guides and references for fragrance collectors covering wardrobe care, longevity, layering, families, and more."
   path="/articles"
+  full
 >
   <Fragment slot="head">
     <BreadcrumbSchema crumbs={[{ name: 'Blog', url: `${SITE.url}/articles` }]} />
   </Fragment>
 
-  <p class="brand">{SITE.name}</p>
-  <h1>Blog</h1>
-  <p class="effective">Field-tested references for fragrance collectors.</p>
+  <section class="hero-wrap tuck">
+    <div class="hero hero-md">
+      <div class="hero-body">
+        <p class="eyebrow">{SITE.name}</p>
+        <h1 class="t-elevated">Blog</h1>
+        <p class="intro">Field-tested references for fragrance collectors.</p>
+      </div>
+    </div>
+  </section>
 
   {articles.length === 0 ? (
-    <p>The first articles are being written now. Check back soon, or email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> if there is a topic you want covered.</p>
+    <section class="contained">
+      <p>The first articles are being written now. Check back soon, or email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> if there is a topic you want covered.</p>
+    </section>
   ) : (
-    <ul class="blog-list">
-      {articles.map((a) => (
-        <li>
-          <a href={`/articles/${a.slug}`}>{a.data.title}</a>
-          <p>{a.data.description}</p>
-          <p class="article-meta">
-            {(a.data.updatedAt ?? a.data.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </p>
-        </li>
-      ))}
-    </ul>
+    months.map((m) => (
+      <section class="contained sticky-section month">
+        <div class="sticky-copy">
+          <p class="upper-tag">{m.items.length} {m.items.length === 1 ? 'article' : 'articles'}</p>
+          <h2>{m.label}</h2>
+        </div>
+        <ol class="post-list">
+          {m.items.map((a) => {
+            const [head, rest] = splitTitle(a.data.title);
+            return (
+              <li><a href={`/articles/${a.slug}`}>
+                <time>{a.data.publishedAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' })}</time>
+                <span><b>{head}</b>{rest && <span class="sub">{rest}</span>}</span>
+              </a></li>
+            );
+          })}
+        </ol>
+      </section>
+    ))
   )}
 
   <Footer />

@@ -21,8 +21,10 @@ interface Props {
   // the footer) and turns on outbound click tracking.
   affiliate?: boolean;
   // Section label shown in breadcrumb between Home and the article (e.g.
-  // \u201CGuides\u201D, \u201CHumidor\u201D). Optional.
+  // “Guides”, “Humidor”). Optional.
   section?: { name: string; url: string };
+  // H2 headings for the "On this page" column.
+  headings?: { slug: string; text: string }[];
 }
 
 const {
@@ -36,6 +38,7 @@ const {
   faqs,
   affiliate = false,
   section,
+  headings = [],
 } = Astro.props;
 
 const fullUrl = `${SITE.url}${path}`;
@@ -50,7 +53,7 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
   day: 'numeric',
 });
 ---
-<BaseLayout title={title} description={description} path={path}>
+<BaseLayout title={title} description={description} path={path} full>
   <Fragment slot="head">
     <ArticleSchema
       title={title}
@@ -63,33 +66,46 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
     <BreadcrumbSchema crumbs={crumbs} />
   </Fragment>
 
-  <header class="article-head">
-    <p class="article-kicker">{section?.name ?? 'Journal'}</p>
-    <h1>{title}</h1>
-    <p class="article-dek">{description}</p>
-    <p class="article-byline">
-      By <a href="/about">{author}</a> &middot; {updatedAt ? 'Updated' : 'Published'} {formattedDate}
-    </p>
-  </header>
+  <section class="hero-wrap tuck">
+    <div class="hero hero-sm">
+      <div class="hero-body">
+        <p class="eyebrow"><a href="/articles">{section?.name ?? 'Blog'}</a></p>
+        <h1 class="t-headline">{title}</h1>
+        <p class="byline">By <a href="/about">{author}</a> &middot; {updatedAt ? 'Updated' : 'Published'} {formattedDate}</p>
+      </div>
+    </div>
+  </section>
 
-  <QuickAnswer text={quickAnswer} />
+  <section class="contained sticky-section article-section">
+    <aside class="sticky-copy toc">
+      {headings.length > 0 && (
+        <nav aria-label="On this page">
+          <p class="upper-tag">On this page</p>
+          {headings.map((h) => <a href={`#${h.slug}`}>{h.text}</a>)}
+        </nav>
+      )}
+    </aside>
+    <div class="article-main">
+      <QuickAnswer text={quickAnswer} />
 
-  {affiliate && (
-    <p class="aff-disclosure">
-      If you buy through a retailer link in this article, Perfume Picks earns a commission. Prices don't change because of it, and retailers don't choose the picks.
-    </p>
-  )}
+      {affiliate && (
+        <p class="aff-disclosure">
+          If you buy through a retailer link in this article, Perfume Picks earns a commission. Prices don't change because of it, and retailers don't choose the picks.
+        </p>
+      )}
 
-  <div class="article-body">
-    <slot />
-  </div>
+      <div class="article-body">
+        <slot />
+      </div>
 
-  <aside class="article-app-cta">
-    <p class="article-app-lead">Perfume Picks learns what you like and tells you what to wear tonight. Free on iPhone.</p>
-    <a class="badge" href={SITE.appStoreUrl}>Download free on the App Store &rarr;</a>
-  </aside>
+      <aside class="article-app-cta">
+        <p class="article-app-lead">Perfume Picks learns what you like and tells you what to wear tonight. Free on iPhone.</p>
+        <a class="btn" href={SITE.appStoreUrl}>Download free on the App Store</a>
+      </aside>
 
-  <FAQ faqs={faqs} />
+      <FAQ faqs={faqs} />
+    </div>
+  </section>
 
   <Footer />
 
@@ -111,56 +127,3 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
     </script>
   )}
 </BaseLayout>
-
-<style is:global>
-  .article-app-cta {
-    margin: 38px 0 6px;
-    padding-top: 28px;
-    border-top: 1px solid var(--line);
-  }
-  .article-app-lead {
-    margin: 0 0 18px;
-    max-width: 42em;
-  }
-  .article-app-cta .badge { margin-bottom: 0; }
-  .aff-disclosure {
-    font-size: 13.5px;
-    line-height: 1.55;
-    color: var(--taupe);
-    border-left: 2px solid var(--line2);
-    padding-left: 14px;
-    margin: 22px 0 0;
-    max-width: 42em;
-  }
-  .buy-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    flex-wrap: wrap;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin: 18px 0 26px;
-  }
-  .buy-card p { margin: 0; }
-  .buy-name { font-weight: 600; color: var(--ink); }
-  .buy-meta {
-    font-size: 13.5px;
-    color: var(--taupe);
-    margin-top: 2px !important;
-  }
-  .buy-card a[data-buy] {
-    flex: none;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--gold);
-    padding: 10px 16px;
-    border: 1px solid var(--gold-bright);
-    border-radius: 8px;
-    white-space: nowrap;
-    border-bottom-width: 1px;
-  }
-  .buy-card a[data-buy]:hover { background: var(--ivory2); }
-</style>

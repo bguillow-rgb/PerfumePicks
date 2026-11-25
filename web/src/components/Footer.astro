@@ -1,24 +1,51 @@
 ---
-import { SITE, FOOTER_NAV } from '../consts';
+import { SITE } from '../consts';
+interface Props { band?: boolean }
+const { band = true } = Astro.props;
 const year = new Date().getFullYear();
+const cols = [
+  [['Features', '/features'], ['Blog', '/articles'], ['About', '/about']],
+  [['Support', '/support'], ['Privacy', '/privacy'], ['Terms', '/terms']],
+  [['Delete Account', '/delete-account']],
+];
 ---
-<hr class="footer-rule" />
-<nav class="footer-nav" aria-label="Footer navigation">
-  {FOOTER_NAV.map((item) => (
-    <a href={item.href}>{item.label}</a>
-  ))}
-</nav>
-<p class="footer">
-  Perfume Picks is an independent journal app. We do not sell fragrance.
-  &ldquo;Buy from&rdquo; links to retailers may earn us a small commission
-  at no cost to you.
-</p>
-<p class="footer">
-  Questions? <a href={`mailto:${SITE.supportEmail}`} style="color:inherit;border-bottom:none;">{SITE.supportEmail}</a>
-</p>
-<p class="footer">&copy; {year} {SITE.name}, a {SITE.legalEntity} product. All rights reserved.</p>
-<p class="footer">
-  <a href="https://findly.tools/perfume-picks?utm_source=perfume-picks" target="_blank" rel="noopener">
-    <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="150" height="52" loading="lazy" />
-  </a>
-</p>
+{band && (
+  <section class="cta-wrap" aria-labelledby="cta-band-title">
+    <div class="cta-band">
+      <div class="cta-body">
+        <p class="upper-tag">Free on iPhone</p>
+        <h2 id="cta-band-title">Wear what you love.</h2>
+        <p class="intro">Perfume Picks learns what you like and tells you what to wear tonight. <b>Free on iPhone.</b></p>
+        <a class="btn" href={SITE.appStoreUrl}>Download free on the App Store</a>
+      </div>
+      <img class="cta-phone" src="/app/2_scent-of-the-day.webp" alt="" width="1284" height="2778" loading="lazy" decoding="async" />
+    </div>
+  </section>
+)}
+<footer class="site-footer">
+  <div class="contained foot-grid">
+    <div class="foot-brand">
+      <a href="/" class="brand-mark">{SITE.name}</a>
+      <p>{SITE.tagline}. Questions? <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></p>
+    </div>
+    {cols.map((c) => (
+      <ul>{c.map(([l, h]) => <li><a href={h}>{l}</a></li>)}</ul>
+    ))}
+    <div class="foot-cta"><a class="btn btn-sm" href={SITE.appStoreUrl}>Download on iOS</a></div>
+  </div>
+  <div class="contained">
+    <p class="foot-disclosure">
+      Perfume Picks is an independent journal app. We do not sell fragrance.
+      &ldquo;Buy from&rdquo; links to retailers may earn us a small commission
+      at no cost to you.
+    </p>
+  </div>
+  <div class="contained foot-fine">
+    <p>&copy; {year} {SITE.name}, a {SITE.legalEntity} product. All rights reserved.</p>
+    <p>
+      <a href="https://findly.tools/perfume-picks?utm_source=perfume-picks" target="_blank" rel="noopener">
+        <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="150" height="52" loading="lazy" />
+      </a>
+    </p>
+  </div>
+</footer>

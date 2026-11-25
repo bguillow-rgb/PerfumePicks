@@ -10,7 +10,7 @@ const { faqs, heading = 'Frequently Asked Questions' } = Astro.props;
 ---
 {faqs.length > 0 && (
   <section class="faq">
-    <h2>{heading}</h2>
+    {heading && <h2>{heading}</h2>}
     {faqs.map(({ q, a }) => (
       <div class="faq-item">
         <p class="faq-q">{q}</p>

@@ -22,9 +22,10 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, headings } = await entry.render();
 const data = entry.data;
 const path = `/articles/${entry.slug}`;
+const toc = headings.filter((h) => h.depth === 2).map((h) => ({ slug: h.slug, text: h.text }));
 
 // Resolve related slugs to real article titles (never render a raw slug), and
 // drop any that don't resolve to a live article so a related link can't 404.
@@ -48,13 +49,14 @@ const related = (data.relatedSlugs ?? [])
   faqs={data.faqs}
   affiliate={data.affiliate}
   section={{ name: 'Articles', url: `${SITE.url}/articles` }}
+  headings={toc}
 >
   <Content />
 
   {related.length > 0 && (
-    <section>
+    <section class="keep-reading">
       <h2>Keep reading</h2>
-      <ul class="blog-list">
+      <ul>
         {related.map(({ slug, title }) => (
           <li><a href={`/articles/${slug}`}>{title}</a></li>
         ))}
