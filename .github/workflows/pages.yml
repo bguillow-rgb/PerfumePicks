@@ -56,6 +56,12 @@ jobs:
       # by this point). Attempt the deploy, and if it fails transiently, wait
       # and retry once. Only if BOTH attempts fail does the run go red, so real
       # breakage still surfaces while transient noise self-heals.
+      # deploy-pages looks the artifact up a fraction of a second after the
+      # upload finalizes and sometimes finds none ("Found 0 artifact(s)"). Wait
+      # before the first attempt; Pour Picks hit this five times in Nov 2026.
+      - name: Let the artifact register
+        run: sleep 15
+
       - name: Deploy to GitHub Pages (attempt 1)
         id: deploy1
         continue-on-error: true

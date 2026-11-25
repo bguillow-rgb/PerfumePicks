@@ -7,7 +7,7 @@ name: Daily SEO content
 # Manual runs are allowed via the "Run workflow" button.
 on:
   schedule:
-    - cron: '0 11 * * *' # 11:00 UTC daily (staggered off the other Timberline sites)
+    - cron: '0 11 * * 3,6' # 12:00-ish UTC Wednesday and Saturday (Bob, 2026-11-25: two articles a week)
   workflow_dispatch:
 
 permissions:
