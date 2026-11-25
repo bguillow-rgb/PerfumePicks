@@ -13,6 +13,7 @@ quickAnswer: "If you don't like a perfume, you have seven real options: give it 
 publishedAt: "2026-08-10"
 author: "Perfume Picks"
 relatedSlugs:
+  - "best-perfume-app"
   - "how-to-blind-buy-perfume"
   - "why-do-i-only-wear-a-few-perfumes-from-my-collection"
   - "are-perfume-discovery-sets-worth-it"

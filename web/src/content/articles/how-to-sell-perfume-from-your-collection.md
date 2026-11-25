@@ -13,6 +13,7 @@ quickAnswer: "You can sell used or unwanted perfume bottles on platforms like r/
 publishedAt: "2026-07-10"
 author: "Perfume Picks"
 relatedSlugs:
+  - "best-perfume-app"
   - "how-to-clean-perfume-bottles"
   - "how-to-photograph-perfume-collection"
   - "how-to-use-up-your-perfume-collection"

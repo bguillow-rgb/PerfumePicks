@@ -13,6 +13,7 @@ quickAnswer: "Hold the bottle up to a strong light source to see the liquid line
 publishedAt: "2026-09-03"
 author: "Perfume Picks"
 relatedSlugs:
+  - "best-perfume-app"
   - "how-to-clean-perfume-bottles"
   - "how-to-read-perfume-batch-codes"
   - "how-to-tell-if-a-perfume-is-fake"

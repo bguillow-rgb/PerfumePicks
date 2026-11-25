@@ -13,6 +13,7 @@ quickAnswer: "Most fragrance enthusiasts land in a 5-15 bottle sweet spot, enoug
 publishedAt: "2026-06-25"
 author: "Perfume Picks"
 relatedSlugs:
+  - "best-perfume-app"
   - "how-to-build-a-fragrance-wardrobe"
   - "how-to-curate-your-perfume-collection"
   - "perfume-capsule-wardrobe"
