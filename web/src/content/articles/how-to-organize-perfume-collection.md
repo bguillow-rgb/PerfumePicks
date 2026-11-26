@@ -33,19 +33,17 @@ faqs:
 published: true
 ---
 
-Most fragrance collectors hit a wall somewhere around bottle eight or ten. The shelf looks great in a photo. But standing in front of it on a Tuesday morning, you grab the same two bottles on autopilot and everything else quietly ages. A well-organized collection isn't about aesthetics. It's about a system that makes every bottle actually wearable.
+Most fragrance collectors hit a wall somewhere around bottle eight or ten. The shelf looks great in a photo. But standing in front of it on a Tuesday morning, you grab the same two bottles on autopilot and everything else quietly ages. A well-organized collection is a system that makes every bottle wearable, not just ownable.
 
 ## Why organizing a perfume collection feels so hard
 
 It feels harder than organizing books or vinyl because scent has no obvious visual grammar. You can't sort by color and end up with something useful for choosing what to wear. You can sort alphabetically and end up with your lightest summer citrus next to a heavy winter oud, which makes neither easier to find in context.
 
-The core problem is a mismatch between *display logic* (what looks good) and *selection logic* (how you actually choose a scent). Most people default to display logic by accident, then wonder why they keep reaching for the same bottles. The fix is to build your organization system around selection first, display second.
+The core problem is a mismatch between *display logic* (what looks good) and *selection logic* (how you actually choose a scent). Most people default to display logic by accident, then wonder why they keep reaching for the same bottles. Build your organization system around selection first, display second.
 
 ## What's the right way to actually categorize perfumes?
 
-There's no single right answer, but there is a hierarchy that works for most collectors.
-
-Start with how you choose, not what you own. The most durable organizational axis is the one that matches your real decision-making. Ask yourself: when you stand in front of your collection, what's the first filter that runs through your mind? For most people it's season or temperature (this is too heavy for today) or occasion (I need something quiet for the office). Build your primary grouping around that filter.
+Start with how you choose, not what you own. The most durable organizational axis is the one that matches your real decision-making. When you stand in front of your collection, what's the first filter that runs through your mind? For most people it's season or temperature (this is too heavy for today) or occasion (I need something quiet for the office). Build your primary grouping around that filter.
 
 Common categorization schemes, from most practical to most aesthetic:
 
@@ -58,24 +56,24 @@ Common categorization schemes, from most practical to most aesthetic:
 | Alphabetical by house | Very large collections (50+) | Zero selection logic; purely archival |
 | Color of bottle | Pure display / aesthetics | Functionally useless for choosing |
 
-For most collectors with 6-20 bottles, a two-axis system works best: season as the primary sort, occasion as the secondary. So a section might be "warm weather / daily wear" and another "cool weather / evening." This mirrors how the brain actually retrieves scent memories and preferences.
+For most collectors with 6-20 bottles, a two-axis system works best: season as the primary sort, occasion as the secondary. A section might be "warm weather / daily wear" and another "cool weather / evening." This mirrors how the brain retrieves scent memories and preferences.
 
 ## Splitting what's on display from what's in storage
 
-Collectors often feel guilty putting bottles "away", it feels like hiding a purchase. Reframe it. Your display is your active rotation. Your storage is your reserve wardrobe. Both are valid; they serve different functions.
+Collectors often feel guilty putting bottles "away," as if it means hiding a purchase. Your display is your active rotation. Your storage is your reserve wardrobe. Both serve different functions.
 
 A practical split for most home setups:
 
 - On display (accessible): your current seasonal rotation, typically 5-10 bottles you're actively working through. These sit on a tray, vanity shelf, or acrylic riser where you can see and reach them daily.
 - In storage (protected): everything else, organized by your chosen system in a drawer, box, or cabinet. Out of direct light and away from temperature swings.
 
-The display shouldn't change weekly, but it should change seasonally at minimum. Rotating bottles forward keeps them in your mental awareness, and awareness is everything, because the average collector owns several bottles they never wear. Visibility directly fights that problem.
+The display shouldn't change weekly, but it should change seasonally at minimum. Rotating bottles forward keeps them in your mental awareness. The average collector owns several bottles they never wear, and visibility fights that directly.
 
-For the storage side, closed cabinets and dresser drawers outperform open shelving for preservation. Perfume is sensitive to light and temperature fluctuations, so areas near radiators, bathroom steam, or sunny windowsills accelerate oxidation. A bedroom shelf away from direct light is a real improvement over a bathroom counter for anything you're not finishing within weeks.
+Closed cabinets and dresser drawers outperform open shelving for preservation. Perfume is sensitive to light and temperature fluctuations. Areas near radiators, bathroom steam, or sunny windowsills accelerate oxidation. A bedroom shelf away from direct light is a real improvement over a bathroom counter for anything you're not finishing within weeks.
 
 ## How do I actually take inventory without it becoming a chore?
 
-The good news is that a useful inventory doesn't have to be elaborate. A working inventory for most collectors needs only five data points per bottle:
+A useful inventory doesn't have to be elaborate. A working inventory for most collectors needs only five data points per bottle:
 
 1. Name and house, what it is
 2. Concentration, EDT, EDP, or Parfum (relevant to longevity expectations; see our [perfume concentration guide](/perfume-concentration-guide) for the full breakdown)
@@ -83,19 +81,19 @@ The good news is that a useful inventory doesn't have to be elaborate. A working
 4. Season or occasion fit, one or two tags
 5. Date acquired, useful for spotting bottles aging unused
 
-You can keep this in a notes app, a spreadsheet, or a dedicated fragrance app. The format matters less than the habit. A quick photo of each bottle alongside its name in a shared album works for some collectors. The goal is being able to answer "what do I own that fits today?" in under 30 seconds, without physically pulling every bottle off a shelf.
+You can keep this in a notes app, a spreadsheet, or a dedicated fragrance app. A quick photo of each bottle alongside its name in a shared album works for some collectors. The goal is being able to answer "what do I own that fits today?" in under 30 seconds, without physically pulling every bottle off a shelf.
 
-Perfume Picks is built specifically around this inventory problem: you log your bottles once, and the app surfaces what's in your wardrobe based on the weather, occasion, or mood you select. It also tracks your wear history, so you can see which bottles you've been neglecting, the fragrance equivalent of rediscovering a forgotten record.
+Perfume Picks is built around this inventory problem: you log your bottles once, and the app surfaces what's in your wardrobe based on the weather, occasion, and your taste profile. It also tracks your wear history, so you can see which bottles you've been neglecting.
 
 ## What about samples, decants, and minis, where do those go?
 
-Decants and samples deserve their own zone entirely. Mixing 2 ml samples in with your full bottles creates visual noise and makes both harder to use. A few approaches that work well:
+Decants and samples deserve their own zone. Mixing 2 ml samples in with your full bottles creates visual noise and makes both harder to use. A few approaches that work well:
 
 - A small designated box or pouch for discovery samples you haven't evaluated yet (your "to test" queue)
 - A separate tray or small acrylic organizer for decants of things you're actively wearing or considering buying
 - A labeled container for travel/purse atomizers, separated from home bottles
 
-Minis (the small 5-10 ml coffret versions) can live with your full bottles if they're keepers, or in the decant zone if you're still deciding. The key principle: anything unresolved, samples you haven't committed to, blind buy decants you're auditioning, lives in a pending zone, not in your main collection. This prevents the undifferentiated pile problem that makes collections feel overwhelming.
+Minis (the small 5-10 ml coffret versions) can live with your full bottles if they're keepers, or in the decant zone if you're still deciding. Anything unresolved, samples you haven't committed to, blind buy decants you're auditioning, lives in a pending zone, not in your main collection. This prevents the undifferentiated pile that makes collections feel overwhelming.
 
 If you're building out your collection through sampling and blind buys, our guide on [how to blind buy perfume](/how-to-blind-buy-perfume) covers the evaluation workflow in detail.
 
@@ -113,8 +111,8 @@ Organizing by aesthetics only. Sorting by bottle color or label design looks com
 
 ## I have fewer than 10 bottles, is this even worth doing?
 
-Yes, and it's actually the best time to start. Building organizational habits when your collection is small means you never hit the chaotic wall that larger collections create. At 6-10 bottles (a common range for collectors today), a simple two-tier display, dailies in front, everything else behind, plus a one-page notes app list is plenty.
+Yes, and it's the best time to start. Building organizational habits when your collection is small means you never hit the chaotic wall that larger collections create. At 6-10 bottles, a simple two-tier display, dailies in front, everything else behind, plus a one-page notes app list is plenty.
 
-The system should scale with you. Start with broad categories and add nuance as the collection grows. What matters at any size is the core habit: knowing what you own, knowing roughly when each bottle suits you, and actually rotating through everything rather than defaulting to the same two bottles every morning.
+The system should scale with you. Start with broad categories and add nuance as the collection grows. Know what you own, know roughly when each bottle suits you, and rotate through everything rather than defaulting to the same two bottles every morning.
 
 If you're still actively building your collection and thinking about what gaps to fill, our guide to [how to build a fragrance wardrobe](/how-to-build-a-fragrance-wardrobe) covers the strategy side, what categories to aim for and in what order.

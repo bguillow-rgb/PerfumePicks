@@ -31,29 +31,29 @@ faqs:
 published: true
 ---
 
-Longevity is the complaint fragrance collectors file most often, not "I don't like this scent," but "it disappeared by lunch." The good news is that most longevity problems have nothing to do with the perfume itself and everything to do with the ritual around it.
+Longevity is the complaint fragrance collectors file most often, not "I don't like this scent," but "it disappeared by lunch." Most longevity problems have nothing to do with the perfume itself and everything to do with the ritual around it.
 
-If your fragrance disappears in a few hours, it's rarely the perfume's fault. The biggest culprits are almost always skin condition, spray placement, layering choices, and storage mistakes. Fix those, and even a modest EDT performs differently.
+If your fragrance disappears in a few hours, the biggest culprits are skin condition, spray placement, layering choices, and storage mistakes. Fix those, and even a modest EDT performs differently.
 
 ---
 
 ## Why does my expensive perfume fade so fast when cheaper ones seem to last?
 
-Price alone doesn't guarantee staying power, formula composition does. Concentration matters a lot: stronger concentrations carry more fragrance oil, which gives the scent more to work with over time. But performance also depends on the specific formula, the fragrance notes, your skin type, and the weather. A heavily marketed designer EDT built mostly on citrus top notes will always be outlasted by a dense, resinous niche Parfum, regardless of what each cost.
+Price alone doesn't guarantee staying power. Formula composition does. Concentration matters: stronger concentrations carry more fragrance oil, which gives the scent more to work with over time. Performance also depends on the specific formula, the fragrance notes, your skin type, and the weather. A heavily marketed designer EDT built mostly on citrus top notes will always be outlasted by a dense, resinous niche Parfum, regardless of what each cost.
 
-The other hidden factor is note composition. Warm, woody, musky, spicy, or sweet base notes tend to hang around. Fresh citrus, green, aquatic, and light floral notes can smell beautiful, but they burn off fast. That gorgeous summer citrus you love evaporates by noon while an oud-heavy winter scent clings for a full day. It isn't poor quality. It's chemistry.
+Note composition is the other hidden factor. Warm, woody, musky, spicy, or sweet base notes tend to hang around. Fresh citrus, green, aquatic, and light floral notes can smell beautiful, but they burn off fast. That gorgeous summer citrus evaporates by noon while an oud-heavy winter scent clings for a full day. It's chemistry.
 
 ---
 
 ## Does moisturizing before I spray actually make a difference?
 
-Yes, and it's probably the single highest-impact change most collectors can make without buying anything new.
+Yes, and it's probably the highest-impact change most collectors can make without buying anything new.
 
 Aromatic compounds dissolve in oil and adhere to moisturized surfaces. Dry skin releases them faster. Applying unscented body lotion 5-10 minutes before you spray can extend longevity by 30-50% compared to dry-skin application, because the lotion gives aromatic compounds something to hold onto without altering the scent itself.
 
 The order matters. Shower first (warm, open pores absorb fragrance better), apply unscented lotion while skin is still slightly warm, wait a few minutes, then spray before getting dressed.
 
-One thing worth flagging for collectors: if you're using a scented body lotion, make sure it doesn't conflict with your chosen fragrance. A mismatched lotion can muddy the opening notes. An unscented base is the safest canvas, or, if your fragrance house makes a matching lotion, that's the ideal pairing.
+If you're using a scented body lotion, make sure it doesn't conflict with your chosen fragrance. A mismatched lotion can muddy the opening notes. An unscented base is the safest canvas, or, if your fragrance house makes a matching lotion, that's the ideal pairing.
 
 ---
 
@@ -61,9 +61,9 @@ One thing worth flagging for collectors: if you're using a scented body lotion, 
 
 Pulse points, where body heat is closest to the surface, help release fragrance gradually over time. The classics, inner wrists, sides of the neck, behind the ears, and the inside of the elbows, all work for this reason.
 
-Fabric is underused by most collectors, though. A light spray on a wool scarf, a cotton collar, or the inside of a jacket cuff can extend the scent trail dramatically. Fabric holds aromatic molecules well after skin has already moved on, though it doesn't amplify them the way body warmth does.
+Fabric is underused by most collectors. A light spray on a wool scarf, a cotton collar, or the inside of a jacket cuff can extend the scent trail dramatically. Fabric holds aromatic molecules well after skin has already moved on, though it doesn't amplify them the way body warmth does.
 
-Hair is another option worth trying. Hair fibres are good aromatic-compound carriers and can hold a scent for anywhere from 12-24 hours. Rather than spraying directly onto hair (the alcohol can dry it out), spray lightly onto your hairbrush and comb through for even, low-impact distribution.
+Hair is another option. Hair fibres are good aromatic-compound carriers and can hold a scent for anywhere from 12-24 hours. Rather than spraying directly onto hair (the alcohol can dry it out), spray lightly onto your hairbrush and comb through for even, low-impact distribution.
 
 ---
 
@@ -84,15 +84,15 @@ No, and this is one of the most stubborn myths in fragrance culture. Rubbing cre
 
 These baselines vary by roughly 30% depending on application practice and skin chemistry, but the tiers hold as a general guide.
 
-Most buyers experiencing longevity disappointment are wearing EDT-tier compositions while expecting EDP-tier wear. Before assuming a fragrance underperforms, check the concentration. You may simply be comparing apples to oranges.
+Most buyers experiencing longevity disappointment are wearing EDT-tier compositions while expecting EDP-tier wear. Before assuming a fragrance underperforms, check the concentration.
 
 ---
 
 ## Why you stop smelling your own perfume after an hour
 
-This isn't the fragrance disappearing. It's your brain filtering it out. After 30-60 minutes of continuous exposure to the same aromatic profile, most wearers lose sensitivity to their own scent even though everyone around them can still smell it clearly.
+The fragrance isn't disappearing. After 30-60 minutes of continuous exposure to the same aromatic profile, most wearers lose sensitivity to their own scent, even though everyone around them can still smell it clearly.
 
-The fix is simple: step outside for five minutes, then come back. You'll catch your own scent again. This is the same phenomenon covered in our guide to [nose blindness](/nose-blind-to-perfume), which affects collectors who wear the same scent day after day. Rotating your wardrobe keeps your nose calibrated and, as a side benefit, means more of your bottles actually get worn.
+Step outside for five minutes, then come back. You'll catch your own scent again. This is the same phenomenon covered in our guide to [nose blindness](/nose-blind-to-perfume), which affects collectors who wear the same scent day after day. Rotating your wardrobe keeps your nose calibrated and means more of your bottles get worn.
 
 ---
 
@@ -100,11 +100,11 @@ The fix is simple: step outside for five minutes, then come back. You'll catch y
 
 Collectors who rotate a fragrance wardrobe regularly, which is exactly what the [Perfume Picks](https://perfumepicks.app) app is built to encourage, will sometimes switch scents mid-week or even mid-day. A few principles help here.
 
-Apply heavier, denser scents more sparingly. A Parfum concentration needs one or two targeted sprays. Over-application creates a wall, not a trail, and more isn't better: heavy-handed spraying makes the opening too sharp and causes the scent to evaporate faster rather than slower.
+Apply heavier, denser scents more sparingly. A Parfum concentration needs one or two targeted sprays. Heavy-handed spraying makes the opening too sharp and causes the scent to evaporate faster rather than slower.
 
 Time your application. The best moment is right after showering, when skin is clean and slightly moist and pores are more receptive. If you're re-applying mid-day, a light touch on a pulse point or fabric layer is enough to revive the dry-down without starting over from scratch.
 
-Decant a few mls into a travel atomizer. Carrying a full bottle isn't always practical, especially on hybrid schedules where your day starts at home and ends in a meeting across town. A 5 ml or 10 ml spray covers the day without adding bulk.
+Decant a few mls into a travel atomizer. Carrying a full bottle isn't always practical, especially on days where your schedule starts at home and ends in a meeting across town. A 5 ml or 10 ml spray covers the day without adding bulk.
 
 ---
 
@@ -112,7 +112,7 @@ Decant a few mls into a travel atomizer. Carrying a full bottle isn't always pra
 
 It affects how long the *formula* stays viable, which directly impacts in-wear performance. Oxidation, triggered by heat, UV exposure, and repeated air contact, slowly breaks down aromatic compounds. A poorly stored bottle will perform worse than the same formula stored correctly, even if both look identical on the shelf.
 
-Heat above 75°F can destroy much of a fragrance's top notes within a single year. The rule is consistent: stable temperature, darkness, low humidity. A dedicated drawer or closed cabinet beats any bathroom shelf or sunny windowsill. See our full [perfume storage guide](/how-to-store-perfume-collection) for specifics on protecting different bottle types.
+Heat above 75°F can destroy much of a fragrance's top notes within a single year. Stable temperature, darkness, and low humidity are what a bottle needs. A dedicated drawer or closed cabinet beats any bathroom shelf or sunny windowsill. See our full [perfume storage guide](/how-to-store-perfume-collection) for specifics on protecting different bottle types.
 
 ---
 
@@ -131,4 +131,4 @@ This is olfactory adaptation. After 30-60 minutes of continuous exposure, your b
 Yes. Friction generates heat that accelerates evaporation of volatile top notes, altering the fragrance's opening phase and shortening overall wear. Spray and let it air-dry naturally.
 
 **Which fragrance notes last longest on skin?**
-Base notes, musks, ambers, woods, vanilla, oud, patchouli, and sandalwood, evaporate slowly and anchor a scent for hours. Fresh citrus, green, and aquatic top notes are highly volatile and fade within the first hour regardless of concentration.
+Base notes, musks, ambers, woods, vanilla, oud, patchouli, and sandalwood evaporate slowly and anchor a scent for hours. Fresh citrus, green, and aquatic top notes are highly volatile and fade within the first hour regardless of concentration.

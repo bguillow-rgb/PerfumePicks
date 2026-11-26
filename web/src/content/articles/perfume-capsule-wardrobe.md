@@ -1,6 +1,6 @@
 ---
 title: "Perfume Capsule Wardrobe: Build Your Core Collection"
-description: "A perfume capsule wardrobe is 4–8 intentional bottles covering every mood, season & occasion. Learn exactly how to build yours without gaps or wasted bottles."
+description: "A perfume capsule wardrobe is 4 to 8 intentional bottles covering every mood, season & occasion. Learn exactly how to build yours without gaps or wasted bottles."
 tier: "detail"
 targetQuery: "perfume capsule wardrobe"
 relatedQueries:
@@ -27,11 +27,11 @@ faqs:
   - q: "Can a perfume capsule wardrobe include niche and designer bottles together?"
     a: "Absolutely. The capsule framework is about function, not prestige tier. A reliable designer flanker can sit perfectly beside a niche statement piece if each covers a different slot. What matters is whether the bottle earns its place in your rotation, not what it cost."
   - q: "How do I know if my capsule wardrobe has a gap?"
-    a: "The clearest signal is reaching for a bottle and feeling like nothing you own is quite right for the moment. Common gaps are a lightweight hot-weather option, a work-appropriate low-projection scent, or a formal evening fragrance. Tracking your wears in an app like Perfume Picks surfaces these gaps quickly. If a slot in your day or week is always unserved, that's where to add next."
+    a: "The clearest signal is reaching for a bottle and feeling like nothing you own is quite right for the moment. Common gaps are a lightweight hot-weather option, a work-appropriate low-projection scent, or a formal evening fragrance. Logging your wears in an app like Perfume Picks surfaces these gaps quickly. If a slot in your day or week is always unserved, that's where to add next."
 published: true
 ---
 
-The idea that one scent should define a person is fading fast. Consumers are building scent wardrobes that shift with mood, season, and setting. But there's a real difference between *collecting* and *curating*. A capsule wardrobe answers a more focused question: what is the smallest set of bottles that leaves you properly equipped for every moment in your actual life? That's what this guide is about.
+Consumers are building scent wardrobes that shift with mood, season, and setting. There's a real difference between *collecting* and *curating*, though. A capsule wardrobe answers a focused question: what is the smallest set of bottles that leaves you properly equipped for every moment in your actual life?
 
 ---
 
@@ -39,9 +39,9 @@ The idea that one scent should define a person is fading fast. Consumers are bui
 
 A perfume capsule wardrobe borrows the concept from fashion's capsule closet: a small, intentional set of pieces where everything earns its place and nothing overlaps. Applied to fragrance, it means owning bottles that together cover your full range of occasions, seasons, and moods without redundancy.
 
-A well-rounded capsule usually falls somewhere between four and six bottles, enough to match different situations but focused enough to feel deliberate. That said, most collectors with busier or more varied lives land closer to seven or eight once they map out their actual needs.
+A well-rounded capsule usually falls somewhere between four and six bottles, enough to match different situations but focused enough to feel deliberate. Most collectors with busier or more varied lives land closer to seven or eight once they map out their actual needs.
 
-The critical distinction: a capsule is *edited*, not just *small*. Someone who owns forty bottles but reaches for the same three every week doesn't have a capsule. They have a collection with a three-bottle capsule buried inside it. The goal here is deliberate completeness, not minimalism for its own sake.
+The critical distinction: a capsule is *edited*, not just *small*. Someone who owns forty bottles but reaches for the same three every week doesn't have a capsule. They have a collection with a three-bottle capsule buried inside it. The goal is deliberate completeness, not minimalism for its own sake.
 
 ---
 
@@ -49,11 +49,11 @@ The critical distinction: a capsule is *edited*, not just *small*. Someone who o
 
 *A question we hear often:* "I already have a decent collection, why would I constrain myself to a capsule?"
 
-You don't have to. But consider this: consumers are holding onto hundreds of dollars' worth of unworn fragrances, with the average person owning 4.3 unused bottles and losing roughly €340 in value from regretted purchases over three years. A capsule framework isn't about restriction. It's about getting more out of what you already own.
+You don't have to. Consider this: consumers are holding onto hundreds of dollars' worth of unworn fragrances, with the average person owning 4.3 unused bottles and losing roughly €340 in value from regretted purchases over three years. A capsule framework isn't about restriction. It's about getting more out of what you already own.
 
-When every bottle has a defined role, you actually wear each one. You stop defaulting to the same two safe choices and start reaching for the bottle that genuinely fits the moment. You also stop buying duplicates of notes you already own in abundance (the fifth woody amber, the fourth clean musk) because you can see the gaps instead of the wants.
+When every bottle has a defined role, you wear each one. You stop defaulting to the same two safe choices and start reaching for the bottle that fits the moment. You also stop buying duplicates of notes you already own in abundance because you can see the gaps instead of the wants.
 
-In 2026, fragrance is less about declaring a single identity and more about building a collection that reflects the many versions of yourself. A capsule is simply the most efficient way to make sure all those versions are actually covered.
+In 2026, fragrance is less about declaring a single identity and more about building a collection that reflects the many versions of yourself. A capsule is the most efficient way to make sure all those versions are covered.
 
 ---
 
@@ -71,7 +71,7 @@ Start with the five core slots that cover the vast majority of situations. Treat
 | Evening / occasion | Dates, dinners, events | Higher projection, more complex, memorable |
 | Wildcard | Your personal gap: travel, sport, weekend, statement piece | Entirely dependent on your actual life |
 
-Once you have these five covered, ask: does my actual daily life contain any additional recurring situations none of these handles? A gym bag scent, a formal work context that's stricter than your casual daily driver, a beach-holiday slot. These become slots six, seven, and eight only if they genuinely recur in your life. If they don't, they're a collection purchase, not a capsule purchase.
+Once you have these five covered, ask: does my actual daily life contain any additional recurring situations none of these handles? A gym bag scent, a formal work context stricter than your casual daily driver, a beach-holiday slot. These become slots six, seven, and eight only if they genuinely recur in your life. If they don't, they're a collection purchase, not a capsule purchase.
 
 ---
 
@@ -79,11 +79,11 @@ Once you have these five covered, ask: does my actual daily life contain any add
 
 *Readers frequently ask:* "I already have fifteen bottles. Where do I even start?"
 
-Pull every bottle out and assign it, honestly, to one of your slots. A bottle that fights for the same slot as another bottle you already own isn't filling a gap. It's a duplicate. This audit often reveals two surprises: you have three or four bottles competing for the "cold-weather rich" slot, and your "warm-weather fresh" slot is completely empty or covered by something you don't actually like wearing.
+Pull every bottle out and assign it, honestly, to one of your slots. A bottle that fights for the same slot as another bottle you already own isn't filling a gap. It's a duplicate. This audit often reveals two surprises: you have three or four bottles competing for the "cold-weather rich" slot, and your "warm-weather fresh" slot is completely empty or covered by something you don't like wearing.
 
-For a methodical version of this process, see our full guide on [how to audit your perfume collection](/how-to-audit-your-perfume-collection). The capsule framework makes the audit much faster because you have a defined standard: does this bottle fill a slot, or is it redundant?
+For a methodical version of this process, see our full guide on [how to audit your perfume collection](/how-to-audit-your-perfume-collection). The capsule framework makes the audit faster because you have a defined standard: does this bottle fill a slot, or is it redundant?
 
-Once you've done this exercise, make two lists. First, the bottles that genuinely cover their slot well and that you reach for. Second, the orphans, meaning bottles that duplicate an already-covered slot or that you never choose in practice. Those orphans are candidates for [selling or trading](/how-to-sell-perfume-from-your-collection), and the proceeds can fund deliberate gap purchases.
+Once you've done this exercise, make two lists. First, the bottles that cover their slot well and that you reach for. Second, the orphans - bottles that duplicate an already-covered slot or that you never choose in practice. Those orphans are candidates for [selling or trading](/how-to-sell-perfume-from-your-collection), and the proceeds can fund deliberate gap purchases.
 
 ---
 
@@ -105,7 +105,7 @@ People are building collections of 6-10 bottles on average to suit different moo
 
 *A question we hear often:* collectors frequently discover, mid-capsule, that three of their five bottles share a heavy sandalwood base and feel interchangeable in wear.
 
-The practical fix is to map your bottles by fragrance family *and* by season/weight, not just one or the other. A [fragrance families overview](/perfume-fragrance-families) helps here, but for capsule purposes the most useful axis is the weight and projection spectrum: light and airy at one end, heavy and resinous at the other. Your capsule should span that spectrum meaningfully, with no two adjacent bottles sitting in the same register.
+Map your bottles by fragrance family *and* by season and weight, not just one or the other. A [fragrance families overview](/perfume-fragrance-families) helps here, but for capsule purposes the most useful axis is the weight and projection spectrum: light and airy at one end, heavy and resinous at the other. Your capsule should span that spectrum meaningfully, with no two adjacent bottles sitting in the same register.
 
 A useful test: blind-spray two of your capsule candidates on opposite wrists and go about your day. If you can't tell which wrist is which after an hour, those two bottles are filling the same slot. One of them doesn't belong in your capsule, though it may still belong in your wider collection.
 
@@ -115,13 +115,13 @@ This is where wear tracking earns its keep. If you log each day's choice in [Per
 
 ## Should my capsule change with the seasons, or stay fixed year-round?
 
-Partially, and the architecture matters. Think of your capsule as having permanent slots and seasonal swaps:
+Partially, and the structure matters. Think of your capsule as having permanent slots and seasonal swaps:
 
 - Your daily driver and evening bottle might stay fixed across all four seasons.
 - Your warm-weather fresh slot is logically swapped out for your cold-weather rich bottle when the temperature drops.
 - Your wildcard slot is the most seasonally fluid. A citrus-forward weekend scent in July becomes a spiced gourmand by November.
 
-In 2026, the relevant question about longevity is "is this scent with me all day?" and the trend favors fragrances that are softer, more balanced, and less projection-driven. This shift makes seasonal capsule planning more relevant than ever: lighter skin-scent formulas genuinely work better in heat, while richer compositions come alive in cooler air. Honoring that in your capsule means you'll actually enjoy wearing every bottle in it, every time.
+In 2026, the relevant question about longevity is "is this scent with me all day?" and the trend favors fragrances that are softer, more balanced, and less projection-driven. Lighter skin-scent formulas work better in heat, while richer compositions come alive in cooler air. Honoring that in your capsule means you'll enjoy wearing every bottle in it, every time.
 
 For a detailed breakdown of which fragrance characters work best in each season, our [best perfume for each season guide](/best-perfume-for-each-season) is the natural companion read.
 
@@ -142,4 +142,4 @@ Not necessarily, but meaningful contrast is the goal. If you own three floral ED
 Absolutely. The capsule framework is about function, not prestige tier. A reliable designer flanker can sit perfectly beside a niche statement piece if each covers a different slot. What matters is whether the bottle earns its place in your rotation, not what it cost.
 
 **How do I know if my capsule wardrobe has a gap?**
-The clearest signal is reaching for a bottle and feeling like nothing you own is quite right for the moment. Common gaps are a lightweight hot-weather option, a work-appropriate low-projection scent, or a formal evening fragrance. Tracking your wears in an app like Perfume Picks surfaces these gaps quickly. If a slot in your day or week is always unserved, that's where to add next.
+The clearest signal is reaching for a bottle and feeling like nothing you own is quite right for the moment. Common gaps are a lightweight hot-weather option, a work-appropriate low-projection scent, or a formal evening fragrance. Logging your wears in an app like Perfume Picks surfaces these gaps quickly. If a slot in your day or week is always unserved, that's where to add next.

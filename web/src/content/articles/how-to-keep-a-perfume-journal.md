@@ -33,17 +33,17 @@ faqs:
 published: true
 ---
 
-A perfume journal is one of the most underrated tools in a collector's kit. You probably already log your wears in a spreadsheet or an app, but a proper journal goes further: it captures *why* a fragrance landed the way it did, what it reminded you of, how it changed across three hours on your skin, and whether you'd reach for it again. Over time, those entries become a map of your own taste.
+A perfume journal is a written record of your scent impressions, wear experiences, and fragrance memories. It captures *why* a fragrance landed the way it did, what it reminded you of, how it changed across three hours on your skin, and whether you'd reach for it again. Over time, those entries become a map of your own taste.
 
-The average collector today owns between six and ten bottles, rotating them across moods, occasions, and routines. Without some form of written reflection, it's easy to own a dozen fragrances and still feel genuinely unsure what you actually like. A perfume journal fixes that.
+The average collector today owns between six and ten bottles, rotating them across moods, occasions, and routines. Without some form of written reflection, it's easy to own a dozen fragrances and still feel unsure what you like. A perfume journal fixes that.
 
 ---
 
 ## Wait - isn't this basically the same as rating perfumes?
 
-*A question we hear often:* ratings and journal entries do very different jobs. A rating is a compressed output, a 7.5 out of 10 that loses all its nuance within a week. A journal entry preserves the whole experience: the dry, sunny Thursday you sprayed it, the three-hour arc from citrus bite to creamy cedar, the way it suddenly reminded you of a hotel room in Lisbon. That context is what makes the entry useful when you return to it six months later trying to remember why you loved, or passed on, a particular bottle.
+*A question we hear often:* ratings and journal entries do very different jobs. A rating is a compressed output, a 7.5 out of 10 that loses its nuance within a week. A journal entry preserves the whole experience: the dry, sunny Thursday you sprayed it, the three-hour arc from citrus bite to creamy cedar, the way it suddenly reminded you of a hotel room in Lisbon. That context is what makes the entry useful when you return to it six months later trying to remember why you loved, or passed on, a particular bottle.
 
-Ratings are still worth keeping. Tools like Perfume Picks let you [rate your collection](https://perfumepicks.app/articles/how-to-rate-your-perfume-collection) and track individual wears, which gives you hard data on what you reach for most. The journal is the qualitative layer that sits on top of that data and explains *why* the numbers look the way they do.
+Ratings are still worth keeping. Tools like Perfume Picks let you [rate your collection](https://perfumepicks.app/articles/how-to-rate-your-perfume-collection) and track individual wears, which gives you hard data on what you reach for most. The journal is the qualitative layer that explains *why* the numbers look the way they do.
 
 ---
 
@@ -71,9 +71,9 @@ You don't need to fill every field every time. For a first wear of something new
 
 ## How do I actually find words for what I'm smelling?
 
-*This one comes up a lot:* describing scent in language is genuinely hard. Our brains process smell through the limbic system, the same region that handles memory and emotion, which is why fragrances trigger feelings before they trigger words. Research in olfactory cognition suggests that smell is the sense most tightly linked to autobiographical memory, yet most people have a vocabulary of fewer than ten scent words at their fingertips.
+*This one comes up a lot:* describing scent in language is hard. Our brains process smell through the limbic system, the same region that handles memory and emotion, which is why fragrances trigger feelings before they trigger words. Research in olfactory cognition suggests that smell is the sense most tightly linked to autobiographical memory, yet most people have a vocabulary of fewer than ten scent words at their fingertips.
 
-The practical fix is to stop trying to name ingredients and start describing experiences. Instead of "I smell bergamot and musk," try: "It opens bright and slightly medicinal, then settles into something warm and skin-close, the kind of scent you'd expect from someone who irons their shirts." That's more useful to your future self than a list of notes you may have read on the box.
+Stop trying to name ingredients and start describing experiences. Instead of "I smell bergamot and musk," try: "It opens bright and slightly medicinal, then settles into something warm and skin-close, the kind of scent you'd expect from someone who irons their shirts." That's more useful to your future self than a list of notes you may have read on the box.
 
 A few prompts that unlock language quickly:
 
@@ -83,7 +83,7 @@ A few prompts that unlock language quickly:
 - Mood: what would you want to be doing while wearing this?
 - Season match: which of the four seasons does it instinctively belong to?
 
-With practice, the vocabulary builds fast. Collectors who journal consistently for 90 days typically find they can articulate the difference between a "green floral" and a "white floral" without looking either up, because they've written that distinction into their own words.
+With practice, the vocabulary builds fast. Collectors who journal consistently for 90 days tend to find they can articulate the difference between a "green floral" and a "white floral" without looking either up, because they've written that distinction into their own words.
 
 ---
 
@@ -91,11 +91,11 @@ With practice, the vocabulary builds fast. Collectors who journal consistently f
 
 Both have real merits, and format matters less than consistency.
 
-Paper journals have a tactile quality that many collectors love. You can tip decant labels inside, press a scent strip to a page, or sketch a bottle shape. They're also genuinely relaxing to write in, which means collectors are often more reflective in paper entries than in quick digital notes.
+Paper journals have a tactile quality that many collectors like. You can tip decant labels inside, press a scent strip to a page, or sketch a bottle shape. They're also relaxing to write in, which means collectors are often more reflective in paper entries than in quick digital notes.
 
 Digital journals, whether a notes app, a private spreadsheet, or a dedicated fragrance app, are searchable. Three months from now, when you're trying to remember every cedar-heavy scent you've tried, you can run a search rather than flip through pages. Perfume Picks handles the structured data side of this well: it logs your wears, timestamps them, and builds a [taste profile](https://perfumepicks.app/articles/what-is-my-scent-profile) from your history automatically, so your journal entries don't have to carry all that weight alone.
 
-A hybrid approach works well for most serious collectors: a quick digital log the moment you spray (date, bottle, occasion, weather), and a longer paper entry in the evening once the fragrance has fully dried down and you have time to sit with it.
+A hybrid approach works well for many serious collectors: a quick digital log the moment you spray (date, bottle, occasion, weather), and a longer paper entry in the evening once the fragrance has fully dried down and you have time to sit with it.
 
 ---
 
@@ -118,7 +118,7 @@ Sampling before buying reduces purchase regret by 86%, but journaling after ever
 
 *A question we hear often:* returning to a familiar bottle with fresh journal eyes is one of the most rewarding exercises in collecting. Wear it on a different occasion than usual. A bottle you've only worn at night, try on a weekday morning. The fragrance will behave differently in different temperatures and humidity, and your nose will catch things it's previously skipped past due to [olfactory adaptation](https://perfumepicks.app/articles/nose-blind-to-perfume).
 
-Write a "revisit entry" with a short header noting how many times you've worn it before and what prompted this fresh look, then go through the same prompts as a first wear. Many collectors find that revisit entries become their most interesting ones, the place where they notice a reformulation, discover a note they'd never consciously registered, or confirm that a bottle they nearly sold is actually one of their all-time favorites.
+Write a "revisit entry" with a short header noting how many times you've worn it before and what prompted this fresh look, then go through the same prompts as a first wear. Many collectors find that revisit entries become their most interesting ones, the place where they notice a reformulation, discover a note they'd never consciously registered, or confirm that a bottle they nearly sold is one of their all-time favorites.
 
 ---
 

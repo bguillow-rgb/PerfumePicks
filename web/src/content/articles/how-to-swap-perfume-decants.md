@@ -31,7 +31,7 @@ faqs:
 published: true
 ---
 
-Swapping perfume decants is one of the most rewarding, and underrated, habits in fragrance collecting. You get to try bottles from someone else's wardrobe, clear out decants gathering dust on your shelf, and build genuine connections inside a community that takes scent seriously. If you've never done it before, the process can look intimidating. It isn't, once you know the conventions.
+Swapping perfume decants is one of the most rewarding and underrated habits in fragrance collecting. You get to try bottles from someone else's wardrobe, clear out decants gathering dust on your shelf, and build genuine connections inside a community that takes scent seriously. The process can look intimidating if you've never done it. It isn't, once you know the conventions.
 
 ## What exactly is a perfume decant swap, and why do collectors do it?
 
@@ -39,7 +39,7 @@ A decant swap is a direct exchange between two (or more) collectors: each person
 
 The appeal is practical. With over 2.3 million subscribers, r/Fragrance is the largest fragrance forum on Reddit, and a significant slice of that community actively swaps. For collectors sitting on a large wardrobe, swapping solves two problems at once: it moves decants you've already explored toward someone who hasn't smelled them yet, and it brings unfamiliar bottles into your rotation without committing to a full purchase. It's also low-risk blind-buying. You're trying something before you decide whether a full bottle belongs in your collection.
 
-For collectors tracking their wear habits, Perfume Picks makes it easy to flag bottles you're willing to split or swap directly in your catalog notes, so nothing gets lost between your swap list and your actual shelf.
+For collectors tracking their wear habits, Perfume Picks lets you add a private journal note to any fragrance in your collection, so nothing gets lost between your thoughts and your actual shelf.
 
 ## Where do people actually do swaps? Which communities are worth joining?
 
@@ -53,13 +53,13 @@ For collectors tracking their wear habits, Perfume Picks makes it easy to flag b
 | Basenotes forums | Classified threads | Niche and vintage bottles | Longer lead times, deeper expertise |
 | Discord fragrance servers | Real-time chat channels | Fast negotiations, niche communities | Server-specific verification varies |
 
-Reddit's r/fragranceswap uses a flair system that publicly shows how many confirmed swaps a user has completed. This matters: a collector with 50+ confirmed trades carries significantly more trust than a brand-new account. Build your flair slowly with smaller, lower-stakes swaps before proposing a trade involving a £200 bottle.
+Reddit's r/fragranceswap uses a flair system that publicly shows how many confirmed swaps a user has completed. A collector with 50+ confirmed trades carries more trust than a brand-new account. Build your flair with smaller, lower-stakes swaps before proposing a trade involving a £200 bottle.
 
 ## How do I work out whether a swap is actually fair?
 
 *This one comes up a lot:* valuing a decant isn't complicated once you have a consistent method.
 
-The standard approach is cost-per-ml. Take the retail price of the full bottle and divide by its volume. A 50ml bottle at £150 gives you a cost of £3 per ml. A 10ml decant from that bottle is therefore worth roughly £30 in trade credit. Both sides calculate their outgoing decant the same way, then compare totals. Aim for parity within 10-15%. Small discrepancies are normal and can be offset with an extra 1-2ml on either side.
+The standard approach is cost-per-ml. Take the retail price of the full bottle and divide by its volume. A 50ml bottle at £150 gives you a cost of £3 per ml. A 10ml decant from that bottle is worth roughly £30 in trade credit. Both sides calculate their outgoing decant the same way, then compare totals. Aim for parity within 10-15%. Small discrepancies are normal and can be offset with an extra 1-2ml on either side.
 
 Three factors can adjust value up or down.
 
@@ -83,7 +83,7 @@ The fragrance swap community is small enough that a reputation for inaccurate li
 
 ## How do I package a decant so it actually arrives intact?
 
-*Readers frequently ask* about packaging, and for good reason: a leaking decant destroys a padded mailer, can damage other parcels, and is almost impossible to claim insurance on. Here's the method that works:
+*Readers frequently ask* about packaging, and for good reason: a leaking decant destroys a padded mailer, can damage other parcels, and is difficult to claim insurance on. Here's the method that works:
 
 1. Parafilm or cling film the cap. Wrap the nozzle or cap tightly with two or three layers before anything else. This is the most important step.
 2. Zip-lock bag. Place each wrapped decant in its own small zip-lock. If it leaks, the bag contains the damage.
@@ -103,11 +103,11 @@ After each successful swap, ask your partner to leave a confirmation comment on 
 
 ## What's the etiquette around swapping fragrances I don't particularly like?
 
-This is a genuinely common situation and there's nothing wrong with it. Swapping a fragrance you no longer reach for is one of the best uses of a decant swap, better for both parties than a bottle sitting unworn.
+This is a common situation and there's nothing wrong with it. Swapping a fragrance you no longer reach for is one of the best uses of a decant swap, better for both parties than a bottle sitting unworn.
 
-The rule is transparency, not enthusiasm. You don't need to rave about what you're sending, but you do need to describe it honestly. "This isn't my style but the juice is fresh and in excellent condition" is completely acceptable. What isn't acceptable is describing something you actively dislike as a hidden gem. The other collector's nose will reach its own verdict, and they'll remember who sent them something misrepresented.
+The rule is transparency, not enthusiasm. You don't need to rave about what you're sending, but you do need to describe it honestly. "This isn't my style but the juice is fresh and in excellent condition" is completely acceptable. Describing something you actively dislike as a hidden gem is not. The other collector's nose will reach its own verdict, and they'll remember who sent them something misrepresented.
 
-One useful frame: think about what you're sending the way you'd think about [what to do with perfume you don't like](/articles/what-to-do-with-perfume-you-dont-like). A swap is a genuinely good outcome. The bottle finds someone whose chemistry suits it, and you get something that fits your rotation better.
+One useful frame: think about what you're sending the way you'd think about [what to do with perfume you don't like](/articles/what-to-do-with-perfume-you-dont-like). A swap is a good outcome. The bottle finds someone whose chemistry suits it, and you get something that fits your rotation better.
 
 ## Are there situations where a swap doesn't make sense?
 
@@ -118,7 +118,7 @@ Yes. Skip swapping when:
 - The other party has no flair and is proposing a high-value trade as their first swap. Suggest starting smaller.
 - You're offering something from a reformulated batch without disclosing the batch code. Collectors who care about vintage vs. current formulas need this information.
 
-For collectors building a systematic approach to their wardrobe, logging which bottles you've decanted, swapped, or received helps avoid duplication and reveals genuine gaps. Perfume Picks lets you tag bottles by status, including partial bottles and incoming swaps, so your digital collection stays accurate even as physical bottles move around.
+For collectors building a systematic approach to their wardrobe, logging which bottles you've decanted, swapped, or received helps avoid duplication and reveals genuine gaps. Perfume Picks lets you assign bottles a status of Have, Want, or Tested, so your digital collection stays accurate even as physical bottles move around.
 
 ---
 

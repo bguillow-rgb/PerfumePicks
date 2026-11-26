@@ -1,6 +1,6 @@
 ---
 title: "How to Fill Gaps in Your Perfume Wardrobe (Collector's Guide)"
-description: "Learn how to identify and fill gaps in your perfume wardrobe — by occasion, season, and fragrance family — without buying duplicates or bottles you won't wear."
+description: "Learn how to identify and fill gaps in your perfume wardrobe, by occasion, season, and fragrance family, without buying duplicates or bottles you won't wear."
 tier: "detail"
 targetQuery: "how to fill gaps in your perfume wardrobe"
 relatedQueries:
@@ -25,13 +25,13 @@ faqs:
   - q: "Should I fill every gap in my wardrobe at once?"
     a: "No. Filling gaps one at a time forces you to be deliberate and lets you actually wear each new bottle before adding the next. Buying three 'gap-fillers' at once usually results in one of them becoming another neglected bottle."
   - q: "Can I use samples or decants to fill a gap temporarily?"
-    a: "Absolutely, and this is the smartest approach. A decant of 5, 10 ml lets you wear a fragrance across real situations (different weather, different moods) before buying a full bottle. Many collectors find that a single decant satisfies the gap completely."
+    a: "Absolutely, and this is the smartest approach. A decant of 5-10 ml lets you wear a fragrance across real situations (different weather, different moods) before buying a full bottle. Many collectors find that a single decant satisfies the gap completely."
   - q: "How does wear tracking help identify wardrobe gaps?"
     a: "When you log every wear, patterns appear quickly: certain occasions show the same two bottles appearing every time, and entire seasons go by with some bottles untouched. That data tells you exactly which role in your wardrobe is underserved, far more reliably than memory alone."
 published: true
 ---
 
-Filling a gap in your fragrance wardrobe sounds simple: just buy a perfume you don't already have. But most collectors who try that approach end up with a shelf of interesting bottles and still nothing to reach for on a Tuesday morning, a date, or a rainy autumn walk. The real skill is diagnosing *which* gap matters, then filling it without creating three new ones in the process.
+Filling a gap in your fragrance wardrobe sounds simple: just buy a perfume you don't already have. Most collectors who try that approach end up with a shelf of interesting bottles and still nothing to reach for on a Tuesday morning, a date, or a rainy autumn walk. The real skill is diagnosing which gap matters, then filling it without creating three new ones in the process.
 
 A fragrance collection is an accumulation of bottles that smell good. A fragrance wardrobe is a system where every bottle has a job, seasonal gaps are covered, and you always have the right thing to reach for. That distinction is where gap-filling begins.
 
@@ -41,11 +41,11 @@ A fragrance collection is an accumulation of bottles that smell good. A fragranc
 
 *A question we hear often:*
 
-A collection often looks complete from the outside. But worn in rotation, a pattern emerges: multiple vanillas that smell nearly identical, several gourmands sitting in the same sweetness register, fresh scents that blur together by Tuesday. None of those bottles are bad. They just repeat the same experience, and repetition isn't range. It's the illusion of range.
+A collection often looks complete from the outside. Worn in rotation, a pattern emerges: multiple vanillas that smell nearly identical, several gourmands sitting in the same sweetness register, fresh scents that blur together by Tuesday. None of those bottles are bad. They repeat the same experience, and repetition isn't range. It's the illusion of range.
 
-This is the most common gap scenario: not absence, but redundancy. You have fifteen bottles and still nothing right for a formal dinner, a Monday morning commute, or a hot July afternoon. The shelf looks full; the wardrobe has holes.
+The most common gap scenario isn't absence, but redundancy. You have fifteen bottles and still nothing right for a formal dinner, a Monday morning commute, or a hot July afternoon. The shelf looks full; the wardrobe has holes.
 
-The human psyche tends to buy similar things. Shelves loaded with five sweet gourmands often have no austere chypre or cool fougere for business meetings. Or the reverse: a completely office-friendly collection with not a single warm oriental for an evening out.
+People tend to buy similar things. Shelves loaded with five sweet gourmands often have no austere chypre or cool fougere for business meetings. Or the reverse: a completely office-friendly collection with not a single warm oriental for an evening out.
 
 The fix starts with a map, not a purchase.
 
@@ -53,7 +53,7 @@ The fix starts with a map, not a purchase.
 
 ## How do I actually figure out which gap to fill first?
 
-The most useful framework is a three-axis audit: occasion, season, and fragrance family. Run through each axis and mark where you have coverage and where you have a blank.
+A three-axis audit covers occasion, season, and fragrance family. Run through each axis and mark where you have coverage and where you have a blank.
 
 | Axis | Common gaps found |
 |---|---|
@@ -63,7 +63,7 @@ The most useful framework is a three-axis audit: occasion, season, and fragrance
 | Intensity | True skin scent, moderate office-safe, bold statement |
 | Format | Travel/purse size, layering base, standalone hero |
 
-Once you've mapped these, look for blanks, not just in family terms but in functional terms. A gap in "leather" is abstract. A gap in "something I can wear to a dinner party that isn't the same vanilla I've been reaching for since 2022" is something you can actually shop for.
+Once you've mapped these, look for blanks in functional terms, not just family terms. A gap in "leather" is abstract. A gap in "something I can wear to a dinner party that isn't the same vanilla I've been reaching for since 2022" is something you can shop for.
 
 The gap often feels strongest as seasons shift, when light zesty perfumes start to feel too sharp and deeper scents feel heavy before their time. If nothing ever feels right whatever the weather, the collection is missing a core fragrance style that can bend with the day.
 
@@ -79,7 +79,7 @@ Beyond that everyday anchor, the slots most collectors are missing:
 
 A genuine warm-weather fresh option. Many collectors arrive at summer with only rich orientals and heavy woods, then wear nothing at all. Soft musks, citrus blends, powdery florals, and light woods all work here. The point is something that doesn't feel suffocating at 30 degrees.
 
-A reliable evening anchor. Warm, enveloping, memorable. Orientals, ambers, vanilla-based scents, spicy woods. Something that actually feels different from what you wore at the office.
+A reliable evening anchor. Warm, enveloping, memorable. Orientals, ambers, vanilla-based scents, spicy woods. Something that feels different from what you wore at the office.
 
 A mood or wellness scent. Sometimes fragrance is less about presentation and more about how you feel. Aromatic greens, herbal blends, tea-inspired compositions, and natural essential oil perfumes fill this role well. Not every bottle needs to make a statement.
 
@@ -99,11 +99,11 @@ Perfume Picks does this automatically. Every wear you log builds a pattern showi
 
 *Readers frequently ask:*
 
-The answer has two parts: confirm the gap is real with lived data, then sample precisely before committing.
+Confirm the gap is real with lived data, then sample precisely before committing.
 
-By 2026, consumers favor fragrance wardrobes and online discovery. Sampling cuts blind-buy regret and waste while boosting repurchases. A targeted decant of 5-10 ml costs a fraction of a full bottle and lets you wear the candidate fragrance across the exact conditions where your gap lives: a full workday, a rainy commute, a warm evening out. If the decant still feels right after three or four wears in context, the gap is genuinely filled. If it doesn't, you've saved yourself from a bottle that would have deepened the problem.
+By 2026, consumers favor fragrance wardrobes and online discovery. Sampling cuts blind-buy regret and waste while boosting repurchases. A targeted decant of 5-10 ml costs a fraction of a full bottle and lets you wear the candidate fragrance across the exact conditions where your gap lives: a full workday, a rainy commute, a warm evening out. If the decant still feels right after three or four wears in context, the gap is filled. If it doesn't, you've saved yourself from a bottle that would have deepened the problem.
 
-Once you've sorted your collection, make a wish list based on gaps, not hype. That last part matters. Fragrance communities and social media surface beautiful bottles constantly, and it's easy to buy something because it's getting attention rather than because it fills an actual slot in your rotation.
+Once you've sorted your collection, make a wish list based on gaps, not hype. Fragrance communities and social media surface beautiful bottles constantly, and it's easy to buy something because it's getting attention rather than because it fills an actual slot in your rotation.
 
 The practical sequence: identify the gap by function, name the exact occasion or weather it's for, search by profile rather than brand, sample two or three candidates, pick the one that holds up in real conditions.
 
@@ -115,15 +115,15 @@ One. Maybe two if you have very different gaps, say a summer fresh and a winter 
 
 Plan to refresh the daily and weekend slots every 18-24 months. Statement and seasonal bottles can last longer because they're worn less. This rhythm also suggests an approach: rather than filling every gap at once in a single buying sprint, treat each gap as its own small project with a sampling phase, a trial period, and a deliberate purchase decision.
 
-You've identified a true gap when you've emptied or decluttered and have room for something new, you've sampled first and the scent still holds up weeks later, and you've set a rule like "one in, one out."
+A true gap is confirmed when you've emptied or decluttered and have room for something new, you've sampled first and the scent still holds up weeks later, and you've set a rule like "one in, one out."
 
 ---
 
 ## What if I realize I have a gap but I'm on a perfume no-buy?
 
-A no-buy doesn't have to mean ignoring your wardrobe's weaknesses. It means being intentional about when and why you break from it. Identifying gaps during a no-buy is arguably the best use of that period: your next purchase, when you do make one, goes directly to the most underserved slot rather than another bottle that overlaps something you already own.
+A no-buy doesn't have to mean ignoring your wardrobe's weaknesses. It means being intentional about when and why you break from it. Identifying gaps during a no-buy is the best use of that period: your next purchase goes directly to the most underserved slot rather than another bottle that overlaps something you already own.
 
-Common signs of a cluttered, directionless collection include plenty of half-used bottles and almost no empty ones, gift sets still boxed because they never quite feel right, and constant layering to try to soften a scent that never satisfied in the first place. If you recognize those signs, a no-buy combined with an honest gap audit is exactly the right combination. You figure out what you actually need before money is involved.
+Common signs of a cluttered, directionless collection include plenty of half-used bottles and almost no empty ones, gift sets still boxed because they never quite feel right, and constant layering to try to soften a scent that never satisfied in the first place. If you recognize those signs, a no-buy combined with an honest gap audit is the right combination. You figure out what you need before money is involved.
 
 Use the gap list as your post-no-buy shopping brief. When the pause ends, you're buying with purpose rather than impulse.
 

@@ -31,25 +31,25 @@ faqs:
 published: true
 ---
 
-A soliflore sits at the quietest, most focused end of perfumery: one flower, rendered with as much fidelity and artistry as the perfumer can manage. For collectors who already know their fragrance families and concentration levels, soliflores are the next layer of vocabulary, and one of the most rewarding categories to explore.
+A soliflore sits at the quietest, most focused end of perfumery: one flower, rendered with as much fidelity and artistry as the perfumer can manage. For collectors who already know their fragrance families and concentration levels, soliflores are the next layer of vocabulary and one of the most rewarding categories to explore.
 
 ## Wait, what exactly is a soliflore? I keep seeing the word but no one actually explains it.
 
 *A question we hear often:*
 
-Soliflore is a French term meaning "single flower." It describes a perfume designed to showcase the scent of one flower rather than a blend of many. The word itself tells you everything: *soli* (single) + *flore* (flower). Historically, soliflores were among the earliest perfumes. Long before layered "designer" compositions, perfumers distilled a single flower and wore it neat.
+Soliflore is a French term meaning "single flower." It describes a perfume designed to showcase the scent of one flower rather than a blend of many. The word itself tells you: *soli* (single) + *flore* (flower). Historically, soliflores were among the earliest perfumes. Long before layered designer compositions, perfumers distilled a single flower and wore it neat.
 
-What trips people up is assuming a soliflore is therefore simple. It isn't. A true soliflore doesn't use just one raw material, because a flower's real scent is itself complex. Instead, the perfumer arranges supporting notes around a single floral "hero" so the whole composition reads as that one bloom. Bergamot or freesia might brighten the opening; a touch of musk or vanilla might warm the base. But the flower always stays in front.
+What trips people up is assuming a soliflore is therefore simple. It isn't. A true soliflore doesn't use just one raw material, because a flower's real scent is itself complex. The perfumer arranges supporting notes around a single floral hero so the whole composition reads as that one bloom. Bergamot or freesia might brighten the opening; a touch of musk or vanilla might warm the base. But the flower always stays in front.
 
-Composing a fragrance around a solitary flower is one of the harder exercises for a perfumer. They need the skill to layer different facets of the note throughout the composition, carefully picking supporting ingredients that don't compete. That constraint is precisely what makes great soliflores so impressive.
+Composing a fragrance around a solitary flower is one of the harder exercises for a perfumer. They need to layer different facets of the note throughout the composition, carefully picking supporting ingredients that don't compete. That constraint is what makes great soliflores impressive.
 
 ## How is a soliflore different from a regular floral perfume or a floral bouquet?
 
 Most floral perfumes are bouquets: rose *and* jasmine *and* peony, blended so the individual flowers blur into a composite accord. The whole point is that interplay. No single bloom dominates, and the perfumer can use complexity to smooth over weak links.
 
-That restraint is the art of the soliflore. Where a bouquet perfume can hide behind complexity, a soliflore has nowhere to hide. Every note has to earn its place. Done well, the result is elegant, wearable, and deeply personal.
+That restraint is the art of the soliflore. A bouquet perfume can hide behind complexity; a soliflore has nowhere to hide. Every note has to earn its place. Done well, the result is elegant, wearable, and deeply personal.
 
-A soliflore is meant to smell like a single flower instead of a floral arrangement. Worth saying plainly: just because a perfume has rose, violet, or jasmine in its name does not mean it smells like one. A perfume called "Roses Somewhere" may be predominantly woody amber with a rose accent. A genuine rose soliflore is *about* the rose from first spray to final dry-down.
+A soliflore smells like a single flower, not a floral arrangement. Worth saying plainly: just because a perfume has rose, violet, or jasmine in its name does not mean it smells like one. A perfume called "Roses Somewhere" may be predominantly woody amber with a rose accent. A genuine rose soliflore is *about* the rose from first spray to final dry-down.
 
 The practical test: after 30 minutes on skin, does the dominant impression still point to one flower, clearly and unmistakably? If yes, you're wearing a soliflore.
 
@@ -59,7 +59,7 @@ The practical test: after 30 minutes on skin, does the dominant impression still
 
 Popular soliflore flowers include rose, jasmine, gardenia, lavender, and tuberose, each with a different scent profile. Rose and jasmine have dominated historically because they've been cultivated for perfumery longer than any other bloom, and they yield the most abundant literature of raw materials: absolutes, enfleurages, steam-distilled waters, synthetic reconstructions. A collector could spend years comparing rose soliflores alone and never run out of material.
 
-Beyond the classics, contemporary perfumers have tackled iris, lily of the valley (muguet), violet, ylang-ylang, peony, and even non-floral "singles" like vetiver or vanilla, which borrow the soliflore spirit even if they aren't strictly floral. What makes the concept interesting is that it lets perfumers showcase the many different facets of a single flower. Take rose: blooms picked later in the morning under direct sunlight can caramelize on their way to processing, giving them sweetness. Pick the same flower at first daybreak and you get something fresher, brighter, greener.
+Beyond the classics, contemporary perfumers have tackled iris, lily of the valley (muguet), violet, ylang-ylang, peony, and even non-floral singles like vetiver or vanilla, which borrow the soliflore spirit even if they aren't floral. The concept lets perfumers showcase the many different facets of a single flower. Take rose: blooms picked later in the morning under direct sunlight can caramelize on their way to processing, giving them sweetness. Pick the same flower at first daybreak and you get something fresher, brighter, greener.
 
 That sensitivity to harvest, climate, and soil is why two rose soliflores from different houses can smell startlingly different, which is exactly why they're worth collecting side by side.
 
@@ -74,7 +74,7 @@ That sensitivity to harvest, climate, and soil is why two rose soliflores from d
 | Nose training | Isolates one note so you can identify it in other fragrances later |
 | Collector benchmark | Comparing three rose soliflores is one of the most instructive exercises in the hobby |
 
-The artistry behind single-flower perfume lies in understanding that flowers smell different at various times of day and stages of bloom. A skilled perfumer captures those nuances, creating a fragrance that shifts on your skin the way a real flower changes through the day. Wearing a soliflore attentively, noting how the opening differs from the dry-down, is one of the fastest ways to sharpen your evaluating instincts.
+Flowers smell different at various times of day and stages of bloom. A skilled perfumer captures those nuances, creating a fragrance that shifts on your skin the way a real flower changes through the day. Wearing a soliflore attentively, noting how the opening differs from the dry-down, is one of the fastest ways to sharpen your evaluating instincts.
 
 If you track your wears and notes in [Perfume Picks](https://perfumepicks.app), logging a soliflore alongside your other florals quickly shows you how much variation exists within a single note category, which is useful data when you're deciding what to buy next.
 
@@ -82,7 +82,7 @@ If you track your wears and notes in [Perfume Picks](https://perfumepicks.app), 
 
 *Readers frequently ask:*
 
-Close, but not identical. "Single-note" is the broader, looser term. It implies simplicity, and it's often used in marketing to mean "this smells like one thing." Soliflore is the more precise, historical category, and it's specifically floral in origin. One of the more interesting threads in modern perfumery is how widely the concept has spread: a fragrance built around one particular flower, whether rose, jasmine, or peony.
+Close, but not identical. "Single-note" is the broader, looser term. It implies simplicity, and it's often used in marketing to mean "this smells like one thing." Soliflore is the more precise, historical category, and it's floral in origin. One of the more interesting threads in modern perfumery is how widely the concept has spread: a fragrance built around one particular flower, whether rose, jasmine, or peony.
 
 Where it gets murky: some see a soliflore as a fragrance that simply contains, say, a tuberose enfleurage diluted in alcohol, and technically they're not wrong. But what if a perfume lists peony as its only flower, yet the brand frames it as a portrait of "the modern woman"? Is that a peony soliflore? There's a lot of grey area.
 
@@ -102,7 +102,7 @@ Soliflores reward a different kind of attention than complex orientals or woody 
 
 ## Where do soliflores fit on the fragrance wheel, and are they their own family?
 
-Soliflores aren't a fragrance family in the traditional sense. They don't appear as a sector on the standard [fragrance wheel](https://perfumepicks.app/perfume-fragrance-families) the way florals, orientals, or fougeres do. They're more of a compositional philosophy that lives primarily within the floral family, occasionally bleeding into chypre territory when the supporting structure leans mossy or green.
+Soliflores aren't a fragrance family in the traditional sense. They don't appear as a sector on the standard [fragrance wheel](https://perfumepicks.app/perfume-fragrance-families) the way florals, orientals, or fougeres do. They're a compositional philosophy that lives primarily within the floral family, occasionally bleeding into chypre territory when the supporting structure leans mossy or green.
 
 Within the floral family, soliflores turn up in nearly every sub-category: light florals (lily of the valley, violet), soft florals (rose, iris), floral orientals (jasmine, ylang-ylang), and rich florals (tuberose, gardenia). The soliflore classification cuts across those sub-categories rather than sitting in one of them.
 

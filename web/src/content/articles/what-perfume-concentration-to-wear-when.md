@@ -1,6 +1,6 @@
 ---
 title: "What Perfume Concentration to Wear & When (EDT vs EDP vs Parfum)"
-description: "EDT, EDP, or Parfum — choosing the right concentration changes how your fragrance performs. A collector's guide to matching strength to occasion, season, and setting."
+description: "EDT, EDP, or Parfum, choosing the right concentration changes how your fragrance performs. A collector's guide to matching strength to occasion, season, and setting."
 tier: "detail"
 targetQuery: "what concentration of perfume should I wear"
 relatedQueries:
@@ -9,7 +9,7 @@ relatedQueries:
   - "is parfum better than EDP"
   - "what perfume concentration lasts longest"
   - "how to choose perfume strength for occasion"
-quickAnswer: "Match concentration to context: EDT (5, 15% oil) suits daytime, warm weather, and offices; EDP (15, 20%) is the all-day versatile pick for evenings and cooler months; Parfum or Extrait (20, 40%) belongs on special occasions and cold-weather wear. Skin type, sillage preference, and setting all refine the choice."
+quickAnswer: "Match concentration to context: EDT (5-15% oil) suits daytime, warm weather, and offices; EDP (15-20%) is the all-day versatile pick for evenings and cooler months; Parfum or Extrait (20-40%) belongs on special occasions and cold-weather wear. Skin type, sillage preference, and setting all refine the choice."
 publishedAt: "2026-10-05"
 author: "Perfume Picks"
 relatedSlugs:
@@ -33,26 +33,24 @@ faqs:
 published: true
 ---
 
-Fragrance concentration is one of those details collectors notice immediately on a bottle: EDP, EDT, Extrait. But deciding *when* to reach for each one is surprisingly underexplored. You might own both the EDT and EDP version of the same fragrance and still wonder which to grab on a Wednesday morning versus a Saturday night. This guide answers that specifically, for collectors who wear multiple bottles and want each one working at its best.
+If you collect seriously, you eventually end up with both the EDT and EDP of the same fragrance and still aren't sure which to reach for on a Wednesday morning versus a Saturday night. This guide answers that specifically, for collectors who wear multiple bottles and want each one working at its best.
 
 ## Okay, what do EDT, EDP, and Parfum actually refer to, quickly?
 
-Before getting into the decision-making, a fast grounding: these labels describe the percentage of aromatic concentrate dissolved in alcohol and water.
+These labels describe the percentage of aromatic concentrate dissolved in alcohol and water.
 
-EDT (Eau de Toilette) sits at roughly 5, 15% fragrance oil concentration. It's generally the choice for daily wear, warm weather, professional environments, and situations where you want to smell good without making an aggressive statement.
+EDT (Eau de Toilette) sits at roughly 5-15% fragrance oil concentration. It's the usual choice for daily wear, warm weather, professional environments, and situations where you want to smell good without making an aggressive statement.
 
-EDP (Eau de Parfum) runs at 15, 20% concentration. Typically the choice for autumn and winter, for evening and formal occasions, and for those who want their fragrance to last through a full day without reapplication.
+EDP (Eau de Parfum) runs at 15-20% concentration. It's typically the choice for autumn and winter, for evening and formal occasions, and for those who want their fragrance to last through a full day without reapplication.
 
-Parfum, also called Extrait de Parfum, sits at 20, 40% concentration. It belongs on special occasions, cold-weather wear, intimate settings, and on those who want the absolute maximum longevity from a fragrance they love.
-
-A quick reference before we dig into the nuance:
+Parfum, also called Extrait de Parfum, sits at 20-40% concentration. It belongs on special occasions, cold-weather wear, intimate settings, and on those who want the maximum longevity from a fragrance they love.
 
 | Concentration | Oil % | Typical Longevity | Best Context |
 |---|---|---|---|
-| Eau de Cologne (EDC) | 2, 5% | 1, 2 hrs | Casual, post-gym, hot climates |
-| Eau de Toilette (EDT) | 5, 15% | 3, 5 hrs | Daytime, office, warm weather |
-| Eau de Parfum (EDP) | 15, 20% | 5, 8 hrs | All-day, evening, cooler months |
-| Parfum / Extrait | 20, 40% | 8, 12+ hrs | Special occasions, intimate, cold weather |
+| Eau de Cologne (EDC) | 2-5% | 1-2 hrs | Casual, post-gym, hot climates |
+| Eau de Toilette (EDT) | 5-15% | 3-5 hrs | Daytime, office, warm weather |
+| Eau de Parfum (EDP) | 15-20% | 5-8 hrs | All-day, evening, cooler months |
+| Parfum / Extrait | 20-40% | 8-12+ hrs | Special occasions, intimate, cold weather |
 
 ---
 
@@ -62,19 +60,19 @@ A quick reference before we dig into the nuance:
 
 EDT is the professional default for a reason. The lower oil content keeps the sillage bubble tight: you're present to someone standing next to you, but you're not announcing yourself to the whole room.
 
-That said, EDT isn't your only option. Some lighter EDPs can work in office environments if the composition itself stays refined. The key question isn't just concentration, it's the formula. A soft floral or sheer musk EDP will behave more politely than a heavy resinous EDT. If you're uncertain, start with a single spray to the chest rather than the wrists, so the projection stays personal rather than ambient.
+EDT isn't your only option, though. Some lighter EDPs can work in office environments if the composition itself stays refined. The question isn't just concentration, it's the formula. A soft floral or sheer musk EDP will behave more politely than a heavy resinous EDT. If you're uncertain, start with a single spray to the chest rather than the wrists, so the projection stays personal rather than ambient.
 
-For collectors who track their wears, Perfume Picks lets you tag each entry by occasion, which is a useful way to start mapping which bottles from your collection actually earn repeat office use versus those that project beautifully but belong at home.
+For collectors who track their wears, Perfume Picks lets you record each entry by occasion, which is a useful way to start mapping which bottles from your collection earn repeat office use versus those that project beautifully but belong at home.
 
 ---
 
 ## It's a Saturday evening out, should I automatically reach for Parfum?
 
-Not automatically, but evenings genuinely reward richer concentrations. Date nights, weddings, dinners, and formal events give EDP, Parfum, or Extrait more room. The reasoning is practical: you're typically further from strangers than you are in the office, the social context welcomes presence, and you're not going to reapply halfway through dinner.
+Evenings reward richer concentrations, but not by default. Date nights, weddings, dinners, and formal events give EDP, Parfum, or Extrait more room. The reasoning is practical: you're typically further from strangers than you are in the office, the social context welcomes presence, and you're not going to reapply halfway through dinner.
 
-Where Parfum earns its keep specifically is on cold-weather evenings. Temperature changes profoundly how much a fragrance projects. Cold slows evaporation, which extends longevity, but it also reduces molecular movement, which weakens projection. Parfum carries enough aromatic density to compensate. An EDT at the same January party might project beautifully for the first hour and then pull tight to your skin for the rest of the night.
+Parfum earns its keep on cold-weather evenings. Temperature changes profoundly how much a fragrance projects. Cold slows evaporation, which extends longevity, but it also reduces molecular movement, which weakens projection. Parfum carries enough aromatic density to compensate. An EDT at the same January party might project well for the first hour and then pull tight to your skin for the rest of the night.
 
-One nuance collectors often discover: the EDP version of most fragrances reveals more complexity. Notes that are muted or brief in the EDT have space and concentration to develop fully. So if you love the dry-down of a fragrance and it always seems to disappear before you reach the base, trying the EDP or Extrait of the same scent is the simplest fix.
+One thing collectors often discover: the EDP version of most fragrances reveals more complexity. Notes that are muted or brief in the EDT have space and concentration to develop fully. If you love the dry-down of a fragrance and it always seems to disappear before you reach the base, trying the EDP or Extrait of the same scent is the simplest fix.
 
 ---
 
@@ -84,7 +82,7 @@ One nuance collectors often discover: the EDP version of most fragrances reveals
 
 Warm weather does two things: it accelerates evaporation and increases your body's ambient heat. Both amplify how a fragrance projects. A dense, high-oil Parfum in July humidity can become genuinely uncomfortable for everyone nearby. The same composition in a November coat check behaves beautifully.
 
-The practical approach: treat your EDT bottles as warm-season workhorses and save your EDPs and Extraits for autumn and winter. If you own multiple concentrations of the same fragrance, seasonal rotation is a completely legitimate reason to keep both. According to fragrance industry data tracked by Spate, the most consistent finding across 2026 fragrance search data is that consumers are building fragrance wardrobes rather than defaulting to a single signature scent, and rotating concentrations seasonally is one of the most practical expressions of that.
+The practical approach: treat your EDT bottles as warm-season workhorses and save your EDPs and Extraits for autumn and winter. If you own multiple concentrations of the same fragrance, seasonal rotation is a legitimate reason to keep both. According to fragrance industry data tracked by Spate, the most consistent finding across 2026 fragrance search data is that consumers are building fragrance wardrobes rather than defaulting to a single signature scent, and rotating concentrations seasonally is one of the most practical expressions of that.
 
 ---
 
@@ -94,15 +92,15 @@ The practical approach: treat your EDT bottles as warm-season workhorses and sav
 
 Dry skin absorbs fragrance faster and releases it faster. The same EDP that lasts eight hours on your friend evaporates off you in four. Stepping up one concentration level is a reasonable adjustment, but the more important fix is skin prep. Applying an unscented body lotion before perfume noticeably extends wear time across all concentration types.
 
-So: moisturize first, then consider whether a higher concentration also helps. Going straight to Parfum without addressing dry skin won't fully solve the problem, and you risk applying too much to compensate, which creates the opposite issue, overprojection on the opening. Hydrated skin plus a well-matched concentration beats trying to brute-force longevity through oil percentage alone.
+Moisturize first, then consider whether a higher concentration also helps. Going straight to Parfum without addressing dry skin won't fully solve the problem, and you risk applying too much to compensate, which creates the opposite issue: overprojection on the opening. Hydrated skin plus a well-matched concentration beats trying to brute-force longevity through oil percentage alone.
 
 ---
 
 ## Is Parfum or Extrait worth the premium price, especially if I already own the EDP?
 
-This question deserves an honest answer. Beyond longevity, Parfum can work better for sensitive skin because the lower alcohol content makes it significantly less likely to cause irritation. The Extrait format also often uses a higher-quality aromatic palette, since the concentration justifies the material cost. The dry-down tends to be smoother, the base lingers longer, and the absence of a loud alcohol burst on the opening lets the composition reveal itself more gradually.
+Beyond longevity, Parfum can work better for sensitive skin because the lower alcohol content makes it less likely to cause irritation. The Extrait format also often uses a higher-quality aromatic palette, since the concentration justifies the material cost. The dry-down tends to be smoother, the base lingers longer, and the absence of a loud alcohol burst on the opening lets the composition reveal itself more gradually.
 
-That said, the collector who should buy the Parfum version is specific: someone who knows the fragrance deeply, wears it frequently on appropriate occasions, and would genuinely appreciate 10, 12 hours of wear over 6, 8. It's not the entry point for a scent you haven't tested properly. If you're still in the sample-and-decide phase, the EDP gives you more than enough information, and if you love it, the Extrait becomes a meaningful next step.
+The collector who should buy the Parfum version is specific: someone who knows the fragrance well, wears it frequently on appropriate occasions, and would appreciate 10-12 hours of wear over 6-8. It's not the entry point for a scent you haven't tested properly. If you're still in the sample-and-decide phase, the EDP gives you more than enough information, and if you love it, the Extrait becomes a meaningful next step.
 
 Fresh, aquatic, and citrus fragrances often stay as EDTs because higher concentration can distort their light, bright character. Worth knowing before you buy a Parfum reformulation of a fragrance you fell in love with in its EDT version. They can smell meaningfully different.
 
@@ -112,7 +110,7 @@ Fresh, aquatic, and citrus fragrances often stay as EDTs because higher concentr
 
 *A question we hear often:* especially from collectors with larger wardrobes who want a usable mental shorthand.
 
-The simplest framework: match concentration to sillage need. A quick decision tree:
+Match concentration to sillage need. A quick decision tree:
 
 - Is this a close-contact or professional setting? EDT, or a very light EDP.
 - Is this a full-day wear in moderate weather? EDP.

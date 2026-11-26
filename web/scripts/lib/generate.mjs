@@ -4,6 +4,7 @@
 // AEO-optimized content. Tuned for the Perfume Picks vertical.
 import { readFileSync } from 'node:fs';
 import { humanizeArticle } from './humanize.mjs';
+import { bobVoiceArticle } from './bobvoice.mjs';
 
 // The audience + niche this site writes for. Baked here (not in consts.ts)
 // because the generation voice is editorial, not site config.
@@ -214,7 +215,8 @@ export async function generateArticle({
   for (let i = 1; i <= attempts; i++) {
     try {
       const draft = await callOnce({ apiKey, model, site, tier, existingList, existingSlugs, today, topicHint });
-      return await humanizeArticle({ apiKey, model, article: draft });
+      const humanized = await humanizeArticle({ apiKey, model, article: draft });
+      return await bobVoiceArticle({ apiKey, model, article: humanized });
     } catch (e) {
       lastErr = e;
       console.error(`generateArticle: attempt ${i}/${attempts} failed: ${e.message}`);

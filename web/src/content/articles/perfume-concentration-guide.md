@@ -33,23 +33,19 @@ published: true
 
 Scan any fragrance shelf and you'll see a cascade of initials: EDT, EDP, EDP Intense, Parfum, Extrait, sometimes on nearly identical-looking bottles of the same scent. For casual shoppers those labels are background noise. For collectors building a deliberate wardrobe, they're load-bearing information. They determine how long a fragrance lasts, how it projects, how it develops on skin, and how it should be deployed across your rotation.
 
-This guide breaks down every mainstream concentration tier, what the numbers actually mean, and how to make smarter decisions as a collector, not just a buyer.
-
 ---
 
 ## What "concentration" actually means in a perfume bottle
 
-Every fragrance is a solution of aromatic compounds dissolved in a solvent, almost always ethanol, sometimes with a small amount of water. The concentration of a fragrance refers to the ratio of perfume essence, a mixture of aromatic compounds, essential oils, and fixatives, to the solvent. Change that ratio and you change the character of the entire experience: how fast it opens, how long it lasts, how close to the skin it stays, and which notes dominate at each stage of the dry-down.
+Every fragrance is a solution of aromatic compounds dissolved in a solvent, almost always ethanol, sometimes with a small amount of water. Concentration refers to the ratio of perfume essence, a mixture of aromatic compounds, essential oils, and fixatives, to that solvent. Change the ratio and you change the character of the entire experience: how fast it opens, how long it lasts, how close to the skin it stays, and which notes dominate at each stage of the dry-down.
 
-Fragrance concentration refers to the proportion of perfume oil blended with a solvent, typically alcohol and water. The higher the oil content, the richer and longer-lasting the scent. But there's a counter-intuitive twist that trips up even experienced collectors: higher concentration doesn't automatically mean louder. More oil means less alcohol, and alcohol is the delivery mechanism that propels molecules into the air around you.
+Higher oil content means a richer, longer-lasting scent. There is a counter-intuitive wrinkle: higher concentration doesn't automatically mean louder. More oil means less alcohol, and alcohol is the delivery mechanism that propels molecules into the air around you.
 
-These categories aren't regulated by universal standards. What one brand labels as EDT might be as potent as another's EDP. Test on skin before you buy. Always.
+These categories aren't regulated by universal standards. What one brand labels as EDT might be as potent as another's EDP. Test on skin before you buy.
 
 ---
 
 ## The difference between each concentration tier
-
-Here is how the mainstream tiers stack up, from lightest to most concentrated:
 
 | Concentration | Oil % | Typical Wear Time | Character | Best For |
 |---|---|---|---|---|
@@ -60,73 +56,71 @@ Here is how the mainstream tiers stack up, from lightest to most concentrated:
 | Parfum / Pure Parfum | 20-30% | 8-12 hrs | Rich, skin-close, complex | Evenings, cooler weather |
 | Extrait de Parfum | 25-40% | 12+ hrs | Maximum depth and longevity | Signature investment pieces |
 
-EDP offers 15-20% fragrance oil, lasting 4-8 hours, with richer, deeper notes that evolve over time, ideal for evenings, cooler weather, or when you need a longer-lasting scent. EDT, with 5-15% fragrance oil, lasts 3-5 hours and emphasizes lighter, fresher top notes, making it well-suited to daytime wear, warmer climates, or casual settings.
+EDP sits at 15-20% fragrance oil, lasts 4-8 hours, and brings out richer, deeper notes that evolve over time. EDT runs 5-15% oil, lasts 3-5 hours, and leads with lighter, fresher top notes. EDT suits daytime wear, warmer climates, and casual settings.
 
-Parfum sits at 20-30% oil concentration and represents the classic "luxury perfume" tier. The lower alcohol content means Parfum projects less outward but stays on skin far longer, 8-12 hours is standard. This is the concentration to reach for when you want a scent that whispers rather than announces: intimate, evolving slowly over an evening.
+Parfum sits at 20-30% oil. The lower alcohol content means it projects less outward but stays on skin far longer. 8-12 hours is standard. Reach for it when you want a scent that stays close rather than fills a room.
 
 ---
 
 ## Does EDT really smell different from EDP of the same fragrance?
 
-Frequently, yes, and collectors are often surprised by just how much. Fragrance concentration not only affects how long a scent lasts but also its overall character. EDPs, with their higher oil content, tend to highlight heart and base notes, creating a gradual, evolving scent experience. EDTs focus on top notes, delivering an immediate burst of freshness that fades more quickly.
+Frequently, yes. Concentration affects not just longevity but overall character. EDPs, with their higher oil content, tend to highlight heart and base notes, creating a gradual, evolving experience. EDTs focus on top notes, delivering an immediate burst of freshness that fades more quickly.
 
-The Dior Sauvage family is the clearest real-world illustration of this. The EDT highlights bright bergamot and ambroxan for an energetic feel, while the EDP introduces vanilla and star anise for a warmer, more sensual twist. Same DNA, genuinely different fragrance experience. Owning both versions of a scent you love isn't necessarily a redundant duplicate. It can be a genuine gap-filler in your rotation: one for summer mornings, one for autumn evenings.
+The Dior Sauvage family is the clearest illustration. The EDT highlights bright bergamot and ambroxan, while the EDP introduces vanilla and star anise for a warmer character. Same DNA, different fragrance experience. Owning both versions of a scent you love isn't a redundant duplicate. It can fill a genuine gap in your rotation: one for summer mornings, one for autumn evenings.
 
-Before assuming an EDT and EDP are interchangeable, smell both on skin separately and wait out the full dry-down. What smells nearly identical in the opening spray can diverge dramatically at the 2-hour mark.
+Before assuming an EDT and EDP are interchangeable, smell both on skin separately and wait out the full dry-down. What smells nearly identical in the opening can diverge at the 2-hour mark.
 
 ---
 
 ## Why Parfum sometimes smells quieter than EDP in the opening
 
-Despite being the strongest concentration, Parfum often projects more intimately than EDP. The higher oil ratio creates a smooth, skin-hugging scent that evolves slowly over hours. Many collectors find this surprising the first time they wear a Parfum. They apply it, step back, and wonder if it's working. It is. Lean in close to skin and the depth is there. The trade-off is intentional: less alcohol means less of the aerosol effect that sends your EDP billowing across a room.
+Despite being the strongest concentration, Parfum often projects more intimately than EDP. The higher oil ratio creates a skin-hugging scent that evolves slowly over hours. Apply it, step back, and it may seem subtle at first. Lean in close to skin and the depth is there. Less alcohol means less of the aerosol effect that sends an EDP billowing across a room.
 
-For office wear or close-contact situations, this can actually be an advantage. For a concert or evening out where you want presence and sillage, you may prefer the EDP of the same fragrance.
+For office wear or close-contact situations, that can be an advantage. For a concert or evening out where you want presence and sillage, the EDP of the same fragrance may serve you better.
 
 ---
 
 ## What is Extrait de Parfum, and is it worth the premium?
 
-Parfum (also called Extrait de Parfum or Pure Perfume) is the most concentrated form available, the purest expression of a perfumer's vision. Extrait takes that further: some brands push oil concentration to 40% or beyond at this tier. Parfum typically comes in smaller bottles (30-50ml) because you only need 1-2 dabs or light sprays. This is fragrance for intimate moments, not the gym, not a crowded office. For evenings, date nights, special occasions.
+Extrait de Parfum, also called Pure Perfume, is the most concentrated form available. Some brands push oil concentration to 40% or beyond at this tier. It typically comes in smaller bottles, 30-50ml, because you only need 1-2 dabs or light sprays. This concentration suits evenings, date nights, and special occasions, not the gym or a crowded office.
 
 The cost-per-wear math often surprises people. A 30ml Extrait at $300 sounds extravagant until you realize a single spray covers a full day and the bottle may last two years of weekly wear. Compare that to a 100ml EDP you spray liberally every morning and the per-wear cost converges faster than you'd expect.
 
-For your fragrance wardrobe, treat Extraits as investment pieces. Buy the Extrait of the one or two fragrances you know you love, and explore everything else in EDP or EDT first. Perfume Picks lets you log the concentration of each bottle in your catalog, which makes this kind of wardrobe mapping concrete rather than theoretical.
+Treat Extraits as investment pieces. Buy the Extrait of the one or two fragrances you know you love, and explore everything else in EDP or EDT first. Perfume Picks lets you log the size of each bottle in your wardrobe, which makes this kind of wardrobe mapping concrete.
 
 ---
 
 ## How does concentration interact with weather and season?
 
-This is where concentration choices directly affect your daily rotation, and where collectors with tracking data have a genuine edge over casual wearers.
-
-Heat amplifies diffusion. In warm weather, an EDP can project dramatically more than it does in winter, and a Parfum that felt perfectly calibrated in January might feel suffocating in July. If you want something that lasts all day and you're willing to invest, go for Parfum. If you want solid everyday performance without the hefty price tag, EDP is your best bet. And if you love switching things up or live in a warm climate, EDT gives you that flexibility.
+Heat amplifies diffusion. In warm weather, an EDP can project dramatically more than it does in winter, and a Parfum that felt perfectly calibrated in January might feel suffocating in July. Parfum suits those who want all-day longevity and are willing to invest. EDP gives solid everyday performance. EDT suits warm climates and anyone who prefers flexibility.
 
 A practical framework for a four-season wardrobe:
 
-- **Spring/Summer:** Reach for EDTs and lighter EDPs, fresh, citrus, and aquatic families where the brighter top notes are the point.
+- **Spring/Summer:** Reach for EDTs and lighter EDPs. Fresh, citrus, and aquatic families work here because the brighter top notes are the point.
 - **Autumn/Winter:** EDPs and Parfums come into their own. Lower temperatures slow diffusion, and richer base notes (amber, woods, resins) need that concentration to project properly.
 - **Layering:** An Eau de Cologne of a complementary scent over a dry-down EDP can extend wear and add complexity without overwhelming.
 
-According to NPD Group research, the average fragrance collector owns between 10 and 25 bottles, while dedicated enthusiasts often exceed 100. If you're in that collector range, having multiple concentrations of the same house or scent family, not just multiple fragrances, is a legitimate and rewarding strategy.
+According to NPD Group research, the average fragrance collector owns between 10 and 25 bottles, while dedicated enthusiasts often exceed 100. If you're in that collector range, having multiple concentrations of the same house or scent family, not just multiple fragrances, is a legitimate strategy.
 
 ---
 
 ## Which concentration should I buy first for a new fragrance?
 
-Start with the EDT or EDP, whichever is the "canonical" version the house first released or the one reviewers most consistently reference. This is usually the composition the perfumer intended as their primary statement, and it gives you the clearest read on whether you actually like the fragrance before committing to a pricier Parfum.
+Start with the EDT or EDP, whichever is the canonical version the house first released or the one reviewers most consistently reference. That's usually the composition the perfumer intended as their primary statement, and it gives you the clearest read on whether you like the fragrance before committing to a pricier Parfum.
 
-For formal events, Parfum provides sophistication without shouting. Starting out, begin with EDTs: they're affordable, widely available, and let you explore many different scent profiles. Building a collection, add EDPs for variety and better performance. Investing in a signature, a Parfum or Extrait is a worthy investment for a scent you truly love.
+For formal events, Parfum works well without projecting loudly. When starting out, EDTs are affordable, widely available, and let you explore many scent profiles. As you build a collection, EDPs add variety and better longevity. For a confirmed signature scent, a Parfum or Extrait is worth the investment.
 
-If sampling is available, decants, discovery sets, travel sprays, always sample on skin for a full day before buying any concentration. What reads beautifully in the bottle can surprise you on the dry-down, and concentration affects that experience significantly. Our guide on [how to test perfume before buying](/how-to-test-perfume-before-buying) walks through the full sampling process.
+If sampling is available, decants, discovery sets, travel sprays, sample on skin for a full day before buying any concentration. Concentration affects the dry-down significantly. Our guide on [how to test perfume before buying](/how-to-test-perfume-before-buying) walks through the full sampling process.
 
 ---
 
 ## Why EDT doesn't mean the fragrance is lower quality
 
-Absolutely not. EDT is just a lighter concentration. Many high-end brands offer their best scents in EDT form because certain notes work better that way. Think of classic fougeres and fresh aquatics. The genre's greatest achievements (Acqua di Gio, Bleu de Chanel EDT, Hermes Un Jardin sur le Nil) were designed at EDT strength intentionally. The brightness of bergamot, the crispness of a marine accord, the lift of a galbanum note: these thrive in higher-alcohol formats.
+EDT is a lighter concentration. Many high-end brands offer their best scents in EDT form because certain notes work better that way. Classic fougeres and fresh aquatics are the clearest examples. The genre's strongest entries, Acqua di Gio, Bleu de Chanel EDT, Hermes Un Jardin sur le Nil, were designed at EDT strength. The brightness of bergamot, the crispness of a marine accord, the lift of a galbanum note: these thrive in higher-alcohol formats.
 
-The flip side is that gourmands, heavy ouds, ambers, and resins often genuinely improve with higher concentration. The oil richness lets those materials develop their full complexity rather than evaporating before the heart arrives.
+Gourmands, heavy ouds, ambers, and resins often improve with higher concentration. The oil richness lets those materials develop their full complexity rather than evaporating before the heart arrives.
 
-Track what you reach for and when. If you keep logging an EDT on rainy autumn days and wondering why it disappears in two hours, that fragrance might deserve an EDP upgrade. Wearing data, the kind Perfume Picks builds automatically from your logs, makes this pattern visible.
+Track what you reach for and when. If you keep logging an EDT on rainy autumn days and wondering why it disappears in two hours, that fragrance might deserve an EDP upgrade. Wearing data, the kind Perfume Picks builds from your wear logs, makes that pattern visible.
 
 ---
 

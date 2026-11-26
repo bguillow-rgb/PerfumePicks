@@ -31,7 +31,7 @@ faqs:
 published: true
 ---
 
-If you've ever counted your bottles and realized you've spent the last month wearing the same two perfumes on rotation, you're not alone, and you're not doing anything wrong. The pattern has a name, a cause, and a straightforward set of fixes.
+If you've counted your bottles and realized you've spent the last month wearing the same two perfumes, you're not alone. The pattern has a name, a cause, and a straightforward set of fixes.
 
 > Quick Answer: Most collectors wear just 20% of their bottles 80% of the time. The causes are decision fatigue, habit loops, nose blindness to familiar bottles, and a collection that has outgrown any real rotation system. The fix is structural: assign roles to each bottle, reduce morning friction, and track what you actually reach for.
 
@@ -43,7 +43,7 @@ If you've ever counted your bottles and realized you've spent the last month wea
 
 Blind buying often leads to disappointment. Industry data puts it at 67% of consumers reporting at least one completely unworn bottle, with the average person holding 4.3 unused bottles. Scale that up and the numbers get striking: European consumers are sitting on roughly 780 million euros worth of unworn fragrances, about 340 euros in regretted purchases per person over three years.
 
-The 80/20 skew shows up consistently in collector communities too. One long-running Fragrantica thread has members openly admitting to owning 50+ bottles and genuinely loving maybe 10. Above ten bottles, the collection becomes a hobby in its own right rather than a daily-use kit. Beyond fifteen or twenty, most bottles will go unworn for months at a stretch. The gap between what you own and what you wear isn't a character flaw. It's a predictable outcome of how collections grow.
+The 80/20 skew shows up consistently in collector communities. One long-running Fragrantica thread has members openly admitting to owning 50+ bottles and genuinely loving maybe 10. Above ten bottles, the collection becomes a hobby in its own right rather than a daily-use kit. Beyond fifteen or twenty, most bottles will go unworn for months at a stretch. The gap between what you own and what you wear isn't a character flaw. It's a predictable outcome of how collections grow.
 
 ---
 
@@ -51,9 +51,9 @@ The 80/20 skew shows up consistently in collector communities too. One long-runn
 
 Habit loops are the biggest culprit, and they're nearly invisible once they form. Your morning routine runs on low cognitive energy. You're not making a considered aesthetic choice at 7 a.m.; you're executing a script. The bottles you grabbed first when you built your collection became your defaults, and your brain hasn't updated that script since.
 
-There's also something worth naming: familiarity bias. You *know* your go-to bottles will work. You know how they open, how they dry down, how long they last on your skin. The rest of your collection carries a small uncertainty tax ("what if it doesn't wear well today?") that's just enough friction to push you back to the safe choice. This is especially true for bolder or more polarizing bottles that need a specific mood or occasion to feel right.
+There's also familiarity bias. You *know* your go-to bottles will work. You know how they open, how they dry down, how long they last on your skin. The rest of your collection carries a small uncertainty tax ("what if it doesn't wear well today?") that's just enough friction to push you back to the safe choice. This is especially true for bolder or more polarizing bottles that need a specific mood or occasion to feel right.
 
-The practical implication: the problem usually isn't that you dislike the other bottles. It's that the other bottles never get a fair audition. Wearing a fragrance once, months ago, when you were distracted or in the wrong context, is not the same as knowing a fragrance. Knowing a bottle across seasons and moods is a fundamentally different experience from sampling many fragrances once and moving on.
+The problem usually isn't that you dislike the other bottles. It's that the other bottles never get a fair audition. Wearing a fragrance once, months ago, when you were distracted or in the wrong context, is not the same as knowing a fragrance. Knowing a bottle across seasons and moods is a different experience from sampling many fragrances once and moving on.
 
 ---
 
@@ -63,7 +63,7 @@ The practical implication: the problem usually isn't that you dislike the other 
 
 The psychology of choice overload is real. When you open a cabinet with 40 bottles and no organizing logic, the decision cost is high enough that your brain shortcuts to the familiar. Research on fragrance ownership shows that while 83% of wearers use fragrances regularly, Gen Z now owns 8-12 different scents on average, far more than previous generations' 2-3 bottles. More bottles, same number of wearing occasions: something has to give, and it's almost always the bottles without a clear assigned role.
 
-The distinction that matters is between a *collection* and a *wardrobe*. A wardrobe is organized around how you actually live. Each bottle answers a specific question: daily work scent, cold-weather evening, weekend casual. A collection grows when you stop asking that question and just buy what you love. Both are valid, but only one of them means you'll reach for every bottle.
+The distinction that matters is between a *collection* and a *wardrobe*. A wardrobe is organized around how you actually live. Each bottle answers a specific question: daily work scent, cold-weather evening, weekend casual. A collection grows when you stop asking that question and just buy what you love. Both are valid, but only one means you'll reach for every bottle.
 
 ---
 
@@ -88,7 +88,7 @@ When you look at your collection through this lens, two things usually happen: y
 
 The most effective intervention is physical, not psychological: move the bottles. Put your default two at the back of your display and bring five underused ones to the front. Decision fatigue operates mostly on visual availability. If you see it first, you're more likely to choose it. Rotate that front row monthly.
 
-A second tactic: designate one day a week as "collection day," where you commit to wearing something outside your usual rotation. You don't have to love it. You're simply gathering data. Keep rough notes, a voice memo, a quick log in Perfume Picks, on how it wore, what the dry-down was like, whether you'd reach for it again. Some dedicated collectors track daily wear on a spreadsheet and analyze it at year's end to decide whether a bottle earns its place or gets given away. You don't need that level of rigor, but any tracking beats none.
+A second tactic: designate one day a week as "collection day," where you commit to wearing something outside your usual rotation. You don't have to love it. You're gathering data. Keep rough notes - a voice memo, a quick log in Perfume Picks - on how it wore, what the dry-down was like, whether you'd reach for it again. Some dedicated collectors track daily wear on a spreadsheet and analyze it at year's end to decide whether a bottle earns its place or gets given away. Any tracking beats none.
 
 ---
 
@@ -96,7 +96,7 @@ A second tactic: designate one day a week as "collection day," where you commit 
 
 Yes, and it's probably more significant than most collectors realize. When you wear the same fragrance repeatedly, your olfactory system adapts and stops registering it as strongly. When someone wears a perfume regularly, the brain filters it out, which can make them think the smell has faded when it's still quite strong to anyone else nearby.
 
-Here's the irony: your defaults smell *weaker* to you precisely because you wear them so often. The bottles you reach for less frequently will smell more vivid, more present, more interesting, because your nose hasn't adapted to them. That's actually an argument for rotating more. A collection you wear in genuine rotation is one your nose stays curious about.
+Your defaults smell *weaker* to you precisely because you wear them so often. The bottles you reach for less frequently will smell more vivid and more present, because your nose hasn't adapted to them. That's an argument for rotating more. A collection you wear in genuine rotation is one your nose stays curious about.
 
 ---
 
@@ -108,7 +108,7 @@ Before decluttering anything, commit to at least three intentional wears per bot
 
 What's not fine is letting bottles oxidize unworn while you feel vaguely guilty about them. Before 2020, people typically owned around 2.5 bottles; by 2026, that number has jumped to 6-10, reflecting the shift toward a wardrobe approach to fragrance. Collections have grown fast. Curation habits haven't kept pace. If after three genuine wears a bottle still doesn't resonate, selling, swapping, or gifting it is better than watching it degrade on the shelf.
 
-Perfume Picks makes this process less daunting: log each bottle in your catalog, track wears, and you'll quickly see which bottles haven't been opened in six months, no spreadsheet required.
+Perfume Picks makes this process less daunting: add each bottle to your wardrobe, log wears, and you'll quickly see which bottles haven't been opened in six months, no spreadsheet required.
 
 ---
 
