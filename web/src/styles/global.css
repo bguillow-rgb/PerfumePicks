@@ -102,7 +102,8 @@ h3 { font-size: 24px; line-height: 1.17; letter-spacing: -0.018em; }
   position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end;
   min-height: clamp(420px, 72vh, 760px); border-radius: var(--radius); background: var(--bg-alt); margin: 0 auto 48px; max-width: 1545px;
 }
-.hero-lg { min-height: clamp(480px, 78vh, 780px); }
+.hero-lg { min-height: clamp(560px, 84vh, 840px); flex-direction: row; align-items: flex-end; }
+.hero-lg .hero-body { flex: 1 1 auto; min-width: 0; padding-right: 24px; }
 .hero-md { min-height: clamp(360px, 54vh, 540px); }
 .hero-sm { min-height: 0; }
 .hero-body { position: relative; z-index: 1; padding: 200px max(45px, calc((100% - var(--contained)) / 2 + var(--pad))) 72px; }
@@ -116,7 +117,7 @@ h3 { font-size: 24px; line-height: 1.17; letter-spacing: -0.018em; }
 .hero .fine { margin: 16px 0 0; }
 .byline { font-size: 17px; color: var(--fg-soft); margin: 12px 0 0; }
 .byline a { color: var(--fg); }
-.hero-phones { position: absolute; right: 3%; bottom: -64px; z-index: 0; display: flex; align-items: flex-end; gap: 24px; }
+.hero-phones { position: relative; z-index: 0; flex: 0 0 auto; align-self: flex-end; margin: 0 3% -64px 0; display: flex; align-items: flex-end; gap: 24px; pointer-events: none; }
 .hero-phones img { display: block; width: 236px; height: auto; border: 7px solid var(--bezel); border-radius: 34px; box-shadow: var(--shot-shadow); background: var(--bezel); }
 .hero-phones img:nth-child(2) { transform: translateY(-72px); }
 .hero-phones img:nth-child(3) { transform: translateY(-20px); }
@@ -312,6 +313,9 @@ td { font-size: 16px; color: var(--fg-soft); border-bottom: 1px solid var(--hair
   .media { aspect-ratio: 3 / 2; }
   .hero, .cta-band { border-radius: 0; }
   .hero-body { padding: 140px 24px 48px; }
+  .hero-lg { min-height: 0; flex-direction: column; }
+  .hero-lg .hero-body { flex: none; padding: 140px 24px 0; }
+  .hero-phones { align-self: center; justify-content: center; margin: 40px auto -140px; }
   .hero-sm .hero-body { padding: 130px 24px 48px; }
   .cta-body { padding: 60px 24px; max-width: none; }
   .cta-phone { display: none; }
