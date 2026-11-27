@@ -49,7 +49,7 @@ People are building fragrance collections of 6-10 bottles on average to suit dif
 
 ---
 
-## "How do I actually read 'outfit mood' -- what am I even looking for?"
+## "How do I actually read 'outfit mood', what am I even looking for?"
 
 Think of outfit mood along two axes: **formality** (relaxed to structured) and **weight** (light to heavy). Almost every clothing decision you make already operates on these two axes, and almost every fragrance family maps onto them.
 
@@ -90,7 +90,7 @@ Fragrance searches on Google and TikTok have grown by 26.5% year over year, and 
 
 ---
 
-## "What about occasion -- does that override outfit mood?"
+## "What about occasion, does that override outfit mood?"
 
 Sometimes. Occasion adds a social dimension that outfit alone doesn't fully capture. You might dress business-casual for a client lunch and for a friend's gallery opening. Same outfit category, very different scent choices.
 
@@ -100,16 +100,16 @@ For collectors who track their wears, a wear-log proves its value here. Entries 
 
 ---
 
-## "Are there scents that work with almost anything -- a utility player fragrance?"
+## "Are there scents that work with almost anything, a utility player fragrance?"
 
 *A question we hear often:* what bottles should I reach for when I genuinely don't know what I'm wearing yet, or I need a fragrance that travels well across contexts?
 
 A high-versatility crossover fragrance tends to share a few traits:
 
-- **Moderate sillage** -- present without announcing itself
-- **Skin-close dry-down** -- clean musks and soft woods are workhorses
-- **Neutral formality register** -- neither too casual nor too formal
-- **Moderate longevity** -- 4-7 hours, not all-day nuclear projection
+- **Moderate sillage**, present without announcing itself
+- **Skin-close dry-down**, clean musks and soft woods are workhorses
+- **Neutral formality register**, neither too casual nor too formal
+- **Moderate longevity**, 4-7 hours, not all-day nuclear projection
 
 Light musks, sheer florals, and quiet woody ambers tend to fill this role. Clean vetiver-based compositions or a lightly spiced sandalwood are good examples. These slot into casual, smart-casual, and semi-formal contexts without effort.
 
@@ -119,7 +119,7 @@ If you use [Perfume Picks](https://perfumepicks.app) to track your wears, its oc
 
 ---
 
-## "What about scent and fabric -- does wool really hold fragrance differently than cotton?"
+## "What about scent and fabric, does wool really hold fragrance differently than cotton?"
 
 It does, and for collectors who apply perfume directly to skin, this is mostly academic. But it matters for one practical reason: **fabric traps and amplifies projection**.
 

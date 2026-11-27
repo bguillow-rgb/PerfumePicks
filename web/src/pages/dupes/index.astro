@@ -12,7 +12,7 @@ const totalDupes = dupes.reduce((n, d) => n + d.dupes.length, 0);
 ---
 
 <BaseLayout
-  title="Fragrance Dupes — Documented Alternatives With Match Percentages"
+  title="Fragrance Dupes: Documented Alternatives With Match Percentages"
   description={`Curated dupe guides for ${dupes.length} designer and niche fragrances: ${totalDupes} documented alternatives with match percentages, prices and side-by-side note comparisons.`}
   path="/dupes"
 >
@@ -36,7 +36,7 @@ const totalDupes = dupes.reduce((n, d) => n + d.dupes.length, 0);
       {sorted.map((d) => (
         <li>
           <a href={`/dupes/${d.orig_slug}`}>What smells like {d.orig_brand} {d.orig_name}?</a>
-          {' — '}{d.dupes.length} documented {d.dupes.length === 1 ? 'alternative' : 'alternatives'}
+          {': '}{d.dupes.length} documented {d.dupes.length === 1 ? 'alternative' : 'alternatives'}
           {d.orig_price ? `, original ${usd(d.orig_price)}` : ''}
         </li>
       ))}

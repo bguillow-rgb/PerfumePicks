@@ -83,7 +83,7 @@ On some forums, collectors weigh opaque bottles and estimate the amount of perfu
 
 ---
 
-## What about the spray pump itself -- does it give any clues?
+## What about the spray pump itself, does it give any clues?
 
 *Readers frequently ask:* Yes, the pump is one of the more underrated diagnostic tools. When a bottle drops below roughly 10-15% full, the dip tube, the straw running from the pump to the bottom of the bottle, begins to pull more air than liquid with each actuation. Signs to watch for:
 

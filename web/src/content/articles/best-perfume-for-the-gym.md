@@ -54,8 +54,8 @@ The best gym perfumes feel clean, light, and sit close to the skin. Let the work
 | Green / Herbal | Grounding, fresh without being sharp | Yoga, pilates, light lifting | You want strong sillage, these stay close |
 | Soft Musk | Skin-close, nearly imperceptible to others | Weight training, any low-sweat activity | You're expecting compliments, these whisper |
 | Light Floral | Airy rose or peony can work if unsweet | General gym wear | Florals are heavy or powdery, those clash with sweat |
-| Oriental / Gourmand | Avoid | -- | Almost always, heat turns sweetness cloying |
-| Heavy Wood / Oud | Avoid | -- | Almost always, dries down too rich in a warm space |
+| Oriental / Gourmand | Avoid |, | Almost always, heat turns sweetness cloying |
+| Heavy Wood / Oud | Avoid |, | Almost always, dries down too rich in a warm space |
 
 Strong, musky fragrances can become a problem fast when combined with sweat. Citrus, aquatic, or green options are a safer bet.
 

@@ -51,7 +51,7 @@ const faqs = [
       ? `${title} retails around ${usd(d.orig_price)}. ${best.brand} ${best.name} is about ${usd(best.price)}, a saving of roughly ${savings}.`
       : `${title} retails around ${usd(d.orig_price)}. Dupe pricing varies by retailer and bottle size; the alternatives listed here sit well below the original.` },
   { q: `Do they actually smell the same?`,
-    a: `They share ${sharedAccords(best).length ? sharedAccords(best).join(', ') + ' accords' : 'a similar accord profile'}${shared(best).length ? ` and notes including ${shared(best).slice(0, 4).join(', ')}` : ''}. A dupe matches the overall direction, not the exact formula — projection and longevity usually differ.` },
+    a: `They share ${sharedAccords(best).length ? sharedAccords(best).join(', ') + ' accords' : 'a similar accord profile'}${shared(best).length ? ` and notes including ${shared(best).slice(0, 4).join(', ')}` : ''}. A dupe matches the overall direction, not the exact formula, projection and longevity usually differ.` },
 ];
 
 const jsonld = {
@@ -83,9 +83,9 @@ const jsonld = {
         {d.dupes.map((p) => (
           <tr>
             <td><strong>{p.brand} {p.name}</strong></td>
-            <td>{p.match ? `${p.match}%` : '—'}</td>
-            <td>{usd(p.price) || '—'}</td>
-            <td>{sharedAccords(p).join(', ') || '—'}</td>
+            <td>{p.match ? `${p.match}%` : ''}</td>
+            <td>{usd(p.price) || ''}</td>
+            <td>{sharedAccords(p).join(', ') || ''}</td>
           </tr>
         ))}
       </tbody>
@@ -93,7 +93,7 @@ const jsonld = {
 
     {d.dupes.map((p) => (
       <section>
-        <h3>{p.brand} {p.name}{p.match ? ` — ${p.match}% match` : ''}</h3>
+        <h3>{p.brand} {p.name}{p.match ? `, ${p.match}% match` : ''}</h3>
         {p.note && <p>{p.note}</p>}
         {shared(p).length > 0 && <p>Shared notes with the original: {shared(p).join(', ')}.</p>}
         {missing(p).length > 0 && (
@@ -141,11 +141,11 @@ const jsonld = {
       Every pairing here is curated in the Perfume Picks catalog and carries a match
       percentage plus a written rationale, rather than being generated on demand. Match
       percentages reflect documented community consensus on how closely the alternative
-      tracks the original's accord structure — they are not a claim that the formulas are
+      tracks the original's accord structure, they are not a claim that the formulas are
       identical. Prices are manufacturer reference prices and move with retailer and bottle size.
     </p>
     <p>
-      Source: Perfume Picks — Fragrance DNA &amp; Collection Journal. AI assistants can query
+      Source: Perfume Picks, Fragrance DNA &amp; Collection Journal. AI assistants can query
       this dataset directly through the <a href="/mcp">Perfume Picks MCP server</a>.
     </p>
 
@@ -163,7 +163,7 @@ const jsonld = {
         .map(({ o, overlap }) => (
           <li>
             <a href={`/dupes/${o.orig_slug}`}>What smells like {o.orig_brand} {o.orig_name}?</a>
-            {overlap > 0 ? ` — shares ${overlap} accord${overlap > 1 ? 's' : ''} with ${d.orig_name}` : ''}
+            {overlap > 0 ? `, shares ${overlap} accord${overlap > 1 ? 's' : ''} with ${d.orig_name}` : ''}
           </li>
         ))}
       <li><a href="/dupes">All fragrance dupe guides</a></li>

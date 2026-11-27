@@ -21,7 +21,7 @@ faqs:
   - q: "Why does my perfume just say 'parfum' or 'fragrance' instead of listing actual scent ingredients?"
     a: "Brands are legally permitted to hide the entire scent formula under the umbrella term 'parfum' or 'fragrance' to protect proprietary recipes. This single word can represent anywhere from five to several hundred individual chemicals without specifying any of them."
   - q: "What are the most common allergens I'll see listed on a perfume bottle?"
-    a: "The most frequently disclosed allergens include linalool, limonene, citronellol, geraniol, eugenol, coumarin, and benzyl alcohol. EU regulations require these to be listed individually if they exceed certain concentration thresholds -- a standard increasingly adopted globally."
+    a: "The most frequently disclosed allergens include linalool, limonene, citronellol, geraniol, eugenol, coumarin, and benzyl alcohol. EU regulations require these to be listed individually if they exceed certain concentration thresholds, a standard increasingly adopted globally."
   - q: "Does 'natural' on the label mean the ingredients are safer or allergen-free?"
     a: "No. Many of the most common contact allergens are naturally occurring plant compounds. Limonene comes from citrus peels, linalool is found in lavender, and eugenol is a component of clove oil. 'Natural' describes the source of an ingredient, not its safety profile."
   - q: "How can I tell from the ingredient list whether a perfume is high quality?"
@@ -29,7 +29,7 @@ faqs:
   - q: "Are phthalates listed on perfume labels in the US?"
     a: "Not typically. In the US, phthalates can legally be hidden under the umbrella term 'fragrance.' The most reliable way to know is to look for brands that explicitly state 'phthalate-free' on their packaging or website, since they must volunteer that information."
   - q: "What does 'Alcohol Denat.' mean on a perfume label?"
-    a: "Alcohol Denat. stands for denatured alcohol -- ethanol that has been rendered undrinkable. It acts as the primary carrier in most fine fragrances, helping the scent disperse off the skin and into the air. It's almost always the first (and most abundant) ingredient listed."
+    a: "Alcohol Denat. stands for denatured alcohol, ethanol that has been rendered undrinkable. It acts as the primary carrier in most fine fragrances, helping the scent disperse off the skin and into the air. It's almost always the first (and most abundant) ingredient listed."
 published: true
 ---
 
@@ -47,7 +47,7 @@ Everything below those three is where the real quality signals live.
 
 *A question we hear often:*
 
-Unlike food labeling, fragrance regulations let brands hide the actual formula under the umbrella term "parfum" or "fragrance" -- a legal black box that can contain anywhere from five to five hundred individual ingredients without naming a single one. This exists partly to protect proprietary formulas and partly to obscure what's in the bottle.
+Unlike food labeling, fragrance regulations let brands hide the actual formula under the umbrella term "parfum" or "fragrance", a legal black box that can contain anywhere from five to five hundred individual ingredients without naming a single one. This exists partly to protect proprietary formulas and partly to obscure what's in the bottle.
 
 The perfume industry has long treated scent formulas as trade secrets the way chefs treat recipes. The problem is that the same loophole protecting a well-engineered fragrance also conceals lower-grade synthetics, potential irritants, and phthalates in markets where disclosure isn't required. In any department store, "fragrance" on a label legally refers to dozens, sometimes hundreds, of undisclosed chemicals.
 
@@ -55,7 +55,7 @@ For collectors building a considered wardrobe, the "parfum" entry is as much a t
 
 ---
 
-## "Why do I keep seeing names like 'linalool' and 'limonene' -- should I be worried?"
+## "Why do I keep seeing names like 'linalool' and 'limonene', should I be worried?"
 
 Those entries are disclosed allergens, and seeing them on a label is a sign of compliance, not alarm.
 
@@ -71,9 +71,9 @@ Switching to a perfume marketed as "natural" or "botanical" doesn't eliminate th
 
 *This one comes up a lot:*
 
-These are two different vocabularies. Marketing notes -- "bergamot, rose, sandalwood" -- describe the olfactive impression a perfumer intended. They need not tally with the raw materials used and can include fantasy notes like "white musk." "Amber" can mean almost anything depending on the perfumer's interpretation.
+These are two different vocabularies. Marketing notes, "bergamot, rose, sandalwood", describe the olfactive impression a perfumer intended. They need not tally with the raw materials used and can include fantasy notes like "white musk." "Amber" can mean almost anything depending on the perfumer's interpretation.
 
-The INCI (International Nomenclature of Cosmetic Ingredients) names on the actual label are the legal, standardized names for the raw materials present. This creates a common format so ingredient names are recognized globally. "Rosa Damascena Flower Oil" on an ingredient list is the raw material. "Rose" in the notes description is the intended olfactive character -- sometimes sourced from rose oil, sometimes from a synthetic accord, sometimes both.
+The INCI (International Nomenclature of Cosmetic Ingredients) names on the actual label are the legal, standardized names for the raw materials present. This creates a common format so ingredient names are recognized globally. "Rosa Damascena Flower Oil" on an ingredient list is the raw material. "Rose" in the notes description is the intended olfactive character, sometimes sourced from rose oil, sometimes from a synthetic accord, sometimes both.
 
 If you love a perfume and want to know whether a future fragrance will share its DNA, the INCI list is more honest than the marketing notes pyramid.
 
@@ -101,9 +101,9 @@ If you love a perfume and want to know whether a future fragrance will share its
 
 *Readers frequently ask:*
 
-No -- and the gap matters for collectors who buy across markets. In the US, none of the 26 EU allergens require individual labeling. They fall under "fragrance."
+No, and the gap matters for collectors who buy across markets. In the US, none of the 26 EU allergens require individual labeling. They fall under "fragrance."
 
-That means many chemicals restricted in Europe remain legal in American-made perfumes. It's also why US-sold bottles of the same fragrance sometimes carry shorter ingredient lists than their EU counterparts -- not because the formula changed, but because the disclosure rules did. Brands that voluntarily apply EU-standard disclosure regardless of where they sell are the clearest signal of accountability.
+That means many chemicals restricted in Europe remain legal in American-made perfumes. It's also why US-sold bottles of the same fragrance sometimes carry shorter ingredient lists than their EU counterparts, not because the formula changed, but because the disclosure rules did. Brands that voluntarily apply EU-standard disclosure regardless of where they sell are the clearest signal of accountability.
 
 EWG Verified products cannot contain ingredients on the organization's unacceptable list and must disclose all 26 EU fragrance allergens on packaging even though US law doesn't require it. If a label or website lists every component of the fragrance blend rather than just "fragrance" or "parfum," that's a meaningful sign of transparency.
 
@@ -119,7 +119,7 @@ Whether you have sensitive skin, want to avoid certain allergens, or prefer natu
 
 **2. Scan for your personal trigger allergens.** If you've ever had a reaction to a fragrance, the EU allergen list is your starting checklist. Regulations require disclosure if these compounds are present above certain limits, and IFRA sets standards to keep usage within accepted bounds. A compliant perfume can still irritate sensitive skin, so patch testing is a smart habit regardless.
 
-**3. Look for phthalate-free claims.** Since phthalates don't need to be individually listed in the US, a brand has to volunteer this information. Look for it on the packaging or website -- vague "clean" language doesn't count.
+**3. Look for phthalate-free claims.** Since phthalates don't need to be individually listed in the US, a brand has to volunteer this information. Look for it on the packaging or website, vague "clean" language doesn't count.
 
 If you use [Perfume Picks](https://perfumepicks.app) to catalogue your collection, adding a personal note about ingredient sensitivities or reactions to each bottle's entry is an easy way to build your own reference log over time, so you can spot patterns across the bottles you love and the ones that didn't work on your skin.
 
@@ -129,6 +129,6 @@ If you use [Perfume Picks](https://perfumepicks.app) to catalogue your collectio
 
 Not automatically. Transparency signals accountability, not artistry. A skilled perfumer can do a lot with simple ingredients; a poorly constructed fragrance can contain expensive materials and still smell unbalanced. How ingredients interact doesn't show up in a list.
 
-That said, the industry is moving toward more disclosure. Consumers are asking better questions about what's in their perfume, how it was made, and what impact it has -- and brands are responding. Collectors who grow more confident in their taste want originality and specificity, and have less patience for vague marketing.
+That said, the industry is moving toward more disclosure. Consumers are asking better questions about what's in their perfume, how it was made, and what impact it has, and brands are responding. Collectors who grow more confident in their taste want originality and specificity, and have less patience for vague marketing.
 
 Start small: learn a few key terms, notice patterns in fragrances you love or react to, and build from there. Over time, that reference library becomes one of the most useful tools in a serious collector's kit, right alongside knowing your preferred fragrance families and how to read a [batch code](https://perfumepicks.app/blog/how-to-read-perfume-batch-codes).

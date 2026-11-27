@@ -43,7 +43,7 @@ Before you panic, check the brand's official website or social channels. Some sc
 
 ---
 
-## I just found out mine was discontinued -- what's the very first move?
+## I just found out mine was discontinued, what's the very first move?
 
 *A question we hear often:* move fast on remaining retail stock before it evaporates.
 

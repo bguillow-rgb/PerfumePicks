@@ -37,7 +37,7 @@ Flip a bottle upside down and you'll find a short string of letters and numbers 
 
 ## "What even is a batch code, and why should I care?"
 
-A batch code is a production and traceability identifier. In fragrance, it tells you *when* a specific batch was produced, not just what it is. A barcode identifies a product line -- every bottle of the same perfume shares it. A batch code identifies a specific production run.
+A batch code is a production and traceability identifier. In fragrance, it tells you *when* a specific batch was produced, not just what it is. A barcode identifies a product line, every bottle of the same perfume shares it. A batch code identifies a specific production run.
 
 For collectors, that matters. The production date lets you estimate freshness, cross-check whether a vintage bottle is as old as the seller claims, and gauge whether the performance you're getting reflects the formula at its best or a fragrance that sat in a warehouse for years. European consumers hold an estimated 780 million euros worth of unworn fragrances, with individuals owning an average of 4.3 unused bottles. Batch codes are one of the fastest ways to assess whether those sleeping bottles are still in prime condition.
 

@@ -27,7 +27,7 @@ faqs:
   - q: "Are there good occasions to use as a 'reason' to buy myself a perfume?"
     a: "Collectors often tie self-gift purchases to completing a project, a birthday, a pay raise, finishing a bottle, or seasonal wardrobe transitions. Linking a purchase to a milestone makes it feel considered rather than compulsive."
   - q: "How do I stop regretting a perfume I bought for myself?"
-    a: "Always sample before committing to a full bottle. Wear the sample across different days, temperatures, and moods before buying. If you skip that step, regret is almost inevitable -- especially at niche price points."
+    a: "Always sample before committing to a full bottle. Wear the sample across different days, temperatures, and moods before buying. If you skip that step, regret is almost inevitable, especially at niche price points."
 published: true
 ---
 
@@ -62,7 +62,7 @@ A useful sanity check: run a quick cost-per-wear calculation. A 50ml bottle of a
 | Trigger | Why it works |
 |---|---|
 | Finishing a bottle | You've proven you love the scent; rebuying is obvious. Or try something new in the same family. |
-| A personal milestone | Birthday, promotion, project completion -- a meaningful moment makes the bottle memorable. |
+| A personal milestone | Birthday, promotion, project completion, a meaningful moment makes the bottle memorable. |
 | Seasonal wardrobe transition | Spring/autumn are natural points to audit and add. You have clear weather-based criteria. |
 | After completing a no-buy period | A planned reward makes the no-buy feel purposeful rather than punishing. |
 | When a sample runs out | If you've used an entire sample vial and still want more, that's a strong signal. |
@@ -71,9 +71,9 @@ The worst time to buy is immediately after smelling something new on a strip in 
 
 ## How do I choose what to buy myself rather than what someone else would buy me?
 
-The real advantage of self-gifting is that you can go beyond the obvious. When someone buys you perfume as a gift, they usually reach for something recognizable and safe. When you buy for yourself, you can target the specific gap in your collection -- the vetiver-forward summer scent you've been hunting, the skin musk you need for the office, the one bold gourmand you've been curious about but would never expect anyone else to pick for you.
+The real advantage of self-gifting is that you can go beyond the obvious. When someone buys you perfume as a gift, they usually reach for something recognizable and safe. When you buy for yourself, you can target the specific gap in your collection, the vetiver-forward summer scent you've been hunting, the skin musk you need for the office, the one bold gourmand you've been curious about but would never expect anyone else to pick for you.
 
-Before shopping, spend five minutes with your existing collection. What occasions or moods do you reach for and find nothing quite right? What fragrance families are missing entirely? One fragrance industry investor put it plainly: "Gone are the days where you had one fragrance on the dresser. Now people have a scent wardrobe -- different fragrances for different occasions, moods, and times of year." Self-gifting is how that wardrobe gets built deliberately, one bottle at a time.
+Before shopping, spend five minutes with your existing collection. What occasions or moods do you reach for and find nothing quite right? What fragrance families are missing entirely? One fragrance industry investor put it plainly: "Gone are the days where you had one fragrance on the dresser. Now people have a scent wardrobe, different fragrances for different occasions, moods, and times of year." Self-gifting is how that wardrobe gets built deliberately, one bottle at a time.
 
 If you use Perfume Picks, pulling up your collection before shopping takes seconds. Your taste profile shows you the families and notes you already lean toward, which makes it easier to spot genuine gaps rather than near-duplicates.
 
@@ -95,13 +95,13 @@ The global perfume market is projected to reach approximately $63.5 billion in 2
 
 Two other mistakes cause regret. First, buying a scent because it's trending, well-reviewed, or loved by someone you follow online, without confirming it works with your skin chemistry and fits how you dress and live. Online enthusiasm is not a substitute for personal experience. Second, buying something nearly identical to what you already own. If you're not sure whether two scents are too similar, the guide on [how to tell if two perfumes are too similar](/how-to-tell-if-two-perfumes-are-too-similar) can help you decide before you spend.
 
-If you do end up with a bottle you don't love, there are good options -- swapping, destashing, gifting -- covered in [what to do with perfume you don't like](/what-to-do-with-perfume-you-dont-like).
+If you do end up with a bottle you don't love, there are good options, swapping, destashing, gifting, covered in [what to do with perfume you don't like](/what-to-do-with-perfume-you-dont-like).
 
 ## Can self-gifting become its own problem?
 
 Yes, and it's worth being honest about this. The intentionality that makes self-gifting healthy can slip into a pattern of buying to feel something in the short term rather than building a collection you use. The trend of collecting multiple scents for different occasions, moods, and seasons is real, particularly among Gen Z. But variety for its own sake produces a wardrobe full of bottles you never finish.
 
-The check is simple: before the next purchase, look at your collection and ask how many bottles you've worn in the past month. If the ratio of worn to unworn is off, the problem isn't that you bought something for yourself -- it's that the collection has outpaced your wearing habits. The guide on [how to rotate your perfume collection](/how-to-rotate-your-perfume-collection) is the practical fix for that.
+The check is simple: before the next purchase, look at your collection and ask how many bottles you've worn in the past month. If the ratio of worn to unworn is off, the problem isn't that you bought something for yourself, it's that the collection has outpaced your wearing habits. The guide on [how to rotate your perfume collection](/how-to-rotate-your-perfume-collection) is the practical fix for that.
 
 Self-gifting is one of the real pleasures of being a collector. The difference between that and something compulsive is almost always intentionality.
 
@@ -122,4 +122,4 @@ An impulse buy happens without sampling, without checking your collection for du
 Collectors often tie self-gift purchases to completing a project, a birthday, a pay raise, finishing a bottle, or seasonal wardrobe transitions. Linking a purchase to a milestone makes it feel considered rather than compulsive.
 
 **How do I stop regretting a perfume I bought for myself?**
-Always sample before committing to a full bottle. Wear the sample across different days, temperatures, and moods before buying. If you skip that step, regret is almost inevitable -- especially at niche price points.
+Always sample before committing to a full bottle. Wear the sample across different days, temperatures, and moods before buying. If you skip that step, regret is almost inevitable, especially at niche price points.

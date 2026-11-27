@@ -23,11 +23,11 @@ faqs:
   - q: "How do I describe a perfume that I like but can't identify the notes?"
     a: "Skip the note list entirely and use sense-crossing language: color (dark, pale), temperature (warm, icy), texture (velvety, rough), mood (cozy, electric), and a memory or place anchor. \"It smells like a library in winter\" is more useful than guessing wrong notes."
   - q: "What does 'animalic' mean in perfume description?"
-    a: "Animalic describes raw, skin-like, or faintly barnyard-adjacent qualities -- think civet, castoreum, or ambergris. At low levels it reads as sexy and lived-in skin; at high levels it becomes challenging. It's the opposite of clean or soapy."
+    a: "Animalic describes raw, skin-like, or faintly barnyard-adjacent qualities, think civet, castoreum, or ambergris. At low levels it reads as sexy and lived-in skin; at high levels it becomes challenging. It's the opposite of clean or soapy."
   - q: "How do perfumers and critics describe perfume differently from regular wearers?"
-    a: "Perfumers tend to use technical note names and structural language (\"the aldehyde flare lifts the rose\"). Critics layer in cultural and emotional references. Regular wearers anchor to personal memory and sensation. All three are valid -- the goal is precision, not jargon."
+    a: "Perfumers tend to use technical note names and structural language (\"the aldehyde flare lifts the rose\"). Critics layer in cultural and emotional references. Regular wearers anchor to personal memory and sensation. All three are valid, the goal is precision, not jargon."
   - q: "What is synesthesia language in perfume description, and should I use it?"
-    a: "Synesthesia language maps scent onto another sense -- color, sound, temperature, texture. Examples: \"velvety,\" \"bright,\" \"dark,\" \"loud,\" \"soft as cashmere.\" Yes, use it -- it's one of the most efficient ways to communicate fragrance character when literal note names fall short."
+    a: "Synesthesia language maps scent onto another sense, color, sound, temperature, texture. Examples: \"velvety,\" \"bright,\" \"dark,\" \"loud,\" \"soft as cashmere.\" Yes, use it, it's one of the most efficient ways to communicate fragrance character when literal note names fall short."
 published: true
 ---
 
@@ -51,7 +51,7 @@ The workaround: stop trying to name ingredients you can't identify and describe 
 
 Work through a fragrance the same way it unfolds on skin, in three structural phases.
 
-Top notes are your first impression: the first scents you smell on application, often light and fresh -- citrus, mint, herbs. They fade fast but set the opening mood. Resist judging a perfume here; tops last 15-30 minutes.
+Top notes are your first impression: the first scents you smell on application, often light and fresh, citrus, mint, herbs. They fade fast but set the opening mood. Resist judging a perfume here; tops last 15-30 minutes.
 
 Heart notes are the real character, also called middle notes. They emerge after the top layer fades and usually include florals, spices, or fruits. This is where your structural description does most of its work.
 
@@ -71,7 +71,7 @@ Name what you can from [fragrance families](https://perfumepicks.app/articles/pe
 
 ### 2. Texture language
 
-Scents can be tactile in a way that surprises people. Reach for: *velvety, powdery, silky, rough, waxy, creamy, airy, dense, dry, resinous.* Powdery tends to signal iris, violet, or heliotrope -- dry scents that tickle the nose.
+Scents can be tactile in a way that surprises people. Reach for: *velvety, powdery, silky, rough, waxy, creamy, airy, dense, dry, resinous.* Powdery tends to signal iris, violet, or heliotrope, dry scents that tickle the nose.
 
 ### 3. Temperature language
 
@@ -100,7 +100,7 @@ Here's a working vocabulary grid organized by sensory register:
 | **Darkness/depth** | Light, bright, dark, deep, shadowy, murky | Patchouli, labdanum, smoke, tar vs. citrus, white florals |
 | **Mood** | Cocooning, solar, animalic, vibrant, nostalgic, electric | Musk/vanilla; frangipani; civet; vetiver; iris; ozonic |
 | **Shape** | Sharp, rounded, linear, faceted, blurred | High aldehydes (sharp); heavy musks (rounded) |
-| **Memory anchor** | Seasonal, locational, biographical | Personal -- use freely |
+| **Memory anchor** | Seasonal, locational, biographical | Personal, use freely |
 
 ---
 
@@ -110,22 +110,22 @@ Here's a working vocabulary grid organized by sensory register:
 
 Personal description shines here. There's no right or wrong way to put words to a smell, because perception is personal and everyone's reference points differ.
 
-Use synesthesia -- cross-sensory language -- freely. Ask yourself:
+Use synesthesia, cross-sensory language, freely. Ask yourself:
 
 - **Color:** Is this fragrance pale, dark, bright, or shadowy? Gourmand fragrances can read as the color of honey or a rich brown, while roses appear in shades of pink, red, and yellow. Color in fragrance is also about whether something smells dark or light, or whether it feels like a single block of color or something more layered and multicolored.
 - **Fabric:** Would this be cashmere, linen, silk, rough wool, or velvet?
-- **Season or place:** Does it belong to a particular landscape -- a pine forest, a spice market, a greenhouse, a laundromat?
+- **Season or place:** Does it belong to a particular landscape, a pine forest, a spice market, a greenhouse, a laundromat?
 - **Emotional temperature:** Does it make you feel expansive or introverted, social or solitary?
 
 One vivid image beats a list of guessed notes. "It feels like opening a cedar chest in a dark library" is a complete, communicable description. Log these in your [perfume journal](https://perfumepicks.app/articles/how-to-keep-a-perfume-journal) and over time they become your personal fragrance fingerprint.
 
 ---
 
-## How do perfume critics write descriptions -- and should I copy their style?
+## How do perfume critics write descriptions, and should I copy their style?
 
 Professional fragrance criticism has its own conventions, worth borrowing selectively. When a perfumer evaluates a new fragrance, they follow a consistent pattern: structure first (top/heart/base), then family, then key accords, then performance, then personal response.
 
-Critics and Fragrantica reviewers add cultural and emotional resonance -- place, season, memory, mood -- because that's what makes a description stick. Skip the purple prose that tells a reader nothing ("a journey through an enchanted forest at twilight"). Words like "crisp," "warm," "velvety," or "sharp" are precise enough to mean something and personal enough to stay honest.
+Critics and Fragrantica reviewers add cultural and emotional resonance, place, season, memory, mood, because that's what makes a description stick. Skip the purple prose that tells a reader nothing ("a journey through an enchanted forest at twilight"). Words like "crisp," "warm," "velvety," or "sharp" are precise enough to mean something and personal enough to stay honest.
 
 One useful habit: after writing a description, read it back and ask whether a stranger could use it to make a purchase decision. If yes, you've written something useful.
 
@@ -139,9 +139,9 @@ Describing scent is a trainable skill, closely tied to the broader practice of [
 
 **1. Write immediately, then write again at two hours.** First impressions capture top notes; the second session captures the real character. Compare what changed. Over weeks, your language will become more precise.
 
-**2. Build a personal reference library.** When you smell a note you can name confidently -- bergamot, sandalwood, vetiver -- make a written note of its texture, temperature, and mood quality. Over time, you're building a vocabulary rooted in actual olfactory experience, not borrowed descriptions.
+**2. Build a personal reference library.** When you smell a note you can name confidently, bergamot, sandalwood, vetiver, make a written note of its texture, temperature, and mood quality. Over time, you're building a vocabulary rooted in actual olfactory experience, not borrowed descriptions.
 
-**3. Rate and reason, not just react.** When you [rate your collection](https://perfumepicks.app/articles/how-to-rate-your-perfume-collection), attach at least one structural word and one mood word to any rating. A score of 8/10 with the note "warm, smoky, cocooning -- like an old leather jacket" is information you can act on. A score of 8/10 alone tells you almost nothing six months later.
+**3. Rate and reason, not just react.** When you [rate your collection](https://perfumepicks.app/articles/how-to-rate-your-perfume-collection), attach at least one structural word and one mood word to any rating. A score of 8/10 with the note "warm, smoky, cocooning, like an old leather jacket" is information you can act on. A score of 8/10 alone tells you almost nothing six months later.
 
 Three behaviors define the 2026 fragrance enthusiast: sampling before committing, building a wardrobe of five to ten scents, and prioritizing longevity. All three depend heavily on being able to articulate *why* a fragrance works for you. The collector who can describe what they own with precision buys smarter, wastes less, and gets more out of every bottle.
 
@@ -156,10 +156,10 @@ For fresh fragrances, reach for: aquatic, ozonic, green, citrusy, crisp, dewy, c
 Skip the note list entirely and use sense-crossing language: color (dark, pale), temperature (warm, icy), texture (velvety, rough), mood (cozy, electric), and a memory or place anchor. "It smells like a library in winter" is more useful than guessing wrong notes.
 
 **What does "animalic" mean in perfume description?**
-Animalic describes raw, skin-like, or faintly barnyard-adjacent qualities -- think civet, castoreum, or ambergris. At low levels it reads as sexy and lived-in; at high levels it becomes challenging. It sits at the opposite end of the spectrum from clean or soapy.
+Animalic describes raw, skin-like, or faintly barnyard-adjacent qualities, think civet, castoreum, or ambergris. At low levels it reads as sexy and lived-in; at high levels it becomes challenging. It sits at the opposite end of the spectrum from clean or soapy.
 
 **How do perfumers and critics describe perfume differently from regular wearers?**
-Perfumers tend to use technical note names and structural language. Critics layer in cultural and emotional references. Regular wearers anchor to personal memory and sensation. All three approaches are valid -- the goal is precision, not jargon.
+Perfumers tend to use technical note names and structural language. Critics layer in cultural and emotional references. Regular wearers anchor to personal memory and sensation. All three approaches are valid, the goal is precision, not jargon.
 
 **What is synesthesia language in perfume description, and should I use it?**
-Synesthesia language maps scent onto another sense -- color, sound, temperature, texture. Examples: "velvety," "bright," "dark," "loud," "soft as cashmere." Use it freely -- it's one of the most efficient ways to communicate fragrance character when literal note names fall short.
+Synesthesia language maps scent onto another sense, color, sound, temperature, texture. Examples: "velvety," "bright," "dark," "loud," "soft as cashmere." Use it freely, it's one of the most efficient ways to communicate fragrance character when literal note names fall short.

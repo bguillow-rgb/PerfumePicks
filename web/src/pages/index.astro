@@ -17,47 +17,47 @@ const latestArticles = (
   .slice(0, 3);
 
 const quickAnswer =
-  'Perfume Picks is an iOS app for fragrance collectors. Catalog every bottle ' +
-  'you own, log each wear with the weather and occasion, and get morning picks ' +
-  'drawn from your wardrobe, not from a store. A taste profile, cost-per-wear, ' +
-  'and an annual Perfume Wrapped recap are built in. Perfume Picks is not a ' +
-  'retailer; we never sell fragrance.';
+  'Perfume Picks is an iPhone app I built for keeping track of a fragrance ' +
+  'collection. It files the bottles you own, logs each wear with the weather ' +
+  'and the occasion, and picks something to wear each morning from your own ' +
+  'wardrobe. A short taste picker builds your Fragrance DNA, and a dupe finder ' +
+  'shows cheaper bottles that smell close. It doesn\'t sell fragrance.';
 
 const faqs = [
   {
     q: 'What is Perfume Picks?',
     a:
-      'Perfume Picks is an iOS app for fragrance collectors. You catalog your wardrobe, log every wear, and get weather- and occasion-aware picks from the bottles you already own. A taste profile is built from your real collection, not just a quiz.',
+      'It\'s an iPhone app I built to keep track of a fragrance wardrobe. You file the bottles you own, log each wear, and every morning the app picks a Scent of the Day from your own wardrobe. A short taste picker learns what you like.',
   },
   {
     q: 'Is Perfume Picks a retailer?',
     a:
-      'No. Perfume Picks does not sell fragrance. When you want to buy a bottle, the app links out to retailers like FragranceX, Sephora, or Amazon Luxury Beauty. We may earn a small commission on those links at no cost to you, and this is disclosed in the Terms.',
+      'No. Perfume Picks doesn\'t sell fragrance. Fragrance pages have buy links to retailers, and I may earn a small commission if you use one. The price you pay is the same, and the Terms spell this out.',
   },
   {
-    q: 'Is Perfume Picks free? What does Pro unlock?',
+    q: 'Is Perfume Picks free?',
     a:
-      'The app is free to download. Free gives you the basic taste quiz, a limited daily round of Train My Nose swipes, and a wardrobe of up to twenty bottles. Pro unlocks the full quiz, unlimited swipes, the taste profile screen, advanced analytics, cost-per-wear, and Perfume Wrapped. Pro is monthly or yearly, managed through Apple, and cancelable anytime in iOS Settings.',
+      'Yes. The free version holds 5 bottles, 5 label scans, 10 wear logs and 3 Train My Nose swipes a day, and it shows the closest dupe for any fragrance. Pro is $2.99 a month or $24.99 a year, with a 7-day free trial. It removes those limits, unlocks the full dupes list and adds Perfume Wrapped. Apple handles billing, and you can cancel any time in iOS Settings.',
   },
   {
     q: 'How does the wear log work?',
     a:
-      'Tap a fragrance you wore today and confirm. The app records the date, captures local weather automatically, and asks you for occasion and how many sprays. You can backdate up to two years, log multiple fragrances on the same day for layering experiments, and search wears by season, occasion, or fragrance family later on.',
+      'Open a fragrance and tap Log a Wear. You set the date, the occasion, the weather and a rating, and you can add a note. Each wear drops the bottle\'s remaining-mL meter. You can also log a layered combination of two bottles.',
+  },
+  {
+    q: 'How does Scent of the Day work?',
+    a:
+      'Each morning the app picks a bottle from your wardrobe. It goes on your Fragrance DNA, the local weather, the occasion and what you haven\'t worn lately, and it gives you one line on why. One tap logs the wear.',
   },
   {
     q: 'Is my wardrobe data private?',
     a:
-      'Yes. Your wardrobe, wear log, ratings, and notes are private by default. Nothing is shared, sold, or used for cross-user ad targeting. Scent of the Day posts become public only when you flip the toggle on a specific entry. See the Privacy Policy for the full breakdown.',
+      'Yes. Your wardrobe, wear log, ratings and notes are tied to your account. I don\'t sell them or use them for advertising. The Privacy Policy covers what the community Scent of the Day feed shows.',
   },
   {
     q: 'Will there be an Android version?',
     a:
-      'Perfume Picks launches on iOS first. An Android release is on the roadmap but not yet scheduled.',
-  },
-  {
-    q: 'Why an app instead of a website?',
-    a:
-      'A wardrobe lives in your pocket. Logging a wear should take three taps from a notification, not a desktop login. The phone also gives us camera-based bottle entry, local weather, and the kind of quick swipe interface that builds a real taste profile over time.',
+      'Not yet. Perfume Picks is iPhone only for now.',
   },
 ];
 ---
@@ -77,12 +77,12 @@ const faqs = [
     <div class="hero hero-lg">
       <div class="hero-body">
         <p class="eyebrow">Fragrance wardrobe &middot; iOS</p>
-        <h1 class="t-welcome">The collector&rsquo;s wardrobe.</h1>
-        <p class="intro">Catalog every bottle, <b>log each wear</b> with the weather and occasion, and get morning picks <b>drawn from the fragrances you already own</b>, never from a store. Wear what you love.</p>
+        <h1 class="t-welcome">Wear what you already own.</h1>
+        <p class="intro">Perfume Picks files the bottles you own, logs each wear, and every morning <b>picks something from your own wardrobe</b> based on the weather and what you haven&rsquo;t worn lately. A short taste picker learns what you like, and a <b>dupe finder shows cheaper bottles that smell close</b>.</p>
         <div class="actions">
           <a class="btn" href={SITE.appStoreUrl}>Download free on the App Store</a>
         </div>
-        <p class="fine">No ads. Your wardrobe stays yours. iOS first.</p>
+        <p class="fine">Free on iPhone. There are no ads.</p>
       </div>
       <div class="hero-phones" aria-label="Perfume Picks on iPhone">
         <img src="/app/8_fragrance-detail.webp" alt="A fragrance detail page in Perfume Picks with notes, accords and a buy link" width="1284" height="2778" fetchpriority="high" />
@@ -95,25 +95,25 @@ const faqs = [
   <section class="contained gallery">
     <div class="intro-block">
       <p class="upper-tag">Features</p>
-      <h2>Built for collectors</h2>
+      <h2>What it does</h2>
       <QuickAnswer text={quickAnswer} label="" />
     </div>
     <div class="scroller" id="tiles">
       <article class="tile">
         <div class="media"><img src="/app/4_wardrobe.webp" alt="The myWardrobe screen in Perfume Picks, filtered by Have, Want and Tried" loading="lazy" /></div>
-        <p class="caption"><b>Your wardrobe, organized.</b> Every bottle by house, family, and status, owned, tried, want, empty. Remaining mL meter and purchase price tracked per bottle.</p>
+        <p class="caption"><b>Your wardrobe, filed.</b> Every bottle by house and family, marked Have, Want or Tested, with how much is left in it and what you paid.</p>
       </article>
       <article class="tile">
         <div class="media"><img src="/app/7_community.webp" alt="Community Scent of the Day, what other collectors are wearing today" loading="lazy" /></div>
-        <p class="caption"><b>A wear log that remembers.</b> Tap to log. Weather and occasion captured automatically. Backdate up to two years and log layering combinations on the same day.</p>
+        <p class="caption"><b>A wear log.</b> Tap to log a wear with the date, the occasion, the weather and a rating. The bottle&rsquo;s remaining-mL meter drops as you go.</p>
       </article>
       <article class="tile">
         <div class="media"><img src="/app/2_scent-of-the-day.webp" alt="Scent of the Day, a pick from your own wardrobe with a line on why it fits today" loading="lazy" /></div>
-        <p class="caption"><b>Picks for tonight, not just shopping.</b> Morning pick suggests something from your wardrobe based on weather, occasion, and what you have not worn recently. The answer comes from your shelf, not a store.</p>
+        <p class="caption"><b>Scent of the Day.</b> A pick from your own wardrobe each morning, with a line on why it fits today.</p>
       </article>
       <article class="tile">
         <div class="media"><img src="/app/5_taste-session.webp" alt="A Train My Nose taste session, swiping pass, like or love on a fragrance" loading="lazy" /></div>
-        <p class="caption"><b>A taste profile from your collection.</b> Swipe through scents to refine your profile, then watch it sharpen with every wear you log. Built from real behavior, not a five-question quiz.</p>
+        <p class="caption"><b>Fragrance DNA.</b> Tap the bottles you love and swipe through Train My Nose. The profile sharpens with every wear you log.</p>
       </article>
     </div>
     <div class="paddles">
@@ -129,8 +129,8 @@ const faqs = [
     <div class="split-copy">
       <p class="upper-tag">Fragrance DNA</p>
       <h2>Your taste, named.</h2>
-      <p class="intro">Tap the scents you love and Perfume Picks reads your palate into <b>one of eleven archetypes</b>. It is your taste, made legible, and it keeps sharpening every time you wear, swipe, and add a bottle.</p>
-      <p class="names">The Connoisseur, The Seducer, The Purist, The Showstopper, The Smart Shopper, The Romantic, The Explorer, The Classicist, The Rebel, The Executive and The Signature Wearer.</p>
+      <p class="intro">Tap the scents you love and Perfume Picks reads them into a <b>Fragrance DNA archetype</b>. It sharpens every time you log a wear or swipe in Train My Nose.</p>
+      <p class="names">The Signature Wearer, The Smart Shopper and The Connoisseur are three of them.</p>
     </div>
     <div class="bento">
       <div class="shot tall"><img src="/app/6_pick-the-ones-you-love.webp" alt="Pick the ones you love, the taste picker that seeds your Fragrance DNA" loading="lazy" /></div>
@@ -144,9 +144,9 @@ const faqs = [
   <section class="contained split split--reverse">
     <div class="split-copy">
       <p class="upper-tag">Budget dupes</p>
-      <h2>Cheaper bottles that smell the same</h2>
-      <p class="intro">Love a $300 bottle? Perfume Picks surfaces dupes that smell nearly identical, ranked by match and showing <b>what you save, often 30 to 70% less</b>. One find pays for a year.</p>
-      <p class="intro">It is the most useful thing in the app, and the simplest reason collectors go Pro.</p>
+      <h2>Cheaper bottles that smell close</h2>
+      <p class="intro">Open any fragrance and Perfume Picks lists its dupes, ranked by how close they smell, with <b>what you&rsquo;d save, usually 30 to 70%</b>.</p>
+      <p class="intro">The free version shows the closest dupe. Pro shows the rest of the list.</p>
     </div>
     <div class="shot wide"><img src="/app/3_dupes.webp" alt="Budget Dupes in Perfume Picks: two cheaper matches for Creed Aventus with the match score and the saving" loading="lazy" /></div>
   </section>
@@ -160,13 +160,12 @@ const faqs = [
     </div>
     <div class="sticky-body">
       <p class="intro">
-        Perfume Picks is <b>free to download</b>. A Pro subscription unlocks the full
-        taste quiz, unlimited Train My Nose swipes, the taste profile screen,
-        advanced analytics, and Perfume Wrapped. Some fragrance detail pages also
-        include &ldquo;Buy from&rdquo; links to retailers like FragranceX, Sephora,
-        and Amazon Luxury Beauty, we may earn a small commission when you
-        use one, at no cost to you. <b>There are no ads and no data selling.</b> We do
-        not sell fragrance.
+        Perfume Picks is <b>free to download</b>. Pro is $2.99 a month or $24.99 a
+        year, with a 7-day free trial. It removes the free limits, unlocks the full
+        dupes list and adds Perfume Wrapped, a yearly recap of your own wears.
+        Fragrance pages also have buy links to retailers, and I may earn a small
+        commission if you use one. <b>There are no ads, and I don&rsquo;t sell your
+        data.</b>
       </p>
       {SITE.appStoreUrl ? (
         <a class="btn" href={SITE.appStoreUrl}>Download on iOS</a>
@@ -183,7 +182,7 @@ const faqs = [
       <div class="sticky-copy">
         <p class="upper-tag">Blog</p>
         <h2>From the Blog</h2>
-        <p>Field-tested references for fragrance collectors.</p>
+        <p>Articles on building and wearing a collection.</p>
         <a class="more" href="/articles">All articles &#8250;</a>
       </div>
       <div class="post-grid">

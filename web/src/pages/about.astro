@@ -8,15 +8,15 @@ import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import { SITE } from '../consts';
 
 const quickAnswer =
-  'Perfume Picks is an iOS app for fragrance collectors, built and run by ' +
-  'one independent developer. It catalogs your wardrobe, logs every wear, ' +
-  'and recommends bottles you already own. It is not a retailer, not a ' +
-  'scraper of competitor sites, and not an ad platform. The app makes ' +
-  'money from an optional Pro subscription and retailer affiliate links.';
+  'Perfume Picks is an iPhone app for keeping track of a fragrance ' +
+  'collection, and I build and run it on my own. It files the bottles you ' +
+  'own, logs every wear and picks a scent each morning from your own ' +
+  'wardrobe. It doesn\'t sell fragrance. It makes money from an optional ' +
+  'Pro subscription and retailer affiliate links.';
 ---
 <BaseLayout
   title="About"
-  description="About Perfume Picks, who runs it, what it is, what it isn't, and how it makes money."
+  description="I'm Bob Guillow, and I build Perfume Picks on my own. It's an iPhone app for keeping track of a fragrance collection."
   path="/about"
 >
   <Fragment slot="head">
@@ -27,86 +27,72 @@ const quickAnswer =
 
   <p class="brand">{SITE.name}</p>
   <h1>About Perfume Picks</h1>
-  <p class="effective">A collector's wardrobe and wear log, built and run by one person.</p>
+  <p class="effective">An iPhone app for a fragrance wardrobe, built and run by one person.</p>
 
   <QuickAnswer text={quickAnswer} />
 
   <h2>Who runs Perfume Picks?</h2>
   <p>
-    Perfume Picks is built and operated by <strong>{SITE.founder.name}</strong>,
-    an independent developer and longtime fragrance collector, and published by
-    {SITE.legalEntity}, the developer's own company. There is no outside
-    investor and no advertising network behind the app.
-    Decisions about features, privacy, and direction are made by one person,
-    and that person answers the email at
+    I'm <strong>{SITE.founder.name}</strong>. I build and run Perfume Picks on my
+    own, and it's published under {SITE.legalEntity}, my own company. There's no
+    outside investor, ad network or parent company, so I make the product and
+    privacy decisions myself, and I'm the one who answers
     <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
   </p>
 
-  <h2>What is Perfume Picks?</h2>
+  <h2>What it is</h2>
   <p>
-    Perfume Picks is an iOS app for fragrance collectors. It does four things
-    well: catalog your wardrobe with status, remaining mL, and purchase price;
-    log every wear with weather and occasion captured automatically; build a
-    taste profile from your real collection and your swipe feedback; and
-    suggest something to wear tonight from bottles you already own. A yearly
-    Perfume Wrapped recap closes the loop with the stats only your own data
-    can produce.
+    Perfume Picks is an iPhone app for fragrance collectors. It files your
+    wardrobe with a remaining-mL meter and what you paid for each bottle, logs
+    every wear with the occasion, the weather and a rating, builds a Fragrance
+    DNA profile from the bottles you love and the swipes you make, and picks a
+    Scent of the Day from your own wardrobe. A dupe finder shows cheaper
+    bottles that smell close, and Perfume Wrapped recaps your year.
   </p>
 
-  <h2>What Perfume Picks is not</h2>
+  <h2>What it is not</h2>
   <ul>
-    <li>It is <strong>not a retailer</strong>. The app does not sell fragrance. When you want to buy, we link out to retailers and may earn a small commission.</li>
-    <li>It is <strong>not a scraper</strong> of other fragrance sites. Our catalog comes from commercial fragrance-data providers and manual curation.</li>
-    <li>It is <strong>not a marketplace</strong>. There are no buy/sell flows, no auctions, no decant exchange.</li>
-    <li>It does <strong>not show ads</strong>. There are no ads anywhere in the app or on this site.</li>
-    <li>It does <strong>not sell or share your data</strong> for cross-user ad targeting. Your wardrobe and wear log are private by default. See the <a href="/privacy">privacy policy</a> for the full breakdown.</li>
+    <li>It doesn't sell fragrance. Fragrance pages link to retailers, and I may earn a small commission if you buy through one.</li>
+    <li>It isn't a scraper of other fragrance sites. The catalog comes from commercial fragrance-data providers and manual curation.</li>
+    <li>It isn't a marketplace, so there are no listings, auctions or decant swaps.</li>
+    <li>There are no ads in the app or on this site.</li>
+    <li>I don't sell or share your data for advertising. The <a href="/privacy">privacy policy</a> has the details.</li>
   </ul>
 
-  <h2>How Perfume Picks makes money</h2>
+  <h2>How it makes money</h2>
   <p>
-    Two revenue streams, both transparent. First, an optional <strong>Pro
-    subscription</strong> unlocks the full taste quiz, unlimited Train My Nose
-    swipes, the taste profile screen, advanced analytics, and Perfume Wrapped.
-    Subscriptions are managed through Apple via RevenueCat, so payment
-    information never touches our servers.
+    Perfume Picks is free to download. Pro is $2.99 a month or $24.99 a year,
+    with a 7-day free trial. It removes the free limits on the wardrobe, wear
+    log, scans and swipes, unlocks the full dupes list and adds Perfume Wrapped.
+    Apple handles billing, so payment details never reach my servers.
   </p>
   <p>
-    Second, fragrance detail pages may include <strong>&ldquo;Buy from&rdquo;</strong>
-    links to retailers such as FragranceX, Sephora, and Amazon Luxury Beauty.
-    When you use one of those links and purchase, we may earn a small commission
-    at no cost to you. This is disclosed on the page where the link appears and
-    in the <a href="/terms">Terms of Service</a>. The price you pay is the same.
+    Fragrance pages also have buy links to retailers. If you buy through one, I
+    may earn a small commission. It's disclosed on the page and in the
+    <a href="/terms">Terms of Service</a>, and the price you pay is the same.
   </p>
 
-  <h2>Why an independent developer built this</h2>
+  <h2>Why I built it</h2>
   <p>
-    The fragrance internet has not been served well. The most-cited reference
-    sites are dated, ad-heavy, and treat the collector like a row in a database.
-    Newer entrants are feature-thin and focused on discovery for shoppers, not
-    on collectors who already own dozens of bottles and want to actually wear
-    them. Perfume Picks is built for the collector who needs a wardrobe, a
-    wear log, and a private taste profile in one place, without ads,
-    without scraping, and without being pushed toward the next purchase.
+    The big fragrance reference sites are built for looking a bottle up, and
+    most newer apps are built for shopping. Perfume Picks is for the bottles
+    already on the shelf: what you own, what you've worn, and what to wear
+    today.
   </p>
 
   <h2>Editorial standards</h2>
   <p>
-    Articles published on this site are written by {SITE.founder.name} based
-    on first-hand experience as a collector and on cited primary sources
-    (manufacturer notes, perfumer interviews, IFRA documentation, and other
-    public sources). When a fact comes from somewhere other than direct
-    experience, it is linked. When something is an opinion, it is labeled.
-  </p>
-  <p>
-    Articles are dated, and the date is updated only when the content
-    actually changes, not just to make the page look fresh.
+    Articles are written from collecting experience and primary sources like
+    manufacturer notes, perfumer interviews and IFRA documentation. Facts link
+    to their sources and opinions are labeled. The updated date only changes
+    when an article does.
   </p>
 
   <h2>Contact</h2>
   <p>
-    Press, partnership, or product feedback:
-    <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
-    There is no DM channel, email is the canonical contact.
+    Press, partnerships and feedback all go to
+    <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. I usually
+    reply within a day.
   </p>
 
   <Footer />

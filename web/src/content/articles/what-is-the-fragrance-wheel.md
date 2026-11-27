@@ -33,7 +33,7 @@ published: true
 
 Most collectors learn fragrance families eventually. Far fewer learn to *use* the wheel that organizes them. It's one of the most practical tools for auditing a wardrobe, planning the next purchase, and understanding why certain bottles work as a rotation while others just duplicate each other.
 
-## "What actually is the fragrance wheel -- is it just a chart of scent categories?"
+## "What actually is the fragrance wheel, is it just a chart of scent categories?"
 
 *A question we hear often:* it comes up whenever someone starts moving beyond buying bottles they simply "like" and starts thinking about their collection as a whole.
 
@@ -86,7 +86,7 @@ The wheel explains it cleanly. Both sit in the Dry Woods subfamily. Despite diff
 
 Most people gravitate toward one or two families. That's natural. The risk is that an untrained collection quietly fills up with variations on the same theme, leaving you with eight Woody Amber variations and nothing light or fresh for summer. The wheel makes that pattern visible before you've reinforced it with more spending.
 
-## "Can the fragrance wheel tell me what to buy next -- like, concretely?"
+## "Can the fragrance wheel tell me what to buy next, like, concretely?"
 
 Yes. A practical three-step process:
 
@@ -100,7 +100,7 @@ That's a different approach from how most collectors shop, which tends to be tre
 
 For a closer look at each family before you start mapping, our [perfume fragrance families guide](/perfume-fragrance-families) covers them in detail. For collectors thinking about layering across wheel neighbors, [how to layer perfumes](/how-to-layer-perfumes) applies the same logic to your skin.
 
-## "Is the fragrance wheel outdated -- I keep seeing newer classification systems online?"
+## "Is the fragrance wheel outdated, I keep seeing newer classification systems online?"
 
 The wheel has evolved since 1992. The most significant structural change has been renaming "Oriental" to "Amber," a shift most major houses and databases have now adopted.
 

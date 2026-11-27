@@ -35,7 +35,7 @@ A small subset of perfumes genuinely appreciate in value. A larger group holds r
 
 ## Why would a perfume increase in value at all?
 
-*A question we hear often:* fragrances are consumable goods -- so what makes one behave more like a collectible than a bottle of shampoo?
+*A question we hear often:* fragrances are consumable goods, so what makes one behave more like a collectible than a bottle of shampoo?
 
 Scarcity, prestige branding, limited production runs, and a shift in consumer behavior that increasingly treats fine fragrances as wearable art push certain bottles toward collector territory. When a fragrance is discontinued, the existing supply is all there will ever be. If demand holds or grows, price follows. Reformulation creates a similar dynamic: pre-reformulation bottles can see values rise 50-300% after discontinuation, especially when the older formula used ingredients no longer permitted under modern IFRA regulations.
 
@@ -43,7 +43,7 @@ There's a secondary effect worth understanding: community memory. Fragrance enth
 
 ## What types of perfume actually appreciate?
 
-*This one comes up a lot:* "I know some old bottles are worth something -- but what specifically?"
+*This one comes up a lot:* "I know some old bottles are worth something, but what specifically?"
 
 In 2026, certain high-end and niche fragrances have shown strong value retention, with collectors reselling bottles for a significant portion of their original purchase price, sometimes more. The bottles that most reliably appreciate share a cluster of traits.
 

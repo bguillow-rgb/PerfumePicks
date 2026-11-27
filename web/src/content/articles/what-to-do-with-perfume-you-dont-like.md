@@ -60,18 +60,18 @@ If the problem is that the fragrance feels too heavy, try layering it under a cl
 
 Room and linen spray is the most practical. For a subtle scent, a ratio of perfume to water of 1:10 works well; 1:5 is better for stronger fragrances. Adding witch hazel or vodka extends the mixture's longevity and prevents bacterial growth for two to four weeks when stored properly. Use distilled water rather than tap water to avoid mineral residue.
 
-Scented drawer sachets are another reliable option. If you dislike a particular stage of the fragrance cycle -- say, the top notes -- placing cotton balls soaked in the perfume inside your wardrobe drawers lets the volatile top notes dissipate. By the time you take out clothing to wear, only the base accords you actually enjoy remain.
+Scented drawer sachets are another reliable option. If you dislike a particular stage of the fragrance cycle, say, the top notes, placing cotton balls soaked in the perfume inside your wardrobe drawers lets the volatile top notes dissipate. By the time you take out clothing to wear, only the base accords you actually enjoy remain.
 
 Many older colognes and perfumes contain oil that can leave a stain or create discoloration over time, so test on an inconspicuous area before spritzing freely. Shoe freshening, air filter spraying, and scenting luggage or storage boxes are lower-risk applications.
 
 | Repurposing method | Best for | Risk level |
 |---|---|---|
-| Room/linen spray (diluted) | Any unwanted fragrance | Low -- test first |
+| Room/linen spray (diluted) | Any unwanted fragrance | Low, test first |
 | Drawer sachets (cotton ball) | Fragrances you like in dry-down only | Very low |
 | Shoe freshener | Citrus/clean fragrances | Low |
 | Air filter spray | Strong/intense fragrances | Very low |
 | Wardrobe scenting | Woody/musky fragrances | Low |
-| Fabric spray (direct, undiluted) | Anything | Medium -- can stain |
+| Fabric spray (direct, undiluted) | Anything | Medium, can stain |
 | Candle/wax melt scenting | Fragrances with no heavy oil | Medium |
 
 ---
@@ -82,11 +82,11 @@ Many older colognes and perfumes contain oil that can leave a stain or create di
 
 It depends on the bottle. For mainstream designer fragrances below 100 ml that are a quarter used, the resale market is soft and you'll spend more time on logistics than you'll recover. For niche bottles, larger formats, limited editions, or anything from a house with a cult following, the math changes considerably. There is a healthy vintage and collectables market where enthusiasts pay good money for discontinued or reformulated scents.
 
-The most active resale communities right now are r/fragranceswap on Reddit (large, well-moderated), Mercari, and eBay. For high-end or rare bottles, fragrance-specific Facebook groups tend to attract buyers who already know the product and won't lowball you. Our full guide to [how to sell perfume from your collection](/how-to-sell-perfume-from-your-collection) covers pricing strategy, photography, and shipping fragrance safely -- worth reading before listing anything over roughly $40 in value. Sampling and resale platforms have been shown to dramatically reduce purchase regret, with sampling alone reducing regret by 86%, which tells you the secondary fragrance economy is active and legitimate.
+The most active resale communities right now are r/fragranceswap on Reddit (large, well-moderated), Mercari, and eBay. For high-end or rare bottles, fragrance-specific Facebook groups tend to attract buyers who already know the product and won't lowball you. Our full guide to [how to sell perfume from your collection](/how-to-sell-perfume-from-your-collection) covers pricing strategy, photography, and shipping fragrance safely, worth reading before listing anything over roughly $40 in value. Sampling and resale platforms have been shown to dramatically reduce purchase regret, with sampling alone reducing regret by 86%, which tells you the secondary fragrance economy is active and legitimate.
 
 ---
 
-## What about donating -- does anyone actually want used perfume?
+## What about donating, does anyone actually want used perfume?
 
 More people than you might expect. Domestic violence shelters, women's transition homes, and veterans' organizations often accept personal care products including partial bottles of fragrance. Call ahead to confirm their current acceptance policy, as it varies by facility and season. Thrift stores like Goodwill in the US accept unopened fragrance. Some fragrance communities also run periodic "pay it forward" threads where members claim bottles from others at shipping cost only.
 
@@ -98,17 +98,17 @@ If the fragrance was a gift you never opened, donation is almost always the righ
 
 *A question we hear often:* specifically from people who received a fragrance they find overwhelming but don't want to discard.
 
-Diluting perfume with a carrier oil like jojoba or almond oil can reduce the intensity, making it more bearable for anyone who prefers something subtler. This works best with fragrances that are conceptually appealing but too aggressive in concentration -- an Extrait or EDP that you wish were an EDT, for example. Use a clean 1 ml dropper to mix a small test batch before committing. A starting ratio of one part fragrance to three parts carrier oil will give you something wearable; adjust from there.
+Diluting perfume with a carrier oil like jojoba or almond oil can reduce the intensity, making it more bearable for anyone who prefers something subtler. This works best with fragrances that are conceptually appealing but too aggressive in concentration, an Extrait or EDP that you wish were an EDT, for example. Use a clean 1 ml dropper to mix a small test batch before committing. A starting ratio of one part fragrance to three parts carrier oil will give you something wearable; adjust from there.
 
 This approach does change the character of the fragrance somewhat. Oil-based applications project differently, tend to stay closer to skin, and alter the dry-down. If your objection is about the scent profile rather than just strength, dilution won't fix the underlying issue. See also our guide on [how to make perfume last longer](/how-to-make-perfume-last-longer), which covers how carrier oils interact with fragrance projection.
 
 ---
 
-## What if I just want it gone -- how do I dispose of perfume responsibly?
+## What if I just want it gone, how do I dispose of perfume responsibly?
 
 Don't pour fragrance down the drain. The alcohol and synthetic compounds in most modern fragrances can affect water treatment systems, and the bottles themselves need to be handled correctly.
 
-The safest disposal route is to contact your local household hazardous waste facility -- most accept cosmetics and fragrances. For the bottle, remove the spray mechanism and separate the glass from plastic components before recycling. Some fragrance brands now offer take-back or refill programs; check the house's website before your next purchase if sustainability matters to your collecting practice.
+The safest disposal route is to contact your local household hazardous waste facility, most accept cosmetics and fragrances. For the bottle, remove the spray mechanism and separate the glass from plastic components before recycling. Some fragrance brands now offer take-back or refill programs; check the house's website before your next purchase if sustainability matters to your collecting practice.
 
 If the fragrance has expired (oxidized, discolored, or smelling strongly of vinegar), disposal rather than donation is the right call. Our [does perfume expire](/does-perfume-expire) guide walks through exactly how to tell whether a bottle has turned.
 

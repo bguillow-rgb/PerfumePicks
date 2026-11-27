@@ -26,7 +26,7 @@ faqs:
     a: "Yes. Perfume oil is the most effective intermediate layer. Its oil base clings to skin longer than alcohol-based sprays, acting as a bridge that deepens and extends the final EDP. Apply oil first, then top with your spray."
   - q: "How long should I wait between lotion and perfume?"
     a: "About 60 seconds is enough for lotion to partially absorb without fully drying out. You want the skin hydrated but not wet or tacky. Spraying perfume onto still-damp lotion can dilute the opening notes."
-  - q: "Does this work for every fragrance concentration -- EDT, EDP, parfum?"
+  - q: "Does this work for every fragrance concentration. EDT, EDP, parfum?"
     a: "Yes, and it matters most for lighter concentrations. An Eau de Toilette on dry skin may fade in two to three hours; the same EDT on moisturized skin can stretch to four or five. The impact is smaller for extrait/parfum, which already has high oil content, but longevity still improves slightly."
 published: true
 ---
@@ -41,7 +41,7 @@ Moisturized skin holds onto scent molecules better than dry skin. Fragrance mole
 
 For collectors tracking wear sessions, that difference is real. An Eau de Toilette that fades in two and a half hours on dry skin may comfortably reach four to five hours on hydrated skin. That changes how you plan reapplication and how quickly you work through a bottle. If you use Perfume Picks to log your wears, you may already notice that some days a fragrance performs dramatically differently. Skin hydration is often the quiet variable behind that gap.
 
-## What kind of lotion should I use -- scented, unscented, or does it matter?
+## What kind of lotion should I use, scented, unscented, or does it matter?
 
 Unscented is the safest starting point for collectors with complex or unusual fragrances. An unscented lotion gives you the longevity benefit without any risk of note interference. It also lets you use the same lotion across your entire wardrobe without thinking about compatibility every morning.
 
@@ -49,7 +49,7 @@ Scented lotion is a more advanced move, the beginning of what the fragrance worl
 
 If your collection skews niche or vintage, unscented is almost always the right call. Those fragrances are deliberate enough that adding an external scent layer is more likely to subtract than add.
 
-## What's the right order -- lotion, oil, then perfume?
+## What's the right order, lotion, oil, then perfume?
 
 *Readers frequently ask* whether perfume oil belongs in this sequence at all, or whether it's redundant if you're already using lotion. It's not redundant. It fills a different role.
 
@@ -123,8 +123,8 @@ Yes. Perfume oil is the most effective intermediate layer. Its oil base clings t
 How long should I wait between lotion and perfume?
 About 60 seconds is enough for lotion to partially absorb without fully drying out. You want the skin hydrated but not wet or tacky. Spraying perfume onto still-damp lotion can dilute the opening notes.
 
-Does this work for every fragrance concentration -- EDT, EDP, parfum?
+Does this work for every fragrance concentration. EDT, EDP, parfum?
 Yes, and it matters most for lighter concentrations. An Eau de Toilette on dry skin may fade in two to three hours; the same EDT on moisturized skin can stretch to four or five. The impact is smaller for extrait/parfum, which already has high oil content, but longevity still improves slightly.
 
-What if I don't want to buy extra products -- is there a simpler version of this?
+What if I don't want to buy extra products, is there a simpler version of this?
 The minimum effective version: apply any unscented body moisturizer (even plain coconut oil or a basic drugstore lotion) to your pulse points after your shower, wait a minute, then spray your perfume as normal. No new products required, no fragrance compatibility decisions needed.

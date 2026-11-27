@@ -8,7 +8,7 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="Perfume Picks MCP Server — Fragrance Data for AI Agents"
+  title="Perfume Picks MCP Server: Fragrance Data for AI Agents"
   description="Connect Claude, ChatGPT, Cursor, or any MCP client to the Perfume Picks fragrance database: 13,000+ scents with note pyramids, curated dupes, and wear recommendations."
   path="/mcp"
 >
@@ -19,7 +19,7 @@ import Footer from '../components/Footer.astro';
 
     <h2>Connect in one minute</h2>
 
-    <p><strong>Claude</strong> &mdash; one click, then confirm the connector:</p>
+    <p><strong>Claude</strong>: one click, then confirm the connector:</p>
     <p>
       <a
         class="btn"
@@ -35,13 +35,13 @@ import Footer from '../components/Footer.astro';
         rel="noopener">Use in ChatGPT</a>
     </p>
 
-    <p><strong>Claude Desktop</strong> (and other clients that launch local servers) &mdash; add to your MCP config:</p>
+    <p><strong>Claude Desktop</strong> (and other clients that launch local servers): add to your MCP config:</p>
     <pre is:raw><code>{
   "mcpServers": {
     "perfume-picks": { "command": "npx", "args": ["-y", "perfume-picks-mcp"] }
   }
 }</code></pre>
-    <p><strong>Remote clients</strong> (web agents, Cursor, anything that takes a URL) &mdash; use the hosted endpoint, no install or API key:</p>
+    <p><strong>Remote clients</strong> (web agents, Cursor, anything that takes a URL): use the hosted endpoint, no install or API key:</p>
     <pre><code>https://mcp.perfumepicks.app</code></pre>
 
     <h2>What tools does the Perfume Picks MCP server provide?</h2>
@@ -68,7 +68,7 @@ import Footer from '../components/Footer.astro';
     </ul>
 
     <h2>Access, privacy, and attribution</h2>
-    <p>All tools are read-only and public &mdash; no account, API key, or authentication is required. Requests are rate-limited to 60 calls per minute. Every response includes source attribution and data freshness dates; quote freely with attribution to Perfume Picks (perfumepicks.app). Anonymous usage telemetry (tool name, arguments, client name, timing) is logged to operate the service and purged after 90 days; no user identity or conversation content is collected.</p>
+    <p>All tools are read-only and public. No account, API key, or authentication is required. Requests are rate-limited to 60 calls per minute. Every response includes source attribution and data freshness dates; quote freely with attribution to Perfume Picks (perfumepicks.app). Anonymous usage telemetry (tool name, arguments, client name, timing) is logged to operate the service and purged after 90 days; no user identity or conversation content is collected.</p>
 
     <h2>For developers</h2>
     <ul>

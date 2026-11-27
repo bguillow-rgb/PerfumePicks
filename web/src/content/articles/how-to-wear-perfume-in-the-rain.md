@@ -25,11 +25,11 @@ faqs:
   - q: "What perfume notes work best in the rain?"
     a: "Soft woods, clean musks, iris, violet, tea, and light florals all perform well in wet conditions. Earthy and petrichor-adjacent notes (vetiver, moss, damp cedar) are particularly evocative in rain. Avoid very heavy orientals or dense gourmands, which can feel overpowering in humid air."
   - q: "Should I wear EDP or EDT on a rainy day?"
-    a: "EDP is generally the better choice. Humidity can cause lighter EDT concentrations to fade faster on wet skin, while EDP molecules cling better. That said, apply one fewer spray than usual -- the humidity will do some of the amplification work for you."
+    a: "EDP is generally the better choice. Humidity can cause lighter EDT concentrations to fade faster on wet skin, while EDP molecules cling better. That said, apply one fewer spray than usual, the humidity will do some of the amplification work for you."
   - q: "Can I spray perfume on wet clothes in the rain?"
-    a: "Avoid spraying directly onto wet fabric -- rain dilutes the fragrance and can leave stains. Apply to dry skin or dry inner layers (like the lining of a coat or a scarf kept under your umbrella) for the best result."
+    a: "Avoid spraying directly onto wet fabric, rain dilutes the fragrance and can leave stains. Apply to dry skin or dry inner layers (like the lining of a coat or a scarf kept under your umbrella) for the best result."
   - q: "How do I make perfume last longer in the rain?"
-    a: "Moisturise first with an unscented lotion -- hydrated skin grips fragrance molecules far better than dry skin. Layer a matching body lotion or oil under your main fragrance, focus on sheltered pulse points (inner elbows, chest), and consider a dry inner garment layer as a backup scent anchor."
+    a: "Moisturise first with an unscented lotion, hydrated skin grips fragrance molecules far better than dry skin. Layer a matching body lotion or oil under your main fragrance, focus on sheltered pulse points (inner elbows, chest), and consider a dry inner garment layer as a backup scent anchor."
 published: true
 ---
 
@@ -61,8 +61,8 @@ Rain doesn't suit every family equally.
 | Clean musks / skin scents | Excellent | Ambrette, ambroxan, cashmeran |
 | Tea & iris / grey-day florals | Very good | Iris, violet, tea, lavender |
 | Light citrus / aromatic fresh | Good (choose herbal over sharp citrus) | Bergamot, lemon verbena, green tea |
-| Powdery florals | Good | Rose, jasmine, peony -- in moderate concentration |
-| Sweet gourmands | Risky -- can feel suffocating | Caramel, heavy vanilla, praline |
+| Powdery florals | Good | Rose, jasmine, peony, in moderate concentration |
+| Sweet gourmands | Risky, can feel suffocating | Caramel, heavy vanilla, praline |
 | Dense orientals / oud-forward | Risky outdoors | Oud, heavy resin, dark musk |
 
 Woody, musky, and earthy notes flourish in rainy conditions. Bottles that feel too challenging on a dry day often click on overcast ones. Vanilla, amber, and tonka can work well in rain when balanced with woods, spice, or musk. That balance stops them feeling sticky in humid air.
@@ -117,10 +117,10 @@ Yes. Humid air slows the evaporation of scent molecules, which keeps them close 
 Soft woods, clean musks, iris, violet, tea, and light florals all perform well in wet conditions. Earthy and petrichor-adjacent notes (vetiver, moss, damp cedar) are particularly evocative in rain. Avoid very heavy orientals or dense gourmands, which can feel overpowering in humid air.
 
 **Should I wear EDP or EDT on a rainy day?**
-EDP is generally the better choice. Humidity can cause lighter EDT concentrations to fade faster on wet skin, while EDP molecules cling better. That said, apply one fewer spray than usual -- the humidity will do some of the amplification work for you.
+EDP is generally the better choice. Humidity can cause lighter EDT concentrations to fade faster on wet skin, while EDP molecules cling better. That said, apply one fewer spray than usual, the humidity will do some of the amplification work for you.
 
 **Can I spray perfume on wet clothes in the rain?**
-Avoid spraying directly onto wet fabric -- rain dilutes the fragrance and can leave stains. Apply to dry skin or dry inner layers (like the lining of a coat or a scarf kept under your umbrella) for the best result.
+Avoid spraying directly onto wet fabric, rain dilutes the fragrance and can leave stains. Apply to dry skin or dry inner layers (like the lining of a coat or a scarf kept under your umbrella) for the best result.
 
 **How do I make perfume last longer in the rain?**
-Moisturise first with an unscented lotion -- hydrated skin grips fragrance molecules far better than dry skin. Layer a matching body lotion or oil under your main fragrance, focus on sheltered pulse points (inner elbows, chest), and consider a dry inner garment layer as a backup scent anchor.
+Moisturise first with an unscented lotion, hydrated skin grips fragrance molecules far better than dry skin. Layer a matching body lotion or oil under your main fragrance, focus on sheltered pulse points (inner elbows, chest), and consider a dry inner garment layer as a backup scent anchor.

@@ -6,7 +6,7 @@ import { SITE } from '../consts';
 ---
 <BaseLayout
   title="Features"
-  description="A closer look at Perfume Picks: wardrobe catalog, wear log, taste profile, weather-aware morning picks, cost-per-wear, Perfume Wrapped, and the SOTD feed."
+  description="What Perfume Picks does: a wardrobe with a remaining-mL meter, a wear log, Scent of the Day, Fragrance DNA, a dupe finder and Perfume Wrapped."
   path="/features"
 >
   <Fragment slot="head">
@@ -15,15 +15,15 @@ import { SITE } from '../consts';
 
   <span class="eyebrow">{SITE.name}</span>
   <h1>Features</h1>
-  <p class="effective">Everything Perfume Picks does, in one place.</p>
+  <p class="effective">What the app does, screen by screen.</p>
 
   <!-- Morning Pick / Today -->
   <section class="feature-row">
     <div class="feature-row-copy">
-      <span class="eyebrow">Morning Pick</span>
+      <span class="eyebrow">Scent of the Day</span>
       <h3>What should I wear today?</h3>
-      <p>The morning pick draws from the bottles you already own. It considers local weather, the occasion you are heading into, the family you have been wearing too much of, and bottles you have not touched in weeks.</p>
-      <p>Discovery is fine, but the everyday question is "what do I wear right now?", and the answer should come from your shelf, not a shopping cart.</p>
+      <p>Every morning the app picks a bottle from your own wardrobe. It goes on your Fragrance DNA, the local weather, the occasion and what you haven&rsquo;t worn in a while, and it gives you one line on why.</p>
+      <p>One tap logs the wear. You can turn on a daily reminder if you want one.</p>
     </div>
     <div class="feature-row-shot">
       <div class="device-wrap"><div class="device">
@@ -50,19 +50,19 @@ import { SITE } from '../consts';
       </div></div>
     </div>
     <div class="feature-row-copy">
-      <h3>Your whole collection in one place</h3>
-      <p>Every bottle in one place. Track each fragrance by house, family, and status, <strong>have</strong>, <strong>want</strong>, <strong>worn</strong>, or <strong>tested</strong>. A remaining-mL meter shows how much is left as you log wears.</p>
-      <p>Record purchase price per bottle. Filter by season, family, or status. Sort by what you have worn least recently, so the back of the shelf gets its turn.</p>
+      <h3>Your wardrobe</h3>
+      <p>Every bottle by house and family, marked <strong>Have</strong>, <strong>Want</strong> or <strong>Tested</strong>. A remaining-mL meter on each bottle drops as you log wears, and you can record what you paid.</p>
+      <p>The free version holds 5 bottles. Pro has no limit.</p>
     </div>
   </section>
 
   <!-- Train My Nose -->
   <section class="feature-row">
     <div class="feature-row-copy">
-      <span class="eyebrow">Taste Profile</span>
-      <h3>Train My Nose, built from real behavior</h3>
-      <p>A swipe interface presents scents with their notes, families, and houses. Swipe right on what you love, down to bookmark, left to pass. Your profile starts to take shape within a few rounds.</p>
-      <p>The profile sharpens with every wear you log. Built from your real collection and your real choices, not from a five-question quiz.</p>
+      <span class="eyebrow">Fragrance DNA</span>
+      <h3>Train My Nose</h3>
+      <p>Tap up to five bottles you love and the app builds your Fragrance DNA from their accords and names your archetype. Train My Nose then shows you fragrances to swipe on, three a day on the free version, and the profile sharpens with every swipe and every wear you log.</p>
+      <p>A taste profile screen shows the signals behind it.</p>
     </div>
     <div class="feature-row-shot">
       <div class="device-wrap"><div class="device">
@@ -90,8 +90,8 @@ import { SITE } from '../consts';
     </div>
     <div class="feature-row-copy">
       <h3>Find your next bottle</h3>
-      <p>Edits by mood, Boudoir, Office, Date Night, alongside celebrity favorites and new arrivals. Browse by house, family, or occasion.</p>
-      <p>Every fragrance links out to retailers so you can buy when you are ready. No shopping pressure, no algorithmic push, just a well-organized catalog.</p>
+      <p>Discover has curated edits by mood, Celebrity Picks, new arrivals and a browse by house, and you can compare two fragrances side by side.</p>
+      <p>Every fragrance page has buy links to retailers. I may earn a small commission if you use one, and the price is the same.</p>
     </div>
   </section>
 
@@ -100,8 +100,8 @@ import { SITE } from '../consts';
     <div class="feature-row-copy">
       <span class="eyebrow">Fragrance Detail</span>
       <h3>Every note, every wear</h3>
-      <p>Tap any fragrance to see its full note pyramid, concentration, release year, and your personal wear history. See the last day you wore it and how it performs across occasions.</p>
-      <p>When you are ready to buy, "Buy from" links connect you directly to retailers, with affiliate disclosure right on the page.</p>
+      <p>Tap any fragrance to see its notes and accords, your own wear history and a private My Notes section. You can rate and review it, and read other people&rsquo;s reviews.</p>
+      <p>Open the dupes on any fragrance to see cheaper bottles ranked by how close they smell, with what you&rsquo;d save. Free shows the closest one and Pro shows the rest.</p>
     </div>
     <div class="feature-row-shot">
       <div class="device-wrap"><div class="device">
@@ -128,17 +128,17 @@ import { SITE } from '../consts';
       </div></div>
     </div>
     <div class="feature-row-copy">
-      <h3>Cost-per-wear and Perfume Wrapped</h3>
-      <p>Every wear ticks the counter on the bottle's purchase price. The expensive bottle you reach for daily quietly becomes the cheap one. The niche purchase you have worn three times reveals itself.</p>
-      <p>At year-end, <strong>Perfume Wrapped</strong> recaps your year, top houses, top families, total wears, layering favorites, and the most-loved bottle by wears per month. Sharable as an image card.</p>
+      <h3>The wear log and Perfume Wrapped</h3>
+      <p>Each wear records the date, the occasion, the weather, a rating and a note, and you can log a layered combination of two bottles. The free version keeps 10 wear logs.</p>
+      <p>At the end of the year, <strong>Perfume Wrapped</strong> recaps your own wear log. It&rsquo;s a Pro feature.</p>
     </div>
   </section>
 
   <section class="cta-section">
-    <h2 class="section-title" style="margin-top:0;">Start your wardrobe</h2>
+    <h2 class="section-title" style="margin-top:0;">Try it</h2>
     <p class="cta-body">
-      Perfume Picks is on the App Store now, free to download. Questions or feedback?
-      Email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> and a real person reads it.
+      Perfume Picks is free on the App Store. Questions and feedback go to
+      <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>, and I read every one.
     </p>
     <div class="cta-row">
       {SITE.appStoreUrl ? (

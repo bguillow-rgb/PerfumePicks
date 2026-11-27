@@ -39,11 +39,11 @@ Aquatic perfumes are the fragrance world's youngest major family. The category b
 
 ## What exactly is an aquatic perfume, and what does it smell like?
 
-An aquatic fragrance is built around notes that conjure water: sea air, ocean spray, rain, or clean wet skin. The experience is crisp, airy, and light -- standing outside five minutes after a storm, or catching a breeze off the water on a warm afternoon.
+An aquatic fragrance is built around notes that conjure water: sea air, ocean spray, rain, or clean wet skin. The experience is crisp, airy, and light, standing outside five minutes after a storm, or catching a breeze off the water on a warm afternoon.
 
 There is no natural material that smells of the sea. Seawater has no extractable scent. The ocean's character in perfumery comes entirely from synthetic molecules; the actual ocean's smell derives from decomposing plankton, algae pheromones, and mineral compounds that can't practically be pulled into a fragrance formula. What you're smelling in a bottle labeled "aquatic" is an entirely synthetic re-creation.
 
-An aquatic perfume is any perfume designed to smell of water -- whether sea spray, rain, a wet stone, or a watery flower -- usually built from synthetic molecules such as Calone. The result smells cool, clean, airy, and often slightly salty or melon-like.
+An aquatic perfume is any perfume designed to smell of water, whether sea spray, rain, a wet stone, or a watery flower, usually built from synthetic molecules such as Calone. The result smells cool, clean, airy, and often slightly salty or melon-like.
 
 ---
 
@@ -75,7 +75,7 @@ The growth hasn't stopped. Research conducted in 2025 indicates that approximate
 
 Aquatic fragrances sit within the fresh family, built around oceanic, watery, and sea-air accords. The most familiar synthetic molecule driving the marine character is Calone, known for its fresh, ozonic sea-breeze effect.
 
-"Aquatic" is wider than "marine." Marine means the sea specifically; aquatic also covers rain, fresh water, and watery florals. When a perfume is described as "ozonic," that's the airier, less salty branch -- the smell just before or just after rain rather than the smell of the coast. Modern perfumery now uses over fifteen synthetic materials in this family, including Cascalone, Aquazone, and Transluzone, giving contemporary aquatics considerably more range than the pure Calone-bomb launches of the 1990s.
+"Aquatic" is wider than "marine." Marine means the sea specifically; aquatic also covers rain, fresh water, and watery florals. When a perfume is described as "ozonic," that's the airier, less salty branch, the smell just before or just after rain rather than the smell of the coast. Modern perfumery now uses over fifteen synthetic materials in this family, including Cascalone, Aquazone, and Transluzone, giving contemporary aquatics considerably more range than the pure Calone-bomb launches of the 1990s.
 
 ---
 
@@ -119,7 +119,7 @@ For collectors: a good ozonic doesn't cover the same emotional ground as a salty
 
 *A question we hear often:* where does an aquatic belong in a well-rounded wardrobe?
 
-Aquatics are freshness anchors -- the bottles you reach for in heat, in the morning, in casual settings, or when you want to smell clean and approachable without demanding attention. More than 42% of millennial and Gen Z fragrance buyers prefer fresh or aquatic scent profiles over traditional heavier accords, which means that in terms of compliment-receiving in public, an aquatic is a reliable call.
+Aquatics are freshness anchors, the bottles you reach for in heat, in the morning, in casual settings, or when you want to smell clean and approachable without demanding attention. More than 42% of millennial and Gen Z fragrance buyers prefer fresh or aquatic scent profiles over traditional heavier accords, which means that in terms of compliment-receiving in public, an aquatic is a reliable call.
 
 For collectors, aquatics represent a category where overlapping bottles is a real risk. Many of the classic blue-ozonic entries smell very similar at arm's length. The more useful approach is to hold one representative from each sub-style: one salty marine, one ozonic, one watery floral, and perhaps one sporty aquatic with enough base warmth to carry into cooler months. That four-bottle footprint covers every scenario the family serves without redundancy.
 
@@ -139,7 +139,7 @@ Marine is a sub-category of aquatic. "Aquatic" is the wider family and includes 
 Calone is a synthetic molecule first made in 1966 that smells simultaneously of sea spray and melon. It reached fine fragrance in the early 1990s and effectively created the aquatic family. Without it, the genre would not exist as we know it.
 
 **Are aquatic perfumes unisex?**
-Most are. The aquatic family's core quality -- clean, fresh, cool -- reads as universally appealing. Blue and aromatic aquatics historically skewed male; watery florals historically skewed female. According to the Fragrance Foundation, the global fragrance industry has seen a notable increase in demand for unisex fragrances, which has further driven the popularity of oceanic scents.
+Most are. The aquatic family's core quality, clean, fresh, cool, reads as universally appealing. Blue and aromatic aquatics historically skewed male; watery florals historically skewed female. According to the Fragrance Foundation, the global fragrance industry has seen a notable increase in demand for unisex fragrances, which has further driven the popularity of oceanic scents.
 
 **Do aquatic perfumes last as long as other families?**
 Generally not. Because they are designed to feel transparent and light, most aquatics project for three to five hours rather than the six or more hours typical of heavier oriental or woody fragrances. Sporty aquatics with warm musk and vanilla bases last longest. Applying to moisturized skin meaningfully extends wear.

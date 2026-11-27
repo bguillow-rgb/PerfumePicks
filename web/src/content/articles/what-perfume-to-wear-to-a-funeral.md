@@ -69,7 +69,7 @@ Concentration matters more here than at almost any other occasion. A parfum or e
 
 Skin scents and musks are the safest category regardless of concentration, because their chemistry is designed to radiate warmth from your skin rather than push a sillage trail into the room. If you have one of those intimate, barely-there musks in your collection, the kind people only notice when they're standing close to you, this is the occasion it was made for. Our guide to [what is a skin scent](https://perfumepicks.app/articles/what-is-a-skin-scent-perfume) covers that category in detail.
 
-## What about the scent-memory risk -- could this ruin a perfume I love?
+## What about the scent-memory risk, could this ruin a perfume I love?
 
 *Readers frequently ask:*
 

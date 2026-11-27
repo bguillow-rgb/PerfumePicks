@@ -10,7 +10,7 @@ export const SITE = {
   legalEntity: 'Timberline Ventures LLC',
   tagline: 'The Fragrance Collector\u2019s Wardrobe',
   description:
-    'Perfume Picks is an iOS app for fragrance collectors. Catalog your wardrobe, track every wear, get weather and occasion-aware picks from bottles you already own, and see a personal taste profile built from your collection.',
+    'Perfume Picks is an iPhone app for keeping track of a fragrance collection. It files the bottles you own, logs each wear, picks a scent each morning from your own wardrobe and shows cheaper dupes. Free on iPhone.',
   url: 'https://perfumepicks.app',
   locale: 'en-US',
   supportEmail: 'support@perfumepicks.app',

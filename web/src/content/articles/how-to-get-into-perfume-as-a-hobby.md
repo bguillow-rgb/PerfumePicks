@@ -23,7 +23,7 @@ faqs:
   - q: "How many perfumes should a beginner own?"
     a: "Start with three to five bottles maximum: one fresh everyday scent, one warmer option for evenings or cooler weather, and one or two wildcards you genuinely love. Owning fewer forces you to actually wear what you have and understand it deeply."
   - q: "What's the best way to learn fragrance families as a beginner?"
-    a: "Pick one classic reference scent from each family -- a clean citrus, a rose floral, a woody sandalwood, an amber oriental -- and smell them back to back. Within a few sessions, the differences become intuitive rather than abstract."
+    a: "Pick one classic reference scent from each family, a clean citrus, a rose floral, a woody sandalwood, an amber oriental, and smell them back to back. Within a few sessions, the differences become intuitive rather than abstract."
   - q: "Where do fragrance enthusiasts hang out online?"
     a: "Reddit's r/fragrance community has over 400,000 members and is beginner-friendly. Fragrantica is the go-to database for looking up notes and reading community reviews. PerfumeTok on TikTok and Instagram are great for discovering new bottles visually."
   - q: "How do I keep track of everything I smell as a beginner?"
@@ -37,11 +37,11 @@ You spray something in a shop, it follows you around all day, and suddenly you'r
 
 Fragrance is portable, invisible, deeply personal, and endlessly deep.
 
-Perfumery as a hobby involves exploring scents using natural or synthetic ingredients. It can be a rewarding way to express creativity, sharpen sensory awareness, and affect your mood. But you don't have to *make* anything to enjoy it. Collecting and wearing finished perfumes -- developing taste, tracking your reactions, hunting for gems -- is its own complete pursuit.
+Perfumery as a hobby involves exploring scents using natural or synthetic ingredients. It can be a rewarding way to express creativity, sharpen sensory awareness, and affect your mood. But you don't have to *make* anything to enjoy it. Collecting and wearing finished perfumes, developing taste, tracking your reactions, hunting for gems, is its own complete pursuit.
 
 Thanks to the explosion of new fragrance launches and #PerfumeTok, the idea of having a fragrance wardrobe has become commonplace. What used to feel like a niche obsession is now a thriving community with YouTube channels, Substacks, and apps built to support it.
 
-## I'm totally new -- where do I even begin?
+## I'm totally new, where do I even begin?
 
 *A question we hear often:* the temptation is to buy a beautiful bottle immediately. Resist it.
 
@@ -63,14 +63,14 @@ The fragrance wheel groups perfumes into broad families: floral, woody, amber/or
 | Floral | Rose, jasmine, peony | Light florals like Chloé EDP |
 | Woody | Sandalwood, cedar, vetiver | Soft woods, e.g. Santal blends |
 | Amber / Oriental | Warm, resinous, spiced vanilla | Vanilla-led or oud-accented scents |
-| Gourmand | Sweet, edible -- coffee, caramel, almond | Vanilla + praline combinations |
+| Gourmand | Sweet, edible, coffee, caramel, almond | Vanilla + praline combinations |
 | Chypre | Mossy, oakmoss, labdanum base | Sophisticated, complex classics |
 
 Fragrance families are the broad groups perfumes fall into: citrus, floral, woody, amber, gourmand, and so on. Spending an afternoon smelling one clear representative from each family will teach you more than a week of reading about them.
 
 ## How do I actually build taste and start to know what I like?
 
-*Readers frequently ask:* this is the most rewarding part of the hobby, and it takes longer than people expect -- which is a good thing.
+*Readers frequently ask:* this is the most rewarding part of the hobby, and it takes longer than people expect, which is a good thing.
 
 Keep notes. Even a voice memo on your phone after each sample counts. What was your first reaction? Did your opinion change after an hour? Did it smell different on a warm day versus a cold one? Over time, these notes reveal patterns you wouldn't otherwise notice. You might discover you love anything with a salty skin note, or that heavy musks consistently give you a headache. That self-knowledge is what separates a collector from someone who just owns bottles.
 
@@ -78,13 +78,13 @@ The fragrance community also accelerates the process. Joining discussions, atten
 
 Fragrance has been making a major comeback, with people shopping for their own individualised scents with the help of social media, and in 2026 "scent stacking" has risen as a trending search. Following that curiosity into communities is one of the fastest ways to accelerate your education.
 
-For collectors who want a more structured record -- especially once you own more than five or six bottles -- Perfume Picks lets you log every scent you own, record wear sessions, and start seeing your own taste profile emerge from real data rather than guesswork.
+For collectors who want a more structured record, especially once you own more than five or six bottles. Perfume Picks lets you log every scent you own, record wear sessions, and start seeing your own taste profile emerge from real data rather than guesswork.
 
 ## Should I start with designer or niche perfumes?
 
 *Readers frequently ask* whether they should go straight for niche houses (Maison Margiela, Byredo, Diptyque) or stay with accessible designers (Chanel, Dior, Yves Saint Laurent). Start where your nose leads, not where your pride points.
 
-Designer fragrances are widely available, easy to test in-store, and produced at high quality. Many of the most beloved collector staples are designer releases. Niche houses offer more unusual ingredient choices and less focus-grouped compositions, but they're not automatically better -- just different.
+Designer fragrances are widely available, easy to test in-store, and produced at high quality. Many of the most beloved collector staples are designer releases. Niche houses offer more unusual ingredient choices and less focus-grouped compositions, but they're not automatically better, just different.
 
 Dupes offer an affordable entry point, letting you explore similar olfactory experiences and work out which notes and accords actually resonate with you. There's no shame in using a well-made dupe to identify whether you enjoy, say, a smoky leather accord before spending £200 on the original.
 
@@ -98,7 +98,7 @@ A few things make life easier as you go:
 
 - A sample storage system. Small zip-lock bags or a dedicated sample box keeps decants organised and prevents leaks. Label everything with the name and house before you forget.
 - Blotter strips. Useful for initial impressions in-store without committing skin real estate to something unknown.
-- A tracking method. A notes app works early on. Once your collection grows beyond ten or fifteen bottles, a dedicated tool like Perfume Picks is worth it -- you can log exactly how much is left in each bottle, track which ones you haven't touched in months, and get wear suggestions based on the weather or occasion.
+- A tracking method. A notes app works early on. Once your collection grows beyond ten or fifteen bottles, a dedicated tool like Perfume Picks is worth it, you can log exactly how much is left in each bottle, track which ones you haven't touched in months, and get wear suggestions based on the weather or occasion.
 - A perfume journal habit. It doesn't have to be elaborate. Even rating each scent 1-5 and noting one thing you liked and one thing you didn't builds a useful record over time. Our guide to [how to keep a perfume journal](/how-to-keep-a-perfume-journal) covers this in depth.
 
 ## What are the most common beginner mistakes to avoid?
@@ -139,7 +139,7 @@ How many perfumes should a beginner own?
 Start with three to five bottles maximum: one fresh everyday scent, one warmer option for evenings or cooler weather, and one or two wildcards you genuinely love. Owning fewer forces you to actually wear what you have and understand it deeply.
 
 What's the best way to learn fragrance families as a beginner?
-Pick one classic reference scent from each family -- a clean citrus, a rose floral, a woody sandalwood, an amber oriental -- and smell them back to back. Within a few sessions, the differences become intuitive rather than abstract.
+Pick one classic reference scent from each family, a clean citrus, a rose floral, a woody sandalwood, an amber oriental, and smell them back to back. Within a few sessions, the differences become intuitive rather than abstract.
 
 Where do fragrance enthusiasts hang out online?
 Reddit's r/fragrance community has over 400,000 members and is beginner-friendly. Fragrantica is the go-to database for looking up notes and reading community reviews. PerfumeTok on TikTok and Instagram are great for discovering new bottles visually.

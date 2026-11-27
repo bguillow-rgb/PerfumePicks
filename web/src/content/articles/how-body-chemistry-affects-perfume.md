@@ -23,11 +23,11 @@ faqs:
   - q: "Does diet affect how perfume smells on you?"
     a: "It can, especially with strong-smelling foods. Garlic and onion release sulfur compounds through the skin for hours after eating. Spicy foods increase sweating, which changes how top notes open. Dehydration from alcohol or caffeine dries the skin and shortens fragrance wear time. The effect is subtle but real on delicate top notes."
   - q: "Does oily skin really make perfume last longer?"
-    a: "Generally yes. Sebum (natural skin oil) acts like a fixative -- it traps fragrance molecules and releases them slowly. People with oilier skin typically report noticeably longer wear time than those with dry skin, who often need to reapply within 2-4 hours."
+    a: "Generally yes. Sebum (natural skin oil) acts like a fixative, it traps fragrance molecules and releases them slowly. People with oilier skin typically report noticeably longer wear time than those with dry skin, who often need to reapply within 2-4 hours."
   - q: "Can hormones change how my perfume smells?"
     a: "Yes. Hormonal shifts during menstrual cycles, pregnancy, stress, or medication alter both your skin's pH and the volatile compounds your body produces. Many collectors notice certain fragrances smell noticeably different at different points in a cycle or during periods of high stress."
   - q: "How can I choose perfume that works with my body chemistry?"
-    a: "Always test on skin (not paper), and wait the full dry-down -- at least 4-6 hours. If you have dry skin, moisturize first and lean toward richer base notes like amber, vanilla, or woods. If you have oily skin, lighter fresh or floral compositions won't overwhelm. Log wears in an app like Perfume Picks to spot patterns in what performs well on you."
+    a: "Always test on skin (not paper), and wait the full dry-down, at least 4-6 hours. If you have dry skin, moisturize first and lean toward richer base notes like amber, vanilla, or woods. If you have oily skin, lighter fresh or floral compositions won't overwhelm. Log wears in an app like Perfume Picks to spot patterns in what performs well on you."
 published: true
 ---
 
@@ -67,7 +67,7 @@ For oilier skin, higher sebum production helps lock in rich fragrance families l
 |---|---|---|---|
 | Oily | Longer wear, intensifies base notes | Florals, fresh, light musks | Choose lighter concentrations (EDT) to avoid heaviness |
 | Dry | Shorter wear, faster top-note fade | Amber, woods, vanilla, orientals | Moisturize first; consider EDP or Parfum concentration |
-| Normal / Combination | Balanced development | Works across most families | Test and track -- your results will be consistent |
+| Normal / Combination | Balanced development | Works across most families | Test and track, your results will be consistent |
 | Dehydrated (temporary) | Significantly reduced longevity | Any | Hydrate before applying; avoid testing on dehydrated days |
 
 ## Does what I eat actually change how my perfume smells?

@@ -62,7 +62,7 @@ The real test is skin performance over a full day, not the label on the cap. Bef
 | Cost-per-wear | Lower | Medium | Higher |
 | Best for | Warm weather, offices | All-season, mixed use | Cooler months, outdoors |
 
-## I have twenty bottles -- how do I actually identify which one is my daily driver?
+## I have twenty bottles, how do I actually identify which one is my daily driver?
 
 *This one comes up a lot:* collectors with large wardrobes often struggle to designate a daily driver because too many options creates decision paralysis, and the most interesting bottles aren't always the most practical ones.
 
