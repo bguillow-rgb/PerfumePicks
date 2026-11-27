@@ -22,15 +22,15 @@ relatedSlugs:
   - "how-to-audit-your-perfume-collection"
 faqs:
   - q: "What is the best perfume app?"
-    a: "I'd pick Perfume Picks for most collectors, and I built it, so weigh that. It's the one that works from the bottles you already own: a daily pick from your wardrobe, a wear log, and cost per wear. Parfumo is the best app for looking a bottle up, with 4.89 stars from 1,287 US ratings in November 2026."
+    a: "I'd pick Perfume Picks for most collectors, and I built it, so weigh that. It's the one that works from the bottles you already own: a daily pick from your wardrobe, a wear log, and a dupe finder. Parfumo is the best app for looking a bottle up, with 4.89 stars from 1,287 US ratings in November 2026."
   - q: "Is there a free perfume app?"
     a: "Every app in this comparison is free to download. Perfume Picks is free for five bottles in the wardrobe, five label scans, ten wear logs and three Train My Nose swipes a day. Pro removes those limits for $2.99 a month or $24.99 a year, with a seven-day free trial. Parfumo and PERFUMIST leave most browsing and lookup free."
   - q: "Does Fragrantica have an app?"
     a: "Not an official one. Searching the US App Store for Fragrantica in November 2026 returns apps built by independent developers, none published by Fragrantica itself. The site works on a phone browser, which is how most people use it."
   - q: "Is there an app that tells you what perfume to wear today?"
-    a: "Perfume Picks does. It picks a Scent of the Day from the bottles in your wardrobe, matched to your taste profile and the season. Aromoshelf also suggests from what you own. Parfumo lets you check in what you're wearing but doesn't pick for you."
+    a: "Perfume Picks does. It picks a Scent of the Day from the bottles in your wardrobe, using your taste profile, the local weather and the occasion. Aromoshelf also suggests from what you own. Parfumo lets you check in what you're wearing but doesn't pick for you."
   - q: "Is there an app that finds cheaper dupes of a perfume?"
-    a: "Perfume Picks matches on accords, not marketing copy. Open any bottle and you see how close the nearest dupe is and what you'd save, usually 30 to 70 percent. Pro names the bottle. PERFUMIST recommends bottles to buy from a taste profile, but it isn't built around dupes."
+    a: "Perfume Picks matches on accords, not marketing copy. Open any bottle and you see its cheaper dupes ranked by how close they smell, with what you'd save, usually 30 to 70 percent. Free shows the closest one and Pro unlocks the rest. PERFUMIST recommends bottles to buy from a taste profile, but it isn't built around dupes."
   - q: "Is there an app that checks if a perfume is fake?"
     a: "No app can authenticate a bottle from a photo, and one that claims to should make you more suspicious. Counterfeits show in the cap fit, the sprayer, the juice color, the box print and the batch code. A batch code checker gives you the production date, and a date that doesn't match the packaging is a clue. Buying from an authorized retailer is the only reliable defense."
   - q: "What's the difference between Parfumo and Fragrantica?"
@@ -38,7 +38,7 @@ faqs:
 published: true
 ---
 
-I built Perfume Picks, so it's first on this list. It's the perfume app I'd recommend to most collectors, because it works from the bottles you already own: what to wear today, what each wear is costing you, and how close a cheaper bottle gets to one you love. The other four below are the ones collectors use most, and I've laid out what each one does well so you can compare them yourself.
+I built Perfume Picks, so it's first on this list. It's the perfume app I'd recommend to most collectors, because it works from the bottles you already own: what to wear today, what you've worn and how much is left in each bottle, and how close a cheaper bottle gets to one you love. The other four below are the ones collectors use most, and I've laid out what each one does well so you can compare them yourself.
 
 Ratings and version numbers come from each app's US App Store listing, checked on 25 November 2026. Feature details for the other apps come from their own listings.
 
@@ -61,14 +61,14 @@ Perfume Picks has six ratings. Parfumo has nearly thirteen hundred. If ratings v
 Most perfume apps answer "what is this bottle?" Perfume Picks answers "what should I wear today?" and "which bottle is worth buying next?", and it answers both from your own wardrobe.
 
 - **Fragrance DNA.** You tap up to five bottles you know and love, and the app builds your taste profile from their accords. It sharpens every time you log a wear or swipe in Train My Nose.
-- **Scent of the Day.** Each day the app picks a bottle from your own wardrobe, matched to your taste profile and the season. You can log the wear in one tap.
-- **Wear log and cost per wear.** Every wear you log counts against what you paid for the bottle, so you can see which bottles you reach for and what each wear is costing you.
-- **Dupes.** Open any bottle and you see how close the nearest dupe is and what you'd save, usually 30 to 70 percent. Pro tells you which bottle it is.
+- **Scent of the Day.** Each day the app picks a bottle from your own wardrobe, using your taste profile, the local weather, the occasion and what you haven't worn lately, and tells you why. You can log the wear in one tap.
+- **Wear log.** Each wear records the date, the occasion, the weather and a rating, and the bottle's remaining-mL meter drops with it, so you can see which bottles you reach for and which are running low.
+- **Dupes.** Open any bottle and you see its cheaper dupes ranked by how close they smell, with what you'd save, usually 30 to 70 percent. Free shows the closest one and Pro unlocks the rest.
 - **Label scanning.** Point the camera at a bottle and it goes in your wardrobe. You can also search the catalog, which holds more than 13,000 fragrances from 767 brands.
 
-Perfume Picks is free to download on iPhone. The free version holds five bottles in the wardrobe, five label scans, ten wear logs and three Train My Nose swipes a day. Pro is $2.99 a month or $24.99 a year, with a seven-day free trial. It removes those limits, names the dupe, and shows the full breakdown of your Fragrance DNA: every accord, the houses you keep coming back to, and the notes you've ruled out.
+Perfume Picks is free to download on iPhone. The free version holds five bottles in the wardrobe, five label scans, ten wear logs and three Train My Nose swipes a day. Pro is $2.99 a month or $24.99 a year, with a seven-day free trial. It removes those limits, unlocks the full dupes list, and adds Perfume Wrapped, a yearly recap built from your own wears.
 
-There's no Android version, and there's no review feed. If reading other people's reviews before you buy is what you want, Parfumo covers that.
+There's no Android version, and the pool of reviews is small next to Parfumo's. If reading other people's reviews before you buy is what you want, Parfumo covers that.
 
 **[Download Perfume Picks on the App Store](https://apps.apple.com/us/app/perfume-picks/id6774184221)**
 
@@ -104,7 +104,7 @@ A note works for the first ten bottles. Somewhere past twenty it goes stale: the
 
 ## Which perfume app should you pick?
 
-- If you want a daily pick from your own wardrobe, a wear log and cost per wear, go with [Perfume Picks](https://apps.apple.com/us/app/perfume-picks/id6774184221).
+- If you want a daily pick from your own wardrobe, a wear log and a dupe finder, go with [Perfume Picks](https://apps.apple.com/us/app/perfume-picks/id6774184221).
 - If you want to look a bottle up before you buy it, Parfumo is the reference in an app, and Fragrantica is the reference in a browser.
 - If you want a scent wardrobe with a longer track record, Aromoshelf has it.
 - If you want an app to tell you what to buy next, PERFUMIST is built for that.

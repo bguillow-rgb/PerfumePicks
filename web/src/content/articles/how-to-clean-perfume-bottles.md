@@ -1,6 +1,6 @@
 ---
 title: "How to Clean Perfume Bottles (A Collector's Guide)"
-description: "Learn exactly how to clean perfume bottles, atomizers, and clogged sprayers — safe methods for glass, crystal, plastic, and vintage flacons."
+description: "Learn exactly how to clean perfume bottles, atomizers, and clogged sprayers, safe methods for glass, crystal, plastic, and vintage flacons."
 tier: "detail"
 targetQuery: "how to clean perfume bottles"
 relatedQueries:
@@ -31,7 +31,7 @@ faqs:
 published: true
 ---
 
-Cleaning a perfume bottle seems like it should be simple. Rinse it out, move on. But collectors know the details matter: the wrong method clouds crystal, destroys vintage labels, or leaves enough old fragrance behind to ruin whatever goes in next. Whether you're refreshing a decant atomizer, restoring a display piece, or prepping an empty flacon for resale, here's exactly how to do it without breaking anything.
+The wrong cleaning method clouds crystal, destroys vintage labels, or leaves enough old fragrance behind to ruin whatever goes in next. Whether you're refreshing a decant atomizer, restoring a display piece, or prepping an empty flacon for resale, the method matters.
 
 ## Why would I even need to clean a perfume bottle?
 
@@ -44,7 +44,7 @@ There are four main situations where cleaning matters:
 3. Display or resale prep, dusty, sticky, or cloudy bottles undercut the look of a collection, and residue dulls appearance over time
 4. Preserving the bottle itself, leftover residue can alter future scents, attract dust, or damage the bottle
 
-If you track your collection in an app like Perfume Picks, it's worth noting which bottles you've cleaned and when, especially useful if you rotate decants across the same atomizer.
+If you track your collection in an app like Perfume Picks, logging which bottles you've worn and when is useful, especially if you rotate decants across the same atomizer.
 
 ---
 
@@ -62,13 +62,13 @@ You don't need specialist products. Almost everything useful is already in your 
 | Distilled water (final rinse) | Crystal and vintage glass | Prevents mineral water spots |
 | Soft bottle brush or pipe cleaner | Wide-mouth bottles | Gentle interior scrubbing |
 
-Use lukewarm water, not boiling hot, especially for delicate crystal perfume bottles. Hot water is one of the most common ways collectors accidentally damage a treasured flacon.
+Use lukewarm water, not hot, especially for delicate crystal perfume bottles. Hot water is one of the most common ways collectors accidentally damage a treasured flacon.
 
 ---
 
 ## How do I clean the inside of a glass perfume bottle?
 
-*Readers frequently ask:* this is the core question, and the method depends on how much residue you're dealing with.
+*Readers frequently ask:* the method depends on how much residue you're dealing with.
 
 **For light residue (recently emptied bottles):**
 
@@ -80,7 +80,7 @@ For glass bottles only, uncooked rice combined with dish soap scrubs the interio
 
 **Final step for both:** let it air-dry completely. Set the bottle upside down or at an angle in a clean, dry spot. Don't refill until it's bone dry.
 
-One thing to know: if the bottle looks clean but still smells, the fragrance oils are usually trapped in the pump or tube. Plastic components in the spray mechanism hold residual scent longer than glass. That's a separate cleaning job.
+If the bottle looks clean but still smells, the fragrance oils are usually trapped in the pump or tube. Plastic components in the spray mechanism hold residual scent longer than glass. That's a separate cleaning job.
 
 ---
 
@@ -98,27 +98,27 @@ Hold each part under warm running water and rinse away visible residue. Avoid ho
 
 **Step 3: Clean the nozzle with a cotton swab.**
 
-Use a cotton swab and mild soap to clean the nozzle and the area around it. For a genuinely blocked nozzle tip, a fine sewing needle inserted very carefully into the spray hole can dislodge dried fragrance crust. Work slowly and don't force it.
+Use a cotton swab and mild soap to clean the nozzle and the area around it. For a blocked nozzle tip, a fine sewing needle inserted carefully into the spray hole can dislodge dried fragrance crust. Work slowly and don't force it.
 
 **Step 4: Flush with isopropyl alcohol for residual scent and deep clogs.**
 
-Spray isopropyl alcohol through the mechanism several times so it flushes through the full tube and nozzle pathway. This dissolves fragrance compounds that water alone won't shift. Baking soda is also worth knowing about as an odor neutralizer if you're dealing with particularly persistent smells.
+Spray isopropyl alcohol through the mechanism several times so it flushes through the full tube and nozzle pathway. This dissolves fragrance compounds that water alone won't shift. Baking soda also neutralizes persistent odors if you're dealing with a stubborn smell.
 
 **Step 5: Dry completely.**
 
-Let the pump dry fully before reattaching. Storing bottles upright and keeping the nozzle clear of debris will reduce how often you need to do this at all.
+Let the pump dry fully before reattaching. Storing bottles upright and keeping the nozzle clear of debris will reduce how often you need to do this.
 
 ---
 
 ## Can I reuse a plastic atomizer with a completely different fragrance?
 
-The honest answer: probably not perfectly, and you should know why before you try.
+Probably not perfectly, and it's worth knowing why before you try.
 
-The glass bottle is fine. The plastic sprayer is the problem. The original fragrance soaks into the plastic over time, and no matter how thoroughly you clean it, some residue may remain and bleed into the next fragrance. This is a known issue in collector communities, and it's why experienced decanting enthusiasts prefer metal mechanisms.
+The glass bottle is fine. The plastic sprayer is the problem. The original fragrance soaks into the plastic over time, and no matter how thoroughly you clean it, some residue may remain and bleed into the next fragrance. This is a known issue in collector communities, which is why experienced decanting enthusiasts prefer metal mechanisms.
 
-Aluminium is completely inert. It won't react with your fragrance or pull its scent profile in a different direction. Plastic isn't, and the longer it's been in use, the worse the cross-contamination risk. For anything you're going to refill repeatedly, aluminium is the better choice.
+Aluminium is completely inert. It won't react with your fragrance or pull its scent in a different direction. Plastic isn't, and the longer it's been in use, the worse the cross-contamination risk. For anything you're going to refill repeatedly, aluminium is the better choice.
 
-If you're committed to reusing a plastic atomizer: after cleaning with mild soap, try filling it with isopropyl alcohol, leaving it for a day or two with occasional shaking, then rinse with water and let it air out. This won't achieve laboratory-grade purity, but it's the best you can do at home.
+If you're committed to reusing a plastic atomizer: after cleaning with mild soap, fill it with isopropyl alcohol, leave it for a day or two with occasional shaking, then rinse with water and let it air out. This won't achieve laboratory-grade purity, but it's the best you can do at home.
 
 ---
 
@@ -132,17 +132,17 @@ If you're committed to reusing a plastic atomizer: after cleaning with mild soap
 - Never put them in the dishwasher. The heat alone can crack or break the bottle.
 - Air-dry face-down on a microfiber cloth, not on a paper towel, which can scratch.
 
-For bottles with painted or acid-etched decoration, skip the rice-and-soap method entirely. Stick to the gentle vinegar soak and keep agitation minimal.
+For bottles with painted or acid-etched decoration, skip the rice-and-soap method. Stick to the gentle vinegar soak and keep agitation minimal.
 
 ---
 
 ## How do I clean the outside of a perfume bottle, and keep labels intact?
 
-The exterior picks up fingerprints, dust, and product residue surprisingly quickly, especially if you apply perfume near your collection shelf.
+The exterior picks up fingerprints, dust, and product residue quickly, especially if you apply perfume near your collection shelf.
 
 For the glass body, a microfiber cloth slightly dampened with distilled water handles most dust and fingerprint smears without risk. For sticky residue around the nozzle or cap area, a cotton swab dipped in a small amount of isopropyl alcohol cleans precisely without spreading moisture onto labels.
 
-Labels, including the paper or foil stickers found on luxury bottles, are the most vulnerable part. Keep them completely dry. If a label is already lifting, don't try to re-stick it with water. A tiny amount of clear archival adhesive applied with a toothpick is a far safer fix. Conservation best practices used by vintage collectors and museum curators hold that paper labels should never be exposed to cleaning agents, even mild ones, as the result can be irreversible discoloration or edge lifting.
+Labels, including the paper or foil stickers found on luxury bottles, are the most vulnerable part. Keep them completely dry. If a label is already lifting, don't try to re-stick it with water. A tiny amount of clear archival adhesive applied with a toothpick is a safer fix. Conservation best practices used by vintage collectors and museum curators hold that paper labels should never be exposed to cleaning agents, even mild ones, the result can be irreversible discoloration or edge lifting.
 
 If resale value matters to you (see our guide to [do perfumes increase in value](/do-perfumes-increase-in-value)), keeping original labels pristine is one of the highest-impact things you can do for a bottle's worth.
 
@@ -150,11 +150,11 @@ If resale value matters to you (see our guide to [do perfumes increase in value]
 
 ## How often should I clean my atomizers?
 
-For daily-use atomizers: a quick warm-water flush every one to two months prevents buildup before it becomes a clog. For travel atomizers you refill between different fragrances: clean before every new fill to avoid cross-contamination. For display bottles you never spray from: a dry microfiber wipe every few weeks is usually enough.
+For daily-use atomizers: a quick warm-water flush every one to two months prevents buildup before it becomes a clog. For travel atomizers you refill between different fragrances: clean before every new fill to avoid cross-contamination. For display bottles you never spray from: a dry microfiber wipe every few weeks is enough.
 
-A clean atomizer also matters for hygiene reasons, not just scent purity. Residue buildup over time can lead to bacterial growth, unpleasant odors, and potential skin irritation.
+A clean atomizer matters for hygiene as well as scent purity. Residue buildup over time can lead to bacterial growth, unpleasant odors, and potential skin irritation.
 
-Tracking which bottles need attention is the kind of thing Perfume Picks handles naturally. If you log each bottle in your collection, you'll always know how long an atomizer has been in use and when it last had a proper flush.
+Tracking which bottles need attention is the kind of thing Perfume Picks handles naturally. If you log each bottle in your collection, you'll always know how much remains in an atomizer as the remaining mL meter drops with each logged wear.
 
 ---
 

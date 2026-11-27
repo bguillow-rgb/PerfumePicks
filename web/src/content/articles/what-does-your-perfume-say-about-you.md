@@ -33,7 +33,7 @@ published: true
 
 Your fragrance speaks before you do.
 
-Scent is unusual among stimuli because it bypasses conscious processing and connects directly with emotion through the olfactory system. It's a direct line to the limbic system, where feelings live. That means the perfume you choose doesn't just sit on your skin. It projects something about who you are, what you value, and how you want to feel. For collectors who own multiple bottles, this gets genuinely interesting: your *entire wardrobe* is a kind of personality portrait.
+Scent bypasses conscious processing and connects directly with emotion through the olfactory system. It runs straight to the limbic system, where feelings live. The perfume you choose doesn't just sit on your skin. It projects something about who you are, what you value, and how you want to feel. For collectors who own multiple bottles, this gets interesting: your *entire wardrobe* is a kind of personality portrait.
 
 ---
 
@@ -41,7 +41,7 @@ Scent is unusual among stimuli because it bypasses conscious processing and conn
 
 *A question we hear often:* Yes, and the evidence runs deeper than fragrance marketing would have you believe.
 
-Fine fragrance has been tied to mood and personal identity for thousands of years, and fragrance is widely experienced as a kind of persona, something that radiates who you are. Psychologists who study scent preference consistently find correlations between fragrance family choices and broader personality dimensions. People who gravitate toward complex, animalic, or smoky accords tend to score higher on openness to experience. Those drawn to clean, aquatic, and citrus scents often self-report as pragmatic and present-focused. Soft florals and musks correlate with warmth, approachability, and nurturing traits.
+Fine fragrance has been tied to mood and personal identity for thousands of years. Psychologists who study scent preference consistently find correlations between fragrance family choices and broader personality dimensions. People who gravitate toward complex, animalic, or smoky accords tend to score higher on openness to experience. Those drawn to clean, aquatic, and citrus scents often self-report as pragmatic and present-focused. Soft florals and musks correlate with warmth, approachability, and nurturing traits.
 
 None of this is deterministic. Your skin chemistry, your memories, and a dozen environmental factors all shape what you reach for on a given day. But across a collection of bottles you've chosen and loved over time, real patterns emerge. The collection as a whole says more than any single bottle.
 
@@ -49,7 +49,7 @@ None of this is deterministic. Your skin chemistry, your memories, and a dozen e
 
 ## "What does each fragrance family say about the person wearing it?"
 
-Here's a working cheat sheet. These are tendencies, not rules. Treat them as starting points for self-reflection, not personality tests.
+These are tendencies, not rules. Treat them as starting points for self-reflection.
 
 | Fragrance Family | Personality Tendencies Often Associated |
 |---|---|
@@ -63,19 +63,19 @@ Here's a working cheat sheet. These are tendencies, not rules. Treat them as sta
 | Green / Herbal / Aromatic | Intellectual, nature-connected, quietly confident |
 | Skin scent / Musk | Intimate, self-contained, understated |
 
-In 2026, searches for warm compositions, boozy accords, creamy sandalwood, dark fruit notes, are outpacing fresh and citrus queries, which suggests broader culture is collectively moving toward richer, more expressive fragrance personalities. If your collection has quietly shifted in that direction, you're not alone.
+In 2026, searches for warm compositions, boozy accords, creamy sandalwood, and dark fruit notes are outpacing fresh and citrus queries. Broader culture is moving toward richer, more expressive fragrance choices. If your collection has shifted in that direction, you're not alone.
 
 ---
 
 ## "Does how much perfume I wear say something about me?"
 
-*This one comes up a lot:* It absolutely does, and it's one of the more nuanced signals your fragrance sends.
+*This one comes up a lot:* It does, and it's one of the more nuanced signals your fragrance sends.
 
-Heavy projection, multiple sprays, sillage that announces you before you enter a room, tends to read as confidence, a desire to be noticed, or deep sensory pleasure in fragrance itself. At a dinner party or an evening out, that can be magnetic. In a shared workspace, it can read as inconsiderate. Context changes the message entirely, which is why perfume etiquette isn't arbitrary. It's about reading the room.
+Heavy projection, multiple sprays, sillage that announces you before you enter a room, tends to read as confidence, a desire to be noticed, or deep sensory pleasure in fragrance. At a dinner party or an evening out, that can be magnetic. In a shared workspace, it can read as inconsiderate. Context changes the message entirely. That's why perfume etiquette isn't arbitrary. It's about reading the room.
 
-A lighter, skin-close application signals the opposite: intimacy, restraint, an invitation for people to lean in rather than be overwhelmed. Not everyone needs a fragrance that precedes them into a room. There's something special about wearing a scent that sits close to the skin, one that only the people nearest to you will catch. Collectors who've been at this for a few years often migrate toward more intimate application, not because their fragrances got weaker, but because they started wearing perfume for themselves rather than for the room.
+A lighter, skin-close application signals intimacy and restraint. It's an invitation for people to lean in rather than be overwhelmed. Collectors who've been at this for a few years often migrate toward more intimate application, not because their fragrances got weaker, but because they started wearing perfume for themselves rather than for the room.
 
-The number of sprays you use also reflects how well you know your own bottles. Someone who has logged wear data on a fragrance, tracking how it performs in heat, cold, and humidity, applies with precision. That kind of calibrated wearing signals genuine expertise, even if no one else in the room knows why you only did one spray on your sternum.
+The number of sprays you use also reflects how well you know your own bottles. Someone who has logged wear data on a fragrance, tracking how it performs in heat, cold, and humidity, applies with precision. That calibrated approach signals genuine expertise, even if no one else in the room knows why you only did one spray on your sternum.
 
 ---
 
@@ -83,11 +83,11 @@ The number of sprays you use also reflects how well you know your own bottles. S
 
 *Readers frequently ask:* this one, especially after a particularly enthusiastic haul.
 
-Perfume is genuinely one of the most layered hobbies going. It blends history, chemistry, gut reaction, art, and the pure pleasure of beautiful objects. People who build large collections tend to score high on two personality traits: openness to experience (curiosity, aesthetic sensitivity, love of variety) and what psychologists call "sensory-seeking," the drive to actively explore perceptual experience rather than settle into the familiar.
+Perfume blends history, chemistry, gut reaction, art, and the pleasure of beautiful objects. People who build large collections tend to score high on two personality traits: openness to experience, which covers curiosity, aesthetic sensitivity, and love of variety, and what psychologists call sensory-seeking, the drive to actively explore perceptual experience rather than settle into the familiar.
 
-There's a meaningful difference, though, between a collector and a hoarder. A fragrance wardrobe is shaped around how you actually live. A collection is what happens when you stop doing that shaping. If most of your bottles get worn regularly, your collection says "curious and intentional." If 40 bottles sit untouched for years, it might be saying something else, possibly that the buying has become more rewarding than the wearing. That's worth sitting with.
+There's a meaningful difference between a collector and a hoarder. A fragrance wardrobe is shaped around how you actually live. A collection is what happens when you stop doing that shaping. If most of your bottles get worn regularly, your collection says "curious and intentional." If 40 bottles sit untouched for years, it might be saying something else, possibly that the buying has become more rewarding than the wearing. That's worth sitting with.
 
-Beauty editors have noted a broader cultural shift: whereas people once invested in one or two signature scents they returned to year after year, the rise of fragrance launches and #PerfumeTok has made the idea of a fragrance wardrobe commonplace. Owning many bottles in 2026 is no longer eccentric. It's simply how engaged fragrance lovers operate.
+Beauty editors have noted a broader cultural shift: whereas people once invested in one or two signature scents they returned to year after year, the rise of fragrance launches and #PerfumeTok has made the idea of a fragrance wardrobe commonplace. Owning many bottles in 2026 is no longer eccentric. It's how engaged fragrance lovers operate.
 
 ---
 
@@ -95,9 +95,9 @@ Beauty editors have noted a broader cultural shift: whereas people once invested
 
 Your everyday scent, the one you grab without thinking, is arguably the most honest signal in your whole collection. It's not chosen for a special occasion or a mood. It's what you are when you're just being yourself.
 
-People who default daily to something clean and understated (fresh musks, light woodies, sheer florals) tend to project reliability and approachability. They've usually found something that feels like an extension of skin rather than a statement. Those who wear something bold or unusual every day, a heavy oud, a smoky leather, a polarizing animalic, are signaling that self-expression matters more to them than universal approval. That's a meaningful declaration of identity.
+People who default daily to something clean and understated, fresh musks, light woodies, sheer florals, tend to project reliability and approachability. They've usually found something that feels like an extension of skin rather than a statement. Those who wear something bold or unusual every day, a heavy oud, a smoky leather, a polarizing animalic, are signaling that self-expression matters more to them than universal approval. That's a meaningful declaration of identity.
 
-If you find yourself rotating your everyday scent constantly and never settling, it often signals someone whose self-concept is still in active exploration, or someone who simply refuses to be fixed. Some people rotate based on mood or setting; others commit to one scent that becomes their olfactory identity. Neither is wrong. The preference itself is the signal.
+If you find yourself rotating your everyday scent constantly and never settling, it often signals someone whose self-concept is still in active exploration, or someone who refuses to be fixed. Some people rotate based on mood or setting; others commit to one scent that becomes their olfactory identity. Neither is wrong. The preference itself is the signal.
 
 ---
 
@@ -111,11 +111,11 @@ The Completist collects flankers, vintage bottles, and limited editions of their
 
 The Variety-Seeker constantly explores new houses, notes, and families and rarely revisits the same bottle twice. High openness, low routine-orientation, driven by discovery over comfort.
 
-The Minimalist Curator owns ten bottles or fewer, each chosen with surgical precision. Often signals strong aesthetic values and a distaste for clutter. Quality over quantity, applied to scent.
+The Minimalist Curator owns ten bottles or fewer, each chosen with precision. Often signals strong aesthetic values and a distaste for clutter. Quality over quantity, applied to scent.
 
-The Nostalgic Collector hunts for discontinued gems, vintage formulas, and pre-reformulation bottles. Search behavior in this category tends to evolve over time, moving from accessible entry points toward increasingly specific, high-knowledge queries as palate and confidence grow. These collectors tend to value preservation, emotional resonance, and the past as a source of meaning.
+The Nostalgic Collector hunts for discontinued gems, vintage formulas, and pre-reformulation bottles. These collectors tend to value preservation, emotional resonance, and the past as a source of meaning. Search behavior in this category tends to evolve over time, moving from accessible entry points toward increasingly specific, high-knowledge queries as palate and confidence grow.
 
-Most collectors are blends of these types, and the blend shifts over time. Tracking your own wear data, what you actually reach for week after week, often reveals which archetype is really driving your buying versus your wearing.
+Most collectors are blends of these types, and the blend shifts over time. Tracking your own wear data, what you actually reach for week after week, often reveals which archetype is driving your buying versus your wearing.
 
 ---
 
@@ -125,7 +125,7 @@ This is the long game, and it's one of the most rewarding things about building 
 
 There are many reasons to buy a perfume, and especially as one gets older and more self-aware, a perfume can affirm who you are, at least for that day. The bottles you bought at 22 likely look very different from what you're wearing now, not because your taste improved, but because your identity sharpened. That arc is visible in a collection.
 
-Perfume Picks was built partly around this idea: that the data of what you actually wear, not what you own, but what you reach for, tells a truer story of your taste than any purchase ever could. Your wear log, your ratings, your notes over time form a kind of fragrant autobiography. For collectors who want to understand the personality portrait their collection is painting, that data is the most honest mirror available.
+Perfume Picks was built partly around this idea: that the data of what you actually wear, not what you own, but what you reach for, tells a truer story of your taste than any purchase ever could. Your wear log, your star ratings, your notes over time form a kind of fragrant autobiography. For collectors who want to understand the personality portrait their collection is painting, that data is the most honest mirror available.
 
 ---
 

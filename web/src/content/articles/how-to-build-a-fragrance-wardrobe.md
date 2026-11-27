@@ -29,7 +29,7 @@ faqs:
   - q: "How do I store a fragrance wardrobe properly?"
     a: "Keep bottles away from direct sunlight, heat sources, and humidity. A drawer, cabinet, or fragrance fridge all work. Avoid windowsills and bathroom shelves. Heat and UV light degrade the top notes first, the bottle will smell flatter and more base-heavy over time."
   - q: "What does it mean to track remaining mL in a fragrance wardrobe?"
-    a: "Tracking remaining mL lets you see how fast you actually use each bottle, calculate a real cost-per-wear, and know when to reorder before you run out of something you wear daily. Most collectors estimate remaining volume visually, but apps like Perfume Picks let you log it precisely per wear."
+    a: "Tracking remaining mL lets you see how fast you actually use each bottle and know when to reorder before you run out of something you wear daily. Most collectors estimate remaining volume visually, but apps like Perfume Picks let you log it precisely per wear."
 published: true
 ---
 
@@ -41,7 +41,7 @@ A wardrobe is different. A wardrobe is intentional, built around the occasions y
 
 The distinction is utility. A wardrobe is a working tool, every bottle in it should answer a specific question: *what do I wear tonight?* A collection answers a different question: *what do I own?*
 
-The practical difference shows up in wear rates. As a rough rule of thumb, about 20% of your bottles account for 80% of your wears. The other 80%, the blind buys, the gifted bottles, the things you loved on first spray but never reached for again, sit unused, degrading slowly on a shelf.
+The practical difference shows up in wear rates. About 20% of your bottles account for 80% of your wears. The other 80%, the blind buys, the gifted bottles, the things you loved on first spray but never reached for again, sit unused, degrading slowly on a shelf.
 
 Building a wardrobe means closing that gap. The goal is a set of bottles where almost every one gets worn regularly, each one serving a purpose the others do not.
 
@@ -66,15 +66,15 @@ Six to eight bottles covering these slots gives you a functional wardrobe. You a
 
 Organization serves two goals: finding the right bottle quickly and understanding your collection at a glance. The two most useful organizing dimensions are **occasion** and **season**, not house or alphabetical order.
 
-**By occasion:** Divide bottles into daily/work, casual social, and formal/evening. Within each tier, sort by season. This mirrors how you actually make decisions in the morning, you start with occasion, then narrow by weather.
+**By occasion:** Divide bottles into daily/work, casual social, and formal/evening. Within each tier, sort by season. This mirrors how you make decisions in the morning, you start with occasion, then narrow by weather.
 
 **By season:** Organize on the physical shelf by current season in the front, off-season in the back. Rotate quarterly. Keeping summer bottles visible in January leads to them sitting unworn.
 
-**By status:** Tracking wardrobe status, *have*, *want*, *worn*, *tested*, is more useful than any physical organization system. Digital tracking (via a spreadsheet or an app like Perfume Picks) gives you a complete picture: what you own, what you are considering, what you have tried and moved on from.
+**By status:** Tracking wardrobe status, *have*, *want*, *tested*, is more useful than any physical organization system. Digital tracking (via a spreadsheet or an app like Perfume Picks) gives you a complete picture: what you own, what you are considering, what you have tried and moved on from.
 
 ## What are the essential fragrance families every wardrobe should cover?
 
-You do not need to represent every family, you need to represent *your* life. But the most commonly under-represented slots in collector wardrobes are:
+You do not need to represent every family, you need to represent *your* life. The most commonly under-represented slots in collector wardrobes are:
 
 **A true office fragrance.** Most enthusiast-community favorites project too hard for shared spaces. Sillage appropriate for a conference room is different from sillage appropriate for an evening dinner. If you wear fragrance to work and only own statement pieces, you will end up not wearing fragrance to work.
 
@@ -84,13 +84,13 @@ You do not need to represent every family, you need to represent *your* life. Bu
 
 ## Tracking what you actually wear
 
-Wear logging is the highest-leverage habit in fragrance collecting. Without it, your sense of your own taste is based on first impressions and conscious preferences, both of which differ systematically from your actual behavior.
+Wear logging is the highest-leverage habit in fragrance collecting. Without it, your sense of your own taste is based on first impressions and conscious preferences, both of which differ from your actual behavior.
 
-The minimum viable log captures: date, fragrance, and occasion. With just those three fields, after three months you can see clearly which families you actually reach for versus which you think you prefer.
+The minimum viable log captures: date, fragrance, and occasion. With just those three fields, after three months you can see clearly which families you reach for versus which you think you prefer.
 
-A more complete log adds: weather conditions at wear time, number of sprays, a 1-5 rating, and a short note. This data lets you answer questions most collectors cannot: *Which fragrance do I wear most on cold mornings? What do I reach for before social events? What has a high rating but a low wear count, a bottle I admire but never actually wear?*
+A more complete log adds: weather conditions at wear time, number of sprays, a 1-5 rating, and a short note. This data lets you answer questions most collectors cannot: *Which fragrance do I wear most on cold mornings? What do I reach for before social events? What has a high rating but a low wear count, a bottle I admire but never wear?*
 
-Apps like Perfume Picks automate the weather capture and build a taste profile from wear history rather than quiz answers. The profile it generates from fifty logged wears is more accurate than anything a questionnaire can produce.
+Apps like Perfume Picks automate the weather capture and build a taste profile from bottles you know and love rather than quiz answers. The profile it generates from your logged wears is more accurate than anything a questionnaire can produce.
 
 ## When should you add a new bottle to your wardrobe?
 
@@ -98,13 +98,13 @@ The right question is not "do I love this fragrance?" but "does this fragrance f
 
 Useful pre-purchase checks:
 
-- **Do I already have something that serves this occasion and season?** If yes, the new bottle is an upgrade or a lateral move, be honest about whether it is actually better for you.
-- **Have I worn a decant through at least one relevant season?** For complex fragrances, performance changes dramatically between summer and winter. A decant that lasts you two to three weeks of regular wear tells you more than any review.
+- **Do I already have something that serves this occasion and season?** If yes, the new bottle is an upgrade or a lateral move, be honest about whether it is better for you.
+- **Have I worn a decant through at least one relevant season?** For complex fragrances, performance changes between summer and winter. A decant that lasts two to three weeks of regular wear tells you more than any review.
 - **What is my current wear rate on similar bottles?** If you own four orientals and already have low wear rates on two of them, adding a fifth is accumulation, not curation.
 
 ## How do you store a fragrance wardrobe properly?
 
-The three enemies of fragrance are heat, light, and humidity. Each degrades the aromatic compounds at different rates, but all accelerate oxidation, the process that makes a fragrance smell flat, sour, or alcohol-heavy over time.
+Heat, light, and humidity degrade aromatic compounds at different rates, but all accelerate oxidation, the process that makes a fragrance smell flat, sour, or alcohol-heavy over time.
 
 **Light** is the fastest-acting. UV exposure breaks down top notes and delicate florals within months on a sunny shelf. Keep bottles in a drawer, cabinet, or dedicated fragrance storage.
 
@@ -112,17 +112,17 @@ The three enemies of fragrance are heat, light, and humidity. Each degrades the 
 
 **Humidity** affects the bottle more than the juice, metal components and caps can corrode, and the pump mechanism can gum up over time. Bathroom steam is the most common culprit.
 
-For large collections, a dedicated fragrance fridge (a small wine or cosmetic cooler set to 55-60°F) extends bottle life significantly and keeps the collection organized by making bottles visible at a glance.
+For large collections, a dedicated fragrance fridge (a small wine or cosmetic cooler set to 55-60°F) extends bottle life and keeps the collection organized by making bottles visible at a glance.
 
 ## Tools fragrance collectors use to manage their wardrobe
 
 Spreadsheets work and many longtime collectors swear by them. A spreadsheet can track every field you care about and generate any analysis you want to write a formula for. The tradeoff is friction, the more fields and the more analytical you want to get, the more time it takes.
 
-Apps built specifically for fragrance collection offer two things spreadsheets cannot: automated weather capture at wear time, and a taste profile built from behavior rather than self-reported preferences.
+Apps built for fragrance collection offer two things spreadsheets cannot: automated weather capture at wear time, and a taste profile built from behavior rather than self-reported preferences.
 
-**Perfume Picks** tracks wardrobe status, remaining mL, purchase price, and wear logs with weather and occasion. The taste profile is built from actual wear history, after enough logged wears, the app surfaces patterns you may not have consciously noticed. A cost-per-wear calculation closes the loop by showing which bottles actually earn their shelf space.
+**Perfume Picks** tracks wardrobe status, remaining mL, purchase price, and wear logs with weather and occasion. The taste profile is built from bottles you know and love, sharpening each time you log a wear or swipe in Train My Nose, and a taste profile screen shows the signals behind it.
 
-The right tool is whichever one you will actually use consistently. A perfect spreadsheet you fill in once a month is worse than a simple app you log every wear in.
+The right tool is whichever one you will use consistently. A perfect spreadsheet you fill in once a month is worse than a simple app you log every wear in.
 
 ## Building a wardrobe when you are just starting out
 
@@ -132,4 +132,4 @@ Build your first wardrobe on paper before you buy anything: write down the six s
 
 After working through twenty to thirty decants this way, your taste profile will be clear enough to buy bottles confidently. The two or three bottles that keep coming back as the right answer across multiple slots are your real anchors, and those are worth spending on.
 
-The collector trap is skipping this phase and buying bottles based on hype, reviews, or single test-strip impressions. A fragrance that smells magnificent in a store on a February afternoon may be unwearable for you in a July heatwave, or may simply never work with your skin chemistry the way it does in reviews. Decanting first is not timid, it is how experienced collectors buy fewer bottles they regret.
+The collector trap is skipping this phase and buying bottles based on hype, reviews, or single test-strip impressions. A fragrance that smells good in a store on a February afternoon may be unwearable for you in a July heatwave, or may never work with your skin chemistry the way it does in reviews. Decanting first is how experienced collectors buy fewer bottles they regret.

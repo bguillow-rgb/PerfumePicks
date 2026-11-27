@@ -1,6 +1,6 @@
 ---
 title: "How to Tell How Much Perfume Is Left in Any Bottle"
-description: "Learn exactly how to check the fill level of any perfume bottle — clear, opaque, or dark glass — using light, weight, sound, and the spray test."
+description: "Learn exactly how to check the fill level of any perfume bottle, clear, opaque, or dark glass, using light, weight, sound, and the spray test."
 tier: "detail"
 targetQuery: "how to tell how much perfume is left"
 relatedQueries:
@@ -28,17 +28,17 @@ faqs:
   - q: "How do I estimate the fill percentage of a secondhand perfume bottle before buying?"
     a: "Ask the seller for a photo held up to a bright window or lamp. On clear bottles, the liquid line is visible. On opaque bottles, request the current weight in grams alongside the bottle's listed full and empty weights, then calculate: (current weight − empty weight) ÷ (full weight − empty weight) × 100."
   - q: "Is there an app that tracks how much perfume I have left?"
-    a: "Perfume Picks lets you log every wear against each bottle in your collection. Over time, your wear count combined with the bottle's spray count gives you a running estimate of remaining volume, no guesswork or scales required."
+    a: "Perfume Picks lets you log every wear against each bottle in your collection. Over time, your logged wears drop a remaining mL meter on each bottle, no guesswork or scales required."
 published: true
 ---
 
-Knowing how much juice is left in a bottle sounds trivially simple, until you're holding a jet-black Serge Lutens flacon or a frosted Dior Homme with no visible liquid line. Whether you're managing a backup shelf, pricing a bottle for resale, or trying to decide whether it's safe to travel with a favorite, this question comes up constantly for anyone with a real collection.
+Knowing how much juice is left in a bottle sounds simple, until you're holding a jet-black Serge Lutens flacon or a frosted Dior Homme with no visible liquid line. Whether you're managing a backup shelf, pricing a bottle for resale, or deciding whether it's safe to travel with a favorite, this question comes up constantly for anyone with a real collection.
 
 ## Why can't I just look at the bottle and see how much is left?
 
-*A question we hear often:* Many modern perfume bottles, especially from niche and luxury houses, are made from thick, colored, frosted, or fully opaque glass. Design wins over practicality, routinely. Some bottles have double-walled construction or internal cases that make the actual liquid chamber completely invisible. Even nominally "clear" bottles can deceive: amber or dark-tinted glass absorbs light and makes the fill line nearly impossible to see in normal room lighting.
+*A question we hear often:* Many modern perfume bottles, especially from niche and luxury houses, are made from thick, colored, frosted, or fully opaque glass. Design wins over practicality. Some bottles have double-walled construction or internal cases that make the liquid chamber completely invisible. Even nominally clear bottles can deceive: amber or dark-tinted glass absorbs light and makes the fill line nearly impossible to see in normal room lighting.
 
-The good news is that there are four reliable methods to check any bottle, and most collectors end up favoring one based on their setup.
+There are four reliable methods to check any bottle, and most collectors end up favoring one based on their setup.
 
 ---
 
@@ -48,13 +48,13 @@ The light transmission test takes under ten seconds. Hold the bottle horizontall
 
 Do this in a dim room if you can. Ambient light washing around the bottle from all directions makes the internal contrast harder to read. A phone torch pressed directly against one side of the bottle, with you looking at the opposite side from a foot away, replicates the same principle after dark.
 
-This is the method seasoned collectors use to photograph fill levels for resale listings. If you've ever seen a perfume on a secondhand market with a shot of the bottle held up to a lamp, that's the light test in action.
+Seasoned collectors use this method to photograph fill levels for resale listings. If you've ever seen a perfume on a secondhand market with a shot of the bottle held up to a lamp, that's the light test.
 
 ---
 
 ## How do I check the fill level on a completely opaque or black bottle?
 
-*This one comes up a lot:* Opaque bottles, matte black, ceramic, lacquered metal, block all light transmission entirely. Here you have two solid options: the weight method and the sound method.
+*This one comes up a lot:* Opaque bottles, matte black, ceramic, lacquered metal, block all light transmission. Here you have two solid options: the weight method and the sound method.
 
 Weight method (most precise): Place the bottle on a kitchen scale that reads to at least 0.1 g accuracy. Record the current weight. Now you need the tare, the weight of the bottle when empty. Many perfume manufacturers publish the empty bottle weight in product documentation, and fragrance communities like Basenotes and Fragrantica forums have documented tare weights for hundreds of popular bottles. Once you have both numbers:
 
@@ -62,13 +62,13 @@ Weight method (most precise): Place the bottle on a kitchen scale that reads to 
 
 Perfume density typically falls between 0.85 and 0.95 g/ml depending on concentration and alcohol content. EdP and parfum concentrations sit toward the higher end of that range. For a rough cross-check, a full 100 ml bottle of EdP typically weighs 185-220 g depending on the bottle design.
 
-Sound method (quick gut-check): Hold the bottle loosely and give it a single gentle shake. A full bottle produces a dull, heavy slosh. At around half full, you get a more noticeable swish. Nearly empty, the sound goes higher-pitched and thin, and you may even hear the sprayer pulling air along with the liquid. It takes a few tries to calibrate your ear, but once you've listened deliberately at known fill levels, say, right after opening a new bottle versus when it's 20% gone, the difference becomes intuitive.
+Sound method (quick gut-check): Hold the bottle loosely and give it a single gentle shake. A full bottle produces a dull, heavy slosh. Around half full, you get a more noticeable swish. Nearly empty, the sound goes higher-pitched and thin, and you may hear the sprayer pulling air along with the liquid. It takes a few tries to calibrate your ear, but once you've listened deliberately at known fill levels, say, right after opening a new bottle versus when it's 20% gone, the difference becomes clear.
 
 ---
 
 ## Is there a formula to convert bottle weight into millilitres?
 
-Yes, and it's more useful than it sounds, especially when buying secondhand.
+Yes, and it's useful when buying secondhand.
 
 | Measurement you have | What you need | Formula |
 |---|---|---|
@@ -79,7 +79,7 @@ Yes, and it's more useful than it sounds, especially when buying secondhand.
 
 The density assumption of 0.90 g/ml works well as a midpoint for most EdTs and EdPs. Parfum concentrations and oil-based attars can run slightly denser. If precision matters, say you're selling a rare bottle and want to list an accurate fill percentage, use the weight-based formula with a verified tare weight.
 
-On some forums, collectors weigh opaque bottles and estimate the amount of perfume inside using Volume = Mass / Density, knowing the weight of the empty or brand-new bottle. Same principle, and it genuinely works.
+On some forums, collectors weigh opaque bottles and estimate the amount of perfume inside using Volume = Mass / Density, knowing the weight of the empty or brand-new bottle. Same principle, and it works.
 
 ---
 
@@ -92,27 +92,27 @@ On some forums, collectors weigh opaque bottles and estimate the amount of perfu
 - An audible sucking sound as you depress the pump.
 - Dry or weak mist: atomization breaks down when there's insufficient liquid.
 
-None of these mean the bottle is completely empty. They mean you're in the final 5-15% and should start deciding whether to back up, decant the remainder, or use it intentionally. Our guide on [how to use up your perfume collection](https://perfumepicks.app/articles/how-to-use-up-your-perfume-collection) covers strategies for the endgame phase specifically.
+None of these mean the bottle is completely empty. They mean you're in the final 5-15% and should start deciding whether to back up, decant the remainder, or use it intentionally. Our guide on [how to use up your perfume collection](https://perfumepicks.app/articles/how-to-use-up-your-perfume-collection) covers strategies for the endgame phase.
 
 ---
 
 ## How do secondhand buyers and sellers verify fill levels accurately?
 
-Misrepresented fill levels are a recurring complaint in the secondhand market. Here's what experienced buyers and sellers actually do.
+Misrepresented fill levels are a recurring complaint in the secondhand market.
 
 For sellers: photograph the bottle held up to a direct lamp in a dim room. Mark the visible liquid line in photo editing. Weigh the bottle and state the weight in the listing alongside the known full weight when available. Use descriptors tied to observable fill percentages, "about 85% remaining" rather than "barely used."
 
-For buyers: ask for weight data if the bottle is opaque and the fill level is uncertain. Cross-reference the stated weight against known full and tare weights from forums. The slosh test works when a bottle is too dark for a flashlight to penetrate, though losing sleep over a few missing sprays isn't warranted. For a rare or expensive purchase, you want to be sure you're not paying full price for something nearly empty.
+For buyers: ask for weight data if the bottle is opaque and the fill level is uncertain. Cross-reference the stated weight against known full and tare weights from forums. The slosh test works when a bottle is too dark for a flashlight to penetrate. For a rare or expensive purchase, you want to be sure you're not paying full price for something nearly empty.
 
-If you're building a collection with secondhand pieces, a kitchen scale becomes a practical tool, not a novelty. A 0.01 g precision scale costs under £20 and pays for itself the first time it saves you from overpaying.
+If you're building a collection with secondhand pieces, a kitchen scale becomes a practical tool. A 0.01 g precision scale costs under £20 and pays for itself the first time it saves you from overpaying.
 
 ---
 
 ## Can I track how much I've used over time without weighing anything?
 
-This is where logging wears pays off. If you know a 50 ml bottle holds approximately 500 sprays at roughly 0.1 ml per actuation, and you've worn it 60 times using 2 sprays per session, you've used around 120 sprays, about 24% of the bottle, leaving roughly 38 ml. The math isn't exact, but it's surprisingly close.
+Logging wears pays off here. If you know a 50 ml bottle holds approximately 500 sprays at roughly 0.1 ml per actuation, and you've worn it 60 times using 2 sprays per session, you've used around 120 sprays, about 24% of the bottle, leaving roughly 38 ml. The math isn't exact, but it's close.
 
-More collectors now keep five to ten bottles open simultaneously rather than running one signature scent, which means more need to monitor what's actually left in each one. Perfume Picks tracks every wear you log against each bottle, so your usage history is always visible. Over time, combined with the bottle size you've entered, the app builds a running picture of which bottles are getting used and which are sitting full. That's useful for rotation planning and for knowing when a backup purchase makes sense before a bottle quietly empties.
+More collectors now keep five to ten bottles open simultaneously rather than running one signature scent, which means more need to monitor what's left in each one. Perfume Picks tracks every wear you log against each bottle, and each bottle can carry its size and remaining mL, shown as a meter that drops as you log wears. Over time, combined with the bottle size you've entered, the app builds a running picture of which bottles are getting used and which are sitting full. That's useful for rotation planning and for knowing when a backup purchase makes sense before a bottle quietly empties.
 
 ---
 
@@ -139,7 +139,7 @@ How do I estimate the fill percentage of a secondhand perfume bottle before buyi
 Ask for a photo held up to a lamp for clear bottles. For opaque ones, request the current weight and compare it to published full and tare weights: (current - empty) / (full - empty) x 100.
 
 Is there an app that tracks how much perfume I have left?
-Perfume Picks logs every wear against each bottle in your collection. Your cumulative spray count, combined with the bottle's total capacity, gives you a running fill estimate without needing to weigh anything.
+Perfume Picks logs every wear against each bottle in your collection. Each bottle can carry its remaining mL, a meter that drops as you log wears, giving you a running fill estimate without needing to weigh anything.
 
 When should I start worrying about a backup bottle?
 Weigh any sealed backup when you buy it and make a note. A backup that loses more than 1-2 g without being opened likely has a seal issue. Re-sealing with plastic wrap around the cap or storing in a zip-lock bag can slow further loss.

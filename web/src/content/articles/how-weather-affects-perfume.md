@@ -33,31 +33,31 @@ faqs:
 published: true
 ---
 
-Your perfume is not a fixed thing. The same bottle you reach for on a grey November morning will behave like a different fragrance on a humid August afternoon. Temperature, humidity, and even indoor heating change how molecules move off your skin, how far a scent projects, and how long it lasts. Understanding these mechanics lets you get more out of the collection you already own, without buying a single new bottle.
+The same bottle you reach for on a grey November morning will behave like a different fragrance on a humid August afternoon. Temperature, humidity, and indoor heating all change how molecules move off your skin, how far a scent projects, and how long it lasts. Getting a handle on this lets you get more out of the collection you already own, without buying a single new bottle.
 
 ## Why does my perfume smell so much stronger in summer?
 
-Heat is essentially an accelerant for fragrance. When skin temperature rises, perfume molecules gain energy and evaporate from the skin surface faster. The result is a noticeably bigger initial burst of scent and a wider sillage, but that intensity comes at a cost. Because those molecules are leaving your skin so rapidly, wear time compresses. Hot-weather wear time for many eau de parfums falls to roughly 2-4 hours, compared to 6-8 hours in temperate conditions.
+Heat is an accelerant for fragrance. When skin temperature rises, perfume molecules gain energy and evaporate faster. The result is a bigger initial burst of scent and a wider sillage, but that intensity comes at a cost. Because those molecules are leaving your skin quickly, wear time compresses. Hot-weather wear time for many eau de parfums falls to roughly 2-4 hours, compared to 6-8 hours in temperate conditions.
 
-The practical implication for collectors is real: a fragrance that seems perfectly calibrated for a conference room in October can tip into "too much" territory on a 32°C afternoon. The notes most affected are the lighter top notes (citrus, bergamot, aldehydes), which combust first and loudest. What's left can smell heavier or denser than the same fragrance on a cooler day. If a scent in your wardrobe has ever made people take a step back in summer when it normally earns compliments, that's almost certainly what's happening.
+A fragrance that seems perfectly calibrated for a conference room in October can tip into too much on a 32°C afternoon. The notes most affected are the lighter top notes - citrus, bergamot, aldehydes - which go first and loudest. What's left can smell heavier or denser than the same fragrance on a cooler day. If a scent in your wardrobe has ever made people take a step back in summer when it normally earns compliments, that's almost certainly what's happening.
 
 **What to do:** In hot weather, apply one or two fewer sprays than usual. Move application to pulse points that stay slightly cooler (inside the elbow, behind the knee) rather than the neck and wrists, which heat up fastest. Keeping a travel atomizer from your existing bottle in a cool bag lets you reapply later rather than front-loading sprays at the start of the day.
 
 ## Cold weather makes perfume last longer
 
-Yes. Cold air slows evaporation, meaning fragrance molecules stay anchored to your skin considerably longer. Some collectors report their winter fragrances lasting up to 10-12 hours, even with moderate concentrations. The trade-off is projection: colder air reduces how far the scent travels from your body, keeping it in what's called a skin-scent envelope rather than diffusing outward.
+Cold air slows evaporation, meaning fragrance molecules stay anchored to your skin longer. Some collectors report their winter fragrances lasting up to 10-12 hours, even with moderate concentrations. The trade-off is projection: colder air reduces how far the scent travels from your body, keeping it in a skin-scent envelope rather than diffusing outward.
 
-This is also why rich base-note-forward fragrances (oud, amber, vanilla, deep musks) feel so natural in winter. Cold slows the evaporation of every layer, so those heavy base notes have time to develop and bloom gradually rather than being buried beneath a rush of volatile top notes. Conversely, a crisp, sparkling citrus that you love in summer will feel almost muted worn on a January commute.
+This is also why rich base-note-forward fragrances - oud, amber, vanilla, deep musks - feel so natural in winter. Cold slows the evaporation of every layer, so those heavy base notes have time to develop and bloom gradually rather than being buried beneath a rush of volatile top notes. A crisp, sparkling citrus that works in summer will feel almost muted on a January commute.
 
-There's an indoor complication worth knowing about: heated buildings in winter typically push relative humidity below 30%, which dries out skin quickly. Dry skin holds fragrance molecules less effectively, which is why a fragrance you applied before leaving home can feel surprisingly faint by mid-morning despite the cold outside. Moisturising with an unscented lotion before application makes a meaningful difference to longevity, year-round but especially in winter. Applying a small amount to exposed fabric (a coat collar, a scarf) also helps project scent outward in cold air.
+One indoor complication worth knowing: heated buildings in winter typically push relative humidity below 30%, which dries out skin. Dry skin holds fragrance molecules less effectively, which is why a fragrance you applied before leaving home can feel surprisingly faint by mid-morning despite the cold outside. Moisturising with an unscented lotion before application makes a meaningful difference to longevity, year-round but especially in winter. Applying a small amount to exposed fabric - a coat collar, a scarf - also helps project scent outward in cold air.
 
 ## So what does humidity actually do to a fragrance?
 
-Humidity's effect on fragrance is more nuanced than simply "more is better." Perfumers and fragrance scientists generally point to a moderate humidity range of around 40-60% as ideal: skin retains its natural moisture barrier, and fragrance evaporates at roughly the rate the perfumer intended.
+Perfumers and fragrance scientists generally point to a moderate humidity range of around 40-60% as ideal: skin retains its natural moisture barrier, and fragrance evaporates at roughly the rate the perfumer intended.
 
-Above 70% humidity (typical of tropical climates, UK summers, or a post-gym environment) the picture changes. Projection amplifies significantly beyond design intent, which can make a moderate fragrance feel aggressive. Certain synthetic musk molecules also interact poorly with high humidity on some skin types, occasionally producing a slightly metallic or sour off-note that disappears in drier conditions. This isn't the fragrance "going off"; it's simply chemistry responding to its environment.
+Above 70% humidity - typical of tropical climates, UK summers, or a post-gym environment - projection amplifies significantly beyond design intent, which can make a moderate fragrance feel aggressive. Certain synthetic musk molecules also interact poorly with high humidity on some skin types, occasionally producing a slightly metallic or sour off-note that disappears in drier conditions. This isn't the fragrance going off; it's chemistry responding to its environment.
 
-Below 30% humidity (very common in centrally-heated offices and apartments in winter) fragrance evaporates from dry skin faster than cold temperatures alone would suggest. Many collectors notice their winter fragrances feel inexplicably weak indoors; this is almost always the culprit. The fix is simple: hydrate your skin before applying.
+Below 30% humidity - common in centrally-heated offices and apartments in winter - fragrance evaporates from dry skin faster than cold temperatures alone would suggest. Many collectors notice their winter fragrances feel inexplicably weak indoors. Hydrating your skin before applying fixes this.
 
 ## The fragrance families that work best by season
 
@@ -69,30 +69,28 @@ Below 30% humidity (very common in centrally-heated offices and apartments in wi
 | **Cold & dry** (winter outdoor) | Woody, amber, leather, gourmand, spicy oriental | Citrus (fades fast), very light eaux |
 | **Cold & indoor-heated** | Warm florals, soft musks, light woods | Powerhouse EDPs (indoors amplifies) |
 
-The "use with caution" column doesn't mean you can't wear those scents. It just means you'll want to adjust spray count and application spots. Many collectors keep their full wardrobe available year-round and simply modify how they apply.
+The "use with caution" column doesn't mean you can't wear those scents. It means you'll want to adjust spray count and application spots. Many collectors keep their full wardrobe available year-round and modify how they apply.
 
 ## Does the same bottle smell different in summer versus winter?
 
-Absolutely, and this surprises people who are newer to collecting. The molecular composition of the fragrance doesn't change, but temperature and humidity alter the *rate* at which each layer becomes perceptible. In summer heat, volatile top notes (the ones that hit first) evaporate within minutes, so you spend more time in the heart notes. In winter, the whole arc slows down. Top notes can linger for 30-45 minutes before the heart takes over, and base notes may not fully emerge until hour three or four.
+The molecular composition of the fragrance doesn't change, but temperature and humidity alter the rate at which each layer becomes perceptible. In summer heat, volatile top notes evaporate within minutes, so you spend more time in the heart notes. In winter, the whole arc slows down. Top notes can linger for 30-45 minutes before the heart takes over, and base notes may not fully emerge until hour three or four.
 
-This means a fragrance you dismissed as "too sharp" in a warm department store might feel beautifully rounded worn outside in autumn. And a deep amber that feels perfect in December can seem cloying by April. It's worth mentally flagging any bottle that disappointed you in one season and trying it again in the opposite one before deciding it's not for you. Seasonal re-testing is one of the most commonly reported ways collectors rediscover bottles they'd nearly given up on.
+A fragrance you dismissed as too sharp in a warm department store might feel rounded worn outside in autumn. A deep amber that feels perfect in December can seem cloying by April. It's worth flagging any bottle that disappointed you in one season and trying it again in the opposite one before deciding it's not for you. Seasonal re-testing is one of the most commonly reported ways collectors rediscover bottles they'd nearly given up on.
 
 ## Using this knowledge with the bottles you already own
 
-The practical application is simpler than the science suggests. You don't need a regimented seasonal swap system, just a loose mental framework.
-
 **Summer / heat:** Reach for lighter concentrations and fresher families. Reduce spray count by 1-2 versus your cooler-weather habit. Reapply mid-day rather than front-loading. Avoid applying right before going directly into heat: spray, then wait five minutes before heading out so the top notes have a moment to settle.
 
-**Winter / cold:** Lean into your richer, deeper bottles. Apply to warm indoor pulse points rather than relying on outdoor diffusion. Add a small spray to fabric. If you're going from cold outdoors to a heated interior, be cautious with powerhouse concentrations. A scent that projects beautifully in the cold can suddenly feel intense indoors.
+**Winter / cold:** Lean into your richer, deeper bottles. Apply to warm indoor pulse points rather than relying on outdoor diffusion. Add a small spray to fabric. If you're going from cold outdoors to a heated interior, be cautious with powerhouse concentrations. A scent that projects well in the cold can feel intense indoors.
 
-**Transitional seasons:** Spring and autumn are the most forgiving conditions for fragrance. Moderate temperatures and humidity let fragrances perform close to how they were designed. This is the best time to test new-to-you bottles from your collection and form accurate impressions.
+**Transitional seasons:** Spring and autumn are the most forgiving conditions for fragrance. Moderate temperatures and humidity let fragrances perform close to how they were designed. This is a good time to test new-to-you bottles from your collection and form accurate impressions.
 
-The Perfume Picks app surfaces weather-aware suggestions from the bottles you already own, so on a humid July afternoon it will skip the heavy ambers in your wardrobe and surface the fresher, lighter bottles instead. That's the low-friction version of this framework for your everyday routine.
+The Perfume Picks app surfaces weather-aware suggestions from the bottles you already own, so on a humid July afternoon it will skip the heavy ambers in your wardrobe and surface the fresher, lighter bottles instead.
 
 ## What about travelling to a different climate?
 
-This is where collectors often get caught off-guard. A fragrance that's a reliable daily driver at home can behave like a stranger in a different climate. Travelling from a temperate city to a humid coastal destination, or from a damp climate to a dry high-altitude one, changes everything discussed above, suddenly and simultaneously.
+A fragrance that's a reliable daily driver at home can behave like a stranger in a different climate. Travelling from a temperate city to a humid coastal destination, or from a damp climate to a dry high-altitude one, changes everything discussed above - suddenly and simultaneously.
 
-The practical tip: pack a small decant of something you know works in the destination climate rather than relying on your signature scent to perform. If you're heading somewhere hot and humid, a smaller 5-10 ml decant of a fresh or citrus fragrance from your existing collection is almost always a safer choice than your go-to EDP. A meaningful portion of the global fragrance market is driven by travel retail, precisely because people notice their usual fragrances don't quite work in unfamiliar climates and reach for something new. You can sidestep that impulse purchase by thinking ahead about what's already in your wardrobe.
+Pack a small decant of something you know works in the destination climate rather than relying on your signature scent to perform. If you're heading somewhere hot and humid, a 5-10 ml decant of a fresh or citrus fragrance from your existing collection is almost always a safer choice than your go-to EDP. A meaningful portion of the global fragrance market is driven by travel retail, because people notice their usual fragrances don't quite work in unfamiliar climates and reach for something new. You can sidestep that impulse purchase by thinking ahead about what's already in your wardrobe.
 
 For more on building a collection that covers different scenarios from the start, the [how to build a fragrance wardrobe](/how-to-build-a-fragrance-wardrobe) guide is a useful companion read. And if you're finding that bottles you've already tested seem to perform unexpectedly, the [why perfume smells different on everyone](/why-perfume-smells-different-on-everyone) article explains the skin chemistry side of the equation.

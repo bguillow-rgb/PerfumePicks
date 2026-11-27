@@ -31,15 +31,15 @@ faqs:
 published: true
 ---
 
-If you've ever sprayed something and immediately thought of a just-mowed lawn, a snapped stem, or the inside of a greenhouse on a cool morning, you've met a green perfume. It's one of the most instinctively recognisable fragrance families, and one of the most underrated for collectors who want something genuinely different on their shelves.
+If you've ever sprayed something and immediately thought of a just-mowed lawn, a snapped stem, or the inside of a greenhouse on a cool morning, you've met a green perfume. It's one of the most instinctively recognisable fragrance families, and one of the most underrated for collectors who want something different on their shelves.
 
 ## What exactly does "green" mean in perfumery?
 
-The term green describes a category of fragrances that evoke plant life in its raw, unprocessed state: not the bloom of a flower, but the stalk it grows from. Think crushed leaves, freshly cut grass, damp herbs, bitter stems, and the cool, watery smell of a vegetable garden. It's the olfactory equivalent of running your hand along a hedge.
+Green describes a category of fragrances that evoke plant life in its raw, unprocessed state: not the bloom of a flower, but the stalk it grows from. Think crushed leaves, freshly cut grass, damp herbs, bitter stems, and the cool, watery smell of a vegetable garden. It's the olfactory equivalent of running your hand along a hedge.
 
-Perfumers achieve this through a specific set of raw materials rather than a single note. The word "green" in fragrance functions more like a mood or a flavour direction than a precise ingredient. When you read "green notes" on a pyramid, it could mean anything from the sharp, metallic edge of galbanum to the soft, aqueous quality of violet leaf, and each reads very differently on skin. What unites them is that raw, chlorophyll-adjacent quality that makes green fragrances feel distinctly alive.
+Perfumers achieve this through a specific set of raw materials rather than a single note. The word "green" in fragrance functions more like a mood or a direction than a precise ingredient. When you read "green notes" on a pyramid, it could mean anything from the sharp, metallic edge of galbanum to the soft, aqueous quality of violet leaf, and each reads very differently on skin. What unites them is that raw, chlorophyll-adjacent quality that makes green fragrances feel distinctly alive.
 
-It's worth distinguishing green from aquatic. Aquatic notes (calone, sea spray, marine accords) smell of *water*: open, mineral, almost abstract. Green notes smell of *plants*: specific, botanical, slightly bitter. The two can appear together, but they're not the same effect. A green fragrance tends to feel more grounded and textured than an aquatic one.
+Green is not the same as aquatic. Aquatic notes (calone, sea spray, marine accords) smell of *water*: open, mineral, almost abstract. Green notes smell of *plants*: specific, botanical, slightly bitter. The two can appear together, but they're not the same effect. A green fragrance tends to feel more grounded and textured than an aquatic one.
 
 ## How old is the green fragrance category?
 
@@ -62,27 +62,27 @@ Older than most people assume. Perfumers were working with mossy, herbal, and le
 | **Vetiver** | Smoky, rooty, earthy green-grey | Low-Medium |
 | **Green tea** | Light, slightly bitter, fresh | Low |
 
-The top four (galbanum, violet leaf, tomato leaf, and hyacinth) are the ones most likely to announce themselves in a fragrance's opening. Oakmoss and vetiver act more as base anchors, giving green accords their depth and longevity without shouting.
+The top four (galbanum, violet leaf, tomato leaf, and hyacinth) are the ones most likely to announce themselves in a fragrance's opening. Oakmoss and vetiver act more as base anchors, giving green accords depth and longevity without shouting.
 
 ## How is a green perfume different from a chypre or an aromatic fougere?
 
 *Readers frequently ask:* where does green end and chypre begin?
 
-The honest answer: they overlap heavily. The classic chypre structure (bergamot top, labdanum base, oakmoss) almost always carries green facets, because oakmoss is itself a green-adjacent material. Many of the most famous green fragrances technically live in the chypre sub-category. What separates a "green" fragrance from a "chypre" is emphasis: a chypre uses green as one element in a formal structure; a green fragrance leads with the vegetal, raw-plant quality and lets that be the dominant impression rather than a component.
+They overlap heavily. The classic chypre structure (bergamot top, labdanum base, oakmoss) almost always carries green facets, because oakmoss is itself a green-adjacent material. Many of the most famous green fragrances technically live in the chypre sub-category. What separates a "green" fragrance from a "chypre" is emphasis: a chypre uses green as one element in a formal structure; a green fragrance leads with the vegetal, raw-plant quality and lets that be the dominant impression rather than a component.
 
-The aromatic fougere is a closer neighbour. Fougeres use herbal notes (lavender, coumarin, oakmoss) in a structured way, but herbaceous and green are related, not identical. Herbal notes smell *culinary* and *medicinal*; green notes smell *botanical* and *raw*. If a fragrance smells like rosemary in a garden bed, it's probably aromatic-herbal. If it smells like you just snapped the rosemary stem and the sap is on your fingers, it's reading green. The [fragrance families guide](https://perfumepicks.app/perfume-fragrance-families) has a broader map if you want to see how all these categories relate to each other.
+The aromatic fougere is a closer neighbour. Fougeres use herbal notes (lavender, coumarin, oakmoss) in a structured way, but herbaceous and green are related, not identical. Herbal notes smell *culinary* and *medicinal*; green notes smell *botanical* and *raw*. If a fragrance smells like rosemary in a garden bed, it's probably aromatic-herbal. If it smells like you just snapped the rosemary stem and the sap is on your fingers, it's reading green. The [fragrance families guide](https://perfumepicks.app/perfume-fragrance-families) has a broader map of how all these categories relate to each other.
 
 ## Can a perfume be both floral and green?
 
-Yes, and many of the best examples of the green family are. Green florals pair a flower's bloom with the vegetal character of its stem or leaves. Violet is the textbook example: the flower itself is powdery and soft, but violet leaf smells cool, watery, and sharp. Many soliflore-style fragrances built around rose or lily actually read as green because the perfumer chose to foreground the stem and dew rather than the petal.
+Yes, and many of the best examples of the green family are. Green florals pair a flower's bloom with the vegetal character of its stem or leaves. Violet is the textbook example: the flower itself is powdery and soft, but violet leaf smells cool, watery, and sharp. Many soliflore-style fragrances built around rose or lily read as green because the perfumer chose to foreground the stem and dew rather than the petal.
 
-The green-floral combination is particularly flattering because it keeps floral fragrances from tipping into heavy sweetness. If you find most florals cloying or old-fashioned, a green floral is likely to feel more modern and wearable. It's also one reason green notes appear so frequently as top notes even in fragrances not primarily classified as green: they add a crisp, fresh opening that lifts heavier materials underneath.
+The green-floral combination keeps floral fragrances from tipping into heavy sweetness. If you find most florals cloying or old-fashioned, a green floral is likely to feel more modern and wearable. It's also one reason green notes appear so frequently as top notes even in fragrances not primarily classified as green: they add a crisp, fresh opening that lifts heavier materials underneath.
 
 ## What occasions and seasons suit green fragrances?
 
 Spring and early summer are the natural home of green perfumes. The raw, dewy quality mirrors new growth: snapped stems, fresh grass after rain, the smell of potting soil in March. For collectors building a [fragrance wardrobe](https://perfumepicks.app/how-to-build-a-fragrance-wardrobe) that covers the full year, a green fragrance is often the most logical choice for the spring slot.
 
-That said, greens with mossy, woody, or vetiver-heavy bases stretch further into autumn. A vetiver-led green can feel perfectly at home in October alongside fallen leaves and cool air. The fragrances that struggle in cold, dry winter air are the light, watery, violet-leaf-dominant types: those need warmth and humidity to open properly on skin.
+Greens with mossy, woody, or vetiver-heavy bases stretch further into autumn. A vetiver-led green can feel perfectly at home in October alongside fallen leaves and cool air. The fragrances that struggle in cold, dry winter air are the light, watery, violet-leaf-dominant types: those need warmth and humidity to open properly on skin.
 
 For occasion, green skews daytime and casual rather than evening and formal. The raw, natural quality feels most at home in outdoor settings, working environments, or any context where you want to smell present but not loud. If you're calibrating sillage for the office, a soft green is one of the more considerate choices, something the [perfume etiquette guide](https://perfumepicks.app/perfume-etiquette-rules) covers in depth.
 
@@ -90,13 +90,13 @@ For occasion, green skews daytime and casual rather than evening and formal. The
 
 *This one comes up a lot:* collectors often notice that most department store fragrance walls are dominated by florals, gourmands, and woody musks. Genuine green fragrances are comparatively rare in the mass market.
 
-That observation is accurate. Green as a leading accord fell out of mainstream fashion in the 1990s and early 2000s when fresh aquatics dominated. According to data from industry analysts tracking fragrance launches, green fragrances represent a significantly smaller share of new releases than oriental, floral, or woody launches, which is precisely what makes finding a great one rewarding. The niche fragrance market has shown more sustained interest in green accords, with houses exploring raw botanical materials and sustainable plant extraction. If your collection skews towards designer fragrance, you may need to actively seek out green options rather than stumbling across them. This is one of those gaps worth auditing, and tracking in an app like [Perfume Picks](https://perfumepicks.app) can help you spot when your collection is light on a whole family like green.
+That observation is accurate. Green as a leading accord fell out of mainstream fashion in the 1990s and early 2000s when fresh aquatics dominated. According to data from industry analysts tracking fragrance launches, green fragrances represent a significantly smaller share of new releases than oriental, floral, or woody launches. The niche fragrance market has shown more sustained interest in green accords, with houses exploring raw botanical materials and sustainable plant extraction. If your collection skews towards designer fragrance, you may need to actively seek out green options rather than stumbling across them. Tracking your collection in an app like [Perfume Picks](https://perfumepicks.app) can help you spot when you're light on a whole family like green.
 
 ## How do I know if I'll like green fragrances?
 
-The simplest indicator: think about the smells in everyday life that stop you in your tracks. If you notice when someone has just been gardening, if you like the smell of tomato plants or fresh herbs, if rain on grass is appealing rather than neutral, green fragrance is almost certainly for you. Conversely, if you find sharp vegetal smells unpleasant or prefer sweetness and warmth, start with a softer green (green tea, vetiver-based) before committing to something built on raw galbanum.
+Think about the smells in everyday life that stop you in your tracks. If you notice when someone has just been gardening, if you like the smell of tomato plants or fresh herbs, if rain on grass is appealing rather than neutral, green fragrance is likely for you. If you find sharp vegetal smells unpleasant or prefer sweetness and warmth, start with a softer green (green tea, vetiver-based) before committing to something built on raw galbanum.
 
-Sampling is especially important here because green notes can be polarising at first spray. They sometimes smell almost medicinal or bitter cold, then settle into something much more wearable after 10-15 minutes. Never reject a green fragrance on a strip or in the first two minutes of wearing it. As covered in [how to test perfume before buying](https://perfumepicks.app/how-to-test-perfume-before-buying), the full dry-down is what matters, and green notes particularly reward patience.
+Sampling is especially important here because green notes can be polarising at first spray. They sometimes smell almost medicinal or bitter cold, then settle into something much more wearable after 10-15 minutes. Don't reject a green fragrance on a strip or in the first two minutes of wearing it. As covered in [how to test perfume before buying](https://perfumepicks.app/how-to-test-perfume-before-buying), the full dry-down is what matters, and green notes particularly reward patience.
 
 ---
 

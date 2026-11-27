@@ -31,7 +31,7 @@ faqs:
 published: true
 ---
 
-Most fragrance collectors think hard about what to buy, how to store it, and how to rotate through their wardrobe. Almost nobody thinks about what happens if a shelf collapses, a pipe bursts, or a house fire takes out years of carefully acquired bottles. If your collection has grown beyond a handful of everyday wearers into something with real financial and sentimental value, insurance is a topic worth facing directly.
+Most fragrance collectors think hard about what to buy, how to store it, and how to rotate through their wardrobe. Few think about what happens if a shelf collapses, a pipe bursts, or a house fire takes out years of carefully acquired bottles. If your collection has grown beyond a handful of everyday wearers into something with real financial and sentimental value, insurance is worth facing directly.
 
 ## Wait, is my perfume collection actually worth insuring?
 
@@ -39,15 +39,15 @@ Most fragrance collectors think hard about what to buy, how to store it, and how
 
 A modest wardrobe of 20-30 bottles, mixing niche and designer, can easily total $3,000-$8,000 at current retail prices. Serious collectors with 100+ bottles, including discontinued, vintage, or limited-edition releases, can hold collections worth $15,000, $30,000, or more. Rare vintage bottles and sought-after niche releases routinely sell for hundreds of dollars each on the secondary market.
 
-The first step is doing the maths. Go bottle by bottle and record current replacement cost: what would it cost to rebuy this exact fragrance, at this size, right now? For discontinued or hard-to-find pieces, check recent sold listings on fragrance resale platforms for comparable prices. Add everything up. The total will probably surprise you, and it will tell you immediately whether your existing insurance is adequate.
+Start by going bottle by bottle and recording the current replacement cost: what would it cost to rebuy this exact fragrance, at this size, right now? For discontinued or hard-to-find pieces, check recent sold listings on fragrance resale platforms for comparable prices. Add everything up. The total will tell you whether your existing insurance is adequate.
 
 ## What does my homeowners or renters policy actually cover?
 
-*A question we hear often:* most people assume their contents insurance just... covers everything. The reality is more limited.
+*A question we hear often:* most people assume their contents insurance covers everything. Coverage is more limited than that.
 
-Standard homeowners and renters policies offer a baseline of protection for personal property, which technically includes your perfume collection. The catch is sub-limits. Many policies cap payouts for collectibles, jewelry, or other valuables at $1,500-$2,500 total, which won't cover much if you've been collecting seriously for more than a year or two.
+Standard homeowners and renters policies offer a baseline of protection for personal property, which technically includes your perfume collection. Many policies cap payouts for collectibles, jewelry, or other valuables at $1,500-$2,500 total, which won't cover much if you've been collecting seriously for more than a year or two.
 
-The dollar cap isn't the only problem. Coverage is usually tied to "named perils" such as fire, theft, and vandalism. If your perfume is accidentally broken, spilled, or damaged by something outside that list, you may get nothing. A shelf falling over, a ceiling leak soaking your display, a child sweeping a tray off a counter: none of these may trigger a standard policy payout.
+The dollar cap isn't the only problem. Coverage is usually tied to named perils such as fire, theft, and vandalism. If your perfume is accidentally broken, spilled, or damaged by something outside that list, you may get nothing. A shelf falling over, a ceiling leak soaking your display, a child sweeping a tray off a counter: none of these may trigger a standard policy payout.
 
 There's also the perishable question. Many insurers classify fragrance as a perishable good and may be reluctant to cover it on those grounds. Ask your insurer directly before assuming you're covered.
 
@@ -87,19 +87,19 @@ If you already use Perfume Picks to catalogue your wardrobe, you're ahead of mos
 
 ## How often should I update my insurance as my collection grows?
 
-This is where many collectors fall behind. Market prices shift, condition changes, and collections grow faster than people track.
+Market prices shift, condition changes, and collections grow faster than people track.
 
-A reasonable baseline: review your inventory and its total value at least once a year, and after any significant addition, whether that's a fragrance sale, a trip abroad, or a run of niche house releases. If you're adding to your collection regularly, a calendar reminder every six months to tally your estimated total and compare it to your coverage limit takes about 20 minutes and costs nothing.
+Review your inventory and its total value at least once a year, and after any significant addition, whether that's a fragrance sale, a trip abroad, or a run of niche house releases. If you're adding to your collection regularly, a calendar reminder every six months to tally your estimated total and compare it to your coverage limit takes about 20 minutes and costs nothing.
 
 ## What's the single most important thing to do right now?
 
 *This one comes up a lot among collectors who've been putting this off.*
 
-You can't properly insure a collection you haven't properly understood. Inventory it. Document it. Know what it's worth. Keep the records somewhere secure and off-device.
+Inventory your collection. Document it. Know what it's worth. Keep the records somewhere secure and off-device.
 
-If you do nothing else today, film a slow, narrated walkthrough of every bottle you own, noting the name and fill level as you go. Upload it to a cloud folder, email it to yourself, whatever you'll actually follow through on. That single piece of evidence is the foundation everything else rests on.
+If you do nothing else today, film a slow, narrated walkthrough of every bottle you own, noting the name and fill level as you go. Upload it to a cloud folder, email it to yourself, whatever you'll actually follow through on. That footage is the foundation everything else rests on.
 
-Once your inventory exists in a reliable format, contact your current insurer and ask three specific questions: "Does my policy cover a fragrance collection worth [your total]? What are the sub-limits for collectibles? Can I add a rider?" Those three questions will tell you within minutes whether you need to look elsewhere.
+Once your inventory exists in a reliable format, contact your current insurer and ask three specific questions: "Does my policy cover a fragrance collection worth [your total]? What are the sub-limits for collectibles? Can I add a rider?" Those questions will tell you within minutes whether you need to look elsewhere.
 
 ---
 

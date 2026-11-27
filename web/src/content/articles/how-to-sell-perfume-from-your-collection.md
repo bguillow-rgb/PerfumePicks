@@ -34,21 +34,19 @@ faqs:
 published: true
 ---
 
-Every serious collector eventually faces the same crossroads: a shelf crowded with bottles that no longer get reached for. Maybe it was a blind buy that missed the mark, a fragrance your tastes have outgrown, or a duplicate you picked up by accident. Whatever the reason, there's a real, active market for pre-loved perfume, and knowing how to work it means recouping meaningful money while your bottle finds someone who'll actually wear it.
-
-Plenty of people are sitting on unworn fragrances, bottles that got bought and then never reached for. If you're sitting on bottles you never reach for, you're in very good company, and the secondhand fragrance market is ready for them.
+A shelf crowded with bottles you no longer reach for is a common collector problem. Maybe a blind buy missed the mark, or your tastes shifted, or you picked up a duplicate by accident. There's a real, active market for pre-loved perfume, and knowing how to work it means recouping meaningful money while your bottle finds someone who'll wear it.
 
 ## Why does anyone buy used perfume in the first place?
 
-Before you price anything, it helps to understand exactly who you're selling to. The secondhand fragrance market is not a last-resort clearance bin. It's a deliberate destination for several distinct buyer types.
+The secondhand fragrance market is not a clearance bin. It's a deliberate destination for several distinct buyer types.
 
-Buyers include serious collectors hunting rare, discontinued, or vintage bottles to complete their sets; hobbyists who enjoy sampling a wide variety of scents without paying full retail; budget-conscious shoppers chasing luxury at a fraction of the cost; and decanters who purchase full bottles specifically to split and resell in smaller portions.
+Buyers include serious collectors hunting rare, discontinued, or vintage bottles; hobbyists who enjoy sampling widely without paying full retail; budget-conscious shoppers chasing luxury at lower cost; and decanters who purchase full bottles specifically to split and resell in smaller portions.
 
-High-end designer, niche, and discontinued scents sit at the top of the demand pyramid. Brands like Chanel, Dior, Creed, Tom Ford, and Frederic Malle consistently fetch good prices, and the harder a fragrance is to find, the more likely it is to sell. Common mass-market bottles face stiff competition from discount fragrance retailers, which makes pricing them to move an uphill battle.
+High-end designer, niche, and discontinued scents sit at the top of demand. Brands like Chanel, Dior, Creed, Tom Ford, and Frederic Malle consistently fetch good prices, and the harder a fragrance is to find, the more likely it is to sell. Common mass-market bottles face stiff competition from discount fragrance retailers, which makes pricing them competitively difficult.
 
 ## Where to list your bottles
 
-Collectors who are new to selling don't know whether to reach for a general marketplace or a fragrance-specific community. Both have a place, but they serve different bottles and different sellers.
+Both general marketplaces and fragrance-specific communities have a place, but they serve different bottles and different sellers.
 
 | Platform | Best For | Fees | Key Caveat |
 |---|---|---|---|
@@ -60,64 +58,54 @@ Collectors who are new to selling don't know whether to reach for a general mark
 | Facebook Marketplace | Local, cash-in-hand sales | None | Verification is on you; limited shipping |
 | Depop | Trendy, affordable, or visually striking bottles | Commission | Less suited to high-end collector pieces |
 
-The FragranceSwap subreddit is a well-regarded resource for selling everything from new or used full bottles down to tiny partially-used fragrance samples. Forums like r/FragranceSwap and Basenotes connect fragrance enthusiasts for peer-to-peer trades and sales, with strict moderation and reputation tracking that makes them particularly suited to collectors with recapped, partial, or discontinued bottles.
+r/FragranceSwap works well for full bottles, partials, and decants. Basenotes connects enthusiasts for peer-to-peer trades and sales, with moderation and reputation tracking that suits collectors with recapped, partial, or discontinued bottles.
 
-For higher-value pieces, specialist platforms earn their place. Scentfine, for example, is a marketplace built specifically for fragrance enthusiasts to buy and sell new, preowned, and unopened perfumes, colognes, partials, and decants, meaning your listings reach actual buyers rather than the general public. eBay has vast global reach and supports new, pre-owned, vintage, and niche fragrances, though sellers face heightened scrutiny on used scent listings and fees that typically run 13-15%.
+For higher-value pieces, specialist platforms earn their place. Scentfine is built specifically for fragrance enthusiasts buying and selling new, preowned, and unopened perfumes, colognes, partials, and decants, so your listings reach actual buyers rather than the general public. eBay has vast global reach and supports new, pre-owned, vintage, and niche fragrances, though sellers face scrutiny on used scent listings and fees that run 13-15%.
 
 ## How do I price a partial bottle without underselling or overpricing?
 
-How to arrive at a fair number when the bottle isn't full and there's no obvious sticker price for "90% of a 100ml EDP."
-
-The community consensus is pretty clear: 20-25% off the current retail asking price is a fair starting point for bottles that aren't readily available from online discounters in larger sizes. For widely available scents sold by discounters, you'll need to drop further. Buyers will compare your price directly to what discounters charge, so you have to beat those prices to make a sale.
+The community consensus: 20-25% off the current retail asking price is a fair starting point for bottles not readily available from online discounters. For widely available scents sold by discounters, you'll need to drop further. Buyers will compare your price directly to what discounters charge, so you have to beat those prices to make a sale.
 
 Adjust that baseline with three variables.
 
-Fill level. The fill level isn't just a courtesy note, it's the single biggest pricing lever. A 50%-full bottle of a popular scent at a 50% discount from retail is a fair deal; the same bottle at a 20% discount is not. Factor in the remaining volume, the condition of the bottle, and the rarity of the fragrance when setting your price.
+Fill level. Fill level is the single biggest pricing lever. A 50%-full bottle of a popular scent at a 50% discount from retail is a fair deal; the same bottle at a 20% discount is not. Factor in remaining volume, bottle condition, and rarity.
 
-Rarity and discontinuation status. Discontinued bottles command genuine premiums because there's no retail alternative. The community at Fragrantica openly discusses holding discontinued bottles until demand ripens, a signal that scarcity pricing is both normal and expected in this niche.
+Rarity and discontinuation status. Discontinued bottles command premiums because there's no retail alternative. Fragrantica discussions openly cover holding discontinued bottles until demand increases, which signals that scarcity pricing is normal in this market.
 
-Condition of bottle and packaging. Original box, cellophane, and accessories all add value. Research similar listings to understand the current market value of your bottle. Pricing too high will deter buyers, while pricing too low may suggest authenticity issues. Use eBay's "sold listings" filter (not active listings) for the most accurate comps: check eBay's sold-listings filter to see how much similar bottles have actually sold for, then cross-reference Mercari and Poshmark, weighing remaining volume, condition, and rarity together.
+Condition of bottle and packaging. Original box, cellophane, and accessories all add value. Use eBay's sold-listings filter (not active listings) for accurate comps, then cross-reference Mercari and Poshmark, weighing remaining volume, condition, and rarity.
 
 ## What to include in your listing to build trust
 
-Sellers who've posted a photo of a bottle and gotten zero interest run into this constantly. A listing that converts has these elements covered.
+Photos: High-quality photographs from multiple angles are essential. Include the fill line (backlit if needed), the batch code stamp on the base or box, and any wear or marks on the bottle or cap. If your bottle is opaque, place it in a fridge for several hours: condensation will appear where the liquid sits, letting you photograph the fill level clearly.
 
-Photos: High-quality photographs showing the bottle from multiple angles are essential. Include the fill line (backlit if needed to show the level clearly), the batch code stamp on the base or box, and any wear or marks on the bottle or cap. If your bottle is opaque (black glass, for instance), try placing it in a fridge for several hours: condensation will show up where the liquid sits inside, letting you take photos that clearly demonstrate how much juice remains to a prospective buyer.
+Text details: Include scent notes, purchase year, condition, and any provenance. Be explicit about storage. A bottle kept in a cool, dark drawer is different from one that's spent years on a sunny bathroom sill. Disclose the fill level as a percentage, provide the batch code, and mention storage conditions.
 
-Text details: A good, honest listing should include scent notes, purchase year, condition, and any provenance. Transparency builds trust. Be explicit about storage too. A bottle kept in a cool, dark drawer is meaningfully different from one that's spent years on a sunny bathroom sill. Disclose the remaining fill level as a percentage and provide the batch code, along with mention of storage conditions.
-
-Pricing context: In community marketplaces like r/FragranceSwap, it's common practice to note the current retail price alongside your asking price, so buyers can quickly assess value without doing their own research.
+Pricing context: On r/FragranceSwap, it's common practice to note the current retail price alongside your asking price, so buyers can assess value without extra research.
 
 ## What are the shipping rules I need to know?
 
-This is where new sellers most often get tripped up, and the consequences range from a rejected parcel to a platform ban.
+Fragrances are high in alcohol, so only ground shipping is permitted, and ground shipping is typically available only for domestic shipments. Air shipping will likely result in the parcel being caught and destroyed by customs. USPS, UPS, and FedEx all have explicit flammable-liquid restrictions that apply to alcohol-based perfume.
 
-Because fragrances are high in alcohol, only ground shipping is permitted, and ground shipping is typically available only for domestic shipments. If you allow air shipping, your parcel is likely to be caught and destroyed by customs. This is not a technicality to gamble on. Carriers like USPS, UPS, and FedEx all have explicit flammable-liquid restrictions that apply to alcohol-based perfume.
+For domestic ground shipping, use bubble wrap, packing peanuts, and a sturdy box, and label the package as "fragile." Add shipping insurance for any bottle above $50 in value.
 
-For domestic ground shipping, pack carefully: perfume bottles are fragile and require meticulous packaging. Use bubble wrap, packing peanuts, and a sturdy box to prevent damage during transit, and clearly label the package as "fragile" to alert postal workers. Adding shipping insurance for any bottle above $50 in value is strongly advisable.
-
-For very small decants, the rules are slightly more lenient, but still check current carrier guidelines before quoting international shipping to a buyer. International shipping of flammable items like fragrances can be tricky due to postal regulations. Research carefully before committing.
+For very small decants, the rules are slightly more lenient, but check current carrier guidelines before quoting international shipping. Research carefully before committing to an international order.
 
 ## Trading or swapping as an alternative to selling
 
-For collectors who aren't interested in cash and just want to diversify their wardrobe without spending more, swapping is an underused option. The same platforms that host sales (r/FragranceSwap, Basenotes, and fragrance Facebook groups) all support Want to Trade (WTT) posts where you list what you have and what you're looking for in return.
+For collectors who want to diversify their wardrobe without spending more, swapping is an underused option. r/FragranceSwap, Basenotes, and fragrance Facebook groups all support Want to Trade (WTT) posts where you list what you have and what you're looking for in return.
 
-Trading has real advantages: no PayPal fees, no pricing negotiations, and the satisfaction of a clean exchange where both parties get something they actually want. The main friction is finding someone who has what you want *and* wants what you have, which is where a logged, searchable fragrance wardrobe helps enormously. When you know exactly what's in your collection and what you've worn (and how much is left), you can post accurate swap offers immediately rather than digging through shelves to check fill levels.
+Trading has real advantages: no PayPal fees, no pricing negotiations, and a clean exchange where both parties get something they want. The main friction is finding someone who has what you want and wants what you have. A logged, searchable fragrance wardrobe helps here. When you know exactly what's in your collection and how much is left in each bottle, you can post accurate swap offers immediately.
 
-This is precisely what [Perfume Picks](https://perfumepicks.app) tracks for you, every bottle catalogued, every wear logged, so when a swap opportunity appears, your inventory data is already in your pocket.
+This is what [Perfume Picks](https://perfumepicks.app) tracks for you, every bottle catalogued, every wear logged, so when a swap opportunity appears, your inventory data is already in your pocket.
 
 ## Should I sell full bottles or decant and sell smaller portions?
 
-Whether it's more profitable to split a bottle into 5ml or 10ml decants rather than selling the full thing.
+It depends on the fragrance and your time. Decanting takes time, and profit margins are often small. For common, available fragrances, decanting rarely makes sense for a casual seller. Glass vials, labels, Parafilm or wax sealing, and packaging materials eat into any potential gain.
 
-Honest answer: it depends on the fragrance and your time budget. It takes a lot of time to sell decants, and profit margins are often small. For common, easily available fragrances, decanting rarely makes commercial sense for a casual seller. The cost of glass vials, labels, Parafilm or wax sealing, and packaging materials eats significantly into any potential gain.
-
-Where decanting does make financial sense is with discontinued or high-demand bottles that would be hard to sell as a full unit at a fair price. It's often better to sell decants of discontinued expensive perfumes. Buyers who won't commit to spending $200-$300 on a full discontinued bottle will happily spend $20-$40 for a 5ml or 10ml decant to experience what the hype is about.
-
-For reference on decanting technique and equipment before going this route, see our [complete guide to decanting perfume](/how-to-decant-perfume).
+Decanting makes financial sense with discontinued or high-demand bottles that would be hard to sell as a full unit at a fair price. Buyers who won't spend $200-$300 on a full discontinued bottle will often spend $20-$40 for a 5ml or 10ml decant. For decanting technique and equipment, see our [complete guide to decanting perfume](/how-to-decant-perfume).
 
 ## A final note on building a collection worth selling from
 
-The average collector now owns 6-10 bottles to suit different moods, routines, and occasions, but a large share of buyers report regretting at least one fragrance purchase. That regret is the inventory that flows through the secondhand market every day. Knowing how to move those bottles efficiently is as much a part of being a seasoned collector as knowing how to buy well in the first place.
+The average collector owns 6-10 bottles to suit different moods and occasions, but a large share of buyers report regretting at least one purchase. That regret is the inventory flowing through the secondhand market every day. Knowing how to move those bottles is part of being a seasoned collector.
 
-The best collections aren't the biggest ones. They're the most *worn* ones. If you're cataloguing your bottles and tracking actual wear rather than relying on memory, you'll know within weeks which bottles deserve a permanent spot and which are only taking up shelf space. That clarity makes selling, swapping, or even gifting the right call much easier to act on.
+The best collections aren't the biggest ones. They're the most worn ones. If you catalogue your bottles and track actual wear rather than relying on memory, you'll know within weeks which bottles deserve a permanent spot and which are taking up shelf space. That clarity makes selling, swapping, or gifting the right call much easier to act on.

@@ -33,69 +33,65 @@ faqs:
 published: true
 ---
 
-Every collector has felt it: you spray a perfume you love, and two hours later it has completely disappeared, while the same bottle lasts all day on your friend. The difference is rarely about perfume quality. More often, it comes down to a variable we rarely think about when choosing fragrance: our skin type.
-
-Understanding how your skin's biology interacts with fragrance molecules is one of the most practical skills a collector can develop, and it changes how you shop, how you apply, and how you actually get value from every bottle you already own.
+You spray a perfume you love, and two hours later it's gone, while the same bottle lasts all day on a friend. The difference is rarely about perfume quality. It usually comes down to skin type.
 
 ---
 
 ## Why does my perfume fade so fast when it lasts all day on someone else?
 
-Longevity is not a fixed property of a fragrance, it is an interaction between the formula and your skin's pH, oil level, and temperature. The same Eau de Parfum can last ten hours on one person and three on another, which is why online reviews and paper strips in store are unreliable predictors of real-world performance.
+Longevity is not a fixed property of a fragrance. It's an interaction between the formula and your skin's pH, oil level, and temperature. The same Eau de Parfum can last ten hours on one person and three on another, which is why online reviews and paper strips in store are unreliable predictors of real-world performance.
 
-The single biggest physical factor is sebum, the natural oil your skin produces. Oily skin works like a natural diffuser: sebum binds with fragrance molecules, releasing them slowly over time, which often results in a scent that is richer and lasts significantly longer. On the other end, dry skin struggles to hold onto fragrance, without sufficient moisture or natural oils, perfume evaporates quickly, often fading within just a few hours.
+The biggest physical factor is sebum, the natural oil your skin produces. Oily skin works like a natural diffuser: sebum binds with fragrance molecules and releases them slowly over time, which results in a scent that lasts longer and often smells richer. Dry skin struggles to hold onto fragrance. Without sufficient natural oils, perfume evaporates quickly, often fading within a few hours.
 
-This is not a flaw in the perfume. It is your skin doing what skin does. Once you know your skin type, you can adapt your application technique, note preferences, and concentration choices to compensate almost entirely.
+This is not a flaw in the perfume. Once you know your skin type, you can adapt your application technique, note preferences, and concentration choices to compensate.
 
 ---
 
 ## I have oily skin, does that mean perfume always performs better for me?
 
-Oily skin is generally considered advantageous for fragrance longevity, but it comes with trade-offs worth knowing.
+Oily skin is generally better for fragrance longevity, but it comes with trade-offs.
 
-Oily skin gives perfume more to cling to, which can extend the life of richer notes like woods, resins, musk, vanilla, and patchouli, and sometimes boosts projection in the first few hours. The trade-off is that certain perfumes can feel louder, sweeter, or heavier than expected. If you have oily skin and a gourmand or heavy oriental consistently smells overwhelming or almost sickly on you, that is likely your sebum amplifying the sweet registers. Choosing a drier, cleaner version of a scent family, aromatic woods, fresh musks, citrus-forward compositions, can give you all the longevity benefits without the excess.
+Oily skin gives perfume more to cling to. That extends the life of richer notes like woods, resins, musk, vanilla, and patchouli, and can boost projection in the first few hours. The trade-off is that certain perfumes can smell louder, sweeter, or heavier than expected. If a gourmand or heavy oriental consistently smells overwhelming on you, your sebum is likely amplifying the sweet registers. Drier, cleaner versions of a scent family, aromatic woods, fresh musks, citrus-forward compositions, give you the longevity benefits without the excess.
 
-Skin pH also shifts how notes read: acidic skin tends to enhance florals, while alkaline skin sharpens citrus, so within the "oily skin" category, two people can still experience the same bottle quite differently depending on their individual pH.
+Skin pH also shifts how notes read. Acidic skin tends to enhance florals; alkaline skin sharpens citrus. Two people with oily skin can still experience the same bottle quite differently depending on their individual pH.
 
-Projection on oily skin can be significant, especially in warm weather. If you wear bold fragrances in close-quarters settings like a shared office, consider applying just one spray to a single pulse point rather than your usual dose. You'll still get good longevity; you'll just avoid becoming the loudest presence in the room.
+Projection on oily skin can be significant, especially in warm weather. In a shared office, consider applying one spray to a single pulse point rather than your usual amount. Longevity holds; projection stays reasonable.
 
 ---
 
 ## What to do differently if you have dry skin
 
-Well-hydrated skin holds fragrance molecules better, as they adhere to the skin's natural lipids. Dry skin is the enemy of perfume longevity. To optimize scent retention, apply an unscented moisturizing cream to your pulse points before spraying, a technique that greatly helps your perfume last longer and smell richer.
+Dry skin is the main enemy of perfume longevity. Fragrance molecules adhere to the skin's natural lipids, and dry skin doesn't have enough of them. Apply an unscented moisturizing cream to your pulse points before spraying. That layer gives fragrance molecules something to cling to, and the perfume lasts longer and smells richer.
 
-Beyond the moisturizer trick, fragrance family selection matters enormously. Dry skin needs bigger fragrances with a good solid base. Orientals and chypres work well, as do spices and heavier blooms like tuberose, the more delicate scents will disappear. In practical terms: if your collection skews toward light, airy citrus EDTs, you'll chronically be disappointed by longevity regardless of how carefully you apply. Shifting even one or two bottles toward richer EDP or Parfum concentrations in oriental or woody-amber families can transform your wearing experience.
+Fragrance family selection matters too. Dry skin needs compositions with solid base notes. Orientals and chypres work well, as do spices and heavier florals like tuberose. Delicate citrus EDTs will disappear. If your collection skews toward light, airy concentrations, shifting even one or two bottles toward richer EDP or Parfum in oriental or woody-amber families can change your wearing experience.
 
-Jojoba oil applied to pulse points before your fragrance can add 2 to 3 extra hours to wear time, a simple and cheap fix. Petroleum jelly works similarly if you prefer a thicker barrier.
+Jojoba oil applied to pulse points before spraying can add 2-3 extra hours of wear time. Petroleum jelly works similarly if you prefer a thicker base.
 
-One more thing worth remembering for dry-skin collectors: don't judge longevity only by what you can smell on yourself after two hours, nose fatigue is common, especially with musks, woods, and ambers. Ask someone you trust, or check whether the scent is still present on clothing before deciding it has disappeared.
+Don't judge longevity only by what you can smell on yourself after two hours. Nose fatigue is common with musks, woods, and ambers. Ask someone nearby, or check whether the scent is still on clothing before deciding it's gone.
 
 ---
 
 ## How combination skin behaves with fragrance
 
-Combination skin creates a mixed effect: fragrance lasts longer on oilier areas, while it fades more quickly on drier zones. For most combination-skin wearers, the practical fix is straightforward, apply fragrance to your oilier zones (inner wrists, sternum, base of throat) and moisturize the drier ones before spraying.
+Combination skin creates a mixed result: fragrance lasts longer on oilier areas and fades faster on drier ones. Apply fragrance to your oilier zones, inner wrists, sternum, base of throat, and moisturize the drier ones before spraying.
 
-Fragrances usually perform best on combination skin when applied to balanced areas such as the sides of the neck or behind the ears. Moisturizing the drier areas before applying perfume can also improve longevity, and Eau de Parfum concentration is often the most suitable choice for combination skin.
+Fragrances tend to perform best on the sides of the neck or behind the ears for combination skin. EDP concentration is usually the most practical choice.
 
-The inconsistency you experience, good longevity one day, mediocre the next, often isn't the perfume changing. It's variations in hydration, ambient temperature, and exactly where on your body you applied it that day.
+The inconsistency you notice, good longevity one day, mediocre the next, often isn't the perfume changing. It's variations in hydration, ambient temperature, and where on your body you applied it.
 
 ---
 
 ## Does anything else affect how a perfume smells on my skin beyond the oily/dry question?
 
-Several other biological and lifestyle factors are worth knowing about.
+Skin pH typically ranges from 4.5 to 5.5. More acidic skin holds fragrances longer. Diet, certain medications, and stress all shift pH. When you're stressed, your body produces more cortisol, which can increase perspiration and acidity, making perfumes evaporate faster or smell different.
 
-Skin pH is perhaps the most underappreciated. Skin pH typically ranges from 4.5 to 5.5. More acidic skin tends to hold onto fragrances better, giving them a longer-lasting presence. Diet, certain medications, and stress all shift pH. When you're stressed, your body produces more cortisol, which can increase perspiration and acidity, making perfumes evaporate faster or even change how they smell entirely.
+Body temperature affects projection. Warmer skin enhances fragrance development, which is why the same perfume can smell different in summer versus winter. People who run warm or stay active often notice stronger projection, thanks to increased skin warmth and circulation.
 
-Body temperature plays a direct role in projection. Warmer skin enhances fragrance development, which is why your perfume might smell different in summer versus winter. Active individuals often notice that their perfume projects more than on sedentary lifestyles, thanks to increased skin warmth and circulation.
+Diet can also factor in. Eating a lot of meat, garlic, or onions may shift how a perfume reads on your skin.
 
-Diet can also subtly influence results. Your diet can alter your natural body scent, eating lots of meat, garlic, or onions may shift how a perfume is perceived on your skin.
+Hydration matters independently of skin type. Drinking enough water and keeping skin moisturized helps longevity and can smooth out the scent's development over time.
 
-Hydration matters independently of skin type. Maintaining overall hydration by drinking enough water and keeping skin moisturized can help improve your perfume's longevity and create a smoother scent progression.
-
-All of this adds up to why logging your wears matters. If you use Perfume Picks to track which bottles you've worn and on which days, patterns emerge: maybe a perfume that reliably underperforms for you is always applied on rushed mornings when you've skipped moisturizer, or it consistently shines in winter. Those data points are invisible without a record.
+Logging your wears helps surface these patterns. If you use [Perfume Picks](https://perfumepicks.com) to track which bottles you've worn and on which days, you may notice a perfume that reliably underperforms is always worn on rushed mornings when you've skipped moisturizer, or that it consistently holds better in winter. Those patterns are invisible without a record.
 
 ---
 
@@ -112,13 +108,13 @@ All of this adds up to why logging your wears matters. If you use Perfume Picks 
 
 ## Choosing a concentration based on your skin type
 
-Concentration is the single fastest lever to pull if your current perfumes aren't performing. Parfum or Extrait de Parfum contains 20-40% fragrance oils and can last an impressive 12-24 hours, the marathon runner of the fragrance world. Eau de Parfum offers 15-20% oils, giving you a solid 6-8 hours of staying power, perfect for most daily wear. Eau de Toilette sits in the middle ground with 5-15% oils, lasting around 3-5 hours.
+Concentration is the fastest variable to adjust if your current perfumes aren't performing. Parfum or Extrait de Parfum contains 20-40% fragrance oils and can last 12-24 hours. Eau de Parfum offers 15-20% oils, giving 6-8 hours of wear, which works for most daily use. Eau de Toilette sits at 5-15% oils and lasts around 3-5 hours.
 
-For dry-skin collectors: moving from EDT to EDP, or from EDP to Parfum, often adds hours of wear time without any other change in routine. This is especially true for note families with delicate top-note-forward profiles like citrus or green florals, which evaporate fastest on dehydrated skin.
+For dry-skin collectors: moving from EDT to EDP, or from EDP to Parfum, often adds hours of wear time without any other change in routine. This matters most for citrus and green florals, which evaporate fastest on dehydrated skin.
 
-For oily-skin collectors: an EDT is not a compromise. It often performs at EDP levels because your sebum does the work of concentration. Starting lighter is a smart move, especially with sillage-heavy profiles like heavy woods, spices, or orientals where the amplification effect is strongest.
+For oily-skin collectors: an EDT is not a compromise. It often performs at EDP levels because your sebum does much of the work. Starting lighter makes sense, especially with sillage-heavy profiles like heavy woods, spices, or orientals where amplification is strongest.
 
-Smaller fragrance formats now account for a growing share of premium perfume sales in North America and Europe, partly because decants and travel sizes let collectors test how a concentration actually performs on their own skin before committing to a full bottle. If you've been disappointed by longevity, testing the EDP version of a fragrance you own in EDT is a low-stakes experiment worth making.
+Decants and travel sizes let you test how a concentration performs on your own skin before committing to a full bottle. If you've been disappointed by longevity, testing the EDP version of a fragrance you own in EDT is a low-cost experiment worth running.
 
 ---
 
@@ -126,10 +122,10 @@ Smaller fragrance formats now account for a growing share of premium perfume sal
 
 A few techniques that make a measurable difference regardless of skin type:
 
-- Moisturize first. Even oily-skin wearers benefit from a light layer of unscented lotion on pulse points in cold or dry-weather months when skin naturally dehydrates.
-- Don't rub your wrists together. The friction heats the skin and produces natural enzymes that change the course of the scent, causing delicate top notes to evaporate more quickly and lose their impact.
-- Layer on clothing for persistence. Fabric often holds fragrance longer than skin but develops differently, useful to know when you want an all-day trail without over-applying to skin.
-- Apply to warm zones. Pulse points (wrists, neck, inner elbows, behind the knees) generate body heat that diffuses fragrance continuously through the day. This is especially important for dry-skin wearers, where those heated zones hold scent better than cooler areas.
-- Test before you judge. Always test a fragrance on your skin for a full day before making your final judgment. Paper strips and quick in-store sniffs tell you almost nothing about how a perfume will behave on your specific skin over eight hours.
+- Moisturize first. Even oily-skin wearers benefit from a light layer of unscented lotion on pulse points in cold or dry months when skin naturally dehydrates.
+- Don't rub your wrists together. The friction heats the skin and produces enzymes that change the scent's development, causing delicate top notes to evaporate faster.
+- Layer on clothing for persistence. Fabric often holds fragrance longer than skin and develops differently, useful when you want an all-day trail without over-applying.
+- Apply to warm zones. Pulse points, wrists, neck, inner elbows, behind the knees, generate body heat that diffuses fragrance through the day. For dry-skin wearers, those heated zones hold scent better than cooler areas.
+- Test before you judge. Test a fragrance on your skin for a full day before deciding. Paper strips and quick in-store sniffs tell you little about how a perfume will behave on your skin over eight hours.
 
-Building a collection without understanding these variables is expensive guesswork. Once you factor in your skin type when evaluating a new bottle, or reconsidering ones already on your shelf, you'll find that some "disappointing" fragrances simply need a different application approach, not a replacement.
+Once you factor in your skin type when evaluating a new bottle, or reconsidering ones already on your shelf, some "disappointing" fragrances turn out to need a different application approach, not a replacement.

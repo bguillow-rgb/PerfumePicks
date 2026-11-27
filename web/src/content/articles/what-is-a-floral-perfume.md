@@ -33,7 +33,7 @@ faqs:
 published: true
 ---
 
-Floral is the single largest family in perfumery, and also the most misunderstood by collectors. Many enthusiasts treat "floral" as code for soft, feminine, and unchallenging, then overlook a category that includes some of perfumery's most ambitious and complex compositions. This guide unpacks what floral perfume actually is, why the sub-families matter more than the label, and how to build florals into a wardrobe without accidentally buying the same scent in four different bottles.
+Floral is the single largest family in perfumery, and also the most misunderstood by collectors. Many enthusiasts treat "floral" as code for soft, feminine, and unchallenging, then overlook a category that includes some of perfumery's most ambitious and complex compositions. This guide covers what floral perfume actually is, why the sub-families matter more than the label, and how to build florals into a wardrobe without accidentally buying the same scent in four different bottles.
 
 ---
 
@@ -51,7 +51,7 @@ This flexibility makes the floral fragrance family extremely broad. A single-flo
 
 ## What are the main floral sub-families, and why do they matter to collectors?
 
-This is where the real work happens. Knowing a perfume is "floral" tells you almost nothing useful; knowing *which* floral sub-family it belongs to tells you almost everything.
+Knowing a perfume is "floral" tells you almost nothing useful. Knowing *which* floral sub-family it belongs to tells you almost everything.
 
 | Sub-family | Character | Typical notes | Best wardrobe role |
 |---|---|---|---|
@@ -62,7 +62,7 @@ This is where the real work happens. Knowing a perfume is "floral" tells you alm
 | Floral oriental | Warm, spiced, rich | Rose + amber, jasmine + vanilla | Autumn/winter evenings |
 | Soliflore | Single-flower portrait | Rose, violet, lily of the valley | Collector's statement piece |
 
-Collectors who understand these distinctions stop buying "another floral" and start making deliberate choices. A fresh floral and a white floral can coexist in the same wardrobe without competing -- they serve completely different occasions and moods. If you want to track exactly which sub-families you already own, [Perfume Picks](https://perfumepicks.app) logs every bottle and surfaces patterns in your collection, which is surprisingly useful when you're wondering why three supposedly different florals all smell like close cousins.
+Collectors who understand these distinctions stop buying "another floral" and start making deliberate choices. A fresh floral and a white floral can coexist in the same wardrobe without competing -- they serve completely different occasions and moods. If you want to track which sub-families you already own, [Perfume Picks](https://perfumepicks.app) logs every bottle and builds a taste profile from their accords, which is useful when you're wondering why three supposedly different florals all smell like close cousins.
 
 ---
 
@@ -94,11 +94,11 @@ The gendered marketing of floral perfume is a 20th-century commercial convention
 
 *A question we hear often:* especially from collectors who already own three or four florals and can't articulate why they still feel like something's missing -- or, conversely, why their newest bottle sounds different but smells identical to what they already have.
 
-The key is to audit by sub-family and base note combination, not by name. Two "rose perfumes" that share similar amber-vanilla bases will smell like close cousins even if they come from entirely different houses. A rose EDP with a dry woody-incense base and a rose EDP with a creamy musks base can feel completely different on skin.
+Audit by sub-family and base note combination, not by name. Two "rose perfumes" that share similar amber-vanilla bases will smell like close cousins even if they come from entirely different houses. A rose EDP with a dry woody-incense base and a rose EDP with a creamy musks base can feel completely different on skin.
 
-A useful framework: for each floral you own, name its sub-family, its dominant heart note, and its base character. If you're using Perfume Picks, the wear log and collection overview make this kind of side-by-side comparison quick. Then apply the same analysis to any candidate bottle before buying. If you already have a floral with vanilla and musk at its core, another one built on the same combination isn't adding much.
+A useful framework: for each floral you own, name its sub-family, its dominant heart note, and its base character. If you're using Perfume Picks, the wear log and the Compare feature make this kind of side-by-side comparison quick. Then apply the same analysis to any candidate bottle before buying. If you already have a floral with vanilla and musk at its core, another one built on the same combination isn't adding much.
 
-What most people overlook is how profoundly diverse the floral family actually is. Many collectors assume "floral" means soft and feminine, yet some of the most arresting floral perfumes are bold, dark, and genuinely challenging in the best sense.
+The floral family is more diverse than most collectors expect. Many assume "floral" means soft and feminine, yet some of the most arresting floral perfumes are bold, dark, and genuinely challenging.
 
 ---
 
@@ -107,13 +107,13 @@ What most people overlook is how profoundly diverse the floral family actually i
 Season matters, but sub-family matters more than season. A practical breakdown:
 
 - Fresh florals and fruity florals are natural warm-weather choices. Their lightness suits heat and humidity without becoming cloying, and they're the most office- and daytime-appropriate florals.
-- Soft florals and soliflores are genuinely year-round. A well-constructed powdery rose or iris adapts across temperatures and situations.
-- White florals perform better in cooler air. The natural indolic quality of jasmine and tuberose can become overwhelming in peak summer heat. Autumn evenings are where many white florals genuinely sing.
+- Soft florals and soliflores are year-round. A well-constructed powdery rose or iris adapts across temperatures and situations.
+- White florals perform better in cooler air. The natural indolic quality of jasmine and tuberose can become overwhelming in peak summer heat. Autumn evenings are where many white florals work best.
 - Floral orientals are cold-weather perfumes at heart. The warmth of their base notes needs cool air to project without overloading a room.
 
 Some floral perfumes are unambiguously occasion-specific; others move from morning meetings to evening events without much trouble. Building a seasonal floral wardrobe means you're not reaching for the same bottle in January and July and hoping for the best.
 
-Worth noting: Circana reports that US prestige fragrance dollar sales grew 6% in the first half of 2026, with average prices rising 5% while unit sales remained flat. The category is trading up, not down. If you're investing in florals now, the market data suggest concentrating on quality EDP and parfum-strength options rather than accumulating cheaper EDT flankers of the same composition.
+Circana reports that US prestige fragrance dollar sales grew 6% in the first half of 2026, with average prices rising 5% while unit sales remained flat. The category is trading up. If you're investing in florals now, that data points toward quality EDP and parfum-strength options rather than accumulating cheaper EDT flankers of the same composition.
 
 ---
 
@@ -123,7 +123,7 @@ Test on skin over a full day. Paper shows the opening only. Wear a decant throug
 
 Test a sample at least 3-4 times across different environments and times of day to get a true read on longevity, sillage, and how the scent evolves on your skin.
 
-For longevity expectations: rich floral orientals and white florals in EDP or parfum concentration can last 8-12 hours on many skin types. Light fresh florals are intentionally designed to be more transient -- 3-5 hours in EDT is normal and appropriate for the character. Don't penalize a fresh floral for not lasting as long as an oud; it's doing exactly what it's meant to do.
+For longevity expectations: rich floral orientals and white florals in EDP or parfum concentration can last 8-12 hours on many skin types. Light fresh florals are designed to be more transient -- 3-5 hours in EDT is normal and appropriate for the character. Don't penalize a fresh floral for not lasting as long as an oud; it's doing exactly what it's meant to do.
 
 ---
 

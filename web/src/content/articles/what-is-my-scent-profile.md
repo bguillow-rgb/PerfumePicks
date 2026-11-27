@@ -33,27 +33,25 @@ faqs:
 published: true
 ---
 
-Your collection is a better personality test than any quiz. Every bottle you've kept, worn down, or reached for repeatedly is a data point, and together they reveal a coherent pattern that fragrance insiders call your **scent profile** (sometimes your fragrance DNA or olfactory fingerprint). This guide shows you how to read that pattern, use it to stop buying bottles you'll never wear, and build a collection that actually reflects who you are.
+Your collection is a better personality test than any quiz. Every bottle you've kept, worn down, or reached for repeatedly is a data point, and together they reveal a coherent pattern that fragrance insiders call your **scent profile** (sometimes your fragrance DNA or olfactory fingerprint). This guide shows you how to read that pattern, use it to stop buying bottles you'll never wear, and build a collection that reflects who you are.
 
 ---
 
 ## What exactly *is* a scent profile, and why does it matter?
 
-A scent profile is the personal fingerprint of fragrance families, dominant notes, and emotional moods that you reliably return to, whether or not you've ever consciously named them. Think of it as the underlying logic behind why you own the bottles you own.
+A scent profile is the personal fingerprint of fragrance families, dominant notes, and emotional moods that you reliably return to, whether or not you've ever consciously named them. It's the underlying logic behind why you own the bottles you own.
 
-It matters because most collectors buy reactively: a glowing review here, a stunning bottle there, a sample that wowed for five minutes in-store. Without a clear picture of your own taste, you accumulate duplicates and misfires. The cost is real: buyers routinely accumulate unused fragrance bottles, money spent on purchases they end up regretting. That happens largely because buyers don't understand their own preferences before spending.
+Most collectors buy reactively: a glowing review here, a stunning bottle there, a sample that wowed for five minutes in-store. Without a clear picture of your own taste, you accumulate duplicates and misfires. Buyers routinely end up with unused bottles and purchases they regret, largely because they didn't understand their own preferences before spending.
 
-Your scent profile fixes this. Once you know, for instance, that you consistently love warm, resinous base notes and feel suffocated by aggressive green florals, every future purchase decision becomes faster and more accurate.
+Once you know, for instance, that you consistently love warm, resinous base notes and feel suffocated by aggressive green florals, every future purchase decision becomes faster and more accurate.
 
 ---
 
 ## How a scent profile differs from just having a favorite perfume
 
-People conflate a beloved signature bottle with a fully formed taste identity. They're related but not the same thing.
+A favorite perfume is one data point. A scent profile is the pattern that *explains* why you love that perfume, and which other bottles would resonate with you for the same underlying reasons.
 
-A favorite perfume is one data point. A scent profile is the pattern that *explains* why you love that perfume, and which dozens of other bottles would resonate with you for the same underlying reasons. Knowing your profile means you're not dependent on a single bottle or a single house. You can walk into any perfumery, identify the structural elements you need (say, a woody amber base with a soft floral heart and no sharp citrus top note), and narrow a wall of 300 options to a shortlist of five before you even lift a tester.
-
-The practical upside: collectors who understand their own profile report far fewer regret purchases and naturally end up with a more cohesive, wearable wardrobe.
+Knowing your profile means you're not dependent on a single bottle or a single house. You can walk into any perfumery, identify the structural elements you need (say, a woody amber base with a soft floral heart and no sharp citrus top note), and narrow a wall of 300 options to a shortlist of five before you even lift a tester. Collectors who understand their own profile end up with fewer regret purchases and a more cohesive, wearable wardrobe.
 
 ---
 
@@ -67,15 +65,13 @@ The most reliable method doesn't involve an online quiz. It involves your own bo
 
 **Step 3, Spot the recurring notes.** Look past the family label and note which specific ingredients appear repeatedly: sandalwood, vanilla, iris, bergamot, oud, rose, vetiver, musk. Two or three notes that show up across unrelated houses and styles are your *signature notes*, the ingredients your nose keeps chasing.
 
-**Step 4, Read the mood column.** Ask yourself when you reach for each bottle. Work? Evenings? Weekends? Comfort days? This reveals your *contextual profile*, the emotional register you want from a fragrance. Some collectors are consistently drawn to mood-lifting, energising scents; others want something quieting and intimate regardless of occasion.
+**Step 4, Read the mood column.** Ask yourself when you reach for each bottle. Work? Evenings? Weekends? Comfort days? This reveals your *contextual profile*, the emotional register you want from a fragrance. Some collectors consistently reach for mood-lifting, energising scents; others want something quieting and intimate regardless of occasion.
 
 **Step 5, Write it down.** Your scent profile might read: *"Anchor family: woody oriental. Signature notes: sandalwood, vanilla, soft musks. Mood: warm, introspective, evening-leaning."* That single sentence is more useful than a hundred quiz results.
 
 ---
 
 ## What the different fragrance families signal about taste
-
-Plenty of collectors are comfortable picking bottles but have never learned the vocabulary to describe their own pattern.
 
 | Family | Core character | What it often signals about taste |
 |---|---|---|
@@ -94,40 +90,38 @@ None of these signal a fixed personality type. They reflect a *sensory* preferen
 
 ## The role of recurring notes vs. fragrance families in your profile
 
-Whether they should think in terms of families or individual notes. The answer: families tell you the *shape* of what you love; recurring notes tell you the *soul* of it.
+Families tell you the *shape* of what you love; recurring notes tell you the *soul* of it.
 
-You might have a broadly woody profile but specifically need cedar rather than oud. They're in the same family but perform very differently on skin and create entirely different emotional registers. Knowing you love cedar-forward woodies but find oud heavy and medicinal is far more actionable than simply knowing you like "woody" fragrances.
+You might have a broadly woody profile but need cedar rather than oud. They're in the same family but perform very differently on skin and create entirely different emotional registers. Knowing you love cedar-forward woodies but find oud heavy and medicinal is more actionable than knowing you like "woody" fragrances.
 
-A practical approach: when you discover a new perfume you love, write down the two or three notes that made you say yes and the one or two that would have made you walk away. Over time, this builds a precise positive-and-negative ingredient map that no quiz can replicate. Fragrance searches keep growing year over year, which means more options, more noise, and a bigger payoff for collectors who have this kind of clarity.
+When you discover a new perfume you love, write down the two or three notes that made you say yes and the one or two that would have made you walk away. Over time, this builds a precise positive-and-negative ingredient map that no quiz can replicate. Fragrance searches keep growing year over year, which means more options, more noise, and a bigger payoff for collectors who have this kind of clarity.
 
 ---
 
 ## How do I know if my scent profile is shifting?
 
-Taste evolves, sometimes seasonally, sometimes because of a major life change, sometimes simply because your nose has grown more sophisticated through exposure. Signs that your profile is drifting:
+Taste evolves, sometimes seasonally, sometimes because of a major life change, sometimes because your nose has grown more sophisticated through exposure. Signs that your profile is drifting:
 
 - You're reaching for bottles at the edges of your collection more than the centre
 - Scents you loved two years ago feel wrong without being able to articulate why
 - You keep sampling and loving things outside your established families
 - You experience what some collectors call "wardrobe fatigue": the feeling that everything you own smells too similar
 
-A wear log is the most reliable diagnostic tool. When you track which bottles you actually spray (rather than which ones look good on the shelf), patterns reveal themselves fast. Apps like [Perfume Picks](https://perfumepicks.app) log every wear automatically and surface your real usage patterns over time, making drift visible before it turns into a drawer full of bottles you've stopped reaching for.
+A wear log is the most reliable diagnostic tool. When you track which bottles you actually spray (rather than which ones look good on the shelf), patterns reveal themselves fast. Apps like [Perfume Picks](https://perfumepicks.app) let you log each wear with details like occasion, weather, mood and a short note, and surface your real usage patterns over time, making drift visible before it turns into a drawer full of bottles you've stopped reaching for.
 
 ---
 
 ## Can I have more than one scent profile, like a "work self" and a "weekend self"?
 
-Absolutely, and many seasoned collectors consciously curate two or three contextual sub-profiles rather than one monolithic identity. Think of it like a wardrobe: you have a dominant aesthetic, but your office clothes and your weekend clothes serve different emotional functions while still reflecting the same underlying taste.
+Many seasoned collectors curate two or three contextual sub-profiles rather than one. Think of it like a wardrobe: you have a dominant aesthetic, but your office clothes and your weekend clothes serve different emotional functions while still reflecting the same underlying taste.
 
 A collector whose anchor family is woody oriental might run two sub-profiles: a lighter, cedar-and-iris version for daytime wear and a full amber-resin expression for evenings. Both are authentically theirs. They share signature notes but calibrate differently for context.
 
-Where this matters practically: when you're shopping, knowing which sub-profile a bottle is intended for helps you avoid accidentally buying a fifth evening-leaning scent when your daytime shelf is already sparse. Understanding your collection gap by occasion is as valuable as knowing your taste overall. The guide on [how to build a fragrance wardrobe](https://perfumepicks.app/articles/how-to-build-a-fragrance-wardrobe) covers the occasion-mapping side of this in depth.
+When you're shopping, knowing which sub-profile a bottle is intended for helps you avoid accidentally buying a fifth evening-leaning scent when your daytime shelf is already sparse. Understanding your collection gap by occasion is as valuable as knowing your taste overall. The guide on [how to build a fragrance wardrobe](https://perfumepicks.app/articles/how-to-build-a-fragrance-wardrobe) covers the occasion-mapping side of this in depth.
 
 ---
 
 ## What to actually *do* with your scent profile once you know it
-
-This, because decoding your taste is only valuable if it changes your behaviour.
 
 **Use it as a buying filter first.** Before sampling anything, check it against your profile. If a new release has none of your signature notes and sits in a family you've never loved, the bar for pulling a sample is higher. This alone prevents most impulse purchases.
 
@@ -137,7 +131,7 @@ This, because decoding your taste is only valuable if it changes your behaviour.
 
 **Use it to guide rotation decisions.** If you know your profile, you can [rotate your collection](https://perfumepicks.app/articles/how-to-rotate-your-perfume-collection) intentionally, front-loading bottles that fit your current season or mood context rather than grabbing whatever is nearest.
 
-Perfume Picks builds a taste profile automatically from the bottles you log and the wears you record, surfacing your dominant families and recurring notes as a visual snapshot so you don't have to construct the audit manually. It's a useful starting point, especially once your collection grows past a dozen bottles and patterns get harder to hold in your head.
+Perfume Picks builds a taste profile from up to five bottles you tap to identify your preferences, sharpening it each time you log a wear or swipe in Train My Nose. It surfaces your dominant accords as a named archetype on a taste profile screen so you don't have to construct the audit manually. It's a useful starting point, especially once your collection grows past a dozen bottles and patterns get harder to hold in your head.
 
 ---
 
@@ -147,7 +141,7 @@ Skin chemistry affects *performance*: longevity, sillage, how a note amplifies o
 
 The practical overlap: if you have dry skin, base notes tend to fade faster. A collector with a woody amber profile and dry skin might need to seek out higher-concentration EdP or Parfum formulations, or layer a complementary body product underneath, to get the performance their taste requires. The guide on [perfume for skin type](https://perfumepicks.app/articles/perfume-for-skin-type) unpacks this interaction in detail.
 
-The main thing to avoid is letting skin-chemistry disappointment distort your profile. If a sandalwood fragrance underperformed on your skin once, the problem might be concentration or formulation, not the note itself. Don't remove sandalwood from your preference map based on a single experience.
+Avoid letting skin-chemistry disappointment distort your profile. If a sandalwood fragrance underperformed on your skin once, the problem might be concentration or formulation, not the note itself. Don't remove sandalwood from your preference map based on a single experience.
 
 ---
 

@@ -31,7 +31,7 @@ faqs:
 published: true
 ---
 
-Perfume collectors spend real energy building a shelf worth looking at, then take a blurry, washed-out photo that does it no justice. Getting a clean, evocative image of your bottles doesn't require professional gear or a studio. What it requires is understanding a handful of principles specific to glass, liquid, and small-scale still life. This guide covers all of them, from first shot to final edit.
+Perfume collectors spend real energy building a shelf worth looking at, then take a blurry, washed-out photo that does it no justice. Getting a clean, evocative image of your bottles doesn't require professional gear or a studio. It requires understanding a handful of principles specific to glass, liquid, and small-scale still life. This guide covers all of them, from first shot to final edit.
 
 ---
 
@@ -39,7 +39,7 @@ Perfume collectors spend real energy building a shelf worth looking at, then tak
 
 *A question we hear often:* collectors who can photograph food or clothing with their phone perfectly well are sometimes baffled when the same approach fails completely on a fragrance shelf.
 
-The short answer: perfume bottles combine almost every difficult property a still-life photographer can face. Refractive glass, mirror-grade reflections, tinted liquid that shifts with light angle, foil-stamped labels that blow out under flash. It's a uniquely demanding subject. When you shoot a ceramic mug, you get what you see. When you shoot a faceted glass bottle, you get the bottle *plus* a tiny mirror image of everything in the room: your ceiling light, your hand, your wall.
+Perfume bottles combine almost every difficult property a still-life photographer can face. Refractive glass, mirror-grade reflections, tinted liquid that shifts with light angle, foil-stamped labels that blow out under flash. When you shoot a ceramic mug, you get what you see. When you shoot a faceted glass bottle, you get the bottle *plus* a tiny mirror image of everything in the room: your ceiling light, your hand, your wall.
 
 The second complication is scale. Most perfume bottles sit between 50 ml and 100 ml, small enough that autofocus often hunts for a subject and depth of field becomes a real concern. Getting a crisp label while keeping the cap in soft focus is a deliberate choice, not a happy accident.
 
@@ -51,7 +51,7 @@ Both constraints, glass reflectivity and small scale, shape every technique in t
 
 *This one comes up a lot:* the background feels like a minor detail until you see how dramatically it changes the result.
 
-The camera sees everything in the room, not just your bottle. A plain, lint-free, seamless white or black surface solves that immediately, and it's the clean catalog-style approach that works reliably. But collectors shooting for Instagram or personal archives often want something with more atmosphere.
+The camera sees everything in the room, not just your bottle. A plain, lint-free, seamless white or black surface solves that immediately, and it's the clean catalog-style approach that works reliably. Collectors shooting for Instagram or personal archives often want something with more atmosphere.
 
 Neutral options that consistently work well:
 
@@ -68,8 +68,6 @@ One rule worth following regardless of surface: glass bottles reflect their surr
 
 Different scenarios call for different angles. A low-angle shot makes a 75 ml bottle feel monumental. An overhead flat lay reads as editorial curation. They're not interchangeable.
 
-Here's a quick breakdown:
-
 | Scenario | Best Angle | Why It Works |
 |---|---|---|
 | Single hero bottle | 30-45 degrees | Shows label, cap shape, and juice color simultaneously |
@@ -84,11 +82,11 @@ For most collectors, alternating between the 45-degree single-bottle shot and th
 
 ## How do I light perfume bottles without a studio setup?
 
-*Readers frequently ask:* whether they need to buy equipment. The honest answer is no, but understanding the logic behind light placement matters more than the gear itself.
+*Readers frequently ask:* whether they need to buy equipment. No, but understanding the logic behind light placement matters more than the gear itself.
 
-The single most reliable setup for a collector working at home: a window with indirect daylight. Position your bottle so the window light comes from one side, not directly behind or in front of the bottle, then use a white piece of card or foam board on the opposite side to bounce soft fill light back onto the shadowed area. That two-element setup (window plus reflector) is how many still-life photographers work before they ever own a studio light.
+The single most reliable setup for a collector working at home: a window with indirect daylight. Position your bottle so the window light comes from one side, not directly behind or in front of the bottle, then use a white piece of card or foam board on the opposite side to bounce soft fill light back onto the shadowed area. That two-element setup, window plus reflector, is how many still-life photographers work before they ever own a studio light.
 
-If you're shooting at night or your apartment doesn't get good natural light, two inexpensive LED lamps work well. Place them at 45-degree angles on either side of the bottle, each diffused through a sheet of white paper or a shower curtain, and the results are genuinely hard to distinguish from a $500 softbox setup.
+If you're shooting at night or your apartment doesn't get good natural light, two inexpensive LED lamps work well. Place them at 45-degree angles on either side of the bottle, each diffused through a sheet of white paper or a shower curtain, and the results are hard to distinguish from a $500 softbox setup.
 
 One thing to avoid regardless of light source: direct on-camera flash. It creates a flat, frontal reflection that wipes out the bottle's dimensionality and turns the cap into a mirror.
 
@@ -96,7 +94,7 @@ One thing to avoid regardless of light source: direct on-camera flash. It create
 
 ## Do I need special camera settings, or is my phone enough?
 
-A flagship phone from the last two or three years, particularly one with a 50mm-equivalent lens and a portrait mode, is genuinely sufficient for collection photography. No special gear required.
+A flagship phone from the last two or three years, one with a 50mm-equivalent lens and a portrait mode, is sufficient for collection photography.
 
 Useful settings regardless of whether you're on a phone or a dedicated camera:
 
@@ -144,9 +142,9 @@ Avoid heavy presets that crush shadows or add strong color grading. Your bottle'
 
 ## How does photographing my collection connect to actually managing it?
 
-This is a collector-adjacent habit more people should develop. A well-photographed collection is easier to audit, easier to share with the community, and practically speaking, easier to log. When you sit down to photograph your shelf, you're forced to handle every bottle. That surfaces the ones you've been ignoring and reminds you of bottles you haven't worn in months.
+A well-photographed collection is easier to audit, easier to share with the community, and easier to log. When you sit down to photograph your shelf, you're forced to handle every bottle. That surfaces the ones you've been ignoring and reminds you of bottles you haven't worn in months.
 
-Many collectors use those photo sessions as a natural trigger to update their wear logs. If you use [Perfume Picks](https://perfumepicks.app) to track your collection, pulling up a bottle during a photo session is a natural moment to log a wear, update a rating, or note how the juice has changed since you last tried it. The photography habit and the collection-tracking habit reinforce each other.
+Many collectors use those photo sessions as a natural trigger to update their wear logs. If you use [Perfume Picks](https://perfumepicks.app) to track your collection, pulling up a bottle during a photo session is a natural moment to log a wear, update your star rating, or add a note on how the juice has changed since you last tried it. The photography habit and the collection-tracking habit reinforce each other.
 
 According to fragrance community data, bottles that collectors actively photograph and share are worn significantly more often than those that sit silently on the back of a shelf, which makes the extra 20 minutes setting up a shot worthwhile beyond aesthetics.
 

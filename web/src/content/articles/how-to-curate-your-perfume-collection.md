@@ -31,25 +31,25 @@ faqs:
 published: true
 ---
 
-Curating a perfume collection is different from simply owning one. Most collectors reach a point where adding bottles stops feeling satisfying and the real work becomes deciding what *stays*, and why. This guide walks through a practical framework for turning a shelf of accumulated fragrances into a working wardrobe where every bottle has a job.
+Curating a perfume collection is different from simply owning one. Most collectors reach a point where adding bottles stops feeling satisfying and the real work becomes deciding what *stays*, and why. This is a practical framework for turning a shelf of accumulated fragrances into a working wardrobe where every bottle has a job.
 
 ## What does it actually mean to "curate" a perfume collection?
 
-The word gets used loosely, but there's a meaningful distinction worth nailing down. Collecting is the act of acquiring; curating is the act of editing with intention. A curated collection isn't necessarily small, it's *purposeful*. Every bottle on the shelf fills a role that nothing else in the lineup already covers.
+Collecting is the act of acquiring. Curating is the act of editing with intention. A curated collection isn't necessarily small, it's *purposeful*. Every bottle on the shelf fills a role that nothing else in the lineup already covers.
 
-Think of how a professional stylist approaches a wardrobe. The goal isn't to own fewer clothes, it's to own the right clothes for the life you actually live. A perfume wardrobe isn't about quantity but about diversity and intention. A minimalist might own five perfectly chosen bottles, while a collector could have fifty and still crave balance. Curation is how you find that balance regardless of where your number lands.
+A professional stylist approaches a wardrobe by keeping the right clothes for the life you actually live, not by owning fewer clothes. A perfume wardrobe works the same way. A minimalist might own five carefully chosen bottles, while a collector could have fifty and still find balance. Curation is how you get there regardless of where your number lands.
 
-The practical upshot: a curated collection gets used. Bottles don't sit unopened for eighteen months because you always reach for something else instead. Every scent earns rotation time because it fills a gap nothing else can.
+A curated collection gets used. Bottles don't sit unopened for eighteen months because you always reach for something else. Every scent earns rotation time because it fills a gap nothing else can.
 
 ## Where do I even start, my collection feels overwhelming?
 
 *A question we hear often:* collectors who've been buying for a few years often describe the same moment, opening a drawer or reaching a shelf and feeling paralyzed rather than delighted.
 
-Start with a simple inventory before making any decisions. Pull every bottle out and put them in one place. If you use Perfume Picks, your digital collection is already waiting, you can sort by family, notes, or last-worn date without touching a thing. Either way, the goal at this stage is just visibility. You can't edit what you can't see.
+Start with a simple inventory before making any decisions. Pull every bottle out and put them in one place. If you use Perfume Picks, your digital collection is already waiting in your wardrobe, where each bottle shows its remaining amount that drops as you log wears. Either way, the goal at this stage is visibility. You can't edit what you can't see.
 
-Once everything is in front of you, sort by one dimension only: when did you last wear this? Bottles you've reached for in the past 60 days belong in one group. Everything else, bottles that have sat untouched for two months or more, forms a second group that deserves scrutiny. This isn't a decision about keeping or discarding yet; it's diagnostic. You're identifying where your collection is working and where it's stagnant.
+Once everything is in front of you, sort by one dimension: when did you last wear this? Bottles you've reached for in the past 60 days belong in one group. Everything else, bottles that have sat untouched for two months or more, forms a second group that deserves scrutiny. This isn't a decision about keeping or discarding yet. You're identifying where your collection is working and where it's stagnant.
 
-According to fragrance industry data, [Gen Z fragrance spending rose 26% in 2024](https://www.example.com), which means more people are entering the hobby with enthusiasm and quickly amassing bottles faster than they can wear them. The overwhelm is real and common, and inventory is the first antidote.
+Fragrance industry data shows [Gen Z fragrance spending rose 26% in 2024](https://www.example.com), which means more people are entering the hobby with enthusiasm and amassing bottles faster than they can wear them. The overwhelm is common, and inventory is the first fix.
 
 ## How do I assign "roles" and why does that matter?
 
@@ -67,27 +67,25 @@ A useful starting framework uses five roles:
 | Seasonal anchor | A scent that only makes sense in one season | You anticipate wearing it when that season returns |
 | Wildcard / personal | Something unusual, sentimental, or experimental | It excites you even if it has no clear occasion |
 
-Any bottle that doesn't map to one of these roles, and that doesn't fill the role better than another bottle you already own, is a candidate for moving on. Redundancy within a role (three evening orientals that all smell like a variation on the same theme) is the most common curation problem collectors face.
+Any bottle that doesn't map to one of these roles, and that doesn't fill the role better than another bottle you already own, is a candidate for moving on. Redundancy within a role, three evening orientals that all smell like a variation on the same theme, is the most common curation problem collectors face.
 
 ## How do I handle bottles I love but never actually wear?
 
-This one comes up a lot, and it's probably the hardest part of curation.
+"Love" in perfume often means two different things: love to smell, and love to wear. Some bottles are beautiful objects, or they carry memories, or they represent a style you admire but don't live in. None of that makes them wrong to own, but it does mean they're serving a different function than a wearable wardrobe piece.
 
-The honest answer is that "love" in perfume often means two different things: love to smell, and love to wear. Some bottles are beautiful objects, or they carry memories, or they represent a style you admire but don't live in. None of that makes them wrong to own, but it does mean they're serving a different function than a wearable wardrobe piece.
+A practical middle ground: give any bottle you haven't worn in six months a deliberate trial. Put it on three times over the next two weeks, at moments it theoretically suits. If you still find yourself unsatisfied, wishing you'd chosen something else or counting the hours until you can wash it off, that's useful data. Loving a fragrance on the strip and loving it on your skin are different things, and curation is about aligning the two.
 
-A practical middle ground: give any bottle you haven't worn in six months a deliberate trial. Put it on three times over the next two weeks, at moments it theoretically suits. If you still find yourself unsatisfied, wishing you'd chosen something else or counting the hours until you can wash it off, that's useful data. Loving a fragrance on the strip and loving it on your life are different things, and curation is about aligning the two.
-
-There's no fixed number that makes a perfume collection too many, what matters is whether you're actually reaching for the bottles you own. A collection becomes cluttered not from having many perfumes but from having many you rarely wear.
+What makes a collection cluttered isn't having many perfumes, it's having many you rarely wear.
 
 ## What's the fastest way to spot redundancy in my collection?
 
 *This one comes up a lot:* collectors who've been building for a while often buy within the same families repeatedly without realizing it.
 
-Pull your collection by fragrance family and look for clusters. If you have four amber-vanilla orientals, two of which are barely distinguishable from each other in daily wear, that cluster has redundancy. The question isn't which one is "better" in the abstract, it's which one fills the role most distinctly. The one with the most character relative to everything else stays; the closer duplicates are candidates to move on.
+Pull your collection by fragrance family and look for clusters. If you have four amber-vanilla orientals and two of them are barely distinguishable in daily wear, that cluster has redundancy. The question isn't which one is "better" in the abstract, it's which one fills the role most distinctly. The one with the most character relative to everything else stays; the closer duplicates are candidates to move on.
 
-Niche fragrances are the fastest-growing segment of the fragrance market at a [13.2% growth rate](https://www.example.com), which means more unique, character-driven bottles are available than ever before. That actually makes redundancy *more* tempting to fall into, because the category feels premium and collectible. The antidote is applying the role framework before buying, not just after.
+Niche fragrances are the fastest-growing segment of the fragrance market at a [13.2% growth rate](https://www.example.com), which means more character-driven bottles are available than ever. That makes redundancy more tempting to fall into, because the category feels premium and collectible. Applying the role framework before buying, not just after, is the fix.
 
-Perfume Picks' taste profile feature can help surface patterns you haven't noticed: if your collection skews heavily toward one note family, the app will show you that clearly before you add another bottle to the cluster.
+Perfume Picks' taste profile feature can help surface patterns you haven't noticed. If your collection skews heavily toward one note family, the app will show you that before you add another bottle to the cluster.
 
 ## How do I build curation into my buying habits going forward?
 
@@ -95,12 +93,12 @@ The best curation happens before purchase, not after regret. A few questions wor
 
 - What role does this fill? Can you name it specifically? If you can't, you're buying for novelty rather than function, which isn't always wrong, but should be a conscious choice.
 - What would this replace or supplement? If you already own something that fills the same role equally well, is there a reason to add a near-duplicate?
-- Have you worn it enough to commit? Proper testing and understanding how a fragrance performs on your skin are key to managing a collection effectively. A strip test tells you the opening. Two wearings on skin across different weather tells you whether you'll actually reach for it.
+- Have you worn it enough to commit? A strip test tells you the opening. Two wearings on skin across different weather tells you whether you'll actually reach for it.
 - Does it work with your current collection? A new bottle doesn't exist in isolation, it needs to earn shelf space relative to what you already own.
 
 A wardrobe is built to match how you live. A collection is what happens when you stop asking that question. The wardrobe-builder asks "what role does this fill?" before each purchase.
 
-Building this question into your routine, especially if you tend to impulse-buy or FOMO-buy on limited releases, is what separates a curated collection from an accumulated one. The global perfume market [is projected to grow from USD 63.5 billion in 2026 to USD 96.1 billion by 2033](https://www.example.com), which means the supply of tempting new bottles is only going to increase. The discernment has to come from you.
+Building this question into your routine is what separates a curated collection from an accumulated one. The global perfume market [is projected to grow from USD 63.5 billion in 2026 to USD 96.1 billion by 2033](https://www.example.com), which means the supply of tempting new bottles is only going to increase. The discernment has to come from you.
 
 ## How often should I re-curate, and what does that actually look like?
 
